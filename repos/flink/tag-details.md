@@ -80,12 +80,12 @@
 -	[`flink:1.15-scala_2.12`](#flink115-scala_212)
 -	[`flink:1.15-scala_2.12-java11`](#flink115-scala_212-java11)
 -	[`flink:1.15-scala_2.12-java8`](#flink115-scala_212-java8)
--	[`flink:1.15.0`](#flink1150)
--	[`flink:1.15.0-java11`](#flink1150-java11)
--	[`flink:1.15.0-java8`](#flink1150-java8)
--	[`flink:1.15.0-scala_2.12`](#flink1150-scala_212)
--	[`flink:1.15.0-scala_2.12-java11`](#flink1150-scala_212-java11)
--	[`flink:1.15.0-scala_2.12-java8`](#flink1150-scala_212-java8)
+-	[`flink:1.15.1`](#flink1151)
+-	[`flink:1.15.1-java11`](#flink1151-java11)
+-	[`flink:1.15.1-java8`](#flink1151-java8)
+-	[`flink:1.15.1-scala_2.12`](#flink1151-scala_212)
+-	[`flink:1.15.1-scala_2.12-java11`](#flink1151-scala_212-java11)
+-	[`flink:1.15.1-scala_2.12-java8`](#flink1151-scala_212-java8)
 -	[`flink:java11`](#flinkjava11)
 -	[`flink:java8`](#flinkjava8)
 -	[`flink:latest`](#flinklatest)
@@ -11184,7 +11184,7 @@ CMD ["help"]
 ## `flink:1.15`
 
 ```console
-$ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b16cef1c02c01
+$ docker pull flink@sha256:201d7e555bc60c9bf48cef1965a4bd072d83f3874b0e45a8e3e09402b90ddc45
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11195,14 +11195,14 @@ $ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b1
 ### `flink:1.15` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:41c4a2dd437e33ed08438b09a3ee161ab8a0efa236d0ed5355a59a318bfc6235
+$ docker pull flink@sha256:591c8d411d9da941dd5a2dfdd44d368f69f9b2fb04e00c7a2c6b703bbcbe86a3
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **563.4 MB (563443755 bytes)**  
+-	Total Size: **562.7 MB (562662019 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6c1e40bf7d941db41437b87dd17386406913d453c3bfb8b267c14ba19a9b3a7a`
+-	Image ID: `sha256:7babea798a2e26a88b07e60449f63301525dff0d798643c5a59c97485281b6d4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -11235,25 +11235,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 20:00:28 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 20:00:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:12 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 20:01:30 GMT
+# Thu, 07 Jul 2022 20:22:01 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 CMD ["help"]
 ```
 
@@ -11290,34 +11290,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
 		Size: 900.5 KB (900514 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec296c0ad3ffab7b87f6718b7af7d8448432749bf3f2ee738c14bb7354685b48`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 4.6 KB (4600 bytes)  
+	-	`sha256:ef0dd5227fb0549aabf2412e9a1ba8646922075c314681b5ec245742beb110ad`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 4.6 KB (4604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8918059d106a7f67688b0d6c94036506732d2e762ca45b6423b166a7adab3ce`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 148.0 B  
+	-	`sha256:caaf5320f59fd0ed16ce055b50033d9fd3631202495cb7884295dd29c1b6ba7d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:51 GMT  
+		Size: 146.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6be94455a6b538fbd3738f9fa7d60cac3222432c8ae340bd2d9c3928f177c67e`  
-		Last Modified: Thu, 23 Jun 2022 20:21:37 GMT  
-		Size: 437.0 MB (436950622 bytes)  
+	-	`sha256:8d99a5a2de6c4716430a0b3708f4c9c953069792a6590450c6572fd82eccfdfc`  
+		Last Modified: Thu, 07 Jul 2022 20:25:09 GMT  
+		Size: 436.2 MB (436168886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1782c46f55f4f64badf1ab1dc2befe88551f1b128e5e354bc37f7a98df52f53`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 1.9 KB (1947 bytes)  
+	-	`sha256:2acf7885c116055239b6d1089cdc48fe41ccb2e7fa734bfb7dcf3e14bfedfe6d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `flink:1.15` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:dec9b692ce6857ee59f804f9187324d0aaf2b02e7f7ef2c6fa0813ca70bafe8a
+$ docker pull flink@sha256:e332e71c911baa4194fceb402b6aead41fa98588e261c4426d5ad5b32b669c30
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **560.5 MB (560544943 bytes)**  
+-	Total Size: **559.8 MB (559763304 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:484fa73280b098affac6f54a83f40a358af4c018c88b257ed829fe69b1fbaf02`
+-	Image ID: `sha256:f01a0563cdde2b4cdd5403a03e9c1833b9def59aeef7a57670aa9b6f9b76eff3`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -11350,25 +11350,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:43:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:43:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:43:29 GMT
+# Thu, 07 Jul 2022 20:41:25 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:41:26 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:43:30 GMT
+# Thu, 07 Jul 2022 20:41:27 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:43:31 GMT
+# Thu, 07 Jul 2022 20:41:28 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:43:32 GMT
+# Thu, 07 Jul 2022 20:41:29 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:44:23 GMT
+# Thu, 07 Jul 2022 20:42:22 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:44:25 GMT
+# Thu, 07 Jul 2022 20:42:24 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:44:26 GMT
+# Thu, 07 Jul 2022 20:42:25 GMT
 CMD ["help"]
 ```
 
@@ -11405,27 +11405,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4385d2b685a14e4ed46d660d681cd1b0b5388dbc9a3752b842bedd24f292ff29`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:8630c6fdb8f68d43a1bb7158aa2f4feba5b0d7e65bf23777b554475367904899`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 4.5 KB (4524 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e881eb05ae95cb925ca81683cc3d3244505c3fbd1ea440bc85f79cf99e50ebf`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 113.0 B  
+	-	`sha256:e47208e174e386a48493c1c7c477511b5055394f9e25b05e16804d641c7127be`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e78483b87f5ffb7f83960642f668a2a57fb71afb4fb48fe1a98ba3c179b4e9b8`  
-		Last Modified: Fri, 24 Jun 2022 01:01:12 GMT  
-		Size: 437.0 MB (436950337 bytes)  
+	-	`sha256:5c174bf2c07a25f8340312f22e120d81a5e5b1201857040f8dce46e57d4d17e9`  
+		Last Modified: Thu, 07 Jul 2022 20:45:26 GMT  
+		Size: 436.2 MB (436168696 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9afb847d3202196d0a83756a8f0201473faf2722653313f01b85fdfb40140a0b`  
-		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
+	-	`sha256:23215d7e62d1d627acd3cc888b445de77c3fbee61a4bddc655ac06c006239d8b`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `flink:1.15-java11`
 
 ```console
-$ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b16cef1c02c01
+$ docker pull flink@sha256:201d7e555bc60c9bf48cef1965a4bd072d83f3874b0e45a8e3e09402b90ddc45
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11436,14 +11436,14 @@ $ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b1
 ### `flink:1.15-java11` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:41c4a2dd437e33ed08438b09a3ee161ab8a0efa236d0ed5355a59a318bfc6235
+$ docker pull flink@sha256:591c8d411d9da941dd5a2dfdd44d368f69f9b2fb04e00c7a2c6b703bbcbe86a3
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **563.4 MB (563443755 bytes)**  
+-	Total Size: **562.7 MB (562662019 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6c1e40bf7d941db41437b87dd17386406913d453c3bfb8b267c14ba19a9b3a7a`
+-	Image ID: `sha256:7babea798a2e26a88b07e60449f63301525dff0d798643c5a59c97485281b6d4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -11476,25 +11476,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 20:00:28 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 20:00:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:12 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 20:01:30 GMT
+# Thu, 07 Jul 2022 20:22:01 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 CMD ["help"]
 ```
 
@@ -11531,34 +11531,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
 		Size: 900.5 KB (900514 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec296c0ad3ffab7b87f6718b7af7d8448432749bf3f2ee738c14bb7354685b48`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 4.6 KB (4600 bytes)  
+	-	`sha256:ef0dd5227fb0549aabf2412e9a1ba8646922075c314681b5ec245742beb110ad`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 4.6 KB (4604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8918059d106a7f67688b0d6c94036506732d2e762ca45b6423b166a7adab3ce`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 148.0 B  
+	-	`sha256:caaf5320f59fd0ed16ce055b50033d9fd3631202495cb7884295dd29c1b6ba7d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:51 GMT  
+		Size: 146.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6be94455a6b538fbd3738f9fa7d60cac3222432c8ae340bd2d9c3928f177c67e`  
-		Last Modified: Thu, 23 Jun 2022 20:21:37 GMT  
-		Size: 437.0 MB (436950622 bytes)  
+	-	`sha256:8d99a5a2de6c4716430a0b3708f4c9c953069792a6590450c6572fd82eccfdfc`  
+		Last Modified: Thu, 07 Jul 2022 20:25:09 GMT  
+		Size: 436.2 MB (436168886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1782c46f55f4f64badf1ab1dc2befe88551f1b128e5e354bc37f7a98df52f53`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 1.9 KB (1947 bytes)  
+	-	`sha256:2acf7885c116055239b6d1089cdc48fe41ccb2e7fa734bfb7dcf3e14bfedfe6d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `flink:1.15-java11` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:dec9b692ce6857ee59f804f9187324d0aaf2b02e7f7ef2c6fa0813ca70bafe8a
+$ docker pull flink@sha256:e332e71c911baa4194fceb402b6aead41fa98588e261c4426d5ad5b32b669c30
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **560.5 MB (560544943 bytes)**  
+-	Total Size: **559.8 MB (559763304 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:484fa73280b098affac6f54a83f40a358af4c018c88b257ed829fe69b1fbaf02`
+-	Image ID: `sha256:f01a0563cdde2b4cdd5403a03e9c1833b9def59aeef7a57670aa9b6f9b76eff3`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -11591,25 +11591,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:43:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:43:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:43:29 GMT
+# Thu, 07 Jul 2022 20:41:25 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:41:26 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:43:30 GMT
+# Thu, 07 Jul 2022 20:41:27 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:43:31 GMT
+# Thu, 07 Jul 2022 20:41:28 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:43:32 GMT
+# Thu, 07 Jul 2022 20:41:29 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:44:23 GMT
+# Thu, 07 Jul 2022 20:42:22 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:44:25 GMT
+# Thu, 07 Jul 2022 20:42:24 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:44:26 GMT
+# Thu, 07 Jul 2022 20:42:25 GMT
 CMD ["help"]
 ```
 
@@ -11646,27 +11646,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4385d2b685a14e4ed46d660d681cd1b0b5388dbc9a3752b842bedd24f292ff29`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:8630c6fdb8f68d43a1bb7158aa2f4feba5b0d7e65bf23777b554475367904899`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 4.5 KB (4524 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e881eb05ae95cb925ca81683cc3d3244505c3fbd1ea440bc85f79cf99e50ebf`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 113.0 B  
+	-	`sha256:e47208e174e386a48493c1c7c477511b5055394f9e25b05e16804d641c7127be`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e78483b87f5ffb7f83960642f668a2a57fb71afb4fb48fe1a98ba3c179b4e9b8`  
-		Last Modified: Fri, 24 Jun 2022 01:01:12 GMT  
-		Size: 437.0 MB (436950337 bytes)  
+	-	`sha256:5c174bf2c07a25f8340312f22e120d81a5e5b1201857040f8dce46e57d4d17e9`  
+		Last Modified: Thu, 07 Jul 2022 20:45:26 GMT  
+		Size: 436.2 MB (436168696 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9afb847d3202196d0a83756a8f0201473faf2722653313f01b85fdfb40140a0b`  
-		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
+	-	`sha256:23215d7e62d1d627acd3cc888b445de77c3fbee61a4bddc655ac06c006239d8b`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `flink:1.15-java8`
 
 ```console
-$ docker pull flink@sha256:d95b4b637a03fb52623b2071a34cd2d66fe8fa4e3c3e73511d8c2538ad53402c
+$ docker pull flink@sha256:2e5d8a8dc50450d5f0fce569eb79a7b35824d41df425478eebf1c47edd45d371
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11677,14 +11677,14 @@ $ docker pull flink@sha256:d95b4b637a03fb52623b2071a34cd2d66fe8fa4e3c3e73511d8c2
 ### `flink:1.15-java8` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:f2f2460fa123d497112d55ab1ed060b9fa302aea278593f466c096a28a002597
+$ docker pull flink@sha256:e70b66d9666515590176ca7e14d75305a19048aab5059ebd490a8a9ffcb0982f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **557.7 MB (557670619 bytes)**  
+-	Total Size: **556.9 MB (556889009 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b3765ee360959976f792b5612f7a2d22c522880cb52f9ea2d757c85a22d73eac`
+-	Image ID: `sha256:8f60b5a49e6a98cc3463beac8baaaee5845801c3415ca72a0bff8a23668e3777`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -11717,25 +11717,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 19:58:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 19:58:27 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 19:58:27 GMT
+# Thu, 07 Jul 2022 20:19:49 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:19:50 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 19:58:27 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 19:58:28 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 19:58:28 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 19:59:29 GMT
+# Thu, 07 Jul 2022 20:20:58 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 CMD ["help"]
 ```
 
@@ -11772,34 +11772,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
 		Size: 900.5 KB (900512 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aadd72c534e263b00540ab7b24473d5f689d3200365f887fd94d407d5d038e16`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
-		Size: 4.6 KB (4603 bytes)  
+	-	`sha256:1b91d02c14502a963e2b84e4e9133c23f80b3a70d73a024891b902bf282244e1`  
+		Last Modified: Thu, 07 Jul 2022 20:24:07 GMT  
+		Size: 4.6 KB (4606 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c62c38eeb8e461b5de53c6ee567535a4df0af8608f47df8cc216e6247542989`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
+	-	`sha256:48e49e563bf990c59eedc04c3073fa0529d264cd07d1d2a51381822c629d3809`  
+		Last Modified: Thu, 07 Jul 2022 20:24:08 GMT  
 		Size: 148.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2161d3d413c365280ea4bdf5852def5994d35cdddd03fa3fe9b27668321b154`  
-		Last Modified: Thu, 23 Jun 2022 20:20:54 GMT  
-		Size: 437.0 MB (436950530 bytes)  
+	-	`sha256:b8a2da0b4d86e67ea07400cccbbf1fe4fbe0b238710e44b73ea7b0c9c58e090f`  
+		Last Modified: Thu, 07 Jul 2022 20:24:27 GMT  
+		Size: 436.2 MB (436168916 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44d06fcc6e609951060bcd2a3cf6bfd4ea2cadf0a657a0f292110586bf5c2bce`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
-		Size: 1.9 KB (1945 bytes)  
+	-	`sha256:656008f25693df0b24be1952153ef28181e7f38703ede3ea82277cf8404465b5`  
+		Last Modified: Thu, 07 Jul 2022 20:24:08 GMT  
+		Size: 1.9 KB (1946 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `flink:1.15-java8` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:2fdda9935697ba672cb8ac273c69e8dd4d613965e2c6de2bf701b326b414ba96
+$ docker pull flink@sha256:2b29a4ff0cda3a37b8324e1d35af321c9e7cbc60b83bb6b4d6cad0ce7d6cf2ec
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **554.7 MB (554709243 bytes)**  
+-	Total Size: **553.9 MB (553927602 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:da8c24e3f9162b2715396323113af3f51e30cfbc9297056c3d8299babbd43721`
+-	Image ID: `sha256:8862be7594e0b44cebb48b9e22fb5a18a104588bd2bac1040779ea067f94a136`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -11832,25 +11832,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:41:07 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:41:08 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:41:09 GMT
+# Thu, 07 Jul 2022 20:39:44 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:39:44 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:41:10 GMT
+# Thu, 07 Jul 2022 20:39:45 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:41:11 GMT
+# Thu, 07 Jul 2022 20:39:46 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:41:12 GMT
+# Thu, 07 Jul 2022 20:39:47 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:42:24 GMT
+# Thu, 07 Jul 2022 20:41:07 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:42:25 GMT
+# Thu, 07 Jul 2022 20:41:09 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:42:25 GMT
+# Thu, 07 Jul 2022 20:41:09 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:42:26 GMT
+# Thu, 07 Jul 2022 20:41:10 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:42:27 GMT
+# Thu, 07 Jul 2022 20:41:11 GMT
 CMD ["help"]
 ```
 
@@ -11887,27 +11887,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94b0f68781a1871db68a56d8042dbafa8ac7fe83085dfa751a4a77a0171fd393`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:da334286700250ff9c172f7d3593ebcfd920f7feae026cffcc4baa5ca10db4d0`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
+		Size: 4.5 KB (4525 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e22408d06855d55e1ce4c7acb09e39c6d4f4fff7594fdc81149300205b05f52c`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
+	-	`sha256:9e8ce8d916ac8446bb5c2bd86a7507661fdbdc09320152af0cf00a2831595742`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
 		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdfe731103e397d8ac2ae215ab3e7d65feda59b53fce279b1cca2692dc8b24aa`  
-		Last Modified: Fri, 24 Jun 2022 01:00:10 GMT  
-		Size: 437.0 MB (436950362 bytes)  
+	-	`sha256:939f149cd5e57ed137391851f0984f02addbf23e62face7e00835e5b8ce7e527`  
+		Last Modified: Thu, 07 Jul 2022 20:44:34 GMT  
+		Size: 436.2 MB (436168719 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f112a36a2e3d485ffe7476efbb1c5f90e91ee2b560f130682fe2b822cc74898`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
+	-	`sha256:4c63dd9912e0369d1678da764afd577f9140ed5c906f9a32f6fd2d52e2afdfdc`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `flink:1.15-scala_2.12`
 
 ```console
-$ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b16cef1c02c01
+$ docker pull flink@sha256:201d7e555bc60c9bf48cef1965a4bd072d83f3874b0e45a8e3e09402b90ddc45
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11918,14 +11918,14 @@ $ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b1
 ### `flink:1.15-scala_2.12` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:41c4a2dd437e33ed08438b09a3ee161ab8a0efa236d0ed5355a59a318bfc6235
+$ docker pull flink@sha256:591c8d411d9da941dd5a2dfdd44d368f69f9b2fb04e00c7a2c6b703bbcbe86a3
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **563.4 MB (563443755 bytes)**  
+-	Total Size: **562.7 MB (562662019 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6c1e40bf7d941db41437b87dd17386406913d453c3bfb8b267c14ba19a9b3a7a`
+-	Image ID: `sha256:7babea798a2e26a88b07e60449f63301525dff0d798643c5a59c97485281b6d4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -11958,25 +11958,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 20:00:28 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 20:00:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:12 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 20:01:30 GMT
+# Thu, 07 Jul 2022 20:22:01 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 CMD ["help"]
 ```
 
@@ -12013,34 +12013,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
 		Size: 900.5 KB (900514 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec296c0ad3ffab7b87f6718b7af7d8448432749bf3f2ee738c14bb7354685b48`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 4.6 KB (4600 bytes)  
+	-	`sha256:ef0dd5227fb0549aabf2412e9a1ba8646922075c314681b5ec245742beb110ad`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 4.6 KB (4604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8918059d106a7f67688b0d6c94036506732d2e762ca45b6423b166a7adab3ce`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 148.0 B  
+	-	`sha256:caaf5320f59fd0ed16ce055b50033d9fd3631202495cb7884295dd29c1b6ba7d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:51 GMT  
+		Size: 146.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6be94455a6b538fbd3738f9fa7d60cac3222432c8ae340bd2d9c3928f177c67e`  
-		Last Modified: Thu, 23 Jun 2022 20:21:37 GMT  
-		Size: 437.0 MB (436950622 bytes)  
+	-	`sha256:8d99a5a2de6c4716430a0b3708f4c9c953069792a6590450c6572fd82eccfdfc`  
+		Last Modified: Thu, 07 Jul 2022 20:25:09 GMT  
+		Size: 436.2 MB (436168886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1782c46f55f4f64badf1ab1dc2befe88551f1b128e5e354bc37f7a98df52f53`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 1.9 KB (1947 bytes)  
+	-	`sha256:2acf7885c116055239b6d1089cdc48fe41ccb2e7fa734bfb7dcf3e14bfedfe6d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `flink:1.15-scala_2.12` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:dec9b692ce6857ee59f804f9187324d0aaf2b02e7f7ef2c6fa0813ca70bafe8a
+$ docker pull flink@sha256:e332e71c911baa4194fceb402b6aead41fa98588e261c4426d5ad5b32b669c30
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **560.5 MB (560544943 bytes)**  
+-	Total Size: **559.8 MB (559763304 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:484fa73280b098affac6f54a83f40a358af4c018c88b257ed829fe69b1fbaf02`
+-	Image ID: `sha256:f01a0563cdde2b4cdd5403a03e9c1833b9def59aeef7a57670aa9b6f9b76eff3`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -12073,25 +12073,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:43:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:43:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:43:29 GMT
+# Thu, 07 Jul 2022 20:41:25 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:41:26 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:43:30 GMT
+# Thu, 07 Jul 2022 20:41:27 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:43:31 GMT
+# Thu, 07 Jul 2022 20:41:28 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:43:32 GMT
+# Thu, 07 Jul 2022 20:41:29 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:44:23 GMT
+# Thu, 07 Jul 2022 20:42:22 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:44:25 GMT
+# Thu, 07 Jul 2022 20:42:24 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:44:26 GMT
+# Thu, 07 Jul 2022 20:42:25 GMT
 CMD ["help"]
 ```
 
@@ -12128,27 +12128,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4385d2b685a14e4ed46d660d681cd1b0b5388dbc9a3752b842bedd24f292ff29`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:8630c6fdb8f68d43a1bb7158aa2f4feba5b0d7e65bf23777b554475367904899`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 4.5 KB (4524 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e881eb05ae95cb925ca81683cc3d3244505c3fbd1ea440bc85f79cf99e50ebf`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 113.0 B  
+	-	`sha256:e47208e174e386a48493c1c7c477511b5055394f9e25b05e16804d641c7127be`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e78483b87f5ffb7f83960642f668a2a57fb71afb4fb48fe1a98ba3c179b4e9b8`  
-		Last Modified: Fri, 24 Jun 2022 01:01:12 GMT  
-		Size: 437.0 MB (436950337 bytes)  
+	-	`sha256:5c174bf2c07a25f8340312f22e120d81a5e5b1201857040f8dce46e57d4d17e9`  
+		Last Modified: Thu, 07 Jul 2022 20:45:26 GMT  
+		Size: 436.2 MB (436168696 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9afb847d3202196d0a83756a8f0201473faf2722653313f01b85fdfb40140a0b`  
-		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
+	-	`sha256:23215d7e62d1d627acd3cc888b445de77c3fbee61a4bddc655ac06c006239d8b`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `flink:1.15-scala_2.12-java11`
 
 ```console
-$ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b16cef1c02c01
+$ docker pull flink@sha256:201d7e555bc60c9bf48cef1965a4bd072d83f3874b0e45a8e3e09402b90ddc45
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12159,14 +12159,14 @@ $ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b1
 ### `flink:1.15-scala_2.12-java11` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:41c4a2dd437e33ed08438b09a3ee161ab8a0efa236d0ed5355a59a318bfc6235
+$ docker pull flink@sha256:591c8d411d9da941dd5a2dfdd44d368f69f9b2fb04e00c7a2c6b703bbcbe86a3
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **563.4 MB (563443755 bytes)**  
+-	Total Size: **562.7 MB (562662019 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6c1e40bf7d941db41437b87dd17386406913d453c3bfb8b267c14ba19a9b3a7a`
+-	Image ID: `sha256:7babea798a2e26a88b07e60449f63301525dff0d798643c5a59c97485281b6d4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -12199,25 +12199,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 20:00:28 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 20:00:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:12 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 20:01:30 GMT
+# Thu, 07 Jul 2022 20:22:01 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 CMD ["help"]
 ```
 
@@ -12254,34 +12254,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
 		Size: 900.5 KB (900514 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec296c0ad3ffab7b87f6718b7af7d8448432749bf3f2ee738c14bb7354685b48`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 4.6 KB (4600 bytes)  
+	-	`sha256:ef0dd5227fb0549aabf2412e9a1ba8646922075c314681b5ec245742beb110ad`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 4.6 KB (4604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8918059d106a7f67688b0d6c94036506732d2e762ca45b6423b166a7adab3ce`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 148.0 B  
+	-	`sha256:caaf5320f59fd0ed16ce055b50033d9fd3631202495cb7884295dd29c1b6ba7d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:51 GMT  
+		Size: 146.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6be94455a6b538fbd3738f9fa7d60cac3222432c8ae340bd2d9c3928f177c67e`  
-		Last Modified: Thu, 23 Jun 2022 20:21:37 GMT  
-		Size: 437.0 MB (436950622 bytes)  
+	-	`sha256:8d99a5a2de6c4716430a0b3708f4c9c953069792a6590450c6572fd82eccfdfc`  
+		Last Modified: Thu, 07 Jul 2022 20:25:09 GMT  
+		Size: 436.2 MB (436168886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1782c46f55f4f64badf1ab1dc2befe88551f1b128e5e354bc37f7a98df52f53`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 1.9 KB (1947 bytes)  
+	-	`sha256:2acf7885c116055239b6d1089cdc48fe41ccb2e7fa734bfb7dcf3e14bfedfe6d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `flink:1.15-scala_2.12-java11` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:dec9b692ce6857ee59f804f9187324d0aaf2b02e7f7ef2c6fa0813ca70bafe8a
+$ docker pull flink@sha256:e332e71c911baa4194fceb402b6aead41fa98588e261c4426d5ad5b32b669c30
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **560.5 MB (560544943 bytes)**  
+-	Total Size: **559.8 MB (559763304 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:484fa73280b098affac6f54a83f40a358af4c018c88b257ed829fe69b1fbaf02`
+-	Image ID: `sha256:f01a0563cdde2b4cdd5403a03e9c1833b9def59aeef7a57670aa9b6f9b76eff3`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -12314,25 +12314,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:43:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:43:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:43:29 GMT
+# Thu, 07 Jul 2022 20:41:25 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:41:26 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:43:30 GMT
+# Thu, 07 Jul 2022 20:41:27 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:43:31 GMT
+# Thu, 07 Jul 2022 20:41:28 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:43:32 GMT
+# Thu, 07 Jul 2022 20:41:29 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:44:23 GMT
+# Thu, 07 Jul 2022 20:42:22 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:44:25 GMT
+# Thu, 07 Jul 2022 20:42:24 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:44:26 GMT
+# Thu, 07 Jul 2022 20:42:25 GMT
 CMD ["help"]
 ```
 
@@ -12369,27 +12369,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4385d2b685a14e4ed46d660d681cd1b0b5388dbc9a3752b842bedd24f292ff29`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:8630c6fdb8f68d43a1bb7158aa2f4feba5b0d7e65bf23777b554475367904899`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 4.5 KB (4524 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e881eb05ae95cb925ca81683cc3d3244505c3fbd1ea440bc85f79cf99e50ebf`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 113.0 B  
+	-	`sha256:e47208e174e386a48493c1c7c477511b5055394f9e25b05e16804d641c7127be`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e78483b87f5ffb7f83960642f668a2a57fb71afb4fb48fe1a98ba3c179b4e9b8`  
-		Last Modified: Fri, 24 Jun 2022 01:01:12 GMT  
-		Size: 437.0 MB (436950337 bytes)  
+	-	`sha256:5c174bf2c07a25f8340312f22e120d81a5e5b1201857040f8dce46e57d4d17e9`  
+		Last Modified: Thu, 07 Jul 2022 20:45:26 GMT  
+		Size: 436.2 MB (436168696 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9afb847d3202196d0a83756a8f0201473faf2722653313f01b85fdfb40140a0b`  
-		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
+	-	`sha256:23215d7e62d1d627acd3cc888b445de77c3fbee61a4bddc655ac06c006239d8b`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `flink:1.15-scala_2.12-java8`
 
 ```console
-$ docker pull flink@sha256:d95b4b637a03fb52623b2071a34cd2d66fe8fa4e3c3e73511d8c2538ad53402c
+$ docker pull flink@sha256:2e5d8a8dc50450d5f0fce569eb79a7b35824d41df425478eebf1c47edd45d371
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12400,14 +12400,14 @@ $ docker pull flink@sha256:d95b4b637a03fb52623b2071a34cd2d66fe8fa4e3c3e73511d8c2
 ### `flink:1.15-scala_2.12-java8` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:f2f2460fa123d497112d55ab1ed060b9fa302aea278593f466c096a28a002597
+$ docker pull flink@sha256:e70b66d9666515590176ca7e14d75305a19048aab5059ebd490a8a9ffcb0982f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **557.7 MB (557670619 bytes)**  
+-	Total Size: **556.9 MB (556889009 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b3765ee360959976f792b5612f7a2d22c522880cb52f9ea2d757c85a22d73eac`
+-	Image ID: `sha256:8f60b5a49e6a98cc3463beac8baaaee5845801c3415ca72a0bff8a23668e3777`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -12440,25 +12440,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 19:58:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 19:58:27 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 19:58:27 GMT
+# Thu, 07 Jul 2022 20:19:49 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:19:50 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 19:58:27 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 19:58:28 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 19:58:28 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 19:59:29 GMT
+# Thu, 07 Jul 2022 20:20:58 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 CMD ["help"]
 ```
 
@@ -12495,34 +12495,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
 		Size: 900.5 KB (900512 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aadd72c534e263b00540ab7b24473d5f689d3200365f887fd94d407d5d038e16`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
-		Size: 4.6 KB (4603 bytes)  
+	-	`sha256:1b91d02c14502a963e2b84e4e9133c23f80b3a70d73a024891b902bf282244e1`  
+		Last Modified: Thu, 07 Jul 2022 20:24:07 GMT  
+		Size: 4.6 KB (4606 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c62c38eeb8e461b5de53c6ee567535a4df0af8608f47df8cc216e6247542989`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
+	-	`sha256:48e49e563bf990c59eedc04c3073fa0529d264cd07d1d2a51381822c629d3809`  
+		Last Modified: Thu, 07 Jul 2022 20:24:08 GMT  
 		Size: 148.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2161d3d413c365280ea4bdf5852def5994d35cdddd03fa3fe9b27668321b154`  
-		Last Modified: Thu, 23 Jun 2022 20:20:54 GMT  
-		Size: 437.0 MB (436950530 bytes)  
+	-	`sha256:b8a2da0b4d86e67ea07400cccbbf1fe4fbe0b238710e44b73ea7b0c9c58e090f`  
+		Last Modified: Thu, 07 Jul 2022 20:24:27 GMT  
+		Size: 436.2 MB (436168916 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44d06fcc6e609951060bcd2a3cf6bfd4ea2cadf0a657a0f292110586bf5c2bce`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
-		Size: 1.9 KB (1945 bytes)  
+	-	`sha256:656008f25693df0b24be1952153ef28181e7f38703ede3ea82277cf8404465b5`  
+		Last Modified: Thu, 07 Jul 2022 20:24:08 GMT  
+		Size: 1.9 KB (1946 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `flink:1.15-scala_2.12-java8` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:2fdda9935697ba672cb8ac273c69e8dd4d613965e2c6de2bf701b326b414ba96
+$ docker pull flink@sha256:2b29a4ff0cda3a37b8324e1d35af321c9e7cbc60b83bb6b4d6cad0ce7d6cf2ec
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **554.7 MB (554709243 bytes)**  
+-	Total Size: **553.9 MB (553927602 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:da8c24e3f9162b2715396323113af3f51e30cfbc9297056c3d8299babbd43721`
+-	Image ID: `sha256:8862be7594e0b44cebb48b9e22fb5a18a104588bd2bac1040779ea067f94a136`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -12555,25 +12555,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:41:07 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:41:08 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:41:09 GMT
+# Thu, 07 Jul 2022 20:39:44 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:39:44 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:41:10 GMT
+# Thu, 07 Jul 2022 20:39:45 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:41:11 GMT
+# Thu, 07 Jul 2022 20:39:46 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:41:12 GMT
+# Thu, 07 Jul 2022 20:39:47 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:42:24 GMT
+# Thu, 07 Jul 2022 20:41:07 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:42:25 GMT
+# Thu, 07 Jul 2022 20:41:09 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:42:25 GMT
+# Thu, 07 Jul 2022 20:41:09 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:42:26 GMT
+# Thu, 07 Jul 2022 20:41:10 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:42:27 GMT
+# Thu, 07 Jul 2022 20:41:11 GMT
 CMD ["help"]
 ```
 
@@ -12610,27 +12610,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94b0f68781a1871db68a56d8042dbafa8ac7fe83085dfa751a4a77a0171fd393`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:da334286700250ff9c172f7d3593ebcfd920f7feae026cffcc4baa5ca10db4d0`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
+		Size: 4.5 KB (4525 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e22408d06855d55e1ce4c7acb09e39c6d4f4fff7594fdc81149300205b05f52c`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
+	-	`sha256:9e8ce8d916ac8446bb5c2bd86a7507661fdbdc09320152af0cf00a2831595742`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
 		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdfe731103e397d8ac2ae215ab3e7d65feda59b53fce279b1cca2692dc8b24aa`  
-		Last Modified: Fri, 24 Jun 2022 01:00:10 GMT  
-		Size: 437.0 MB (436950362 bytes)  
+	-	`sha256:939f149cd5e57ed137391851f0984f02addbf23e62face7e00835e5b8ce7e527`  
+		Last Modified: Thu, 07 Jul 2022 20:44:34 GMT  
+		Size: 436.2 MB (436168719 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f112a36a2e3d485ffe7476efbb1c5f90e91ee2b560f130682fe2b822cc74898`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
+	-	`sha256:4c63dd9912e0369d1678da764afd577f9140ed5c906f9a32f6fd2d52e2afdfdc`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-## `flink:1.15.0`
+## `flink:1.15.1`
 
 ```console
-$ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b16cef1c02c01
+$ docker pull flink@sha256:201d7e555bc60c9bf48cef1965a4bd072d83f3874b0e45a8e3e09402b90ddc45
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12638,17 +12638,17 @@ $ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b1
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
-### `flink:1.15.0` - linux; amd64
+### `flink:1.15.1` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:41c4a2dd437e33ed08438b09a3ee161ab8a0efa236d0ed5355a59a318bfc6235
+$ docker pull flink@sha256:591c8d411d9da941dd5a2dfdd44d368f69f9b2fb04e00c7a2c6b703bbcbe86a3
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **563.4 MB (563443755 bytes)**  
+-	Total Size: **562.7 MB (562662019 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6c1e40bf7d941db41437b87dd17386406913d453c3bfb8b267c14ba19a9b3a7a`
+-	Image ID: `sha256:7babea798a2e26a88b07e60449f63301525dff0d798643c5a59c97485281b6d4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -12681,25 +12681,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 20:00:28 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 20:00:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:12 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 20:01:30 GMT
+# Thu, 07 Jul 2022 20:22:01 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 CMD ["help"]
 ```
 
@@ -12736,34 +12736,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
 		Size: 900.5 KB (900514 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec296c0ad3ffab7b87f6718b7af7d8448432749bf3f2ee738c14bb7354685b48`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 4.6 KB (4600 bytes)  
+	-	`sha256:ef0dd5227fb0549aabf2412e9a1ba8646922075c314681b5ec245742beb110ad`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 4.6 KB (4604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8918059d106a7f67688b0d6c94036506732d2e762ca45b6423b166a7adab3ce`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 148.0 B  
+	-	`sha256:caaf5320f59fd0ed16ce055b50033d9fd3631202495cb7884295dd29c1b6ba7d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:51 GMT  
+		Size: 146.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6be94455a6b538fbd3738f9fa7d60cac3222432c8ae340bd2d9c3928f177c67e`  
-		Last Modified: Thu, 23 Jun 2022 20:21:37 GMT  
-		Size: 437.0 MB (436950622 bytes)  
+	-	`sha256:8d99a5a2de6c4716430a0b3708f4c9c953069792a6590450c6572fd82eccfdfc`  
+		Last Modified: Thu, 07 Jul 2022 20:25:09 GMT  
+		Size: 436.2 MB (436168886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1782c46f55f4f64badf1ab1dc2befe88551f1b128e5e354bc37f7a98df52f53`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 1.9 KB (1947 bytes)  
+	-	`sha256:2acf7885c116055239b6d1089cdc48fe41ccb2e7fa734bfb7dcf3e14bfedfe6d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `flink:1.15.0` - linux; arm64 variant v8
+### `flink:1.15.1` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:dec9b692ce6857ee59f804f9187324d0aaf2b02e7f7ef2c6fa0813ca70bafe8a
+$ docker pull flink@sha256:e332e71c911baa4194fceb402b6aead41fa98588e261c4426d5ad5b32b669c30
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **560.5 MB (560544943 bytes)**  
+-	Total Size: **559.8 MB (559763304 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:484fa73280b098affac6f54a83f40a358af4c018c88b257ed829fe69b1fbaf02`
+-	Image ID: `sha256:f01a0563cdde2b4cdd5403a03e9c1833b9def59aeef7a57670aa9b6f9b76eff3`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -12796,25 +12796,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:43:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:43:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:43:29 GMT
+# Thu, 07 Jul 2022 20:41:25 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:41:26 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:43:30 GMT
+# Thu, 07 Jul 2022 20:41:27 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:43:31 GMT
+# Thu, 07 Jul 2022 20:41:28 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:43:32 GMT
+# Thu, 07 Jul 2022 20:41:29 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:44:23 GMT
+# Thu, 07 Jul 2022 20:42:22 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:44:25 GMT
+# Thu, 07 Jul 2022 20:42:24 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:44:26 GMT
+# Thu, 07 Jul 2022 20:42:25 GMT
 CMD ["help"]
 ```
 
@@ -12851,27 +12851,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4385d2b685a14e4ed46d660d681cd1b0b5388dbc9a3752b842bedd24f292ff29`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:8630c6fdb8f68d43a1bb7158aa2f4feba5b0d7e65bf23777b554475367904899`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 4.5 KB (4524 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e881eb05ae95cb925ca81683cc3d3244505c3fbd1ea440bc85f79cf99e50ebf`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 113.0 B  
+	-	`sha256:e47208e174e386a48493c1c7c477511b5055394f9e25b05e16804d641c7127be`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e78483b87f5ffb7f83960642f668a2a57fb71afb4fb48fe1a98ba3c179b4e9b8`  
-		Last Modified: Fri, 24 Jun 2022 01:01:12 GMT  
-		Size: 437.0 MB (436950337 bytes)  
+	-	`sha256:5c174bf2c07a25f8340312f22e120d81a5e5b1201857040f8dce46e57d4d17e9`  
+		Last Modified: Thu, 07 Jul 2022 20:45:26 GMT  
+		Size: 436.2 MB (436168696 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9afb847d3202196d0a83756a8f0201473faf2722653313f01b85fdfb40140a0b`  
-		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
+	-	`sha256:23215d7e62d1d627acd3cc888b445de77c3fbee61a4bddc655ac06c006239d8b`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-## `flink:1.15.0-java11`
+## `flink:1.15.1-java11`
 
 ```console
-$ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b16cef1c02c01
+$ docker pull flink@sha256:201d7e555bc60c9bf48cef1965a4bd072d83f3874b0e45a8e3e09402b90ddc45
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12879,17 +12879,17 @@ $ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b1
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
-### `flink:1.15.0-java11` - linux; amd64
+### `flink:1.15.1-java11` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:41c4a2dd437e33ed08438b09a3ee161ab8a0efa236d0ed5355a59a318bfc6235
+$ docker pull flink@sha256:591c8d411d9da941dd5a2dfdd44d368f69f9b2fb04e00c7a2c6b703bbcbe86a3
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **563.4 MB (563443755 bytes)**  
+-	Total Size: **562.7 MB (562662019 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6c1e40bf7d941db41437b87dd17386406913d453c3bfb8b267c14ba19a9b3a7a`
+-	Image ID: `sha256:7babea798a2e26a88b07e60449f63301525dff0d798643c5a59c97485281b6d4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -12922,25 +12922,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 20:00:28 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 20:00:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:12 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 20:01:30 GMT
+# Thu, 07 Jul 2022 20:22:01 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 CMD ["help"]
 ```
 
@@ -12977,34 +12977,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
 		Size: 900.5 KB (900514 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec296c0ad3ffab7b87f6718b7af7d8448432749bf3f2ee738c14bb7354685b48`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 4.6 KB (4600 bytes)  
+	-	`sha256:ef0dd5227fb0549aabf2412e9a1ba8646922075c314681b5ec245742beb110ad`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 4.6 KB (4604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8918059d106a7f67688b0d6c94036506732d2e762ca45b6423b166a7adab3ce`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 148.0 B  
+	-	`sha256:caaf5320f59fd0ed16ce055b50033d9fd3631202495cb7884295dd29c1b6ba7d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:51 GMT  
+		Size: 146.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6be94455a6b538fbd3738f9fa7d60cac3222432c8ae340bd2d9c3928f177c67e`  
-		Last Modified: Thu, 23 Jun 2022 20:21:37 GMT  
-		Size: 437.0 MB (436950622 bytes)  
+	-	`sha256:8d99a5a2de6c4716430a0b3708f4c9c953069792a6590450c6572fd82eccfdfc`  
+		Last Modified: Thu, 07 Jul 2022 20:25:09 GMT  
+		Size: 436.2 MB (436168886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1782c46f55f4f64badf1ab1dc2befe88551f1b128e5e354bc37f7a98df52f53`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 1.9 KB (1947 bytes)  
+	-	`sha256:2acf7885c116055239b6d1089cdc48fe41ccb2e7fa734bfb7dcf3e14bfedfe6d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `flink:1.15.0-java11` - linux; arm64 variant v8
+### `flink:1.15.1-java11` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:dec9b692ce6857ee59f804f9187324d0aaf2b02e7f7ef2c6fa0813ca70bafe8a
+$ docker pull flink@sha256:e332e71c911baa4194fceb402b6aead41fa98588e261c4426d5ad5b32b669c30
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **560.5 MB (560544943 bytes)**  
+-	Total Size: **559.8 MB (559763304 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:484fa73280b098affac6f54a83f40a358af4c018c88b257ed829fe69b1fbaf02`
+-	Image ID: `sha256:f01a0563cdde2b4cdd5403a03e9c1833b9def59aeef7a57670aa9b6f9b76eff3`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -13037,25 +13037,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:43:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:43:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:43:29 GMT
+# Thu, 07 Jul 2022 20:41:25 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:41:26 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:43:30 GMT
+# Thu, 07 Jul 2022 20:41:27 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:43:31 GMT
+# Thu, 07 Jul 2022 20:41:28 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:43:32 GMT
+# Thu, 07 Jul 2022 20:41:29 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:44:23 GMT
+# Thu, 07 Jul 2022 20:42:22 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:44:25 GMT
+# Thu, 07 Jul 2022 20:42:24 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:44:26 GMT
+# Thu, 07 Jul 2022 20:42:25 GMT
 CMD ["help"]
 ```
 
@@ -13092,27 +13092,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4385d2b685a14e4ed46d660d681cd1b0b5388dbc9a3752b842bedd24f292ff29`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:8630c6fdb8f68d43a1bb7158aa2f4feba5b0d7e65bf23777b554475367904899`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 4.5 KB (4524 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e881eb05ae95cb925ca81683cc3d3244505c3fbd1ea440bc85f79cf99e50ebf`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 113.0 B  
+	-	`sha256:e47208e174e386a48493c1c7c477511b5055394f9e25b05e16804d641c7127be`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e78483b87f5ffb7f83960642f668a2a57fb71afb4fb48fe1a98ba3c179b4e9b8`  
-		Last Modified: Fri, 24 Jun 2022 01:01:12 GMT  
-		Size: 437.0 MB (436950337 bytes)  
+	-	`sha256:5c174bf2c07a25f8340312f22e120d81a5e5b1201857040f8dce46e57d4d17e9`  
+		Last Modified: Thu, 07 Jul 2022 20:45:26 GMT  
+		Size: 436.2 MB (436168696 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9afb847d3202196d0a83756a8f0201473faf2722653313f01b85fdfb40140a0b`  
-		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
+	-	`sha256:23215d7e62d1d627acd3cc888b445de77c3fbee61a4bddc655ac06c006239d8b`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-## `flink:1.15.0-java8`
+## `flink:1.15.1-java8`
 
 ```console
-$ docker pull flink@sha256:d95b4b637a03fb52623b2071a34cd2d66fe8fa4e3c3e73511d8c2538ad53402c
+$ docker pull flink@sha256:2e5d8a8dc50450d5f0fce569eb79a7b35824d41df425478eebf1c47edd45d371
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13120,17 +13120,17 @@ $ docker pull flink@sha256:d95b4b637a03fb52623b2071a34cd2d66fe8fa4e3c3e73511d8c2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
-### `flink:1.15.0-java8` - linux; amd64
+### `flink:1.15.1-java8` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:f2f2460fa123d497112d55ab1ed060b9fa302aea278593f466c096a28a002597
+$ docker pull flink@sha256:e70b66d9666515590176ca7e14d75305a19048aab5059ebd490a8a9ffcb0982f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **557.7 MB (557670619 bytes)**  
+-	Total Size: **556.9 MB (556889009 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b3765ee360959976f792b5612f7a2d22c522880cb52f9ea2d757c85a22d73eac`
+-	Image ID: `sha256:8f60b5a49e6a98cc3463beac8baaaee5845801c3415ca72a0bff8a23668e3777`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -13163,25 +13163,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 19:58:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 19:58:27 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 19:58:27 GMT
+# Thu, 07 Jul 2022 20:19:49 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:19:50 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 19:58:27 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 19:58:28 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 19:58:28 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 19:59:29 GMT
+# Thu, 07 Jul 2022 20:20:58 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 CMD ["help"]
 ```
 
@@ -13218,34 +13218,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
 		Size: 900.5 KB (900512 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aadd72c534e263b00540ab7b24473d5f689d3200365f887fd94d407d5d038e16`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
-		Size: 4.6 KB (4603 bytes)  
+	-	`sha256:1b91d02c14502a963e2b84e4e9133c23f80b3a70d73a024891b902bf282244e1`  
+		Last Modified: Thu, 07 Jul 2022 20:24:07 GMT  
+		Size: 4.6 KB (4606 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c62c38eeb8e461b5de53c6ee567535a4df0af8608f47df8cc216e6247542989`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
+	-	`sha256:48e49e563bf990c59eedc04c3073fa0529d264cd07d1d2a51381822c629d3809`  
+		Last Modified: Thu, 07 Jul 2022 20:24:08 GMT  
 		Size: 148.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2161d3d413c365280ea4bdf5852def5994d35cdddd03fa3fe9b27668321b154`  
-		Last Modified: Thu, 23 Jun 2022 20:20:54 GMT  
-		Size: 437.0 MB (436950530 bytes)  
+	-	`sha256:b8a2da0b4d86e67ea07400cccbbf1fe4fbe0b238710e44b73ea7b0c9c58e090f`  
+		Last Modified: Thu, 07 Jul 2022 20:24:27 GMT  
+		Size: 436.2 MB (436168916 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44d06fcc6e609951060bcd2a3cf6bfd4ea2cadf0a657a0f292110586bf5c2bce`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
-		Size: 1.9 KB (1945 bytes)  
+	-	`sha256:656008f25693df0b24be1952153ef28181e7f38703ede3ea82277cf8404465b5`  
+		Last Modified: Thu, 07 Jul 2022 20:24:08 GMT  
+		Size: 1.9 KB (1946 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `flink:1.15.0-java8` - linux; arm64 variant v8
+### `flink:1.15.1-java8` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:2fdda9935697ba672cb8ac273c69e8dd4d613965e2c6de2bf701b326b414ba96
+$ docker pull flink@sha256:2b29a4ff0cda3a37b8324e1d35af321c9e7cbc60b83bb6b4d6cad0ce7d6cf2ec
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **554.7 MB (554709243 bytes)**  
+-	Total Size: **553.9 MB (553927602 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:da8c24e3f9162b2715396323113af3f51e30cfbc9297056c3d8299babbd43721`
+-	Image ID: `sha256:8862be7594e0b44cebb48b9e22fb5a18a104588bd2bac1040779ea067f94a136`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -13278,25 +13278,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:41:07 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:41:08 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:41:09 GMT
+# Thu, 07 Jul 2022 20:39:44 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:39:44 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:41:10 GMT
+# Thu, 07 Jul 2022 20:39:45 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:41:11 GMT
+# Thu, 07 Jul 2022 20:39:46 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:41:12 GMT
+# Thu, 07 Jul 2022 20:39:47 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:42:24 GMT
+# Thu, 07 Jul 2022 20:41:07 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:42:25 GMT
+# Thu, 07 Jul 2022 20:41:09 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:42:25 GMT
+# Thu, 07 Jul 2022 20:41:09 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:42:26 GMT
+# Thu, 07 Jul 2022 20:41:10 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:42:27 GMT
+# Thu, 07 Jul 2022 20:41:11 GMT
 CMD ["help"]
 ```
 
@@ -13333,27 +13333,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94b0f68781a1871db68a56d8042dbafa8ac7fe83085dfa751a4a77a0171fd393`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:da334286700250ff9c172f7d3593ebcfd920f7feae026cffcc4baa5ca10db4d0`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
+		Size: 4.5 KB (4525 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e22408d06855d55e1ce4c7acb09e39c6d4f4fff7594fdc81149300205b05f52c`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
+	-	`sha256:9e8ce8d916ac8446bb5c2bd86a7507661fdbdc09320152af0cf00a2831595742`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
 		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdfe731103e397d8ac2ae215ab3e7d65feda59b53fce279b1cca2692dc8b24aa`  
-		Last Modified: Fri, 24 Jun 2022 01:00:10 GMT  
-		Size: 437.0 MB (436950362 bytes)  
+	-	`sha256:939f149cd5e57ed137391851f0984f02addbf23e62face7e00835e5b8ce7e527`  
+		Last Modified: Thu, 07 Jul 2022 20:44:34 GMT  
+		Size: 436.2 MB (436168719 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f112a36a2e3d485ffe7476efbb1c5f90e91ee2b560f130682fe2b822cc74898`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
+	-	`sha256:4c63dd9912e0369d1678da764afd577f9140ed5c906f9a32f6fd2d52e2afdfdc`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-## `flink:1.15.0-scala_2.12`
+## `flink:1.15.1-scala_2.12`
 
 ```console
-$ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b16cef1c02c01
+$ docker pull flink@sha256:201d7e555bc60c9bf48cef1965a4bd072d83f3874b0e45a8e3e09402b90ddc45
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13361,17 +13361,17 @@ $ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b1
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
-### `flink:1.15.0-scala_2.12` - linux; amd64
+### `flink:1.15.1-scala_2.12` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:41c4a2dd437e33ed08438b09a3ee161ab8a0efa236d0ed5355a59a318bfc6235
+$ docker pull flink@sha256:591c8d411d9da941dd5a2dfdd44d368f69f9b2fb04e00c7a2c6b703bbcbe86a3
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **563.4 MB (563443755 bytes)**  
+-	Total Size: **562.7 MB (562662019 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6c1e40bf7d941db41437b87dd17386406913d453c3bfb8b267c14ba19a9b3a7a`
+-	Image ID: `sha256:7babea798a2e26a88b07e60449f63301525dff0d798643c5a59c97485281b6d4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -13404,25 +13404,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 20:00:28 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 20:00:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:12 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 20:01:30 GMT
+# Thu, 07 Jul 2022 20:22:01 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 CMD ["help"]
 ```
 
@@ -13459,34 +13459,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
 		Size: 900.5 KB (900514 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec296c0ad3ffab7b87f6718b7af7d8448432749bf3f2ee738c14bb7354685b48`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 4.6 KB (4600 bytes)  
+	-	`sha256:ef0dd5227fb0549aabf2412e9a1ba8646922075c314681b5ec245742beb110ad`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 4.6 KB (4604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8918059d106a7f67688b0d6c94036506732d2e762ca45b6423b166a7adab3ce`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 148.0 B  
+	-	`sha256:caaf5320f59fd0ed16ce055b50033d9fd3631202495cb7884295dd29c1b6ba7d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:51 GMT  
+		Size: 146.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6be94455a6b538fbd3738f9fa7d60cac3222432c8ae340bd2d9c3928f177c67e`  
-		Last Modified: Thu, 23 Jun 2022 20:21:37 GMT  
-		Size: 437.0 MB (436950622 bytes)  
+	-	`sha256:8d99a5a2de6c4716430a0b3708f4c9c953069792a6590450c6572fd82eccfdfc`  
+		Last Modified: Thu, 07 Jul 2022 20:25:09 GMT  
+		Size: 436.2 MB (436168886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1782c46f55f4f64badf1ab1dc2befe88551f1b128e5e354bc37f7a98df52f53`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 1.9 KB (1947 bytes)  
+	-	`sha256:2acf7885c116055239b6d1089cdc48fe41ccb2e7fa734bfb7dcf3e14bfedfe6d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `flink:1.15.0-scala_2.12` - linux; arm64 variant v8
+### `flink:1.15.1-scala_2.12` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:dec9b692ce6857ee59f804f9187324d0aaf2b02e7f7ef2c6fa0813ca70bafe8a
+$ docker pull flink@sha256:e332e71c911baa4194fceb402b6aead41fa98588e261c4426d5ad5b32b669c30
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **560.5 MB (560544943 bytes)**  
+-	Total Size: **559.8 MB (559763304 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:484fa73280b098affac6f54a83f40a358af4c018c88b257ed829fe69b1fbaf02`
+-	Image ID: `sha256:f01a0563cdde2b4cdd5403a03e9c1833b9def59aeef7a57670aa9b6f9b76eff3`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -13519,25 +13519,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:43:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:43:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:43:29 GMT
+# Thu, 07 Jul 2022 20:41:25 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:41:26 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:43:30 GMT
+# Thu, 07 Jul 2022 20:41:27 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:43:31 GMT
+# Thu, 07 Jul 2022 20:41:28 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:43:32 GMT
+# Thu, 07 Jul 2022 20:41:29 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:44:23 GMT
+# Thu, 07 Jul 2022 20:42:22 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:44:25 GMT
+# Thu, 07 Jul 2022 20:42:24 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:44:26 GMT
+# Thu, 07 Jul 2022 20:42:25 GMT
 CMD ["help"]
 ```
 
@@ -13574,27 +13574,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4385d2b685a14e4ed46d660d681cd1b0b5388dbc9a3752b842bedd24f292ff29`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:8630c6fdb8f68d43a1bb7158aa2f4feba5b0d7e65bf23777b554475367904899`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 4.5 KB (4524 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e881eb05ae95cb925ca81683cc3d3244505c3fbd1ea440bc85f79cf99e50ebf`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 113.0 B  
+	-	`sha256:e47208e174e386a48493c1c7c477511b5055394f9e25b05e16804d641c7127be`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e78483b87f5ffb7f83960642f668a2a57fb71afb4fb48fe1a98ba3c179b4e9b8`  
-		Last Modified: Fri, 24 Jun 2022 01:01:12 GMT  
-		Size: 437.0 MB (436950337 bytes)  
+	-	`sha256:5c174bf2c07a25f8340312f22e120d81a5e5b1201857040f8dce46e57d4d17e9`  
+		Last Modified: Thu, 07 Jul 2022 20:45:26 GMT  
+		Size: 436.2 MB (436168696 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9afb847d3202196d0a83756a8f0201473faf2722653313f01b85fdfb40140a0b`  
-		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
+	-	`sha256:23215d7e62d1d627acd3cc888b445de77c3fbee61a4bddc655ac06c006239d8b`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-## `flink:1.15.0-scala_2.12-java11`
+## `flink:1.15.1-scala_2.12-java11`
 
 ```console
-$ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b16cef1c02c01
+$ docker pull flink@sha256:201d7e555bc60c9bf48cef1965a4bd072d83f3874b0e45a8e3e09402b90ddc45
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13602,17 +13602,17 @@ $ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b1
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
-### `flink:1.15.0-scala_2.12-java11` - linux; amd64
+### `flink:1.15.1-scala_2.12-java11` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:41c4a2dd437e33ed08438b09a3ee161ab8a0efa236d0ed5355a59a318bfc6235
+$ docker pull flink@sha256:591c8d411d9da941dd5a2dfdd44d368f69f9b2fb04e00c7a2c6b703bbcbe86a3
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **563.4 MB (563443755 bytes)**  
+-	Total Size: **562.7 MB (562662019 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6c1e40bf7d941db41437b87dd17386406913d453c3bfb8b267c14ba19a9b3a7a`
+-	Image ID: `sha256:7babea798a2e26a88b07e60449f63301525dff0d798643c5a59c97485281b6d4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -13645,25 +13645,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 20:00:28 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 20:00:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:12 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 20:01:30 GMT
+# Thu, 07 Jul 2022 20:22:01 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 CMD ["help"]
 ```
 
@@ -13700,34 +13700,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
 		Size: 900.5 KB (900514 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec296c0ad3ffab7b87f6718b7af7d8448432749bf3f2ee738c14bb7354685b48`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 4.6 KB (4600 bytes)  
+	-	`sha256:ef0dd5227fb0549aabf2412e9a1ba8646922075c314681b5ec245742beb110ad`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 4.6 KB (4604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8918059d106a7f67688b0d6c94036506732d2e762ca45b6423b166a7adab3ce`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 148.0 B  
+	-	`sha256:caaf5320f59fd0ed16ce055b50033d9fd3631202495cb7884295dd29c1b6ba7d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:51 GMT  
+		Size: 146.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6be94455a6b538fbd3738f9fa7d60cac3222432c8ae340bd2d9c3928f177c67e`  
-		Last Modified: Thu, 23 Jun 2022 20:21:37 GMT  
-		Size: 437.0 MB (436950622 bytes)  
+	-	`sha256:8d99a5a2de6c4716430a0b3708f4c9c953069792a6590450c6572fd82eccfdfc`  
+		Last Modified: Thu, 07 Jul 2022 20:25:09 GMT  
+		Size: 436.2 MB (436168886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1782c46f55f4f64badf1ab1dc2befe88551f1b128e5e354bc37f7a98df52f53`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 1.9 KB (1947 bytes)  
+	-	`sha256:2acf7885c116055239b6d1089cdc48fe41ccb2e7fa734bfb7dcf3e14bfedfe6d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `flink:1.15.0-scala_2.12-java11` - linux; arm64 variant v8
+### `flink:1.15.1-scala_2.12-java11` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:dec9b692ce6857ee59f804f9187324d0aaf2b02e7f7ef2c6fa0813ca70bafe8a
+$ docker pull flink@sha256:e332e71c911baa4194fceb402b6aead41fa98588e261c4426d5ad5b32b669c30
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **560.5 MB (560544943 bytes)**  
+-	Total Size: **559.8 MB (559763304 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:484fa73280b098affac6f54a83f40a358af4c018c88b257ed829fe69b1fbaf02`
+-	Image ID: `sha256:f01a0563cdde2b4cdd5403a03e9c1833b9def59aeef7a57670aa9b6f9b76eff3`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -13760,25 +13760,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:43:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:43:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:43:29 GMT
+# Thu, 07 Jul 2022 20:41:25 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:41:26 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:43:30 GMT
+# Thu, 07 Jul 2022 20:41:27 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:43:31 GMT
+# Thu, 07 Jul 2022 20:41:28 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:43:32 GMT
+# Thu, 07 Jul 2022 20:41:29 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:44:23 GMT
+# Thu, 07 Jul 2022 20:42:22 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:44:25 GMT
+# Thu, 07 Jul 2022 20:42:24 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:44:26 GMT
+# Thu, 07 Jul 2022 20:42:25 GMT
 CMD ["help"]
 ```
 
@@ -13815,27 +13815,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4385d2b685a14e4ed46d660d681cd1b0b5388dbc9a3752b842bedd24f292ff29`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:8630c6fdb8f68d43a1bb7158aa2f4feba5b0d7e65bf23777b554475367904899`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 4.5 KB (4524 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e881eb05ae95cb925ca81683cc3d3244505c3fbd1ea440bc85f79cf99e50ebf`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 113.0 B  
+	-	`sha256:e47208e174e386a48493c1c7c477511b5055394f9e25b05e16804d641c7127be`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e78483b87f5ffb7f83960642f668a2a57fb71afb4fb48fe1a98ba3c179b4e9b8`  
-		Last Modified: Fri, 24 Jun 2022 01:01:12 GMT  
-		Size: 437.0 MB (436950337 bytes)  
+	-	`sha256:5c174bf2c07a25f8340312f22e120d81a5e5b1201857040f8dce46e57d4d17e9`  
+		Last Modified: Thu, 07 Jul 2022 20:45:26 GMT  
+		Size: 436.2 MB (436168696 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9afb847d3202196d0a83756a8f0201473faf2722653313f01b85fdfb40140a0b`  
-		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
+	-	`sha256:23215d7e62d1d627acd3cc888b445de77c3fbee61a4bddc655ac06c006239d8b`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-## `flink:1.15.0-scala_2.12-java8`
+## `flink:1.15.1-scala_2.12-java8`
 
 ```console
-$ docker pull flink@sha256:d95b4b637a03fb52623b2071a34cd2d66fe8fa4e3c3e73511d8c2538ad53402c
+$ docker pull flink@sha256:2e5d8a8dc50450d5f0fce569eb79a7b35824d41df425478eebf1c47edd45d371
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13843,17 +13843,17 @@ $ docker pull flink@sha256:d95b4b637a03fb52623b2071a34cd2d66fe8fa4e3c3e73511d8c2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
-### `flink:1.15.0-scala_2.12-java8` - linux; amd64
+### `flink:1.15.1-scala_2.12-java8` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:f2f2460fa123d497112d55ab1ed060b9fa302aea278593f466c096a28a002597
+$ docker pull flink@sha256:e70b66d9666515590176ca7e14d75305a19048aab5059ebd490a8a9ffcb0982f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **557.7 MB (557670619 bytes)**  
+-	Total Size: **556.9 MB (556889009 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b3765ee360959976f792b5612f7a2d22c522880cb52f9ea2d757c85a22d73eac`
+-	Image ID: `sha256:8f60b5a49e6a98cc3463beac8baaaee5845801c3415ca72a0bff8a23668e3777`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -13886,25 +13886,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 19:58:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 19:58:27 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 19:58:27 GMT
+# Thu, 07 Jul 2022 20:19:49 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:19:50 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 19:58:27 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 19:58:28 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 19:58:28 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 19:59:29 GMT
+# Thu, 07 Jul 2022 20:20:58 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 CMD ["help"]
 ```
 
@@ -13941,34 +13941,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
 		Size: 900.5 KB (900512 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aadd72c534e263b00540ab7b24473d5f689d3200365f887fd94d407d5d038e16`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
-		Size: 4.6 KB (4603 bytes)  
+	-	`sha256:1b91d02c14502a963e2b84e4e9133c23f80b3a70d73a024891b902bf282244e1`  
+		Last Modified: Thu, 07 Jul 2022 20:24:07 GMT  
+		Size: 4.6 KB (4606 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c62c38eeb8e461b5de53c6ee567535a4df0af8608f47df8cc216e6247542989`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
+	-	`sha256:48e49e563bf990c59eedc04c3073fa0529d264cd07d1d2a51381822c629d3809`  
+		Last Modified: Thu, 07 Jul 2022 20:24:08 GMT  
 		Size: 148.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2161d3d413c365280ea4bdf5852def5994d35cdddd03fa3fe9b27668321b154`  
-		Last Modified: Thu, 23 Jun 2022 20:20:54 GMT  
-		Size: 437.0 MB (436950530 bytes)  
+	-	`sha256:b8a2da0b4d86e67ea07400cccbbf1fe4fbe0b238710e44b73ea7b0c9c58e090f`  
+		Last Modified: Thu, 07 Jul 2022 20:24:27 GMT  
+		Size: 436.2 MB (436168916 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44d06fcc6e609951060bcd2a3cf6bfd4ea2cadf0a657a0f292110586bf5c2bce`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
-		Size: 1.9 KB (1945 bytes)  
+	-	`sha256:656008f25693df0b24be1952153ef28181e7f38703ede3ea82277cf8404465b5`  
+		Last Modified: Thu, 07 Jul 2022 20:24:08 GMT  
+		Size: 1.9 KB (1946 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `flink:1.15.0-scala_2.12-java8` - linux; arm64 variant v8
+### `flink:1.15.1-scala_2.12-java8` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:2fdda9935697ba672cb8ac273c69e8dd4d613965e2c6de2bf701b326b414ba96
+$ docker pull flink@sha256:2b29a4ff0cda3a37b8324e1d35af321c9e7cbc60b83bb6b4d6cad0ce7d6cf2ec
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **554.7 MB (554709243 bytes)**  
+-	Total Size: **553.9 MB (553927602 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:da8c24e3f9162b2715396323113af3f51e30cfbc9297056c3d8299babbd43721`
+-	Image ID: `sha256:8862be7594e0b44cebb48b9e22fb5a18a104588bd2bac1040779ea067f94a136`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -14001,25 +14001,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:41:07 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:41:08 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:41:09 GMT
+# Thu, 07 Jul 2022 20:39:44 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:39:44 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:41:10 GMT
+# Thu, 07 Jul 2022 20:39:45 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:41:11 GMT
+# Thu, 07 Jul 2022 20:39:46 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:41:12 GMT
+# Thu, 07 Jul 2022 20:39:47 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:42:24 GMT
+# Thu, 07 Jul 2022 20:41:07 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:42:25 GMT
+# Thu, 07 Jul 2022 20:41:09 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:42:25 GMT
+# Thu, 07 Jul 2022 20:41:09 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:42:26 GMT
+# Thu, 07 Jul 2022 20:41:10 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:42:27 GMT
+# Thu, 07 Jul 2022 20:41:11 GMT
 CMD ["help"]
 ```
 
@@ -14056,27 +14056,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94b0f68781a1871db68a56d8042dbafa8ac7fe83085dfa751a4a77a0171fd393`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:da334286700250ff9c172f7d3593ebcfd920f7feae026cffcc4baa5ca10db4d0`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
+		Size: 4.5 KB (4525 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e22408d06855d55e1ce4c7acb09e39c6d4f4fff7594fdc81149300205b05f52c`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
+	-	`sha256:9e8ce8d916ac8446bb5c2bd86a7507661fdbdc09320152af0cf00a2831595742`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
 		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdfe731103e397d8ac2ae215ab3e7d65feda59b53fce279b1cca2692dc8b24aa`  
-		Last Modified: Fri, 24 Jun 2022 01:00:10 GMT  
-		Size: 437.0 MB (436950362 bytes)  
+	-	`sha256:939f149cd5e57ed137391851f0984f02addbf23e62face7e00835e5b8ce7e527`  
+		Last Modified: Thu, 07 Jul 2022 20:44:34 GMT  
+		Size: 436.2 MB (436168719 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f112a36a2e3d485ffe7476efbb1c5f90e91ee2b560f130682fe2b822cc74898`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
+	-	`sha256:4c63dd9912e0369d1678da764afd577f9140ed5c906f9a32f6fd2d52e2afdfdc`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `flink:java11`
 
 ```console
-$ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b16cef1c02c01
+$ docker pull flink@sha256:201d7e555bc60c9bf48cef1965a4bd072d83f3874b0e45a8e3e09402b90ddc45
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14087,14 +14087,14 @@ $ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b1
 ### `flink:java11` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:41c4a2dd437e33ed08438b09a3ee161ab8a0efa236d0ed5355a59a318bfc6235
+$ docker pull flink@sha256:591c8d411d9da941dd5a2dfdd44d368f69f9b2fb04e00c7a2c6b703bbcbe86a3
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **563.4 MB (563443755 bytes)**  
+-	Total Size: **562.7 MB (562662019 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6c1e40bf7d941db41437b87dd17386406913d453c3bfb8b267c14ba19a9b3a7a`
+-	Image ID: `sha256:7babea798a2e26a88b07e60449f63301525dff0d798643c5a59c97485281b6d4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -14127,25 +14127,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 20:00:28 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 20:00:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:12 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 20:01:30 GMT
+# Thu, 07 Jul 2022 20:22:01 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 CMD ["help"]
 ```
 
@@ -14182,34 +14182,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
 		Size: 900.5 KB (900514 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec296c0ad3ffab7b87f6718b7af7d8448432749bf3f2ee738c14bb7354685b48`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 4.6 KB (4600 bytes)  
+	-	`sha256:ef0dd5227fb0549aabf2412e9a1ba8646922075c314681b5ec245742beb110ad`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 4.6 KB (4604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8918059d106a7f67688b0d6c94036506732d2e762ca45b6423b166a7adab3ce`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 148.0 B  
+	-	`sha256:caaf5320f59fd0ed16ce055b50033d9fd3631202495cb7884295dd29c1b6ba7d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:51 GMT  
+		Size: 146.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6be94455a6b538fbd3738f9fa7d60cac3222432c8ae340bd2d9c3928f177c67e`  
-		Last Modified: Thu, 23 Jun 2022 20:21:37 GMT  
-		Size: 437.0 MB (436950622 bytes)  
+	-	`sha256:8d99a5a2de6c4716430a0b3708f4c9c953069792a6590450c6572fd82eccfdfc`  
+		Last Modified: Thu, 07 Jul 2022 20:25:09 GMT  
+		Size: 436.2 MB (436168886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1782c46f55f4f64badf1ab1dc2befe88551f1b128e5e354bc37f7a98df52f53`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 1.9 KB (1947 bytes)  
+	-	`sha256:2acf7885c116055239b6d1089cdc48fe41ccb2e7fa734bfb7dcf3e14bfedfe6d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `flink:java11` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:dec9b692ce6857ee59f804f9187324d0aaf2b02e7f7ef2c6fa0813ca70bafe8a
+$ docker pull flink@sha256:e332e71c911baa4194fceb402b6aead41fa98588e261c4426d5ad5b32b669c30
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **560.5 MB (560544943 bytes)**  
+-	Total Size: **559.8 MB (559763304 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:484fa73280b098affac6f54a83f40a358af4c018c88b257ed829fe69b1fbaf02`
+-	Image ID: `sha256:f01a0563cdde2b4cdd5403a03e9c1833b9def59aeef7a57670aa9b6f9b76eff3`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -14242,25 +14242,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:43:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:43:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:43:29 GMT
+# Thu, 07 Jul 2022 20:41:25 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:41:26 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:43:30 GMT
+# Thu, 07 Jul 2022 20:41:27 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:43:31 GMT
+# Thu, 07 Jul 2022 20:41:28 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:43:32 GMT
+# Thu, 07 Jul 2022 20:41:29 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:44:23 GMT
+# Thu, 07 Jul 2022 20:42:22 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:44:25 GMT
+# Thu, 07 Jul 2022 20:42:24 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:44:26 GMT
+# Thu, 07 Jul 2022 20:42:25 GMT
 CMD ["help"]
 ```
 
@@ -14297,27 +14297,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4385d2b685a14e4ed46d660d681cd1b0b5388dbc9a3752b842bedd24f292ff29`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:8630c6fdb8f68d43a1bb7158aa2f4feba5b0d7e65bf23777b554475367904899`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 4.5 KB (4524 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e881eb05ae95cb925ca81683cc3d3244505c3fbd1ea440bc85f79cf99e50ebf`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 113.0 B  
+	-	`sha256:e47208e174e386a48493c1c7c477511b5055394f9e25b05e16804d641c7127be`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e78483b87f5ffb7f83960642f668a2a57fb71afb4fb48fe1a98ba3c179b4e9b8`  
-		Last Modified: Fri, 24 Jun 2022 01:01:12 GMT  
-		Size: 437.0 MB (436950337 bytes)  
+	-	`sha256:5c174bf2c07a25f8340312f22e120d81a5e5b1201857040f8dce46e57d4d17e9`  
+		Last Modified: Thu, 07 Jul 2022 20:45:26 GMT  
+		Size: 436.2 MB (436168696 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9afb847d3202196d0a83756a8f0201473faf2722653313f01b85fdfb40140a0b`  
-		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
+	-	`sha256:23215d7e62d1d627acd3cc888b445de77c3fbee61a4bddc655ac06c006239d8b`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `flink:java8`
 
 ```console
-$ docker pull flink@sha256:d95b4b637a03fb52623b2071a34cd2d66fe8fa4e3c3e73511d8c2538ad53402c
+$ docker pull flink@sha256:2e5d8a8dc50450d5f0fce569eb79a7b35824d41df425478eebf1c47edd45d371
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14328,14 +14328,14 @@ $ docker pull flink@sha256:d95b4b637a03fb52623b2071a34cd2d66fe8fa4e3c3e73511d8c2
 ### `flink:java8` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:f2f2460fa123d497112d55ab1ed060b9fa302aea278593f466c096a28a002597
+$ docker pull flink@sha256:e70b66d9666515590176ca7e14d75305a19048aab5059ebd490a8a9ffcb0982f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **557.7 MB (557670619 bytes)**  
+-	Total Size: **556.9 MB (556889009 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b3765ee360959976f792b5612f7a2d22c522880cb52f9ea2d757c85a22d73eac`
+-	Image ID: `sha256:8f60b5a49e6a98cc3463beac8baaaee5845801c3415ca72a0bff8a23668e3777`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -14368,25 +14368,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 19:58:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 19:58:27 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 19:58:27 GMT
+# Thu, 07 Jul 2022 20:19:49 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:19:50 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 19:58:27 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 19:58:28 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 19:58:28 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 19:59:29 GMT
+# Thu, 07 Jul 2022 20:20:58 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 CMD ["help"]
 ```
 
@@ -14423,34 +14423,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
 		Size: 900.5 KB (900512 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aadd72c534e263b00540ab7b24473d5f689d3200365f887fd94d407d5d038e16`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
-		Size: 4.6 KB (4603 bytes)  
+	-	`sha256:1b91d02c14502a963e2b84e4e9133c23f80b3a70d73a024891b902bf282244e1`  
+		Last Modified: Thu, 07 Jul 2022 20:24:07 GMT  
+		Size: 4.6 KB (4606 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c62c38eeb8e461b5de53c6ee567535a4df0af8608f47df8cc216e6247542989`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
+	-	`sha256:48e49e563bf990c59eedc04c3073fa0529d264cd07d1d2a51381822c629d3809`  
+		Last Modified: Thu, 07 Jul 2022 20:24:08 GMT  
 		Size: 148.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2161d3d413c365280ea4bdf5852def5994d35cdddd03fa3fe9b27668321b154`  
-		Last Modified: Thu, 23 Jun 2022 20:20:54 GMT  
-		Size: 437.0 MB (436950530 bytes)  
+	-	`sha256:b8a2da0b4d86e67ea07400cccbbf1fe4fbe0b238710e44b73ea7b0c9c58e090f`  
+		Last Modified: Thu, 07 Jul 2022 20:24:27 GMT  
+		Size: 436.2 MB (436168916 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44d06fcc6e609951060bcd2a3cf6bfd4ea2cadf0a657a0f292110586bf5c2bce`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
-		Size: 1.9 KB (1945 bytes)  
+	-	`sha256:656008f25693df0b24be1952153ef28181e7f38703ede3ea82277cf8404465b5`  
+		Last Modified: Thu, 07 Jul 2022 20:24:08 GMT  
+		Size: 1.9 KB (1946 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `flink:java8` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:2fdda9935697ba672cb8ac273c69e8dd4d613965e2c6de2bf701b326b414ba96
+$ docker pull flink@sha256:2b29a4ff0cda3a37b8324e1d35af321c9e7cbc60b83bb6b4d6cad0ce7d6cf2ec
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **554.7 MB (554709243 bytes)**  
+-	Total Size: **553.9 MB (553927602 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:da8c24e3f9162b2715396323113af3f51e30cfbc9297056c3d8299babbd43721`
+-	Image ID: `sha256:8862be7594e0b44cebb48b9e22fb5a18a104588bd2bac1040779ea067f94a136`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -14483,25 +14483,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:41:07 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:41:08 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:41:09 GMT
+# Thu, 07 Jul 2022 20:39:44 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:39:44 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:41:10 GMT
+# Thu, 07 Jul 2022 20:39:45 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:41:11 GMT
+# Thu, 07 Jul 2022 20:39:46 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:41:12 GMT
+# Thu, 07 Jul 2022 20:39:47 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:42:24 GMT
+# Thu, 07 Jul 2022 20:41:07 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:42:25 GMT
+# Thu, 07 Jul 2022 20:41:09 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:42:25 GMT
+# Thu, 07 Jul 2022 20:41:09 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:42:26 GMT
+# Thu, 07 Jul 2022 20:41:10 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:42:27 GMT
+# Thu, 07 Jul 2022 20:41:11 GMT
 CMD ["help"]
 ```
 
@@ -14538,27 +14538,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94b0f68781a1871db68a56d8042dbafa8ac7fe83085dfa751a4a77a0171fd393`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:da334286700250ff9c172f7d3593ebcfd920f7feae026cffcc4baa5ca10db4d0`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
+		Size: 4.5 KB (4525 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e22408d06855d55e1ce4c7acb09e39c6d4f4fff7594fdc81149300205b05f52c`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
+	-	`sha256:9e8ce8d916ac8446bb5c2bd86a7507661fdbdc09320152af0cf00a2831595742`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
 		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdfe731103e397d8ac2ae215ab3e7d65feda59b53fce279b1cca2692dc8b24aa`  
-		Last Modified: Fri, 24 Jun 2022 01:00:10 GMT  
-		Size: 437.0 MB (436950362 bytes)  
+	-	`sha256:939f149cd5e57ed137391851f0984f02addbf23e62face7e00835e5b8ce7e527`  
+		Last Modified: Thu, 07 Jul 2022 20:44:34 GMT  
+		Size: 436.2 MB (436168719 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f112a36a2e3d485ffe7476efbb1c5f90e91ee2b560f130682fe2b822cc74898`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
+	-	`sha256:4c63dd9912e0369d1678da764afd577f9140ed5c906f9a32f6fd2d52e2afdfdc`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `flink:latest`
 
 ```console
-$ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b16cef1c02c01
+$ docker pull flink@sha256:201d7e555bc60c9bf48cef1965a4bd072d83f3874b0e45a8e3e09402b90ddc45
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14569,14 +14569,14 @@ $ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b1
 ### `flink:latest` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:41c4a2dd437e33ed08438b09a3ee161ab8a0efa236d0ed5355a59a318bfc6235
+$ docker pull flink@sha256:591c8d411d9da941dd5a2dfdd44d368f69f9b2fb04e00c7a2c6b703bbcbe86a3
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **563.4 MB (563443755 bytes)**  
+-	Total Size: **562.7 MB (562662019 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6c1e40bf7d941db41437b87dd17386406913d453c3bfb8b267c14ba19a9b3a7a`
+-	Image ID: `sha256:7babea798a2e26a88b07e60449f63301525dff0d798643c5a59c97485281b6d4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -14609,25 +14609,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 20:00:28 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 20:00:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:12 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 20:01:30 GMT
+# Thu, 07 Jul 2022 20:22:01 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 CMD ["help"]
 ```
 
@@ -14664,34 +14664,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
 		Size: 900.5 KB (900514 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec296c0ad3ffab7b87f6718b7af7d8448432749bf3f2ee738c14bb7354685b48`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 4.6 KB (4600 bytes)  
+	-	`sha256:ef0dd5227fb0549aabf2412e9a1ba8646922075c314681b5ec245742beb110ad`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 4.6 KB (4604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8918059d106a7f67688b0d6c94036506732d2e762ca45b6423b166a7adab3ce`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 148.0 B  
+	-	`sha256:caaf5320f59fd0ed16ce055b50033d9fd3631202495cb7884295dd29c1b6ba7d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:51 GMT  
+		Size: 146.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6be94455a6b538fbd3738f9fa7d60cac3222432c8ae340bd2d9c3928f177c67e`  
-		Last Modified: Thu, 23 Jun 2022 20:21:37 GMT  
-		Size: 437.0 MB (436950622 bytes)  
+	-	`sha256:8d99a5a2de6c4716430a0b3708f4c9c953069792a6590450c6572fd82eccfdfc`  
+		Last Modified: Thu, 07 Jul 2022 20:25:09 GMT  
+		Size: 436.2 MB (436168886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1782c46f55f4f64badf1ab1dc2befe88551f1b128e5e354bc37f7a98df52f53`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 1.9 KB (1947 bytes)  
+	-	`sha256:2acf7885c116055239b6d1089cdc48fe41ccb2e7fa734bfb7dcf3e14bfedfe6d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `flink:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:dec9b692ce6857ee59f804f9187324d0aaf2b02e7f7ef2c6fa0813ca70bafe8a
+$ docker pull flink@sha256:e332e71c911baa4194fceb402b6aead41fa98588e261c4426d5ad5b32b669c30
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **560.5 MB (560544943 bytes)**  
+-	Total Size: **559.8 MB (559763304 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:484fa73280b098affac6f54a83f40a358af4c018c88b257ed829fe69b1fbaf02`
+-	Image ID: `sha256:f01a0563cdde2b4cdd5403a03e9c1833b9def59aeef7a57670aa9b6f9b76eff3`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -14724,25 +14724,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:43:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:43:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:43:29 GMT
+# Thu, 07 Jul 2022 20:41:25 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:41:26 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:43:30 GMT
+# Thu, 07 Jul 2022 20:41:27 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:43:31 GMT
+# Thu, 07 Jul 2022 20:41:28 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:43:32 GMT
+# Thu, 07 Jul 2022 20:41:29 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:44:23 GMT
+# Thu, 07 Jul 2022 20:42:22 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:44:25 GMT
+# Thu, 07 Jul 2022 20:42:24 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:44:26 GMT
+# Thu, 07 Jul 2022 20:42:25 GMT
 CMD ["help"]
 ```
 
@@ -14779,27 +14779,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4385d2b685a14e4ed46d660d681cd1b0b5388dbc9a3752b842bedd24f292ff29`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:8630c6fdb8f68d43a1bb7158aa2f4feba5b0d7e65bf23777b554475367904899`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 4.5 KB (4524 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e881eb05ae95cb925ca81683cc3d3244505c3fbd1ea440bc85f79cf99e50ebf`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 113.0 B  
+	-	`sha256:e47208e174e386a48493c1c7c477511b5055394f9e25b05e16804d641c7127be`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e78483b87f5ffb7f83960642f668a2a57fb71afb4fb48fe1a98ba3c179b4e9b8`  
-		Last Modified: Fri, 24 Jun 2022 01:01:12 GMT  
-		Size: 437.0 MB (436950337 bytes)  
+	-	`sha256:5c174bf2c07a25f8340312f22e120d81a5e5b1201857040f8dce46e57d4d17e9`  
+		Last Modified: Thu, 07 Jul 2022 20:45:26 GMT  
+		Size: 436.2 MB (436168696 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9afb847d3202196d0a83756a8f0201473faf2722653313f01b85fdfb40140a0b`  
-		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
+	-	`sha256:23215d7e62d1d627acd3cc888b445de77c3fbee61a4bddc655ac06c006239d8b`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `flink:scala_2.12`
 
 ```console
-$ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b16cef1c02c01
+$ docker pull flink@sha256:201d7e555bc60c9bf48cef1965a4bd072d83f3874b0e45a8e3e09402b90ddc45
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14810,14 +14810,14 @@ $ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b1
 ### `flink:scala_2.12` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:41c4a2dd437e33ed08438b09a3ee161ab8a0efa236d0ed5355a59a318bfc6235
+$ docker pull flink@sha256:591c8d411d9da941dd5a2dfdd44d368f69f9b2fb04e00c7a2c6b703bbcbe86a3
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **563.4 MB (563443755 bytes)**  
+-	Total Size: **562.7 MB (562662019 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6c1e40bf7d941db41437b87dd17386406913d453c3bfb8b267c14ba19a9b3a7a`
+-	Image ID: `sha256:7babea798a2e26a88b07e60449f63301525dff0d798643c5a59c97485281b6d4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -14850,25 +14850,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 20:00:28 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 20:00:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:12 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 20:01:30 GMT
+# Thu, 07 Jul 2022 20:22:01 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 CMD ["help"]
 ```
 
@@ -14905,34 +14905,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
 		Size: 900.5 KB (900514 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec296c0ad3ffab7b87f6718b7af7d8448432749bf3f2ee738c14bb7354685b48`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 4.6 KB (4600 bytes)  
+	-	`sha256:ef0dd5227fb0549aabf2412e9a1ba8646922075c314681b5ec245742beb110ad`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 4.6 KB (4604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8918059d106a7f67688b0d6c94036506732d2e762ca45b6423b166a7adab3ce`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 148.0 B  
+	-	`sha256:caaf5320f59fd0ed16ce055b50033d9fd3631202495cb7884295dd29c1b6ba7d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:51 GMT  
+		Size: 146.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6be94455a6b538fbd3738f9fa7d60cac3222432c8ae340bd2d9c3928f177c67e`  
-		Last Modified: Thu, 23 Jun 2022 20:21:37 GMT  
-		Size: 437.0 MB (436950622 bytes)  
+	-	`sha256:8d99a5a2de6c4716430a0b3708f4c9c953069792a6590450c6572fd82eccfdfc`  
+		Last Modified: Thu, 07 Jul 2022 20:25:09 GMT  
+		Size: 436.2 MB (436168886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1782c46f55f4f64badf1ab1dc2befe88551f1b128e5e354bc37f7a98df52f53`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 1.9 KB (1947 bytes)  
+	-	`sha256:2acf7885c116055239b6d1089cdc48fe41ccb2e7fa734bfb7dcf3e14bfedfe6d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `flink:scala_2.12` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:dec9b692ce6857ee59f804f9187324d0aaf2b02e7f7ef2c6fa0813ca70bafe8a
+$ docker pull flink@sha256:e332e71c911baa4194fceb402b6aead41fa98588e261c4426d5ad5b32b669c30
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **560.5 MB (560544943 bytes)**  
+-	Total Size: **559.8 MB (559763304 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:484fa73280b098affac6f54a83f40a358af4c018c88b257ed829fe69b1fbaf02`
+-	Image ID: `sha256:f01a0563cdde2b4cdd5403a03e9c1833b9def59aeef7a57670aa9b6f9b76eff3`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -14965,25 +14965,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:43:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:43:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:43:29 GMT
+# Thu, 07 Jul 2022 20:41:25 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:41:26 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:43:30 GMT
+# Thu, 07 Jul 2022 20:41:27 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:43:31 GMT
+# Thu, 07 Jul 2022 20:41:28 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:43:32 GMT
+# Thu, 07 Jul 2022 20:41:29 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:44:23 GMT
+# Thu, 07 Jul 2022 20:42:22 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:44:25 GMT
+# Thu, 07 Jul 2022 20:42:24 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:44:26 GMT
+# Thu, 07 Jul 2022 20:42:25 GMT
 CMD ["help"]
 ```
 
@@ -15020,27 +15020,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4385d2b685a14e4ed46d660d681cd1b0b5388dbc9a3752b842bedd24f292ff29`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:8630c6fdb8f68d43a1bb7158aa2f4feba5b0d7e65bf23777b554475367904899`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 4.5 KB (4524 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e881eb05ae95cb925ca81683cc3d3244505c3fbd1ea440bc85f79cf99e50ebf`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 113.0 B  
+	-	`sha256:e47208e174e386a48493c1c7c477511b5055394f9e25b05e16804d641c7127be`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e78483b87f5ffb7f83960642f668a2a57fb71afb4fb48fe1a98ba3c179b4e9b8`  
-		Last Modified: Fri, 24 Jun 2022 01:01:12 GMT  
-		Size: 437.0 MB (436950337 bytes)  
+	-	`sha256:5c174bf2c07a25f8340312f22e120d81a5e5b1201857040f8dce46e57d4d17e9`  
+		Last Modified: Thu, 07 Jul 2022 20:45:26 GMT  
+		Size: 436.2 MB (436168696 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9afb847d3202196d0a83756a8f0201473faf2722653313f01b85fdfb40140a0b`  
-		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
+	-	`sha256:23215d7e62d1d627acd3cc888b445de77c3fbee61a4bddc655ac06c006239d8b`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `flink:scala_2.12-java11`
 
 ```console
-$ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b16cef1c02c01
+$ docker pull flink@sha256:201d7e555bc60c9bf48cef1965a4bd072d83f3874b0e45a8e3e09402b90ddc45
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -15051,14 +15051,14 @@ $ docker pull flink@sha256:fc4e1d8311d53215c88974644bb1ea203f1a38cf907384068d8b1
 ### `flink:scala_2.12-java11` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:41c4a2dd437e33ed08438b09a3ee161ab8a0efa236d0ed5355a59a318bfc6235
+$ docker pull flink@sha256:591c8d411d9da941dd5a2dfdd44d368f69f9b2fb04e00c7a2c6b703bbcbe86a3
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **563.4 MB (563443755 bytes)**  
+-	Total Size: **562.7 MB (562662019 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6c1e40bf7d941db41437b87dd17386406913d453c3bfb8b267c14ba19a9b3a7a`
+-	Image ID: `sha256:7babea798a2e26a88b07e60449f63301525dff0d798643c5a59c97485281b6d4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -15091,25 +15091,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 20:00:28 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 20:00:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:12 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 20:00:28 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 20:00:29 GMT
+# Thu, 07 Jul 2022 20:21:13 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 20:01:30 GMT
+# Thu, 07 Jul 2022 20:22:01 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 20:01:31 GMT
+# Thu, 07 Jul 2022 20:22:02 GMT
 CMD ["help"]
 ```
 
@@ -15146,34 +15146,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
 		Size: 900.5 KB (900514 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec296c0ad3ffab7b87f6718b7af7d8448432749bf3f2ee738c14bb7354685b48`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 4.6 KB (4600 bytes)  
+	-	`sha256:ef0dd5227fb0549aabf2412e9a1ba8646922075c314681b5ec245742beb110ad`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 4.6 KB (4604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8918059d106a7f67688b0d6c94036506732d2e762ca45b6423b166a7adab3ce`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 148.0 B  
+	-	`sha256:caaf5320f59fd0ed16ce055b50033d9fd3631202495cb7884295dd29c1b6ba7d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:51 GMT  
+		Size: 146.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6be94455a6b538fbd3738f9fa7d60cac3222432c8ae340bd2d9c3928f177c67e`  
-		Last Modified: Thu, 23 Jun 2022 20:21:37 GMT  
-		Size: 437.0 MB (436950622 bytes)  
+	-	`sha256:8d99a5a2de6c4716430a0b3708f4c9c953069792a6590450c6572fd82eccfdfc`  
+		Last Modified: Thu, 07 Jul 2022 20:25:09 GMT  
+		Size: 436.2 MB (436168886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1782c46f55f4f64badf1ab1dc2befe88551f1b128e5e354bc37f7a98df52f53`  
-		Last Modified: Thu, 23 Jun 2022 20:21:18 GMT  
-		Size: 1.9 KB (1947 bytes)  
+	-	`sha256:2acf7885c116055239b6d1089cdc48fe41ccb2e7fa734bfb7dcf3e14bfedfe6d`  
+		Last Modified: Thu, 07 Jul 2022 20:24:50 GMT  
+		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `flink:scala_2.12-java11` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:dec9b692ce6857ee59f804f9187324d0aaf2b02e7f7ef2c6fa0813ca70bafe8a
+$ docker pull flink@sha256:e332e71c911baa4194fceb402b6aead41fa98588e261c4426d5ad5b32b669c30
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **560.5 MB (560544943 bytes)**  
+-	Total Size: **559.8 MB (559763304 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:484fa73280b098affac6f54a83f40a358af4c018c88b257ed829fe69b1fbaf02`
+-	Image ID: `sha256:f01a0563cdde2b4cdd5403a03e9c1833b9def59aeef7a57670aa9b6f9b76eff3`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -15206,25 +15206,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:43:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:43:28 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:43:29 GMT
+# Thu, 07 Jul 2022 20:41:25 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:41:26 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:43:30 GMT
+# Thu, 07 Jul 2022 20:41:27 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:43:31 GMT
+# Thu, 07 Jul 2022 20:41:28 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:43:32 GMT
+# Thu, 07 Jul 2022 20:41:29 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:44:23 GMT
+# Thu, 07 Jul 2022 20:42:22 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:44:24 GMT
+# Thu, 07 Jul 2022 20:42:23 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:44:25 GMT
+# Thu, 07 Jul 2022 20:42:24 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:44:26 GMT
+# Thu, 07 Jul 2022 20:42:25 GMT
 CMD ["help"]
 ```
 
@@ -15261,27 +15261,27 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4385d2b685a14e4ed46d660d681cd1b0b5388dbc9a3752b842bedd24f292ff29`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:8630c6fdb8f68d43a1bb7158aa2f4feba5b0d7e65bf23777b554475367904899`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 4.5 KB (4524 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e881eb05ae95cb925ca81683cc3d3244505c3fbd1ea440bc85f79cf99e50ebf`  
-		Last Modified: Fri, 24 Jun 2022 01:00:38 GMT  
-		Size: 113.0 B  
+	-	`sha256:e47208e174e386a48493c1c7c477511b5055394f9e25b05e16804d641c7127be`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
+		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e78483b87f5ffb7f83960642f668a2a57fb71afb4fb48fe1a98ba3c179b4e9b8`  
-		Last Modified: Fri, 24 Jun 2022 01:01:12 GMT  
-		Size: 437.0 MB (436950337 bytes)  
+	-	`sha256:5c174bf2c07a25f8340312f22e120d81a5e5b1201857040f8dce46e57d4d17e9`  
+		Last Modified: Thu, 07 Jul 2022 20:45:26 GMT  
+		Size: 436.2 MB (436168696 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9afb847d3202196d0a83756a8f0201473faf2722653313f01b85fdfb40140a0b`  
-		Last Modified: Fri, 24 Jun 2022 01:00:39 GMT  
+	-	`sha256:23215d7e62d1d627acd3cc888b445de77c3fbee61a4bddc655ac06c006239d8b`  
+		Last Modified: Thu, 07 Jul 2022 20:45:00 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `flink:scala_2.12-java8`
 
 ```console
-$ docker pull flink@sha256:d95b4b637a03fb52623b2071a34cd2d66fe8fa4e3c3e73511d8c2538ad53402c
+$ docker pull flink@sha256:2e5d8a8dc50450d5f0fce569eb79a7b35824d41df425478eebf1c47edd45d371
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -15292,14 +15292,14 @@ $ docker pull flink@sha256:d95b4b637a03fb52623b2071a34cd2d66fe8fa4e3c3e73511d8c2
 ### `flink:scala_2.12-java8` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:f2f2460fa123d497112d55ab1ed060b9fa302aea278593f466c096a28a002597
+$ docker pull flink@sha256:e70b66d9666515590176ca7e14d75305a19048aab5059ebd490a8a9ffcb0982f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **557.7 MB (557670619 bytes)**  
+-	Total Size: **556.9 MB (556889009 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b3765ee360959976f792b5612f7a2d22c522880cb52f9ea2d757c85a22d73eac`
+-	Image ID: `sha256:8f60b5a49e6a98cc3463beac8baaaee5845801c3415ca72a0bff8a23668e3777`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -15332,25 +15332,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Thu, 23 Jun 2022 19:58:27 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 23 Jun 2022 19:58:27 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Thu, 23 Jun 2022 19:58:27 GMT
+# Thu, 07 Jul 2022 20:19:49 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:19:50 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 23 Jun 2022 19:58:27 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 23 Jun 2022 19:58:28 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 23 Jun 2022 19:58:28 GMT
+# Thu, 07 Jul 2022 20:19:50 GMT
 WORKDIR /opt/flink
-# Thu, 23 Jun 2022 19:59:29 GMT
+# Thu, 07 Jul 2022 20:20:58 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 EXPOSE 6123 8081
-# Thu, 23 Jun 2022 19:59:31 GMT
+# Thu, 07 Jul 2022 20:20:59 GMT
 CMD ["help"]
 ```
 
@@ -15387,34 +15387,34 @@ CMD ["help"]
 		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
 		Size: 900.5 KB (900512 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aadd72c534e263b00540ab7b24473d5f689d3200365f887fd94d407d5d038e16`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
-		Size: 4.6 KB (4603 bytes)  
+	-	`sha256:1b91d02c14502a963e2b84e4e9133c23f80b3a70d73a024891b902bf282244e1`  
+		Last Modified: Thu, 07 Jul 2022 20:24:07 GMT  
+		Size: 4.6 KB (4606 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c62c38eeb8e461b5de53c6ee567535a4df0af8608f47df8cc216e6247542989`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
+	-	`sha256:48e49e563bf990c59eedc04c3073fa0529d264cd07d1d2a51381822c629d3809`  
+		Last Modified: Thu, 07 Jul 2022 20:24:08 GMT  
 		Size: 148.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2161d3d413c365280ea4bdf5852def5994d35cdddd03fa3fe9b27668321b154`  
-		Last Modified: Thu, 23 Jun 2022 20:20:54 GMT  
-		Size: 437.0 MB (436950530 bytes)  
+	-	`sha256:b8a2da0b4d86e67ea07400cccbbf1fe4fbe0b238710e44b73ea7b0c9c58e090f`  
+		Last Modified: Thu, 07 Jul 2022 20:24:27 GMT  
+		Size: 436.2 MB (436168916 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44d06fcc6e609951060bcd2a3cf6bfd4ea2cadf0a657a0f292110586bf5c2bce`  
-		Last Modified: Thu, 23 Jun 2022 20:20:34 GMT  
-		Size: 1.9 KB (1945 bytes)  
+	-	`sha256:656008f25693df0b24be1952153ef28181e7f38703ede3ea82277cf8404465b5`  
+		Last Modified: Thu, 07 Jul 2022 20:24:08 GMT  
+		Size: 1.9 KB (1946 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `flink:scala_2.12-java8` - linux; arm64 variant v8
 
 ```console
-$ docker pull flink@sha256:2fdda9935697ba672cb8ac273c69e8dd4d613965e2c6de2bf701b326b414ba96
+$ docker pull flink@sha256:2b29a4ff0cda3a37b8324e1d35af321c9e7cbc60b83bb6b4d6cad0ce7d6cf2ec
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **554.7 MB (554709243 bytes)**  
+-	Total Size: **553.9 MB (553927602 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:da8c24e3f9162b2715396323113af3f51e30cfbc9297056c3d8299babbd43721`
+-	Image ID: `sha256:8862be7594e0b44cebb48b9e22fb5a18a104588bd2bac1040779ea067f94a136`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -15447,25 +15447,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base li
 ENV GOSU_VERSION=1.11
 # Fri, 24 Jun 2022 00:41:07 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Fri, 24 Jun 2022 00:41:08 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.0/flink-1.15.0-bin-scala_2.12.tgz.asc GPG_KEY=CBE82BEFD827B08AFA843977EDBF922A7BC84897 CHECK_GPG=true
-# Fri, 24 Jun 2022 00:41:09 GMT
+# Thu, 07 Jul 2022 20:39:44 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.15.1/flink-1.15.1-bin-scala_2.12.tgz.asc GPG_KEY=7D660377995CA7A5AFEBA79A3EE012FEE982F098 CHECK_GPG=true
+# Thu, 07 Jul 2022 20:39:44 GMT
 ENV FLINK_HOME=/opt/flink
-# Fri, 24 Jun 2022 00:41:10 GMT
+# Thu, 07 Jul 2022 20:39:45 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jun 2022 00:41:11 GMT
+# Thu, 07 Jul 2022 20:39:46 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Fri, 24 Jun 2022 00:41:12 GMT
+# Thu, 07 Jul 2022 20:39:47 GMT
 WORKDIR /opt/flink
-# Fri, 24 Jun 2022 00:42:24 GMT
+# Thu, 07 Jul 2022 20:41:07 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;   sed -i 's/rest.address: localhost/rest.address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/rest.bind-address: localhost/rest.bind-address: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/jobmanager.bind-host: localhost/jobmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i 's/taskmanager.bind-host: localhost/taskmanager.bind-host: 0.0.0.0/g' $FLINK_HOME/conf/flink-conf.yaml;   sed -i '/taskmanager.host: localhost/d' $FLINK_HOME/conf/flink-conf.yaml;
-# Fri, 24 Jun 2022 00:42:25 GMT
+# Thu, 07 Jul 2022 20:41:09 GMT
 COPY file:e308297ef6ffd9c3cff00834ffd8c0f8baacafe7ea8ed0b19a897eb03baceb28 in / 
-# Fri, 24 Jun 2022 00:42:25 GMT
+# Thu, 07 Jul 2022 20:41:09 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 24 Jun 2022 00:42:26 GMT
+# Thu, 07 Jul 2022 20:41:10 GMT
 EXPOSE 6123 8081
-# Fri, 24 Jun 2022 00:42:27 GMT
+# Thu, 07 Jul 2022 20:41:11 GMT
 CMD ["help"]
 ```
 
@@ -15502,19 +15502,19 @@ CMD ["help"]
 		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
 		Size: 835.4 KB (835388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94b0f68781a1871db68a56d8042dbafa8ac7fe83085dfa751a4a77a0171fd393`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
-		Size: 4.5 KB (4523 bytes)  
+	-	`sha256:da334286700250ff9c172f7d3593ebcfd920f7feae026cffcc4baa5ca10db4d0`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
+		Size: 4.5 KB (4525 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e22408d06855d55e1ce4c7acb09e39c6d4f4fff7594fdc81149300205b05f52c`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
+	-	`sha256:9e8ce8d916ac8446bb5c2bd86a7507661fdbdc09320152af0cf00a2831595742`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
 		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdfe731103e397d8ac2ae215ab3e7d65feda59b53fce279b1cca2692dc8b24aa`  
-		Last Modified: Fri, 24 Jun 2022 01:00:10 GMT  
-		Size: 437.0 MB (436950362 bytes)  
+	-	`sha256:939f149cd5e57ed137391851f0984f02addbf23e62face7e00835e5b8ce7e527`  
+		Last Modified: Thu, 07 Jul 2022 20:44:34 GMT  
+		Size: 436.2 MB (436168719 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f112a36a2e3d485ffe7476efbb1c5f90e91ee2b560f130682fe2b822cc74898`  
-		Last Modified: Fri, 24 Jun 2022 00:50:13 GMT  
+	-	`sha256:4c63dd9912e0369d1678da764afd577f9140ed5c906f9a32f6fd2d52e2afdfdc`  
+		Last Modified: Thu, 07 Jul 2022 20:44:01 GMT  
 		Size: 1.9 KB (1945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
