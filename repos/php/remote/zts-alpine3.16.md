@@ -1,7 +1,7 @@
 ## `php:zts-alpine3.16`
 
 ```console
-$ docker pull php@sha256:d63ce55f2d8f9f84b02d4164bfcb0e8f5a2a587f68b8ae7b667b54a4873b799e
+$ docker pull php@sha256:112d555e5055bb08b1eff71109a793ba1c17cf96e296c3a3e75b58e15eb3c355
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -211,14 +211,14 @@ CMD ["php" "-a"]
 ### `php:zts-alpine3.16` - linux; arm variant v7
 
 ```console
-$ docker pull php@sha256:ed676c641a950d4865034fef4ee352532479e944198c3e24ed333df38633263f
+$ docker pull php@sha256:6738e13952a49d37530d97debdbfb33e563745a1c3b31a793fc38fc626f1378e
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **23.0 MB (22973923 bytes)**  
+-	Total Size: **24.5 MB (24474392 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ad2ecad336611e2f8a963d0d381c7ca26430b8c035dcab97a941cc59a2c58803`
+-	Image ID: `sha256:a4d4465abfe4d9236fd000e70a039a4cf7ed2bce7bd86de4350a51cb6a4c22f4`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php","-a"]`
 
@@ -245,25 +245,25 @@ ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D
 ENV PHP_LDFLAGS=-Wl,-O1 -pie
 # Wed, 25 May 2022 19:01:31 GMT
 ENV GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD
-# Thu, 09 Jun 2022 23:54:04 GMT
-ENV PHP_VERSION=8.1.7
-# Thu, 09 Jun 2022 23:54:05 GMT
-ENV PHP_URL=https://www.php.net/distributions/php-8.1.7.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.1.7.tar.xz.asc
-# Thu, 09 Jun 2022 23:54:05 GMT
-ENV PHP_SHA256=f042322f1b5a9f7c2decb84b7086ef676896c2f7178739b9672afafa964ed0e5
-# Thu, 09 Jun 2022 23:54:13 GMT
+# Thu, 07 Jul 2022 22:57:41 GMT
+ENV PHP_VERSION=8.1.8
+# Thu, 07 Jul 2022 22:57:41 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.1.8.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.1.8.tar.xz.asc
+# Thu, 07 Jul 2022 22:57:42 GMT
+ENV PHP_SHA256=04c065515bc347bc68e0bb1ac7182669a98a731e4a17727e5731650ad3d8de4c
+# Thu, 07 Jul 2022 22:57:50 GMT
 RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apk del --no-network .fetch-deps
-# Thu, 09 Jun 2022 23:54:14 GMT
+# Thu, 07 Jul 2022 22:57:51 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 10 Jun 2022 00:09:16 GMT
+# Thu, 07 Jul 2022 23:13:52 GMT
 RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		gnu-libiconv-dev 		libsodium-dev 		libxml2-dev 		linux-headers 		oniguruma-dev 		openssl-dev 		readline-dev 		sqlite-dev 	; 		rm -vf /usr/include/iconv.h; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv=/usr 		--with-openssl 		--with-readline 		--with-zlib 				--disable-phpdbg 				--with-pear 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 				--disable-cgi 				--enable-zts 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
-# Fri, 10 Jun 2022 00:09:17 GMT
+# Thu, 07 Jul 2022 23:13:53 GMT
 COPY multi:6edd033b037aa2d7697fc3b9f82c2f162146c1920a0c6d25a165dc56783204db in /usr/local/bin/ 
-# Fri, 10 Jun 2022 00:09:20 GMT
+# Thu, 07 Jul 2022 23:13:56 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 10 Jun 2022 00:09:21 GMT
+# Thu, 07 Jul 2022 23:13:56 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 10 Jun 2022 00:09:21 GMT
+# Thu, 07 Jul 2022 23:13:57 GMT
 CMD ["php" "-a"]
 ```
 
@@ -284,25 +284,25 @@ CMD ["php" "-a"]
 		Last Modified: Wed, 25 May 2022 20:09:18 GMT  
 		Size: 268.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa189f26d87306071c5becc4c322787e1c6e41c194b5ecc5380918197e3becf8`  
-		Last Modified: Fri, 10 Jun 2022 02:11:26 GMT  
-		Size: 11.7 MB (11738546 bytes)  
+	-	`sha256:874b17b70d3dcdc229bea0fa13e8a9c46a393c0b2a1a8adbc1ac9ca1dcd1c4a5`  
+		Last Modified: Fri, 08 Jul 2022 01:14:24 GMT  
+		Size: 11.7 MB (11742246 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:acffe43f38eaff981aeeff8898339ffb30328ce13d08e8eca312f7b6577c472b`  
-		Last Modified: Fri, 10 Jun 2022 02:11:23 GMT  
-		Size: 499.0 B  
+	-	`sha256:4a2ad42a8a59d26981614895494bc1ced0f5bdb5c6ea6b9e9b672e0d3a93027b`  
+		Last Modified: Fri, 08 Jul 2022 01:14:21 GMT  
+		Size: 497.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:716286032bd7a46e4d9d00ba40441f7b489fe7938a77da47c82af66882b2d66b`  
-		Last Modified: Fri, 10 Jun 2022 02:13:28 GMT  
-		Size: 7.2 MB (7240088 bytes)  
+	-	`sha256:daa4e5cc38346d8d7272d3cfdc93f9f9fc888970bad2455235b2fce7e6a20041`  
+		Last Modified: Fri, 08 Jul 2022 01:16:33 GMT  
+		Size: 8.7 MB (8736779 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e3543d736fff20bf0a85fb221bbcc77b204e9ba17c4f1550849a9818a1a0e9f`  
-		Last Modified: Fri, 10 Jun 2022 02:13:23 GMT  
-		Size: 2.4 KB (2448 bytes)  
+	-	`sha256:a0b3b7a0f2f0cc394682ef448f053f2442042563026876d91423e002462a787c`  
+		Last Modified: Fri, 08 Jul 2022 01:16:27 GMT  
+		Size: 2.4 KB (2446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:240b032968c0c663b177da401127bf17e4d71d5054c9256147cb707b33143e53`  
-		Last Modified: Fri, 10 Jun 2022 02:13:23 GMT  
-		Size: 18.3 KB (18333 bytes)  
+	-	`sha256:7fa822c2ab4ee26840a241d65cf6e668f65757e92f3ed4ef3ecd610989efc440`  
+		Last Modified: Fri, 08 Jul 2022 01:16:27 GMT  
+		Size: 18.4 KB (18415 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `php:zts-alpine3.16` - linux; arm64 variant v8
