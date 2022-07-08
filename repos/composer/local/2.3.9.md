@@ -1,9 +1,9 @@
-# `composer:2.3.8`
+# `composer:2.3.9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c419c9f0e3ece89a39ce3455d0279decced07401aa5afb0a6a1fed944453441f`
-- Created: `2022-07-05T19:23:32.797960646Z`
+- Image ID: `sha256:3c6900495e5ec0505ec766fafa701833ef4c9c896bf6c071ccb2f3dbd61d32ef`
+- Created: `2022-07-08T01:46:15.213551219Z`
 - Virtual Size: ~ 204.92 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -17,13 +17,13 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
-  - `PHP_VERSION=8.1.7`
-  - `PHP_URL=https://www.php.net/distributions/php-8.1.7.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.7.tar.xz.asc`
-  - `PHP_SHA256=f042322f1b5a9f7c2decb84b7086ef676896c2f7178739b9672afafa964ed0e5`
+  - `PHP_VERSION=8.1.8`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.8.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.8.tar.xz.asc`
+  - `PHP_SHA256=04c065515bc347bc68e0bb1ac7182669a98a731e4a17727e5731650ad3d8de4c`
   - `COMPOSER_ALLOW_SUPERUSER=1`
   - `COMPOSER_HOME=/tmp`
-  - `COMPOSER_VERSION=2.3.8`
+  - `COMPOSER_VERSION=2.3.9`
 
 ## `apk` (`.apk`-based packages)
 
