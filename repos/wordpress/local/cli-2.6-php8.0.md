@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:600c3dd686eefbb12242d2d9a427ac521502fdc3ce9e13aae2fd6aee2f9797f7`
-- Created: `2022-06-10T04:01:44.729208605Z`
-- Virtual Size: ~ 149.67 Mb  
+- Image ID: `sha256:2193fe0fac19fd2a34e7218a393589f3a2a7175153f64dc129ce500f7afa3e08`
+- Created: `2022-07-08T00:33:42.097885126Z`
+- Virtual Size: ~ 153.52 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
-  - `PHP_VERSION=8.0.20`
-  - `PHP_URL=https://www.php.net/distributions/php-8.0.20.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.20.tar.xz.asc`
-  - `PHP_SHA256=973fec765336ee01f47536a5db1c2eee98df9d34a41522b7b6c760159bf0a77b`
+  - `PHP_VERSION=8.0.21`
+  - `PHP_URL=https://www.php.net/distributions/php-8.0.21.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.21.tar.xz.asc`
+  - `PHP_SHA256=e87a598f157e0cf0606e64382bb91c8b30c47d4a0fc96b2c17ad547a27869b3b`
   - `WORDPRESS_CLI_GPG_KEY=63AF7AA15067C05616FDDD88A3A2E8F226F0BC06`
   - `WORDPRESS_CLI_VERSION=2.6.0`
   - `WORDPRESS_CLI_SHA512=d73f9161a1f03b8ecaac7b196b6051fe847b3c402b9c92b1f6f3acbe5b1cf91f7260c0e499b8947bab75920ecec918b39533ca65fa5a1fd3eb6ce7b8e2c58e7d`
@@ -421,16 +421,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1o-r0 description:
+libcrypto1.1-1.1.1q-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1o-r0 webpage:
+libcrypto1.1-1.1.1q-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1o-r0 installed size:
+libcrypto1.1-1.1.1q-r0 installed size:
 2708 KiB
 
-libcrypto1.1-1.1.1o-r0 license:
+libcrypto1.1-1.1.1q-r0 license:
 OpenSSL
 
 ```
@@ -438,16 +438,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.83.1-r1 description:
+libcurl-7.83.1-r2 description:
 The multiprotocol file transfer library
 
-libcurl-7.83.1-r1 webpage:
+libcurl-7.83.1-r2 webpage:
 https://curl.se/
 
-libcurl-7.83.1-r1 installed size:
-508 KiB
+libcurl-7.83.1-r2 installed size:
+512 KiB
 
-libcurl-7.83.1-r1 license:
+libcurl-7.83.1-r2 license:
 curl
 
 ```
@@ -557,16 +557,16 @@ ISC
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1o-r0 description:
+libssl1.1-1.1.1q-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1o-r0 webpage:
+libssl1.1-1.1.1q-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1o-r0 installed size:
+libssl1.1-1.1.1q-r0 installed size:
 528 KiB
 
-libssl1.1-1.1.1o-r0 license:
+libssl1.1-1.1.1q-r0 license:
 OpenSSL
 
 ```
