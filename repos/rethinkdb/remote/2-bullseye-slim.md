@@ -1,7 +1,7 @@
 ## `rethinkdb:2-bullseye-slim`
 
 ```console
-$ docker pull rethinkdb@sha256:3798254817e5e8e0ee4e060feb9dea53d3fe55001ef140c0d3e9a0abc2bca538
+$ docker pull rethinkdb@sha256:3525b9b8277f9056cb1ac4d192c77eb7118e292570847ac965336e21285cde26
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13,58 +13,58 @@ $ docker pull rethinkdb@sha256:3798254817e5e8e0ee4e060feb9dea53d3fe55001ef140c0d
 ### `rethinkdb:2-bullseye-slim` - linux; amd64
 
 ```console
-$ docker pull rethinkdb@sha256:4452aadba3e99771ff3559735dab16279c5a352359d79f38737c6fdca941c6e5
+$ docker pull rethinkdb@sha256:af88cb60c22c03338c3cbb35ee962d411a96ae2d34b55a07e06830a982ee5213
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **47.9 MB (47944705 bytes)**  
+-	Total Size: **47.9 MB (47932023 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ce59549f0c046540e10788de1be822f1710568ed76111c0eb0aaaebc4cd8f906`
+-	Image ID: `sha256:8d5e5887e45c6244aef237c496fcab5a47414fabd9fa47478804c525c6ec1bdb`
 -	Default Command: `["rethinkdb","--bind","all"]`
 
 ```dockerfile
-# Thu, 23 Jun 2022 00:20:27 GMT
-ADD file:8adbbab04d6f84cd83b5f4205b89b0acb7ecbf27a1bb2dc181d0a629479039fe in / 
-# Thu, 23 Jun 2022 00:20:27 GMT
+# Tue, 12 Jul 2022 01:20:10 GMT
+ADD file:d978f6d3025a06f5142a0c13c98bf12fbd47cdf9162ed31fbc05c86983b0a679 in / 
+# Tue, 12 Jul 2022 01:20:10 GMT
 CMD ["bash"]
-# Thu, 23 Jun 2022 12:37:17 GMT
+# Tue, 12 Jul 2022 15:25:57 GMT
 RUN apt-get -qqy update     && apt-get install -y --no-install-recommends ca-certificates gnupg2 curl     && rm -rf /var/lib/apt/lists/*
-# Thu, 23 Jun 2022 12:37:19 GMT
+# Tue, 12 Jul 2022 15:25:59 GMT
 RUN GNUPGHOME="$(mktemp -d)" && export GNUPGHOME     && gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys 539A3A8C6692E6E3F69B3FE81D85E93F801BB43F     && gpg --batch --export 539A3A8C6692E6E3F69B3FE81D85E93F801BB43F > /usr/share/keyrings/rethinkdb.gpg     && gpgconf --kill all && rm -rf "$GNUPGHOME"     && echo "deb [signed-by=/usr/share/keyrings/rethinkdb.gpg] https://download.rethinkdb.com/repository/debian-bullseye bullseye main" > /etc/apt/sources.list.d/rethinkdb.list
-# Thu, 23 Jun 2022 12:37:19 GMT
+# Tue, 12 Jul 2022 15:25:59 GMT
 ENV RETHINKDB_PACKAGE_VERSION=2.4.2~0bullseye
-# Thu, 23 Jun 2022 12:37:24 GMT
+# Tue, 12 Jul 2022 15:26:05 GMT
 RUN apt-get -qqy update 	&& apt-get install -y rethinkdb=$RETHINKDB_PACKAGE_VERSION 	&& rm -rf /var/lib/apt/lists/*
-# Thu, 23 Jun 2022 12:37:25 GMT
+# Tue, 12 Jul 2022 15:26:05 GMT
 VOLUME [/data]
-# Thu, 23 Jun 2022 12:37:25 GMT
+# Tue, 12 Jul 2022 15:26:05 GMT
 WORKDIR /data
-# Thu, 23 Jun 2022 12:37:25 GMT
+# Tue, 12 Jul 2022 15:26:05 GMT
 CMD ["rethinkdb" "--bind" "all"]
-# Thu, 23 Jun 2022 12:37:25 GMT
+# Tue, 12 Jul 2022 15:26:05 GMT
 EXPOSE 28015 29015 8080
 ```
 
 -	Layers:
-	-	`sha256:b85a868b505ffd0342a37e6a3b1c49f7c71878afe569a807e6238ef08252fcb7`  
-		Last Modified: Thu, 23 Jun 2022 00:25:18 GMT  
-		Size: 31.4 MB (31379408 bytes)  
+	-	`sha256:461246efe0a75316d99afdbf348f7063b57b0caeee8daab775f1f08152ea36f4`  
+		Last Modified: Tue, 12 Jul 2022 01:24:34 GMT  
+		Size: 31.4 MB (31366610 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bb28ba7e8a6993983fcb329c610b2469a7fb49a6241638ea2e1af37415a7801`  
-		Last Modified: Thu, 23 Jun 2022 12:37:43 GMT  
-		Size: 6.3 MB (6326725 bytes)  
+	-	`sha256:0337deed8224ea2e7c0ca5e077c62939d704d7306ada45e847cb504c8c03bf25`  
+		Last Modified: Tue, 12 Jul 2022 15:26:20 GMT  
+		Size: 6.3 MB (6326840 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:82a4883e6561248c4b0375999c2b4e5d20c94f95967b2afed1231c996934d3c8`  
-		Last Modified: Thu, 23 Jun 2022 12:37:42 GMT  
-		Size: 2.7 KB (2687 bytes)  
+	-	`sha256:191a5691db899e2953b0bc2290bf23b2fb61433fd3cca052ae314ec10722c54b`  
+		Last Modified: Tue, 12 Jul 2022 15:26:19 GMT  
+		Size: 2.7 KB (2686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0dcc411eaabeb6a5b64e7a77bfbe4fe752628b91658918f6081a8ff30e8525ef`  
-		Last Modified: Thu, 23 Jun 2022 12:37:43 GMT  
-		Size: 10.2 MB (10235758 bytes)  
+	-	`sha256:f78e81da69a5aa3227e86434456376e58469c15945c381af45fd9e30f012c12f`  
+		Last Modified: Tue, 12 Jul 2022 15:26:21 GMT  
+		Size: 10.2 MB (10235760 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f7b39921d5de33afe5df6605776c61e7c2a2e213fa08f63b06808d3778fa663c`  
-		Last Modified: Thu, 23 Jun 2022 12:37:42 GMT  
+	-	`sha256:a1079a17c34a30028313ceb7f6c634b5c277b3bbcc42095e1d0d381c5569b726`  
+		Last Modified: Tue, 12 Jul 2022 15:26:19 GMT  
 		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -129,57 +129,57 @@ EXPOSE 28015 29015 8080
 ### `rethinkdb:2-bullseye-slim` - linux; s390x
 
 ```console
-$ docker pull rethinkdb@sha256:66daaf46cd34cfd771b7c160e00601fd2d5fa6804eccffe5a0e6119edc6e8b33
+$ docker pull rethinkdb@sha256:c8408ac4f3bdafe1226456fd16376e591cacbfa8de259923e09b8b35bdb7ca4a
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **45.4 MB (45434585 bytes)**  
+-	Total Size: **45.4 MB (45419547 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2f619841234da6caacf1ea14be636d8388ca6ed121836b19b912d981537e4244`
+-	Image ID: `sha256:0076cb3120e9226025b2fabd799c363b078af682ccee8922caeaebd70f855399`
 -	Default Command: `["rethinkdb","--bind","all"]`
 
 ```dockerfile
-# Thu, 23 Jun 2022 00:43:10 GMT
-ADD file:0b511e3efd87267fb27161eae56c4d08f0fed733697da6ffe6ea96a4cb68e938 in / 
-# Thu, 23 Jun 2022 00:43:15 GMT
+# Tue, 12 Jul 2022 00:43:45 GMT
+ADD file:70135711d42f7b2b32586e31afb57a0590019326efa82abf1402dc7a8f02a3f2 in / 
+# Tue, 12 Jul 2022 00:43:49 GMT
 CMD ["bash"]
-# Thu, 23 Jun 2022 13:00:41 GMT
+# Tue, 12 Jul 2022 16:00:38 GMT
 RUN apt-get -qqy update     && apt-get install -y --no-install-recommends ca-certificates gnupg2 curl     && rm -rf /var/lib/apt/lists/*
-# Thu, 23 Jun 2022 13:00:43 GMT
+# Tue, 12 Jul 2022 16:00:41 GMT
 RUN GNUPGHOME="$(mktemp -d)" && export GNUPGHOME     && gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys 539A3A8C6692E6E3F69B3FE81D85E93F801BB43F     && gpg --batch --export 539A3A8C6692E6E3F69B3FE81D85E93F801BB43F > /usr/share/keyrings/rethinkdb.gpg     && gpgconf --kill all && rm -rf "$GNUPGHOME"     && echo "deb [signed-by=/usr/share/keyrings/rethinkdb.gpg] https://download.rethinkdb.com/repository/debian-bullseye bullseye main" > /etc/apt/sources.list.d/rethinkdb.list
-# Thu, 23 Jun 2022 13:00:43 GMT
+# Tue, 12 Jul 2022 16:00:42 GMT
 ENV RETHINKDB_PACKAGE_VERSION=2.4.2~0bullseye
-# Thu, 23 Jun 2022 13:00:49 GMT
+# Tue, 12 Jul 2022 16:00:52 GMT
 RUN apt-get -qqy update 	&& apt-get install -y rethinkdb=$RETHINKDB_PACKAGE_VERSION 	&& rm -rf /var/lib/apt/lists/*
-# Thu, 23 Jun 2022 13:00:49 GMT
+# Tue, 12 Jul 2022 16:00:54 GMT
 VOLUME [/data]
-# Thu, 23 Jun 2022 13:00:49 GMT
+# Tue, 12 Jul 2022 16:00:55 GMT
 WORKDIR /data
-# Thu, 23 Jun 2022 13:00:50 GMT
+# Tue, 12 Jul 2022 16:00:55 GMT
 CMD ["rethinkdb" "--bind" "all"]
-# Thu, 23 Jun 2022 13:00:50 GMT
+# Tue, 12 Jul 2022 16:00:55 GMT
 EXPOSE 28015 29015 8080
 ```
 
 -	Layers:
-	-	`sha256:c547f465e0c8708ad0c57cf09caa52f4c2b5b295bf10ab1ce71ca17ff81ea36a`  
-		Last Modified: Thu, 23 Jun 2022 00:51:59 GMT  
-		Size: 29.7 MB (29655262 bytes)  
+	-	`sha256:447abc12b0c6da6e339b4fa17a2a7dd672d6f0631d30ee44c28b8b06e78884bd`  
+		Last Modified: Tue, 12 Jul 2022 00:53:41 GMT  
+		Size: 29.6 MB (29640209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e3104fccb3513ac4a04f15b186f4f8d3c88580133df6e3be8e523a60b53cd30`  
-		Last Modified: Thu, 23 Jun 2022 13:01:19 GMT  
-		Size: 6.2 MB (6204050 bytes)  
+	-	`sha256:143ba62ba31e365491492a3e52c8e2c5eb508e56a67b5fc0830aea56c82c8db2`  
+		Last Modified: Tue, 12 Jul 2022 16:01:30 GMT  
+		Size: 6.2 MB (6204024 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40b7b28887b426c1db0eb36aa2e1269750469e3ebfd5b6b294c39373df45b306`  
-		Last Modified: Thu, 23 Jun 2022 13:01:17 GMT  
+	-	`sha256:d621e03ff9f857dddbc6c5dc6b43290f998c09b83ce2222e35a93ed8a66650f8`  
+		Last Modified: Tue, 12 Jul 2022 16:01:29 GMT  
 		Size: 2.7 KB (2689 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ead49101fb2b2b324995f8cc7b670e5cb0b5ae554add6609c673d99e4212f6fc`  
-		Last Modified: Thu, 23 Jun 2022 13:01:18 GMT  
-		Size: 9.6 MB (9572457 bytes)  
+	-	`sha256:032221f765b1a2edbdbb3f21e3583e9da17a9ecc7da6c60b175a2ef553216cd3`  
+		Last Modified: Tue, 12 Jul 2022 16:01:31 GMT  
+		Size: 9.6 MB (9572498 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a211e0c69fd205999d25be28d81b21ad4b6e8ac3ba021df2239830ca084d8c0`  
-		Last Modified: Thu, 23 Jun 2022 13:01:17 GMT  
+	-	`sha256:c2a1fd668046da70882ed5cab6092d410282b0930cee27d7d845a294320ca3c4`  
+		Last Modified: Tue, 12 Jul 2022 16:01:29 GMT  
 		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
