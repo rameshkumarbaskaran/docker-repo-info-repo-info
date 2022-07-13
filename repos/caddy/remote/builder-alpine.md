@@ -1,7 +1,7 @@
 ## `caddy:builder-alpine`
 
 ```console
-$ docker pull caddy@sha256:2871190deed26d80a1a118a61ec0247b4aa411507052a9ce82282b95c813f251
+$ docker pull caddy@sha256:06b0763a041d60d5095e9f50f4f0c2187961c35337430ba252527f2754058c66
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -102,14 +102,14 @@ WORKDIR /usr/bin
 ### `caddy:builder-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull caddy@sha256:335db362071b1699a6611b3184448b7bd18e0db20170df11ed209fc6a00c8581
+$ docker pull caddy@sha256:703622cb9f18f0b8afa018cad85ee38f07a589dad0efd9a17320f18ecc13cd5f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **122.6 MB (122569987 bytes)**  
+-	Total Size: **122.6 MB (122569995 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:704278b6791246e6d9c76aa24a49b6669ead5c19385102cc8b464d2870b2b8b4`
+-	Image ID: `sha256:e8bede613e41fb58ab47edf7b489bb233d938d4ecdecac92918e083fb05bc964`
 -	Default Command: `["\/bin\/sh"]`
 
 ```dockerfile
@@ -139,15 +139,15 @@ WORKDIR /go
 RUN apk add --no-cache     git     ca-certificates
 # Tue, 12 Jul 2022 22:56:18 GMT
 ENV XCADDY_VERSION=v0.3.0
-# Tue, 12 Jul 2022 22:56:19 GMT
-ENV CADDY_VERSION=v2.5.1
-# Tue, 12 Jul 2022 22:56:19 GMT
+# Wed, 13 Jul 2022 00:25:16 GMT
+ENV CADDY_VERSION=v2.5.2
+# Wed, 13 Jul 2022 00:25:16 GMT
 ENV XCADDY_SKIP_CLEANUP=1
-# Tue, 12 Jul 2022 22:56:22 GMT
+# Wed, 13 Jul 2022 00:25:18 GMT
 RUN set -eux; 	apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		x86_64)  binArch='amd64'; checksum='889b63098037e4641cce5b355bd82535a4b6bbbc4aa16b8214108d0d847d288b52cd19017a477eedc9c066c2ec623310dd7909251888bc9432a7d7553ba9037e' ;; 		armhf)   binArch='armv6'; checksum='decfc298b900b62ee16e0dc92a05d3b61926b961de5ee10138ce9fc6cde85dba732928d4481e02e4290750c85a92c4c24c1850045eb16c0d6a75781ff1506964' ;; 		armv7)   binArch='armv7'; checksum='99819ca7b2d37ab93e0b6af8f41dbc16dec5844c47b64993c1c1c2df0567e4abbff55ca6e9642231bd68a1789d0ebbef36822362f0c29d6dcdb01d55b3669cba' ;; 		aarch64) binArch='arm64'; checksum='24203b66ed47ba5aaa358a9e84c6a13f48737d8dc2902fdc7e2218409ac1bde9f043f0bbdf7b66697c9f9263cf1272a73784e51a26eca94ff37bcda4c21ece87' ;; 		ppc64el|ppc64le) binArch='ppc64le'; checksum='b96d1e6bfced6288678d45b120988e0c9e386671526688d229ace91b8f40ae03ae98a31aca9bdbbdbb9b865037e606801e434594d49cb1654398f53b4f904fd4' ;; 		s390x)   binArch='s390x'; checksum='6af5190825ac0ff01a60c7bfe5dbfea999841b9b1cf8dfca337c30eabc4aa7c03ad4da948f3472954a94f53552c1ab0a7bbd76894af6eb218ae118de68481f78' ;; 		*) echo >&2 "error: unsupported architecture ($apkArch)"; exit 1 ;;	esac; 	wget -O /tmp/xcaddy.tar.gz "https://github.com/caddyserver/xcaddy/releases/download/v0.3.0/xcaddy_0.3.0_linux_${binArch}.tar.gz"; 	echo "$checksum  /tmp/xcaddy.tar.gz" | sha512sum -c; 	tar x -z -f /tmp/xcaddy.tar.gz -C /usr/bin xcaddy; 	rm -f /tmp/xcaddy.tar.gz; 	chmod +x /usr/bin/xcaddy;
-# Tue, 12 Jul 2022 22:56:22 GMT
+# Wed, 13 Jul 2022 00:25:19 GMT
 COPY file:3284b89c053fa1b60b278653bdca42a092891284e07e11d2fe66ee30b14e3081 in /usr/bin/caddy-builder 
-# Tue, 12 Jul 2022 22:56:23 GMT
+# Wed, 13 Jul 2022 00:25:19 GMT
 WORKDIR /usr/bin
 ```
 
@@ -176,13 +176,13 @@ WORKDIR /usr/bin
 		Last Modified: Tue, 12 Jul 2022 22:57:30 GMT  
 		Size: 6.8 MB (6806683 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f786b2e2db9f7fc6dc940c93f68ef957353cdfcc37fdf54623b94ac0a244d1b5`  
-		Last Modified: Tue, 12 Jul 2022 22:57:27 GMT  
-		Size: 1.2 MB (1229156 bytes)  
+	-	`sha256:93c8e293f9d738d252bf475ce912e8291238915bf42ce57e839482143ab0287d`  
+		Last Modified: Wed, 13 Jul 2022 00:26:43 GMT  
+		Size: 1.2 MB (1229160 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de6085898e1001ad763dbacfb2508df2e2c93ed2ab40748a1b18c59f2596eb09`  
-		Last Modified: Tue, 12 Jul 2022 22:57:26 GMT  
-		Size: 405.0 B  
+	-	`sha256:e2a5f7917a376356834c38ec70309cec40192a27123e32b1516ccdf50a3de64a`  
+		Last Modified: Wed, 13 Jul 2022 00:26:42 GMT  
+		Size: 409.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `caddy:builder-alpine` - linux; arm variant v7
