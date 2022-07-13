@@ -1,7 +1,7 @@
 ## `ghost:alpine`
 
 ```console
-$ docker pull ghost@sha256:cb4b58d45001d7f12cfdc137f87cdf626d8fa5d0764a6afde3d89b1552012eab
+$ docker pull ghost@sha256:59951a2c4737344cacdefec2f38a3d49287d67d99f978a436f206235721ddc3e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14,14 +14,14 @@ $ docker pull ghost@sha256:cb4b58d45001d7f12cfdc137f87cdf626d8fa5d0764a6afde3d89
 ### `ghost:alpine` - linux; amd64
 
 ```console
-$ docker pull ghost@sha256:1250b1af65c81f6732e5aaf5b8e326dcb0d50e03246d3b71b8dae105366898f3
+$ docker pull ghost@sha256:ac658ac29ea69f380afdb3f43ac1ce7f8f39a4f68fa0348e417bb3e9fe6f36e4
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **118.0 MB (118037408 bytes)**  
+-	Total Size: **119.2 MB (119206495 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2971ada05ea123a9eddcde6e08263fc6e6ed1d2937d9e03bf4dbc2bb7ef9aa62`
+-	Image ID: `sha256:574ca6e948564d7e75106d034ec910258e755696d0d3a3127cb798e50601b2bf`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["node","current\/index.js"]`
 
@@ -58,21 +58,21 @@ RUN set -eux; 	npm install -g "ghost-cli@$GHOST_CLI_VERSION"; 	npm cache clean -
 ENV GHOST_INSTALL=/var/lib/ghost
 # Fri, 08 Jul 2022 18:57:00 GMT
 ENV GHOST_CONTENT=/var/lib/ghost/content
-# Fri, 08 Jul 2022 18:57:00 GMT
-ENV GHOST_VERSION=5.2.4
-# Fri, 08 Jul 2022 18:58:03 GMT
+# Wed, 13 Jul 2022 06:13:06 GMT
+ENV GHOST_VERSION=5.3.0
+# Wed, 13 Jul 2022 06:14:13 GMT
 RUN set -eux; 	mkdir -p "$GHOST_INSTALL"; 	chown node:node "$GHOST_INSTALL"; 		apkDel=; 		installCmd='su-exec node ghost install "$GHOST_VERSION" --db sqlite3 --no-prompt --no-stack --no-setup --dir "$GHOST_INSTALL"'; 	if ! eval "$installCmd"; then 		virtual='.build-deps-ghost'; 		apkDel="$apkDel $virtual"; 		apk add --no-cache --virtual "$virtual" g++ make python3; 		eval "$installCmd"; 	fi; 		cd "$GHOST_INSTALL"; 	su-exec node ghost config --ip '::' --port 2368 --no-prompt --db sqlite3 --url http://localhost:2368 --dbpath "$GHOST_CONTENT/data/ghost.db"; 	su-exec node ghost config paths.contentPath "$GHOST_CONTENT"; 		su-exec node ln -s config.production.json "$GHOST_INSTALL/config.development.json"; 	readlink -f "$GHOST_INSTALL/config.development.json"; 		mv "$GHOST_CONTENT" "$GHOST_INSTALL/content.orig"; 	mkdir -p "$GHOST_CONTENT"; 	chown node:node "$GHOST_CONTENT"; 	chmod 1777 "$GHOST_CONTENT"; 		cd "$GHOST_INSTALL/current"; 	packages="$(node -p ' 		var ghost = require("./package.json"); 		var transform = require("./node_modules/@tryghost/image-transform/package.json"); 		[ 			"sharp@" + transform.optionalDependencies["sharp"], 			"sqlite3@" + ghost.optionalDependencies["sqlite3"], 		].join(" ") 	')"; 	if echo "$packages" | grep 'undefined'; then exit 1; fi; 	for package in $packages; do 		installCmd='su-exec node yarn add "$package" --force'; 		if ! eval "$installCmd"; then 			virtualPackages='g++ make python3'; 			case "$package" in 				sharp@*) echo >&2 "sorry: libvips 8.12.1 in Alpine 3.15 is not new enough (8.12.2+) for sharp 0.30 😞"; continue ;; 			esac; 			virtual=".build-deps-${package%%@*}"; 			apkDel="$apkDel $virtual"; 			apk add --no-cache --virtual "$virtual" $virtualPackages; 						eval "$installCmd --build-from-source"; 		fi; 	done; 		if [ -n "$apkDel" ]; then 		apk del --no-network $apkDel; 	fi; 		su-exec node yarn cache clean; 	su-exec node npm cache clean --force; 	npm cache clean --force; 	rm -rv /tmp/yarn* /tmp/v8*
-# Fri, 08 Jul 2022 18:58:05 GMT
+# Wed, 13 Jul 2022 06:14:15 GMT
 WORKDIR /var/lib/ghost
-# Fri, 08 Jul 2022 18:58:05 GMT
+# Wed, 13 Jul 2022 06:14:15 GMT
 VOLUME [/var/lib/ghost/content]
-# Fri, 08 Jul 2022 18:58:05 GMT
+# Wed, 13 Jul 2022 06:14:15 GMT
 COPY file:87209c4c75826f5d839c2f3270a782740f42eecf4bc96b2f6dbae79b08c17e21 in /usr/local/bin 
-# Fri, 08 Jul 2022 18:58:05 GMT
+# Wed, 13 Jul 2022 06:14:15 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 08 Jul 2022 18:58:05 GMT
+# Wed, 13 Jul 2022 06:14:15 GMT
 EXPOSE 2368
-# Fri, 08 Jul 2022 18:58:05 GMT
+# Wed, 13 Jul 2022 06:14:15 GMT
 CMD ["node" "current/index.js"]
 ```
 
@@ -105,13 +105,13 @@ CMD ["node" "current/index.js"]
 		Last Modified: Fri, 08 Jul 2022 19:02:53 GMT  
 		Size: 10.5 MB (10542138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08acea76de1022ca73ddf43c69125638ca6a9772b12ff781774ed92ea0fffa3c`  
-		Last Modified: Fri, 08 Jul 2022 19:03:02 GMT  
-		Size: 65.9 MB (65913566 bytes)  
+	-	`sha256:e93b20573242a64187bb426059bd09cd11eacfee816486ad24b05f87c68ce17c`  
+		Last Modified: Wed, 13 Jul 2022 06:17:21 GMT  
+		Size: 67.1 MB (67082648 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cdc794f5c4c8787732ac98318faa10ab026e780ee74d74c326d3d5e56aa46ef7`  
-		Last Modified: Fri, 08 Jul 2022 19:02:50 GMT  
-		Size: 544.0 B  
+	-	`sha256:fb0b2c43f2e6f44a68bcb85f3911ddb06667a08a0a473819006b11d365831f39`  
+		Last Modified: Wed, 13 Jul 2022 06:17:08 GMT  
+		Size: 549.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `ghost:alpine` - linux; arm variant v6
