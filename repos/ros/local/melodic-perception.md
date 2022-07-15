@@ -1957,14 +1957,9 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.17.1-1ubuntu0.11
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.17.1-1ubuntu0.11.dsc' git_2.17.1-1ubuntu0.11.dsc 2963 SHA512:be8eb2e3e6cd406461fcab306744af504836a4bf4883720d1923010fa3bf6ecfa4c5c675e91b270a2dd2077e783b46c12f0714f26c5c90a26c75e03ff5aa1551
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.17.1.orig.tar.xz' git_2.17.1.orig.tar.xz 5015484 SHA512:77c27569d40fbae1842130baa0cdda674a02e384631bd8fb1f2ddf67ce372dd4903b2ce6b4283a4ae506cdedd5daa55baa2afe6a6689528511e24e4beb864960
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.17.1-1ubuntu0.11.debian.tar.xz' git_2.17.1-1ubuntu0.11.debian.tar.xz 624772 SHA512:5972a784b8f0f690c0f347a7bb734a347b8ca00f790f7b6d41fc5c8e8231b491cfa1553ce807abff287a9a723aef88c457bd1af55848e3f76bf82a5def322131
-```
 
 ### `dpkg` source package: `gl2ps=1.4.0+dfsg1-1`
 
@@ -7558,14 +7553,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7/copyright`, `/usr/share/doc
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.17-1~18.04ubuntu1.7
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17-1%7e18.04ubuntu1.7.dsc' python2.7_2.7.17-1~18.04ubuntu1.7.dsc 3483 SHA512:66f05d29fdf2b2f1943b8abc3674512d81e748990cefeb5e03e92ea64400c5de9f6b9333f75f1fa08e3bf7372761b4c3ae1e85fc0d768d3d96c36949e2f89646
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17.orig.tar.gz' python2.7_2.7.17.orig.tar.gz 17535962 SHA512:f526baff7f1a9451244edb04e2aca63336b656aac178f4f64c135390b5b1185990ccff0c48f602914dd1c49c9e075951d372b4f2daac39e336c23ae84ef4ca16
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17-1%7e18.04ubuntu1.7.diff.gz' python2.7_2.7.17-1~18.04ubuntu1.7.diff.gz 299204 SHA512:a4068d90f75a40613cddd491ba5f8f2a841eb7c767fc97ef909e8971c08c0d1a983942cd1a73f1e4a60d84a0677460a51202471104c6b644d0c62bc61026e526
-```
 
 ### `dpkg` source package: `python3-defaults=3.6.7-1~18.04`
 
@@ -7641,14 +7631,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.6/copyright`, `/usr/share/doc
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.6=3.6.9-1~18.04ubuntu1.7
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9-1%7e18.04ubuntu1.7.dsc' python3.6_3.6.9-1~18.04ubuntu1.7.dsc 3470 SHA512:f1253dbbb476205c46e519d9390327a9bdd538b5f1b50190a9512eaa0efde371cd36c453bdae33c0984612b05ade8293cf3e8da5b75103746c6e403e434f57a1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9.orig.tar.xz' python3.6_3.6.9.orig.tar.xz 17212164 SHA512:05de9c6f44d96a52bfce10ede4312de892573edaf8bece65926d19973a3a800d65eed7a857af945f69efcfb25efa3788e7a54016b03d80b611eb51c3ea074819
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9-1%7e18.04ubuntu1.7.debian.tar.xz' python3.6_3.6.9-1~18.04ubuntu1.7.debian.tar.xz 229128 SHA512:27ef04bf0a59274291ee73416f2794b001e338a90d030dccc8250697f583082f9b3d6ae982b4bfb1180bba6f9f5b7f15a7183e9ec28284131634966890294ac5
-```
 
 ### `dpkg` source package: `pyyaml=3.12-1build2`
 
@@ -10567,14 +10552,9 @@ Licenses: (parsed from: `/usr/share/doc/liburiparser-dev/copyright`, `/usr/share
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris uriparser=0.8.4-1+deb9u2build0.18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/universe/u/uriparser/uriparser_0.8.4-1%2bdeb9u2build0.18.04.1.dsc' uriparser_0.8.4-1+deb9u2build0.18.04.1.dsc 2167 SHA512:5b4853dc2ee0fe7dd65b9a2ab00657f09a03f15def05a102b2a9e439e2b54c5bde2a74779cc109e6643ea9de388a10eae2be2362a56425a4b73b3c047196518c
-'http://archive.ubuntu.com/ubuntu/pool/universe/u/uriparser/uriparser_0.8.4.orig.tar.bz2' uriparser_0.8.4.orig.tar.bz2 358408 SHA512:b6238c6495eaa9f7178269d66dbea05a39c51c27137d8ebf39cd02d1c3fa96aa0d1608f5ccb36bf7b454f3238830dd46d7de8299b608f185b2520fc2c955aa1a
-'http://archive.ubuntu.com/ubuntu/pool/universe/u/uriparser/uriparser_0.8.4-1%2bdeb9u2build0.18.04.1.debian.tar.xz' uriparser_0.8.4-1+deb9u2build0.18.04.1.debian.tar.xz 8424 SHA512:760492bb434a620a18fe4c5ef573e327152a21dddd84eb773e4963ba405f33ea3a47570f2b1689e2dbb913e93701a915db6214b29a2c383e99a6c7fb80b71303
-```
 
 ### `dpkg` source package: `util-linux=2.31.1-0.4ubuntu3.7`
 
