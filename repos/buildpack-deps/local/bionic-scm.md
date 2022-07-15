@@ -615,14 +615,9 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.17.1-1ubuntu0.11
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.17.1-1ubuntu0.11.dsc' git_2.17.1-1ubuntu0.11.dsc 2963 SHA512:be8eb2e3e6cd406461fcab306744af504836a4bf4883720d1923010fa3bf6ecfa4c5c675e91b270a2dd2077e783b46c12f0714f26c5c90a26c75e03ff5aa1551
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.17.1.orig.tar.xz' git_2.17.1.orig.tar.xz 5015484 SHA512:77c27569d40fbae1842130baa0cdda674a02e384631bd8fb1f2ddf67ce372dd4903b2ce6b4283a4ae506cdedd5daa55baa2afe6a6689528511e24e4beb864960
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.17.1-1ubuntu0.11.debian.tar.xz' git_2.17.1-1ubuntu0.11.debian.tar.xz 624772 SHA512:5972a784b8f0f690c0f347a7bb734a347b8ca00f790f7b6d41fc5c8e8231b491cfa1553ce807abff287a9a723aef88c457bd1af55848e3f76bf82a5def322131
-```
 
 ### `dpkg` source package: `glibc=2.27-3ubuntu1.6`
 
@@ -1796,14 +1791,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.17-1~18.04ubuntu1.7
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17-1%7e18.04ubuntu1.7.dsc' python2.7_2.7.17-1~18.04ubuntu1.7.dsc 3483 SHA512:66f05d29fdf2b2f1943b8abc3674512d81e748990cefeb5e03e92ea64400c5de9f6b9333f75f1fa08e3bf7372761b4c3ae1e85fc0d768d3d96c36949e2f89646
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17.orig.tar.gz' python2.7_2.7.17.orig.tar.gz 17535962 SHA512:f526baff7f1a9451244edb04e2aca63336b656aac178f4f64c135390b5b1185990ccff0c48f602914dd1c49c9e075951d372b4f2daac39e336c23ae84ef4ca16
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17-1%7e18.04ubuntu1.7.diff.gz' python2.7_2.7.17-1~18.04ubuntu1.7.diff.gz 299204 SHA512:a4068d90f75a40613cddd491ba5f8f2a841eb7c767fc97ef909e8971c08c0d1a983942cd1a73f1e4a60d84a0677460a51202471104c6b644d0c62bc61026e526
-```
 
 ### `dpkg` source package: `readline=7.0-3`
 

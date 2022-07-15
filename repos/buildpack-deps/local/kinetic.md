@@ -2138,15 +2138,9 @@ Licenses: (parsed from: `/usr/share/doc/libksba8/copyright`)
 - `GPL-3`
 - `LGPL-2.1-or-later`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libksba=1.6.0-2build1
-'http://archive.ubuntu.com/ubuntu/pool/main/libk/libksba/libksba_1.6.0-2build1.dsc' libksba_1.6.0-2build1.dsc 2602 SHA512:832761d70684def527dacae7f2403972eea3e9133a74c7daa96bf8497693b29a2ddb8d6cd54893604106cecae56637eddbf272e4b7e5778fef4bdd92046f838c
-'http://archive.ubuntu.com/ubuntu/pool/main/libk/libksba/libksba_1.6.0.orig.tar.bz2' libksba_1.6.0.orig.tar.bz2 662120 SHA512:a7c76d41dfd8ec6383ac2de3c53848cd9f066b538f6f3cd43175e3c8095df51b96d0a24a573481c0c4856b09b7c224e2b562d88f5c0801e7acfb582ea2739c2b
-'http://archive.ubuntu.com/ubuntu/pool/main/libk/libksba/libksba_1.6.0.orig.tar.bz2.asc' libksba_1.6.0.orig.tar.bz2.asc 228 SHA512:fc381ea66eefdb431a5248fa3ac0751d7343d7f99cc7ebf7621b0763e6e31a80b45c5e17b09bbc7c1c1154e6a0152af1f13798f64959ac63f50b789ec046d7a3
-'http://archive.ubuntu.com/ubuntu/pool/main/libk/libksba/libksba_1.6.0-2build1.debian.tar.xz' libksba_1.6.0-2build1.debian.tar.xz 14612 SHA512:95b789302a6a3408e8f3751845a8ed09ad5a09313e8106b9aba24c565219ce2012899068faaa6606b134e64a3244286ef4f035bf36e95d0010c7701edf8aa64e
-```
 
 ### `dpkg` source package: `liblqr=0.4.2-2.1`
 
@@ -2670,14 +2664,9 @@ Licenses: (parsed from: `/usr/share/doc/libwmf-0.2-7/copyright`, `/usr/share/doc
 - `LGPL-2+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libwmf=0.2.12-5ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.12-5ubuntu2.dsc' libwmf_0.2.12-5ubuntu2.dsc 2632 SHA512:f8ee424067a5f9de3c6e55050899086f9fe48a64283c0ef2306e99720a7fe57f7f063800e595fe45491586dfde452726756cfdd085c7e002c931407495feeac7
-'http://archive.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.12.orig.tar.gz' libwmf_0.2.12.orig.tar.gz 3043572 SHA512:9280851e560becc91546906b911e0c59a1abd690e10680f6d94a335d66aeaec5eb12ccf2214ee7af2a15729a7b5f8b906022822399b4e2bc12c75a2d75748cab
-'http://archive.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.12-5ubuntu2.debian.tar.xz' libwmf_0.2.12-5ubuntu2.debian.tar.xz 26204 SHA512:6e52187d938d52b09fbb79c0ce4b5788be7243eef7cfbbe62b6e7c1076a5096a2e0ef8a7cf5aa14033685f207d9ad8f50f6249fbf839179c0179a471269040d5
-```
 
 ### `dpkg` source package: `libx11=2:1.7.5-1`
 
@@ -3828,14 +3817,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.10.4-0ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.4-0ubuntu2.dsc' python3-stdlib-extensions_3.10.4-0ubuntu2.dsc 2525 SHA512:a9b4967c4fff1621da6e0f09d9b2d35a9ff240f46a327caacb373401f92caf3714d19333be3fc4765044e0613b1907f64acd4390d474391333ba0a06ca26f7ef
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.4.orig.tar.xz' python3-stdlib-extensions_3.10.4.orig.tar.xz 1113688 SHA512:44ab4d6d883f62a2ebfe6585509caef63d74daea5970487231646c5adf9622e3f979c552867520bb08a7254520d23c6593602a6136ecce32eeaa5e941bd142a3
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.4-0ubuntu2.debian.tar.xz' python3-stdlib-extensions_3.10.4-0ubuntu2.debian.tar.xz 25376 SHA512:21fae5e2ebc18455df8d9ac2e1c7ffd6cf8ae45f1fc9e1a41e99a1878225398b0f8df13d74f70eafb7868860f0ced905f772ad58ca853592e005072ef84f95a3
-```
 
 ### `dpkg` source package: `python3.10=3.10.4-4`
 

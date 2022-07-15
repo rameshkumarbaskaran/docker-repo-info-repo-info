@@ -688,14 +688,9 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.25.1-1ubuntu3.4
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1-1ubuntu3.4.dsc' git_2.25.1-1ubuntu3.4.dsc 2962 SHA512:eb2b1800c05ed3826469f49c95ff154e646c8187ce75f758975f0802d531a1ffbdb41f922626c46a74a5d677f3a53962b7be52c5caca7c60af47c50776a7eae4
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1.orig.tar.xz' git_2.25.1.orig.tar.xz 5875548 SHA512:15241143acfd8542d85d2709ac3c80dbd6e8d5234438f70c4f33cc71a2bdec3e32938df7f6351e2746d570b021d3bd0b70474ea4beec0c51d1fc45f9c287b344
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1-1ubuntu3.4.debian.tar.xz' git_2.25.1-1ubuntu3.4.debian.tar.xz 661056 SHA512:5af63bee7c5a2e2ea0214b79d3cd421d2b089676c5c3c5f78e1487fa6f5e54bc101b79dac4aa51517d6093fbc0fa7c3058a211701d2eb13999bf5ee3a869a5ea
-```
 
 ### `dpkg` source package: `glibc=2.31-0ubuntu9.9`
 
@@ -2047,14 +2042,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.18-1~20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18-1%7e20.04.1.dsc' python2.7_2.7.18-1~20.04.1.dsc 3330 SHA512:68bec698e527280687e01f29861351f8f552af6cdaa46186bd879ac8f7937b6372e0c3e93c9561fb87715f9375cae6a3322d716192769dca5f3de9adb5c173e9
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18.orig.tar.gz' python2.7_2.7.18.orig.tar.gz 17539408 SHA512:9a81cea8f8853b183364b399a238604075b00d18badb0cde118b20fe4428135de5d75a3feca0d56a3d8d40d557e3933de573671072d9da6f76f84435d23bf1ba
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18-1%7e20.04.1.diff.gz' python2.7_2.7.18-1~20.04.1.diff.gz 292694 SHA512:eb583ec25a447af1dd77bcea5b92faccdc67c5ee5b60729aa065670cda186ba870dbc20a0d5dd89805c4f0c51b5abccd40b15ff1d7ca91990bf8c30c8ec0342b
-```
 
 ### `dpkg` source package: `python3-defaults=3.8.2-0ubuntu2`
 
@@ -2105,14 +2095,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.8-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.8=3.8.10-0ubuntu1~20.04.4
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.10-0ubuntu1%7e20.04.4.dsc' python3.8_3.8.10-0ubuntu1~20.04.4.dsc 3504 SHA512:99509bd55a634418dc1207c94536d6af0eb271eb40b573417055bf28a71989a2afedc0bba95fb7bbdbf211ceda6ba008ae982fc8568a5d605199eb51650fc341
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.10.orig.tar.xz' python3.8_3.8.10.orig.tar.xz 18433456 SHA512:0be69705483ff9692e12048a96180e586f9d84c8d53066629f7fb2389585eb75c0f3506bb8182936e322508f58b71f4d8c6dfebbab9049b31b49da11d3b98e80
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.10-0ubuntu1%7e20.04.4.debian.tar.xz' python3.8_3.8.10-0ubuntu1~20.04.4.debian.tar.xz 216412 SHA512:bad7f4ea640e97fb7c2a55547c7eb8f4662216ba872ccf3481f92ef3dd5152dcc28d23844fba2cda32f25b73df501d000b83430935b597d8926e830faa854e6f
-```
 
 ### `dpkg` source package: `readline=8.0-4`
 

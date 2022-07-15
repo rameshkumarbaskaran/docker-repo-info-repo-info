@@ -53,19 +53,13 @@ Licenses: (parsed from: `/usr/share/doc/adduser/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris adduser=3.121
-'http://deb.debian.org/debian/pool/main/a/adduser/adduser_3.121.dsc' adduser_3.121.dsc 1683 SHA256:3ee2ea47fea02391edaf14d47325f2b24ca108ca2141d03a5cc10166472ac73b
-'http://deb.debian.org/debian/pool/main/a/adduser/adduser_3.121.tar.xz' adduser_3.121.tar.xz 215848 SHA256:e68cee9900b1070d91c18a883b4356923267f222899bfa7f753c011de8661f6a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/adduser/3.121/
 
-- https://sources.debian.net/src/adduser/3.121/ (for browsing the source)
-- https://sources.debian.net/src/adduser/3.121/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/adduser/3.121/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `apr-util=1.6.1-5`
 
@@ -2807,21 +2801,13 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 - `GPL-2+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sqlite3=3.39.0-2
-'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.39.0-2.dsc' sqlite3_3.39.0-2.dsc 2487 SHA256:4b4af780290181fe37ae3368eda704bbd6da5781ad1df8dde8bc95a7c4b09164
-'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.39.0.orig-www.tar.xz' sqlite3_3.39.0.orig-www.tar.xz 5733868 SHA256:bfc2b804b25ec62521056d4a05934d9fba6b3304ca6172167782f0db122ad666
-'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.39.0.orig.tar.xz' sqlite3_3.39.0.orig.tar.xz 7820104 SHA256:68cbe13384f578a83c4217193487a3bf710af7de325f2ee79a3e3222a28f9be2
-'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.39.0-2.debian.tar.xz' sqlite3_3.39.0-2.debian.tar.xz 29452 SHA256:3d9b5b3ecde02ca03704c3f5fdc685ac0fdb698218a3583360b14baffb5658c9
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/sqlite3/3.39.0-2/
 
-- https://sources.debian.net/src/sqlite3/3.39.0-2/ (for browsing the source)
-- https://sources.debian.net/src/sqlite3/3.39.0-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/sqlite3/3.39.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `subversion=1.14.2-2`
 
@@ -2846,21 +2832,13 @@ Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subv
 - `Unicode`
 - `Utfwidth`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris subversion=1.14.2-2
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.14.2-2.dsc' subversion_1.14.2-2.dsc 4046 SHA256:2494f5e3c6cbc277e5d5619a610ec8d3869e7fe63fbb0807c2edb372561a4235
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.14.2.orig.tar.gz' subversion_1.14.2.orig.tar.gz 11626792 SHA256:fd826afad03db7a580722839927dc664f3e93398fe88b66905732c8530971353
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.14.2.orig.tar.gz.asc' subversion_1.14.2.orig.tar.gz.asc 3215 SHA256:da6a0a5ff56f671ad2d1eae708f8d1cc1abf0485b029a163ff8272cba5475861
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.14.2-2.debian.tar.xz' subversion_1.14.2-2.debian.tar.xz 336292 SHA256:e8788e59f69853c4583b025ffbd8f82287fd0373d70cd988b811d8ec23da6f10
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/subversion/1.14.2-2/
 
-- https://sources.debian.net/src/subversion/1.14.2-2/ (for browsing the source)
-- https://sources.debian.net/src/subversion/1.14.2-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/subversion/1.14.2-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `systemd=251.2-8`
 
@@ -2880,20 +2858,13 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=251.2-8
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_251.2-8.dsc' systemd_251.2-8.dsc 6150 SHA256:d113bf44c6cb5908ad2026c68103ffdc9b59b25a64b6867698fd0d394183f3e8
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_251.2.orig.tar.gz' systemd_251.2.orig.tar.gz 11434645 SHA256:5b371e824fe3e3128f2338b8db8cd37171f8e249eea88077eea468f73d833545
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_251.2-8.debian.tar.xz' systemd_251.2-8.debian.tar.xz 172768 SHA256:f139e2c9dd037077432d85efc3d17f97819ba62a4b702774add5b27c49fe53d8
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/systemd/251.2-8/
 
-- https://sources.debian.net/src/systemd/251.2-8/ (for browsing the source)
-- https://sources.debian.net/src/systemd/251.2-8/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/systemd/251.2-8/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=3.03-1`
 
