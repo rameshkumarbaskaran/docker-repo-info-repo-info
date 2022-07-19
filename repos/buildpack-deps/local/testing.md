@@ -604,21 +604,13 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.83.1-2
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.83.1-2.dsc' curl_7.83.1-2.dsc 2959 SHA256:e95b7ae740c4261db6cee38533f25994a99f087db906a7092ee7dc3a12840110
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.83.1.orig.tar.gz' curl_7.83.1.orig.tar.gz 4162207 SHA256:93fb2cd4b880656b4e8589c912a9fd092750166d555166370247f09d18f5d0c0
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.83.1.orig.tar.gz.asc' curl_7.83.1.orig.tar.gz.asc 488 SHA256:b8bd927f15bd02cb0bd831ce6d7c9f7406a1b6d8fb2d1bd1c10f16144d8491c4
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.83.1-2.debian.tar.xz' curl_7.83.1-2.debian.tar.xz 38500 SHA256:c6fc59133a8ba1f03a82a713a1eaa3cc9ff7368b465588a95579b5979b7c8d07
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/curl/7.83.1-2/
 
-- https://sources.debian.net/src/curl/7.83.1-2/ (for browsing the source)
-- https://sources.debian.net/src/curl/7.83.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/curl/7.83.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.28+dfsg-6`
 
@@ -2753,21 +2745,13 @@ Licenses: (parsed from: `/usr/share/doc/libksba8/copyright`)
 - `GPL-3`
 - `LGPL-2.1-or-later`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libksba=1.6.0-2
-'http://deb.debian.org/debian/pool/main/libk/libksba/libksba_1.6.0-2.dsc' libksba_1.6.0-2.dsc 2470 SHA256:0f8d4feca82987e43fb51fd6b63b5b2a93ecf825de45d958620e13df7866e31b
-'http://deb.debian.org/debian/pool/main/libk/libksba/libksba_1.6.0.orig.tar.bz2' libksba_1.6.0.orig.tar.bz2 662120 SHA256:dad683e6f2d915d880aa4bed5cea9a115690b8935b78a1bbe01669189307a48b
-'http://deb.debian.org/debian/pool/main/libk/libksba/libksba_1.6.0.orig.tar.bz2.asc' libksba_1.6.0.orig.tar.bz2.asc 228 SHA256:c695098f67cc837071d899f0e15d993bcf29eaac8f1ca7428ee793d9c62c795c
-'http://deb.debian.org/debian/pool/main/libk/libksba/libksba_1.6.0-2.debian.tar.xz' libksba_1.6.0-2.debian.tar.xz 14524 SHA256:59b54f92324bf527f9edc898d9b3113eee93bf0521e2443bda6e9aedf695ea79
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libksba/1.6.0-2/
 
-- https://sources.debian.net/src/libksba/1.6.0-2/ (for browsing the source)
-- https://sources.debian.net/src/libksba/1.6.0-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libksba/1.6.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `liblqr=0.4.2-2.1`
 

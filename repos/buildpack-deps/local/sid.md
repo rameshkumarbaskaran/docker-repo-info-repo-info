@@ -2032,20 +2032,13 @@ Licenses: (parsed from: `/usr/share/doc/libisl23/copyright`)
 - `LGPL-2.1+`
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris isl=0.24-2
-'http://deb.debian.org/debian/pool/main/i/isl/isl_0.24-2.dsc' isl_0.24-2.dsc 1832 SHA256:dfb7409828a6f733e80ed0240311f9ab64f2496cfb5c7d3c878fadc35e578ae3
-'http://deb.debian.org/debian/pool/main/i/isl/isl_0.24.orig.tar.xz' isl_0.24.orig.tar.xz 1930956 SHA256:043105cc544f416b48736fff8caf077fb0663a717d06b1113f16e391ac99ebad
-'http://deb.debian.org/debian/pool/main/i/isl/isl_0.24-2.debian.tar.xz' isl_0.24-2.debian.tar.xz 26476 SHA256:dc20a4d6dbddf6e40665626b3b2523fc464090cb4f8bda6844c64d1584aa2af4
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/isl/0.24-2/
 
-- https://sources.debian.net/src/isl/0.24-2/ (for browsing the source)
-- https://sources.debian.net/src/isl/0.24-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/isl/0.24-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `jbigkit=2.1-3.1`
 
@@ -3721,21 +3714,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxslt=1.1.34-4
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.34-4.dsc' libxslt_1.1.34-4.dsc 2375 SHA256:29447f928b2fd534bd819aaf74005ff286f3786689a2684b9cbc61c1c65c2212
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.34.orig.tar.gz' libxslt_1.1.34.orig.tar.gz 3552258 SHA256:98b1bd46d6792925ad2dfe9a87452ea2adebf69dcb9919ffd55bf926a7f93f7f
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.34.orig.tar.gz.asc' libxslt_1.1.34.orig.tar.gz.asc 488 SHA256:673d1477552bdd5b0cc665704e77ca70e6be5d2f257e6a5a341c846719d747cf
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.34-4.debian.tar.xz' libxslt_1.1.34-4.debian.tar.xz 21464 SHA256:24d5490d6e33f42391d2ce449dd8fec0830ced115a6af886ee03af985a727dc9
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libxslt/1.1.34-4/
 
-- https://sources.debian.net/src/libxslt/1.1.34-4/ (for browsing the source)
-- https://sources.debian.net/src/libxslt/1.1.34-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libxslt/1.1.34-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxt=1:1.2.1-1`
 
@@ -3776,20 +3761,13 @@ Licenses: (parsed from: `/usr/share/doc/libyaml-0-2/copyright`, `/usr/share/doc/
 - `Expat`
 - `permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libyaml=0.2.2-1
-'http://deb.debian.org/debian/pool/main/liby/libyaml/libyaml_0.2.2-1.dsc' libyaml_0.2.2-1.dsc 1833 SHA256:b4baba985391f52409013a0c9303191e34aaa4c1c9200e4c01c4963df801db09
-'http://deb.debian.org/debian/pool/main/liby/libyaml/libyaml_0.2.2.orig.tar.gz' libyaml_0.2.2.orig.tar.gz 602509 SHA256:689ef3ebdecfa81f3789ccd2481acc81fc0f22f3f5c947eed95c4c0802e356b8
-'http://deb.debian.org/debian/pool/main/liby/libyaml/libyaml_0.2.2-1.debian.tar.xz' libyaml_0.2.2-1.debian.tar.xz 4112 SHA256:186aad3e4bcd95891a8c59249c59f862f5f71601058fda0bf020a9e9e39320fe
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libyaml/0.2.2-1/
 
-- https://sources.debian.net/src/libyaml/0.2.2-1/ (for browsing the source)
-- https://sources.debian.net/src/libyaml/0.2.2-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libyaml/0.2.2-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libzstd=1.5.2+dfsg-1`
 
@@ -4955,19 +4933,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-defaults=3.10.4-1
-'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.10.4-1.dsc' python3-defaults_3.10.4-1.dsc 2885 SHA256:c58e154aebf55f8affe928323ccddbeb5b6b2e2738ba2baa64ec8b872cb2d5ab
-'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.10.4-1.tar.gz' python3-defaults_3.10.4-1.tar.gz 145046 SHA256:905c879f3c54a791d4e56c7a430469005b4508e209cf482f7b372de77ad4112d
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3-defaults/3.10.4-1/
 
-- https://sources.debian.net/src/python3-defaults/3.10.4-1/ (for browsing the source)
-- https://sources.debian.net/src/python3-defaults/3.10.4-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3-defaults/3.10.4-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3-stdlib-extensions=3.10.5-1`
 
@@ -4980,20 +4952,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.10.5-1
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.5-1.dsc' python3-stdlib-extensions_3.10.5-1.dsc 2649 SHA256:5966ebcf54a94ca8a6bfe8bb76c047311ffc46f506ee2575faccb92a209b5870
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.5.orig.tar.xz' python3-stdlib-extensions_3.10.5.orig.tar.xz 1116560 SHA256:169ade9a114c0558ea731c3cae2d5654c5a36e5056b4b677e00786d38f07865e
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.5-1.debian.tar.xz' python3-stdlib-extensions_3.10.5-1.debian.tar.xz 25692 SHA256:e28c73c63bb2e968d4db2dabd64b7ec31e97540419d32b1bce15ced9eb01e7e0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3-stdlib-extensions/3.10.5-1/
 
-- https://sources.debian.net/src/python3-stdlib-extensions/3.10.5-1/ (for browsing the source)
-- https://sources.debian.net/src/python3-stdlib-extensions/3.10.5-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3-stdlib-extensions/3.10.5-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3.10=3.10.5-1`
 
@@ -5550,20 +5515,13 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/lib
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.38-4
-'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.38-4.dsc' util-linux_2.38-4.dsc 4520 SHA256:83dcb7432dcaf74591361a204f724aecc16e278af98ee5da6d50ec7adc402f49
-'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.38.orig.tar.xz' util-linux_2.38.orig.tar.xz 7349140 SHA256:6d111cbe4d55b336db2f1fbeffbc65b89908704c01136371d32aa9bec373eb64
-'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.38-4.debian.tar.xz' util-linux_2.38-4.debian.tar.xz 95860 SHA256:7b850834deb91f88046474cb258c0ac735a83f4895ed4fe6294ef249678f7378
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/util-linux/2.38-4/
 
-- https://sources.debian.net/src/util-linux/2.38-4/ (for browsing the source)
-- https://sources.debian.net/src/util-linux/2.38-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/util-linux/2.38-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `wget=1.21.3-1`
 

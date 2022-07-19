@@ -2574,19 +2574,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-defaults=3.10.4-1
-'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.10.4-1.dsc' python3-defaults_3.10.4-1.dsc 2885 SHA256:c58e154aebf55f8affe928323ccddbeb5b6b2e2738ba2baa64ec8b872cb2d5ab
-'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.10.4-1.tar.gz' python3-defaults_3.10.4-1.tar.gz 145046 SHA256:905c879f3c54a791d4e56c7a430469005b4508e209cf482f7b372de77ad4112d
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3-defaults/3.10.4-1/
 
-- https://sources.debian.net/src/python3-defaults/3.10.4-1/ (for browsing the source)
-- https://sources.debian.net/src/python3-defaults/3.10.4-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3-defaults/3.10.4-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3.10=3.10.5-1`
 
@@ -3026,20 +3020,13 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/lib
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.38-4
-'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.38-4.dsc' util-linux_2.38-4.dsc 4520 SHA256:83dcb7432dcaf74591361a204f724aecc16e278af98ee5da6d50ec7adc402f49
-'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.38.orig.tar.xz' util-linux_2.38.orig.tar.xz 7349140 SHA256:6d111cbe4d55b336db2f1fbeffbc65b89908704c01136371d32aa9bec373eb64
-'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.38-4.debian.tar.xz' util-linux_2.38-4.debian.tar.xz 95860 SHA256:7b850834deb91f88046474cb258c0ac735a83f4895ed4fe6294ef249678f7378
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/util-linux/2.38-4/
 
-- https://sources.debian.net/src/util-linux/2.38-4/ (for browsing the source)
-- https://sources.debian.net/src/util-linux/2.38-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/util-linux/2.38-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `wget=1.21.3-1`
 
