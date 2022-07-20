@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:972e092346584a3880cd3263e838c9e55d7bbb02bfe88b7369f1dd08ef03d275`
-- Created: `2022-06-28T17:49:17.851976656Z`
-- Virtual Size: ~ 228.98 Mb  
+- Image ID: `sha256:6d424ade91335f8cd97ecb674e2233865fd973888286dbd5cb1dee81edbd105c`
+- Created: `2022-07-20T04:19:43.29619547Z`
+- Virtual Size: ~ 228.41 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -59,16 +59,16 @@ MIT
 ### `apk` package: `amazon-corretto-8`
 
 ```console
-amazon-corretto-8-8.332.08.1-r0 description:
+amazon-corretto-8-8.342.07.1-r0 description:
 Corretto-8
 
-amazon-corretto-8-8.332.08.1-r0 webpage:
+amazon-corretto-8-8.342.07.1-r0 webpage:
 https://github.com/corretto/corretto-8
 
-amazon-corretto-8-8.332.08.1-r0 installed size:
+amazon-corretto-8-8.342.07.1-r0 installed size:
 87 MiB
 
-amazon-corretto-8-8.332.08.1-r0 license:
+amazon-corretto-8-8.342.07.1-r0 license:
 https://github.com/corretto/corretto-8/blob/develop/LICENSE
 
 ```
@@ -76,16 +76,16 @@ https://github.com/corretto/corretto-8/blob/develop/LICENSE
 ### `apk` package: `amazon-corretto-8-jre`
 
 ```console
-amazon-corretto-8-jre-8.332.08.1-r0 description:
+amazon-corretto-8-jre-8.342.07.1-r0 description:
 Amazon Corretto 8 Java Runtime
 
-amazon-corretto-8-jre-8.332.08.1-r0 webpage:
+amazon-corretto-8-jre-8.342.07.1-r0 webpage:
 https://github.com/corretto/corretto-8
 
-amazon-corretto-8-jre-8.332.08.1-r0 installed size:
+amazon-corretto-8-jre-8.342.07.1-r0 installed size:
 99 MiB
 
-amazon-corretto-8-jre-8.332.08.1-r0 license:
+amazon-corretto-8-jre-8.342.07.1-r0 license:
 https://github.com/corretto/corretto-8/blob/develop/LICENSE
 
 ```
@@ -127,16 +127,16 @@ MIT
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.34.1-r5 description:
+busybox-1.34.1-r7 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.34.1-r5 webpage:
+busybox-1.34.1-r7 webpage:
 https://busybox.net/
 
-busybox-1.34.1-r5 installed size:
+busybox-1.34.1-r7 installed size:
 924 KiB
 
-busybox-1.34.1-r5 license:
+busybox-1.34.1-r7 license:
 GPL-2.0-only
 
 ```
@@ -178,16 +178,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `curl`
 
 ```console
-curl-7.80.0-r1 description:
+curl-7.80.0-r2 description:
 URL retrival utility and library
 
-curl-7.80.0-r1 webpage:
+curl-7.80.0-r2 webpage:
 https://curl.se/
 
-curl-7.80.0-r1 installed size:
+curl-7.80.0-r2 installed size:
 248 KiB
 
-curl-7.80.0-r1 license:
+curl-7.80.0-r2 license:
 MIT
 
 ```
@@ -229,16 +229,16 @@ LGPL-3.0-or-later OR GPL-2.0-or-later
 ### `apk` package: `gnupg`
 
 ```console
-gnupg-2.2.31-r1 description:
+gnupg-2.2.31-r2 description:
 GNU Privacy Guard 2 - meta package for full GnuPG suite
 
-gnupg-2.2.31-r1 webpage:
+gnupg-2.2.31-r2 webpage:
 https://www.gnupg.org/
 
-gnupg-2.2.31-r1 installed size:
+gnupg-2.2.31-r2 installed size:
 4096 B
 
-gnupg-2.2.31-r1 license:
+gnupg-2.2.31-r2 license:
 GPL-3.0-or-later
 
 ```
@@ -246,16 +246,16 @@ GPL-3.0-or-later
 ### `apk` package: `gnupg-dirmngr`
 
 ```console
-gnupg-dirmngr-2.2.31-r1 description:
+gnupg-dirmngr-2.2.31-r2 description:
 GNU Privacy Guard 2 - network certificate management service
 
-gnupg-dirmngr-2.2.31-r1 webpage:
+gnupg-dirmngr-2.2.31-r2 webpage:
 https://www.gnupg.org/
 
-gnupg-dirmngr-2.2.31-r1 installed size:
+gnupg-dirmngr-2.2.31-r2 installed size:
 652 KiB
 
-gnupg-dirmngr-2.2.31-r1 license:
+gnupg-dirmngr-2.2.31-r2 license:
 GPL-3.0-or-later
 
 ```
@@ -263,16 +263,16 @@ GPL-3.0-or-later
 ### `apk` package: `gnupg-gpgconf`
 
 ```console
-gnupg-gpgconf-2.2.31-r1 description:
+gnupg-gpgconf-2.2.31-r2 description:
 GNU Privacy Guard 2 - core configuration utilities
 
-gnupg-gpgconf-2.2.31-r1 webpage:
+gnupg-gpgconf-2.2.31-r2 webpage:
 https://www.gnupg.org/
 
-gnupg-gpgconf-2.2.31-r1 installed size:
+gnupg-gpgconf-2.2.31-r2 installed size:
 296 KiB
 
-gnupg-gpgconf-2.2.31-r1 license:
+gnupg-gpgconf-2.2.31-r2 license:
 GPL-3.0-or-later
 
 ```
@@ -280,16 +280,16 @@ GPL-3.0-or-later
 ### `apk` package: `gnupg-utils`
 
 ```console
-gnupg-utils-2.2.31-r1 description:
+gnupg-utils-2.2.31-r2 description:
 GNU Privacy Guard 2 - utility programs
 
-gnupg-utils-2.2.31-r1 webpage:
+gnupg-utils-2.2.31-r2 webpage:
 https://www.gnupg.org/
 
-gnupg-utils-2.2.31-r1 installed size:
+gnupg-utils-2.2.31-r2 installed size:
 396 KiB
 
-gnupg-utils-2.2.31-r1 license:
+gnupg-utils-2.2.31-r2 license:
 GPL-3.0-or-later
 
 ```
@@ -297,16 +297,16 @@ GPL-3.0-or-later
 ### `apk` package: `gnupg-wks-client`
 
 ```console
-gnupg-wks-client-2.2.31-r1 description:
+gnupg-wks-client-2.2.31-r2 description:
 GNU Privacy Guard 2 - Web Key Service client
 
-gnupg-wks-client-2.2.31-r1 webpage:
+gnupg-wks-client-2.2.31-r2 webpage:
 https://www.gnupg.org/
 
-gnupg-wks-client-2.2.31-r1 installed size:
+gnupg-wks-client-2.2.31-r2 installed size:
 188 KiB
 
-gnupg-wks-client-2.2.31-r1 license:
+gnupg-wks-client-2.2.31-r2 license:
 GPL-3.0-or-later
 
 ```
@@ -331,16 +331,16 @@ LGPL-2.1-or-later
 ### `apk` package: `gpg`
 
 ```console
-gpg-2.2.31-r1 description:
+gpg-2.2.31-r2 description:
 GNU Privacy Guard 2 - public key operations only
 
-gpg-2.2.31-r1 webpage:
+gpg-2.2.31-r2 webpage:
 https://www.gnupg.org/
 
-gpg-2.2.31-r1 installed size:
+gpg-2.2.31-r2 installed size:
 892 KiB
 
-gpg-2.2.31-r1 license:
+gpg-2.2.31-r2 license:
 GPL-3.0-or-later
 
 ```
@@ -348,16 +348,16 @@ GPL-3.0-or-later
 ### `apk` package: `gpg-agent`
 
 ```console
-gpg-agent-2.2.31-r1 description:
+gpg-agent-2.2.31-r2 description:
 GNU Privacy Guard 2 - cryptographic agent
 
-gpg-agent-2.2.31-r1 webpage:
+gpg-agent-2.2.31-r2 webpage:
 https://www.gnupg.org/
 
-gpg-agent-2.2.31-r1 installed size:
+gpg-agent-2.2.31-r2 installed size:
 716 KiB
 
-gpg-agent-2.2.31-r1 license:
+gpg-agent-2.2.31-r2 license:
 GPL-3.0-or-later
 
 ```
@@ -365,16 +365,16 @@ GPL-3.0-or-later
 ### `apk` package: `gpg-wks-server`
 
 ```console
-gpg-wks-server-2.2.31-r1 description:
+gpg-wks-server-2.2.31-r2 description:
 GNU Privacy Guard 2 - Web Key Service server
 
-gpg-wks-server-2.2.31-r1 webpage:
+gpg-wks-server-2.2.31-r2 webpage:
 https://www.gnupg.org/
 
-gpg-wks-server-2.2.31-r1 installed size:
+gpg-wks-server-2.2.31-r2 installed size:
 176 KiB
 
-gpg-wks-server-2.2.31-r1 license:
+gpg-wks-server-2.2.31-r2 license:
 GPL-3.0-or-later
 
 ```
@@ -382,16 +382,16 @@ GPL-3.0-or-later
 ### `apk` package: `gpgsm`
 
 ```console
-gpgsm-2.2.31-r1 description:
+gpgsm-2.2.31-r2 description:
 GNU Privacy Guard 2 - S/MIME version
 
-gpgsm-2.2.31-r1 webpage:
+gpgsm-2.2.31-r2 webpage:
 https://www.gnupg.org/
 
-gpgsm-2.2.31-r1 installed size:
+gpgsm-2.2.31-r2 installed size:
 436 KiB
 
-gpgsm-2.2.31-r1 license:
+gpgsm-2.2.31-r2 license:
 GPL-3.0-or-later
 
 ```
@@ -399,16 +399,16 @@ GPL-3.0-or-later
 ### `apk` package: `gpgv`
 
 ```console
-gpgv-2.2.31-r1 description:
+gpgv-2.2.31-r2 description:
 GNU Privacy Guard 2 - signature verification only
 
-gpgv-2.2.31-r1 webpage:
+gpgv-2.2.31-r2 webpage:
 https://www.gnupg.org/
 
-gpgv-2.2.31-r1 installed size:
+gpgv-2.2.31-r2 installed size:
 384 KiB
 
-gpgv-2.2.31-r1 license:
+gpgv-2.2.31-r2 license:
 GPL-3.0-or-later
 
 ```
@@ -501,16 +501,16 @@ BSD-3-Clause OR GPL-2.0-only
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1n-r0 description:
+libcrypto1.1-1.1.1q-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1n-r0 webpage:
+libcrypto1.1-1.1.1q-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1n-r0 installed size:
+libcrypto1.1-1.1.1q-r0 installed size:
 2676 KiB
 
-libcrypto1.1-1.1.1n-r0 license:
+libcrypto1.1-1.1.1q-r0 license:
 OpenSSL
 
 ```
@@ -518,16 +518,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.80.0-r1 description:
+libcurl-7.80.0-r2 description:
 The multiprotocol file transfer library
 
-libcurl-7.80.0-r1 webpage:
+libcurl-7.80.0-r2 webpage:
 https://curl.se/
 
-libcurl-7.80.0-r1 installed size:
+libcurl-7.80.0-r2 installed size:
 504 KiB
 
-libcurl-7.80.0-r1 license:
+libcurl-7.80.0-r2 license:
 MIT
 
 ```
@@ -654,16 +654,16 @@ custom
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1n-r0 description:
+libssl1.1-1.1.1q-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1n-r0 webpage:
+libssl1.1-1.1.1q-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1n-r0 installed size:
+libssl1.1-1.1.1q-r0 installed size:
 528 KiB
 
-libssl1.1-1.1.1n-r0 license:
+libssl1.1-1.1.1q-r0 license:
 OpenSSL
 
 ```
@@ -739,16 +739,16 @@ MIT BSD GPL2+
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.3_p20211120-r0 description:
+ncurses-libs-6.3_p20211120-r1 description:
 Ncurses libraries
 
-ncurses-libs-6.3_p20211120-r0 webpage:
+ncurses-libs-6.3_p20211120-r1 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-libs-6.3_p20211120-r0 installed size:
-500 KiB
+ncurses-libs-6.3_p20211120-r1 installed size:
+504 KiB
 
-ncurses-libs-6.3_p20211120-r0 license:
+ncurses-libs-6.3_p20211120-r1 license:
 MIT
 
 ```
@@ -756,16 +756,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.3_p20211120-r0 description:
+ncurses-terminfo-base-6.3_p20211120-r1 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.3_p20211120-r0 webpage:
+ncurses-terminfo-base-6.3_p20211120-r1 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-terminfo-base-6.3_p20211120-r0 installed size:
+ncurses-terminfo-base-6.3_p20211120-r1 installed size:
 216 KiB
 
-ncurses-terminfo-base-6.3_p20211120-r0 license:
+ncurses-terminfo-base-6.3_p20211120-r1 license:
 MIT
 
 ```
@@ -892,16 +892,16 @@ blessing
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.34.1-r5 description:
+ssl_client-1.34.1-r7 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.34.1-r5 webpage:
+ssl_client-1.34.1-r7 webpage:
 https://busybox.net/
 
-ssl_client-1.34.1-r5 installed size:
+ssl_client-1.34.1-r7 installed size:
 28 KiB
 
-ssl_client-1.34.1-r5 license:
+ssl_client-1.34.1-r7 license:
 GPL-2.0-only
 
 ```
@@ -909,16 +909,16 @@ GPL-2.0-only
 ### `apk` package: `zlib`
 
 ```console
-zlib-1.2.12-r0 description:
+zlib-1.2.12-r1 description:
 A compression/decompression Library
 
-zlib-1.2.12-r0 webpage:
+zlib-1.2.12-r1 webpage:
 https://zlib.net/
 
-zlib-1.2.12-r0 installed size:
+zlib-1.2.12-r1 installed size:
 108 KiB
 
-zlib-1.2.12-r0 license:
+zlib-1.2.12-r1 license:
 Zlib
 
 ```
