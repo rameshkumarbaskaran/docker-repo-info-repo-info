@@ -1,10 +1,10 @@
-# `julia:1.8.0-rc1-bullseye`
+# `julia:1.8.0-rc3-bullseye`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f69b7ba17074f35a9c0a9c6471104a8c5af69a114205e7db521be30e29eb69dd`
-- Created: `2022-07-12T04:35:43.993547075Z`
-- Virtual Size: ~ 563.79 Mb  
+- Image ID: `sha256:f98eb08823eafb96956ec300d08924179b863c8cc62b7c55fe3e50389a70d0ea`
+- Created: `2022-07-18T20:11:32.690080796Z`
+- Virtual Size: ~ 570.81 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["julia"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JULIA_PATH=/usr/local/julia`
   - `JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495`
-  - `JULIA_VERSION=1.8.0-rc1`
+  - `JULIA_VERSION=1.8.0-rc3`
 
 ## `dpkg` (`.deb`-based packages)
 
