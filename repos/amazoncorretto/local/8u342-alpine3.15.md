@@ -1,10 +1,10 @@
-# `amazoncorretto:11-alpine3.15`
+# `amazoncorretto:8-alpine3.15`
 
 ## Docker Metadata
 
-- Image ID: `sha256:4193c28ed9bafd6b9ac969d9c212ce9141c87f7ff3bf8efc8336877ff6311f2e`
-- Created: `2022-04-19T22:24:49.247333311Z`
-- Virtual Size: ~ 324.64 Mb  
+- Image ID: `sha256:4d23b1cc9146a069f5d580aa0e47bde72c44644247553d34f310f872c120102d`
+- Created: `2022-07-19T22:37:27.945154831Z`
+- Virtual Size: ~ 200.99 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/sh"]`
@@ -49,20 +49,37 @@ MIT
 
 ```
 
-### `apk` package: `amazon-corretto-11`
+### `apk` package: `amazon-corretto-8`
 
 ```console
-amazon-corretto-11-11.0.15.9.1-r0 description:
-Corretto11
+amazon-corretto-8-8.342.07.1-r0 description:
+Corretto-8
 
-amazon-corretto-11-11.0.15.9.1-r0 webpage:
-https://github.com/corretto/corretto-11
+amazon-corretto-8-8.342.07.1-r0 webpage:
+https://github.com/corretto/corretto-8
 
-amazon-corretto-11-11.0.15.9.1-r0 installed size:
-305 MiB
+amazon-corretto-8-8.342.07.1-r0 installed size:
+87 MiB
 
-amazon-corretto-11-11.0.15.9.1-r0 license:
-https://github.com/corretto/corretto-11/blob/develop/LICENSE
+amazon-corretto-8-8.342.07.1-r0 license:
+https://github.com/corretto/corretto-8/blob/develop/LICENSE
+
+```
+
+### `apk` package: `amazon-corretto-8-jre`
+
+```console
+amazon-corretto-8-jre-8.342.07.1-r0 description:
+Amazon Corretto 8 Java Runtime
+
+amazon-corretto-8-jre-8.342.07.1-r0 webpage:
+https://github.com/corretto/corretto-8
+
+amazon-corretto-8-jre-8.342.07.1-r0 installed size:
+99 MiB
+
+amazon-corretto-8-jre-8.342.07.1-r0 license:
+https://github.com/corretto/corretto-8/blob/develop/LICENSE
 
 ```
 
@@ -86,16 +103,16 @@ GPL-2.0-only
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.34.1-r5 description:
+busybox-1.34.1-r7 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.34.1-r5 webpage:
+busybox-1.34.1-r7 webpage:
 https://busybox.net/
 
-busybox-1.34.1-r5 installed size:
+busybox-1.34.1-r7 installed size:
 924 KiB
 
-busybox-1.34.1-r5 license:
+busybox-1.34.1-r7 license:
 GPL-2.0-only
 
 ```
@@ -154,16 +171,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1n-r0 description:
+libcrypto1.1-1.1.1q-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1n-r0 webpage:
+libcrypto1.1-1.1.1q-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1n-r0 installed size:
+libcrypto1.1-1.1.1q-r0 installed size:
 2676 KiB
 
-libcrypto1.1-1.1.1n-r0 license:
+libcrypto1.1-1.1.1q-r0 license:
 OpenSSL
 
 ```
@@ -188,16 +205,16 @@ ISC AND (BSD-3-Clause OR MIT)
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1n-r0 description:
+libssl1.1-1.1.1q-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1n-r0 webpage:
+libssl1.1-1.1.1q-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1n-r0 installed size:
+libssl1.1-1.1.1q-r0 installed size:
 528 KiB
 
-libssl1.1-1.1.1n-r0 license:
+libssl1.1-1.1.1q-r0 license:
 OpenSSL
 
 ```
@@ -256,16 +273,16 @@ GPL-2.0-only
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.34.1-r5 description:
+ssl_client-1.34.1-r7 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.34.1-r5 webpage:
+ssl_client-1.34.1-r7 webpage:
 https://busybox.net/
 
-ssl_client-1.34.1-r5 installed size:
+ssl_client-1.34.1-r7 installed size:
 28 KiB
 
-ssl_client-1.34.1-r5 license:
+ssl_client-1.34.1-r7 license:
 GPL-2.0-only
 
 ```
@@ -273,16 +290,16 @@ GPL-2.0-only
 ### `apk` package: `zlib`
 
 ```console
-zlib-1.2.12-r0 description:
+zlib-1.2.12-r1 description:
 A compression/decompression Library
 
-zlib-1.2.12-r0 webpage:
+zlib-1.2.12-r1 webpage:
 https://zlib.net/
 
-zlib-1.2.12-r0 installed size:
+zlib-1.2.12-r1 installed size:
 108 KiB
 
-zlib-1.2.12-r0 license:
+zlib-1.2.12-r1 license:
 Zlib
 
 ```
