@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:8b700906d1f334863ac63c56310df99794fa9b300cc8e2d62731f818b71cff6c`
-- Created: `2022-07-18T20:09:10.251228014Z`
-- Virtual Size: ~ 110.61 Mb  
+- Image ID: `sha256:73dfc58496b5a1cf0c69dbe6533fbce4c0538431eb735fca60b4682a68bc1f53`
+- Created: `2022-07-19T23:26:57.406636476Z`
+- Virtual Size: ~ 107.39 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/home/eggdrop/eggdrop/entrypoint.sh"]`
@@ -93,16 +93,16 @@ GPL-3.0-or-later
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.34.1-r5 description:
+busybox-1.34.1-r7 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.34.1-r5 webpage:
+busybox-1.34.1-r7 webpage:
 https://busybox.net/
 
-busybox-1.34.1-r5 installed size:
+busybox-1.34.1-r7 installed size:
 924 KiB
 
-busybox-1.34.1-r5 license:
+busybox-1.34.1-r7 license:
 GPL-2.0-only
 
 ```
@@ -314,16 +314,16 @@ GPL-2.0-only
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.34.1-r5 description:
+ssl_client-1.34.1-r7 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.34.1-r5 webpage:
+ssl_client-1.34.1-r7 webpage:
 https://busybox.net/
 
-ssl_client-1.34.1-r5 installed size:
+ssl_client-1.34.1-r7 installed size:
 28 KiB
 
-ssl_client-1.34.1-r5 license:
+ssl_client-1.34.1-r7 license:
 GPL-2.0-only
 
 ```
@@ -348,16 +348,16 @@ MIT
 ### `apk` package: `zlib`
 
 ```console
-zlib-1.2.12-r0 description:
+zlib-1.2.12-r1 description:
 A compression/decompression Library
 
-zlib-1.2.12-r0 webpage:
+zlib-1.2.12-r1 webpage:
 https://zlib.net/
 
-zlib-1.2.12-r0 installed size:
+zlib-1.2.12-r1 installed size:
 108 KiB
 
-zlib-1.2.12-r0 license:
+zlib-1.2.12-r1 license:
 Zlib
 
 ```
