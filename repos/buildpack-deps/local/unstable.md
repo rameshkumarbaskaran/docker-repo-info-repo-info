@@ -1348,19 +1348,13 @@ Licenses: (parsed from: `/usr/share/doc/cpp/copyright`, `/usr/share/doc/g++/copy
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-defaults=1.194
-'http://deb.debian.org/debian/pool/main/g/gcc-defaults/gcc-defaults_1.194.dsc' gcc-defaults_1.194.dsc 12639 SHA256:e98726befd3c6b7f32fd863dd0cfd87e19163f208e2983e13df30f4f62f8d415
-'http://deb.debian.org/debian/pool/main/g/gcc-defaults/gcc-defaults_1.194.tar.xz' gcc-defaults_1.194.tar.xz 45200 SHA256:ef25edf2ad31a51abdcc0bc5237233daedc8cc6ed2a7194e49d83150dde2a445
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gcc-defaults/1.194/
 
-- https://sources.debian.net/src/gcc-defaults/1.194/ (for browsing the source)
-- https://sources.debian.net/src/gcc-defaults/1.194/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gcc-defaults/1.194/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gdbm=1.23-1`
 
@@ -2145,20 +2139,13 @@ Licenses: (parsed from: `/usr/share/doc/liblcms2-2/copyright`, `/usr/share/doc/l
 - `GPL-3 (GPL-3 for the fast_float plugin only)`
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lcms2=2.12~rc1-2
-'http://deb.debian.org/debian/pool/main/l/lcms2/lcms2_2.12%7erc1-2.dsc' lcms2_2.12~rc1-2.dsc 1988 SHA256:57b0b3cde709d8b7c43b195ba7f628d2d79323ee0db883050f253ee9f9acd48a
-'http://deb.debian.org/debian/pool/main/l/lcms2/lcms2_2.12%7erc1.orig.tar.gz' lcms2_2.12~rc1.orig.tar.gz 7417767 SHA256:3300ddd8c51d60ebcc206d20d185b1b19939c4cec1576d1f5b95297b0fbdfe19
-'http://deb.debian.org/debian/pool/main/l/lcms2/lcms2_2.12%7erc1-2.debian.tar.xz' lcms2_2.12~rc1-2.debian.tar.xz 10420 SHA256:dddb5b18a42fc7308e732f00643b29ac9f2638cf246569683cb50f13520c2cca
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/lcms2/2.12~rc1-2/
 
-- https://sources.debian.net/src/lcms2/2.12~rc1-2/ (for browsing the source)
-- https://sources.debian.net/src/lcms2/2.12~rc1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/lcms2/2.12~rc1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lerc=3.0+ds-1`
 
