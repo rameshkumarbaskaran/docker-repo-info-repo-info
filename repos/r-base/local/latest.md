@@ -1520,20 +1520,13 @@ Licenses: (parsed from: `/usr/share/doc/libisl23/copyright`)
 - `LGPL-2.1+`
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris isl=0.24-2
-'http://deb.debian.org/debian/pool/main/i/isl/isl_0.24-2.dsc' isl_0.24-2.dsc 1832 SHA256:dfb7409828a6f733e80ed0240311f9ab64f2496cfb5c7d3c878fadc35e578ae3
-'http://deb.debian.org/debian/pool/main/i/isl/isl_0.24.orig.tar.xz' isl_0.24.orig.tar.xz 1930956 SHA256:043105cc544f416b48736fff8caf077fb0663a717d06b1113f16e391ac99ebad
-'http://deb.debian.org/debian/pool/main/i/isl/isl_0.24-2.debian.tar.xz' isl_0.24-2.debian.tar.xz 26476 SHA256:dc20a4d6dbddf6e40665626b3b2523fc464090cb4f8bda6844c64d1584aa2af4
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/isl/0.24-2/
 
-- https://sources.debian.net/src/isl/0.24-2/ (for browsing the source)
-- https://sources.debian.net/src/isl/0.24-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/isl/0.24-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `jbigkit=2.1-3.1`
 
@@ -3646,20 +3639,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-mass/copyright`)
 - `GPL-2`
 - `GPL-2 | GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris r-cran-mass=7.3-57-1
-'http://deb.debian.org/debian/pool/main/r/r-cran-mass/r-cran-mass_7.3-57-1.dsc' r-cran-mass_7.3-57-1.dsc 1851 SHA256:06ec27f5640e9c896ea13df1ac5a279f0cf612b57a3d709cb67bba1f23e9fdb0
-'http://deb.debian.org/debian/pool/main/r/r-cran-mass/r-cran-mass_7.3-57.orig.tar.gz' r-cran-mass_7.3-57.orig.tar.gz 500611 SHA256:bd8b880105bc1aadb2db699086f74bd92a8611287979a24243187f9d80795a8d
-'http://deb.debian.org/debian/pool/main/r/r-cran-mass/r-cran-mass_7.3-57-1.debian.tar.xz' r-cran-mass_7.3-57-1.debian.tar.xz 6412 SHA256:28ee3b76e81201a70666909f555fd232b9b5727bfd0387ca9620570b18d7b22b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/r-cran-mass/7.3-57-1/
 
-- https://sources.debian.net/src/r-cran-mass/7.3-57-1/ (for browsing the source)
-- https://sources.debian.net/src/r-cran-mass/7.3-57-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/r-cran-mass/7.3-57-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `r-cran-nnet=7.3-17-1`
 
