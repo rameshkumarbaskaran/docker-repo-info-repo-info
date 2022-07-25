@@ -1,7 +1,7 @@
 ## `busybox:unstable`
 
 ```console
-$ docker pull busybox@sha256:8c40df61d40166f5791f44b3d90b77b4c7f59ed39a992fd9046886d3126ffa68
+$ docker pull busybox@sha256:a3170d3672568b2c6626710db3573f3d92ee31eed933c24f3d7ea978178e21b8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -72,20 +72,20 @@ CMD ["sh"]
 ### `busybox:unstable` - linux; arm variant v6
 
 ```console
-$ docker pull busybox@sha256:ac22aaabc02d97f08243e1cc5e5b4db4b7a94b64a13c6dfd357213305c6fb9a7
+$ docker pull busybox@sha256:ddb1d9af46821bc5a5095f87791277f50e699aee27211f39f5d4ae5b4bd8d954
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **955.5 KB (955523 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a80ef61bb96ee2867a1098072854b43b92df1af5439cfe9e9418a7bbc1b5b953`
+-	Image ID: `sha256:0950d2b7fd492708f67e8d9b57e786550671ea0db323137ce49df485e6ddfe64`
 -	Default Command: `["sh"]`
 
 ```dockerfile
-# Wed, 08 Jun 2022 00:49:51 GMT
+# Mon, 25 Jul 2022 21:47:26 GMT
 ADD file:caebf932e76bdc0b83ab18d4c404edcac6a42c4492b0391cc582fdc31dac54e8 in / 
-# Wed, 08 Jun 2022 00:49:52 GMT
+# Mon, 25 Jul 2022 21:47:26 GMT
 CMD ["sh"]
 ```
 
