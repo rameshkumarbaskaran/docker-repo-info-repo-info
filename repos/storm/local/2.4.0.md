@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d355de98a212825bae6bee0651501cc81a44421627cb79bc914040d0766e2dac`
-- Created: `2022-07-12T18:44:42.491679959Z`
-- Virtual Size: ~ 672.41 Mb  
+- Image ID: `sha256:19fe5b943c6cbe71b2c48b4fe1a59926ec5ac43ff28e1e8c56714a15b1eda540`
+- Created: `2022-07-25T22:31:24.443177662Z`
+- Virtual Size: ~ 668.22 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/apache-storm-2.4.0/bin`
   - `JAVA_HOME=/usr/local/openjdk-11`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=11.0.15`
+  - `JAVA_VERSION=11.0.16`
   - `STORM_CONF_DIR=/conf`
   - `STORM_DATA_DIR=/data`
   - `STORM_LOG_DIR=/logs`
