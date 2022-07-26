@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ce6a2d0c1c91790e2abee98586083724258d99158ae5e59dc5b0ce6285cf78f9`
-- Created: `2022-07-12T19:47:51.516956412Z`
-- Virtual Size: ~ 387.98 Mb  
+- Image ID: `sha256:31b971eb993c3aa77b3dd9e4367b37f820631c8e9581896c806e9fbaf8bc20d4`
+- Created: `2022-07-26T00:03:03.812621416Z`
+- Virtual Size: ~ 383.79 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/usr/local/openjdk-11`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=11.0.15`
+  - `JAVA_VERSION=11.0.16`
   - `TOMEE_VER=8.0.12`
   - `TOMEE_BUILD=plus`
 
