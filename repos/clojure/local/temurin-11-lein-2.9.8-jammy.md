@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:34c62245b7fc300d4abade19ec4361eccac4323a5c4ca938902701f2ecd0c3d0`
-- Created: `2022-07-26T22:27:05.84546149Z`
-- Virtual Size: ~ 453.09 Mb  
+- Image ID: `sha256:1ec316367fa775ffed71dd9373484cf756f9f56fd797615f8758181d3c114e5f`
+- Created: `2022-07-28T16:52:50.904188629Z`
+- Virtual Size: ~ 453.94 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["lein","repl"]`
@@ -13,7 +13,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.15+10`
+  - `JAVA_VERSION=jdk-11.0.16+8`
   - `JAVA_HOME=/opt/java/openjdk`
   - `LEIN_VERSION=2.9.8`
   - `LEIN_INSTALL=/usr/local/bin/`
@@ -137,13 +137,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=12ubuntu4.1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_12ubuntu4.1.dsc' base-files_12ubuntu4.1.dsc 1277 SHA512:565061fbc9a6565a15ae571d3c378fcb377a00324a09b4926d8a290c46b57cd36993c8da649a143f425028c2cccd80beda1d893f6cd7fb14065cf4f3fed769a4
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_12ubuntu4.1.tar.xz' base-files_12ubuntu4.1.tar.xz 81772 SHA512:2076b8b9baab0eea592bb52486269daa748892068aa059441da027e5cf986de29cbd88410466615654eb270e248edf95318939badfe0b72758ae31f2d78bee91
-```
 
 ### `dpkg` source package: `base-passwd=3.5.52build1`
 

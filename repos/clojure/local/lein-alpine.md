@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ce7daeb9d92a7848b8b3540a8c706125b183b38ada39fd5877af4de60a2b8e6b`
-- Created: `2022-07-19T03:29:28.931284745Z`
-- Virtual Size: ~ 355.10 Mb  
+- Image ID: `sha256:d12f5fd4d1daa1f0fa58d1b49ed7a0d15f951ca1e92de419a6a189e87926090b`
+- Created: `2022-07-28T16:54:51.355204945Z`
+- Virtual Size: ~ 376.46 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint"]`
@@ -14,7 +14,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-17.0.3+7`
+  - `JAVA_VERSION=jdk-17.0.4+8`
   - `JAVA_HOME=/opt/java/openjdk`
   - `LEIN_VERSION=2.9.8`
   - `LEIN_INSTALL=/usr/local/bin/`
@@ -107,6 +107,23 @@ GPL-3.0-or-later
 
 ```
 
+### `apk` package: `brotli-libs`
+
+```console
+brotli-libs-1.0.9-r6 description:
+Generic lossless compressor (libraries)
+
+brotli-libs-1.0.9-r6 webpage:
+https://github.com/google/brotli
+
+brotli-libs-1.0.9-r6 installed size:
+716 KiB
+
+brotli-libs-1.0.9-r6 license:
+MIT
+
+```
+
 ### `apk` package: `busybox`
 
 ```console
@@ -138,6 +155,91 @@ ca-certificates-bundle-20211220-r0 installed size:
 
 ca-certificates-bundle-20211220-r0 license:
 MPL-2.0 AND MIT
+
+```
+
+### `apk` package: `encodings`
+
+```console
+encodings-1.0.5-r0 description:
+X.org font encoding files
+
+encodings-1.0.5-r0 webpage:
+http://xorg.freedesktop.org/
+
+encodings-1.0.5-r0 installed size:
+788 KiB
+
+encodings-1.0.5-r0 license:
+custom
+
+```
+
+### `apk` package: `expat`
+
+```console
+expat-2.4.8-r0 description:
+XML Parser library written in C
+
+expat-2.4.8-r0 webpage:
+https://libexpat.github.io/
+
+expat-2.4.8-r0 installed size:
+192 KiB
+
+expat-2.4.8-r0 license:
+MIT
+
+```
+
+### `apk` package: `fontconfig`
+
+```console
+fontconfig-2.14.0-r0 description:
+Library for configuring and customizing font access
+
+fontconfig-2.14.0-r0 webpage:
+https://www.freedesktop.org/wiki/Software/fontconfig
+
+fontconfig-2.14.0-r0 installed size:
+708 KiB
+
+fontconfig-2.14.0-r0 license:
+MIT
+
+```
+
+### `apk` package: `freetype`
+
+```console
+freetype-2.12.1-r0 description:
+TrueType font rendering library
+
+freetype-2.12.1-r0 webpage:
+https://www.freetype.org/
+
+freetype-2.12.1-r0 installed size:
+752 KiB
+
+freetype-2.12.1-r0 license:
+FTL GPL-2.0-or-later
+
+```
+
+### `apk` package: `libbz2`
+
+```console
+libbz2-1.0.8-r1 description:
+Shared library for bz2
+
+libbz2-1.0.8-r1 webpage:
+http://sources.redhat.com/bzip2
+
+libbz2-1.0.8-r1 installed size:
+72 KiB
+
+libbz2-1.0.8-r1 license:
+bzip2-1.0.6
 
 ```
 
@@ -175,6 +277,40 @@ OpenSSL
 
 ```
 
+### `apk` package: `libfontenc`
+
+```console
+libfontenc-1.1.4-r0 description:
+X11 font encoding library
+
+libfontenc-1.1.4-r0 webpage:
+http://xorg.freedesktop.org/
+
+libfontenc-1.1.4-r0 installed size:
+48 KiB
+
+libfontenc-1.1.4-r0 license:
+MIT
+
+```
+
+### `apk` package: `libpng`
+
+```console
+libpng-1.6.37-r1 description:
+Portable Network Graphics library
+
+libpng-1.6.37-r1 webpage:
+http://www.libpng.org
+
+libpng-1.6.37-r1 installed size:
+204 KiB
+
+libpng-1.6.37-r1 license:
+Libpng
+
+```
+
 ### `apk` package: `libretls`
 
 ```console
@@ -206,6 +342,23 @@ libssl1.1-1.1.1q-r0 installed size:
 
 libssl1.1-1.1.1q-r0 license:
 OpenSSL
+
+```
+
+### `apk` package: `mkfontscale`
+
+```console
+mkfontscale-1.2.2-r0 description:
+Scalable font index generator for X
+
+mkfontscale-1.2.2-r0 webpage:
+http://xorg.freedesktop.org
+
+mkfontscale-1.2.2-r0 installed size:
+56 KiB
+
+mkfontscale-1.2.2-r0 license:
+MIT
 
 ```
 
@@ -359,6 +512,23 @@ ssl_client-1.35.0-r15 installed size:
 
 ssl_client-1.35.0-r15 license:
 GPL-2.0-only
+
+```
+
+### `apk` package: `ttf-dejavu`
+
+```console
+ttf-dejavu-2.37-r1 description:
+Font family based on the Bitstream Vera Fonts with a wider range of characters
+
+ttf-dejavu-2.37-r1 webpage:
+https://dejavu-fonts.github.io/
+
+ttf-dejavu-2.37-r1 installed size:
+17 MiB
+
+ttf-dejavu-2.37-r1 license:
+custom
 
 ```
 
