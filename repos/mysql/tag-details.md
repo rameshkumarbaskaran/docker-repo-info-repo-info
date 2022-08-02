@@ -140,7 +140,7 @@ CMD ["mysqld"]
 ## `mysql:5-debian`
 
 ```console
-$ docker pull mysql@sha256:d150c2e5269349200254d3fddb6bb00b6d3f3b4f301c8b050193ce02235e2bd1
+$ docker pull mysql@sha256:8a2b6cea84dbac03339b72c39f0ac5be07816ad26e7f00ed2b1f13cba01512f6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -150,101 +150,101 @@ $ docker pull mysql@sha256:d150c2e5269349200254d3fddb6bb00b6d3f3b4f301c8b050193c
 ### `mysql:5-debian` - linux; amd64
 
 ```console
-$ docker pull mysql@sha256:7d71e364a747cdf4c564a78c439e28b831d1b4013937c925a63b6502c4bb03e1
+$ docker pull mysql@sha256:fea7de9666bd9c9afeb553ffc38f359372dcb5ceef2d93616dcd5d8d54aa2823
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **162.5 MB (162535672 bytes)**  
+-	Total Size: **162.5 MB (162536048 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:96e7464ce3a1541cd7c305635158e6965c7aa939595b401b918d878ab8e8110e`
+-	Image ID: `sha256:93726b1fb68c052d2b8d15ec32edca75015c2b448a10acce6a4dacbce95a3fb9`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Tue, 12 Jul 2022 01:20:32 GMT
-ADD file:7f2320197e75c5169402827ce0c47d93629331875d76b9f0ddd389244747eccd in / 
-# Tue, 12 Jul 2022 01:20:33 GMT
+# Tue, 02 Aug 2022 01:20:24 GMT
+ADD file:81dbfe4f9df4d280f7580380c0c5c93ba71fedba17b3072d2b7b4bce127f88a9 in / 
+# Tue, 02 Aug 2022 01:20:24 GMT
 CMD ["bash"]
-# Tue, 12 Jul 2022 01:50:41 GMT
+# Tue, 02 Aug 2022 04:49:52 GMT
 RUN groupadd -r mysql && useradd -r -g mysql mysql
-# Tue, 12 Jul 2022 01:50:48 GMT
+# Tue, 02 Aug 2022 04:49:57 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends gnupg dirmngr && rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jul 2022 01:50:48 GMT
+# Tue, 02 Aug 2022 04:49:58 GMT
 ENV GOSU_VERSION=1.14
-# Tue, 12 Jul 2022 01:50:57 GMT
+# Tue, 02 Aug 2022 04:50:06 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates wget; 	rm -rf /var/lib/apt/lists/*; 	dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	chmod +x /usr/local/bin/gosu; 	gosu --version; 	gosu nobody true
-# Tue, 12 Jul 2022 01:50:57 GMT
+# Tue, 02 Aug 2022 04:50:07 GMT
 RUN mkdir /docker-entrypoint-initdb.d
-# Tue, 12 Jul 2022 01:51:04 GMT
+# Tue, 02 Aug 2022 04:50:13 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		openssl 		perl 		xz-utils 		zstd 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jul 2022 01:51:05 GMT
+# Tue, 02 Aug 2022 04:50:14 GMT
 RUN set -eux; 	key='859BE8D7C586F538430B19C2467B942D3A79BD29'; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 	mkdir -p /etc/apt/keyrings; 	gpg --batch --export "$key" > /etc/apt/keyrings/mysql.gpg; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"
-# Tue, 12 Jul 2022 01:51:05 GMT
+# Tue, 02 Aug 2022 04:50:14 GMT
 ENV MYSQL_MAJOR=5.7
-# Tue, 26 Jul 2022 23:29:39 GMT
+# Tue, 02 Aug 2022 04:50:14 GMT
 ENV MYSQL_VERSION=5.7.39-1debian10
-# Tue, 26 Jul 2022 23:29:39 GMT
+# Tue, 02 Aug 2022 04:50:15 GMT
 RUN echo 'deb [ signed-by=/etc/apt/keyrings/mysql.gpg ] http://repo.mysql.com/apt/debian/ buster mysql-5.7' > /etc/apt/sources.list.d/mysql.list
-# Tue, 26 Jul 2022 23:29:58 GMT
+# Tue, 02 Aug 2022 04:50:33 GMT
 RUN { 		echo mysql-community-server mysql-community-server/data-dir select ''; 		echo mysql-community-server mysql-community-server/root-pass password ''; 		echo mysql-community-server mysql-community-server/re-root-pass password ''; 		echo mysql-community-server mysql-community-server/remove-test-db select false; 	} | debconf-set-selections 	&& apt-get update 	&& apt-get install -y 		mysql-server="${MYSQL_VERSION}" 	&& find /etc/mysql/ -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log)/#&/' 	&& echo '[mysqld]\nskip-host-cache\nskip-name-resolve' > /etc/mysql/conf.d/docker.cnf 	&& rm -rf /var/lib/apt/lists/* 	&& rm -rf /var/lib/mysql && mkdir -p /var/lib/mysql /var/run/mysqld 	&& chown -R mysql:mysql /var/lib/mysql /var/run/mysqld 	&& chmod 1777 /var/run/mysqld /var/lib/mysql
-# Tue, 26 Jul 2022 23:29:59 GMT
+# Tue, 02 Aug 2022 04:50:34 GMT
 VOLUME [/var/lib/mysql]
-# Tue, 26 Jul 2022 23:29:59 GMT
+# Tue, 02 Aug 2022 04:50:34 GMT
 COPY file:d27cf504fa76fb5a4038020a01eaaf52723b17b751566119de311adacb043752 in /usr/local/bin/ 
-# Tue, 26 Jul 2022 23:30:00 GMT
+# Tue, 02 Aug 2022 04:50:35 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
-# Tue, 26 Jul 2022 23:30:00 GMT
+# Tue, 02 Aug 2022 04:50:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 26 Jul 2022 23:30:00 GMT
+# Tue, 02 Aug 2022 04:50:35 GMT
 EXPOSE 3306 33060
-# Tue, 26 Jul 2022 23:30:00 GMT
+# Tue, 02 Aug 2022 04:50:35 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:ac2fb615420c18b61e0693f2569a3d38e3b9b58456b691bac44405e08389a591`  
-		Last Modified: Tue, 12 Jul 2022 01:25:22 GMT  
-		Size: 27.1 MB (27139850 bytes)  
+	-	`sha256:751ef25978b2971e15496369695ba51ed5b1b9aaca7e37b18a173d754d1ca820`  
+		Last Modified: Tue, 02 Aug 2022 01:25:00 GMT  
+		Size: 27.1 MB (27140083 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c67721b86bd696950ee55207c50a132ffea3fd315ce65340a9364aa2b0a28b71`  
-		Last Modified: Tue, 12 Jul 2022 01:53:21 GMT  
-		Size: 1.7 KB (1734 bytes)  
+	-	`sha256:8dde536a29c092d40250b981fea24b05a9dc01fae8ed7473b95bc09a7919e3d4`  
+		Last Modified: Tue, 02 Aug 2022 04:51:46 GMT  
+		Size: 1.7 KB (1731 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a459e3867bf64a340f900e39d7bcaa2e41acc1a1bbf6534a5f808dc821c198d`  
-		Last Modified: Tue, 12 Jul 2022 01:53:19 GMT  
-		Size: 4.2 MB (4179193 bytes)  
+	-	`sha256:dc6dbe684fb4d5f85516eab17e234538e624294dc9802813fe7d5471d7f0fb22`  
+		Last Modified: Tue, 02 Aug 2022 04:51:45 GMT  
+		Size: 4.2 MB (4179188 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4146b33aaf1f61e1e653cc708bd8aca2aba92bc9de0ed003536be939c133e815`  
-		Last Modified: Tue, 12 Jul 2022 01:53:19 GMT  
-		Size: 1.4 MB (1386646 bytes)  
+	-	`sha256:81e7b9b4c2f95f52a2e335c627e253309b4990e6aa70126b87f466b03ead54a6`  
+		Last Modified: Tue, 02 Aug 2022 04:51:44 GMT  
+		Size: 1.4 MB (1386653 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01dc4ff4603c80ddf6552e8a571530056427fcadc9eeda2864926afb0bcfb04c`  
-		Last Modified: Tue, 12 Jul 2022 01:53:18 GMT  
+	-	`sha256:c9a63e201542d8ec3a607182805f0550389619da1b31e6b5565635bc9894dfb8`  
+		Last Modified: Tue, 02 Aug 2022 04:51:44 GMT  
 		Size: 149.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eae6e50dbb1b5a2203bce53487d118136572c3b462597c0c55400cad43cf359`  
-		Last Modified: Tue, 12 Jul 2022 01:53:21 GMT  
-		Size: 14.1 MB (14086975 bytes)  
+	-	`sha256:3d6f168d24831f4c6e191421ef112b0fd55a6bdf1e335246a8e3e6848d150c84`  
+		Last Modified: Tue, 02 Aug 2022 04:51:47 GMT  
+		Size: 14.1 MB (14087033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba7a8db4d7e220d8a84874391bc45a74f1482d62ffd0ba285904d5d0280ba290`  
-		Last Modified: Tue, 12 Jul 2022 01:53:16 GMT  
-		Size: 2.5 KB (2548 bytes)  
+	-	`sha256:3a8f214492792e72d7b500c0a1e8e5df55d26bb07aa7c919911c04f1a9e7c1f2`  
+		Last Modified: Tue, 02 Aug 2022 04:51:42 GMT  
+		Size: 2.5 KB (2547 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e8fd0393c8403efcb77e99b1edc7a90b98ceac858a821e21704a4f48f10d4b98`  
-		Last Modified: Tue, 26 Jul 2022 23:32:11 GMT  
-		Size: 255.0 B  
+	-	`sha256:324d2966183c1fe326b26d0309659babda5141268f4e55ce8016cef16b6bcfc1`  
+		Last Modified: Tue, 02 Aug 2022 04:51:42 GMT  
+		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:61755fb54b19fb7c2751fa8c64fd26d43621cce235c36793339e494c768c39f0`  
-		Last Modified: Tue, 26 Jul 2022 23:32:26 GMT  
-		Size: 115.7 MB (115733043 bytes)  
+	-	`sha256:294ee13b3a068f95d69addf91bb1ee6e73c9cb2b69798cdcf73ffa4be99e0cda`  
+		Last Modified: Tue, 02 Aug 2022 04:51:57 GMT  
+		Size: 115.7 MB (115733135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e4cdf50400e14a83af72628ac5bdd68b13c9a5b5f33e1b471c962277e79795cd`  
-		Last Modified: Tue, 26 Jul 2022 23:32:11 GMT  
-		Size: 5.2 KB (5158 bytes)  
+	-	`sha256:b412f4ed71e26e9a985d22750ab20a1a75d135bf32ece0b1c58093fb9407a814`  
+		Last Modified: Tue, 02 Aug 2022 04:51:42 GMT  
+		Size: 5.2 KB (5159 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b2b65322bb3e6ec927486d764cc71e9fd17af86fcc3acd9b63214438d84f356`  
-		Last Modified: Tue, 26 Jul 2022 23:32:11 GMT  
+	-	`sha256:664c9e63111cdb7e0c20a5b1cedfc5aec938f7eb9239d98209c8d34f2aa4000a`  
+		Last Modified: Tue, 02 Aug 2022 04:51:42 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -477,7 +477,7 @@ CMD ["mysqld"]
 ## `mysql:5.7-debian`
 
 ```console
-$ docker pull mysql@sha256:d150c2e5269349200254d3fddb6bb00b6d3f3b4f301c8b050193ce02235e2bd1
+$ docker pull mysql@sha256:8a2b6cea84dbac03339b72c39f0ac5be07816ad26e7f00ed2b1f13cba01512f6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -487,101 +487,101 @@ $ docker pull mysql@sha256:d150c2e5269349200254d3fddb6bb00b6d3f3b4f301c8b050193c
 ### `mysql:5.7-debian` - linux; amd64
 
 ```console
-$ docker pull mysql@sha256:7d71e364a747cdf4c564a78c439e28b831d1b4013937c925a63b6502c4bb03e1
+$ docker pull mysql@sha256:fea7de9666bd9c9afeb553ffc38f359372dcb5ceef2d93616dcd5d8d54aa2823
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **162.5 MB (162535672 bytes)**  
+-	Total Size: **162.5 MB (162536048 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:96e7464ce3a1541cd7c305635158e6965c7aa939595b401b918d878ab8e8110e`
+-	Image ID: `sha256:93726b1fb68c052d2b8d15ec32edca75015c2b448a10acce6a4dacbce95a3fb9`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Tue, 12 Jul 2022 01:20:32 GMT
-ADD file:7f2320197e75c5169402827ce0c47d93629331875d76b9f0ddd389244747eccd in / 
-# Tue, 12 Jul 2022 01:20:33 GMT
+# Tue, 02 Aug 2022 01:20:24 GMT
+ADD file:81dbfe4f9df4d280f7580380c0c5c93ba71fedba17b3072d2b7b4bce127f88a9 in / 
+# Tue, 02 Aug 2022 01:20:24 GMT
 CMD ["bash"]
-# Tue, 12 Jul 2022 01:50:41 GMT
+# Tue, 02 Aug 2022 04:49:52 GMT
 RUN groupadd -r mysql && useradd -r -g mysql mysql
-# Tue, 12 Jul 2022 01:50:48 GMT
+# Tue, 02 Aug 2022 04:49:57 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends gnupg dirmngr && rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jul 2022 01:50:48 GMT
+# Tue, 02 Aug 2022 04:49:58 GMT
 ENV GOSU_VERSION=1.14
-# Tue, 12 Jul 2022 01:50:57 GMT
+# Tue, 02 Aug 2022 04:50:06 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates wget; 	rm -rf /var/lib/apt/lists/*; 	dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	chmod +x /usr/local/bin/gosu; 	gosu --version; 	gosu nobody true
-# Tue, 12 Jul 2022 01:50:57 GMT
+# Tue, 02 Aug 2022 04:50:07 GMT
 RUN mkdir /docker-entrypoint-initdb.d
-# Tue, 12 Jul 2022 01:51:04 GMT
+# Tue, 02 Aug 2022 04:50:13 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		openssl 		perl 		xz-utils 		zstd 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jul 2022 01:51:05 GMT
+# Tue, 02 Aug 2022 04:50:14 GMT
 RUN set -eux; 	key='859BE8D7C586F538430B19C2467B942D3A79BD29'; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 	mkdir -p /etc/apt/keyrings; 	gpg --batch --export "$key" > /etc/apt/keyrings/mysql.gpg; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"
-# Tue, 12 Jul 2022 01:51:05 GMT
+# Tue, 02 Aug 2022 04:50:14 GMT
 ENV MYSQL_MAJOR=5.7
-# Tue, 26 Jul 2022 23:29:39 GMT
+# Tue, 02 Aug 2022 04:50:14 GMT
 ENV MYSQL_VERSION=5.7.39-1debian10
-# Tue, 26 Jul 2022 23:29:39 GMT
+# Tue, 02 Aug 2022 04:50:15 GMT
 RUN echo 'deb [ signed-by=/etc/apt/keyrings/mysql.gpg ] http://repo.mysql.com/apt/debian/ buster mysql-5.7' > /etc/apt/sources.list.d/mysql.list
-# Tue, 26 Jul 2022 23:29:58 GMT
+# Tue, 02 Aug 2022 04:50:33 GMT
 RUN { 		echo mysql-community-server mysql-community-server/data-dir select ''; 		echo mysql-community-server mysql-community-server/root-pass password ''; 		echo mysql-community-server mysql-community-server/re-root-pass password ''; 		echo mysql-community-server mysql-community-server/remove-test-db select false; 	} | debconf-set-selections 	&& apt-get update 	&& apt-get install -y 		mysql-server="${MYSQL_VERSION}" 	&& find /etc/mysql/ -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log)/#&/' 	&& echo '[mysqld]\nskip-host-cache\nskip-name-resolve' > /etc/mysql/conf.d/docker.cnf 	&& rm -rf /var/lib/apt/lists/* 	&& rm -rf /var/lib/mysql && mkdir -p /var/lib/mysql /var/run/mysqld 	&& chown -R mysql:mysql /var/lib/mysql /var/run/mysqld 	&& chmod 1777 /var/run/mysqld /var/lib/mysql
-# Tue, 26 Jul 2022 23:29:59 GMT
+# Tue, 02 Aug 2022 04:50:34 GMT
 VOLUME [/var/lib/mysql]
-# Tue, 26 Jul 2022 23:29:59 GMT
+# Tue, 02 Aug 2022 04:50:34 GMT
 COPY file:d27cf504fa76fb5a4038020a01eaaf52723b17b751566119de311adacb043752 in /usr/local/bin/ 
-# Tue, 26 Jul 2022 23:30:00 GMT
+# Tue, 02 Aug 2022 04:50:35 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
-# Tue, 26 Jul 2022 23:30:00 GMT
+# Tue, 02 Aug 2022 04:50:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 26 Jul 2022 23:30:00 GMT
+# Tue, 02 Aug 2022 04:50:35 GMT
 EXPOSE 3306 33060
-# Tue, 26 Jul 2022 23:30:00 GMT
+# Tue, 02 Aug 2022 04:50:35 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:ac2fb615420c18b61e0693f2569a3d38e3b9b58456b691bac44405e08389a591`  
-		Last Modified: Tue, 12 Jul 2022 01:25:22 GMT  
-		Size: 27.1 MB (27139850 bytes)  
+	-	`sha256:751ef25978b2971e15496369695ba51ed5b1b9aaca7e37b18a173d754d1ca820`  
+		Last Modified: Tue, 02 Aug 2022 01:25:00 GMT  
+		Size: 27.1 MB (27140083 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c67721b86bd696950ee55207c50a132ffea3fd315ce65340a9364aa2b0a28b71`  
-		Last Modified: Tue, 12 Jul 2022 01:53:21 GMT  
-		Size: 1.7 KB (1734 bytes)  
+	-	`sha256:8dde536a29c092d40250b981fea24b05a9dc01fae8ed7473b95bc09a7919e3d4`  
+		Last Modified: Tue, 02 Aug 2022 04:51:46 GMT  
+		Size: 1.7 KB (1731 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a459e3867bf64a340f900e39d7bcaa2e41acc1a1bbf6534a5f808dc821c198d`  
-		Last Modified: Tue, 12 Jul 2022 01:53:19 GMT  
-		Size: 4.2 MB (4179193 bytes)  
+	-	`sha256:dc6dbe684fb4d5f85516eab17e234538e624294dc9802813fe7d5471d7f0fb22`  
+		Last Modified: Tue, 02 Aug 2022 04:51:45 GMT  
+		Size: 4.2 MB (4179188 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4146b33aaf1f61e1e653cc708bd8aca2aba92bc9de0ed003536be939c133e815`  
-		Last Modified: Tue, 12 Jul 2022 01:53:19 GMT  
-		Size: 1.4 MB (1386646 bytes)  
+	-	`sha256:81e7b9b4c2f95f52a2e335c627e253309b4990e6aa70126b87f466b03ead54a6`  
+		Last Modified: Tue, 02 Aug 2022 04:51:44 GMT  
+		Size: 1.4 MB (1386653 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01dc4ff4603c80ddf6552e8a571530056427fcadc9eeda2864926afb0bcfb04c`  
-		Last Modified: Tue, 12 Jul 2022 01:53:18 GMT  
+	-	`sha256:c9a63e201542d8ec3a607182805f0550389619da1b31e6b5565635bc9894dfb8`  
+		Last Modified: Tue, 02 Aug 2022 04:51:44 GMT  
 		Size: 149.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eae6e50dbb1b5a2203bce53487d118136572c3b462597c0c55400cad43cf359`  
-		Last Modified: Tue, 12 Jul 2022 01:53:21 GMT  
-		Size: 14.1 MB (14086975 bytes)  
+	-	`sha256:3d6f168d24831f4c6e191421ef112b0fd55a6bdf1e335246a8e3e6848d150c84`  
+		Last Modified: Tue, 02 Aug 2022 04:51:47 GMT  
+		Size: 14.1 MB (14087033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba7a8db4d7e220d8a84874391bc45a74f1482d62ffd0ba285904d5d0280ba290`  
-		Last Modified: Tue, 12 Jul 2022 01:53:16 GMT  
-		Size: 2.5 KB (2548 bytes)  
+	-	`sha256:3a8f214492792e72d7b500c0a1e8e5df55d26bb07aa7c919911c04f1a9e7c1f2`  
+		Last Modified: Tue, 02 Aug 2022 04:51:42 GMT  
+		Size: 2.5 KB (2547 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e8fd0393c8403efcb77e99b1edc7a90b98ceac858a821e21704a4f48f10d4b98`  
-		Last Modified: Tue, 26 Jul 2022 23:32:11 GMT  
-		Size: 255.0 B  
+	-	`sha256:324d2966183c1fe326b26d0309659babda5141268f4e55ce8016cef16b6bcfc1`  
+		Last Modified: Tue, 02 Aug 2022 04:51:42 GMT  
+		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:61755fb54b19fb7c2751fa8c64fd26d43621cce235c36793339e494c768c39f0`  
-		Last Modified: Tue, 26 Jul 2022 23:32:26 GMT  
-		Size: 115.7 MB (115733043 bytes)  
+	-	`sha256:294ee13b3a068f95d69addf91bb1ee6e73c9cb2b69798cdcf73ffa4be99e0cda`  
+		Last Modified: Tue, 02 Aug 2022 04:51:57 GMT  
+		Size: 115.7 MB (115733135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e4cdf50400e14a83af72628ac5bdd68b13c9a5b5f33e1b471c962277e79795cd`  
-		Last Modified: Tue, 26 Jul 2022 23:32:11 GMT  
-		Size: 5.2 KB (5158 bytes)  
+	-	`sha256:b412f4ed71e26e9a985d22750ab20a1a75d135bf32ece0b1c58093fb9407a814`  
+		Last Modified: Tue, 02 Aug 2022 04:51:42 GMT  
+		Size: 5.2 KB (5159 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b2b65322bb3e6ec927486d764cc71e9fd17af86fcc3acd9b63214438d84f356`  
-		Last Modified: Tue, 26 Jul 2022 23:32:11 GMT  
+	-	`sha256:664c9e63111cdb7e0c20a5b1cedfc5aec938f7eb9239d98209c8d34f2aa4000a`  
+		Last Modified: Tue, 02 Aug 2022 04:51:42 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -814,7 +814,7 @@ CMD ["mysqld"]
 ## `mysql:5.7.39-debian`
 
 ```console
-$ docker pull mysql@sha256:d150c2e5269349200254d3fddb6bb00b6d3f3b4f301c8b050193ce02235e2bd1
+$ docker pull mysql@sha256:8a2b6cea84dbac03339b72c39f0ac5be07816ad26e7f00ed2b1f13cba01512f6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -824,101 +824,101 @@ $ docker pull mysql@sha256:d150c2e5269349200254d3fddb6bb00b6d3f3b4f301c8b050193c
 ### `mysql:5.7.39-debian` - linux; amd64
 
 ```console
-$ docker pull mysql@sha256:7d71e364a747cdf4c564a78c439e28b831d1b4013937c925a63b6502c4bb03e1
+$ docker pull mysql@sha256:fea7de9666bd9c9afeb553ffc38f359372dcb5ceef2d93616dcd5d8d54aa2823
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **162.5 MB (162535672 bytes)**  
+-	Total Size: **162.5 MB (162536048 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:96e7464ce3a1541cd7c305635158e6965c7aa939595b401b918d878ab8e8110e`
+-	Image ID: `sha256:93726b1fb68c052d2b8d15ec32edca75015c2b448a10acce6a4dacbce95a3fb9`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Tue, 12 Jul 2022 01:20:32 GMT
-ADD file:7f2320197e75c5169402827ce0c47d93629331875d76b9f0ddd389244747eccd in / 
-# Tue, 12 Jul 2022 01:20:33 GMT
+# Tue, 02 Aug 2022 01:20:24 GMT
+ADD file:81dbfe4f9df4d280f7580380c0c5c93ba71fedba17b3072d2b7b4bce127f88a9 in / 
+# Tue, 02 Aug 2022 01:20:24 GMT
 CMD ["bash"]
-# Tue, 12 Jul 2022 01:50:41 GMT
+# Tue, 02 Aug 2022 04:49:52 GMT
 RUN groupadd -r mysql && useradd -r -g mysql mysql
-# Tue, 12 Jul 2022 01:50:48 GMT
+# Tue, 02 Aug 2022 04:49:57 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends gnupg dirmngr && rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jul 2022 01:50:48 GMT
+# Tue, 02 Aug 2022 04:49:58 GMT
 ENV GOSU_VERSION=1.14
-# Tue, 12 Jul 2022 01:50:57 GMT
+# Tue, 02 Aug 2022 04:50:06 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates wget; 	rm -rf /var/lib/apt/lists/*; 	dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	chmod +x /usr/local/bin/gosu; 	gosu --version; 	gosu nobody true
-# Tue, 12 Jul 2022 01:50:57 GMT
+# Tue, 02 Aug 2022 04:50:07 GMT
 RUN mkdir /docker-entrypoint-initdb.d
-# Tue, 12 Jul 2022 01:51:04 GMT
+# Tue, 02 Aug 2022 04:50:13 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		openssl 		perl 		xz-utils 		zstd 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jul 2022 01:51:05 GMT
+# Tue, 02 Aug 2022 04:50:14 GMT
 RUN set -eux; 	key='859BE8D7C586F538430B19C2467B942D3A79BD29'; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 	mkdir -p /etc/apt/keyrings; 	gpg --batch --export "$key" > /etc/apt/keyrings/mysql.gpg; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"
-# Tue, 12 Jul 2022 01:51:05 GMT
+# Tue, 02 Aug 2022 04:50:14 GMT
 ENV MYSQL_MAJOR=5.7
-# Tue, 26 Jul 2022 23:29:39 GMT
+# Tue, 02 Aug 2022 04:50:14 GMT
 ENV MYSQL_VERSION=5.7.39-1debian10
-# Tue, 26 Jul 2022 23:29:39 GMT
+# Tue, 02 Aug 2022 04:50:15 GMT
 RUN echo 'deb [ signed-by=/etc/apt/keyrings/mysql.gpg ] http://repo.mysql.com/apt/debian/ buster mysql-5.7' > /etc/apt/sources.list.d/mysql.list
-# Tue, 26 Jul 2022 23:29:58 GMT
+# Tue, 02 Aug 2022 04:50:33 GMT
 RUN { 		echo mysql-community-server mysql-community-server/data-dir select ''; 		echo mysql-community-server mysql-community-server/root-pass password ''; 		echo mysql-community-server mysql-community-server/re-root-pass password ''; 		echo mysql-community-server mysql-community-server/remove-test-db select false; 	} | debconf-set-selections 	&& apt-get update 	&& apt-get install -y 		mysql-server="${MYSQL_VERSION}" 	&& find /etc/mysql/ -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log)/#&/' 	&& echo '[mysqld]\nskip-host-cache\nskip-name-resolve' > /etc/mysql/conf.d/docker.cnf 	&& rm -rf /var/lib/apt/lists/* 	&& rm -rf /var/lib/mysql && mkdir -p /var/lib/mysql /var/run/mysqld 	&& chown -R mysql:mysql /var/lib/mysql /var/run/mysqld 	&& chmod 1777 /var/run/mysqld /var/lib/mysql
-# Tue, 26 Jul 2022 23:29:59 GMT
+# Tue, 02 Aug 2022 04:50:34 GMT
 VOLUME [/var/lib/mysql]
-# Tue, 26 Jul 2022 23:29:59 GMT
+# Tue, 02 Aug 2022 04:50:34 GMT
 COPY file:d27cf504fa76fb5a4038020a01eaaf52723b17b751566119de311adacb043752 in /usr/local/bin/ 
-# Tue, 26 Jul 2022 23:30:00 GMT
+# Tue, 02 Aug 2022 04:50:35 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
-# Tue, 26 Jul 2022 23:30:00 GMT
+# Tue, 02 Aug 2022 04:50:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 26 Jul 2022 23:30:00 GMT
+# Tue, 02 Aug 2022 04:50:35 GMT
 EXPOSE 3306 33060
-# Tue, 26 Jul 2022 23:30:00 GMT
+# Tue, 02 Aug 2022 04:50:35 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:ac2fb615420c18b61e0693f2569a3d38e3b9b58456b691bac44405e08389a591`  
-		Last Modified: Tue, 12 Jul 2022 01:25:22 GMT  
-		Size: 27.1 MB (27139850 bytes)  
+	-	`sha256:751ef25978b2971e15496369695ba51ed5b1b9aaca7e37b18a173d754d1ca820`  
+		Last Modified: Tue, 02 Aug 2022 01:25:00 GMT  
+		Size: 27.1 MB (27140083 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c67721b86bd696950ee55207c50a132ffea3fd315ce65340a9364aa2b0a28b71`  
-		Last Modified: Tue, 12 Jul 2022 01:53:21 GMT  
-		Size: 1.7 KB (1734 bytes)  
+	-	`sha256:8dde536a29c092d40250b981fea24b05a9dc01fae8ed7473b95bc09a7919e3d4`  
+		Last Modified: Tue, 02 Aug 2022 04:51:46 GMT  
+		Size: 1.7 KB (1731 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a459e3867bf64a340f900e39d7bcaa2e41acc1a1bbf6534a5f808dc821c198d`  
-		Last Modified: Tue, 12 Jul 2022 01:53:19 GMT  
-		Size: 4.2 MB (4179193 bytes)  
+	-	`sha256:dc6dbe684fb4d5f85516eab17e234538e624294dc9802813fe7d5471d7f0fb22`  
+		Last Modified: Tue, 02 Aug 2022 04:51:45 GMT  
+		Size: 4.2 MB (4179188 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4146b33aaf1f61e1e653cc708bd8aca2aba92bc9de0ed003536be939c133e815`  
-		Last Modified: Tue, 12 Jul 2022 01:53:19 GMT  
-		Size: 1.4 MB (1386646 bytes)  
+	-	`sha256:81e7b9b4c2f95f52a2e335c627e253309b4990e6aa70126b87f466b03ead54a6`  
+		Last Modified: Tue, 02 Aug 2022 04:51:44 GMT  
+		Size: 1.4 MB (1386653 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01dc4ff4603c80ddf6552e8a571530056427fcadc9eeda2864926afb0bcfb04c`  
-		Last Modified: Tue, 12 Jul 2022 01:53:18 GMT  
+	-	`sha256:c9a63e201542d8ec3a607182805f0550389619da1b31e6b5565635bc9894dfb8`  
+		Last Modified: Tue, 02 Aug 2022 04:51:44 GMT  
 		Size: 149.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eae6e50dbb1b5a2203bce53487d118136572c3b462597c0c55400cad43cf359`  
-		Last Modified: Tue, 12 Jul 2022 01:53:21 GMT  
-		Size: 14.1 MB (14086975 bytes)  
+	-	`sha256:3d6f168d24831f4c6e191421ef112b0fd55a6bdf1e335246a8e3e6848d150c84`  
+		Last Modified: Tue, 02 Aug 2022 04:51:47 GMT  
+		Size: 14.1 MB (14087033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba7a8db4d7e220d8a84874391bc45a74f1482d62ffd0ba285904d5d0280ba290`  
-		Last Modified: Tue, 12 Jul 2022 01:53:16 GMT  
-		Size: 2.5 KB (2548 bytes)  
+	-	`sha256:3a8f214492792e72d7b500c0a1e8e5df55d26bb07aa7c919911c04f1a9e7c1f2`  
+		Last Modified: Tue, 02 Aug 2022 04:51:42 GMT  
+		Size: 2.5 KB (2547 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e8fd0393c8403efcb77e99b1edc7a90b98ceac858a821e21704a4f48f10d4b98`  
-		Last Modified: Tue, 26 Jul 2022 23:32:11 GMT  
-		Size: 255.0 B  
+	-	`sha256:324d2966183c1fe326b26d0309659babda5141268f4e55ce8016cef16b6bcfc1`  
+		Last Modified: Tue, 02 Aug 2022 04:51:42 GMT  
+		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:61755fb54b19fb7c2751fa8c64fd26d43621cce235c36793339e494c768c39f0`  
-		Last Modified: Tue, 26 Jul 2022 23:32:26 GMT  
-		Size: 115.7 MB (115733043 bytes)  
+	-	`sha256:294ee13b3a068f95d69addf91bb1ee6e73c9cb2b69798cdcf73ffa4be99e0cda`  
+		Last Modified: Tue, 02 Aug 2022 04:51:57 GMT  
+		Size: 115.7 MB (115733135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e4cdf50400e14a83af72628ac5bdd68b13c9a5b5f33e1b471c962277e79795cd`  
-		Last Modified: Tue, 26 Jul 2022 23:32:11 GMT  
-		Size: 5.2 KB (5158 bytes)  
+	-	`sha256:b412f4ed71e26e9a985d22750ab20a1a75d135bf32ece0b1c58093fb9407a814`  
+		Last Modified: Tue, 02 Aug 2022 04:51:42 GMT  
+		Size: 5.2 KB (5159 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b2b65322bb3e6ec927486d764cc71e9fd17af86fcc3acd9b63214438d84f356`  
-		Last Modified: Tue, 26 Jul 2022 23:32:11 GMT  
+	-	`sha256:664c9e63111cdb7e0c20a5b1cedfc5aec938f7eb9239d98209c8d34f2aa4000a`  
+		Last Modified: Tue, 02 Aug 2022 04:51:42 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -1255,7 +1255,7 @@ CMD ["mysqld"]
 ## `mysql:8-debian`
 
 ```console
-$ docker pull mysql@sha256:504760f722770e8554c40e7ea6b803ae9e0c19e21e25b94d0b8a03bab20541ff
+$ docker pull mysql@sha256:25685dab065bbd127542768e3a697eefbaebb697d29b704d902af3f9930e55cc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1265,107 +1265,107 @@ $ docker pull mysql@sha256:504760f722770e8554c40e7ea6b803ae9e0c19e21e25b94d0b8a0
 ### `mysql:8-debian` - linux; amd64
 
 ```console
-$ docker pull mysql@sha256:9a16d88a3410a326a082261a64db5624902fc763775410663cc44420968831a3
+$ docker pull mysql@sha256:36ba3720adcbd75f00da7680b25266ff480c6ce18265c9fc33daf8ff3886b48f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **157.8 MB (157835607 bytes)**  
+-	Total Size: **157.8 MB (157835919 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c2ee58f241ef6265fbc87840afec971c52938a5bcc38259e71bb0ad0363e827e`
+-	Image ID: `sha256:764b78482e3abe4d1ff03a987aee2f8293bd316233b0edaa2513ef582171a9e6`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Tue, 12 Jul 2022 01:20:10 GMT
-ADD file:d978f6d3025a06f5142a0c13c98bf12fbd47cdf9162ed31fbc05c86983b0a679 in / 
-# Tue, 12 Jul 2022 01:20:10 GMT
+# Tue, 02 Aug 2022 01:20:04 GMT
+ADD file:0eae0dca665c7044bf242cb1fc92cb8ea744f5af2dd376a558c90bc47349aefe in / 
+# Tue, 02 Aug 2022 01:20:05 GMT
 CMD ["bash"]
-# Tue, 12 Jul 2022 01:49:49 GMT
+# Tue, 02 Aug 2022 04:49:02 GMT
 RUN groupadd -r mysql && useradd -r -g mysql mysql
-# Tue, 12 Jul 2022 01:49:55 GMT
+# Tue, 02 Aug 2022 04:49:07 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends gnupg dirmngr && rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jul 2022 01:49:56 GMT
+# Tue, 02 Aug 2022 04:49:07 GMT
 ENV GOSU_VERSION=1.14
-# Tue, 12 Jul 2022 01:50:05 GMT
+# Tue, 02 Aug 2022 04:49:16 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates wget; 	rm -rf /var/lib/apt/lists/*; 	dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	chmod +x /usr/local/bin/gosu; 	gosu --version; 	gosu nobody true
-# Tue, 12 Jul 2022 01:50:05 GMT
+# Tue, 02 Aug 2022 04:49:17 GMT
 RUN mkdir /docker-entrypoint-initdb.d
-# Tue, 12 Jul 2022 01:50:11 GMT
+# Tue, 02 Aug 2022 04:49:22 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		openssl 		perl 		xz-utils 		zstd 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jul 2022 01:50:12 GMT
+# Tue, 02 Aug 2022 04:49:23 GMT
 RUN set -eux; 	key='859BE8D7C586F538430B19C2467B942D3A79BD29'; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 	mkdir -p /etc/apt/keyrings; 	gpg --batch --export "$key" > /etc/apt/keyrings/mysql.gpg; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"
-# Tue, 12 Jul 2022 01:50:12 GMT
+# Tue, 02 Aug 2022 04:49:24 GMT
 ENV MYSQL_MAJOR=8.0
-# Tue, 26 Jul 2022 23:28:31 GMT
+# Tue, 02 Aug 2022 04:49:24 GMT
 ENV MYSQL_VERSION=8.0.30-1debian11
-# Tue, 26 Jul 2022 23:28:31 GMT
+# Tue, 02 Aug 2022 04:49:24 GMT
 RUN echo 'deb [ signed-by=/etc/apt/keyrings/mysql.gpg ] http://repo.mysql.com/apt/debian/ bullseye mysql-8.0' > /etc/apt/sources.list.d/mysql.list
-# Tue, 26 Jul 2022 23:28:45 GMT
+# Tue, 02 Aug 2022 04:49:38 GMT
 RUN { 		echo mysql-community-server mysql-community-server/data-dir select ''; 		echo mysql-community-server mysql-community-server/root-pass password ''; 		echo mysql-community-server mysql-community-server/re-root-pass password ''; 		echo mysql-community-server mysql-community-server/remove-test-db select false; 	} | debconf-set-selections 	&& apt-get update 	&& apt-get install -y 		mysql-community-client="${MYSQL_VERSION}" 		mysql-community-server-core="${MYSQL_VERSION}" 	&& rm -rf /var/lib/apt/lists/* 	&& rm -rf /var/lib/mysql && mkdir -p /var/lib/mysql /var/run/mysqld 	&& chown -R mysql:mysql /var/lib/mysql /var/run/mysqld 	&& chmod 1777 /var/run/mysqld /var/lib/mysql
-# Tue, 26 Jul 2022 23:28:45 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 VOLUME [/var/lib/mysql]
-# Tue, 26 Jul 2022 23:28:45 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 COPY dir:2e040acc386ebd23b8571951a51e6cb93647df091bc26159b8c757ef82b3fcda in /etc/mysql/ 
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 COPY file:d27cf504fa76fb5a4038020a01eaaf52723b17b751566119de311adacb043752 in /usr/local/bin/ 
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:40 GMT
 EXPOSE 3306 33060
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:40 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:461246efe0a75316d99afdbf348f7063b57b0caeee8daab775f1f08152ea36f4`  
-		Last Modified: Tue, 12 Jul 2022 01:24:34 GMT  
-		Size: 31.4 MB (31366610 bytes)  
+	-	`sha256:1efc276f4ff952c055dea726cfc96ec6a4fdb8b62d9eed816bd2b788f2860ad7`  
+		Last Modified: Tue, 02 Aug 2022 01:24:13 GMT  
+		Size: 31.4 MB (31366757 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1cd5bb1f5de5503f17b383d7c62078467389f82828ac46a41db64289ecf9880`  
-		Last Modified: Tue, 12 Jul 2022 01:52:26 GMT  
+	-	`sha256:31b7d57630bf155b31f64dda3d9aad39f813d2fc58a320a985daebf3b14f3049`  
+		Last Modified: Tue, 02 Aug 2022 04:51:11 GMT  
 		Size: 1.7 KB (1734 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bd9d402d85bd06018ec1a89d3298f4d88f3c4d06c2cd93c8951d8bbb19596ace`  
-		Last Modified: Tue, 12 Jul 2022 01:52:26 GMT  
-		Size: 4.4 MB (4414786 bytes)  
+	-	`sha256:012051d8478ee1090757968629c2716309d45c2643a5621613c61ab3a03d76c5`  
+		Last Modified: Tue, 02 Aug 2022 04:51:11 GMT  
+		Size: 4.4 MB (4414798 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33a04621f5daa2ee95b4484e11cb963f929686d8f77511d9e31d8cf63d2a491b`  
-		Last Modified: Tue, 12 Jul 2022 01:52:24 GMT  
-		Size: 1.4 MB (1418425 bytes)  
+	-	`sha256:0716ee4adc59fd6c63c76aee408f7e4da30281cd45d17e5a5719856fe1a23f1f`  
+		Last Modified: Tue, 02 Aug 2022 04:51:08 GMT  
+		Size: 1.4 MB (1418429 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2eef8024049f6e7f8a7769c0ed43bc5ddab7c1b3dbc772a3ba1b71a039bff03`  
-		Last Modified: Tue, 12 Jul 2022 01:52:23 GMT  
-		Size: 147.0 B  
+	-	`sha256:56be18bdc82a7cee346550f6df75908c04732f1cacc71c8c7f62f9e12f8cedeb`  
+		Last Modified: Tue, 02 Aug 2022 04:51:08 GMT  
+		Size: 149.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a021c48082a6778bc62f96a17b8202ad24185d41b54fad0c4788d55e18a106b1`  
-		Last Modified: Tue, 12 Jul 2022 01:52:26 GMT  
-		Size: 12.7 MB (12661669 bytes)  
+	-	`sha256:4704a769d13c18019727a01026cade3dbe37e10958126203da9485c5b5ef5395`  
+		Last Modified: Tue, 02 Aug 2022 04:51:11 GMT  
+		Size: 12.7 MB (12661885 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a27a84090d2f2cc8e7bc9db5098fe5f2c61aaf38e003421fab9630fdf6541c2`  
-		Last Modified: Tue, 12 Jul 2022 01:52:23 GMT  
+	-	`sha256:23293c50f7a9d512dc7ebeb4a7c6ad2d0986578db082bac560b47f82f20cff13`  
+		Last Modified: Tue, 02 Aug 2022 04:51:08 GMT  
 		Size: 2.5 KB (2547 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40bc66f09ecd05d38547cb872afb8703d21702dcbd68f1688e69c1fa899b9bfe`  
-		Last Modified: Tue, 26 Jul 2022 23:31:05 GMT  
-		Size: 256.0 B  
+	-	`sha256:3321eeac21f74670a9c57774978f68de3eddd58873a14f2d6f670c4e34de9936`  
+		Last Modified: Tue, 02 Aug 2022 04:51:06 GMT  
+		Size: 251.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57a0b87a3f7d2dd5b0a2ba39b526929f321b90da90a2249caf4da175b9b19e70`  
-		Last Modified: Tue, 26 Jul 2022 23:31:22 GMT  
-		Size: 108.0 MB (107963313 bytes)  
+	-	`sha256:b08665c1f84bc1a553e1a74920208eb162f6a5f64d5cd874481a001360597920`  
+		Last Modified: Tue, 02 Aug 2022 04:51:22 GMT  
+		Size: 108.0 MB (107963250 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44e82ef1aa7cd91168ba63bd5724afa619590e17c79d641515a3a0f23bf75839`  
-		Last Modified: Tue, 26 Jul 2022 23:31:05 GMT  
-		Size: 842.0 B  
+	-	`sha256:04746e5f66aad7d8339336c409d924f925fa570241ec1c3b39c33bce9df68350`  
+		Last Modified: Tue, 02 Aug 2022 04:51:06 GMT  
+		Size: 844.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f04800ad7ccd34e26a26464cfa045c9030672e0bc018c05b370e55acce1d02e`  
-		Last Modified: Tue, 26 Jul 2022 23:31:05 GMT  
-		Size: 5.2 KB (5157 bytes)  
+	-	`sha256:d25aec94921556ff0c94b5dc9bbc84c66e1c842d69e2948bc88ea5e4e76892e6`  
+		Last Modified: Tue, 02 Aug 2022 04:51:06 GMT  
+		Size: 5.2 KB (5154 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6593ab5ec7351b0dba0042dd7086bb2ae362d26cd4c7be288dfc618a7884ea15`  
-		Last Modified: Tue, 26 Jul 2022 23:31:05 GMT  
+	-	`sha256:a9f5f8572eba5ce08d6c92d90d8786c70833d8b03af10f67de7363d307e9e0a7`  
+		Last Modified: Tue, 02 Aug 2022 04:51:06 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -1806,7 +1806,7 @@ CMD ["mysqld"]
 ## `mysql:8.0-debian`
 
 ```console
-$ docker pull mysql@sha256:504760f722770e8554c40e7ea6b803ae9e0c19e21e25b94d0b8a03bab20541ff
+$ docker pull mysql@sha256:25685dab065bbd127542768e3a697eefbaebb697d29b704d902af3f9930e55cc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1816,107 +1816,107 @@ $ docker pull mysql@sha256:504760f722770e8554c40e7ea6b803ae9e0c19e21e25b94d0b8a0
 ### `mysql:8.0-debian` - linux; amd64
 
 ```console
-$ docker pull mysql@sha256:9a16d88a3410a326a082261a64db5624902fc763775410663cc44420968831a3
+$ docker pull mysql@sha256:36ba3720adcbd75f00da7680b25266ff480c6ce18265c9fc33daf8ff3886b48f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **157.8 MB (157835607 bytes)**  
+-	Total Size: **157.8 MB (157835919 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c2ee58f241ef6265fbc87840afec971c52938a5bcc38259e71bb0ad0363e827e`
+-	Image ID: `sha256:764b78482e3abe4d1ff03a987aee2f8293bd316233b0edaa2513ef582171a9e6`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Tue, 12 Jul 2022 01:20:10 GMT
-ADD file:d978f6d3025a06f5142a0c13c98bf12fbd47cdf9162ed31fbc05c86983b0a679 in / 
-# Tue, 12 Jul 2022 01:20:10 GMT
+# Tue, 02 Aug 2022 01:20:04 GMT
+ADD file:0eae0dca665c7044bf242cb1fc92cb8ea744f5af2dd376a558c90bc47349aefe in / 
+# Tue, 02 Aug 2022 01:20:05 GMT
 CMD ["bash"]
-# Tue, 12 Jul 2022 01:49:49 GMT
+# Tue, 02 Aug 2022 04:49:02 GMT
 RUN groupadd -r mysql && useradd -r -g mysql mysql
-# Tue, 12 Jul 2022 01:49:55 GMT
+# Tue, 02 Aug 2022 04:49:07 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends gnupg dirmngr && rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jul 2022 01:49:56 GMT
+# Tue, 02 Aug 2022 04:49:07 GMT
 ENV GOSU_VERSION=1.14
-# Tue, 12 Jul 2022 01:50:05 GMT
+# Tue, 02 Aug 2022 04:49:16 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates wget; 	rm -rf /var/lib/apt/lists/*; 	dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	chmod +x /usr/local/bin/gosu; 	gosu --version; 	gosu nobody true
-# Tue, 12 Jul 2022 01:50:05 GMT
+# Tue, 02 Aug 2022 04:49:17 GMT
 RUN mkdir /docker-entrypoint-initdb.d
-# Tue, 12 Jul 2022 01:50:11 GMT
+# Tue, 02 Aug 2022 04:49:22 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		openssl 		perl 		xz-utils 		zstd 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jul 2022 01:50:12 GMT
+# Tue, 02 Aug 2022 04:49:23 GMT
 RUN set -eux; 	key='859BE8D7C586F538430B19C2467B942D3A79BD29'; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 	mkdir -p /etc/apt/keyrings; 	gpg --batch --export "$key" > /etc/apt/keyrings/mysql.gpg; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"
-# Tue, 12 Jul 2022 01:50:12 GMT
+# Tue, 02 Aug 2022 04:49:24 GMT
 ENV MYSQL_MAJOR=8.0
-# Tue, 26 Jul 2022 23:28:31 GMT
+# Tue, 02 Aug 2022 04:49:24 GMT
 ENV MYSQL_VERSION=8.0.30-1debian11
-# Tue, 26 Jul 2022 23:28:31 GMT
+# Tue, 02 Aug 2022 04:49:24 GMT
 RUN echo 'deb [ signed-by=/etc/apt/keyrings/mysql.gpg ] http://repo.mysql.com/apt/debian/ bullseye mysql-8.0' > /etc/apt/sources.list.d/mysql.list
-# Tue, 26 Jul 2022 23:28:45 GMT
+# Tue, 02 Aug 2022 04:49:38 GMT
 RUN { 		echo mysql-community-server mysql-community-server/data-dir select ''; 		echo mysql-community-server mysql-community-server/root-pass password ''; 		echo mysql-community-server mysql-community-server/re-root-pass password ''; 		echo mysql-community-server mysql-community-server/remove-test-db select false; 	} | debconf-set-selections 	&& apt-get update 	&& apt-get install -y 		mysql-community-client="${MYSQL_VERSION}" 		mysql-community-server-core="${MYSQL_VERSION}" 	&& rm -rf /var/lib/apt/lists/* 	&& rm -rf /var/lib/mysql && mkdir -p /var/lib/mysql /var/run/mysqld 	&& chown -R mysql:mysql /var/lib/mysql /var/run/mysqld 	&& chmod 1777 /var/run/mysqld /var/lib/mysql
-# Tue, 26 Jul 2022 23:28:45 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 VOLUME [/var/lib/mysql]
-# Tue, 26 Jul 2022 23:28:45 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 COPY dir:2e040acc386ebd23b8571951a51e6cb93647df091bc26159b8c757ef82b3fcda in /etc/mysql/ 
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 COPY file:d27cf504fa76fb5a4038020a01eaaf52723b17b751566119de311adacb043752 in /usr/local/bin/ 
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:40 GMT
 EXPOSE 3306 33060
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:40 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:461246efe0a75316d99afdbf348f7063b57b0caeee8daab775f1f08152ea36f4`  
-		Last Modified: Tue, 12 Jul 2022 01:24:34 GMT  
-		Size: 31.4 MB (31366610 bytes)  
+	-	`sha256:1efc276f4ff952c055dea726cfc96ec6a4fdb8b62d9eed816bd2b788f2860ad7`  
+		Last Modified: Tue, 02 Aug 2022 01:24:13 GMT  
+		Size: 31.4 MB (31366757 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1cd5bb1f5de5503f17b383d7c62078467389f82828ac46a41db64289ecf9880`  
-		Last Modified: Tue, 12 Jul 2022 01:52:26 GMT  
+	-	`sha256:31b7d57630bf155b31f64dda3d9aad39f813d2fc58a320a985daebf3b14f3049`  
+		Last Modified: Tue, 02 Aug 2022 04:51:11 GMT  
 		Size: 1.7 KB (1734 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bd9d402d85bd06018ec1a89d3298f4d88f3c4d06c2cd93c8951d8bbb19596ace`  
-		Last Modified: Tue, 12 Jul 2022 01:52:26 GMT  
-		Size: 4.4 MB (4414786 bytes)  
+	-	`sha256:012051d8478ee1090757968629c2716309d45c2643a5621613c61ab3a03d76c5`  
+		Last Modified: Tue, 02 Aug 2022 04:51:11 GMT  
+		Size: 4.4 MB (4414798 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33a04621f5daa2ee95b4484e11cb963f929686d8f77511d9e31d8cf63d2a491b`  
-		Last Modified: Tue, 12 Jul 2022 01:52:24 GMT  
-		Size: 1.4 MB (1418425 bytes)  
+	-	`sha256:0716ee4adc59fd6c63c76aee408f7e4da30281cd45d17e5a5719856fe1a23f1f`  
+		Last Modified: Tue, 02 Aug 2022 04:51:08 GMT  
+		Size: 1.4 MB (1418429 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2eef8024049f6e7f8a7769c0ed43bc5ddab7c1b3dbc772a3ba1b71a039bff03`  
-		Last Modified: Tue, 12 Jul 2022 01:52:23 GMT  
-		Size: 147.0 B  
+	-	`sha256:56be18bdc82a7cee346550f6df75908c04732f1cacc71c8c7f62f9e12f8cedeb`  
+		Last Modified: Tue, 02 Aug 2022 04:51:08 GMT  
+		Size: 149.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a021c48082a6778bc62f96a17b8202ad24185d41b54fad0c4788d55e18a106b1`  
-		Last Modified: Tue, 12 Jul 2022 01:52:26 GMT  
-		Size: 12.7 MB (12661669 bytes)  
+	-	`sha256:4704a769d13c18019727a01026cade3dbe37e10958126203da9485c5b5ef5395`  
+		Last Modified: Tue, 02 Aug 2022 04:51:11 GMT  
+		Size: 12.7 MB (12661885 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a27a84090d2f2cc8e7bc9db5098fe5f2c61aaf38e003421fab9630fdf6541c2`  
-		Last Modified: Tue, 12 Jul 2022 01:52:23 GMT  
+	-	`sha256:23293c50f7a9d512dc7ebeb4a7c6ad2d0986578db082bac560b47f82f20cff13`  
+		Last Modified: Tue, 02 Aug 2022 04:51:08 GMT  
 		Size: 2.5 KB (2547 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40bc66f09ecd05d38547cb872afb8703d21702dcbd68f1688e69c1fa899b9bfe`  
-		Last Modified: Tue, 26 Jul 2022 23:31:05 GMT  
-		Size: 256.0 B  
+	-	`sha256:3321eeac21f74670a9c57774978f68de3eddd58873a14f2d6f670c4e34de9936`  
+		Last Modified: Tue, 02 Aug 2022 04:51:06 GMT  
+		Size: 251.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57a0b87a3f7d2dd5b0a2ba39b526929f321b90da90a2249caf4da175b9b19e70`  
-		Last Modified: Tue, 26 Jul 2022 23:31:22 GMT  
-		Size: 108.0 MB (107963313 bytes)  
+	-	`sha256:b08665c1f84bc1a553e1a74920208eb162f6a5f64d5cd874481a001360597920`  
+		Last Modified: Tue, 02 Aug 2022 04:51:22 GMT  
+		Size: 108.0 MB (107963250 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44e82ef1aa7cd91168ba63bd5724afa619590e17c79d641515a3a0f23bf75839`  
-		Last Modified: Tue, 26 Jul 2022 23:31:05 GMT  
-		Size: 842.0 B  
+	-	`sha256:04746e5f66aad7d8339336c409d924f925fa570241ec1c3b39c33bce9df68350`  
+		Last Modified: Tue, 02 Aug 2022 04:51:06 GMT  
+		Size: 844.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f04800ad7ccd34e26a26464cfa045c9030672e0bc018c05b370e55acce1d02e`  
-		Last Modified: Tue, 26 Jul 2022 23:31:05 GMT  
-		Size: 5.2 KB (5157 bytes)  
+	-	`sha256:d25aec94921556ff0c94b5dc9bbc84c66e1c842d69e2948bc88ea5e4e76892e6`  
+		Last Modified: Tue, 02 Aug 2022 04:51:06 GMT  
+		Size: 5.2 KB (5154 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6593ab5ec7351b0dba0042dd7086bb2ae362d26cd4c7be288dfc618a7884ea15`  
-		Last Modified: Tue, 26 Jul 2022 23:31:05 GMT  
+	-	`sha256:a9f5f8572eba5ce08d6c92d90d8786c70833d8b03af10f67de7363d307e9e0a7`  
+		Last Modified: Tue, 02 Aug 2022 04:51:06 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -2357,7 +2357,7 @@ CMD ["mysqld"]
 ## `mysql:8.0.30-debian`
 
 ```console
-$ docker pull mysql@sha256:504760f722770e8554c40e7ea6b803ae9e0c19e21e25b94d0b8a03bab20541ff
+$ docker pull mysql@sha256:25685dab065bbd127542768e3a697eefbaebb697d29b704d902af3f9930e55cc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2367,107 +2367,107 @@ $ docker pull mysql@sha256:504760f722770e8554c40e7ea6b803ae9e0c19e21e25b94d0b8a0
 ### `mysql:8.0.30-debian` - linux; amd64
 
 ```console
-$ docker pull mysql@sha256:9a16d88a3410a326a082261a64db5624902fc763775410663cc44420968831a3
+$ docker pull mysql@sha256:36ba3720adcbd75f00da7680b25266ff480c6ce18265c9fc33daf8ff3886b48f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **157.8 MB (157835607 bytes)**  
+-	Total Size: **157.8 MB (157835919 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c2ee58f241ef6265fbc87840afec971c52938a5bcc38259e71bb0ad0363e827e`
+-	Image ID: `sha256:764b78482e3abe4d1ff03a987aee2f8293bd316233b0edaa2513ef582171a9e6`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Tue, 12 Jul 2022 01:20:10 GMT
-ADD file:d978f6d3025a06f5142a0c13c98bf12fbd47cdf9162ed31fbc05c86983b0a679 in / 
-# Tue, 12 Jul 2022 01:20:10 GMT
+# Tue, 02 Aug 2022 01:20:04 GMT
+ADD file:0eae0dca665c7044bf242cb1fc92cb8ea744f5af2dd376a558c90bc47349aefe in / 
+# Tue, 02 Aug 2022 01:20:05 GMT
 CMD ["bash"]
-# Tue, 12 Jul 2022 01:49:49 GMT
+# Tue, 02 Aug 2022 04:49:02 GMT
 RUN groupadd -r mysql && useradd -r -g mysql mysql
-# Tue, 12 Jul 2022 01:49:55 GMT
+# Tue, 02 Aug 2022 04:49:07 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends gnupg dirmngr && rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jul 2022 01:49:56 GMT
+# Tue, 02 Aug 2022 04:49:07 GMT
 ENV GOSU_VERSION=1.14
-# Tue, 12 Jul 2022 01:50:05 GMT
+# Tue, 02 Aug 2022 04:49:16 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates wget; 	rm -rf /var/lib/apt/lists/*; 	dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	chmod +x /usr/local/bin/gosu; 	gosu --version; 	gosu nobody true
-# Tue, 12 Jul 2022 01:50:05 GMT
+# Tue, 02 Aug 2022 04:49:17 GMT
 RUN mkdir /docker-entrypoint-initdb.d
-# Tue, 12 Jul 2022 01:50:11 GMT
+# Tue, 02 Aug 2022 04:49:22 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		openssl 		perl 		xz-utils 		zstd 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jul 2022 01:50:12 GMT
+# Tue, 02 Aug 2022 04:49:23 GMT
 RUN set -eux; 	key='859BE8D7C586F538430B19C2467B942D3A79BD29'; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 	mkdir -p /etc/apt/keyrings; 	gpg --batch --export "$key" > /etc/apt/keyrings/mysql.gpg; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"
-# Tue, 12 Jul 2022 01:50:12 GMT
+# Tue, 02 Aug 2022 04:49:24 GMT
 ENV MYSQL_MAJOR=8.0
-# Tue, 26 Jul 2022 23:28:31 GMT
+# Tue, 02 Aug 2022 04:49:24 GMT
 ENV MYSQL_VERSION=8.0.30-1debian11
-# Tue, 26 Jul 2022 23:28:31 GMT
+# Tue, 02 Aug 2022 04:49:24 GMT
 RUN echo 'deb [ signed-by=/etc/apt/keyrings/mysql.gpg ] http://repo.mysql.com/apt/debian/ bullseye mysql-8.0' > /etc/apt/sources.list.d/mysql.list
-# Tue, 26 Jul 2022 23:28:45 GMT
+# Tue, 02 Aug 2022 04:49:38 GMT
 RUN { 		echo mysql-community-server mysql-community-server/data-dir select ''; 		echo mysql-community-server mysql-community-server/root-pass password ''; 		echo mysql-community-server mysql-community-server/re-root-pass password ''; 		echo mysql-community-server mysql-community-server/remove-test-db select false; 	} | debconf-set-selections 	&& apt-get update 	&& apt-get install -y 		mysql-community-client="${MYSQL_VERSION}" 		mysql-community-server-core="${MYSQL_VERSION}" 	&& rm -rf /var/lib/apt/lists/* 	&& rm -rf /var/lib/mysql && mkdir -p /var/lib/mysql /var/run/mysqld 	&& chown -R mysql:mysql /var/lib/mysql /var/run/mysqld 	&& chmod 1777 /var/run/mysqld /var/lib/mysql
-# Tue, 26 Jul 2022 23:28:45 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 VOLUME [/var/lib/mysql]
-# Tue, 26 Jul 2022 23:28:45 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 COPY dir:2e040acc386ebd23b8571951a51e6cb93647df091bc26159b8c757ef82b3fcda in /etc/mysql/ 
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 COPY file:d27cf504fa76fb5a4038020a01eaaf52723b17b751566119de311adacb043752 in /usr/local/bin/ 
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:40 GMT
 EXPOSE 3306 33060
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:40 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:461246efe0a75316d99afdbf348f7063b57b0caeee8daab775f1f08152ea36f4`  
-		Last Modified: Tue, 12 Jul 2022 01:24:34 GMT  
-		Size: 31.4 MB (31366610 bytes)  
+	-	`sha256:1efc276f4ff952c055dea726cfc96ec6a4fdb8b62d9eed816bd2b788f2860ad7`  
+		Last Modified: Tue, 02 Aug 2022 01:24:13 GMT  
+		Size: 31.4 MB (31366757 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1cd5bb1f5de5503f17b383d7c62078467389f82828ac46a41db64289ecf9880`  
-		Last Modified: Tue, 12 Jul 2022 01:52:26 GMT  
+	-	`sha256:31b7d57630bf155b31f64dda3d9aad39f813d2fc58a320a985daebf3b14f3049`  
+		Last Modified: Tue, 02 Aug 2022 04:51:11 GMT  
 		Size: 1.7 KB (1734 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bd9d402d85bd06018ec1a89d3298f4d88f3c4d06c2cd93c8951d8bbb19596ace`  
-		Last Modified: Tue, 12 Jul 2022 01:52:26 GMT  
-		Size: 4.4 MB (4414786 bytes)  
+	-	`sha256:012051d8478ee1090757968629c2716309d45c2643a5621613c61ab3a03d76c5`  
+		Last Modified: Tue, 02 Aug 2022 04:51:11 GMT  
+		Size: 4.4 MB (4414798 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33a04621f5daa2ee95b4484e11cb963f929686d8f77511d9e31d8cf63d2a491b`  
-		Last Modified: Tue, 12 Jul 2022 01:52:24 GMT  
-		Size: 1.4 MB (1418425 bytes)  
+	-	`sha256:0716ee4adc59fd6c63c76aee408f7e4da30281cd45d17e5a5719856fe1a23f1f`  
+		Last Modified: Tue, 02 Aug 2022 04:51:08 GMT  
+		Size: 1.4 MB (1418429 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2eef8024049f6e7f8a7769c0ed43bc5ddab7c1b3dbc772a3ba1b71a039bff03`  
-		Last Modified: Tue, 12 Jul 2022 01:52:23 GMT  
-		Size: 147.0 B  
+	-	`sha256:56be18bdc82a7cee346550f6df75908c04732f1cacc71c8c7f62f9e12f8cedeb`  
+		Last Modified: Tue, 02 Aug 2022 04:51:08 GMT  
+		Size: 149.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a021c48082a6778bc62f96a17b8202ad24185d41b54fad0c4788d55e18a106b1`  
-		Last Modified: Tue, 12 Jul 2022 01:52:26 GMT  
-		Size: 12.7 MB (12661669 bytes)  
+	-	`sha256:4704a769d13c18019727a01026cade3dbe37e10958126203da9485c5b5ef5395`  
+		Last Modified: Tue, 02 Aug 2022 04:51:11 GMT  
+		Size: 12.7 MB (12661885 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a27a84090d2f2cc8e7bc9db5098fe5f2c61aaf38e003421fab9630fdf6541c2`  
-		Last Modified: Tue, 12 Jul 2022 01:52:23 GMT  
+	-	`sha256:23293c50f7a9d512dc7ebeb4a7c6ad2d0986578db082bac560b47f82f20cff13`  
+		Last Modified: Tue, 02 Aug 2022 04:51:08 GMT  
 		Size: 2.5 KB (2547 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40bc66f09ecd05d38547cb872afb8703d21702dcbd68f1688e69c1fa899b9bfe`  
-		Last Modified: Tue, 26 Jul 2022 23:31:05 GMT  
-		Size: 256.0 B  
+	-	`sha256:3321eeac21f74670a9c57774978f68de3eddd58873a14f2d6f670c4e34de9936`  
+		Last Modified: Tue, 02 Aug 2022 04:51:06 GMT  
+		Size: 251.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57a0b87a3f7d2dd5b0a2ba39b526929f321b90da90a2249caf4da175b9b19e70`  
-		Last Modified: Tue, 26 Jul 2022 23:31:22 GMT  
-		Size: 108.0 MB (107963313 bytes)  
+	-	`sha256:b08665c1f84bc1a553e1a74920208eb162f6a5f64d5cd874481a001360597920`  
+		Last Modified: Tue, 02 Aug 2022 04:51:22 GMT  
+		Size: 108.0 MB (107963250 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44e82ef1aa7cd91168ba63bd5724afa619590e17c79d641515a3a0f23bf75839`  
-		Last Modified: Tue, 26 Jul 2022 23:31:05 GMT  
-		Size: 842.0 B  
+	-	`sha256:04746e5f66aad7d8339336c409d924f925fa570241ec1c3b39c33bce9df68350`  
+		Last Modified: Tue, 02 Aug 2022 04:51:06 GMT  
+		Size: 844.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f04800ad7ccd34e26a26464cfa045c9030672e0bc018c05b370e55acce1d02e`  
-		Last Modified: Tue, 26 Jul 2022 23:31:05 GMT  
-		Size: 5.2 KB (5157 bytes)  
+	-	`sha256:d25aec94921556ff0c94b5dc9bbc84c66e1c842d69e2948bc88ea5e4e76892e6`  
+		Last Modified: Tue, 02 Aug 2022 04:51:06 GMT  
+		Size: 5.2 KB (5154 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6593ab5ec7351b0dba0042dd7086bb2ae362d26cd4c7be288dfc618a7884ea15`  
-		Last Modified: Tue, 26 Jul 2022 23:31:05 GMT  
+	-	`sha256:a9f5f8572eba5ce08d6c92d90d8786c70833d8b03af10f67de7363d307e9e0a7`  
+		Last Modified: Tue, 02 Aug 2022 04:51:06 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -2691,7 +2691,7 @@ CMD ["mysqld"]
 ## `mysql:debian`
 
 ```console
-$ docker pull mysql@sha256:504760f722770e8554c40e7ea6b803ae9e0c19e21e25b94d0b8a03bab20541ff
+$ docker pull mysql@sha256:25685dab065bbd127542768e3a697eefbaebb697d29b704d902af3f9930e55cc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2701,107 +2701,107 @@ $ docker pull mysql@sha256:504760f722770e8554c40e7ea6b803ae9e0c19e21e25b94d0b8a0
 ### `mysql:debian` - linux; amd64
 
 ```console
-$ docker pull mysql@sha256:9a16d88a3410a326a082261a64db5624902fc763775410663cc44420968831a3
+$ docker pull mysql@sha256:36ba3720adcbd75f00da7680b25266ff480c6ce18265c9fc33daf8ff3886b48f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **157.8 MB (157835607 bytes)**  
+-	Total Size: **157.8 MB (157835919 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c2ee58f241ef6265fbc87840afec971c52938a5bcc38259e71bb0ad0363e827e`
+-	Image ID: `sha256:764b78482e3abe4d1ff03a987aee2f8293bd316233b0edaa2513ef582171a9e6`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Tue, 12 Jul 2022 01:20:10 GMT
-ADD file:d978f6d3025a06f5142a0c13c98bf12fbd47cdf9162ed31fbc05c86983b0a679 in / 
-# Tue, 12 Jul 2022 01:20:10 GMT
+# Tue, 02 Aug 2022 01:20:04 GMT
+ADD file:0eae0dca665c7044bf242cb1fc92cb8ea744f5af2dd376a558c90bc47349aefe in / 
+# Tue, 02 Aug 2022 01:20:05 GMT
 CMD ["bash"]
-# Tue, 12 Jul 2022 01:49:49 GMT
+# Tue, 02 Aug 2022 04:49:02 GMT
 RUN groupadd -r mysql && useradd -r -g mysql mysql
-# Tue, 12 Jul 2022 01:49:55 GMT
+# Tue, 02 Aug 2022 04:49:07 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends gnupg dirmngr && rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jul 2022 01:49:56 GMT
+# Tue, 02 Aug 2022 04:49:07 GMT
 ENV GOSU_VERSION=1.14
-# Tue, 12 Jul 2022 01:50:05 GMT
+# Tue, 02 Aug 2022 04:49:16 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates wget; 	rm -rf /var/lib/apt/lists/*; 	dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	chmod +x /usr/local/bin/gosu; 	gosu --version; 	gosu nobody true
-# Tue, 12 Jul 2022 01:50:05 GMT
+# Tue, 02 Aug 2022 04:49:17 GMT
 RUN mkdir /docker-entrypoint-initdb.d
-# Tue, 12 Jul 2022 01:50:11 GMT
+# Tue, 02 Aug 2022 04:49:22 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		openssl 		perl 		xz-utils 		zstd 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jul 2022 01:50:12 GMT
+# Tue, 02 Aug 2022 04:49:23 GMT
 RUN set -eux; 	key='859BE8D7C586F538430B19C2467B942D3A79BD29'; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 	mkdir -p /etc/apt/keyrings; 	gpg --batch --export "$key" > /etc/apt/keyrings/mysql.gpg; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"
-# Tue, 12 Jul 2022 01:50:12 GMT
+# Tue, 02 Aug 2022 04:49:24 GMT
 ENV MYSQL_MAJOR=8.0
-# Tue, 26 Jul 2022 23:28:31 GMT
+# Tue, 02 Aug 2022 04:49:24 GMT
 ENV MYSQL_VERSION=8.0.30-1debian11
-# Tue, 26 Jul 2022 23:28:31 GMT
+# Tue, 02 Aug 2022 04:49:24 GMT
 RUN echo 'deb [ signed-by=/etc/apt/keyrings/mysql.gpg ] http://repo.mysql.com/apt/debian/ bullseye mysql-8.0' > /etc/apt/sources.list.d/mysql.list
-# Tue, 26 Jul 2022 23:28:45 GMT
+# Tue, 02 Aug 2022 04:49:38 GMT
 RUN { 		echo mysql-community-server mysql-community-server/data-dir select ''; 		echo mysql-community-server mysql-community-server/root-pass password ''; 		echo mysql-community-server mysql-community-server/re-root-pass password ''; 		echo mysql-community-server mysql-community-server/remove-test-db select false; 	} | debconf-set-selections 	&& apt-get update 	&& apt-get install -y 		mysql-community-client="${MYSQL_VERSION}" 		mysql-community-server-core="${MYSQL_VERSION}" 	&& rm -rf /var/lib/apt/lists/* 	&& rm -rf /var/lib/mysql && mkdir -p /var/lib/mysql /var/run/mysqld 	&& chown -R mysql:mysql /var/lib/mysql /var/run/mysqld 	&& chmod 1777 /var/run/mysqld /var/lib/mysql
-# Tue, 26 Jul 2022 23:28:45 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 VOLUME [/var/lib/mysql]
-# Tue, 26 Jul 2022 23:28:45 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 COPY dir:2e040acc386ebd23b8571951a51e6cb93647df091bc26159b8c757ef82b3fcda in /etc/mysql/ 
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 COPY file:d27cf504fa76fb5a4038020a01eaaf52723b17b751566119de311adacb043752 in /usr/local/bin/ 
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:39 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:40 GMT
 EXPOSE 3306 33060
-# Tue, 26 Jul 2022 23:28:46 GMT
+# Tue, 02 Aug 2022 04:49:40 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:461246efe0a75316d99afdbf348f7063b57b0caeee8daab775f1f08152ea36f4`  
-		Last Modified: Tue, 12 Jul 2022 01:24:34 GMT  
-		Size: 31.4 MB (31366610 bytes)  
+	-	`sha256:1efc276f4ff952c055dea726cfc96ec6a4fdb8b62d9eed816bd2b788f2860ad7`  
+		Last Modified: Tue, 02 Aug 2022 01:24:13 GMT  
+		Size: 31.4 MB (31366757 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1cd5bb1f5de5503f17b383d7c62078467389f82828ac46a41db64289ecf9880`  
-		Last Modified: Tue, 12 Jul 2022 01:52:26 GMT  
+	-	`sha256:31b7d57630bf155b31f64dda3d9aad39f813d2fc58a320a985daebf3b14f3049`  
+		Last Modified: Tue, 02 Aug 2022 04:51:11 GMT  
 		Size: 1.7 KB (1734 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bd9d402d85bd06018ec1a89d3298f4d88f3c4d06c2cd93c8951d8bbb19596ace`  
-		Last Modified: Tue, 12 Jul 2022 01:52:26 GMT  
-		Size: 4.4 MB (4414786 bytes)  
+	-	`sha256:012051d8478ee1090757968629c2716309d45c2643a5621613c61ab3a03d76c5`  
+		Last Modified: Tue, 02 Aug 2022 04:51:11 GMT  
+		Size: 4.4 MB (4414798 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33a04621f5daa2ee95b4484e11cb963f929686d8f77511d9e31d8cf63d2a491b`  
-		Last Modified: Tue, 12 Jul 2022 01:52:24 GMT  
-		Size: 1.4 MB (1418425 bytes)  
+	-	`sha256:0716ee4adc59fd6c63c76aee408f7e4da30281cd45d17e5a5719856fe1a23f1f`  
+		Last Modified: Tue, 02 Aug 2022 04:51:08 GMT  
+		Size: 1.4 MB (1418429 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2eef8024049f6e7f8a7769c0ed43bc5ddab7c1b3dbc772a3ba1b71a039bff03`  
-		Last Modified: Tue, 12 Jul 2022 01:52:23 GMT  
-		Size: 147.0 B  
+	-	`sha256:56be18bdc82a7cee346550f6df75908c04732f1cacc71c8c7f62f9e12f8cedeb`  
+		Last Modified: Tue, 02 Aug 2022 04:51:08 GMT  
+		Size: 149.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a021c48082a6778bc62f96a17b8202ad24185d41b54fad0c4788d55e18a106b1`  
-		Last Modified: Tue, 12 Jul 2022 01:52:26 GMT  
-		Size: 12.7 MB (12661669 bytes)  
+	-	`sha256:4704a769d13c18019727a01026cade3dbe37e10958126203da9485c5b5ef5395`  
+		Last Modified: Tue, 02 Aug 2022 04:51:11 GMT  
+		Size: 12.7 MB (12661885 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a27a84090d2f2cc8e7bc9db5098fe5f2c61aaf38e003421fab9630fdf6541c2`  
-		Last Modified: Tue, 12 Jul 2022 01:52:23 GMT  
+	-	`sha256:23293c50f7a9d512dc7ebeb4a7c6ad2d0986578db082bac560b47f82f20cff13`  
+		Last Modified: Tue, 02 Aug 2022 04:51:08 GMT  
 		Size: 2.5 KB (2547 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40bc66f09ecd05d38547cb872afb8703d21702dcbd68f1688e69c1fa899b9bfe`  
-		Last Modified: Tue, 26 Jul 2022 23:31:05 GMT  
-		Size: 256.0 B  
+	-	`sha256:3321eeac21f74670a9c57774978f68de3eddd58873a14f2d6f670c4e34de9936`  
+		Last Modified: Tue, 02 Aug 2022 04:51:06 GMT  
+		Size: 251.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57a0b87a3f7d2dd5b0a2ba39b526929f321b90da90a2249caf4da175b9b19e70`  
-		Last Modified: Tue, 26 Jul 2022 23:31:22 GMT  
-		Size: 108.0 MB (107963313 bytes)  
+	-	`sha256:b08665c1f84bc1a553e1a74920208eb162f6a5f64d5cd874481a001360597920`  
+		Last Modified: Tue, 02 Aug 2022 04:51:22 GMT  
+		Size: 108.0 MB (107963250 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44e82ef1aa7cd91168ba63bd5724afa619590e17c79d641515a3a0f23bf75839`  
-		Last Modified: Tue, 26 Jul 2022 23:31:05 GMT  
-		Size: 842.0 B  
+	-	`sha256:04746e5f66aad7d8339336c409d924f925fa570241ec1c3b39c33bce9df68350`  
+		Last Modified: Tue, 02 Aug 2022 04:51:06 GMT  
+		Size: 844.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f04800ad7ccd34e26a26464cfa045c9030672e0bc018c05b370e55acce1d02e`  
-		Last Modified: Tue, 26 Jul 2022 23:31:05 GMT  
-		Size: 5.2 KB (5157 bytes)  
+	-	`sha256:d25aec94921556ff0c94b5dc9bbc84c66e1c842d69e2948bc88ea5e4e76892e6`  
+		Last Modified: Tue, 02 Aug 2022 04:51:06 GMT  
+		Size: 5.2 KB (5154 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6593ab5ec7351b0dba0042dd7086bb2ae362d26cd4c7be288dfc618a7884ea15`  
-		Last Modified: Tue, 26 Jul 2022 23:31:05 GMT  
+	-	`sha256:a9f5f8572eba5ce08d6c92d90d8786c70833d8b03af10f67de7363d307e9e0a7`  
+		Last Modified: Tue, 02 Aug 2022 04:51:06 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
