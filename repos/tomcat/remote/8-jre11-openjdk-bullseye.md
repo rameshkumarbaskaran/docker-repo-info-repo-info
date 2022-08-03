@@ -1,7 +1,7 @@
 ## `tomcat:8-jre11-openjdk-bullseye`
 
 ```console
-$ docker pull tomcat@sha256:4b127c206ff79f1e5aaf3e0c79ce8706fb64712f98a5a47c2b437e3a0de7a730
+$ docker pull tomcat@sha256:6ee131e2a990e146b4a306c36d6a8d267970173a5742547fd96811df92030825
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -122,105 +122,105 @@ CMD ["catalina.sh" "run"]
 ### `tomcat:8-jre11-openjdk-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:98ae016a1b94ad44b81e2137c2a1e8082af37a6525b42decc66757600b38823f
+$ docker pull tomcat@sha256:6a54e50bcff8bc2de2a9c775e91e08f3a1c965de867a70378f5d73339403b3a3
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **131.6 MB (131604898 bytes)**  
+-	Total Size: **131.6 MB (131609894 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea8fdb028bb989769dc2a0c1aa6cfc51ca6c8c1c78ac9e5bf7e0537a0d1828c5`
+-	Image ID: `sha256:40002f9e2eab56a8c0df6111e32a9712b556dcefa4a96d3740239e42d2d34991`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 12 Jul 2022 00:40:18 GMT
-ADD file:2dcc013bca5a420cad3b6a1ac61f52ea58a29ae05fe282078a744979c0e1a89e in / 
-# Tue, 12 Jul 2022 00:40:19 GMT
+# Tue, 02 Aug 2022 00:40:24 GMT
+ADD file:5972a7ce0f1d89d63e5ed48011838c998fa506cd34f8e5f0b0070039cd74c5b9 in / 
+# Tue, 02 Aug 2022 00:40:25 GMT
 CMD ["bash"]
-# Tue, 12 Jul 2022 02:33:32 GMT
+# Tue, 02 Aug 2022 01:24:26 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jul 2022 02:33:38 GMT
+# Tue, 02 Aug 2022 01:24:32 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 12 Jul 2022 16:45:16 GMT
+# Tue, 02 Aug 2022 04:50:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jul 2022 16:45:16 GMT
+# Tue, 02 Aug 2022 04:50:02 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Tue, 12 Jul 2022 16:45:17 GMT
+# Tue, 02 Aug 2022 04:50:03 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 12 Jul 2022 16:45:18 GMT
+# Tue, 02 Aug 2022 04:50:04 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 12 Jul 2022 16:45:19 GMT
+# Tue, 02 Aug 2022 04:50:05 GMT
 ENV LANG=C.UTF-8
-# Mon, 25 Jul 2022 20:55:16 GMT
+# Tue, 02 Aug 2022 04:50:06 GMT
 ENV JAVA_VERSION=11.0.16
-# Mon, 25 Jul 2022 20:55:24 GMT
+# Tue, 02 Aug 2022 04:50:14 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.16%2B8/OpenJDK11U-jre_x64_linux_11.0.16_8.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.16%2B8/OpenJDK11U-jre_aarch64_linux_11.0.16_8.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Mon, 25 Jul 2022 22:46:32 GMT
+# Wed, 03 Aug 2022 01:52:48 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Mon, 25 Jul 2022 22:46:33 GMT
+# Wed, 03 Aug 2022 01:52:49 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 25 Jul 2022 22:46:34 GMT
+# Wed, 03 Aug 2022 01:52:50 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Mon, 25 Jul 2022 22:46:35 GMT
+# Wed, 03 Aug 2022 01:52:51 GMT
 WORKDIR /usr/local/tomcat
-# Mon, 25 Jul 2022 22:46:36 GMT
+# Wed, 03 Aug 2022 01:52:52 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Mon, 25 Jul 2022 22:46:37 GMT
+# Wed, 03 Aug 2022 01:52:53 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Mon, 25 Jul 2022 23:06:45 GMT
+# Wed, 03 Aug 2022 02:27:39 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 5C3C5F3E314C866292F359A8F3AD5C94A67F707E 765908099ACF92702C7D949BFA0C35EA8AA299F1 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Mon, 25 Jul 2022 23:06:45 GMT
+# Wed, 03 Aug 2022 02:27:40 GMT
 ENV TOMCAT_MAJOR=8
-# Mon, 25 Jul 2022 23:06:46 GMT
+# Wed, 03 Aug 2022 02:27:41 GMT
 ENV TOMCAT_VERSION=8.5.81
-# Mon, 25 Jul 2022 23:06:47 GMT
+# Wed, 03 Aug 2022 02:27:42 GMT
 ENV TOMCAT_SHA512=729387275cce4a0900289722f6c70ebcf7aee924af671b110b8ea8577fd6d045d47f17d526c8db5fd41c8590102e7f5100e95e89f7fd511b941565812ecbed35
-# Mon, 25 Jul 2022 23:06:49 GMT
-COPY dir:9178996ec336d61a3eeef915d8186867ec86ded2fa24ac478dcf07712fc2ce8c in /usr/local/tomcat 
-# Mon, 25 Jul 2022 23:06:52 GMT
+# Wed, 03 Aug 2022 02:27:44 GMT
+COPY dir:950d1dca115f3bbfa575a556912f82e43642e36a068898552d8be6be05277c8a in /usr/local/tomcat 
+# Wed, 03 Aug 2022 02:27:47 GMT
 RUN set -eux; 	apt-get update; 	xargs -rt apt-get install -y --no-install-recommends < "$TOMCAT_NATIVE_LIBDIR/.dependencies.txt"; 	rm -rf /var/lib/apt/lists/*
-# Mon, 25 Jul 2022 23:06:53 GMT
+# Wed, 03 Aug 2022 02:27:48 GMT
 RUN set -eux; 	nativeLines="$(catalina.sh configtest 2>&1)"; 	nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')"; 	nativeLines="$(echo "$nativeLines" | sort -u)"; 	if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Mon, 25 Jul 2022 23:06:54 GMT
+# Wed, 03 Aug 2022 02:27:49 GMT
 EXPOSE 8080
-# Mon, 25 Jul 2022 23:06:55 GMT
+# Wed, 03 Aug 2022 02:27:50 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:cfc947b533a3ed8b8ce79820c7fe5e7634bf9c08479ed0aee1e74ee7b4f2b068`  
-		Last Modified: Tue, 12 Jul 2022 00:45:41 GMT  
-		Size: 53.7 MB (53683129 bytes)  
+	-	`sha256:114ba63dd73a866ac1bb59fe594dfd218f44ac9b4fa4b2c68499da5584fcfa9d`  
+		Last Modified: Tue, 02 Aug 2022 00:45:33 GMT  
+		Size: 53.7 MB (53683005 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9ca36aa4204d2a708dcd1d41d1d4a128b095f8d88a2f9544f89799c36914e356`  
-		Last Modified: Tue, 12 Jul 2022 02:42:29 GMT  
-		Size: 5.1 MB (5142960 bytes)  
+	-	`sha256:bc0b8a8acead4d7bf71c232054b2a0a8e08eb3e1e2cf46f9f3dba68723e88c85`  
+		Last Modified: Tue, 02 Aug 2022 01:44:32 GMT  
+		Size: 5.1 MB (5148901 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1fdcd2014de70fbce8c43a70cd1f42bceab4f1e35953db987fc318dbc0fb0d26`  
-		Last Modified: Tue, 12 Jul 2022 02:42:30 GMT  
-		Size: 10.7 MB (10657500 bytes)  
+	-	`sha256:a4ea641ee67989acdb6af3d8b9b984ecd751a2a83c3b7ce071542b31c9ac1304`  
+		Last Modified: Tue, 02 Aug 2022 01:44:33 GMT  
+		Size: 10.7 MB (10657494 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60047e9914e670a899370adf2dd0fa2454a135151f9b3a2b871f18ef9e193bce`  
-		Last Modified: Tue, 12 Jul 2022 17:04:52 GMT  
-		Size: 5.6 MB (5648704 bytes)  
+	-	`sha256:f3b7f28ea2855580a872ab6a4242d40e22c12ccc0312535acf914ece186b4562`  
+		Last Modified: Tue, 02 Aug 2022 05:16:26 GMT  
+		Size: 5.6 MB (5648824 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bfe81dbfbe8d8bda9067737340106f1de9bfae84dda03edf2640783c25345ef2`  
-		Last Modified: Tue, 12 Jul 2022 17:04:51 GMT  
-		Size: 212.0 B  
+	-	`sha256:3d45ceb6cdd310b5a38d1e452968a59edcea4296d763533977e6554faf5ed553`  
+		Last Modified: Tue, 02 Aug 2022 05:16:25 GMT  
+		Size: 213.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:41f4917b3a622c1c72fd6a59682fa52c5a46bf90a7bc937b7f8afad2ec042eab`  
-		Last Modified: Mon, 25 Jul 2022 21:13:48 GMT  
-		Size: 45.1 MB (45070702 bytes)  
+	-	`sha256:40af590bb61e926debbe8ba325fa28ee651fec79c1161422837588d5c82eee6e`  
+		Last Modified: Tue, 02 Aug 2022 05:16:32 GMT  
+		Size: 45.1 MB (45069710 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a87024ffaf0ab687ff6650d13cce94086f1e6cd57203cf5b360662075b44ea15`  
-		Last Modified: Mon, 25 Jul 2022 23:33:03 GMT  
+	-	`sha256:a9ec0301ee654a6210ed262399128f1368de2591a0c62ff14cd797136ebe3c98`  
+		Last Modified: Wed, 03 Aug 2022 03:02:08 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb18d17de61d5b71c2f0c2240eb4111deea609e52a9b87816d339999365187e1`  
-		Last Modified: Mon, 25 Jul 2022 23:47:29 GMT  
-		Size: 11.2 MB (11184355 bytes)  
+	-	`sha256:b3152b26557167519a653a71cd3df0fd1f4c065c06df4a0fd4194d61df3966bf`  
+		Last Modified: Wed, 03 Aug 2022 03:26:12 GMT  
+		Size: 11.2 MB (11184452 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dddb5107d74e548d8bc8e2e9a86e5a6e50440151ec0f80c2ddc54bec5dba8ecf`  
-		Last Modified: Mon, 25 Jul 2022 23:47:27 GMT  
-		Size: 217.2 KB (217198 bytes)  
+	-	`sha256:005d14f786937b589b71efb81368b20867ee36aaa2aaa3972be8298bdaa5567c`  
+		Last Modified: Wed, 03 Aug 2022 03:26:11 GMT  
+		Size: 217.2 KB (217157 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
