@@ -1,7 +1,7 @@
 ## `jruby:9-jdk`
 
 ```console
-$ docker pull jruby@sha256:09c4ec5f98c4143f6cd505177456bc85cb28fc774daef0a2e958ea1b330816ff
+$ docker pull jruby@sha256:df4d9e2900bbe4737eeea11752b71accf04f927957516837cd019f8df8d278e0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -106,93 +106,93 @@ CMD ["irb"]
 ### `jruby:9-jdk` - linux; arm64 variant v8
 
 ```console
-$ docker pull jruby@sha256:8bfea66fd963afea11a38f43d60d2d470120074610cee9450aba7711aac7b0f5
+$ docker pull jruby@sha256:92159c22ed0f56cbeb6e3f28a8197dc41581bf2c0572c203974ce4a91d05417e
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **180.2 MB (180159788 bytes)**  
+-	Total Size: **180.2 MB (180180778 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:440acbf82936e27fd64b5ebb29eeac9c702510ff5c38e04761a8c51b634cacc3`
+-	Image ID: `sha256:8f0f34b58c36ba8209462548688eeb20ef916a47a7e66307984148d24e37419e`
 -	Default Command: `["irb"]`
 
 ```dockerfile
-# Tue, 07 Jun 2022 01:25:15 GMT
-ADD file:8bb0809a8ac8e978274cf731cff7529372088d22c5b0233a28f01ef414aefbca in / 
-# Tue, 07 Jun 2022 01:25:16 GMT
+# Tue, 02 Aug 2022 01:18:51 GMT
+ADD file:151548d1bfac57d762f2c0b18b2378c363ffd1568da9fecd4be611db4832e8e2 in / 
+# Tue, 02 Aug 2022 01:18:51 GMT
 CMD ["bash"]
-# Tue, 07 Jun 2022 04:59:51 GMT
+# Tue, 02 Aug 2022 17:50:53 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 07 Jun 2022 05:00:09 GMT
+# Tue, 02 Aug 2022 17:51:12 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Tue, 07 Jun 2022 06:34:18 GMT
-ENV JAVA_VERSION=jdk8u332-b09
-# Tue, 07 Jun 2022 06:34:25 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='d10efb2afad3ed3d7bac9d3249cea77928aca6acb973cac0f90a2dd3606a3533';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u332-b09/OpenJDK8U-jdk_aarch64_linux_hotspot_8u332b09.tar.gz';          ;;        armhf|arm)          ESUM='c914250a736e620c12f9fe65fcd94ffa1acdacc5323e5aaff611a33a37cd158f';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u332-b09/OpenJDK8U-jdk_arm_linux_hotspot_8u332b09.tar.gz';          apt-get update          && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libatomic1          && rm -rf /var/lib/apt/lists/*          ;;        ppc64el|powerpc:common64)          ESUM='1df8c12fd97e76c388d64e4df16893f4285e000e6ff837d1e39969e5428aafa0';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u332-b09/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u332b09.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='adc13a0a0540d77f0a3481b48f10d61eb203e5ad4914507d489c2de3bd3d83da';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u332-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u332b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Tue, 07 Jun 2022 06:34:26 GMT
+# Tue, 02 Aug 2022 17:51:12 GMT
+ENV JAVA_VERSION=jdk8u342-b07
+# Tue, 02 Aug 2022 17:51:20 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='ebac40a9a126d1c5333106f9428c9a1d32593ad90b032c1cc147975fa554dfb7';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u342-b07/OpenJDK8U-jdk_aarch64_linux_hotspot_8u342b07.tar.gz';          ;;        armhf|arm)          ESUM='a12987778eb1455ff5145ae4eda11025e21477c10b0c45e0db8ba96bf9ef20f1';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u342-b07/OpenJDK8U-jdk_arm_linux_hotspot_8u342b07.tar.gz';          apt-get update          && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libatomic1          && rm -rf /var/lib/apt/lists/*          ;;        ppc64el|powerpc:common64)          ESUM='bc943c3e6bc1232ea4e7dd114831b609d83a79f271907941a18f1d7206f741b2';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u342-b07/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u342b07.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='8252c0e11d542ea0f9ce6b8f147d1a2bea4a17e9fc299da270288f5a4f35b1f3';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u342-b07/OpenJDK8U-jdk_x64_linux_hotspot_8u342b07.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Tue, 02 Aug 2022 17:51:21 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 07 Jun 2022 06:34:27 GMT
+# Tue, 02 Aug 2022 17:51:22 GMT
 RUN echo Verifying install ...     && echo javac -version && javac -version     && echo java -version && java -version     && echo Complete.
-# Thu, 30 Jun 2022 20:09:09 GMT
+# Wed, 03 Aug 2022 11:34:04 GMT
 RUN apt-get update && apt-get install -y libc6-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*
-# Thu, 30 Jun 2022 20:09:09 GMT
+# Wed, 03 Aug 2022 11:34:04 GMT
 ENV JRUBY_VERSION=9.3.6.0
-# Thu, 30 Jun 2022 20:09:10 GMT
+# Wed, 03 Aug 2022 11:34:05 GMT
 ENV JRUBY_SHA256=747af6af99a674f208f40da8db22d77c6da493a83280e990b52d523abd9499e2
-# Thu, 30 Jun 2022 20:09:13 GMT
+# Wed, 03 Aug 2022 11:34:08 GMT
 RUN mkdir /opt/jruby   && curl -fSL https://repo1.maven.org/maven2/org/jruby/jruby-dist/${JRUBY_VERSION}/jruby-dist-${JRUBY_VERSION}-bin.tar.gz -o /tmp/jruby.tar.gz   && echo "$JRUBY_SHA256 /tmp/jruby.tar.gz" | sha256sum -c -   && tar -zx --strip-components=1 -f /tmp/jruby.tar.gz -C /opt/jruby   && rm /tmp/jruby.tar.gz   && update-alternatives --install /usr/local/bin/ruby ruby /opt/jruby/bin/jruby 1
-# Thu, 30 Jun 2022 20:09:13 GMT
+# Wed, 03 Aug 2022 11:34:08 GMT
 ENV PATH=/opt/jruby/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 30 Jun 2022 20:09:14 GMT
+# Wed, 03 Aug 2022 11:34:09 GMT
 RUN mkdir -p /opt/jruby/etc 	&& { 		echo 'install: --no-document'; 		echo 'update: --no-document'; 	} >> /opt/jruby/etc/gemrc
-# Thu, 30 Jun 2022 20:09:25 GMT
+# Wed, 03 Aug 2022 11:34:19 GMT
 RUN gem install bundler rake net-telnet xmlrpc
-# Thu, 30 Jun 2022 20:09:25 GMT
+# Wed, 03 Aug 2022 11:34:19 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Thu, 30 Jun 2022 20:09:26 GMT
+# Wed, 03 Aug 2022 11:34:20 GMT
 ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Thu, 30 Jun 2022 20:09:27 GMT
+# Wed, 03 Aug 2022 11:34:21 GMT
 ENV PATH=/usr/local/bundle/bin:/opt/jruby/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 30 Jun 2022 20:09:28 GMT
+# Wed, 03 Aug 2022 11:34:22 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Thu, 30 Jun 2022 20:09:29 GMT
+# Wed, 03 Aug 2022 11:34:23 GMT
 CMD ["irb"]
 ```
 
 -	Layers:
-	-	`sha256:11e23ac719b33170b39b7e30b8027dc09c9cbad6b503b2b6b3ebbd9d33f4adad`  
-		Last Modified: Thu, 02 Jun 2022 08:33:07 GMT  
-		Size: 27.2 MB (27191210 bytes)  
+	-	`sha256:a749a280e3e905de447c3d95a39e8aa1ede5835a6eadeb0c11596051592b675b`  
+		Last Modified: Tue, 02 Aug 2022 01:20:32 GMT  
+		Size: 27.2 MB (27191804 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b15da1b4c110f7cc460fbf968fb55b77c541f0e3ab87b92d5e6a822cc2c593e1`  
-		Last Modified: Tue, 07 Jun 2022 05:10:23 GMT  
-		Size: 15.9 MB (15898299 bytes)  
+	-	`sha256:5cf715bbfc12ff844d7de72d6ff70e4c89116b7db5bed3c7bc1c776ee4f99a77`  
+		Last Modified: Tue, 02 Aug 2022 17:59:38 GMT  
+		Size: 15.9 MB (15891207 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdcece0580e10c416c1e7046a5470a31a642ce59eaf3a03ef9b31073f0fd3e91`  
-		Last Modified: Tue, 07 Jun 2022 06:41:49 GMT  
-		Size: 102.6 MB (102596127 bytes)  
+	-	`sha256:019b4cd65cf45c9d4186251e352cfad87abbcb789b135b96be49490c8d77f683`  
+		Last Modified: Tue, 02 Aug 2022 17:59:46 GMT  
+		Size: 102.6 MB (102614845 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:420c91f4a49be859828f6df357cf0f1808e1f6d00041b47ecc2e772bd926e536`  
-		Last Modified: Tue, 07 Jun 2022 06:41:39 GMT  
-		Size: 127.0 B  
+	-	`sha256:cde9c970c968ce668699a56ebdb65bffb3cf917cd3932941bf40f80af8deabdc`  
+		Last Modified: Tue, 02 Aug 2022 17:59:36 GMT  
+		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:660982d3c7e8c497f54bb855f8c5051ca4cdc3da55f3d23582ac4a1ec8ed5992`  
-		Last Modified: Thu, 30 Jun 2022 20:13:05 GMT  
-		Size: 5.6 MB (5638974 bytes)  
+	-	`sha256:b112b80526a844857a76e18d8e7037ca52f186c725b7219d45c60a3259934d24`  
+		Last Modified: Wed, 03 Aug 2022 11:37:57 GMT  
+		Size: 5.6 MB (5643656 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b1eab6c0d1be9126f007b81d59151e392328216fb7c11124c37bca62313be5c`  
-		Last Modified: Thu, 30 Jun 2022 20:13:06 GMT  
-		Size: 27.8 MB (27781917 bytes)  
+	-	`sha256:62dea2c88b3852eb3082e33257f633e687edb34ea0054d6c5e2c80dc53102dc2`  
+		Last Modified: Wed, 03 Aug 2022 11:37:58 GMT  
+		Size: 27.8 MB (27782073 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b70132f7bfde1520dc8b92bf5c479764dd663a0b68c5aa5c4553123c9a6a8202`  
-		Last Modified: Thu, 30 Jun 2022 20:13:04 GMT  
-		Size: 200.0 B  
+	-	`sha256:dec76eda55fcd2fae7c23307e81b77c71658b565ee7e50e628f1d9bbecab56b4`  
+		Last Modified: Wed, 03 Aug 2022 11:37:56 GMT  
+		Size: 199.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dc93618464469473af7166a14faa06ea0ea9c7e459e9ecb93072566572f93087`  
-		Last Modified: Thu, 30 Jun 2022 20:13:04 GMT  
-		Size: 1.1 MB (1052791 bytes)  
+	-	`sha256:6fe97c88807a2d8f29772e83468e3e3f150815993421f3d777b28d88514db05b`  
+		Last Modified: Wed, 03 Aug 2022 11:37:56 GMT  
+		Size: 1.1 MB (1056723 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f5a8bb4caab52b79c2b80f12d4e597f61438b07bf0abb423e59c2474ab3cd5e8`  
-		Last Modified: Thu, 30 Jun 2022 20:13:04 GMT  
+	-	`sha256:bffd191d2e8b1926fcfab179711ae0bae0488ed30201d436c57afe2cbdabc8d7`  
+		Last Modified: Wed, 03 Aug 2022 11:37:56 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
