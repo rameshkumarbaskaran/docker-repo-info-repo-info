@@ -1,7 +1,7 @@
 ## `varnish:old-alpine`
 
 ```console
-$ docker pull varnish@sha256:a59c066b705ad10b2450a1e7c0077ae34d407b31058f55d05e8fb41abf0052c5
+$ docker pull varnish@sha256:69652fe1424f585bd4f21d0b3a18dfbb29a6872a1702f715ee97509ccbd72257
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -212,14 +212,14 @@ CMD []
 ### `varnish:old-alpine` - linux; ppc64le
 
 ```console
-$ docker pull varnish@sha256:fa4da2838ba1c35c497605b02fbaa6495b9b89f2099a893316373e8b042b0258
+$ docker pull varnish@sha256:d49441380189577b764cdcbebd5f50638f4ab20559700cc9d535104ba41d4950
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **48.2 MB (48200382 bytes)**  
+-	Total Size: **48.2 MB (48214010 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:dbcea45e25448b06ffb34f93d56f24dea75034ac436374461efdd78aacfa8e95`
+-	Image ID: `sha256:df0163e7c5a69ce05aefe95ae93146ff692754f1ef890de0fd7723ed668d69af`
 -	Entrypoint: `["\/usr\/local\/bin\/docker-varnish-entrypoint"]`
 -	Default Command: `[]`
 
@@ -228,19 +228,19 @@ $ docker pull varnish@sha256:fa4da2838ba1c35c497605b02fbaa6495b9b89f2099a8933163
 ADD file:f7d6f7b933d430698b1ac478c38557461cf2d285610a6d61f367cdfbea0ce98d in / 
 # Tue, 19 Jul 2022 22:26:50 GMT
 CMD ["/bin/sh"]
-# Wed, 20 Jul 2022 06:19:57 GMT
+# Wed, 03 Aug 2022 01:44:42 GMT
 ENV VARNISH_SIZE=100M
-# Wed, 20 Jul 2022 06:21:14 GMT
+# Wed, 03 Aug 2022 01:46:06 GMT
 RUN set -e;    BASE_PKGS="tar alpine-sdk sudo git";     apk add --virtual varnish-build-deps -q --no-progress --update $BASE_PKGS;     git clone https://github.com/varnishcache/pkg-varnish-cache.git;     cd pkg-varnish-cache/alpine;     git checkout d3e6a3fad7d4c2ac781ada92dcc246e7eef9d129;     sed -i APKBUILD         -e "s/pkgver=@VERSION@/pkgver=7.0.2/" 	-e 's@^source=.*@source="https://varnish-cache.org/downloads/varnish-$pkgver.tgz"@' 	-e "s/^sha512sums=.*/sha512sums=\"5eb08345c95152639266b7ad241185188477f8fd04e88e4dfda1579719a1a413790a0616f25d70994f6d3b8f7640ea80926ece7c547555dad856fd9f6960c9a3  varnish-\$pkgver.tgz\"/";     adduser -D builder;     echo "builder ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers;     addgroup builder abuild;     su builder -c "abuild-keygen -nai";     chown builder -R .;     su builder -c "abuild -r";    apk add --allow-untrusted ~builder/packages/pkg-varnish-cache/*/*.apk;     echo -e 'vcl 4.1;\nbackend default none;' > /etc/varnish/default.vcl;     apk del --no-network varnish-build-deps;     rm -rf ~builder /pkg-varnish-cache;     sed -i '/^builder/d' /etc/sudoers;     deluser --remove-home builder;
-# Wed, 20 Jul 2022 06:21:21 GMT
+# Wed, 03 Aug 2022 01:46:08 GMT
 WORKDIR /etc/varnish
-# Wed, 20 Jul 2022 06:21:23 GMT
+# Wed, 03 Aug 2022 01:46:08 GMT
 COPY dir:846b8f8975487ee292d565d7ea945a1a79fb5f0e418fec900574091bb0a7cffc in /usr/local/bin/ 
-# Wed, 20 Jul 2022 06:21:25 GMT
+# Wed, 03 Aug 2022 01:46:08 GMT
 ENTRYPOINT ["/usr/local/bin/docker-varnish-entrypoint"]
-# Wed, 20 Jul 2022 06:21:30 GMT
+# Wed, 03 Aug 2022 01:46:09 GMT
 EXPOSE 80 8443
-# Wed, 20 Jul 2022 06:21:35 GMT
+# Wed, 03 Aug 2022 01:46:09 GMT
 CMD []
 ```
 
@@ -249,13 +249,13 @@ CMD []
 		Last Modified: Tue, 19 Jul 2022 22:28:07 GMT  
 		Size: 2.8 MB (2814561 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:96f2a2797c57525d3bd497655694ec9270a9c7d7d6a71db9a2c0dc9dd8b45f0d`  
-		Last Modified: Wed, 20 Jul 2022 06:23:17 GMT  
-		Size: 45.4 MB (45385341 bytes)  
+	-	`sha256:8aed61875fff6ffc25e866ca1d7f5602e7b6f3d8f297dfcf40215d9fc2f5245f`  
+		Last Modified: Wed, 03 Aug 2022 01:53:46 GMT  
+		Size: 45.4 MB (45398967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:97fc1a1f6e83d0711f9cd0e86f3d6d46c77331babbf4beca6a91f88816a02ad6`  
-		Last Modified: Wed, 20 Jul 2022 06:23:08 GMT  
-		Size: 480.0 B  
+	-	`sha256:50e6a6d24bacb7b9e5fcb803deb17c254227784ee6d397388ad151fe1c481847`  
+		Last Modified: Wed, 03 Aug 2022 01:53:34 GMT  
+		Size: 482.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `varnish:old-alpine` - linux; s390x
