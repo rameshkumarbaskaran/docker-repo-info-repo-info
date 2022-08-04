@@ -1,17 +1,17 @@
-# `docker:20.10.17-git`
+# `docker:22.06.0-beta.0-cli`
 
 ## Docker Metadata
 
-- Image ID: `sha256:9249078eb69272d01b5972df91434385f01b5018cb90849079b6a4727dc96b54`
-- Created: `2022-08-02T00:20:43.962653348Z`
-- Virtual Size: ~ 148.61 Mb  
+- Image ID: `sha256:b1b2f2d61558b5fbe499576149cb6da2a5df6d573da87cab395098a3b953cc0b`
+- Created: `2022-08-02T00:19:39.661067556Z`
+- Virtual Size: ~ 111.50 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_VERSION=20.10.17`
+  - `DOCKER_VERSION=22.06.0-beta.0`
   - `DOCKER_BUILDX_VERSION=0.8.2`
   - `DOCKER_COMPOSE_VERSION=2.9.0`
   - `DOCKER_TLS_CERTDIR=/certs`
@@ -86,23 +86,6 @@ GPL-2.0-only
 
 ```
 
-### `apk` package: `brotli-libs`
-
-```console
-brotli-libs-1.0.9-r6 description:
-Generic lossless compressor (libraries)
-
-brotli-libs-1.0.9-r6 webpage:
-https://github.com/google/brotli
-
-brotli-libs-1.0.9-r6 installed size:
-716 KiB
-
-brotli-libs-1.0.9-r6 license:
-MIT
-
-```
-
 ### `apk` package: `busybox`
 
 ```console
@@ -154,40 +137,6 @@ MPL-2.0 AND MIT
 
 ```
 
-### `apk` package: `expat`
-
-```console
-expat-2.4.8-r0 description:
-XML Parser library written in C
-
-expat-2.4.8-r0 webpage:
-https://libexpat.github.io/
-
-expat-2.4.8-r0 installed size:
-192 KiB
-
-expat-2.4.8-r0 license:
-MIT
-
-```
-
-### `apk` package: `git`
-
-```console
-git-2.36.2-r0 description:
-Distributed version control system
-
-git-2.36.2-r0 webpage:
-https://www.git-scm.com/
-
-git-2.36.2-r0 installed size:
-10 MiB
-
-git-2.36.2-r0 license:
-GPL-2.0-or-later
-
-```
-
 ### `apk` package: `libc-utils`
 
 ```console
@@ -236,23 +185,6 @@ libcrypto1.1-1.1.1q-r0 installed size:
 
 libcrypto1.1-1.1.1q-r0 license:
 OpenSSL
-
-```
-
-### `apk` package: `libcurl`
-
-```console
-libcurl-7.83.1-r2 description:
-The multiprotocol file transfer library
-
-libcurl-7.83.1-r2 webpage:
-https://curl.se/
-
-libcurl-7.83.1-r2 installed size:
-512 KiB
-
-libcurl-7.83.1-r2 license:
-curl
 
 ```
 
@@ -358,23 +290,6 @@ MIT
 
 ```
 
-### `apk` package: `nghttp2-libs`
-
-```console
-nghttp2-libs-1.47.0-r0 description:
-Experimental HTTP/2 client, server and proxy (libraries)
-
-nghttp2-libs-1.47.0-r0 webpage:
-https://nghttp2.org
-
-nghttp2-libs-1.47.0-r0 installed size:
-156 KiB
-
-nghttp2-libs-1.47.0-r0 license:
-MIT
-
-```
-
 ### `apk` package: `openssh-client-common`
 
 ```console
@@ -423,23 +338,6 @@ openssh-keygen-9.0_p1-r1 installed size:
 
 openssh-keygen-9.0_p1-r1 license:
 BSD
-
-```
-
-### `apk` package: `pcre2`
-
-```console
-pcre2-10.40-r0 description:
-Perl-compatible regular expression library
-
-pcre2-10.40-r0 webpage:
-https://pcre.org/
-
-pcre2-10.40-r0 installed size:
-672 KiB
-
-pcre2-10.40-r0 license:
-BSD-3-Clause
 
 ```
 
