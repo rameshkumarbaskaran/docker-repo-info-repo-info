@@ -1676,16 +1676,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris lerc=3.0+ds-1
-'http://deb.debian.org/debian/pool/main/l/lerc/lerc_3.0%2bds-1.dsc' lerc_3.0+ds-1.dsc 2178 SHA256:d4c11f09703856b7b0dbb152c4848ac63e2018136bde83a72501c14294191f83
-'http://deb.debian.org/debian/pool/main/l/lerc/lerc_3.0%2bds.orig.tar.xz' lerc_3.0+ds.orig.tar.xz 341576 SHA256:bd30d1e5acebfc0f58a8ddbe8f18e692cfc17885bdd8112f787ca83578124228
-'http://deb.debian.org/debian/pool/main/l/lerc/lerc_3.0%2bds-1.debian.tar.xz' lerc_3.0+ds-1.debian.tar.xz 6620 SHA256:da95bc1c2a66ae206dd910a31b9d6d151bc734fa142511d099caa53d469ef514
+'http://http.debian.net/debian/pool/main/l/lerc/lerc_3.0%2bds-1.dsc' lerc_3.0+ds-1.dsc 2178 SHA256:d4c11f09703856b7b0dbb152c4848ac63e2018136bde83a72501c14294191f83
+'http://http.debian.net/debian/pool/main/l/lerc/lerc_3.0%2bds.orig.tar.xz' lerc_3.0+ds.orig.tar.xz 341576 SHA256:bd30d1e5acebfc0f58a8ddbe8f18e692cfc17885bdd8112f787ca83578124228
+'http://http.debian.net/debian/pool/main/l/lerc/lerc_3.0%2bds-1.debian.tar.xz' lerc_3.0+ds-1.debian.tar.xz 6620 SHA256:da95bc1c2a66ae206dd910a31b9d6d151bc734fa142511d099caa53d469ef514
 ```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/lerc/3.0+ds-1/ (for browsing the source)
-- https://sources.debian.net/src/lerc/3.0+ds-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/lerc/3.0+ds-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `less=590-1`
 
