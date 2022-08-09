@@ -1825,20 +1825,13 @@ Licenses: (parsed from: `/usr/share/doc/libtirpc-common/copyright`, `/usr/share/
 - `PERMISSIVE`
 - `__AUTO_PERMISSIVE__`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libtirpc=1.3.2-2
-'http://deb.debian.org/debian/pool/main/libt/libtirpc/libtirpc_1.3.2-2.dsc' libtirpc_1.3.2-2.dsc 2111 SHA256:830223f0db2a95266185d18cc75691d37ba1ae001616df7f11a42cd1e9dd3394
-'http://deb.debian.org/debian/pool/main/libt/libtirpc/libtirpc_1.3.2.orig.tar.bz2' libtirpc_1.3.2.orig.tar.bz2 513151 SHA256:e24eb88b8ce7db3b7ca6eb80115dd1284abc5ec32a8deccfed2224fc2532b9fd
-'http://deb.debian.org/debian/pool/main/libt/libtirpc/libtirpc_1.3.2-2.debian.tar.xz' libtirpc_1.3.2-2.debian.tar.xz 10996 SHA256:ad8da93212dae510e8568f242abb4aef2694981aab45a6c0357d73d5f9d2d517
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libtirpc/1.3.2-2/
 
-- https://sources.debian.net/src/libtirpc/1.3.2-2/ (for browsing the source)
-- https://sources.debian.net/src/libtirpc/1.3.2-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libtirpc/1.3.2-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libunistring=1.0-1`
 
@@ -2908,20 +2901,13 @@ Licenses: (parsed from: `/usr/share/doc/sysvinit-utils/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sysvinit=3.03-1
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_3.03-1.dsc' sysvinit_3.03-1.dsc 2367 SHA256:4e5a05e554bf124636a9dbf86707c7197df920ceb65318b4688433914eb6128e
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_3.03.orig.tar.gz' sysvinit_3.03.orig.tar.gz 464919 SHA256:eeedaec3ec8f928b0cdcf7639834f0e177afe5012a4c523b4b3286c8e341a0ac
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_3.03-1.debian.tar.xz' sysvinit_3.03-1.debian.tar.xz 127984 SHA256:55e0a2b43678ebc7010301c4c0d7f83aa7081c89cc0f0d975e7667c23303ffe4
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/sysvinit/3.03-1/
 
-- https://sources.debian.net/src/sysvinit/3.03-1/ (for browsing the source)
-- https://sources.debian.net/src/sysvinit/3.03-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/sysvinit/3.03-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tar=1.34+dfsg-1`
 
@@ -3057,20 +3043,13 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/lib
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.38-6
-'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.38-6.dsc' util-linux_2.38-6.dsc 4506 SHA256:a660df441c2e195821b9eda87dbcbced58c124f94527a14b4dd9111782c5d96d
-'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.38.orig.tar.xz' util-linux_2.38.orig.tar.xz 7349140 SHA256:6d111cbe4d55b336db2f1fbeffbc65b89908704c01136371d32aa9bec373eb64
-'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.38-6.debian.tar.xz' util-linux_2.38-6.debian.tar.xz 96492 SHA256:0586d01a2d004c0c1d81c3751c69926d762afc06485c023d12fd88d3b1cd08ff
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/util-linux/2.38-6/
 
-- https://sources.debian.net/src/util-linux/2.38-6/ (for browsing the source)
-- https://sources.debian.net/src/util-linux/2.38-6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/util-linux/2.38-6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `wget=1.21.3-1`
 

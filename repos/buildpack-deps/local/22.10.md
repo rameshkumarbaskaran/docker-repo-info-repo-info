@@ -485,15 +485,13 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.83.1-2
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.83.1-2.dsc' curl_7.83.1-2.dsc 2959 SHA512:d647294ba5ec46c90ed8acc7f5ef0285ae35e59d8c672a829a3b538022620eccf0070ece5c953025c48c6e7c9e33ba7343ad4d8a6637b10733e714c9bf56ac37
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.83.1.orig.tar.gz' curl_7.83.1.orig.tar.gz 4162207 SHA512:0b909b7ed55f9a9789584fd9d2033d5838dcf29e33adf6657258e97ebe7c91b26282007687a729c8385594fd8220bd718fd008154926b87b8da254d586fab3c7
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.83.1.orig.tar.gz.asc' curl_7.83.1.orig.tar.gz.asc 488 SHA512:4aee6744667b84d7d00efcd184e0b25ffe8c0c43361c4e0320b34a98a3a7679a513ed1df4093c0aa5e968c9b2e8b89f90ead254ad5ae59b5aaa1b101a0d88fb5
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.83.1-2.debian.tar.xz' curl_7.83.1-2.debian.tar.xz 38500 SHA512:2e9f01935a7a70434a33ba31feb7783cd47543c79fe872872616a9c11dcf34d80206c2fe12b9e7666dfa8d45167d2083320ada925f4bb9732087db795a03671b
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/curl/7.83.1-2/
+
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.28+dfsg-6ubuntu1`
 
@@ -657,14 +655,13 @@ Licenses: (parsed from: `/usr/share/doc/debianutils/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris debianutils=5.7-0.2
-'http://archive.ubuntu.com/ubuntu/pool/main/d/debianutils/debianutils_5.7-0.2.dsc' debianutils_5.7-0.2.dsc 1542 SHA512:ef393fe10de8d84dedc38e60ca4760c93b02ecdcf6b1930d30f2e230dfbc002a5113459f430ac850df90285f534553db4e6ee6c533c9b25b8eb99594d533ce58
-'http://archive.ubuntu.com/ubuntu/pool/main/d/debianutils/debianutils_5.7.orig.tar.gz' debianutils_5.7.orig.tar.gz 257231 SHA512:79acd8885abca93842d696167171a359011c49a40f38deeb25bc94d62905f95afa3a7b2540d3bd4b0ffd363c5c48a439a1a68139a29d6c033980b019cea75d92
-'http://archive.ubuntu.com/ubuntu/pool/main/d/debianutils/debianutils_5.7-0.2.debian.tar.xz' debianutils_5.7-0.2.debian.tar.xz 21664 SHA512:9984de24acd5a8cb9dfad84ba5d26689a808a0a9a23f231c099f30a3dbe1ade2e3eaec758b0f4e358d0f79d0b2d97ad164df78f58b776afcf76085ddf47a4172
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/debianutils/5.7-0.2/
+
 
 ### `dpkg` source package: `diffutils=1:3.8-0ubuntu2`
 
@@ -1278,15 +1275,9 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `LGPLv3+_or_GPLv2+`
 - `The main library is licensed under GNU Lesser`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnutls28=3.7.6-2ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.7.6-2ubuntu1.dsc' gnutls28_3.7.6-2ubuntu1.dsc 3549 SHA512:bf3dc17da48ab359c35c2003253878dbcc7a1bd9948a86936f86d2bbaefa0df2960baefac5ed542f195e8df9b0aa74903348bbc322f2f15fab80c16c548300e2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.7.6.orig.tar.xz' gnutls28_3.7.6.orig.tar.xz 6338276 SHA512:f872339df80ec31d292821ff00eaafbe50e0bd4cdbb86e21e4f78541cd0a26d843596d5e69c91de4db8ce7d027fc639ae6462b57d89fb116162ae63c5a97486a
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.7.6.orig.tar.xz.asc' gnutls28_3.7.6.orig.tar.xz.asc 996 SHA512:9bc54b6418d10341a2dea774599a85783fd242eb33058e013598632ca3389f3ffdb7eaf0cf2d26c6cb7079a0baed5d5b87046203d1ac945f33eded89d8f87fec
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.7.6-2ubuntu1.debian.tar.xz' gnutls28_3.7.6-2ubuntu1.debian.tar.xz 68880 SHA512:6edfc6492ba656cceb88ba0b6591ae67942ec219ee108e04a5045e83bcf98b928f564de9f520c54d387ef5a6085bd313f6cfceaf2a0b3c11226ecd1a54472bec
-```
 
 ### `dpkg` source package: `gobject-introspection=1.72.0-1`
 
@@ -2771,15 +2762,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libx11=2:1.7.5-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.7.5-1.dsc' libx11_1.7.5-1.dsc 2539 SHA512:f126b0bec60f9d5dd002cde0d555ab316674bc6b411358498bf67ea4201be660f4e278c4e42ccdee1c4b9a2503fd64207cb948bf428b1cf56bbc25c62584e9b2
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.7.5.orig.tar.gz' libx11_1.7.5.orig.tar.gz 3170022 SHA512:90474f5f95c3498a02100aeeb6b5ad7ae9076bc40a70cdd828bd881adac0bf278002186142f2760e5504cf82120f4869798831e0e2332ecbc6903e8f7c9114ab
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.7.5.orig.tar.gz.asc' libx11_1.7.5.orig.tar.gz.asc 358 SHA512:75139b9f7b2f19aed3d3a66ea8b883480db2fa56d713bb0160ea8a0faba208da4c241768f9f2703f723f13906438eda3117f489d7d5d17fbe1cbb75b13c9935d
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.7.5-1.diff.gz' libx11_1.7.5-1.diff.gz 94094 SHA512:529f346d7f2ebb03988a10bf30516506a648b542d52fb9338e1f7d31cc4e939cffb651ddbd08ddcbf2911b26046864c02b8583914b2413ac244209ecb97313bb
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libx11/2:1.7.5-1/
+
 
 ### `dpkg` source package: `libxau=1:1.0.9-1build5`
 
@@ -2817,14 +2806,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxcb=1.14-3ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcb/libxcb_1.14-3ubuntu3.dsc' libxcb_1.14-3ubuntu3.dsc 5480 SHA512:cc563eae53e92b3f5cf700f0a61ee036fe0df9a109453dd4cd6a8107dac4a7f6d85e28810011ef74ca69ca36853a8d20e877480b94344ad5262f8fd6da299d5c
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcb/libxcb_1.14.orig.tar.gz' libxcb_1.14.orig.tar.gz 640322 SHA512:6114d8c233b42b56604787a0475e924143aa13f1d382e6029b2150a4360c12ce78073409f754fbb1e5d9f99fc26900c0a4c59e9cfbd4c3d0a3af0c1306e62da1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcb/libxcb_1.14-3ubuntu3.diff.gz' libxcb_1.14-3ubuntu3.diff.gz 27588 SHA512:228c6da2cf94e02b249ccb04f2668f45b2ab117a4c6670ac6f7ab449582e459df4fc7e1ce5ae5cd945acea6fd00b935ed6394c800ee3d92ce9a0fb6913460f86
-```
 
 ### `dpkg` source package: `libxcrypt=1:4.4.28-2`
 
