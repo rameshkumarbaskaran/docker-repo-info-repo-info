@@ -1,9 +1,9 @@
-# `gradle:7.5.0-jdk18-focal`
+# `gradle:7.5.1-jdk18-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:224bfb4c97125e677e8e813e99c58c25431b344c2f1f33b70f2cd19153605def`
-- Created: `2022-08-03T12:36:17.412917364Z`
+- Image ID: `sha256:9c6549391f943f488d79f5e2cc4a1a5dbc1ecf9d15609649c6e3f2cd580d1678`
+- Created: `2022-08-08T19:28:32.225117901Z`
 - Virtual Size: ~ 786.60 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -16,7 +16,7 @@
   - `JAVA_VERSION=jdk-18.0.2+9`
   - `JAVA_HOME=/opt/java/openjdk`
   - `GRADLE_HOME=/opt/gradle`
-  - `GRADLE_VERSION=7.5`
+  - `GRADLE_VERSION=7.5.1`
 
 ## `dpkg` (`.deb`-based packages)
 
