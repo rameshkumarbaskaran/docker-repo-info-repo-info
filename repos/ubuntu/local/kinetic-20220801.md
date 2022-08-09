@@ -67,13 +67,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.5.1
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.5.1.dsc' apt_2.5.1.dsc 2933 SHA512:efcb5c42c71d02dc4c12a9412e12db09a647447ae5a827c591bbd9744d52bc94c6589223abc594f27236e31b77bcda7e2eaa60d525fb67d86e8b34bda89990ec
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.5.1.tar.xz' apt_2.5.1.tar.xz 2221352 SHA512:a711daa0a99927ae5d042fbb543cfa38e6b64963b44643ea29e77a57f081f0c0e39d59ff1cac6c00eb57a5592506c25517e60e37e0a4294a98908e8f7facbb75
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/apt/2.5.1/
+
 
 ### `dpkg` source package: `attr=1:2.5.1-1build1`
 
