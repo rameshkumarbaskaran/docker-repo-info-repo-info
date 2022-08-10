@@ -1,7 +1,7 @@
 ## `varnish:old-alpine`
 
 ```console
-$ docker pull varnish@sha256:20d7dcdd046171d699ccef2105736b61cf9a6ebaa65b6e3fe30785a44add0ce1
+$ docker pull varnish@sha256:fdbdc8aa20496b5e42e7c66c80c12815d5ce5d6e8a387b279b9004eaf375fd31
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -163,50 +163,50 @@ CMD []
 ### `varnish:old-alpine` - linux; 386
 
 ```console
-$ docker pull varnish@sha256:dcadf2f1589588769716e0d253cf48bc6bc71c29e8cec89a5c5f4a056c1ca1fe
+$ docker pull varnish@sha256:faf7f02bdd0ad41b939888bf1e83a222cdd6ff64c737617638d1afab0fc69920
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **58.5 MB (58549841 bytes)**  
+-	Total Size: **58.6 MB (58567058 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ebcb76713d9f0df4e47ce4a43716bf1e8ae754ad3cbe19203a4dec3723055980`
+-	Image ID: `sha256:ef6c52ee8f06a2e29ce3abeb4747e4c4231cd6a97348824717e9baf64db2d442`
 -	Entrypoint: `["\/usr\/local\/bin\/docker-varnish-entrypoint"]`
 -	Default Command: `[]`
 
 ```dockerfile
-# Tue, 19 Jul 2022 22:38:40 GMT
-ADD file:4ae4391bf852a3e83cff6c0baebf0241d4955d580e24c180f882a142e4adaf1d in / 
-# Tue, 19 Jul 2022 22:38:40 GMT
+# Tue, 09 Aug 2022 17:38:54 GMT
+ADD file:fea8a3ba06779852956b0d3a2dd7514ab33217b1fd395231864c443797f077f6 in / 
+# Tue, 09 Aug 2022 17:38:54 GMT
 CMD ["/bin/sh"]
-# Wed, 20 Jul 2022 02:24:19 GMT
+# Wed, 10 Aug 2022 00:08:00 GMT
 ENV VARNISH_SIZE=100M
-# Wed, 20 Jul 2022 02:25:03 GMT
+# Wed, 10 Aug 2022 00:08:43 GMT
 RUN set -e;    BASE_PKGS="tar alpine-sdk sudo git";     apk add --virtual varnish-build-deps -q --no-progress --update $BASE_PKGS;     git clone https://github.com/varnishcache/pkg-varnish-cache.git;     cd pkg-varnish-cache/alpine;     git checkout d3e6a3fad7d4c2ac781ada92dcc246e7eef9d129;     sed -i APKBUILD         -e "s/pkgver=@VERSION@/pkgver=7.0.2/" 	-e 's@^source=.*@source="https://varnish-cache.org/downloads/varnish-$pkgver.tgz"@' 	-e "s/^sha512sums=.*/sha512sums=\"5eb08345c95152639266b7ad241185188477f8fd04e88e4dfda1579719a1a413790a0616f25d70994f6d3b8f7640ea80926ece7c547555dad856fd9f6960c9a3  varnish-\$pkgver.tgz\"/";     adduser -D builder;     echo "builder ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers;     addgroup builder abuild;     su builder -c "abuild-keygen -nai";     chown builder -R .;     su builder -c "abuild -r";    apk add --allow-untrusted ~builder/packages/pkg-varnish-cache/*/*.apk;     echo -e 'vcl 4.1;\nbackend default none;' > /etc/varnish/default.vcl;     apk del --no-network varnish-build-deps;     rm -rf ~builder /pkg-varnish-cache;     sed -i '/^builder/d' /etc/sudoers;     deluser --remove-home builder;
-# Wed, 20 Jul 2022 02:25:03 GMT
+# Wed, 10 Aug 2022 00:08:43 GMT
 WORKDIR /etc/varnish
-# Wed, 20 Jul 2022 02:25:05 GMT
+# Wed, 10 Aug 2022 00:08:45 GMT
 COPY dir:846b8f8975487ee292d565d7ea945a1a79fb5f0e418fec900574091bb0a7cffc in /usr/local/bin/ 
-# Wed, 20 Jul 2022 02:25:05 GMT
+# Wed, 10 Aug 2022 00:08:45 GMT
 ENTRYPOINT ["/usr/local/bin/docker-varnish-entrypoint"]
-# Wed, 20 Jul 2022 02:25:06 GMT
+# Wed, 10 Aug 2022 00:08:46 GMT
 EXPOSE 80 8443
-# Wed, 20 Jul 2022 02:25:07 GMT
+# Wed, 10 Aug 2022 00:08:47 GMT
 CMD []
 ```
 
 -	Layers:
-	-	`sha256:cbf9934fc184d27d98bef2567dbcecbee05767c8762c95e63984577a8c23e961`  
-		Last Modified: Tue, 19 Jul 2022 22:39:35 GMT  
-		Size: 2.8 MB (2821611 bytes)  
+	-	`sha256:2c44f983a875883421e7d5bc471f6437e0e377e6e7343b52c856caee71064d31`  
+		Last Modified: Tue, 09 Aug 2022 17:40:01 GMT  
+		Size: 2.8 MB (2832612 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:43145b3b1aee8cf99942576ad1267e0f452afe1152481810c40973dcc244b234`  
-		Last Modified: Wed, 20 Jul 2022 02:26:41 GMT  
-		Size: 55.7 MB (55727753 bytes)  
+	-	`sha256:32bcb5bb399c5569917c6abfec6bc7f6c53fc62ef8d61276aedb82d3febceaae`  
+		Last Modified: Wed, 10 Aug 2022 00:12:52 GMT  
+		Size: 55.7 MB (55733966 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6990782b33d766bd7755f491cf11605d12af947424c24baa3cb99020f1f03002`  
-		Last Modified: Wed, 20 Jul 2022 02:26:35 GMT  
-		Size: 477.0 B  
+	-	`sha256:c66fa5d0ba93e6a84e5d2dc485fa6ffca7a147980e9cbef8ae108bbe96c159ca`  
+		Last Modified: Wed, 10 Aug 2022 00:12:45 GMT  
+		Size: 480.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `varnish:old-alpine` - linux; ppc64le
