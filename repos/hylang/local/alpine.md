@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:243435a8aecc897c5d19447ed0063a30094cb376a25a948f2b82687db4112bf4`
-- Created: `2022-08-03T11:30:19.970169096Z`
-- Virtual Size: ~ 58.90 Mb  
+- Image ID: `sha256:f5efa820b1e5ed8dfad68bebd4dbd015240d98103753fc52f3b33bdef270f9aa`
+- Created: `2022-08-10T05:51:21.204085341Z`
+- Virtual Size: ~ 58.94 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -93,16 +93,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20211220-r0 description:
+ca-certificates-20220614-r0 description:
 Common CA certificates PEM files from Mozilla
 
-ca-certificates-20211220-r0 webpage:
+ca-certificates-20220614-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20211220-r0 installed size:
-656 KiB
+ca-certificates-20220614-r0 installed size:
+688 KiB
 
-ca-certificates-20211220-r0 license:
+ca-certificates-20220614-r0 license:
 MPL-2.0 AND MIT
 
 ```
@@ -110,16 +110,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `ca-certificates-bundle`
 
 ```console
-ca-certificates-bundle-20211220-r0 description:
+ca-certificates-bundle-20220614-r0 description:
 Pre generated bundle of Mozilla certificates
 
-ca-certificates-bundle-20211220-r0 webpage:
+ca-certificates-bundle-20220614-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-bundle-20211220-r0 installed size:
-216 KiB
+ca-certificates-bundle-20220614-r0 installed size:
+228 KiB
 
-ca-certificates-bundle-20211220-r0 license:
+ca-certificates-bundle-20220614-r0 license:
 MPL-2.0 AND MIT
 
 ```
@@ -365,16 +365,16 @@ OpenSSL
 ### `apk` package: `libtirpc`
 
 ```console
-libtirpc-1.3.2-r0 description:
+libtirpc-1.3.2-r1 description:
 Transport Independent RPC library (SunRPC replacement)
 
-libtirpc-1.3.2-r0 webpage:
+libtirpc-1.3.2-r1 webpage:
 https://sourceforge.net/projects/libtirpc
 
-libtirpc-1.3.2-r0 installed size:
-180 KiB
+libtirpc-1.3.2-r1 installed size:
+184 KiB
 
-libtirpc-1.3.2-r0 license:
+libtirpc-1.3.2-r1 license:
 BSD-3-Clause
 
 ```
@@ -382,16 +382,16 @@ BSD-3-Clause
 ### `apk` package: `libtirpc-conf`
 
 ```console
-libtirpc-conf-1.3.2-r0 description:
+libtirpc-conf-1.3.2-r1 description:
 Configuration files for TI-RPC
 
-libtirpc-conf-1.3.2-r0 webpage:
+libtirpc-conf-1.3.2-r1 webpage:
 https://sourceforge.net/projects/libtirpc
 
-libtirpc-conf-1.3.2-r0 installed size:
+libtirpc-conf-1.3.2-r1 installed size:
 16 KiB
 
-libtirpc-conf-1.3.2-r0 license:
+libtirpc-conf-1.3.2-r1 license:
 BSD-3-Clause
 
 ```
@@ -603,16 +603,16 @@ GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 ### `apk` package: `zlib`
 
 ```console
-zlib-1.2.12-r1 description:
+zlib-1.2.12-r3 description:
 A compression/decompression Library
 
-zlib-1.2.12-r1 webpage:
+zlib-1.2.12-r3 webpage:
 https://zlib.net/
 
-zlib-1.2.12-r1 installed size:
+zlib-1.2.12-r3 installed size:
 108 KiB
 
-zlib-1.2.12-r1 license:
+zlib-1.2.12-r3 license:
 Zlib
 
 ```
