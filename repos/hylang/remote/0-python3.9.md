@@ -1,7 +1,7 @@
 ## `hylang:0-python3.9`
 
 ```console
-$ docker pull hylang@sha256:a6d1161110222383f36224b26f74a87abcc4b2f2eaea7aab701765bd78ad8ed9
+$ docker pull hylang@sha256:6bb5b04e63d5e2e03c1f3e35eabcf7ca6e006f4557f8b0d89743fee35777829c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -180,14 +180,14 @@ CMD ["hy"]
 ### `hylang:0-python3.9` - linux; arm variant v7
 
 ```console
-$ docker pull hylang@sha256:746f61892fd16e2ec74fde923516b507f14894c7cd5f9bde314ab43466b5aae8
+$ docker pull hylang@sha256:ca904e43cbcfb82e40c49741b40d708fe6b4ad4bdf067d06e031917658f9094a
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **45.1 MB (45086317 bytes)**  
+-	Total Size: **45.1 MB (45086565 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:87abf229565e20bd120b1a3d0aecf7a4b452c538fc3a8ba38d4df194cd6cc9bc`
+-	Image ID: `sha256:457c2e7212a8f31facf54d16ab6d01d6dc151a5e0ea252b842b1dad04ea716ea`
 -	Default Command: `["hy"]`
 
 ```dockerfile
@@ -213,21 +213,21 @@ RUN set -eux; 	for src in idle3 pydoc3 python3 python3-config; do 		dst="$(echo 
 ENV PYTHON_PIP_VERSION=22.0.4
 # Wed, 03 Aug 2022 09:04:49 GMT
 ENV PYTHON_SETUPTOOLS_VERSION=58.1.0
-# Wed, 03 Aug 2022 09:04:49 GMT
-ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/aeca83c7ba7f9cdfd681103c4dcbf0214f6d742e/public/get-pip.py
-# Wed, 03 Aug 2022 09:04:49 GMT
-ENV PYTHON_GET_PIP_SHA256=d0b5909f3ab32dae9d115aa68a4b763529823ad5589c56af15cf816fca2773d6
-# Wed, 03 Aug 2022 09:05:04 GMT
+# Fri, 12 Aug 2022 06:55:08 GMT
+ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/5eaac1050023df1f5c98b173b248c260023f2278/public/get-pip.py
+# Fri, 12 Aug 2022 06:55:08 GMT
+ENV PYTHON_GET_PIP_SHA256=5aefe6ade911d997af080b315ebcb7f882212d070465df544e1175ac2be519b4
+# Fri, 12 Aug 2022 06:55:20 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum -c -; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		export PYTHONDONTWRITEBYTECODE=1; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		--no-compile 		"pip==$PYTHON_PIP_VERSION" 		"setuptools==$PYTHON_SETUPTOOLS_VERSION" 	; 	rm -f get-pip.py; 		pip --version
-# Wed, 03 Aug 2022 09:05:04 GMT
+# Fri, 12 Aug 2022 06:55:20 GMT
 CMD ["python3"]
-# Thu, 04 Aug 2022 13:34:08 GMT
+# Fri, 12 Aug 2022 10:50:32 GMT
 ENV HY_VERSION=0.24.0
-# Thu, 04 Aug 2022 13:34:08 GMT
+# Fri, 12 Aug 2022 10:50:32 GMT
 ENV HYRULE_VERSION=0.2
-# Thu, 04 Aug 2022 13:34:22 GMT
+# Fri, 12 Aug 2022 10:50:45 GMT
 RUN pip install --no-cache-dir "hy == $HY_VERSION" "hyrule == $HYRULE_VERSION"
-# Thu, 04 Aug 2022 13:34:22 GMT
+# Fri, 12 Aug 2022 10:50:45 GMT
 CMD ["hy"]
 ```
 
@@ -248,13 +248,13 @@ CMD ["hy"]
 		Last Modified: Wed, 03 Aug 2022 11:23:53 GMT  
 		Size: 233.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:baa6c21f992e3f43e5f5d2e0607c136257ac17d3d50727bd3e70308166f0b1ca`  
-		Last Modified: Wed, 03 Aug 2022 11:23:56 GMT  
-		Size: 3.2 MB (3174946 bytes)  
+	-	`sha256:ba028c078074ab5612105ad3037ef2daa70ac1e92a17ff879a5707d96028229d`  
+		Last Modified: Fri, 12 Aug 2022 10:07:24 GMT  
+		Size: 3.2 MB (3175007 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e016c80db4757f1b5b196410211b815bc729bef71eedd8a8fded531017cea92f`  
-		Last Modified: Thu, 04 Aug 2022 13:43:19 GMT  
-		Size: 3.6 MB (3645194 bytes)  
+	-	`sha256:9db2e7943fa68d73b72d9a0bb2a357961ee8767efab4a39cb46455ca61f598dc`  
+		Last Modified: Fri, 12 Aug 2022 10:59:35 GMT  
+		Size: 3.6 MB (3645381 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `hylang:0-python3.9` - linux; arm64 variant v8
