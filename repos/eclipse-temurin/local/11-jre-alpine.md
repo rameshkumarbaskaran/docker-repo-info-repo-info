@@ -2,19 +2,19 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9fbff52e40523afdcbe6dd9ba9851ce8ed32b15487e51f0fdd7cdd3fd6b08034`
-- Created: `2022-08-10T01:32:04.340592628Z`
+- Image ID: `sha256:853f19858489d1406442ba9e6331194e5b5e84058216dab240a69680c639b806`
+- Created: `2022-08-11T19:23:16.237842591Z`
 - Virtual Size: ~ 156.08 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/sh"]`
 - Environment:
   - `PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `JAVA_HOME=/opt/java/openjdk`
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
   - `JAVA_VERSION=jdk-11.0.16+8`
-  - `JAVA_HOME=/opt/java/openjdk`
 
 ## `apk` (`.apk`-based packages)
 
