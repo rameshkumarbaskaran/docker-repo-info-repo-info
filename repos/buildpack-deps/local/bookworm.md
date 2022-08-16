@@ -4566,20 +4566,13 @@ Licenses: (parsed from: `/usr/share/doc/libpango-1.0-0/copyright`, `/usr/share/d
 - `TCL`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pango1.0=1.50.7+ds-1
-'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.50.7%2bds-1.dsc' pango1.0_1.50.7+ds-1.dsc 3857 SHA256:a932df579e273d8ec75331208e0a361a863a18af69e2f91b42964b0b71caad3b
-'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.50.7%2bds.orig.tar.xz' pango1.0_1.50.7+ds.orig.tar.xz 2673928 SHA256:f5ab7af0330fed70b67680dc52cfd596a09e9e5187a8732c212a8db53f146ea0
-'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.50.7%2bds-1.debian.tar.xz' pango1.0_1.50.7+ds-1.debian.tar.xz 50324 SHA256:8c8b1010d5e98409af5df430e36cf5e65ebf4d2b303c3b460adee03efb4baaed
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/pango1.0/1.50.7+ds-1/
 
-- https://sources.debian.net/src/pango1.0/1.50.7+ds-1/ (for browsing the source)
-- https://sources.debian.net/src/pango1.0/1.50.7+ds-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/pango1.0/1.50.7+ds-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `patch=2.7.6-7`
 
@@ -4825,20 +4818,13 @@ Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/li
 - `nagaysau-ishii`
 - `rijndael`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-14=14.4-1
-'http://deb.debian.org/debian/pool/main/p/postgresql-14/postgresql-14_14.4-1.dsc' postgresql-14_14.4-1.dsc 3721 SHA256:2f71fd5c73cc71fdda05c3c244702193dacb687bb9bcee042997804eb2794021
-'http://deb.debian.org/debian/pool/main/p/postgresql-14/postgresql-14_14.4.orig.tar.bz2' postgresql-14_14.4.orig.tar.bz2 22094218 SHA256:c23b6237c5231c791511bdc79098617d6852e9e3bdf360efd8b5d15a1a3d8f6a
-'http://deb.debian.org/debian/pool/main/p/postgresql-14/postgresql-14_14.4-1.debian.tar.xz' postgresql-14_14.4-1.debian.tar.xz 24500 SHA256:9bd492037ec3936ffe9cff0cf95494b541fc6b8ce28155a0bd701d58dd199da3
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/postgresql-14/14.4-1/
 
-- https://sources.debian.net/src/postgresql-14/14.4-1/ (for browsing the source)
-- https://sources.debian.net/src/postgresql-14/14.4-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/postgresql-14/14.4-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `procps=2:3.3.17-7`
 
@@ -4908,20 +4894,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.10.5-2
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.5-2.dsc' python3-stdlib-extensions_3.10.5-2.dsc 2652 SHA256:30b936a7076131092a371fc16c968d159cf55257d6d50dcc71e4ff053f75bb69
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.5.orig.tar.bz2' python3-stdlib-extensions_3.10.5.orig.tar.bz2 6340975 SHA256:337102556a096f3beb971860ebde32643a9baec0f3dd846d8666577d839e5123
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.5-2.debian.tar.xz' python3-stdlib-extensions_3.10.5-2.debian.tar.xz 25700 SHA256:32223c8ce6be1db2c01faafa0ec11f833c6da0c575ebb510c8d00211638e73e9
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3-stdlib-extensions/3.10.5-2/
 
-- https://sources.debian.net/src/python3-stdlib-extensions/3.10.5-2/ (for browsing the source)
-- https://sources.debian.net/src/python3-stdlib-extensions/3.10.5-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3-stdlib-extensions/3.10.5-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3.10=3.10.5-1`
 
@@ -4952,20 +4931,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.10-minimal/copyright`, `/usr/
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.10=3.10.5-1
-'http://deb.debian.org/debian/pool/main/p/python3.10/python3.10_3.10.5-1.dsc' python3.10_3.10.5-1.dsc 3639 SHA256:9559b9c03d92eaf60ddb6c3d1415af22183e95874721eed5df2da9d40b416552
-'http://deb.debian.org/debian/pool/main/p/python3.10/python3.10_3.10.5.orig.tar.xz' python3.10_3.10.5.orig.tar.xz 19361320 SHA256:8437efd5b106ef0a75aabfbf23d880625120a73a86a22ade4d2e2e68d7b74486
-'http://deb.debian.org/debian/pool/main/p/python3.10/python3.10_3.10.5-1.debian.tar.xz' python3.10_3.10.5-1.debian.tar.xz 217776 SHA256:0defe2272a11986868662154c69d727419503fd2db84cbe543076395e71b0bbb
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3.10/3.10.5-1/
 
-- https://sources.debian.net/src/python3.10/3.10.5-1/ (for browsing the source)
-- https://sources.debian.net/src/python3.10/3.10.5-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3.10/3.10.5-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=8.1.2-1.2`
 
@@ -5379,21 +5351,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2022a-1
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2022a-1.dsc' tzdata_2022a-1.dsc 2205 SHA256:f316f1b551570c26c7001c8ee18396838289e709993d6b0e9f1a18a5378c514b
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2022a.orig.tar.gz' tzdata_2022a.orig.tar.gz 425833 SHA256:ef7fffd9f4f50f4f58328b35022a32a5a056b245c5cb3d6791dddb342f871664
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2022a.orig.tar.gz.asc' tzdata_2022a.orig.tar.gz.asc 833 SHA256:f8180c9943426d5e53ada60ebb44114c8f1763034c4cc8fc87ba5d493ab39a92
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2022a-1.debian.tar.xz' tzdata_2022a-1.debian.tar.xz 111804 SHA256:83f21a59c4f4dd773de30b044f0f68911594e23d374ca14a5eb2edd254b5578e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tzdata/2022a-1/
 
-- https://sources.debian.net/src/tzdata/2022a-1/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2022a-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2022a-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0043`
 

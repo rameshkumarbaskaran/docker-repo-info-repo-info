@@ -1244,14 +1244,9 @@ Licenses: (parsed from: `/usr/share/doc/dirmngr/copyright`, `/usr/share/doc/gnup
 - `TinySCHEME`
 - `permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnupg2=2.2.27-3ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnupg2/gnupg2_2.2.27-3ubuntu3.dsc' gnupg2_2.2.27-3ubuntu3.dsc 3718 SHA512:b2d2e8986b0553d5a96be18d625e7296eeae61c148e85a337554cb5b1b33e8489b7ce9308171d802ce91b5186e595bc5e2043810b4ea6e5ff92c8c2a58d68832
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnupg2/gnupg2_2.2.27.orig.tar.bz2' gnupg2_2.2.27.orig.tar.bz2 7191555 SHA512:cf336962116c9c08ac80b1299654b94948033ef51d6d5e7f54c2f07bbf7d92c7b0bddb606ceee2cdd837063f519b8d59af5a82816b840a0fc47d90c07b0e95ab
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnupg2/gnupg2_2.2.27-3ubuntu3.debian.tar.xz' gnupg2_2.2.27-3ubuntu3.debian.tar.xz 66660 SHA512:526cd5c06f089a17a1b86fee217af61bb74f5217866347b5963af4df7fc07eee94d0b2236a7c26ba6b31d8fe008498dc1d2c48f21f7d900b6e37f6a4fe4defcf
-```
 
 ### `dpkg` source package: `gnutls28=3.7.6-2ubuntu1`
 
@@ -1368,15 +1363,9 @@ Licenses: (parsed from: `/usr/share/doc/gzip/copyright`)
 - `GPL-3`
 - `GPL-3+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gzip=1.10-4ubuntu4
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gzip/gzip_1.10-4ubuntu4.dsc' gzip_1.10-4ubuntu4.dsc 2269 SHA512:65ca7a283eb955a928afbb3586234a77a06d7468af69f273a203ebddcb629cbb77f1a3e3b80573bd7968dc1ecb9cc3cd9b95c0948a6b941be06fccf27aa2203c
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gzip/gzip_1.10.orig.tar.gz' gzip_1.10.orig.tar.gz 1201421 SHA512:7939043e74554ced0c1c05d354ab4eb36cd6dce89ad79d02ccdc5ed6b7ee390759689b2d47c07227b9b44a62851afe7c76c4cae9f92527d999f3f1b4df1cccff
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gzip/gzip_1.10.orig.tar.gz.asc' gzip_1.10.orig.tar.gz.asc 833 SHA512:74727fb3a8b64f81b4dd2d941fa750a789c482d7ae604d0ecfbe5ec623780efc7c5f0e51d65e7b99c2f097c5cd6585cc3a0f1b31abb03306156e0d410d9f0186
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gzip/gzip_1.10-4ubuntu4.debian.tar.xz' gzip_1.10-4ubuntu4.debian.tar.xz 39072 SHA512:faac8029bc9632865b0a8f2ddd42cce4cb63cb56df2aae6720fa37d28286775cab81c3193800e2350fbefb1a4ecea061f7943efb1385f5821fd0a47cd54efd8d
-```
 
 ### `dpkg` source package: `harfbuzz=2.7.4-1ubuntu5`
 
@@ -3653,14 +3642,13 @@ Licenses: (parsed from: `/usr/share/doc/libpango-1.0-0/copyright`, `/usr/share/d
 - `TCL`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pango1.0=1.50.7+ds-1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.50.7%2bds-1.dsc' pango1.0_1.50.7+ds-1.dsc 3857 SHA512:1af587bbd736d47088d5e43d140b6f7cef74981d37a4f8feb997646124fb0dbcc77eacc682557e8ea51f24c63fc44216b273664e2688f31c42f7cba8c2590fc2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.50.7%2bds.orig.tar.xz' pango1.0_1.50.7+ds.orig.tar.xz 2673928 SHA512:fc73810b09a967d1280cdd364a0e4c19a71312a1e3e1d7cfc994a72dce7a8daf2085e048ab10d52e3c255d10db3b2f2ec8a4177ed36fd668fc4bd9dc9c828674
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.50.7%2bds-1.debian.tar.xz' pango1.0_1.50.7+ds-1.debian.tar.xz 50324 SHA512:0007e4059a0c2c2ed6f0740cf96dbcbf07b2574c6de5d72b5cc32d2f3ee372b26c51bb7f44adf83913d7d11aedf77f841fc0160222840c857e9469b0a315f556
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/pango1.0/1.50.7+ds-1/
+
 
 ### `dpkg` source package: `patch=2.7.6-7build2`
 
@@ -3864,14 +3852,13 @@ Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/li
 - `nagaysau-ishii`
 - `rijndael`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-14=14.4-1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-14/postgresql-14_14.4-1.dsc' postgresql-14_14.4-1.dsc 3721 SHA512:d6ddd67c72959925e184144298d25113af712941eb2733a997dbbf5862c52251d82a1a654aae819b03d19dff05386148156d43728611129353aab5f106f51e1e
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-14/postgresql-14_14.4.orig.tar.bz2' postgresql-14_14.4.orig.tar.bz2 22094218 SHA512:dd2f80248684e331d2ffb1e26cd2a285df1fb18710807a0c31aedabf917912ce9267f8ca26318e5371d916c6fe476f8a17886d82d3ff86a974e6f24c19a6aafb
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-14/postgresql-14_14.4-1.debian.tar.xz' postgresql-14_14.4-1.debian.tar.xz 24500 SHA512:28ba263882a9fadd308fffaf6516d151c4ffcdc84e7016adf8e437f42674c963603d51bc9c1aaf68635baf1eb8cdd9feb20031a14d43cd572e3d26f84996f576
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/postgresql-14/14.4-1/
+
 
 ### `dpkg` source package: `procps=2:3.3.17-6ubuntu2`
 
@@ -3967,14 +3954,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.10-minimal/copyright`, `/usr/
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.10=3.10.5-1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.10/python3.10_3.10.5-1.dsc' python3.10_3.10.5-1.dsc 3639 SHA512:3a22608a695a31d91954252d48c2dd2620e57681f2f83b4c1e2827559b59a704c9e16579d77c2b28135bbaca55b6b49c4b2a746e24604047f24414eda0670dd1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.10/python3.10_3.10.5.orig.tar.xz' python3.10_3.10.5.orig.tar.xz 19361320 SHA512:aa7f58a9b31de9824185b3e7bfa7da0dcf64ae9e89840664eae9d98d9048a650fa012cd5b873a62ff44b65b856db86f095c4003117406ec5e9583ec5f7e78e90
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.10/python3.10_3.10.5-1.debian.tar.xz' python3.10_3.10.5-1.debian.tar.xz 217776 SHA512:86eb3de9c07acfd076e1e5adbf17a3ef39831b69a946d2f2017047b16770be739dcb90709db393aacac9d8b8de561f75a201e1d3f5f1bc6577bb4999c121e5ae
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/python3.10/3.10.5-1/
+
 
 ### `dpkg` source package: `readline=8.1.2-1.2`
 
@@ -4653,11 +4639,6 @@ Licenses: (parsed from: `/usr/share/doc/zlib1g/copyright`, `/usr/share/doc/zlib1
 
 - `Zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris zlib=1:1.2.11.dfsg-2ubuntu9
-'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg-2ubuntu9.dsc' zlib_1.2.11.dfsg-2ubuntu9.dsc 2945 SHA512:26d5a0dc49615cce718e898f384f5f4d4ca2d37e76bb68b4e4feadf64b197a42ce0a85c1e96baa3d8d5c2c8d0a115ba109bf31d735eca49897bf3b9d3b3bad04
-'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg.orig.tar.gz' zlib_1.2.11.dfsg.orig.tar.gz 370248 SHA512:92819807c0b8de655021bb2d5d182f9b6b381d3072d8c8dc1df34bbaa25d36bcba140c85f754a43cc466aac65850b7a7366aa0c93e804180e5b255e61d5748de
-'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg-2ubuntu9.debian.tar.xz' zlib_1.2.11.dfsg-2ubuntu9.debian.tar.xz 58360 SHA512:e81d458faa4a79d02620a6a07c25c2838dedb7baa11155523184642d561269b8c9677ba96b571b31be429606b9572469871a99ee48f54d95c729efffb6af8563
-```
