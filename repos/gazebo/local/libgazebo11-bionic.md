@@ -2173,13 +2173,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-common3/copyright`, `/usr/sh
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-common3=3.14.1-1~bionic
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-common3/ignition-common3_3.14.1-1%7ebionic.dsc' ignition-common3_3.14.1-1~bionic.dsc 1895 SHA256:ebf764a87a1e15d10af1a81e8cedef580196f75fde9e471fefb702095749d055
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-common3/ignition-common3_3.14.1-1%7ebionic.tar.xz' ignition-common3_3.14.1-1~bionic.tar.xz 6731220 SHA256:79f7bf3d1bff372f920e225ec0b77145c2ddcd84a1e660c337238c0fa502b23c
-```
 
 ### `dpkg` source package: `ignition-fuel-tools4=4.5.0-1~bionic`
 
@@ -2193,14 +2189,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-fuel-tools4/copyright`, `/us
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-fuel-tools4=4.5.0-1~bionic
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.5.0-1%7ebionic.dsc' ignition-fuel-tools4_4.5.0-1~bionic.dsc 1433 SHA256:9bbe8c6eeaa52840c25fdfc4fcc8e07c60a9d8d521e20461b30135d5059dcb2e
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.5.0.orig.tar.bz2' ignition-fuel-tools4_4.5.0.orig.tar.bz2 304290 SHA256:70d7c48009b1406726b3844ea746cd50cf6dde5c784e90775c2dfe28cd29d62e
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.5.0-1%7ebionic.debian.tar.xz' ignition-fuel-tools4_4.5.0-1~bionic.debian.tar.xz 1768 SHA256:fbca2093baba3c88e64cd23f0e8a0aa15de959fc550065cca7ddece2e0094ac7
-```
 
 ### `dpkg` source package: `ignition-math6=6.12.0-1~bionic`
 
@@ -2267,14 +2258,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-transport8/copyright`, `/usr
 - `Apache-2.0`
 - `BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-transport8=8.3.0-1~bionic
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.3.0-1%7ebionic.dsc' ignition-transport8_8.3.0-1~bionic.dsc 1772 SHA256:e37dc96afc5f7c61262125cc5858cdcd9988194303abaef1f52658691350f3f2
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.3.0.orig.tar.bz2' ignition-transport8_8.3.0.orig.tar.bz2 509305 SHA256:bb12422a0563b9804e34074c6bfd3890505485c5e7d20a8f6f57fcd7beb57c9d
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.3.0-1%7ebionic.debian.tar.xz' ignition-transport8_8.3.0-1~bionic.debian.tar.xz 3232 SHA256:1928e66f8a181d0e980a6762cc3546008a0253350ea9ab6624a58c1cc56bf116
-```
 
 ### `dpkg` source package: `ilmbase=2.2.0-11ubuntu2`
 
@@ -7842,14 +7828,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris zlib=1:1.2.11.dfsg-0ubuntu2.1
-'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg-0ubuntu2.1.dsc' zlib_1.2.11.dfsg-0ubuntu2.1.dsc 2716 SHA512:bfcf85417e5430b1728e4c1f40ad7726a6c401aff6027e7a26d31f59b04957c820a3e98c47a538516c13b0ee76c86c8b50af8af1aa68dab699fa0d3e4ec36ed3
-'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg.orig.tar.xz' zlib_1.2.11.dfsg.orig.tar.xz 287216 SHA512:ffa49436c80fc94555a36a1f2f1f025b223055e02e43f297a572dd5df56d88421dfc36fcbbf0825fbdad876cb0c104f1846af51cca66cac57bbfe698c4365731
-'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg-0ubuntu2.1.debian.tar.xz' zlib_1.2.11.dfsg-0ubuntu2.1.debian.tar.xz 22448 SHA512:19a2517f7cddcbfa813a91756ddb5b52606496c7bd07cc86ae09a190701cc44c1caca602f49b8ce870e6c544e468fe08329548f20448efdf42c17510e32bf2fa
-```
 
 ### `dpkg` source package: `zvbi=0.2.35-13`
 

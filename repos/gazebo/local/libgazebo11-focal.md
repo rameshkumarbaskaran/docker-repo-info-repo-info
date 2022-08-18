@@ -2352,13 +2352,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-common3/copyright`, `/usr/sh
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-common3=3.14.1-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-common3/ignition-common3_3.14.1-1%7efocal.dsc' ignition-common3_3.14.1-1~focal.dsc 1891 SHA256:0cb4b2c08903796d86b00bffc8e14d63bf486b9ae40d7b6217823d6d686dc1e7
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-common3/ignition-common3_3.14.1-1%7efocal.tar.xz' ignition-common3_3.14.1-1~focal.tar.xz 6731224 SHA256:ceeea0c4aa42b00e7b17ccf1ab8e112ca3d567cc19217171e707ffc20a6fdd75
-```
 
 ### `dpkg` source package: `ignition-fuel-tools4=4.5.0-1~focal`
 
@@ -2372,14 +2368,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-fuel-tools4/copyright`, `/us
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-fuel-tools4=4.5.0-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.5.0-1%7efocal.dsc' ignition-fuel-tools4_4.5.0-1~focal.dsc 1429 SHA256:cbb6524aa5c174011908d3477551b07f58225806d9e635572432e3331010804a
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.5.0.orig.tar.bz2' ignition-fuel-tools4_4.5.0.orig.tar.bz2 304290 SHA256:70d7c48009b1406726b3844ea746cd50cf6dde5c784e90775c2dfe28cd29d62e
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.5.0-1%7efocal.debian.tar.xz' ignition-fuel-tools4_4.5.0-1~focal.debian.tar.xz 1744 SHA256:f113e467daaf5731ff2f043ce9d23694de8716a477b98fbc6cda8c7bc2c03177
-```
 
 ### `dpkg` source package: `ignition-math6=6.12.0-1~focal`
 
@@ -2446,14 +2437,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-transport8/copyright`, `/usr
 - `Apache-2.0`
 - `BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-transport8=8.3.0-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.3.0-1%7efocal.dsc' ignition-transport8_8.3.0-1~focal.dsc 1769 SHA256:69e9f84941427f1ca1a7c75ff576c9df9c44689d3c2f08516a5d5f2fe3620b17
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.3.0.orig.tar.bz2' ignition-transport8_8.3.0.orig.tar.bz2 509305 SHA256:bb12422a0563b9804e34074c6bfd3890505485c5e7d20a8f6f57fcd7beb57c9d
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.3.0-1%7efocal.debian.tar.xz' ignition-transport8_8.3.0-1~focal.debian.tar.xz 3176 SHA256:777e54dca2b5c40c3b8b59fd6611bf8c46a69370d9ce06f02ebb490e8ce763d8
-```
 
 ### `dpkg` source package: `ilmbase=2.3.0-6build1`
 
