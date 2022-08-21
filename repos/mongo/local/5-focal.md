@@ -1,10 +1,10 @@
-# `mongo:5.0.10-focal`
+# `mongo:5.0.11-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d98599fdfd656eada595e97b0389b911095dc7e914a2c194e0f0395cabec90fa`
-- Created: `2022-08-02T20:31:29.428923047Z`
-- Virtual Size: ~ 696.21 Mb  
+- Image ID: `sha256:4130848d45a9029621ebb788067479178f90f7cb2eadd23277cb1c056ddd3b7d`
+- Created: `2022-08-20T01:25:44.36375427Z`
+- Virtual Size: ~ 696.48 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -16,7 +16,7 @@
   - `MONGO_PACKAGE=mongodb-org`
   - `MONGO_REPO=repo.mongodb.org`
   - `MONGO_MAJOR=5.0`
-  - `MONGO_VERSION=5.0.10`
+  - `MONGO_VERSION=5.0.11`
   - `HOME=/data/db`
 
 ## `dpkg` (`.deb`-based packages)
@@ -1261,11 +1261,11 @@ $ apt-get source -qq --print-uris mawk=1.3.4.20200120-2
 'http://archive.ubuntu.com/ubuntu/pool/main/m/mawk/mawk_1.3.4.20200120-2.debian.tar.xz' mawk_1.3.4.20200120-2.debian.tar.xz 7504 SHA256:b772ed2f016b0286980c46cbc1f1f4ae62887ef2aa3dff6ef10cae638f923f26
 ```
 
-### `dpkg` source package: `mongodb-database-tools=100.5.4`
+### `dpkg` source package: `mongodb-database-tools=100.6.0`
 
 Binary Packages:
 
-- `mongodb-database-tools=100.5.4`
+- `mongodb-database-tools=100.6.0`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1290,17 +1290,17 @@ Licenses: (parsed from: `/usr/share/doc/mongodb-mongosh/copyright`)
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `mongodb-org=5.0.10`
+### `dpkg` source package: `mongodb-org=5.0.11`
 
 Binary Packages:
 
-- `mongodb-org=5.0.10`
-- `mongodb-org-database=5.0.10`
-- `mongodb-org-database-tools-extra=5.0.10`
-- `mongodb-org-mongos=5.0.10`
-- `mongodb-org-server=5.0.10`
-- `mongodb-org-shell=5.0.10`
-- `mongodb-org-tools=5.0.10`
+- `mongodb-org=5.0.11`
+- `mongodb-org-database=5.0.11`
+- `mongodb-org-database-tools-extra=5.0.11`
+- `mongodb-org-mongos=5.0.11`
+- `mongodb-org-server=5.0.11`
+- `mongodb-org-shell=5.0.11`
+- `mongodb-org-tools=5.0.11`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
