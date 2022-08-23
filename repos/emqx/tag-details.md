@@ -12,7 +12,7 @@
 ## `emqx:4`
 
 ```console
-$ docker pull emqx@sha256:00da7d91ed80191c10bcf0ddbddb8b7cfb6b87020752505e9b8c4b950a019a1a
+$ docker pull emqx@sha256:cdce1403e0fee48b827129479775d37302f0e22cfc41b8c71da75ff82e5291be
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -90,74 +90,74 @@ CMD ["emqx" "foreground"]
 ### `emqx:4` - linux; arm64 variant v8
 
 ```console
-$ docker pull emqx@sha256:96b008f7a2747ff4f13160a962292dbd1ab678597a9228a76b3203f84a46bf1b
+$ docker pull emqx@sha256:b9b2be320c2a2469aa9c8de01a47db24c4b11d7d8980a59e39259a4976cfc49c
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **110.2 MB (110228075 bytes)**  
+-	Total Size: **110.0 MB (110033038 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5c98a17532608ae41772e2e92f9bb3d479794c37c9d9e045805c39568ce75607`
+-	Image ID: `sha256:bcabc472c20703152f5e87f687372023f66139abb5c82b7bdecb205d4139962f`
 -	Entrypoint: `["\/usr\/bin\/docker-entrypoint.sh"]`
 -	Default Command: `["emqx","foreground"]`
 
 ```dockerfile
-# Tue, 02 Aug 2022 00:40:38 GMT
-ADD file:6039adfbca55ed34a719c37672c664e3524130a0e2a3b8663629b8120b81b790 in / 
-# Tue, 02 Aug 2022 00:40:39 GMT
+# Tue, 23 Aug 2022 01:52:32 GMT
+ADD file:90344130400909b0ad12bb54d439b0e4868fc5863f538f676e6fdfeaeb4dad51 in / 
+# Tue, 23 Aug 2022 01:52:33 GMT
 CMD ["bash"]
-# Tue, 02 Aug 2022 02:00:31 GMT
+# Tue, 23 Aug 2022 02:48:22 GMT
 RUN set -eu;     apt-get update;     apt-get install -y --no-install-recommends curl unzip ca-certificates;     rm -rf /var/lib/apt/lists/*
-# Tue, 02 Aug 2022 02:00:32 GMT
+# Tue, 23 Aug 2022 02:48:22 GMT
 ENV EMQX_VERSION=4.4.4
-# Tue, 02 Aug 2022 02:00:33 GMT
+# Tue, 23 Aug 2022 02:48:23 GMT
 ENV OTP=otp24.1.5-3
-# Tue, 02 Aug 2022 02:00:39 GMT
+# Tue, 23 Aug 2022 02:48:28 GMT
 RUN set -eu;     arch=$(dpkg --print-architecture);     if [ ${arch} = "amd64" ]; then sha256="74a65d51ab60b044874f98e1dc4022f2932c7d70e68bc13ed5fe43be177ba515"; fi;     if [ ${arch} = "arm64" ]; then sha256="6aed1583bf96b53e6355e7431204fc8b09b89ffbce580f5031a77a542c53c5e8"; fi;     ID="$(sed -n '/^ID=/p' /etc/os-release | sed -r 's/ID=(.*)/\1/g' | sed 's/\"//g')";     VERSION_ID="$(sed -n '/^VERSION_ID=/p' /etc/os-release | sed -r 's/VERSION_ID=(.*)/\1/g' | sed 's/\"//g')";     pkg="emqx-${EMQX_VERSION}-${OTP}-${ID}${VERSION_ID}-${arch}.zip";     curl -f -O -L https://www.emqx.com/en/downloads/broker/${EMQX_VERSION}/${pkg};     echo "$sha256 *$pkg" | sha256sum -c || exit 1;     unzip -q -d /opt $pkg;     ln -s /opt/emqx/bin/* /usr/local/bin/;     rm -rf $pkg
-# Tue, 02 Aug 2022 02:00:40 GMT
+# Tue, 23 Aug 2022 02:48:30 GMT
 RUN set -eu;     groupadd -r -g 1000 emqx;     useradd -r -m -u 1000 -g emqx emqx;     chgrp -Rf emqx /opt/emqx;     chmod -Rf g+w /opt/emqx;     chown -Rf emqx /opt/emqx
-# Tue, 02 Aug 2022 02:00:40 GMT
+# Tue, 23 Aug 2022 02:48:30 GMT
 WORKDIR /opt/emqx
-# Tue, 02 Aug 2022 02:00:41 GMT
+# Tue, 23 Aug 2022 02:48:31 GMT
 USER emqx
-# Tue, 02 Aug 2022 02:00:42 GMT
+# Tue, 23 Aug 2022 02:48:32 GMT
 VOLUME [/opt/emqx/log /opt/emqx/data]
-# Tue, 02 Aug 2022 02:00:43 GMT
+# Tue, 23 Aug 2022 02:48:33 GMT
 EXPOSE 11883 18083 1883 4369 4370 5369 6369 6370 8081 8083 8084 8883
-# Tue, 02 Aug 2022 02:00:45 GMT
+# Tue, 23 Aug 2022 02:48:35 GMT
 COPY file:6dd7e4492be7572c69a0409bd663714c620b2048d81308e1877901073db7f426 in /usr/bin/ 
-# Tue, 02 Aug 2022 02:00:45 GMT
+# Tue, 23 Aug 2022 02:48:35 GMT
 ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
-# Tue, 02 Aug 2022 02:00:46 GMT
+# Tue, 23 Aug 2022 02:48:36 GMT
 CMD ["emqx" "foreground"]
 ```
 
 -	Layers:
-	-	`sha256:a9fe95647e78b5516c7e2327355b6996e2ea295cd76ae242cbfe87f016b4e760`  
-		Last Modified: Tue, 02 Aug 2022 00:46:05 GMT  
-		Size: 30.1 MB (30054304 bytes)  
+	-	`sha256:5b142346550416c75ea412d21741de5eaf3e76857affc12fab789277f81f53b3`  
+		Last Modified: Tue, 23 Aug 2022 01:58:00 GMT  
+		Size: 30.1 MB (30063788 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23b8f37b5c2edc91fd1bdf8c28fd2b3da0c926ac40e82e7c59c7d03f310614f8`  
-		Last Modified: Tue, 02 Aug 2022 02:01:24 GMT  
-		Size: 2.6 MB (2558106 bytes)  
+	-	`sha256:76875b2a2774be642d6a500995cffb336dc0b7fce71c6554e4415cc6df01a4b2`  
+		Last Modified: Tue, 23 Aug 2022 02:49:14 GMT  
+		Size: 2.4 MB (2353690 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1a4cdc0cba9be243cb158e5751b728035148562b033d8ef1de765ca01f1a60dc`  
-		Last Modified: Tue, 02 Aug 2022 02:01:28 GMT  
-		Size: 38.8 MB (38806797 bytes)  
+	-	`sha256:c2bd6d30cd6371bb62afaacfb03fb3dd2ea33d16d25087af221e21d238febfc9`  
+		Last Modified: Tue, 23 Aug 2022 02:49:18 GMT  
+		Size: 38.8 MB (38806760 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d14c711205c5c7e4009eff2ea08ba336ac4598b6d1dfa6c1f7cf37089a5e727e`  
-		Last Modified: Tue, 02 Aug 2022 02:01:28 GMT  
-		Size: 38.8 MB (38807760 bytes)  
+	-	`sha256:62cf00ca63decf520e5ab938da78a25d9ad2816babd18a8e5594cc877a2d4791`  
+		Last Modified: Tue, 23 Aug 2022 02:49:18 GMT  
+		Size: 38.8 MB (38807691 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f05323f5f302f4d39168dba4ee48ae9ba98e3f6cd38134a5eaf7d8fe54dbc96`  
-		Last Modified: Tue, 02 Aug 2022 02:01:24 GMT  
-		Size: 1.1 KB (1108 bytes)  
+	-	`sha256:e6c5c2a2bac240c35e3c2ef46b56552e483b7324b2c74c09c78bc86d2a7e7b0b`  
+		Last Modified: Tue, 23 Aug 2022 02:49:13 GMT  
+		Size: 1.1 KB (1109 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `emqx:4.3`
 
 ```console
-$ docker pull emqx@sha256:f7c938a4b47ab9b6ea6d3849832666a7d3d2f8e0cc76fafad5892fe11a15e9cb
+$ docker pull emqx@sha256:b55e60556e2fbb77cdd9b5b77712d330f57c0edc4da46c26184fcbe10c8bf593
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -233,72 +233,72 @@ CMD ["emqx" "foreground"]
 ### `emqx:4.3` - linux; arm64 variant v8
 
 ```console
-$ docker pull emqx@sha256:b16db7118eb58b8d4a97fb43c042cd32a1655157bc4db9f9dcae97f114624fb8
+$ docker pull emqx@sha256:3ac92e082f78f6c79436d92a8bc0b02b223dc6e51f3362475630f57557b8256d
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **101.9 MB (101935760 bytes)**  
+-	Total Size: **101.9 MB (101934052 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8b7a2a6bf2ba99e9903831293b4162a6627d0e1a53f9820d1ecbee59f9490863`
+-	Image ID: `sha256:653d6bc567df59282c0e919f8da05ed6944db4c1dd664b56f0276722f1c7e4f4`
 -	Entrypoint: `["\/usr\/bin\/docker-entrypoint.sh"]`
 -	Default Command: `["emqx","foreground"]`
 
 ```dockerfile
-# Tue, 02 Aug 2022 00:41:03 GMT
-ADD file:d973e057fdca9166fb9f39e73d7d5d4ca8ac2af6a55813580bf14a13cef4c159 in / 
-# Tue, 02 Aug 2022 00:41:04 GMT
+# Tue, 23 Aug 2022 01:52:58 GMT
+ADD file:4c5bca2d158b11314fb47a6d4b34239575621c2f00f92e77870f23aa02913fac in / 
+# Tue, 23 Aug 2022 01:52:59 GMT
 CMD ["bash"]
-# Tue, 02 Aug 2022 02:00:06 GMT
+# Tue, 23 Aug 2022 02:47:57 GMT
 RUN set -eu;     apt-get update;     apt-get install -y --no-install-recommends curl unzip ca-certificates;     rm -rf /var/lib/apt/lists/*
-# Tue, 02 Aug 2022 02:00:07 GMT
+# Tue, 23 Aug 2022 02:47:57 GMT
 ENV EMQX_VERSION=4.3.15
-# Tue, 02 Aug 2022 02:00:11 GMT
+# Tue, 23 Aug 2022 02:48:03 GMT
 RUN set -eu;     arch=$(dpkg --print-architecture);     if [ ${arch} = "amd64" ]; then sha256="8f44386aebf472297377d7b6b595638f323227347047d5278dce9c0cd04963bc"; fi;     if [ ${arch} = "arm64" ]; then sha256="b0094028d388684136be975c574d98295205dd5a343045f76f423a109535e016"; fi;     ID="$(sed -n '/^ID=/p' /etc/os-release | sed -r 's/ID=(.*)/\1/g' | sed 's/\"//g')";     VERSION_ID="$(sed -n '/^VERSION_ID=/p' /etc/os-release | sed -r 's/VERSION_ID=(.*)/\1/g' | sed 's/\"//g')";     pkg="emqx-${ID}${VERSION_ID}-${EMQX_VERSION}-${arch}.zip";     curl -f -O -L https://www.emqx.com/en/downloads/broker/${EMQX_VERSION}/${pkg};     echo "$sha256 *$pkg" | sha256sum -c || exit 1;     unzip -q -d /opt $pkg;     ln -s /opt/emqx/bin/* /usr/local/bin/;     rm -rf $pkg
-# Tue, 02 Aug 2022 02:00:13 GMT
+# Tue, 23 Aug 2022 02:48:04 GMT
 RUN set -eu;     groupadd -r -g 1000 emqx;     useradd -r -m -u 1000 -g emqx emqx;     chgrp -Rf emqx /opt/emqx;     chmod -Rf g+w /opt/emqx;     chown -Rf emqx /opt/emqx
-# Tue, 02 Aug 2022 02:00:13 GMT
+# Tue, 23 Aug 2022 02:48:05 GMT
 WORKDIR /opt/emqx
-# Tue, 02 Aug 2022 02:00:14 GMT
+# Tue, 23 Aug 2022 02:48:05 GMT
 USER emqx
-# Tue, 02 Aug 2022 02:00:15 GMT
+# Tue, 23 Aug 2022 02:48:06 GMT
 VOLUME [/opt/emqx/log /opt/emqx/data]
-# Tue, 02 Aug 2022 02:00:16 GMT
+# Tue, 23 Aug 2022 02:48:07 GMT
 EXPOSE 11883 18083 1883 4369 4370 5369 6369 6370 8081 8083 8084 8883
-# Tue, 02 Aug 2022 02:00:18 GMT
+# Tue, 23 Aug 2022 02:48:09 GMT
 COPY file:715d536465bb73dc7e7d11b7af4806884602823836c36e9ec561de98ccbf3424 in /usr/bin/ 
-# Tue, 02 Aug 2022 02:00:18 GMT
+# Tue, 23 Aug 2022 02:48:09 GMT
 ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
-# Tue, 02 Aug 2022 02:00:19 GMT
+# Tue, 23 Aug 2022 02:48:10 GMT
 CMD ["emqx" "foreground"]
 ```
 
 -	Layers:
-	-	`sha256:6d588874b4737b02fc84169cf7d3d1d70f20c7f5dbd1ddfe27de4aff25e23314`  
-		Last Modified: Tue, 02 Aug 2022 00:46:56 GMT  
-		Size: 25.9 MB (25914363 bytes)  
+	-	`sha256:a84b81edbdb892b3702892bbb01c240695b0b9d619fda43a9b951c9d2df1443c`  
+		Last Modified: Tue, 23 Aug 2022 01:58:50 GMT  
+		Size: 25.9 MB (25912515 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7d2b2f4e619a38b8280049a873bd6f8a35e77602ef714c8d925914cfdc1d7f66`  
-		Last Modified: Tue, 02 Aug 2022 02:01:08 GMT  
-		Size: 4.5 MB (4485416 bytes)  
+	-	`sha256:d4cfd2f8a927d82ae5d26d82ed5148ad6a2a04e77a07b7a8b09510f39a69d0b3`  
+		Last Modified: Tue, 23 Aug 2022 02:48:59 GMT  
+		Size: 4.5 MB (4485521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ce39f660024cb68f4dce1c54e7144cf9f342e0153943e1f5c82ee3538c880fa`  
-		Last Modified: Tue, 02 Aug 2022 02:01:12 GMT  
-		Size: 35.8 MB (35761683 bytes)  
+	-	`sha256:850adcf8056d1b068f8f7c9c4ac1bf58621a291060fffbcf0c53d16fd5ff690a`  
+		Last Modified: Tue, 23 Aug 2022 02:49:02 GMT  
+		Size: 35.8 MB (35761707 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e01a9662cbb50570188d29c50987a3a9013fb6857606ae07726533cca3e6f94f`  
-		Last Modified: Tue, 02 Aug 2022 02:01:12 GMT  
-		Size: 35.8 MB (35773257 bytes)  
+	-	`sha256:0121fab99e6fd1a8eef8c52ec64255cf4b03c04c6836e7d1bef8bc080d74a300`  
+		Last Modified: Tue, 23 Aug 2022 02:49:02 GMT  
+		Size: 35.8 MB (35773268 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c1cc57c05c26773068d31086af331ff5adeb249867eeaeccfd54090deff52b6`  
-		Last Modified: Tue, 02 Aug 2022 02:01:08 GMT  
+	-	`sha256:a79194c5998efc0a6588755f766dae727b0bce61d7ee1c6ec94657fa7de17ae4`  
+		Last Modified: Tue, 23 Aug 2022 02:48:58 GMT  
 		Size: 1.0 KB (1041 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `emqx:4.3.15`
 
 ```console
-$ docker pull emqx@sha256:f7c938a4b47ab9b6ea6d3849832666a7d3d2f8e0cc76fafad5892fe11a15e9cb
+$ docker pull emqx@sha256:b55e60556e2fbb77cdd9b5b77712d330f57c0edc4da46c26184fcbe10c8bf593
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -374,72 +374,72 @@ CMD ["emqx" "foreground"]
 ### `emqx:4.3.15` - linux; arm64 variant v8
 
 ```console
-$ docker pull emqx@sha256:b16db7118eb58b8d4a97fb43c042cd32a1655157bc4db9f9dcae97f114624fb8
+$ docker pull emqx@sha256:3ac92e082f78f6c79436d92a8bc0b02b223dc6e51f3362475630f57557b8256d
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **101.9 MB (101935760 bytes)**  
+-	Total Size: **101.9 MB (101934052 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8b7a2a6bf2ba99e9903831293b4162a6627d0e1a53f9820d1ecbee59f9490863`
+-	Image ID: `sha256:653d6bc567df59282c0e919f8da05ed6944db4c1dd664b56f0276722f1c7e4f4`
 -	Entrypoint: `["\/usr\/bin\/docker-entrypoint.sh"]`
 -	Default Command: `["emqx","foreground"]`
 
 ```dockerfile
-# Tue, 02 Aug 2022 00:41:03 GMT
-ADD file:d973e057fdca9166fb9f39e73d7d5d4ca8ac2af6a55813580bf14a13cef4c159 in / 
-# Tue, 02 Aug 2022 00:41:04 GMT
+# Tue, 23 Aug 2022 01:52:58 GMT
+ADD file:4c5bca2d158b11314fb47a6d4b34239575621c2f00f92e77870f23aa02913fac in / 
+# Tue, 23 Aug 2022 01:52:59 GMT
 CMD ["bash"]
-# Tue, 02 Aug 2022 02:00:06 GMT
+# Tue, 23 Aug 2022 02:47:57 GMT
 RUN set -eu;     apt-get update;     apt-get install -y --no-install-recommends curl unzip ca-certificates;     rm -rf /var/lib/apt/lists/*
-# Tue, 02 Aug 2022 02:00:07 GMT
+# Tue, 23 Aug 2022 02:47:57 GMT
 ENV EMQX_VERSION=4.3.15
-# Tue, 02 Aug 2022 02:00:11 GMT
+# Tue, 23 Aug 2022 02:48:03 GMT
 RUN set -eu;     arch=$(dpkg --print-architecture);     if [ ${arch} = "amd64" ]; then sha256="8f44386aebf472297377d7b6b595638f323227347047d5278dce9c0cd04963bc"; fi;     if [ ${arch} = "arm64" ]; then sha256="b0094028d388684136be975c574d98295205dd5a343045f76f423a109535e016"; fi;     ID="$(sed -n '/^ID=/p' /etc/os-release | sed -r 's/ID=(.*)/\1/g' | sed 's/\"//g')";     VERSION_ID="$(sed -n '/^VERSION_ID=/p' /etc/os-release | sed -r 's/VERSION_ID=(.*)/\1/g' | sed 's/\"//g')";     pkg="emqx-${ID}${VERSION_ID}-${EMQX_VERSION}-${arch}.zip";     curl -f -O -L https://www.emqx.com/en/downloads/broker/${EMQX_VERSION}/${pkg};     echo "$sha256 *$pkg" | sha256sum -c || exit 1;     unzip -q -d /opt $pkg;     ln -s /opt/emqx/bin/* /usr/local/bin/;     rm -rf $pkg
-# Tue, 02 Aug 2022 02:00:13 GMT
+# Tue, 23 Aug 2022 02:48:04 GMT
 RUN set -eu;     groupadd -r -g 1000 emqx;     useradd -r -m -u 1000 -g emqx emqx;     chgrp -Rf emqx /opt/emqx;     chmod -Rf g+w /opt/emqx;     chown -Rf emqx /opt/emqx
-# Tue, 02 Aug 2022 02:00:13 GMT
+# Tue, 23 Aug 2022 02:48:05 GMT
 WORKDIR /opt/emqx
-# Tue, 02 Aug 2022 02:00:14 GMT
+# Tue, 23 Aug 2022 02:48:05 GMT
 USER emqx
-# Tue, 02 Aug 2022 02:00:15 GMT
+# Tue, 23 Aug 2022 02:48:06 GMT
 VOLUME [/opt/emqx/log /opt/emqx/data]
-# Tue, 02 Aug 2022 02:00:16 GMT
+# Tue, 23 Aug 2022 02:48:07 GMT
 EXPOSE 11883 18083 1883 4369 4370 5369 6369 6370 8081 8083 8084 8883
-# Tue, 02 Aug 2022 02:00:18 GMT
+# Tue, 23 Aug 2022 02:48:09 GMT
 COPY file:715d536465bb73dc7e7d11b7af4806884602823836c36e9ec561de98ccbf3424 in /usr/bin/ 
-# Tue, 02 Aug 2022 02:00:18 GMT
+# Tue, 23 Aug 2022 02:48:09 GMT
 ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
-# Tue, 02 Aug 2022 02:00:19 GMT
+# Tue, 23 Aug 2022 02:48:10 GMT
 CMD ["emqx" "foreground"]
 ```
 
 -	Layers:
-	-	`sha256:6d588874b4737b02fc84169cf7d3d1d70f20c7f5dbd1ddfe27de4aff25e23314`  
-		Last Modified: Tue, 02 Aug 2022 00:46:56 GMT  
-		Size: 25.9 MB (25914363 bytes)  
+	-	`sha256:a84b81edbdb892b3702892bbb01c240695b0b9d619fda43a9b951c9d2df1443c`  
+		Last Modified: Tue, 23 Aug 2022 01:58:50 GMT  
+		Size: 25.9 MB (25912515 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7d2b2f4e619a38b8280049a873bd6f8a35e77602ef714c8d925914cfdc1d7f66`  
-		Last Modified: Tue, 02 Aug 2022 02:01:08 GMT  
-		Size: 4.5 MB (4485416 bytes)  
+	-	`sha256:d4cfd2f8a927d82ae5d26d82ed5148ad6a2a04e77a07b7a8b09510f39a69d0b3`  
+		Last Modified: Tue, 23 Aug 2022 02:48:59 GMT  
+		Size: 4.5 MB (4485521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ce39f660024cb68f4dce1c54e7144cf9f342e0153943e1f5c82ee3538c880fa`  
-		Last Modified: Tue, 02 Aug 2022 02:01:12 GMT  
-		Size: 35.8 MB (35761683 bytes)  
+	-	`sha256:850adcf8056d1b068f8f7c9c4ac1bf58621a291060fffbcf0c53d16fd5ff690a`  
+		Last Modified: Tue, 23 Aug 2022 02:49:02 GMT  
+		Size: 35.8 MB (35761707 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e01a9662cbb50570188d29c50987a3a9013fb6857606ae07726533cca3e6f94f`  
-		Last Modified: Tue, 02 Aug 2022 02:01:12 GMT  
-		Size: 35.8 MB (35773257 bytes)  
+	-	`sha256:0121fab99e6fd1a8eef8c52ec64255cf4b03c04c6836e7d1bef8bc080d74a300`  
+		Last Modified: Tue, 23 Aug 2022 02:49:02 GMT  
+		Size: 35.8 MB (35773268 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c1cc57c05c26773068d31086af331ff5adeb249867eeaeccfd54090deff52b6`  
-		Last Modified: Tue, 02 Aug 2022 02:01:08 GMT  
+	-	`sha256:a79194c5998efc0a6588755f766dae727b0bce61d7ee1c6ec94657fa7de17ae4`  
+		Last Modified: Tue, 23 Aug 2022 02:48:58 GMT  
 		Size: 1.0 KB (1041 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `emqx:4.4`
 
 ```console
-$ docker pull emqx@sha256:00da7d91ed80191c10bcf0ddbddb8b7cfb6b87020752505e9b8c4b950a019a1a
+$ docker pull emqx@sha256:cdce1403e0fee48b827129479775d37302f0e22cfc41b8c71da75ff82e5291be
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -517,74 +517,74 @@ CMD ["emqx" "foreground"]
 ### `emqx:4.4` - linux; arm64 variant v8
 
 ```console
-$ docker pull emqx@sha256:96b008f7a2747ff4f13160a962292dbd1ab678597a9228a76b3203f84a46bf1b
+$ docker pull emqx@sha256:b9b2be320c2a2469aa9c8de01a47db24c4b11d7d8980a59e39259a4976cfc49c
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **110.2 MB (110228075 bytes)**  
+-	Total Size: **110.0 MB (110033038 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5c98a17532608ae41772e2e92f9bb3d479794c37c9d9e045805c39568ce75607`
+-	Image ID: `sha256:bcabc472c20703152f5e87f687372023f66139abb5c82b7bdecb205d4139962f`
 -	Entrypoint: `["\/usr\/bin\/docker-entrypoint.sh"]`
 -	Default Command: `["emqx","foreground"]`
 
 ```dockerfile
-# Tue, 02 Aug 2022 00:40:38 GMT
-ADD file:6039adfbca55ed34a719c37672c664e3524130a0e2a3b8663629b8120b81b790 in / 
-# Tue, 02 Aug 2022 00:40:39 GMT
+# Tue, 23 Aug 2022 01:52:32 GMT
+ADD file:90344130400909b0ad12bb54d439b0e4868fc5863f538f676e6fdfeaeb4dad51 in / 
+# Tue, 23 Aug 2022 01:52:33 GMT
 CMD ["bash"]
-# Tue, 02 Aug 2022 02:00:31 GMT
+# Tue, 23 Aug 2022 02:48:22 GMT
 RUN set -eu;     apt-get update;     apt-get install -y --no-install-recommends curl unzip ca-certificates;     rm -rf /var/lib/apt/lists/*
-# Tue, 02 Aug 2022 02:00:32 GMT
+# Tue, 23 Aug 2022 02:48:22 GMT
 ENV EMQX_VERSION=4.4.4
-# Tue, 02 Aug 2022 02:00:33 GMT
+# Tue, 23 Aug 2022 02:48:23 GMT
 ENV OTP=otp24.1.5-3
-# Tue, 02 Aug 2022 02:00:39 GMT
+# Tue, 23 Aug 2022 02:48:28 GMT
 RUN set -eu;     arch=$(dpkg --print-architecture);     if [ ${arch} = "amd64" ]; then sha256="74a65d51ab60b044874f98e1dc4022f2932c7d70e68bc13ed5fe43be177ba515"; fi;     if [ ${arch} = "arm64" ]; then sha256="6aed1583bf96b53e6355e7431204fc8b09b89ffbce580f5031a77a542c53c5e8"; fi;     ID="$(sed -n '/^ID=/p' /etc/os-release | sed -r 's/ID=(.*)/\1/g' | sed 's/\"//g')";     VERSION_ID="$(sed -n '/^VERSION_ID=/p' /etc/os-release | sed -r 's/VERSION_ID=(.*)/\1/g' | sed 's/\"//g')";     pkg="emqx-${EMQX_VERSION}-${OTP}-${ID}${VERSION_ID}-${arch}.zip";     curl -f -O -L https://www.emqx.com/en/downloads/broker/${EMQX_VERSION}/${pkg};     echo "$sha256 *$pkg" | sha256sum -c || exit 1;     unzip -q -d /opt $pkg;     ln -s /opt/emqx/bin/* /usr/local/bin/;     rm -rf $pkg
-# Tue, 02 Aug 2022 02:00:40 GMT
+# Tue, 23 Aug 2022 02:48:30 GMT
 RUN set -eu;     groupadd -r -g 1000 emqx;     useradd -r -m -u 1000 -g emqx emqx;     chgrp -Rf emqx /opt/emqx;     chmod -Rf g+w /opt/emqx;     chown -Rf emqx /opt/emqx
-# Tue, 02 Aug 2022 02:00:40 GMT
+# Tue, 23 Aug 2022 02:48:30 GMT
 WORKDIR /opt/emqx
-# Tue, 02 Aug 2022 02:00:41 GMT
+# Tue, 23 Aug 2022 02:48:31 GMT
 USER emqx
-# Tue, 02 Aug 2022 02:00:42 GMT
+# Tue, 23 Aug 2022 02:48:32 GMT
 VOLUME [/opt/emqx/log /opt/emqx/data]
-# Tue, 02 Aug 2022 02:00:43 GMT
+# Tue, 23 Aug 2022 02:48:33 GMT
 EXPOSE 11883 18083 1883 4369 4370 5369 6369 6370 8081 8083 8084 8883
-# Tue, 02 Aug 2022 02:00:45 GMT
+# Tue, 23 Aug 2022 02:48:35 GMT
 COPY file:6dd7e4492be7572c69a0409bd663714c620b2048d81308e1877901073db7f426 in /usr/bin/ 
-# Tue, 02 Aug 2022 02:00:45 GMT
+# Tue, 23 Aug 2022 02:48:35 GMT
 ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
-# Tue, 02 Aug 2022 02:00:46 GMT
+# Tue, 23 Aug 2022 02:48:36 GMT
 CMD ["emqx" "foreground"]
 ```
 
 -	Layers:
-	-	`sha256:a9fe95647e78b5516c7e2327355b6996e2ea295cd76ae242cbfe87f016b4e760`  
-		Last Modified: Tue, 02 Aug 2022 00:46:05 GMT  
-		Size: 30.1 MB (30054304 bytes)  
+	-	`sha256:5b142346550416c75ea412d21741de5eaf3e76857affc12fab789277f81f53b3`  
+		Last Modified: Tue, 23 Aug 2022 01:58:00 GMT  
+		Size: 30.1 MB (30063788 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23b8f37b5c2edc91fd1bdf8c28fd2b3da0c926ac40e82e7c59c7d03f310614f8`  
-		Last Modified: Tue, 02 Aug 2022 02:01:24 GMT  
-		Size: 2.6 MB (2558106 bytes)  
+	-	`sha256:76875b2a2774be642d6a500995cffb336dc0b7fce71c6554e4415cc6df01a4b2`  
+		Last Modified: Tue, 23 Aug 2022 02:49:14 GMT  
+		Size: 2.4 MB (2353690 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1a4cdc0cba9be243cb158e5751b728035148562b033d8ef1de765ca01f1a60dc`  
-		Last Modified: Tue, 02 Aug 2022 02:01:28 GMT  
-		Size: 38.8 MB (38806797 bytes)  
+	-	`sha256:c2bd6d30cd6371bb62afaacfb03fb3dd2ea33d16d25087af221e21d238febfc9`  
+		Last Modified: Tue, 23 Aug 2022 02:49:18 GMT  
+		Size: 38.8 MB (38806760 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d14c711205c5c7e4009eff2ea08ba336ac4598b6d1dfa6c1f7cf37089a5e727e`  
-		Last Modified: Tue, 02 Aug 2022 02:01:28 GMT  
-		Size: 38.8 MB (38807760 bytes)  
+	-	`sha256:62cf00ca63decf520e5ab938da78a25d9ad2816babd18a8e5594cc877a2d4791`  
+		Last Modified: Tue, 23 Aug 2022 02:49:18 GMT  
+		Size: 38.8 MB (38807691 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f05323f5f302f4d39168dba4ee48ae9ba98e3f6cd38134a5eaf7d8fe54dbc96`  
-		Last Modified: Tue, 02 Aug 2022 02:01:24 GMT  
-		Size: 1.1 KB (1108 bytes)  
+	-	`sha256:e6c5c2a2bac240c35e3c2ef46b56552e483b7324b2c74c09c78bc86d2a7e7b0b`  
+		Last Modified: Tue, 23 Aug 2022 02:49:13 GMT  
+		Size: 1.1 KB (1109 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `emqx:4.4.4`
 
 ```console
-$ docker pull emqx@sha256:00da7d91ed80191c10bcf0ddbddb8b7cfb6b87020752505e9b8c4b950a019a1a
+$ docker pull emqx@sha256:cdce1403e0fee48b827129479775d37302f0e22cfc41b8c71da75ff82e5291be
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -662,74 +662,74 @@ CMD ["emqx" "foreground"]
 ### `emqx:4.4.4` - linux; arm64 variant v8
 
 ```console
-$ docker pull emqx@sha256:96b008f7a2747ff4f13160a962292dbd1ab678597a9228a76b3203f84a46bf1b
+$ docker pull emqx@sha256:b9b2be320c2a2469aa9c8de01a47db24c4b11d7d8980a59e39259a4976cfc49c
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **110.2 MB (110228075 bytes)**  
+-	Total Size: **110.0 MB (110033038 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5c98a17532608ae41772e2e92f9bb3d479794c37c9d9e045805c39568ce75607`
+-	Image ID: `sha256:bcabc472c20703152f5e87f687372023f66139abb5c82b7bdecb205d4139962f`
 -	Entrypoint: `["\/usr\/bin\/docker-entrypoint.sh"]`
 -	Default Command: `["emqx","foreground"]`
 
 ```dockerfile
-# Tue, 02 Aug 2022 00:40:38 GMT
-ADD file:6039adfbca55ed34a719c37672c664e3524130a0e2a3b8663629b8120b81b790 in / 
-# Tue, 02 Aug 2022 00:40:39 GMT
+# Tue, 23 Aug 2022 01:52:32 GMT
+ADD file:90344130400909b0ad12bb54d439b0e4868fc5863f538f676e6fdfeaeb4dad51 in / 
+# Tue, 23 Aug 2022 01:52:33 GMT
 CMD ["bash"]
-# Tue, 02 Aug 2022 02:00:31 GMT
+# Tue, 23 Aug 2022 02:48:22 GMT
 RUN set -eu;     apt-get update;     apt-get install -y --no-install-recommends curl unzip ca-certificates;     rm -rf /var/lib/apt/lists/*
-# Tue, 02 Aug 2022 02:00:32 GMT
+# Tue, 23 Aug 2022 02:48:22 GMT
 ENV EMQX_VERSION=4.4.4
-# Tue, 02 Aug 2022 02:00:33 GMT
+# Tue, 23 Aug 2022 02:48:23 GMT
 ENV OTP=otp24.1.5-3
-# Tue, 02 Aug 2022 02:00:39 GMT
+# Tue, 23 Aug 2022 02:48:28 GMT
 RUN set -eu;     arch=$(dpkg --print-architecture);     if [ ${arch} = "amd64" ]; then sha256="74a65d51ab60b044874f98e1dc4022f2932c7d70e68bc13ed5fe43be177ba515"; fi;     if [ ${arch} = "arm64" ]; then sha256="6aed1583bf96b53e6355e7431204fc8b09b89ffbce580f5031a77a542c53c5e8"; fi;     ID="$(sed -n '/^ID=/p' /etc/os-release | sed -r 's/ID=(.*)/\1/g' | sed 's/\"//g')";     VERSION_ID="$(sed -n '/^VERSION_ID=/p' /etc/os-release | sed -r 's/VERSION_ID=(.*)/\1/g' | sed 's/\"//g')";     pkg="emqx-${EMQX_VERSION}-${OTP}-${ID}${VERSION_ID}-${arch}.zip";     curl -f -O -L https://www.emqx.com/en/downloads/broker/${EMQX_VERSION}/${pkg};     echo "$sha256 *$pkg" | sha256sum -c || exit 1;     unzip -q -d /opt $pkg;     ln -s /opt/emqx/bin/* /usr/local/bin/;     rm -rf $pkg
-# Tue, 02 Aug 2022 02:00:40 GMT
+# Tue, 23 Aug 2022 02:48:30 GMT
 RUN set -eu;     groupadd -r -g 1000 emqx;     useradd -r -m -u 1000 -g emqx emqx;     chgrp -Rf emqx /opt/emqx;     chmod -Rf g+w /opt/emqx;     chown -Rf emqx /opt/emqx
-# Tue, 02 Aug 2022 02:00:40 GMT
+# Tue, 23 Aug 2022 02:48:30 GMT
 WORKDIR /opt/emqx
-# Tue, 02 Aug 2022 02:00:41 GMT
+# Tue, 23 Aug 2022 02:48:31 GMT
 USER emqx
-# Tue, 02 Aug 2022 02:00:42 GMT
+# Tue, 23 Aug 2022 02:48:32 GMT
 VOLUME [/opt/emqx/log /opt/emqx/data]
-# Tue, 02 Aug 2022 02:00:43 GMT
+# Tue, 23 Aug 2022 02:48:33 GMT
 EXPOSE 11883 18083 1883 4369 4370 5369 6369 6370 8081 8083 8084 8883
-# Tue, 02 Aug 2022 02:00:45 GMT
+# Tue, 23 Aug 2022 02:48:35 GMT
 COPY file:6dd7e4492be7572c69a0409bd663714c620b2048d81308e1877901073db7f426 in /usr/bin/ 
-# Tue, 02 Aug 2022 02:00:45 GMT
+# Tue, 23 Aug 2022 02:48:35 GMT
 ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
-# Tue, 02 Aug 2022 02:00:46 GMT
+# Tue, 23 Aug 2022 02:48:36 GMT
 CMD ["emqx" "foreground"]
 ```
 
 -	Layers:
-	-	`sha256:a9fe95647e78b5516c7e2327355b6996e2ea295cd76ae242cbfe87f016b4e760`  
-		Last Modified: Tue, 02 Aug 2022 00:46:05 GMT  
-		Size: 30.1 MB (30054304 bytes)  
+	-	`sha256:5b142346550416c75ea412d21741de5eaf3e76857affc12fab789277f81f53b3`  
+		Last Modified: Tue, 23 Aug 2022 01:58:00 GMT  
+		Size: 30.1 MB (30063788 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23b8f37b5c2edc91fd1bdf8c28fd2b3da0c926ac40e82e7c59c7d03f310614f8`  
-		Last Modified: Tue, 02 Aug 2022 02:01:24 GMT  
-		Size: 2.6 MB (2558106 bytes)  
+	-	`sha256:76875b2a2774be642d6a500995cffb336dc0b7fce71c6554e4415cc6df01a4b2`  
+		Last Modified: Tue, 23 Aug 2022 02:49:14 GMT  
+		Size: 2.4 MB (2353690 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1a4cdc0cba9be243cb158e5751b728035148562b033d8ef1de765ca01f1a60dc`  
-		Last Modified: Tue, 02 Aug 2022 02:01:28 GMT  
-		Size: 38.8 MB (38806797 bytes)  
+	-	`sha256:c2bd6d30cd6371bb62afaacfb03fb3dd2ea33d16d25087af221e21d238febfc9`  
+		Last Modified: Tue, 23 Aug 2022 02:49:18 GMT  
+		Size: 38.8 MB (38806760 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d14c711205c5c7e4009eff2ea08ba336ac4598b6d1dfa6c1f7cf37089a5e727e`  
-		Last Modified: Tue, 02 Aug 2022 02:01:28 GMT  
-		Size: 38.8 MB (38807760 bytes)  
+	-	`sha256:62cf00ca63decf520e5ab938da78a25d9ad2816babd18a8e5594cc877a2d4791`  
+		Last Modified: Tue, 23 Aug 2022 02:49:18 GMT  
+		Size: 38.8 MB (38807691 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f05323f5f302f4d39168dba4ee48ae9ba98e3f6cd38134a5eaf7d8fe54dbc96`  
-		Last Modified: Tue, 02 Aug 2022 02:01:24 GMT  
-		Size: 1.1 KB (1108 bytes)  
+	-	`sha256:e6c5c2a2bac240c35e3c2ef46b56552e483b7324b2c74c09c78bc86d2a7e7b0b`  
+		Last Modified: Tue, 23 Aug 2022 02:49:13 GMT  
+		Size: 1.1 KB (1109 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `emqx:latest`
 
 ```console
-$ docker pull emqx@sha256:00da7d91ed80191c10bcf0ddbddb8b7cfb6b87020752505e9b8c4b950a019a1a
+$ docker pull emqx@sha256:cdce1403e0fee48b827129479775d37302f0e22cfc41b8c71da75ff82e5291be
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -807,66 +807,66 @@ CMD ["emqx" "foreground"]
 ### `emqx:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull emqx@sha256:96b008f7a2747ff4f13160a962292dbd1ab678597a9228a76b3203f84a46bf1b
+$ docker pull emqx@sha256:b9b2be320c2a2469aa9c8de01a47db24c4b11d7d8980a59e39259a4976cfc49c
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **110.2 MB (110228075 bytes)**  
+-	Total Size: **110.0 MB (110033038 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5c98a17532608ae41772e2e92f9bb3d479794c37c9d9e045805c39568ce75607`
+-	Image ID: `sha256:bcabc472c20703152f5e87f687372023f66139abb5c82b7bdecb205d4139962f`
 -	Entrypoint: `["\/usr\/bin\/docker-entrypoint.sh"]`
 -	Default Command: `["emqx","foreground"]`
 
 ```dockerfile
-# Tue, 02 Aug 2022 00:40:38 GMT
-ADD file:6039adfbca55ed34a719c37672c664e3524130a0e2a3b8663629b8120b81b790 in / 
-# Tue, 02 Aug 2022 00:40:39 GMT
+# Tue, 23 Aug 2022 01:52:32 GMT
+ADD file:90344130400909b0ad12bb54d439b0e4868fc5863f538f676e6fdfeaeb4dad51 in / 
+# Tue, 23 Aug 2022 01:52:33 GMT
 CMD ["bash"]
-# Tue, 02 Aug 2022 02:00:31 GMT
+# Tue, 23 Aug 2022 02:48:22 GMT
 RUN set -eu;     apt-get update;     apt-get install -y --no-install-recommends curl unzip ca-certificates;     rm -rf /var/lib/apt/lists/*
-# Tue, 02 Aug 2022 02:00:32 GMT
+# Tue, 23 Aug 2022 02:48:22 GMT
 ENV EMQX_VERSION=4.4.4
-# Tue, 02 Aug 2022 02:00:33 GMT
+# Tue, 23 Aug 2022 02:48:23 GMT
 ENV OTP=otp24.1.5-3
-# Tue, 02 Aug 2022 02:00:39 GMT
+# Tue, 23 Aug 2022 02:48:28 GMT
 RUN set -eu;     arch=$(dpkg --print-architecture);     if [ ${arch} = "amd64" ]; then sha256="74a65d51ab60b044874f98e1dc4022f2932c7d70e68bc13ed5fe43be177ba515"; fi;     if [ ${arch} = "arm64" ]; then sha256="6aed1583bf96b53e6355e7431204fc8b09b89ffbce580f5031a77a542c53c5e8"; fi;     ID="$(sed -n '/^ID=/p' /etc/os-release | sed -r 's/ID=(.*)/\1/g' | sed 's/\"//g')";     VERSION_ID="$(sed -n '/^VERSION_ID=/p' /etc/os-release | sed -r 's/VERSION_ID=(.*)/\1/g' | sed 's/\"//g')";     pkg="emqx-${EMQX_VERSION}-${OTP}-${ID}${VERSION_ID}-${arch}.zip";     curl -f -O -L https://www.emqx.com/en/downloads/broker/${EMQX_VERSION}/${pkg};     echo "$sha256 *$pkg" | sha256sum -c || exit 1;     unzip -q -d /opt $pkg;     ln -s /opt/emqx/bin/* /usr/local/bin/;     rm -rf $pkg
-# Tue, 02 Aug 2022 02:00:40 GMT
+# Tue, 23 Aug 2022 02:48:30 GMT
 RUN set -eu;     groupadd -r -g 1000 emqx;     useradd -r -m -u 1000 -g emqx emqx;     chgrp -Rf emqx /opt/emqx;     chmod -Rf g+w /opt/emqx;     chown -Rf emqx /opt/emqx
-# Tue, 02 Aug 2022 02:00:40 GMT
+# Tue, 23 Aug 2022 02:48:30 GMT
 WORKDIR /opt/emqx
-# Tue, 02 Aug 2022 02:00:41 GMT
+# Tue, 23 Aug 2022 02:48:31 GMT
 USER emqx
-# Tue, 02 Aug 2022 02:00:42 GMT
+# Tue, 23 Aug 2022 02:48:32 GMT
 VOLUME [/opt/emqx/log /opt/emqx/data]
-# Tue, 02 Aug 2022 02:00:43 GMT
+# Tue, 23 Aug 2022 02:48:33 GMT
 EXPOSE 11883 18083 1883 4369 4370 5369 6369 6370 8081 8083 8084 8883
-# Tue, 02 Aug 2022 02:00:45 GMT
+# Tue, 23 Aug 2022 02:48:35 GMT
 COPY file:6dd7e4492be7572c69a0409bd663714c620b2048d81308e1877901073db7f426 in /usr/bin/ 
-# Tue, 02 Aug 2022 02:00:45 GMT
+# Tue, 23 Aug 2022 02:48:35 GMT
 ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
-# Tue, 02 Aug 2022 02:00:46 GMT
+# Tue, 23 Aug 2022 02:48:36 GMT
 CMD ["emqx" "foreground"]
 ```
 
 -	Layers:
-	-	`sha256:a9fe95647e78b5516c7e2327355b6996e2ea295cd76ae242cbfe87f016b4e760`  
-		Last Modified: Tue, 02 Aug 2022 00:46:05 GMT  
-		Size: 30.1 MB (30054304 bytes)  
+	-	`sha256:5b142346550416c75ea412d21741de5eaf3e76857affc12fab789277f81f53b3`  
+		Last Modified: Tue, 23 Aug 2022 01:58:00 GMT  
+		Size: 30.1 MB (30063788 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23b8f37b5c2edc91fd1bdf8c28fd2b3da0c926ac40e82e7c59c7d03f310614f8`  
-		Last Modified: Tue, 02 Aug 2022 02:01:24 GMT  
-		Size: 2.6 MB (2558106 bytes)  
+	-	`sha256:76875b2a2774be642d6a500995cffb336dc0b7fce71c6554e4415cc6df01a4b2`  
+		Last Modified: Tue, 23 Aug 2022 02:49:14 GMT  
+		Size: 2.4 MB (2353690 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1a4cdc0cba9be243cb158e5751b728035148562b033d8ef1de765ca01f1a60dc`  
-		Last Modified: Tue, 02 Aug 2022 02:01:28 GMT  
-		Size: 38.8 MB (38806797 bytes)  
+	-	`sha256:c2bd6d30cd6371bb62afaacfb03fb3dd2ea33d16d25087af221e21d238febfc9`  
+		Last Modified: Tue, 23 Aug 2022 02:49:18 GMT  
+		Size: 38.8 MB (38806760 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d14c711205c5c7e4009eff2ea08ba336ac4598b6d1dfa6c1f7cf37089a5e727e`  
-		Last Modified: Tue, 02 Aug 2022 02:01:28 GMT  
-		Size: 38.8 MB (38807760 bytes)  
+	-	`sha256:62cf00ca63decf520e5ab938da78a25d9ad2816babd18a8e5594cc877a2d4791`  
+		Last Modified: Tue, 23 Aug 2022 02:49:18 GMT  
+		Size: 38.8 MB (38807691 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f05323f5f302f4d39168dba4ee48ae9ba98e3f6cd38134a5eaf7d8fe54dbc96`  
-		Last Modified: Tue, 02 Aug 2022 02:01:24 GMT  
-		Size: 1.1 KB (1108 bytes)  
+	-	`sha256:e6c5c2a2bac240c35e3c2ef46b56552e483b7324b2c74c09c78bc86d2a7e7b0b`  
+		Last Modified: Tue, 23 Aug 2022 02:49:13 GMT  
+		Size: 1.1 KB (1109 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
