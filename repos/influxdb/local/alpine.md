@@ -1,19 +1,18 @@
-# `influxdb:2.3-alpine`
+# `influxdb:2.4-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:04e62816c06e4eadf6f66d12d52bffdd65638771bfafaf21c47a725ff3122490`
-- Created: `2022-08-09T20:37:25.259607157Z`
-- Virtual Size: ~ 324.56 Mb  
+- Image ID: `sha256:a00fe993fbb4c3a647e8a8d605112e71bf4ebcd9dd42ed3902ece5e5877a5cea`
+- Created: `2022-08-22T20:24:29.420054258Z`
+- Virtual Size: ~ 346.77 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Command: `["influxd"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `GOSU_VER=1.12`
-  - `INFLUXDB_VERSION=2.3.0`
-  - `INFLUX_CLI_VERSION=2.3.0`
+  - `INFLUXDB_VERSION=2.4.0`
+  - `INFLUX_CLI_VERSION=2.4.0`
   - `INFLUX_CONFIGS_PATH=/etc/influxdb2/influx-configs`
   - `INFLUXD_INIT_PORT=9999`
   - `INFLUXD_INIT_PING_ATTEMPTS=600`
@@ -786,19 +785,36 @@ GPL-2.0-only
 
 ```
 
+### `apk` package: `su-exec`
+
+```console
+su-exec-0.2-r1 description:
+switch user and group id, setgroups and exec
+
+su-exec-0.2-r1 webpage:
+https://github.com/ncopa/su-exec
+
+su-exec-0.2-r1 installed size:
+24 KiB
+
+su-exec-0.2-r1 license:
+MIT
+
+```
+
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2022a-r0 description:
+tzdata-2022c-r0 description:
 Timezone data
 
-tzdata-2022a-r0 webpage:
+tzdata-2022c-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2022a-r0 installed size:
-3376 KiB
+tzdata-2022c-r0 installed size:
+3208 KiB
 
-tzdata-2022a-r0 license:
+tzdata-2022c-r0 license:
 Public-Domain
 
 ```
