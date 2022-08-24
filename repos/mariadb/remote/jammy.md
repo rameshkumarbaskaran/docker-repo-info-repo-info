@@ -1,7 +1,7 @@
 ## `mariadb:jammy`
 
 ```console
-$ docker pull mariadb@sha256:0abf60f81588662e716c27c7f1b54a72b3bf879e0ca88fc393e1741970ec7f3f
+$ docker pull mariadb@sha256:cbcf33d6dab0a014dfc9450148f3dcf42c8ae77635b3c8e948e3af09562a989e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14,14 +14,14 @@ $ docker pull mariadb@sha256:0abf60f81588662e716c27c7f1b54a72b3bf879e0ca88fc393e
 ### `mariadb:jammy` - linux; amd64
 
 ```console
-$ docker pull mariadb@sha256:0a6ed934c1518abff64ed856b06f44006b4498b115941e19bbd910bd62a12232
+$ docker pull mariadb@sha256:3b4bcc98c0982745a30b013e8b66233c7313496eae9de6b691963a737f614d26
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **123.9 MB (123908351 bytes)**  
+-	Total Size: **124.0 MB (124029543 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:40b966d7252f541b41677fc35f8660fa90d14df0f33edc8085e6ca2dc0c5b247`
+-	Image ID: `sha256:01d138caf7d0f7680129a9dd134f363a23da6be5d76449a93bb5906598d0e06d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mariadbd"]`
 
@@ -32,48 +32,44 @@ ADD file:396eeb65c8d737180cc1219713cf59efb214027b79d8ea0b7e58a08e7c8d7a21 in /
 CMD ["bash"]
 # Tue, 02 Aug 2022 20:19:21 GMT
 RUN groupadd -r mysql && useradd -r -g mysql mysql
-# Tue, 02 Aug 2022 20:19:39 GMT
-RUN set -ex; 	apt-get update; 	if ! which gpg; then 		apt-get install -y --no-install-recommends gnupg; 	fi; 	if ! gpg --version | grep -q '^gpg (GnuPG) 1\.'; then 		apt-get install -y --no-install-recommends dirmngr; 	fi; 	rm -rf /var/lib/apt/lists/*
-# Tue, 02 Aug 2022 20:19:40 GMT
+# Wed, 24 Aug 2022 00:00:46 GMT
+RUN set -ex; 	apt-get update; 	if ! which gpg; then 		apt-get install -y --no-install-recommends gnupg; 	fi; 	rm -rf /var/lib/apt/lists/*
+# Wed, 24 Aug 2022 00:00:46 GMT
 ENV GOSU_VERSION=1.14
-# Tue, 02 Aug 2022 20:19:50 GMT
+# Wed, 24 Aug 2022 00:00:57 GMT
 RUN set -eux; 	apt-get update; 	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ca-certificates; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 	dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	chmod +x /usr/local/bin/gosu; 	gosu --version; 	gosu nobody true
-# Tue, 02 Aug 2022 20:19:51 GMT
+# Wed, 24 Aug 2022 00:00:58 GMT
 RUN mkdir /docker-entrypoint-initdb.d
-# Tue, 02 Aug 2022 20:19:58 GMT
+# Wed, 24 Aug 2022 00:01:06 GMT
 RUN set -ex; 	apt-get update; 	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends 		libjemalloc2 		pwgen 		tzdata 		xz-utils 		zstd 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 02 Aug 2022 20:19:58 GMT
+# Wed, 24 Aug 2022 00:01:06 GMT
 ARG GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8
-# Tue, 02 Aug 2022 20:19:59 GMT
+# Wed, 24 Aug 2022 00:01:07 GMT
 # ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8
 RUN set -ex; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 	done; 	gpg --batch --export $GPG_KEYS > /etc/apt/trusted.gpg.d/mariadb.gpg; 	command -v gpgconf > /dev/null && gpgconf --kill all || :; 	rm -fr "$GNUPGHOME"; 	apt-key list
-# Tue, 02 Aug 2022 20:20:59 GMT
-ARG MARIADB_MAJOR=10.8
-# Tue, 02 Aug 2022 20:20:59 GMT
-ENV MARIADB_MAJOR=10.8
-# Tue, 02 Aug 2022 20:20:59 GMT
-ARG MARIADB_VERSION=1:10.8.3+maria~jammy
-# Tue, 02 Aug 2022 20:20:59 GMT
-ENV MARIADB_VERSION=1:10.8.3+maria~jammy
-# Tue, 02 Aug 2022 20:20:59 GMT
-ARG REPOSITORY=http://archive.mariadb.org/mariadb-10.8.3/repo/ubuntu/ jammy main
-# Tue, 02 Aug 2022 20:21:00 GMT
-# ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 REPOSITORY=http://archive.mariadb.org/mariadb-10.8.3/repo/ubuntu/ jammy main
+# Wed, 24 Aug 2022 00:02:02 GMT
+ARG MARIADB_VERSION=1:10.9.2+maria~ubu2204
+# Wed, 24 Aug 2022 00:02:02 GMT
+ENV MARIADB_VERSION=1:10.9.2+maria~ubu2204
+# Wed, 24 Aug 2022 00:02:02 GMT
+ARG REPOSITORY=http://archive.mariadb.org/mariadb-10.9.2/repo/ubuntu/ jammy main
+# Wed, 24 Aug 2022 00:02:03 GMT
+# ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 REPOSITORY=http://archive.mariadb.org/mariadb-10.9.2/repo/ubuntu/ jammy main
 RUN set -e;	echo "deb ${REPOSITORY}" > /etc/apt/sources.list.d/mariadb.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release o=MariaDB'; 		echo 'Pin-Priority: 999'; 	} > /etc/apt/preferences.d/mariadb
-# Tue, 02 Aug 2022 20:21:19 GMT
-# ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 REPOSITORY=http://archive.mariadb.org/mariadb-10.8.3/repo/ubuntu/ jammy main
-RUN set -ex; 	{ 		echo "mariadb-server-$MARIADB_MAJOR" mysql-server/root_password password 'unused'; 		echo "mariadb-server-$MARIADB_MAJOR" mysql-server/root_password_again password 'unused'; 	} | debconf-set-selections; 	apt-get update; 	apt-get install -y 		"mariadb-server=$MARIADB_VERSION" 		mariadb-backup 		socat 	; 	rm -rf /var/lib/apt/lists/*; 	rm -rf /var/lib/mysql; 	mkdir -p /var/lib/mysql /var/run/mysqld; 	chown -R mysql:mysql /var/lib/mysql /var/run/mysqld; 	chmod 777 /var/run/mysqld; 	find /etc/mysql/ -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log|user\s)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user\s)/#&/'; 	if [ ! -L /etc/mysql/my.cnf ]; then sed -i -e '/includedir/i[mariadb]\nskip-host-cache\nskip-name-resolve\n' /etc/mysql/my.cnf; 	else sed -i -e '/includedir/ {N;s/\(.*\)\n\(.*\)/[mariadbd]\nskip-host-cache\nskip-name-resolve\n\n\2\n\1/}'                 /etc/mysql/mariadb.cnf; fi
-# Tue, 02 Aug 2022 20:21:19 GMT
+# Wed, 24 Aug 2022 00:02:23 GMT
+# ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 REPOSITORY=http://archive.mariadb.org/mariadb-10.9.2/repo/ubuntu/ jammy main
+RUN set -ex; 	{ 		echo "mariadb-server" mysql-server/root_password password 'unused'; 		echo "mariadb-server" mysql-server/root_password_again password 'unused'; 	} | debconf-set-selections; 	apt-get update; 	apt-get install -y 		"mariadb-server=$MARIADB_VERSION" mariadb-backup socat 	; 	rm -rf /var/lib/apt/lists/*; 	rm -rf /var/lib/mysql; 	mkdir -p /var/lib/mysql /var/run/mysqld; 	chown -R mysql:mysql /var/lib/mysql /var/run/mysqld; 	chmod 777 /var/run/mysqld; 	find /etc/mysql/ -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log|user\s)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user\s)/#&/'; 	if [ ! -L /etc/mysql/my.cnf ]; then sed -i -e '/includedir/i[mariadb]\nskip-host-cache\nskip-name-resolve\n' /etc/mysql/my.cnf; 	else sed -i -e '/includedir/ {N;s/\(.*\)\n\(.*\)/[mariadbd]\nskip-host-cache\nskip-name-resolve\n\n\2\n\1/}'                 /etc/mysql/mariadb.cnf; fi
+# Wed, 24 Aug 2022 00:02:23 GMT
 VOLUME [/var/lib/mysql]
-# Tue, 02 Aug 2022 20:21:19 GMT
+# Wed, 24 Aug 2022 00:02:23 GMT
 COPY file:03ef406a869fc1d453794e4b0c7e8da3dee6816b3267c63fa57c93b4a38c8c52 in /usr/local/bin/healthcheck.sh 
-# Tue, 02 Aug 2022 20:21:19 GMT
-COPY file:e4da674ce3a4afd5069ca1fdb1c5969db396f58ba4a9105ee3e377f2391b91c5 in /usr/local/bin/ 
-# Tue, 02 Aug 2022 20:21:20 GMT
+# Wed, 24 Aug 2022 00:02:24 GMT
+COPY file:7032e58fbba6784f90935fcf1ff3c389e5b2936aa9e1c6b8b291cbb26774ee2e in /usr/local/bin/ 
+# Wed, 24 Aug 2022 00:02:24 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 02 Aug 2022 20:21:20 GMT
+# Wed, 24 Aug 2022 00:02:24 GMT
 EXPOSE 3306
-# Tue, 02 Aug 2022 20:21:20 GMT
+# Wed, 24 Aug 2022 00:02:24 GMT
 CMD ["mariadbd"]
 ```
 
@@ -86,41 +82,41 @@ CMD ["mariadbd"]
 		Last Modified: Tue, 02 Aug 2022 20:26:32 GMT  
 		Size: 1.7 KB (1747 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9fb060f92f2fef90ded1edd0a8c0609f95d414c40ff3684d1189beffa353f88b`  
-		Last Modified: Tue, 02 Aug 2022 20:26:31 GMT  
-		Size: 3.8 MB (3765797 bytes)  
+	-	`sha256:b91b7f01dd8c9789fcbc319a914f6dc80a08b62652311d6222d8aa94300f1215`  
+		Last Modified: Wed, 24 Aug 2022 00:07:17 GMT  
+		Size: 3.8 MB (3765804 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27513e1f7a1e0c1c4f6197df108bf04d451bddf1da7bbdace8285098ba5dcf50`  
-		Last Modified: Tue, 02 Aug 2022 20:26:31 GMT  
-		Size: 2.0 MB (1992883 bytes)  
+	-	`sha256:fb5f1b1e214ad49dd5fe9fc6d3877b978b07b3508878e514b5d03443036acdd3`  
+		Last Modified: Wed, 24 Aug 2022 00:07:17 GMT  
+		Size: 2.0 MB (1992926 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a84d3c510baac7a944c9669fc71e613930f5ca9c87cf616eeb06d2aa7c1917e`  
-		Last Modified: Tue, 02 Aug 2022 20:26:30 GMT  
+	-	`sha256:a5ab08b1f4c596f5c08df73d1e28460d993642f257ddfb44b794b375dbf8c694`  
+		Last Modified: Wed, 24 Aug 2022 00:07:16 GMT  
 		Size: 149.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59731d2805a614a839795e79d61509494c939119e1dd7d76bf0f1b3a5f923c29`  
-		Last Modified: Tue, 02 Aug 2022 20:26:31 GMT  
-		Size: 2.3 MB (2298176 bytes)  
+	-	`sha256:1093648eca210c840879dc3b45d99ebac1345e4ff58a9c348db3833f7f404a70`  
+		Last Modified: Wed, 24 Aug 2022 00:07:17 GMT  
+		Size: 2.3 MB (2298217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c008ca4420a867178be129dfe4311ce5ff0fcf8c2933d99ad49a3f0e3079cb3d`  
-		Last Modified: Tue, 02 Aug 2022 20:26:28 GMT  
-		Size: 2.5 KB (2490 bytes)  
+	-	`sha256:e1cc76be63b2b96be82d3c6529ca763fc892caebed7f4cad06bc16f60e84333c`  
+		Last Modified: Wed, 24 Aug 2022 00:07:14 GMT  
+		Size: 2.5 KB (2492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:abc47daf3f5d60b9b18f5ca3f556bc478eb967c997777a87459d43a9aea2fc6f`  
-		Last Modified: Tue, 02 Aug 2022 20:26:58 GMT  
-		Size: 328.0 B  
+	-	`sha256:710253f0933b7c0e3be3f7a4b4b77cb5ba9ece744177ccbb68472b8b46ce122b`  
+		Last Modified: Wed, 24 Aug 2022 00:07:45 GMT  
+		Size: 329.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dc547eec2be51eceb698e0766c93b76d55e7457043af4fe44ace5ca82927b1d4`  
-		Last Modified: Tue, 02 Aug 2022 20:27:09 GMT  
-		Size: 85.4 MB (85410459 bytes)  
+	-	`sha256:962d5115199c9aa41cc86312e841f5ac0ff84a38ead396deb3ee0a54b01b973b`  
+		Last Modified: Wed, 24 Aug 2022 00:07:58 GMT  
+		Size: 85.5 MB (85531548 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7bdaf629fe8214124455eb146db774a989c93271e8c3e264ece8ff4af772ea7b`  
-		Last Modified: Tue, 02 Aug 2022 20:26:57 GMT  
-		Size: 3.5 KB (3490 bytes)  
+	-	`sha256:31f43d7b59b546061df8a538a2cd4376a400245c54955445749e405d33098d73`  
+		Last Modified: Wed, 24 Aug 2022 00:07:45 GMT  
+		Size: 3.5 KB (3494 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ddfbe3e290918fede8f6a3b0123b009178834c861a89c42c8b48075f8f8f420d`  
-		Last Modified: Tue, 02 Aug 2022 20:26:58 GMT  
-		Size: 6.7 KB (6696 bytes)  
+	-	`sha256:4e7032a660a4eef799097fd44e9d6a7ae89c6f5a3bb148c9f6515f8b1f800f46`  
+		Last Modified: Wed, 24 Aug 2022 00:07:45 GMT  
+		Size: 6.7 KB (6701 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mariadb:jammy` - linux; arm64 variant v8
@@ -238,14 +234,14 @@ CMD ["mariadbd"]
 ### `mariadb:jammy` - linux; ppc64le
 
 ```console
-$ docker pull mariadb@sha256:017f8f45233c3bb9128302760d3c66df5253d31744a6e7401125b14233028d3a
+$ docker pull mariadb@sha256:b68e6672e1dfd013fc5b4fb42b368c534af7e07fce685f287b3a99296e09b2bc
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **116.8 MB (116844233 bytes)**  
+-	Total Size: **117.0 MB (117038959 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cf24d5b9794e7b70a566d82d3aa538d3b1657c23f08249227462a909b294c582`
+-	Image ID: `sha256:5a3d753a037ef6f672b98d11a6b2b3ddd116a81dea34be15c6b9a40c05fecbcf`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mariadbd"]`
 
@@ -256,48 +252,44 @@ ADD file:b6916c28c03568df4c2efc3da91ea6320f639cdbd2fa3f6741fcea7acad4fd5f in /
 CMD ["bash"]
 # Wed, 03 Aug 2022 04:30:02 GMT
 RUN groupadd -r mysql && useradd -r -g mysql mysql
-# Wed, 03 Aug 2022 04:30:30 GMT
-RUN set -ex; 	apt-get update; 	if ! which gpg; then 		apt-get install -y --no-install-recommends gnupg; 	fi; 	if ! gpg --version | grep -q '^gpg (GnuPG) 1\.'; then 		apt-get install -y --no-install-recommends dirmngr; 	fi; 	rm -rf /var/lib/apt/lists/*
-# Wed, 03 Aug 2022 04:30:31 GMT
+# Tue, 23 Aug 2022 22:10:24 GMT
+RUN set -ex; 	apt-get update; 	if ! which gpg; then 		apt-get install -y --no-install-recommends gnupg; 	fi; 	rm -rf /var/lib/apt/lists/*
+# Tue, 23 Aug 2022 22:10:25 GMT
 ENV GOSU_VERSION=1.14
-# Wed, 03 Aug 2022 04:30:49 GMT
+# Tue, 23 Aug 2022 22:10:46 GMT
 RUN set -eux; 	apt-get update; 	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ca-certificates; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 	dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	chmod +x /usr/local/bin/gosu; 	gosu --version; 	gosu nobody true
-# Wed, 03 Aug 2022 04:30:50 GMT
+# Tue, 23 Aug 2022 22:10:47 GMT
 RUN mkdir /docker-entrypoint-initdb.d
-# Wed, 03 Aug 2022 04:31:03 GMT
+# Tue, 23 Aug 2022 22:11:00 GMT
 RUN set -ex; 	apt-get update; 	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends 		libjemalloc2 		pwgen 		tzdata 		xz-utils 		zstd 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 03 Aug 2022 04:31:03 GMT
+# Tue, 23 Aug 2022 22:11:01 GMT
 ARG GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8
-# Wed, 03 Aug 2022 04:31:05 GMT
+# Tue, 23 Aug 2022 22:11:03 GMT
 # ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8
 RUN set -ex; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 	done; 	gpg --batch --export $GPG_KEYS > /etc/apt/trusted.gpg.d/mariadb.gpg; 	command -v gpgconf > /dev/null && gpgconf --kill all || :; 	rm -fr "$GNUPGHOME"; 	apt-key list
-# Wed, 03 Aug 2022 04:32:26 GMT
-ARG MARIADB_MAJOR=10.8
-# Wed, 03 Aug 2022 04:32:26 GMT
-ENV MARIADB_MAJOR=10.8
-# Wed, 03 Aug 2022 04:32:26 GMT
-ARG MARIADB_VERSION=1:10.8.3+maria~jammy
-# Wed, 03 Aug 2022 04:32:27 GMT
-ENV MARIADB_VERSION=1:10.8.3+maria~jammy
-# Wed, 03 Aug 2022 04:32:27 GMT
-ARG REPOSITORY=http://archive.mariadb.org/mariadb-10.8.3/repo/ubuntu/ jammy main
-# Wed, 03 Aug 2022 04:32:28 GMT
-# ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 REPOSITORY=http://archive.mariadb.org/mariadb-10.8.3/repo/ubuntu/ jammy main
+# Tue, 23 Aug 2022 22:12:28 GMT
+ARG MARIADB_VERSION=1:10.9.2+maria~ubu2204
+# Tue, 23 Aug 2022 22:12:29 GMT
+ENV MARIADB_VERSION=1:10.9.2+maria~ubu2204
+# Tue, 23 Aug 2022 22:12:29 GMT
+ARG REPOSITORY=http://archive.mariadb.org/mariadb-10.9.2/repo/ubuntu/ jammy main
+# Tue, 23 Aug 2022 22:12:30 GMT
+# ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 REPOSITORY=http://archive.mariadb.org/mariadb-10.9.2/repo/ubuntu/ jammy main
 RUN set -e;	echo "deb ${REPOSITORY}" > /etc/apt/sources.list.d/mariadb.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release o=MariaDB'; 		echo 'Pin-Priority: 999'; 	} > /etc/apt/preferences.d/mariadb
-# Wed, 03 Aug 2022 04:33:08 GMT
-# ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 REPOSITORY=http://archive.mariadb.org/mariadb-10.8.3/repo/ubuntu/ jammy main
-RUN set -ex; 	{ 		echo "mariadb-server-$MARIADB_MAJOR" mysql-server/root_password password 'unused'; 		echo "mariadb-server-$MARIADB_MAJOR" mysql-server/root_password_again password 'unused'; 	} | debconf-set-selections; 	apt-get update; 	apt-get install -y 		"mariadb-server=$MARIADB_VERSION" 		mariadb-backup 		socat 	; 	rm -rf /var/lib/apt/lists/*; 	rm -rf /var/lib/mysql; 	mkdir -p /var/lib/mysql /var/run/mysqld; 	chown -R mysql:mysql /var/lib/mysql /var/run/mysqld; 	chmod 777 /var/run/mysqld; 	find /etc/mysql/ -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log|user\s)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user\s)/#&/'; 	if [ ! -L /etc/mysql/my.cnf ]; then sed -i -e '/includedir/i[mariadb]\nskip-host-cache\nskip-name-resolve\n' /etc/mysql/my.cnf; 	else sed -i -e '/includedir/ {N;s/\(.*\)\n\(.*\)/[mariadbd]\nskip-host-cache\nskip-name-resolve\n\n\2\n\1/}'                 /etc/mysql/mariadb.cnf; fi
-# Wed, 03 Aug 2022 04:33:11 GMT
+# Tue, 23 Aug 2022 22:13:11 GMT
+# ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 REPOSITORY=http://archive.mariadb.org/mariadb-10.9.2/repo/ubuntu/ jammy main
+RUN set -ex; 	{ 		echo "mariadb-server" mysql-server/root_password password 'unused'; 		echo "mariadb-server" mysql-server/root_password_again password 'unused'; 	} | debconf-set-selections; 	apt-get update; 	apt-get install -y 		"mariadb-server=$MARIADB_VERSION" mariadb-backup socat 	; 	rm -rf /var/lib/apt/lists/*; 	rm -rf /var/lib/mysql; 	mkdir -p /var/lib/mysql /var/run/mysqld; 	chown -R mysql:mysql /var/lib/mysql /var/run/mysqld; 	chmod 777 /var/run/mysqld; 	find /etc/mysql/ -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log|user\s)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user\s)/#&/'; 	if [ ! -L /etc/mysql/my.cnf ]; then sed -i -e '/includedir/i[mariadb]\nskip-host-cache\nskip-name-resolve\n' /etc/mysql/my.cnf; 	else sed -i -e '/includedir/ {N;s/\(.*\)\n\(.*\)/[mariadbd]\nskip-host-cache\nskip-name-resolve\n\n\2\n\1/}'                 /etc/mysql/mariadb.cnf; fi
+# Tue, 23 Aug 2022 22:13:14 GMT
 VOLUME [/var/lib/mysql]
-# Wed, 03 Aug 2022 04:33:11 GMT
+# Tue, 23 Aug 2022 22:13:15 GMT
 COPY file:03ef406a869fc1d453794e4b0c7e8da3dee6816b3267c63fa57c93b4a38c8c52 in /usr/local/bin/healthcheck.sh 
-# Wed, 03 Aug 2022 04:33:12 GMT
-COPY file:e4da674ce3a4afd5069ca1fdb1c5969db396f58ba4a9105ee3e377f2391b91c5 in /usr/local/bin/ 
-# Wed, 03 Aug 2022 04:33:12 GMT
+# Tue, 23 Aug 2022 22:13:15 GMT
+COPY file:7032e58fbba6784f90935fcf1ff3c389e5b2936aa9e1c6b8b291cbb26774ee2e in /usr/local/bin/ 
+# Tue, 23 Aug 2022 22:13:15 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 03 Aug 2022 04:33:12 GMT
+# Tue, 23 Aug 2022 22:13:16 GMT
 EXPOSE 3306
-# Wed, 03 Aug 2022 04:33:13 GMT
+# Tue, 23 Aug 2022 22:13:16 GMT
 CMD ["mariadbd"]
 ```
 
@@ -310,54 +302,54 @@ CMD ["mariadbd"]
 		Last Modified: Wed, 03 Aug 2022 04:43:49 GMT  
 		Size: 1.7 KB (1745 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:06895bfe56d4b1ebe076e361e483fe6fc6bfbaeb765ae25852c1993a6943452c`  
-		Last Modified: Wed, 03 Aug 2022 04:43:47 GMT  
-		Size: 4.5 MB (4503176 bytes)  
+	-	`sha256:9cb11655cae670a33415465d29bd89cb9938848c51e472440a30ea85e4f14418`  
+		Last Modified: Tue, 23 Aug 2022 22:22:33 GMT  
+		Size: 4.5 MB (4503149 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ee69296533cbe8c0bf533fa14d2f744068f58d5998026a4ba0c82bf9ea828ca`  
-		Last Modified: Wed, 03 Aug 2022 04:43:47 GMT  
-		Size: 1.9 MB (1921808 bytes)  
+	-	`sha256:88b9f073bf34b13e2d6f3c1e5ece7ad5a8054000543be8679275166ef1b703c4`  
+		Last Modified: Tue, 23 Aug 2022 22:22:33 GMT  
+		Size: 1.9 MB (1921728 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e76647cede58c06588416f8c141f66a1bf687145f5a0b0b2c530cdc63b14c805`  
-		Last Modified: Wed, 03 Aug 2022 04:43:46 GMT  
+	-	`sha256:459989f6209d8b80dbdf54d9f8ca199da71664fd354e4c5d76a2f5e2e3263cf1`  
+		Last Modified: Tue, 23 Aug 2022 22:22:33 GMT  
 		Size: 149.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b9befa094840721fea90813c85958f817ad561e93636ebd0730a9a395a0b46a`  
-		Last Modified: Wed, 03 Aug 2022 04:43:47 GMT  
-		Size: 2.4 MB (2404905 bytes)  
+	-	`sha256:bf5255fb655e522ca09ddba8c75ee7be501bdcfbba3fa47fbea1281cca82e669`  
+		Last Modified: Tue, 23 Aug 2022 22:22:33 GMT  
+		Size: 2.4 MB (2404843 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f92e1e86f56f2fadd73fdf7cc3428ca6687fbfa29af810bdb5c43b92ab77d02`  
-		Last Modified: Wed, 03 Aug 2022 04:43:44 GMT  
+	-	`sha256:c101d18c7d52ad1f948a16ef3d50a8b748a9ac1d37e114d9971f75f85ef2a9e2`  
+		Last Modified: Tue, 23 Aug 2022 22:22:30 GMT  
 		Size: 2.5 KB (2492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e2b92a0e7592d7a0ad15eb1a53b8fcda1b2bb13d5dc516094d233fc4e8d23f53`  
-		Last Modified: Wed, 03 Aug 2022 04:44:25 GMT  
-		Size: 328.0 B  
+	-	`sha256:caabbd107834c8bff1673ba81491e0983e459aabc2855d3cf78188307c813365`  
+		Last Modified: Tue, 23 Aug 2022 22:23:10 GMT  
+		Size: 330.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3c0e53f407a9d9f4fdfdb556976d3e976f93310c77b48124319cd55841b06ac`  
-		Last Modified: Wed, 03 Aug 2022 04:44:43 GMT  
-		Size: 72.3 MB (72281444 bytes)  
+	-	`sha256:be3bd7204dda4f3ab271317d058dfb5ef33dfcf95bf4b663c30432f03f3fc3fc`  
+		Last Modified: Tue, 23 Aug 2022 22:23:28 GMT  
+		Size: 72.5 MB (72476332 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a525304ab204f12f8e1da79b296cd25e4eeda97bab0a3c0b8b21d27624c824c`  
-		Last Modified: Wed, 03 Aug 2022 04:44:24 GMT  
-		Size: 3.5 KB (3488 bytes)  
+	-	`sha256:e06c727c5cc2517b4755a4205d2b008e2454929862a191ba73a55c1dca7f58e1`  
+		Last Modified: Tue, 23 Aug 2022 22:23:10 GMT  
+		Size: 3.5 KB (3490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:759170fa57f07b1b2ffc7f1dc434234f5446e9b18b7a5bb4bc1edbea87035db4`  
-		Last Modified: Wed, 03 Aug 2022 04:44:24 GMT  
-		Size: 6.7 KB (6694 bytes)  
+	-	`sha256:714083977b193354161a308393ac0d56d68efc4be6cb3d26edfff12859e0a23e`  
+		Last Modified: Tue, 23 Aug 2022 22:23:10 GMT  
+		Size: 6.7 KB (6697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mariadb:jammy` - linux; s390x
 
 ```console
-$ docker pull mariadb@sha256:12097ab474fe2ee789b394e1e8a6b489f2ca4ce5ebc8904a14cfddeedb17b8e5
+$ docker pull mariadb@sha256:c7116a14d5deca65bec93cec3a99662a47f1d1c85330b3aefa2b5610f932d26d
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **105.0 MB (104979316 bytes)**  
+-	Total Size: **105.1 MB (105140532 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d95792c9ef5a984b01f32025b66c1495e316d034e94d5975da4069d260d40064`
+-	Image ID: `sha256:b55ac87f204e8050170fd16b50ad4652cc817bd6d937b569cb01e04580d15fa5`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mariadbd"]`
 
@@ -368,48 +360,44 @@ ADD file:d5a5e56e0ca8287f27b257e3ddbc9675a1bdac1912afbbab6cddd891056cd144 in /
 CMD ["bash"]
 # Tue, 02 Aug 2022 12:55:49 GMT
 RUN groupadd -r mysql && useradd -r -g mysql mysql
-# Tue, 02 Aug 2022 12:56:06 GMT
-RUN set -ex; 	apt-get update; 	if ! which gpg; then 		apt-get install -y --no-install-recommends gnupg; 	fi; 	if ! gpg --version | grep -q '^gpg (GnuPG) 1\.'; then 		apt-get install -y --no-install-recommends dirmngr; 	fi; 	rm -rf /var/lib/apt/lists/*
-# Tue, 02 Aug 2022 12:56:07 GMT
+# Tue, 23 Aug 2022 22:54:31 GMT
+RUN set -ex; 	apt-get update; 	if ! which gpg; then 		apt-get install -y --no-install-recommends gnupg; 	fi; 	rm -rf /var/lib/apt/lists/*
+# Tue, 23 Aug 2022 22:54:31 GMT
 ENV GOSU_VERSION=1.14
-# Tue, 02 Aug 2022 12:56:16 GMT
+# Tue, 23 Aug 2022 22:55:01 GMT
 RUN set -eux; 	apt-get update; 	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ca-certificates; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 	dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	chmod +x /usr/local/bin/gosu; 	gosu --version; 	gosu nobody true
-# Tue, 02 Aug 2022 12:56:17 GMT
+# Tue, 23 Aug 2022 22:55:02 GMT
 RUN mkdir /docker-entrypoint-initdb.d
-# Tue, 02 Aug 2022 12:56:22 GMT
+# Tue, 23 Aug 2022 22:55:08 GMT
 RUN set -ex; 	apt-get update; 	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends 		libjemalloc2 		pwgen 		tzdata 		xz-utils 		zstd 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 02 Aug 2022 12:56:22 GMT
+# Tue, 23 Aug 2022 22:55:08 GMT
 ARG GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8
-# Tue, 02 Aug 2022 12:56:23 GMT
+# Tue, 23 Aug 2022 22:55:13 GMT
 # ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8
 RUN set -ex; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 	done; 	gpg --batch --export $GPG_KEYS > /etc/apt/trusted.gpg.d/mariadb.gpg; 	command -v gpgconf > /dev/null && gpgconf --kill all || :; 	rm -fr "$GNUPGHOME"; 	apt-key list
-# Tue, 02 Aug 2022 12:57:08 GMT
-ARG MARIADB_MAJOR=10.8
-# Tue, 02 Aug 2022 12:57:08 GMT
-ENV MARIADB_MAJOR=10.8
-# Tue, 02 Aug 2022 12:57:08 GMT
-ARG MARIADB_VERSION=1:10.8.3+maria~jammy
-# Tue, 02 Aug 2022 12:57:08 GMT
-ENV MARIADB_VERSION=1:10.8.3+maria~jammy
-# Tue, 02 Aug 2022 12:57:09 GMT
-ARG REPOSITORY=http://archive.mariadb.org/mariadb-10.8.3/repo/ubuntu/ jammy main
-# Tue, 02 Aug 2022 12:57:09 GMT
-# ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 REPOSITORY=http://archive.mariadb.org/mariadb-10.8.3/repo/ubuntu/ jammy main
+# Tue, 23 Aug 2022 22:56:01 GMT
+ARG MARIADB_VERSION=1:10.9.2+maria~ubu2204
+# Tue, 23 Aug 2022 22:56:01 GMT
+ENV MARIADB_VERSION=1:10.9.2+maria~ubu2204
+# Tue, 23 Aug 2022 22:56:01 GMT
+ARG REPOSITORY=http://archive.mariadb.org/mariadb-10.9.2/repo/ubuntu/ jammy main
+# Tue, 23 Aug 2022 22:56:02 GMT
+# ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 REPOSITORY=http://archive.mariadb.org/mariadb-10.9.2/repo/ubuntu/ jammy main
 RUN set -e;	echo "deb ${REPOSITORY}" > /etc/apt/sources.list.d/mariadb.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release o=MariaDB'; 		echo 'Pin-Priority: 999'; 	} > /etc/apt/preferences.d/mariadb
-# Tue, 02 Aug 2022 12:57:31 GMT
-# ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 REPOSITORY=http://archive.mariadb.org/mariadb-10.8.3/repo/ubuntu/ jammy main
-RUN set -ex; 	{ 		echo "mariadb-server-$MARIADB_MAJOR" mysql-server/root_password password 'unused'; 		echo "mariadb-server-$MARIADB_MAJOR" mysql-server/root_password_again password 'unused'; 	} | debconf-set-selections; 	apt-get update; 	apt-get install -y 		"mariadb-server=$MARIADB_VERSION" 		mariadb-backup 		socat 	; 	rm -rf /var/lib/apt/lists/*; 	rm -rf /var/lib/mysql; 	mkdir -p /var/lib/mysql /var/run/mysqld; 	chown -R mysql:mysql /var/lib/mysql /var/run/mysqld; 	chmod 777 /var/run/mysqld; 	find /etc/mysql/ -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log|user\s)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user\s)/#&/'; 	if [ ! -L /etc/mysql/my.cnf ]; then sed -i -e '/includedir/i[mariadb]\nskip-host-cache\nskip-name-resolve\n' /etc/mysql/my.cnf; 	else sed -i -e '/includedir/ {N;s/\(.*\)\n\(.*\)/[mariadbd]\nskip-host-cache\nskip-name-resolve\n\n\2\n\1/}'                 /etc/mysql/mariadb.cnf; fi
-# Tue, 02 Aug 2022 12:57:38 GMT
+# Tue, 23 Aug 2022 22:56:32 GMT
+# ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 REPOSITORY=http://archive.mariadb.org/mariadb-10.9.2/repo/ubuntu/ jammy main
+RUN set -ex; 	{ 		echo "mariadb-server" mysql-server/root_password password 'unused'; 		echo "mariadb-server" mysql-server/root_password_again password 'unused'; 	} | debconf-set-selections; 	apt-get update; 	apt-get install -y 		"mariadb-server=$MARIADB_VERSION" mariadb-backup socat 	; 	rm -rf /var/lib/apt/lists/*; 	rm -rf /var/lib/mysql; 	mkdir -p /var/lib/mysql /var/run/mysqld; 	chown -R mysql:mysql /var/lib/mysql /var/run/mysqld; 	chmod 777 /var/run/mysqld; 	find /etc/mysql/ -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log|user\s)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user\s)/#&/'; 	if [ ! -L /etc/mysql/my.cnf ]; then sed -i -e '/includedir/i[mariadb]\nskip-host-cache\nskip-name-resolve\n' /etc/mysql/my.cnf; 	else sed -i -e '/includedir/ {N;s/\(.*\)\n\(.*\)/[mariadbd]\nskip-host-cache\nskip-name-resolve\n\n\2\n\1/}'                 /etc/mysql/mariadb.cnf; fi
+# Tue, 23 Aug 2022 22:56:35 GMT
 VOLUME [/var/lib/mysql]
-# Tue, 02 Aug 2022 12:57:38 GMT
+# Tue, 23 Aug 2022 22:56:35 GMT
 COPY file:03ef406a869fc1d453794e4b0c7e8da3dee6816b3267c63fa57c93b4a38c8c52 in /usr/local/bin/healthcheck.sh 
-# Tue, 02 Aug 2022 12:57:38 GMT
-COPY file:e4da674ce3a4afd5069ca1fdb1c5969db396f58ba4a9105ee3e377f2391b91c5 in /usr/local/bin/ 
-# Tue, 02 Aug 2022 12:57:39 GMT
+# Tue, 23 Aug 2022 22:56:35 GMT
+COPY file:7032e58fbba6784f90935fcf1ff3c389e5b2936aa9e1c6b8b291cbb26774ee2e in /usr/local/bin/ 
+# Tue, 23 Aug 2022 22:56:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 02 Aug 2022 12:57:39 GMT
+# Tue, 23 Aug 2022 22:56:36 GMT
 EXPOSE 3306
-# Tue, 02 Aug 2022 12:57:39 GMT
+# Tue, 23 Aug 2022 22:56:36 GMT
 CMD ["mariadbd"]
 ```
 
@@ -422,39 +410,39 @@ CMD ["mariadbd"]
 		Last Modified: Tue, 02 Aug 2022 13:01:03 GMT  
 		Size: 1.7 KB (1749 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01c5074a746c3e8a07e66d2d76ac4a7b9e0af6ffbf0cc8a87f601bb8b6913662`  
-		Last Modified: Tue, 02 Aug 2022 13:01:02 GMT  
-		Size: 3.7 MB (3675041 bytes)  
+	-	`sha256:dba8cabf22db4899159613c30bfc0b438ddb1815c02db35a1dd11ec92f073730`  
+		Last Modified: Tue, 23 Aug 2022 23:02:51 GMT  
+		Size: 3.7 MB (3675110 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:db6140902b730422bc6cad80b27cf9005104adc5047e2e34955e4fbb5cf7d394`  
-		Last Modified: Tue, 02 Aug 2022 13:01:02 GMT  
-		Size: 2.0 MB (1955931 bytes)  
+	-	`sha256:11923e077f6acedb8075b3c2ac4c921b04aefc98f94d3c478948f39dd3e12c38`  
+		Last Modified: Tue, 23 Aug 2022 23:02:51 GMT  
+		Size: 2.0 MB (1955983 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:67105478e75b1563365dc4986a18198b1230a86bb142ade80fa52d1f71e2b6d7`  
-		Last Modified: Tue, 02 Aug 2022 13:01:02 GMT  
+	-	`sha256:6d69b48e6f7faa35ab401ba6f1d74dd64e4d2e7cf6dcb9a4cd810b423c7cfd5c`  
+		Last Modified: Tue, 23 Aug 2022 23:02:51 GMT  
 		Size: 149.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af39a56c0cc78baeec34ac8d7b93879b9b0878bfcc89737ffecf164a865bd46b`  
-		Last Modified: Tue, 02 Aug 2022 13:01:02 GMT  
-		Size: 2.2 MB (2216654 bytes)  
+	-	`sha256:3b1adb7f976d562dce7286f9edda1ece0a76de472846be206e78ca740bf1a73e`  
+		Last Modified: Tue, 23 Aug 2022 23:02:42 GMT  
+		Size: 2.2 MB (2216749 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:90c8957d63d730d9dbe5d508e565371ce9f1a318e16ad05c720373da4dbbe208`  
-		Last Modified: Tue, 02 Aug 2022 13:01:00 GMT  
-		Size: 2.5 KB (2491 bytes)  
+	-	`sha256:f03447a3c7a2a54f12139adee8ceaffc55556a01e73baa2110aacd6a8633e4b4`  
+		Last Modified: Tue, 23 Aug 2022 23:02:33 GMT  
+		Size: 2.5 KB (2493 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5461cdd4f49c09bdda524801b26ccc244a1f3b4daa635e39c8d982532b8646d7`  
-		Last Modified: Tue, 02 Aug 2022 13:01:21 GMT  
-		Size: 326.0 B  
+	-	`sha256:4bab6e11c25e790046065da17a078d6f1068e0d5f9988a46f3ec1a381810189c`  
+		Last Modified: Tue, 23 Aug 2022 23:05:45 GMT  
+		Size: 327.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d0c9a941eeee8bd3fcf6d0504466a69f3b30632b6d14fed1f53bc29439ded147`  
-		Last Modified: Tue, 02 Aug 2022 13:01:30 GMT  
-		Size: 68.5 MB (68473998 bytes)  
+	-	`sha256:1fb6ddbdfd315c17604dd29c4cceec21edcd2a1f5b6de90cb34814ec25f1d944`  
+		Last Modified: Tue, 23 Aug 2022 23:05:50 GMT  
+		Size: 68.6 MB (68634999 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7458611c3efeaaf589463cdc0dff355cd54d57b45ece924dd1f1e136b26ef8dc`  
-		Last Modified: Tue, 02 Aug 2022 13:01:21 GMT  
-		Size: 3.5 KB (3493 bytes)  
+	-	`sha256:814afb85a75d500819281410f8832949cdfeb711ca835ef097214003f8f058a8`  
+		Last Modified: Tue, 23 Aug 2022 23:05:41 GMT  
+		Size: 3.5 KB (3491 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcf3286637af3a581d1537b503e2b8404768d5a37566247553295844ea4b760d`  
-		Last Modified: Tue, 02 Aug 2022 13:01:21 GMT  
-		Size: 6.7 KB (6699 bytes)  
+	-	`sha256:673619860a5c62749b0f25f505cc892fb9cc9d5cedfb493a12a10520c01b57d8`  
+		Last Modified: Tue, 23 Aug 2022 23:05:45 GMT  
+		Size: 6.7 KB (6697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
