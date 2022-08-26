@@ -1,19 +1,18 @@
-# `aerospike:ee-6.0.0.4`
+# `aerospike:ce-6.0.0.5`
 
 ## Docker Metadata
 
-- Image ID: `sha256:30363909d4f33c18236739a392c774e7a4781563e9e227ac39bb69efb1e348e3`
-- Created: `2022-08-23T00:44:32.382350058Z`
-- Virtual Size: ~ 294.13 Mb  
+- Image ID: `sha256:d1f6316ec53c9be62d30e155d6887b29561ede28b8edba38520d93f0ba077f62`
+- Created: `2022-08-24T23:07:53.648033424Z`
+- Virtual Size: ~ 334.53 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Entrypoint: `["/usr/bin/as-tini-static","-r","SIGUSR1","-t","SIGTERM","--","/entrypoint.sh"]`
+- Entrypoint: `["/usr/bin/dumb-init","--","/entrypoint.sh"]`
 - Command: `["asd"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `AEROSPIKE_VERSION=6.0.0.4`
-  - `AEROSPIKE_SHA256=2e7db8e35aa8d9214ab59ead9b8455a824c236d57a44aa00f25de1012ed2d6d9`
-  - `AS_TINI_SHA256=d1f6826dd70cdd88dde3d5a20d8ed248883a3bc2caba3071c8a3a9b0e0de5940`
+  - `AEROSPIKE_VERSION=6.0.0.5`
+  - `AEROSPIKE_SHA256=2eb30e08fd5fa5055e328ee5e652f59efd99af66f2b9e8eede5ffb532b7bd99a`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -70,11 +69,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/adduser/3.118/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/adduser/3.118/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `aerospike-server-enterprise=6.0.0.4-1`
+### `dpkg` source package: `aerospike-server-community=6.0.0.5-1`
 
 Binary Packages:
 
-- `aerospike-server-enterprise=6.0.0.4-1`
+- `aerospike-server-community=6.0.0.5-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -84,11 +83,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `aerospike-tools=7.0.5`
+### `dpkg` source package: `aerospike-tools=7.1.1`
 
 Binary Packages:
 
-- `aerospike-tools=7.0.5`
+- `aerospike-tools=7.1.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -566,6 +565,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/dpkg/1.19.8/ (for browsing the source)
 - https://sources.debian.net/src/dpkg/1.19.8/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/dpkg/1.19.8/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `dumb-init=1.2.2-1.1`
+
+Binary Packages:
+
+- `dumb-init=1.2.2-1.1`
+
+Licenses: (parsed from: `/usr/share/doc/dumb-init/copyright`)
+
+- `Expat`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris dumb-init=1.2.2-1.1
+'http://deb.debian.org/debian/pool/main/d/dumb-init/dumb-init_1.2.2-1.1.dsc' dumb-init_1.2.2-1.1.dsc 1613 SHA256:6e3b3554b27624140fdcec89051de4664cabb07a19d2a15772699d741e833af3
+'http://deb.debian.org/debian/pool/main/d/dumb-init/dumb-init_1.2.2.orig.tar.xz' dumb-init_1.2.2.orig.tar.xz 22488 SHA256:c8a00ca238832502c4fdd8914af5a4636c1760bcbe04b18dba353d3ff9571f52
+'http://deb.debian.org/debian/pool/main/d/dumb-init/dumb-init_1.2.2-1.1.debian.tar.xz' dumb-init_1.2.2-1.1.debian.tar.xz 3684 SHA256:2968b02f556fe5ba6f68bcbe9f85640324220c0aeaf9f01aa432db124ef1ed70
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/dumb-init/1.2.2-1.1/ (for browsing the source)
+- https://sources.debian.net/src/dumb-init/1.2.2-1.1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/dumb-init/1.2.2-1.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `e2fsprogs=1.44.5-1+deb10u3`
 
@@ -1862,7 +1886,6 @@ Binary Packages:
 
 - `libldap-2.4-2:amd64=2.4.47+dfsg-3+deb10u7`
 - `libldap-common=2.4.47+dfsg-3+deb10u7`
-- `libldap2-dev:amd64=2.4.47+dfsg-3+deb10u7`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
