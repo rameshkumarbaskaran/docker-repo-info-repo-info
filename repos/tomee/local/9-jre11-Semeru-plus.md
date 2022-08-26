@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f1f615ddf6a04f6f476bd4a1f1006661dbf08fb8a2bda2c51fe737626a246976`
-- Created: `2022-08-10T23:52:04.70069137Z`
+- Image ID: `sha256:ba863b01385914484a21d8392da3e9ddb4df6260da5ad6432d5084d9a709f320`
+- Created: `2022-08-24T01:31:38.874640847Z`
 - Virtual Size: ~ 366.33 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -13,7 +13,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.16+8_openj9-0.33.0`
+  - `JAVA_VERSION=jdk-11.0.16.1+1_openj9-0.33.1`
   - `JAVA_HOME=/opt/java/openjdk`
   - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal`
   - `TOMEE_VER=9.0.0-M8`
@@ -137,13 +137,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=11ubuntu5.5
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu5.5.dsc' base-files_11ubuntu5.5.dsc 1676 SHA512:a96414af9c3a120ce23f854ab5e80807319d820825ae9027b0ff6f5be621c6aff2941eb31b7f05523b5015d6702d973e628a6e70cb17bf9312b6cf5256b98962
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu5.5.tar.xz' base-files_11ubuntu5.5.tar.xz 80616 SHA512:682851e1d0001fd0d79a4d61357a6ce8de8d46367259619c5c66b289fc471901d70eb47d64289a8ad63d6b784ecad912f92ef005421f732ad9d3a3ddc97a0e74
-```
 
 ### `dpkg` source package: `base-passwd=3.5.47`
 

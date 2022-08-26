@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6b5f1da3ecceb57027658288bb1246c2cf634ebf8444c49ee4c44f115a7bfdcf`
-- Created: `2022-08-11T22:23:39.021027887Z`
+- Image ID: `sha256:4b5d30c4bbf45850d58572640bd715f20e729fb4b360d5b4dcd2cb73d4888196`
+- Created: `2022-08-24T20:55:42.322163455Z`
 - Virtual Size: ~ 264.28 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -14,7 +14,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-17.0.4+8`
+  - `JAVA_VERSION=jdk-17.0.4.1+1`
   - `TOMEE_VER=9.0.0-M8`
   - `TOMEE_BUILD=plus`
 
