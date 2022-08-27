@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:154611678644d4b539fa65fd048dc02d0656bd4e38e46a553b439be31f5b41c5`
-- Created: `2022-08-12T19:58:27.81115854Z`
-- Virtual Size: ~ 471.59 Mb  
+- Image ID: `sha256:8e4c31a5e2f79768861bc4cfaf1805d92a0172212e569a5618aa82ce0b45deba`
+- Created: `2022-08-24T20:04:52.945175462Z`
+- Virtual Size: ~ 471.58 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -15,7 +15,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-17.0.4+8`
+  - `JAVA_VERSION=jdk-17.0.4.1+1`
   - `JETTY_VERSION=9.4.48.v20220622`
   - `JETTY_HOME=/usr/local/jetty`
   - `JETTY_BASE=/var/lib/jetty`
@@ -141,13 +141,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=11ubuntu5.5
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu5.5.dsc' base-files_11ubuntu5.5.dsc 1676 SHA512:a96414af9c3a120ce23f854ab5e80807319d820825ae9027b0ff6f5be621c6aff2941eb31b7f05523b5015d6702d973e628a6e70cb17bf9312b6cf5256b98962
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu5.5.tar.xz' base-files_11ubuntu5.5.tar.xz 80616 SHA512:682851e1d0001fd0d79a4d61357a6ce8de8d46367259619c5c66b289fc471901d70eb47d64289a8ad63d6b784ecad912f92ef005421f732ad9d3a3ddc97a0e74
-```
 
 ### `dpkg` source package: `base-passwd=3.5.47`
 
