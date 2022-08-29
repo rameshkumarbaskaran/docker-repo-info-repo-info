@@ -1,7 +1,7 @@
 ## `sonarqube:datacenter-app`
 
 ```console
-$ docker pull sonarqube@sha256:dbc5befec8be48f06621776d7fa0fef0321f6b8a6df69dda950a27d5cc111ae6
+$ docker pull sonarqube@sha256:71fd98481fd5b05b7191dabc18cfe0802394eabe5a59d8dc641bf27f8ec37681
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull sonarqube@sha256:dbc5befec8be48f06621776d7fa0fef0321f6b8a6df69dda9
 ### `sonarqube:datacenter-app` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:54a050cd281bda762cebdc2dbb2b7a1847e9b6c11940766dfce85bdb81aea47d
+$ docker pull sonarqube@sha256:1cdfe3db1029c54da48fbedc9d69299171b49032a9ff4a0156f258261f9a92d1
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **507.1 MB (507114811 bytes)**  
+-	Total Size: **507.0 MB (506965377 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:739394e684698f78ad4597a8dc2ce17c7eb5680725330e41d46f9a32d1b15248`
+-	Image ID: `sha256:8ca84da6275145b7489a799a2cdfdb8e320b76472d846fccb86198e11493088a`
 -	Entrypoint: `["\/opt\/sonarqube\/bin\/run.sh"]`
 -	Default Command: `["\/opt\/sonarqube\/bin\/sonar.sh"]`
 
@@ -29,26 +29,26 @@ ADD file:f77e3f51f020890d22997e6c2ca98968b75b8bc8c463341a2010ff0655d4c88f in /
 CMD ["/bin/sh"]
 # Fri, 12 Aug 2022 22:41:43 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 12 Aug 2022 22:41:43 GMT
-ARG SONARQUBE_VERSION=9.6.0.59041
-# Fri, 12 Aug 2022 22:43:32 GMT
-ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.6.0.59041.zip
-# Fri, 12 Aug 2022 22:43:32 GMT
-ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.6.0.59041 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp SONAR_CLUSTER_NODE_TYPE=application SONAR_CLUSTER_ENABLED=true
-# Fri, 12 Aug 2022 22:43:59 GMT
-# ARGS: SONARQUBE_VERSION=9.6.0.59041 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.6.0.59041.zip
+# Mon, 29 Aug 2022 18:36:22 GMT
+ARG SONARQUBE_VERSION=9.6.1.59531
+# Mon, 29 Aug 2022 18:38:06 GMT
+ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.6.1.59531.zip
+# Mon, 29 Aug 2022 18:38:06 GMT
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.6.1.59531 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp SONAR_CLUSTER_NODE_TYPE=application SONAR_CLUSTER_ENABLED=true
+# Mon, 29 Aug 2022 18:38:31 GMT
+# ARGS: SONARQUBE_VERSION=9.6.1.59531 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.6.1.59531.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu openjdk11-jre;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e hkps://keys.openpgp.org                             hkps://keyserver.ubuntu.com) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt ;    cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME} ;     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}" ;     apk del --purge build-dependencies;
-# Fri, 12 Aug 2022 22:44:01 GMT
+# Mon, 29 Aug 2022 18:38:33 GMT
 COPY --chown=sonarqube:sonarqubemulti:b3583528dc7e1c8c3d5b50dfbb55820aeec61ed9bbc812d0d58f5c5875189ea8 in /opt/sonarqube/bin/ 
-# Fri, 12 Aug 2022 22:44:01 GMT
+# Mon, 29 Aug 2022 18:38:33 GMT
 WORKDIR /opt/sonarqube
-# Fri, 12 Aug 2022 22:44:01 GMT
+# Mon, 29 Aug 2022 18:38:33 GMT
 EXPOSE 9000
-# Fri, 12 Aug 2022 22:44:01 GMT
+# Mon, 29 Aug 2022 18:38:33 GMT
 STOPSIGNAL SIGINT
-# Fri, 12 Aug 2022 22:44:01 GMT
+# Mon, 29 Aug 2022 18:38:33 GMT
 ENTRYPOINT ["/opt/sonarqube/bin/run.sh"]
-# Fri, 12 Aug 2022 22:44:01 GMT
+# Mon, 29 Aug 2022 18:38:33 GMT
 CMD ["/opt/sonarqube/bin/sonar.sh"]
 ```
 
@@ -57,11 +57,11 @@ CMD ["/opt/sonarqube/bin/sonar.sh"]
 		Last Modified: Tue, 09 Aug 2022 17:20:52 GMT  
 		Size: 2.8 MB (2823512 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e7da70916bc64e11bb4d70dcea025d05093fc841b6525ceeee8696dba97a1a24`  
-		Last Modified: Fri, 12 Aug 2022 22:50:35 GMT  
-		Size: 504.3 MB (504289779 bytes)  
+	-	`sha256:d4e87f1e280a48ce247c56379c8f404573a03d3a40d389c98e69e82836f82a3f`  
+		Last Modified: Mon, 29 Aug 2022 18:43:23 GMT  
+		Size: 504.1 MB (504140344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d5796b8d1eb914b6d3a7a6a18321c667b5ea396ae3d77665837715aa7d39e45`  
-		Last Modified: Fri, 12 Aug 2022 22:50:05 GMT  
-		Size: 1.5 KB (1520 bytes)  
+	-	`sha256:0d33b3f47b48ff605fec3414ab79631f306efea21de7dec87693f16a525a7ac5`  
+		Last Modified: Mon, 29 Aug 2022 18:42:55 GMT  
+		Size: 1.5 KB (1521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
