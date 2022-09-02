@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:56f40630d2891c03df67d273272601ebe97293cc1a7fdd3c6b85c1a9372672ae`
-- Created: `2022-08-10T05:20:17.255852331Z`
-- Virtual Size: ~ 156.85 Mb  
+- Image ID: `sha256:b76b2163c576ef1d98ecc557bec5727287364cf5b578820fb7bb749ad6864d33`
+- Created: `2022-09-02T01:02:16.568710388Z`
+- Virtual Size: ~ 157.37 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
-  - `PHP_VERSION=8.1.9`
-  - `PHP_URL=https://www.php.net/distributions/php-8.1.9.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.9.tar.xz.asc`
-  - `PHP_SHA256=53477e73e6254dc942b68913a58d815ffdbf6946baf61a1f8ef854de524c27bf`
+  - `PHP_VERSION=8.1.10`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.10.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.10.tar.xz.asc`
+  - `PHP_SHA256=90e7120c77ee83630e6ac928d23bc6396603d62d83a3cf5df8a450d2e3070162`
   - `WORDPRESS_CLI_GPG_KEY=63AF7AA15067C05616FDDD88A3A2E8F226F0BC06`
   - `WORDPRESS_CLI_VERSION=2.6.0`
   - `WORDPRESS_CLI_SHA512=d73f9161a1f03b8ecaac7b196b6051fe847b3c402b9c92b1f6f3acbe5b1cf91f7260c0e499b8947bab75920ecec918b39533ca65fa5a1fd3eb6ce7b8e2c58e7d`
@@ -438,16 +438,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.83.1-r2 description:
+libcurl-7.83.1-r3 description:
 The multiprotocol file transfer library
 
-libcurl-7.83.1-r2 webpage:
+libcurl-7.83.1-r3 webpage:
 https://curl.se/
 
-libcurl-7.83.1-r2 installed size:
-512 KiB
+libcurl-7.83.1-r3 installed size:
+516 KiB
 
-libcurl-7.83.1-r2 license:
+libcurl-7.83.1-r3 license:
 curl
 
 ```
@@ -693,16 +693,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.14-r0 description:
+libxml2-2.9.14-r1 description:
 XML parsing library, version 2
 
-libxml2-2.9.14-r0 webpage:
+libxml2-2.9.14-r1 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.14-r0 installed size:
+libxml2-2.9.14-r1 installed size:
 1200 KiB
 
-libxml2-2.9.14-r0 license:
+libxml2-2.9.14-r1 license:
 MIT
 
 ```
@@ -727,16 +727,16 @@ BSD-3-Clause
 ### `apk` package: `mariadb-client`
 
 ```console
-mariadb-client-10.6.8-r0 description:
+mariadb-client-10.6.9-r0 description:
 Client for the MariaDB database
 
-mariadb-client-10.6.8-r0 webpage:
+mariadb-client-10.6.9-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-client-10.6.8-r0 installed size:
+mariadb-client-10.6.9-r0 installed size:
 28 MiB
 
-mariadb-client-10.6.8-r0 license:
+mariadb-client-10.6.9-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -744,16 +744,16 @@ GPL-2.0-or-later
 ### `apk` package: `mariadb-common`
 
 ```console
-mariadb-common-10.6.8-r0 description:
+mariadb-common-10.6.9-r0 description:
 MariaDB common files for both server and client
 
-mariadb-common-10.6.8-r0 webpage:
+mariadb-common-10.6.9-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-common-10.6.8-r0 installed size:
+mariadb-common-10.6.9-r0 installed size:
 2260 KiB
 
-mariadb-common-10.6.8-r0 license:
+mariadb-common-10.6.9-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -795,16 +795,16 @@ MIT BSD GPL2+
 ### `apk` package: `mysql-client`
 
 ```console
-mysql-client-10.6.8-r0 description:
+mysql-client-10.6.9-r0 description:
 Dummy package for mysql-client migration
 
-mysql-client-10.6.8-r0 webpage:
+mysql-client-10.6.9-r0 webpage:
 https://www.mariadb.org/
 
-mysql-client-10.6.8-r0 installed size:
+mysql-client-10.6.9-r0 installed size:
 4096 B
 
-mysql-client-10.6.8-r0 license:
+mysql-client-10.6.9-r0 license:
 GPL-2.0-or-later
 
 ```
