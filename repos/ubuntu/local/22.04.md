@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:df5de72bdb3b711aba4eca685b1f42c722cc8a1837ed3fbd548a9282af2d836d`
-- Created: `2022-08-02T01:30:56.165288114Z`
+- Image ID: `sha256:2dc39ba059dcd42ade30aae30147b5692777ba9ff0779a62ad93a74de02e3e1f`
+- Created: `2022-09-01T23:46:35.375057619Z`
 - Virtual Size: ~ 77.83 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -54,21 +54,25 @@ $ apt-get source -qq --print-uris adduser=3.118ubuntu5
 'http://archive.ubuntu.com/ubuntu/pool/main/a/adduser/adduser_3.118ubuntu5.tar.xz' adduser_3.118ubuntu5.tar.xz 222904 SHA512:ded568a5a3f5a5ac1acc2098e37160194f8c4622e90c7044d599286a321fe8fd701c8554a4517e4d72a6089b8e3b5592b92d46668032bda81de64cc736bf0a75
 ```
 
-### `dpkg` source package: `apt=2.4.6`
+### `dpkg` source package: `apt=2.4.7`
 
 Binary Packages:
 
-- `apt=2.4.6`
-- `libapt-pkg6.0:amd64=2.4.6`
+- `apt=2.4.7`
+- `libapt-pkg6.0:amd64=2.4.7`
 
 Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-pkg6.0/copyright`)
 
 - `GPL-2`
 - `GPLv2+`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris apt=2.4.7
+'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.4.7.dsc' apt_2.4.7.dsc 2805 SHA512:5b6443d01217b23de594e9937ae43bdad06b63c8a5630e6ffc1f1dbd2a04c804a54dbda63d9706def6e6ef8f7929720fafa3731bcd1ecaddefce7c53346e3d8a
+'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.4.7.tar.xz' apt_2.4.7.tar.xz 2249016 SHA512:9343616f9bd620579859d03a525cb8253401a4d99574eb384f4e371007786ce73e38040772ac22e5a6fddc330acc3622d96b28f18b8e13b2c38a067217a4d996
+```
 
 ### `dpkg` source package: `attr=1:2.5.1-1build1`
 
@@ -501,11 +505,11 @@ $ apt-get source -qq --print-uris gnupg2=2.2.27-3ubuntu2.1
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gnupg2/gnupg2_2.2.27-3ubuntu2.1.debian.tar.xz' gnupg2_2.2.27-3ubuntu2.1.debian.tar.xz 66676 SHA512:6f8aea12b515ef1b8558ac925bb84ae6f1743739c0edfc64e02952479d4a1271f8f6ee8fc23461164116f3f8396376009ed1ea609c55a59e4936f7d02b1f828a
 ```
 
-### `dpkg` source package: `gnutls28=3.7.3-4ubuntu1`
+### `dpkg` source package: `gnutls28=3.7.3-4ubuntu1.1`
 
 Binary Packages:
 
-- `libgnutls30:amd64=3.7.3-4ubuntu1`
+- `libgnutls30:amd64=3.7.3-4ubuntu1.1`
 
 Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 
@@ -526,11 +530,11 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris gnutls28=3.7.3-4ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.7.3-4ubuntu1.dsc' gnutls28_3.7.3-4ubuntu1.dsc 3564 SHA512:9fac0e1be78d2494426033728657f97ee93ece30fae655818ad052d17ad10888f01767fd3837ffa4ba9c06fd0bbd3df4325228a40713a84d8657b6423ab1e233
+$ apt-get source -qq --print-uris gnutls28=3.7.3-4ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.7.3-4ubuntu1.1.dsc' gnutls28_3.7.3-4ubuntu1.1.dsc 3572 SHA512:272d0a1896f1e3180f44e507e0b1aaf104be6642c241e9b3071e97ac41a6d63e2bcbc423ff7fa7fef971261c5753a70045aeb953c5417f0bee74f063f9c75784
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.7.3.orig.tar.xz' gnutls28_3.7.3.orig.tar.xz 6119292 SHA512:3ace744affe23e284342658d6d2d2de49dd50065489cbc8be18fc7d38187253e5268ca54027ce5cd517056c249ac039a7481e4548cec04325de37ae85617d077
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.7.3.orig.tar.xz.asc' gnutls28_3.7.3.orig.tar.xz.asc 833 SHA512:cd0d30298377deddf20a835863b71e3f119588061f659906ad2684004758943179531508b1c77c730e930e2131148095e60ad9be365353cce772472d5f5345df
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.7.3-4ubuntu1.debian.tar.xz' gnutls28_3.7.3-4ubuntu1.debian.tar.xz 68892 SHA512:154bee93d15779dd125332edc1aa7071c641547b1b9e60bdfbf331b000578b09e65feaa3d57b8d451beec3ef3b092a7eb8abf15f92ce22532f4edd5bcdf442e6
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.7.3-4ubuntu1.1.debian.tar.xz' gnutls28_3.7.3-4ubuntu1.1.debian.tar.xz 74796 SHA512:34b84a690de05f59fa9f3323e39914a0639c253b5ea2b42d2a7d859d158ffdd82367cf1bab0a2e6bb6eb9a7f4e6b8d7a4192fc34c4f0bfcafee63a5c4b20d3ae
 ```
 
 ### `dpkg` source package: `grep=3.7-1build1`
