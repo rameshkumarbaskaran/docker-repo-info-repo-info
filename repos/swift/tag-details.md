@@ -145,6 +145,30 @@
 -	[`swift:5.6.3-focal`](#swift563-focal)
 -	[`swift:5.6.3-focal-slim`](#swift563-focal-slim)
 -	[`swift:5.6.3-slim`](#swift563-slim)
+-	[`swift:5.7`](#swift57)
+-	[`swift:5.7-amazonlinux2`](#swift57-amazonlinux2)
+-	[`swift:5.7-amazonlinux2-slim`](#swift57-amazonlinux2-slim)
+-	[`swift:5.7-bionic`](#swift57-bionic)
+-	[`swift:5.7-bionic-slim`](#swift57-bionic-slim)
+-	[`swift:5.7-centos7`](#swift57-centos7)
+-	[`swift:5.7-centos7-slim`](#swift57-centos7-slim)
+-	[`swift:5.7-focal`](#swift57-focal)
+-	[`swift:5.7-focal-slim`](#swift57-focal-slim)
+-	[`swift:5.7-jammy`](#swift57-jammy)
+-	[`swift:5.7-jammy-slim`](#swift57-jammy-slim)
+-	[`swift:5.7-slim`](#swift57-slim)
+-	[`swift:5.7.0`](#swift570)
+-	[`swift:5.7.0-amazonlinux2`](#swift570-amazonlinux2)
+-	[`swift:5.7.0-amazonlinux2-slim`](#swift570-amazonlinux2-slim)
+-	[`swift:5.7.0-bionic`](#swift570-bionic)
+-	[`swift:5.7.0-bionic-slim`](#swift570-bionic-slim)
+-	[`swift:5.7.0-centos7`](#swift570-centos7)
+-	[`swift:5.7.0-centos7-slim`](#swift570-centos7-slim)
+-	[`swift:5.7.0-focal`](#swift570-focal)
+-	[`swift:5.7.0-focal-slim`](#swift570-focal-slim)
+-	[`swift:5.7.0-jammy`](#swift570-jammy)
+-	[`swift:5.7.0-jammy-slim`](#swift570-jammy-slim)
+-	[`swift:5.7.0-slim`](#swift570-slim)
 -	[`swift:amazonlinux2`](#swiftamazonlinux2)
 -	[`swift:amazonlinux2-slim`](#swiftamazonlinux2-slim)
 -	[`swift:bionic`](#swiftbionic)
@@ -153,6 +177,8 @@
 -	[`swift:centos7-slim`](#swiftcentos7-slim)
 -	[`swift:focal`](#swiftfocal)
 -	[`swift:focal-slim`](#swiftfocal-slim)
+-	[`swift:jammy`](#swiftjammy)
+-	[`swift:jammy-slim`](#swiftjammy-slim)
 -	[`swift:latest`](#swiftlatest)
 -	[`swift:slim`](#swiftslim)
 -	[`swift:xenial`](#swiftxenial)
@@ -10401,6 +10427,222 @@ RUN set -e;     SWIFT_WEBDIR="$SWIFT_WEBROOT/$SWIFT_BRANCH/$(echo $SWIFT_PLATFOR
 		Size: 84.5 MB (84518077 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `swift:5.7`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7-amazonlinux2`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7-amazonlinux2-slim`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7-bionic`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7-bionic-slim`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7-centos7`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7-centos7-slim`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7-focal`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7-focal-slim`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7-jammy`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7-jammy-slim`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7-slim`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7.0`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7.0-amazonlinux2`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7.0-amazonlinux2-slim`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7.0-bionic`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7.0-bionic-slim`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7.0-centos7`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7.0-centos7-slim`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7.0-focal`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7.0-focal-slim`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7.0-jammy`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7.0-jammy-slim`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:5.7.0-slim`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
 ## `swift:amazonlinux2`
 
 ```console
@@ -11160,6 +11402,24 @@ RUN set -e;     ARCH_NAME="$(dpkg --print-architecture)";     url=;     case "${
 		Last Modified: Mon, 12 Sep 2022 19:04:13 GMT  
 		Size: 80.3 MB (80263813 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `swift:jammy`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `swift:jammy-slim`
+
+```console
+$ docker pull swift@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
 
 ## `swift:latest`
 
