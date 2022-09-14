@@ -1,10 +1,10 @@
-# `api-firewall:0.6.8`
+# `api-firewall:0.6.9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a2557517f85256294702dafbd88e3fb62c567277548bffe6ff868eb4ba657a36`
-- Created: `2022-08-09T17:47:41.954767409Z`
-- Virtual Size: ~ 17.18 Mb  
+- Image ID: `sha256:c17ca12e493bd8130c06091fd4c2c3090ad1996e9a50774ca1220c0b50da6e08`
+- Created: `2022-09-14T00:12:04.605009992Z`
+- Virtual Size: ~ 17.79 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -12,23 +12,40 @@
 - Environment:
   - `PATH=/opt/api-firewall:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `APIFW_PATH=/opt/api-firewall`
-  - `APIFIREWALL_VERSION=v0.6.8`
+  - `APIFIREWALL_VERSION=v0.6.9`
 
 ## `apk` (`.apk`-based packages)
 
 ### `apk` package: `alpine-baselayout`
 
 ```console
-alpine-baselayout-3.2.0-r18 description:
+alpine-baselayout-3.2.0-r22 description:
 Alpine base dir structure and init scripts
 
-alpine-baselayout-3.2.0-r18 webpage:
+alpine-baselayout-3.2.0-r22 webpage:
 https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
 
-alpine-baselayout-3.2.0-r18 installed size:
-404 KiB
+alpine-baselayout-3.2.0-r22 installed size:
+340 KiB
 
-alpine-baselayout-3.2.0-r18 license:
+alpine-baselayout-3.2.0-r22 license:
+GPL-2.0-only
+
+```
+
+### `apk` package: `alpine-baselayout-data`
+
+```console
+alpine-baselayout-data-3.2.0-r22 description:
+Alpine base dir structure and init scripts
+
+alpine-baselayout-data-3.2.0-r22 webpage:
+https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
+
+alpine-baselayout-data-3.2.0-r22 installed size:
+72 KiB
+
+alpine-baselayout-data-3.2.0-r22 license:
 GPL-2.0-only
 
 ```
@@ -53,16 +70,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.12.7-r3 description:
+apk-tools-2.12.9-r3 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.12.7-r3 webpage:
+apk-tools-2.12.9-r3 webpage:
 https://gitlab.alpinelinux.org/alpine/apk-tools
 
-apk-tools-2.12.7-r3 installed size:
-304 KiB
+apk-tools-2.12.9-r3 installed size:
+300 KiB
 
-apk-tools-2.12.7-r3 license:
+apk-tools-2.12.9-r3 license:
 GPL-2.0-only
 
 ```
@@ -70,16 +87,16 @@ GPL-2.0-only
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.34.1-r7 description:
+busybox-1.35.0-r17 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.34.1-r7 webpage:
+busybox-1.35.0-r17 webpage:
 https://busybox.net/
 
-busybox-1.34.1-r7 installed size:
-924 KiB
+busybox-1.35.0-r17 installed size:
+940 KiB
 
-busybox-1.34.1-r7 license:
+busybox-1.35.0-r17 license:
 GPL-2.0-only
 
 ```
@@ -128,7 +145,7 @@ libcrypto1.1-1.1.1q-r0 webpage:
 https://www.openssl.org/
 
 libcrypto1.1-1.1.1q-r0 installed size:
-2676 KiB
+2708 KiB
 
 libcrypto1.1-1.1.1q-r0 license:
 OpenSSL
@@ -138,34 +155,17 @@ OpenSSL
 ### `apk` package: `libidn2`
 
 ```console
-libidn2-2.3.2-r0 description:
+libidn2-2.3.2-r2 description:
 Encode/Decode library for internationalized domain names
 
-libidn2-2.3.2-r0 webpage:
+libidn2-2.3.2-r2 webpage:
 https://www.gnu.org/software/libidn#libidn2
 
-libidn2-2.3.2-r0 installed size:
-212 KiB
+libidn2-2.3.2-r2 installed size:
+148 KiB
 
-libidn2-2.3.2-r0 license:
-GPL-2.0-or-later GPL-3.0-or-later LGPL-3.0-or-later
-
-```
-
-### `apk` package: `libretls`
-
-```console
-libretls-3.3.4-r3 description:
-port of libtls from libressl to openssl
-
-libretls-3.3.4-r3 webpage:
-https://git.causal.agency/libretls/
-
-libretls-3.3.4-r3 installed size:
-84 KiB
-
-libretls-3.3.4-r3 license:
-ISC AND (BSD-3-Clause OR MIT)
+libidn2-2.3.2-r2 license:
+GPL-2.0-or-later AND LGPL-3.0-or-later
 
 ```
 
@@ -189,33 +189,33 @@ OpenSSL
 ### `apk` package: `libunistring`
 
 ```console
-libunistring-0.9.10-r1 description:
+libunistring-1.0-r0 description:
 Library for manipulating Unicode strings and C strings
 
-libunistring-0.9.10-r1 webpage:
+libunistring-1.0-r0 webpage:
 https://www.gnu.org/software/libunistring/
 
-libunistring-0.9.10-r1 installed size:
-1504 KiB
+libunistring-1.0-r0 installed size:
+1672 KiB
 
-libunistring-0.9.10-r1 license:
-GPL-2.0+ OR LGPL-3.0+
+libunistring-1.0-r0 license:
+GPL-2.0-or-later OR LGPL-3.0-or-later
 
 ```
 
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.2-r7 description:
+musl-1.2.3-r0 description:
 the musl c library (libc) implementation
 
-musl-1.2.2-r7 webpage:
+musl-1.2.3-r0 webpage:
 https://musl.libc.org/
 
-musl-1.2.2-r7 installed size:
+musl-1.2.3-r0 installed size:
 608 KiB
 
-musl-1.2.2-r7 license:
+musl-1.2.3-r0 license:
 MIT
 
 ```
@@ -223,16 +223,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.2.2-r7 description:
+musl-utils-1.2.3-r0 description:
 the musl c library (libc) implementation
 
-musl-utils-1.2.2-r7 webpage:
+musl-utils-1.2.3-r0 webpage:
 https://musl.libc.org/
 
-musl-utils-1.2.2-r7 installed size:
-140 KiB
+musl-utils-1.2.3-r0 installed size:
+132 KiB
 
-musl-utils-1.2.2-r7 license:
+musl-utils-1.2.3-r0 license:
 MIT BSD GPL2+
 
 ```
@@ -240,16 +240,16 @@ MIT BSD GPL2+
 ### `apk` package: `scanelf`
 
 ```console
-scanelf-1.3.3-r0 description:
+scanelf-1.3.4-r0 description:
 Scan ELF binaries for stuff
 
-scanelf-1.3.3-r0 webpage:
+scanelf-1.3.4-r0 webpage:
 https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities
 
-scanelf-1.3.3-r0 installed size:
+scanelf-1.3.4-r0 installed size:
 92 KiB
 
-scanelf-1.3.3-r0 license:
+scanelf-1.3.4-r0 license:
 GPL-2.0-only
 
 ```
@@ -257,16 +257,16 @@ GPL-2.0-only
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.34.1-r7 description:
+ssl_client-1.35.0-r17 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.34.1-r7 webpage:
+ssl_client-1.35.0-r17 webpage:
 https://busybox.net/
 
-ssl_client-1.34.1-r7 installed size:
+ssl_client-1.35.0-r17 installed size:
 28 KiB
 
-ssl_client-1.34.1-r7 license:
+ssl_client-1.35.0-r17 license:
 GPL-2.0-only
 
 ```
@@ -274,16 +274,16 @@ GPL-2.0-only
 ### `apk` package: `wget`
 
 ```console
-wget-1.21.2-r2 description:
+wget-1.21.3-r0 description:
 Network utility to retrieve files from the Web
 
-wget-1.21.2-r2 webpage:
+wget-1.21.3-r0 webpage:
 https://www.gnu.org/software/wget/wget.html
 
-wget-1.21.2-r2 installed size:
-488 KiB
+wget-1.21.3-r0 installed size:
+480 KiB
 
-wget-1.21.2-r2 license:
+wget-1.21.3-r0 license:
 GPL-3.0-or-later WITH OpenSSL-Exception
 
 ```
