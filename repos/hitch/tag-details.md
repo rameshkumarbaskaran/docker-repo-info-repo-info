@@ -6,6 +6,8 @@
 -	[`hitch:1.7`](#hitch17)
 -	[`hitch:1.7.2`](#hitch172)
 -	[`hitch:1.7.2-1`](#hitch172-1)
+-	[`hitch:1.7.3`](#hitch173)
+-	[`hitch:1.7.3-1`](#hitch173-1)
 -	[`hitch:latest`](#hitchlatest)
 
 ## `hitch:1`
@@ -1459,6 +1461,14 @@ CMD []
 		Last Modified: Wed, 14 Sep 2022 17:43:32 GMT  
 		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `hitch:1.7.3`
+
+**does not exist** (yet?)
+
+## `hitch:1.7.3-1`
+
+**does not exist** (yet?)
 
 ## `hitch:latest`
 
