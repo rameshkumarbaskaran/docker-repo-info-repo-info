@@ -5101,14 +5101,9 @@ Licenses: (parsed from: `/usr/share/doc/libpoppler73/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris poppler=0.62.0-2ubuntu2.12
-'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.62.0-2ubuntu2.12.dsc' poppler_0.62.0-2ubuntu2.12.dsc 3374 SHA512:436174eb93e59a21382d301662f438bdff8dea3b317eeb1ace4b6bc3a5bd5faa8c4b0812952e1d27d024874e3b0ec02f27d0c6c831074913d5c31f3e7b37587a
-'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.62.0.orig.tar.xz' poppler_0.62.0.orig.tar.xz 1423372 SHA512:91f7eae7b05965ae97a34e658bed2a676be8a6e4d34f82148ece6eb58932632dcf9a34d50c66412f93f560ce575abf5c608ed6b1e5184604b96024801886c706
-'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.62.0-2ubuntu2.12.debian.tar.xz' poppler_0.62.0-2ubuntu2.12.debian.tar.xz 45412 SHA512:7fc4e1e17c6e2239521f9e70e3b0fa0c84595e396ce96a0e2b95185bf09f77a88f0e72e641f42410c480665a9d922867244a57edaeb148f3d3d31958729c09bc
-```
 
 ### `dpkg` source package: `postgresql-10=10.22-0ubuntu0.18.04.1`
 
@@ -5797,14 +5792,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=237-3ubuntu10.53
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.53.dsc' systemd_237-3ubuntu10.53.dsc 5187 SHA512:67bec5ef899046e4dac8d004d456a4320acf2865b66c697040f54f7e04ce1dd31d4abb331b77f5beffdcf4281a4b44eb29746d68b796be4e55c7865afbbf5c9f
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA512:15ef4b92815a6dd9a6c51672dbc00fd7cd0f08068ef0cbeaca574f68d330b28bc67ba1946f24f75ef3d9e7b63843a73eea700db54688061dbf5c9f8470394c3b
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.53.debian.tar.xz' systemd_237-3ubuntu10.53.debian.tar.xz 302640 SHA512:5b2fbb5ec3ca3030e64326af2281b42aedad040edc44595d41f7ea2d06c91a1fdee6e2e4c1bc6c513332ddae6d89bbbc2ff4584e6c59c20e43e2ee0ed27d64bd
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 
@@ -5894,14 +5884,9 @@ Licenses: (parsed from: `/usr/share/doc/libtiff5/copyright`)
 
 - `Hylafax`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.0.9-5ubuntu0.5
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.0.9-5ubuntu0.5.dsc' tiff_4.0.9-5ubuntu0.5.dsc 2177 SHA512:7f7a37be4434207b11a6526c7cca61be7519da62f3054ffc021ed644555505909f5a4325cc2b26a94278e7d09416550d0c18a736722afccd8ee72ea5080a3e35
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.0.9.orig.tar.gz' tiff_4.0.9.orig.tar.gz 2305681 SHA512:04f3d5eefccf9c1a0393659fe27f3dddd31108c401ba0dc587bca152a1c1f6bc844ba41622ff5572da8cc278593eff8c402b44e7af0a0090e91d326c2d79f6cd
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.0.9-5ubuntu0.5.debian.tar.xz' tiff_4.0.9-5ubuntu0.5.debian.tar.xz 37028 SHA512:cfb2a63ca9aa6c876db38ca80adca1c06f29724cd4663c26d8c611cf2f63490efc3f837bfba571f0e597434e691f61b1d4d07bb96c0e3b8a90acdf91c2ed2cf9
-```
 
 ### `dpkg` source package: `tinyxml2=6.0.0+dfsg-1`
 
