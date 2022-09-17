@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ff5c3ee72ae5e08cfcf981f055bf064dccb43a587a4a5828603a3c8daaf19011`
-- Created: `2022-09-12T19:33:56.657480727Z`
+- Image ID: `sha256:b40036699405bcb9f44fe91436b576fce41bcfacc0a563cce27a772e4c3bacff`
+- Created: `2022-09-16T23:20:40.31498154Z`
 - Virtual Size: ~ 37.14 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20220910`
+  - `build-date=20220916`
   - `name=Photon OS x86_64/4.0 Base Image`
   - `vendor=VMware`
 
@@ -119,7 +119,7 @@ Licenses (from `rpm --query`): BSD
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libssh2-1.9.0-4.ph4.x86_64`
+### `rpm` package: `libssh2-1.9.0-5.ph4.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
