@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e04095290d8bff5735b94ae6c9680e4da2cf62b8b88e8dd0d262fa9311d31fa1`
-- Created: `2022-09-08T22:26:44.79424423Z`
+- Image ID: `sha256:223937044b8508ffc39fbc2ab8d34e63efb68069fd6a10e8e447df51eb7cf003`
+- Created: `2022-09-20T20:38:48.353379712Z`
 - Virtual Size: ~ 467.48 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -506,16 +506,16 @@ BSD-3-Clause IJG Zlib
 ### `apk` package: `libldap`
 
 ```console
-libldap-2.6.3-r0 description:
+libldap-2.6.3-r1 description:
 OpenLDAP libraries
 
-libldap-2.6.3-r0 webpage:
+libldap-2.6.3-r1 webpage:
 https://www.openldap.org/
 
-libldap-2.6.3-r0 installed size:
+libldap-2.6.3-r1 installed size:
 400 KiB
 
-libldap-2.6.3-r0 license:
+libldap-2.6.3-r1 license:
 OLDAP-2.8
 
 ```
