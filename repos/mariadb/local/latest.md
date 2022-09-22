@@ -1,10 +1,10 @@
-# `mariadb:10.9.2-jammy`
+# `mariadb:10.9.3-jammy`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5c284e5e829612878511aa9fc0c383708c5a68f2167fa77a515bc2e4b2a35bf2`
-- Created: `2022-09-02T03:43:42.553399504Z`
-- Virtual Size: ~ 383.66 Mb  
+- Image ID: `sha256:4c9943b40f2e01596a2093d22909c931a2a3c1c396ce97d1d80906cad3298a29`
+- Created: `2022-09-20T22:20:37.045505123Z`
+- Virtual Size: ~ 383.71 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `GOSU_VERSION=1.14`
-  - `MARIADB_VERSION=1:10.9.2+maria~ubu2204`
+  - `MARIADB_VERSION=1:10.9.3+maria~ubu2204`
 
 ## `dpkg` (`.deb`-based packages)
 
