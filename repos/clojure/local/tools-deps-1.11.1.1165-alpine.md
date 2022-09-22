@@ -1,21 +1,22 @@
-# `clojure:temurin-8-alpine`
+# `clojure:temurin-17-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:0e2cb352ef9737511cf6805fd1629d5cabce1bc8026df895fbebded4c8ced3a4`
-- Created: `2022-08-17T01:21:41.840755491Z`
-- Virtual Size: ~ 271.74 Mb  
+- Image ID: `sha256:f8e6c0b5f6a3c4d96b2e7b87c5d690347b03bfbb6a97cce4e1cbeaa069d8ad55`
+- Created: `2022-09-19T19:23:14.212965379Z`
+- Virtual Size: ~ 397.14 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Command: `["clj"]`
+- Entrypoint: `["entrypoint"]`
+- Command: `["-M","--repl"]`
 - Environment:
   - `PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/opt/java/openjdk`
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk8u345-b01`
-  - `CLOJURE_VERSION=1.11.1.1155`
+  - `JAVA_VERSION=jdk-17.0.4.1+1`
+  - `CLOJURE_VERSION=1.11.1.1165`
 
 ## `apk` (`.apk`-based packages)
 
@@ -311,16 +312,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.83.1-r2 description:
+libcurl-7.83.1-r3 description:
 The multiprotocol file transfer library
 
-libcurl-7.83.1-r2 webpage:
+libcurl-7.83.1-r3 webpage:
 https://curl.se/
 
-libcurl-7.83.1-r2 installed size:
-512 KiB
+libcurl-7.83.1-r3 installed size:
+516 KiB
 
-libcurl-7.83.1-r2 license:
+libcurl-7.83.1-r3 license:
 curl
 
 ```
