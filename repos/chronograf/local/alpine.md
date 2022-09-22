@@ -1,17 +1,17 @@
-# `chronograf:1.9-alpine`
+# `chronograf:1.10-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ced3757bcaca9904d45cc79b6978e0aa53759fa9d16a4fb13fa24be010091f25`
-- Created: `2022-08-09T18:17:43.967102309Z`
-- Virtual Size: ~ 82.35 Mb  
+- Image ID: `sha256:46e472a1f7b448779d264ff1d5a2d3e0711a25c41260fbf237eecb091cbd66b2`
+- Created: `2022-09-20T20:22:15.274659497Z`
+- Virtual Size: ~ 113.60 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Command: `["chronograf"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `CHRONOGRAF_VERSION=1.9.4`
+  - `CHRONOGRAF_VERSION=1.10.0`
 
 ## `apk` (`.apk`-based packages)
 
