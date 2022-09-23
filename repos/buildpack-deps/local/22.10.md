@@ -174,14 +174,9 @@ Licenses: (parsed from: `/usr/share/doc/libaudit-common/copyright`, `/usr/share/
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris audit=1:3.0.7-1build1
-'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_3.0.7-1build1.dsc' audit_3.0.7-1build1.dsc 2771 SHA512:beb14e23239ab9c87dd4a57821d7d557a14a3e67f66306110ef87cd77cd2c07426f3bc8413d757618f886c5059e9bf624347753170708e0ad39b90f96fd51053
-'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_3.0.7.orig.tar.gz' audit_3.0.7.orig.tar.gz 1180226 SHA512:b5662b32082fc2ac54e247aa0db5442d76afa30134ebba1d624a17004e9ccf6856bb75344af4ce9d9a0a66c03e1c6f18b7d45658d7df13ea71af0c8362e08d70
-'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_3.0.7-1build1.debian.tar.xz' audit_3.0.7-1build1.debian.tar.xz 17772 SHA512:cdf346fc7dc04e42b44a9089fb7c01e68ea54ccd20d3eef8100d0cd8eed8ebd0764d8fd6ceab133faa0bfeee18e3cfe7625d230600b0e34ed0c19a7b739ec783
-```
 
 ### `dpkg` source package: `autoconf=2.71-2`
 
@@ -2302,14 +2297,13 @@ Licenses: (parsed from: `/usr/share/doc/libpng-dev/copyright`, `/usr/share/doc/l
 - `libpng`
 - `libpng OR Apache-2.0 OR BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libpng1.6=1.6.37-5
-'http://archive.ubuntu.com/ubuntu/pool/main/libp/libpng1.6/libpng1.6_1.6.37-5.dsc' libpng1.6_1.6.37-5.dsc 2225 SHA512:457d0953cb125e07953e14fe4686613c9a8ab1c91360b05cf95ae9dfb93a50be79dab337a4e10e72f79b041d8dd40ac22e4a6865321cb9a7d8060ef5415753bf
-'http://archive.ubuntu.com/ubuntu/pool/main/libp/libpng1.6/libpng1.6_1.6.37.orig.tar.gz' libpng1.6_1.6.37.orig.tar.gz 1508805 SHA512:ccb3705c23b2724e86d072e2ac8cfc380f41fadfd6977a248d588a8ad57b6abe0e4155e525243011f245e98d9b7afbe2e8cc7fd4ff7d82fcefb40c0f48f88918
-'http://archive.ubuntu.com/ubuntu/pool/main/libp/libpng1.6/libpng1.6_1.6.37-5.debian.tar.xz' libpng1.6_1.6.37-5.debian.tar.xz 32744 SHA512:51565a6b1dc08c2edd9e1c6fab6cd2060f0e6c249a0a7e712f58b4d8d3ec753222bd42ae50d5054a2cc849aad511a6a791ab975406833f29d0c53123c81c62fa
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libpng1.6/1.6.37-5/
+
 
 ### `dpkg` source package: `libpsl=0.21.0-1.2build2`
 
@@ -3815,9 +3809,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris postgresql-14=14.5-1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-14/postgresql-14_14.5-1.dsc' postgresql-14_14.5-1.dsc 3721 SHA512:6d54a9954f27fa139f048fdd09d42378c658691d377542ba737dc7a492f8905af396eee3ff9573e1383a77a9dff9e863d81e0a5831edc21b8b2a17b501f31f7d
+'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-14/postgresql-14_14.5-1ubuntu1.dsc' postgresql-14_14.5-1ubuntu1.dsc 3834 SHA512:86fc3f4a81934f6e8fc10d0eb4781a1a2867382b8cf9333361006a77980d7e0c5fc9024f16380f57f102801610eb0bc9a5ef7aeb69a45874b4789d315b0b1b03
 'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-14/postgresql-14_14.5.orig.tar.bz2' postgresql-14_14.5.orig.tar.bz2 22132996 SHA512:3051c5ab729f6a55952c6108098b022517398b1de64f7fefbdd6c806c7e2eb0637d00f3c98a6203c5bee654656528c4ff3530db5a69470e7888864c77900178a
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-14/postgresql-14_14.5-1.debian.tar.xz' postgresql-14_14.5-1.debian.tar.xz 24780 SHA512:eeac80b91712467fbbffa9e6db090a1fa4f663fba29fe9f6c074ed7e263c08641b7bd8d1b0ed0a1d42c75bfc25d2b468b281a977c8a438f5de2b2a9b72135d35
+'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-14/postgresql-14_14.5-1ubuntu1.debian.tar.xz' postgresql-14_14.5-1ubuntu1.debian.tar.xz 24904 SHA512:000c62e61fc27a1e70c997698525059449add300bbfbdfb261655081dc3244e97e24b188e1be96450eeaeb7a53d0a48e396b1597c3cd40e533795e045962ab8f
 ```
 
 ### `dpkg` source package: `procps=2:3.3.17-7ubuntu1`
@@ -4357,14 +4351,13 @@ Licenses: (parsed from: `/usr/share/doc/libutf8proc2/copyright`)
 - `Expat`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris utf8proc=2.7.0-3
-'http://archive.ubuntu.com/ubuntu/pool/universe/u/utf8proc/utf8proc_2.7.0-3.dsc' utf8proc_2.7.0-3.dsc 2162 SHA512:715ebac4f4159744be21331ffed20228b00e81807b208489194c16be4654d10cb6350950e203e435568d8facb006c021e18893d145f4a19189ee54b9720a6049
-'http://archive.ubuntu.com/ubuntu/pool/universe/u/utf8proc/utf8proc_2.7.0.orig.tar.gz' utf8proc_2.7.0.orig.tar.gz 187906 SHA512:29f7883de13302d609e8755872ed43174e70076e9681b4ac3f9b03e50295c45d9972c193bc81f94ad7e11e2d33a46cad5a30a80873173e6e1ae242101ebb3bed
-'http://archive.ubuntu.com/ubuntu/pool/universe/u/utf8proc/utf8proc_2.7.0-3.debian.tar.xz' utf8proc_2.7.0-3.debian.tar.xz 5608 SHA512:b0c8e5c7d348d7fa66c55872c88c8698aab33734cea340ed851a10da55f786b1ccd27098f075a72eb3711435de119873b2938a031e0de38d7b2710d024d1dc7f
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/utf8proc/2.7.0-3/
+
 
 ### `dpkg` source package: `util-linux=2.38-4ubuntu1`
 

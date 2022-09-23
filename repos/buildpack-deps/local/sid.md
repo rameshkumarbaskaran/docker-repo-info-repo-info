@@ -210,20 +210,13 @@ Licenses: (parsed from: `/usr/share/doc/libaudit-common/copyright`, `/usr/share/
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris audit=1:3.0.7-1
-'http://deb.debian.org/debian/pool/main/a/audit/audit_3.0.7-1.dsc' audit_3.0.7-1.dsc 2401 SHA256:26295f1e194787a177ec8f8fedb610a0b6543918b37f8eab59bc51e2afce0656
-'http://deb.debian.org/debian/pool/main/a/audit/audit_3.0.7.orig.tar.gz' audit_3.0.7.orig.tar.gz 1180226 SHA256:8b4c78632a9301a1c7f859b0e38fc0b9c260b8214d6b7c771bf28b3d73a62597
-'http://deb.debian.org/debian/pool/main/a/audit/audit_3.0.7-1.debian.tar.xz' audit_3.0.7-1.debian.tar.xz 17700 SHA256:8cc9ce5b529c3c5062a58a2cb0e6ac10f010c334cf973ae3a48d7ebb5a10f57c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/audit/1:3.0.7-1/
 
-- https://sources.debian.net/src/audit/1:3.0.7-1/ (for browsing the source)
-- https://sources.debian.net/src/audit/1:3.0.7-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/audit/1:3.0.7-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `autoconf=2.71-2`
 
@@ -357,19 +350,13 @@ Licenses: (parsed from: `/usr/share/doc/base-passwd/copyright`)
 - `GPL-2`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-passwd=3.6.0
-'http://deb.debian.org/debian/pool/main/b/base-passwd/base-passwd_3.6.0.dsc' base-passwd_3.6.0.dsc 1740 SHA256:5148d442ff8e095975872459dad47d293f5054b49df02264e29b0577ac7bcc41
-'http://deb.debian.org/debian/pool/main/b/base-passwd/base-passwd_3.6.0.tar.xz' base-passwd_3.6.0.tar.xz 55648 SHA256:3ce778ed92e3f89319d519bc1e79830e359cc2c63ff2105136f7279bb68af244
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/base-passwd/3.6.0/
 
-- https://sources.debian.net/src/base-passwd/3.6.0/ (for browsing the source)
-- https://sources.debian.net/src/base-passwd/3.6.0/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/base-passwd/3.6.0/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `bash=5.2~rc2-2`
 
@@ -571,21 +558,13 @@ Licenses: (parsed from: `/usr/share/doc/coreutils/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris coreutils=8.32-4.1
-'http://deb.debian.org/debian/pool/main/c/coreutils/coreutils_8.32-4.1.dsc' coreutils_8.32-4.1.dsc 2104 SHA256:3f518b32292c1be81069ee884acd1aac09f3d949280dc1a7fc1488160eeb495e
-'http://deb.debian.org/debian/pool/main/c/coreutils/coreutils_8.32.orig.tar.xz' coreutils_8.32.orig.tar.xz 5547836 SHA256:4458d8de7849df44ccab15e16b1548b285224dbba5f08fac070c1c0e0bcc4cfa
-'http://deb.debian.org/debian/pool/main/c/coreutils/coreutils_8.32.orig.tar.xz.asc' coreutils_8.32.orig.tar.xz.asc 833 SHA256:71b944375b322ba77c9c56b687b48df885c676d4fd7c465b3706713a9b62ce0a
-'http://deb.debian.org/debian/pool/main/c/coreutils/coreutils_8.32-4.1.debian.tar.xz' coreutils_8.32-4.1.debian.tar.xz 33124 SHA256:79fb30407aa09ed82a37deb11c8f105d7bda6a731a92f6274ceee6ac610aacf6
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/coreutils/8.32-4.1/
 
-- https://sources.debian.net/src/coreutils/8.32-4.1/ (for browsing the source)
-- https://sources.debian.net/src/coreutils/8.32-4.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/coreutils/8.32-4.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `curl=7.85.0-1`
 
@@ -983,20 +962,13 @@ Licenses: (parsed from: `/usr/share/doc/libelf1/copyright`)
 - `GPL-3`
 - `LGPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris elfutils=0.187-2
-'http://deb.debian.org/debian/pool/main/e/elfutils/elfutils_0.187-2.dsc' elfutils_0.187-2.dsc 3222 SHA256:db68829670454a9999f9f7f6577ca30549c4fbd1ff1696ba4721eadf588e00f1
-'http://deb.debian.org/debian/pool/main/e/elfutils/elfutils_0.187.orig.tar.bz2' elfutils_0.187.orig.tar.bz2 9240221 SHA256:e70b0dfbe610f90c4d1fe0d71af142a4e25c3c4ef9ebab8d2d72b65159d454c8
-'http://deb.debian.org/debian/pool/main/e/elfutils/elfutils_0.187-2.debian.tar.xz' elfutils_0.187-2.debian.tar.xz 37372 SHA256:de95d5e7d69aec17a09a9136457f012cb5a499df92e8e3e75d0a4bc9eb3efe6b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/elfutils/0.187-2/
 
-- https://sources.debian.net/src/elfutils/0.187-2/ (for browsing the source)
-- https://sources.debian.net/src/elfutils/0.187-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/elfutils/0.187-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `expat=2.4.8-1`
 
@@ -3012,20 +2984,13 @@ Licenses: (parsed from: `/usr/share/doc/gir1.2-rsvg-2.0/copyright`, `/usr/share/
 - `Unlicense,`
 - `zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris librsvg=2.54.4+dfsg-1
-'http://deb.debian.org/debian/pool/main/libr/librsvg/librsvg_2.54.4%2bdfsg-1.dsc' librsvg_2.54.4+dfsg-1.dsc 2879 SHA256:d338eeaba5672e52acf1403bce42cbff438ef2c22c5cf57edd41d962de023b1f
-'http://deb.debian.org/debian/pool/main/libr/librsvg/librsvg_2.54.4%2bdfsg.orig.tar.xz' librsvg_2.54.4+dfsg.orig.tar.xz 20610076 SHA256:1ed186ce708c867f0fa8ed2c2b9e4ed9b41db86f56ffcf2e4520e94b1aa98f39
-'http://deb.debian.org/debian/pool/main/libr/librsvg/librsvg_2.54.4%2bdfsg-1.debian.tar.xz' librsvg_2.54.4+dfsg-1.debian.tar.xz 34352 SHA256:067d28674c2341e423741c102c417a8e3484c25b12a1ca86aaebcc1eae3bf232
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/librsvg/2.54.4+dfsg-1/
 
-- https://sources.debian.net/src/librsvg/2.54.4+dfsg-1/ (for browsing the source)
-- https://sources.debian.net/src/librsvg/2.54.4+dfsg-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/librsvg/2.54.4+dfsg-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libseccomp=2.5.4-1`
 
@@ -5390,20 +5355,13 @@ Licenses: (parsed from: `/usr/share/doc/libutf8proc2/copyright`)
 - `Expat`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris utf8proc=2.7.0-3
-'http://deb.debian.org/debian/pool/main/u/utf8proc/utf8proc_2.7.0-3.dsc' utf8proc_2.7.0-3.dsc 2162 SHA256:95642d5aebbae9e1f3cb4bfcc3888291214644c508950944625d3544528fc4c7
-'http://deb.debian.org/debian/pool/main/u/utf8proc/utf8proc_2.7.0.orig.tar.gz' utf8proc_2.7.0.orig.tar.gz 187906 SHA256:4bb121e297293c0fd55f08f83afab6d35d48f0af4ecc07523ad8ec99aa2b12a1
-'http://deb.debian.org/debian/pool/main/u/utf8proc/utf8proc_2.7.0-3.debian.tar.xz' utf8proc_2.7.0-3.debian.tar.xz 5608 SHA256:66ed859302f2b28b68e70ed2fce30af4ee45d71a045216e77c6ad81614b326f2
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/utf8proc/2.7.0-3/
 
-- https://sources.debian.net/src/utf8proc/2.7.0-3/ (for browsing the source)
-- https://sources.debian.net/src/utf8proc/2.7.0-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/utf8proc/2.7.0-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `util-linux=2.38.1-1`
 

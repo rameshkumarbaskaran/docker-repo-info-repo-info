@@ -185,19 +185,13 @@ Licenses: (parsed from: `/usr/share/doc/base-passwd/copyright`)
 - `GPL-2`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-passwd=3.6.0
-'http://deb.debian.org/debian/pool/main/b/base-passwd/base-passwd_3.6.0.dsc' base-passwd_3.6.0.dsc 1740 SHA256:5148d442ff8e095975872459dad47d293f5054b49df02264e29b0577ac7bcc41
-'http://deb.debian.org/debian/pool/main/b/base-passwd/base-passwd_3.6.0.tar.xz' base-passwd_3.6.0.tar.xz 55648 SHA256:3ce778ed92e3f89319d519bc1e79830e359cc2c63ff2105136f7279bb68af244
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/base-passwd/3.6.0/
 
-- https://sources.debian.net/src/base-passwd/3.6.0/ (for browsing the source)
-- https://sources.debian.net/src/base-passwd/3.6.0/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/base-passwd/3.6.0/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `bash=5.2~rc2-2`
 
@@ -937,19 +931,13 @@ Licenses: (parsed from: `/usr/share/doc/init-system-helpers/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris init-system-helpers=1.64
-'http://deb.debian.org/debian/pool/main/i/init-system-helpers/init-system-helpers_1.64.dsc' init-system-helpers_1.64.dsc 1993 SHA256:e2285c0f17182d85aceee57357bba65fe7007d62a0b9fc4ef7e5b10bcfadf1d9
-'http://deb.debian.org/debian/pool/main/i/init-system-helpers/init-system-helpers_1.64.tar.xz' init-system-helpers_1.64.tar.xz 43400 SHA256:79dee58d7cda9fac5de7e0045e1346b93cf079efc542db21c4bc16acc7358e2a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/init-system-helpers/1.64/
 
-- https://sources.debian.net/src/init-system-helpers/1.64/ (for browsing the source)
-- https://sources.debian.net/src/init-system-helpers/1.64/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/init-system-helpers/1.64/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `keyutils=1.6.3-1`
 
@@ -1734,20 +1722,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openldap=2.5.12+dfsg-2
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.5.12%2bdfsg-2.dsc' openldap_2.5.12+dfsg-2.dsc 3179 SHA256:140e78550e434b2366af9973567952439c9e88fbbf91c9abc8673b89c0a94318
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.5.12%2bdfsg.orig.tar.gz' openldap_2.5.12+dfsg.orig.tar.gz 5612581 SHA256:e22c3a35319ed1b7f7148b508bf2298f7180f3a82fbba34c272f437b979f49aa
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.5.12%2bdfsg-2.debian.tar.xz' openldap_2.5.12+dfsg-2.debian.tar.xz 157900 SHA256:f4a0ffc8e00fcea2d7a3629e714ff1d1c440614510e590230bf4c9f2f7adc574
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openldap/2.5.12+dfsg-2/
 
-- https://sources.debian.net/src/openldap/2.5.12+dfsg-2/ (for browsing the source)
-- https://sources.debian.net/src/openldap/2.5.12+dfsg-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openldap/2.5.12+dfsg-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=3.0.5-2`
 

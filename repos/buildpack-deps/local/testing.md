@@ -963,21 +963,13 @@ Licenses: (parsed from: `/usr/share/doc/comerr-dev/copyright`, `/usr/share/doc/e
 - `GPL-2`
 - `LGPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris e2fsprogs=1.46.5-2
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.46.5-2.dsc' e2fsprogs_1.46.5-2.dsc 2846 SHA256:6be9066b5b608aeb053e9c25bfd69c11123d8a945d191ff12657e73efb3480c3
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.46.5.orig.tar.gz' e2fsprogs_1.46.5.orig.tar.gz 9530158 SHA256:b7430d1e6b7b5817ce8e36d7c8c7c3249b3051d0808a96ffd6e5c398e4e2fbb9
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.46.5.orig.tar.gz.asc' e2fsprogs_1.46.5.orig.tar.gz.asc 488 SHA256:b1e248ed73d4d67ac0cf7760e780e0a5cd2db85bbb9a5dcc235538b596128916
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.46.5-2.debian.tar.xz' e2fsprogs_1.46.5-2.debian.tar.xz 83972 SHA256:0d635367a58eead808e5c780003a63d00fd37aaa20a3270d5f2ec796fe3f22ee
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/e2fsprogs/1.46.5-2/
 
-- https://sources.debian.net/src/e2fsprogs/1.46.5-2/ (for browsing the source)
-- https://sources.debian.net/src/e2fsprogs/1.46.5-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/e2fsprogs/1.46.5-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `elfutils=0.187-2`
 
@@ -1646,21 +1638,13 @@ Licenses: (parsed from: `/usr/share/doc/gir1.2-freedesktop/copyright`, `/usr/sha
 - `Unicode-DFS-2016`
 - `bzip2-1.0.6`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gobject-introspection=1.73.0+ds-1
-'http://deb.debian.org/debian/pool/main/g/gobject-introspection/gobject-introspection_1.73.0%2bds-1.dsc' gobject-introspection_1.73.0+ds-1.dsc 3525 SHA256:dac4e045c4b6f79c0c0ba22451f1c34d4b03051e39eb2d9349b8bc0880a16953
-'http://deb.debian.org/debian/pool/main/g/gobject-introspection/gobject-introspection_1.73.0%2bds.orig-glib.tar.xz' gobject-introspection_1.73.0+ds.orig-glib.tar.xz 5158160 SHA256:5f3ee36e34f4aaab393c3e3dc46fb01b32f7ead6c88d41d7f20d88a49cdef1d9
-'http://deb.debian.org/debian/pool/main/g/gobject-introspection/gobject-introspection_1.73.0%2bds.orig.tar.xz' gobject-introspection_1.73.0+ds.orig.tar.xz 1043072 SHA256:d645218ce1451285b8b4f0935e35dbc1e419f50ceb643b7d66f59e38fcc08776
-'http://deb.debian.org/debian/pool/main/g/gobject-introspection/gobject-introspection_1.73.0%2bds-1.debian.tar.xz' gobject-introspection_1.73.0+ds-1.debian.tar.xz 39092 SHA256:37ee775ee8358ed70c1bd78a73953cc0f863ea18e0b6a3e835339f21176fe83e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gobject-introspection/1.73.0+ds-1/
 
-- https://sources.debian.net/src/gobject-introspection/1.73.0+ds-1/ (for browsing the source)
-- https://sources.debian.net/src/gobject-introspection/1.73.0+ds-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gobject-introspection/1.73.0+ds-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `graphite2=1.3.14-1`
 
@@ -1958,19 +1942,13 @@ Licenses: (parsed from: `/usr/share/doc/init-system-helpers/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris init-system-helpers=1.64
-'http://deb.debian.org/debian/pool/main/i/init-system-helpers/init-system-helpers_1.64.dsc' init-system-helpers_1.64.dsc 1993 SHA256:e2285c0f17182d85aceee57357bba65fe7007d62a0b9fc4ef7e5b10bcfadf1d9
-'http://deb.debian.org/debian/pool/main/i/init-system-helpers/init-system-helpers_1.64.tar.xz' init-system-helpers_1.64.tar.xz 43400 SHA256:79dee58d7cda9fac5de7e0045e1346b93cf079efc542db21c4bc16acc7358e2a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/init-system-helpers/1.64/
 
-- https://sources.debian.net/src/init-system-helpers/1.64/ (for browsing the source)
-- https://sources.debian.net/src/init-system-helpers/1.64/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/init-system-helpers/1.64/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `isl=0.25-1`
 
@@ -4820,20 +4798,13 @@ Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/li
 - `nagaysau-ishii`
 - `rijndael`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-14=14.5-1
-'http://deb.debian.org/debian/pool/main/p/postgresql-14/postgresql-14_14.5-1.dsc' postgresql-14_14.5-1.dsc 3721 SHA256:3fd56af51169514586b8bf3e97413b7651b5c66060e4bfca3f8a198bede27d2f
-'http://deb.debian.org/debian/pool/main/p/postgresql-14/postgresql-14_14.5.orig.tar.bz2' postgresql-14_14.5.orig.tar.bz2 22132996 SHA256:d4f72cb5fb857c9a9f75ec8cf091a1771272802f2178f0b2e65b7b6ff64f4a30
-'http://deb.debian.org/debian/pool/main/p/postgresql-14/postgresql-14_14.5-1.debian.tar.xz' postgresql-14_14.5-1.debian.tar.xz 24780 SHA256:6d14a121d5e0cc0b3a5d7f4b5a081445dddc1685c31dac1a06220c6c3919f0b7
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/postgresql-14/14.5-1/
 
-- https://sources.debian.net/src/postgresql-14/14.5-1/ (for browsing the source)
-- https://sources.debian.net/src/postgresql-14/14.5-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/postgresql-14/14.5-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `procps=2:3.3.17-7`
 
