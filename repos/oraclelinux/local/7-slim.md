@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6a34bf5396690a3c0ea1d6914f32fae9860bca03c68e7253cfd6d5d11551e2d2`
-- Created: `2022-08-24T19:35:43.028869456Z`
-- Virtual Size: ~ 132.72 Mb  
+- Image ID: `sha256:60807cf6683b0b8769aca57bae78f5752023a536f299c42c72c05fc227a8b026`
+- Created: `2022-09-22T18:21:00.863086127Z`
+- Virtual Size: ~ 135.03 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -57,15 +57,15 @@ $ dnf --quiet download --source --url bzip2-libs-1.0.6-13.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/bzip2-1.0.6-13.el7.src.rpm
 ```
 
-### `rpm` package: `ca-certificates-2021.2.50-72.el7_9.noarch`
+### `rpm` package: `ca-certificates-2022.2.54-74.el7_9.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url ca-certificates-2021.2.50-72.el7_9.noarch
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/ca-certificates-2021.2.50-72.el7_9.src.rpm
+$ dnf --quiet download --source --url ca-certificates-2022.2.54-74.el7_9.noarch
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/ca-certificates-2022.2.54-74.el7_9.src.rpm
 ```
 
 ### `rpm` package: `chkconfig-1.7.6-1.el7.x86_64`
