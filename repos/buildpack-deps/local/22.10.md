@@ -1134,15 +1134,9 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glibc=2.36-0ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.36-0ubuntu2.dsc' glibc_2.36-0ubuntu2.dsc 8876 SHA512:70183e2b5e292cefa3c18dd323a121962027dcd8ca21483c601496bb33c22533dc2d7bf3ca862bddbafc0746ea14419ceda8e9d16cb130d33b03e3a91353b167
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.36.orig.tar.xz' glibc_2.36.orig.tar.xz 18610836 SHA512:9ea0bbda32f83a85b7da0c34f169607fb8a102f0a11a914e6bf531be47d1bef4f5307128286cffa1e2dc5879f0e6ccaef527dd353486883fa332a0b44bde8b3e
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.36.orig.tar.xz.asc' glibc_2.36.orig.tar.xz.asc 833 SHA512:b6999ebc4067e08950207e9c67f5172c6d43144e6680677bf3d93093c2270cb4c6e75f9ad37a60e7fec243141fd64b4348782c5794fcf03be363adf0b4543d53
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.36-0ubuntu2.debian.tar.xz' glibc_2.36-0ubuntu2.debian.tar.xz 886284 SHA512:dee6657f10a91b648d1c0a5aed314a298847e7b0dc949a65fe2b1499427c1bbfe0ae910dd28880c3e0fdfe66e4e3b9625f2e6535ebffe17e082907780c50a438
-```
 
 ### `dpkg` source package: `gmp=2:6.2.1+dfsg1-1ubuntu2`
 
@@ -3474,15 +3468,9 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:9.0p1-1ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_9.0p1-1ubuntu3.dsc' openssh_9.0p1-1ubuntu3.dsc 3376 SHA512:f65954c1030dac4aff3b78dfdd2f8d48d3a28190efcb481f07fb14df95eadc35613810108dd46b88e72826bc76eecda3604b4e2d4c55260d2d0388a504f2acdf
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_9.0p1.orig.tar.gz' openssh_9.0p1.orig.tar.gz 1822183 SHA512:613ae95317e734868c6a60d9cc5af47a889baa3124bbdd2b31bb51dd6b57b136f4cfcb5604cca78a03bd500baab9b9b45eaf77e038b1ed776c86dce0437449a9
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_9.0p1.orig.tar.gz.asc' openssh_9.0p1.orig.tar.gz.asc 833 SHA512:7b1445764058435d2fa8a9c7553643983650d4232036c088e46e44beeb538d32cba88f775b1be9da5f21a01d6caea59b3dc4714507781e9cb946546fa54f169f
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_9.0p1-1ubuntu3.debian.tar.xz' openssh_9.0p1-1ubuntu3.debian.tar.xz 178668 SHA512:f6e6048bd2978bb0067bd40c9b18260e5926c1f2041805ba2731050caca686e007a3946db59fe913255cc498931d16377d4c19ba26dac13ccd168ab6fbb0c4df
-```
 
 ### `dpkg` source package: `openssl=3.0.5-2ubuntu1`
 
@@ -4123,15 +4111,13 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`, `/usr/share/doc
 - `GPL-2+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sqlite3=3.39.2-1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.39.2-1.dsc' sqlite3_3.39.2-1.dsc 2487 SHA512:44d34b2c866735927a665e3938c0c5148a06617ca41b455ee7f714704e3e596ced668447a4c3b91fe5cff18119045a71a74a09c0b6f5d3f1e4f5d4cb5e12198a
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.39.2.orig-www.tar.xz' sqlite3_3.39.2.orig-www.tar.xz 5853576 SHA512:d0b4b58fb221ed20171c0df58d06d76355a1f7d364ca1ffa22da7328b073340159438c4024e5bb7760d8fc3f95dd26784c44c990fd02ceaa4d4c941e1edbb62c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.39.2.orig.tar.xz' sqlite3_3.39.2.orig.tar.xz 7770608 SHA512:edd5ff49d8c82cda237d6364e8a3652f352351a634bb7f79f14632d1e1d6a78b44cc6ad97903f7dacb26500c8ee46977acb0bd57e383559538476ca94527a730
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.39.2-1.debian.tar.xz' sqlite3_3.39.2-1.debian.tar.xz 29532 SHA512:9ea27f5bdad9f03da2f963487986ecba46ccd916ed9f7c391c9659a32e31339da701b4a63c4a61af5f1aa89bcf1b8fce15c38765516a01b90a24555feba4774d
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/sqlite3/3.39.2-1/
+
 
 ### `dpkg` source package: `subversion=1.14.2-3`
 
