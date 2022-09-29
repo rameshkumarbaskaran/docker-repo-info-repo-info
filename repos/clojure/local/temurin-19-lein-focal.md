@@ -1,10 +1,10 @@
-# `clojure:temurin-18-lein-2.9.10-focal`
+# `clojure:temurin-19-lein-2.9.10-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:4d1bc384f93fdcd39e79946444c5ab38ededa3dd8945a7e25cdebc99c05cf167`
-- Created: `2022-09-02T10:10:56.515593326Z`
-- Virtual Size: ~ 480.63 Mb  
+- Image ID: `sha256:63ef9ab34e8e06ac8505cd168a27f0e22c94aab815d7a3e93f96fbd906e8cea9`
+- Created: `2022-09-28T17:47:00.333373807Z`
+- Virtual Size: ~ 495.09 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint"]`
@@ -15,7 +15,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-18.0.2.1+1`
+  - `JAVA_VERSION=jdk-19+36`
   - `LEIN_VERSION=2.9.10`
   - `LEIN_INSTALL=/usr/local/bin/`
   - `LEIN_ROOT=1`

@@ -1,10 +1,10 @@
-# `clojure:temurin-18-boot-2.8.3-focal`
+# `clojure:temurin-19-boot-2.8.3-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:142d12ae71213baf0ba19f72ac89c32329a75b93c98260806dc86cacc4c6454a`
-- Created: `2022-09-02T10:10:03.248040272Z`
-- Virtual Size: ~ 525.55 Mb  
+- Image ID: `sha256:0630b09385cce324e4b0f18047fa4624dab94601fcc010d54c28ffdc0a649c9f`
+- Created: `2022-09-28T17:45:48.823139392Z`
+- Virtual Size: ~ 540.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint"]`
@@ -15,7 +15,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-18.0.2.1+1`
+  - `JAVA_VERSION=jdk-19+36`
   - `BOOT_VERSION=2.8.3`
   - `BOOT_INSTALL=/usr/local/bin/`
   - `BOOT_AS_ROOT=yes`

@@ -1,10 +1,10 @@
-# `clojure:temurin-18-lein-2.9.10-alpine`
+# `clojure:temurin-19-boot-2.8.3-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:01d97200f0170f42cf971545ed5770247bdd4969f97956ec3a273631f0f61037`
-- Created: `2022-08-29T18:54:39.494939613Z`
-- Virtual Size: ~ 379.43 Mb  
+- Image ID: `sha256:614629655b9fada530220d15ace33cefdbb17a831892beb71496c214abb0fc06`
+- Created: `2022-09-28T00:25:59.363304969Z`
+- Virtual Size: ~ 438.89 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint"]`
@@ -15,10 +15,10 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-18.0.2.1+1`
-  - `LEIN_VERSION=2.9.10`
-  - `LEIN_INSTALL=/usr/local/bin/`
-  - `LEIN_ROOT=1`
+  - `JAVA_VERSION=jdk-19+36`
+  - `BOOT_VERSION=2.8.3`
+  - `BOOT_INSTALL=/usr/local/bin/`
+  - `BOOT_AS_ROOT=yes`
 
 ## `apk` (`.apk`-based packages)
 

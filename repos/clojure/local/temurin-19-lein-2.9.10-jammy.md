@@ -1,10 +1,10 @@
-# `clojure:temurin-18-boot`
+# `clojure:temurin-19-lein`
 
 ## Docker Metadata
 
-- Image ID: `sha256:586199f63a0d2ead3ba412c3ad100b4a412bf4dde9a9218ea9930f858ca781b9`
-- Created: `2022-09-02T10:10:33.730602628Z`
-- Virtual Size: ~ 522.10 Mb  
+- Image ID: `sha256:a88ded25d8f53cc7f54d482a01e0c3b1e69820998d1b95bbbebc705c316713e7`
+- Created: `2022-09-28T17:47:24.112036006Z`
+- Virtual Size: ~ 491.66 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint"]`
@@ -15,10 +15,10 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-18.0.2.1+1`
-  - `BOOT_VERSION=2.8.3`
-  - `BOOT_INSTALL=/usr/local/bin/`
-  - `BOOT_AS_ROOT=yes`
+  - `JAVA_VERSION=jdk-19+36`
+  - `LEIN_VERSION=2.9.10`
+  - `LEIN_INSTALL=/usr/local/bin/`
+  - `LEIN_ROOT=1`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1372,6 +1372,26 @@ $ apt-get source -qq --print-uris lz4=1.9.3-2build2
 'http://archive.ubuntu.com/ubuntu/pool/main/l/lz4/lz4_1.9.3-2build2.dsc' lz4_1.9.3-2build2.dsc 2091 SHA512:a8f802737139536f8a9c0a3483635ff4dd8a3eba2e0d9d0d27f4f91c17592d1797929d491183dc25de4100a7aa924edefa8ca45eed4968c0e1b7e817f1ae9e1c
 'http://archive.ubuntu.com/ubuntu/pool/main/l/lz4/lz4_1.9.3.orig.tar.gz' lz4_1.9.3.orig.tar.gz 320958 SHA512:c246b0bda881ee9399fa1be490fa39f43b291bb1d9db72dba8a85db1a50aad416a97e9b300eee3d2a4203c2bd88bda2762e81bc229c3aa409ad217eb306a454c
 'http://archive.ubuntu.com/ubuntu/pool/main/l/lz4/lz4_1.9.3-2build2.debian.tar.xz' lz4_1.9.3-2build2.debian.tar.xz 14088 SHA512:9f61516a672186299a96aee5b7a71d9cb1ad3db2697fa10b802fef14a63587bb3459281f7300726711a116893c10858914f558aece1d224876e287020a23dde6
+```
+
+### `dpkg` source package: `make-dfsg=4.3-4.1build1`
+
+Binary Packages:
+
+- `make=4.3-4.1build1`
+
+Licenses: (parsed from: `/usr/share/doc/make/copyright`)
+
+- `GPL-3`
+- `GPL-3+`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris make-dfsg=4.3-4.1build1
+'http://archive.ubuntu.com/ubuntu/pool/main/m/make-dfsg/make-dfsg_4.3-4.1build1.dsc' make-dfsg_4.3-4.1build1.dsc 2072 SHA512:f5580f5dc9e7d4ee3a7bfcd82a42c0615a4828cac1f84db3c720260209cee3334d0a23ea78113cd2b26eaf233d46ec59743d14a8bd05cfd225f111ff739ad57d
+'http://archive.ubuntu.com/ubuntu/pool/main/m/make-dfsg/make-dfsg_4.3.orig.tar.gz' make-dfsg_4.3.orig.tar.gz 1845906 SHA512:bdc150f9d256145923380d6e7058ab9b2b4e43fcb1d75ab2984fa8f859eab6852a68e4ea5f626633e0bec76fbebf1477378e268e8ffdb5cb2a53b29cbc439bc1
+'http://archive.ubuntu.com/ubuntu/pool/main/m/make-dfsg/make-dfsg_4.3-4.1build1.diff.gz' make-dfsg_4.3-4.1build1.diff.gz 50780 SHA512:258dc63a0cea09995adfe4091599664e2ef0d5f81c990f980b0ddf9e02212177c4a23fa8d82e886ecbae33c84816c61530e97fd82c5347ff25a434a3aa6732ae
 ```
 
 ### `dpkg` source package: `mawk=1.3.4.20200120-3`
