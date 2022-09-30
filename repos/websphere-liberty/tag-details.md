@@ -2,6 +2,12 @@
 
 # Tags of `websphere-liberty`
 
+-	[`websphere-liberty:22.0.0.10-full-java11-openj9`](#websphere-liberty220010-full-java11-openj9)
+-	[`websphere-liberty:22.0.0.10-full-java17-openj9`](#websphere-liberty220010-full-java17-openj9)
+-	[`websphere-liberty:22.0.0.10-full-java8-ibmjava`](#websphere-liberty220010-full-java8-ibmjava)
+-	[`websphere-liberty:22.0.0.10-kernel-java11-openj9`](#websphere-liberty220010-kernel-java11-openj9)
+-	[`websphere-liberty:22.0.0.10-kernel-java17-openj9`](#websphere-liberty220010-kernel-java17-openj9)
+-	[`websphere-liberty:22.0.0.10-kernel-java8-ibmjava`](#websphere-liberty220010-kernel-java8-ibmjava)
 -	[`websphere-liberty:22.0.0.6-full-java11-openj9`](#websphere-liberty22006-full-java11-openj9)
 -	[`websphere-liberty:22.0.0.6-full-java17-openj9`](#websphere-liberty22006-full-java17-openj9)
 -	[`websphere-liberty:22.0.0.6-full-java8-ibmjava`](#websphere-liberty22006-full-java8-ibmjava)
@@ -21,6 +27,60 @@
 -	[`websphere-liberty:kernel-java11-openj9`](#websphere-libertykernel-java11-openj9)
 -	[`websphere-liberty:kernel-java17-openj9`](#websphere-libertykernel-java17-openj9)
 -	[`websphere-liberty:latest`](#websphere-libertylatest)
+
+## `websphere-liberty:22.0.0.10-full-java11-openj9`
+
+```console
+$ docker pull websphere-liberty@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `websphere-liberty:22.0.0.10-full-java17-openj9`
+
+```console
+$ docker pull websphere-liberty@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `websphere-liberty:22.0.0.10-full-java8-ibmjava`
+
+```console
+$ docker pull websphere-liberty@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `websphere-liberty:22.0.0.10-kernel-java11-openj9`
+
+```console
+$ docker pull websphere-liberty@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `websphere-liberty:22.0.0.10-kernel-java17-openj9`
+
+```console
+$ docker pull websphere-liberty@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
+## `websphere-liberty:22.0.0.10-kernel-java8-ibmjava`
+
+```console
+$ docker pull websphere-liberty@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
 
 ## `websphere-liberty:22.0.0.6-full-java11-openj9`
 
