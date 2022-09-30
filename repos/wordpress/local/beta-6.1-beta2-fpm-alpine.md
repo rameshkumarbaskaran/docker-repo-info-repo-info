@@ -1,10 +1,10 @@
-# `wordpress:beta-6.1-beta1-php8.1-fpm-alpine`
+# `wordpress:beta-6.1-beta2-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:83cebf6b0110ccc9c621c4470e12029b226800981143e5221b7a9281787939cc`
-- Created: `2022-09-22T17:26:43.093491862Z`
-- Virtual Size: ~ 310.41 Mb  
+- Image ID: `sha256:8791c166bf319b4299e3ba213cf800715f19d9479c37bd12c8c1cb48c6a85ca1`
+- Created: `2022-09-29T16:26:54.32219263Z`
+- Virtual Size: ~ 303.86 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -16,11 +16,11 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
-  - `PHP_VERSION=8.1.10`
-  - `PHP_URL=https://www.php.net/distributions/php-8.1.10.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.10.tar.xz.asc`
-  - `PHP_SHA256=90e7120c77ee83630e6ac928d23bc6396603d62d83a3cf5df8a450d2e3070162`
+  - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
+  - `PHP_VERSION=7.4.32`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.32.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.32.tar.xz.asc`
+  - `PHP_SHA256=323332c991e8ef30b1d219cb10f5e30f11b5f319ce4c6642a5470d75ade7864a`
 
 ## `apk` (`.apk`-based packages)
 
@@ -316,16 +316,16 @@ AFL-2.1 OR GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.4.8-r0 description:
+expat-2.4.9-r0 description:
 XML Parser library written in C
 
-expat-2.4.8-r0 webpage:
+expat-2.4.9-r0 webpage:
 https://libexpat.github.io/
 
-expat-2.4.8-r0 installed size:
+expat-2.4.9-r0 installed size:
 192 KiB
 
-expat-2.4.8-r0 license:
+expat-2.4.9-r0 license:
 MIT
 
 ```

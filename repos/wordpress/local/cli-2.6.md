@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:bdda5cc6138b1bd8927baf779a0151e4eb5052523dbbd6a46592eec45ed41d03`
-- Created: `2022-08-10T05:17:57.060959383Z`
-- Virtual Size: ~ 148.12 Mb  
+- Image ID: `sha256:a8cb5b208c6aa8d57154be84728a38a58d45c6c793ddd398c864c0f7f2605d29`
+- Created: `2022-09-29T16:26:17.128500547Z`
+- Virtual Size: ~ 148.69 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.30`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.30.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.30.tar.xz.asc`
-  - `PHP_SHA256=ea72a34f32c67e79ac2da7dfe96177f3c451c3eefae5810ba13312ed398ba70d`
+  - `PHP_VERSION=7.4.32`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.32.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.32.tar.xz.asc`
+  - `PHP_SHA256=323332c991e8ef30b1d219cb10f5e30f11b5f319ce4c6642a5470d75ade7864a`
   - `WORDPRESS_CLI_GPG_KEY=63AF7AA15067C05616FDDD88A3A2E8F226F0BC06`
   - `WORDPRESS_CLI_VERSION=2.6.0`
   - `WORDPRESS_CLI_SHA512=d73f9161a1f03b8ecaac7b196b6051fe847b3c402b9c92b1f6f3acbe5b1cf91f7260c0e499b8947bab75920ecec918b39533ca65fa5a1fd3eb6ce7b8e2c58e7d`
@@ -217,16 +217,16 @@ curl
 ### `apk` package: `expat`
 
 ```console
-expat-2.4.8-r0 description:
+expat-2.4.9-r0 description:
 XML Parser library written in C
 
-expat-2.4.8-r0 webpage:
+expat-2.4.9-r0 webpage:
 https://libexpat.github.io/
 
-expat-2.4.8-r0 installed size:
+expat-2.4.9-r0 installed size:
 192 KiB
 
-expat-2.4.8-r0 license:
+expat-2.4.9-r0 license:
 MIT
 
 ```
@@ -438,16 +438,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.83.1-r2 description:
+libcurl-7.83.1-r3 description:
 The multiprotocol file transfer library
 
-libcurl-7.83.1-r2 webpage:
+libcurl-7.83.1-r3 webpage:
 https://curl.se/
 
-libcurl-7.83.1-r2 installed size:
-512 KiB
+libcurl-7.83.1-r3 installed size:
+516 KiB
 
-libcurl-7.83.1-r2 license:
+libcurl-7.83.1-r3 license:
 curl
 
 ```
@@ -693,16 +693,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.14-r0 description:
+libxml2-2.9.14-r1 description:
 XML parsing library, version 2
 
-libxml2-2.9.14-r0 webpage:
+libxml2-2.9.14-r1 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.14-r0 installed size:
+libxml2-2.9.14-r1 installed size:
 1200 KiB
 
-libxml2-2.9.14-r0 license:
+libxml2-2.9.14-r1 license:
 MIT
 
 ```
@@ -727,16 +727,16 @@ BSD-3-Clause
 ### `apk` package: `mariadb-client`
 
 ```console
-mariadb-client-10.6.8-r0 description:
+mariadb-client-10.6.9-r0 description:
 Client for the MariaDB database
 
-mariadb-client-10.6.8-r0 webpage:
+mariadb-client-10.6.9-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-client-10.6.8-r0 installed size:
+mariadb-client-10.6.9-r0 installed size:
 28 MiB
 
-mariadb-client-10.6.8-r0 license:
+mariadb-client-10.6.9-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -744,16 +744,16 @@ GPL-2.0-or-later
 ### `apk` package: `mariadb-common`
 
 ```console
-mariadb-common-10.6.8-r0 description:
+mariadb-common-10.6.9-r0 description:
 MariaDB common files for both server and client
 
-mariadb-common-10.6.8-r0 webpage:
+mariadb-common-10.6.9-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-common-10.6.8-r0 installed size:
+mariadb-common-10.6.9-r0 installed size:
 2260 KiB
 
-mariadb-common-10.6.8-r0 license:
+mariadb-common-10.6.9-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -795,16 +795,16 @@ MIT BSD GPL2+
 ### `apk` package: `mysql-client`
 
 ```console
-mysql-client-10.6.8-r0 description:
+mysql-client-10.6.9-r0 description:
 Dummy package for mysql-client migration
 
-mysql-client-10.6.8-r0 webpage:
+mysql-client-10.6.9-r0 webpage:
 https://www.mariadb.org/
 
-mysql-client-10.6.8-r0 installed size:
+mysql-client-10.6.9-r0 installed size:
 4096 B
 
-mysql-client-10.6.8-r0 license:
+mysql-client-10.6.9-r0 license:
 GPL-2.0-or-later
 
 ```
