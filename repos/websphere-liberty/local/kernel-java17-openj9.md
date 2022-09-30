@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b200bdec619037a0b48e9496eeb4264bca183496fe8f8bc1912104b5cabe5f65`
-- Created: `2022-09-02T20:52:37.771133101Z`
-- Virtual Size: ~ 314.62 Mb  
+- Image ID: `sha256:dff752b3a3f770f52b6fad7a926988842e8961c9f22861be9c2fa5a42535ff1f`
+- Created: `2022-09-30T01:31:52.040892262Z`
+- Virtual Size: ~ 314.66 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ibm/helpers/runtime/docker-server.sh"]`
@@ -17,25 +17,25 @@
   - `JAVA_VERSION=jdk-17.0.4.1+1_openj9-0.33.1`
   - `JAVA_HOME=/opt/java/openjdk`
   - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal`
-  - `LIBERTY_VERSION=22.0.0_09`
+  - `LIBERTY_VERSION=22.0.0_10`
   - `LOG_DIR=/logs`
   - `WLP_OUTPUT_DIR=/opt/ibm/wlp/output`
   - `OPENJ9_SCC=true`
   - `RANDFILE=/tmp/.rnd`
   - `OPENJ9_JAVA_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal -Dosgi.checkConfiguration=false`
 - Labels:
-  - `BuildLabel=cl220920220815-1900`
+  - `BuildLabel=cl221020220912-1100`
   - `ProductID=fbf6a96d49214c0abc6a3bc5da6e48cd`
   - `ProductName=WebSphere Application Server Liberty`
-  - `ProductVersion=22.0.0.9`
+  - `ProductVersion=22.0.0.10`
   - `org.opencontainers.image.authors=Chris Potter, Christy Jesuraj, Melissa Lee`
   - `org.opencontainers.image.description=This image contains the WebSphere Liberty runtime with IBM Semeru Runtime Open Edition OpenJDK with OpenJ9 and Ubuntu as the base OS.  For more information on this image please see https://github.com/WASdev/ci.docker#building-an-application-image`
   - `org.opencontainers.image.documentation=https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/cwlp_about.html`
-  - `org.opencontainers.image.revision=cl220920220815-1900`
+  - `org.opencontainers.image.revision=cl221020220912-1100`
   - `org.opencontainers.image.title=IBM WebSphere Liberty`
   - `org.opencontainers.image.url=http://wasdev.net`
   - `org.opencontainers.image.vendor=IBM`
-  - `org.opencontainers.image.version=22.0.0.9`
+  - `org.opencontainers.image.version=22.0.0.10`
 
 ## `dpkg` (`.deb`-based packages)
 
