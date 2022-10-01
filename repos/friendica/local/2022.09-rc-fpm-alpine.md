@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:2e719a3d8dfc996c3b3b74d8ffe0ef9390dca6bc7e1fae4707628c8b0b91f246`
-- Created: `2022-09-26T21:28:59.573175948Z`
-- Virtual Size: ~ 108.38 Mb  
+- Image ID: `sha256:382d77eda71b9c92a866842791349169f9d15e9c94a258a022df2006b13a9982`
+- Created: `2022-09-29T15:46:43.67772548Z`
+- Virtual Size: ~ 108.88 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint-dev.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.30`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.30.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.30.tar.xz.asc`
-  - `PHP_SHA256=ea72a34f32c67e79ac2da7dfe96177f3c451c3eefae5810ba13312ed398ba70d`
+  - `PHP_VERSION=7.4.32`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.32.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.32.tar.xz.asc`
+  - `PHP_SHA256=323332c991e8ef30b1d219cb10f5e30f11b5f319ce4c6642a5470d75ade7864a`
   - `GOSU_VERSION=1.14`
   - `PHP_MEMORY_LIMIT=512M`
   - `PHP_UPLOAD_LIMIT=512M`
@@ -628,16 +628,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.83.1-r2 description:
+libcurl-7.83.1-r3 description:
 The multiprotocol file transfer library
 
-libcurl-7.83.1-r2 webpage:
+libcurl-7.83.1-r3 webpage:
 https://curl.se/
 
-libcurl-7.83.1-r2 installed size:
-512 KiB
+libcurl-7.83.1-r3 installed size:
+516 KiB
 
-libcurl-7.83.1-r2 license:
+libcurl-7.83.1-r3 license:
 curl
 
 ```
@@ -1070,16 +1070,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.14-r0 description:
+libxml2-2.9.14-r1 description:
 XML parsing library, version 2
 
-libxml2-2.9.14-r0 webpage:
+libxml2-2.9.14-r1 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.14-r0 installed size:
+libxml2-2.9.14-r1 installed size:
 1200 KiB
 
-libxml2-2.9.14-r0 license:
+libxml2-2.9.14-r1 license:
 MIT
 
 ```
@@ -1376,16 +1376,16 @@ GPL-2.0-or-later
 ### `apk` package: `rsync`
 
 ```console
-rsync-3.2.4-r2 description:
+rsync-3.2.5-r0 description:
 A file transfer program to keep remote files in sync
 
-rsync-3.2.4-r2 webpage:
+rsync-3.2.5-r0 webpage:
 https://rsync.samba.org/
 
-rsync-3.2.4-r2 installed size:
+rsync-3.2.5-r0 installed size:
 436 KiB
 
-rsync-3.2.4-r2 license:
+rsync-3.2.5-r0 license:
 GPL-3.0-or-later
 
 ```
