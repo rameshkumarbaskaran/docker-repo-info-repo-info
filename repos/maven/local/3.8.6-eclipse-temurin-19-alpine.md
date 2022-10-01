@@ -1,10 +1,10 @@
-# `maven:3.8.6-eclipse-temurin-18-alpine`
+# `maven:3.8.6-eclipse-temurin-19-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:b6f2b2786e580d8862e00310b77b7f0d7c57d7378ecbc12e89a7eed64a4519ac`
-- Created: `2022-08-29T19:14:50.601598404Z`
-- Virtual Size: ~ 373.87 Mb  
+- Image ID: `sha256:875feb63dd6890d3c412cb0c3e9ff671e6dbacbd1aeec9f4265631a5721b4d3f`
+- Created: `2022-09-29T19:27:10.669678029Z`
+- Virtual Size: ~ 388.32 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/mvn-entrypoint.sh"]`
@@ -15,7 +15,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-18.0.2.1+1`
+  - `JAVA_VERSION=jdk-19+36`
   - `MAVEN_HOME=/usr/share/maven`
   - `MAVEN_CONFIG=/root/.m2`
 
@@ -177,16 +177,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `curl`
 
 ```console
-curl-7.83.1-r2 description:
+curl-7.83.1-r3 description:
 URL retrival utility and library
 
-curl-7.83.1-r2 webpage:
+curl-7.83.1-r3 webpage:
 https://curl.se/
 
-curl-7.83.1-r2 installed size:
+curl-7.83.1-r3 installed size:
 256 KiB
 
-curl-7.83.1-r2 license:
+curl-7.83.1-r3 license:
 curl
 
 ```
@@ -330,16 +330,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.83.1-r2 description:
+libcurl-7.83.1-r3 description:
 The multiprotocol file transfer library
 
-libcurl-7.83.1-r2 webpage:
+libcurl-7.83.1-r3 webpage:
 https://curl.se/
 
-libcurl-7.83.1-r2 installed size:
-512 KiB
+libcurl-7.83.1-r3 installed size:
+516 KiB
 
-libcurl-7.83.1-r2 license:
+libcurl-7.83.1-r3 license:
 curl
 
 ```

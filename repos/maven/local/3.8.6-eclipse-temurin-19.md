@@ -1,10 +1,10 @@
-# `maven:3.8.6-eclipse-temurin-18`
+# `maven:3.8.6-eclipse-temurin-19`
 
 ## Docker Metadata
 
-- Image ID: `sha256:7d2a8c80b7a7db23b7ef885655ee9fda12d1fa2a3fd593970df1f9de0fa55479`
-- Created: `2022-09-02T07:14:39.859019882Z`
-- Virtual Size: ~ 537.97 Mb  
+- Image ID: `sha256:21a45c4a4d5cb4e0ef4782c351f8837224eee37cdae257353cad370486fba20f`
+- Created: `2022-09-29T19:27:02.420857132Z`
+- Virtual Size: ~ 552.43 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/mvn-entrypoint.sh"]`
@@ -15,7 +15,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-18.0.2.1+1`
+  - `JAVA_VERSION=jdk-19+36`
   - `MAVEN_HOME=/usr/share/maven`
   - `MAVEN_CONFIG=/root/.m2`
 
