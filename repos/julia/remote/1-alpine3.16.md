@@ -1,7 +1,7 @@
 ## `julia:1-alpine3.16`
 
 ```console
-$ docker pull julia@sha256:fac15652a6c07605ea777b892df34b61dc2c8ecdbd091d5a73525e2b2c3fae08
+$ docker pull julia@sha256:428e9cf68f7e23e9a0c8761794937f26ccec93fb299adf895a6052d843138568
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull julia@sha256:fac15652a6c07605ea777b892df34b61dc2c8ecdbd091d5a73525
 ### `julia:1-alpine3.16` - linux; amd64
 
 ```console
-$ docker pull julia@sha256:e711ec5666450576c1bf0d7ff1073f01a3efefce2742267130870d25275464df
+$ docker pull julia@sha256:a5979927a0785c3c691d6a9c9d12eb0090bc9e4600f71564c6f2f679d89e7e02
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **152.1 MB (152064487 bytes)**  
+-	Total Size: **149.9 MB (149941173 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e606f4ad058113d6e2c4b37c28dc0ecd6cbc0ce05c2ee38e316f29a4e491bcb9`
+-	Image ID: `sha256:dd5a8547886d102459d471da442f6b6737effc7d32eb724480eafbd7103f1a8d`
 -	Default Command: `["julia"]`
 
 ```dockerfile
@@ -32,11 +32,11 @@ ENV JULIA_PATH=/usr/local/julia
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Tue, 09 Aug 2022 20:42:34 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Mon, 12 Sep 2022 22:30:57 GMT
-ENV JULIA_VERSION=1.8.1
-# Mon, 12 Sep 2022 22:31:20 GMT
-RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		arch="$(apk --print-arch)"; 	case "$arch" in 		'x86_64') 			url='https://julialang-s3.julialang.org/bin/musl/x64/1.8/julia-1.8.1-musl-x86_64.tar.gz'; 			sha256='d459b1283401a51219d619ecb053920be68b2331eb239e68c9c3a87a2388f4c4'; 			;; 		*) 			echo >&2 "error: current architecture ($arch) does not have a corresponding Julia binary release"; 			exit 1; 			;; 	esac; 		wget -O julia.tar.gz.asc "$url.asc"; 	wget -O julia.tar.gz "$url"; 		echo "$sha256 *julia.tar.gz" | sha256sum -w -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apk del --no-network .fetch-deps; 		julia --version
-# Mon, 12 Sep 2022 22:31:21 GMT
+# Fri, 30 Sep 2022 23:25:46 GMT
+ENV JULIA_VERSION=1.8.2
+# Fri, 30 Sep 2022 23:26:04 GMT
+RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		arch="$(apk --print-arch)"; 	case "$arch" in 		'x86_64') 			url='https://julialang-s3.julialang.org/bin/musl/x64/1.8/julia-1.8.2-musl-x86_64.tar.gz'; 			sha256='9a50f90f30254b588be74e1cb983f6408b0ed81f28f7cd7077a0eefc7f33e04a'; 			;; 		*) 			echo >&2 "error: current architecture ($arch) does not have a corresponding Julia binary release"; 			exit 1; 			;; 	esac; 		wget -O julia.tar.gz.asc "$url.asc"; 	wget -O julia.tar.gz "$url"; 		echo "$sha256 *julia.tar.gz" | sha256sum -w -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apk del --no-network .fetch-deps; 		julia --version
+# Fri, 30 Sep 2022 23:26:05 GMT
 CMD ["julia"]
 ```
 
@@ -45,7 +45,7 @@ CMD ["julia"]
 		Last Modified: Tue, 09 Aug 2022 14:25:13 GMT  
 		Size: 2.8 MB (2806054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d5077780a65658451435cb2305d83206f4c58db4599de6934b9162367ee5492`  
-		Last Modified: Mon, 12 Sep 2022 22:34:03 GMT  
-		Size: 149.3 MB (149258433 bytes)  
+	-	`sha256:cecb8cac93109c747662ae2cd4cf4583c1aee3803d8c239668a66b4848060717`  
+		Last Modified: Fri, 30 Sep 2022 23:28:43 GMT  
+		Size: 147.1 MB (147135119 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
