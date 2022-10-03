@@ -7195,14 +7195,9 @@ Licenses: (parsed from: `/usr/share/doc/libsdformat9/copyright`, `/usr/share/doc
 - `Apache-2.0`
 - `BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sdformat9=9.8.0-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/s/sdformat9/sdformat9_9.8.0-1%7efocal.dsc' sdformat9_9.8.0-1~focal.dsc 1376 SHA256:b6f9452abc529b7db70d07457ff9cc5e1fae3402af103b8b3708c324799756f6
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/s/sdformat9/sdformat9_9.8.0.orig.tar.bz2' sdformat9_9.8.0.orig.tar.bz2 706107 SHA256:909cfaaa5c5b988ad63b0be12db6f5d9908b6da8cc274a7d3a9ce3ea5cc3b4fb
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/s/sdformat9/sdformat9_9.8.0-1%7efocal.debian.tar.xz' sdformat9_9.8.0-1~focal.debian.tar.xz 3504 SHA256:d7898f5eb3392543ef5e6d96772b4f69dc4997273eec95a8d54aa6a8f2b09907
-```
 
 ### `dpkg` source package: `sed=4.7-1`
 
