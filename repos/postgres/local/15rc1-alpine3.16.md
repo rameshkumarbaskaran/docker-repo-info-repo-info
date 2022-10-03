@@ -1,10 +1,10 @@
-# `postgres:15beta4-alpine`
+# `postgres:15rc1-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:24cad2537b26b6c6ee7cf473be63e58c1f8a6df76d4b1803cc189cfc60512be2`
-- Created: `2022-09-12T22:49:16.945044978Z`
-- Virtual Size: ~ 217.87 Mb  
+- Image ID: `sha256:54335947116634c5af57410866d78b1f5eaf7238b27ed6eec794cce119874ec2`
+- Created: `2022-09-30T18:23:48.374593272Z`
+- Virtual Size: ~ 217.86 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -13,8 +13,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=15`
-  - `PG_VERSION=15beta4`
-  - `PG_SHA256=d84d18ef26a64e76f189b7efb05179920eb0e8ae5d68cdbdbbe966305aee4416`
+  - `PG_VERSION=15rc1`
+  - `PG_SHA256=576476fab0d49f05f27625e1d6ed433e6e1358fabba92ae41780421e65fa7ad4`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `apk` (`.apk`-based packages)
@@ -379,16 +379,16 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `libldap`
 
 ```console
-libldap-2.6.3-r0 description:
+libldap-2.6.3-r1 description:
 OpenLDAP libraries
 
-libldap-2.6.3-r0 webpage:
+libldap-2.6.3-r1 webpage:
 https://www.openldap.org/
 
-libldap-2.6.3-r0 installed size:
+libldap-2.6.3-r1 installed size:
 400 KiB
 
-libldap-2.6.3-r0 license:
+libldap-2.6.3-r1 license:
 OLDAP-2.8
 
 ```
