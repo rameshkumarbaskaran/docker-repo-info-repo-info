@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:075cb088b443c7217c243fa60658a12e0c0b4d7435214f689c408d0a75b2e5d4`
-- Created: `2022-09-23T22:20:05.317494561Z`
-- Virtual Size: ~ 37.15 Mb  
+- Image ID: `sha256:1c08a395b24b20e8c7c1ae51755f18b303d80f3354f0b2003e377b0dd9b9a966`
+- Created: `2022-10-03T16:20:17.242035523Z`
+- Virtual Size: ~ 37.04 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20220923`
+  - `build-date=20220930`
   - `name=Photon OS x86_64/4.0 Base Image`
   - `vendor=VMware`
 
@@ -113,7 +113,7 @@ Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libsolv-0.7.19-4.ph4.x86_64`
+### `rpm` package: `libsolv-0.7.19-5.ph4.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
@@ -197,13 +197,13 @@ Licenses (from `rpm --query`): Public Domain
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `tdnf-3.3.1-1.ph4.x86_64`
+### `rpm` package: `tdnf-3.3.2-1.ph4.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2.1,GPLv2
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `tdnf-cli-libs-3.3.1-1.ph4.x86_64`
+### `rpm` package: `tdnf-cli-libs-3.3.2-1.ph4.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2.1,GPLv2
 
