@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:0fd482d41dd690dc424b451978f614914a3638290d0bb9eeaf26c13bcb906f2a`
-- Created: `2022-09-01T23:10:51.291465363Z`
-- Virtual Size: ~ 92.20 Mb  
+- Image ID: `sha256:19badaa24b64f7c287922b51099a183d645107c692d046a8a085a34c6d640c54`
+- Created: `2022-10-03T21:23:56.462099313Z`
+- Virtual Size: ~ 94.52 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -79,15 +79,15 @@ $ dnf --quiet download --source --url bzip2-libs-1.0.6-26.el8
 http://repo.almalinux.org/vault/8/BaseOS/Source/Packages/bzip2-1.0.6-26.el8.src.rpm
 ```
 
-### `rpm` package: `ca-certificates-2021.2.50-80.0.el8_4.noarch`
+### `rpm` package: `ca-certificates-2022.2.54-80.2.el8_6.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url ca-certificates-2021.2.50-80.0.el8_4.noarch
-http://repo.almalinux.org/vault/8/BaseOS/Source/Packages/ca-certificates-2021.2.50-80.0.el8_4.src.rpm
+$ dnf --quiet download --source --url ca-certificates-2022.2.54-80.2.el8_6.noarch
+http://repo.almalinux.org/vault/8/BaseOS/Source/Packages/ca-certificates-2022.2.54-80.2.el8_6.src.rpm
 ```
 
 ### `rpm` package: `chkconfig-1.19.1-1.el8.x86_64`
@@ -244,15 +244,15 @@ $ dnf --quiet download --source --url gmp-6.1.2-10.el8
 http://repo.almalinux.org/vault/8/BaseOS/Source/Packages/gmp-6.1.2-10.el8.src.rpm
 ```
 
-### `rpm` package: `gnupg2-2.2.20-2.el8.x86_64`
+### `rpm` package: `gnupg2-2.2.20-3.el8_6.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url gnupg2-2.2.20-2.el8
-http://repo.almalinux.org/vault/8/BaseOS/Source/Packages/gnupg2-2.2.20-2.el8.src.rpm
+$ dnf --quiet download --source --url gnupg2-2.2.20-3.el8_6
+http://repo.almalinux.org/vault/8/BaseOS/Source/Packages/gnupg2-2.2.20-3.el8_6.src.rpm
 ```
 
 ### `rpm` package: `gnutls-3.6.16-4.el8.x86_64`
@@ -481,15 +481,15 @@ $ dnf --quiet download --source --url libdb-utils-5.3.28-42.el8_4
 http://repo.almalinux.org/vault/8/BaseOS/Source/Packages/libdb-5.3.28-42.el8_4.src.rpm
 ```
 
-### `rpm` package: `libdnf-0.63.0-8.1.el8_6.alma.x86_64`
+### `rpm` package: `libdnf-0.63.0-8.2.el8_6.alma.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url libdnf-0.63.0-8.1.el8_6.alma
-http://repo.almalinux.org/vault/8/BaseOS/Source/Packages/libdnf-0.63.0-8.1.el8_6.alma.src.rpm
+$ dnf --quiet download --source --url libdnf-0.63.0-8.2.el8_6.alma
+http://repo.almalinux.org/vault/8/BaseOS/Source/Packages/libdnf-0.63.0-8.2.el8_6.alma.src.rpm
 ```
 
 ### `rpm` package: `libffi-3.1-23.el8.x86_64`
@@ -1064,15 +1064,15 @@ $ dnf --quiet download --source --url sqlite-libs-3.26.0-15.el8
 http://repo.almalinux.org/vault/8/BaseOS/Source/Packages/sqlite-3.26.0-15.el8.src.rpm
 ```
 
-### `rpm` package: `systemd-libs-239-58.el8_6.4.x86_64`
+### `rpm` package: `systemd-libs-239-58.el8_6.7.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and MIT
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url systemd-libs-239-58.el8_6.4
-http://repo.almalinux.org/vault/8/BaseOS/Source/Packages/systemd-239-58.el8_6.4.src.rpm
+$ dnf --quiet download --source --url systemd-libs-239-58.el8_6.7
+http://repo.almalinux.org/vault/8/BaseOS/Source/Packages/systemd-239-58.el8_6.7.src.rpm
 ```
 
 ### `rpm` package: `tzdata-2022c-1.el8.noarch`
