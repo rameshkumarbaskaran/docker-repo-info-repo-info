@@ -1,10 +1,10 @@
-# `redmine:4.2.7`
+# `redmine:4.2.8`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6086aa880ed1ff72d2c4186fe86797d72aaef3e0d60a7c659b0e20d69540dbe6`
-- Created: `2022-09-13T03:34:16.708275757Z`
-- Virtual Size: ~ 531.70 Mb  
+- Image ID: `sha256:241bc0a511fc45e076847263b097e48146bea42e5cd92d72c83a38499a4a92da`
+- Created: `2022-10-06T02:54:26.822607096Z`
+- Virtual Size: ~ 531.73 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -20,9 +20,9 @@
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
   - `RAILS_ENV=production`
   - `HOME=/home/redmine`
-  - `REDMINE_VERSION=4.2.7`
-  - `REDMINE_DOWNLOAD_URL=https://www.redmine.org/releases/redmine-4.2.7.tar.gz`
-  - `REDMINE_DOWNLOAD_SHA256=ed4be03b5ab63c2641a87db8978739dd997c0f646bfa1010ac9e5210c343724e`
+  - `REDMINE_VERSION=4.2.8`
+  - `REDMINE_DOWNLOAD_URL=https://www.redmine.org/releases/redmine-4.2.8.tar.gz`
+  - `REDMINE_DOWNLOAD_SHA256=0b431c052d8fd36b93201dafaf3615cdb8d03460efcf2400e7d32662b2ab6272`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -950,11 +950,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/e2fsprogs/1.46.2-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/e2fsprogs/1.46.2-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `expat=2.2.10-2+deb11u3`
+### `dpkg` source package: `expat=2.2.10-2+deb11u4`
 
 Binary Packages:
 
-- `libexpat1:amd64=2.2.10-2+deb11u3`
+- `libexpat1:amd64=2.2.10-2+deb11u4`
 
 Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
@@ -963,17 +963,17 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris expat=2.2.10-2+deb11u3
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.10-2%2bdeb11u3.dsc' expat_2.2.10-2+deb11u3.dsc 2175 SHA256:bf66d8eca15055af1961c95703204fb71f48c0bfbb9db7b2a7eccce19e444555
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.10.orig.tar.gz' expat_2.2.10.orig.tar.gz 8276395 SHA256:62e280f5fd29a5b70973f623e20a7412c3e3912c2684cb0e462e2c881be129e1
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.10-2%2bdeb11u3.debian.tar.xz' expat_2.2.10-2+deb11u3.debian.tar.xz 27188 SHA256:03a961cdbe42a5ebee68e072090821995730502cb3822fb59f0c642688fb9f51
+$ apt-get source -qq --print-uris expat=2.2.10-2+deb11u4
+'http://deb.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.10-2%2bdeb11u4.dsc' expat_2.2.10-2+deb11u4.dsc 2020 SHA256:a86fa66526a76b784044975e978a070d5b17154c0b76e264fda802811ca7ec74
+'http://deb.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.10.orig.tar.gz' expat_2.2.10.orig.tar.gz 8276395 SHA256:62e280f5fd29a5b70973f623e20a7412c3e3912c2684cb0e462e2c881be129e1
+'http://deb.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.10-2%2bdeb11u4.debian.tar.xz' expat_2.2.10-2+deb11u4.debian.tar.xz 28500 SHA256:54ecdf492d5c77cefe6aab7ea5cff6e448f073a258fc7031cafe2c76fd699d09
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/expat/2.2.10-2+deb11u3/ (for browsing the source)
-- https://sources.debian.net/src/expat/2.2.10-2+deb11u3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/expat/2.2.10-2+deb11u3/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/expat/2.2.10-2+deb11u4/ (for browsing the source)
+- https://sources.debian.net/src/expat/2.2.10-2+deb11u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/expat/2.2.10-2+deb11u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `fftw3=3.3.8-2`
 
@@ -4413,11 +4413,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/tini/0.19.0-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/tini/0.19.0-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `tzdata=2021a-1+deb11u5`
+### `dpkg` source package: `tzdata=2021a-1+deb11u6`
 
 Binary Packages:
 
-- `tzdata=2021a-1+deb11u5`
+- `tzdata=2021a-1+deb11u6`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4426,18 +4426,18 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris tzdata=2021a-1+deb11u5
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-1%2bdeb11u5.dsc' tzdata_2021a-1+deb11u5.dsc 2269 SHA256:90144991fdbc0676acbb2f09730b754df24ebb8a422e041b70a614871425afeb
+$ apt-get source -qq --print-uris tzdata=2021a-1+deb11u6
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-1%2bdeb11u6.dsc' tzdata_2021a-1+deb11u6.dsc 2269 SHA256:2d3bf44d3a46c6d7af2dead664360f0e05835c83a6c0475851c2fd6ee2923c85
 'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz' tzdata_2021a.orig.tar.gz 411892 SHA256:39e7d2ba08c68cbaefc8de3227aab0dec2521be8042cf56855f7dc3a9fb14e08
 'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz.asc' tzdata_2021a.orig.tar.gz.asc 833 SHA256:9dc5f54674166f4ffbc2d4485e656227430ab5f39c9006e6ed9986281117f058
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-1%2bdeb11u5.debian.tar.xz' tzdata_2021a-1+deb11u5.debian.tar.xz 112384 SHA256:92e9016c42002bfe242cb91cdd6cef7163a15f2998767e67bb2f8390bd13de45
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-1%2bdeb11u6.debian.tar.xz' tzdata_2021a-1+deb11u6.debian.tar.xz 113564 SHA256:1d4e96a91bea03a87b99cc90a7e5b378f2ccc6a976966ceb3dcb80c9109e65cc
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/tzdata/2021a-1+deb11u5/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2021a-1+deb11u5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2021a-1+deb11u5/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/tzdata/2021a-1+deb11u6/ (for browsing the source)
+- https://sources.debian.net/src/tzdata/2021a-1+deb11u6/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tzdata/2021a-1+deb11u6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0043`
 
