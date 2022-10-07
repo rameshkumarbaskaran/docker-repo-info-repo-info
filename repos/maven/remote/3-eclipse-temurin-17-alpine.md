@@ -1,7 +1,7 @@
 ## `maven:3-eclipse-temurin-17-alpine`
 
 ```console
-$ docker pull maven@sha256:2a54237c4ddd1aaaa26e52d395478b09255bf382465b7d94eee72fcadd1ac5c6
+$ docker pull maven@sha256:93fb078408e4a33f17e3f468b98f3f42b5963332ade43271092d21a746b3f185
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull maven@sha256:2a54237c4ddd1aaaa26e52d395478b09255bf382465b7d94eee72
 ### `maven:3-eclipse-temurin-17-alpine` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:37cd35b1def61eb23e195d1e7714a1baf475c815232256b07d9f2fc5d603332d
+$ docker pull maven@sha256:6e208b62c49bf36c844437638f6b1a75844dd7dc018929eb13ec1ade6308b196
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **217.1 MB (217135833 bytes)**  
+-	Total Size: **217.1 MB (217126945 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f8b519cd112f5af6ac127b5fffefddbe8c384a30c412e7902cc77a10f4074c40`
+-	Image ID: `sha256:262b753ae3d64d4a356d69af0dd41a8475361876d2317109bead640e3f884b36`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -27,46 +27,46 @@ $ docker pull maven@sha256:37cd35b1def61eb23e195d1e7714a1baf475c815232256b07d9f2
 ADD file:2a949686d9886ac7c10582a6c29116fd29d3077d02755e87e111870d63607725 in / 
 # Tue, 09 Aug 2022 17:19:53 GMT
 CMD ["/bin/sh"]
-# Thu, 11 Aug 2022 19:19:38 GMT
+# Fri, 07 Oct 2022 16:53:17 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 11 Aug 2022 19:19:38 GMT
+# Fri, 07 Oct 2022 16:53:17 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 11 Aug 2022 19:19:38 GMT
+# Fri, 07 Oct 2022 16:53:17 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 11 Aug 2022 19:19:40 GMT
+# Fri, 07 Oct 2022 16:53:21 GMT
 RUN apk add --no-cache fontconfig libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 06 Oct 2022 20:30:13 GMT
+# Fri, 07 Oct 2022 16:54:38 GMT
 ENV JAVA_VERSION=jdk-17.0.4.1+1
-# Thu, 06 Oct 2022 20:30:34 GMT
+# Fri, 07 Oct 2022 16:54:57 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='1a1706304c26da0d8d2e05127c5aa7dba00e5401b2c0228c8ae894d2812beee0';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.4.1%2B1/OpenJDK17U-jdk_x64_alpine-linux_hotspot_17.0.4.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm /tmp/openjdk.tar.gz;
-# Thu, 06 Oct 2022 20:30:36 GMT
+# Fri, 07 Oct 2022 16:55:00 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Thu, 06 Oct 2022 20:30:36 GMT
+# Fri, 07 Oct 2022 16:55:00 GMT
 CMD ["jshell"]
-# Fri, 07 Oct 2022 04:36:38 GMT
+# Fri, 07 Oct 2022 17:58:56 GMT
 RUN apk add --no-cache curl tar bash procps
-# Fri, 07 Oct 2022 04:36:38 GMT
+# Fri, 07 Oct 2022 17:58:56 GMT
 ARG MAVEN_VERSION=3.8.6
-# Fri, 07 Oct 2022 04:36:38 GMT
+# Fri, 07 Oct 2022 17:58:56 GMT
 ARG USER_HOME_DIR=/root
-# Fri, 07 Oct 2022 04:36:38 GMT
+# Fri, 07 Oct 2022 17:58:56 GMT
 ARG SHA=f790857f3b1f90ae8d16281f902c689e4f136ebe584aba45e4b1fa66c80cba826d3e0e52fdd04ed44b4c66f6d3fe3584a057c26dfcac544a60b301e6d0f91c26
-# Fri, 07 Oct 2022 04:36:39 GMT
+# Fri, 07 Oct 2022 17:58:56 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.8.6/binaries
-# Fri, 07 Oct 2022 04:36:40 GMT
+# Fri, 07 Oct 2022 17:58:57 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.8.6/binaries MAVEN_VERSION=3.8.6 SHA=f790857f3b1f90ae8d16281f902c689e4f136ebe584aba45e4b1fa66c80cba826d3e0e52fdd04ed44b4c66f6d3fe3584a057c26dfcac544a60b301e6d0f91c26 USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Fri, 07 Oct 2022 04:36:40 GMT
+# Fri, 07 Oct 2022 17:58:57 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Fri, 07 Oct 2022 04:36:41 GMT
+# Fri, 07 Oct 2022 17:58:57 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Fri, 07 Oct 2022 04:36:41 GMT
+# Fri, 07 Oct 2022 17:58:57 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Fri, 07 Oct 2022 04:36:41 GMT
+# Fri, 07 Oct 2022 17:58:58 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Fri, 07 Oct 2022 04:36:41 GMT
+# Fri, 07 Oct 2022 17:58:58 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Fri, 07 Oct 2022 04:36:41 GMT
+# Fri, 07 Oct 2022 17:58:58 GMT
 CMD ["mvn"]
 ```
 
@@ -75,31 +75,31 @@ CMD ["mvn"]
 		Last Modified: Tue, 09 Aug 2022 14:25:13 GMT  
 		Size: 2.8 MB (2806054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:107abfa4a9656cc98051eebaf02de090526191f4d53ab3733605b34f84513224`  
-		Last Modified: Thu, 11 Aug 2022 19:29:52 GMT  
-		Size: 12.1 MB (12050073 bytes)  
+	-	`sha256:4e5835cc7e6eb64b728c9694dd72d8aede877af0a2ec44f981847853af9abbf5`  
+		Last Modified: Fri, 07 Oct 2022 16:57:51 GMT  
+		Size: 12.0 MB (12041341 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a3a51737823497694fa5e9cebe8b7707efca2ce0ea52b15e1dcbffd589f8ba2`  
-		Last Modified: Thu, 06 Oct 2022 20:35:11 GMT  
-		Size: 191.5 MB (191455681 bytes)  
+	-	`sha256:66921d78a848ca667cee7c9ac5c36866360472568bff11508ec830e2cae8c513`  
+		Last Modified: Fri, 07 Oct 2022 16:59:38 GMT  
+		Size: 191.5 MB (191455720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdcdd16d0f27ebf8ead3fe9595fe15276a8d0e98a678ba4678967f1da3440a32`  
-		Last Modified: Thu, 06 Oct 2022 20:34:55 GMT  
-		Size: 178.0 B  
+	-	`sha256:9397d1cfc90c1e218a7afa7e2f30af6e85ccd47bd28f0d677d278019b0ed86da`  
+		Last Modified: Fri, 07 Oct 2022 16:59:23 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18fc25ce7dac550bcda439000088971f186b58f49ae416e9536d8ba269fa15cf`  
-		Last Modified: Fri, 07 Oct 2022 04:39:07 GMT  
-		Size: 2.1 MB (2083143 bytes)  
+	-	`sha256:406c450dafe5f146b8d91fd47886ee330bec92f80ff2a5bac9cb928c0a58a4fe`  
+		Last Modified: Fri, 07 Oct 2022 18:01:24 GMT  
+		Size: 2.1 MB (2082954 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ffea81911b776af8a5d8cada216009bbd42628e8413cc70d03c059b7e100d7bb`  
-		Last Modified: Fri, 07 Oct 2022 04:39:08 GMT  
-		Size: 8.7 MB (8739489 bytes)  
+	-	`sha256:92fbcdaea95760d22acd172137b379999380ca568a32f759c4eeaa6df2ee7307`  
+		Last Modified: Fri, 07 Oct 2022 18:01:25 GMT  
+		Size: 8.7 MB (8739485 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e82da115151ae7845120d2e1eea12cb54bbd67cb924809a3387d1e15478dcb3`  
-		Last Modified: Fri, 07 Oct 2022 04:39:07 GMT  
+	-	`sha256:95206f45f7c2f121b4a68413ce63f5508201b6e5047cfab6605c30725816dca5`  
+		Last Modified: Fri, 07 Oct 2022 18:01:24 GMT  
 		Size: 857.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69c3efce174e657023c69ff6b421096b3d533334680cdaefebbd92e05849cba3`  
-		Last Modified: Fri, 07 Oct 2022 04:39:07 GMT  
+	-	`sha256:ac307cfb3a4265df4c94bb77634d165b275bb5e33cf6d1a4669af8008e28f4c5`  
+		Last Modified: Fri, 07 Oct 2022 18:01:24 GMT  
 		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
