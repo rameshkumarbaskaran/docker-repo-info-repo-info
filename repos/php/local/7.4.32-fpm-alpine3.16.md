@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:8033c01f9f9cd291d774b7c920a689b4e4757c0fa91bf55d0a85e47e2142152c`
-- Created: `2022-09-29T14:50:01.417180394Z`
-- Virtual Size: ~ 67.25 Mb  
+- Image ID: `sha256:9da49eca4d4f51ce648f738980a1e118abd91a90f3983353ccb7fc78aa40d173`
+- Created: `2022-10-07T00:42:14.217593149Z`
+- Virtual Size: ~ 66.75 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -180,16 +180,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `curl`
 
 ```console
-curl-7.83.1-r2 description:
+curl-7.83.1-r3 description:
 URL retrival utility and library
 
-curl-7.83.1-r2 webpage:
+curl-7.83.1-r3 webpage:
 https://curl.se/
 
-curl-7.83.1-r2 installed size:
+curl-7.83.1-r3 installed size:
 256 KiB
 
-curl-7.83.1-r2 license:
+curl-7.83.1-r3 license:
 curl
 
 ```
