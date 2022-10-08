@@ -1,7 +1,7 @@
 ## `redmine:5-bullseye`
 
 ```console
-$ docker pull redmine@sha256:72bf3487faf0b674fdaec8ca338a39c58b2bf244a513d574ac83e4184b1a3f90
+$ docker pull redmine@sha256:b23eaf5e863fbfad7e23e05e5ae5222932ab5874d3dec1ef16a17d5c942c8e65
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -398,14 +398,14 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 ### `redmine:5-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull redmine@sha256:17b8553dfc13acc50450880f405eb6d50039e58c5e2dc35f613aac447817e241
+$ docker pull redmine@sha256:e3a1ff4907712bb041a93b7852a6347533dbc5b70bf011dffa91ab5453103682
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **231.1 MB (231060224 bytes)**  
+-	Total Size: **231.1 MB (231060378 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:52c3854c184c64b0d432861d6e5a406e682db892aa2b3569a2995976dd259135`
+-	Image ID: `sha256:aa9a55c2a78e8d49a05f116828f208dc32fe4c40b09b8bd3bef58df146fb6b4d`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -462,13 +462,13 @@ RUN set -eux; 	curl -fL -o redmine.tar.gz "$REDMINE_DOWNLOAD_URL"; 	echo "$REDMI
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		default-libmysqlclient-dev 		freetds-dev 		gcc 		libpq-dev 		libsqlite3-dev 		make 		patch 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle config --local without 'development test'; 	puma="$(grep -E "^[[:space:]]*gem [:'\"]puma['\",[:space:]].*\$" Gemfile)"; 	{ echo; echo "$puma"; } | sed -re 's/^[[:space:]]+//' >> Gemfile; 	echo '# the following entries only exist to force `bundle install` to pre-install all database adapter dependencies -- they can be safely removed/ignored' > ./config/database.yml; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$adapter:" >> ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 	done; 	gosu redmine bundle install --jobs "$(nproc)"; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
 # Thu, 06 Oct 2022 02:16:52 GMT
 VOLUME [/usr/src/redmine/files]
-# Thu, 06 Oct 2022 02:16:53 GMT
-COPY file:5ad924c6f87c91325ac6781766e5ad56444f0bea5780e13e8bed5000ee3cfc38 in / 
-# Thu, 06 Oct 2022 02:16:54 GMT
+# Sat, 08 Oct 2022 00:48:38 GMT
+COPY file:f61e8718e722eba56748d9a7e58011159861fb49784b1ad721746c1fc5735b6d in / 
+# Sat, 08 Oct 2022 00:48:39 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 06 Oct 2022 02:16:55 GMT
+# Sat, 08 Oct 2022 00:48:40 GMT
 EXPOSE 3000
-# Thu, 06 Oct 2022 02:16:56 GMT
+# Sat, 08 Oct 2022 00:48:41 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -517,22 +517,22 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Thu, 06 Oct 2022 02:20:01 GMT  
 		Size: 57.4 MB (57428332 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af8ba0f40a63871e8f6508c46dc3622ee096790bfd0c0fdbd8e8676312278de6`  
-		Last Modified: Thu, 06 Oct 2022 02:19:54 GMT  
-		Size: 1.9 KB (1859 bytes)  
+	-	`sha256:ca01bf541dc1c0bcd5d1e35efdbc9fe529237b0fff6a124f4cb4dbdc40a44e86`  
+		Last Modified: Sat, 08 Oct 2022 00:50:09 GMT  
+		Size: 2.0 KB (2013 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:5-bullseye` - linux; 386
 
 ```console
-$ docker pull redmine@sha256:b38f8a97eab581152bc7c3c07c48b8d835cea3674a170bfbda5a06b441c60469
+$ docker pull redmine@sha256:d278ea73cea58bdf5fc8205f7eff487b21a623efc6ffd19f3fb335701008adca
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **238.9 MB (238880241 bytes)**  
+-	Total Size: **238.9 MB (238880394 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8799028fb7fc6f2ae541e0e6e83a856a025e886f2d5204d6390234497df5f73b`
+-	Image ID: `sha256:521205f1f00e0335c8327b21e2eb06d566040934b767503041c2cf44878fad34`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -589,13 +589,13 @@ RUN set -eux; 	curl -fL -o redmine.tar.gz "$REDMINE_DOWNLOAD_URL"; 	echo "$REDMI
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		default-libmysqlclient-dev 		freetds-dev 		gcc 		libpq-dev 		libsqlite3-dev 		make 		patch 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle config --local without 'development test'; 	puma="$(grep -E "^[[:space:]]*gem [:'\"]puma['\",[:space:]].*\$" Gemfile)"; 	{ echo; echo "$puma"; } | sed -re 's/^[[:space:]]+//' >> Gemfile; 	echo '# the following entries only exist to force `bundle install` to pre-install all database adapter dependencies -- they can be safely removed/ignored' > ./config/database.yml; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$adapter:" >> ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 	done; 	gosu redmine bundle install --jobs "$(nproc)"; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
 # Wed, 05 Oct 2022 18:55:04 GMT
 VOLUME [/usr/src/redmine/files]
-# Wed, 05 Oct 2022 18:55:05 GMT
-COPY file:5ad924c6f87c91325ac6781766e5ad56444f0bea5780e13e8bed5000ee3cfc38 in / 
-# Wed, 05 Oct 2022 18:55:06 GMT
+# Sat, 08 Oct 2022 00:39:47 GMT
+COPY file:f61e8718e722eba56748d9a7e58011159861fb49784b1ad721746c1fc5735b6d in / 
+# Sat, 08 Oct 2022 00:39:48 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 05 Oct 2022 18:55:06 GMT
+# Sat, 08 Oct 2022 00:39:49 GMT
 EXPOSE 3000
-# Wed, 05 Oct 2022 18:55:07 GMT
+# Sat, 08 Oct 2022 00:39:50 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -644,9 +644,9 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Wed, 05 Oct 2022 18:58:23 GMT  
 		Size: 57.4 MB (57406828 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0831c621b7e89e9e5864f6c61fa0217f1824a9ecf78a46944b932de40a72b640`  
-		Last Modified: Wed, 05 Oct 2022 18:58:16 GMT  
-		Size: 1.9 KB (1858 bytes)  
+	-	`sha256:19d2b8ae6e0218490c9f3c8249562801c4b93ac5d2d66f0708cd6908116621a1`  
+		Last Modified: Sat, 08 Oct 2022 00:41:28 GMT  
+		Size: 2.0 KB (2011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:5-bullseye` - linux; ppc64le
@@ -779,14 +779,14 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 ### `redmine:5-bullseye` - linux; s390x
 
 ```console
-$ docker pull redmine@sha256:5369cedb1d8cc5521cbb50edf4f931aec8aa786b000bb71e3d68e83d2abb5f97
+$ docker pull redmine@sha256:40ee6a146e1384875f0d714b52a37a3954213d83311b9a22040147610d2c9142
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **243.7 MB (243718201 bytes)**  
+-	Total Size: **243.7 MB (243718356 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f0f68ed61d7bbee5d37891c324f84bef236a999a2cd0b0440704ae0727355717`
+-	Image ID: `sha256:ce66f77320ff15e95396e33d53da244221d90a1752e3875e1e59e09c8f6e3271`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -843,13 +843,13 @@ RUN set -eux; 	curl -fL -o redmine.tar.gz "$REDMINE_DOWNLOAD_URL"; 	echo "$REDMI
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		default-libmysqlclient-dev 		freetds-dev 		gcc 		libpq-dev 		libsqlite3-dev 		make 		patch 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle config --local without 'development test'; 	puma="$(grep -E "^[[:space:]]*gem [:'\"]puma['\",[:space:]].*\$" Gemfile)"; 	{ echo; echo "$puma"; } | sed -re 's/^[[:space:]]+//' >> Gemfile; 	echo '# the following entries only exist to force `bundle install` to pre-install all database adapter dependencies -- they can be safely removed/ignored' > ./config/database.yml; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$adapter:" >> ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 	done; 	gosu redmine bundle install --jobs "$(nproc)"; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
 # Wed, 05 Oct 2022 12:34:23 GMT
 VOLUME [/usr/src/redmine/files]
-# Wed, 05 Oct 2022 12:34:23 GMT
-COPY file:5ad924c6f87c91325ac6781766e5ad56444f0bea5780e13e8bed5000ee3cfc38 in / 
-# Wed, 05 Oct 2022 12:34:23 GMT
+# Sat, 08 Oct 2022 00:29:33 GMT
+COPY file:f61e8718e722eba56748d9a7e58011159861fb49784b1ad721746c1fc5735b6d in / 
+# Sat, 08 Oct 2022 00:29:33 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 05 Oct 2022 12:34:24 GMT
+# Sat, 08 Oct 2022 00:29:34 GMT
 EXPOSE 3000
-# Wed, 05 Oct 2022 12:34:25 GMT
+# Sat, 08 Oct 2022 00:29:34 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -898,7 +898,7 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Wed, 05 Oct 2022 12:39:31 GMT  
 		Size: 70.7 MB (70660589 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:151473d4ce1d5ddcd41fb6cc4d2206a211bd29d64d5fe13704997bfe5af881eb`  
-		Last Modified: Wed, 05 Oct 2022 12:39:24 GMT  
-		Size: 1.9 KB (1859 bytes)  
+	-	`sha256:b9096cc0954791ce822500cb67fc89ad1dce19ccce71b471b13c91301a355185`  
+		Last Modified: Sat, 08 Oct 2022 00:31:09 GMT  
+		Size: 2.0 KB (2014 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
