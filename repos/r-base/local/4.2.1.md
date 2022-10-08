@@ -149,19 +149,13 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=12.2
-'http://deb.debian.org/debian/pool/main/b/base-files/base-files_12.2.dsc' base-files_12.2.dsc 1078 SHA256:bce25568b596e80923f764c1a2ecfb5022ccee0c4387e8e4785598250852ea7f
-'http://deb.debian.org/debian/pool/main/b/base-files/base-files_12.2.tar.xz' base-files_12.2.tar.xz 65760 SHA256:ed45674c39c6051591d6037aac3fb7e97e3ef868c51d3112e8b3234d2e275ac6
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/base-files/12.2/
 
-- https://sources.debian.net/src/base-files/12.2/ (for browsing the source)
-- https://sources.debian.net/src/base-files/12.2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/base-files/12.2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-passwd=3.5.52`
 
@@ -1712,20 +1706,13 @@ Licenses: (parsed from: `/usr/share/doc/libdeflate0/copyright`)
 
 - `Expat`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libdeflate=1.12-1
-'http://deb.debian.org/debian/pool/main/libd/libdeflate/libdeflate_1.12-1.dsc' libdeflate_1.12-1.dsc 2206 SHA256:298feb19982977e3b1218d31b7e47d1bcc3a3bcd2f9ba9c4669ebb914aecfa5b
-'http://deb.debian.org/debian/pool/main/libd/libdeflate/libdeflate_1.12.orig.tar.gz' libdeflate_1.12.orig.tar.gz 173456 SHA256:ba89fb167a5ab6bbdfa6ee3b1a71636e8140fa8471cce8a311697584948e4d06
-'http://deb.debian.org/debian/pool/main/libd/libdeflate/libdeflate_1.12-1.debian.tar.xz' libdeflate_1.12-1.debian.tar.xz 4692 SHA256:5508aa7a5f475087418dbb81b0236c7edbb290fe3b2fe4541f9db3dc1861a924
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libdeflate/1.12-1/
 
-- https://sources.debian.net/src/libdeflate/1.12-1/ (for browsing the source)
-- https://sources.debian.net/src/libdeflate/1.12-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libdeflate/1.12-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libffi=3.4.2-4`
 
