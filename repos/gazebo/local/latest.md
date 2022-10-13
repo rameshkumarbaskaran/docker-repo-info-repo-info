@@ -2427,14 +2427,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-msgs5/copyright`, `/usr/shar
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-msgs5=5.10.0-4~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-msgs5/ignition-msgs5_5.10.0-4%7efocal.dsc' ignition-msgs5_5.10.0-4~focal.dsc 1390 SHA256:acf95c5eca514c1642e142668a071c3c63547b64387ff05a1dc0cd3380e8aa70
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-msgs5/ignition-msgs5_5.10.0.orig.tar.bz2' ignition-msgs5_5.10.0.orig.tar.bz2 269931 SHA256:4d83468ba00c9a3a7a01b1dfa6924873d2e0c7c6ccbe0311660965d0aee5cde5
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-msgs5/ignition-msgs5_5.10.0-4%7efocal.debian.tar.xz' ignition-msgs5_5.10.0-4~focal.debian.tar.xz 2204 SHA256:a65f36f1f42e80faa7b14fcba275dc5e22476e7ff61f58b6dd3d7d47817ee1b6
-```
 
 ### `dpkg` source package: `ignition-tools=1.5.0-1~focal`
 
@@ -5261,14 +5256,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.4.0-126.142
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-126.142.dsc' linux_5.4.0-126.142.dsc 7335 SHA512:de4f20252e76ed054636a8fd94024d678be8b9b45df04862b92fce75cf7c8ed997e04a362c01113ede580329e2e38ab714a148bb2ce66de597508d4c1f28e2ca
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA512:62b09a7231fd793973c5f59b16c4f6ffce621188b02a71915874b05e8e3f956fb6146d4a4fb1a4475bebe463949ca5a18da12842c3ce7c52e996e6bc4012a074
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-126.142.diff.gz' linux_5.4.0-126.142.diff.gz 9868136 SHA512:64c0403ccd0aa455a96fc14eee25798cc490f1d462da787cb4f29fcfc2e898918d6cdfdf42559ad5fadfb49771fa81741cbc7b209f9653de04420ca27f57adfb
-```
 
 ### `dpkg` source package: `llvm-toolchain-12=1:12.0.0-3ubuntu1~20.04.5`
 

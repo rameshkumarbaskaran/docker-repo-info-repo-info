@@ -1746,14 +1746,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-msgs5/copyright`)
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-msgs5=5.10.0-4~bionic
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-msgs5/ignition-msgs5_5.10.0-4%7ebionic.dsc' ignition-msgs5_5.10.0-4~bionic.dsc 1394 SHA256:f5f2bfe01f1363a312f79d417e48c677079b42917cbab00dd8434c4a2bf8bcd9
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-msgs5/ignition-msgs5_5.10.0.orig.tar.bz2' ignition-msgs5_5.10.0.orig.tar.bz2 269931 SHA256:4d83468ba00c9a3a7a01b1dfa6924873d2e0c7c6ccbe0311660965d0aee5cde5
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-msgs5/ignition-msgs5_5.10.0-4%7ebionic.debian.tar.xz' ignition-msgs5_5.10.0-4~bionic.debian.tar.xz 2308 SHA256:9a3a5f763b7882b46947ba7df02f39ed9d108c48910c9e577bf5c88d03145284
-```
 
 ### `dpkg` source package: `ignition-transport8=8.3.0-2~bionic`
 
