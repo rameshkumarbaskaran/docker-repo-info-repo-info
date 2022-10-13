@@ -1,7 +1,7 @@
 ## `silverpeas:latest`
 
 ```console
-$ docker pull silverpeas@sha256:337db3357459ba7cac7c83304395f5a1c3fc1ef92a3d6f0813125748049d3a40
+$ docker pull silverpeas@sha256:635877186aea3c570a36db787cd83e9e24942c3a1afcff27798dd03365c6e92c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull silverpeas@sha256:337db3357459ba7cac7c83304395f5a1c3fc1ef92a3d6f08
 ### `silverpeas:latest` - linux; amd64
 
 ```console
-$ docker pull silverpeas@sha256:f62cfe38816698f1ec19601a6c118813d2aa27a6954a26640aeedceb1065d11d
+$ docker pull silverpeas@sha256:bec6bea06f451b774cf130b1477eb26f07e8bd71bec98b27788bab59fdf3ba3a
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 GB (1898134594 bytes)**  
+-	Total Size: **1.9 GB (1928342391 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4285add3122aab64976f1f4b4a93f2da8673515a570ff2999cc5bae1ede207dd`
+-	Image ID: `sha256:243c50c3d268cf6981da0bd25ccf795b7d581d141cd2d64553b4fc451358cc0a`
 -	Default Command: `["\/opt\/run.sh"]`
 
 ```dockerfile
@@ -59,33 +59,33 @@ ENV JAVA_HOME=/docker-java-home
 ENV SILVERPEAS_HOME=/opt/silverpeas
 # Wed, 05 Oct 2022 18:42:58 GMT
 ENV JBOSS_HOME=/opt/wildfly
-# Wed, 05 Oct 2022 18:42:59 GMT
-ENV SILVERPEAS_VERSION=6.2.3
-# Wed, 05 Oct 2022 18:42:59 GMT
-ENV WILDFLY_VERSION=20.0.1
-# Wed, 05 Oct 2022 18:42:59 GMT
-LABEL name=Silverpeas 6.2.3 description=Image to install and to run Silverpeas 6.2.3 vendor=Silverpeas version=6.2.3 build=1
-# Wed, 05 Oct 2022 18:43:41 GMT
+# Thu, 13 Oct 2022 18:28:48 GMT
+ENV SILVERPEAS_VERSION=6.3
+# Thu, 13 Oct 2022 18:28:48 GMT
+ENV WILDFLY_VERSION=26.1.1
+# Thu, 13 Oct 2022 18:28:48 GMT
+LABEL name=Silverpeas 6.3 description=Image to install and to run Silverpeas 6.3 vendor=Silverpeas version=6.3 build=1
+# Thu, 13 Oct 2022 18:35:46 GMT
 # ARGS: DEFAULT_LOCALE=en_US.UTF-8
-RUN wget -nc https://www.silverpeas.org/files/silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip   && wget -nc https://www.silverpeas.org/files/silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip.asc   && gpg --keyserver keys.openpgp.org --recv-keys 3F4657EF9C591F2FEA458FEBC19391EB3DF442B6   && gpg --batch --verify silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip.asc silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip   && wget -nc http://download.jboss.org/wildfly/${WILDFLY_VERSION}.Final/wildfly-${WILDFLY_VERSION}.Final.zip   && unzip silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip -d /opt   && unzip wildfly-${WILDFLY_VERSION}.Final.zip -d /opt   && mv /opt/silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?} /opt/silverpeas   && mv /opt/wildfly-${WILDFLY_VERSION}.Final /opt/wildfly   && rm *.zip   && mkdir -p /root/.m2
-# Wed, 05 Oct 2022 18:43:42 GMT
+RUN wget -nc https://www.silverpeas.org/files/silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip   && wget -nc https://www.silverpeas.org/files/silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip.asc   && gpg --keyserver keys.openpgp.org --recv-keys 3F4657EF9C591F2FEA458FEBC19391EB3DF442B6   && gpg --batch --verify silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip.asc silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip   && wget -nc https://www.silverpeas.org/files/wildfly-${WILDFLY_VERSION}.Final.zip   && unzip silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip -d /opt   && unzip wildfly-${WILDFLY_VERSION}.Final.zip -d /opt   && mv /opt/silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?} /opt/silverpeas   && mv /opt/wildfly-${WILDFLY_VERSION}.Final /opt/wildfly   && rm *.zip   && mkdir -p /root/.m2
+# Thu, 13 Oct 2022 18:35:46 GMT
 COPY file:4d0e637a3e1ce0b8143795fd5df1997a7ee18fba27382849ed23e9ecb8142009 in /root/.m2/ 
-# Wed, 05 Oct 2022 18:43:42 GMT
+# Thu, 13 Oct 2022 18:35:46 GMT
 COPY file:473bf75b335a39b6b4b39c64cd151bd8ed3d3e33da73b8124e537a5db1fad3d6 in /opt/silverpeas/bin/ 
-# Wed, 05 Oct 2022 18:43:42 GMT
+# Thu, 13 Oct 2022 18:35:47 GMT
 WORKDIR /opt/silverpeas/bin
-# Wed, 05 Oct 2022 18:43:42 GMT
+# Thu, 13 Oct 2022 18:35:47 GMT
 COPY file:b54156953ecf6c3259f3b3d2885a784847c0996fd145c0f7ccef25182725511f in /opt/ 
-# Wed, 05 Oct 2022 18:43:42 GMT
+# Thu, 13 Oct 2022 18:35:47 GMT
 COPY file:b5a807d0a061fd9e87c6acfc7080c110a5f3c030251fe9a4c995cec7603e12d2 in /opt/silverpeas/configuration/silverpeas/ 
-# Wed, 05 Oct 2022 18:46:51 GMT
+# Thu, 13 Oct 2022 18:38:18 GMT
 # ARGS: DEFAULT_LOCALE=en_US.UTF-8
 RUN sed -i -e "s/SILVERPEAS_VERSION/${SILVERPEAS_VERSION}/g" ${SILVERPEAS_HOME}/bin/silverpeas.gradle   && ./silverpeas construct   && rm ../log/build-*   && touch .install
-# Wed, 05 Oct 2022 18:46:54 GMT
+# Thu, 13 Oct 2022 18:38:21 GMT
 EXPOSE 8000 9990
-# Wed, 05 Oct 2022 18:46:54 GMT
+# Thu, 13 Oct 2022 18:38:21 GMT
 VOLUME [/opt/silverpeas/log /opt/silverpeas/data /opt/silverpeas/properties /opt/silverpeas/xmlcomponents/workflows]
-# Wed, 05 Oct 2022 18:46:55 GMT
+# Thu, 13 Oct 2022 18:38:21 GMT
 CMD ["/opt/run.sh"]
 ```
 
@@ -118,27 +118,27 @@ CMD ["/opt/run.sh"]
 		Last Modified: Wed, 05 Oct 2022 18:47:17 GMT  
 		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8820afaed4a90d89eb3f3d3ef700133bca4d9431f1a1ae041befd0256a3a8d9c`  
-		Last Modified: Wed, 05 Oct 2022 18:47:28 GMT  
-		Size: 196.8 MB (196774082 bytes)  
+	-	`sha256:1391587da9da25cd966eb63ac6e6bcab07b538acacda19033e6529dc300c19a9`  
+		Last Modified: Thu, 13 Oct 2022 18:47:44 GMT  
+		Size: 217.8 MB (217842819 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f3e090c3be9ebb42239beff4d5af22b91c2ff46f298c072c51ad7a924a3f47b`  
-		Last Modified: Wed, 05 Oct 2022 18:47:14 GMT  
+	-	`sha256:e4ed411d33fd2fc34ccfe489fb500fa970eded495e614493127ccee0b066a1fd`  
+		Last Modified: Thu, 13 Oct 2022 18:47:26 GMT  
 		Size: 407.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b01fe0e60323b7adc38b52fdda445eefef5e8ee865099aa97ee89ca6dff8ba68`  
-		Last Modified: Wed, 05 Oct 2022 18:47:14 GMT  
+	-	`sha256:426e37e9d29bba0d500a03825073a9672b6272f346730b65a36c37ee38b7f382`  
+		Last Modified: Thu, 13 Oct 2022 18:47:26 GMT  
 		Size: 663.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01801226c55be0e9581051af14cba3c0debe7382083888df14c7ac93e7d8890d`  
-		Last Modified: Wed, 05 Oct 2022 18:47:14 GMT  
-		Size: 875.0 B  
+	-	`sha256:dcdb8c959f566c38c10bd7dc44a1e1788f6deb836ad4e7385594bb74563385e1`  
+		Last Modified: Thu, 13 Oct 2022 18:47:26 GMT  
+		Size: 878.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da586769b8af9f24f277b5d6f2069d8be4dc76ffe9659a14ba15380e24b31ed3`  
-		Last Modified: Wed, 05 Oct 2022 18:47:14 GMT  
-		Size: 388.0 B  
+	-	`sha256:e1fe2a7ae45c6273c4a1e72f64141498ac457bedf82d46540aa17c5a2cec2476`  
+		Last Modified: Thu, 13 Oct 2022 18:47:26 GMT  
+		Size: 383.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:52d2790837c77d183df82e84724a8780565989a9f87457c6069e5531e34177bf`  
-		Last Modified: Wed, 05 Oct 2022 18:47:51 GMT  
-		Size: 748.1 MB (748073883 bytes)  
+	-	`sha256:6bb35618554c9d147de2b04f34117337bf3bfed72b61be54f6d422a0a634db4d`  
+		Last Modified: Thu, 13 Oct 2022 18:48:02 GMT  
+		Size: 757.2 MB (757212945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
