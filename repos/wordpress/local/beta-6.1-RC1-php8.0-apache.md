@@ -1,10 +1,10 @@
-# `wordpress:beta-6.1-beta3-php8.1-apache`
+# `wordpress:beta-6.1-RC1-php8.0-apache`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6714d39f9104859c1f047324cf85c1e4c19f74aa0579cef7e63b54c42114b1a6`
-- Created: `2022-10-06T02:04:20.98471918Z`
-- Virtual Size: ~ 620.21 Mb  
+- Image ID: `sha256:f7d4147a0c8a45dd0cef6247436e6d817251a1680b7a9a5ae6b83aa7a637e3af`
+- Created: `2022-10-14T00:57:56.592156632Z`
+- Virtual Size: ~ 616.72 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -18,11 +18,11 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
-  - `PHP_VERSION=8.1.11`
-  - `PHP_URL=https://www.php.net/distributions/php-8.1.11.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.11.tar.xz.asc`
-  - `PHP_SHA256=3005198d7303f87ab31bc30695de76e8ad62783f806b6ab9744da59fe41cc5bd`
+  - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
+  - `PHP_VERSION=8.0.24`
+  - `PHP_URL=https://www.php.net/distributions/php-8.0.24.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.24.tar.xz.asc`
+  - `PHP_SHA256=8e6a63ac9cdabe4c345b32a54b18f348d9e50a1decda217faf2d61278d22f08b`
 
 ## `dpkg` (`.deb`-based packages)
 

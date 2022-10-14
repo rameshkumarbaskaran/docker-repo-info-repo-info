@@ -1,10 +1,10 @@
-# `wordpress:cli-2.6.0-php8.1`
+# `wordpress:cli-2.7.0`
 
 ## Docker Metadata
 
-- Image ID: `sha256:be6d89f47a0e2eab8b193f8690b06c5d7d64b5b8fe7d0c99e6cb337b7f34ffba`
-- Created: `2022-10-07T08:22:48.898607518Z`
-- Virtual Size: ~ 156.93 Mb  
+- Image ID: `sha256:576645363d2130a01cfc1ed8848512744058ba882a0b3188608670caaf2477c2`
+- Created: `2022-10-14T00:57:11.807849208Z`
+- Virtual Size: ~ 148.42 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -16,14 +16,14 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
-  - `PHP_VERSION=8.1.11`
-  - `PHP_URL=https://www.php.net/distributions/php-8.1.11.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.11.tar.xz.asc`
-  - `PHP_SHA256=3005198d7303f87ab31bc30695de76e8ad62783f806b6ab9744da59fe41cc5bd`
+  - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
+  - `PHP_VERSION=7.4.32`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.32.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.32.tar.xz.asc`
+  - `PHP_SHA256=323332c991e8ef30b1d219cb10f5e30f11b5f319ce4c6642a5470d75ade7864a`
   - `WORDPRESS_CLI_GPG_KEY=63AF7AA15067C05616FDDD88A3A2E8F226F0BC06`
-  - `WORDPRESS_CLI_VERSION=2.6.0`
-  - `WORDPRESS_CLI_SHA512=d73f9161a1f03b8ecaac7b196b6051fe847b3c402b9c92b1f6f3acbe5b1cf91f7260c0e499b8947bab75920ecec918b39533ca65fa5a1fd3eb6ce7b8e2c58e7d`
+  - `WORDPRESS_CLI_VERSION=2.7.0`
+  - `WORDPRESS_CLI_SHA512=43ada12f3d462b7e4cd2b29cb8bd11789e57f6cd57be1627eb137bc1312c62a565794e13ede71c80e35356f4253130d0d1869873b80817fdfc55812035a2bd43`
 
 ## `apk` (`.apk`-based packages)
 

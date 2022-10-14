@@ -1,10 +1,10 @@
-# `wordpress:cli-2.6.0`
+# `wordpress:cli-2.7.0`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a532f8dec63b9697b49c64fc971f470700d2b9b2db7e29a8bf4886c57d0aa415`
-- Created: `2022-10-07T08:20:28.522473297Z`
-- Virtual Size: ~ 148.19 Mb  
+- Image ID: `sha256:576645363d2130a01cfc1ed8848512744058ba882a0b3188608670caaf2477c2`
+- Created: `2022-10-14T00:57:11.807849208Z`
+- Virtual Size: ~ 148.42 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -22,8 +22,8 @@
   - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.32.tar.xz.asc`
   - `PHP_SHA256=323332c991e8ef30b1d219cb10f5e30f11b5f319ce4c6642a5470d75ade7864a`
   - `WORDPRESS_CLI_GPG_KEY=63AF7AA15067C05616FDDD88A3A2E8F226F0BC06`
-  - `WORDPRESS_CLI_VERSION=2.6.0`
-  - `WORDPRESS_CLI_SHA512=d73f9161a1f03b8ecaac7b196b6051fe847b3c402b9c92b1f6f3acbe5b1cf91f7260c0e499b8947bab75920ecec918b39533ca65fa5a1fd3eb6ce7b8e2c58e7d`
+  - `WORDPRESS_CLI_VERSION=2.7.0`
+  - `WORDPRESS_CLI_SHA512=43ada12f3d462b7e4cd2b29cb8bd11789e57f6cd57be1627eb137bc1312c62a565794e13ede71c80e35356f4253130d0d1869873b80817fdfc55812035a2bd43`
 
 ## `apk` (`.apk`-based packages)
 
