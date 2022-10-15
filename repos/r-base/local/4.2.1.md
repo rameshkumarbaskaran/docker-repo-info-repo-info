@@ -3724,20 +3724,13 @@ Licenses: (parsed from: `/usr/share/doc/fonts-texgyre/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tex-gyre=20180621-3.1
-'http://deb.debian.org/debian/pool/main/t/tex-gyre/tex-gyre_20180621-3.1.dsc' tex-gyre_20180621-3.1.dsc 2039 SHA256:d34500d573c01e0b608817b902f19c36880b7f833e91b36e20e99a0c4b2b1063
-'http://deb.debian.org/debian/pool/main/t/tex-gyre/tex-gyre_20180621.orig.tar.gz' tex-gyre_20180621.orig.tar.gz 24033627 SHA256:fe6b0f8ca6890d4a369f36c3b45bc30470069701a2f59042178ad5933fc9cdb8
-'http://deb.debian.org/debian/pool/main/t/tex-gyre/tex-gyre_20180621-3.1.debian.tar.xz' tex-gyre_20180621-3.1.debian.tar.xz 11096 SHA256:52d232bef3d92ad68589904ce906fbe0520c551ebc1ac07a6d1dd4c6694b048a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tex-gyre/20180621-3.1/
 
-- https://sources.debian.net/src/tex-gyre/20180621-3.1/ (for browsing the source)
-- https://sources.debian.net/src/tex-gyre/20180621-3.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tex-gyre/20180621-3.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tiff=4.4.0-2`
 
