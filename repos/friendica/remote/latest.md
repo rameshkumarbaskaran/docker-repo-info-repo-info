@@ -1,7 +1,7 @@
 ## `friendica:latest`
 
 ```console
-$ docker pull friendica@sha256:fdc1244b797db3a223fb1c3b135e381be582a70404783ca95015944832c1b34e
+$ docker pull friendica@sha256:57f721cc85d7cfb783612d4ffd79f6b5b50e1a8acf3fd7ab3a4c1d61255992a7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18,14 +18,14 @@ $ docker pull friendica@sha256:fdc1244b797db3a223fb1c3b135e381be582a70404783ca95
 ### `friendica:latest` - linux; amd64
 
 ```console
-$ docker pull friendica@sha256:573ce1fe506e4825ee0da658469425110dbc9dea23e8824d50140400dd14c71b
+$ docker pull friendica@sha256:4ade156156c87627b87d6ea1faa0ec7ee16be6c76500b152fda221a4a0054007
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **251.7 MB (251690751 bytes)**  
+-	Total Size: **250.7 MB (250679357 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ad34bf787f8877611fc03bd939c302a8719333cde26baeeef37fe638e9b83522`
+-	Image ID: `sha256:c99fdc53b14121c12fa3b7e264e435d29cd42ef5818be2e576f9907e36252a84`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -110,23 +110,23 @@ VOLUME [/var/www/html]
 RUN set -ex;    a2enmod rewrite remoteip ;    {     echo RemoteIPHeader X-Real-IP ;     echo RemoteIPTrustedProxy 10.0.0.0/8 ;     echo RemoteIPTrustedProxy 172.16.0.0/12 ;     echo RemoteIPTrustedProxy 192.168.0.0/16 ;    } > /etc/apache2/conf-available/remoteip.conf;    a2enconf remoteip
 # Thu, 06 Oct 2022 00:47:53 GMT
 ENV FRIENDICA_SYSLOG_FLAGS=39
-# Thu, 06 Oct 2022 00:51:20 GMT
-ENV FRIENDICA_VERSION=2022.06
-# Thu, 06 Oct 2022 00:51:20 GMT
-ENV FRIENDICA_ADDONS=2022.06
-# Thu, 06 Oct 2022 00:51:20 GMT
-ENV FRIENDICA_DOWNLOAD_SHA256=05a43d9ec085c06d3bde8b637286dd5fb397d9bdd75e30359e710bcba73082a9
-# Thu, 06 Oct 2022 00:51:20 GMT
-ENV FRIENDICA_DOWNLOAD_ADDONS_SHA256=3f7ee1ee6591a0183de99b994c25e55e34ac966ba58f7a98f6323d48cee9969d
-# Thu, 06 Oct 2022 00:51:43 GMT
+# Mon, 17 Oct 2022 20:27:08 GMT
+ENV FRIENDICA_VERSION=2022.10
+# Mon, 17 Oct 2022 20:27:08 GMT
+ENV FRIENDICA_ADDONS=2022.10
+# Mon, 17 Oct 2022 20:27:08 GMT
+ENV FRIENDICA_DOWNLOAD_SHA256=0d708afdd57a7e00745eb25a6317edc9be9abf7d794c96efdf75c85f5c8c7a52
+# Mon, 17 Oct 2022 20:27:08 GMT
+ENV FRIENDICA_DOWNLOAD_ADDONS_SHA256=fe6f9ef9e652b41088d66e2d57a43bdc7d2730e30e3e97d99af8ecd6c1182718
+# Mon, 17 Oct 2022 20:27:32 GMT
 RUN set -ex;     fetchDeps="         gnupg     ";     apt-get update;     apt-get install -y --no-install-recommends $fetchDeps;         export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 08656443618E6567A39524083EE197EF3F9E4287;         curl -fsSL -o friendica-full-${FRIENDICA_VERSION}.tar.gz         "https://files.friendi.ca/friendica-full-${FRIENDICA_VERSION}.tar.gz";     curl -fsSL -o friendica-full-${FRIENDICA_VERSION}.tar.gz.asc         "https://files.friendi.ca/friendica-full-${FRIENDICA_VERSION}.tar.gz.asc";     gpg --batch --verify friendica-full-${FRIENDICA_VERSION}.tar.gz.asc friendica-full-${FRIENDICA_VERSION}.tar.gz;     echo "${FRIENDICA_DOWNLOAD_SHA256} *friendica-full-${FRIENDICA_VERSION}.tar.gz" | sha256sum -c;     tar -xzf friendica-full-${FRIENDICA_VERSION}.tar.gz -C /usr/src/;     rm friendica-full-${FRIENDICA_VERSION}.tar.gz friendica-full-${FRIENDICA_VERSION}.tar.gz.asc;     mv -f /usr/src/friendica-full-${FRIENDICA_VERSION}/ /usr/src/friendica;     chmod 777 /usr/src/friendica/view/smarty3;         curl -fsSL -o friendica-addons-${FRIENDICA_ADDONS}.tar.gz             "https://files.friendi.ca/friendica-addons-${FRIENDICA_ADDONS}.tar.gz";     curl -fsSL -o friendica-addons-${FRIENDICA_ADDONS}.tar.gz.asc             "https://files.friendi.ca/friendica-addons-${FRIENDICA_ADDONS}.tar.gz.asc";     gpg --batch --verify friendica-addons-${FRIENDICA_ADDONS}.tar.gz.asc friendica-addons-${FRIENDICA_ADDONS}.tar.gz;     echo "${FRIENDICA_DOWNLOAD_ADDONS_SHA256} *friendica-addons-${FRIENDICA_ADDONS}.tar.gz" | sha256sum -c;     mkdir -p /usr/src/friendica/proxy;     mkdir -p /usr/src/friendica/addon;     tar -xzf friendica-addons-${FRIENDICA_ADDONS}.tar.gz -C /usr/src/friendica/addon --strip-components=1;     rm friendica-addons-${FRIENDICA_ADDONS}.tar.gz friendica-addons-${FRIENDICA_ADDONS}.tar.gz.asc;         gpgconf --kill all;     rm -rf "$GNUPGHOME";         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps;     rm -rf /var/lib/apt/lists/*
-# Thu, 06 Oct 2022 00:51:44 GMT
+# Mon, 17 Oct 2022 20:27:33 GMT
 COPY multi:7cba7205e29ccd126186db9586c104a13fc6a00055e2ad88545d236d2d069334 in / 
-# Thu, 06 Oct 2022 00:51:44 GMT
+# Mon, 17 Oct 2022 20:27:33 GMT
 COPY multi:201dba5df7e408009a8882797a28095a47753a2db673a80c99e898e88501c42e in /usr/src/friendica/config/ 
-# Thu, 06 Oct 2022 00:51:44 GMT
+# Mon, 17 Oct 2022 20:27:34 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Thu, 06 Oct 2022 00:51:44 GMT
+# Mon, 17 Oct 2022 20:27:34 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -203,17 +203,17 @@ CMD ["apache2-foreground"]
 		Last Modified: Thu, 06 Oct 2022 00:53:28 GMT  
 		Size: 536.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2289bb8bfe7193e5121f28a39b324e813f92806f2f29c79c2d0cfc64316484ff`  
-		Last Modified: Thu, 06 Oct 2022 00:54:06 GMT  
-		Size: 54.1 MB (54100718 bytes)  
+	-	`sha256:0d9593474992e7c136a345507c4b23c4fc93dd1f8a6eebb32f2c8deb54f6a7e9`  
+		Last Modified: Mon, 17 Oct 2022 20:29:20 GMT  
+		Size: 53.1 MB (53089323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a0c1feb96610d2829e045358834d5276e8384a99f087441e6158ed8b66642380`  
-		Last Modified: Thu, 06 Oct 2022 00:54:00 GMT  
-		Size: 3.0 KB (2988 bytes)  
+	-	`sha256:73a410b5769f5ef0215b8966ba95419cb91aefd99bea22e6e85b7d50f62a0b47`  
+		Last Modified: Mon, 17 Oct 2022 20:29:13 GMT  
+		Size: 3.0 KB (2987 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f3c232eecea7953543562f43d230d43b1af7efd9bab5ba021cbd91e3837a939c`  
-		Last Modified: Thu, 06 Oct 2022 00:54:00 GMT  
-		Size: 927.0 B  
+	-	`sha256:d81d45b2d9add744c18f8b95d565de568268f8609794791951ac1eda9315f8cb`  
+		Last Modified: Mon, 17 Oct 2022 20:29:13 GMT  
+		Size: 929.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `friendica:latest` - linux; arm variant v5
@@ -1023,14 +1023,14 @@ CMD ["apache2-foreground"]
 ### `friendica:latest` - linux; mips64le
 
 ```console
-$ docker pull friendica@sha256:dc654f98a1081bc0bbb5303d234f073b902bdd4fe958665b00ac4b72964b0728
+$ docker pull friendica@sha256:4d9aaff4c9a457a0b0468bad99a82b260def75df607b476b1e836a42cfef39ca
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **225.8 MB (225822678 bytes)**  
+-	Total Size: **224.8 MB (224808659 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:260d1c81d2813de2758bb826ee057455b81727c0e5e7e3d9237e3f72e63466c3`
+-	Image ID: `sha256:92c0a5c40899af4f51ed4e3dce9dfd9abfd39c242084631a11fc2159e1696fed`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -1115,23 +1115,23 @@ VOLUME [/var/www/html]
 RUN set -ex;    a2enmod rewrite remoteip ;    {     echo RemoteIPHeader X-Real-IP ;     echo RemoteIPTrustedProxy 10.0.0.0/8 ;     echo RemoteIPTrustedProxy 172.16.0.0/12 ;     echo RemoteIPTrustedProxy 192.168.0.0/16 ;    } > /etc/apache2/conf-available/remoteip.conf;    a2enconf remoteip
 # Thu, 06 Oct 2022 07:00:50 GMT
 ENV FRIENDICA_SYSLOG_FLAGS=39
-# Thu, 06 Oct 2022 07:16:56 GMT
-ENV FRIENDICA_VERSION=2022.06
-# Thu, 06 Oct 2022 07:17:00 GMT
-ENV FRIENDICA_ADDONS=2022.06
-# Thu, 06 Oct 2022 07:17:04 GMT
-ENV FRIENDICA_DOWNLOAD_SHA256=05a43d9ec085c06d3bde8b637286dd5fb397d9bdd75e30359e710bcba73082a9
-# Thu, 06 Oct 2022 07:17:08 GMT
-ENV FRIENDICA_DOWNLOAD_ADDONS_SHA256=3f7ee1ee6591a0183de99b994c25e55e34ac966ba58f7a98f6323d48cee9969d
-# Thu, 06 Oct 2022 07:18:28 GMT
+# Mon, 17 Oct 2022 20:53:16 GMT
+ENV FRIENDICA_VERSION=2022.10
+# Mon, 17 Oct 2022 20:53:20 GMT
+ENV FRIENDICA_ADDONS=2022.10
+# Mon, 17 Oct 2022 20:53:24 GMT
+ENV FRIENDICA_DOWNLOAD_SHA256=0d708afdd57a7e00745eb25a6317edc9be9abf7d794c96efdf75c85f5c8c7a52
+# Mon, 17 Oct 2022 20:53:28 GMT
+ENV FRIENDICA_DOWNLOAD_ADDONS_SHA256=fe6f9ef9e652b41088d66e2d57a43bdc7d2730e30e3e97d99af8ecd6c1182718
+# Mon, 17 Oct 2022 20:54:48 GMT
 RUN set -ex;     fetchDeps="         gnupg     ";     apt-get update;     apt-get install -y --no-install-recommends $fetchDeps;         export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 08656443618E6567A39524083EE197EF3F9E4287;         curl -fsSL -o friendica-full-${FRIENDICA_VERSION}.tar.gz         "https://files.friendi.ca/friendica-full-${FRIENDICA_VERSION}.tar.gz";     curl -fsSL -o friendica-full-${FRIENDICA_VERSION}.tar.gz.asc         "https://files.friendi.ca/friendica-full-${FRIENDICA_VERSION}.tar.gz.asc";     gpg --batch --verify friendica-full-${FRIENDICA_VERSION}.tar.gz.asc friendica-full-${FRIENDICA_VERSION}.tar.gz;     echo "${FRIENDICA_DOWNLOAD_SHA256} *friendica-full-${FRIENDICA_VERSION}.tar.gz" | sha256sum -c;     tar -xzf friendica-full-${FRIENDICA_VERSION}.tar.gz -C /usr/src/;     rm friendica-full-${FRIENDICA_VERSION}.tar.gz friendica-full-${FRIENDICA_VERSION}.tar.gz.asc;     mv -f /usr/src/friendica-full-${FRIENDICA_VERSION}/ /usr/src/friendica;     chmod 777 /usr/src/friendica/view/smarty3;         curl -fsSL -o friendica-addons-${FRIENDICA_ADDONS}.tar.gz             "https://files.friendi.ca/friendica-addons-${FRIENDICA_ADDONS}.tar.gz";     curl -fsSL -o friendica-addons-${FRIENDICA_ADDONS}.tar.gz.asc             "https://files.friendi.ca/friendica-addons-${FRIENDICA_ADDONS}.tar.gz.asc";     gpg --batch --verify friendica-addons-${FRIENDICA_ADDONS}.tar.gz.asc friendica-addons-${FRIENDICA_ADDONS}.tar.gz;     echo "${FRIENDICA_DOWNLOAD_ADDONS_SHA256} *friendica-addons-${FRIENDICA_ADDONS}.tar.gz" | sha256sum -c;     mkdir -p /usr/src/friendica/proxy;     mkdir -p /usr/src/friendica/addon;     tar -xzf friendica-addons-${FRIENDICA_ADDONS}.tar.gz -C /usr/src/friendica/addon --strip-components=1;     rm friendica-addons-${FRIENDICA_ADDONS}.tar.gz friendica-addons-${FRIENDICA_ADDONS}.tar.gz.asc;         gpgconf --kill all;     rm -rf "$GNUPGHOME";         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps;     rm -rf /var/lib/apt/lists/*
-# Thu, 06 Oct 2022 07:18:36 GMT
+# Mon, 17 Oct 2022 20:54:56 GMT
 COPY multi:7cba7205e29ccd126186db9586c104a13fc6a00055e2ad88545d236d2d069334 in / 
-# Thu, 06 Oct 2022 07:18:42 GMT
+# Mon, 17 Oct 2022 20:55:02 GMT
 COPY multi:201dba5df7e408009a8882797a28095a47753a2db673a80c99e898e88501c42e in /usr/src/friendica/config/ 
-# Thu, 06 Oct 2022 07:18:48 GMT
+# Mon, 17 Oct 2022 20:55:08 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Thu, 06 Oct 2022 07:18:55 GMT
+# Mon, 17 Oct 2022 20:55:14 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -1208,17 +1208,17 @@ CMD ["apache2-foreground"]
 		Last Modified: Thu, 06 Oct 2022 07:25:45 GMT  
 		Size: 543.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:96de564fa8b81bc3a9a6051ad85123bdee899095021bd94556d4c77f58a9d8cc`  
-		Last Modified: Thu, 06 Oct 2022 07:27:33 GMT  
-		Size: 53.9 MB (53856872 bytes)  
+	-	`sha256:d65b6afabb604a6b4550280f6acd4ddcbb8580ffb9a55e824ad5ecfbafecafb6`  
+		Last Modified: Mon, 17 Oct 2022 21:00:22 GMT  
+		Size: 52.8 MB (52842853 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2675208aeeb67abc644c2db8ed95449a13fa7d25918fb4fadb4e32b00d6bb7a9`  
-		Last Modified: Thu, 06 Oct 2022 07:27:05 GMT  
-		Size: 3.0 KB (2989 bytes)  
+	-	`sha256:b5b934e09687bdf890028557c73811383120b748d7ec61b27af2ac23c39997f2`  
+		Last Modified: Mon, 17 Oct 2022 20:59:54 GMT  
+		Size: 3.0 KB (2986 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fee504f5b650b8be49549c2ff7f3b34a2580d6d1e625f33fd03d1147fba7e53c`  
-		Last Modified: Thu, 06 Oct 2022 07:27:05 GMT  
-		Size: 928.0 B  
+	-	`sha256:26358556536b77d9c4a6bc90c7f7cc432953c0a926dfd016719f4cb9757ae673`  
+		Last Modified: Mon, 17 Oct 2022 20:59:54 GMT  
+		Size: 931.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `friendica:latest` - linux; ppc64le
