@@ -1,10 +1,10 @@
-# `sonarqube:9.6.1-community`
+# `sonarqube:9.7.0-community`
 
 ## Docker Metadata
 
-- Image ID: `sha256:1d0a268344cb114b1528249b8f141e481acb767cfa68d6022d0c2aed5962d617`
-- Created: `2022-10-07T04:08:25.991636893Z`
-- Virtual Size: ~ 534.31 Mb  
+- Image ID: `sha256:e772d58ff6ae904f7c12fb3c4dc52bf9c96ffa598d78030859d2d40545bd09b0`
+- Created: `2022-10-17T22:20:38.74751577Z`
+- Virtual Size: ~ 540.33 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/sonarqube/bin/run.sh"]`
@@ -16,7 +16,7 @@
   - `LC_ALL=en_US.UTF-8`
   - `JAVA_HOME=/usr/lib/jvm/java-11-openjdk`
   - `SONARQUBE_HOME=/opt/sonarqube`
-  - `SONAR_VERSION=9.6.1.59531`
+  - `SONAR_VERSION=9.7.0.61563`
   - `SQ_DATA_DIR=/opt/sonarqube/data`
   - `SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions`
   - `SQ_LOGS_DIR=/opt/sonarqube/logs`
@@ -537,16 +537,16 @@ GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
 ### `apk` package: `libx11`
 
 ```console
-libx11-1.7.2-r0 description:
+libx11-1.7.3.1-r0 description:
 X11 client-side library
 
-libx11-1.7.2-r0 webpage:
+libx11-1.7.3.1-r0 webpage:
 http://xorg.freedesktop.org/
 
-libx11-1.7.2-r0 installed size:
-3240 KiB
+libx11-1.7.3.1-r0 installed size:
+3244 KiB
 
-libx11-1.7.2-r0 license:
+libx11-1.7.3.1-r0 license:
 custom:XFREE86
 
 ```
