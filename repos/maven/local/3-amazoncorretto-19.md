@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ab8571cfb3829dfb3958c4d126136f15a09228bf72f919c74f12964e85f84811`
-- Created: `2022-09-29T19:28:09.294901417Z`
-- Virtual Size: ~ 499.39 Mb  
+- Image ID: `sha256:7d5c8d23180789548e522fb44bbbc6381e30e90b3d95c070387c9ff7d57d1a7c`
+- Created: `2022-10-19T00:11:35.105705335Z`
+- Virtual Size: ~ 499.84 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/mvn-entrypoint.sh"]`
@@ -404,7 +404,7 @@ $ dnf --quiet download --source --url info-5.1-5.amzn2
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/39fb7a9eb158b0644e63823ed759d4be80a96355d53d365e794918064957c219/../../../../../blobstore/968c079ef8a8a2efee76ff59cd99e06dd242b8813960171d0f5c23f4a6eb0bb2/texinfo-5.1-5.amzn2.src.rpm
 ```
 
-### `rpm` package: `java-19-amazon-corretto-devel-19.0.0.36-1.x86_64`
+### `rpm` package: `java-19-amazon-corretto-devel-19.0.1.10-1.x86_64`
 
 Licenses (from `rpm --query`): ASL 1.1 and ASL 2.0 and BSD and BSD with advertising and GPL+ and GPLv2 and GPLv2 with exceptions and IJG and LGPLv2+ and MIT and MPLv2.0 and Public Domain and W3C and zlib and ISC and FTL and RSA.
 
