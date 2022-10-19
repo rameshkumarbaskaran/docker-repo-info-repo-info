@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d4bb55bcff9d691a979419279eca572d6d5c47f4418cca9865decb671666717b`
-- Created: `2022-10-08T00:07:25.147327274Z`
-- Virtual Size: ~ 493.30 Mb  
+- Image ID: `sha256:a97ca387e8d2d3af01a3c29929e1023663337bced6ca2749504824bfd48ce04b`
+- Created: `2022-10-19T00:19:02.965226301Z`
+- Virtual Size: ~ 495.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -408,7 +408,7 @@ $ dnf --quiet download --source --url info-5.1-5.amzn2
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/39fb7a9eb158b0644e63823ed759d4be80a96355d53d365e794918064957c219/../../../../../blobstore/968c079ef8a8a2efee76ff59cd99e06dd242b8813960171d0f5c23f4a6eb0bb2/texinfo-5.1-5.amzn2.src.rpm
 ```
 
-### `rpm` package: `java-17-amazon-corretto-devel-17.0.4.9-1.x86_64`
+### `rpm` package: `java-17-amazon-corretto-devel-17.0.5.8-1.x86_64`
 
 Licenses (from `rpm --query`): ASL 1.1 and ASL 2.0 and BSD and BSD with advertising and GPL+ and GPLv2 and GPLv2 with exceptions and IJG and LGPLv2+ and MIT and MPLv2.0 and Public Domain and W3C and zlib and ISC and FTL and RSA.
 
@@ -733,15 +733,15 @@ $ dnf --quiet download --source --url libverto-0.2.5-4.amzn2.0.2
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/39fb7a9eb158b0644e63823ed759d4be80a96355d53d365e794918064957c219/../../../../../blobstore/23eb8faf40e93c9ecbfeccc868d2e42b65bde82f92e1af0b0e9e17c387f1b049/libverto-0.2.5-4.amzn2.0.2.src.rpm
 ```
 
-### `rpm` package: `libxml2-2.9.1-6.amzn2.5.5.x86_64`
+### `rpm` package: `libxml2-2.9.1-6.amzn2.5.6.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url libxml2-2.9.1-6.amzn2.5.5
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/39fb7a9eb158b0644e63823ed759d4be80a96355d53d365e794918064957c219/../../../../../blobstore/8aa303717ea7a71620a1a3da5350538b5e300ee5ec2ca7b111b315e75bea09af/libxml2-2.9.1-6.amzn2.5.5.src.rpm
+$ dnf --quiet download --source --url libxml2-2.9.1-6.amzn2.5.6
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/39fb7a9eb158b0644e63823ed759d4be80a96355d53d365e794918064957c219/../../../../../blobstore/79e607f1b320f6a1badfdc3879024bfe5f234146d84b771139da7a8a13f60e79/libxml2-2.9.1-6.amzn2.5.6.src.rpm
 ```
 
 ### `rpm` package: `lua-5.1.4-15.amzn2.0.2.x86_64`
@@ -1272,13 +1272,13 @@ $ dnf --quiet download --source --url yum-plugin-priorities-1.1.31-46.amzn2.0.1.
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/39fb7a9eb158b0644e63823ed759d4be80a96355d53d365e794918064957c219/../../../../../blobstore/74e03e38d661b26d57dc3fcbd58a66e736b5e8979ccf0493149d0add45dd0416/yum-utils-1.1.31-46.amzn2.0.1.src.rpm
 ```
 
-### `rpm` package: `zlib-1.2.7-19.amzn2.0.1.x86_64`
+### `rpm` package: `zlib-1.2.7-19.amzn2.0.2.x86_64`
 
 Licenses (from `rpm --query`): zlib and Boost
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url zlib-1.2.7-19.amzn2.0.1
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/39fb7a9eb158b0644e63823ed759d4be80a96355d53d365e794918064957c219/../../../../../blobstore/00d232efacdb572acde00741e94d309b870f3839d33d9cc5b331e5ea54eb5a56/zlib-1.2.7-19.amzn2.0.1.src.rpm
+$ dnf --quiet download --source --url zlib-1.2.7-19.amzn2.0.2
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/39fb7a9eb158b0644e63823ed759d4be80a96355d53d365e794918064957c219/../../../../../blobstore/c82fee0e17a19d1b365f1bc3ab3a70808d24391c57ef3ab6a2845b5ca1c0e6ed/zlib-1.2.7-19.amzn2.0.2.src.rpm
 ```
