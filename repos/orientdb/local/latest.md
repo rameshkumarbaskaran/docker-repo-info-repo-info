@@ -1,10 +1,10 @@
-# `orientdb:3.2.10`
+# `orientdb:3.2.11`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3ce9a6d8a6a17c80a992c84468378b426181dcb6e07b4220df4b64dcbe70a317`
-- Created: `2022-10-06T05:52:44.717256947Z`
-- Virtual Size: ~ 414.94 Mb  
+- Image ID: `sha256:59b79e5a5abc3d679b1308bbcb28c3b8a9ed510b116d957802cd74ba4f191a0f`
+- Created: `2022-10-19T19:41:51.599297708Z`
+- Virtual Size: ~ 406.44 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["server.sh"]`
@@ -15,10 +15,10 @@
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
   - `JAVA_VERSION=jdk8u345-b01`
-  - `ORIENTDB_VERSION=3.2.10`
-  - `ORIENTDB_DOWNLOAD_MD5=223e34750938a082ec2f901ef9d7d3e4`
-  - `ORIENTDB_DOWNLOAD_SHA1=2079b2d4b1a9a4bcaf9c6c448abd024750a42d46`
-  - `ORIENTDB_DOWNLOAD_URL=https://repo1.maven.org/maven2/com/orientechnologies/orientdb-community/3.2.10/orientdb-community-3.2.10.tar.gz`
+  - `ORIENTDB_VERSION=3.2.11`
+  - `ORIENTDB_DOWNLOAD_MD5=9adfa85decda8fccbc9339e5744ed26e`
+  - `ORIENTDB_DOWNLOAD_SHA1=a4d71b90152dc066424c184dd61ef5d5a37d320e`
+  - `ORIENTDB_DOWNLOAD_URL=https://repo1.maven.org/maven2/com/orientechnologies/orientdb-community/3.2.11/orientdb-community-3.2.11.tar.gz`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -2000,11 +2000,6 @@ Licenses: (parsed from: `/usr/share/doc/zlib1g/copyright`)
 
 - `Zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris zlib=1:1.2.11.dfsg-2ubuntu9.1
-'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg-2ubuntu9.1.dsc' zlib_1.2.11.dfsg-2ubuntu9.1.dsc 2953 SHA512:443edb665eee245314a768ee579e68684078aa3c2cb3295fca1fb8a06bb72b00975efb66d2cf1d14cf820044feba75442080c5a8d4b97ea9a5b2fc942cd43e9c
-'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg.orig.tar.gz' zlib_1.2.11.dfsg.orig.tar.gz 370248 SHA512:92819807c0b8de655021bb2d5d182f9b6b381d3072d8c8dc1df34bbaa25d36bcba140c85f754a43cc466aac65850b7a7366aa0c93e804180e5b255e61d5748de
-'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg-2ubuntu9.1.debian.tar.xz' zlib_1.2.11.dfsg-2ubuntu9.1.debian.tar.xz 59368 SHA512:53c6b7bcc37c1e93ac2ceb33b5db917fd6251dd59f7dd02f2eea77f23f6b6a7a7467d942ae90163b953b970b147b4e3c4dcd5359a19481aeb941f77bec94c974
-```
