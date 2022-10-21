@@ -1,18 +1,18 @@
-# `nginx:1.23.1-alpine-perl`
+# `nginx:1.23.2-alpine-perl`
 
 ## Docker Metadata
 
-- Image ID: `sha256:2d5bb1b3b93a7c23d3a3bbea4f6be55bed86d4a9210b82770c16465a5a1653af`
-- Created: `2022-10-06T23:11:23.04979083Z`
-- Virtual Size: ~ 58.48 Mb  
+- Image ID: `sha256:e9cac061cc445cd57ec49934a9bbc8d73e6791e42f6a2155d7be1c4ae17d8d07`
+- Created: `2022-10-19T18:21:08.388653751Z`
+- Virtual Size: ~ 58.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["nginx","-g","daemon off;"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NGINX_VERSION=1.23.1`
-  - `NJS_VERSION=0.7.6`
+  - `NGINX_VERSION=1.23.2`
+  - `NJS_VERSION=0.7.7`
   - `PKG_RELEASE=1`
 - Labels:
   - `maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>`
@@ -430,16 +430,16 @@ BSD-3-Clause
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.14-r1 description:
+libxml2-2.9.14-r2 description:
 XML parsing library, version 2
 
-libxml2-2.9.14-r1 webpage:
+libxml2-2.9.14-r2 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.14-r1 installed size:
+libxml2-2.9.14-r2 installed size:
 1200 KiB
 
-libxml2-2.9.14-r1 license:
+libxml2-2.9.14-r2 license:
 MIT
 
 ```
@@ -549,16 +549,16 @@ MIT
 ### `apk` package: `nginx`
 
 ```console
-nginx-1.23.1-r1 description:
+nginx-1.23.2-r1 description:
 High performance web server
 
-nginx-1.23.1-r1 webpage:
+nginx-1.23.2-r1 webpage:
 https://nginx.org/
 
-nginx-1.23.1-r1 installed size:
-2592 KiB
+nginx-1.23.2-r1 installed size:
+2604 KiB
 
-nginx-1.23.1-r1 license:
+nginx-1.23.2-r1 license:
 2-clause BSD-like license
 
 ```
@@ -566,16 +566,16 @@ nginx-1.23.1-r1 license:
 ### `apk` package: `nginx-module-geoip`
 
 ```console
-nginx-module-geoip-1.23.1-r1 description:
+nginx-module-geoip-1.23.2-r1 description:
 nginx GeoIP dynamic modules
 
-nginx-module-geoip-1.23.1-r1 webpage:
+nginx-module-geoip-1.23.2-r1 webpage:
 https://nginx.org/
 
-nginx-module-geoip-1.23.1-r1 installed size:
+nginx-module-geoip-1.23.2-r1 installed size:
 116 KiB
 
-nginx-module-geoip-1.23.1-r1 license:
+nginx-module-geoip-1.23.2-r1 license:
 2-clause BSD-like license
 
 ```
@@ -583,16 +583,16 @@ nginx-module-geoip-1.23.1-r1 license:
 ### `apk` package: `nginx-module-image-filter`
 
 ```console
-nginx-module-image-filter-1.23.1-r1 description:
+nginx-module-image-filter-1.23.2-r1 description:
 nginx image filter dynamic module
 
-nginx-module-image-filter-1.23.1-r1 webpage:
+nginx-module-image-filter-1.23.2-r1 webpage:
 https://nginx.org/
 
-nginx-module-image-filter-1.23.1-r1 installed size:
+nginx-module-image-filter-1.23.2-r1 installed size:
 88 KiB
 
-nginx-module-image-filter-1.23.1-r1 license:
+nginx-module-image-filter-1.23.2-r1 license:
 2-clause BSD-like license
 
 ```
@@ -600,16 +600,16 @@ nginx-module-image-filter-1.23.1-r1 license:
 ### `apk` package: `nginx-module-njs`
 
 ```console
-nginx-module-njs-1.23.1.0.7.6-r1 description:
+nginx-module-njs-1.23.2.0.7.7-r1 description:
 nginx njs dynamic modules
 
-nginx-module-njs-1.23.1.0.7.6-r1 webpage:
+nginx-module-njs-1.23.2.0.7.7-r1 webpage:
 https://nginx.org/
 
-nginx-module-njs-1.23.1.0.7.6-r1 installed size:
-3840 KiB
+nginx-module-njs-1.23.2.0.7.7-r1 installed size:
+3912 KiB
 
-nginx-module-njs-1.23.1.0.7.6-r1 license:
+nginx-module-njs-1.23.2.0.7.7-r1 license:
 2-clause BSD-like license
 
 ```
@@ -617,16 +617,16 @@ nginx-module-njs-1.23.1.0.7.6-r1 license:
 ### `apk` package: `nginx-module-perl`
 
 ```console
-nginx-module-perl-1.23.1-r1 description:
+nginx-module-perl-1.23.2-r1 description:
 nginx Perl dynamic module
 
-nginx-module-perl-1.23.1-r1 webpage:
+nginx-module-perl-1.23.2-r1 webpage:
 https://nginx.org/
 
-nginx-module-perl-1.23.1-r1 installed size:
+nginx-module-perl-1.23.2-r1 installed size:
 156 KiB
 
-nginx-module-perl-1.23.1-r1 license:
+nginx-module-perl-1.23.2-r1 license:
 2-clause BSD-like license
 
 ```
@@ -634,16 +634,16 @@ nginx-module-perl-1.23.1-r1 license:
 ### `apk` package: `nginx-module-xslt`
 
 ```console
-nginx-module-xslt-1.23.1-r1 description:
+nginx-module-xslt-1.23.2-r1 description:
 nginx xslt dynamic module
 
-nginx-module-xslt-1.23.1-r1 webpage:
+nginx-module-xslt-1.23.2-r1 webpage:
 https://nginx.org/
 
-nginx-module-xslt-1.23.1-r1 installed size:
+nginx-module-xslt-1.23.2-r1 installed size:
 84 KiB
 
-nginx-module-xslt-1.23.1-r1 license:
+nginx-module-xslt-1.23.2-r1 license:
 2-clause BSD-like license
 
 ```
