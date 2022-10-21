@@ -1,10 +1,10 @@
-# `sonarqube:8.9.9-datacenter-search`
+# `sonarqube:8.9.10-datacenter-search`
 
 ## Docker Metadata
 
-- Image ID: `sha256:515838aba9210bbc0de95f3f1e9f21a7a4387e0a4156924e4dd6542c06e4f1bd`
-- Created: `2022-10-07T04:07:59.059724138Z`
-- Virtual Size: ~ 609.40 Mb  
+- Image ID: `sha256:0a596a78ea4a5cac76ae68bd78d9a5408ca9af29fbdb07bd4d93f0743ad16885`
+- Created: `2022-10-18T19:32:11.134624655Z`
+- Virtual Size: ~ 600.41 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["bin/run.sh"]`
@@ -17,7 +17,7 @@
   - `LC_ALL=en_US.UTF-8`
   - `JAVA_HOME=/opt/java/openjdk`
   - `SONARQUBE_HOME=/opt/sonarqube`
-  - `SONAR_VERSION=8.9.9.56886`
+  - `SONAR_VERSION=8.9.10.61524`
   - `SQ_DATA_DIR=/opt/sonarqube/data`
   - `SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions`
   - `SQ_LOGS_DIR=/opt/sonarqube/logs`
