@@ -22,7 +22,7 @@
 ## `matomo:4`
 
 ```console
-$ docker pull matomo@sha256:81dba5723e646809b7b236cd86efddb6f7b36c271ed766e6a01c8e1c58c67353
+$ docker pull matomo@sha256:63558ccb613d65e4c8ee3e483c276057e733314d44d358b97ca67adbaa1b7cee
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -385,14 +385,14 @@ CMD ["apache2-foreground"]
 ### `matomo:4` - linux; arm variant v7
 
 ```console
-$ docker pull matomo@sha256:d50caf9affb23a6bcb26586f326ee10fb25f9484d709d1f508a3ae9bf60d6ebe
+$ docker pull matomo@sha256:5044c0b47a6bfeb8242572901d2650067556c52a503df8d068ffd33b57bc3338
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **154.5 MB (154521435 bytes)**  
+-	Total Size: **154.5 MB (154521217 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:968531cc2bfd0b2b053fabcee72d52e32cce91ffa7176ff8e341131f20cc43f5`
+-	Image ID: `sha256:549dc3c2c070254585c44c7a7ff3cc95eb0403e2c0b45a3b01fd7fa962bb0fbd`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -457,27 +457,27 @@ WORKDIR /var/www/html
 EXPOSE 80
 # Wed, 05 Oct 2022 19:27:04 GMT
 CMD ["apache2-foreground"]
-# Thu, 06 Oct 2022 20:30:24 GMT
+# Tue, 25 Oct 2022 12:43:18 GMT
 LABEL maintainer=pierre@piwik.org
-# Thu, 06 Oct 2022 20:30:24 GMT
+# Tue, 25 Oct 2022 12:43:18 GMT
 ENV PHP_MEMORY_LIMIT=256M
-# Thu, 06 Oct 2022 20:32:19 GMT
+# Tue, 25 Oct 2022 12:44:37 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libldap2-dev 		libpng-dev 		libzip-dev 		procps 	; 		debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Thu, 06 Oct 2022 20:32:20 GMT
+# Tue, 25 Oct 2022 12:44:38 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 19 Oct 2022 19:59:53 GMT
-ENV MATOMO_VERSION=4.12.1
-# Wed, 19 Oct 2022 20:00:11 GMT
+# Tue, 25 Oct 2022 12:44:38 GMT
+ENV MATOMO_VERSION=4.12.2
+# Tue, 25 Oct 2022 12:45:18 GMT
 RUN set -ex; 	fetchDeps=" 		dirmngr 		gnupg 	"; 	apt-get update; 	apt-get install -y --no-install-recommends 		$fetchDeps 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
-# Wed, 19 Oct 2022 20:00:11 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 COPY file:ccb778224a0e1f6742127aba2860c245adf24b73ca277e7260c4789883751ccb in /entrypoint.sh 
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 VOLUME [/var/www/html]
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:19 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -534,25 +534,25 @@ CMD ["apache2-foreground"]
 		Last Modified: Wed, 05 Oct 2022 21:29:04 GMT  
 		Size: 891.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20cb46c957024efb0e762c11be0aaa5b53bb7da2ed95db8e8c32e881e01f8abd`  
-		Last Modified: Thu, 06 Oct 2022 20:37:53 GMT  
-		Size: 2.7 MB (2681580 bytes)  
+	-	`sha256:206421f4938e1e8a834ad67cca7b25f8cb016716cd99a80b124279fb5e382aea`  
+		Last Modified: Tue, 25 Oct 2022 12:51:08 GMT  
+		Size: 2.7 MB (2681411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b48b47c08f1da8024a9eb80ed1fc96c8f6aacd2217d8fec16a83bfed102056af`  
-		Last Modified: Thu, 06 Oct 2022 20:37:51 GMT  
-		Size: 326.0 B  
+	-	`sha256:bf8cc4e6606e8674cd6e4ca0412f6f1c3d233bd42b75804382a29f4ff5802b50`  
+		Last Modified: Tue, 25 Oct 2022 12:51:07 GMT  
+		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef08fd0226d8924bcb3cde520d1dbfe748c889293abd6728d673beef27dcf985`  
-		Last Modified: Wed, 19 Oct 2022 20:01:50 GMT  
-		Size: 17.4 MB (17391757 bytes)  
+	-	`sha256:e985cf8279b85575ac4ef7416f1cd057aca5aa5406255f942fa379d5d9a83295`  
+		Last Modified: Tue, 25 Oct 2022 12:51:12 GMT  
+		Size: 17.4 MB (17391706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0373ec9a81762d3ba017a6a8eb37781be2d873bf43bea78e627529e4d35c8c27`  
-		Last Modified: Wed, 19 Oct 2022 20:01:43 GMT  
-		Size: 342.0 B  
+	-	`sha256:40c23c4b7ad465f436ff94390d79d6fc787d32589159c0e6d5949ffbe3db986a`  
+		Last Modified: Tue, 25 Oct 2022 12:51:07 GMT  
+		Size: 343.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:03c00ee7b40135ea6becb27fc6961ab1b2bf6b8f19e0666bffdbb928dbac3109`  
-		Last Modified: Wed, 19 Oct 2022 20:01:43 GMT  
-		Size: 633.0 B  
+	-	`sha256:bca3109ed43d6bb0aa358f3555fa96bdc06656d8d901b0132b1fc25fa92d40fd`  
+		Last Modified: Tue, 25 Oct 2022 12:51:08 GMT  
+		Size: 632.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `matomo:4` - linux; arm64 variant v8
@@ -1423,7 +1423,7 @@ CMD ["apache2-foreground"]
 ## `matomo:4-apache`
 
 ```console
-$ docker pull matomo@sha256:81dba5723e646809b7b236cd86efddb6f7b36c271ed766e6a01c8e1c58c67353
+$ docker pull matomo@sha256:63558ccb613d65e4c8ee3e483c276057e733314d44d358b97ca67adbaa1b7cee
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1786,14 +1786,14 @@ CMD ["apache2-foreground"]
 ### `matomo:4-apache` - linux; arm variant v7
 
 ```console
-$ docker pull matomo@sha256:d50caf9affb23a6bcb26586f326ee10fb25f9484d709d1f508a3ae9bf60d6ebe
+$ docker pull matomo@sha256:5044c0b47a6bfeb8242572901d2650067556c52a503df8d068ffd33b57bc3338
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **154.5 MB (154521435 bytes)**  
+-	Total Size: **154.5 MB (154521217 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:968531cc2bfd0b2b053fabcee72d52e32cce91ffa7176ff8e341131f20cc43f5`
+-	Image ID: `sha256:549dc3c2c070254585c44c7a7ff3cc95eb0403e2c0b45a3b01fd7fa962bb0fbd`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -1858,27 +1858,27 @@ WORKDIR /var/www/html
 EXPOSE 80
 # Wed, 05 Oct 2022 19:27:04 GMT
 CMD ["apache2-foreground"]
-# Thu, 06 Oct 2022 20:30:24 GMT
+# Tue, 25 Oct 2022 12:43:18 GMT
 LABEL maintainer=pierre@piwik.org
-# Thu, 06 Oct 2022 20:30:24 GMT
+# Tue, 25 Oct 2022 12:43:18 GMT
 ENV PHP_MEMORY_LIMIT=256M
-# Thu, 06 Oct 2022 20:32:19 GMT
+# Tue, 25 Oct 2022 12:44:37 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libldap2-dev 		libpng-dev 		libzip-dev 		procps 	; 		debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Thu, 06 Oct 2022 20:32:20 GMT
+# Tue, 25 Oct 2022 12:44:38 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 19 Oct 2022 19:59:53 GMT
-ENV MATOMO_VERSION=4.12.1
-# Wed, 19 Oct 2022 20:00:11 GMT
+# Tue, 25 Oct 2022 12:44:38 GMT
+ENV MATOMO_VERSION=4.12.2
+# Tue, 25 Oct 2022 12:45:18 GMT
 RUN set -ex; 	fetchDeps=" 		dirmngr 		gnupg 	"; 	apt-get update; 	apt-get install -y --no-install-recommends 		$fetchDeps 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
-# Wed, 19 Oct 2022 20:00:11 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 COPY file:ccb778224a0e1f6742127aba2860c245adf24b73ca277e7260c4789883751ccb in /entrypoint.sh 
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 VOLUME [/var/www/html]
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:19 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -1935,25 +1935,25 @@ CMD ["apache2-foreground"]
 		Last Modified: Wed, 05 Oct 2022 21:29:04 GMT  
 		Size: 891.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20cb46c957024efb0e762c11be0aaa5b53bb7da2ed95db8e8c32e881e01f8abd`  
-		Last Modified: Thu, 06 Oct 2022 20:37:53 GMT  
-		Size: 2.7 MB (2681580 bytes)  
+	-	`sha256:206421f4938e1e8a834ad67cca7b25f8cb016716cd99a80b124279fb5e382aea`  
+		Last Modified: Tue, 25 Oct 2022 12:51:08 GMT  
+		Size: 2.7 MB (2681411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b48b47c08f1da8024a9eb80ed1fc96c8f6aacd2217d8fec16a83bfed102056af`  
-		Last Modified: Thu, 06 Oct 2022 20:37:51 GMT  
-		Size: 326.0 B  
+	-	`sha256:bf8cc4e6606e8674cd6e4ca0412f6f1c3d233bd42b75804382a29f4ff5802b50`  
+		Last Modified: Tue, 25 Oct 2022 12:51:07 GMT  
+		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef08fd0226d8924bcb3cde520d1dbfe748c889293abd6728d673beef27dcf985`  
-		Last Modified: Wed, 19 Oct 2022 20:01:50 GMT  
-		Size: 17.4 MB (17391757 bytes)  
+	-	`sha256:e985cf8279b85575ac4ef7416f1cd057aca5aa5406255f942fa379d5d9a83295`  
+		Last Modified: Tue, 25 Oct 2022 12:51:12 GMT  
+		Size: 17.4 MB (17391706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0373ec9a81762d3ba017a6a8eb37781be2d873bf43bea78e627529e4d35c8c27`  
-		Last Modified: Wed, 19 Oct 2022 20:01:43 GMT  
-		Size: 342.0 B  
+	-	`sha256:40c23c4b7ad465f436ff94390d79d6fc787d32589159c0e6d5949ffbe3db986a`  
+		Last Modified: Tue, 25 Oct 2022 12:51:07 GMT  
+		Size: 343.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:03c00ee7b40135ea6becb27fc6961ab1b2bf6b8f19e0666bffdbb928dbac3109`  
-		Last Modified: Wed, 19 Oct 2022 20:01:43 GMT  
-		Size: 633.0 B  
+	-	`sha256:bca3109ed43d6bb0aa358f3555fa96bdc06656d8d901b0132b1fc25fa92d40fd`  
+		Last Modified: Tue, 25 Oct 2022 12:51:08 GMT  
+		Size: 632.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `matomo:4-apache` - linux; arm64 variant v8
@@ -2824,7 +2824,7 @@ CMD ["apache2-foreground"]
 ## `matomo:4-fpm`
 
 ```console
-$ docker pull matomo@sha256:57a085837eb624d9312d3be6838516e31e603c530bcfd5b2c22dfe3383b14465
+$ docker pull matomo@sha256:7a2f1fde851f59c191926b5e665ede0aefcd8eeee3cc47e6e2e8b3d69db4d808
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3143,14 +3143,14 @@ CMD ["php-fpm"]
 ### `matomo:4-fpm` - linux; arm variant v7
 
 ```console
-$ docker pull matomo@sha256:7423fb3921df1bf783e67db2c07ac7d4ca064129e15d8a643aeb6fc83e6eabb6
+$ docker pull matomo@sha256:cb0cce0e6616d855959b6c27c745b3af49ce3c9a71e12264c2fb5e1c849ab839
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **150.9 MB (150909401 bytes)**  
+-	Total Size: **150.9 MB (150909245 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4f007aac67f398a6470cc268721b66e4f00caeef017940b8406eb917f93311dd`
+-	Image ID: `sha256:c0f5ceb6d28ab0cde2c5b0d5964481d428198fdae9af92035899cf83d1400be6`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -3205,27 +3205,27 @@ STOPSIGNAL SIGQUIT
 EXPOSE 9000
 # Wed, 05 Oct 2022 19:36:20 GMT
 CMD ["php-fpm"]
-# Thu, 06 Oct 2022 20:32:48 GMT
+# Tue, 25 Oct 2022 12:45:29 GMT
 LABEL maintainer=pierre@piwik.org
-# Thu, 06 Oct 2022 20:32:48 GMT
+# Tue, 25 Oct 2022 12:45:29 GMT
 ENV PHP_MEMORY_LIMIT=256M
-# Thu, 06 Oct 2022 20:34:20 GMT
+# Tue, 25 Oct 2022 12:46:54 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libldap2-dev 		libpng-dev 		libzip-dev 		procps 	; 		debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Thu, 06 Oct 2022 20:34:20 GMT
+# Tue, 25 Oct 2022 12:46:55 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 19 Oct 2022 20:00:21 GMT
-ENV MATOMO_VERSION=4.12.1
-# Wed, 19 Oct 2022 20:00:39 GMT
+# Tue, 25 Oct 2022 12:46:55 GMT
+ENV MATOMO_VERSION=4.12.2
+# Tue, 25 Oct 2022 12:47:38 GMT
 RUN set -ex; 	fetchDeps=" 		dirmngr 		gnupg 	"; 	apt-get update; 	apt-get install -y --no-install-recommends 		$fetchDeps 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
-# Wed, 19 Oct 2022 20:00:39 GMT
+# Tue, 25 Oct 2022 12:47:39 GMT
 COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
-# Wed, 19 Oct 2022 20:00:39 GMT
+# Tue, 25 Oct 2022 12:47:39 GMT
 COPY file:ccb778224a0e1f6742127aba2860c245adf24b73ca277e7260c4789883751ccb in /entrypoint.sh 
-# Wed, 19 Oct 2022 20:00:40 GMT
+# Tue, 25 Oct 2022 12:47:40 GMT
 VOLUME [/var/www/html]
-# Wed, 19 Oct 2022 20:00:40 GMT
+# Tue, 25 Oct 2022 12:47:40 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 19 Oct 2022 20:00:40 GMT
+# Tue, 25 Oct 2022 12:47:40 GMT
 CMD ["php-fpm"]
 ```
 
@@ -3270,25 +3270,25 @@ CMD ["php-fpm"]
 		Last Modified: Wed, 05 Oct 2022 21:29:28 GMT  
 		Size: 8.6 KB (8572 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23ab67d351f9ffd452a50215715644c9aad5784ebdcd164397e5550e2df68d89`  
-		Last Modified: Thu, 06 Oct 2022 20:38:37 GMT  
-		Size: 2.7 MB (2656436 bytes)  
+	-	`sha256:e887030b55c8809709e9a75d90e64c31f00fc9710bb829aee95a8a8cfac6cc9f`  
+		Last Modified: Tue, 25 Oct 2022 12:51:52 GMT  
+		Size: 2.7 MB (2656292 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:00f953be789eac43d0d7d58d077d3b79d3172867b7cd4411a1a61f4ff2596edb`  
-		Last Modified: Thu, 06 Oct 2022 20:38:36 GMT  
+	-	`sha256:7eddd960ceb934ca8a8f5fadc48f360efffcbfcd33a54b437be5765cdd6364f0`  
+		Last Modified: Tue, 25 Oct 2022 12:51:51 GMT  
 		Size: 330.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:643f3aade991877b5ed04bc8b0a3efa5fc0667770d2fc1326614b30cfd390cf7`  
-		Last Modified: Wed, 19 Oct 2022 20:02:36 GMT  
-		Size: 17.4 MB (17366287 bytes)  
+	-	`sha256:137a892a7cc731389c20d5bb52d697f1fa417507d1df5b6550043a630313223b`  
+		Last Modified: Tue, 25 Oct 2022 12:51:56 GMT  
+		Size: 17.4 MB (17366275 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:47d2d4416ee8f0d8d54d21bfa96123a062986650eb547bbc9f9bbba15edc96ef`  
-		Last Modified: Wed, 19 Oct 2022 20:02:31 GMT  
-		Size: 345.0 B  
+	-	`sha256:e64fd2aba844dbe1a61e637d4ff825f9b519bdfb37bdbac0e0a24ba741c213fa`  
+		Last Modified: Tue, 25 Oct 2022 12:51:51 GMT  
+		Size: 347.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2efa44360f923ad547c704bd4b4597d00ee2531eb0d0b2ce64d95e6d56d34da`  
-		Last Modified: Wed, 19 Oct 2022 20:02:31 GMT  
-		Size: 633.0 B  
+	-	`sha256:bf65bd3b965a914783872f49bc64501cbd9fc89a1945dcfd1947a7bfc3896554`  
+		Last Modified: Tue, 25 Oct 2022 12:51:51 GMT  
+		Size: 631.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `matomo:4-fpm` - linux; arm64 variant v8
@@ -4049,7 +4049,7 @@ CMD ["php-fpm"]
 ## `matomo:4-fpm-alpine`
 
 ```console
-$ docker pull matomo@sha256:ce003a780488ce55ce77f5e384067721901a065a30d8942b156bb4440ae9dfc7
+$ docker pull matomo@sha256:edd9308aa608758c8b008bdcecef84606ffb739ce3cdd828e7964f395922ef4a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4367,14 +4367,14 @@ CMD ["php-fpm"]
 ### `matomo:4-fpm-alpine` - linux; arm variant v7
 
 ```console
-$ docker pull matomo@sha256:7f5ad5353cfeeb260e1cd357a9850f7dd1f18846cec0e9af324d9b51772526a6
+$ docker pull matomo@sha256:60c7bc1e1662098a11d1d1f57685182e29d03ac747a79267c0e396f0b08bcd54
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **47.8 MB (47810443 bytes)**  
+-	Total Size: **47.8 MB (47814105 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a960260a3227aac9c09a4ead133a8d02c7aa4ae1149a79cfb8b0ca13c88f2f26`
+-	Image ID: `sha256:e09da204cbefc9a5281b06b184bc8c88d8d3d02d5af0815cff4a5c312537b7d5`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -4429,27 +4429,27 @@ STOPSIGNAL SIGQUIT
 EXPOSE 9000
 # Sat, 08 Oct 2022 00:50:49 GMT
 CMD ["php-fpm"]
-# Sat, 08 Oct 2022 04:10:37 GMT
+# Tue, 25 Oct 2022 12:47:57 GMT
 LABEL maintainer=pierre@piwik.org
-# Sat, 08 Oct 2022 04:10:38 GMT
+# Tue, 25 Oct 2022 12:47:57 GMT
 ENV PHP_MEMORY_LIMIT=256M
-# Sat, 08 Oct 2022 04:12:25 GMT
+# Tue, 25 Oct 2022 12:49:36 GMT
 RUN set -ex; 		apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		autoconf 		freetype-dev 		icu-dev 		libjpeg-turbo-dev 		libpng-dev 		libzip-dev 		openldap-dev 		pcre-dev 		procps 	; 		docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --virtual .matomo-phpext-rundeps $runDeps; 	apk del .build-deps
-# Sat, 08 Oct 2022 04:12:25 GMT
+# Tue, 25 Oct 2022 12:49:38 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 19 Oct 2022 20:00:46 GMT
-ENV MATOMO_VERSION=4.12.1
-# Wed, 19 Oct 2022 20:00:56 GMT
+# Tue, 25 Oct 2022 12:49:38 GMT
+ENV MATOMO_VERSION=4.12.2
+# Tue, 25 Oct 2022 12:50:04 GMT
 RUN set -ex; 	apk add --no-cache --virtual .fetch-deps 		gnupg 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apk del .fetch-deps
-# Wed, 19 Oct 2022 20:00:57 GMT
+# Tue, 25 Oct 2022 12:50:05 GMT
 COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
-# Wed, 19 Oct 2022 20:00:57 GMT
+# Tue, 25 Oct 2022 12:50:05 GMT
 COPY file:ccb778224a0e1f6742127aba2860c245adf24b73ca277e7260c4789883751ccb in /entrypoint.sh 
-# Wed, 19 Oct 2022 20:00:57 GMT
+# Tue, 25 Oct 2022 12:50:06 GMT
 VOLUME [/var/www/html]
-# Wed, 19 Oct 2022 20:00:57 GMT
+# Tue, 25 Oct 2022 12:50:06 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 19 Oct 2022 20:00:57 GMT
+# Tue, 25 Oct 2022 12:50:06 GMT
 CMD ["php-fpm"]
 ```
 
@@ -4494,25 +4494,25 @@ CMD ["php-fpm"]
 		Last Modified: Sat, 08 Oct 2022 02:08:59 GMT  
 		Size: 8.6 KB (8575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f76d6c50df1f752ac370c06c1b8601383ccf207bf5fc9f2eb5c771c268447a3a`  
-		Last Modified: Sat, 08 Oct 2022 04:14:11 GMT  
-		Size: 5.2 MB (5247131 bytes)  
+	-	`sha256:04947607599d59aebb4bbd01b5faad9a6c5db4329499df7c724655416985f913`  
+		Last Modified: Tue, 25 Oct 2022 12:52:18 GMT  
+		Size: 5.3 MB (5250898 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:340267f776381329ad845afe8f77bea990c875e0e18a363bd82780ef1a9abb88`  
-		Last Modified: Sat, 08 Oct 2022 04:14:10 GMT  
-		Size: 327.0 B  
+	-	`sha256:16b841880c8f4442fb692ed559b20dd44f4909cc891bbdda192dc3497b5484a0`  
+		Last Modified: Tue, 25 Oct 2022 12:52:17 GMT  
+		Size: 325.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:896ed944c654010438402d4855c5e9befb5ee40e6df7a4af1a27e7a745234950`  
-		Last Modified: Wed, 19 Oct 2022 20:03:00 GMT  
-		Size: 17.1 MB (17063015 bytes)  
+	-	`sha256:92875b6e4ef143d57eca90c0f89b8ee606163e1670793af71b53620328f55405`  
+		Last Modified: Tue, 25 Oct 2022 12:52:22 GMT  
+		Size: 17.1 MB (17062917 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:732f15109ded32aa298e49eafce6cce29cc64cd086cb1480ad0eeaee9cbb8e8c`  
-		Last Modified: Wed, 19 Oct 2022 20:02:56 GMT  
-		Size: 343.0 B  
+	-	`sha256:78cc510ffc99b468a0d8b22e6ca4cd92d913fd6baa3cbd9e8a83698a04856576`  
+		Last Modified: Tue, 25 Oct 2022 12:52:17 GMT  
+		Size: 339.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:87a446182fc55c36c440eb7cf6cc6f81cbd9f5d85a0a729b56b1a6dbde595c8b`  
-		Last Modified: Wed, 19 Oct 2022 20:02:56 GMT  
-		Size: 632.0 B  
+	-	`sha256:dfc57230f787a0a037e3361c82be04b6b643db2859372d4464c2589454607c2a`  
+		Last Modified: Tue, 25 Oct 2022 12:52:17 GMT  
+		Size: 631.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `matomo:4-fpm-alpine` - linux; arm64 variant v8
@@ -5122,7 +5122,7 @@ CMD ["php-fpm"]
 ## `matomo:4.12`
 
 ```console
-$ docker pull matomo@sha256:81dba5723e646809b7b236cd86efddb6f7b36c271ed766e6a01c8e1c58c67353
+$ docker pull matomo@sha256:63558ccb613d65e4c8ee3e483c276057e733314d44d358b97ca67adbaa1b7cee
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5485,14 +5485,14 @@ CMD ["apache2-foreground"]
 ### `matomo:4.12` - linux; arm variant v7
 
 ```console
-$ docker pull matomo@sha256:d50caf9affb23a6bcb26586f326ee10fb25f9484d709d1f508a3ae9bf60d6ebe
+$ docker pull matomo@sha256:5044c0b47a6bfeb8242572901d2650067556c52a503df8d068ffd33b57bc3338
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **154.5 MB (154521435 bytes)**  
+-	Total Size: **154.5 MB (154521217 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:968531cc2bfd0b2b053fabcee72d52e32cce91ffa7176ff8e341131f20cc43f5`
+-	Image ID: `sha256:549dc3c2c070254585c44c7a7ff3cc95eb0403e2c0b45a3b01fd7fa962bb0fbd`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -5557,27 +5557,27 @@ WORKDIR /var/www/html
 EXPOSE 80
 # Wed, 05 Oct 2022 19:27:04 GMT
 CMD ["apache2-foreground"]
-# Thu, 06 Oct 2022 20:30:24 GMT
+# Tue, 25 Oct 2022 12:43:18 GMT
 LABEL maintainer=pierre@piwik.org
-# Thu, 06 Oct 2022 20:30:24 GMT
+# Tue, 25 Oct 2022 12:43:18 GMT
 ENV PHP_MEMORY_LIMIT=256M
-# Thu, 06 Oct 2022 20:32:19 GMT
+# Tue, 25 Oct 2022 12:44:37 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libldap2-dev 		libpng-dev 		libzip-dev 		procps 	; 		debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Thu, 06 Oct 2022 20:32:20 GMT
+# Tue, 25 Oct 2022 12:44:38 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 19 Oct 2022 19:59:53 GMT
-ENV MATOMO_VERSION=4.12.1
-# Wed, 19 Oct 2022 20:00:11 GMT
+# Tue, 25 Oct 2022 12:44:38 GMT
+ENV MATOMO_VERSION=4.12.2
+# Tue, 25 Oct 2022 12:45:18 GMT
 RUN set -ex; 	fetchDeps=" 		dirmngr 		gnupg 	"; 	apt-get update; 	apt-get install -y --no-install-recommends 		$fetchDeps 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
-# Wed, 19 Oct 2022 20:00:11 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 COPY file:ccb778224a0e1f6742127aba2860c245adf24b73ca277e7260c4789883751ccb in /entrypoint.sh 
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 VOLUME [/var/www/html]
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:19 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -5634,25 +5634,25 @@ CMD ["apache2-foreground"]
 		Last Modified: Wed, 05 Oct 2022 21:29:04 GMT  
 		Size: 891.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20cb46c957024efb0e762c11be0aaa5b53bb7da2ed95db8e8c32e881e01f8abd`  
-		Last Modified: Thu, 06 Oct 2022 20:37:53 GMT  
-		Size: 2.7 MB (2681580 bytes)  
+	-	`sha256:206421f4938e1e8a834ad67cca7b25f8cb016716cd99a80b124279fb5e382aea`  
+		Last Modified: Tue, 25 Oct 2022 12:51:08 GMT  
+		Size: 2.7 MB (2681411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b48b47c08f1da8024a9eb80ed1fc96c8f6aacd2217d8fec16a83bfed102056af`  
-		Last Modified: Thu, 06 Oct 2022 20:37:51 GMT  
-		Size: 326.0 B  
+	-	`sha256:bf8cc4e6606e8674cd6e4ca0412f6f1c3d233bd42b75804382a29f4ff5802b50`  
+		Last Modified: Tue, 25 Oct 2022 12:51:07 GMT  
+		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef08fd0226d8924bcb3cde520d1dbfe748c889293abd6728d673beef27dcf985`  
-		Last Modified: Wed, 19 Oct 2022 20:01:50 GMT  
-		Size: 17.4 MB (17391757 bytes)  
+	-	`sha256:e985cf8279b85575ac4ef7416f1cd057aca5aa5406255f942fa379d5d9a83295`  
+		Last Modified: Tue, 25 Oct 2022 12:51:12 GMT  
+		Size: 17.4 MB (17391706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0373ec9a81762d3ba017a6a8eb37781be2d873bf43bea78e627529e4d35c8c27`  
-		Last Modified: Wed, 19 Oct 2022 20:01:43 GMT  
-		Size: 342.0 B  
+	-	`sha256:40c23c4b7ad465f436ff94390d79d6fc787d32589159c0e6d5949ffbe3db986a`  
+		Last Modified: Tue, 25 Oct 2022 12:51:07 GMT  
+		Size: 343.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:03c00ee7b40135ea6becb27fc6961ab1b2bf6b8f19e0666bffdbb928dbac3109`  
-		Last Modified: Wed, 19 Oct 2022 20:01:43 GMT  
-		Size: 633.0 B  
+	-	`sha256:bca3109ed43d6bb0aa358f3555fa96bdc06656d8d901b0132b1fc25fa92d40fd`  
+		Last Modified: Tue, 25 Oct 2022 12:51:08 GMT  
+		Size: 632.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `matomo:4.12` - linux; arm64 variant v8
@@ -6523,7 +6523,7 @@ CMD ["apache2-foreground"]
 ## `matomo:4.12-apache`
 
 ```console
-$ docker pull matomo@sha256:81dba5723e646809b7b236cd86efddb6f7b36c271ed766e6a01c8e1c58c67353
+$ docker pull matomo@sha256:63558ccb613d65e4c8ee3e483c276057e733314d44d358b97ca67adbaa1b7cee
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6886,14 +6886,14 @@ CMD ["apache2-foreground"]
 ### `matomo:4.12-apache` - linux; arm variant v7
 
 ```console
-$ docker pull matomo@sha256:d50caf9affb23a6bcb26586f326ee10fb25f9484d709d1f508a3ae9bf60d6ebe
+$ docker pull matomo@sha256:5044c0b47a6bfeb8242572901d2650067556c52a503df8d068ffd33b57bc3338
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **154.5 MB (154521435 bytes)**  
+-	Total Size: **154.5 MB (154521217 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:968531cc2bfd0b2b053fabcee72d52e32cce91ffa7176ff8e341131f20cc43f5`
+-	Image ID: `sha256:549dc3c2c070254585c44c7a7ff3cc95eb0403e2c0b45a3b01fd7fa962bb0fbd`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -6958,27 +6958,27 @@ WORKDIR /var/www/html
 EXPOSE 80
 # Wed, 05 Oct 2022 19:27:04 GMT
 CMD ["apache2-foreground"]
-# Thu, 06 Oct 2022 20:30:24 GMT
+# Tue, 25 Oct 2022 12:43:18 GMT
 LABEL maintainer=pierre@piwik.org
-# Thu, 06 Oct 2022 20:30:24 GMT
+# Tue, 25 Oct 2022 12:43:18 GMT
 ENV PHP_MEMORY_LIMIT=256M
-# Thu, 06 Oct 2022 20:32:19 GMT
+# Tue, 25 Oct 2022 12:44:37 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libldap2-dev 		libpng-dev 		libzip-dev 		procps 	; 		debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Thu, 06 Oct 2022 20:32:20 GMT
+# Tue, 25 Oct 2022 12:44:38 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 19 Oct 2022 19:59:53 GMT
-ENV MATOMO_VERSION=4.12.1
-# Wed, 19 Oct 2022 20:00:11 GMT
+# Tue, 25 Oct 2022 12:44:38 GMT
+ENV MATOMO_VERSION=4.12.2
+# Tue, 25 Oct 2022 12:45:18 GMT
 RUN set -ex; 	fetchDeps=" 		dirmngr 		gnupg 	"; 	apt-get update; 	apt-get install -y --no-install-recommends 		$fetchDeps 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
-# Wed, 19 Oct 2022 20:00:11 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 COPY file:ccb778224a0e1f6742127aba2860c245adf24b73ca277e7260c4789883751ccb in /entrypoint.sh 
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 VOLUME [/var/www/html]
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:19 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -7035,25 +7035,25 @@ CMD ["apache2-foreground"]
 		Last Modified: Wed, 05 Oct 2022 21:29:04 GMT  
 		Size: 891.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20cb46c957024efb0e762c11be0aaa5b53bb7da2ed95db8e8c32e881e01f8abd`  
-		Last Modified: Thu, 06 Oct 2022 20:37:53 GMT  
-		Size: 2.7 MB (2681580 bytes)  
+	-	`sha256:206421f4938e1e8a834ad67cca7b25f8cb016716cd99a80b124279fb5e382aea`  
+		Last Modified: Tue, 25 Oct 2022 12:51:08 GMT  
+		Size: 2.7 MB (2681411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b48b47c08f1da8024a9eb80ed1fc96c8f6aacd2217d8fec16a83bfed102056af`  
-		Last Modified: Thu, 06 Oct 2022 20:37:51 GMT  
-		Size: 326.0 B  
+	-	`sha256:bf8cc4e6606e8674cd6e4ca0412f6f1c3d233bd42b75804382a29f4ff5802b50`  
+		Last Modified: Tue, 25 Oct 2022 12:51:07 GMT  
+		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef08fd0226d8924bcb3cde520d1dbfe748c889293abd6728d673beef27dcf985`  
-		Last Modified: Wed, 19 Oct 2022 20:01:50 GMT  
-		Size: 17.4 MB (17391757 bytes)  
+	-	`sha256:e985cf8279b85575ac4ef7416f1cd057aca5aa5406255f942fa379d5d9a83295`  
+		Last Modified: Tue, 25 Oct 2022 12:51:12 GMT  
+		Size: 17.4 MB (17391706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0373ec9a81762d3ba017a6a8eb37781be2d873bf43bea78e627529e4d35c8c27`  
-		Last Modified: Wed, 19 Oct 2022 20:01:43 GMT  
-		Size: 342.0 B  
+	-	`sha256:40c23c4b7ad465f436ff94390d79d6fc787d32589159c0e6d5949ffbe3db986a`  
+		Last Modified: Tue, 25 Oct 2022 12:51:07 GMT  
+		Size: 343.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:03c00ee7b40135ea6becb27fc6961ab1b2bf6b8f19e0666bffdbb928dbac3109`  
-		Last Modified: Wed, 19 Oct 2022 20:01:43 GMT  
-		Size: 633.0 B  
+	-	`sha256:bca3109ed43d6bb0aa358f3555fa96bdc06656d8d901b0132b1fc25fa92d40fd`  
+		Last Modified: Tue, 25 Oct 2022 12:51:08 GMT  
+		Size: 632.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `matomo:4.12-apache` - linux; arm64 variant v8
@@ -7924,7 +7924,7 @@ CMD ["apache2-foreground"]
 ## `matomo:4.12-fpm`
 
 ```console
-$ docker pull matomo@sha256:57a085837eb624d9312d3be6838516e31e603c530bcfd5b2c22dfe3383b14465
+$ docker pull matomo@sha256:7a2f1fde851f59c191926b5e665ede0aefcd8eeee3cc47e6e2e8b3d69db4d808
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8243,14 +8243,14 @@ CMD ["php-fpm"]
 ### `matomo:4.12-fpm` - linux; arm variant v7
 
 ```console
-$ docker pull matomo@sha256:7423fb3921df1bf783e67db2c07ac7d4ca064129e15d8a643aeb6fc83e6eabb6
+$ docker pull matomo@sha256:cb0cce0e6616d855959b6c27c745b3af49ce3c9a71e12264c2fb5e1c849ab839
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **150.9 MB (150909401 bytes)**  
+-	Total Size: **150.9 MB (150909245 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4f007aac67f398a6470cc268721b66e4f00caeef017940b8406eb917f93311dd`
+-	Image ID: `sha256:c0f5ceb6d28ab0cde2c5b0d5964481d428198fdae9af92035899cf83d1400be6`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -8305,27 +8305,27 @@ STOPSIGNAL SIGQUIT
 EXPOSE 9000
 # Wed, 05 Oct 2022 19:36:20 GMT
 CMD ["php-fpm"]
-# Thu, 06 Oct 2022 20:32:48 GMT
+# Tue, 25 Oct 2022 12:45:29 GMT
 LABEL maintainer=pierre@piwik.org
-# Thu, 06 Oct 2022 20:32:48 GMT
+# Tue, 25 Oct 2022 12:45:29 GMT
 ENV PHP_MEMORY_LIMIT=256M
-# Thu, 06 Oct 2022 20:34:20 GMT
+# Tue, 25 Oct 2022 12:46:54 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libldap2-dev 		libpng-dev 		libzip-dev 		procps 	; 		debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Thu, 06 Oct 2022 20:34:20 GMT
+# Tue, 25 Oct 2022 12:46:55 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 19 Oct 2022 20:00:21 GMT
-ENV MATOMO_VERSION=4.12.1
-# Wed, 19 Oct 2022 20:00:39 GMT
+# Tue, 25 Oct 2022 12:46:55 GMT
+ENV MATOMO_VERSION=4.12.2
+# Tue, 25 Oct 2022 12:47:38 GMT
 RUN set -ex; 	fetchDeps=" 		dirmngr 		gnupg 	"; 	apt-get update; 	apt-get install -y --no-install-recommends 		$fetchDeps 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
-# Wed, 19 Oct 2022 20:00:39 GMT
+# Tue, 25 Oct 2022 12:47:39 GMT
 COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
-# Wed, 19 Oct 2022 20:00:39 GMT
+# Tue, 25 Oct 2022 12:47:39 GMT
 COPY file:ccb778224a0e1f6742127aba2860c245adf24b73ca277e7260c4789883751ccb in /entrypoint.sh 
-# Wed, 19 Oct 2022 20:00:40 GMT
+# Tue, 25 Oct 2022 12:47:40 GMT
 VOLUME [/var/www/html]
-# Wed, 19 Oct 2022 20:00:40 GMT
+# Tue, 25 Oct 2022 12:47:40 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 19 Oct 2022 20:00:40 GMT
+# Tue, 25 Oct 2022 12:47:40 GMT
 CMD ["php-fpm"]
 ```
 
@@ -8370,25 +8370,25 @@ CMD ["php-fpm"]
 		Last Modified: Wed, 05 Oct 2022 21:29:28 GMT  
 		Size: 8.6 KB (8572 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23ab67d351f9ffd452a50215715644c9aad5784ebdcd164397e5550e2df68d89`  
-		Last Modified: Thu, 06 Oct 2022 20:38:37 GMT  
-		Size: 2.7 MB (2656436 bytes)  
+	-	`sha256:e887030b55c8809709e9a75d90e64c31f00fc9710bb829aee95a8a8cfac6cc9f`  
+		Last Modified: Tue, 25 Oct 2022 12:51:52 GMT  
+		Size: 2.7 MB (2656292 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:00f953be789eac43d0d7d58d077d3b79d3172867b7cd4411a1a61f4ff2596edb`  
-		Last Modified: Thu, 06 Oct 2022 20:38:36 GMT  
+	-	`sha256:7eddd960ceb934ca8a8f5fadc48f360efffcbfcd33a54b437be5765cdd6364f0`  
+		Last Modified: Tue, 25 Oct 2022 12:51:51 GMT  
 		Size: 330.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:643f3aade991877b5ed04bc8b0a3efa5fc0667770d2fc1326614b30cfd390cf7`  
-		Last Modified: Wed, 19 Oct 2022 20:02:36 GMT  
-		Size: 17.4 MB (17366287 bytes)  
+	-	`sha256:137a892a7cc731389c20d5bb52d697f1fa417507d1df5b6550043a630313223b`  
+		Last Modified: Tue, 25 Oct 2022 12:51:56 GMT  
+		Size: 17.4 MB (17366275 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:47d2d4416ee8f0d8d54d21bfa96123a062986650eb547bbc9f9bbba15edc96ef`  
-		Last Modified: Wed, 19 Oct 2022 20:02:31 GMT  
-		Size: 345.0 B  
+	-	`sha256:e64fd2aba844dbe1a61e637d4ff825f9b519bdfb37bdbac0e0a24ba741c213fa`  
+		Last Modified: Tue, 25 Oct 2022 12:51:51 GMT  
+		Size: 347.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2efa44360f923ad547c704bd4b4597d00ee2531eb0d0b2ce64d95e6d56d34da`  
-		Last Modified: Wed, 19 Oct 2022 20:02:31 GMT  
-		Size: 633.0 B  
+	-	`sha256:bf65bd3b965a914783872f49bc64501cbd9fc89a1945dcfd1947a7bfc3896554`  
+		Last Modified: Tue, 25 Oct 2022 12:51:51 GMT  
+		Size: 631.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `matomo:4.12-fpm` - linux; arm64 variant v8
@@ -9149,7 +9149,7 @@ CMD ["php-fpm"]
 ## `matomo:4.12-fpm-alpine`
 
 ```console
-$ docker pull matomo@sha256:ce003a780488ce55ce77f5e384067721901a065a30d8942b156bb4440ae9dfc7
+$ docker pull matomo@sha256:edd9308aa608758c8b008bdcecef84606ffb739ce3cdd828e7964f395922ef4a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9467,14 +9467,14 @@ CMD ["php-fpm"]
 ### `matomo:4.12-fpm-alpine` - linux; arm variant v7
 
 ```console
-$ docker pull matomo@sha256:7f5ad5353cfeeb260e1cd357a9850f7dd1f18846cec0e9af324d9b51772526a6
+$ docker pull matomo@sha256:60c7bc1e1662098a11d1d1f57685182e29d03ac747a79267c0e396f0b08bcd54
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **47.8 MB (47810443 bytes)**  
+-	Total Size: **47.8 MB (47814105 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a960260a3227aac9c09a4ead133a8d02c7aa4ae1149a79cfb8b0ca13c88f2f26`
+-	Image ID: `sha256:e09da204cbefc9a5281b06b184bc8c88d8d3d02d5af0815cff4a5c312537b7d5`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -9529,27 +9529,27 @@ STOPSIGNAL SIGQUIT
 EXPOSE 9000
 # Sat, 08 Oct 2022 00:50:49 GMT
 CMD ["php-fpm"]
-# Sat, 08 Oct 2022 04:10:37 GMT
+# Tue, 25 Oct 2022 12:47:57 GMT
 LABEL maintainer=pierre@piwik.org
-# Sat, 08 Oct 2022 04:10:38 GMT
+# Tue, 25 Oct 2022 12:47:57 GMT
 ENV PHP_MEMORY_LIMIT=256M
-# Sat, 08 Oct 2022 04:12:25 GMT
+# Tue, 25 Oct 2022 12:49:36 GMT
 RUN set -ex; 		apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		autoconf 		freetype-dev 		icu-dev 		libjpeg-turbo-dev 		libpng-dev 		libzip-dev 		openldap-dev 		pcre-dev 		procps 	; 		docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --virtual .matomo-phpext-rundeps $runDeps; 	apk del .build-deps
-# Sat, 08 Oct 2022 04:12:25 GMT
+# Tue, 25 Oct 2022 12:49:38 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 19 Oct 2022 20:00:46 GMT
-ENV MATOMO_VERSION=4.12.1
-# Wed, 19 Oct 2022 20:00:56 GMT
+# Tue, 25 Oct 2022 12:49:38 GMT
+ENV MATOMO_VERSION=4.12.2
+# Tue, 25 Oct 2022 12:50:04 GMT
 RUN set -ex; 	apk add --no-cache --virtual .fetch-deps 		gnupg 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apk del .fetch-deps
-# Wed, 19 Oct 2022 20:00:57 GMT
+# Tue, 25 Oct 2022 12:50:05 GMT
 COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
-# Wed, 19 Oct 2022 20:00:57 GMT
+# Tue, 25 Oct 2022 12:50:05 GMT
 COPY file:ccb778224a0e1f6742127aba2860c245adf24b73ca277e7260c4789883751ccb in /entrypoint.sh 
-# Wed, 19 Oct 2022 20:00:57 GMT
+# Tue, 25 Oct 2022 12:50:06 GMT
 VOLUME [/var/www/html]
-# Wed, 19 Oct 2022 20:00:57 GMT
+# Tue, 25 Oct 2022 12:50:06 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 19 Oct 2022 20:00:57 GMT
+# Tue, 25 Oct 2022 12:50:06 GMT
 CMD ["php-fpm"]
 ```
 
@@ -9594,25 +9594,25 @@ CMD ["php-fpm"]
 		Last Modified: Sat, 08 Oct 2022 02:08:59 GMT  
 		Size: 8.6 KB (8575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f76d6c50df1f752ac370c06c1b8601383ccf207bf5fc9f2eb5c771c268447a3a`  
-		Last Modified: Sat, 08 Oct 2022 04:14:11 GMT  
-		Size: 5.2 MB (5247131 bytes)  
+	-	`sha256:04947607599d59aebb4bbd01b5faad9a6c5db4329499df7c724655416985f913`  
+		Last Modified: Tue, 25 Oct 2022 12:52:18 GMT  
+		Size: 5.3 MB (5250898 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:340267f776381329ad845afe8f77bea990c875e0e18a363bd82780ef1a9abb88`  
-		Last Modified: Sat, 08 Oct 2022 04:14:10 GMT  
-		Size: 327.0 B  
+	-	`sha256:16b841880c8f4442fb692ed559b20dd44f4909cc891bbdda192dc3497b5484a0`  
+		Last Modified: Tue, 25 Oct 2022 12:52:17 GMT  
+		Size: 325.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:896ed944c654010438402d4855c5e9befb5ee40e6df7a4af1a27e7a745234950`  
-		Last Modified: Wed, 19 Oct 2022 20:03:00 GMT  
-		Size: 17.1 MB (17063015 bytes)  
+	-	`sha256:92875b6e4ef143d57eca90c0f89b8ee606163e1670793af71b53620328f55405`  
+		Last Modified: Tue, 25 Oct 2022 12:52:22 GMT  
+		Size: 17.1 MB (17062917 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:732f15109ded32aa298e49eafce6cce29cc64cd086cb1480ad0eeaee9cbb8e8c`  
-		Last Modified: Wed, 19 Oct 2022 20:02:56 GMT  
-		Size: 343.0 B  
+	-	`sha256:78cc510ffc99b468a0d8b22e6ca4cd92d913fd6baa3cbd9e8a83698a04856576`  
+		Last Modified: Tue, 25 Oct 2022 12:52:17 GMT  
+		Size: 339.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:87a446182fc55c36c440eb7cf6cc6f81cbd9f5d85a0a729b56b1a6dbde595c8b`  
-		Last Modified: Wed, 19 Oct 2022 20:02:56 GMT  
-		Size: 632.0 B  
+	-	`sha256:dfc57230f787a0a037e3361c82be04b6b643db2859372d4464c2589454607c2a`  
+		Last Modified: Tue, 25 Oct 2022 12:52:17 GMT  
+		Size: 631.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `matomo:4.12-fpm-alpine` - linux; arm64 variant v8
@@ -10222,13 +10222,14 @@ CMD ["php-fpm"]
 ## `matomo:4.12.2`
 
 ```console
-$ docker pull matomo@sha256:1b90c8561accdcf712f056360088dc26573081d4de2aef52abe4721aa5ee47ea
+$ docker pull matomo@sha256:63558ccb613d65e4c8ee3e483c276057e733314d44d358b97ca67adbaa1b7cee
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 7
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
+	-	linux; arm variant v7
 	-	linux; arm64 variant v8
 	-	linux; 386
 	-	linux; mips64le
@@ -10578,6 +10579,179 @@ CMD ["apache2-foreground"]
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c7688c05d5ecf3e1356323cbc373eda262376468ce6be34b46a6ae44ccb9666a`  
 		Last Modified: Tue, 25 Oct 2022 06:06:51 GMT  
+		Size: 632.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `matomo:4.12.2` - linux; arm variant v7
+
+```console
+$ docker pull matomo@sha256:5044c0b47a6bfeb8242572901d2650067556c52a503df8d068ffd33b57bc3338
+```
+
+-	Docker Version: 20.10.17
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **154.5 MB (154521217 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:549dc3c2c070254585c44c7a7ff3cc95eb0403e2c0b45a3b01fd7fa962bb0fbd`
+-	Entrypoint: `["\/entrypoint.sh"]`
+-	Default Command: `["apache2-foreground"]`
+
+```dockerfile
+# Tue, 04 Oct 2022 23:58:46 GMT
+ADD file:ca1bf27f17594a91224a252bd446f97c3b898210c571f2f26fa2e723d2bf521e in / 
+# Tue, 04 Oct 2022 23:58:46 GMT
+CMD ["bash"]
+# Wed, 05 Oct 2022 16:24:30 GMT
+RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
+# Wed, 05 Oct 2022 16:24:31 GMT
+ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
+# Wed, 05 Oct 2022 16:24:58 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
+# Wed, 05 Oct 2022 16:24:58 GMT
+ENV PHP_INI_DIR=/usr/local/etc/php
+# Wed, 05 Oct 2022 16:24:59 GMT
+RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
+# Wed, 05 Oct 2022 16:35:16 GMT
+ENV APACHE_CONFDIR=/etc/apache2
+# Wed, 05 Oct 2022 16:35:16 GMT
+ENV APACHE_ENVVARS=/etc/apache2/envvars
+# Wed, 05 Oct 2022 16:35:30 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
+# Wed, 05 Oct 2022 16:35:31 GMT
+RUN a2dismod mpm_event && a2enmod mpm_prefork
+# Wed, 05 Oct 2022 16:35:31 GMT
+RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
+# Wed, 05 Oct 2022 16:35:32 GMT
+ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Wed, 05 Oct 2022 16:35:32 GMT
+ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Wed, 05 Oct 2022 16:35:32 GMT
+ENV PHP_LDFLAGS=-Wl,-O1 -pie
+# Wed, 05 Oct 2022 19:17:29 GMT
+ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F
+# Wed, 05 Oct 2022 19:17:29 GMT
+ENV PHP_VERSION=8.0.24
+# Wed, 05 Oct 2022 19:17:29 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.0.24.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.0.24.tar.xz.asc
+# Wed, 05 Oct 2022 19:17:29 GMT
+ENV PHP_SHA256=8e6a63ac9cdabe4c345b32a54b18f348d9e50a1decda217faf2d61278d22f08b
+# Wed, 05 Oct 2022 19:17:43 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
+# Wed, 05 Oct 2022 19:17:43 GMT
+COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
+# Wed, 05 Oct 2022 19:27:02 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		apache2-dev 		libargon2-dev 		libcurl4-openssl-dev 		libonig-dev 		libreadline-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 	; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv 		--with-openssl 		--with-readline 		--with-zlib 				--disable-phpdbg 				--with-pear 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				--disable-cgi 				--with-apxs2 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
+# Wed, 05 Oct 2022 19:27:03 GMT
+COPY multi:e11221d43af7136e4dbad5a74e659bcfa753214a9e615c3daf357f1633d9d3d1 in /usr/local/bin/ 
+# Wed, 05 Oct 2022 19:27:03 GMT
+RUN docker-php-ext-enable sodium
+# Wed, 05 Oct 2022 19:27:03 GMT
+ENTRYPOINT ["docker-php-entrypoint"]
+# Wed, 05 Oct 2022 19:27:04 GMT
+STOPSIGNAL SIGWINCH
+# Wed, 05 Oct 2022 19:27:04 GMT
+COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
+# Wed, 05 Oct 2022 19:27:04 GMT
+WORKDIR /var/www/html
+# Wed, 05 Oct 2022 19:27:04 GMT
+EXPOSE 80
+# Wed, 05 Oct 2022 19:27:04 GMT
+CMD ["apache2-foreground"]
+# Tue, 25 Oct 2022 12:43:18 GMT
+LABEL maintainer=pierre@piwik.org
+# Tue, 25 Oct 2022 12:43:18 GMT
+ENV PHP_MEMORY_LIMIT=256M
+# Tue, 25 Oct 2022 12:44:37 GMT
+RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libldap2-dev 		libpng-dev 		libzip-dev 		procps 	; 		debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
+# Tue, 25 Oct 2022 12:44:38 GMT
+RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
+# Tue, 25 Oct 2022 12:44:38 GMT
+ENV MATOMO_VERSION=4.12.2
+# Tue, 25 Oct 2022 12:45:18 GMT
+RUN set -ex; 	fetchDeps=" 		dirmngr 		gnupg 	"; 	apt-get update; 	apt-get install -y --no-install-recommends 		$fetchDeps 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
+# Tue, 25 Oct 2022 12:45:18 GMT
+COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
+# Tue, 25 Oct 2022 12:45:18 GMT
+COPY file:ccb778224a0e1f6742127aba2860c245adf24b73ca277e7260c4789883751ccb in /entrypoint.sh 
+# Tue, 25 Oct 2022 12:45:18 GMT
+VOLUME [/var/www/html]
+# Tue, 25 Oct 2022 12:45:18 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Tue, 25 Oct 2022 12:45:19 GMT
+CMD ["apache2-foreground"]
+```
+
+-	Layers:
+	-	`sha256:2bc64aeac2e429577e497affc8a416d2fc59158aa967f07aced793368e19455f`  
+		Last Modified: Wed, 05 Oct 2022 00:05:09 GMT  
+		Size: 26.6 MB (26579199 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:584501380c2ed7550f9448cd6cc5bd8e0a21022806a841c4667e39696bdc1db7`  
+		Last Modified: Wed, 05 Oct 2022 21:18:31 GMT  
+		Size: 225.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:431b428a901f2bd26cfb604a51e4405b669ceaa8c004401df3e3c7562858e06f`  
+		Last Modified: Wed, 05 Oct 2022 21:18:47 GMT  
+		Size: 69.3 MB (69320187 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:264cb2924ffd7444e569f4b67ea64dd54d76f83f9fb925c3b993688e01f3f391`  
+		Last Modified: Wed, 05 Oct 2022 21:18:31 GMT  
+		Size: 271.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e51cde6db43d44597c473f0842a8a4e1932f10801a40c6a4b04e8707177f4c21`  
+		Last Modified: Wed, 05 Oct 2022 21:19:29 GMT  
+		Size: 18.0 MB (17997873 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f0d1748b177ecc1f1cf92ce0253a0211e152e3682c9fcb00413da72bd6e6b91e`  
+		Last Modified: Wed, 05 Oct 2022 21:19:25 GMT  
+		Size: 475.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1c0da66653bbd8074d64df2d02b49a07f67be385ee4581054c2a29fcf0a1fb2b`  
+		Last Modified: Wed, 05 Oct 2022 21:19:25 GMT  
+		Size: 516.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:4d2087df76561d08b14b9e3e789aecb16815ceac457e2055571c856fcfbc0684`  
+		Last Modified: Wed, 05 Oct 2022 21:29:07 GMT  
+		Size: 11.2 MB (11233759 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c0fb51b898835e9cdfae14954c32369a2625149d1122267648bd23830ca47200`  
+		Last Modified: Wed, 05 Oct 2022 21:29:04 GMT  
+		Size: 493.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:620871cfee3206469a393b09ac96b58f3def00b60bb12a14e72bd6a4c5d5c52d`  
+		Last Modified: Wed, 05 Oct 2022 21:29:06 GMT  
+		Size: 9.3 MB (9310204 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cfc77110a124c6468f967b6a9bc7b881ee031edf03f0a3556bcc79810f4f9e08`  
+		Last Modified: Wed, 05 Oct 2022 21:29:04 GMT  
+		Size: 2.5 KB (2457 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:30bddd149727718ce44e6735fa2ff3e86dcea3e17ca8969a24f8f03e0a97ca9f`  
+		Last Modified: Wed, 05 Oct 2022 21:29:04 GMT  
+		Size: 247.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:64f2b60fa9687358cb24c9a2acd22e4184573fc3214ae5459db6eeea67817637`  
+		Last Modified: Wed, 05 Oct 2022 21:29:04 GMT  
+		Size: 891.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:206421f4938e1e8a834ad67cca7b25f8cb016716cd99a80b124279fb5e382aea`  
+		Last Modified: Tue, 25 Oct 2022 12:51:08 GMT  
+		Size: 2.7 MB (2681411 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:bf8cc4e6606e8674cd6e4ca0412f6f1c3d233bd42b75804382a29f4ff5802b50`  
+		Last Modified: Tue, 25 Oct 2022 12:51:07 GMT  
+		Size: 328.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e985cf8279b85575ac4ef7416f1cd057aca5aa5406255f942fa379d5d9a83295`  
+		Last Modified: Tue, 25 Oct 2022 12:51:12 GMT  
+		Size: 17.4 MB (17391706 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:40c23c4b7ad465f436ff94390d79d6fc787d32589159c0e6d5949ffbe3db986a`  
+		Last Modified: Tue, 25 Oct 2022 12:51:07 GMT  
+		Size: 343.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:bca3109ed43d6bb0aa358f3555fa96bdc06656d8d901b0132b1fc25fa92d40fd`  
+		Last Modified: Tue, 25 Oct 2022 12:51:08 GMT  
 		Size: 632.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -11449,13 +11623,14 @@ CMD ["apache2-foreground"]
 ## `matomo:4.12.2-apache`
 
 ```console
-$ docker pull matomo@sha256:1b90c8561accdcf712f056360088dc26573081d4de2aef52abe4721aa5ee47ea
+$ docker pull matomo@sha256:63558ccb613d65e4c8ee3e483c276057e733314d44d358b97ca67adbaa1b7cee
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 7
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
+	-	linux; arm variant v7
 	-	linux; arm64 variant v8
 	-	linux; 386
 	-	linux; mips64le
@@ -11805,6 +11980,179 @@ CMD ["apache2-foreground"]
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c7688c05d5ecf3e1356323cbc373eda262376468ce6be34b46a6ae44ccb9666a`  
 		Last Modified: Tue, 25 Oct 2022 06:06:51 GMT  
+		Size: 632.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `matomo:4.12.2-apache` - linux; arm variant v7
+
+```console
+$ docker pull matomo@sha256:5044c0b47a6bfeb8242572901d2650067556c52a503df8d068ffd33b57bc3338
+```
+
+-	Docker Version: 20.10.17
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **154.5 MB (154521217 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:549dc3c2c070254585c44c7a7ff3cc95eb0403e2c0b45a3b01fd7fa962bb0fbd`
+-	Entrypoint: `["\/entrypoint.sh"]`
+-	Default Command: `["apache2-foreground"]`
+
+```dockerfile
+# Tue, 04 Oct 2022 23:58:46 GMT
+ADD file:ca1bf27f17594a91224a252bd446f97c3b898210c571f2f26fa2e723d2bf521e in / 
+# Tue, 04 Oct 2022 23:58:46 GMT
+CMD ["bash"]
+# Wed, 05 Oct 2022 16:24:30 GMT
+RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
+# Wed, 05 Oct 2022 16:24:31 GMT
+ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
+# Wed, 05 Oct 2022 16:24:58 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
+# Wed, 05 Oct 2022 16:24:58 GMT
+ENV PHP_INI_DIR=/usr/local/etc/php
+# Wed, 05 Oct 2022 16:24:59 GMT
+RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
+# Wed, 05 Oct 2022 16:35:16 GMT
+ENV APACHE_CONFDIR=/etc/apache2
+# Wed, 05 Oct 2022 16:35:16 GMT
+ENV APACHE_ENVVARS=/etc/apache2/envvars
+# Wed, 05 Oct 2022 16:35:30 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
+# Wed, 05 Oct 2022 16:35:31 GMT
+RUN a2dismod mpm_event && a2enmod mpm_prefork
+# Wed, 05 Oct 2022 16:35:31 GMT
+RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
+# Wed, 05 Oct 2022 16:35:32 GMT
+ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Wed, 05 Oct 2022 16:35:32 GMT
+ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Wed, 05 Oct 2022 16:35:32 GMT
+ENV PHP_LDFLAGS=-Wl,-O1 -pie
+# Wed, 05 Oct 2022 19:17:29 GMT
+ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F
+# Wed, 05 Oct 2022 19:17:29 GMT
+ENV PHP_VERSION=8.0.24
+# Wed, 05 Oct 2022 19:17:29 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.0.24.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.0.24.tar.xz.asc
+# Wed, 05 Oct 2022 19:17:29 GMT
+ENV PHP_SHA256=8e6a63ac9cdabe4c345b32a54b18f348d9e50a1decda217faf2d61278d22f08b
+# Wed, 05 Oct 2022 19:17:43 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
+# Wed, 05 Oct 2022 19:17:43 GMT
+COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
+# Wed, 05 Oct 2022 19:27:02 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		apache2-dev 		libargon2-dev 		libcurl4-openssl-dev 		libonig-dev 		libreadline-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 	; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv 		--with-openssl 		--with-readline 		--with-zlib 				--disable-phpdbg 				--with-pear 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				--disable-cgi 				--with-apxs2 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
+# Wed, 05 Oct 2022 19:27:03 GMT
+COPY multi:e11221d43af7136e4dbad5a74e659bcfa753214a9e615c3daf357f1633d9d3d1 in /usr/local/bin/ 
+# Wed, 05 Oct 2022 19:27:03 GMT
+RUN docker-php-ext-enable sodium
+# Wed, 05 Oct 2022 19:27:03 GMT
+ENTRYPOINT ["docker-php-entrypoint"]
+# Wed, 05 Oct 2022 19:27:04 GMT
+STOPSIGNAL SIGWINCH
+# Wed, 05 Oct 2022 19:27:04 GMT
+COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
+# Wed, 05 Oct 2022 19:27:04 GMT
+WORKDIR /var/www/html
+# Wed, 05 Oct 2022 19:27:04 GMT
+EXPOSE 80
+# Wed, 05 Oct 2022 19:27:04 GMT
+CMD ["apache2-foreground"]
+# Tue, 25 Oct 2022 12:43:18 GMT
+LABEL maintainer=pierre@piwik.org
+# Tue, 25 Oct 2022 12:43:18 GMT
+ENV PHP_MEMORY_LIMIT=256M
+# Tue, 25 Oct 2022 12:44:37 GMT
+RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libldap2-dev 		libpng-dev 		libzip-dev 		procps 	; 		debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
+# Tue, 25 Oct 2022 12:44:38 GMT
+RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
+# Tue, 25 Oct 2022 12:44:38 GMT
+ENV MATOMO_VERSION=4.12.2
+# Tue, 25 Oct 2022 12:45:18 GMT
+RUN set -ex; 	fetchDeps=" 		dirmngr 		gnupg 	"; 	apt-get update; 	apt-get install -y --no-install-recommends 		$fetchDeps 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
+# Tue, 25 Oct 2022 12:45:18 GMT
+COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
+# Tue, 25 Oct 2022 12:45:18 GMT
+COPY file:ccb778224a0e1f6742127aba2860c245adf24b73ca277e7260c4789883751ccb in /entrypoint.sh 
+# Tue, 25 Oct 2022 12:45:18 GMT
+VOLUME [/var/www/html]
+# Tue, 25 Oct 2022 12:45:18 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Tue, 25 Oct 2022 12:45:19 GMT
+CMD ["apache2-foreground"]
+```
+
+-	Layers:
+	-	`sha256:2bc64aeac2e429577e497affc8a416d2fc59158aa967f07aced793368e19455f`  
+		Last Modified: Wed, 05 Oct 2022 00:05:09 GMT  
+		Size: 26.6 MB (26579199 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:584501380c2ed7550f9448cd6cc5bd8e0a21022806a841c4667e39696bdc1db7`  
+		Last Modified: Wed, 05 Oct 2022 21:18:31 GMT  
+		Size: 225.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:431b428a901f2bd26cfb604a51e4405b669ceaa8c004401df3e3c7562858e06f`  
+		Last Modified: Wed, 05 Oct 2022 21:18:47 GMT  
+		Size: 69.3 MB (69320187 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:264cb2924ffd7444e569f4b67ea64dd54d76f83f9fb925c3b993688e01f3f391`  
+		Last Modified: Wed, 05 Oct 2022 21:18:31 GMT  
+		Size: 271.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e51cde6db43d44597c473f0842a8a4e1932f10801a40c6a4b04e8707177f4c21`  
+		Last Modified: Wed, 05 Oct 2022 21:19:29 GMT  
+		Size: 18.0 MB (17997873 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f0d1748b177ecc1f1cf92ce0253a0211e152e3682c9fcb00413da72bd6e6b91e`  
+		Last Modified: Wed, 05 Oct 2022 21:19:25 GMT  
+		Size: 475.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1c0da66653bbd8074d64df2d02b49a07f67be385ee4581054c2a29fcf0a1fb2b`  
+		Last Modified: Wed, 05 Oct 2022 21:19:25 GMT  
+		Size: 516.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:4d2087df76561d08b14b9e3e789aecb16815ceac457e2055571c856fcfbc0684`  
+		Last Modified: Wed, 05 Oct 2022 21:29:07 GMT  
+		Size: 11.2 MB (11233759 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c0fb51b898835e9cdfae14954c32369a2625149d1122267648bd23830ca47200`  
+		Last Modified: Wed, 05 Oct 2022 21:29:04 GMT  
+		Size: 493.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:620871cfee3206469a393b09ac96b58f3def00b60bb12a14e72bd6a4c5d5c52d`  
+		Last Modified: Wed, 05 Oct 2022 21:29:06 GMT  
+		Size: 9.3 MB (9310204 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cfc77110a124c6468f967b6a9bc7b881ee031edf03f0a3556bcc79810f4f9e08`  
+		Last Modified: Wed, 05 Oct 2022 21:29:04 GMT  
+		Size: 2.5 KB (2457 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:30bddd149727718ce44e6735fa2ff3e86dcea3e17ca8969a24f8f03e0a97ca9f`  
+		Last Modified: Wed, 05 Oct 2022 21:29:04 GMT  
+		Size: 247.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:64f2b60fa9687358cb24c9a2acd22e4184573fc3214ae5459db6eeea67817637`  
+		Last Modified: Wed, 05 Oct 2022 21:29:04 GMT  
+		Size: 891.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:206421f4938e1e8a834ad67cca7b25f8cb016716cd99a80b124279fb5e382aea`  
+		Last Modified: Tue, 25 Oct 2022 12:51:08 GMT  
+		Size: 2.7 MB (2681411 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:bf8cc4e6606e8674cd6e4ca0412f6f1c3d233bd42b75804382a29f4ff5802b50`  
+		Last Modified: Tue, 25 Oct 2022 12:51:07 GMT  
+		Size: 328.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e985cf8279b85575ac4ef7416f1cd057aca5aa5406255f942fa379d5d9a83295`  
+		Last Modified: Tue, 25 Oct 2022 12:51:12 GMT  
+		Size: 17.4 MB (17391706 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:40c23c4b7ad465f436ff94390d79d6fc787d32589159c0e6d5949ffbe3db986a`  
+		Last Modified: Tue, 25 Oct 2022 12:51:07 GMT  
+		Size: 343.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:bca3109ed43d6bb0aa358f3555fa96bdc06656d8d901b0132b1fc25fa92d40fd`  
+		Last Modified: Tue, 25 Oct 2022 12:51:08 GMT  
 		Size: 632.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -12676,13 +13024,14 @@ CMD ["apache2-foreground"]
 ## `matomo:4.12.2-fpm`
 
 ```console
-$ docker pull matomo@sha256:9316b6977de7414b1c195a8ed4a893e7f901848a3cde8105e4b2f8bf717282d0
+$ docker pull matomo@sha256:7a2f1fde851f59c191926b5e665ede0aefcd8eeee3cc47e6e2e8b3d69db4d808
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 7
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
+	-	linux; arm variant v7
 	-	linux; arm64 variant v8
 	-	linux; 386
 	-	linux; mips64le
@@ -12989,6 +13338,157 @@ CMD ["php-fpm"]
 	-	`sha256:1a5b551201c88fe481d7fc0bce87e2c85db25690e786cf1c3192fc47454ad445`  
 		Last Modified: Tue, 25 Oct 2022 06:07:36 GMT  
 		Size: 632.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `matomo:4.12.2-fpm` - linux; arm variant v7
+
+```console
+$ docker pull matomo@sha256:cb0cce0e6616d855959b6c27c745b3af49ce3c9a71e12264c2fb5e1c849ab839
+```
+
+-	Docker Version: 20.10.17
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **150.9 MB (150909245 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:c0f5ceb6d28ab0cde2c5b0d5964481d428198fdae9af92035899cf83d1400be6`
+-	Entrypoint: `["\/entrypoint.sh"]`
+-	Default Command: `["php-fpm"]`
+
+```dockerfile
+# Tue, 04 Oct 2022 23:58:46 GMT
+ADD file:ca1bf27f17594a91224a252bd446f97c3b898210c571f2f26fa2e723d2bf521e in / 
+# Tue, 04 Oct 2022 23:58:46 GMT
+CMD ["bash"]
+# Wed, 05 Oct 2022 16:24:30 GMT
+RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
+# Wed, 05 Oct 2022 16:24:31 GMT
+ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
+# Wed, 05 Oct 2022 16:24:58 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
+# Wed, 05 Oct 2022 16:24:58 GMT
+ENV PHP_INI_DIR=/usr/local/etc/php
+# Wed, 05 Oct 2022 16:24:59 GMT
+RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
+# Wed, 05 Oct 2022 16:24:59 GMT
+ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Wed, 05 Oct 2022 16:24:59 GMT
+ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Wed, 05 Oct 2022 16:24:59 GMT
+ENV PHP_LDFLAGS=-Wl,-O1 -pie
+# Wed, 05 Oct 2022 19:07:19 GMT
+ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F
+# Wed, 05 Oct 2022 19:07:19 GMT
+ENV PHP_VERSION=8.0.24
+# Wed, 05 Oct 2022 19:07:19 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.0.24.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.0.24.tar.xz.asc
+# Wed, 05 Oct 2022 19:07:19 GMT
+ENV PHP_SHA256=8e6a63ac9cdabe4c345b32a54b18f348d9e50a1decda217faf2d61278d22f08b
+# Wed, 05 Oct 2022 19:07:35 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
+# Wed, 05 Oct 2022 19:07:35 GMT
+COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
+# Wed, 05 Oct 2022 19:36:18 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libonig-dev 		libreadline-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 	; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv 		--with-openssl 		--with-readline 		--with-zlib 				--disable-phpdbg 				--with-pear 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				--disable-cgi 				--enable-fpm 		--with-fpm-user=www-data 		--with-fpm-group=www-data 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
+# Wed, 05 Oct 2022 19:36:18 GMT
+COPY multi:869bde9dbeae74886a05c9e2107b3e3b4877116db8c6d9adbaff2719f9fb5262 in /usr/local/bin/ 
+# Wed, 05 Oct 2022 19:36:19 GMT
+RUN docker-php-ext-enable sodium
+# Wed, 05 Oct 2022 19:36:19 GMT
+ENTRYPOINT ["docker-php-entrypoint"]
+# Wed, 05 Oct 2022 19:36:19 GMT
+WORKDIR /var/www/html
+# Wed, 05 Oct 2022 19:36:20 GMT
+RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; echo '; https://github.com/docker-library/php/pull/725#issuecomment-443540114'; echo 'log_limit = 8192'; 		echo; 		echo '[www]'; 		echo '; if we send this to /proc/self/fd/1, it never appears'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 		echo 'decorate_workers_output = no'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf
+# Wed, 05 Oct 2022 19:36:20 GMT
+STOPSIGNAL SIGQUIT
+# Wed, 05 Oct 2022 19:36:20 GMT
+EXPOSE 9000
+# Wed, 05 Oct 2022 19:36:20 GMT
+CMD ["php-fpm"]
+# Tue, 25 Oct 2022 12:45:29 GMT
+LABEL maintainer=pierre@piwik.org
+# Tue, 25 Oct 2022 12:45:29 GMT
+ENV PHP_MEMORY_LIMIT=256M
+# Tue, 25 Oct 2022 12:46:54 GMT
+RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libldap2-dev 		libpng-dev 		libzip-dev 		procps 	; 		debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
+# Tue, 25 Oct 2022 12:46:55 GMT
+RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
+# Tue, 25 Oct 2022 12:46:55 GMT
+ENV MATOMO_VERSION=4.12.2
+# Tue, 25 Oct 2022 12:47:38 GMT
+RUN set -ex; 	fetchDeps=" 		dirmngr 		gnupg 	"; 	apt-get update; 	apt-get install -y --no-install-recommends 		$fetchDeps 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
+# Tue, 25 Oct 2022 12:47:39 GMT
+COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
+# Tue, 25 Oct 2022 12:47:39 GMT
+COPY file:ccb778224a0e1f6742127aba2860c245adf24b73ca277e7260c4789883751ccb in /entrypoint.sh 
+# Tue, 25 Oct 2022 12:47:40 GMT
+VOLUME [/var/www/html]
+# Tue, 25 Oct 2022 12:47:40 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Tue, 25 Oct 2022 12:47:40 GMT
+CMD ["php-fpm"]
+```
+
+-	Layers:
+	-	`sha256:2bc64aeac2e429577e497affc8a416d2fc59158aa967f07aced793368e19455f`  
+		Last Modified: Wed, 05 Oct 2022 00:05:09 GMT  
+		Size: 26.6 MB (26579199 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:584501380c2ed7550f9448cd6cc5bd8e0a21022806a841c4667e39696bdc1db7`  
+		Last Modified: Wed, 05 Oct 2022 21:18:31 GMT  
+		Size: 225.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:431b428a901f2bd26cfb604a51e4405b669ceaa8c004401df3e3c7562858e06f`  
+		Last Modified: Wed, 05 Oct 2022 21:18:47 GMT  
+		Size: 69.3 MB (69320187 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:264cb2924ffd7444e569f4b67ea64dd54d76f83f9fb925c3b993688e01f3f391`  
+		Last Modified: Wed, 05 Oct 2022 21:18:31 GMT  
+		Size: 271.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:8659ca25a20ef43e00b9e801cf3bd36572ea2df065cabc12ab3f68c49eee5c6d`  
+		Last Modified: Wed, 05 Oct 2022 21:28:25 GMT  
+		Size: 11.2 MB (11212212 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:458087001405da50353124a3c756f3141bab1645664358203426ad9573433bee`  
+		Last Modified: Wed, 05 Oct 2022 21:28:24 GMT  
+		Size: 493.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6d10631208ba15792e5b51f4ff77143b463594fa801c82ea1ab5fa7298ee9a71`  
+		Last Modified: Wed, 05 Oct 2022 21:29:35 GMT  
+		Size: 23.8 MB (23761516 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cabdcc592418c8f8ab65bb365905b7d1b7cdea2d3da2c4c88205fc1e4f9d6e20`  
+		Last Modified: Wed, 05 Oct 2022 21:29:28 GMT  
+		Size: 2.5 KB (2451 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:99dc7606df8910a45fa52c7496b94079378c634fec668a69a43cf394d1019824`  
+		Last Modified: Wed, 05 Oct 2022 21:29:28 GMT  
+		Size: 244.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:bcbe1ef39ac9d0df98123e4f2edf7eca94b6f8a864c6146448a0028c5fa6cf8a`  
+		Last Modified: Wed, 05 Oct 2022 21:29:28 GMT  
+		Size: 8.6 KB (8572 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e887030b55c8809709e9a75d90e64c31f00fc9710bb829aee95a8a8cfac6cc9f`  
+		Last Modified: Tue, 25 Oct 2022 12:51:52 GMT  
+		Size: 2.7 MB (2656292 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7eddd960ceb934ca8a8f5fadc48f360efffcbfcd33a54b437be5765cdd6364f0`  
+		Last Modified: Tue, 25 Oct 2022 12:51:51 GMT  
+		Size: 330.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:137a892a7cc731389c20d5bb52d697f1fa417507d1df5b6550043a630313223b`  
+		Last Modified: Tue, 25 Oct 2022 12:51:56 GMT  
+		Size: 17.4 MB (17366275 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e64fd2aba844dbe1a61e637d4ff825f9b519bdfb37bdbac0e0a24ba741c213fa`  
+		Last Modified: Tue, 25 Oct 2022 12:51:51 GMT  
+		Size: 347.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:bf65bd3b965a914783872f49bc64501cbd9fc89a1945dcfd1947a7bfc3896554`  
+		Last Modified: Tue, 25 Oct 2022 12:51:51 GMT  
+		Size: 631.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `matomo:4.12.2-fpm` - linux; arm64 variant v8
@@ -13749,13 +14249,14 @@ CMD ["php-fpm"]
 ## `matomo:4.12.2-fpm-alpine`
 
 ```console
-$ docker pull matomo@sha256:ca78edcc5941633337f9382119fd3306d3fc133392cb33a1d6e0d1daca41b2d8
+$ docker pull matomo@sha256:edd9308aa608758c8b008bdcecef84606ffb739ce3cdd828e7964f395922ef4a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 6
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
+	-	linux; arm variant v7
 	-	linux; arm64 variant v8
 	-	linux; 386
 	-	linux; ppc64le
@@ -14061,6 +14562,157 @@ CMD ["php-fpm"]
 	-	`sha256:55fc2296ff5b572d7bf7a4c99e3e1d2a854cbbfbde464cae0ed60c4617ea0046`  
 		Last Modified: Tue, 25 Oct 2022 05:56:11 GMT  
 		Size: 632.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `matomo:4.12.2-fpm-alpine` - linux; arm variant v7
+
+```console
+$ docker pull matomo@sha256:60c7bc1e1662098a11d1d1f57685182e29d03ac747a79267c0e396f0b08bcd54
+```
+
+-	Docker Version: 20.10.17
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **47.8 MB (47814105 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:e09da204cbefc9a5281b06b184bc8c88d8d3d02d5af0815cff4a5c312537b7d5`
+-	Entrypoint: `["\/entrypoint.sh"]`
+-	Default Command: `["php-fpm"]`
+
+```dockerfile
+# Tue, 09 Aug 2022 16:57:44 GMT
+ADD file:75521fe16320b193092588f6f31052c85e736965ceb11673de18bd14965a45e6 in / 
+# Tue, 09 Aug 2022 16:57:44 GMT
+CMD ["/bin/sh"]
+# Wed, 10 Aug 2022 14:13:13 GMT
+ENV PHPIZE_DEPS=autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c
+# Wed, 10 Aug 2022 14:13:14 GMT
+RUN apk add --no-cache 		ca-certificates 		curl 		tar 		xz 		openssl
+# Wed, 10 Aug 2022 14:13:15 GMT
+RUN set -eux; 	adduser -u 82 -D -S -G www-data www-data
+# Wed, 10 Aug 2022 14:13:15 GMT
+ENV PHP_INI_DIR=/usr/local/etc/php
+# Wed, 10 Aug 2022 14:13:16 GMT
+RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
+# Wed, 10 Aug 2022 14:13:16 GMT
+ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Wed, 10 Aug 2022 14:13:16 GMT
+ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Wed, 10 Aug 2022 14:13:16 GMT
+ENV PHP_LDFLAGS=-Wl,-O1 -pie
+# Sat, 08 Oct 2022 00:37:19 GMT
+ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F
+# Sat, 08 Oct 2022 00:37:19 GMT
+ENV PHP_VERSION=8.0.24
+# Sat, 08 Oct 2022 00:37:19 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.0.24.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.0.24.tar.xz.asc
+# Sat, 08 Oct 2022 00:37:19 GMT
+ENV PHP_SHA256=8e6a63ac9cdabe4c345b32a54b18f348d9e50a1decda217faf2d61278d22f08b
+# Sat, 08 Oct 2022 00:37:26 GMT
+RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apk del --no-network .fetch-deps
+# Sat, 08 Oct 2022 00:37:26 GMT
+COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
+# Sat, 08 Oct 2022 00:50:47 GMT
+RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		gnu-libiconv-dev 		libsodium-dev 		libxml2-dev 		linux-headers 		oniguruma-dev 		openssl-dev 		readline-dev 		sqlite-dev 	; 		rm -vf /usr/include/iconv.h; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv=/usr 		--with-openssl 		--with-readline 		--with-zlib 				--disable-phpdbg 				--with-pear 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 				--disable-cgi 				--enable-fpm 		--with-fpm-user=www-data 		--with-fpm-group=www-data 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
+# Sat, 08 Oct 2022 00:50:47 GMT
+COPY multi:869bde9dbeae74886a05c9e2107b3e3b4877116db8c6d9adbaff2719f9fb5262 in /usr/local/bin/ 
+# Sat, 08 Oct 2022 00:50:48 GMT
+RUN docker-php-ext-enable sodium
+# Sat, 08 Oct 2022 00:50:48 GMT
+ENTRYPOINT ["docker-php-entrypoint"]
+# Sat, 08 Oct 2022 00:50:48 GMT
+WORKDIR /var/www/html
+# Sat, 08 Oct 2022 00:50:49 GMT
+RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; echo '; https://github.com/docker-library/php/pull/725#issuecomment-443540114'; echo 'log_limit = 8192'; 		echo; 		echo '[www]'; 		echo '; if we send this to /proc/self/fd/1, it never appears'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 		echo 'decorate_workers_output = no'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf
+# Sat, 08 Oct 2022 00:50:49 GMT
+STOPSIGNAL SIGQUIT
+# Sat, 08 Oct 2022 00:50:49 GMT
+EXPOSE 9000
+# Sat, 08 Oct 2022 00:50:49 GMT
+CMD ["php-fpm"]
+# Tue, 25 Oct 2022 12:47:57 GMT
+LABEL maintainer=pierre@piwik.org
+# Tue, 25 Oct 2022 12:47:57 GMT
+ENV PHP_MEMORY_LIMIT=256M
+# Tue, 25 Oct 2022 12:49:36 GMT
+RUN set -ex; 		apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		autoconf 		freetype-dev 		icu-dev 		libjpeg-turbo-dev 		libpng-dev 		libzip-dev 		openldap-dev 		pcre-dev 		procps 	; 		docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --virtual .matomo-phpext-rundeps $runDeps; 	apk del .build-deps
+# Tue, 25 Oct 2022 12:49:38 GMT
+RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
+# Tue, 25 Oct 2022 12:49:38 GMT
+ENV MATOMO_VERSION=4.12.2
+# Tue, 25 Oct 2022 12:50:04 GMT
+RUN set -ex; 	apk add --no-cache --virtual .fetch-deps 		gnupg 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apk del .fetch-deps
+# Tue, 25 Oct 2022 12:50:05 GMT
+COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
+# Tue, 25 Oct 2022 12:50:05 GMT
+COPY file:ccb778224a0e1f6742127aba2860c245adf24b73ca277e7260c4789883751ccb in /entrypoint.sh 
+# Tue, 25 Oct 2022 12:50:06 GMT
+VOLUME [/var/www/html]
+# Tue, 25 Oct 2022 12:50:06 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Tue, 25 Oct 2022 12:50:06 GMT
+CMD ["php-fpm"]
+```
+
+-	Layers:
+	-	`sha256:c6556b3b6858c6fa1e328377cc2c4becdc9cd1bc3e7302aa7299936522cf93ba`  
+		Last Modified: Tue, 09 Aug 2022 16:58:55 GMT  
+		Size: 2.4 MB (2417065 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:533661cc695e850f2ce9a61f8d6bcabf20631bc4be493498e7c06a85445a834d`  
+		Last Modified: Wed, 10 Aug 2022 19:17:39 GMT  
+		Size: 1.6 MB (1575470 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:83ea8309925b47b4d8ed5708b410d6856267d8d8dea3544802ae2a6d8e16e2a5`  
+		Last Modified: Wed, 10 Aug 2022 19:17:38 GMT  
+		Size: 1.3 KB (1262 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:4a23ce236c2c67c8bab1a6d9e5111a49299c4b7a07b9914b84c845eb1ff3c3ab`  
+		Last Modified: Wed, 10 Aug 2022 19:17:38 GMT  
+		Size: 268.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e2eb5c80cae2405488e2d55c37aed398e980ccba047ee13ea7f1fe0709619f28`  
+		Last Modified: Sat, 08 Oct 2022 02:08:24 GMT  
+		Size: 10.9 MB (10915489 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e462a3d41a096ca396bac3cdaadbc8f1b9613ae81a1b84889042a8f6d63bcd4d`  
+		Last Modified: Sat, 08 Oct 2022 02:08:23 GMT  
+		Size: 496.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e5bd707c15b132863b933897c0d84a396ebee295e8e2de3831ff30c170f57d79`  
+		Last Modified: Sat, 08 Oct 2022 02:09:01 GMT  
+		Size: 10.6 MB (10559268 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:05e691566f5c7098d173412c80f6dbc985c9cfb910e4e27ec40da0b830bc928c`  
+		Last Modified: Sat, 08 Oct 2022 02:08:59 GMT  
+		Size: 2.4 KB (2448 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:50981ac3182263136d4bf07d42e32eb3b058b79783c73fff0defdced47e44b5a`  
+		Last Modified: Sat, 08 Oct 2022 02:08:59 GMT  
+		Size: 18.7 KB (18654 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e7913bc20d6e0f4596a31b040811d7ef0da0f1b19eef1fe2316b7d6b471beba0`  
+		Last Modified: Sat, 08 Oct 2022 02:08:59 GMT  
+		Size: 8.6 KB (8575 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:04947607599d59aebb4bbd01b5faad9a6c5db4329499df7c724655416985f913`  
+		Last Modified: Tue, 25 Oct 2022 12:52:18 GMT  
+		Size: 5.3 MB (5250898 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:16b841880c8f4442fb692ed559b20dd44f4909cc891bbdda192dc3497b5484a0`  
+		Last Modified: Tue, 25 Oct 2022 12:52:17 GMT  
+		Size: 325.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:92875b6e4ef143d57eca90c0f89b8ee606163e1670793af71b53620328f55405`  
+		Last Modified: Tue, 25 Oct 2022 12:52:22 GMT  
+		Size: 17.1 MB (17062917 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:78cc510ffc99b468a0d8b22e6ca4cd92d913fd6baa3cbd9e8a83698a04856576`  
+		Last Modified: Tue, 25 Oct 2022 12:52:17 GMT  
+		Size: 339.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dfc57230f787a0a037e3361c82be04b6b643db2859372d4464c2589454607c2a`  
+		Last Modified: Tue, 25 Oct 2022 12:52:17 GMT  
+		Size: 631.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `matomo:4.12.2-fpm-alpine` - linux; arm64 variant v8
@@ -14670,7 +15322,7 @@ CMD ["php-fpm"]
 ## `matomo:apache`
 
 ```console
-$ docker pull matomo@sha256:81dba5723e646809b7b236cd86efddb6f7b36c271ed766e6a01c8e1c58c67353
+$ docker pull matomo@sha256:63558ccb613d65e4c8ee3e483c276057e733314d44d358b97ca67adbaa1b7cee
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -15033,14 +15685,14 @@ CMD ["apache2-foreground"]
 ### `matomo:apache` - linux; arm variant v7
 
 ```console
-$ docker pull matomo@sha256:d50caf9affb23a6bcb26586f326ee10fb25f9484d709d1f508a3ae9bf60d6ebe
+$ docker pull matomo@sha256:5044c0b47a6bfeb8242572901d2650067556c52a503df8d068ffd33b57bc3338
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **154.5 MB (154521435 bytes)**  
+-	Total Size: **154.5 MB (154521217 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:968531cc2bfd0b2b053fabcee72d52e32cce91ffa7176ff8e341131f20cc43f5`
+-	Image ID: `sha256:549dc3c2c070254585c44c7a7ff3cc95eb0403e2c0b45a3b01fd7fa962bb0fbd`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -15105,27 +15757,27 @@ WORKDIR /var/www/html
 EXPOSE 80
 # Wed, 05 Oct 2022 19:27:04 GMT
 CMD ["apache2-foreground"]
-# Thu, 06 Oct 2022 20:30:24 GMT
+# Tue, 25 Oct 2022 12:43:18 GMT
 LABEL maintainer=pierre@piwik.org
-# Thu, 06 Oct 2022 20:30:24 GMT
+# Tue, 25 Oct 2022 12:43:18 GMT
 ENV PHP_MEMORY_LIMIT=256M
-# Thu, 06 Oct 2022 20:32:19 GMT
+# Tue, 25 Oct 2022 12:44:37 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libldap2-dev 		libpng-dev 		libzip-dev 		procps 	; 		debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Thu, 06 Oct 2022 20:32:20 GMT
+# Tue, 25 Oct 2022 12:44:38 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 19 Oct 2022 19:59:53 GMT
-ENV MATOMO_VERSION=4.12.1
-# Wed, 19 Oct 2022 20:00:11 GMT
+# Tue, 25 Oct 2022 12:44:38 GMT
+ENV MATOMO_VERSION=4.12.2
+# Tue, 25 Oct 2022 12:45:18 GMT
 RUN set -ex; 	fetchDeps=" 		dirmngr 		gnupg 	"; 	apt-get update; 	apt-get install -y --no-install-recommends 		$fetchDeps 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
-# Wed, 19 Oct 2022 20:00:11 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 COPY file:ccb778224a0e1f6742127aba2860c245adf24b73ca277e7260c4789883751ccb in /entrypoint.sh 
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 VOLUME [/var/www/html]
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:19 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -15182,25 +15834,25 @@ CMD ["apache2-foreground"]
 		Last Modified: Wed, 05 Oct 2022 21:29:04 GMT  
 		Size: 891.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20cb46c957024efb0e762c11be0aaa5b53bb7da2ed95db8e8c32e881e01f8abd`  
-		Last Modified: Thu, 06 Oct 2022 20:37:53 GMT  
-		Size: 2.7 MB (2681580 bytes)  
+	-	`sha256:206421f4938e1e8a834ad67cca7b25f8cb016716cd99a80b124279fb5e382aea`  
+		Last Modified: Tue, 25 Oct 2022 12:51:08 GMT  
+		Size: 2.7 MB (2681411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b48b47c08f1da8024a9eb80ed1fc96c8f6aacd2217d8fec16a83bfed102056af`  
-		Last Modified: Thu, 06 Oct 2022 20:37:51 GMT  
-		Size: 326.0 B  
+	-	`sha256:bf8cc4e6606e8674cd6e4ca0412f6f1c3d233bd42b75804382a29f4ff5802b50`  
+		Last Modified: Tue, 25 Oct 2022 12:51:07 GMT  
+		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef08fd0226d8924bcb3cde520d1dbfe748c889293abd6728d673beef27dcf985`  
-		Last Modified: Wed, 19 Oct 2022 20:01:50 GMT  
-		Size: 17.4 MB (17391757 bytes)  
+	-	`sha256:e985cf8279b85575ac4ef7416f1cd057aca5aa5406255f942fa379d5d9a83295`  
+		Last Modified: Tue, 25 Oct 2022 12:51:12 GMT  
+		Size: 17.4 MB (17391706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0373ec9a81762d3ba017a6a8eb37781be2d873bf43bea78e627529e4d35c8c27`  
-		Last Modified: Wed, 19 Oct 2022 20:01:43 GMT  
-		Size: 342.0 B  
+	-	`sha256:40c23c4b7ad465f436ff94390d79d6fc787d32589159c0e6d5949ffbe3db986a`  
+		Last Modified: Tue, 25 Oct 2022 12:51:07 GMT  
+		Size: 343.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:03c00ee7b40135ea6becb27fc6961ab1b2bf6b8f19e0666bffdbb928dbac3109`  
-		Last Modified: Wed, 19 Oct 2022 20:01:43 GMT  
-		Size: 633.0 B  
+	-	`sha256:bca3109ed43d6bb0aa358f3555fa96bdc06656d8d901b0132b1fc25fa92d40fd`  
+		Last Modified: Tue, 25 Oct 2022 12:51:08 GMT  
+		Size: 632.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `matomo:apache` - linux; arm64 variant v8
@@ -16071,7 +16723,7 @@ CMD ["apache2-foreground"]
 ## `matomo:fpm`
 
 ```console
-$ docker pull matomo@sha256:57a085837eb624d9312d3be6838516e31e603c530bcfd5b2c22dfe3383b14465
+$ docker pull matomo@sha256:7a2f1fde851f59c191926b5e665ede0aefcd8eeee3cc47e6e2e8b3d69db4d808
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16390,14 +17042,14 @@ CMD ["php-fpm"]
 ### `matomo:fpm` - linux; arm variant v7
 
 ```console
-$ docker pull matomo@sha256:7423fb3921df1bf783e67db2c07ac7d4ca064129e15d8a643aeb6fc83e6eabb6
+$ docker pull matomo@sha256:cb0cce0e6616d855959b6c27c745b3af49ce3c9a71e12264c2fb5e1c849ab839
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **150.9 MB (150909401 bytes)**  
+-	Total Size: **150.9 MB (150909245 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4f007aac67f398a6470cc268721b66e4f00caeef017940b8406eb917f93311dd`
+-	Image ID: `sha256:c0f5ceb6d28ab0cde2c5b0d5964481d428198fdae9af92035899cf83d1400be6`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -16452,27 +17104,27 @@ STOPSIGNAL SIGQUIT
 EXPOSE 9000
 # Wed, 05 Oct 2022 19:36:20 GMT
 CMD ["php-fpm"]
-# Thu, 06 Oct 2022 20:32:48 GMT
+# Tue, 25 Oct 2022 12:45:29 GMT
 LABEL maintainer=pierre@piwik.org
-# Thu, 06 Oct 2022 20:32:48 GMT
+# Tue, 25 Oct 2022 12:45:29 GMT
 ENV PHP_MEMORY_LIMIT=256M
-# Thu, 06 Oct 2022 20:34:20 GMT
+# Tue, 25 Oct 2022 12:46:54 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libldap2-dev 		libpng-dev 		libzip-dev 		procps 	; 		debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Thu, 06 Oct 2022 20:34:20 GMT
+# Tue, 25 Oct 2022 12:46:55 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 19 Oct 2022 20:00:21 GMT
-ENV MATOMO_VERSION=4.12.1
-# Wed, 19 Oct 2022 20:00:39 GMT
+# Tue, 25 Oct 2022 12:46:55 GMT
+ENV MATOMO_VERSION=4.12.2
+# Tue, 25 Oct 2022 12:47:38 GMT
 RUN set -ex; 	fetchDeps=" 		dirmngr 		gnupg 	"; 	apt-get update; 	apt-get install -y --no-install-recommends 		$fetchDeps 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
-# Wed, 19 Oct 2022 20:00:39 GMT
+# Tue, 25 Oct 2022 12:47:39 GMT
 COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
-# Wed, 19 Oct 2022 20:00:39 GMT
+# Tue, 25 Oct 2022 12:47:39 GMT
 COPY file:ccb778224a0e1f6742127aba2860c245adf24b73ca277e7260c4789883751ccb in /entrypoint.sh 
-# Wed, 19 Oct 2022 20:00:40 GMT
+# Tue, 25 Oct 2022 12:47:40 GMT
 VOLUME [/var/www/html]
-# Wed, 19 Oct 2022 20:00:40 GMT
+# Tue, 25 Oct 2022 12:47:40 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 19 Oct 2022 20:00:40 GMT
+# Tue, 25 Oct 2022 12:47:40 GMT
 CMD ["php-fpm"]
 ```
 
@@ -16517,25 +17169,25 @@ CMD ["php-fpm"]
 		Last Modified: Wed, 05 Oct 2022 21:29:28 GMT  
 		Size: 8.6 KB (8572 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23ab67d351f9ffd452a50215715644c9aad5784ebdcd164397e5550e2df68d89`  
-		Last Modified: Thu, 06 Oct 2022 20:38:37 GMT  
-		Size: 2.7 MB (2656436 bytes)  
+	-	`sha256:e887030b55c8809709e9a75d90e64c31f00fc9710bb829aee95a8a8cfac6cc9f`  
+		Last Modified: Tue, 25 Oct 2022 12:51:52 GMT  
+		Size: 2.7 MB (2656292 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:00f953be789eac43d0d7d58d077d3b79d3172867b7cd4411a1a61f4ff2596edb`  
-		Last Modified: Thu, 06 Oct 2022 20:38:36 GMT  
+	-	`sha256:7eddd960ceb934ca8a8f5fadc48f360efffcbfcd33a54b437be5765cdd6364f0`  
+		Last Modified: Tue, 25 Oct 2022 12:51:51 GMT  
 		Size: 330.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:643f3aade991877b5ed04bc8b0a3efa5fc0667770d2fc1326614b30cfd390cf7`  
-		Last Modified: Wed, 19 Oct 2022 20:02:36 GMT  
-		Size: 17.4 MB (17366287 bytes)  
+	-	`sha256:137a892a7cc731389c20d5bb52d697f1fa417507d1df5b6550043a630313223b`  
+		Last Modified: Tue, 25 Oct 2022 12:51:56 GMT  
+		Size: 17.4 MB (17366275 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:47d2d4416ee8f0d8d54d21bfa96123a062986650eb547bbc9f9bbba15edc96ef`  
-		Last Modified: Wed, 19 Oct 2022 20:02:31 GMT  
-		Size: 345.0 B  
+	-	`sha256:e64fd2aba844dbe1a61e637d4ff825f9b519bdfb37bdbac0e0a24ba741c213fa`  
+		Last Modified: Tue, 25 Oct 2022 12:51:51 GMT  
+		Size: 347.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2efa44360f923ad547c704bd4b4597d00ee2531eb0d0b2ce64d95e6d56d34da`  
-		Last Modified: Wed, 19 Oct 2022 20:02:31 GMT  
-		Size: 633.0 B  
+	-	`sha256:bf65bd3b965a914783872f49bc64501cbd9fc89a1945dcfd1947a7bfc3896554`  
+		Last Modified: Tue, 25 Oct 2022 12:51:51 GMT  
+		Size: 631.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `matomo:fpm` - linux; arm64 variant v8
@@ -17296,7 +17948,7 @@ CMD ["php-fpm"]
 ## `matomo:fpm-alpine`
 
 ```console
-$ docker pull matomo@sha256:ce003a780488ce55ce77f5e384067721901a065a30d8942b156bb4440ae9dfc7
+$ docker pull matomo@sha256:edd9308aa608758c8b008bdcecef84606ffb739ce3cdd828e7964f395922ef4a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -17614,14 +18266,14 @@ CMD ["php-fpm"]
 ### `matomo:fpm-alpine` - linux; arm variant v7
 
 ```console
-$ docker pull matomo@sha256:7f5ad5353cfeeb260e1cd357a9850f7dd1f18846cec0e9af324d9b51772526a6
+$ docker pull matomo@sha256:60c7bc1e1662098a11d1d1f57685182e29d03ac747a79267c0e396f0b08bcd54
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **47.8 MB (47810443 bytes)**  
+-	Total Size: **47.8 MB (47814105 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a960260a3227aac9c09a4ead133a8d02c7aa4ae1149a79cfb8b0ca13c88f2f26`
+-	Image ID: `sha256:e09da204cbefc9a5281b06b184bc8c88d8d3d02d5af0815cff4a5c312537b7d5`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -17676,27 +18328,27 @@ STOPSIGNAL SIGQUIT
 EXPOSE 9000
 # Sat, 08 Oct 2022 00:50:49 GMT
 CMD ["php-fpm"]
-# Sat, 08 Oct 2022 04:10:37 GMT
+# Tue, 25 Oct 2022 12:47:57 GMT
 LABEL maintainer=pierre@piwik.org
-# Sat, 08 Oct 2022 04:10:38 GMT
+# Tue, 25 Oct 2022 12:47:57 GMT
 ENV PHP_MEMORY_LIMIT=256M
-# Sat, 08 Oct 2022 04:12:25 GMT
+# Tue, 25 Oct 2022 12:49:36 GMT
 RUN set -ex; 		apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		autoconf 		freetype-dev 		icu-dev 		libjpeg-turbo-dev 		libpng-dev 		libzip-dev 		openldap-dev 		pcre-dev 		procps 	; 		docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --virtual .matomo-phpext-rundeps $runDeps; 	apk del .build-deps
-# Sat, 08 Oct 2022 04:12:25 GMT
+# Tue, 25 Oct 2022 12:49:38 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 19 Oct 2022 20:00:46 GMT
-ENV MATOMO_VERSION=4.12.1
-# Wed, 19 Oct 2022 20:00:56 GMT
+# Tue, 25 Oct 2022 12:49:38 GMT
+ENV MATOMO_VERSION=4.12.2
+# Tue, 25 Oct 2022 12:50:04 GMT
 RUN set -ex; 	apk add --no-cache --virtual .fetch-deps 		gnupg 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apk del .fetch-deps
-# Wed, 19 Oct 2022 20:00:57 GMT
+# Tue, 25 Oct 2022 12:50:05 GMT
 COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
-# Wed, 19 Oct 2022 20:00:57 GMT
+# Tue, 25 Oct 2022 12:50:05 GMT
 COPY file:ccb778224a0e1f6742127aba2860c245adf24b73ca277e7260c4789883751ccb in /entrypoint.sh 
-# Wed, 19 Oct 2022 20:00:57 GMT
+# Tue, 25 Oct 2022 12:50:06 GMT
 VOLUME [/var/www/html]
-# Wed, 19 Oct 2022 20:00:57 GMT
+# Tue, 25 Oct 2022 12:50:06 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 19 Oct 2022 20:00:57 GMT
+# Tue, 25 Oct 2022 12:50:06 GMT
 CMD ["php-fpm"]
 ```
 
@@ -17741,25 +18393,25 @@ CMD ["php-fpm"]
 		Last Modified: Sat, 08 Oct 2022 02:08:59 GMT  
 		Size: 8.6 KB (8575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f76d6c50df1f752ac370c06c1b8601383ccf207bf5fc9f2eb5c771c268447a3a`  
-		Last Modified: Sat, 08 Oct 2022 04:14:11 GMT  
-		Size: 5.2 MB (5247131 bytes)  
+	-	`sha256:04947607599d59aebb4bbd01b5faad9a6c5db4329499df7c724655416985f913`  
+		Last Modified: Tue, 25 Oct 2022 12:52:18 GMT  
+		Size: 5.3 MB (5250898 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:340267f776381329ad845afe8f77bea990c875e0e18a363bd82780ef1a9abb88`  
-		Last Modified: Sat, 08 Oct 2022 04:14:10 GMT  
-		Size: 327.0 B  
+	-	`sha256:16b841880c8f4442fb692ed559b20dd44f4909cc891bbdda192dc3497b5484a0`  
+		Last Modified: Tue, 25 Oct 2022 12:52:17 GMT  
+		Size: 325.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:896ed944c654010438402d4855c5e9befb5ee40e6df7a4af1a27e7a745234950`  
-		Last Modified: Wed, 19 Oct 2022 20:03:00 GMT  
-		Size: 17.1 MB (17063015 bytes)  
+	-	`sha256:92875b6e4ef143d57eca90c0f89b8ee606163e1670793af71b53620328f55405`  
+		Last Modified: Tue, 25 Oct 2022 12:52:22 GMT  
+		Size: 17.1 MB (17062917 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:732f15109ded32aa298e49eafce6cce29cc64cd086cb1480ad0eeaee9cbb8e8c`  
-		Last Modified: Wed, 19 Oct 2022 20:02:56 GMT  
-		Size: 343.0 B  
+	-	`sha256:78cc510ffc99b468a0d8b22e6ca4cd92d913fd6baa3cbd9e8a83698a04856576`  
+		Last Modified: Tue, 25 Oct 2022 12:52:17 GMT  
+		Size: 339.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:87a446182fc55c36c440eb7cf6cc6f81cbd9f5d85a0a729b56b1a6dbde595c8b`  
-		Last Modified: Wed, 19 Oct 2022 20:02:56 GMT  
-		Size: 632.0 B  
+	-	`sha256:dfc57230f787a0a037e3361c82be04b6b643db2859372d4464c2589454607c2a`  
+		Last Modified: Tue, 25 Oct 2022 12:52:17 GMT  
+		Size: 631.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `matomo:fpm-alpine` - linux; arm64 variant v8
@@ -18369,7 +19021,7 @@ CMD ["php-fpm"]
 ## `matomo:latest`
 
 ```console
-$ docker pull matomo@sha256:81dba5723e646809b7b236cd86efddb6f7b36c271ed766e6a01c8e1c58c67353
+$ docker pull matomo@sha256:63558ccb613d65e4c8ee3e483c276057e733314d44d358b97ca67adbaa1b7cee
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18732,14 +19384,14 @@ CMD ["apache2-foreground"]
 ### `matomo:latest` - linux; arm variant v7
 
 ```console
-$ docker pull matomo@sha256:d50caf9affb23a6bcb26586f326ee10fb25f9484d709d1f508a3ae9bf60d6ebe
+$ docker pull matomo@sha256:5044c0b47a6bfeb8242572901d2650067556c52a503df8d068ffd33b57bc3338
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **154.5 MB (154521435 bytes)**  
+-	Total Size: **154.5 MB (154521217 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:968531cc2bfd0b2b053fabcee72d52e32cce91ffa7176ff8e341131f20cc43f5`
+-	Image ID: `sha256:549dc3c2c070254585c44c7a7ff3cc95eb0403e2c0b45a3b01fd7fa962bb0fbd`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -18804,27 +19456,27 @@ WORKDIR /var/www/html
 EXPOSE 80
 # Wed, 05 Oct 2022 19:27:04 GMT
 CMD ["apache2-foreground"]
-# Thu, 06 Oct 2022 20:30:24 GMT
+# Tue, 25 Oct 2022 12:43:18 GMT
 LABEL maintainer=pierre@piwik.org
-# Thu, 06 Oct 2022 20:30:24 GMT
+# Tue, 25 Oct 2022 12:43:18 GMT
 ENV PHP_MEMORY_LIMIT=256M
-# Thu, 06 Oct 2022 20:32:19 GMT
+# Tue, 25 Oct 2022 12:44:37 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libldap2-dev 		libpng-dev 		libzip-dev 		procps 	; 		debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Thu, 06 Oct 2022 20:32:20 GMT
+# Tue, 25 Oct 2022 12:44:38 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 19 Oct 2022 19:59:53 GMT
-ENV MATOMO_VERSION=4.12.1
-# Wed, 19 Oct 2022 20:00:11 GMT
+# Tue, 25 Oct 2022 12:44:38 GMT
+ENV MATOMO_VERSION=4.12.2
+# Tue, 25 Oct 2022 12:45:18 GMT
 RUN set -ex; 	fetchDeps=" 		dirmngr 		gnupg 	"; 	apt-get update; 	apt-get install -y --no-install-recommends 		$fetchDeps 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
-# Wed, 19 Oct 2022 20:00:11 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 COPY file:ccb778224a0e1f6742127aba2860c245adf24b73ca277e7260c4789883751ccb in /entrypoint.sh 
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 VOLUME [/var/www/html]
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:18 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 19 Oct 2022 20:00:12 GMT
+# Tue, 25 Oct 2022 12:45:19 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -18881,25 +19533,25 @@ CMD ["apache2-foreground"]
 		Last Modified: Wed, 05 Oct 2022 21:29:04 GMT  
 		Size: 891.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20cb46c957024efb0e762c11be0aaa5b53bb7da2ed95db8e8c32e881e01f8abd`  
-		Last Modified: Thu, 06 Oct 2022 20:37:53 GMT  
-		Size: 2.7 MB (2681580 bytes)  
+	-	`sha256:206421f4938e1e8a834ad67cca7b25f8cb016716cd99a80b124279fb5e382aea`  
+		Last Modified: Tue, 25 Oct 2022 12:51:08 GMT  
+		Size: 2.7 MB (2681411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b48b47c08f1da8024a9eb80ed1fc96c8f6aacd2217d8fec16a83bfed102056af`  
-		Last Modified: Thu, 06 Oct 2022 20:37:51 GMT  
-		Size: 326.0 B  
+	-	`sha256:bf8cc4e6606e8674cd6e4ca0412f6f1c3d233bd42b75804382a29f4ff5802b50`  
+		Last Modified: Tue, 25 Oct 2022 12:51:07 GMT  
+		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef08fd0226d8924bcb3cde520d1dbfe748c889293abd6728d673beef27dcf985`  
-		Last Modified: Wed, 19 Oct 2022 20:01:50 GMT  
-		Size: 17.4 MB (17391757 bytes)  
+	-	`sha256:e985cf8279b85575ac4ef7416f1cd057aca5aa5406255f942fa379d5d9a83295`  
+		Last Modified: Tue, 25 Oct 2022 12:51:12 GMT  
+		Size: 17.4 MB (17391706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0373ec9a81762d3ba017a6a8eb37781be2d873bf43bea78e627529e4d35c8c27`  
-		Last Modified: Wed, 19 Oct 2022 20:01:43 GMT  
-		Size: 342.0 B  
+	-	`sha256:40c23c4b7ad465f436ff94390d79d6fc787d32589159c0e6d5949ffbe3db986a`  
+		Last Modified: Tue, 25 Oct 2022 12:51:07 GMT  
+		Size: 343.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:03c00ee7b40135ea6becb27fc6961ab1b2bf6b8f19e0666bffdbb928dbac3109`  
-		Last Modified: Wed, 19 Oct 2022 20:01:43 GMT  
-		Size: 633.0 B  
+	-	`sha256:bca3109ed43d6bb0aa358f3555fa96bdc06656d8d901b0132b1fc25fa92d40fd`  
+		Last Modified: Tue, 25 Oct 2022 12:51:08 GMT  
+		Size: 632.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `matomo:latest` - linux; arm64 variant v8
