@@ -1,7 +1,7 @@
 ## `buildpack-deps:bookworm-scm`
 
 ```console
-$ docker pull buildpack-deps@sha256:a81e95dfcb91d911f19b346aaf1541ab3580d5089e12dd2742fbe63b6fa2ce5c
+$ docker pull buildpack-deps@sha256:ec7ef8a575e12d3b99f209058a5ae50ce366599fcf8e694f7266f707c90f6f6a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -326,43 +326,43 @@ RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercuri
 ### `buildpack-deps:bookworm-scm` - linux; s390x
 
 ```console
-$ docker pull buildpack-deps@sha256:a32a2095c38aa2bf8f89f6155cd621ece6ddb166524787281a7173dad2a82d97
+$ docker pull buildpack-deps@sha256:221812309a8315f40e7a00439dfae7b687e3828c543190683390eec5bc6263dd
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **127.9 MB (127931980 bytes)**  
+-	Total Size: **126.5 MB (126484316 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4145310f04addb352a7d97737568bce09005d7a723b908e21d09b4a0e99f1f16`
+-	Image ID: `sha256:c27b9f13f925e68613971e6806d863cbc335c648a119e6ce33664f7874816557`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 04 Oct 2022 23:41:48 GMT
-ADD file:75b0ff403984b3c95919c781c632871090a7238d4c22c9c631160406de8309a4 in / 
-# Tue, 04 Oct 2022 23:41:54 GMT
+# Tue, 25 Oct 2022 01:13:56 GMT
+ADD file:92a462945d4b32c30f41478992b9ab30d452ac37b0ecef64e2325e4e99296ea8 in / 
+# Tue, 25 Oct 2022 01:13:58 GMT
 CMD ["bash"]
-# Wed, 05 Oct 2022 00:07:58 GMT
+# Tue, 25 Oct 2022 02:29:35 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 05 Oct 2022 00:08:06 GMT
+# Tue, 25 Oct 2022 02:29:40 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 05 Oct 2022 00:08:43 GMT
+# Tue, 25 Oct 2022 02:30:02 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
 ```
 
 -	Layers:
-	-	`sha256:b7893043d434a6c00815ae2e7de11adb8c1f06815bbea513110060ae94e8851b`  
-		Last Modified: Tue, 04 Oct 2022 23:46:26 GMT  
-		Size: 51.3 MB (51280212 bytes)  
+	-	`sha256:e544dc28605cf962b36f5ba4703f824c022460d64f8973e49764cd76163df5ff`  
+		Last Modified: Tue, 25 Oct 2022 01:18:08 GMT  
+		Size: 49.6 MB (49578501 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:67ed7a0c18fee7ec61cc5b8d9ae520abe4b09aa014195c8b9481866aa0eff290`  
-		Last Modified: Wed, 05 Oct 2022 00:31:29 GMT  
-		Size: 8.9 MB (8935386 bytes)  
+	-	`sha256:50715b09b75ed5a3b59f5532be8529ac130746e899c823894a3ee91fc976a5ed`  
+		Last Modified: Tue, 25 Oct 2022 02:48:44 GMT  
+		Size: 8.8 MB (8785586 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:847d523eea662ddeeaa863120a2afe9127a5bb8c4a67ff524928ce23514e9469`  
-		Last Modified: Wed, 05 Oct 2022 00:31:29 GMT  
-		Size: 11.2 MB (11240632 bytes)  
+	-	`sha256:09bb8ed5a6b2d134cb7b866721196b0adaa54ab94d27c13c65773f16fffc143d`  
+		Last Modified: Tue, 25 Oct 2022 02:48:44 GMT  
+		Size: 11.7 MB (11727044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff33f2f178d309eb3e2d7fb3457599b55e7731e1d8af441d100e4eb4c7e1b8a3`  
-		Last Modified: Wed, 05 Oct 2022 00:31:43 GMT  
-		Size: 56.5 MB (56475750 bytes)  
+	-	`sha256:094b78b28a264fd0d8e36e29b1b3e4c349049eedd6af26957228a4bb291b7f90`  
+		Last Modified: Tue, 25 Oct 2022 02:48:58 GMT  
+		Size: 56.4 MB (56393185 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
