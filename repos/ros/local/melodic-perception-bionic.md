@@ -5668,14 +5668,9 @@ Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/sha
 - `public-domain`
 - `zlib/libpng`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mysql-5.7=5.7.39-0ubuntu0.18.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.39-0ubuntu0.18.04.2.dsc' mysql-5.7_5.7.39-0ubuntu0.18.04.2.dsc 3446 SHA512:94fdca24ef02451c184f7873bc0b916f69c501d611d5171f912816830dab7a0b52e0d9618cf4edbe494134be59471472ff17bccae1cdea21fd891ebdf77834b4
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.39.orig.tar.gz' mysql-5.7_5.7.39.orig.tar.gz 53243335 SHA512:1938ac811be526af062c213cc1b4feee6ea0b96e69f1d200eb4206c649173d1eec832b7b4628ecef9f78f0eb2e4ee005e338dfd69d409b0683e7a934d44c18c2
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.39-0ubuntu0.18.04.2.debian.tar.xz' mysql-5.7_5.7.39-0ubuntu0.18.04.2.debian.tar.xz 156900 SHA512:bb5071ae530cc6b945299a71d4f26b3250c182b3968fee1661a7f2f55e9745ddb0d57d46ce2c0256f295084b7fd087cebedbb1de0823335ed84cbdf215c23a08
-```
 
 ### `dpkg` source package: `mysql-defaults=1.0.4`
 
@@ -6493,14 +6488,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pillow=5.1.0-1ubuntu0.7
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pillow/pillow_5.1.0-1ubuntu0.7.dsc' pillow_5.1.0-1ubuntu0.7.dsc 2883 SHA512:58f0fec9986431b7fb703fea26dbdc5e86b4c8d0d9439a558f1d0be50cbd5109052a8eb5d944fcf52c55b18570e80b0e67b01f40d7c4519c22023e183d9cb2ae
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pillow/pillow_5.1.0.orig.tar.xz' pillow_5.1.0.orig.tar.xz 10771012 SHA512:40262690ef24ae1b4a5e8f7da5070d9e7a9d85a2ae990ef859f0af9270bb447dff249501abbd76352248ca9ec26c6f49862240270f1cb0b8dc3ab5b449e3801e
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pillow/pillow_5.1.0-1ubuntu0.7.debian.tar.xz' pillow_5.1.0-1ubuntu0.7.debian.tar.xz 48444 SHA512:64760b0abaed3d4ae3361ff3bd340b7a7790a3ceee52b7272b68a35c127e0cf77e1742843e8d1736f2d3142af821d486a9b94e920c28757613e596ac3fa78263
-```
 
 ### `dpkg` source package: `pinentry=1.1.0-1`
 
