@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:74c853bb7926517e9ea1164ab14749b8c82d60104738a97ed59ae4984e6efe22`
-- Created: `2022-10-14T02:23:49.363834565Z`
-- Virtual Size: ~ 224.51 Mb  
+- Image ID: `sha256:573d321061c578beb282537365e7ffcc978625063b33fb42bca6fb5b17e877b9`
+- Created: `2022-10-25T02:19:05.417712957Z`
+- Virtual Size: ~ 237.08 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -16,8 +16,8 @@
   - `PYTHON_VERSION=3.10.8`
   - `PYTHON_PIP_VERSION=22.2.2`
   - `PYTHON_SETUPTOOLS_VERSION=63.2.0`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/5eaac1050023df1f5c98b173b248c260023f2278/public/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=5aefe6ade911d997af080b315ebcb7f882212d070465df544e1175ac2be519b4`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/6d265be7a6b5bc4e9c5c07646aee0bf0394be03d/public/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=36c6f6214694ef64cc70f4127ac0ccec668408a93825359d998fb31d24968d67`
   - `SATOSA_VERSION=8.1.1`
 
 ## `dpkg` (`.deb`-based packages)
@@ -699,9 +699,8 @@ Other potentially useful URLs:
 Binary Packages:
 
 - `libc-bin=2.31-13+deb11u4`
-- `libc6:amd64=2.31-13+deb11u4`
 
-Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/libc6/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`)
 
 - `GPL-2`
 - `LGPL-2.1`
@@ -720,6 +719,32 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/glibc/2.31-13+deb11u4/ (for browsing the source)
 - https://sources.debian.net/src/glibc/2.31-13+deb11u4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/glibc/2.31-13+deb11u4/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `glibc=2.31-13+deb11u5`
+
+Binary Packages:
+
+- `libc6:amd64=2.31-13+deb11u5`
+
+Licenses: (parsed from: `/usr/share/doc/libc6/copyright`)
+
+- `GPL-2`
+- `LGPL-2.1`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris glibc=2.31-13+deb11u5
+'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.31-13%2bdeb11u5.dsc' glibc_2.31-13+deb11u5.dsc 8347 SHA256:77e3760f65a2f850bf492c8248690aed6eaec2eb988a261e0439cdcada110487
+'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.31.orig.tar.xz' glibc_2.31.orig.tar.xz 17254692 SHA256:3dc7704b6166839c37d7047626fd199f3d4c09aca0d90e48c51c31c967dce34e
+'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.31-13%2bdeb11u5.debian.tar.xz' glibc_2.31-13+deb11u5.debian.tar.xz 954032 SHA256:bb679f8e65d5b692f4479848848ec60e6eaa40e40b7eba7f5c2cf7bc79e3a415
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/glibc/2.31-13+deb11u5/ (for browsing the source)
+- https://sources.debian.net/src/glibc/2.31-13+deb11u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/glibc/2.31-13+deb11u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gmp=2:6.2.1+dfsg-1+deb11u1`
 

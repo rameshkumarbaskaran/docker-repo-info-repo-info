@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a3e7b6b9577f4c66aea80f9e92f8572c523ecda1bcb2e5136d42ca9035edb184`
-- Created: `2022-10-14T02:24:53.16464622Z`
+- Image ID: `sha256:6b74dd755f6a456de7036eab75d83d594237f466d67eec881ebeb845d2f101f2`
+- Created: `2022-10-25T02:20:08.491896883Z`
 - Virtual Size: ~ 111.74 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -16,8 +16,8 @@
   - `PYTHON_VERSION=3.10.8`
   - `PYTHON_PIP_VERSION=22.2.2`
   - `PYTHON_SETUPTOOLS_VERSION=63.2.0`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/5eaac1050023df1f5c98b173b248c260023f2278/public/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=5aefe6ade911d997af080b315ebcb7f882212d070465df544e1175ac2be519b4`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/6d265be7a6b5bc4e9c5c07646aee0bf0394be03d/public/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=36c6f6214694ef64cc70f4127ac0ccec668408a93825359d998fb31d24968d67`
   - `SATOSA_VERSION=8.1.1`
 
 ## `apk` (`.apk`-based packages)
@@ -518,16 +518,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.14-r1 description:
+libxml2-2.9.14-r2 description:
 XML parsing library, version 2
 
-libxml2-2.9.14-r1 webpage:
+libxml2-2.9.14-r2 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.14-r1 installed size:
+libxml2-2.9.14-r2 installed size:
 1200 KiB
 
-libxml2-2.9.14-r1 license:
+libxml2-2.9.14-r2 license:
 MIT
 
 ```
@@ -535,16 +535,16 @@ MIT
 ### `apk` package: `libxml2-utils`
 
 ```console
-libxml2-utils-2.9.14-r1 description:
+libxml2-utils-2.9.14-r2 description:
 XML utilities
 
-libxml2-utils-2.9.14-r1 webpage:
+libxml2-utils-2.9.14-r2 webpage:
 http://www.xmlsoft.org/
 
-libxml2-utils-2.9.14-r1 installed size:
+libxml2-utils-2.9.14-r2 installed size:
 96 KiB
 
-libxml2-utils-2.9.14-r1 license:
+libxml2-utils-2.9.14-r2 license:
 MIT
 
 ```
