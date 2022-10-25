@@ -1,20 +1,20 @@
-# `erlang:25.1.1.0`
+# `erlang:25.1.2.0`
 
 ## Docker Metadata
 
-- Image ID: `sha256:aa761da0881146c4e0a398f918fae89c3900c8012559438b74e28aab9b796b46`
-- Created: `2022-10-05T02:09:22.463550823Z`
+- Image ID: `sha256:519233fa882c85bf97c0ebc4ef6d65c767353be7d0f9468f57062dbc12c528b9`
+- Created: `2022-10-24T22:27:49.391573162Z`
 - Virtual Size: ~ 1.46 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["erl"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `OTP_VERSION=25.1.1`
+  - `OTP_VERSION=25.1.2`
   - `REBAR3_VERSION=3.19.0`
   - `REBAR_VERSION=2.6.4`
 - Labels:
-  - `org.opencontainers.image.version=25.1.1`
+  - `org.opencontainers.image.version=25.1.2`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1180,13 +1180,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/db5.3/5.3.28+dfsg1-0.8/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/db5.3/5.3.28+dfsg1-0.8/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `dbus=1.12.20-2`
+### `dpkg` source package: `dbus=1.12.24-0+deb11u1`
 
 Binary Packages:
 
-- `dbus=1.12.20-2`
-- `dbus-user-session=1.12.20-2`
-- `libdbus-1-3:amd64=1.12.20-2`
+- `dbus=1.12.24-0+deb11u1`
+- `dbus-user-session=1.12.24-0+deb11u1`
+- `libdbus-1-3:amd64=1.12.24-0+deb11u1`
 
 Licenses: (parsed from: `/usr/share/doc/dbus/copyright`, `/usr/share/doc/dbus-user-session/copyright`, `/usr/share/doc/libdbus-1-3/copyright`)
 
@@ -1203,18 +1203,18 @@ Licenses: (parsed from: `/usr/share/doc/dbus/copyright`, `/usr/share/doc/dbus-us
 Source:
 
 ```console
-$ apt-get source -qq --print-uris dbus=1.12.20-2
-'http://deb.debian.org/debian/pool/main/d/dbus/dbus_1.12.20-2.dsc' dbus_1.12.20-2.dsc 3638 SHA256:2131b177514f1a5a830d21d5f757ac5f69f30cea7ed1429e357f7bf5098de3c0
-'http://deb.debian.org/debian/pool/main/d/dbus/dbus_1.12.20.orig.tar.gz' dbus_1.12.20.orig.tar.gz 2095511 SHA256:f77620140ecb4cdc67f37fb444f8a6bea70b5b6461f12f1cbe2cec60fa7de5fe
-'http://deb.debian.org/debian/pool/main/d/dbus/dbus_1.12.20.orig.tar.gz.asc' dbus_1.12.20.orig.tar.gz.asc 833 SHA256:a5f4d51c9c95a6cf7270abb6548894d91d51eebc0e9f996d0951c8ee925894e7
-'http://deb.debian.org/debian/pool/main/d/dbus/dbus_1.12.20-2.debian.tar.xz' dbus_1.12.20-2.debian.tar.xz 58076 SHA256:b421fd81e8b8d400846d1d9646d347c5211ac187fd9973e6254f84a717089dc6
+$ apt-get source -qq --print-uris dbus=1.12.24-0+deb11u1
+'http://deb.debian.org/debian-security/pool/updates/main/d/dbus/dbus_1.12.24-0%2bdeb11u1.dsc' dbus_1.12.24-0+deb11u1.dsc 3578 SHA256:9a75dcffa9112579a74072fc56523f450fed635793ee1eea298b7229cbb9485a
+'http://deb.debian.org/debian-security/pool/updates/main/d/dbus/dbus_1.12.24.orig.tar.gz' dbus_1.12.24.orig.tar.gz 2120623 SHA256:bc42d196c1756ac520d61bf3ccd6f42013617def45dd1e591a6091abf51dca38
+'http://deb.debian.org/debian-security/pool/updates/main/d/dbus/dbus_1.12.24.orig.tar.gz.asc' dbus_1.12.24.orig.tar.gz.asc 833 SHA256:a81b175c65d1daa36d7043d113d6f11d5b4a43c3125f5613bfe734ad1c79a41b
+'http://deb.debian.org/debian-security/pool/updates/main/d/dbus/dbus_1.12.24-0%2bdeb11u1.debian.tar.xz' dbus_1.12.24-0+deb11u1.debian.tar.xz 58472 SHA256:b4e21844823b01eeac821f276b0f3a871b798c48381edc5626c4bfe8950575ae
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/dbus/1.12.20-2/ (for browsing the source)
-- https://sources.debian.net/src/dbus/1.12.20-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/dbus/1.12.20-2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/dbus/1.12.24-0+deb11u1/ (for browsing the source)
+- https://sources.debian.net/src/dbus/1.12.24-0+deb11u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/dbus/1.12.24-0+deb11u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `dconf=0.38.0-2`
 
