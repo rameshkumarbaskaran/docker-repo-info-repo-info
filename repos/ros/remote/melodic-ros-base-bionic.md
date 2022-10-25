@@ -1,7 +1,7 @@
 ## `ros:melodic-ros-base-bionic`
 
 ```console
-$ docker pull ros@sha256:a01392ed8cf43fb99fa539137626bfd50c5b44b63448a4d5ea6b391f6b5b7196
+$ docker pull ros@sha256:ecf84b223a21ae4bc5dbeb24ff850fc8963031e00bd67121cdaf99b4f898c083
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13,92 +13,92 @@ $ docker pull ros@sha256:a01392ed8cf43fb99fa539137626bfd50c5b44b63448a4d5ea6b391
 ### `ros:melodic-ros-base-bionic` - linux; amd64
 
 ```console
-$ docker pull ros@sha256:8e83dbb13e46ad46ade95f14a41d9cb1f52b0ded3671ec0ca47da2a75405caa2
+$ docker pull ros@sha256:a7201ea28800aff6b84b5fc7ab4fd80b61bc58dc006b9c2cdca6ec7be32cf6ee
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **437.5 MB (437522644 bytes)**  
+-	Total Size: **437.5 MB (437538991 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:19100de5b02016f5969462e71fb3370efde59d2bb6f50e78a774079ca02d19d6`
+-	Image ID: `sha256:898998df3ed57ef16b7e130a5148adf56b94754f794c70d6f6b5c670eb939dbf`
 -	Entrypoint: `["\/ros_entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 04 Oct 2022 23:35:04 GMT
-ADD file:ed601c56cf74241eeb1971b24ed969fb855cd2b9330276d3c5779ecdb0b28364 in / 
-# Tue, 04 Oct 2022 23:35:04 GMT
+# Tue, 25 Oct 2022 01:53:28 GMT
+ADD file:fc5d658c47ede58827812b75a311353be776e41e2dd339b8906839527c9b5247 in / 
+# Tue, 25 Oct 2022 01:53:28 GMT
 CMD ["bash"]
-# Wed, 05 Oct 2022 09:49:28 GMT
+# Tue, 25 Oct 2022 06:51:42 GMT
 RUN echo 'Etc/UTC' > /etc/timezone &&     ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime &&     apt-get update &&     apt-get install -q -y --no-install-recommends tzdata &&     rm -rf /var/lib/apt/lists/*
-# Wed, 05 Oct 2022 09:49:42 GMT
+# Tue, 25 Oct 2022 06:51:56 GMT
 RUN apt-get update && apt-get install -q -y --no-install-recommends     dirmngr     gnupg2     && rm -rf /var/lib/apt/lists/*
-# Wed, 05 Oct 2022 09:49:42 GMT
+# Tue, 25 Oct 2022 06:51:57 GMT
 RUN echo "deb http://packages.ros.org/ros/ubuntu bionic main" > /etc/apt/sources.list.d/ros1-latest.list
-# Wed, 05 Oct 2022 09:49:44 GMT
+# Tue, 25 Oct 2022 06:51:58 GMT
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-# Wed, 05 Oct 2022 09:49:44 GMT
+# Tue, 25 Oct 2022 06:51:58 GMT
 ENV LANG=C.UTF-8
-# Wed, 05 Oct 2022 09:49:44 GMT
+# Tue, 25 Oct 2022 06:51:58 GMT
 ENV LC_ALL=C.UTF-8
-# Wed, 05 Oct 2022 09:49:44 GMT
+# Tue, 25 Oct 2022 06:51:58 GMT
 ENV ROS_DISTRO=melodic
-# Wed, 05 Oct 2022 09:53:37 GMT
+# Tue, 25 Oct 2022 06:55:47 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends     ros-melodic-ros-core=1.4.1-0*     && rm -rf /var/lib/apt/lists/*
-# Wed, 05 Oct 2022 09:53:41 GMT
+# Tue, 25 Oct 2022 06:55:51 GMT
 COPY file:b48a3fff5008212a0bcdc238d0e8be930aa89d2336e357e1f628c98db523efeb in / 
-# Wed, 05 Oct 2022 09:53:41 GMT
+# Tue, 25 Oct 2022 06:55:51 GMT
 ENTRYPOINT ["/ros_entrypoint.sh"]
-# Wed, 05 Oct 2022 09:53:41 GMT
+# Tue, 25 Oct 2022 06:55:51 GMT
 CMD ["bash"]
-# Wed, 05 Oct 2022 09:54:36 GMT
+# Tue, 25 Oct 2022 06:56:35 GMT
 RUN apt-get update && apt-get install --no-install-recommends -y     build-essential     python-rosdep     python-rosinstall     python-vcstools     && rm -rf /var/lib/apt/lists/*
-# Wed, 05 Oct 2022 09:54:44 GMT
+# Tue, 25 Oct 2022 06:56:43 GMT
 RUN rosdep init &&   rosdep update --rosdistro $ROS_DISTRO
-# Wed, 05 Oct 2022 09:56:00 GMT
+# Tue, 25 Oct 2022 06:58:02 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends     ros-melodic-ros-base=1.4.1-0*     && rm -rf /var/lib/apt/lists/*
 ```
 
 -	Layers:
-	-	`sha256:e706e0a9f42365312b366bf4caa22f3cdd8fc7fd8f6f49b4dd3782711f66aca7`  
-		Last Modified: Tue, 04 Oct 2022 11:37:26 GMT  
-		Size: 26.7 MB (26711852 bytes)  
+	-	`sha256:a404e54162968593b8d92b571f3cdd673e4c9eab5d9be28d7c494595c0aa6682`  
+		Last Modified: Wed, 19 Oct 2022 22:03:02 GMT  
+		Size: 26.7 MB (26712500 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40ec163f2e73ca4c7df5142df330fb9169325367e235b65c457afcc3bf320f35`  
-		Last Modified: Wed, 05 Oct 2022 10:47:14 GMT  
-		Size: 831.0 KB (831002 bytes)  
+	-	`sha256:c1955214fb5b152d9d9fa8ce9a39b19a4e6e8ea487bc617e76c0b7b33e1881bc`  
+		Last Modified: Tue, 25 Oct 2022 07:50:06 GMT  
+		Size: 831.1 KB (831118 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdc154e3f17c6b6f2816c50c8a5bdf831cd4d8813015cacf86568d64746596b6`  
-		Last Modified: Wed, 05 Oct 2022 10:47:12 GMT  
-		Size: 4.9 MB (4873641 bytes)  
+	-	`sha256:b389880aa1534b94319b44ef0d7e8e52ae108ec326dc1efe1cf0e4e749a4190a`  
+		Last Modified: Tue, 25 Oct 2022 07:50:04 GMT  
+		Size: 4.9 MB (4877285 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2dfe6435278fe5856644c183f90cfb982b207bddda62c63a94d6a938acffaa85`  
-		Last Modified: Wed, 05 Oct 2022 10:47:11 GMT  
-		Size: 227.0 B  
+	-	`sha256:db68a36d4b9f8fa036da9f0c51e74b6d27dffd9d39317f42638ee84b29322668`  
+		Last Modified: Tue, 25 Oct 2022 07:50:03 GMT  
+		Size: 229.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:47d8283d791cae1e7c3329c4a1d8f4bc0476769b04e9ce92d6a97fe84026c059`  
-		Last Modified: Wed, 05 Oct 2022 10:47:11 GMT  
-		Size: 1.4 KB (1419 bytes)  
+	-	`sha256:b325e4aad15f84b511f749de8e3b84dc88f98909bbfdd1961ac0e84f7d273f16`  
+		Last Modified: Tue, 25 Oct 2022 07:50:03 GMT  
+		Size: 1.4 KB (1422 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab60f51f309df710bd88888532e7f25291a9e1d1f54e49a7af43e0771994831f`  
-		Last Modified: Wed, 05 Oct 2022 10:48:02 GMT  
-		Size: 259.6 MB (259558625 bytes)  
+	-	`sha256:f0ad76754b2b5a9699fc604ac8d1393dd3d6dfe21df82c8e930da67ffd6f6708`  
+		Last Modified: Tue, 25 Oct 2022 07:50:52 GMT  
+		Size: 259.6 MB (259567997 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:81b4b730c4ae1b037fe75c6ca063e9c629e1ed238654786a73fabd60b4ed9719`  
-		Last Modified: Wed, 05 Oct 2022 10:47:11 GMT  
-		Size: 196.0 B  
+	-	`sha256:8d1318baf5e3f70ccdc707f97c58bf69e65917aadaa98ec26b67d1d2695572fa`  
+		Last Modified: Tue, 25 Oct 2022 07:50:03 GMT  
+		Size: 195.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:291c878123af7c6629193bffe3aef7b2e41bc7e5b6d8d6c195e41a0afa072a2e`  
-		Last Modified: Wed, 05 Oct 2022 10:48:23 GMT  
-		Size: 70.3 MB (70259758 bytes)  
+	-	`sha256:7bb834ce8392143178e871793c61a9bd2ac4e34031627b0f8d8453a1f1d836a1`  
+		Last Modified: Tue, 25 Oct 2022 07:51:13 GMT  
+		Size: 70.3 MB (70260436 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:233ad80e5d2bd29146fac7ab104b0a8959214abd2c1e6381db3da5f889ec798c`  
-		Last Modified: Wed, 05 Oct 2022 10:48:12 GMT  
-		Size: 287.6 KB (287643 bytes)  
+	-	`sha256:874278d4c37ef6d13abdb486dd6dfd9900b104ad68492eb5ba5df13c5c947b37`  
+		Last Modified: Tue, 25 Oct 2022 07:51:03 GMT  
+		Size: 289.2 KB (289160 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:13911ccd58f2742aeb456bf670156ec35a6d1bb3670c9ba7d5a709b0201e2388`  
-		Last Modified: Wed, 05 Oct 2022 10:48:28 GMT  
-		Size: 75.0 MB (74998281 bytes)  
+	-	`sha256:5236595b9f2b064d0593cf222d04423eaa11b12eaa5c8e78974d822f22c23287`  
+		Last Modified: Tue, 25 Oct 2022 07:51:19 GMT  
+		Size: 75.0 MB (74998649 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `ros:melodic-ros-base-bionic` - linux; arm variant v7
