@@ -1,7 +1,7 @@
 ## `golang:nanoserver-ltsc2022`
 
 ```console
-$ docker pull golang@sha256:06aa3c2751a788da2c8e38d82ddde1f5cc4182ee763316b1fef118ba3519cf68
+$ docker pull golang@sha256:b14a4b34e14ff36bf98cc45783422ef7b2e367fe588deb107eba6eedb8fc1146
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,12 +11,12 @@ $ docker pull golang@sha256:06aa3c2751a788da2c8e38d82ddde1f5cc4182ee763316b1fef1
 ### `golang:nanoserver-ltsc2022` - windows version 10.0.20348.1129; amd64
 
 ```console
-$ docker pull golang@sha256:79867343ee8d01588a1d7c6b439ec80b10030b2e5c0cf66a52edd23cd2c90600
+$ docker pull golang@sha256:11d139d1e75a45498353760e5503efa1d7c2feedd3744d884067c6bd3d3379fe
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **275.6 MB (275622803 bytes)**  
+-	Total Size: **279.4 MB (279423421 bytes)**  
 	(compressed transfer size, not on-disk size)
 -	Image ID: `sha256:089bd9f5bdd52378dd83971aab0cc0395b8cc7a7bea22729b712be66518c1a80`
 -	Default Command: `["c:\\windows\\system32\\cmd.exe"]`
@@ -46,9 +46,10 @@ WORKDIR C:\go
 ```
 
 -	Layers:
-	-	`sha256:38fa349577729651ac1fc3ec785f908719a8100da5f5ba9bd3f549411061f583`  
-		Size: 118.2 MB (118202895 bytes)  
-		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:b6520318982addabaf67d0cef5499282d15348f205cf5d7328925bcd681e85bd`  
+		Last Modified: Tue, 25 Oct 2022 22:04:15 GMT  
+		Size: 122.0 MB (122003513 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c9abf6e1518124a035a9bbaf0dad0924d5286be7dc0ee052f1225355c2e68da7`  
 		Last Modified: Wed, 12 Oct 2022 13:17:17 GMT  
 		Size: 1.2 KB (1160 bytes)  
