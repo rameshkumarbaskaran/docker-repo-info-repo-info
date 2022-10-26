@@ -1,7 +1,7 @@
 ## `lightstreamer:7-jdk8`
 
 ```console
-$ docker pull lightstreamer@sha256:cf4b713c8e23793d5f9ac5f009a977a6ecb99fa66712a8fc76435af0cd7f9954
+$ docker pull lightstreamer@sha256:de428f4f553ba215b4e89fdb8972cae8365272de677fe3e3b975bd40c2e18e2e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -96,83 +96,83 @@ CMD ["./LS.sh" "run"]
 ### `lightstreamer:7-jdk8` - linux; arm64 variant v8
 
 ```console
-$ docker pull lightstreamer@sha256:5ad0ab236b20741be88508576214a5f2c003e9e5048cddf40a422f5daf4a7218
+$ docker pull lightstreamer@sha256:3a450ccdb7b39b098a39f088b031ca6fed49b38a54581d501131a0e384d8c9be
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **204.6 MB (204558930 bytes)**  
+-	Total Size: **204.8 MB (204799672 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d26636f5a62eddd832ccc2c08f56cf02649cc3ac31eb4da3fca28875a1d78190`
+-	Image ID: `sha256:9ebd7d96392d71e7f587039e40961b17c4e07b6e4f8517d08356afd63cb2682e`
 -	Default Command: `[".\/LS.sh","run"]`
 
 ```dockerfile
-# Wed, 05 Oct 2022 00:02:19 GMT
-ADD file:fd8103ca1472a4f51eeff3e22fbd1dfd61a3d22c34f16a61ef1ba016352e3629 in / 
-# Wed, 05 Oct 2022 00:02:20 GMT
+# Tue, 25 Oct 2022 05:55:02 GMT
+ADD file:515177312f20fb1814b89bfccfe695fa2354bbb6d43fdb6e018bf5b1acc17e9f in / 
+# Tue, 25 Oct 2022 05:55:02 GMT
 CMD ["bash"]
-# Wed, 05 Oct 2022 15:44:00 GMT
+# Wed, 26 Oct 2022 01:08:29 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Wed, 05 Oct 2022 15:44:01 GMT
+# Wed, 26 Oct 2022 01:08:29 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 05 Oct 2022 15:44:02 GMT
+# Wed, 26 Oct 2022 01:08:30 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Wed, 05 Oct 2022 15:44:19 GMT
+# Wed, 26 Oct 2022 01:09:02 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Wed, 05 Oct 2022 15:44:19 GMT
+# Wed, 26 Oct 2022 01:09:02 GMT
 ENV JAVA_VERSION=jdk8u345-b01
-# Wed, 05 Oct 2022 15:44:25 GMT
+# Wed, 26 Oct 2022 01:09:07 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='c1965fb24dded7d7944e2da36cd902adf3b7b1d327aaa21ea507cff00a5a0090';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u345-b01/OpenJDK8U-jdk_aarch64_linux_hotspot_8u345b01.tar.gz';          ;;        armhf|arm)          ESUM='af4ecd311df32b405142d5756f966418d0200fbf6cb9009c20a44dc691e8da6f';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u345-b01/OpenJDK8U-jdk_arm_linux_hotspot_8u345b01.tar.gz';          apt-get update          && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libatomic1          && rm -rf /var/lib/apt/lists/*          ;;        ppc64el|powerpc:common64)          ESUM='f2be72678f6c2ad283453d0e21a6cb03144dda356e4edf79f818d99c37feaf34';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u345-b01/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u345b01.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='ed6c9db3719895584fb1fd69fc79c29240977675f26631911c5a1dbce07b7d58';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u345-b01/OpenJDK8U-jdk_x64_linux_hotspot_8u345b01.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm /tmp/openjdk.tar.gz;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;
-# Wed, 05 Oct 2022 15:44:26 GMT
+# Wed, 26 Oct 2022 01:09:08 GMT
 RUN echo Verifying install ...     && echo javac -version && javac -version     && echo java -version && java -version     && echo Complete.
-# Thu, 06 Oct 2022 04:01:25 GMT
+# Wed, 26 Oct 2022 18:32:27 GMT
 LABEL maintainer=Lightstreamer Server Development Team <support@lightstreamer.com>
-# Thu, 06 Oct 2022 04:01:34 GMT
+# Wed, 26 Oct 2022 18:32:33 GMT
 RUN apt-get -y update         && apt-get -y install gnupg         && rm -rf /var/lib/apt/lists/*
-# Thu, 06 Oct 2022 04:01:35 GMT
+# Wed, 26 Oct 2022 18:32:34 GMT
 RUN gpg --batch --keyserver hkp://keyserver.ubuntu.com --recv-keys 9B90BFD14309C7DA5EF58D7D4A8C08966F29B4D2
-# Thu, 06 Oct 2022 04:04:01 GMT
+# Wed, 26 Oct 2022 18:33:45 GMT
 ENV LIGHTSTREAMER_VERSION=7.3.0
-# Thu, 06 Oct 2022 04:04:02 GMT
+# Wed, 26 Oct 2022 18:33:45 GMT
 ENV LIGHTSTREAMER_URL_DOWNLOAD=https://lightstreamer.com/distr/ls-server/7.3.0/Lightstreamer-7.3.0.tar.gz
-# Thu, 06 Oct 2022 04:04:11 GMT
+# Wed, 26 Oct 2022 18:33:52 GMT
 RUN set -ex;         mkdir /lightstreamer && cd /lightstreamer         && curl -fSL -o Lightstreamer.tar.gz ${LIGHTSTREAMER_URL_DOWNLOAD}         && curl -fSL -o Lightstreamer.tar.gz.asc ${LIGHTSTREAMER_URL_DOWNLOAD}.asc         && gpg --batch --verify Lightstreamer.tar.gz.asc Lightstreamer.tar.gz         && tar -xvf Lightstreamer.tar.gz --strip-components=1         && sed -i -e 's/<appender-ref ref="LSDailyRolling" \/>/<appender-ref ref="LSConsole" \/>/'                   -e '/<logger name="LightstreamerLogger.init/,+2s/<appender-ref ref="LSConsole" \/>/<!-- <appender-ref ref="LSConsole" \/> -->/'                   -e '/<logger name="LightstreamerLogger.license/,+2s/<appender-ref ref="LSConsole" \/>/<!-- <appender-ref ref="LSConsole" \/> -->/'                   -e '/<logger name="LightstreamerProxyAdapters/,+2s/<appender-ref ref="LSConsole" \/>/<!-- <appender-ref ref="LSConsole" \/> -->/'                   conf/lightstreamer_log_conf.xml         && groupadd -r -g 10000 lightstreamer         && useradd --no-log-init -r -g lightstreamer -u 10000 lightstreamer         && chown -R lightstreamer:lightstreamer ../lightstreamer         && rm Lightstreamer.tar.gz Lightstreamer.tar.gz.asc
-# Thu, 06 Oct 2022 04:04:11 GMT
+# Wed, 26 Oct 2022 18:33:53 GMT
 USER lightstreamer
-# Thu, 06 Oct 2022 04:04:12 GMT
+# Wed, 26 Oct 2022 18:33:53 GMT
 EXPOSE 8080
-# Thu, 06 Oct 2022 04:04:13 GMT
+# Wed, 26 Oct 2022 18:33:53 GMT
 WORKDIR /lightstreamer/bin/unix-like
-# Thu, 06 Oct 2022 04:04:14 GMT
+# Wed, 26 Oct 2022 18:33:53 GMT
 CMD ["./LS.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:d6cb415e2683249f7884ee5367306b023c72f907afeca2a30ca19c8de5f4f7d9`  
-		Last Modified: Tue, 04 Oct 2022 15:08:22 GMT  
-		Size: 28.4 MB (28382255 bytes)  
+	-	`sha256:56a2caa6b2c66e01954c1a013b37ea359b6e6af8989dbfb958124b6318771af4`  
+		Last Modified: Tue, 25 Oct 2022 05:56:14 GMT  
+		Size: 28.4 MB (28382489 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f02ffb58034794e0992216f802a3c5320c4b6b9cc80080bdd07eb7afa7db54bd`  
-		Last Modified: Wed, 05 Oct 2022 15:52:13 GMT  
-		Size: 12.4 MB (12397643 bytes)  
+	-	`sha256:d8d33b973dbba18a894c3b9064cedfece84e92985bce6e3be86a5efef3afdea8`  
+		Last Modified: Wed, 26 Oct 2022 01:16:34 GMT  
+		Size: 12.4 MB (12400371 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f130659f1f5099939cfd713643cde819bb17814b6a28efea72a5b1aade910f1`  
-		Last Modified: Wed, 05 Oct 2022 15:52:21 GMT  
-		Size: 102.6 MB (102615290 bytes)  
+	-	`sha256:1450eb44b38081331cb5a62349c603b45d6d09d6d3c44aa7a6dbf1d8d0f93691`  
+		Last Modified: Wed, 26 Oct 2022 01:16:40 GMT  
+		Size: 102.6 MB (102615195 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f23bd073459caf625b7279b9a79059667527491a38b2cc1679971652c3e1fee7`  
-		Last Modified: Wed, 05 Oct 2022 15:52:09 GMT  
-		Size: 128.0 B  
+	-	`sha256:f33429867dba4a125aa72267ecd6c28be29d991b925a2143e4079348193bbf8e`  
+		Last Modified: Wed, 26 Oct 2022 01:16:32 GMT  
+		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:446a8e831b352fd9cc0b4a9f763f8fb3e819eac95b82456bf396850ae2357a06`  
-		Last Modified: Thu, 06 Oct 2022 04:06:16 GMT  
-		Size: 3.3 MB (3331405 bytes)  
+	-	`sha256:6995c7241961207512f24b87f40f054d9c4fd5f8f05aefdd43b9984501b006a5`  
+		Last Modified: Wed, 26 Oct 2022 18:34:54 GMT  
+		Size: 3.6 MB (3569061 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:352ddda502cd258fb81719553847c07548427e62b9491d299bbe97ebba8fbb6f`  
-		Last Modified: Thu, 06 Oct 2022 04:06:16 GMT  
-		Size: 2.4 KB (2366 bytes)  
+	-	`sha256:2c2b8bd0c20489f220125d1d6f2a369cc2da5250e463c07990c33322ab6481ea`  
+		Last Modified: Wed, 26 Oct 2022 18:34:53 GMT  
+		Size: 2.4 KB (2388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1fe5656b2cfbfc7bc77200fdf9458f7483d57658573727d62c7bdb1dadfa83bf`  
-		Last Modified: Thu, 06 Oct 2022 04:09:22 GMT  
-		Size: 57.8 MB (57829843 bytes)  
+	-	`sha256:af855c39fc2663389eded0a0ae1bb2297f6c0cccd6656a5440ade63d40c83e10`  
+		Last Modified: Wed, 26 Oct 2022 18:37:29 GMT  
+		Size: 57.8 MB (57830006 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
