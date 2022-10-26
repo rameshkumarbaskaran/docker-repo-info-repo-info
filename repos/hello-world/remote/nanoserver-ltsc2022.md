@@ -1,7 +1,7 @@
 ## `hello-world:nanoserver-ltsc2022`
 
 ```console
-$ docker pull hello-world@sha256:a07fb469f7139a756e0d33384b3b44b5cf476b1fe5e7a6239863265fb6422952
+$ docker pull hello-world@sha256:cfa379c242bdbb093b12fe3970703988bd18aec8bf890085fc226533d6948841
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,12 +11,12 @@ $ docker pull hello-world@sha256:a07fb469f7139a756e0d33384b3b44b5cf476b1fe5e7a62
 ### `hello-world:nanoserver-ltsc2022` - windows version 10.0.20348.1129; amd64
 
 ```console
-$ docker pull hello-world@sha256:7aef5136b6c5aa5cb38b504f3c5d1aa61b6ec6db2565ae81d705c10b49241167
+$ docker pull hello-world@sha256:7780733f3cf8caf4de9b96deec0dd0a2bedc187d0a6934acd1308f3f7cd72166
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **118.2 MB (118205899 bytes)**  
+-	Total Size: **122.0 MB (122006517 bytes)**  
 	(compressed transfer size, not on-disk size)
 -	Image ID: `sha256:bd0eb300498435cbaa827ae2a85900e920dd9528c0a253ae6a07beb7b5fae99e`
 -	Default Command: `["cmd","\/C","type C:\\hello.txt"]`
@@ -31,9 +31,10 @@ RUN cmd /S /C #(nop)  CMD ["cmd" "/C" "type C:\\hello.txt"]
 ```
 
 -	Layers:
-	-	`sha256:38fa349577729651ac1fc3ec785f908719a8100da5f5ba9bd3f549411061f583`  
-		Size: 118.2 MB (118202895 bytes)  
-		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:b6520318982addabaf67d0cef5499282d15348f205cf5d7328925bcd681e85bd`  
+		Last Modified: Tue, 25 Oct 2022 22:04:15 GMT  
+		Size: 122.0 MB (122003513 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:cb2f9654ae65bd4aa50f3463f2d053025144322b599cc6506edf94170f1f170d`  
 		Last Modified: Wed, 12 Oct 2022 12:40:11 GMT  
 		Size: 1.8 KB (1835 bytes)  
