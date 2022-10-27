@@ -41,29 +41,29 @@ ADD file:2a949686d9886ac7c10582a6c29116fd29d3077d02755e87e111870d63607725 in /
 # Tue, 09 Aug 2022 17:19:53 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 01:52:21 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 01:52:21 GMT
-RUN EXPOSE map[4443/tcp:{}]
+EXPOSE map[4443/tcp:{}]
 # Tue, 25 Oct 2022 01:52:21 GMT
-RUN ENV INSTALLDIR=/notary/server
+ENV INSTALLDIR=/notary/server
 # Tue, 25 Oct 2022 01:52:21 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
 # Tue, 25 Oct 2022 01:52:21 GMT
-RUN WORKDIR /notary/server
+WORKDIR /notary/server
 # Tue, 25 Oct 2022 01:52:41 GMT
-RUN COPY /notary-server ./ # buildkit
+COPY /notary-server ./ # buildkit
 # Tue, 25 Oct 2022 01:52:41 GMT
-RUN RUN /bin/sh -c ./notary-server --version # buildkit
+RUN ./notary-server --version # buildkit
 # Tue, 25 Oct 2022 01:52:41 GMT
-RUN COPY ./server-config.json . # buildkit
+COPY ./server-config.json . # buildkit
 # Tue, 25 Oct 2022 01:52:41 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Tue, 25 Oct 2022 01:52:41 GMT
-RUN USER notary
+USER notary
 # Tue, 25 Oct 2022 01:52:41 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Tue, 25 Oct 2022 01:52:41 GMT
-RUN CMD ["notary-server" "--version"]
+CMD ["notary-server" "--version"]
 ```
 
 -	Layers:
@@ -115,29 +115,29 @@ ADD file:e8733e8cc0a81e15ca4041760b6e27392c34171512d34405a9b262b1fff5c687 in /
 # Tue, 09 Aug 2022 17:49:22 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 05:30:38 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 05:30:38 GMT
-RUN EXPOSE map[4443/tcp:{}]
+EXPOSE map[4443/tcp:{}]
 # Tue, 25 Oct 2022 05:30:38 GMT
-RUN ENV INSTALLDIR=/notary/server
+ENV INSTALLDIR=/notary/server
 # Tue, 25 Oct 2022 05:30:38 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
 # Tue, 25 Oct 2022 05:30:38 GMT
-RUN WORKDIR /notary/server
+WORKDIR /notary/server
 # Tue, 25 Oct 2022 05:31:03 GMT
-RUN COPY /notary-server ./ # buildkit
+COPY /notary-server ./ # buildkit
 # Tue, 25 Oct 2022 05:31:03 GMT
-RUN RUN /bin/sh -c ./notary-server --version # buildkit
+RUN ./notary-server --version # buildkit
 # Tue, 25 Oct 2022 05:31:03 GMT
-RUN COPY ./server-config.json . # buildkit
+COPY ./server-config.json . # buildkit
 # Tue, 25 Oct 2022 05:31:04 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Tue, 25 Oct 2022 05:31:04 GMT
-RUN USER notary
+USER notary
 # Tue, 25 Oct 2022 05:31:04 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Tue, 25 Oct 2022 05:31:04 GMT
-RUN CMD ["notary-server" "--version"]
+CMD ["notary-server" "--version"]
 ```
 
 -	Layers:
@@ -189,29 +189,29 @@ ADD file:960fd469d48cf79ba14bbda71f3192074ed860c112e30e0bc92bff3440cb45ab in /
 # Tue, 09 Aug 2022 17:39:42 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 05:54:03 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 05:54:03 GMT
-RUN EXPOSE map[4443/tcp:{}]
+EXPOSE map[4443/tcp:{}]
 # Tue, 25 Oct 2022 05:54:03 GMT
-RUN ENV INSTALLDIR=/notary/server
+ENV INSTALLDIR=/notary/server
 # Tue, 25 Oct 2022 05:54:03 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
 # Tue, 25 Oct 2022 05:54:03 GMT
-RUN WORKDIR /notary/server
+WORKDIR /notary/server
 # Wed, 26 Oct 2022 18:53:13 GMT
-RUN COPY /notary-server ./ # buildkit
+COPY /notary-server ./ # buildkit
 # Wed, 26 Oct 2022 18:53:14 GMT
-RUN RUN /bin/sh -c ./notary-server --version # buildkit
+RUN ./notary-server --version # buildkit
 # Wed, 26 Oct 2022 18:53:14 GMT
-RUN COPY ./server-config.json . # buildkit
+COPY ./server-config.json . # buildkit
 # Wed, 26 Oct 2022 18:53:14 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Wed, 26 Oct 2022 18:53:14 GMT
-RUN USER notary
+USER notary
 # Wed, 26 Oct 2022 18:53:14 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Wed, 26 Oct 2022 18:53:14 GMT
-RUN CMD ["notary-server" "--version"]
+CMD ["notary-server" "--version"]
 ```
 
 -	Layers:
@@ -334,29 +334,29 @@ ADD file:66b351666e41834033d334aeb3dc6998dea77aa22e8e254028c923fee67a41a8 in /
 # Tue, 09 Aug 2022 17:17:10 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 03:23:54 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 03:23:54 GMT
-RUN EXPOSE map[4443/tcp:{}]
+EXPOSE map[4443/tcp:{}]
 # Tue, 25 Oct 2022 03:23:54 GMT
-RUN ENV INSTALLDIR=/notary/server
+ENV INSTALLDIR=/notary/server
 # Tue, 25 Oct 2022 03:23:54 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
 # Tue, 25 Oct 2022 03:23:54 GMT
-RUN WORKDIR /notary/server
+WORKDIR /notary/server
 # Tue, 25 Oct 2022 03:24:25 GMT
-RUN COPY /notary-server ./ # buildkit
+COPY /notary-server ./ # buildkit
 # Tue, 25 Oct 2022 03:24:25 GMT
-RUN RUN /bin/sh -c ./notary-server --version # buildkit
+RUN ./notary-server --version # buildkit
 # Tue, 25 Oct 2022 03:24:26 GMT
-RUN COPY ./server-config.json . # buildkit
+COPY ./server-config.json . # buildkit
 # Tue, 25 Oct 2022 03:24:26 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Tue, 25 Oct 2022 03:24:26 GMT
-RUN USER notary
+USER notary
 # Tue, 25 Oct 2022 03:24:26 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Tue, 25 Oct 2022 03:24:26 GMT
-RUN CMD ["notary-server" "--version"]
+CMD ["notary-server" "--version"]
 ```
 
 -	Layers:
@@ -408,29 +408,29 @@ ADD file:b43a065471bc4711415d3c67cd5b6559b0c48ee7ffe9761530477cf457a6dc34 in /
 # Tue, 09 Aug 2022 17:41:46 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 01:21:39 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 01:21:39 GMT
-RUN EXPOSE map[4443/tcp:{}]
+EXPOSE map[4443/tcp:{}]
 # Tue, 25 Oct 2022 01:21:39 GMT
-RUN ENV INSTALLDIR=/notary/server
+ENV INSTALLDIR=/notary/server
 # Tue, 25 Oct 2022 01:21:39 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
 # Tue, 25 Oct 2022 01:21:39 GMT
-RUN WORKDIR /notary/server
+WORKDIR /notary/server
 # Tue, 25 Oct 2022 01:22:02 GMT
-RUN COPY /notary-server ./ # buildkit
+COPY /notary-server ./ # buildkit
 # Tue, 25 Oct 2022 01:22:02 GMT
-RUN RUN /bin/sh -c ./notary-server --version # buildkit
+RUN ./notary-server --version # buildkit
 # Tue, 25 Oct 2022 01:22:02 GMT
-RUN COPY ./server-config.json . # buildkit
+COPY ./server-config.json . # buildkit
 # Tue, 25 Oct 2022 01:22:02 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Tue, 25 Oct 2022 01:22:02 GMT
-RUN USER notary
+USER notary
 # Tue, 25 Oct 2022 01:22:02 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Tue, 25 Oct 2022 01:22:02 GMT
-RUN CMD ["notary-server" "--version"]
+CMD ["notary-server" "--version"]
 ```
 
 -	Layers:
@@ -497,29 +497,29 @@ ADD file:2a949686d9886ac7c10582a6c29116fd29d3077d02755e87e111870d63607725 in /
 # Tue, 09 Aug 2022 17:19:53 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 01:52:21 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 01:52:21 GMT
-RUN EXPOSE map[4443/tcp:{}]
+EXPOSE map[4443/tcp:{}]
 # Tue, 25 Oct 2022 01:52:21 GMT
-RUN ENV INSTALLDIR=/notary/server
+ENV INSTALLDIR=/notary/server
 # Tue, 25 Oct 2022 01:52:21 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
 # Tue, 25 Oct 2022 01:52:21 GMT
-RUN WORKDIR /notary/server
+WORKDIR /notary/server
 # Tue, 25 Oct 2022 01:52:41 GMT
-RUN COPY /notary-server ./ # buildkit
+COPY /notary-server ./ # buildkit
 # Tue, 25 Oct 2022 01:52:41 GMT
-RUN RUN /bin/sh -c ./notary-server --version # buildkit
+RUN ./notary-server --version # buildkit
 # Tue, 25 Oct 2022 01:52:41 GMT
-RUN COPY ./server-config.json . # buildkit
+COPY ./server-config.json . # buildkit
 # Tue, 25 Oct 2022 01:52:41 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Tue, 25 Oct 2022 01:52:41 GMT
-RUN USER notary
+USER notary
 # Tue, 25 Oct 2022 01:52:41 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Tue, 25 Oct 2022 01:52:41 GMT
-RUN CMD ["notary-server" "--version"]
+CMD ["notary-server" "--version"]
 ```
 
 -	Layers:
@@ -571,29 +571,29 @@ ADD file:e8733e8cc0a81e15ca4041760b6e27392c34171512d34405a9b262b1fff5c687 in /
 # Tue, 09 Aug 2022 17:49:22 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 05:30:38 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 05:30:38 GMT
-RUN EXPOSE map[4443/tcp:{}]
+EXPOSE map[4443/tcp:{}]
 # Tue, 25 Oct 2022 05:30:38 GMT
-RUN ENV INSTALLDIR=/notary/server
+ENV INSTALLDIR=/notary/server
 # Tue, 25 Oct 2022 05:30:38 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
 # Tue, 25 Oct 2022 05:30:38 GMT
-RUN WORKDIR /notary/server
+WORKDIR /notary/server
 # Tue, 25 Oct 2022 05:31:03 GMT
-RUN COPY /notary-server ./ # buildkit
+COPY /notary-server ./ # buildkit
 # Tue, 25 Oct 2022 05:31:03 GMT
-RUN RUN /bin/sh -c ./notary-server --version # buildkit
+RUN ./notary-server --version # buildkit
 # Tue, 25 Oct 2022 05:31:03 GMT
-RUN COPY ./server-config.json . # buildkit
+COPY ./server-config.json . # buildkit
 # Tue, 25 Oct 2022 05:31:04 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Tue, 25 Oct 2022 05:31:04 GMT
-RUN USER notary
+USER notary
 # Tue, 25 Oct 2022 05:31:04 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Tue, 25 Oct 2022 05:31:04 GMT
-RUN CMD ["notary-server" "--version"]
+CMD ["notary-server" "--version"]
 ```
 
 -	Layers:
@@ -645,29 +645,29 @@ ADD file:960fd469d48cf79ba14bbda71f3192074ed860c112e30e0bc92bff3440cb45ab in /
 # Tue, 09 Aug 2022 17:39:42 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 05:54:03 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 05:54:03 GMT
-RUN EXPOSE map[4443/tcp:{}]
+EXPOSE map[4443/tcp:{}]
 # Tue, 25 Oct 2022 05:54:03 GMT
-RUN ENV INSTALLDIR=/notary/server
+ENV INSTALLDIR=/notary/server
 # Tue, 25 Oct 2022 05:54:03 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
 # Tue, 25 Oct 2022 05:54:03 GMT
-RUN WORKDIR /notary/server
+WORKDIR /notary/server
 # Wed, 26 Oct 2022 18:53:13 GMT
-RUN COPY /notary-server ./ # buildkit
+COPY /notary-server ./ # buildkit
 # Wed, 26 Oct 2022 18:53:14 GMT
-RUN RUN /bin/sh -c ./notary-server --version # buildkit
+RUN ./notary-server --version # buildkit
 # Wed, 26 Oct 2022 18:53:14 GMT
-RUN COPY ./server-config.json . # buildkit
+COPY ./server-config.json . # buildkit
 # Wed, 26 Oct 2022 18:53:14 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Wed, 26 Oct 2022 18:53:14 GMT
-RUN USER notary
+USER notary
 # Wed, 26 Oct 2022 18:53:14 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Wed, 26 Oct 2022 18:53:14 GMT
-RUN CMD ["notary-server" "--version"]
+CMD ["notary-server" "--version"]
 ```
 
 -	Layers:
@@ -790,29 +790,29 @@ ADD file:66b351666e41834033d334aeb3dc6998dea77aa22e8e254028c923fee67a41a8 in /
 # Tue, 09 Aug 2022 17:17:10 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 03:23:54 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 03:23:54 GMT
-RUN EXPOSE map[4443/tcp:{}]
+EXPOSE map[4443/tcp:{}]
 # Tue, 25 Oct 2022 03:23:54 GMT
-RUN ENV INSTALLDIR=/notary/server
+ENV INSTALLDIR=/notary/server
 # Tue, 25 Oct 2022 03:23:54 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
 # Tue, 25 Oct 2022 03:23:54 GMT
-RUN WORKDIR /notary/server
+WORKDIR /notary/server
 # Tue, 25 Oct 2022 03:24:25 GMT
-RUN COPY /notary-server ./ # buildkit
+COPY /notary-server ./ # buildkit
 # Tue, 25 Oct 2022 03:24:25 GMT
-RUN RUN /bin/sh -c ./notary-server --version # buildkit
+RUN ./notary-server --version # buildkit
 # Tue, 25 Oct 2022 03:24:26 GMT
-RUN COPY ./server-config.json . # buildkit
+COPY ./server-config.json . # buildkit
 # Tue, 25 Oct 2022 03:24:26 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Tue, 25 Oct 2022 03:24:26 GMT
-RUN USER notary
+USER notary
 # Tue, 25 Oct 2022 03:24:26 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Tue, 25 Oct 2022 03:24:26 GMT
-RUN CMD ["notary-server" "--version"]
+CMD ["notary-server" "--version"]
 ```
 
 -	Layers:
@@ -864,29 +864,29 @@ ADD file:b43a065471bc4711415d3c67cd5b6559b0c48ee7ffe9761530477cf457a6dc34 in /
 # Tue, 09 Aug 2022 17:41:46 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 01:21:39 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 01:21:39 GMT
-RUN EXPOSE map[4443/tcp:{}]
+EXPOSE map[4443/tcp:{}]
 # Tue, 25 Oct 2022 01:21:39 GMT
-RUN ENV INSTALLDIR=/notary/server
+ENV INSTALLDIR=/notary/server
 # Tue, 25 Oct 2022 01:21:39 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
 # Tue, 25 Oct 2022 01:21:39 GMT
-RUN WORKDIR /notary/server
+WORKDIR /notary/server
 # Tue, 25 Oct 2022 01:22:02 GMT
-RUN COPY /notary-server ./ # buildkit
+COPY /notary-server ./ # buildkit
 # Tue, 25 Oct 2022 01:22:02 GMT
-RUN RUN /bin/sh -c ./notary-server --version # buildkit
+RUN ./notary-server --version # buildkit
 # Tue, 25 Oct 2022 01:22:02 GMT
-RUN COPY ./server-config.json . # buildkit
+COPY ./server-config.json . # buildkit
 # Tue, 25 Oct 2022 01:22:02 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Tue, 25 Oct 2022 01:22:02 GMT
-RUN USER notary
+USER notary
 # Tue, 25 Oct 2022 01:22:02 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Tue, 25 Oct 2022 01:22:02 GMT
-RUN CMD ["notary-server" "--version"]
+CMD ["notary-server" "--version"]
 ```
 
 -	Layers:
@@ -953,31 +953,31 @@ ADD file:2a949686d9886ac7c10582a6c29116fd29d3077d02755e87e111870d63607725 in /
 # Tue, 09 Aug 2022 17:19:53 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 01:52:21 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 01:52:46 GMT
-RUN EXPOSE map[4444/tcp:{}]
+EXPOSE map[4444/tcp:{}]
 # Tue, 25 Oct 2022 01:52:46 GMT
-RUN EXPOSE map[7899/tcp:{}]
+EXPOSE map[7899/tcp:{}]
 # Tue, 25 Oct 2022 01:52:46 GMT
-RUN ENV INSTALLDIR=/notary/signer
+ENV INSTALLDIR=/notary/signer
 # Tue, 25 Oct 2022 01:52:46 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
 # Tue, 25 Oct 2022 01:52:46 GMT
-RUN WORKDIR /notary/signer
+WORKDIR /notary/signer
 # Tue, 25 Oct 2022 01:52:46 GMT
-RUN COPY /notary-signer ./ # buildkit
+COPY /notary-signer ./ # buildkit
 # Tue, 25 Oct 2022 01:52:47 GMT
-RUN RUN /bin/sh -c ./notary-signer --version # buildkit
+RUN ./notary-signer --version # buildkit
 # Tue, 25 Oct 2022 01:52:47 GMT
-RUN COPY ./signer-config.json . # buildkit
+COPY ./signer-config.json . # buildkit
 # Tue, 25 Oct 2022 01:52:47 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Tue, 25 Oct 2022 01:52:47 GMT
-RUN USER notary
+USER notary
 # Tue, 25 Oct 2022 01:52:47 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Tue, 25 Oct 2022 01:52:47 GMT
-RUN CMD ["notary-signer" "--version"]
+CMD ["notary-signer" "--version"]
 ```
 
 -	Layers:
@@ -1029,31 +1029,31 @@ ADD file:e8733e8cc0a81e15ca4041760b6e27392c34171512d34405a9b262b1fff5c687 in /
 # Tue, 09 Aug 2022 17:49:22 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 05:30:38 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 05:31:20 GMT
-RUN EXPOSE map[4444/tcp:{}]
+EXPOSE map[4444/tcp:{}]
 # Tue, 25 Oct 2022 05:31:20 GMT
-RUN EXPOSE map[7899/tcp:{}]
+EXPOSE map[7899/tcp:{}]
 # Tue, 25 Oct 2022 05:31:20 GMT
-RUN ENV INSTALLDIR=/notary/signer
+ENV INSTALLDIR=/notary/signer
 # Tue, 25 Oct 2022 05:31:20 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
 # Tue, 25 Oct 2022 05:31:20 GMT
-RUN WORKDIR /notary/signer
+WORKDIR /notary/signer
 # Tue, 25 Oct 2022 05:31:20 GMT
-RUN COPY /notary-signer ./ # buildkit
+COPY /notary-signer ./ # buildkit
 # Tue, 25 Oct 2022 05:31:20 GMT
-RUN RUN /bin/sh -c ./notary-signer --version # buildkit
+RUN ./notary-signer --version # buildkit
 # Tue, 25 Oct 2022 05:31:20 GMT
-RUN COPY ./signer-config.json . # buildkit
+COPY ./signer-config.json . # buildkit
 # Tue, 25 Oct 2022 05:31:21 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Tue, 25 Oct 2022 05:31:21 GMT
-RUN USER notary
+USER notary
 # Tue, 25 Oct 2022 05:31:21 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Tue, 25 Oct 2022 05:31:21 GMT
-RUN CMD ["notary-signer" "--version"]
+CMD ["notary-signer" "--version"]
 ```
 
 -	Layers:
@@ -1105,31 +1105,31 @@ ADD file:960fd469d48cf79ba14bbda71f3192074ed860c112e30e0bc92bff3440cb45ab in /
 # Tue, 09 Aug 2022 17:39:42 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 05:54:03 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 05:54:20 GMT
-RUN EXPOSE map[4444/tcp:{}]
+EXPOSE map[4444/tcp:{}]
 # Tue, 25 Oct 2022 05:54:20 GMT
-RUN EXPOSE map[7899/tcp:{}]
+EXPOSE map[7899/tcp:{}]
 # Tue, 25 Oct 2022 05:54:20 GMT
-RUN ENV INSTALLDIR=/notary/signer
+ENV INSTALLDIR=/notary/signer
 # Tue, 25 Oct 2022 05:54:20 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
 # Tue, 25 Oct 2022 05:54:20 GMT
-RUN WORKDIR /notary/signer
+WORKDIR /notary/signer
 # Wed, 26 Oct 2022 18:53:19 GMT
-RUN COPY /notary-signer ./ # buildkit
+COPY /notary-signer ./ # buildkit
 # Wed, 26 Oct 2022 18:53:19 GMT
-RUN RUN /bin/sh -c ./notary-signer --version # buildkit
+RUN ./notary-signer --version # buildkit
 # Wed, 26 Oct 2022 18:53:20 GMT
-RUN COPY ./signer-config.json . # buildkit
+COPY ./signer-config.json . # buildkit
 # Wed, 26 Oct 2022 18:53:20 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Wed, 26 Oct 2022 18:53:20 GMT
-RUN USER notary
+USER notary
 # Wed, 26 Oct 2022 18:53:20 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Wed, 26 Oct 2022 18:53:20 GMT
-RUN CMD ["notary-signer" "--version"]
+CMD ["notary-signer" "--version"]
 ```
 
 -	Layers:
@@ -1254,31 +1254,31 @@ ADD file:66b351666e41834033d334aeb3dc6998dea77aa22e8e254028c923fee67a41a8 in /
 # Tue, 09 Aug 2022 17:17:10 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 03:23:54 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 03:24:38 GMT
-RUN EXPOSE map[4444/tcp:{}]
+EXPOSE map[4444/tcp:{}]
 # Tue, 25 Oct 2022 03:24:38 GMT
-RUN EXPOSE map[7899/tcp:{}]
+EXPOSE map[7899/tcp:{}]
 # Tue, 25 Oct 2022 03:24:38 GMT
-RUN ENV INSTALLDIR=/notary/signer
+ENV INSTALLDIR=/notary/signer
 # Tue, 25 Oct 2022 03:24:38 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
 # Tue, 25 Oct 2022 03:24:38 GMT
-RUN WORKDIR /notary/signer
+WORKDIR /notary/signer
 # Tue, 25 Oct 2022 03:24:39 GMT
-RUN COPY /notary-signer ./ # buildkit
+COPY /notary-signer ./ # buildkit
 # Tue, 25 Oct 2022 03:24:39 GMT
-RUN RUN /bin/sh -c ./notary-signer --version # buildkit
+RUN ./notary-signer --version # buildkit
 # Tue, 25 Oct 2022 03:24:39 GMT
-RUN COPY ./signer-config.json . # buildkit
+COPY ./signer-config.json . # buildkit
 # Tue, 25 Oct 2022 03:24:40 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Tue, 25 Oct 2022 03:24:40 GMT
-RUN USER notary
+USER notary
 # Tue, 25 Oct 2022 03:24:40 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Tue, 25 Oct 2022 03:24:40 GMT
-RUN CMD ["notary-signer" "--version"]
+CMD ["notary-signer" "--version"]
 ```
 
 -	Layers:
@@ -1330,31 +1330,31 @@ ADD file:b43a065471bc4711415d3c67cd5b6559b0c48ee7ffe9761530477cf457a6dc34 in /
 # Tue, 09 Aug 2022 17:41:46 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 01:21:39 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN EXPOSE map[4444/tcp:{}]
+EXPOSE map[4444/tcp:{}]
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN EXPOSE map[7899/tcp:{}]
+EXPOSE map[7899/tcp:{}]
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN ENV INSTALLDIR=/notary/signer
+ENV INSTALLDIR=/notary/signer
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN WORKDIR /notary/signer
+WORKDIR /notary/signer
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN COPY /notary-signer ./ # buildkit
+COPY /notary-signer ./ # buildkit
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN RUN /bin/sh -c ./notary-signer --version # buildkit
+RUN ./notary-signer --version # buildkit
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN COPY ./signer-config.json . # buildkit
+COPY ./signer-config.json . # buildkit
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN USER notary
+USER notary
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN CMD ["notary-signer" "--version"]
+CMD ["notary-signer" "--version"]
 ```
 
 -	Layers:
@@ -1421,31 +1421,31 @@ ADD file:2a949686d9886ac7c10582a6c29116fd29d3077d02755e87e111870d63607725 in /
 # Tue, 09 Aug 2022 17:19:53 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 01:52:21 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 01:52:46 GMT
-RUN EXPOSE map[4444/tcp:{}]
+EXPOSE map[4444/tcp:{}]
 # Tue, 25 Oct 2022 01:52:46 GMT
-RUN EXPOSE map[7899/tcp:{}]
+EXPOSE map[7899/tcp:{}]
 # Tue, 25 Oct 2022 01:52:46 GMT
-RUN ENV INSTALLDIR=/notary/signer
+ENV INSTALLDIR=/notary/signer
 # Tue, 25 Oct 2022 01:52:46 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
 # Tue, 25 Oct 2022 01:52:46 GMT
-RUN WORKDIR /notary/signer
+WORKDIR /notary/signer
 # Tue, 25 Oct 2022 01:52:46 GMT
-RUN COPY /notary-signer ./ # buildkit
+COPY /notary-signer ./ # buildkit
 # Tue, 25 Oct 2022 01:52:47 GMT
-RUN RUN /bin/sh -c ./notary-signer --version # buildkit
+RUN ./notary-signer --version # buildkit
 # Tue, 25 Oct 2022 01:52:47 GMT
-RUN COPY ./signer-config.json . # buildkit
+COPY ./signer-config.json . # buildkit
 # Tue, 25 Oct 2022 01:52:47 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Tue, 25 Oct 2022 01:52:47 GMT
-RUN USER notary
+USER notary
 # Tue, 25 Oct 2022 01:52:47 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Tue, 25 Oct 2022 01:52:47 GMT
-RUN CMD ["notary-signer" "--version"]
+CMD ["notary-signer" "--version"]
 ```
 
 -	Layers:
@@ -1497,31 +1497,31 @@ ADD file:e8733e8cc0a81e15ca4041760b6e27392c34171512d34405a9b262b1fff5c687 in /
 # Tue, 09 Aug 2022 17:49:22 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 05:30:38 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 05:31:20 GMT
-RUN EXPOSE map[4444/tcp:{}]
+EXPOSE map[4444/tcp:{}]
 # Tue, 25 Oct 2022 05:31:20 GMT
-RUN EXPOSE map[7899/tcp:{}]
+EXPOSE map[7899/tcp:{}]
 # Tue, 25 Oct 2022 05:31:20 GMT
-RUN ENV INSTALLDIR=/notary/signer
+ENV INSTALLDIR=/notary/signer
 # Tue, 25 Oct 2022 05:31:20 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
 # Tue, 25 Oct 2022 05:31:20 GMT
-RUN WORKDIR /notary/signer
+WORKDIR /notary/signer
 # Tue, 25 Oct 2022 05:31:20 GMT
-RUN COPY /notary-signer ./ # buildkit
+COPY /notary-signer ./ # buildkit
 # Tue, 25 Oct 2022 05:31:20 GMT
-RUN RUN /bin/sh -c ./notary-signer --version # buildkit
+RUN ./notary-signer --version # buildkit
 # Tue, 25 Oct 2022 05:31:20 GMT
-RUN COPY ./signer-config.json . # buildkit
+COPY ./signer-config.json . # buildkit
 # Tue, 25 Oct 2022 05:31:21 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Tue, 25 Oct 2022 05:31:21 GMT
-RUN USER notary
+USER notary
 # Tue, 25 Oct 2022 05:31:21 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Tue, 25 Oct 2022 05:31:21 GMT
-RUN CMD ["notary-signer" "--version"]
+CMD ["notary-signer" "--version"]
 ```
 
 -	Layers:
@@ -1573,31 +1573,31 @@ ADD file:960fd469d48cf79ba14bbda71f3192074ed860c112e30e0bc92bff3440cb45ab in /
 # Tue, 09 Aug 2022 17:39:42 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 05:54:03 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 05:54:20 GMT
-RUN EXPOSE map[4444/tcp:{}]
+EXPOSE map[4444/tcp:{}]
 # Tue, 25 Oct 2022 05:54:20 GMT
-RUN EXPOSE map[7899/tcp:{}]
+EXPOSE map[7899/tcp:{}]
 # Tue, 25 Oct 2022 05:54:20 GMT
-RUN ENV INSTALLDIR=/notary/signer
+ENV INSTALLDIR=/notary/signer
 # Tue, 25 Oct 2022 05:54:20 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
 # Tue, 25 Oct 2022 05:54:20 GMT
-RUN WORKDIR /notary/signer
+WORKDIR /notary/signer
 # Wed, 26 Oct 2022 18:53:19 GMT
-RUN COPY /notary-signer ./ # buildkit
+COPY /notary-signer ./ # buildkit
 # Wed, 26 Oct 2022 18:53:19 GMT
-RUN RUN /bin/sh -c ./notary-signer --version # buildkit
+RUN ./notary-signer --version # buildkit
 # Wed, 26 Oct 2022 18:53:20 GMT
-RUN COPY ./signer-config.json . # buildkit
+COPY ./signer-config.json . # buildkit
 # Wed, 26 Oct 2022 18:53:20 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Wed, 26 Oct 2022 18:53:20 GMT
-RUN USER notary
+USER notary
 # Wed, 26 Oct 2022 18:53:20 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Wed, 26 Oct 2022 18:53:20 GMT
-RUN CMD ["notary-signer" "--version"]
+CMD ["notary-signer" "--version"]
 ```
 
 -	Layers:
@@ -1722,31 +1722,31 @@ ADD file:66b351666e41834033d334aeb3dc6998dea77aa22e8e254028c923fee67a41a8 in /
 # Tue, 09 Aug 2022 17:17:10 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 03:23:54 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 03:24:38 GMT
-RUN EXPOSE map[4444/tcp:{}]
+EXPOSE map[4444/tcp:{}]
 # Tue, 25 Oct 2022 03:24:38 GMT
-RUN EXPOSE map[7899/tcp:{}]
+EXPOSE map[7899/tcp:{}]
 # Tue, 25 Oct 2022 03:24:38 GMT
-RUN ENV INSTALLDIR=/notary/signer
+ENV INSTALLDIR=/notary/signer
 # Tue, 25 Oct 2022 03:24:38 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
 # Tue, 25 Oct 2022 03:24:38 GMT
-RUN WORKDIR /notary/signer
+WORKDIR /notary/signer
 # Tue, 25 Oct 2022 03:24:39 GMT
-RUN COPY /notary-signer ./ # buildkit
+COPY /notary-signer ./ # buildkit
 # Tue, 25 Oct 2022 03:24:39 GMT
-RUN RUN /bin/sh -c ./notary-signer --version # buildkit
+RUN ./notary-signer --version # buildkit
 # Tue, 25 Oct 2022 03:24:39 GMT
-RUN COPY ./signer-config.json . # buildkit
+COPY ./signer-config.json . # buildkit
 # Tue, 25 Oct 2022 03:24:40 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Tue, 25 Oct 2022 03:24:40 GMT
-RUN USER notary
+USER notary
 # Tue, 25 Oct 2022 03:24:40 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Tue, 25 Oct 2022 03:24:40 GMT
-RUN CMD ["notary-signer" "--version"]
+CMD ["notary-signer" "--version"]
 ```
 
 -	Layers:
@@ -1798,31 +1798,31 @@ ADD file:b43a065471bc4711415d3c67cd5b6559b0c48ee7ffe9761530477cf457a6dc34 in /
 # Tue, 09 Aug 2022 17:41:46 GMT
 CMD ["/bin/sh"]
 # Tue, 25 Oct 2022 01:21:39 GMT
-RUN RUN /bin/sh -c adduser -D -H -g "" notary # buildkit
+RUN adduser -D -H -g "" notary # buildkit
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN EXPOSE map[4444/tcp:{}]
+EXPOSE map[4444/tcp:{}]
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN EXPOSE map[7899/tcp:{}]
+EXPOSE map[7899/tcp:{}]
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN ENV INSTALLDIR=/notary/signer
+ENV INSTALLDIR=/notary/signer
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN WORKDIR /notary/signer
+WORKDIR /notary/signer
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN COPY /notary-signer ./ # buildkit
+COPY /notary-signer ./ # buildkit
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN RUN /bin/sh -c ./notary-signer --version # buildkit
+RUN ./notary-signer --version # buildkit
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN COPY ./signer-config.json . # buildkit
+COPY ./signer-config.json . # buildkit
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN COPY ./entrypoint.sh . # buildkit
+COPY ./entrypoint.sh . # buildkit
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN USER notary
+USER notary
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 # Tue, 25 Oct 2022 01:22:14 GMT
-RUN CMD ["notary-signer" "--version"]
+CMD ["notary-signer" "--version"]
 ```
 
 -	Layers:
