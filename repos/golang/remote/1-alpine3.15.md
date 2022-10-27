@@ -1,7 +1,7 @@
 ## `golang:1-alpine3.15`
 
 ```console
-$ docker pull golang@sha256:3cdb7a0280bbc851d637a20ee638c3d9144c330f10d29ef5499b81eee130956e
+$ docker pull golang@sha256:1125117a5a470c518e59afec94f366899e9ee0c7791327d5a8d75969006f2777
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -137,14 +137,14 @@ WORKDIR /go
 ### `golang:1-alpine3.15` - linux; arm variant v7
 
 ```console
-$ docker pull golang@sha256:03253cd6daf56d8eb105f923614211b4ea8e602ee8eff74474694211bdb74401
+$ docker pull golang@sha256:5d77369501ef0c6e1be9f9dbab32dd127f99c594ed050654cb81d18a6a9d7e31
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **121.1 MB (121126530 bytes)**  
+-	Total Size: **121.1 MB (121127286 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:77c2f7d1400ee8a1f0317282d19c8e78f4122683bc1dcdcfa7b2864ac9ee6670`
+-	Image ID: `sha256:f4073b66fb636ca236386cb514d0951eb3e2fb61fd76c3f88004b3ddbe419ef2`
 -	Default Command: `["\/bin\/sh"]`
 
 ```dockerfile
@@ -152,23 +152,23 @@ $ docker pull golang@sha256:03253cd6daf56d8eb105f923614211b4ea8e602ee8eff7447469
 ADD file:0bd18306f21937a9572e68c768f05f4a9d8341b40c2379a7bfcb857c77734a14 in / 
 # Tue, 09 Aug 2022 16:57:52 GMT
 CMD ["/bin/sh"]
-# Fri, 07 Oct 2022 09:49:30 GMT
+# Thu, 27 Oct 2022 03:13:29 GMT
 RUN apk add --no-cache ca-certificates
-# Fri, 07 Oct 2022 09:49:30 GMT
+# Thu, 27 Oct 2022 03:13:29 GMT
 RUN [ ! -e /etc/nsswitch.conf ] && echo 'hosts: files dns' > /etc/nsswitch.conf
-# Fri, 07 Oct 2022 09:49:31 GMT
+# Thu, 27 Oct 2022 03:13:29 GMT
 ENV PATH=/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 07 Oct 2022 09:49:31 GMT
+# Thu, 27 Oct 2022 03:13:29 GMT
 ENV GOLANG_VERSION=1.19.2
-# Fri, 07 Oct 2022 09:56:02 GMT
+# Thu, 27 Oct 2022 03:15:23 GMT
 RUN set -eux; 	apk add --no-cache --virtual .fetch-deps gnupg; 	arch="$(apk --print-arch)"; 	url=; 	case "$arch" in 		'x86_64') 			export GOAMD64='v1' GOARCH='amd64' GOOS='linux'; 			;; 		'armhf') 			export GOARCH='arm' GOARM='6' GOOS='linux'; 			;; 		'armv7') 			export GOARCH='arm' GOARM='7' GOOS='linux'; 			;; 		'aarch64') 			export GOARCH='arm64' GOOS='linux'; 			;; 		'x86') 			export GO386='softfloat' GOARCH='386' GOOS='linux'; 			;; 		'ppc64le') 			export GOARCH='ppc64le' GOOS='linux'; 			;; 		's390x') 			export GOARCH='s390x' GOOS='linux'; 			;; 		*) echo >&2 "error: unsupported architecture '$arch' (likely packaging update needed)"; exit 1 ;; 	esac; 	build=; 	if [ -z "$url" ]; then 		build=1; 		url='https://dl.google.com/go/go1.19.2.src.tar.gz'; 		sha256='2ce930d70a931de660fdaf271d70192793b1b240272645bf0275779f6704df6b'; 	fi; 		wget -O go.tgz.asc "$url.asc"; 	wget -O go.tgz "$url"; 	echo "$sha256 *go.tgz" | sha256sum -c -; 		GNUPGHOME="$(mktemp -d)"; export GNUPGHOME; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 'EB4C 1BFD 4F04 2F6D DDCC  EC91 7721 F63B D38B 4796'; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys '2F52 8D36 D67B 69ED F998  D857 78BD 6547 3CB3 BD13'; 	gpg --batch --verify go.tgz.asc go.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" go.tgz.asc; 		tar -C /usr/local -xzf go.tgz; 	rm go.tgz; 		if [ -n "$build" ]; then 		apk add --no-cache --virtual .build-deps 			bash 			gcc 			go 			musl-dev 		; 				export GOCACHE='/tmp/gocache'; 				( 			cd /usr/local/go/src; 			export GOROOT_BOOTSTRAP="$(go env GOROOT)" GOHOSTOS="$GOOS" GOHOSTARCH="$GOARCH"; 			if [ "${GOARCH:-}" = '386' ]; then 				export CGO_CFLAGS='-fno-stack-protector'; 			fi; 			./make.bash; 		); 				apk del --no-network .build-deps; 				rm -rf 			/usr/local/go/pkg/*/cmd 			/usr/local/go/pkg/bootstrap 			/usr/local/go/pkg/obj 			/usr/local/go/pkg/tool/*/api 			/usr/local/go/pkg/tool/*/go_bootstrap 			/usr/local/go/src/cmd/dist/dist 			"$GOCACHE" 		; 	fi; 		apk del --no-network .fetch-deps; 		go version
-# Fri, 07 Oct 2022 09:56:02 GMT
+# Thu, 27 Oct 2022 03:15:24 GMT
 ENV GOPATH=/go
-# Fri, 07 Oct 2022 09:56:02 GMT
+# Thu, 27 Oct 2022 03:15:24 GMT
 ENV PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 07 Oct 2022 09:56:03 GMT
+# Thu, 27 Oct 2022 03:15:25 GMT
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
-# Fri, 07 Oct 2022 09:56:04 GMT
+# Thu, 27 Oct 2022 03:15:25 GMT
 WORKDIR /go
 ```
 
@@ -177,21 +177,21 @@ WORKDIR /go
 		Last Modified: Tue, 09 Aug 2022 16:59:12 GMT  
 		Size: 2.4 MB (2435092 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3d606274721eb952376d4c7fbbc57f5d0f09da7203470cb3ca77390d7472939`  
-		Last Modified: Fri, 07 Oct 2022 10:12:10 GMT  
-		Size: 283.9 KB (283917 bytes)  
+	-	`sha256:45bfd3f31fd4b0166492fdd2feb42287ff7f6c3fcd8a6e75f1719c72b05584f4`  
+		Last Modified: Thu, 27 Oct 2022 03:24:26 GMT  
+		Size: 283.9 KB (283850 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c93c30897634e5cd148ccc0f5c1ad9f4e7840c19e9196041ad08415be1479318`  
-		Last Modified: Fri, 07 Oct 2022 10:12:10 GMT  
-		Size: 154.0 B  
+	-	`sha256:8e2cdd419a0eb6c411246bc091f259faa55a3ae62d69f6cd85ce46bf745fb377`  
+		Last Modified: Thu, 27 Oct 2022 03:24:26 GMT  
+		Size: 153.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:52fc018d83d49939ba560bc72fa07eda9546090fcedffc1820bc08bb25831d2a`  
-		Last Modified: Fri, 07 Oct 2022 10:12:43 GMT  
-		Size: 118.4 MB (118407212 bytes)  
+	-	`sha256:2f5433f3b2c670f8b1bb81a5a178ded0470f2390bac53b6a52f87867d5bd88c9`  
+		Last Modified: Thu, 27 Oct 2022 03:24:47 GMT  
+		Size: 118.4 MB (118408065 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a085101ca368f5a95d15d8d46832e7ea54f9da2b26d05cc658e914cd0055655c`  
-		Last Modified: Fri, 07 Oct 2022 10:12:10 GMT  
-		Size: 155.0 B  
+	-	`sha256:e3483d6547d0cd1cf51f7ca5551364c112ae2d6b7e401c42f71488effe6eaa6a`  
+		Last Modified: Thu, 27 Oct 2022 03:24:26 GMT  
+		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `golang:1-alpine3.15` - linux; arm64 variant v8
