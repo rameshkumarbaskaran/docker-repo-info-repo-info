@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ada7890aa8a4a542eff920f854758b2c105a4d8e9cfa84bd05b0d56ba256f164`
-- Created: `2022-10-14T02:06:37.783802356Z`
-- Virtual Size: ~ 770.99 Mb  
+- Image ID: `sha256:c88e5792c71c44d062d5bbea2fcb11264b030c12bfea549687742905753ae3d1`
+- Created: `2022-10-25T20:19:30.536886456Z`
+- Virtual Size: ~ 771.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -16,8 +16,8 @@
   - `PYTHON_VERSION=3.8.15`
   - `PYTHON_PIP_VERSION=22.0.4`
   - `PYTHON_SETUPTOOLS_VERSION=57.5.0`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/5eaac1050023df1f5c98b173b248c260023f2278/public/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=5aefe6ade911d997af080b315ebcb7f882212d070465df544e1175ac2be519b4`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/6d265be7a6b5bc4e9c5c07646aee0bf0394be03d/public/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=36c6f6214694ef64cc70f4127ac0ccec668408a93825359d998fb31d24968d67`
   - `PIP=22.2.2`
   - `ZC_BUILDOUT=2.13.7`
   - `SETUPTOOLS=51.3.3`
@@ -910,14 +910,14 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/glib2.0/2.58.3-2+deb10u4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/glib2.0/2.58.3-2+deb10u4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `glibc=2.28-10+deb10u1`
+### `dpkg` source package: `glibc=2.28-10+deb10u2`
 
 Binary Packages:
 
-- `libc-bin=2.28-10+deb10u1`
-- `libc-dev-bin=2.28-10+deb10u1`
-- `libc6:amd64=2.28-10+deb10u1`
-- `libc6-dev:amd64=2.28-10+deb10u1`
+- `libc-bin=2.28-10+deb10u2`
+- `libc-dev-bin=2.28-10+deb10u2`
+- `libc6:amd64=2.28-10+deb10u2`
+- `libc6-dev:amd64=2.28-10+deb10u2`
 
 Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/libc-dev-bin/copyright`, `/usr/share/doc/libc6/copyright`, `/usr/share/doc/libc6-dev/copyright`)
 
@@ -927,17 +927,17 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 Source:
 
 ```console
-$ apt-get source -qq --print-uris glibc=2.28-10+deb10u1
-'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.28-10%2bdeb10u1.dsc' glibc_2.28-10+deb10u1.dsc 8921 SHA256:9bb410368ec00f6c6d2b281e97244337fb3513c885c250c0bd5caab694f4f62f
-'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.28.orig.tar.xz' glibc_2.28.orig.tar.xz 17061292 SHA256:53d3c1c7bff0fb25d4c7874bf13435dc44a71fd7dd5ffc9bfdcb513cdfc36854
-'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.28-10%2bdeb10u1.debian.tar.xz' glibc_2.28-10+deb10u1.debian.tar.xz 899676 SHA256:2f8b22a99965eafcfbb65f14bfb2dbe2400b06cb8e646e909eb22317c222dfe7
+$ apt-get source -qq --print-uris glibc=2.28-10+deb10u2
+'http://deb.debian.org/debian-security/pool/updates/main/g/glibc/glibc_2.28-10%2bdeb10u2.dsc' glibc_2.28-10+deb10u2.dsc 8921 SHA256:1db9443dcf591e7c3980686ebf782400658761c6dcf832c704efbd592e203418
+'http://deb.debian.org/debian-security/pool/updates/main/g/glibc/glibc_2.28.orig.tar.xz' glibc_2.28.orig.tar.xz 17061292 SHA256:53d3c1c7bff0fb25d4c7874bf13435dc44a71fd7dd5ffc9bfdcb513cdfc36854
+'http://deb.debian.org/debian-security/pool/updates/main/g/glibc/glibc_2.28-10%2bdeb10u2.debian.tar.xz' glibc_2.28-10+deb10u2.debian.tar.xz 922792 SHA256:e9e8a1512517faa1cab5a5fe0231dcae3d410ad3f981a8db5e1494ed68bee15a
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/glibc/2.28-10+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/glibc/2.28-10+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/glibc/2.28-10+deb10u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/glibc/2.28-10+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/glibc/2.28-10+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/glibc/2.28-10+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gmp=2:6.1.2+dfsg-4+deb10u1`
 
@@ -3261,20 +3261,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2021a-0+deb10u7
-'http://deb.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2021a-0%2bdeb10u7.dsc' tzdata_2021a-0+deb10u7.dsc 2023 SHA256:c7464bc7872aa0b43653a38c1f131d31531bbb18d7ed3e34e3a47b2b62dc0801
-'http://deb.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2021a.orig.tar.gz' tzdata_2021a.orig.tar.gz 411892 SHA256:39e7d2ba08c68cbaefc8de3227aab0dec2521be8042cf56855f7dc3a9fb14e08
-'http://deb.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2021a-0%2bdeb10u7.debian.tar.xz' tzdata_2021a-0+deb10u7.debian.tar.xz 114484 SHA256:808028fadf6f8a2e3349c29c761ea3063571e1f286ac4e27460b0fbe87bd27a4
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tzdata/2021a-0+deb10u7/
 
-- https://sources.debian.net/src/tzdata/2021a-0+deb10u7/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2021a-0+deb10u7/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2021a-0+deb10u7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0038+nmu1`
 
