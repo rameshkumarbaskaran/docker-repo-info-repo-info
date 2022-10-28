@@ -713,12 +713,7 @@ Licenses (from `rpm --query`): BSD and GPLv2+
 
 Licenses (from `rpm --query`): relaxed BSD and (L)GPL-compatible
 
-Source:
-
-```console
-$ dnf --quiet download --source --url lib64pam_userpass1-1.0.2-15.mga8
-ftp://ftp.snt.utwente.nl/pub/os/linux/mageia/distrib/cauldron/SRPMS/core/release/pam_userpass-1.0.2-15.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `lib64pcre1-8.44-1.mga8.x86_64`
 
@@ -1466,7 +1461,7 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url tar-1.34-1.mga9
-ftp://ftp.snt.utwente.nl/pub/os/linux/mageia/distrib/cauldron/SRPMS/core/release/tar-1.34-1.mga9.src.rpm
+http://mirror.datacenter.by/pub/mirrors/mageia.org/distrib/cauldron/SRPMS/core/release/tar-1.34-1.mga9.src.rpm
 ```
 
 ### `rpm` package: `tcb-1.1-12.mga8.x86_64`
