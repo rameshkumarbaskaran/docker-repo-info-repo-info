@@ -2732,20 +2732,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-mgcv/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mgcv=1.8-40-1
-'http://deb.debian.org/debian/pool/main/m/mgcv/mgcv_1.8-40-1.dsc' mgcv_1.8-40-1.dsc 1833 SHA256:af5529e80005524bb5b97c0258b7ae4c537e207d69e98ae602df90b636c1c3cc
-'http://deb.debian.org/debian/pool/main/m/mgcv/mgcv_1.8-40.orig.tar.gz' mgcv_1.8-40.orig.tar.gz 1175920 SHA256:dbe627266c3b339232e2d4228d5370ba88c86540319e6891d161242efba7e4a5
-'http://deb.debian.org/debian/pool/main/m/mgcv/mgcv_1.8-40-1.debian.tar.xz' mgcv_1.8-40-1.debian.tar.xz 5436 SHA256:1b095252167a1b57efc96b00cfd92cc74fd5f423daff508b07301cb26df7768b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mgcv/1.8-40-1/
 
-- https://sources.debian.net/src/mgcv/1.8-40-1/ (for browsing the source)
-- https://sources.debian.net/src/mgcv/1.8-40-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mgcv/1.8-40-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mpclib3=1.2.1-2`
 
@@ -3447,20 +3440,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-rpart/copyright`)
 - `GPL-2`
 - `GPL-2+ | license included below`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris rpart=4.1.16-1
-'http://deb.debian.org/debian/pool/main/r/rpart/rpart_4.1.16-1.dsc' rpart_4.1.16-1.dsc 1843 SHA256:6cf20fb51f2d326b3470640bdc6fd07c146f08a48c7683251efd875e59117ee0
-'http://deb.debian.org/debian/pool/main/r/rpart/rpart_4.1.16.orig.tar.gz' rpart_4.1.16.orig.tar.gz 859107 SHA256:27ec75258a5a3459ad999f5f36760ead974930744249605bf8465f234f31425c
-'http://deb.debian.org/debian/pool/main/r/rpart/rpart_4.1.16-1.debian.tar.xz' rpart_4.1.16-1.debian.tar.xz 4352 SHA256:b2869785bfa8e24010c43f2e1063a9c4250cf1097b8c1e6b5624fc2fd23de88d
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/rpart/4.1.16-1/
 
-- https://sources.debian.net/src/rpart/4.1.16-1/ (for browsing the source)
-- https://sources.debian.net/src/rpart/4.1.16-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/rpart/4.1.16-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `rpcsvc-proto=1.4.2-4`
 
