@@ -1,10 +1,10 @@
-# `clojure:temurin-19-focal`
+# `clojure:temurin-17-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:137a3a3d228796bfeb626436a1c96f76c1f41433b859d01774108d051710ccb9`
-- Created: `2022-10-26T22:01:39.900733134Z`
-- Virtual Size: ~ 620.75 Mb  
+- Image ID: `sha256:5de508a14926c973faa6ecb9c2260a20e9fb82a6b8adefde7ed3ab262d37758f`
+- Created: `2022-10-28T20:39:22.300830399Z`
+- Virtual Size: ~ 603.68 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint"]`
@@ -15,8 +15,8 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-19+36`
-  - `CLOJURE_VERSION=1.11.1.1165`
+  - `JAVA_VERSION=jdk-17.0.4.1+1`
+  - `CLOJURE_VERSION=1.11.1.1182`
 
 ## `dpkg` (`.deb`-based packages)
 
