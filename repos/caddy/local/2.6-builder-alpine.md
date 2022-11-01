@@ -2,15 +2,15 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:3ceb882ff0e452cdbcbf3cc83e3905cc7fa55f99865db6308bcabf9e4518e53a`
-- Created: `2022-10-14T01:43:28.566914426Z`
-- Virtual Size: ~ 368.53 Mb  
+- Image ID: `sha256:e4fa387ebb822f454dc9877bfe19aaba627e1b422f476a4952468eb35c419c3f`
+- Created: `2022-11-01T19:49:51.335044714Z`
+- Virtual Size: ~ 368.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/sh"]`
 - Environment:
   - `PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `GOLANG_VERSION=1.19.2`
+  - `GOLANG_VERSION=1.19.3`
   - `GOPATH=/go`
   - `XCADDY_VERSION=v0.3.1`
   - `CADDY_VERSION=v2.6.2`
@@ -157,16 +157,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `expat`
 
 ```console
-expat-2.4.9-r0 description:
+expat-2.5.0-r0 description:
 XML Parser library written in C
 
-expat-2.4.9-r0 webpage:
+expat-2.5.0-r0 webpage:
 https://libexpat.github.io/
 
-expat-2.4.9-r0 installed size:
+expat-2.5.0-r0 installed size:
 192 KiB
 
-expat-2.4.9-r0 license:
+expat-2.5.0-r0 license:
 MIT
 
 ```
@@ -174,16 +174,16 @@ MIT
 ### `apk` package: `git`
 
 ```console
-git-2.36.2-r0 description:
+git-2.36.3-r0 description:
 Distributed version control system
 
-git-2.36.2-r0 webpage:
+git-2.36.3-r0 webpage:
 https://www.git-scm.com/
 
-git-2.36.2-r0 installed size:
+git-2.36.3-r0 installed size:
 10 MiB
 
-git-2.36.2-r0 license:
+git-2.36.3-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -225,16 +225,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.83.1-r3 description:
+libcurl-7.83.1-r4 description:
 The multiprotocol file transfer library
 
-libcurl-7.83.1-r3 webpage:
+libcurl-7.83.1-r4 webpage:
 https://curl.se/
 
-libcurl-7.83.1-r3 installed size:
-516 KiB
+libcurl-7.83.1-r4 installed size:
+512 KiB
 
-libcurl-7.83.1-r3 license:
+libcurl-7.83.1-r4 license:
 curl
 
 ```
