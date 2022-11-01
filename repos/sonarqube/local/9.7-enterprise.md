@@ -1,9 +1,9 @@
-# `sonarqube:9.7.0-enterprise`
+# `sonarqube:9.7.1-enterprise`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3f73ae09654a441a661f82c1f544ba235cb7ec60426e2c2c7ddf765d731856dd`
-- Created: `2022-10-17T22:21:45.15705064Z`
+- Image ID: `sha256:0a4de839ab6a14fb9de4e190a1800cdbc7f795047ba3055edbc259015e25bde6`
+- Created: `2022-10-28T20:26:13.795656897Z`
 - Virtual Size: ~ 653.99 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -16,7 +16,7 @@
   - `LC_ALL=en_US.UTF-8`
   - `JAVA_HOME=/usr/lib/jvm/java-11-openjdk`
   - `SONARQUBE_HOME=/opt/sonarqube`
-  - `SONAR_VERSION=9.7.0.61563`
+  - `SONAR_VERSION=9.7.1.62043`
   - `SQ_DATA_DIR=/opt/sonarqube/data`
   - `SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions`
   - `SQ_LOGS_DIR=/opt/sonarqube/logs`
@@ -197,16 +197,16 @@ custom
 ### `apk` package: `expat`
 
 ```console
-expat-2.4.9-r0 description:
+expat-2.5.0-r0 description:
 XML Parser library written in C
 
-expat-2.4.9-r0 webpage:
+expat-2.5.0-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.4.9-r0 installed size:
+expat-2.5.0-r0 installed size:
 192 KiB
 
-expat-2.4.9-r0 license:
+expat-2.5.0-r0 license:
 MIT
 
 ```
