@@ -1,9 +1,9 @@
-# `swift:5.7.0-focal`
+# `swift:5.7.1-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:388adf4c2b2a8c941ed106e5fdaec0af90d32c84bc811c28a7cbfd5f61bbcb2f`
-- Created: `2022-10-25T18:43:10.440361979Z`
+- Image ID: `sha256:e54f9e9152bdc8c06ba7f3b87f2e297ba9e6011b027414d65dda476c5d470f20`
+- Created: `2022-11-02T22:54:29.934916228Z`
 - Virtual Size: ~ 2.14 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -12,8 +12,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561`
   - `SWIFT_PLATFORM=ubuntu20.04`
-  - `SWIFT_BRANCH=swift-5.7-release`
-  - `SWIFT_VERSION=swift-5.7-RELEASE`
+  - `SWIFT_BRANCH=swift-5.7.1-release`
+  - `SWIFT_VERSION=swift-5.7.1-RELEASE`
   - `SWIFT_WEBROOT=https://download.swift.org`
 - Labels:
   - `description=Docker Container for the Swift programming language`
@@ -311,10 +311,8 @@ $ apt-get source -qq --print-uris coreutils=8.30-3ubuntu2
 Binary Packages:
 
 - `libcurl3-gnutls:amd64=7.68.0-1ubuntu2.13`
-- `libcurl4:amd64=7.68.0-1ubuntu2.13`
-- `libcurl4-openssl-dev:amd64=7.68.0-1ubuntu2.13`
 
-Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/doc/libcurl4/copyright`, `/usr/share/doc/libcurl4-openssl-dev/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`)
 
 - `BSD-3-Clause`
 - `BSD-4-Clause`
@@ -326,6 +324,31 @@ Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
 
+
+### `dpkg` source package: `curl=7.68.0-1ubuntu2.14`
+
+Binary Packages:
+
+- `libcurl4:amd64=7.68.0-1ubuntu2.14`
+- `libcurl4-openssl-dev:amd64=7.68.0-1ubuntu2.14`
+
+Licenses: (parsed from: `/usr/share/doc/libcurl4/copyright`, `/usr/share/doc/libcurl4-openssl-dev/copyright`)
+
+- `BSD-3-Clause`
+- `BSD-4-Clause`
+- `ISC`
+- `curl`
+- `other`
+- `public-domain`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris curl=7.68.0-1ubuntu2.14
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.14.dsc' curl_7.68.0-1ubuntu2.14.dsc 2737 SHA512:653b4e9f917b70858e4c4d37cea1232a17f9ccbe6ee29384678419657b07dee9b437c3159f0083363287e743d4e905c0c958ad4b5cc15a0fd4e641c95a6148b6
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0.orig.tar.gz' curl_7.68.0.orig.tar.gz 4096350 SHA512:58b42c08b1cf4cb6e68f8e469d5b5f6298eebe286ba2677ad29e1a7eefd15b8609af54544f4c5a7dadebbd3b23bd77700830f2f60fbea7ae3f2f306e640010b0
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.14.debian.tar.xz' curl_7.68.0-1ubuntu2.14.debian.tar.xz 57840 SHA512:3b2fa1bc62354e4fbf638775e158b369ecb1c6dc3896743c1126237d3dbb36f298da4e3f768d2e8e81e4eff29b005955c59f3ccb105a5630edff7475003e3c2c
+```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-2ubuntu0.1`
 

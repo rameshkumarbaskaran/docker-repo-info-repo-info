@@ -1,9 +1,9 @@
-# `swift:5.7.0-bionic`
+# `swift:5.7.1-bionic`
 
 ## Docker Metadata
 
-- Image ID: `sha256:da5a462271bc85051e72aca6a1829e5249905eef472a9ad859a563c7d43778ec`
-- Created: `2022-10-25T18:39:07.038781486Z`
+- Image ID: `sha256:e008569d76e67d8ed7251edce355050cc44b9f786e80101d8d62960f60469caa`
+- Created: `2022-11-02T22:51:51.37485685Z`
 - Virtual Size: ~ 2.20 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -12,8 +12,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561`
   - `SWIFT_PLATFORM=ubuntu18.04`
-  - `SWIFT_BRANCH=swift-5.7-release`
-  - `SWIFT_VERSION=swift-5.7-RELEASE`
+  - `SWIFT_BRANCH=swift-5.7.1-release`
+  - `SWIFT_VERSION=swift-5.7.1-RELEASE`
   - `SWIFT_WEBROOT=https://download.swift.org`
 - Labels:
   - `Description=Docker Container for the Swift programming language`
@@ -302,10 +302,8 @@ $ apt-get source -qq --print-uris coreutils=8.28-1ubuntu1
 Binary Packages:
 
 - `libcurl3-gnutls:amd64=7.58.0-2ubuntu3.20`
-- `libcurl4:amd64=7.58.0-2ubuntu3.20`
-- `libcurl4-openssl-dev:amd64=7.58.0-2ubuntu3.20`
 
-Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/doc/libcurl4/copyright`, `/usr/share/doc/libcurl4-openssl-dev/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`)
 
 - `BSD-3-Clause`
 - `BSD-4-Clause`
@@ -317,6 +315,31 @@ Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
 
+
+### `dpkg` source package: `curl=7.58.0-2ubuntu3.21`
+
+Binary Packages:
+
+- `libcurl4:amd64=7.58.0-2ubuntu3.21`
+- `libcurl4-openssl-dev:amd64=7.58.0-2ubuntu3.21`
+
+Licenses: (parsed from: `/usr/share/doc/libcurl4/copyright`, `/usr/share/doc/libcurl4-openssl-dev/copyright`)
+
+- `BSD-3-Clause`
+- `BSD-4-Clause`
+- `ISC`
+- `curl`
+- `other`
+- `public-domain`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris curl=7.58.0-2ubuntu3.21
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0-2ubuntu3.21.dsc' curl_7.58.0-2ubuntu3.21.dsc 2781 SHA512:0432ab25ec0157f873ba8e1a9e704d968369482a8850a6df7456f770a82003f51b1d81fe9d789665ed8935b07542aae2ad33dbd72dce7b3d9e82e5a084ebf299
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0.orig.tar.gz' curl_7.58.0.orig.tar.gz 3879728 SHA512:7b12b79107558bb266672d6e128615fe5a8149c37f4ae540197e3298f5d312beb2d78fbb23e3ea84ea7afc41549898a1e5cd38509f0388b11707b48d5efb8ca3
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0-2ubuntu3.21.debian.tar.xz' curl_7.58.0-2ubuntu3.21.debian.tar.xz 73500 SHA512:360824194e8209e44059f5253d0696b45be46472358616fd37a1f5c801c7abb018653bf7f71e2fbc58941bf047a3febf4cbd87be88616b2af6e5c46646b7146d
+```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27~101-g0780600+dfsg-3ubuntu2.4`
 
@@ -1932,9 +1955,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris linux=4.15.0-194.205
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-194.205.dsc' linux_4.15.0-194.205.dsc 7426 SHA512:af56196b8144d5ab037b4e646cb7677b8db312d2435722dd3a15561aabfb7f8bd75114ab7be464b5c9f103260b4359dcf349361a5c0e64c0855b2036047c3991
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA512:0fab606a295e0857f774f8adaa9d56bf2cb227fbab2daed374415da216391b156f49e606ba37ac402987c5796d408807da5d1a42c0d85a8552f109a3e279443d
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-194.205.diff.gz' linux_4.15.0-194.205.diff.gz 13327653 SHA512:f10c6e9ce5ef0501594f7b032afc88cb4d51f05931c75e5bff60023dc1870d088901d03a80442031d81be5528d1f217bae4b04b5ec6e673e4f615af3cf0c6c9b
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-194.205.dsc' linux_4.15.0-194.205.dsc 7426 SHA512:af56196b8144d5ab037b4e646cb7677b8db312d2435722dd3a15561aabfb7f8bd75114ab7be464b5c9f103260b4359dcf349361a5c0e64c0855b2036047c3991
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA512:0fab606a295e0857f774f8adaa9d56bf2cb227fbab2daed374415da216391b156f49e606ba37ac402987c5796d408807da5d1a42c0d85a8552f109a3e279443d
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-194.205.diff.gz' linux_4.15.0-194.205.diff.gz 13327653 SHA512:f10c6e9ce5ef0501594f7b032afc88cb4d51f05931c75e5bff60023dc1870d088901d03a80442031d81be5528d1f217bae4b04b5ec6e673e4f615af3cf0c6c9b
 ```
 
 ### `dpkg` source package: `lsb=9.20170808ubuntu1`
