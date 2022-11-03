@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ab51248bf737424b66465f481117c3d39503b07fb62fbf010ab143f64a4a097b`
-- Created: `2022-10-26T18:22:29.645202773Z`
-- Virtual Size: ~ 808.80 Mb  
+- Image ID: `sha256:54cd1ea17b520441d3c2a17eac67a70958605680d77510684c2a703e8e1bbb40`
+- Created: `2022-11-03T19:09:39.911493295Z`
+- Virtual Size: ~ 809.19 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -19,10 +19,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.32`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.32.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.32.tar.xz.asc`
-  - `PHP_SHA256=323332c991e8ef30b1d219cb10f5e30f11b5f319ce4c6642a5470d75ade7864a`
+  - `PHP_VERSION=7.4.33`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.33.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.33.tar.xz.asc`
+  - `PHP_SHA256=924846abf93bc613815c55dd3f5809377813ac62a9ec4eb3778675b82a27b927`
   - `MEDIAWIKI_MAJOR_VERSION=1.38`
   - `MEDIAWIKI_VERSION=1.38.4`
 
@@ -923,23 +923,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/e2fsprogs/1.46.2-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/e2fsprogs/1.46.2-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `expat=2.2.10-2+deb11u4`
+### `dpkg` source package: `expat=2.2.10-2+deb11u5`
 
 Binary Packages:
 
-- `libexpat1:amd64=2.2.10-2+deb11u4`
+- `libexpat1:amd64=2.2.10-2+deb11u5`
 
 Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
 - `MIT`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris expat=2.2.10-2+deb11u5
+'http://deb.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.10-2%2bdeb11u5.dsc' expat_2.2.10-2+deb11u5.dsc 2175 SHA256:5bbf7d1df4aa4fb5d31141b58dc08a687918c1685c48300bc3f67a8f56fe3071
+'http://deb.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.10.orig.tar.gz' expat_2.2.10.orig.tar.gz 8276395 SHA256:62e280f5fd29a5b70973f623e20a7412c3e3912c2684cb0e462e2c881be129e1
+'http://deb.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.10-2%2bdeb11u5.debian.tar.xz' expat_2.2.10-2+deb11u5.debian.tar.xz 29468 SHA256:b24f586a155c207b2dbf6db1b6e4106427150acdd3a654c00c52d400da70d23d
+```
 
-- http://snapshot.debian.org/package/expat/2.2.10-2+deb11u4/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/expat/2.2.10-2+deb11u5/ (for browsing the source)
+- https://sources.debian.net/src/expat/2.2.10-2+deb11u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/expat/2.2.10-2+deb11u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `fftw3=3.3.8-2`
 
@@ -4402,21 +4409,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2021a-1+deb11u7
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-1%2bdeb11u7.dsc' tzdata_2021a-1+deb11u7.dsc 2269 SHA256:77cea3308c13dc8dc94c0a210f1af5177ba081b7ba0db69254d77643e5c81921
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz' tzdata_2021a.orig.tar.gz 411892 SHA256:39e7d2ba08c68cbaefc8de3227aab0dec2521be8042cf56855f7dc3a9fb14e08
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz.asc' tzdata_2021a.orig.tar.gz.asc 833 SHA256:9dc5f54674166f4ffbc2d4485e656227430ab5f39c9006e6ed9986281117f058
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-1%2bdeb11u7.debian.tar.xz' tzdata_2021a-1+deb11u7.debian.tar.xz 114652 SHA256:dd4f2b7c623603ae5912ca267358468eee613630270a3e1ba628fcdc35330dd0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tzdata/2021a-1+deb11u7/
 
-- https://sources.debian.net/src/tzdata/2021a-1+deb11u7/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2021a-1+deb11u7/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2021a-1+deb11u7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0043`
 
