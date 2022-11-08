@@ -1,15 +1,15 @@
-# `haskell:9.4.2-slim-buster`
+# `haskell:9.4.3-slim-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a8cb79a4afd0ccc6a0a14e591fdfb23d68b3650348d292de72499a653bb00dec`
-- Created: `2022-10-25T03:44:03.573089726Z`
+- Image ID: `sha256:d0f3b783bbf42bc5c26843f1a1266d99369268ed5d26232c3c92cf933f39b516`
+- Created: `2022-11-07T18:22:54.236636771Z`
 - Virtual Size: ~ 1.34 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["ghci"]`
 - Environment:
-  - `PATH=/root/.cabal/bin:/root/.local/bin:/opt/ghc/9.4.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `PATH=/root/.cabal/bin:/root/.local/bin:/opt/ghc/9.4.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
 
 ## `dpkg` (`.deb`-based packages)
