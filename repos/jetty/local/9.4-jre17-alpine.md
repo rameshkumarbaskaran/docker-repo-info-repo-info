@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:66a54f53cf76e3d2200a007d85a61a58a67587e6b8002204488f9c286a1c230a`
-- Created: `2022-10-07T17:44:02.012750742Z`
-- Virtual Size: ~ 195.19 Mb  
+- Image ID: `sha256:a858a57ea4b5e3a5841770d1cb8caf9600a2feb35c7bd483ad8e485e05826f9c`
+- Created: `2022-11-07T21:20:06.552637664Z`
+- Virtual Size: ~ 195.52 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -15,7 +15,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-17.0.4.1+1`
+  - `JAVA_VERSION=jdk-17.0.5+8`
   - `JETTY_VERSION=9.4.49.v20220914`
   - `JETTY_HOME=/usr/local/jetty`
   - `JETTY_BASE=/var/lib/jetty`
@@ -164,16 +164,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `curl`
 
 ```console
-curl-7.83.1-r3 description:
+curl-7.83.1-r4 description:
 URL retrival utility and library
 
-curl-7.83.1-r3 webpage:
+curl-7.83.1-r4 webpage:
 https://curl.se/
 
-curl-7.83.1-r3 installed size:
+curl-7.83.1-r4 installed size:
 256 KiB
 
-curl-7.83.1-r3 license:
+curl-7.83.1-r4 license:
 curl
 
 ```
@@ -555,16 +555,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.83.1-r3 description:
+libcurl-7.83.1-r4 description:
 The multiprotocol file transfer library
 
-libcurl-7.83.1-r3 webpage:
+libcurl-7.83.1-r4 webpage:
 https://curl.se/
 
-libcurl-7.83.1-r3 installed size:
-516 KiB
+libcurl-7.83.1-r4 installed size:
+512 KiB
 
-libcurl-7.83.1-r3 license:
+libcurl-7.83.1-r4 license:
 curl
 
 ```
@@ -657,16 +657,16 @@ GPL-2.0-or-later or GPL-3.0-or-later
 ### `apk` package: `libldap`
 
 ```console
-libldap-2.6.3-r1 description:
+libldap-2.6.3-r3 description:
 OpenLDAP libraries
 
-libldap-2.6.3-r1 webpage:
+libldap-2.6.3-r3 webpage:
 https://www.openldap.org/
 
-libldap-2.6.3-r1 installed size:
+libldap-2.6.3-r3 installed size:
 400 KiB
 
-libldap-2.6.3-r1 license:
+libldap-2.6.3-r3 license:
 OLDAP-2.8
 
 ```
@@ -708,16 +708,16 @@ ISC AND ( BSD-3-Clause OR MIT )
 ### `apk` package: `libsasl`
 
 ```console
-libsasl-2.1.28-r0 description:
+libsasl-2.1.28-r1 description:
 Cyrus Simple Authentication and Security Layer (SASL) library
 
-libsasl-2.1.28-r0 webpage:
+libsasl-2.1.28-r1 webpage:
 https://www.cyrusimap.org/sasl/
 
-libsasl-2.1.28-r0 installed size:
+libsasl-2.1.28-r1 installed size:
 192 KiB
 
-libsasl-2.1.28-r0 license:
+libsasl-2.1.28-r1 license:
 custom
 
 ```
