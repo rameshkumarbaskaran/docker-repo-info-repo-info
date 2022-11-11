@@ -1,12 +1,13 @@
 ## `amazoncorretto:17-al2022-RC-headful`
 
 ```console
-$ docker pull amazoncorretto@sha256:f95b349bd237bee3c45ed539c95f93c9b6c3e89252920afead83114ca814c3f4
+$ docker pull amazoncorretto@sha256:7c3348e42653c83171aad6bf2022b29afced815de4a6d7ef6175d947e441e677
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
+-	Platforms: 2
 	-	linux; amd64
+	-	linux; arm64 variant v8
 
 ### `amazoncorretto:17-al2022-RC-headful` - linux; amd64
 
@@ -47,4 +48,45 @@ ENV JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto
 	-	`sha256:1df04607be2835ea2cc5d105df890bdc2e024011f143581578771fec96cbb325`  
 		Last Modified: Fri, 11 Nov 2022 01:44:42 GMT  
 		Size: 79.5 MB (79472588 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `amazoncorretto:17-al2022-RC-headful` - linux; arm64 variant v8
+
+```console
+$ docker pull amazoncorretto@sha256:22b80b1eb487716b075b3135b5b41b88a1a221ee94e131ae3c8fd04b813e74d4
+```
+
+-	Docker Version: 20.10.17
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **135.4 MB (135399447 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:51721b17c1a4202d2f4f3b367745c405a8e014b6cb5f822f48398e4d6b5214a8`
+-	Default Command: `["\/bin\/bash"]`
+
+```dockerfile
+# Tue, 01 Nov 2022 23:11:12 GMT
+ADD file:a96a24d7338f7e441a7666f0001096f24674170b376588f39095734b91d9dfed in / 
+# Tue, 01 Nov 2022 23:11:13 GMT
+CMD ["/bin/bash"]
+# Fri, 11 Nov 2022 11:57:11 GMT
+ARG version=17.0.5.8-1
+# Fri, 11 Nov 2022 11:57:11 GMT
+ARG package_version=1
+# Fri, 11 Nov 2022 11:57:39 GMT
+# ARGS: package_version=1 version=17.0.5.8-1
+RUN set -eux     && rpm --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2022     && echo "localpkg_gpgcheck=1" >> /etc/dnf/dnf.conf     && CORRETO_TEMP=$(mktemp -d)     && pushd ${CORRETO_TEMP}     && RPM_LIST=("java-17-amazon-corretto-headless-$version.amzn2022.${package_version}.$(uname -m).rpm")     && for rpm in ${RPM_LIST[@]}; do     curl --fail -O https://corretto.aws/downloads/resources/$(echo $version | tr '-' '.')/${rpm}     && rpm -K "${CORRETO_TEMP}/${rpm}" | grep -F "${CORRETO_TEMP}/${rpm}: digests signatures OK" || exit 1;     done     && dnf install -y ${CORRETO_TEMP}/*.rpm     && popd     && rm -rf /usr/lib/jvm/java-17-amazon-corretto.$(uname -m)/lib/src.zip     && rm -rf ${CORRETO_TEMP}     && dnf clean all     && sed -i '/localpkg_gpgcheck=1/d' /etc/dnf/dnf.conf
+# Fri, 11 Nov 2022 11:57:40 GMT
+ENV LANG=C.UTF-8
+# Fri, 11 Nov 2022 11:57:40 GMT
+ENV JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto
+```
+
+-	Layers:
+	-	`sha256:9f53c5402c7b18b2658ebb93a03c882a5ca1212112c795f5d4a3c561ea6fcd2f`  
+		Last Modified: Tue, 01 Nov 2022 23:12:05 GMT  
+		Size: 56.5 MB (56505867 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:607aee92f0726a40481416121db35452d8458335bcf6117fe3298757734f332e`  
+		Last Modified: Fri, 11 Nov 2022 12:00:16 GMT  
+		Size: 78.9 MB (78893580 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
