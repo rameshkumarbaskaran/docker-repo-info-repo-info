@@ -1,10 +1,10 @@
-# `kong:3.0.0-ubuntu`
+# `kong:3.0.1-ubuntu`
 
 ## Docker Metadata
 
-- Image ID: `sha256:74877fd6ac73ec1aacca102ec56550f4b7d4d978bcbd932e363a2285077ed8d2`
-- Created: `2022-10-25T17:02:28.09031982Z`
-- Virtual Size: ~ 318.46 Mb  
+- Image ID: `sha256:84e9f1024e06097ac4fca629ffee3ce0211b986375b283c46f3b4a86b7576e5f`
+- Created: `2022-11-10T21:47:05.698113296Z`
+- Virtual Size: ~ 293.19 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `ASSET=ce`
-  - `KONG_VERSION=3.0.0`
+  - `KONG_VERSION=3.0.1`
 - Labels:
   - `maintainer=Kong Docker Maintainers <docker@konghq.com> (@team-gateway-bot)`
 
@@ -277,12 +277,12 @@ $ apt-get source -qq --print-uris coreutils=8.30-3ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.30-3ubuntu2.debian.tar.xz' coreutils_8.30-3ubuntu2.debian.tar.xz 39636 SHA256:98204ef9d94e5c567880cd0245fdb7940eaf7592d6c6830c300ad117628b351f
 ```
 
-### `dpkg` source package: `curl=7.68.0-1ubuntu2.13`
+### `dpkg` source package: `curl=7.68.0-1ubuntu2.14`
 
 Binary Packages:
 
-- `libcurl3-gnutls:amd64=7.68.0-1ubuntu2.13`
-- `libcurl4:amd64=7.68.0-1ubuntu2.13`
+- `libcurl3-gnutls:amd64=7.68.0-1ubuntu2.14`
+- `libcurl4:amd64=7.68.0-1ubuntu2.14`
 
 Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
@@ -293,9 +293,14 @@ Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/
 - `other`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris curl=7.68.0-1ubuntu2.14
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.14.dsc' curl_7.68.0-1ubuntu2.14.dsc 2737 SHA512:653b4e9f917b70858e4c4d37cea1232a17f9ccbe6ee29384678419657b07dee9b437c3159f0083363287e743d4e905c0c958ad4b5cc15a0fd4e641c95a6148b6
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0.orig.tar.gz' curl_7.68.0.orig.tar.gz 4096350 SHA512:58b42c08b1cf4cb6e68f8e469d5b5f6298eebe286ba2677ad29e1a7eefd15b8609af54544f4c5a7dadebbd3b23bd77700830f2f60fbea7ae3f2f306e640010b0
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.14.debian.tar.xz' curl_7.68.0-1ubuntu2.14.debian.tar.xz 57840 SHA512:3b2fa1bc62354e4fbf638775e158b369ecb1c6dc3896743c1126237d3dbb36f298da4e3f768d2e8e81e4eff29b005955c59f3ccb105a5630edff7475003e3c2c
+```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-2ubuntu0.1`
 
@@ -828,11 +833,11 @@ $ apt-get source -qq --print-uris keyutils=1.6-6ubuntu1.1
 'http://archive.ubuntu.com/ubuntu/pool/main/k/keyutils/keyutils_1.6-6ubuntu1.1.debian.tar.xz' keyutils_1.6-6ubuntu1.1.debian.tar.xz 14556 SHA512:300ed4c9626de95616a7c799f14d4f8bf7dc0b765d1751d3c9d60f86b7c60801bfbb97bf26c5d0ab39e5e41d5f3021ca870748f9555433b0e6c4ba261f475c3b
 ```
 
-### `dpkg` source package: `kong=3.0.0`
+### `dpkg` source package: `kong=3.0.1`
 
 Binary Packages:
 
-- `kong=3.0.0`
+- `kong=3.0.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1702,11 +1707,11 @@ $ apt-get source -qq --print-uris shadow=1:4.8.1-1ubuntu5.20.04.2
 'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.8.1-1ubuntu5.20.04.2.debian.tar.xz' shadow_4.8.1-1ubuntu5.20.04.2.debian.tar.xz 86308 SHA512:927d5e25c5fc2a35f0994069783b94a45d2635d0358eccfc6ef5b7761fe3479ba62d093b2f7ddae26c935bdf77bfff648b68f3e4184420cb0eb200a17cb3a3b2
 ```
 
-### `dpkg` source package: `sqlite3=3.31.1-4ubuntu0.4`
+### `dpkg` source package: `sqlite3=3.31.1-4ubuntu0.5`
 
 Binary Packages:
 
-- `libsqlite3-0:amd64=3.31.1-4ubuntu0.4`
+- `libsqlite3-0:amd64=3.31.1-4ubuntu0.5`
 
 Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 
@@ -1714,9 +1719,15 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 - `GPL-2+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris sqlite3=3.31.1-4ubuntu0.5
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.31.1-4ubuntu0.5.dsc' sqlite3_3.31.1-4ubuntu0.5.dsc 2519 SHA512:a2e13e7f5795464a7ddea523dfc02a11d41f2263bf93651a756e7c9e7680d67066531f09cce459847471e1f6e3983402b0fa38805b5f55d159dc511c43f2bf56
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.31.1.orig-www.tar.xz' sqlite3_3.31.1.orig-www.tar.xz 5764424 SHA512:a47adacd46c673cfd674cb64fb54b054e69560aed8c8c429773f0eccdcdbce4be538397506eca8e2d169f4b46d0d47442b273e12d82f8c87e1aadf3ade458db6
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.31.1.orig.tar.xz' sqlite3_3.31.1.orig.tar.xz 7108036 SHA512:67e1050efe2988fa3d0d7e4a87e147a8114c6ff9b6ca5307a068befb38e861930eaee0135048ff1abb1e6323b507cbc68a0aac3a8fe5f095d6fcea1547a7efaf
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.31.1-4ubuntu0.5.debian.tar.xz' sqlite3_3.31.1-4ubuntu0.5.debian.tar.xz 35824 SHA512:9a0a273044c4dd39856ba378c3c70c3bf3796179bb4e8e66e38b1895148cf286eceb1aac8fd8a45a026c4c6c9a311f64e3baee93d82fdb1b844806df1f41c20a
+```
 
 ### `dpkg` source package: `systemd=245.4-4ubuntu3.18`
 
