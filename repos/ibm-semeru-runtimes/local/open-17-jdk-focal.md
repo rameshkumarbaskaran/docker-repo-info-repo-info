@@ -1,10 +1,10 @@
-# `ibm-semeru-runtimes:open-17.0.4.1_1-jdk-focal`
+# `ibm-semeru-runtimes:open-17.0.5_8-jdk-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c266ba08d65e7879e26680889dab5ceca4bf78c73825d44b1e868c9815c4da72`
-- Created: `2022-10-25T16:45:13.758577599Z`
-- Virtual Size: ~ 482.73 Mb  
+- Image ID: `sha256:3efe3b372dff0010bccd00100936eda439551596a07da15556c67b7077381bd8`
+- Created: `2022-11-10T20:34:03.634590877Z`
+- Virtual Size: ~ 483.40 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -13,7 +13,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-17.0.4.1+1_openj9-0.33.1`
+  - `JAVA_VERSION=jdk-17.0.5+8_openj9-0.35.0`
   - `JAVA_HOME=/opt/java/openjdk`
   - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal`
 
