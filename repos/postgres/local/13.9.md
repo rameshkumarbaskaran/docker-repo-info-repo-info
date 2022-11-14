@@ -1,10 +1,10 @@
-# `postgres:13.8`
+# `postgres:13.9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:621268accecf5f25ab5439bc2aa0c947f50e4afd29396157edf3faaa68a37dbf`
-- Created: `2022-10-25T13:25:23.797948032Z`
-- Virtual Size: ~ 373.34 Mb  
+- Image ID: `sha256:2592adce382bbcbbd7a17daab0d89282501f53d45c987bdeca5ece781ded8ef4`
+- Created: `2022-11-10T23:00:43.07043269Z`
+- Virtual Size: ~ 373.41 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -14,5 +14,5 @@
   - `GOSU_VERSION=1.14`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=13`
-  - `PG_VERSION=13.8-1.pgdg110+1`
+  - `PG_VERSION=13.9-1.pgdg110+1`
   - `PGDATA=/var/lib/postgresql/data`

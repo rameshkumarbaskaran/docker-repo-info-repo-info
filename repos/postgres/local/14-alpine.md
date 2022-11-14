@@ -1,10 +1,10 @@
-# `postgres:14.5-alpine`
+# `postgres:14.6-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:aac01494762a1319624f6117a3d9d374540ec58095c2c9f84adb92619aec3b6e`
-- Created: `2022-10-07T01:17:40.378042126Z`
-- Virtual Size: ~ 216.44 Mb  
+- Image ID: `sha256:664ff9e724c94dad825a5ba2ec257668271027c0f0032c35adb53f4ccab9176f`
+- Created: `2022-11-12T09:44:54.623824152Z`
+- Virtual Size: ~ 216.42 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -13,8 +13,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=14`
-  - `PG_VERSION=14.5`
-  - `PG_SHA256=d4f72cb5fb857c9a9f75ec8cf091a1771272802f2178f0b2e65b7b6ff64f4a30`
+  - `PG_VERSION=14.6`
+  - `PG_SHA256=508840fc1809d39ab72274d5f137dabb9fd7fb4f933da4168aeebb20069edf22`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `apk` (`.apk`-based packages)
@@ -22,16 +22,16 @@
 ### `apk` package: `alpine-baselayout`
 
 ```console
-alpine-baselayout-3.2.0-r22 description:
+alpine-baselayout-3.2.0-r23 description:
 Alpine base dir structure and init scripts
 
-alpine-baselayout-3.2.0-r22 webpage:
+alpine-baselayout-3.2.0-r23 webpage:
 https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
 
-alpine-baselayout-3.2.0-r22 installed size:
+alpine-baselayout-3.2.0-r23 installed size:
 340 KiB
 
-alpine-baselayout-3.2.0-r22 license:
+alpine-baselayout-3.2.0-r23 license:
 GPL-2.0-only
 
 ```
@@ -39,16 +39,16 @@ GPL-2.0-only
 ### `apk` package: `alpine-baselayout-data`
 
 ```console
-alpine-baselayout-data-3.2.0-r22 description:
+alpine-baselayout-data-3.2.0-r23 description:
 Alpine base dir structure and init scripts
 
-alpine-baselayout-data-3.2.0-r22 webpage:
+alpine-baselayout-data-3.2.0-r23 webpage:
 https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
 
-alpine-baselayout-data-3.2.0-r22 installed size:
-72 KiB
+alpine-baselayout-data-3.2.0-r23 installed size:
+76 KiB
 
-alpine-baselayout-data-3.2.0-r22 license:
+alpine-baselayout-data-3.2.0-r23 license:
 GPL-2.0-only
 
 ```
@@ -277,16 +277,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1q-r0 description:
+libcrypto1.1-1.1.1s-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1q-r0 webpage:
+libcrypto1.1-1.1.1s-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1q-r0 installed size:
+libcrypto1.1-1.1.1s-r0 installed size:
 2708 KiB
 
-libcrypto1.1-1.1.1q-r0 license:
+libcrypto1.1-1.1.1s-r0 license:
 OpenSSL
 
 ```
@@ -379,16 +379,16 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `libldap`
 
 ```console
-libldap-2.6.3-r1 description:
+libldap-2.6.3-r3 description:
 OpenLDAP libraries
 
-libldap-2.6.3-r1 webpage:
+libldap-2.6.3-r3 webpage:
 https://www.openldap.org/
 
-libldap-2.6.3-r1 installed size:
+libldap-2.6.3-r3 installed size:
 400 KiB
 
-libldap-2.6.3-r1 license:
+libldap-2.6.3-r3 license:
 OLDAP-2.8
 
 ```
@@ -396,16 +396,16 @@ OLDAP-2.8
 ### `apk` package: `libsasl`
 
 ```console
-libsasl-2.1.28-r0 description:
+libsasl-2.1.28-r1 description:
 Cyrus Simple Authentication and Security Layer (SASL) library
 
-libsasl-2.1.28-r0 webpage:
+libsasl-2.1.28-r1 webpage:
 https://www.cyrusimap.org/sasl/
 
-libsasl-2.1.28-r0 installed size:
+libsasl-2.1.28-r1 installed size:
 192 KiB
 
-libsasl-2.1.28-r0 license:
+libsasl-2.1.28-r1 license:
 custom
 
 ```
@@ -413,16 +413,16 @@ custom
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1q-r0 description:
+libssl1.1-1.1.1s-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1q-r0 webpage:
+libssl1.1-1.1.1s-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1q-r0 installed size:
+libssl1.1-1.1.1s-r0 installed size:
 528 KiB
 
-libssl1.1-1.1.1q-r0 license:
+libssl1.1-1.1.1s-r0 license:
 OpenSSL
 
 ```
@@ -481,16 +481,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.14-r1 description:
+libxml2-2.9.14-r2 description:
 XML parsing library, version 2
 
-libxml2-2.9.14-r1 webpage:
+libxml2-2.9.14-r2 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.14-r1 installed size:
+libxml2-2.9.14-r2 installed size:
 1200 KiB
 
-libxml2-2.9.14-r1 license:
+libxml2-2.9.14-r2 license:
 MIT
 
 ```
@@ -549,16 +549,16 @@ BSD-2-Clause GPL-2.0-only
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.3-r0 description:
+musl-1.2.3-r1 description:
 the musl c library (libc) implementation
 
-musl-1.2.3-r0 webpage:
+musl-1.2.3-r1 webpage:
 https://musl.libc.org/
 
-musl-1.2.3-r0 installed size:
+musl-1.2.3-r1 installed size:
 608 KiB
 
-musl-1.2.3-r0 license:
+musl-1.2.3-r1 license:
 MIT
 
 ```
@@ -566,16 +566,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.2.3-r0 description:
+musl-utils-1.2.3-r1 description:
 the musl c library (libc) implementation
 
-musl-utils-1.2.3-r0 webpage:
+musl-utils-1.2.3-r1 webpage:
 https://musl.libc.org/
 
-musl-utils-1.2.3-r0 installed size:
+musl-utils-1.2.3-r1 installed size:
 132 KiB
 
-musl-utils-1.2.3-r0 license:
+musl-utils-1.2.3-r1 license:
 MIT BSD GPL2+
 
 ```
@@ -685,16 +685,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2022c-r0 description:
+tzdata-2022f-r1 description:
 Timezone data
 
-tzdata-2022c-r0 webpage:
+tzdata-2022f-r1 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2022c-r0 installed size:
-3208 KiB
+tzdata-2022f-r1 installed size:
+3172 KiB
 
-tzdata-2022c-r0 license:
+tzdata-2022f-r1 license:
 Public-Domain
 
 ```
