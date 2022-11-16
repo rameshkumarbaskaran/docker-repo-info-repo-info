@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ddb24f700640e0fe592b7210b932af516cadc8d644165382bce0860fa5d0725c`
-- Created: `2022-10-06T22:38:57.653260022Z`
+- Image ID: `sha256:f5ad0727dee3c9c1b737d7221ebb3a8183925cef21e0f5326d0739aa75ed1f8e`
+- Created: `2022-11-12T06:17:08.698123836Z`
 - Virtual Size: ~ 54.96 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -20,16 +20,16 @@
 ### `apk` package: `alpine-baselayout`
 
 ```console
-alpine-baselayout-3.2.0-r22 description:
+alpine-baselayout-3.2.0-r23 description:
 Alpine base dir structure and init scripts
 
-alpine-baselayout-3.2.0-r22 webpage:
+alpine-baselayout-3.2.0-r23 webpage:
 https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
 
-alpine-baselayout-3.2.0-r22 installed size:
+alpine-baselayout-3.2.0-r23 installed size:
 340 KiB
 
-alpine-baselayout-3.2.0-r22 license:
+alpine-baselayout-3.2.0-r23 license:
 GPL-2.0-only
 
 ```
@@ -37,16 +37,16 @@ GPL-2.0-only
 ### `apk` package: `alpine-baselayout-data`
 
 ```console
-alpine-baselayout-data-3.2.0-r22 description:
+alpine-baselayout-data-3.2.0-r23 description:
 Alpine base dir structure and init scripts
 
-alpine-baselayout-data-3.2.0-r22 webpage:
+alpine-baselayout-data-3.2.0-r23 webpage:
 https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
 
-alpine-baselayout-data-3.2.0-r22 installed size:
-72 KiB
+alpine-baselayout-data-3.2.0-r23 installed size:
+76 KiB
 
-alpine-baselayout-data-3.2.0-r22 license:
+alpine-baselayout-data-3.2.0-r23 license:
 GPL-2.0-only
 
 ```
@@ -207,16 +207,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `expat`
 
 ```console
-expat-2.4.9-r0 description:
+expat-2.5.0-r0 description:
 XML Parser library written in C
 
-expat-2.4.9-r0 webpage:
+expat-2.5.0-r0 webpage:
 https://libexpat.github.io/
 
-expat-2.4.9-r0 installed size:
+expat-2.5.0-r0 installed size:
 192 KiB
 
-expat-2.4.9-r0 license:
+expat-2.5.0-r0 license:
 MIT
 
 ```
@@ -292,16 +292,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1q-r0 description:
+libcrypto1.1-1.1.1s-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1q-r0 webpage:
+libcrypto1.1-1.1.1s-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1q-r0 installed size:
+libcrypto1.1-1.1.1s-r0 installed size:
 2708 KiB
 
-libcrypto1.1-1.1.1q-r0 license:
+libcrypto1.1-1.1.1s-r0 license:
 OpenSSL
 
 ```
@@ -309,16 +309,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.83.1-r3 description:
+libcurl-7.83.1-r4 description:
 The multiprotocol file transfer library
 
-libcurl-7.83.1-r3 webpage:
+libcurl-7.83.1-r4 webpage:
 https://curl.se/
 
-libcurl-7.83.1-r3 installed size:
-516 KiB
+libcurl-7.83.1-r4 installed size:
+512 KiB
 
-libcurl-7.83.1-r3 license:
+libcurl-7.83.1-r4 license:
 curl
 
 ```
@@ -326,16 +326,16 @@ curl
 ### `apk` package: `libldap`
 
 ```console
-libldap-2.6.3-r1 description:
+libldap-2.6.3-r3 description:
 OpenLDAP libraries
 
-libldap-2.6.3-r1 webpage:
+libldap-2.6.3-r3 webpage:
 https://www.openldap.org/
 
-libldap-2.6.3-r1 installed size:
+libldap-2.6.3-r3 installed size:
 400 KiB
 
-libldap-2.6.3-r1 license:
+libldap-2.6.3-r3 license:
 OLDAP-2.8
 
 ```
@@ -343,16 +343,16 @@ OLDAP-2.8
 ### `apk` package: `libsasl`
 
 ```console
-libsasl-2.1.28-r0 description:
+libsasl-2.1.28-r1 description:
 Cyrus Simple Authentication and Security Layer (SASL) library
 
-libsasl-2.1.28-r0 webpage:
+libsasl-2.1.28-r1 webpage:
 https://www.cyrusimap.org/sasl/
 
-libsasl-2.1.28-r0 installed size:
+libsasl-2.1.28-r1 installed size:
 192 KiB
 
-libsasl-2.1.28-r0 license:
+libsasl-2.1.28-r1 license:
 custom
 
 ```
@@ -360,16 +360,16 @@ custom
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1q-r0 description:
+libssl1.1-1.1.1s-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1q-r0 webpage:
+libssl1.1-1.1.1s-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1q-r0 installed size:
+libssl1.1-1.1.1s-r0 installed size:
 528 KiB
 
-libssl1.1-1.1.1q-r0 license:
+libssl1.1-1.1.1s-r0 license:
 OpenSSL
 
 ```
@@ -394,16 +394,16 @@ GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.14-r1 description:
+libxml2-2.9.14-r2 description:
 XML parsing library, version 2
 
-libxml2-2.9.14-r1 webpage:
+libxml2-2.9.14-r2 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.14-r1 installed size:
+libxml2-2.9.14-r2 installed size:
 1200 KiB
 
-libxml2-2.9.14-r1 license:
+libxml2-2.9.14-r2 license:
 MIT
 
 ```
@@ -428,16 +428,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.3-r0 description:
+musl-1.2.3-r1 description:
 the musl c library (libc) implementation
 
-musl-1.2.3-r0 webpage:
+musl-1.2.3-r1 webpage:
 https://musl.libc.org/
 
-musl-1.2.3-r0 installed size:
+musl-1.2.3-r1 installed size:
 608 KiB
 
-musl-1.2.3-r0 license:
+musl-1.2.3-r1 license:
 MIT
 
 ```
@@ -445,16 +445,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.2.3-r0 description:
+musl-utils-1.2.3-r1 description:
 the musl c library (libc) implementation
 
-musl-utils-1.2.3-r0 webpage:
+musl-utils-1.2.3-r1 webpage:
 https://musl.libc.org/
 
-musl-utils-1.2.3-r0 installed size:
+musl-utils-1.2.3-r1 installed size:
 132 KiB
 
-musl-utils-1.2.3-r0 license:
+musl-utils-1.2.3-r1 license:
 MIT BSD GPL2+
 
 ```
