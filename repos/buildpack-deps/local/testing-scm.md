@@ -2770,20 +2770,13 @@ Licenses: (parsed from: `/usr/share/doc/login/copyright`, `/usr/share/doc/passwd
 - `GPL-2+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris shadow=1:4.12.3+dfsg1-3
-'http://deb.debian.org/debian/pool/main/s/shadow/shadow_4.12.3%2bdfsg1-3.dsc' shadow_4.12.3+dfsg1-3.dsc 2416 SHA256:ffb326db1c14125adb60a8d1c529164ca4e75b9107969ee05dcb848bf740013d
-'http://deb.debian.org/debian/pool/main/s/shadow/shadow_4.12.3%2bdfsg1.orig.tar.xz' shadow_4.12.3+dfsg1.orig.tar.xz 1796336 SHA256:0f6b86620d4893e766401ae7aca0361e19859e5da56851af6d6dc58932044657
-'http://deb.debian.org/debian/pool/main/s/shadow/shadow_4.12.3%2bdfsg1-3.debian.tar.xz' shadow_4.12.3+dfsg1-3.debian.tar.xz 80316 SHA256:95cc0009b3d9b6a60ee9bd47eb49945774c0356605673014ced871f1e89dc3e7
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/shadow/1:4.12.3+dfsg1-3/
 
-- https://sources.debian.net/src/shadow/1:4.12.3+dfsg1-3/ (for browsing the source)
-- https://sources.debian.net/src/shadow/1:4.12.3+dfsg1-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/shadow/1:4.12.3+dfsg1-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sqlite3=3.39.4-1`
 
@@ -2836,21 +2829,13 @@ Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subv
 - `Unicode`
 - `Utfwidth`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris subversion=1.14.2-3
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.14.2-3.dsc' subversion_1.14.2-3.dsc 4046 SHA256:09b88f161ce31aa691728d2decf9a78a16078da0812eeb68f93d9af0dd74431d
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.14.2.orig.tar.gz' subversion_1.14.2.orig.tar.gz 11626792 SHA256:fd826afad03db7a580722839927dc664f3e93398fe88b66905732c8530971353
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.14.2.orig.tar.gz.asc' subversion_1.14.2.orig.tar.gz.asc 3215 SHA256:da6a0a5ff56f671ad2d1eae708f8d1cc1abf0485b029a163ff8272cba5475861
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.14.2-3.debian.tar.xz' subversion_1.14.2-3.debian.tar.xz 336384 SHA256:bab721201e0673a74b64263ae9dd460b1193d71f905c2cc76c7a21f0d6e7acc0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/subversion/1.14.2-3/
 
-- https://sources.debian.net/src/subversion/1.14.2-3/ (for browsing the source)
-- https://sources.debian.net/src/subversion/1.14.2-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/subversion/1.14.2-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `systemd=252.1-1`
 

@@ -422,13 +422,20 @@ Licenses: (parsed from: `/usr/share/doc/libsasl2-2/copyright`, `/usr/share/doc/l
 - `RSA-MD`
 - `SSLeay`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris cyrus-sasl2=2.1.28+dfsg-9
+'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.28%2bdfsg-9.dsc' cyrus-sasl2_2.1.28+dfsg-9.dsc 3306 SHA256:173670779db23e5999b719b22b3a617b05a5a3f9b4aa13af30c2d6d46f91bd13
+'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.28%2bdfsg.orig.tar.xz' cyrus-sasl2_2.1.28+dfsg.orig.tar.xz 797472 SHA256:a15886d7da5958bd27f35b7c871dd872f6dc5b9917c9b6b15e3de014c7dab3d9
+'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.28%2bdfsg-9.debian.tar.xz' cyrus-sasl2_2.1.28+dfsg-9.debian.tar.xz 97024 SHA256:2542f723a6795bee72bdc8bab0056ef31794b5412ca9a1994d5fde60f743eedb
+```
 
-- http://snapshot.debian.org/package/cyrus-sasl2/2.1.28+dfsg-9/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/cyrus-sasl2/2.1.28+dfsg-9/ (for browsing the source)
+- https://sources.debian.net/src/cyrus-sasl2/2.1.28+dfsg-9/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/cyrus-sasl2/2.1.28+dfsg-9/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `dash=0.5.11+git20210903+057cd650a4ed-9`
 
@@ -2093,20 +2100,13 @@ Licenses: (parsed from: `/usr/share/doc/login/copyright`, `/usr/share/doc/passwd
 - `GPL-2+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris shadow=1:4.12.3+dfsg1-3
-'http://deb.debian.org/debian/pool/main/s/shadow/shadow_4.12.3%2bdfsg1-3.dsc' shadow_4.12.3+dfsg1-3.dsc 2416 SHA256:ffb326db1c14125adb60a8d1c529164ca4e75b9107969ee05dcb848bf740013d
-'http://deb.debian.org/debian/pool/main/s/shadow/shadow_4.12.3%2bdfsg1.orig.tar.xz' shadow_4.12.3+dfsg1.orig.tar.xz 1796336 SHA256:0f6b86620d4893e766401ae7aca0361e19859e5da56851af6d6dc58932044657
-'http://deb.debian.org/debian/pool/main/s/shadow/shadow_4.12.3%2bdfsg1-3.debian.tar.xz' shadow_4.12.3+dfsg1-3.debian.tar.xz 80316 SHA256:95cc0009b3d9b6a60ee9bd47eb49945774c0356605673014ced871f1e89dc3e7
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/shadow/1:4.12.3+dfsg1-3/
 
-- https://sources.debian.net/src/shadow/1:4.12.3+dfsg1-3/ (for browsing the source)
-- https://sources.debian.net/src/shadow/1:4.12.3+dfsg1-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/shadow/1:4.12.3+dfsg1-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sqlite3=3.39.4-1`
 

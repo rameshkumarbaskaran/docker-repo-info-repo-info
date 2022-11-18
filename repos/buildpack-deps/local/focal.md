@@ -781,14 +781,9 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`, `/usr/share/doc/li
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris expat=2.2.9-1ubuntu0.4
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.9-1ubuntu0.4.dsc' expat_2.2.9-1ubuntu0.4.dsc 2064 SHA512:e8fa4c5bd395f58c262075cc80f94c33c9386898809b3959812a9f01413aadacb1dfc34d1ca3f03045571e6eba125f4d6d18b0a14808862832136af12e4aea3c
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.9.orig.tar.gz' expat_2.2.9.orig.tar.gz 8273174 SHA512:e274fa7f30630450cb3ca681b266d765dbb7f5d00d1275ff9d9b2e2f6e1095893b8af4e3f4172ae6297c7a8a831a0a6becd484fe4bcdca09c37922f630780ef0
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.9-1ubuntu0.4.debian.tar.xz' expat_2.2.9-1ubuntu0.4.debian.tar.xz 25972 SHA512:e9ee861e786b5811684233a5e5c8c3ba1f0713519e1084f0801088a5d0f29e00483b60e4e3d3024d9400ac78aee7b7a4198c30c6c2ea5c146c9947a71d237864
-```
 
 ### `dpkg` source package: `fftw3=3.3.8-2ubuntu1`
 
@@ -2819,14 +2814,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.4.0-131.147
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-131.147.dsc' linux_5.4.0-131.147.dsc 7022 SHA512:eb464d97cccddd3c56b576d95622aded1f4ffd8732d15380c787e576ba46378519302eab4c0284dec9f0c67b70396d15af23a99bb74e6a62713563664f35bd44
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA512:62b09a7231fd793973c5f59b16c4f6ffce621188b02a71915874b05e8e3f956fb6146d4a4fb1a4475bebe463949ca5a18da12842c3ce7c52e996e6bc4012a074
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-131.147.diff.gz' linux_5.4.0-131.147.diff.gz 9962807 SHA512:aa59eefcb7ba30621346f06cd9ea7b420be40389cd59f680c5af0e8e22c28110451b37980c5163a958d38f4c79f23c094b159b81afa8df8e894a3e2a5afcc904
-```
 
 ### `dpkg` source package: `lsb=11.1.0ubuntu2`
 
