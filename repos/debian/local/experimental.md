@@ -580,13 +580,20 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 - `GPL-2`
 - `LGPL-2.1`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris glibc=2.36-5
+'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.36-5.dsc' glibc_2.36-5.dsc 9689 SHA256:7d6a6b90ff19c66f2704a8d2a9a21f2e2c1e0e67517b67fa9d0f5f862bbb69d3
+'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.36.orig.tar.xz' glibc_2.36.orig.tar.xz 19363988 SHA256:a543c02070d46ccaf866957efd13f10c924daa74c86a90a0254db09a92a708ee
+'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.36-5.debian.tar.xz' glibc_2.36-5.debian.tar.xz 820064 SHA256:11ab403a5dd75750f1670671704a30571af73ad59f5ab3e3bfd86ca189cc80ec
+```
 
-- http://snapshot.debian.org/package/glibc/2.36-5/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/glibc/2.36-5/ (for browsing the source)
+- https://sources.debian.net/src/glibc/2.36-5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/glibc/2.36-5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gmp=2:6.2.1+dfsg1-1.1`
 
