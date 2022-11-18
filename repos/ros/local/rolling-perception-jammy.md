@@ -2170,9 +2170,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gdk-pixbuf=2.42.8+dfsg-1ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.42.8%2bdfsg-1ubuntu0.1.dsc' gdk-pixbuf_2.42.8+dfsg-1ubuntu0.1.dsc 3238 SHA512:d71e09c7d02cf7409dd80fef40e9e73d2a6449aaa8774e7a6db3c834ccb812468c822f48f2735ccfeed6524469577bd84f29d2e863f5dea20bfa9f1c23924457
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.42.8%2bdfsg.orig.tar.xz' gdk-pixbuf_2.42.8+dfsg.orig.tar.xz 6439548 SHA512:d77093ac4bd5c8f9a5267e67958dd99db009e16f94c44be95a547cd291b6d03fcc35c4a02327dd9f4341af1ae2ecdaa6a1bec02dcf1116ec5a440d22b3f68924
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.42.8%2bdfsg-1ubuntu0.1.debian.tar.xz' gdk-pixbuf_2.42.8+dfsg-1ubuntu0.1.debian.tar.xz 21692 SHA512:191221b653ec49458c34d7978ea2121632dceac831a1368accf680897e2522fec027c8bd24169620cabd828e27dd3012c18268bef863a447b266a4c4130266b3
+'http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.42.8%2bdfsg-1ubuntu0.1.dsc' gdk-pixbuf_2.42.8+dfsg-1ubuntu0.1.dsc 3238 SHA512:d71e09c7d02cf7409dd80fef40e9e73d2a6449aaa8774e7a6db3c834ccb812468c822f48f2735ccfeed6524469577bd84f29d2e863f5dea20bfa9f1c23924457
+'http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.42.8%2bdfsg.orig.tar.xz' gdk-pixbuf_2.42.8+dfsg.orig.tar.xz 6439548 SHA512:d77093ac4bd5c8f9a5267e67958dd99db009e16f94c44be95a547cd291b6d03fcc35c4a02327dd9f4341af1ae2ecdaa6a1bec02dcf1116ec5a440d22b3f68924
+'http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.42.8%2bdfsg-1ubuntu0.1.debian.tar.xz' gdk-pixbuf_2.42.8+dfsg-1ubuntu0.1.debian.tar.xz 21692 SHA512:191221b653ec49458c34d7978ea2121632dceac831a1368accf680897e2522fec027c8bd24169620cabd828e27dd3012c18268bef863a447b266a4c4130266b3
 ```
 
 ### `dpkg` source package: `geos=3.10.2-1`
@@ -5761,14 +5761,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.15.0-52.58
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.15.0-52.58.dsc' linux_5.15.0-52.58.dsc 7645 SHA512:58bdb30b2c0b3a872b98c01f44b4a58ae5e0f3a489852348e2ce694d5bad3881eed446898c3844cc498778bbaf85ab9bfc58e97ab8d0b4a9992a2e38bcde2544
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.15.0.orig.tar.gz' linux_5.15.0.orig.tar.gz 194969557 SHA512:ae9a32132d5988441c189157703b0f8fa4e232d8d24f7104f944c06827db740beafae55eb37a51eb99b4ac513927cd372321fa1e84afff4d450b786e44414861
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.15.0-52.58.diff.gz' linux_5.15.0-52.58.diff.gz 7887155 SHA512:bc39d04fb9df7c46568c917fd4146c5e26c90df4493c0eea1bc8227ce0396bc8ce6cbbfbcb2090f7fbbacf5777abaabda763ce42daf5c0eef16dd88a7b885400
-```
 
 ### `dpkg` source package: `llvm-toolchain-13=1:13.0.1-2ubuntu2.1`
 
@@ -8214,14 +8209,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-core=0.10.0-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-core/python3-colcon-core_0.10.0-1.debian.tar.xz' python3-colcon-core_0.10.0-1.debian.tar.xz 1616 SHA512:cb9392e8c2cba44be8fd154cb70c3832656844ee049d8da5582f7c8194024fff897d7d9d23e7720494f973367bf59157d6c1e3c45857f58b840a083ee6be8b0a
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-core/python3-colcon-core_0.10.0-1.dsc' python3-colcon-core_0.10.0-1.dsc 959 SHA512:2dd272271696e99bcf5ca1e374d71966fc7bdefd1132d6aadf05f8fbcc09ac436d8434724f945ec783640c54886037866f04bb0244d3d50604e2adf59c81653a
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-core/python3-colcon-core_0.10.0.orig.tar.gz' python3-colcon-core_0.10.0.orig.tar.gz 108868 SHA512:35d67c69f47a289327b2b80d5c48e491d7ea3b800e1f6c7e6ecdd1503b6588d213864c94ec329b64109a5680ff5f1697d6195cb5b35f78dbbc023ffb72a1bbd0
-```
 
 ### `dpkg` source package: `python3-colcon-defaults=0.2.6-1`
 
