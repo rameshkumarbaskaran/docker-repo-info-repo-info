@@ -865,14 +865,9 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris expat=2.2.9-1ubuntu0.4
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.9-1ubuntu0.4.dsc' expat_2.2.9-1ubuntu0.4.dsc 2064 SHA512:e8fa4c5bd395f58c262075cc80f94c33c9386898809b3959812a9f01413aadacb1dfc34d1ca3f03045571e6eba125f4d6d18b0a14808862832136af12e4aea3c
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.9.orig.tar.gz' expat_2.2.9.orig.tar.gz 8273174 SHA512:e274fa7f30630450cb3ca681b266d765dbb7f5d00d1275ff9d9b2e2f6e1095893b8af4e3f4172ae6297c7a8a831a0a6becd484fe4bcdca09c37922f630780ef0
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.9-1ubuntu0.4.debian.tar.xz' expat_2.2.9-1ubuntu0.4.debian.tar.xz 25972 SHA512:e9ee861e786b5811684233a5e5c8c3ba1f0713519e1084f0801088a5d0f29e00483b60e4e3d3024d9400ac78aee7b7a4198c30c6c2ea5c146c9947a71d237864
-```
 
 ### `dpkg` source package: `fcl=0.5.0-5build1`
 
@@ -1782,14 +1777,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-fuel-tools4/copyright`)
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-fuel-tools4=4.6.0-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.6.0-1%7efocal.dsc' ignition-fuel-tools4_4.6.0-1~focal.dsc 1538 SHA256:2540db06d3eae871b52c93f2b993eb21014e559caa50890c06914ff5b13a8809
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.6.0.orig.tar.bz2' ignition-fuel-tools4_4.6.0.orig.tar.bz2 272885 SHA256:8451bdcb040a463f74863cc688e8164dcdd4646b42604a96774ce5d8adee7f9d
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.6.0-1%7efocal.debian.tar.xz' ignition-fuel-tools4_4.6.0-1~focal.debian.tar.xz 1820 SHA256:2f2f48982a9c46f064e45e126e5f5c8038b005b6b8b356beab3df17b4f962513
-```
 
 ### `dpkg` source package: `ignition-math6=6.13.0-3~focal`
 
@@ -1844,14 +1834,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-transport8/copyright`)
 - `Apache-2.0`
 - `BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-transport8=8.3.0-2~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.3.0-2%7efocal.dsc' ignition-transport8_8.3.0-2~focal.dsc 2185 SHA256:cc0689ec562f9f03476c2a13ab2400ee9d973b65c182ad93532bb3291ee65493
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.3.0.orig.tar.bz2' ignition-transport8_8.3.0.orig.tar.bz2 509305 SHA256:bb12422a0563b9804e34074c6bfd3890505485c5e7d20a8f6f57fcd7beb57c9d
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.3.0-2%7efocal.debian.tar.xz' ignition-transport8_8.3.0-2~focal.debian.tar.xz 3252 SHA256:293d61930025242db56ec9ae4fa2ee52f586d1dd1915183a3ad5cc92e752be45
-```
 
 ### `dpkg` source package: `ilmbase=2.3.0-6build1`
 
@@ -6005,14 +5990,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=245.4-4ubuntu3.18
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.18.dsc' systemd_245.4-4ubuntu3.18.dsc 5262 SHA512:54fdd08eb54669496a545c1bbacad81ebc174d32cf3247c9620e3b79cec9c5714e91025a6bd8284f863011dda8f5fa6059d5598c27ba050d20b6cfd810a12b71
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4.orig.tar.gz' systemd_245.4.orig.tar.gz 9000780 SHA512:02036bb1ab05301a9d0dfdd4b9c9376e90134474482531e6e292122380be2f24f99177493dd3af6f8af1a8ed2599ee0996da91a3b1b7872bbfaf26a1c3e61b4c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.18.debian.tar.xz' systemd_245.4-4ubuntu3.18.debian.tar.xz 279672 SHA512:fb32658af3f684336e05270c4b10cf17c11830dc5ec1e7c1b1a3ed4b50fdcc8a89db6a05488d24b5bec4a8996ab716b0fec73d464d25b3a464f10b4d11f3380b
-```
 
 ### `dpkg` source package: `sysvinit=2.96-2.1ubuntu1`
 

@@ -795,14 +795,9 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris expat=2.2.5-3ubuntu0.7
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.5-3ubuntu0.7.dsc' expat_2.2.5-3ubuntu0.7.dsc 2214 SHA512:92501860b0eaba70da80b4891df4e630b1b1c106a0d9ab680c9ede8beffadd11aff3d50c1fce7ea0013bb15d8310674b606c41af752d0fc76f1594bd9e160b4b
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.5.orig.tar.gz' expat_2.2.5.orig.tar.gz 8273003 SHA512:61ce2a479521412e0c56c352106c4adfb61a6bedb883921aba3ebccc29311ddd192646ac2c51b41572728d4de6ab4cb60a1dbc71515d742a80a8b59d89ca74d6
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.5-3ubuntu0.7.debian.tar.xz' expat_2.2.5-3ubuntu0.7.debian.tar.xz 25800 SHA512:c813288c179eea85f56bd4742be81148d6c2bdb7c80283a5dfb4803a870cdc4c3a600adb29c9e8f7b2f0174762a15f4bf78db61b83b2debb0bc88eb55bfc7e02
-```
 
 ### `dpkg` source package: `fcl=0.5.0-5`
 
@@ -1699,14 +1694,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-fuel-tools4/copyright`)
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-fuel-tools4=4.6.0-1~bionic
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.6.0-1%7ebionic.dsc' ignition-fuel-tools4_4.6.0-1~bionic.dsc 1542 SHA256:c16b785ed455e9fbae9301d6a2963e2427321b8564684355f9665f25c3a3e581
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.6.0.orig.tar.bz2' ignition-fuel-tools4_4.6.0.orig.tar.bz2 272885 SHA256:8451bdcb040a463f74863cc688e8164dcdd4646b42604a96774ce5d8adee7f9d
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.6.0-1%7ebionic.debian.tar.xz' ignition-fuel-tools4_4.6.0-1~bionic.debian.tar.xz 1836 SHA256:52514e2153685a002694c41c5aa250625cdeb1d9fa4fad20fe4d17157d70fe62
-```
 
 ### `dpkg` source package: `ignition-math6=6.13.0-3~bionic`
 
@@ -1761,14 +1751,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-transport8/copyright`)
 - `Apache-2.0`
 - `BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-transport8=8.3.0-2~bionic
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.3.0-2%7ebionic.dsc' ignition-transport8_8.3.0-2~bionic.dsc 2188 SHA256:52ea742beb26116323533ceda9c410d1362967b0d1c05ec4d36a7e24f05bed0f
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.3.0.orig.tar.bz2' ignition-transport8_8.3.0.orig.tar.bz2 509305 SHA256:bb12422a0563b9804e34074c6bfd3890505485c5e7d20a8f6f57fcd7beb57c9d
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.3.0-2%7ebionic.debian.tar.xz' ignition-transport8_8.3.0-2~bionic.debian.tar.xz 3304 SHA256:98f45045f67a84343570ffb9c0a6472874aa474c32a48982b6353c9d1cd68a7d
-```
 
 ### `dpkg` source package: `ilmbase=2.2.0-11ubuntu2`
 
