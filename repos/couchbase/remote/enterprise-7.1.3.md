@@ -1,4 +1,4 @@
-## `couchbase:enterprise`
+## `couchbase:enterprise-7.1.3`
 
 ```console
 $ docker pull couchbase@sha256:a09a7c26144f4419cab7132b0cb941326bfe5e0c9a2c1e1c242684a0c0efbaa1
@@ -9,7 +9,7 @@ $ docker pull couchbase@sha256:a09a7c26144f4419cab7132b0cb941326bfe5e0c9a2c1e1c2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
-### `couchbase:enterprise` - linux; amd64
+### `couchbase:enterprise-7.1.3` - linux; amd64
 
 ```console
 $ docker pull couchbase@sha256:ef252915a047bb14a0e8e55d6ff4881ed90f22b1f68359c2b57c97cdd56e212c
@@ -121,7 +121,7 @@ VOLUME [/opt/couchbase/var]
 		Size: 868.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `couchbase:enterprise` - linux; arm64 variant v8
+### `couchbase:enterprise-7.1.3` - linux; arm64 variant v8
 
 ```console
 $ docker pull couchbase@sha256:7f1e9086a42518f68b0881c4ea7d4a43c48ee9b598fe63cc102548ab1ebdb825
