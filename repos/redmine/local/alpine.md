@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:777f990b27bdfee6f7703f2fde708179d3fc5794ec1a4dd9396ca72170363007`
-- Created: `2022-10-08T00:00:18.659830969Z`
-- Virtual Size: ~ 441.89 Mb  
+- Image ID: `sha256:ea9164e4398dc1d84d6b394ed4e0aad8111c55ea0a2671d9780a175b185228fb`
+- Created: `2022-11-25T22:49:42.251449134Z`
+- Virtual Size: ~ 443.93 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -13,8 +13,8 @@
   - `PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `RUBY_MAJOR=3.1`
-  - `RUBY_VERSION=3.1.2`
-  - `RUBY_DOWNLOAD_SHA256=ca10d017f8a1b6d247556622c841fc56b90c03b1803f87198da1e4fd3ec3bf2a`
+  - `RUBY_VERSION=3.1.3`
+  - `RUBY_DOWNLOAD_SHA256=4ee161939826bcdfdafa757cf8e293a7f14e357f62be7144f040335cc8c7371a`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
@@ -336,16 +336,16 @@ AFL-2.1 OR GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.4.9-r0 description:
+expat-2.5.0-r0 description:
 XML Parser library written in C
 
-expat-2.4.9-r0 webpage:
+expat-2.5.0-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.4.9-r0 installed size:
+expat-2.5.0-r0 installed size:
 192 KiB
 
-expat-2.4.9-r0 license:
+expat-2.5.0-r0 license:
 MIT
 
 ```
@@ -506,16 +506,16 @@ GPL
 ### `apk` package: `git`
 
 ```console
-git-2.34.4-r0 description:
+git-2.34.5-r0 description:
 Distributed version control system
 
-git-2.34.4-r0 webpage:
+git-2.34.5-r0 webpage:
 https://www.git-scm.com/
 
-git-2.34.4-r0 installed size:
+git-2.34.5-r0 installed size:
 10 MiB
 
-git-2.34.4-r0 license:
+git-2.34.5-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -761,16 +761,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1q-r0 description:
+libcrypto1.1-1.1.1s-r1 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1q-r0 webpage:
+libcrypto1.1-1.1.1s-r1 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1q-r0 installed size:
+libcrypto1.1-1.1.1s-r1 installed size:
 2676 KiB
 
-libcrypto1.1-1.1.1q-r0 license:
+libcrypto1.1-1.1.1s-r1 license:
 OpenSSL
 
 ```
@@ -778,16 +778,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.80.0-r3 description:
+libcurl-7.80.0-r4 description:
 The multiprotocol file transfer library
 
-libcurl-7.80.0-r3 webpage:
+libcurl-7.80.0-r4 webpage:
 https://curl.se/
 
-libcurl-7.80.0-r3 installed size:
+libcurl-7.80.0-r4 installed size:
 504 KiB
 
-libcurl-7.80.0-r3 license:
+libcurl-7.80.0-r4 license:
 MIT
 
 ```
@@ -1118,16 +1118,16 @@ custom
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1q-r0 description:
+libssl1.1-1.1.1s-r1 description:
 SSL shared libraries
 
-libssl1.1-1.1.1q-r0 webpage:
+libssl1.1-1.1.1s-r1 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1q-r0 installed size:
+libssl1.1-1.1.1s-r1 installed size:
 528 KiB
 
-libssl1.1-1.1.1q-r0 license:
+libssl1.1-1.1.1s-r1 license:
 OpenSSL
 
 ```
@@ -1220,16 +1220,16 @@ BSD-3-Clause
 ### `apk` package: `libx11`
 
 ```console
-libx11-1.7.2-r0 description:
+libx11-1.7.3.1-r0 description:
 X11 client-side library
 
-libx11-1.7.2-r0 webpage:
+libx11-1.7.3.1-r0 webpage:
 http://xorg.freedesktop.org/
 
-libx11-1.7.2-r0 installed size:
-3240 KiB
+libx11-1.7.3.1-r0 installed size:
+3244 KiB
 
-libx11-1.7.2-r0 license:
+libx11-1.7.3.1-r0 license:
 custom:XFREE86
 
 ```
@@ -1322,16 +1322,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.14-r1 description:
+libxml2-2.9.14-r2 description:
 XML parsing library, version 2
 
-libxml2-2.9.14-r1 webpage:
+libxml2-2.9.14-r2 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.14-r1 installed size:
+libxml2-2.9.14-r2 installed size:
 1200 KiB
 
-libxml2-2.9.14-r1 license:
+libxml2-2.9.14-r2 license:
 MIT
 
 ```
@@ -1662,16 +1662,16 @@ BSD-3-Clause
 ### `apk` package: `pixman`
 
 ```console
-pixman-0.40.0-r3 description:
+pixman-0.40.0-r4 description:
 Low-level pixel manipulation library
 
-pixman-0.40.0-r3 webpage:
+pixman-0.40.0-r4 webpage:
 https://gitlab.freedesktop.org/pixman
 
-pixman-0.40.0-r3 installed size:
+pixman-0.40.0-r4 installed size:
 608 KiB
 
-pixman-0.40.0-r3 license:
+pixman-0.40.0-r4 license:
 MIT
 
 ```
@@ -1815,16 +1815,16 @@ MIT
 ### `apk` package: `python3`
 
 ```console
-python3-3.9.13-r1 description:
+python3-3.9.15-r0 description:
 A high-level scripting language
 
-python3-3.9.13-r1 webpage:
+python3-3.9.15-r0 webpage:
 https://www.python.org/
 
-python3-3.9.13-r1 installed size:
+python3-3.9.15-r0 installed size:
 46 MiB
 
-python3-3.9.13-r1 license:
+python3-3.9.15-r0 license:
 PSF-2.0
 
 ```
@@ -1883,16 +1883,16 @@ Apache-2.0
 ### `apk` package: `shared-mime-info`
 
 ```console
-shared-mime-info-2.1-r0 description:
+shared-mime-info-2.1-r1 description:
 Freedesktop.org Shared MIME Info
 
-shared-mime-info-2.1-r0 webpage:
+shared-mime-info-2.1-r1 webpage:
 http://freedesktop.org/Software/shared-mime-info
 
-shared-mime-info-2.1-r0 installed size:
+shared-mime-info-2.1-r1 installed size:
 2424 KiB
 
-shared-mime-info-2.1-r0 license:
+shared-mime-info-2.1-r1 license:
 GPL-2.0-or-later
 
 ```
@@ -2019,16 +2019,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2022c-r0 description:
+tzdata-2022f-r1 description:
 Timezone data
 
-tzdata-2022c-r0 webpage:
+tzdata-2022f-r1 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2022c-r0 installed size:
-3208 KiB
+tzdata-2022f-r1 installed size:
+3172 KiB
 
-tzdata-2022c-r0 license:
+tzdata-2022f-r1 license:
 Public-Domain
 
 ```
