@@ -1847,21 +1847,13 @@ Licenses: (parsed from: `/usr/share/doc/icu-devtools/copyright`, `/usr/share/doc
 - `GPL-3`
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris icu=72.1-2
-'http://deb.debian.org/debian/pool/main/i/icu/icu_72.1-2.dsc' icu_72.1-2.dsc 2252 SHA256:73cc77074541c27d50f2b716a79674f52cc167503b9b42cd5412722457379127
-'http://deb.debian.org/debian/pool/main/i/icu/icu_72.1.orig.tar.gz' icu_72.1.orig.tar.gz 26303933 SHA256:a2d2d38217092a7ed56635e34467f92f976b370e20182ad325edea6681a71d68
-'http://deb.debian.org/debian/pool/main/i/icu/icu_72.1.orig.tar.gz.asc' icu_72.1.orig.tar.gz.asc 659 SHA256:87b6ff610d587292cec0444fa8cbbfb12994cb89bade40578f5ba6470de245c7
-'http://deb.debian.org/debian/pool/main/i/icu/icu_72.1-2.debian.tar.xz' icu_72.1-2.debian.tar.xz 61704 SHA256:209f93ad115a81714f7ad968897008782f73646ee4f53208871594a5fc418ad0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/icu/72.1-2/
 
-- https://sources.debian.net/src/icu/72.1-2/ (for browsing the source)
-- https://sources.debian.net/src/icu/72.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/icu/72.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `imagemagick=8:6.9.11.60+dfsg-1.3`
 
@@ -2397,20 +2389,13 @@ Licenses: (parsed from: `/usr/share/doc/libedit2/copyright`)
 
 - `BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libedit=3.1-20221030-1
-'http://deb.debian.org/debian/pool/main/libe/libedit/libedit_3.1-20221030-1.dsc' libedit_3.1-20221030-1.dsc 2208 SHA256:5dae2bea8aae504c5d3d6d0f164b52a371057225533d86852946af9d9ecf2707
-'http://deb.debian.org/debian/pool/main/libe/libedit/libedit_3.1-20221030.orig.tar.gz' libedit_3.1-20221030.orig.tar.gz 533261 SHA256:f0925a5adf4b1bf116ee19766b7daa766917aec198747943b1c4edf67a4be2bb
-'http://deb.debian.org/debian/pool/main/libe/libedit/libedit_3.1-20221030-1.debian.tar.xz' libedit_3.1-20221030-1.debian.tar.xz 15132 SHA256:e6b32bc7cbc3158efd582e1ac8ba1074a99e817dcf6ab2ff6674d8e0be0ffa31
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libedit/3.1-20221030-1/
 
-- https://sources.debian.net/src/libedit/3.1-20221030-1/ (for browsing the source)
-- https://sources.debian.net/src/libedit/3.1-20221030-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libedit/3.1-20221030-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `liberror-perl=0.17029-2`
 
@@ -3307,20 +3292,13 @@ Licenses: (parsed from: `/usr/share/doc/libltdl-dev/copyright`, `/usr/share/doc/
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libtool=2.4.7-4
-'http://deb.debian.org/debian/pool/main/libt/libtool/libtool_2.4.7-4.dsc' libtool_2.4.7-4.dsc 2257 SHA256:ad05b0fc53387ea08dd150456cbe1f8118b1bae86aa60f2e50554207e8ecb79c
-'http://deb.debian.org/debian/pool/main/libt/libtool/libtool_2.4.7.orig.tar.xz' libtool_2.4.7.orig.tar.xz 1026028 SHA256:dd637e270439b208907ceead3f163470ed2ce5723ef97ffbda6463c64b57128a
-'http://deb.debian.org/debian/pool/main/libt/libtool/libtool_2.4.7-4.debian.tar.xz' libtool_2.4.7-4.debian.tar.xz 40100 SHA256:7f335f64c1078018e7a486fa1ac1bd14e882502f71f139cdb24122c5f06fbe89
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libtool/2.4.7-4/
 
-- https://sources.debian.net/src/libtool/2.4.7-4/ (for browsing the source)
-- https://sources.debian.net/src/libtool/2.4.7-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libtool/2.4.7-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libunistring=1.0-2`
 
@@ -4925,20 +4903,13 @@ Licenses: (parsed from: `/usr/share/doc/libreadline-dev/copyright`, `/usr/share/
 - `GFDL`
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris readline=8.2-1.1
-'http://deb.debian.org/debian/pool/main/r/readline/readline_8.2-1.1.dsc' readline_8.2-1.1.dsc 2595 SHA256:b10408a05c3181db5ccf34240c152020d43ec58703c41f39b1228e10c5fa6840
-'http://deb.debian.org/debian/pool/main/r/readline/readline_8.2.orig.tar.gz' readline_8.2.orig.tar.gz 3043952 SHA256:3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35
-'http://deb.debian.org/debian/pool/main/r/readline/readline_8.2-1.1.debian.tar.xz' readline_8.2-1.1.debian.tar.xz 29484 SHA256:384e45522c28efb4cb4508a302b96fb729499d401f9f7c3f1b36a3bc145d09f5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/readline/8.2-1.1/
 
-- https://sources.debian.net/src/readline/8.2-1.1/ (for browsing the source)
-- https://sources.debian.net/src/readline/8.2-1.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/readline/8.2-1.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `rpcsvc-proto=1.4.2-4`
 
@@ -5268,20 +5239,13 @@ Licenses: (parsed from: `/usr/share/doc/libtiff-dev/copyright`, `/usr/share/doc/
 
 - `Hylafax`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.4.0-5
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.4.0-5.dsc' tiff_4.4.0-5.dsc 2238 SHA256:7d74d6e94890625d784c589ac8773adbe6e6647411237e05a932456f8cd9985b
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.4.0.orig.tar.bz2' tiff_4.4.0.orig.tar.bz2 2072723 SHA256:ce0848109b627eb5442187b6362a8e4809728e4f28fcc5a04940e5afb464caba
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.4.0-5.debian.tar.xz' tiff_4.4.0-5.debian.tar.xz 32312 SHA256:f21400783c9c034143111f80eb8136735d99c4ee0ac325f5cc78ef694cccf249
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tiff/4.4.0-5/
 
-- https://sources.debian.net/src/tiff/4.4.0-5/ (for browsing the source)
-- https://sources.debian.net/src/tiff/4.4.0-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tiff/4.4.0-5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tzdata=2022f-1`
 
@@ -5657,20 +5621,13 @@ Licenses: (parsed from: `/usr/share/doc/liblzma-dev/copyright`, `/usr/share/doc/
 - `permissive-nowarranty`
 - `probably-PD`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris xz-utils=5.2.7-0.1
-'http://deb.debian.org/debian/pool/main/x/xz-utils/xz-utils_5.2.7-0.1.dsc' xz-utils_5.2.7-0.1.dsc 2247 SHA256:9324b210c29b9a9e0ae510e98d160d3c22e043bceafc16df0321a910f5769457
-'http://deb.debian.org/debian/pool/main/x/xz-utils/xz-utils_5.2.7.orig.tar.xz' xz-utils_5.2.7.orig.tar.xz 1282620 SHA256:8712e9acb0b6b49a97d443458a3067dc5c08a025e02dc5f773176c51dd7cfc69
-'http://deb.debian.org/debian/pool/main/x/xz-utils/xz-utils_5.2.7-0.1.debian.tar.xz' xz-utils_5.2.7-0.1.debian.tar.xz 31540 SHA256:9cf41fbe4f0048b8553ad7b4085f90ee671b24da77b4f630b4a149fcc43f613e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/xz-utils/5.2.7-0.1/
 
-- https://sources.debian.net/src/xz-utils/5.2.7-0.1/ (for browsing the source)
-- https://sources.debian.net/src/xz-utils/5.2.7-0.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/xz-utils/5.2.7-0.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `zlib=1:1.2.11.dfsg-4.1`
 
