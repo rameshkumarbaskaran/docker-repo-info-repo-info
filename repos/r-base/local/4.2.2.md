@@ -262,20 +262,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-boot/copyright`)
 
 - `'unlimited distribution'`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris boot=1.3-28-2
-'http://deb.debian.org/debian/pool/main/b/boot/boot_1.3-28-2.dsc' boot_1.3-28-2.dsc 1802 SHA256:ceeb6723addbf4de10f640d6b0c0abcab3b9d069239cac15e97e45d05a8f16d4
-'http://deb.debian.org/debian/pool/main/b/boot/boot_1.3-28.orig.tar.gz' boot_1.3-28.orig.tar.gz 236842 SHA256:9f7158fd2714659f590c3955651893dc24bd8f39196bc5a4cc35b0b031744a32
-'http://deb.debian.org/debian/pool/main/b/boot/boot_1.3-28-2.debian.tar.xz' boot_1.3-28-2.debian.tar.xz 5316 SHA256:ec34c243ea04a6cf650076aa922a3af6aa55efb287550d21540828b4911ac23f
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/boot/1.3-28-2/
 
-- https://sources.debian.net/src/boot/1.3-28-2/ (for browsing the source)
-- https://sources.debian.net/src/boot/1.3-28-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/boot/1.3-28-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `brotli=1.0.9-2`
 
@@ -1267,21 +1260,13 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `LGPLv3+_or_GPLv2+`
 - `The main library is licensed under GNU Lesser`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnutls28=3.7.8-2
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.7.8-2.dsc' gnutls28_3.7.8-2.dsc 3445 SHA256:bc0813c738c3ce575b32a39305a3a21835570039ce544057f34d33574bea7f49
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.7.8.orig.tar.xz' gnutls28_3.7.8.orig.tar.xz 6029220 SHA256:c58ad39af0670efe6a8aee5e3a8b2331a1200418b64b7c51977fb396d4617114
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.7.8.orig.tar.xz.asc' gnutls28_3.7.8.orig.tar.xz.asc 1760 SHA256:796ac6a01ed73a96b6737c4ea2928ea99715ce922fd49fe6e81de2fc36dc5945
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.7.8-2.debian.tar.xz' gnutls28_3.7.8-2.debian.tar.xz 67084 SHA256:7851708c817e77f6740ddc2214d81289f49d49a4cbeeaefd9d13d557cc87d7bb
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gnutls28/3.7.8-2/
 
-- https://sources.debian.net/src/gnutls28/3.7.8-2/ (for browsing the source)
-- https://sources.debian.net/src/gnutls28/3.7.8-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gnutls28/3.7.8-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `graphite2=1.3.14-1`
 
@@ -4419,16 +4404,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris xz-utils=5.2.7-0.1
-'http://deb.debian.org/debian/pool/main/x/xz-utils/xz-utils_5.2.7-0.1.dsc' xz-utils_5.2.7-0.1.dsc 2247 SHA256:9324b210c29b9a9e0ae510e98d160d3c22e043bceafc16df0321a910f5769457
-'http://deb.debian.org/debian/pool/main/x/xz-utils/xz-utils_5.2.7.orig.tar.xz' xz-utils_5.2.7.orig.tar.xz 1282620 SHA256:8712e9acb0b6b49a97d443458a3067dc5c08a025e02dc5f773176c51dd7cfc69
-'http://deb.debian.org/debian/pool/main/x/xz-utils/xz-utils_5.2.7-0.1.debian.tar.xz' xz-utils_5.2.7-0.1.debian.tar.xz 31540 SHA256:9cf41fbe4f0048b8553ad7b4085f90ee671b24da77b4f630b4a149fcc43f613e
+'http://http.debian.net/debian/pool/main/x/xz-utils/xz-utils_5.2.7-0.1.dsc' xz-utils_5.2.7-0.1.dsc 2247 SHA256:9324b210c29b9a9e0ae510e98d160d3c22e043bceafc16df0321a910f5769457
+'http://http.debian.net/debian/pool/main/x/xz-utils/xz-utils_5.2.7.orig.tar.xz' xz-utils_5.2.7.orig.tar.xz 1282620 SHA256:8712e9acb0b6b49a97d443458a3067dc5c08a025e02dc5f773176c51dd7cfc69
+'http://http.debian.net/debian/pool/main/x/xz-utils/xz-utils_5.2.7-0.1.debian.tar.xz' xz-utils_5.2.7-0.1.debian.tar.xz 31540 SHA256:9cf41fbe4f0048b8553ad7b4085f90ee671b24da77b4f630b4a149fcc43f613e
 ```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/xz-utils/5.2.7-0.1/ (for browsing the source)
-- https://sources.debian.net/src/xz-utils/5.2.7-0.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/xz-utils/5.2.7-0.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `zip=3.0-12`
 
