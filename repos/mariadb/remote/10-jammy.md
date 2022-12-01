@@ -1,7 +1,7 @@
 ## `mariadb:10-jammy`
 
 ```console
-$ docker pull mariadb@sha256:e2516ecfde15aa7ffb5d69088e8109dc56b8db552f98a75eb5be5171105ba5cd
+$ docker pull mariadb@sha256:2fb4a3fd8b735c137589f0aaf0634ffbc9cc9db9764b766da1ccf550416cdbd0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14,14 +14,14 @@ $ docker pull mariadb@sha256:e2516ecfde15aa7ffb5d69088e8109dc56b8db552f98a75eb5b
 ### `mariadb:10-jammy` - linux; amd64
 
 ```console
-$ docker pull mariadb@sha256:3564ad7a0b556154afb8ef50a3bd7a44b40cf6a5790da13302526a8bb0fa50c5
+$ docker pull mariadb@sha256:8e39ff6b2750b294de969a470b391557f3184e6e181a1f48a3250c5c15fc1734
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **125.7 MB (125690299 bytes)**  
+-	Total Size: **125.7 MB (125690316 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:28ca9ca8e2989310df9bfbc57d88b54ac931ac80ccd8f41cb9846a38cebdaef8`
+-	Image ID: `sha256:1de5905a61646ae4a92cd24156fc0cbd3fa7cca654388637e1b3c57c0677dd2d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mariadbd"]`
 
@@ -62,13 +62,13 @@ RUN set -ex; 	{ 		echo "mariadb-server" mysql-server/root_password password 'unu
 VOLUME [/var/lib/mysql]
 # Fri, 18 Nov 2022 01:39:09 GMT
 COPY file:889339e755ad928a437caeaa979e26ba168ae42039fb519e6d5b31d29bcce082 in /usr/local/bin/healthcheck.sh 
-# Fri, 18 Nov 2022 01:39:09 GMT
-COPY file:8ff49c407a76d8990281701d57bd3af69835977acdff7e2905ae6052323b3ebd in /usr/local/bin/ 
-# Fri, 18 Nov 2022 01:39:09 GMT
+# Wed, 30 Nov 2022 23:30:42 GMT
+COPY file:ebdfbcbc74dda1874f1c75d86e1c32733edb402d13440b2b7140a952010bc21f in /usr/local/bin/ 
+# Wed, 30 Nov 2022 23:30:42 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Nov 2022 01:39:09 GMT
+# Wed, 30 Nov 2022 23:30:42 GMT
 EXPOSE 3306
-# Fri, 18 Nov 2022 01:39:09 GMT
+# Wed, 30 Nov 2022 23:30:42 GMT
 CMD ["mariadbd"]
 ```
 
@@ -101,9 +101,9 @@ CMD ["mariadbd"]
 		Last Modified: Fri, 18 Nov 2022 01:40:33 GMT  
 		Size: 3.5 KB (3490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f9e5f484f6bce140e476e1a62eeb5d7e93a1380f3a6e36d4bc1c91375de1af12`  
-		Last Modified: Fri, 18 Nov 2022 01:40:33 GMT  
-		Size: 7.0 KB (6951 bytes)  
+	-	`sha256:cbb1c35b18de24a37f7e4eaf6f1905bf6de888a1735edec5a3b5e09c86d810b8`  
+		Last Modified: Wed, 30 Nov 2022 23:32:04 GMT  
+		Size: 7.0 KB (6968 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mariadb:10-jammy` - linux; arm64 variant v8
@@ -299,14 +299,14 @@ CMD ["mariadbd"]
 ### `mariadb:10-jammy` - linux; s390x
 
 ```console
-$ docker pull mariadb@sha256:de01e01b4934120174613d81c01e409b42dac76b12a721b43b5066b42266fb37
+$ docker pull mariadb@sha256:c9fe3fc7ed23be84802393d8d5f6557d44c087057be7db1769d635aaccffe620
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **124.1 MB (124120567 bytes)**  
+-	Total Size: **124.1 MB (124120589 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1d4c0901f53ef3f1ea469b3ca7c123484204aef5c39da53f59e934c148869ae0`
+-	Image ID: `sha256:287e4ed1608f68a2872b057d5f3b4e7d16525b71d2b1ba86190bcbb29b93af8d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mariadbd"]`
 
@@ -347,13 +347,13 @@ RUN set -ex; 	{ 		echo "mariadb-server" mysql-server/root_password password 'unu
 VOLUME [/var/lib/mysql]
 # Fri, 18 Nov 2022 00:43:11 GMT
 COPY file:889339e755ad928a437caeaa979e26ba168ae42039fb519e6d5b31d29bcce082 in /usr/local/bin/healthcheck.sh 
-# Fri, 18 Nov 2022 00:43:12 GMT
-COPY file:8ff49c407a76d8990281701d57bd3af69835977acdff7e2905ae6052323b3ebd in /usr/local/bin/ 
-# Fri, 18 Nov 2022 00:43:12 GMT
+# Wed, 30 Nov 2022 23:16:01 GMT
+COPY file:ebdfbcbc74dda1874f1c75d86e1c32733edb402d13440b2b7140a952010bc21f in /usr/local/bin/ 
+# Wed, 30 Nov 2022 23:16:02 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Nov 2022 00:43:12 GMT
+# Wed, 30 Nov 2022 23:16:02 GMT
 EXPOSE 3306
-# Fri, 18 Nov 2022 00:43:12 GMT
+# Wed, 30 Nov 2022 23:16:02 GMT
 CMD ["mariadbd"]
 ```
 
@@ -386,7 +386,7 @@ CMD ["mariadbd"]
 		Last Modified: Fri, 18 Nov 2022 00:45:16 GMT  
 		Size: 3.5 KB (3490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ca766d8383f9f7e5cea4244874c7c102f395c1bcc577628be8b9998c323678dc`  
-		Last Modified: Fri, 18 Nov 2022 00:45:16 GMT  
-		Size: 6.9 KB (6949 bytes)  
+	-	`sha256:ca658636ece9d245982986923fb8a6fe13005d6125e577b608bbbbf8d2fe5fb4`  
+		Last Modified: Wed, 30 Nov 2022 23:18:21 GMT  
+		Size: 7.0 KB (6971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
