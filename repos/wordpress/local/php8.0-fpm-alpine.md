@@ -1,4 +1,4 @@
-# `wordpress:6.1.1-php8.0-fpm-alpine`
+# `wordpress:6.1.1-fpm-alpine`
 
 ## Docker Metadata
 
