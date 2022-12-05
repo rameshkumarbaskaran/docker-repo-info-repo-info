@@ -1,10 +1,10 @@
-# `mediawiki:1.37.6-fpm`
+# `mediawiki:1.38.4-fpm`
 
 ## Docker Metadata
 
-- Image ID: `sha256:892b1b5c898a32097201837562e2c24b5d241cd776dc8a7277b6e5ebe60f9653`
-- Created: `2022-11-15T07:33:13.500994033Z`
-- Virtual Size: ~ 784.95 Mb  
+- Image ID: `sha256:9d4301be801911ecc2a59beed149f80ac3b8cc0d646e725af18448691b143d9b`
+- Created: `2022-12-05T20:47:30.253921876Z`
+- Virtual Size: ~ 802.20 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -16,13 +16,13 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.33`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.33.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.33.tar.xz.asc`
-  - `PHP_SHA256=924846abf93bc613815c55dd3f5809377813ac62a9ec4eb3778675b82a27b927`
-  - `MEDIAWIKI_MAJOR_VERSION=1.37`
-  - `MEDIAWIKI_VERSION=1.37.6`
+  - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F 2C16C765DBE54A088130F1BC4B9B5F600B55F3B4`
+  - `PHP_VERSION=8.0.26`
+  - `PHP_URL=https://www.php.net/distributions/php-8.0.26.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.26.tar.xz.asc`
+  - `PHP_SHA256=0765bfbe640dba37ccc36d2bc7c7b7ba3d2c3381c9cd4305f66eca83e82a40b3`
+  - `MEDIAWIKI_MAJOR_VERSION=1.38`
+  - `MEDIAWIKI_VERSION=1.38.4`
 
 ## `dpkg` (`.deb`-based packages)
 
