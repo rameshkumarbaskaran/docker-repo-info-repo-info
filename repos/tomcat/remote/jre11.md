@@ -1,7 +1,7 @@
 ## `tomcat:jre11`
 
 ```console
-$ docker pull tomcat@sha256:2e77fe0e017cd2382d2b306c4debc69c0ce6eae14ac6914cd5838fd9d795c612
+$ docker pull tomcat@sha256:0075ec5a2b70776a330da69bb7f4e4dc2c2d8b72a7600ab4f1ef90071d63a3da
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -113,14 +113,14 @@ CMD ["catalina.sh" "run"]
 ### `tomcat:jre11` - linux; arm variant v7
 
 ```console
-$ docker pull tomcat@sha256:3f815ecab4d8fb0c491d08c01ffa6e62e0701a83f668dc2815144b1e4d4d09d0
+$ docker pull tomcat@sha256:734dada347808d6f03fa682e4416ab382b6b587639835b7d3a204c232bc7cc0e
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **96.4 MB (96430722 bytes)**  
+-	Total Size: **96.4 MB (96438477 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1a65324f8156962c5f5e13ffbadbbc419316393dc9448a102607e94baf508852`
+-	Image ID: `sha256:e9c762573a5be012fa3d22af62cfbd8f1c435b0b310f1e71509dcbd533f613a5`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
@@ -158,19 +158,19 @@ ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
 ENV GPG_KEYS=A9C5DF4D22E99998D9875A5110C01C5A2F6059E7
 # Fri, 09 Dec 2022 04:48:33 GMT
 ENV TOMCAT_MAJOR=10
-# Fri, 09 Dec 2022 04:48:33 GMT
-ENV TOMCAT_VERSION=10.1.2
-# Fri, 09 Dec 2022 04:48:33 GMT
-ENV TOMCAT_SHA512=50e933934cbf2915603264dfd245db0137491555d71d4fe8a535a7a8b6bc36bb4984e8bb2f38c968fbfc84a87aeeaa773ce1c6ee5f2eaa87780d1869251da51e
-# Fri, 09 Dec 2022 04:48:34 GMT
-COPY dir:c866d0645790e72f5c236fd7c4138c5f7e038f539a1565c933c03dd6a8b62eb2 in /usr/local/tomcat 
-# Fri, 09 Dec 2022 04:48:38 GMT
+# Fri, 09 Dec 2022 21:39:29 GMT
+ENV TOMCAT_VERSION=10.1.4
+# Fri, 09 Dec 2022 21:39:29 GMT
+ENV TOMCAT_SHA512=f54f4298e59fb2085bb9720db06479956eb77c354a9210d56361c105814d2cb020edde9eb093077ed9d8c09cc9cda9c686d8f78488affb37c9a14abceeb27534
+# Fri, 09 Dec 2022 21:39:29 GMT
+COPY dir:519458ac70722b3ad88216905f2ec07f1ae9f62e8ad8fda1f50678b1272ba892 in /usr/local/tomcat 
+# Fri, 09 Dec 2022 21:39:34 GMT
 RUN set -eux; 	apt-get update; 	xargs -rt apt-get install -y --no-install-recommends < "$TOMCAT_NATIVE_LIBDIR/.dependencies.txt"; 	rm -rf /var/lib/apt/lists/*
-# Fri, 09 Dec 2022 04:48:39 GMT
+# Fri, 09 Dec 2022 21:39:35 GMT
 RUN set -eux; 	nativeLines="$(catalina.sh configtest 2>&1)"; 	nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')"; 	nativeLines="$(echo "$nativeLines" | sort -u)"; 	if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 09 Dec 2022 04:48:40 GMT
+# Fri, 09 Dec 2022 21:39:35 GMT
 EXPOSE 8080
-# Fri, 09 Dec 2022 04:48:40 GMT
+# Fri, 09 Dec 2022 21:39:35 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -195,16 +195,16 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Fri, 09 Dec 2022 05:21:10 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65b4d763b85fee28068c4778f8e2d7355523791a67519627ac8a9ae9c2135e5d`  
-		Last Modified: Fri, 09 Dec 2022 05:24:17 GMT  
-		Size: 12.2 MB (12169340 bytes)  
+	-	`sha256:c811152dcd24a52e50070e38051f22edda6534276e6d5398da99c30587fd5a6b`  
+		Last Modified: Fri, 09 Dec 2022 21:59:43 GMT  
+		Size: 12.2 MB (12177089 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3c5947d6cb5727844156915ced0dc7f61b387181071a4dbc794942549447627b`  
-		Last Modified: Fri, 09 Dec 2022 05:24:16 GMT  
-		Size: 427.3 KB (427270 bytes)  
+	-	`sha256:9fc64ee9106065ebd015d8af6e48c0f63825b328947064294bd17c5af94b225e`  
+		Last Modified: Fri, 09 Dec 2022 21:59:41 GMT  
+		Size: 427.3 KB (427276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:836157621a55f5ef5577b23f1f485f48caa71b62d21bd7578debe3f33b9f56f0`  
-		Last Modified: Fri, 09 Dec 2022 05:24:16 GMT  
+	-	`sha256:529f59d38916abe344ad9243c3190cf47d704c77d062fb0230c7618f4c45eb44`  
+		Last Modified: Fri, 09 Dec 2022 21:59:41 GMT  
 		Size: 130.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
