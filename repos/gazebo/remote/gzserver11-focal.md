@@ -1,7 +1,7 @@
 ## `gazebo:gzserver11-focal`
 
 ```console
-$ docker pull gazebo@sha256:bfe46bfc486d0c73ecea8ac3494896f9eb7e50a208cd40703242fb13d30c5f5d
+$ docker pull gazebo@sha256:dbfda1e652164a39f975d17eb60829078ea80804ad89bff69fbfe398e154361b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,68 +11,68 @@ $ docker pull gazebo@sha256:bfe46bfc486d0c73ecea8ac3494896f9eb7e50a208cd40703242
 ### `gazebo:gzserver11-focal` - linux; amd64
 
 ```console
-$ docker pull gazebo@sha256:46bb287a45e3cf501642fe89e548599c0c47f5744ba217d68bd425033927f8de
+$ docker pull gazebo@sha256:4f644682bc04892cd5ed315349e1233609d1733054021a1bb568a7449da661d7
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **322.0 MB (321952840 bytes)**  
+-	Total Size: **321.9 MB (321939079 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ddaf9eebd129a99a09ca80ccbc3a767280db1f435ded372b4f3a9bd3e85ae622`
+-	Image ID: `sha256:2b60487a7bab6d538c67a610833150f06636ecf2091faa5cf55f2848c254cb1b`
 -	Entrypoint: `["\/gzserver_entrypoint.sh"]`
 -	Default Command: `["gzserver"]`
 
 ```dockerfile
-# Tue, 25 Oct 2022 01:53:34 GMT
-ADD file:7633003155a1059419aa1a6756fafb6e4f419d65bff7feb7c945de1e29dccb1e in / 
-# Tue, 25 Oct 2022 01:53:35 GMT
+# Fri, 09 Dec 2022 01:20:21 GMT
+ADD file:9d282119af0c42bc823c95b4192a3350cf2cad670622017356dd2e637762e425 in / 
+# Fri, 09 Dec 2022 01:20:21 GMT
 CMD ["bash"]
-# Tue, 25 Oct 2022 07:04:29 GMT
+# Fri, 09 Dec 2022 02:05:57 GMT
 RUN echo 'Etc/UTC' > /etc/timezone &&     ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime &&     apt-get update &&     apt-get install -q -y --no-install-recommends tzdata &&     rm -rf /var/lib/apt/lists/*
-# Tue, 25 Oct 2022 16:23:47 GMT
+# Fri, 09 Dec 2022 02:06:22 GMT
 RUN apt-get update && apt-get install -q -y --no-install-recommends     dirmngr     gnupg2     lsb-release     && rm -rf /var/lib/apt/lists/*
-# Tue, 25 Oct 2022 16:23:49 GMT
+# Fri, 09 Dec 2022 02:06:23 GMT
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
-# Tue, 25 Oct 2022 16:23:49 GMT
+# Fri, 09 Dec 2022 02:06:24 GMT
 RUN . /etc/os-release     && echo "deb http://packages.osrfoundation.org/gazebo/$ID-stable `lsb_release -sc` main" > /etc/apt/sources.list.d/gazebo-latest.list
-# Tue, 25 Oct 2022 16:27:14 GMT
+# Fri, 09 Dec 2022 02:09:32 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends     gazebo11=11.12.0-1*     && rm -rf /var/lib/apt/lists/*
-# Tue, 25 Oct 2022 16:27:16 GMT
+# Fri, 09 Dec 2022 02:09:33 GMT
 EXPOSE 11345
-# Tue, 25 Oct 2022 16:27:16 GMT
+# Fri, 09 Dec 2022 02:09:33 GMT
 COPY file:b79966dec12c55a0a5c9e673326cc3faf9cbbeee0ea5f172e863df237eb8a601 in / 
-# Tue, 25 Oct 2022 16:27:16 GMT
+# Fri, 09 Dec 2022 02:09:33 GMT
 ENTRYPOINT ["/gzserver_entrypoint.sh"]
-# Tue, 25 Oct 2022 16:27:16 GMT
+# Fri, 09 Dec 2022 02:09:33 GMT
 CMD ["gzserver"]
 ```
 
 -	Layers:
-	-	`sha256:eaead16dc43bb8811d4ff450935d607f9ba4baffda4fc110cc402fa43f601d83`  
-		Last Modified: Fri, 21 Oct 2022 03:03:39 GMT  
-		Size: 28.6 MB (28577834 bytes)  
+	-	`sha256:846c0b181fff0c667d9444f8378e8fcfa13116da8d308bf21673f7e4bea8d580`  
+		Last Modified: Thu, 08 Dec 2022 13:18:11 GMT  
+		Size: 28.6 MB (28576882 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ff4b427f850657d03c70299694b020567ea6ea793e6e9113bc123ebe18aaf4`  
-		Last Modified: Tue, 25 Oct 2022 07:52:57 GMT  
-		Size: 1.2 MB (1163883 bytes)  
+	-	`sha256:caabce4ffd25edf36993bf0280efcd423502afe7b8c7b2da5782388b72f81a89`  
+		Last Modified: Fri, 09 Dec 2022 02:17:31 GMT  
+		Size: 1.2 MB (1154736 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:778f2ed9e43ab2f34b8effd97c264f823bf07e53e2094517b3eedd682a4d37ba`  
-		Last Modified: Wed, 26 Oct 2022 16:37:48 GMT  
-		Size: 16.2 MB (16181419 bytes)  
+	-	`sha256:9407eeb625fe2c900e470fa908d7ee55e09017864dca28a5f9c72573a9d52257`  
+		Last Modified: Fri, 09 Dec 2022 02:17:31 GMT  
+		Size: 16.2 MB (16175005 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4d4e046ed5d8aed26b3cc2a362aebf04e5c2c644381b15b85e0a14d880b9129b`  
-		Last Modified: Wed, 26 Oct 2022 16:37:44 GMT  
+	-	`sha256:706ba6387149bce96634a8370740ed6e6b7a6d2c90347fceebf004911f0531d7`  
+		Last Modified: Fri, 09 Dec 2022 02:17:28 GMT  
 		Size: 1.4 KB (1439 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8ba1ebdedae980f6556e1d105203aa8d49331eb679c22e26cf1b2561a9fd80d6`  
-		Last Modified: Wed, 26 Oct 2022 16:37:45 GMT  
-		Size: 5.5 KB (5501 bytes)  
+	-	`sha256:3898ee161b0b01c4a45afe98f7cc2de8d3158a83500e82d97e543b87fd956963`  
+		Last Modified: Fri, 09 Dec 2022 02:17:29 GMT  
+		Size: 5.5 KB (5504 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e7b2d158870abdadd00adc989a44ff0024d595958682932eb8f188a5ea5a24f`  
-		Last Modified: Wed, 26 Oct 2022 16:38:25 GMT  
-		Size: 276.0 MB (276022576 bytes)  
+	-	`sha256:9afdea06022fc2980019e69cc7f1d45b745990e698f0e24c365e824308c34338`  
+		Last Modified: Fri, 09 Dec 2022 02:18:02 GMT  
+		Size: 276.0 MB (276025324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:daf5583419a61e41bd432eff6ce52ed4a721946e46fbc30632bd9af9b8d1368a`  
-		Last Modified: Wed, 26 Oct 2022 16:37:44 GMT  
-		Size: 188.0 B  
+	-	`sha256:467d7154411fabc35faef4ae0ee98db0d7a89ce3c8aca8d86caf384c532aaf9d`  
+		Last Modified: Fri, 09 Dec 2022 02:17:29 GMT  
+		Size: 189.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
