@@ -4031,21 +4031,13 @@ Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/me
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mercurial=6.2.3-1
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_6.2.3-1.dsc' mercurial_6.2.3-1.dsc 2799 SHA256:99e81e44614075c6cab7b20225df50a8c33480e61af640f3d72c63802db70129
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_6.2.3.orig.tar.gz' mercurial_6.2.3.orig.tar.gz 8058864 SHA256:98d1ae002f68adf53d65c5947fe8b7a379f98cf05d9b8ea1f4077d2ca5dce9db
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_6.2.3.orig.tar.gz.asc' mercurial_6.2.3.orig.tar.gz.asc 659 SHA256:ce18248bfb508479f8117df172951a64c8098e9768af4db90adf951ff329f74b
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_6.2.3-1.debian.tar.xz' mercurial_6.2.3-1.debian.tar.xz 69956 SHA256:459b0dec435d3af41aad8918a07fa9eadff56ee385d08f7460584445f237402a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mercurial/6.2.3-1/
 
-- https://sources.debian.net/src/mercurial/6.2.3-1/ (for browsing the source)
-- https://sources.debian.net/src/mercurial/6.2.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mercurial/6.2.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mpclib3=1.2.1-2`
 
@@ -4864,20 +4856,13 @@ Licenses: (parsed from: `/usr/share/doc/libproc2-0/copyright`, `/usr/share/doc/p
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris procps=2:4.0.2-1
-'http://deb.debian.org/debian/pool/main/p/procps/procps_4.0.2-1.dsc' procps_4.0.2-1.dsc 2127 SHA256:066dbde7e724e15cf4811fc2eec617cddf63d4d3ffc33096a1f8a7a2ff9d2371
-'http://deb.debian.org/debian/pool/main/p/procps/procps_4.0.2.orig.tar.xz' procps_4.0.2.orig.tar.xz 1279196 SHA256:ee3fcd2ea6ff94aa43a81ba5cc7912b7c9615acd2911c7a3d3ea081287fdf47a
-'http://deb.debian.org/debian/pool/main/p/procps/procps_4.0.2-1.debian.tar.xz' procps_4.0.2-1.debian.tar.xz 27416 SHA256:d6a6cf01cd34bf48fc916d2ac4b99636608a4746c644e82ed101382f99de7021
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/procps/2:4.0.2-1/
 
-- https://sources.debian.net/src/procps/2:4.0.2-1/ (for browsing the source)
-- https://sources.debian.net/src/procps/2:4.0.2-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/procps/2:4.0.2-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3-defaults=3.10.6-3`
 
@@ -4960,20 +4945,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.10-minimal/copyright`, `/usr/
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.10=3.10.8-3
-'http://deb.debian.org/debian/pool/main/p/python3.10/python3.10_3.10.8-3.dsc' python3.10_3.10.8-3.dsc 3662 SHA256:c8299b1b682e515ca6424afa733d5ace13ddb8fa3613d4cace7636240a546b34
-'http://deb.debian.org/debian/pool/main/p/python3.10/python3.10_3.10.8.orig.tar.xz' python3.10_3.10.8.orig.tar.xz 19619508 SHA256:6a30ecde59c47048013eb5a658c9b5dec277203d2793667f578df7671f7f03f3
-'http://deb.debian.org/debian/pool/main/p/python3.10/python3.10_3.10.8-3.debian.tar.xz' python3.10_3.10.8-3.debian.tar.xz 219448 SHA256:0975ad5385c5014ed26927363a9cade2291539aeb3c1078da025bbd5b11b3c98
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3.10/3.10.8-3/
 
-- https://sources.debian.net/src/python3.10/3.10.8-3/ (for browsing the source)
-- https://sources.debian.net/src/python3.10/3.10.8-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3.10/3.10.8-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=8.2-1.2`
 
@@ -5279,20 +5257,13 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=252.2-1
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_252.2-1.dsc' systemd_252.2-1.dsc 6371 SHA256:6c43f00da55faa0f59240932d2d5a79328185e42fbdc1ac858daf5bf5bb8b64c
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_252.2.orig.tar.gz' systemd_252.2.orig.tar.gz 11745627 SHA256:4682efb2dccdfdc4241d21fe4f6e762d5c43c2b964daae1c9fe9167ffe28c874
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_252.2-1.debian.tar.xz' systemd_252.2-1.debian.tar.xz 167192 SHA256:b6b172972efff0ead5547cf2e273db55b713c0761569619ccac796ac70c7c6d0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/systemd/252.2-1/
 
-- https://sources.debian.net/src/systemd/252.2-1/ (for browsing the source)
-- https://sources.debian.net/src/systemd/252.2-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/systemd/252.2-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=3.05-7`
 
