@@ -1,7 +1,7 @@
 ## `centos:centos7.9.2009`
 
 ```console
-$ docker pull centos@sha256:c73f515d06b0fa07bb18d8202035e739a494ce760aa73129f60f4bf2bd22b407
+$ docker pull centos@sha256:be65f488b7764ad3638f236b7b515b3678369a5124c47b8d32916d6487418ea4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -43,22 +43,22 @@ CMD ["/bin/bash"]
 ### `centos:centos7.9.2009` - linux; arm variant v7
 
 ```console
-$ docker pull centos@sha256:1cef7b00a46a2a90c62eef9a9707d01d19c2f5e253b7ccc574ccaa775063d7e0
+$ docker pull centos@sha256:6887440ab977f751d6675157b73e42428d8ac05cf244c5d09ba036cc22d40d13
 ```
 
--	Docker Version: 20.10.7
+-	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **70.0 MB (70029389 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:df85be4d57c4a6d35c3a4f6a10c7501eeefb08cab83e91ccb073c0cb979936b2`
+-	Image ID: `sha256:b22fdcc90005aaf146b334656a764d47a9a1f730f318dea4990f83ad25a2ba42`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Wed, 15 Sep 2021 18:02:06 GMT
+# Fri, 09 Dec 2022 18:57:35 GMT
 ADD file:e9a3f27674e8ef05c9fb52ea3995976938e8063024e52e52c8f72f0514f1f10c in / 
-# Wed, 15 Sep 2021 18:02:08 GMT
+# Fri, 09 Dec 2022 18:57:36 GMT
 LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20181205
-# Wed, 15 Sep 2021 18:02:08 GMT
+# Fri, 09 Dec 2022 18:57:36 GMT
 CMD ["/bin/bash"]
 ```
 
