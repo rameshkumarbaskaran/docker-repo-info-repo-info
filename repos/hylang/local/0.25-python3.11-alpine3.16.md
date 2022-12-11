@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e001020572b13e2dfb36f63e7b1756d3a829e63a6511541e336c47a814a4b9a1`
-- Created: `2022-11-16T07:34:00.240594699Z`
-- Virtual Size: ~ 66.53 Mb  
+- Image ID: `sha256:63db5f7f0eee5402a8efd0dc62e647702d7348c393281be2bb106e19fe67e273`
+- Created: `2022-12-08T05:37:46.105724025Z`
+- Virtual Size: ~ 67.11 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -12,8 +12,8 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D`
-  - `PYTHON_VERSION=3.11.0`
-  - `PYTHON_PIP_VERSION=22.3`
+  - `PYTHON_VERSION=3.11.1`
+  - `PYTHON_PIP_VERSION=22.3.1`
   - `PYTHON_SETUPTOOLS_VERSION=65.5.0`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/66030fa03382b4914d4c4d0896961a0bdeeeb274/public/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=1e501cf004eac1b7eb1f97266d28f995ae835d30250bec7f8850562703067dc6`
@@ -212,16 +212,16 @@ MIT
 ### `apk` package: `krb5-libs`
 
 ```console
-krb5-libs-1.19.3-r0 description:
+krb5-libs-1.19.4-r0 description:
 The shared libraries used by Kerberos 5
 
-krb5-libs-1.19.3-r0 webpage:
+krb5-libs-1.19.4-r0 webpage:
 https://web.mit.edu/kerberos/www/
 
-krb5-libs-1.19.3-r0 installed size:
+krb5-libs-1.19.4-r0 installed size:
 1968 KiB
 
-krb5-libs-1.19.3-r0 license:
+krb5-libs-1.19.4-r0 license:
 MIT
 
 ```
@@ -433,16 +433,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.3-r1 description:
+musl-1.2.3-r2 description:
 the musl c library (libc) implementation
 
-musl-1.2.3-r1 webpage:
+musl-1.2.3-r2 webpage:
 https://musl.libc.org/
 
-musl-1.2.3-r1 installed size:
+musl-1.2.3-r2 installed size:
 608 KiB
 
-musl-1.2.3-r1 license:
+musl-1.2.3-r2 license:
 MIT
 
 ```
