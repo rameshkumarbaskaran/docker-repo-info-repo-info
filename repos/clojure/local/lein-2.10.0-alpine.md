@@ -1,21 +1,22 @@
-# `clojure:temurin-11-lein-2.9.10-alpine`
+# `clojure:lein-2.10.0-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:8323330f46087ca3d1fba243e29b367a25185b656c0e685b848b6efb3f5a74af`
-- Created: `2022-11-29T22:55:04.035801806Z`
-- Virtual Size: ~ 372.06 Mb  
+- Image ID: `sha256:6225f0e940450485d8719df6daf3a82670968fb8b08560306ed488209ca41ac1`
+- Created: `2022-12-09T22:34:33.390492867Z`
+- Virtual Size: ~ 378.39 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Command: `["lein","repl"]`
+- Entrypoint: `["entrypoint"]`
+- Command: `["repl"]`
 - Environment:
   - `PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/`
   - `JAVA_HOME=/opt/java/openjdk`
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.17+8`
-  - `LEIN_VERSION=2.9.10`
+  - `JAVA_VERSION=jdk-17.0.5+8`
+  - `LEIN_VERSION=2.10.0`
   - `LEIN_INSTALL=/usr/local/bin/`
   - `LEIN_ROOT=1`
 
@@ -92,16 +93,16 @@ GPL-2.0-only
 ### `apk` package: `bash`
 
 ```console
-bash-5.2.9-r0 description:
+bash-5.2.12-r0 description:
 The GNU Bourne Again shell
 
-bash-5.2.9-r0 webpage:
+bash-5.2.12-r0 webpage:
 https://www.gnu.org/software/bash/bash.html
 
-bash-5.2.9-r0 installed size:
+bash-5.2.12-r0 installed size:
 1400 KiB
 
-bash-5.2.9-r0 license:
+bash-5.2.12-r0 license:
 GPL-3.0-or-later
 
 ```

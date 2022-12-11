@@ -1,17 +1,17 @@
-# `clojure:temurin-11-lein-2.9.10-bullseye-slim`
+# `clojure:temurin-11-lein-2.10.0-bullseye-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:12e35ab193a4b7c2bcd6f7adc79687a401187594f359ac6770845dcf86753491`
-- Created: `2022-12-06T01:53:38.774861043Z`
-- Virtual Size: ~ 436.82 Mb  
+- Image ID: `sha256:42e22d1cc2d2895712b01bc7f679e0a5fefe71b3b96d0e7a18c44449149895a7`
+- Created: `2022-12-09T22:27:32.813122761Z`
+- Virtual Size: ~ 436.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["lein","repl"]`
 - Environment:
   - `PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/`
   - `JAVA_HOME=/opt/java/openjdk`
-  - `LEIN_VERSION=2.9.10`
+  - `LEIN_VERSION=2.10.0`
   - `LEIN_INSTALL=/usr/local/bin/`
   - `LEIN_ROOT=1`
 
