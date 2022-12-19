@@ -1,10 +1,10 @@
-# `swift:5.7.1-bionic-slim`
+# `swift:5.7.2-bionic-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f3b8568716110aee97dd767c465d3e1fbf8f851441fbe8af1d6406f92a2457b0`
-- Created: `2022-12-09T02:57:11.483578949Z`
-- Virtual Size: ~ 377.51 Mb  
+- Image ID: `sha256:62fb87e73f2f811bc9ea861e4ea687b9f3db8aa9e06f61e30f01d2daccf9f975`
+- Created: `2022-12-16T18:32:12.68316419Z`
+- Virtual Size: ~ 377.50 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -12,8 +12,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561`
   - `SWIFT_PLATFORM=ubuntu18.04`
-  - `SWIFT_BRANCH=swift-5.7.1-release`
-  - `SWIFT_VERSION=swift-5.7.1-RELEASE`
+  - `SWIFT_BRANCH=swift-5.7.2-release`
+  - `SWIFT_VERSION=swift-5.7.2-RELEASE`
   - `SWIFT_WEBROOT=https://download.swift.org`
 - Labels:
   - `Description=Docker Container for the Swift programming language`
