@@ -1,7 +1,7 @@
 ## `neurodebian:bookworm`
 
 ```console
-$ docker pull neurodebian@sha256:af0516a652aa48ea17784c52ace0f5955f9825a38ef533861435282ccfa9519c
+$ docker pull neurodebian@sha256:cfe27c6e4097f96eba82539d13a315a418a5389cd9926c08857693fed090ca4e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13,51 +13,51 @@ $ docker pull neurodebian@sha256:af0516a652aa48ea17784c52ace0f5955f9825a38ef5338
 ### `neurodebian:bookworm` - linux; amd64
 
 ```console
-$ docker pull neurodebian@sha256:414f30ae000289be5b3dfff39b6d94d3e0c1bac88b52c717a9f88f366c731cf4
+$ docker pull neurodebian@sha256:a798192f540b21efd22eaf5fb156bbca690ebefe6b916e542390342f504f6445
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62205396 bytes)**  
+-	Total Size: **62.3 MB (62269842 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ac48b46b1ceecffb60422aff9f7f47ba739d3e5b19102302ef1ed965fb591a9e`
+-	Image ID: `sha256:fc8f7e06a13bc62ec135a888db4e42165c315feb75aefe85fa0ab9a8833c7a93`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 06 Dec 2022 01:20:17 GMT
-ADD file:bc800ccc3502eee52ab13da7e930beeea45bff7ec8e6f625f2958550a0e0c4a0 in / 
-# Tue, 06 Dec 2022 01:20:17 GMT
+# Wed, 21 Dec 2022 01:20:01 GMT
+ADD file:5498bb69da6f2fdd15556904d80120042d5bb48f73fc9f20a2d1bd5a908e0017 in / 
+# Wed, 21 Dec 2022 01:20:02 GMT
 CMD ["bash"]
-# Tue, 06 Dec 2022 08:59:46 GMT
+# Wed, 21 Dec 2022 12:46:21 GMT
 RUN set -x 	&& apt-get update 	&& { 		which gpg 		|| apt-get install -y --no-install-recommends gnupg 	; } 	&& { 		gpg --version | grep -q '^gpg (GnuPG) 1\.' 		|| apt-get install -y --no-install-recommends dirmngr 	; } 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 06 Dec 2022 08:59:48 GMT
+# Wed, 21 Dec 2022 12:46:22 GMT
 RUN set -x 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --batch --keyserver keyserver.ubuntu.com --recv-keys DD95CC430502E37EF840ACEEA5D32F012649A5A9 	&& gpg --batch --export DD95CC430502E37EF840ACEEA5D32F012649A5A9 > /etc/apt/trusted.gpg.d/neurodebian.gpg 	&& rm -rf "$GNUPGHOME" 	&& apt-key list | grep neurodebian
-# Tue, 06 Dec 2022 08:59:48 GMT
+# Wed, 21 Dec 2022 12:46:22 GMT
 RUN { 	echo 'deb http://neuro.debian.net/debian bookworm main'; 	echo 'deb http://neuro.debian.net/debian data main'; 	echo '#deb-src http://neuro.debian.net/debian-devel bookworm main'; } > /etc/apt/sources.list.d/neurodebian.sources.list
-# Tue, 06 Dec 2022 08:59:52 GMT
+# Wed, 21 Dec 2022 12:46:26 GMT
 RUN set -x 	&& apt-get update 	&& apt-get install -y --no-install-recommends neurodebian-freeze eatmydata 	&& ln -s /usr/bin/eatmydata /usr/local/bin/apt-get 	&& rm -rf /var/lib/apt/lists/*
 ```
 
 -	Layers:
-	-	`sha256:3d5213c1b98149df5de6014f7a0822d3f7c1239b55b191918b5019861d2385bf`  
-		Last Modified: Tue, 06 Dec 2022 01:24:15 GMT  
-		Size: 50.3 MB (50260519 bytes)  
+	-	`sha256:2eed4289b3de645a7af9bc81fe7c50d50a1c7aae044a61e100a676b9e6224267`  
+		Last Modified: Wed, 21 Dec 2022 01:23:37 GMT  
+		Size: 50.3 MB (50324468 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e34f3b713ff24584fbc4f0d01232e38cfc50e552901e86aff81379bc0b91dec7`  
-		Last Modified: Tue, 06 Dec 2022 09:01:47 GMT  
-		Size: 11.7 MB (11662865 bytes)  
+	-	`sha256:90d684c700c928a924acfb8e63cc2f1f221b22a91af904bc43abd82f60759fcd`  
+		Last Modified: Wed, 21 Dec 2022 12:48:08 GMT  
+		Size: 11.7 MB (11663206 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:038ac8a6e4b8f2ac7e55d5681f5200702296571cec417384e1b85b8996a24729`  
-		Last Modified: Tue, 06 Dec 2022 09:01:45 GMT  
-		Size: 1.8 KB (1760 bytes)  
+	-	`sha256:646e67ad9a9557d3c9db03000c4d0fd620a4746ed5c3265b654aaaf7ac226e0c`  
+		Last Modified: Wed, 21 Dec 2022 12:48:07 GMT  
+		Size: 1.8 KB (1769 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:813b288bae82dad23a32a4ab481dfeaa06c02934f9db7d57644b0703ee85cc1a`  
-		Last Modified: Tue, 06 Dec 2022 09:01:45 GMT  
-		Size: 246.0 B  
+	-	`sha256:205a85f36b86b874baffa44201da50ee2e552a01cfe699c079f8bf13043b9348`  
+		Last Modified: Wed, 21 Dec 2022 12:48:07 GMT  
+		Size: 247.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b3f8e7214605a66deddc72a2f21f3d62d61dffbaa0cd2d60a50c46d3a85c23c5`  
-		Last Modified: Tue, 06 Dec 2022 09:01:45 GMT  
-		Size: 280.0 KB (280006 bytes)  
+	-	`sha256:0da8f02c09c3892562652ee798806a76a6863675d50ca287e3df840931fe0707`  
+		Last Modified: Wed, 21 Dec 2022 12:48:07 GMT  
+		Size: 280.2 KB (280152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `neurodebian:bookworm` - linux; arm64 variant v8
