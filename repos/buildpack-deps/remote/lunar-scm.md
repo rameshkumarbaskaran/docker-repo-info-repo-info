@@ -1,12 +1,13 @@
 ## `buildpack-deps:lunar-scm`
 
 ```console
-$ docker pull buildpack-deps@sha256:9d82564af17be98abfc9102a22445ac6a72dd042ac65d60a424fd181ea4f4e6f
+$ docker pull buildpack-deps@sha256:358294868e9210d8098b8eeacf36d9694a1ce50d64e848769998215c3f03bdb9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 5
+-	Platforms: 6
 	-	linux; amd64
+	-	linux; arm variant v7
 	-	linux; arm64 variant v8
 	-	linux; ppc64le
 	-	linux; riscv64
@@ -54,6 +55,50 @@ RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercuri
 	-	`sha256:de4c43da0c86244888b0b84f7c0a7f0e0c892e4926cf101cce101bfd3af10574`  
 		Last Modified: Thu, 22 Dec 2022 19:32:44 GMT  
 		Size: 42.6 MB (42577651 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `buildpack-deps:lunar-scm` - linux; arm variant v7
+
+```console
+$ docker pull buildpack-deps@sha256:0d5bd2ddfff7137145b367adc7275d6c45c4eacdb47e6eeb38185240ca9c180e
+```
+
+-	Docker Version: 20.10.17
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **81.0 MB (80994630 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:6acf0f212fb086eaad8b87a6bc8374a610fa413867f48348083ac585e3b0cf64`
+-	Default Command: `["bash"]`
+
+```dockerfile
+# Fri, 09 Dec 2022 01:36:59 GMT
+ADD file:c32587e56b8bc2fc7216d4ae1555fbd250b1d9fe75287cc1695ef58d8473c990 in / 
+# Fri, 09 Dec 2022 01:37:00 GMT
+CMD ["bash"]
+# Thu, 22 Dec 2022 20:26:52 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 		tzdata 	; 	rm -rf /var/lib/apt/lists/*
+# Thu, 22 Dec 2022 20:27:10 GMT
+RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
+# Thu, 22 Dec 2022 20:28:08 GMT
+RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
+```
+
+-	Layers:
+	-	`sha256:6a0077c0ef8989650a1fb4f37effd0a1fad1055621ccc056d7282a1831abf9a8`  
+		Last Modified: Fri, 09 Dec 2022 01:39:37 GMT  
+		Size: 26.0 MB (26028162 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e3c164931ea1da2a0de524578266acb327c17a70e0d87f42535da4e05d4993a6`  
+		Last Modified: Thu, 22 Dec 2022 20:35:44 GMT  
+		Size: 5.9 MB (5949770 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:26c1b49a8f9a05a169d8201bbead60565ec21f42041d81ed336ee1f858ae7521`  
+		Last Modified: Thu, 22 Dec 2022 20:35:43 GMT  
+		Size: 3.8 MB (3819824 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:50b3d9c178b3a2b07116594452dbe60b04ff8358ccb42a8c1305da86b69af83c`  
+		Last Modified: Thu, 22 Dec 2022 20:36:03 GMT  
+		Size: 45.2 MB (45196874 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `buildpack-deps:lunar-scm` - linux; arm64 variant v8
