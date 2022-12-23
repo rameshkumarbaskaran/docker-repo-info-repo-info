@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:22e1ec2a09a54452db27f0b2ddd7ecbbcce2a130d68c49439ca78a6a7f2148ed`
-- Created: `2022-12-06T22:22:12.336114739Z`
-- Virtual Size: ~ 468.59 Mb  
+- Image ID: `sha256:d998aab31223f0adb3445197aa41d2eaff194a111697e03a81c8760533a4fc30`
+- Created: `2022-12-21T15:32:43.719309812Z`
+- Virtual Size: ~ 468.55 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -338,23 +338,29 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/autoconf/2.69-14/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/autoconf/2.69-14/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `base-files=11.1+deb11u5`
+### `dpkg` source package: `base-files=11.1+deb11u6`
 
 Binary Packages:
 
-- `base-files=11.1+deb11u5`
+- `base-files=11.1+deb11u6`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris base-files=11.1+deb11u6
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_11.1%2bdeb11u6.dsc' base-files_11.1+deb11u6.dsc 1110 SHA256:df6d12e042b225431d93a2cb297bbd07f667dcdc94d9d7bc0b3f3849af174c1e
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_11.1%2bdeb11u6.tar.xz' base-files_11.1+deb11u6.tar.xz 65644 SHA256:7399a3755e527ef0d87153090ae5bc73b18b6e80edd2b48639418f840e4f9238
+```
 
-- http://snapshot.debian.org/package/base-files/11.1+deb11u5/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/base-files/11.1+deb11u6/ (for browsing the source)
+- https://sources.debian.net/src/base-files/11.1+deb11u6/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/base-files/11.1+deb11u6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-passwd=3.5.51`
 
@@ -1886,11 +1892,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libssh2/1.9.0-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libssh2/1.9.0-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libtasn1-6=4.16.0-2`
+### `dpkg` source package: `libtasn1-6=4.16.0-2+deb11u1`
 
 Binary Packages:
 
-- `libtasn1-6:amd64=4.16.0-2`
+- `libtasn1-6:amd64=4.16.0-2+deb11u1`
 
 Licenses: (parsed from: `/usr/share/doc/libtasn1-6/copyright`)
 
@@ -1899,13 +1905,21 @@ Licenses: (parsed from: `/usr/share/doc/libtasn1-6/copyright`)
 - `LGPL`
 - `LGPL-2.1`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libtasn1-6=4.16.0-2+deb11u1
+'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.16.0-2%2bdeb11u1.dsc' libtasn1-6_4.16.0-2+deb11u1.dsc 2618 SHA256:795155e19208ef5cf07534cd0fc0664b6144f94c16eec03d80fdee7a14f838b8
+'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.16.0.orig.tar.gz' libtasn1-6_4.16.0.orig.tar.gz 1812442 SHA256:0e0fb0903839117cb6e3b56e68222771bebf22ad7fc2295a0ed7d576e8d4329d
+'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.16.0.orig.tar.gz.asc' libtasn1-6_4.16.0.orig.tar.gz.asc 488 SHA256:06c201e8c3b43c27465ed79294d4c4ec8dcd3e95e4a6176ecbf273229ee3e2d0
+'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.16.0-2%2bdeb11u1.debian.tar.xz' libtasn1-6_4.16.0-2+deb11u1.debian.tar.xz 18324 SHA256:85198cc8eac7ecf5dc8bf220b0973c4ccd6c039217240fbf45ffe49860aacdd1
+```
 
-- http://snapshot.debian.org/package/libtasn1-6/4.16.0-2/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libtasn1-6/4.16.0-2+deb11u1/ (for browsing the source)
+- https://sources.debian.net/src/libtasn1-6/4.16.0-2+deb11u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libtasn1-6/4.16.0-2+deb11u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libtirpc=1.3.1-1+deb11u1`
 
@@ -2057,11 +2071,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libzstd/1.4.8+dfsg-2.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libzstd/1.4.8+dfsg-2.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=5.10.149-2`
+### `dpkg` source package: `linux=5.10.158-2`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=5.10.149-2`
+- `linux-libc-dev:amd64=5.10.158-2`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -2077,17 +2091,17 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris linux=5.10.149-2
-'http://deb.debian.org/debian-security/pool/updates/main/l/linux/linux_5.10.149-2.dsc' linux_5.10.149-2.dsc 197238 SHA256:3224be746cd8eb283471d0791ee1132b89bc0485e8c7348b9bce85f15852554e
-'http://deb.debian.org/debian-security/pool/updates/main/l/linux/linux_5.10.149.orig.tar.xz' linux_5.10.149.orig.tar.xz 121772840 SHA256:4d3279aa39a3d3a17fe382c3e8a09ea430ff2d3eb4cdcd29864c700ac5885169
-'http://deb.debian.org/debian-security/pool/updates/main/l/linux/linux_5.10.149-2.debian.tar.xz' linux_5.10.149-2.debian.tar.xz 3473800 SHA256:2efe84aab6aeb700fd0a94f463b4a9f58f45f20e619e54841e962bb2bc03bab3
+$ apt-get source -qq --print-uris linux=5.10.158-2
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.10.158-2.dsc' linux_5.10.158-2.dsc 197238 SHA256:938feb8baa4c955c3313eb4e6e03f3f556e86b8a74a578d91691edab29db07f3
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.10.158.orig.tar.xz' linux_5.10.158.orig.tar.xz 121806368 SHA256:a0791322c13f09ec855a0630a4764234308aafb4fe04540dde302b8cc21e052a
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.10.158-2.debian.tar.xz' linux_5.10.158-2.debian.tar.xz 3487356 SHA256:bfb86bb848fc869105455d59363f2323963278988168b32f54dc71f0eb246b69
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/linux/5.10.149-2/ (for browsing the source)
-- https://sources.debian.net/src/linux/5.10.149-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/5.10.149-2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/linux/5.10.158-2/ (for browsing the source)
+- https://sources.debian.net/src/linux/5.10.158-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/5.10.158-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=11.1.0`
 
