@@ -1,19 +1,19 @@
-# `haproxy:2.7.0-alpine`
+# `haproxy:2.7.1-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:acab7e6560218601834f6031229911d1db0a26b11055dec737f61b560777689a`
-- Created: `2022-12-01T20:43:02.983343885Z`
-- Virtual Size: ~ 23.28 Mb  
+- Image ID: `sha256:af20f44c2f0d85ae56f2f1100886a277fd6cfd8e9369b6546f5083419719b5ff`
+- Created: `2022-12-22T02:23:51.965754219Z`
+- Virtual Size: ~ 23.29 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["haproxy","-f","/usr/local/etc/haproxy/haproxy.cfg"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `HAPROXY_VERSION=2.7.0`
-  - `HAPROXY_URL=https://www.haproxy.org/download/2.7/src/haproxy-2.7.0.tar.gz`
-  - `HAPROXY_SHA256=0f7bdebd9b0d7abfd89087bf36af6bd1520d3234266349786654e32e186b4768`
+  - `HAPROXY_VERSION=2.7.1`
+  - `HAPROXY_URL=https://www.haproxy.org/download/2.7/src/haproxy-2.7.1.tar.gz`
+  - `HAPROXY_SHA256=155f3a2fb6dfc1fdfd13d946a260ab8dd2a137714acb818510749e3ffb6b351d`
 
 ## `apk` (`.apk`-based packages)
 
@@ -241,16 +241,16 @@ MIT AND BSD-2-Clause AND GPL-2.0-or-later
 ### `apk` package: `pcre2`
 
 ```console
-pcre2-10.40-r0 description:
+pcre2-10.42-r0 description:
 Perl-compatible regular expression library
 
-pcre2-10.40-r0 webpage:
+pcre2-10.42-r0 webpage:
 https://pcre.org/
 
-pcre2-10.40-r0 installed size:
+pcre2-10.42-r0 installed size:
 672 KiB
 
-pcre2-10.40-r0 license:
+pcre2-10.42-r0 license:
 BSD-3-Clause
 
 ```
