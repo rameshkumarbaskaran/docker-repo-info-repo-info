@@ -1,10 +1,10 @@
-# `composer:2.4.4`
+# `composer:2.5.1`
 
 ## Docker Metadata
 
-- Image ID: `sha256:0d0f40971aa0c333e4bbd328ee68a12b9ec52fa84463b59ad75e627afa825ffb`
-- Created: `2022-12-08T20:54:31.497308846Z`
-- Virtual Size: ~ 192.34 Mb  
+- Image ID: `sha256:ec8ec8db33a5e7c006861f9f03b33b2d176add1e70852ee16229d73e9ded5e1d`
+- Created: `2022-12-23T17:19:54.270735982Z`
+- Virtual Size: ~ 193.65 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -23,7 +23,7 @@
   - `PHP_SHA256=6ea4c2dfb532950fd712aa2a08c1412a6a81cd1334dd0b0bf88a8e44c2b3a943`
   - `COMPOSER_ALLOW_SUPERUSER=1`
   - `COMPOSER_HOME=/tmp`
-  - `COMPOSER_VERSION=2.4.4`
+  - `COMPOSER_VERSION=2.5.1`
 
 ## `apk` (`.apk`-based packages)
 
@@ -149,16 +149,16 @@ Apache-2.0 CC0-1.0
 ### `apk` package: `bash`
 
 ```console
-bash-5.2.12-r0 description:
+bash-5.2.15-r0 description:
 The GNU Bourne Again shell
 
-bash-5.2.12-r0 webpage:
+bash-5.2.15-r0 webpage:
 https://www.gnu.org/software/bash/bash.html
 
-bash-5.2.12-r0 installed size:
+bash-5.2.15-r0 installed size:
 1400 KiB
 
-bash-5.2.12-r0 license:
+bash-5.2.15-r0 license:
 GPL-3.0-or-later
 
 ```
@@ -217,16 +217,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20220614-r2 description:
+ca-certificates-20220614-r3 description:
 Common CA certificates PEM files from Mozilla
 
-ca-certificates-20220614-r2 webpage:
+ca-certificates-20220614-r3 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20220614-r2 installed size:
+ca-certificates-20220614-r3 installed size:
 688 KiB
 
-ca-certificates-20220614-r2 license:
+ca-certificates-20220614-r3 license:
 MPL-2.0 AND MIT
 
 ```
@@ -234,16 +234,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `ca-certificates-bundle`
 
 ```console
-ca-certificates-bundle-20220614-r2 description:
+ca-certificates-bundle-20220614-r3 description:
 Pre generated bundle of Mozilla certificates
 
-ca-certificates-bundle-20220614-r2 webpage:
+ca-certificates-bundle-20220614-r3 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-bundle-20220614-r2 installed size:
+ca-certificates-bundle-20220614-r3 installed size:
 232 KiB
 
-ca-certificates-bundle-20220614-r2 license:
+ca-certificates-bundle-20220614-r3 license:
 MPL-2.0 AND MIT
 
 ```
@@ -268,16 +268,16 @@ GPL-3.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-7.86.0-r1 description:
+curl-7.87.0-r0 description:
 URL retrival utility and library
 
-curl-7.86.0-r1 webpage:
+curl-7.87.0-r0 webpage:
 https://curl.se/
 
-curl-7.86.0-r1 installed size:
-260 KiB
+curl-7.87.0-r0 installed size:
+264 KiB
 
-curl-7.86.0-r1 license:
+curl-7.87.0-r0 license:
 curl
 
 ```
@@ -302,16 +302,16 @@ GPL-3.0-or-later
 ### `apk` package: `git`
 
 ```console
-git-2.38.1-r0 description:
+git-2.38.2-r0 description:
 Distributed version control system
 
-git-2.38.1-r0 webpage:
+git-2.38.2-r0 webpage:
 https://www.git-scm.com/
 
-git-2.38.1-r0 installed size:
+git-2.38.2-r0 installed size:
 6060 KiB
 
-git-2.38.1-r0 license:
+git-2.38.2-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -353,16 +353,16 @@ LGPL-2.1-or-later AND GPL-2.0-or-later
 ### `apk` package: `libattr`
 
 ```console
-libattr-2.5.1-r1 description:
+libattr-2.5.1-r2 description:
 utilities for managing filesystem extended attributes (libraries)
 
-libattr-2.5.1-r1 webpage:
+libattr-2.5.1-r2 webpage:
 https://savannah.nongnu.org/projects/attr
 
-libattr-2.5.1-r1 installed size:
+libattr-2.5.1-r2 installed size:
 32 KiB
 
-libattr-2.5.1-r1 license:
+libattr-2.5.1-r2 license:
 LGPL-2.1-or-later
 
 ```
@@ -421,16 +421,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.86.0-r1 description:
+libcurl-7.87.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.86.0-r1 webpage:
+libcurl-7.87.0-r0 webpage:
 https://curl.se/
 
-libcurl-7.86.0-r1 installed size:
-528 KiB
+libcurl-7.87.0-r0 installed size:
+540 KiB
 
-libcurl-7.86.0-r1 license:
+libcurl-7.87.0-r0 license:
 curl
 
 ```
@@ -897,16 +897,16 @@ GPL-3.0-or-later
 ### `apk` package: `pcre2`
 
 ```console
-pcre2-10.41-r0 description:
+pcre2-10.42-r0 description:
 Perl-compatible regular expression library
 
-pcre2-10.41-r0 webpage:
+pcre2-10.42-r0 webpage:
 https://pcre.org/
 
-pcre2-10.41-r0 installed size:
+pcre2-10.42-r0 installed size:
 672 KiB
 
-pcre2-10.41-r0 license:
+pcre2-10.42-r0 license:
 BSD-3-Clause
 
 ```
@@ -914,16 +914,16 @@ BSD-3-Clause
 ### `apk` package: `python3`
 
 ```console
-python3-3.10.8-r3 description:
+python3-3.10.9-r1 description:
 A high-level scripting language
 
-python3-3.10.8-r3 webpage:
+python3-3.10.9-r1 webpage:
 https://www.python.org/
 
-python3-3.10.8-r3 installed size:
+python3-3.10.9-r1 installed size:
 47 MiB
 
-python3-3.10.8-r3 license:
+python3-3.10.9-r1 license:
 PSF-2.0
 
 ```
