@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:1a5d7ce47523e121c49952b3f557419605435f47dac2fa2071ad142938eebb35`
-- Created: `2022-12-13T23:34:16.789387587Z`
+- Image ID: `sha256:281fee10c798c61c71399f59321c2e9f186e5ff04043cf9174e43132381be0a0`
+- Created: `2022-12-23T00:28:36.23809473Z`
 - Virtual Size: ~ 237.99 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -90,16 +90,16 @@ GPL-2.0-only
 ### `apk` package: `bash`
 
 ```console
-bash-5.2.12-r0 description:
+bash-5.2.15-r0 description:
 The GNU Bourne Again shell
 
-bash-5.2.12-r0 webpage:
+bash-5.2.15-r0 webpage:
 https://www.gnu.org/software/bash/bash.html
 
-bash-5.2.12-r0 installed size:
+bash-5.2.15-r0 installed size:
 1400 KiB
 
-bash-5.2.12-r0 license:
+bash-5.2.15-r0 license:
 GPL-3.0-or-later
 
 ```
