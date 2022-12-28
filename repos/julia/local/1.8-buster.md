@@ -1,10 +1,10 @@
-# `julia:1.8.3-buster`
+# `julia:1.8.4-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:8b0e536a31e17d54f2f757a54bc661af484a4f3bcef9fd0dcbfe082fdd0a17b1`
-- Created: `2022-12-21T03:29:46.012396537Z`
-- Virtual Size: ~ 544.65 Mb  
+- Image ID: `sha256:32d5c97855e3113ce80c34d8897f1d8756f882f5cb02603a37a38ed478f2d6b1`
+- Created: `2022-12-27T18:37:00.94016823Z`
+- Virtual Size: ~ 546.92 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -13,7 +13,7 @@
   - `PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JULIA_PATH=/usr/local/julia`
   - `JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495`
-  - `JULIA_VERSION=1.8.3`
+  - `JULIA_VERSION=1.8.4`
 
 ## `dpkg` (`.deb`-based packages)
 
