@@ -1,17 +1,17 @@
-# `docker:23.0.0-beta.1-git`
+# `docker:23.0.0-rc.1-git`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f33b7c06bf590f65ce3951e42b010a7b511ea94c5df82d35c5848cc98dd24b9b`
-- Created: `2022-12-22T01:56:35.680560244Z`
-- Virtual Size: ~ 147.05 Mb  
+- Image ID: `sha256:bca0a2fabbdb738cabeb63b20ba478982a1c766aee1fcac643dc792b475488e0`
+- Created: `2022-12-29T17:21:28.772028275Z`
+- Virtual Size: ~ 147.07 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_VERSION=23.0.0-beta.1`
+  - `DOCKER_VERSION=23.0.0-rc.1`
   - `DOCKER_BUILDX_VERSION=0.9.1`
   - `DOCKER_COMPOSE_VERSION=2.14.2`
   - `DOCKER_TLS_CERTDIR=/certs`
