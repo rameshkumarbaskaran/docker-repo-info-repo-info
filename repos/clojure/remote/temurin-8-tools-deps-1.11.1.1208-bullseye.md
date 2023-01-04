@@ -1,7 +1,7 @@
 ## `clojure:temurin-8-tools-deps-1.11.1.1208-bullseye`
 
 ```console
-$ docker pull clojure@sha256:2840c02ad6b8e693a76ecb0daa40b08fab759344bce34dcf896b20f2e76c651f
+$ docker pull clojure@sha256:5ef06c146f0b9dadf4fabe47b65f8a67d41146f15d9bed858ef69f42b3fd45c5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull clojure@sha256:2840c02ad6b8e693a76ecb0daa40b08fab759344bce34dcf896
 ### `clojure:temurin-8-tools-deps-1.11.1.1208-bullseye` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:182bb1f722e6643011013686931a78aee976cec60062b12fd6f6f1f151c16451
+$ docker pull clojure@sha256:2ca3109b6758183fd039942120f4752361f985cbcf1f5d3b3c821393f192ba5c
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **205.9 MB (205866359 bytes)**  
+-	Total Size: **230.4 MB (230414609 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a9e5862f9479f51c10803ec42774f1e751419aa8d1a5068bd4a3d7b86f7d0b53`
+-	Image ID: `sha256:408d83afba610ea068d5a67a5ba797777d3592f7d03868c3e79196ff96c8e38d`
 -	Default Command: `["clj"]`
 
 ```dockerfile
@@ -33,15 +33,15 @@ ENV JAVA_HOME=/opt/java/openjdk
 COPY dir:53540f2d79f4eef9b2bf8c4b39ecdbbd82fb14bfcf951e14853afffd2efa2ecb in /opt/java/openjdk 
 # Wed, 21 Dec 2022 01:50:11 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 21 Dec 2022 01:52:38 GMT
-ENV CLOJURE_VERSION=1.11.1.1200
-# Wed, 21 Dec 2022 01:52:38 GMT
+# Wed, 04 Jan 2023 19:21:44 GMT
+ENV CLOJURE_VERSION=1.11.1.1208
+# Wed, 04 Jan 2023 19:21:44 GMT
 WORKDIR /tmp
-# Wed, 21 Dec 2022 01:52:54 GMT
-RUN apt-get update && apt-get install -y curl make rlwrap wget && rm -rf /var/lib/apt/lists/* && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "694381cb78d44f143bdcc38657507f012ebac4009bc57cec67abef1675447878 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apt-get purge -y --auto-remove curl wget
-# Wed, 21 Dec 2022 01:52:55 GMT
+# Wed, 04 Jan 2023 19:22:09 GMT
+RUN apt-get update && apt-get install -y curl make git rlwrap wget && rm -rf /var/lib/apt/lists/* && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "4a3b1200c4d633202648dc3db6ed0a1311e75cc4baeee8fce32208c1eaa07537 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apt-get purge -y --auto-remove curl wget
+# Wed, 04 Jan 2023 19:22:10 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Wed, 21 Dec 2022 01:52:55 GMT
+# Wed, 04 Jan 2023 19:22:10 GMT
 CMD ["clj"]
 ```
 
@@ -54,13 +54,13 @@ CMD ["clj"]
 		Last Modified: Wed, 21 Dec 2022 02:05:09 GMT  
 		Size: 103.5 MB (103530611 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd4bf8109381088cd767bf9282589984618a5eb78fac511a3494c75fd7d7938f`  
-		Last Modified: Wed, 21 Dec 2022 02:06:06 GMT  
-		Size: 47.3 MB (47309965 bytes)  
+	-	`sha256:dcc94e83a00e8789fad8f7358748b0232631b1b9bbc75c0ce4aa6f1832ee698e`  
+		Last Modified: Wed, 04 Jan 2023 19:31:10 GMT  
+		Size: 71.9 MB (71858213 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f91e3d3021401e2808244a1c4062ac34f8c09d2fb6f60e559dffecfbcae2998d`  
-		Last Modified: Wed, 21 Dec 2022 02:06:01 GMT  
-		Size: 617.0 B  
+	-	`sha256:1477b33a02f124cb101a30fdcd248f099fe6123ece9bec3d323e16431d2a9af6`  
+		Last Modified: Wed, 04 Jan 2023 19:31:01 GMT  
+		Size: 619.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `clojure:temurin-8-tools-deps-1.11.1.1208-bullseye` - linux; arm64 variant v8
