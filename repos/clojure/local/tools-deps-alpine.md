@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6c965aefeeac6d3a3c9d66aee82e15b121c1d738ac29c5f7685116996914582f`
-- Created: `2022-11-29T22:56:38.495221402Z`
+- Image ID: `sha256:77224ac42a5dbd48f3532b60fa219357662c8945c1e1351f061aaf139d9b93d2`
+- Created: `2023-01-04T19:25:34.842949201Z`
 - Virtual Size: ~ 393.83 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -16,7 +16,7 @@
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
   - `JAVA_VERSION=jdk-17.0.5+8`
-  - `CLOJURE_VERSION=1.11.1.1200`
+  - `CLOJURE_VERSION=1.11.1.1208`
 
 ## `apk` (`.apk`-based packages)
 
@@ -91,16 +91,16 @@ GPL-2.0-only
 ### `apk` package: `bash`
 
 ```console
-bash-5.2.9-r0 description:
+bash-5.2.15-r0 description:
 The GNU Bourne Again shell
 
-bash-5.2.9-r0 webpage:
+bash-5.2.15-r0 webpage:
 https://www.gnu.org/software/bash/bash.html
 
-bash-5.2.9-r0 installed size:
+bash-5.2.15-r0 installed size:
 1400 KiB
 
-bash-5.2.9-r0 license:
+bash-5.2.15-r0 license:
 GPL-3.0-or-later
 
 ```
@@ -159,16 +159,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20220614-r2 description:
+ca-certificates-20220614-r3 description:
 Common CA certificates PEM files from Mozilla
 
-ca-certificates-20220614-r2 webpage:
+ca-certificates-20220614-r3 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20220614-r2 installed size:
+ca-certificates-20220614-r3 installed size:
 688 KiB
 
-ca-certificates-20220614-r2 license:
+ca-certificates-20220614-r3 license:
 MPL-2.0 AND MIT
 
 ```
@@ -261,16 +261,16 @@ FTL GPL-2.0-or-later
 ### `apk` package: `git`
 
 ```console
-git-2.38.1-r0 description:
+git-2.38.2-r0 description:
 Distributed version control system
 
-git-2.38.1-r0 webpage:
+git-2.38.2-r0 webpage:
 https://www.git-scm.com/
 
-git-2.38.1-r0 installed size:
+git-2.38.2-r0 installed size:
 6060 KiB
 
-git-2.38.1-r0 license:
+git-2.38.2-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -329,16 +329,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.86.0-r1 description:
+libcurl-7.87.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.86.0-r1 webpage:
+libcurl-7.87.0-r0 webpage:
 https://curl.se/
 
-libcurl-7.86.0-r1 installed size:
-528 KiB
+libcurl-7.87.0-r0 installed size:
+540 KiB
 
-libcurl-7.86.0-r1 license:
+libcurl-7.87.0-r0 license:
 curl
 
 ```
@@ -584,16 +584,16 @@ MIT
 ### `apk` package: `pcre2`
 
 ```console
-pcre2-10.40-r0 description:
+pcre2-10.42-r0 description:
 Perl-compatible regular expression library
 
-pcre2-10.40-r0 webpage:
+pcre2-10.42-r0 webpage:
 https://pcre.org/
 
-pcre2-10.40-r0 installed size:
+pcre2-10.42-r0 installed size:
 672 KiB
 
-pcre2-10.40-r0 license:
+pcre2-10.42-r0 license:
 BSD-3-Clause
 
 ```

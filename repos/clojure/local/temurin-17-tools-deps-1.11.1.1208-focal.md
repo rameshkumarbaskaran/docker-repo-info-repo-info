@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:89b64bb81b1f7f377557347f0f73f4c34a61e09e4d19ffbbccd48c2e511f71b8`
-- Created: `2022-12-09T06:45:45.195940162Z`
-- Virtual Size: ~ 604.11 Mb  
+- Image ID: `sha256:9deade1f6a11cbc24130a4e45348ddec227834297a7e5596b18277c12a57fc23`
+- Created: `2023-01-04T19:26:20.060921754Z`
+- Virtual Size: ~ 604.09 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint"]`
@@ -16,7 +16,7 @@
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
   - `JAVA_VERSION=jdk-17.0.5+8`
-  - `CLOJURE_VERSION=1.11.1.1200`
+  - `CLOJURE_VERSION=1.11.1.1208`
 
 ## `dpkg` (`.deb`-based packages)
 
