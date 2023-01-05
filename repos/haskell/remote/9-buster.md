@@ -1,7 +1,7 @@
 ## `haskell:9-buster`
 
 ```console
-$ docker pull haskell@sha256:12771a84ce8c34dd4a3296f9f6fc34aaf1adf7c4864216bc79f580e05e747a1f
+$ docker pull haskell@sha256:4dec0a970c695c92abbc23c33c67ce836f3b533be0496d00ae5ffa16a556e876
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -107,14 +107,14 @@ CMD ["ghci"]
 ### `haskell:9-buster` - linux; arm64 variant v8
 
 ```console
-$ docker pull haskell@sha256:acb0cdc175586fe1bc43a9514b5526cffe5065c357f03aef3466affb8e361b67
+$ docker pull haskell@sha256:0c625bccaba7ec8111df02d3011e1d97acae3416d86dac38aeb2bb9e65de5c78
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **687.1 MB (687146073 bytes)**  
+-	Total Size: **764.1 MB (764113757 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:18f3d49a80e2e2c612d751f5eae06d1d3dd7cde01ce9656077537f70244d4819`
+-	Image ID: `sha256:62d88ab646dd18e72b24f631a5fae42b7bdfa617815f970836c35b662d313e01`
 -	Default Command: `["ghci"]`
 
 ```dockerfile
@@ -152,12 +152,12 @@ RUN set -eux;     cd /tmp;     ARCH="$(dpkg-architecture --query DEB_BUILD_GNU_C
 ARG GHC=9.4.4
 # Tue, 27 Dec 2022 16:44:48 GMT
 ARG GHC_RELEASE_KEY=FFEB7CE81E16A36B3E2DED6F2DE04D4E97DB64AD
-# Tue, 27 Dec 2022 16:46:06 GMT
+# Thu, 05 Jan 2023 17:40:46 GMT
 # ARGS: CABAL_INSTALL=3.8.1.0 CABAL_INSTALL_RELEASE_KEY=E9EC5616017C3EE26B33468CCE1ED8AE0B011D8C GHC=9.4.4 GHC_RELEASE_KEY=FFEB7CE81E16A36B3E2DED6F2DE04D4E97DB64AD STACK=2.9.3 STACK_RELEASE_KEY=C5705533DA4F78D8664B5DC0575159689BEFB442
-RUN set -eux;     cd /tmp;     ARCH="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)";     GHC_URL="https://downloads.haskell.org/~ghc/$GHC/ghc-$GHC-$ARCH-deb10-linux.tar.xz";     case "$ARCH" in         'aarch64')             GHC_SHA256='2c0f22a7430490be3071f88240761bd7aadb7d40f22c6b9f1d2485ffcdf4e2e0';             ;;         'x86_64')             GHC_SHA256='a3ecd2426bb519d6fdad05904c386f1c74b433f07722b0d1ef606c23159ade2d';             ;;         *) echo >&2 "error: unsupported architecture '$ARCH'" ; exit 1 ;;     esac;     curl -sSL "$GHC_URL" -o ghc.tar.xz;     echo "$GHC_SHA256 ghc.tar.xz" | sha256sum --strict --check;         GNUPGHOME="$(mktemp -d)"; export GNUPGHOME;     curl -sSL "$GHC_URL.sig" -o ghc.tar.xz.sig;     gpg --batch --keyserver keyserver.ubuntu.com --receive-keys "$GHC_RELEASE_KEY";     gpg --batch --verify ghc.tar.xz.sig ghc.tar.xz;     gpgconf --kill all;         tar xf ghc.tar.xz;     cd "ghc-$GHC-$ARCH-unknown-linux";     ./configure --prefix "/opt/ghc/$GHC";     make install;     rm -rf "/opt/ghc/$GHC/share/";         rm -rf /tmp/*;         "/opt/ghc/$GHC/bin/ghc" --version
-# Tue, 27 Dec 2022 16:46:19 GMT
+RUN set -eux;     cd /tmp;     ARCH="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)";     GHC_URL="https://downloads.haskell.org/~ghc/$GHC/ghc-$GHC-$ARCH-deb10-linux.tar.xz";     case "$ARCH" in         'aarch64')             GHC_SHA256='2c0f22a7430490be3071f88240761bd7aadb7d40f22c6b9f1d2485ffcdf4e2e0';             ;;         'x86_64')             GHC_SHA256='a3ecd2426bb519d6fdad05904c386f1c74b433f07722b0d1ef606c23159ade2d';             ;;         *) echo >&2 "error: unsupported architecture '$ARCH'" ; exit 1 ;;     esac;     curl -sSL "$GHC_URL" -o ghc.tar.xz;     echo "$GHC_SHA256 ghc.tar.xz" | sha256sum --strict --check;         GNUPGHOME="$(mktemp -d)"; export GNUPGHOME;     curl -sSL "$GHC_URL.sig" -o ghc.tar.xz.sig;     gpg --batch --keyserver keyserver.ubuntu.com --receive-keys "$GHC_RELEASE_KEY";     gpg --batch --verify ghc.tar.xz.sig ghc.tar.xz;     gpgconf --kill all;         tar xf ghc.tar.xz;     cd "ghc-$GHC-$ARCH-unknown-linux";     ./configure --prefix "/opt/ghc/$GHC";     make install;         rm -rf /tmp/*;         "/opt/ghc/$GHC/bin/ghc" --version
+# Thu, 05 Jan 2023 17:41:01 GMT
 ENV PATH=/root/.cabal/bin:/root/.local/bin:/opt/ghc/9.4.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 27 Dec 2022 16:46:19 GMT
+# Thu, 05 Jan 2023 17:41:02 GMT
 CMD ["ghci"]
 ```
 
@@ -194,7 +194,7 @@ CMD ["ghci"]
 		Last Modified: Tue, 27 Dec 2022 16:54:19 GMT  
 		Size: 12.4 MB (12373197 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40bfb84a6aa174557cc895838706a3e313df9dbb06e4b385978301fa9b788a46`  
-		Last Modified: Tue, 27 Dec 2022 16:55:15 GMT  
-		Size: 356.3 MB (356269981 bytes)  
+	-	`sha256:e0ac3bce5496070ac93fc124cd10142dfec85d867a735801b08110a6d50978c2`  
+		Last Modified: Thu, 05 Jan 2023 17:50:03 GMT  
+		Size: 433.2 MB (433237665 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
