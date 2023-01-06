@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:5c592796927d321852029e005d9e1cddf8b473a189f99a32703bf1d512924431`
-- Created: `2022-12-15T18:32:13.217709025Z`
-- Virtual Size: ~ 305.99 Mb  
+- Image ID: `sha256:5e54c731e2610fc2696b05c3b1ef67eea5265a2cdf0254b6cc18c5ff8da1654b`
+- Created: `2023-01-06T04:49:38.932085532Z`
+- Virtual Size: ~ 311.59 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC`
-  - `PHP_VERSION=8.2.0`
-  - `PHP_URL=https://www.php.net/distributions/php-8.2.0.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.0.tar.xz.asc`
-  - `PHP_SHA256=6ea4c2dfb532950fd712aa2a08c1412a6a81cd1334dd0b0bf88a8e44c2b3a943`
+  - `PHP_VERSION=8.2.1`
+  - `PHP_URL=https://www.php.net/distributions/php-8.2.1.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.1.tar.xz.asc`
+  - `PHP_SHA256=650d3bd7a056cabf07f6a0f6f1dd8ba45cd369574bbeaa36de7d1ece212c17af`
 
 ## `apk` (`.apk`-based packages)
 
@@ -418,16 +418,16 @@ AGPL-3.0-or-later
 ### `apk` package: `glib`
 
 ```console
-glib-2.74.3-r2 description:
+glib-2.74.4-r0 description:
 Common C routines used by Gtk+ and other libs
 
-glib-2.74.3-r2 webpage:
+glib-2.74.4-r0 webpage:
 https://developer.gnome.org/glib/
 
-glib-2.74.3-r2 installed size:
+glib-2.74.4-r0 installed size:
 3396 KiB
 
-glib-2.74.3-r2 license:
+glib-2.74.4-r0 license:
 LGPL-2.1-or-later
 
 ```
@@ -639,16 +639,16 @@ LGPL-2.1-or-later AND GPL-2.0-or-later
 ### `apk` package: `libblkid`
 
 ```console
-libblkid-2.38.1-r0 description:
+libblkid-2.38.1-r1 description:
 Block device identification library from util-linux
 
-libblkid-2.38.1-r0 webpage:
+libblkid-2.38.1-r1 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libblkid-2.38.1-r0 installed size:
+libblkid-2.38.1-r1 installed size:
 312 KiB
 
-libblkid-2.38.1-r0 license:
+libblkid-2.38.1-r1 license:
 LGPL-2.1-or-later
 
 ```
@@ -707,16 +707,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.7-r0 description:
+libcrypto3-3.0.7-r2 description:
 Crypto library from openssl
 
-libcrypto3-3.0.7-r0 webpage:
+libcrypto3-3.0.7-r2 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.7-r0 installed size:
+libcrypto3-3.0.7-r2 installed size:
 4108 KiB
 
-libcrypto3-3.0.7-r0 license:
+libcrypto3-3.0.7-r2 license:
 Apache-2.0
 
 ```
@@ -724,16 +724,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.86.0-r1 description:
+libcurl-7.87.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.86.0-r1 webpage:
+libcurl-7.87.0-r0 webpage:
 https://curl.se/
 
-libcurl-7.86.0-r1 installed size:
-528 KiB
+libcurl-7.87.0-r0 installed size:
+540 KiB
 
-libcurl-7.86.0-r1 license:
+libcurl-7.87.0-r0 license:
 curl
 
 ```
@@ -928,16 +928,16 @@ Public Domain
 ### `apk` package: `libmount`
 
 ```console
-libmount-2.38.1-r0 description:
+libmount-2.38.1-r1 description:
 Block device identification library from util-linux
 
-libmount-2.38.1-r0 webpage:
+libmount-2.38.1-r1 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libmount-2.38.1-r0 installed size:
-340 KiB
+libmount-2.38.1-r1 installed size:
+344 KiB
 
-libmount-2.38.1-r0 license:
+libmount-2.38.1-r1 license:
 LGPL-2.1-or-later
 
 ```
@@ -996,16 +996,16 @@ ISC
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.7-r0 description:
+libssl3-3.0.7-r2 description:
 SSL shared libraries
 
-libssl3-3.0.7-r0 webpage:
+libssl3-3.0.7-r2 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.7-r0 installed size:
+libssl3-3.0.7-r2 installed size:
 608 KiB
 
-libssl3-3.0.7-r0 license:
+libssl3-3.0.7-r2 license:
 Apache-2.0
 
 ```
@@ -1081,16 +1081,16 @@ BSD-3-Clause
 ### `apk` package: `libx11`
 
 ```console
-libx11-1.8.2-r0 description:
+libx11-1.8.3-r0 description:
 X11 client-side library
 
-libx11-1.8.2-r0 webpage:
+libx11-1.8.3-r0 webpage:
 http://xorg.freedesktop.org/
 
-libx11-1.8.2-r0 installed size:
+libx11-1.8.3-r0 installed size:
 3180 KiB
 
-libx11-1.8.2-r0 license:
+libx11-1.8.3-r0 license:
 custom:XFREE86
 
 ```
@@ -1523,16 +1523,16 @@ GPL-2.0-or-later
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.40.0-r0 description:
+sqlite-libs-3.40.1-r0 description:
 Sqlite3 library
 
-sqlite-libs-3.40.0-r0 webpage:
+sqlite-libs-3.40.1-r0 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.40.0-r0 installed size:
+sqlite-libs-3.40.1-r0 installed size:
 1008 KiB
 
-sqlite-libs-3.40.0-r0 license:
+sqlite-libs-3.40.1-r0 license:
 blessing
 
 ```
