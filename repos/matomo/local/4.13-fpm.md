@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:41fa829eadc65fb77a74195f4433cc50cb197ebb8da31d5925587848303b5f55`
-- Created: `2022-12-21T14:25:01.010958698Z`
-- Virtual Size: ~ 518.92 Mb  
+- Image ID: `sha256:bbc081f96600c8be2f9779e0c0f8f33e32e10cacb5e9f6ba9b692b66028a313c`
+- Created: `2023-01-06T03:52:03.924525333Z`
+- Virtual Size: ~ 518.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
-  - `PHP_VERSION=8.1.13`
-  - `PHP_URL=https://www.php.net/distributions/php-8.1.13.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.13.tar.xz.asc`
-  - `PHP_SHA256=b15ef0ccdd6760825604b3c4e3e73558dcf87c75ef1d68ef4289d8fd261ac856`
+  - `PHP_VERSION=8.1.14`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.14.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.14.tar.xz.asc`
+  - `PHP_SHA256=e16e47a872d58685913ac848ce92ec49f42c1828110c98c65fb6265a08724a1a`
   - `PHP_MEMORY_LIMIT=256M`
   - `MATOMO_VERSION=4.13.0`
 - Labels:
