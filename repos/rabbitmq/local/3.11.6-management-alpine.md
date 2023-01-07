@@ -1,10 +1,10 @@
-# `rabbitmq:3.11.5-management-alpine`
+# `rabbitmq:3.11.6-management-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:66965248a9cb8baf421dd8e39bff512af926fed34871deaf0969e28c5d3075a9`
-- Created: `2022-12-15T01:44:39.908544605Z`
-- Virtual Size: ~ 174.55 Mb  
+- Image ID: `sha256:aed469eef948f63ff6c46078226643b0c6fe7eb2c3e0c6052c6d75598cdb81c6`
+- Created: `2023-01-06T18:52:13.176451164Z`
+- Virtual Size: ~ 174.54 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RABBITMQ_DATA_DIR=/var/lib/rabbitmq`
-  - `RABBITMQ_VERSION=3.11.5`
+  - `RABBITMQ_VERSION=3.11.6`
   - `RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA`
   - `RABBITMQ_HOME=/opt/rabbitmq`
   - `HOME=/var/lib/rabbitmq`
@@ -501,16 +501,16 @@ GPL-2.0-only
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.40.0-r0 description:
+sqlite-libs-3.40.1-r0 description:
 Sqlite3 library
 
-sqlite-libs-3.40.0-r0 webpage:
+sqlite-libs-3.40.1-r0 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.40.0-r0 installed size:
+sqlite-libs-3.40.1-r0 installed size:
 1008 KiB
 
-sqlite-libs-3.40.0-r0 license:
+sqlite-libs-3.40.1-r0 license:
 blessing
 
 ```
