@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7ec85d40ab3aa8923f6295358e72e000090652b9a26b7b9c7774d997a844e842`
-- Created: `2022-12-21T01:44:29.139686436Z`
-- Virtual Size: ~ 249.45 Mb  
+- Image ID: `sha256:ada61419ab056a93d2728e728b19edc7f7f1b1ec2c82e5116fd822c095d08a6e`
+- Created: `2023-01-06T20:20:14.319820304Z`
+- Virtual Size: ~ 250.04 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint.sh"]`
@@ -662,6 +662,35 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/findutils/4.8.0-1/ (for browsing the source)
 - https://sources.debian.net/src/findutils/4.8.0-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/findutils/4.8.0-1/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `freetds=1.2.3-1`
+
+Binary Packages:
+
+- `freetds-common=1.2.3-1`
+- `libsybdb5:amd64=1.2.3-1`
+
+Licenses: (parsed from: `/usr/share/doc/freetds-common/copyright`, `/usr/share/doc/libsybdb5/copyright`)
+
+- `GFDL`
+- `GFDL-NIV-1.1+`
+- `LGPL`
+- `LGPL-2+`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris freetds=1.2.3-1
+'http://deb.debian.org/debian/pool/main/f/freetds/freetds_1.2.3-1.dsc' freetds_1.2.3-1.dsc 2353 SHA256:d15428c9485b2dd032c3c6e9401355140418521f994a50814a321ee1e54da28f
+'http://deb.debian.org/debian/pool/main/f/freetds/freetds_1.2.3.orig.tar.gz' freetds_1.2.3.orig.tar.gz 3402019 SHA256:50ca5f54a76088fcf54873d76806996c6f43a7b6defafafa2b11060caf2e05b8
+'http://deb.debian.org/debian/pool/main/f/freetds/freetds_1.2.3-1.diff.gz' freetds_1.2.3-1.diff.gz 24634 SHA256:55ad19b90526826cf039773f09c9ec8cad267dd6d8bf68621e4b6cc501fbc483
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/freetds/1.2.3-1/ (for browsing the source)
+- https://sources.debian.net/src/freetds/1.2.3-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/freetds/1.2.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-10=10.2.1-6`
 
@@ -2248,8 +2277,9 @@ Binary Packages:
 - `php7.4-pgsql=7.4.33-1+deb11u1`
 - `php7.4-readline=7.4.33-1+deb11u1`
 - `php7.4-sqlite3=7.4.33-1+deb11u1`
+- `php7.4-sybase=7.4.33-1+deb11u1`
 
-Licenses: (parsed from: `/usr/share/doc/php7.4-cli/copyright`, `/usr/share/doc/php7.4-common/copyright`, `/usr/share/doc/php7.4-fpm/copyright`, `/usr/share/doc/php7.4-json/copyright`, `/usr/share/doc/php7.4-mbstring/copyright`, `/usr/share/doc/php7.4-mysql/copyright`, `/usr/share/doc/php7.4-odbc/copyright`, `/usr/share/doc/php7.4-opcache/copyright`, `/usr/share/doc/php7.4-pgsql/copyright`, `/usr/share/doc/php7.4-readline/copyright`, `/usr/share/doc/php7.4-sqlite3/copyright`)
+Licenses: (parsed from: `/usr/share/doc/php7.4-cli/copyright`, `/usr/share/doc/php7.4-common/copyright`, `/usr/share/doc/php7.4-fpm/copyright`, `/usr/share/doc/php7.4-json/copyright`, `/usr/share/doc/php7.4-mbstring/copyright`, `/usr/share/doc/php7.4-mysql/copyright`, `/usr/share/doc/php7.4-odbc/copyright`, `/usr/share/doc/php7.4-opcache/copyright`, `/usr/share/doc/php7.4-pgsql/copyright`, `/usr/share/doc/php7.4-readline/copyright`, `/usr/share/doc/php7.4-sqlite3/copyright`, `/usr/share/doc/php7.4-sybase/copyright`)
 
 - `Apache-2.0`
 - `BSD-2-clause`
