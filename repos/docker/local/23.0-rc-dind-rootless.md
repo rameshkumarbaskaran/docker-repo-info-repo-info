@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:80ddc01ea3be79317490b6b36e7faa2effa6cd2eecdc7a3e504676216ef5f67d`
-- Created: `2022-12-29T17:21:25.767137403Z`
-- Virtual Size: ~ 361.51 Mb  
+- Image ID: `sha256:2c69d4a42f4e8121cc5928a737842af2e8cf7244b9a6f33e5e467734f396c5cb`
+- Created: `2023-01-05T21:21:44.680037603Z`
+- Virtual Size: ~ 361.52 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_VERSION=23.0.0-rc.1`
   - `DOCKER_BUILDX_VERSION=0.9.1`
-  - `DOCKER_COMPOSE_VERSION=2.14.2`
+  - `DOCKER_COMPOSE_VERSION=2.15.0`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5`
 
@@ -480,16 +480,16 @@ MIT
 ### `apk` package: `libblkid`
 
 ```console
-libblkid-2.38.1-r0 description:
+libblkid-2.38.1-r1 description:
 Block device identification library from util-linux
 
-libblkid-2.38.1-r0 webpage:
+libblkid-2.38.1-r1 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libblkid-2.38.1-r0 installed size:
+libblkid-2.38.1-r1 installed size:
 312 KiB
 
-libblkid-2.38.1-r0 license:
+libblkid-2.38.1-r1 license:
 LGPL-2.1-or-later
 
 ```
@@ -735,16 +735,16 @@ BSD-3-Clause
 ### `apk` package: `libuuid`
 
 ```console
-libuuid-2.38.1-r0 description:
+libuuid-2.38.1-r1 description:
 DCE compatible Universally Unique Identifier library
 
-libuuid-2.38.1-r0 webpage:
+libuuid-2.38.1-r1 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libuuid-2.38.1-r0 installed size:
+libuuid-2.38.1-r1 installed size:
 40 KiB
 
-libuuid-2.38.1-r0 license:
+libuuid-2.38.1-r1 license:
 BSD-3-Clause
 
 ```
@@ -939,16 +939,16 @@ BSD
 ### `apk` package: `openssl`
 
 ```console
-openssl-3.0.7-r0 description:
+openssl-3.0.7-r2 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-3.0.7-r0 webpage:
+openssl-3.0.7-r2 webpage:
 https://www.openssl.org/
 
-openssl-3.0.7-r0 installed size:
+openssl-3.0.7-r2 installed size:
 868 KiB
 
-openssl-3.0.7-r0 license:
+openssl-3.0.7-r2 license:
 Apache-2.0
 
 ```

@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d736edfbfb0cb958492a1209140d3d1706596305a5d8a22b63c9fca65a51e578`
-- Created: `2022-12-22T01:56:52.659116935Z`
+- Image ID: `sha256:2f32379d825c05eb3fbffeaf8c950416a33fea07f013d747407491c51975a116`
+- Created: `2023-01-05T21:22:05.449834333Z`
 - Virtual Size: ~ 322.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_VERSION=20.10.22`
   - `DOCKER_BUILDX_VERSION=0.9.1`
-  - `DOCKER_COMPOSE_VERSION=2.14.2`
+  - `DOCKER_COMPOSE_VERSION=2.15.0`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5`
 
@@ -344,16 +344,16 @@ MIT
 ### `apk` package: `libblkid`
 
 ```console
-libblkid-2.38.1-r0 description:
+libblkid-2.38.1-r1 description:
 Block device identification library from util-linux
 
-libblkid-2.38.1-r0 webpage:
+libblkid-2.38.1-r1 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libblkid-2.38.1-r0 installed size:
+libblkid-2.38.1-r1 installed size:
 312 KiB
 
-libblkid-2.38.1-r0 license:
+libblkid-2.38.1-r1 license:
 LGPL-2.1-or-later
 
 ```
@@ -548,16 +548,16 @@ BSD-3-Clause
 ### `apk` package: `libuuid`
 
 ```console
-libuuid-2.38.1-r0 description:
+libuuid-2.38.1-r1 description:
 DCE compatible Universally Unique Identifier library
 
-libuuid-2.38.1-r0 webpage:
+libuuid-2.38.1-r1 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libuuid-2.38.1-r0 installed size:
+libuuid-2.38.1-r1 installed size:
 40 KiB
 
-libuuid-2.38.1-r0 license:
+libuuid-2.38.1-r1 license:
 BSD-3-Clause
 
 ```
@@ -735,16 +735,16 @@ BSD
 ### `apk` package: `openssl`
 
 ```console
-openssl-3.0.7-r0 description:
+openssl-3.0.7-r2 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-3.0.7-r0 webpage:
+openssl-3.0.7-r2 webpage:
 https://www.openssl.org/
 
-openssl-3.0.7-r0 installed size:
+openssl-3.0.7-r2 installed size:
 868 KiB
 
-openssl-3.0.7-r0 license:
+openssl-3.0.7-r2 license:
 Apache-2.0
 
 ```
