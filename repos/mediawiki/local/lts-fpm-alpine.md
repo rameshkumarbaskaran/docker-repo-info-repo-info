@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:12a1881db0624063b6ab6839321b26eaa8c5aab0b80b1dcf88edb5846cfc40c3`
-- Created: `2022-12-27T17:51:16.369987261Z`
-- Virtual Size: ~ 524.16 Mb  
+- Image ID: `sha256:562ae6bee4de639e74cb9f35c30530367a12af550b2f4797d5bf9f5fa2fbb5d2`
+- Created: `2023-01-06T05:06:06.919427156Z`
+- Virtual Size: ~ 529.80 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
-  - `PHP_VERSION=8.1.13`
-  - `PHP_URL=https://www.php.net/distributions/php-8.1.13.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.13.tar.xz.asc`
-  - `PHP_SHA256=b15ef0ccdd6760825604b3c4e3e73558dcf87c75ef1d68ef4289d8fd261ac856`
+  - `PHP_VERSION=8.1.14`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.14.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.14.tar.xz.asc`
+  - `PHP_SHA256=e16e47a872d58685913ac848ce92ec49f42c1828110c98c65fb6265a08724a1a`
   - `MEDIAWIKI_MAJOR_VERSION=1.39`
   - `MEDIAWIKI_VERSION=1.39.1`
 
@@ -420,16 +420,16 @@ AGPL-3.0-or-later
 ### `apk` package: `git`
 
 ```console
-git-2.38.1-r0 description:
+git-2.38.2-r0 description:
 Distributed version control system
 
-git-2.38.1-r0 webpage:
+git-2.38.2-r0 webpage:
 https://www.git-scm.com/
 
-git-2.38.1-r0 installed size:
+git-2.38.2-r0 installed size:
 6060 KiB
 
-git-2.38.1-r0 license:
+git-2.38.2-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -437,16 +437,16 @@ GPL-2.0-or-later
 ### `apk` package: `glib`
 
 ```console
-glib-2.74.3-r0 description:
+glib-2.74.4-r0 description:
 Common C routines used by Gtk+ and other libs
 
-glib-2.74.3-r0 webpage:
+glib-2.74.4-r0 webpage:
 https://developer.gnome.org/glib/
 
-glib-2.74.3-r0 installed size:
-3388 KiB
+glib-2.74.4-r0 installed size:
+3396 KiB
 
-glib-2.74.3-r0 license:
+glib-2.74.4-r0 license:
 LGPL-2.1-or-later
 
 ```
@@ -658,16 +658,16 @@ LGPL-2.1-or-later AND GPL-2.0-or-later
 ### `apk` package: `libblkid`
 
 ```console
-libblkid-2.38.1-r0 description:
+libblkid-2.38.1-r1 description:
 Block device identification library from util-linux
 
-libblkid-2.38.1-r0 webpage:
+libblkid-2.38.1-r1 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libblkid-2.38.1-r0 installed size:
+libblkid-2.38.1-r1 installed size:
 312 KiB
 
-libblkid-2.38.1-r0 license:
+libblkid-2.38.1-r1 license:
 LGPL-2.1-or-later
 
 ```
@@ -726,16 +726,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.7-r0 description:
+libcrypto3-3.0.7-r2 description:
 Crypto library from openssl
 
-libcrypto3-3.0.7-r0 webpage:
+libcrypto3-3.0.7-r2 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.7-r0 installed size:
+libcrypto3-3.0.7-r2 installed size:
 4108 KiB
 
-libcrypto3-3.0.7-r0 license:
+libcrypto3-3.0.7-r2 license:
 Apache-2.0
 
 ```
@@ -743,16 +743,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.86.0-r1 description:
+libcurl-7.87.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.86.0-r1 webpage:
+libcurl-7.87.0-r0 webpage:
 https://curl.se/
 
-libcurl-7.86.0-r1 installed size:
-528 KiB
+libcurl-7.87.0-r0 installed size:
+540 KiB
 
-libcurl-7.86.0-r1 license:
+libcurl-7.87.0-r0 license:
 curl
 
 ```
@@ -930,16 +930,16 @@ Public Domain
 ### `apk` package: `libmount`
 
 ```console
-libmount-2.38.1-r0 description:
+libmount-2.38.1-r1 description:
 Block device identification library from util-linux
 
-libmount-2.38.1-r0 webpage:
+libmount-2.38.1-r1 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libmount-2.38.1-r0 installed size:
-340 KiB
+libmount-2.38.1-r1 installed size:
+344 KiB
 
-libmount-2.38.1-r0 license:
+libmount-2.38.1-r1 license:
 LGPL-2.1-or-later
 
 ```
@@ -998,16 +998,16 @@ ISC
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.7-r0 description:
+libssl3-3.0.7-r2 description:
 SSL shared libraries
 
-libssl3-3.0.7-r0 webpage:
+libssl3-3.0.7-r2 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.7-r0 installed size:
+libssl3-3.0.7-r2 installed size:
 608 KiB
 
-libssl3-3.0.7-r0 license:
+libssl3-3.0.7-r2 license:
 Apache-2.0
 
 ```
@@ -1083,16 +1083,16 @@ BSD-3-Clause
 ### `apk` package: `libx11`
 
 ```console
-libx11-1.8.2-r0 description:
+libx11-1.8.3-r0 description:
 X11 client-side library
 
-libx11-1.8.2-r0 webpage:
+libx11-1.8.3-r0 webpage:
 http://xorg.freedesktop.org/
 
-libx11-1.8.2-r0 installed size:
+libx11-1.8.3-r0 installed size:
 3180 KiB
 
-libx11-1.8.2-r0 license:
+libx11-1.8.3-r0 license:
 custom:XFREE86
 
 ```
@@ -1423,16 +1423,16 @@ LGPL-2.1-or-later
 ### `apk` package: `pcre2`
 
 ```console
-pcre2-10.40-r0 description:
+pcre2-10.42-r0 description:
 Perl-compatible regular expression library
 
-pcre2-10.40-r0 webpage:
+pcre2-10.42-r0 webpage:
 https://pcre.org/
 
-pcre2-10.40-r0 installed size:
+pcre2-10.42-r0 installed size:
 672 KiB
 
-pcre2-10.40-r0 license:
+pcre2-10.42-r0 license:
 BSD-3-Clause
 
 ```
@@ -1474,16 +1474,16 @@ ISC
 ### `apk` package: `python3`
 
 ```console
-python3-3.10.8-r3 description:
+python3-3.10.9-r1 description:
 A high-level scripting language
 
-python3-3.10.8-r3 webpage:
+python3-3.10.9-r1 webpage:
 https://www.python.org/
 
-python3-3.10.8-r3 installed size:
+python3-3.10.9-r1 installed size:
 47 MiB
 
-python3-3.10.8-r3 license:
+python3-3.10.9-r1 license:
 PSF-2.0
 
 ```
@@ -1542,16 +1542,16 @@ GPL-2.0-or-later
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.40.0-r0 description:
+sqlite-libs-3.40.1-r0 description:
 Sqlite3 library
 
-sqlite-libs-3.40.0-r0 webpage:
+sqlite-libs-3.40.1-r0 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.40.0-r0 installed size:
+sqlite-libs-3.40.1-r0 installed size:
 1008 KiB
 
-sqlite-libs-3.40.0-r0 license:
+sqlite-libs-3.40.1-r0 license:
 blessing
 
 ```
@@ -1644,16 +1644,16 @@ GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 ### `apk` package: `xz-libs`
 
 ```console
-xz-libs-5.2.8-r0 description:
+xz-libs-5.2.9-r0 description:
 Library and CLI tools for XZ and LZMA compressed files (libraries)
 
-xz-libs-5.2.8-r0 webpage:
+xz-libs-5.2.9-r0 webpage:
 https://tukaani.org/xz
 
-xz-libs-5.2.8-r0 installed size:
+xz-libs-5.2.9-r0 installed size:
 176 KiB
 
-xz-libs-5.2.8-r0 license:
+xz-libs-5.2.9-r0 license:
 GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 
 ```
