@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ad817bfb660239b5335a9030edb6915cd77c33d62df366631e6142698ef1aea1`
-- Created: `2022-11-25T22:37:08.367533Z`
-- Virtual Size: ~ 474.51 Mb  
+- Image ID: `sha256:eb6ab9586a38d110a20e4d13e7ba6762883e099833040798face404ff63453c4`
+- Created: `2023-01-09T21:26:26.251847062Z`
+- Virtual Size: ~ 474.55 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -749,16 +749,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20220614-r2 description:
+ca-certificates-20220614-r4 description:
 Common CA certificates PEM files from Mozilla
 
-ca-certificates-20220614-r2 webpage:
+ca-certificates-20220614-r4 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20220614-r2 installed size:
+ca-certificates-20220614-r4 installed size:
 688 KiB
 
-ca-certificates-20220614-r2 license:
+ca-certificates-20220614-r4 license:
 MPL-2.0 AND MIT
 
 ```
@@ -766,16 +766,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `ca-certificates-bundle`
 
 ```console
-ca-certificates-bundle-20220614-r2 description:
+ca-certificates-bundle-20220614-r4 description:
 Pre generated bundle of Mozilla certificates
 
-ca-certificates-bundle-20220614-r2 webpage:
+ca-certificates-bundle-20220614-r4 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-bundle-20220614-r2 installed size:
+ca-certificates-bundle-20220614-r4 installed size:
 232 KiB
 
-ca-certificates-bundle-20220614-r2 license:
+ca-certificates-bundle-20220614-r4 license:
 MPL-2.0 AND MIT
 
 ```
@@ -1055,16 +1055,16 @@ LGPL-2.1-or-later AND GPL-2.0-or-later
 ### `apk` package: `libarchive`
 
 ```console
-libarchive-3.6.1-r1 description:
+libarchive-3.6.1-r2 description:
 library that can create and read several streaming archive formats
 
-libarchive-3.6.1-r1 webpage:
+libarchive-3.6.1-r2 webpage:
 https://libarchive.org/
 
-libarchive-3.6.1-r1 installed size:
+libarchive-3.6.1-r2 installed size:
 668 KiB
 
-libarchive-3.6.1-r1 license:
+libarchive-3.6.1-r2 license:
 BSD-2-Clause AND BSD-3-Clause AND Public-Domain
 
 ```
@@ -1157,16 +1157,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.7-r0 description:
+libcrypto3-3.0.7-r2 description:
 Crypto library from openssl
 
-libcrypto3-3.0.7-r0 webpage:
+libcrypto3-3.0.7-r2 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.7-r0 installed size:
+libcrypto3-3.0.7-r2 installed size:
 4108 KiB
 
-libcrypto3-3.0.7-r0 license:
+libcrypto3-3.0.7-r2 license:
 Apache-2.0
 
 ```
@@ -1174,16 +1174,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.86.0-r1 description:
+libcurl-7.87.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.86.0-r1 webpage:
+libcurl-7.87.0-r0 webpage:
 https://curl.se/
 
-libcurl-7.86.0-r1 installed size:
-528 KiB
+libcurl-7.87.0-r0 installed size:
+540 KiB
 
-libcurl-7.86.0-r1 license:
+libcurl-7.87.0-r0 license:
 curl
 
 ```
@@ -1293,16 +1293,16 @@ custom
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.7-r0 description:
+libssl3-3.0.7-r2 description:
 SSL shared libraries
 
-libssl3-3.0.7-r0 webpage:
+libssl3-3.0.7-r2 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.7-r0 installed size:
+libssl3-3.0.7-r2 installed size:
 608 KiB
 
-libssl3-3.0.7-r0 license:
+libssl3-3.0.7-r2 license:
 Apache-2.0
 
 ```
@@ -1548,16 +1548,16 @@ MIT
 ### `apk` package: `openssl`
 
 ```console
-openssl-3.0.7-r0 description:
+openssl-3.0.7-r2 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-3.0.7-r0 webpage:
+openssl-3.0.7-r2 webpage:
 https://www.openssl.org/
 
-openssl-3.0.7-r0 installed size:
+openssl-3.0.7-r2 installed size:
 868 KiB
 
-openssl-3.0.7-r0 license:
+openssl-3.0.7-r2 license:
 Apache-2.0
 
 ```
@@ -1565,16 +1565,16 @@ Apache-2.0
 ### `apk` package: `openssl-dev`
 
 ```console
-openssl-dev-3.0.7-r0 description:
+openssl-dev-3.0.7-r2 description:
 Toolkit for Transport Layer Security (TLS) (development files)
 
-openssl-dev-3.0.7-r0 webpage:
+openssl-dev-3.0.7-r2 webpage:
 https://www.openssl.org/
 
-openssl-dev-3.0.7-r0 installed size:
+openssl-dev-3.0.7-r2 installed size:
 2224 KiB
 
-openssl-dev-3.0.7-r0 license:
+openssl-dev-3.0.7-r2 license:
 Apache-2.0
 
 ```
@@ -1633,16 +1633,16 @@ ISC
 ### `apk` package: `python3`
 
 ```console
-python3-3.10.8-r3 description:
+python3-3.10.9-r1 description:
 A high-level scripting language
 
-python3-3.10.8-r3 webpage:
+python3-3.10.9-r1 webpage:
 https://www.python.org/
 
-python3-3.10.8-r3 installed size:
+python3-3.10.9-r1 installed size:
 47 MiB
 
-python3-3.10.8-r3 license:
+python3-3.10.9-r1 license:
 PSF-2.0
 
 ```
@@ -1684,16 +1684,16 @@ rhash-libs-1.4.3-r1 license:
 ### `apk` package: `runtime-dependencies`
 
 ```console
-runtime-dependencies-20221125.223253 description:
+runtime-dependencies-20230109.212211 description:
 virtual meta package
 
-runtime-dependencies-20221125.223253 webpage:
+runtime-dependencies-20230109.212211 webpage:
 
 
-runtime-dependencies-20221125.223253 installed size:
+runtime-dependencies-20230109.212211 installed size:
 0 B
 
-runtime-dependencies-20221125.223253 license:
+runtime-dependencies-20230109.212211 license:
 
 
 ```
@@ -1718,16 +1718,16 @@ GPL-2.0-only
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.40.0-r0 description:
+sqlite-libs-3.40.1-r0 description:
 Sqlite3 library
 
-sqlite-libs-3.40.0-r0 webpage:
+sqlite-libs-3.40.1-r0 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.40.0-r0 installed size:
+sqlite-libs-3.40.1-r0 installed size:
 1008 KiB
 
-sqlite-libs-3.40.0-r0 license:
+sqlite-libs-3.40.1-r0 license:
 blessing
 
 ```
@@ -1803,16 +1803,16 @@ Public-Domain
 ### `apk` package: `xz-libs`
 
 ```console
-xz-libs-5.2.8-r0 description:
+xz-libs-5.2.9-r0 description:
 Library and CLI tools for XZ and LZMA compressed files (libraries)
 
-xz-libs-5.2.8-r0 webpage:
+xz-libs-5.2.9-r0 webpage:
 https://tukaani.org/xz
 
-xz-libs-5.2.8-r0 installed size:
+xz-libs-5.2.9-r0 installed size:
 176 KiB
 
-xz-libs-5.2.8-r0 license:
+xz-libs-5.2.9-r0 license:
 GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 
 ```
