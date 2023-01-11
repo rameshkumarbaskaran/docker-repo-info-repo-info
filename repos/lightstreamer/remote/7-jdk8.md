@@ -1,7 +1,7 @@
 ## `lightstreamer:7-jdk8`
 
 ```console
-$ docker pull lightstreamer@sha256:f667ba325802f224e175f4168f8502f45b7485eb08d2b4906ee9d624e1a2273c
+$ docker pull lightstreamer@sha256:c462d37d78fa07c12a37927cf67e46af05cb97e745a86f11e6023ecdb0622214
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -96,14 +96,14 @@ CMD ["./LS.sh" "run"]
 ### `lightstreamer:7-jdk8` - linux; arm64 variant v8
 
 ```console
-$ docker pull lightstreamer@sha256:0e0ee503878cd792280980337bfe25a05566b200c0aab4c772bd66ae83ff3088
+$ docker pull lightstreamer@sha256:def5bbec5e06aad711b07a9b74433a55260a39ed618efb61ac9eabba503eef99
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **204.8 MB (204822279 bytes)**  
+-	Total Size: **204.8 MB (204824082 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6b50e0c1450d055aa1f00b463cbb3f216b3e814adc60f85c2d897b73ebabecdd`
+-	Image ID: `sha256:b8ebb7530d480308d48f29ba48914b9d5eb74e2250228b90643a9749bde027c0`
 -	Default Command: `[".\/LS.sh","run"]`
 
 ```dockerfile
@@ -131,19 +131,19 @@ LABEL maintainer=Lightstreamer Server Development Team <support@lightstreamer.co
 RUN apt-get -y update         && apt-get -y install gnupg         && rm -rf /var/lib/apt/lists/*
 # Fri, 09 Dec 2022 07:48:41 GMT
 RUN gpg --batch --keyserver hkp://keyserver.ubuntu.com --recv-keys 9B90BFD14309C7DA5EF58D7D4A8C08966F29B4D2
-# Mon, 12 Dec 2022 20:52:00 GMT
-ENV LIGHTSTREAMER_VERSION=7.3.2
-# Mon, 12 Dec 2022 20:52:00 GMT
-ENV LIGHTSTREAMER_URL_DOWNLOAD=https://lightstreamer.com/distr/ls-server/7.3.2/Lightstreamer-7.3.2.tar.gz
-# Mon, 12 Dec 2022 20:52:03 GMT
+# Wed, 11 Jan 2023 22:39:49 GMT
+ENV LIGHTSTREAMER_VERSION=7.3.3
+# Wed, 11 Jan 2023 22:39:49 GMT
+ENV LIGHTSTREAMER_URL_DOWNLOAD=https://lightstreamer.com/distr/ls-server/7.3.3/Lightstreamer-7.3.3.tar.gz
+# Wed, 11 Jan 2023 22:39:57 GMT
 RUN set -ex;         mkdir /lightstreamer && cd /lightstreamer         && curl -fSL -o Lightstreamer.tar.gz ${LIGHTSTREAMER_URL_DOWNLOAD}         && curl -fSL -o Lightstreamer.tar.gz.asc ${LIGHTSTREAMER_URL_DOWNLOAD}.asc         && gpg --batch --verify Lightstreamer.tar.gz.asc Lightstreamer.tar.gz         && tar -xvf Lightstreamer.tar.gz --strip-components=1         && sed -i -e 's/<appender-ref ref="LSDailyRolling" \/>/<appender-ref ref="LSConsole" \/>/'                   -e '/<logger name="LightstreamerLogger.init/,+2s/<appender-ref ref="LSConsole" \/>/<!-- <appender-ref ref="LSConsole" \/> -->/'                   -e '/<logger name="LightstreamerLogger.license/,+2s/<appender-ref ref="LSConsole" \/>/<!-- <appender-ref ref="LSConsole" \/> -->/'                   -e '/<logger name="LightstreamerProxyAdapters/,+2s/<appender-ref ref="LSConsole" \/>/<!-- <appender-ref ref="LSConsole" \/> -->/'                   conf/lightstreamer_log_conf.xml         && groupadd -r -g 10000 lightstreamer         && useradd --no-log-init -r -g lightstreamer -u 10000 lightstreamer         && chown -R lightstreamer:lightstreamer ../lightstreamer         && rm Lightstreamer.tar.gz Lightstreamer.tar.gz.asc
-# Mon, 12 Dec 2022 20:52:03 GMT
+# Wed, 11 Jan 2023 22:39:57 GMT
 USER lightstreamer
-# Mon, 12 Dec 2022 20:52:03 GMT
+# Wed, 11 Jan 2023 22:39:57 GMT
 EXPOSE 8080
-# Mon, 12 Dec 2022 20:52:03 GMT
+# Wed, 11 Jan 2023 22:39:57 GMT
 WORKDIR /lightstreamer/bin/unix-like
-# Mon, 12 Dec 2022 20:52:03 GMT
+# Wed, 11 Jan 2023 22:39:57 GMT
 CMD ["./LS.sh" "run"]
 ```
 
@@ -172,7 +172,7 @@ CMD ["./LS.sh" "run"]
 		Last Modified: Fri, 09 Dec 2022 07:51:00 GMT  
 		Size: 2.4 KB (2395 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ea9f168c6647b7444b8559a74d11c37d910926a774561d4105aab6ace467e521`  
-		Last Modified: Mon, 12 Dec 2022 20:53:23 GMT  
-		Size: 57.8 MB (57843534 bytes)  
+	-	`sha256:441be55317a9d1f091a7051da30591d5da8560295d31a014bbbc0683aa02f8a0`  
+		Last Modified: Wed, 11 Jan 2023 22:41:11 GMT  
+		Size: 57.8 MB (57845337 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip

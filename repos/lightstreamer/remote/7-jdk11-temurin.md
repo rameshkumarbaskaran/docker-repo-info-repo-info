@@ -1,7 +1,7 @@
 ## `lightstreamer:7-jdk11-temurin`
 
 ```console
-$ docker pull lightstreamer@sha256:718bd493b75cf653eeac49230c86b4527d2e01473c154f326673ae98277cbe8d
+$ docker pull lightstreamer@sha256:f9d47552693d667ddf80a313d6c92a9df9ea06395abbadab9dcea25090d5a14f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -98,14 +98,14 @@ CMD ["./LS.sh" "run"]
 ### `lightstreamer:7-jdk11-temurin` - linux; arm64 variant v8
 
 ```console
-$ docker pull lightstreamer@sha256:f0f01c6444cd978fc39384d2049723705f13fd9cf5bd9bd910a33ac555c390aa
+$ docker pull lightstreamer@sha256:b96af3a7011b0f94a4e0e8cb9fd5d909c3ad53fa69617905ad3ede481506fc95
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **297.4 MB (297410401 bytes)**  
+-	Total Size: **297.4 MB (297412182 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2e6652c873faead7c62019610b3ddae09277986ff8b5811366cbd05f8b779358`
+-	Image ID: `sha256:81b4b5139077f72322c4055c6454933fc99f95259ab2bae5f1c100ec005f66ce`
 -	Default Command: `[".\/LS.sh","run"]`
 
 ```dockerfile
@@ -135,19 +135,19 @@ LABEL maintainer=Lightstreamer Server Development Team <support@lightstreamer.co
 RUN apt-get -y update         && apt-get -y install gnupg         && rm -rf /var/lib/apt/lists/*
 # Fri, 09 Dec 2022 07:49:16 GMT
 RUN gpg --batch --keyserver hkp://keyserver.ubuntu.com --recv-keys 9B90BFD14309C7DA5EF58D7D4A8C08966F29B4D2
-# Mon, 12 Dec 2022 20:52:06 GMT
-ENV LIGHTSTREAMER_VERSION=7.3.2
-# Mon, 12 Dec 2022 20:52:06 GMT
-ENV LIGHTSTREAMER_URL_DOWNLOAD=https://lightstreamer.com/distr/ls-server/7.3.2/Lightstreamer-7.3.2.tar.gz
-# Mon, 12 Dec 2022 20:52:09 GMT
+# Wed, 11 Jan 2023 22:40:00 GMT
+ENV LIGHTSTREAMER_VERSION=7.3.3
+# Wed, 11 Jan 2023 22:40:00 GMT
+ENV LIGHTSTREAMER_URL_DOWNLOAD=https://lightstreamer.com/distr/ls-server/7.3.3/Lightstreamer-7.3.3.tar.gz
+# Wed, 11 Jan 2023 22:40:02 GMT
 RUN set -ex;         mkdir /lightstreamer && cd /lightstreamer         && curl -fSL -o Lightstreamer.tar.gz ${LIGHTSTREAMER_URL_DOWNLOAD}         && curl -fSL -o Lightstreamer.tar.gz.asc ${LIGHTSTREAMER_URL_DOWNLOAD}.asc         && gpg --batch --verify Lightstreamer.tar.gz.asc Lightstreamer.tar.gz         && tar -xvf Lightstreamer.tar.gz --strip-components=1         && sed -i -e 's/<appender-ref ref="LSDailyRolling" \/>/<appender-ref ref="LSConsole" \/>/'                   -e '/<logger name="LightstreamerLogger.init/,+2s/<appender-ref ref="LSConsole" \/>/<!-- <appender-ref ref="LSConsole" \/> -->/'                   -e '/<logger name="LightstreamerLogger.license/,+2s/<appender-ref ref="LSConsole" \/>/<!-- <appender-ref ref="LSConsole" \/> -->/'                   -e '/<logger name="LightstreamerProxyAdapters/,+2s/<appender-ref ref="LSConsole" \/>/<!-- <appender-ref ref="LSConsole" \/> -->/'                   conf/lightstreamer_log_conf.xml         && groupadd -r -g 10000 lightstreamer         && useradd --no-log-init -r -g lightstreamer -u 10000 lightstreamer         && chown -R lightstreamer:lightstreamer ../lightstreamer         && rm Lightstreamer.tar.gz Lightstreamer.tar.gz.asc
-# Mon, 12 Dec 2022 20:52:09 GMT
+# Wed, 11 Jan 2023 22:40:03 GMT
 USER lightstreamer
-# Mon, 12 Dec 2022 20:52:09 GMT
+# Wed, 11 Jan 2023 22:40:03 GMT
 EXPOSE 8080
-# Mon, 12 Dec 2022 20:52:09 GMT
+# Wed, 11 Jan 2023 22:40:03 GMT
 WORKDIR /lightstreamer/bin/unix-like
-# Mon, 12 Dec 2022 20:52:09 GMT
+# Wed, 11 Jan 2023 22:40:03 GMT
 CMD ["./LS.sh" "run"]
 ```
 
@@ -176,7 +176,7 @@ CMD ["./LS.sh" "run"]
 		Last Modified: Fri, 09 Dec 2022 07:51:39 GMT  
 		Size: 2.4 KB (2394 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e031a960a1d75740332be0a4ec57345e9b1748a43b7c4a26a21cc4e2ab3b3523`  
-		Last Modified: Mon, 12 Dec 2022 20:53:43 GMT  
-		Size: 57.8 MB (57843554 bytes)  
+	-	`sha256:4523189536fd7c73f10f4ca1bcbab641943e126503124abc657b33e078437659`  
+		Last Modified: Wed, 11 Jan 2023 22:41:32 GMT  
+		Size: 57.8 MB (57845335 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
