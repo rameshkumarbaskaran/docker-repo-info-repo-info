@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:fb7170aa2b9b95bdf81a1d3f1c0a7a894afc47e12a893ae79d00c88d9c5e3f7d`
-- Created: `2022-12-13T19:53:39.654824212Z`
+- Image ID: `sha256:399cc5685cda2a7844ea8228cfd63489470bb4a33f22bc914204e4ffbe9596ef`
+- Created: `2023-01-09T18:43:35.220979579Z`
 - Virtual Size: ~ 123.04 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -121,16 +121,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates-bundle`
 
 ```console
-ca-certificates-bundle-20220614-r2 description:
+ca-certificates-bundle-20220614-r4 description:
 Pre generated bundle of Mozilla certificates
 
-ca-certificates-bundle-20220614-r2 webpage:
+ca-certificates-bundle-20220614-r4 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-bundle-20220614-r2 installed size:
+ca-certificates-bundle-20220614-r4 installed size:
 232 KiB
 
-ca-certificates-bundle-20220614-r2 license:
+ca-certificates-bundle-20220614-r4 license:
 MPL-2.0 AND MIT
 
 ```
@@ -155,16 +155,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.7-r0 description:
+libcrypto3-3.0.7-r2 description:
 Crypto library from openssl
 
-libcrypto3-3.0.7-r0 webpage:
+libcrypto3-3.0.7-r2 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.7-r0 installed size:
+libcrypto3-3.0.7-r2 installed size:
 4108 KiB
 
-libcrypto3-3.0.7-r0 license:
+libcrypto3-3.0.7-r2 license:
 Apache-2.0
 
 ```
@@ -189,16 +189,16 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.7-r0 description:
+libssl3-3.0.7-r2 description:
 SSL shared libraries
 
-libssl3-3.0.7-r0 webpage:
+libssl3-3.0.7-r2 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.7-r0 installed size:
+libssl3-3.0.7-r2 installed size:
 608 KiB
 
-libssl3-3.0.7-r0 license:
+libssl3-3.0.7-r2 license:
 Apache-2.0
 
 ```
