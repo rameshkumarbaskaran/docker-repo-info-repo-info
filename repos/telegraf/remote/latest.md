@@ -1,7 +1,7 @@
 ## `telegraf:latest`
 
 ```console
-$ docker pull telegraf@sha256:e685340b4ac93182a02b9664ee129e37f3487ec13fe5824aafa96c693757debc
+$ docker pull telegraf@sha256:6992d25baf40f555c3dc84acf361521ac7919b01f076d5915e8946771e6a617b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -84,72 +84,72 @@ CMD ["telegraf"]
 ### `telegraf:latest` - linux; arm variant v7
 
 ```console
-$ docker pull telegraf@sha256:c44057b58da2c708fddbf1a31d1535427a96229e8a30813a98b86ecda01d41a3
+$ docker pull telegraf@sha256:ea63153bef0f381b420f721f3eb5c34d2d31697a775b4d48a67578a076e54457
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **125.8 MB (125849681 bytes)**  
+-	Total Size: **125.8 MB (125849391 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f2b5ed5cb9ce905713189695498391f41ce34fbd77b5cee355a524570008b66a`
+-	Image ID: `sha256:4993637583994ca173020eef34f62b28ec89cc4f1f797788d0fca3503e03a474`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
 ```dockerfile
-# Wed, 21 Dec 2022 01:58:09 GMT
-ADD file:4b6f71680de34554595f062f9e52037b48edf19ca8f34c75877caa85c42caad3 in / 
-# Wed, 21 Dec 2022 01:58:10 GMT
+# Wed, 11 Jan 2023 04:00:17 GMT
+ADD file:48f6407691a382c3ad731f05f78d4210efd40f1a00abfd6c043d8401c6ca1811 in / 
+# Wed, 11 Jan 2023 04:00:18 GMT
 CMD ["bash"]
-# Wed, 21 Dec 2022 02:27:43 GMT
+# Wed, 11 Jan 2023 04:33:04 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 21 Dec 2022 02:27:49 GMT
+# Wed, 11 Jan 2023 04:33:10 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 22 Dec 2022 02:31:39 GMT
+# Wed, 11 Jan 2023 21:04:30 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors libcap2-bin &&     rm -rf /var/lib/apt/lists/*
-# Thu, 22 Dec 2022 02:31:41 GMT
+# Wed, 11 Jan 2023 21:04:32 GMT
 RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done
-# Thu, 22 Dec 2022 02:32:06 GMT
+# Wed, 11 Jan 2023 21:04:59 GMT
 ENV TELEGRAF_VERSION=1.25.0
-# Thu, 22 Dec 2022 02:32:12 GMT
+# Wed, 11 Jan 2023 21:05:05 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
-# Thu, 22 Dec 2022 02:32:13 GMT
+# Wed, 11 Jan 2023 21:05:05 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Thu, 22 Dec 2022 02:32:13 GMT
+# Wed, 11 Jan 2023 21:05:05 GMT
 COPY file:689e73cc90c23fa6e27f7d087886e186b6baf02bb95756b42136644d4f83a893 in /entrypoint.sh 
-# Thu, 22 Dec 2022 02:32:13 GMT
+# Wed, 11 Jan 2023 21:05:06 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Thu, 22 Dec 2022 02:32:14 GMT
+# Wed, 11 Jan 2023 21:05:06 GMT
 CMD ["telegraf"]
 ```
 
 -	Layers:
-	-	`sha256:706bb1d74512e1fb9ba97aa9212a32d07726fbfe77e4c7e609406d2065418f57`  
-		Last Modified: Wed, 21 Dec 2022 02:04:37 GMT  
-		Size: 50.2 MB (50190771 bytes)  
+	-	`sha256:d705c97ea3a2300e9dda9a18ff662a98c2811b41147a15d4f4791f475ce8be47`  
+		Last Modified: Wed, 11 Jan 2023 04:07:17 GMT  
+		Size: 50.2 MB (50190808 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6680cc86b286376b17781e60087f333900d6195e47181a19cc371bdfcabcaa81`  
-		Last Modified: Wed, 21 Dec 2022 02:37:59 GMT  
-		Size: 4.9 MB (4931334 bytes)  
+	-	`sha256:d40c8c22d251f4b5db1459714e722a41f58f37155eb88da1b4155fd032f90153`  
+		Last Modified: Wed, 11 Jan 2023 04:43:56 GMT  
+		Size: 4.9 MB (4931090 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7be4d1bc2e6499ce625dcdda5acd93b321c54ee260c695d77c968071e871021d`  
-		Last Modified: Wed, 21 Dec 2022 02:37:59 GMT  
-		Size: 10.2 MB (10217819 bytes)  
+	-	`sha256:97570844854b4122edbc4c60110b4f0690133f761a66c1d6b732b80d4e1b26be`  
+		Last Modified: Wed, 11 Jan 2023 04:43:56 GMT  
+		Size: 10.2 MB (10217786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:99830163fbc8ba6ac264ecf7b0fa49ed4d2b78c8bf11317660a35013c4b08e04`  
-		Last Modified: Thu, 22 Dec 2022 02:32:43 GMT  
-		Size: 17.5 MB (17462327 bytes)  
+	-	`sha256:af1750fbbb1fe485f9a32582fce38b85d8ce942908f698af02909f037ec48094`  
+		Last Modified: Wed, 11 Jan 2023 21:05:38 GMT  
+		Size: 17.5 MB (17462313 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fe2d3d12f6d6f528680ad6a75911e7eceeac68269f8760cf8d34cabe7b35449`  
-		Last Modified: Thu, 22 Dec 2022 02:32:39 GMT  
-		Size: 2.9 KB (2868 bytes)  
+	-	`sha256:9f83276cd723d83b265f4d16426252363b00ab2efaec2ee84337a3bfd02dc616`  
+		Last Modified: Wed, 11 Jan 2023 21:05:33 GMT  
+		Size: 2.9 KB (2869 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b68b8064cf7971e034fca73f27b7aae58267a4087ab773da9c5377d01c4c8096`  
-		Last Modified: Thu, 22 Dec 2022 02:33:25 GMT  
-		Size: 43.0 MB (43044220 bytes)  
+	-	`sha256:50197c6fa7ab577844cb76de6ad56095b41f501c64501e68876f8a3b5e2d4927`  
+		Last Modified: Wed, 11 Jan 2023 21:06:19 GMT  
+		Size: 43.0 MB (43044182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2c88746ed888fc30ae54b548413ecce003f869cfa84d48728c00d953bd7f66d6`  
-		Last Modified: Thu, 22 Dec 2022 02:33:16 GMT  
-		Size: 342.0 B  
+	-	`sha256:69803adedf54ab75a949f15827fb35f78bd7e60653b33fb71aaed48b88eb0561`  
+		Last Modified: Wed, 11 Jan 2023 21:06:11 GMT  
+		Size: 343.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `telegraf:latest` - linux; arm64 variant v8
