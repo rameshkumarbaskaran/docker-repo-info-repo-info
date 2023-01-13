@@ -1,10 +1,10 @@
-# `openjdk:21-ea-4-jdk-bullseye`
+# `openjdk:21-ea-5-jdk-bullseye`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5f343cb3945018721d6447e749cb3b4148cdb2ef3cca1ba8cc7f2a4228af9e37`
-- Created: `2023-01-06T19:22:30.35218445Z`
-- Virtual Size: ~ 685.92 Mb  
+- Image ID: `sha256:f3d03810fae25f333850cbf26bec5d0032f99011f2d6e909709611c5c8e02b02`
+- Created: `2023-01-13T00:29:18.008959396Z`
+- Virtual Size: ~ 685.99 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/openjdk-21/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/usr/local/openjdk-21`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=21-ea+4`
+  - `JAVA_VERSION=21-ea+5`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1627,11 +1627,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libidn2/2.3.0-5/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libidn2/2.3.0-5/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libksba=1.5.0-3+deb11u1`
+### `dpkg` source package: `libksba=1.5.0-3+deb11u2`
 
 Binary Packages:
 
-- `libksba8:amd64=1.5.0-3+deb11u1`
+- `libksba8:amd64=1.5.0-3+deb11u2`
 
 Licenses: (parsed from: `/usr/share/doc/libksba8/copyright`)
 
@@ -1642,18 +1642,17 @@ Licenses: (parsed from: `/usr/share/doc/libksba8/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libksba=1.5.0-3+deb11u1
-'http://deb.debian.org/debian/pool/main/libk/libksba/libksba_1.5.0-3%2bdeb11u1.dsc' libksba_1.5.0-3+deb11u1.dsc 2502 SHA256:045b58b87315cbeaab6c82a8cdaf0f53463c1d8369935539cf0615df7bdac877
-'http://deb.debian.org/debian/pool/main/libk/libksba/libksba_1.5.0.orig.tar.bz2' libksba_1.5.0.orig.tar.bz2 656518 SHA256:ae4af129216b2d7fdea0b5bf2a788cd458a79c983bb09a43f4d525cc87aba0ba
-'http://deb.debian.org/debian/pool/main/libk/libksba/libksba_1.5.0.orig.tar.bz2.asc' libksba_1.5.0.orig.tar.bz2.asc 228 SHA256:41a9020381b8201f15b9d7fc2a1abdb90ab2723152d1af0b77a58b12b4884a0f
-'http://deb.debian.org/debian/pool/main/libk/libksba/libksba_1.5.0-3%2bdeb11u1.debian.tar.xz' libksba_1.5.0-3+deb11u1.debian.tar.xz 14940 SHA256:8cf8f061a85a496cc4dd4756f38e982e4ae79a41eef331ca0fe1fccb3c8e7a1a
+$ apt-get source -qq --print-uris libksba=1.5.0-3+deb11u2
+'http://deb.debian.org/debian-security/pool/updates/main/libk/libksba/libksba_1.5.0-3%2bdeb11u2.dsc' libksba_1.5.0-3+deb11u2.dsc 2255 SHA256:acf88e1fab76405a18e0b85753ae1a6d2b68d0634711b9f24f03f7ab77b7263a
+'http://deb.debian.org/debian-security/pool/updates/main/libk/libksba/libksba_1.5.0.orig.tar.bz2' libksba_1.5.0.orig.tar.bz2 656518 SHA256:ae4af129216b2d7fdea0b5bf2a788cd458a79c983bb09a43f4d525cc87aba0ba
+'http://deb.debian.org/debian-security/pool/updates/main/libk/libksba/libksba_1.5.0-3%2bdeb11u2.debian.tar.xz' libksba_1.5.0-3+deb11u2.debian.tar.xz 15672 SHA256:556d4370f91d73a2152c5a1979d792ed8a82de52c37b5c8cc5e5da8464bd6eed
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libksba/1.5.0-3+deb11u1/ (for browsing the source)
-- https://sources.debian.net/src/libksba/1.5.0-3+deb11u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libksba/1.5.0-3+deb11u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libksba/1.5.0-3+deb11u2/ (for browsing the source)
+- https://sources.debian.net/src/libksba/1.5.0-3+deb11u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libksba/1.5.0-3+deb11u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libmd=1.0.3-3`
 
