@@ -1,19 +1,19 @@
-# `emqx:5.0.13`
+# `emqx:5.0.14`
 
 ## Docker Metadata
 
-- Image ID: `sha256:9be156fa8346c02b9558c66eff46e1d2dc0c29d698672163852705a7d846b43e`
-- Created: `2023-01-11T03:49:24.680303646Z`
-- Virtual Size: ~ 235.67 Mb  
+- Image ID: `sha256:3498af7074104eff8d97408cf66afe6eac4cc3788481cd3ee1a8e52fe99f1c8a`
+- Created: `2023-01-12T19:22:31.612248909Z`
+- Virtual Size: ~ 235.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/bin/docker-entrypoint.sh"]`
 - Command: `["/opt/emqx/bin/emqx","foreground"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `EMQX_VERSION=5.0.13`
-  - `AMD64_SHA256=d52ea9a5c07cb31106f3bb7ac541a269ce205a6d1c9d847d7fe01ad39da0b1a4`
-  - `ARM64_SHA256=5f02e38b6fbd07c23455890a59b041f8d91fcceeeaedaec090435f913927538e`
+  - `EMQX_VERSION=5.0.14`
+  - `AMD64_SHA256=d39b51da45aa6675cc3026965db120c0dd0a4b070cfe7e47ba2075ac8162d077`
+  - `ARM64_SHA256=bfa6d03e3acfd6dbd48c626f66742c00778a2f3030bd76c6faf0199e272836a2`
   - `LC_ALL=C.UTF-8`
   - `LANG=C.UTF-8`
 
