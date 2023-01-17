@@ -520,14 +520,9 @@ Licenses: (parsed from: `/usr/share/doc/libsasl2-2/copyright`, `/usr/share/doc/l
 - `RSA-MD`
 - `SSLeay`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris cyrus-sasl2=2.1.28+dfsg-6ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.28%2bdfsg-6ubuntu2.dsc' cyrus-sasl2_2.1.28+dfsg-6ubuntu2.dsc 3570 SHA512:48551795a90890c16e4cf472ba165aba14fabadf4efa12c27bfb834d722a5a9b2ba82553317046f4709a110f008cbf725e6a33ea0dde7702ee80fc9e5528859b
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.28%2bdfsg.orig.tar.xz' cyrus-sasl2_2.1.28+dfsg.orig.tar.xz 797472 SHA512:70cccbac70e71828f1345beba5c78c14332e425b75c84a66393cf62ecf6848741c5912697fc0197516f1d4c41ec8c9644506a6241588b8f6bf5bba79edd8b15a
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.28%2bdfsg-6ubuntu2.debian.tar.xz' cyrus-sasl2_2.1.28+dfsg-6ubuntu2.debian.tar.xz 97164 SHA512:8ca80fbba9f1f2a2dacf04e57a229dad7dba9932b48cf34fb75b567f86b71f86b40c82ed32e4b391f19fac02503a272033e795819d796c36ccfe58fb81cebf4e
-```
 
 ### `dpkg` source package: `dash=0.5.11+git20210903+057cd650a4ed-9ubuntu1`
 
@@ -676,15 +671,13 @@ Licenses: (parsed from: `/usr/share/doc/diffutils/copyright`)
 - `GFDL`
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris diffutils=1:3.8-1
-'http://archive.ubuntu.com/ubuntu/pool/main/d/diffutils/diffutils_3.8-1.dsc' diffutils_3.8-1.dsc 1705 SHA512:33682549a968ef1e004f9e98fcc8d0c7328bfd30d7ce419ce18eb7454d8e493990dd4a32dc12f98724db7a32822ad3a7a53113c3a07148f9856f4de2c54bf96e
-'http://archive.ubuntu.com/ubuntu/pool/main/d/diffutils/diffutils_3.8.orig.tar.xz' diffutils_3.8.orig.tar.xz 1585120 SHA512:279441270987e70d5ecfaf84b6285a4866929c43ec877e50f154a788858d548a8a316f2fc26ad62f7348c8d289cb29a09d06dfadce1806e3d8b4ea88c8b1aa7c
-'http://archive.ubuntu.com/ubuntu/pool/main/d/diffutils/diffutils_3.8.orig.tar.xz.asc' diffutils_3.8.orig.tar.xz.asc 833 SHA512:0464ac89209411993800666b45ff90243d22fbda53bf1d71c6870d565b39cc8d9c54c141b9d297a181ce74ad8fb5313953f416bced179ff7728a52a3e9a4f5a5
-'http://archive.ubuntu.com/ubuntu/pool/main/d/diffutils/diffutils_3.8-1.debian.tar.xz' diffutils_3.8-1.debian.tar.xz 11004 SHA512:ad5d9a682d9973491c66f80a77d180a1941f23dc99866fa63ef9866a437576c02c86a6af4673b3ce43aa4e99156016eba5b54348f88d0e71e84f609a4b97a5c2
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/diffutils/1:3.8-1/
+
 
 ### `dpkg` source package: `djvulibre=3.5.28-2build2`
 
@@ -767,15 +760,13 @@ Licenses: (parsed from: `/usr/share/doc/libelf1/copyright`)
 - `GPL-3`
 - `LGPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris elfutils=0.188-1
-'http://archive.ubuntu.com/ubuntu/pool/main/e/elfutils/elfutils_0.188-1.dsc' elfutils_0.188-1.dsc 3472 SHA512:1c0097242244be9097975b2a5ee790582e8d41cc85182079ea55254587d6ff67275229335116f291794625c5b64fb0df5628b7d816543dedbfcb5864a8a3a3b6
-'http://archive.ubuntu.com/ubuntu/pool/main/e/elfutils/elfutils_0.188.orig.tar.bz2' elfutils_0.188.orig.tar.bz2 9112977 SHA512:585551b2d937d19d1becfc2f28935db1dd1a3d25571a62f322b70ac8da98c1a741a55d070327705df6c3e2ee026652e0b9a3c733b050a0b0ec5f2fc75d5b74b5
-'http://archive.ubuntu.com/ubuntu/pool/main/e/elfutils/elfutils_0.188.orig.tar.bz2.asc' elfutils_0.188.orig.tar.bz2.asc 488 SHA512:daa6e2c164602652542340863c6272628346e5f8acd1c01cca72f065ddfe23c5fcff3d84fa53916e4b888d58778958a0d5e7715033d220f1e36d4d88b5c69aa7
-'http://archive.ubuntu.com/ubuntu/pool/main/e/elfutils/elfutils_0.188-1.debian.tar.xz' elfutils_0.188-1.debian.tar.xz 38496 SHA512:0a08e6b7996b8c32fdbf40772432eebd898d1485b0738ad8c327955df96687e82ef5bd13987ce94bc9ddda71bf95c7ff10e5a8a1e3088303f6939e5624245dd7
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/elfutils/0.188-1/
+
 
 ### `dpkg` source package: `expat=2.5.0-1`
 
@@ -1106,14 +1097,9 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.37.2-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.37.2-1ubuntu1.dsc' git_2.37.2-1ubuntu1.dsc 2956 SHA512:9528ce1b5fe970b5c085a0d8399df7d464f35881fa099a136e7e37f664448ac311c30bc1dca63ae4e0b3a7c9f8d7d0f0b9fbbbd8617ba5255a63915ad137476c
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.37.2.orig.tar.xz' git_2.37.2.orig.tar.xz 6985408 SHA512:a26d83f4eeb71d49c427ced9509861f7677e13e806da729f369ca39b795f8417b789a0adec859f44716f7fbc1190f7d1e6e518e774ad95c89e88442ac125b9c2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.37.2-1ubuntu1.debian.tar.xz' git_2.37.2-1ubuntu1.debian.tar.xz 727212 SHA512:6b054b4e05bde310609ff3db8457fdc8b6645ea9bd1967ab182ef4e36955b4437f692c50f1cd4b3f03755f35fec6c335f0f2c6eb8838085462e728c013877753
-```
 
 ### `dpkg` source package: `glib2.0=2.74.2-1`
 
@@ -1246,15 +1232,9 @@ Licenses: (parsed from: `/usr/share/doc/dirmngr/copyright`, `/usr/share/doc/gnup
 - `TinySCHEME`
 - `permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnupg2=2.2.40-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnupg2/gnupg2_2.2.40-1ubuntu1.dsc' gnupg2_2.2.40-1ubuntu1.dsc 3949 SHA512:be206bc5d82e28a6bcfe0d6108f4599cfee397a5d9dd92dd04f92d2d2663b7eab26b53d2a8de17773431a193be4adc3659f13c1a0ac2bfec96eb1fae5a5e83a7
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnupg2/gnupg2_2.2.40.orig.tar.bz2' gnupg2_2.2.40.orig.tar.bz2 7301631 SHA512:4c2f5fbf37ba6fbad0045aad23129186963010c673ea0b81801adc4f98efe14d6c7228e22815b6b26307c1fe5bb51cd088aa6a0f06a9325d3c021849ef81c594
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnupg2/gnupg2_2.2.40.orig.tar.bz2.asc' gnupg2_2.2.40.orig.tar.bz2.asc 228 SHA512:50e8abae322430bf4d3230d0291ca519663a1397fe0d0b8df29076808504b5fea2b984952d6dc51ecc239c12af8ecd5d93b88dd1c6bc0babf0b48a5a840b8ada
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnupg2/gnupg2_2.2.40-1ubuntu1.debian.tar.xz' gnupg2_2.2.40-1ubuntu1.debian.tar.xz 65128 SHA512:3791de87d5c1d2ec980ecb6add00e4f77f26b87c611b13575bca90c3dd40964c6dd141c81ddfb95e65750afef4dd2d3db10a2a247b3b066d66f62d16fa3377d3
-```
 
 ### `dpkg` source package: `gnutls28=3.7.7-2ubuntu2`
 
@@ -1416,14 +1396,13 @@ Licenses: (parsed from: `/usr/share/doc/libharfbuzz0b/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris harfbuzz=5.2.0-2
-'http://archive.ubuntu.com/ubuntu/pool/main/h/harfbuzz/harfbuzz_5.2.0-2.dsc' harfbuzz_5.2.0-2.dsc 2706 SHA512:e45ac29b30307944c0762e15c1a9df7d0e0882b657ee6a7a8fc0cc438151e40ead339097fabae7d1896d8f5cb575fd6bcd9ed8ee88a072ab453510e408818f0d
-'http://archive.ubuntu.com/ubuntu/pool/main/h/harfbuzz/harfbuzz_5.2.0.orig.tar.xz' harfbuzz_5.2.0.orig.tar.xz 17711968 SHA512:3c95ae9916dfc283714b936988726c0b391f634e22a62d148c201104178ee229c48e49cc82961d728a5c8bc8af06978eb172b35acb552c969bc2385892380d30
-'http://archive.ubuntu.com/ubuntu/pool/main/h/harfbuzz/harfbuzz_5.2.0-2.debian.tar.xz' harfbuzz_5.2.0-2.debian.tar.xz 11288 SHA512:f6935e739e51c093d7c67bc743b07a0e0f463875ed75a9f3d32e019d39035a3f11d50e72bf649f75322cfbc40501472e9eacaff56029910a5f37eab83b625241
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/harfbuzz/5.2.0-2/
+
 
 ### `dpkg` source package: `hicolor-icon-theme=0.17-2`
 
@@ -2798,15 +2777,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libx11=2:1.8.1-2
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.8.1-2.dsc' libx11_1.8.1-2.dsc 2542 SHA512:ecf75ca20cdfe2bdbc95460ee0ba495eb7deb1cfb770d741d55c3bd55caa4452fd30cf4fc631da81cf81aae8d0c93e2c14e755d41c0b91d23486852ac3c443dd
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.8.1.orig.tar.gz' libx11_1.8.1.orig.tar.gz 3174798 SHA512:ac73ff99abfc13a0b8d04e3e4fde2a3b97813120c73c4dbf57e0ec56bbde8cd0272f1c09f417f10561f57def22878509adced897ebb2adfc1cb0d30385ee9396
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.8.1.orig.tar.gz.asc' libx11_1.8.1.orig.tar.gz.asc 801 SHA512:287d13e6c003adad3609e20f5a8da2aa61b9e8059f4dbccfb838e2c4b8adfb5b5d989b4be41f80e010918a54448a4865f821b07c6235d3973d79ae0ccb299882
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.8.1-2.diff.gz' libx11_1.8.1-2.diff.gz 101135 SHA512:4c6ea7de7f5cb7c9851c485393d7b9a652f2da7373e3e269d58c206cfc3b21df79e20b663971482ad8467bf0d350135a5ad67e6ead02ec9deba5225c728b1224
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libx11/2:1.8.1-2/
+
 
 ### `dpkg` source package: `libxau=1:1.0.9-1build5`
 
@@ -3369,15 +3346,13 @@ Licenses: (parsed from: `/usr/share/doc/libncurses-dev/copyright`, `/usr/share/d
 - `MIT/X11`
 - `X11`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ncurses=6.3+20220423-2
-'http://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/ncurses_6.3%2b20220423-2.dsc' ncurses_6.3+20220423-2.dsc 4200 SHA512:6a7194bec8331f7e5396cc58390c6523388a08b6cfc7488dc357112163b2f55d0de7d5060d2591a33b2b074c1fd8b7acb111157c68b9f10a9ed6e21b9551c228
-'http://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/ncurses_6.3%2b20220423.orig.tar.gz' ncurses_6.3+20220423.orig.tar.gz 3611993 SHA512:350a2f36ffea4f98a346217356e2730b6ef115eecd35144b8ef741a119932ab717febb2bd16acc596364084758bd9ecc8223ffcd91e59c9e0700445cfb700284
-'http://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/ncurses_6.3%2b20220423.orig.tar.gz.asc' ncurses_6.3+20220423.orig.tar.gz.asc 729 SHA512:b933258b43863cd1a68dd0ba40d7340dbd2676586aae1409f7dcc33e86f3b0e0e6d1544430632976d96b8ec7a5b3e630c0a81cea3f7f7471eba14ac7194dac3f
-'http://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/ncurses_6.3%2b20220423-2.debian.tar.xz' ncurses_6.3+20220423-2.debian.tar.xz 54600 SHA512:575373307127325f015df4d654037c8294d8ae07c5cd2acb8f145e35d2dfded53cc3c38776a76a4fc3783ddeff8f6f2134eefc0d7d52da456a42871094eea356
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/ncurses/6.3+20220423-2/
+
 
 ### `dpkg` source package: `netbase=6.4`
 
@@ -3484,14 +3459,13 @@ Licenses: (parsed from: `/usr/share/doc/libnuma1/copyright`)
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris numactl=2.0.15-1
-'http://archive.ubuntu.com/ubuntu/pool/main/n/numactl/numactl_2.0.15-1.dsc' numactl_2.0.15-1.dsc 1974 SHA512:065e9ab7b0ae339af7c57b2769ba3d6b5d833ba1a0cd7898ff5b818df73e54fc79aa0c4229f265f1529084afb9731cf15aac01a0f41b9ff768c66e566a7b10e0
-'http://archive.ubuntu.com/ubuntu/pool/main/n/numactl/numactl_2.0.15.orig.tar.gz' numactl_2.0.15.orig.tar.gz 110817 SHA512:dcc76b8d36698a740e04206471352013b39bd61357d6090fc062681fa2f31e5f0b40c8582c06fd1a97919f494002bef1fa8330b6a6784b516c39961caa2a4320
-'http://archive.ubuntu.com/ubuntu/pool/main/n/numactl/numactl_2.0.15-1.debian.tar.xz' numactl_2.0.15-1.debian.tar.xz 7016 SHA512:d294717e72e7b394ed1ec69f29edc906b7153fc7ca0a0397a1627b0075d36daf7659cf7b7f491916f72de438c63958acf5adc3831639fb575fbe31e650e7ac2e
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/numactl/2.0.15-1/
+
 
 ### `dpkg` source package: `openexr=3.1.5-4`
 
@@ -3759,14 +3733,13 @@ Licenses: (parsed from: `/usr/share/doc/libpango-1.0-0/copyright`, `/usr/share/d
 - `TCL`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pango1.0=1.50.10+ds-1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.50.10%2bds-1.dsc' pango1.0_1.50.10+ds-1.dsc 3746 SHA512:cff353f09fa515a7f8063aa2cfcd519f5ed24f1c2046bb22a12053954ec02e11346a27f3ada7fb86954de78a8ea19148453b1eb952fbacb32f67f2a5721b326f
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.50.10%2bds.orig.tar.xz' pango1.0_1.50.10+ds.orig.tar.xz 2671840 SHA512:f368b3d3f580cd0d56083ef0d4a2caf65c92afe99e972b3e6ce4eb7889f290f981c0f96aa3a4db68fd420b9e22502ce2fc22d9ecae1c507544c656c0118d9ef0
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.50.10%2bds-1.debian.tar.xz' pango1.0_1.50.10+ds-1.debian.tar.xz 49292 SHA512:133313d2e399fe9daf7a2c655fd8ae9f818829a6afaa5c6895e241b39f2e80ed34d457338c7f57b7d88184cdaa56108b35de97aac9eb95dc9084c46eb2664f06
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/pango1.0/1.50.10+ds-1/
+
 
 ### `dpkg` source package: `patch=2.7.6-7build2`
 
@@ -3820,14 +3793,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pcre3=2:8.39-14
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre3/pcre3_8.39-14.dsc' pcre3_8.39-14.dsc 2226 SHA512:7d70d8acc6cfa87516f23570b9a20f080d8af660f6fa9237aa0b01cf1888217ddf9f9102ad95888126ea0d1b5c7bd3162fc5210d797c190a831e1e360156e356
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre3/pcre3_8.39.orig.tar.bz2' pcre3_8.39.orig.tar.bz2 1560758 SHA512:8b0f14ae5947c4b2d74876a795b04e532fd71c2479a64dbe0ed817e7c7894ea3cae533413de8c17322d305cb7f4e275d72b43e4e828eaca77dc4bcaf04529cf6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre3/pcre3_8.39-14.debian.tar.gz' pcre3_8.39-14.debian.tar.gz 27185 SHA512:e0678498cbfc9cbebdadf8591fdf58ff6a297510bb06d1f378d3c3ffb3882b9a5eca2a624ebd98e8bf175c38453141f4519612f4111eb491718daaf22b2b9202
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/pcre3/2:8.39-14/
+
 
 ### `dpkg` source package: `perl=5.36.0-4ubuntu2`
 
@@ -4156,15 +4128,9 @@ Licenses: (parsed from: `/usr/share/doc/sed/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sed=4.8-1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sed/sed_4.8-1ubuntu2.dsc' sed_4.8-1ubuntu2.dsc 2217 SHA512:310ccdf0bac73d16c8898fd600acbeceb534a1be53c795fc6f6059eccb431b45ef9ebcde147c150f9fd5e0d33161269f53e191bb26a095b45339a28b1c3381b2
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sed/sed_4.8.orig.tar.xz' sed_4.8.orig.tar.xz 1348048 SHA512:7de25d9bc2981c63321c2223f3fbcab61d7b0df4fcf7d4394b72400b91993e1288d8bf53948ed5fffcf5a98c75265726a68ad4fb98e1d571bf768603a108c1c8
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sed/sed_4.8.orig.tar.xz.asc' sed_4.8.orig.tar.xz.asc 833 SHA512:9b886bdbd18ee2d60608cee3fd2b4193a1b6c3309d887ee05828c14b89b7b515dbf042a9e0ebdd13e6ccfa42e3cd217a408c796d68c4ebedaaa64f795000f095
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sed/sed_4.8-1ubuntu2.debian.tar.xz' sed_4.8-1ubuntu2.debian.tar.xz 60936 SHA512:c4f0c5b3f75acbcb213e78f5696129e83bc721031be3c756150e84b7aa7e725ac0d5afacbe18e91d39bc2b7892986d92e1e21db89601ccf2bccb8ac088482180
-```
 
 ### `dpkg` source package: `sensible-utils=0.0.17`
 
