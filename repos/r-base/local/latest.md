@@ -768,20 +768,13 @@ Licenses: (parsed from: `/usr/share/doc/ed/copyright`)
 - `GPL-3`
 - `GPL-3+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ed=1.18-1
-'http://deb.debian.org/debian/pool/main/e/ed/ed_1.18-1.dsc' ed_1.18-1.dsc 1818 SHA256:852ded3a5723443123d50167081aa06e8d6dd57c8b98686faa497ced81c91a6e
-'http://deb.debian.org/debian/pool/main/e/ed/ed_1.18.orig.tar.gz' ed_1.18.orig.tar.gz 88236 SHA256:652c2b57aa48b2b3a37e6a20229ba879493666a3dd7a338532145e0d335d11f0
-'http://deb.debian.org/debian/pool/main/e/ed/ed_1.18-1.debian.tar.xz' ed_1.18-1.debian.tar.xz 8500 SHA256:65ce9249f5415be523991715e1ca4d3169a4a01e90484b4f84929fe86c0a8c4b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/ed/1.18-1/
 
-- https://sources.debian.net/src/ed/1.18-1/ (for browsing the source)
-- https://sources.debian.net/src/ed/1.18-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/ed/1.18-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `expat=2.5.0-1`
 
@@ -839,20 +832,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris fontconfig=2.13.1-4.5
-'http://deb.debian.org/debian/pool/main/f/fontconfig/fontconfig_2.13.1-4.5.dsc' fontconfig_2.13.1-4.5.dsc 2687 SHA256:2c71a85d457f50aa3e179768a2c448764882be11f0aab944a817b5b076ea096e
-'http://deb.debian.org/debian/pool/main/f/fontconfig/fontconfig_2.13.1.orig.tar.bz2' fontconfig_2.13.1.orig.tar.bz2 1723639 SHA256:f655dd2a986d7aa97e052261b36aa67b0a64989496361eca8d604e6414006741
-'http://deb.debian.org/debian/pool/main/f/fontconfig/fontconfig_2.13.1-4.5.debian.tar.xz' fontconfig_2.13.1-4.5.debian.tar.xz 56244 SHA256:886bcb0f34349a368e886e8d7054c8dbbbe35cfc45cce1a44495dda88af3fad8
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/fontconfig/2.13.1-4.5/
 
-- https://sources.debian.net/src/fontconfig/2.13.1-4.5/ (for browsing the source)
-- https://sources.debian.net/src/fontconfig/2.13.1-4.5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/fontconfig/2.13.1-4.5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `foreign=0.8.83-1`
 
@@ -2998,20 +2984,13 @@ Licenses: (parsed from: `/usr/share/doc/libldap-2.5-0/copyright`)
 - `UMich`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openldap=2.5.13+dfsg-2
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.5.13%2bdfsg-2.dsc' openldap_2.5.13+dfsg-2.dsc 3224 SHA256:304eb2f104e2c1986f18c14c4f3d0ddba6049aa4440f8401c903303c6943ef24
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.5.13%2bdfsg.orig.tar.xz' openldap_2.5.13+dfsg.orig.tar.xz 3727704 SHA256:1d95c400a3eae6730246614ef16883de3dbd1b14b01a1ebe3a9aa1ccad2c13ec
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.5.13%2bdfsg-2.debian.tar.xz' openldap_2.5.13+dfsg-2.debian.tar.xz 164476 SHA256:ca255fdc5ef77c3c9660af701331f19a0fe7dffbd625c5302746d2ace75a9656
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openldap/2.5.13+dfsg-2/
 
-- https://sources.debian.net/src/openldap/2.5.13+dfsg-2/ (for browsing the source)
-- https://sources.debian.net/src/openldap/2.5.13+dfsg-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openldap/2.5.13+dfsg-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=3.0.5-4`
 
@@ -3600,19 +3579,13 @@ Licenses: (parsed from: `/usr/share/doc/sensible-utils/copyright`)
 - `configure`
 - `installsh`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sensible-utils=0.0.17
-'http://deb.debian.org/debian/pool/main/s/sensible-utils/sensible-utils_0.0.17.dsc' sensible-utils_0.0.17.dsc 1733 SHA256:e4754f4763f77d57fdb29093ec78eb0a84bac4e3aa94e4c251f0d00f11a4b231
-'http://deb.debian.org/debian/pool/main/s/sensible-utils/sensible-utils_0.0.17.tar.xz' sensible-utils_0.0.17.tar.xz 66648 SHA256:5edf1f6043eeb88957ffe0b0e8793fbbdf40c8ff83f5bf9b36c9421c2d977626
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/sensible-utils/0.0.17/
 
-- https://sources.debian.net/src/sensible-utils/0.0.17/ (for browsing the source)
-- https://sources.debian.net/src/sensible-utils/0.0.17/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/sensible-utils/0.0.17/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `shadow=1:4.12.3+dfsg1-1`
 
@@ -3647,20 +3620,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-survival/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris survival=3.4-0-1
-'http://deb.debian.org/debian/pool/main/s/survival/survival_3.4-0-1.dsc' survival_3.4-0-1.dsc 1861 SHA256:650cf2d4936b79dfaccb17852d040437e20a6117c7e570c0c49c863a41a52f61
-'http://deb.debian.org/debian/pool/main/s/survival/survival_3.4-0.orig.tar.gz' survival_3.4-0.orig.tar.gz 6203524 SHA256:a48e23d47265fe4d90fb5f0f9fc388906014f8063211980856985db9e89cf812
-'http://deb.debian.org/debian/pool/main/s/survival/survival_3.4-0-1.debian.tar.xz' survival_3.4-0-1.debian.tar.xz 6192 SHA256:17c86a71382449d673169ffa9ecf5c86c88fa0f63416cdcec74a98f60e7cda7d
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/survival/3.4-0-1/
 
-- https://sources.debian.net/src/survival/3.4-0-1/ (for browsing the source)
-- https://sources.debian.net/src/survival/3.4-0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/survival/3.4-0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `systemd=251.6-1`
 
