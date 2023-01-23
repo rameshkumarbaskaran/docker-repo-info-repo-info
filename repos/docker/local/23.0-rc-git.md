@@ -1,18 +1,18 @@
-# `docker:23.0.0-rc.1-git`
+# `docker:23.0.0-rc.3-git`
 
 ## Docker Metadata
 
-- Image ID: `sha256:2d739e592df09040433bae1327535777b0defe4a2d4b4012b057da75d6c9f143`
-- Created: `2023-01-09T23:59:59.189916681Z`
-- Virtual Size: ~ 147.11 Mb  
+- Image ID: `sha256:585748018385fb9f6137894a758d54d7a84950329ddc8fd5093347b578413c60`
+- Created: `2023-01-21T00:20:04.405655389Z`
+- Virtual Size: ~ 149.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_VERSION=23.0.0-rc.1`
-  - `DOCKER_BUILDX_VERSION=0.9.1`
+  - `DOCKER_VERSION=23.0.0-rc.3`
+  - `DOCKER_BUILDX_VERSION=0.10.0`
   - `DOCKER_COMPOSE_VERSION=2.15.1`
   - `DOCKER_TLS_CERTDIR=/certs`
 
@@ -174,16 +174,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `git`
 
 ```console
-git-2.38.2-r0 description:
+git-2.38.3-r1 description:
 Distributed version control system
 
-git-2.38.2-r0 webpage:
+git-2.38.3-r1 webpage:
 https://www.git-scm.com/
 
-git-2.38.2-r0 installed size:
-6060 KiB
+git-2.38.3-r1 installed size:
+6068 KiB
 
-git-2.38.2-r0 license:
+git-2.38.3-r1 license:
 GPL-2.0-or-later
 
 ```
@@ -242,16 +242,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.87.0-r0 description:
+libcurl-7.87.0-r1 description:
 The multiprotocol file transfer library
 
-libcurl-7.87.0-r0 webpage:
+libcurl-7.87.0-r1 webpage:
 https://curl.se/
 
-libcurl-7.87.0-r0 installed size:
+libcurl-7.87.0-r1 installed size:
 540 KiB
 
-libcurl-7.87.0-r0 license:
+libcurl-7.87.0-r1 license:
 curl
 
 ```
