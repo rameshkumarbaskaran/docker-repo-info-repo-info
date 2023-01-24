@@ -1,19 +1,19 @@
-# `haproxy:2.7.1`
+# `haproxy:2.7.2`
 
 ## Docker Metadata
 
-- Image ID: `sha256:4838e8b47a6856cf8230129af525b66421771dd2a72c18877711501861b29517`
-- Created: `2023-01-11T05:27:15.171650007Z`
-- Virtual Size: ~ 102.55 Mb  
+- Image ID: `sha256:f9a9dda01072fb27de01a90c14dda10ff0661644663a2832203dc2849312e31d`
+- Created: `2023-01-21T00:25:16.31223081Z`
+- Virtual Size: ~ 102.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["haproxy","-f","/usr/local/etc/haproxy/haproxy.cfg"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `HAPROXY_VERSION=2.7.1`
-  - `HAPROXY_URL=https://www.haproxy.org/download/2.7/src/haproxy-2.7.1.tar.gz`
-  - `HAPROXY_SHA256=155f3a2fb6dfc1fdfd13d946a260ab8dd2a137714acb818510749e3ffb6b351d`
+  - `HAPROXY_VERSION=2.7.2`
+  - `HAPROXY_URL=https://www.haproxy.org/download/2.7/src/haproxy-2.7.2.tar.gz`
+  - `HAPROXY_SHA256=63bc6ec0302d0ebbe1fa769c19606640de834ac8cb07447b80799cb563dc0f3f`
 
 ## `dpkg` (`.deb`-based packages)
 
