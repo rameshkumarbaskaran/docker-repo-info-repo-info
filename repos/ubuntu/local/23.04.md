@@ -268,13 +268,9 @@ Licenses: (parsed from: `/usr/share/doc/debconf/copyright`)
 
 - `BSD-2-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris debconf=1.5.79ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/d/debconf/debconf_1.5.79ubuntu1.dsc' debconf_1.5.79ubuntu1.dsc 2077 SHA512:0aac451b347a5f6758ab2e468c25ea8061840519412210861a13ced479d5e6bb2a3abd469cb0cf68d80f1f9c4debba28501141055eb2eb1ac1701f800cdd83ba
-'http://archive.ubuntu.com/ubuntu/pool/main/d/debconf/debconf_1.5.79ubuntu1.tar.xz' debconf_1.5.79ubuntu1.tar.xz 570660 SHA512:1bf6de4d1cec7475f64d9bdaa47ef6dcb3d1181bcb3b97076ec60213534aa344ca49d552fdcb5c6fde4d42c364b8242bb4880de0a787493868383e6db36f9e5f
-```
 
 ### `dpkg` source package: `debianutils=5.7-0.4`
 
@@ -909,14 +905,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxcrypt=1:4.4.33-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcrypt/libxcrypt_4.4.33-1.dsc' libxcrypt_4.4.33-1.dsc 1591 SHA512:0f9c4e2af010735b972498e48152daaaac4380aeca23a69bddb14cc4aaf51d990e428f6fd17edf64bd83b6c0fc85967a751f20ff5e7a888a93ba9456087f1733
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcrypt/libxcrypt_4.4.33.orig.tar.xz' libxcrypt_4.4.33.orig.tar.xz 393372 SHA512:67a0a2ce0301976513873a15acfb0d3c36c934bf62c5172a6268f48ce54cba40bbd05a1881a96cfe57c0f69c4816f0fff5a344afd99147b5f6b3fde16006d59e
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcrypt/libxcrypt_4.4.33-1.debian.tar.xz' libxcrypt_4.4.33-1.debian.tar.xz 8148 SHA512:12f8513f45c01d7c6922b90325078a69692195987e14a5922ea2e091d520c849b8df4951d7714b7150286b373167c44268d5d265a44322ad59f52f42cef7f801
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libxcrypt/1:4.4.33-1/
+
 
 ### `dpkg` source package: `libzstd=1.5.2+dfsg-1`
 
@@ -1179,15 +1174,9 @@ Licenses: (parsed from: `/usr/share/doc/perl-base/copyright`)
 - `Unicode`
 - `ZLIB`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris perl=5.36.0-4ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.36.0-4ubuntu2.dsc' perl_5.36.0-4ubuntu2.dsc 2968 SHA512:00fbb2e81f6ee6b892e3eb1553414b8b3fdab17da352b3e6d6e45b2eb35e3370a1e10fd5d9a6c20acb28263f359ecacab5e6ce5a0f96cabae62ada589039568f
-'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.36.0.orig-regen-configure.tar.xz' perl_5.36.0.orig-regen-configure.tar.xz 417784 SHA512:4d16685f569a5b1dea79d607b6d62718111c32efaf5547bb9e1528bd755acf0c8fc74a1cc1f4d68fcb10aef9da7d8fea17a5cc10dabce6efa4721ab45ab03a65
-'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.36.0.orig.tar.xz' perl_5.36.0.orig.tar.xz 13051500 SHA512:6dd6ac2a77566c173c5ab9c238cf555f2c3e592e89abb5600bc23ce1cbd0c349e0233f6417cbbf1f6d0aefc6a734ba491285af0d3dc68a605b658b65c89f1dab
-'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.36.0-4ubuntu2.debian.tar.xz' perl_5.36.0-4ubuntu2.debian.tar.xz 168076 SHA512:4d9ee60d762684b07b3b63d087ca2e3542a535dcd75d873fe63069996211c6605120f9b0cea728cce501e142c23d873832539db77e4b21b26c9d1b49def89064
-```
 
 ### `dpkg` source package: `procps=2:3.3.17-7ubuntu1`
 
@@ -1469,15 +1458,13 @@ Licenses: (parsed from: `/usr/share/doc/liblzma5/copyright`)
 - `permissive-nowarranty`
 - `probably-PD`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris xz-utils=5.2.9-0.0
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xz-utils/xz-utils_5.2.9-0.0.dsc' xz-utils_5.2.9-0.0.dsc 2494 SHA512:eb19634e671b4137d1498b367781df17706e6b75be11f693592015d69fb74b606e0bbac99b5f848aaa3d6ad3029bcfcab4e132df1b25fa9e64e0bc60712307a0
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xz-utils/xz-utils_5.2.9.orig.tar.xz' xz-utils_5.2.9.orig.tar.xz 1290516 SHA512:fa844d63ceedf3b35c38f82532dc3b847543ac37b9e56db774c234af73d1385a300ba1033154689059031f18793d791c8cdb65bbeb031691d837f76e673372a7
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xz-utils/xz-utils_5.2.9.orig.tar.xz.asc' xz-utils_5.2.9.orig.tar.xz.asc 833 SHA512:5e6805b52b959af4414ddcc6cfd82dea13018d1c183fe495a73f49b7034ac23af3e620acfc8dca15636a1519c1c191864f8935e8dca5a0701f8d1489911b7b20
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xz-utils/xz-utils_5.2.9-0.0.debian.tar.xz' xz-utils_5.2.9-0.0.debian.tar.xz 30448 SHA512:db65f8c7b7884878c8bf8a05df9de5bb900c34aa122a831588d88f8e9139fbf55398e68b63d3a050d13137cae9dc7627848cccf59182dad2cb1294dcf10443fa
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/xz-utils/5.2.9-0.0/
+
 
 ### `dpkg` source package: `zlib=1:1.2.11.dfsg-4.1ubuntu1`
 
