@@ -86,8 +86,44 @@
 -	[`perl:5.36.0-threaded`](#perl5360-threaded)
 -	[`perl:5.36.0-threaded-bullseye`](#perl5360-threaded-bullseye)
 -	[`perl:5.36.0-threaded-buster`](#perl5360-threaded-buster)
+-	[`perl:5.37`](#perl537)
+-	[`perl:5.37-bullseye`](#perl537-bullseye)
+-	[`perl:5.37-buster`](#perl537-buster)
+-	[`perl:5.37-slim`](#perl537-slim)
+-	[`perl:5.37-slim-bullseye`](#perl537-slim-bullseye)
+-	[`perl:5.37-slim-buster`](#perl537-slim-buster)
+-	[`perl:5.37-slim-threaded`](#perl537-slim-threaded)
+-	[`perl:5.37-slim-threaded-bullseye`](#perl537-slim-threaded-bullseye)
+-	[`perl:5.37-slim-threaded-buster`](#perl537-slim-threaded-buster)
+-	[`perl:5.37-threaded`](#perl537-threaded)
+-	[`perl:5.37-threaded-bullseye`](#perl537-threaded-bullseye)
+-	[`perl:5.37-threaded-buster`](#perl537-threaded-buster)
+-	[`perl:5.37.8`](#perl5378)
+-	[`perl:5.37.8-bullseye`](#perl5378-bullseye)
+-	[`perl:5.37.8-buster`](#perl5378-buster)
+-	[`perl:5.37.8-slim`](#perl5378-slim)
+-	[`perl:5.37.8-slim-bullseye`](#perl5378-slim-bullseye)
+-	[`perl:5.37.8-slim-buster`](#perl5378-slim-buster)
+-	[`perl:5.37.8-slim-threaded`](#perl5378-slim-threaded)
+-	[`perl:5.37.8-slim-threaded-bullseye`](#perl5378-slim-threaded-bullseye)
+-	[`perl:5.37.8-slim-threaded-buster`](#perl5378-slim-threaded-buster)
+-	[`perl:5.37.8-threaded`](#perl5378-threaded)
+-	[`perl:5.37.8-threaded-bullseye`](#perl5378-threaded-bullseye)
+-	[`perl:5.37.8-threaded-buster`](#perl5378-threaded-buster)
 -	[`perl:bullseye`](#perlbullseye)
 -	[`perl:buster`](#perlbuster)
+-	[`perl:devel`](#perldevel)
+-	[`perl:devel-bullseye`](#perldevel-bullseye)
+-	[`perl:devel-buster`](#perldevel-buster)
+-	[`perl:devel-slim`](#perldevel-slim)
+-	[`perl:devel-slim-bullseye`](#perldevel-slim-bullseye)
+-	[`perl:devel-slim-buster`](#perldevel-slim-buster)
+-	[`perl:devel-slim-threaded`](#perldevel-slim-threaded)
+-	[`perl:devel-slim-threaded-bullseye`](#perldevel-slim-threaded-bullseye)
+-	[`perl:devel-slim-threaded-buster`](#perldevel-slim-threaded-buster)
+-	[`perl:devel-threaded`](#perldevel-threaded)
+-	[`perl:devel-threaded-bullseye`](#perldevel-threaded-bullseye)
+-	[`perl:devel-threaded-buster`](#perldevel-threaded-buster)
 -	[`perl:latest`](#perllatest)
 -	[`perl:slim`](#perlslim)
 -	[`perl:slim-bullseye`](#perlslim-bullseye)
@@ -95,6 +131,18 @@
 -	[`perl:slim-threaded`](#perlslim-threaded)
 -	[`perl:slim-threaded-bullseye`](#perlslim-threaded-bullseye)
 -	[`perl:slim-threaded-buster`](#perlslim-threaded-buster)
+-	[`perl:stable`](#perlstable)
+-	[`perl:stable-bullseye`](#perlstable-bullseye)
+-	[`perl:stable-buster`](#perlstable-buster)
+-	[`perl:stable-slim`](#perlstable-slim)
+-	[`perl:stable-slim-bullseye`](#perlstable-slim-bullseye)
+-	[`perl:stable-slim-buster`](#perlstable-slim-buster)
+-	[`perl:stable-slim-threaded`](#perlstable-slim-threaded)
+-	[`perl:stable-slim-threaded-bullseye`](#perlstable-slim-threaded-bullseye)
+-	[`perl:stable-slim-threaded-buster`](#perlstable-slim-threaded-buster)
+-	[`perl:stable-threaded`](#perlstable-threaded)
+-	[`perl:stable-threaded-bullseye`](#perlstable-threaded-bullseye)
+-	[`perl:stable-threaded-buster`](#perlstable-threaded-buster)
 -	[`perl:threaded`](#perlthreaded)
 -	[`perl:threaded-bullseye`](#perlthreaded-bullseye)
 -	[`perl:threaded-buster`](#perlthreaded-buster)
@@ -40503,6 +40551,102 @@ CMD ["perl5.36.0" "-de0"]
 		Size: 15.6 MB (15640101 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `perl:5.37`
+
+**does not exist** (yet?)
+
+## `perl:5.37-bullseye`
+
+**does not exist** (yet?)
+
+## `perl:5.37-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.37-slim`
+
+**does not exist** (yet?)
+
+## `perl:5.37-slim-bullseye`
+
+**does not exist** (yet?)
+
+## `perl:5.37-slim-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.37-slim-threaded`
+
+**does not exist** (yet?)
+
+## `perl:5.37-slim-threaded-bullseye`
+
+**does not exist** (yet?)
+
+## `perl:5.37-slim-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.37-threaded`
+
+**does not exist** (yet?)
+
+## `perl:5.37-threaded-bullseye`
+
+**does not exist** (yet?)
+
+## `perl:5.37-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.37.8`
+
+**does not exist** (yet?)
+
+## `perl:5.37.8-bullseye`
+
+**does not exist** (yet?)
+
+## `perl:5.37.8-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.37.8-slim`
+
+**does not exist** (yet?)
+
+## `perl:5.37.8-slim-bullseye`
+
+**does not exist** (yet?)
+
+## `perl:5.37.8-slim-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.37.8-slim-threaded`
+
+**does not exist** (yet?)
+
+## `perl:5.37.8-slim-threaded-bullseye`
+
+**does not exist** (yet?)
+
+## `perl:5.37.8-slim-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.37.8-threaded`
+
+**does not exist** (yet?)
+
+## `perl:5.37.8-threaded-bullseye`
+
+**does not exist** (yet?)
+
+## `perl:5.37.8-threaded-buster`
+
+**does not exist** (yet?)
+
 ## `perl:bullseye`
 
 ```console
@@ -41656,6 +41800,54 @@ CMD ["perl5.36.0" "-de0"]
 		Last Modified: Tue, 02 Aug 2022 05:43:49 GMT  
 		Size: 15.6 MB (15596398 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `perl:devel`
+
+**does not exist** (yet?)
+
+## `perl:devel-bullseye`
+
+**does not exist** (yet?)
+
+## `perl:devel-buster`
+
+**does not exist** (yet?)
+
+## `perl:devel-slim`
+
+**does not exist** (yet?)
+
+## `perl:devel-slim-bullseye`
+
+**does not exist** (yet?)
+
+## `perl:devel-slim-buster`
+
+**does not exist** (yet?)
+
+## `perl:devel-slim-threaded`
+
+**does not exist** (yet?)
+
+## `perl:devel-slim-threaded-bullseye`
+
+**does not exist** (yet?)
+
+## `perl:devel-slim-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:devel-threaded`
+
+**does not exist** (yet?)
+
+## `perl:devel-threaded-bullseye`
+
+**does not exist** (yet?)
+
+## `perl:devel-threaded-buster`
+
+**does not exist** (yet?)
 
 ## `perl:latest`
 
@@ -44543,6 +44735,54 @@ CMD ["perl5.36.0" "-de0"]
 		Last Modified: Tue, 02 Aug 2022 05:45:32 GMT  
 		Size: 25.6 MB (25564925 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `perl:stable`
+
+**does not exist** (yet?)
+
+## `perl:stable-bullseye`
+
+**does not exist** (yet?)
+
+## `perl:stable-buster`
+
+**does not exist** (yet?)
+
+## `perl:stable-slim`
+
+**does not exist** (yet?)
+
+## `perl:stable-slim-bullseye`
+
+**does not exist** (yet?)
+
+## `perl:stable-slim-buster`
+
+**does not exist** (yet?)
+
+## `perl:stable-slim-threaded`
+
+**does not exist** (yet?)
+
+## `perl:stable-slim-threaded-bullseye`
+
+**does not exist** (yet?)
+
+## `perl:stable-slim-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:stable-threaded`
+
+**does not exist** (yet?)
+
+## `perl:stable-threaded-bullseye`
+
+**does not exist** (yet?)
+
+## `perl:stable-threaded-buster`
+
+**does not exist** (yet?)
 
 ## `perl:threaded`
 
