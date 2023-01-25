@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:94cf5af19f7b4bc95f08744bf6ad5a778ce371d9859d8c6c286fa01cb141f64a`
-- Created: `2022-12-13T19:29:24.061516971Z`
-- Virtual Size: ~ 466.09 Mb  
+- Image ID: `sha256:94c0367eae077a614ded6d6214594efeb20764e9ae7304251f6de64262243e33`
+- Created: `2023-01-24T23:02:47.235386696Z`
+- Virtual Size: ~ 467.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -15,7 +15,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.17+8`
+  - `JAVA_VERSION=jdk-11.0.18+10`
   - `JETTY_VERSION=10.0.13`
   - `JETTY_HOME=/usr/local/jetty`
   - `JETTY_BASE=/var/lib/jetty`
@@ -284,12 +284,12 @@ $ apt-get source -qq --print-uris coreutils=8.30-3ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.30-3ubuntu2.debian.tar.xz' coreutils_8.30-3ubuntu2.debian.tar.xz 39636 SHA256:98204ef9d94e5c567880cd0245fdb7940eaf7592d6c6830c300ad117628b351f
 ```
 
-### `dpkg` source package: `curl=7.68.0-1ubuntu2.14`
+### `dpkg` source package: `curl=7.68.0-1ubuntu2.15`
 
 Binary Packages:
 
-- `curl=7.68.0-1ubuntu2.14`
-- `libcurl4:amd64=7.68.0-1ubuntu2.14`
+- `curl=7.68.0-1ubuntu2.15`
+- `libcurl4:amd64=7.68.0-1ubuntu2.15`
 
 Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
@@ -300,9 +300,14 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris curl=7.68.0-1ubuntu2.15
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.15.dsc' curl_7.68.0-1ubuntu2.15.dsc 2737 SHA512:26c41b8eac11f5274527ae5b19f1cbaa529a8688f7196cf4dcc42f96a6bd10e236c205a311d2c14a323e44681a3f4ea6fb0d31dfb94f0ffe7add6f9bfdc2cc9f
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0.orig.tar.gz' curl_7.68.0.orig.tar.gz 4096350 SHA512:58b42c08b1cf4cb6e68f8e469d5b5f6298eebe286ba2677ad29e1a7eefd15b8609af54544f4c5a7dadebbd3b23bd77700830f2f60fbea7ae3f2f306e640010b0
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.15.debian.tar.xz' curl_7.68.0-1ubuntu2.15.debian.tar.xz 58376 SHA512:1f20c6fbcb594e6a79af4578029d840e5f054c1bacbed44cd16f6ed420cb6a55f383c09f2b0caf5b1cb3d82aa4ca6aa5dfbe3c1129c6e7511e7065b3738c6b62
+```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-2ubuntu0.1`
 
@@ -1439,14 +1444,9 @@ Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/d
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pam=1.3.1-5ubuntu4.3
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1-5ubuntu4.3.dsc' pam_1.3.1-5ubuntu4.3.dsc 2761 SHA512:314394037f6006a11778f96aaac57c1a9997bc1b2b1c67224a46e670ea1707ae5d00e3c2d7ef42890e13f87d4edac16481050ae412b6092061e5fef27f6a80e4
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1.orig.tar.xz' pam_1.3.1.orig.tar.xz 912332 SHA512:6bc8e2a5b64686f0a23846221c5228c88418ba485b17c53b3a12f91262b5bb73566d6b6a5daa1f63bbae54310aee918b987e44a72ce809b4e7c668f0fadfe08e
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1-5ubuntu4.3.debian.tar.xz' pam_1.3.1-5ubuntu4.3.debian.tar.xz 170884 SHA512:0d10c47ed3aa1a1ef040413a746543c833b9bef971e70586d053d59ac8de2ad480ca69a5ed1c56df5322e793675b2fd8f7e65ddde1b2ee8340bb05f77fea846e
-```
 
 ### `dpkg` source package: `pcre2=10.34-7ubuntu0.1`
 
