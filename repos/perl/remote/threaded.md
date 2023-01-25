@@ -1,7 +1,7 @@
 ## `perl:threaded`
 
 ```console
-$ docker pull perl@sha256:89fb768b407db286e18ad360241a57cc391a6e1822fe02c5dc651534a1fed96d
+$ docker pull perl@sha256:0d280a3549536f67d71dde89b9f09a832f78320db8222a36a6f76db9166eb622
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -358,14 +358,14 @@ CMD ["perl5.36.0" "-de0"]
 ### `perl:threaded` - linux; mips64le
 
 ```console
-$ docker pull perl@sha256:c928f3a1f22554ec05035ea37c82896964d61cf214e6dc85054e4f7866bd0905
+$ docker pull perl@sha256:43da2fbe3bdf724f3dd8500c2cf45d27d4326160fea41f078a265ab9df2e5978
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **315.8 MB (315836809 bytes)**  
+-	Total Size: **315.8 MB (315836634 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2ba520d798460bf3999ebff39b4e1e4cffa0895fd242a1a4ecceba1856a78638`
+-	Image ID: `sha256:d4931a5c4b198760b829a5313af9b0fa72640852b050561c429d3da964173c0d`
 -	Default Command: `["perl5.36.0","-de0"]`
 
 ```dockerfile
@@ -383,15 +383,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercuri
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
 # Thu, 12 Jan 2023 02:37:16 GMT
 LABEL maintainer=Peter Martini <PeterCMartini@GMail.com>, Zak B. Elep <zakame@cpan.org>
-# Thu, 12 Jan 2023 02:37:21 GMT
-COPY file:3744c5cc39cdbdcae10db09a1f0f399005a79f93c237b387a72ff5710cdd458c in /usr/src/perl/ 
-# Thu, 12 Jan 2023 02:37:27 GMT
+# Tue, 24 Jan 2023 19:10:42 GMT
 WORKDIR /usr/src/perl
-# Thu, 12 Jan 2023 03:47:41 GMT
+# Tue, 24 Jan 2023 20:20:33 GMT
 RUN true     && curl -fL https://www.cpan.org/src/5.0/perl-5.36.0.tar.xz -o perl-5.36.0.tar.xz     && echo '0f386dccbee8e26286404b2cca144e1005be65477979beb9b1ba272d4819bcf0 *perl-5.36.0.tar.xz' | sha256sum --strict --check -     && tar --strip-components=1 -xaf perl-5.36.0.tar.xz -C /usr/src/perl     && rm perl-5.36.0.tar.xz     && cat *.patch | patch -p1     && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"     && archBits="$(dpkg-architecture --query DEB_BUILD_ARCH_BITS)"     && archFlag="$([ "$archBits" = '64' ] && echo '-Duse64bitall' || echo '-Duse64bitint')"     && ./Configure -Darchname="$gnuArch" "$archFlag" -Dusethreads -Duseshrplib -Dvendorprefix=/usr/local  -des     && make -j$(nproc)     && TEST_JOBS=$(nproc) make test_harness     && make install     && cd /usr/src     && curl -fLO https://www.cpan.org/authors/id/M/MI/MIYAGAWA/App-cpanminus-1.7046.tar.gz     && echo '3e8c9d9b44a7348f9acc917163dbfc15bd5ea72501492cea3a35b346440ff862 *App-cpanminus-1.7046.tar.gz' | sha256sum --strict --check -     && tar -xzf App-cpanminus-1.7046.tar.gz && cd App-cpanminus-1.7046 && perl bin/cpanm . && cd /root     && cpanm IO::Socket::SSL     && curl -fL https://raw.githubusercontent.com/skaji/cpm/0.997011/cpm -o /usr/local/bin/cpm     && echo '7dee2176a450a8be3a6b9b91dac603a0c3a7e807042626d3fe6c93d843f75610 */usr/local/bin/cpm' | sha256sum --strict --check -     && chmod +x /usr/local/bin/cpm     && true     && rm -fr /root/.cpanm /usr/src/perl /usr/src/App-cpanminus-1.7046* /tmp/*     && cpanm --version && cpm --version
-# Thu, 12 Jan 2023 03:47:47 GMT
+# Tue, 24 Jan 2023 20:20:39 GMT
 WORKDIR /
-# Thu, 12 Jan 2023 03:47:53 GMT
+# Tue, 24 Jan 2023 20:20:45 GMT
 CMD ["perl5.36.0" "-de0"]
 ```
 
@@ -416,13 +414,13 @@ CMD ["perl5.36.0" "-de0"]
 		Last Modified: Wed, 11 Jan 2023 17:45:54 GMT  
 		Size: 179.0 MB (178988636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:12c6bb3e366b3307c889cfae3bd791bb5350aa720e18d07e25319b52208c991d`  
-		Last Modified: Thu, 12 Jan 2023 07:21:05 GMT  
-		Size: 182.0 B  
+	-	`sha256:1ed3ce59b6294564b90302daff16470d97ea7918bcae5c2c0f081ceb1fb78909`  
+		Last Modified: Wed, 25 Jan 2023 01:26:20 GMT  
+		Size: 134.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ea2166def8d8d3f8d9ed9d37bc121d553d11fd04fae912fc2f96cfb3c089eb7d`  
-		Last Modified: Thu, 12 Jan 2023 07:22:36 GMT  
-		Size: 14.5 MB (14511275 bytes)  
+	-	`sha256:5f45914a84421e3e3c0aa12a708d2b145de77aee9acdf762ab5b0a087d2f4989`  
+		Last Modified: Wed, 25 Jan 2023 01:28:00 GMT  
+		Size: 14.5 MB (14511148 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `perl:threaded` - linux; ppc64le
