@@ -1,10 +1,10 @@
-# `eclipse-temurin:17.0.5_8-jdk-jammy`
+# `eclipse-temurin:17.0.6_10-jdk-jammy`
 
 ## Docker Metadata
 
-- Image ID: `sha256:9ef86393bfda539c7b724c5a7bbb8c30ecaa2ff59eda028d672cb0064c18a330`
-- Created: `2022-12-09T01:46:05.876022018Z`
-- Virtual Size: ~ 455.25 Mb  
+- Image ID: `sha256:1e117025f42dec0c918b48814cb91082b6bdcf1b7a88e04e01b082c7fbeaeefa`
+- Created: `2023-01-24T18:46:13.177266196Z`
+- Virtual Size: ~ 455.21 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -14,7 +14,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-17.0.5+8`
+  - `JAVA_VERSION=jdk-17.0.6+10`
 
 ## `dpkg` (`.deb`-based packages)
 
