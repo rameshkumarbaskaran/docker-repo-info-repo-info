@@ -1723,20 +1723,13 @@ Licenses: (parsed from: `/usr/share/doc/libharfbuzz0b/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris harfbuzz=6.0.0-1
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_6.0.0-1.dsc' harfbuzz_6.0.0-1.dsc 2706 SHA256:8d95ddf04ea0130dc7316880c87e8679c988b5d28597575866c30b15f4b03d0b
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_6.0.0.orig.tar.xz' harfbuzz_6.0.0.orig.tar.xz 18952524 SHA256:1d1010a1751d076d5291e433c138502a794d679a7498d1268ee21e2d4a140eb4
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_6.0.0-1.debian.tar.xz' harfbuzz_6.0.0-1.debian.tar.xz 11432 SHA256:874ec148d5d133c85831130345bf6abc2b810af99fa6a51dc903f8510a57fa7f
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/harfbuzz/6.0.0-1/
 
-- https://sources.debian.net/src/harfbuzz/6.0.0-1/ (for browsing the source)
-- https://sources.debian.net/src/harfbuzz/6.0.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/harfbuzz/6.0.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `hicolor-icon-theme=0.17-2`
 
@@ -2183,21 +2176,13 @@ Licenses: (parsed from: `/usr/share/doc/libbsd0/copyright`)
 - `ISC-Original`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libbsd=0.11.7-1
-'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.11.7-1.dsc' libbsd_0.11.7-1.dsc 2308 SHA256:f8627014f4ef55b2b79a4a26aacfa01a0c4fef899922a4c40b6f2dc5f8a7019c
-'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.11.7.orig.tar.xz' libbsd_0.11.7.orig.tar.xz 418508 SHA256:9baa186059ebbf25c06308e9f991fda31f7183c0f24931826d83aa6abd8a0261
-'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.11.7.orig.tar.xz.asc' libbsd_0.11.7.orig.tar.xz.asc 833 SHA256:b470d3fa5ad6948de7a85891e652970828f26eb7057028d57b94fa8644af934a
-'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.11.7-1.debian.tar.xz' libbsd_0.11.7-1.debian.tar.xz 18012 SHA256:8f852a5846f34df63ac56a2e520c2cc9bcd9eb7ecb6f67ecec78438a4c1f6d47
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libbsd/0.11.7-1/
 
-- https://sources.debian.net/src/libbsd/0.11.7-1/ (for browsing the source)
-- https://sources.debian.net/src/libbsd/0.11.7-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libbsd/0.11.7-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libcap-ng=0.8.3-1`
 
@@ -4790,19 +4775,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-defaults=3.11.1-1
-'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.11.1-1.dsc' python3-defaults_3.11.1-1.dsc 2944 SHA256:426a09d1b97b9677430e9414f36824b0b98e2207f14c4451a4d0a53da383bf34
-'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.11.1-1.tar.gz' python3-defaults_3.11.1-1.tar.gz 145485 SHA256:18898e7dc7312102124c16459dc8fcaf6524a1c64d144ae8fcbf383b16f6136f
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3-defaults/3.11.1-1/
 
-- https://sources.debian.net/src/python3-defaults/3.11.1-1/ (for browsing the source)
-- https://sources.debian.net/src/python3-defaults/3.11.1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3-defaults/3.11.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3-stdlib-extensions=3.10.8-1`
 
