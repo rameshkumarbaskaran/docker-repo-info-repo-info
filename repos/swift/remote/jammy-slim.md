@@ -1,7 +1,7 @@
 ## `swift:jammy-slim`
 
 ```console
-$ docker pull swift@sha256:5a13f055abbb1d7e95af0dd23bdda632024d5e7977f1e8d778a0bc16a45f2a52
+$ docker pull swift@sha256:85debd558f74e61853f0cdbe88c8d69b8056b1bce853019d23d9e40ec198a7f8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -66,53 +66,61 @@ RUN set -e;     ARCH_NAME="$(dpkg --print-architecture)";     url=;     case "${
 ### `swift:jammy-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull swift@sha256:fb6abcceb6a875e40f4a344afd5bafcf4ed469159808c376b959d621afffe79d
+$ docker pull swift@sha256:ed09909857ce62912eba66c2a64d0ed2e8e722a37ecc9696c887a2dadd894cdf
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **136.0 MB (135972178 bytes)**  
+-	Total Size: **135.7 MB (135659550 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8fdff1a46da82aa8d724162695040ba6266886f094b2956a7385e4b4dbc81a52`
--	Default Command: `["bash"]`
+-	Image ID: `sha256:3c11098261ce2ced71200fda0323ae4e6cb76fb9ee05b0b51384d648fca93ba2`
+-	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Fri, 09 Dec 2022 01:46:57 GMT
-ADD file:429a55a11d4bcd15647d1316d9debd9ead4b4ab5c0b9146894d07c39aa814290 in / 
-# Fri, 09 Dec 2022 01:46:57 GMT
-CMD ["bash"]
-# Fri, 09 Dec 2022 02:16:10 GMT
+# Thu, 26 Jan 2023 05:05:49 GMT
+ARG RELEASE
+# Thu, 26 Jan 2023 05:05:49 GMT
+ARG LAUNCHPAD_BUILD_ARCH
+# Thu, 26 Jan 2023 05:05:49 GMT
+LABEL org.opencontainers.image.ref.name=ubuntu
+# Thu, 26 Jan 2023 05:05:50 GMT
+LABEL org.opencontainers.image.version=22.04
+# Thu, 26 Jan 2023 05:05:51 GMT
+ADD file:55486a91f732042dd4e81ecfd8457d23e04dcd7dd80a0bb06cc7c44873fac838 in / 
+# Thu, 26 Jan 2023 05:05:51 GMT
+CMD ["/bin/bash"]
+# Tue, 31 Jan 2023 20:21:46 GMT
 LABEL maintainer=Swift Infrastructure <swift-infrastructure@forums.swift.org>
-# Fri, 09 Dec 2022 02:16:10 GMT
+# Tue, 31 Jan 2023 20:21:46 GMT
 LABEL description=Docker Container for the Swift programming language
-# Fri, 09 Dec 2022 02:19:24 GMT
+# Tue, 31 Jan 2023 20:24:44 GMT
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && apt-get -q update &&     apt-get -q install -y     libcurl4     libxml2     tzdata     && rm -r /var/lib/apt/lists/*
-# Fri, 09 Dec 2022 02:19:24 GMT
+# Tue, 31 Jan 2023 20:24:44 GMT
 ARG SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561
-# Fri, 09 Dec 2022 02:19:24 GMT
+# Tue, 31 Jan 2023 20:24:44 GMT
 ARG SWIFT_PLATFORM=ubuntu22.04
-# Thu, 19 Jan 2023 18:49:42 GMT
+# Tue, 31 Jan 2023 20:24:44 GMT
 ARG SWIFT_BRANCH=swift-5.7.3-release
-# Thu, 19 Jan 2023 18:49:42 GMT
+# Tue, 31 Jan 2023 20:24:44 GMT
 ARG SWIFT_VERSION=swift-5.7.3-RELEASE
-# Thu, 19 Jan 2023 18:49:42 GMT
+# Tue, 31 Jan 2023 20:24:44 GMT
 ARG SWIFT_WEBROOT=https://download.swift.org
-# Thu, 19 Jan 2023 18:49:42 GMT
+# Tue, 31 Jan 2023 20:24:45 GMT
 ENV SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561 SWIFT_PLATFORM=ubuntu22.04 SWIFT_BRANCH=swift-5.7.3-release SWIFT_VERSION=swift-5.7.3-RELEASE SWIFT_WEBROOT=https://download.swift.org
-# Thu, 19 Jan 2023 18:50:13 GMT
+# Tue, 31 Jan 2023 20:25:11 GMT
 RUN set -e;     ARCH_NAME="$(dpkg --print-architecture)";     url=;     case "${ARCH_NAME##*-}" in         'amd64')             OS_ARCH_SUFFIX='';             ;;         'arm64')             OS_ARCH_SUFFIX='-aarch64';             ;;         *) echo >&2 "error: unsupported architecture: '$ARCH_NAME'"; exit 1 ;;     esac;     SWIFT_WEBDIR="$SWIFT_WEBROOT/$SWIFT_BRANCH/$(echo $SWIFT_PLATFORM | tr -d .)$OS_ARCH_SUFFIX"     && SWIFT_BIN_URL="$SWIFT_WEBDIR/$SWIFT_VERSION/$SWIFT_VERSION-$SWIFT_PLATFORM$OS_ARCH_SUFFIX.tar.gz"     && SWIFT_SIG_URL="$SWIFT_BIN_URL.sig"     && export DEBIAN_FRONTEND=noninteractive     && apt-get -q update && apt-get -q install -y curl gnupg && rm -rf /var/lib/apt/lists/*     && export GNUPGHOME="$(mktemp -d)"     && curl -fsSL "$SWIFT_BIN_URL" -o swift.tar.gz "$SWIFT_SIG_URL" -o swift.tar.gz.sig     && gpg --batch --quiet --keyserver keyserver.ubuntu.com --recv-keys "$SWIFT_SIGNING_KEY"     && gpg --batch --verify swift.tar.gz.sig swift.tar.gz     && tar -xzf swift.tar.gz --directory / --strip-components=1 $SWIFT_VERSION-$SWIFT_PLATFORM$OS_ARCH_SUFFIX/usr/lib/swift/linux     && chmod -R o+r /usr/lib/swift     && rm -rf "$GNUPGHOME" swift.tar.gz.sig swift.tar.gz     && apt-get purge --auto-remove -y curl gnupg
 ```
 
 -	Layers:
-	-	`sha256:10175de2f0c4f7d306f660ee073bce12b824c8012dd19b3c140aae053fabd1cc`  
-		Last Modified: Thu, 08 Dec 2022 18:50:01 GMT  
-		Size: 28.4 MB (28384475 bytes)  
+	-	`sha256:565cb979c5c01279efcd69c4457a9954801b6be6da65894374260ec92d993891`  
+		Last Modified: Thu, 26 Jan 2023 16:22:40 GMT  
+		Size: 28.4 MB (28384974 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c281e7fba87591a6d615bbd45d84cc901be1febefb8c6d191d04c3f3c9d89551`  
-		Last Modified: Fri, 09 Dec 2022 02:26:53 GMT  
-		Size: 19.0 MB (18997075 bytes)  
+	-	`sha256:ac1bc10550091d5bc84ea7ce9bbde04041d6c7e7ef4aa604533d6fb8ebcb08ce`  
+		Last Modified: Tue, 31 Jan 2023 20:31:36 GMT  
+		Size: 19.0 MB (18997054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5efa58126a10ffb10a0d56efbee9063c62430cb1797b280ea64a51d2ef357ee`  
-		Last Modified: Thu, 19 Jan 2023 18:55:52 GMT  
-		Size: 88.6 MB (88590628 bytes)  
+	-	`sha256:3cdbc9e51fbc885f9dd2662507a14a1f83ce78936d08065c4341336ebe3eb7d9`  
+		Last Modified: Tue, 31 Jan 2023 20:31:43 GMT  
+		Size: 88.3 MB (88277522 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
