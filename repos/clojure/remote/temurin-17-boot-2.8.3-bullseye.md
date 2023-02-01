@@ -1,7 +1,7 @@
 ## `clojure:temurin-17-boot-2.8.3-bullseye`
 
 ```console
-$ docker pull clojure@sha256:3e3924ea09733c82749006717cb024a66cd4602673b2fd26e1f2c6ea8b6185ce
+$ docker pull clojure@sha256:d9f7bb51160f929475238267795253c01612ddb83f83ae38cbfc8c41442862d0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull clojure@sha256:3e3924ea09733c82749006717cb024a66cd4602673b2fd26e1f
 ### `clojure:temurin-17-boot-2.8.3-bullseye` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:8a4584fee4810f1efb8a44706b2642f859f6032d9a0e50f133edec2c46616faf
+$ docker pull clojure@sha256:269f9ea64eb534221d8b18b7c70245abaeda3bb0b67aa55d8c05dae56aea666f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **308.6 MB (308644898 bytes)**  
+-	Total Size: **308.6 MB (308645166 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4e48e65a5ee78c4b2be6ab34915b35238709c42c3f1c568517e751307a8cfd17`
+-	Image ID: `sha256:d4c3ce21705df9573be5cd5ccedd73be7a30ffc1db66d4c10921a9173d34fdc4`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["repl"]`
 
@@ -30,29 +30,29 @@ ADD file:917750a82b29f8f7f88a121017bd9dfeb0fbcc8f0697a009f08b6b58246eff4b in /
 CMD ["bash"]
 # Wed, 11 Jan 2023 03:18:55 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Wed, 25 Jan 2023 00:45:22 GMT
-COPY dir:bb223240e99e5b7e66eb621e33f54e49ced87035f56dd975e567c739be4bfe96 in /opt/java/openjdk 
-# Wed, 25 Jan 2023 00:45:24 GMT
+# Wed, 01 Feb 2023 03:17:31 GMT
+COPY dir:5cf52f938fe415b0022fbccb8cf978562c503c0b8313cc9dedf46c1c4edb35cf in /opt/java/openjdk 
+# Wed, 01 Feb 2023 03:17:33 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 25 Jan 2023 00:45:24 GMT
+# Wed, 01 Feb 2023 03:17:33 GMT
 ENV BOOT_VERSION=2.8.3
-# Wed, 25 Jan 2023 00:45:24 GMT
+# Wed, 01 Feb 2023 03:17:33 GMT
 ENV BOOT_INSTALL=/usr/local/bin/
-# Wed, 25 Jan 2023 00:45:24 GMT
+# Wed, 01 Feb 2023 03:17:33 GMT
 WORKDIR /tmp
-# Wed, 25 Jan 2023 00:45:30 GMT
+# Wed, 01 Feb 2023 03:17:39 GMT
 RUN apt-get update && apt-get install -y make wget && rm -rf /var/lib/apt/lists/* && mkdir -p $BOOT_INSTALL && wget -q https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && echo "Comparing installer checksum..." && sha256sum boot.sh && echo "0ccd697f2027e7e1cd3be3d62721057cbc841585740d0aaa9fbb485d7b1f17c3 *boot.sh" | sha256sum -c - && mv boot.sh $BOOT_INSTALL/boot && chmod 0755 $BOOT_INSTALL/boot && apt-get purge -y --auto-remove wget
-# Wed, 25 Jan 2023 00:45:31 GMT
+# Wed, 01 Feb 2023 03:17:39 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Wed, 25 Jan 2023 00:45:31 GMT
+# Wed, 01 Feb 2023 03:17:39 GMT
 ENV BOOT_AS_ROOT=yes
-# Wed, 25 Jan 2023 00:45:48 GMT
+# Wed, 01 Feb 2023 03:18:04 GMT
 RUN boot
-# Wed, 25 Jan 2023 00:45:48 GMT
+# Wed, 01 Feb 2023 03:18:05 GMT
 COPY file:0282db266eb050a3ad3609149efe2188243cb9f95c0b3e48a312ddef6c6bea02 in /usr/local/bin/entrypoint 
-# Wed, 25 Jan 2023 00:45:48 GMT
+# Wed, 01 Feb 2023 03:18:05 GMT
 ENTRYPOINT ["entrypoint"]
-# Wed, 25 Jan 2023 00:45:48 GMT
+# Wed, 01 Feb 2023 03:18:05 GMT
 CMD ["repl"]
 ```
 
@@ -61,21 +61,21 @@ CMD ["repl"]
 		Last Modified: Wed, 11 Jan 2023 02:38:42 GMT  
 		Size: 55.0 MB (55025206 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:147288dc8989fb24ee233733fb7ef84c2cf5d7be2f0863fe9ea1e153e52a350f`  
-		Last Modified: Wed, 25 Jan 2023 00:57:58 GMT  
-		Size: 192.4 MB (192438164 bytes)  
+	-	`sha256:0d0699e5bbdef14668bbceef793e64bea067346a8ac79edc3b4b14dfee1d1be3`  
+		Last Modified: Wed, 01 Feb 2023 03:33:35 GMT  
+		Size: 192.4 MB (192438145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:117d7a4824bc4d2c9db632d2aed76365b9ff1dff689a3b742f6698a4dfa4f7e5`  
-		Last Modified: Wed, 25 Jan 2023 00:57:43 GMT  
-		Size: 2.4 MB (2360635 bytes)  
+	-	`sha256:23a3c192801029ba27ce2628b6b5f146a6675715a2b4f70d1070fe153d797f8e`  
+		Last Modified: Wed, 01 Feb 2023 03:33:20 GMT  
+		Size: 2.4 MB (2360735 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e93bb362a493d7f7ad065de9e46d29e66ef91b974cbb23e33531a99e71862c91`  
-		Last Modified: Wed, 25 Jan 2023 00:57:47 GMT  
-		Size: 58.8 MB (58820494 bytes)  
+	-	`sha256:05d01d7917d1fb5bd5d2849fd9551d0609efe300aab11696631a78a32e9b55f2`  
+		Last Modified: Wed, 01 Feb 2023 03:33:24 GMT  
+		Size: 58.8 MB (58820680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:003c9ac5587341842c4bdec8eb3f2766052d23da6da598e74968e82a4ce46f03`  
-		Last Modified: Wed, 25 Jan 2023 00:57:43 GMT  
-		Size: 399.0 B  
+	-	`sha256:22369836feaf414fc3cfad532b70ddabcc20bd0104851735d8bdb18059a5d735`  
+		Last Modified: Wed, 01 Feb 2023 03:33:20 GMT  
+		Size: 400.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `clojure:temurin-17-boot-2.8.3-bullseye` - linux; arm64 variant v8
