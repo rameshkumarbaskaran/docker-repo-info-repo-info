@@ -20,7 +20,7 @@
 ## `telegraf:1.23`
 
 ```console
-$ docker pull telegraf@sha256:6c63cf281f7ca8af1bdc70c5c99d49f4310d86b24266dac40fe29cafda1fa80a
+$ docker pull telegraf@sha256:e8c33cae18c11c0b806d6fc4f020043c8819c293294d5cf98946ade7e51b75f9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -32,14 +32,14 @@ $ docker pull telegraf@sha256:6c63cf281f7ca8af1bdc70c5c99d49f4310d86b24266dac40f
 ### `telegraf:1.23` - linux; amd64
 
 ```console
-$ docker pull telegraf@sha256:aa5d1935e41c0ed6f17f2754985c735ea9e4647174f26a29e9b109e5274e9ecc
+$ docker pull telegraf@sha256:6bab415d7543f35b8fcb5e4292a90c931cab16c42b7655513bff8a50042cf4aa
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **131.7 MB (131677749 bytes)**  
+-	Total Size: **131.7 MB (131676588 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a63202b8d60214b980d2f21fa2d59df45898317f0873aef26b099911c75315f9`
+-	Image ID: `sha256:9f452811ec92c205810aff73320ef206829543a368443ae4c7db79c86daf192b`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
@@ -54,19 +54,19 @@ RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
 # Wed, 11 Jan 2023 18:34:59 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors libcap2-bin &&     rm -rf /var/lib/apt/lists/*
-# Wed, 11 Jan 2023 18:35:00 GMT
-RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done
-# Wed, 11 Jan 2023 18:35:01 GMT
+# Wed, 01 Feb 2023 21:42:07 GMT
+RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     for key in         9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done
+# Wed, 01 Feb 2023 21:42:07 GMT
 ENV TELEGRAF_VERSION=1.23.4
-# Wed, 11 Jan 2023 18:35:06 GMT
+# Wed, 01 Feb 2023 21:42:12 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
-# Wed, 11 Jan 2023 18:35:06 GMT
+# Wed, 01 Feb 2023 21:42:12 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Wed, 11 Jan 2023 18:35:06 GMT
+# Wed, 01 Feb 2023 21:42:13 GMT
 COPY file:689e73cc90c23fa6e27f7d087886e186b6baf02bb95756b42136644d4f83a893 in /entrypoint.sh 
-# Wed, 11 Jan 2023 18:35:06 GMT
+# Wed, 01 Feb 2023 21:42:13 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 11 Jan 2023 18:35:06 GMT
+# Wed, 01 Feb 2023 21:42:13 GMT
 CMD ["telegraf"]
 ```
 
@@ -87,16 +87,16 @@ CMD ["telegraf"]
 		Last Modified: Wed, 11 Jan 2023 18:35:48 GMT  
 		Size: 18.8 MB (18759941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b157ae0cf7624cb887be9fcd579ac67f5747186833e41493cfa0570babbf04c6`  
-		Last Modified: Wed, 11 Jan 2023 18:35:45 GMT  
-		Size: 2.9 KB (2901 bytes)  
+	-	`sha256:51ee0af46436a6eec45f9f12f7e9315dd12718a5f42fad5b36ecf37196d46650`  
+		Last Modified: Wed, 01 Feb 2023 21:43:20 GMT  
+		Size: 1.8 KB (1812 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf1ab6c6a4ad72a12c3f97761e11445bff983b87a45407c399c8e894991df315`  
-		Last Modified: Wed, 11 Jan 2023 18:35:52 GMT  
-		Size: 41.8 MB (41849250 bytes)  
+	-	`sha256:15452cc3f6ac2bdf3b6b4f80590e0bb4d176d773f0b2a9711d648b1ed6d239ba`  
+		Last Modified: Wed, 01 Feb 2023 21:43:26 GMT  
+		Size: 41.8 MB (41849178 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb0bd51ade016b00f722c371af3b05dd84e446bc59e6729043a03c9d00f7bc3e`  
-		Last Modified: Wed, 11 Jan 2023 18:35:45 GMT  
+	-	`sha256:a4d4124c855ecdbc37d7b487a8503375459d8213423394b5f2f40ddd105bbbf3`  
+		Last Modified: Wed, 01 Feb 2023 21:43:19 GMT  
 		Size: 344.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -245,7 +245,7 @@ CMD ["telegraf"]
 ## `telegraf:1.23-alpine`
 
 ```console
-$ docker pull telegraf@sha256:deada02a4669f60913770b54e538e7c4ef1f3596b69425a1ae17fec155050d10
+$ docker pull telegraf@sha256:1926cd26e2513a7accae2c8f6d2f529913d8014e9abd0179c7e5bf6e90ef047c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -255,14 +255,14 @@ $ docker pull telegraf@sha256:deada02a4669f60913770b54e538e7c4ef1f3596b69425a1ae
 ### `telegraf:1.23-alpine` - linux; amd64
 
 ```console
-$ docker pull telegraf@sha256:acca0f662ea434da10739c21ee6c94a3af210baab442528013e20b251649a9ae
+$ docker pull telegraf@sha256:9b0df9667fcceac0af01b504652981fb545ea69c830e4401a23b0bb0c74e2405
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **47.8 MB (47790772 bytes)**  
+-	Total Size: **47.8 MB (47790823 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8cb5b879e6101df5e177d87eb1ebf9b5da0c90fab88d3a03479bf6b075bda2ae`
+-	Image ID: `sha256:f32baa5e4356d4cb3dbd13b6f57a6c46e41e16fbcd09427afb97a2611c786e5f`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
@@ -277,15 +277,15 @@ RUN echo 'hosts: files dns' >> /etc/nsswitch.conf
 RUN apk add --no-cache iputils ca-certificates net-snmp-tools procps lm_sensors tzdata su-exec libcap &&     update-ca-certificates
 # Sat, 12 Nov 2022 10:02:41 GMT
 ENV TELEGRAF_VERSION=1.23.4
-# Sat, 12 Nov 2022 10:02:48 GMT
-RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     apk add --no-cache --virtual .build-deps wget gnupg tar &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     gpg --batch --verify telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mkdir -p /usr/src /etc/telegraf &&     tar -C /usr/src -xzf telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mv /usr/src/telegraf*/etc/telegraf/telegraf.conf /etc/telegraf/ &&     mkdir /etc/telegraf/telegraf.d &&     cp -a /usr/src/telegraf*/usr/bin/telegraf /usr/bin/ &&     gpgconf --kill all &&     rm -rf *.tar.gz* /usr/src /root/.gnupg &&     apk del .build-deps &&     addgroup -S telegraf &&     adduser -S telegraf -G telegraf &&     chown -R telegraf:telegraf /etc/telegraf
-# Sat, 12 Nov 2022 10:02:49 GMT
+# Wed, 01 Feb 2023 21:42:23 GMT
+RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     apk add --no-cache --virtual .build-deps wget gnupg tar &&     for key in         9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     gpg --batch --verify telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mkdir -p /usr/src /etc/telegraf &&     tar -C /usr/src -xzf telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mv /usr/src/telegraf*/etc/telegraf/telegraf.conf /etc/telegraf/ &&     mkdir /etc/telegraf/telegraf.d &&     cp -a /usr/src/telegraf*/usr/bin/telegraf /usr/bin/ &&     gpgconf --kill all &&     rm -rf *.tar.gz* /usr/src /root/.gnupg &&     apk del .build-deps &&     addgroup -S telegraf &&     adduser -S telegraf -G telegraf &&     chown -R telegraf:telegraf /etc/telegraf
+# Wed, 01 Feb 2023 21:42:23 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Sat, 12 Nov 2022 10:02:49 GMT
+# Wed, 01 Feb 2023 21:42:23 GMT
 COPY file:f41cb64129e03c46523c3acd2da77376a68d9785d775faf0d359051c20b4f1bf in /entrypoint.sh 
-# Sat, 12 Nov 2022 10:02:49 GMT
+# Wed, 01 Feb 2023 21:42:24 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Sat, 12 Nov 2022 10:02:49 GMT
+# Wed, 01 Feb 2023 21:42:24 GMT
 CMD ["telegraf"]
 ```
 
@@ -302,19 +302,19 @@ CMD ["telegraf"]
 		Last Modified: Sat, 12 Nov 2022 10:03:26 GMT  
 		Size: 3.3 MB (3298059 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e8e702c89f92384b863c431a1780fe1eb6cb2051d840892639c41ab668017ae0`  
-		Last Modified: Sat, 12 Nov 2022 10:03:50 GMT  
-		Size: 41.7 MB (41685831 bytes)  
+	-	`sha256:a89c8bf1101b7f5fe6e4c1f292a4f6f423ad10b4091d0027b11b8d855ecbe889`  
+		Last Modified: Wed, 01 Feb 2023 21:43:41 GMT  
+		Size: 41.7 MB (41685883 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d62792d26ded35216d918492be7c49a9d8bff2da01169e4a3f362fa409cb365`  
-		Last Modified: Sat, 12 Nov 2022 10:03:43 GMT  
-		Size: 328.0 B  
+	-	`sha256:3f1b5ca8e7c11770726e4f893d584288acd1846c0e379f2e46a4cb42d0d473df`  
+		Last Modified: Wed, 01 Feb 2023 21:43:34 GMT  
+		Size: 327.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `telegraf:1.23.4`
 
 ```console
-$ docker pull telegraf@sha256:6c63cf281f7ca8af1bdc70c5c99d49f4310d86b24266dac40fe29cafda1fa80a
+$ docker pull telegraf@sha256:e8c33cae18c11c0b806d6fc4f020043c8819c293294d5cf98946ade7e51b75f9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -326,14 +326,14 @@ $ docker pull telegraf@sha256:6c63cf281f7ca8af1bdc70c5c99d49f4310d86b24266dac40f
 ### `telegraf:1.23.4` - linux; amd64
 
 ```console
-$ docker pull telegraf@sha256:aa5d1935e41c0ed6f17f2754985c735ea9e4647174f26a29e9b109e5274e9ecc
+$ docker pull telegraf@sha256:6bab415d7543f35b8fcb5e4292a90c931cab16c42b7655513bff8a50042cf4aa
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **131.7 MB (131677749 bytes)**  
+-	Total Size: **131.7 MB (131676588 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a63202b8d60214b980d2f21fa2d59df45898317f0873aef26b099911c75315f9`
+-	Image ID: `sha256:9f452811ec92c205810aff73320ef206829543a368443ae4c7db79c86daf192b`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
@@ -348,19 +348,19 @@ RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
 # Wed, 11 Jan 2023 18:34:59 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors libcap2-bin &&     rm -rf /var/lib/apt/lists/*
-# Wed, 11 Jan 2023 18:35:00 GMT
-RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done
-# Wed, 11 Jan 2023 18:35:01 GMT
+# Wed, 01 Feb 2023 21:42:07 GMT
+RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     for key in         9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done
+# Wed, 01 Feb 2023 21:42:07 GMT
 ENV TELEGRAF_VERSION=1.23.4
-# Wed, 11 Jan 2023 18:35:06 GMT
+# Wed, 01 Feb 2023 21:42:12 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
-# Wed, 11 Jan 2023 18:35:06 GMT
+# Wed, 01 Feb 2023 21:42:12 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Wed, 11 Jan 2023 18:35:06 GMT
+# Wed, 01 Feb 2023 21:42:13 GMT
 COPY file:689e73cc90c23fa6e27f7d087886e186b6baf02bb95756b42136644d4f83a893 in /entrypoint.sh 
-# Wed, 11 Jan 2023 18:35:06 GMT
+# Wed, 01 Feb 2023 21:42:13 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 11 Jan 2023 18:35:06 GMT
+# Wed, 01 Feb 2023 21:42:13 GMT
 CMD ["telegraf"]
 ```
 
@@ -381,16 +381,16 @@ CMD ["telegraf"]
 		Last Modified: Wed, 11 Jan 2023 18:35:48 GMT  
 		Size: 18.8 MB (18759941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b157ae0cf7624cb887be9fcd579ac67f5747186833e41493cfa0570babbf04c6`  
-		Last Modified: Wed, 11 Jan 2023 18:35:45 GMT  
-		Size: 2.9 KB (2901 bytes)  
+	-	`sha256:51ee0af46436a6eec45f9f12f7e9315dd12718a5f42fad5b36ecf37196d46650`  
+		Last Modified: Wed, 01 Feb 2023 21:43:20 GMT  
+		Size: 1.8 KB (1812 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf1ab6c6a4ad72a12c3f97761e11445bff983b87a45407c399c8e894991df315`  
-		Last Modified: Wed, 11 Jan 2023 18:35:52 GMT  
-		Size: 41.8 MB (41849250 bytes)  
+	-	`sha256:15452cc3f6ac2bdf3b6b4f80590e0bb4d176d773f0b2a9711d648b1ed6d239ba`  
+		Last Modified: Wed, 01 Feb 2023 21:43:26 GMT  
+		Size: 41.8 MB (41849178 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb0bd51ade016b00f722c371af3b05dd84e446bc59e6729043a03c9d00f7bc3e`  
-		Last Modified: Wed, 11 Jan 2023 18:35:45 GMT  
+	-	`sha256:a4d4124c855ecdbc37d7b487a8503375459d8213423394b5f2f40ddd105bbbf3`  
+		Last Modified: Wed, 01 Feb 2023 21:43:19 GMT  
 		Size: 344.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -539,7 +539,7 @@ CMD ["telegraf"]
 ## `telegraf:1.23.4-alpine`
 
 ```console
-$ docker pull telegraf@sha256:deada02a4669f60913770b54e538e7c4ef1f3596b69425a1ae17fec155050d10
+$ docker pull telegraf@sha256:1926cd26e2513a7accae2c8f6d2f529913d8014e9abd0179c7e5bf6e90ef047c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -549,14 +549,14 @@ $ docker pull telegraf@sha256:deada02a4669f60913770b54e538e7c4ef1f3596b69425a1ae
 ### `telegraf:1.23.4-alpine` - linux; amd64
 
 ```console
-$ docker pull telegraf@sha256:acca0f662ea434da10739c21ee6c94a3af210baab442528013e20b251649a9ae
+$ docker pull telegraf@sha256:9b0df9667fcceac0af01b504652981fb545ea69c830e4401a23b0bb0c74e2405
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **47.8 MB (47790772 bytes)**  
+-	Total Size: **47.8 MB (47790823 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8cb5b879e6101df5e177d87eb1ebf9b5da0c90fab88d3a03479bf6b075bda2ae`
+-	Image ID: `sha256:f32baa5e4356d4cb3dbd13b6f57a6c46e41e16fbcd09427afb97a2611c786e5f`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
@@ -571,15 +571,15 @@ RUN echo 'hosts: files dns' >> /etc/nsswitch.conf
 RUN apk add --no-cache iputils ca-certificates net-snmp-tools procps lm_sensors tzdata su-exec libcap &&     update-ca-certificates
 # Sat, 12 Nov 2022 10:02:41 GMT
 ENV TELEGRAF_VERSION=1.23.4
-# Sat, 12 Nov 2022 10:02:48 GMT
-RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     apk add --no-cache --virtual .build-deps wget gnupg tar &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     gpg --batch --verify telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mkdir -p /usr/src /etc/telegraf &&     tar -C /usr/src -xzf telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mv /usr/src/telegraf*/etc/telegraf/telegraf.conf /etc/telegraf/ &&     mkdir /etc/telegraf/telegraf.d &&     cp -a /usr/src/telegraf*/usr/bin/telegraf /usr/bin/ &&     gpgconf --kill all &&     rm -rf *.tar.gz* /usr/src /root/.gnupg &&     apk del .build-deps &&     addgroup -S telegraf &&     adduser -S telegraf -G telegraf &&     chown -R telegraf:telegraf /etc/telegraf
-# Sat, 12 Nov 2022 10:02:49 GMT
+# Wed, 01 Feb 2023 21:42:23 GMT
+RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     apk add --no-cache --virtual .build-deps wget gnupg tar &&     for key in         9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     gpg --batch --verify telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mkdir -p /usr/src /etc/telegraf &&     tar -C /usr/src -xzf telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mv /usr/src/telegraf*/etc/telegraf/telegraf.conf /etc/telegraf/ &&     mkdir /etc/telegraf/telegraf.d &&     cp -a /usr/src/telegraf*/usr/bin/telegraf /usr/bin/ &&     gpgconf --kill all &&     rm -rf *.tar.gz* /usr/src /root/.gnupg &&     apk del .build-deps &&     addgroup -S telegraf &&     adduser -S telegraf -G telegraf &&     chown -R telegraf:telegraf /etc/telegraf
+# Wed, 01 Feb 2023 21:42:23 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Sat, 12 Nov 2022 10:02:49 GMT
+# Wed, 01 Feb 2023 21:42:23 GMT
 COPY file:f41cb64129e03c46523c3acd2da77376a68d9785d775faf0d359051c20b4f1bf in /entrypoint.sh 
-# Sat, 12 Nov 2022 10:02:49 GMT
+# Wed, 01 Feb 2023 21:42:24 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Sat, 12 Nov 2022 10:02:49 GMT
+# Wed, 01 Feb 2023 21:42:24 GMT
 CMD ["telegraf"]
 ```
 
@@ -596,19 +596,19 @@ CMD ["telegraf"]
 		Last Modified: Sat, 12 Nov 2022 10:03:26 GMT  
 		Size: 3.3 MB (3298059 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e8e702c89f92384b863c431a1780fe1eb6cb2051d840892639c41ab668017ae0`  
-		Last Modified: Sat, 12 Nov 2022 10:03:50 GMT  
-		Size: 41.7 MB (41685831 bytes)  
+	-	`sha256:a89c8bf1101b7f5fe6e4c1f292a4f6f423ad10b4091d0027b11b8d855ecbe889`  
+		Last Modified: Wed, 01 Feb 2023 21:43:41 GMT  
+		Size: 41.7 MB (41685883 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d62792d26ded35216d918492be7c49a9d8bff2da01169e4a3f362fa409cb365`  
-		Last Modified: Sat, 12 Nov 2022 10:03:43 GMT  
-		Size: 328.0 B  
+	-	`sha256:3f1b5ca8e7c11770726e4f893d584288acd1846c0e379f2e46a4cb42d0d473df`  
+		Last Modified: Wed, 01 Feb 2023 21:43:34 GMT  
+		Size: 327.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `telegraf:1.24`
 
 ```console
-$ docker pull telegraf@sha256:d765f654029ec2eae398edbae4601e852b9fd2054cde0f52f2481effdf9dcb62
+$ docker pull telegraf@sha256:126a6ddffbe802307dc3b58a857efa0ec865bb01389ff3e6865507c511ca8c07
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -620,14 +620,14 @@ $ docker pull telegraf@sha256:d765f654029ec2eae398edbae4601e852b9fd2054cde0f52f2
 ### `telegraf:1.24` - linux; amd64
 
 ```console
-$ docker pull telegraf@sha256:2b08363bc27d797a6df2b546d15e958f44984dad8fe6a11384a549bfd734b342
+$ docker pull telegraf@sha256:a07ae8ba466e1e82f4f03df7355f7b3b4bb1ad7c31c268cd072f389ba1362c23
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **134.3 MB (134295903 bytes)**  
+-	Total Size: **134.3 MB (134294834 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ca6d2cab87fa3d9a84af649442ef21a2daf2fa6381fcbf1aecf45459aa4654f1`
+-	Image ID: `sha256:2b17ac425ccbff4b814804e71b7816b1b12c4c86de81a3f9330dde6fa28ae3d1`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
@@ -642,19 +642,19 @@ RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
 # Wed, 11 Jan 2023 18:34:59 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors libcap2-bin &&     rm -rf /var/lib/apt/lists/*
-# Wed, 11 Jan 2023 18:35:00 GMT
-RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done
-# Wed, 11 Jan 2023 18:35:11 GMT
+# Wed, 01 Feb 2023 21:42:07 GMT
+RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     for key in         9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done
+# Wed, 01 Feb 2023 21:42:26 GMT
 ENV TELEGRAF_VERSION=1.24.4
-# Wed, 11 Jan 2023 18:35:15 GMT
+# Wed, 01 Feb 2023 21:42:29 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
-# Wed, 11 Jan 2023 18:35:16 GMT
+# Wed, 01 Feb 2023 21:42:30 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Wed, 11 Jan 2023 18:35:16 GMT
+# Wed, 01 Feb 2023 21:42:30 GMT
 COPY file:689e73cc90c23fa6e27f7d087886e186b6baf02bb95756b42136644d4f83a893 in /entrypoint.sh 
-# Wed, 11 Jan 2023 18:35:16 GMT
+# Wed, 01 Feb 2023 21:42:30 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 11 Jan 2023 18:35:16 GMT
+# Wed, 01 Feb 2023 21:42:30 GMT
 CMD ["telegraf"]
 ```
 
@@ -675,16 +675,16 @@ CMD ["telegraf"]
 		Last Modified: Wed, 11 Jan 2023 18:35:48 GMT  
 		Size: 18.8 MB (18759941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b157ae0cf7624cb887be9fcd579ac67f5747186833e41493cfa0570babbf04c6`  
-		Last Modified: Wed, 11 Jan 2023 18:35:45 GMT  
-		Size: 2.9 KB (2901 bytes)  
+	-	`sha256:51ee0af46436a6eec45f9f12f7e9315dd12718a5f42fad5b36ecf37196d46650`  
+		Last Modified: Wed, 01 Feb 2023 21:43:20 GMT  
+		Size: 1.8 KB (1812 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e48a1388ffe456a1857d49c267846e5cfc28e68e6a395df51b3487fe7c27de6`  
-		Last Modified: Wed, 11 Jan 2023 18:36:08 GMT  
-		Size: 44.5 MB (44467406 bytes)  
+	-	`sha256:45dc04407ed9d602eb62d24a42d0ed48423b25cbb6e36be9aa817aab5c8a5c46`  
+		Last Modified: Wed, 01 Feb 2023 21:43:56 GMT  
+		Size: 44.5 MB (44467426 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e5336abf6280bf3603da6d2d3ce2f71b392d8c88f5860bc4cf282046a8e3801`  
-		Last Modified: Wed, 11 Jan 2023 18:36:01 GMT  
+	-	`sha256:ca7e9b26774cd34e041d7a1d82cf9dc967ebc4b8cf4cec4d4c98ad94638c99e6`  
+		Last Modified: Wed, 01 Feb 2023 21:43:49 GMT  
 		Size: 342.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -833,7 +833,7 @@ CMD ["telegraf"]
 ## `telegraf:1.24-alpine`
 
 ```console
-$ docker pull telegraf@sha256:931837fcc2fffee2e4c49a26d7f5d1661f1b9110f48e0a88487359480b997acb
+$ docker pull telegraf@sha256:02f7d3ef3ec96fb316c46ef8d9edffda3ef9e1a1674064d692405a3a26466267
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -843,14 +843,14 @@ $ docker pull telegraf@sha256:931837fcc2fffee2e4c49a26d7f5d1661f1b9110f48e0a8848
 ### `telegraf:1.24-alpine` - linux; amd64
 
 ```console
-$ docker pull telegraf@sha256:a9ced3bb7e97d9934af64190a43e4bc3070ac4de3eb78d7436f26bfca8393b75
+$ docker pull telegraf@sha256:2b78bb229fea92cbf8d5de4a73fe57786d4c4bf081728782d2c198c750524564
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **50.4 MB (50402774 bytes)**  
+-	Total Size: **50.4 MB (50402771 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d62aa8f8aab76d62ea53a6ea5df86b36262fc8aa85199d59b8df57070168216b`
+-	Image ID: `sha256:be46e026466d0af78f6c9e4f2b822855db451217c037d63684c71c34e80bcc27`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
@@ -865,15 +865,15 @@ RUN echo 'hosts: files dns' >> /etc/nsswitch.conf
 RUN apk add --no-cache iputils ca-certificates net-snmp-tools procps lm_sensors tzdata su-exec libcap &&     update-ca-certificates
 # Tue, 29 Nov 2022 21:43:37 GMT
 ENV TELEGRAF_VERSION=1.24.4
-# Tue, 29 Nov 2022 21:43:43 GMT
-RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     apk add --no-cache --virtual .build-deps wget gnupg tar &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     gpg --batch --verify telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mkdir -p /usr/src /etc/telegraf &&     tar -C /usr/src -xzf telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mv /usr/src/telegraf*/etc/telegraf/telegraf.conf /etc/telegraf/ &&     mkdir /etc/telegraf/telegraf.d &&     cp -a /usr/src/telegraf*/usr/bin/telegraf /usr/bin/ &&     gpgconf --kill all &&     rm -rf *.tar.gz* /usr/src /root/.gnupg &&     apk del .build-deps &&     addgroup -S telegraf &&     adduser -S telegraf -G telegraf &&     chown -R telegraf:telegraf /etc/telegraf
-# Tue, 29 Nov 2022 21:43:43 GMT
+# Wed, 01 Feb 2023 21:42:39 GMT
+RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     apk add --no-cache --virtual .build-deps wget gnupg tar &&     for key in         9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     gpg --batch --verify telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mkdir -p /usr/src /etc/telegraf &&     tar -C /usr/src -xzf telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mv /usr/src/telegraf*/etc/telegraf/telegraf.conf /etc/telegraf/ &&     mkdir /etc/telegraf/telegraf.d &&     cp -a /usr/src/telegraf*/usr/bin/telegraf /usr/bin/ &&     gpgconf --kill all &&     rm -rf *.tar.gz* /usr/src /root/.gnupg &&     apk del .build-deps &&     addgroup -S telegraf &&     adduser -S telegraf -G telegraf &&     chown -R telegraf:telegraf /etc/telegraf
+# Wed, 01 Feb 2023 21:42:39 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Tue, 29 Nov 2022 21:43:43 GMT
+# Wed, 01 Feb 2023 21:42:39 GMT
 COPY file:f41cb64129e03c46523c3acd2da77376a68d9785d775faf0d359051c20b4f1bf in /entrypoint.sh 
-# Tue, 29 Nov 2022 21:43:43 GMT
+# Wed, 01 Feb 2023 21:42:40 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Tue, 29 Nov 2022 21:43:43 GMT
+# Wed, 01 Feb 2023 21:42:40 GMT
 CMD ["telegraf"]
 ```
 
@@ -890,19 +890,19 @@ CMD ["telegraf"]
 		Last Modified: Sat, 12 Nov 2022 10:03:26 GMT  
 		Size: 3.3 MB (3298059 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2742b2df39f6a27cbf7a4ad7f41349ba8273b8d75e3e353ee528d2318b420621`  
-		Last Modified: Tue, 29 Nov 2022 21:44:33 GMT  
-		Size: 44.3 MB (44297833 bytes)  
+	-	`sha256:f65ea668ec7df7f50f53a7856922aa0885ea15b233b2a8272bd4fbb0375639b1`  
+		Last Modified: Wed, 01 Feb 2023 21:44:12 GMT  
+		Size: 44.3 MB (44297831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c12c991a997bd8392e8ad217b7f28e72804f920abefa588ed594646b7facdea`  
-		Last Modified: Tue, 29 Nov 2022 21:44:25 GMT  
-		Size: 328.0 B  
+	-	`sha256:266f21d86884f435a855689439601e152c3345dfb9d9e97d49dfebd93cc82c26`  
+		Last Modified: Wed, 01 Feb 2023 21:44:04 GMT  
+		Size: 327.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `telegraf:1.24.4`
 
 ```console
-$ docker pull telegraf@sha256:d765f654029ec2eae398edbae4601e852b9fd2054cde0f52f2481effdf9dcb62
+$ docker pull telegraf@sha256:126a6ddffbe802307dc3b58a857efa0ec865bb01389ff3e6865507c511ca8c07
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -914,14 +914,14 @@ $ docker pull telegraf@sha256:d765f654029ec2eae398edbae4601e852b9fd2054cde0f52f2
 ### `telegraf:1.24.4` - linux; amd64
 
 ```console
-$ docker pull telegraf@sha256:2b08363bc27d797a6df2b546d15e958f44984dad8fe6a11384a549bfd734b342
+$ docker pull telegraf@sha256:a07ae8ba466e1e82f4f03df7355f7b3b4bb1ad7c31c268cd072f389ba1362c23
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **134.3 MB (134295903 bytes)**  
+-	Total Size: **134.3 MB (134294834 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ca6d2cab87fa3d9a84af649442ef21a2daf2fa6381fcbf1aecf45459aa4654f1`
+-	Image ID: `sha256:2b17ac425ccbff4b814804e71b7816b1b12c4c86de81a3f9330dde6fa28ae3d1`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
@@ -936,19 +936,19 @@ RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
 # Wed, 11 Jan 2023 18:34:59 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors libcap2-bin &&     rm -rf /var/lib/apt/lists/*
-# Wed, 11 Jan 2023 18:35:00 GMT
-RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done
-# Wed, 11 Jan 2023 18:35:11 GMT
+# Wed, 01 Feb 2023 21:42:07 GMT
+RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     for key in         9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done
+# Wed, 01 Feb 2023 21:42:26 GMT
 ENV TELEGRAF_VERSION=1.24.4
-# Wed, 11 Jan 2023 18:35:15 GMT
+# Wed, 01 Feb 2023 21:42:29 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
-# Wed, 11 Jan 2023 18:35:16 GMT
+# Wed, 01 Feb 2023 21:42:30 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Wed, 11 Jan 2023 18:35:16 GMT
+# Wed, 01 Feb 2023 21:42:30 GMT
 COPY file:689e73cc90c23fa6e27f7d087886e186b6baf02bb95756b42136644d4f83a893 in /entrypoint.sh 
-# Wed, 11 Jan 2023 18:35:16 GMT
+# Wed, 01 Feb 2023 21:42:30 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 11 Jan 2023 18:35:16 GMT
+# Wed, 01 Feb 2023 21:42:30 GMT
 CMD ["telegraf"]
 ```
 
@@ -969,16 +969,16 @@ CMD ["telegraf"]
 		Last Modified: Wed, 11 Jan 2023 18:35:48 GMT  
 		Size: 18.8 MB (18759941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b157ae0cf7624cb887be9fcd579ac67f5747186833e41493cfa0570babbf04c6`  
-		Last Modified: Wed, 11 Jan 2023 18:35:45 GMT  
-		Size: 2.9 KB (2901 bytes)  
+	-	`sha256:51ee0af46436a6eec45f9f12f7e9315dd12718a5f42fad5b36ecf37196d46650`  
+		Last Modified: Wed, 01 Feb 2023 21:43:20 GMT  
+		Size: 1.8 KB (1812 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e48a1388ffe456a1857d49c267846e5cfc28e68e6a395df51b3487fe7c27de6`  
-		Last Modified: Wed, 11 Jan 2023 18:36:08 GMT  
-		Size: 44.5 MB (44467406 bytes)  
+	-	`sha256:45dc04407ed9d602eb62d24a42d0ed48423b25cbb6e36be9aa817aab5c8a5c46`  
+		Last Modified: Wed, 01 Feb 2023 21:43:56 GMT  
+		Size: 44.5 MB (44467426 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e5336abf6280bf3603da6d2d3ce2f71b392d8c88f5860bc4cf282046a8e3801`  
-		Last Modified: Wed, 11 Jan 2023 18:36:01 GMT  
+	-	`sha256:ca7e9b26774cd34e041d7a1d82cf9dc967ebc4b8cf4cec4d4c98ad94638c99e6`  
+		Last Modified: Wed, 01 Feb 2023 21:43:49 GMT  
 		Size: 342.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -1127,7 +1127,7 @@ CMD ["telegraf"]
 ## `telegraf:1.24.4-alpine`
 
 ```console
-$ docker pull telegraf@sha256:931837fcc2fffee2e4c49a26d7f5d1661f1b9110f48e0a88487359480b997acb
+$ docker pull telegraf@sha256:02f7d3ef3ec96fb316c46ef8d9edffda3ef9e1a1674064d692405a3a26466267
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1137,14 +1137,14 @@ $ docker pull telegraf@sha256:931837fcc2fffee2e4c49a26d7f5d1661f1b9110f48e0a8848
 ### `telegraf:1.24.4-alpine` - linux; amd64
 
 ```console
-$ docker pull telegraf@sha256:a9ced3bb7e97d9934af64190a43e4bc3070ac4de3eb78d7436f26bfca8393b75
+$ docker pull telegraf@sha256:2b78bb229fea92cbf8d5de4a73fe57786d4c4bf081728782d2c198c750524564
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **50.4 MB (50402774 bytes)**  
+-	Total Size: **50.4 MB (50402771 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d62aa8f8aab76d62ea53a6ea5df86b36262fc8aa85199d59b8df57070168216b`
+-	Image ID: `sha256:be46e026466d0af78f6c9e4f2b822855db451217c037d63684c71c34e80bcc27`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
@@ -1159,15 +1159,15 @@ RUN echo 'hosts: files dns' >> /etc/nsswitch.conf
 RUN apk add --no-cache iputils ca-certificates net-snmp-tools procps lm_sensors tzdata su-exec libcap &&     update-ca-certificates
 # Tue, 29 Nov 2022 21:43:37 GMT
 ENV TELEGRAF_VERSION=1.24.4
-# Tue, 29 Nov 2022 21:43:43 GMT
-RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     apk add --no-cache --virtual .build-deps wget gnupg tar &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     gpg --batch --verify telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mkdir -p /usr/src /etc/telegraf &&     tar -C /usr/src -xzf telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mv /usr/src/telegraf*/etc/telegraf/telegraf.conf /etc/telegraf/ &&     mkdir /etc/telegraf/telegraf.d &&     cp -a /usr/src/telegraf*/usr/bin/telegraf /usr/bin/ &&     gpgconf --kill all &&     rm -rf *.tar.gz* /usr/src /root/.gnupg &&     apk del .build-deps &&     addgroup -S telegraf &&     adduser -S telegraf -G telegraf &&     chown -R telegraf:telegraf /etc/telegraf
-# Tue, 29 Nov 2022 21:43:43 GMT
+# Wed, 01 Feb 2023 21:42:39 GMT
+RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     apk add --no-cache --virtual .build-deps wget gnupg tar &&     for key in         9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     gpg --batch --verify telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mkdir -p /usr/src /etc/telegraf &&     tar -C /usr/src -xzf telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mv /usr/src/telegraf*/etc/telegraf/telegraf.conf /etc/telegraf/ &&     mkdir /etc/telegraf/telegraf.d &&     cp -a /usr/src/telegraf*/usr/bin/telegraf /usr/bin/ &&     gpgconf --kill all &&     rm -rf *.tar.gz* /usr/src /root/.gnupg &&     apk del .build-deps &&     addgroup -S telegraf &&     adduser -S telegraf -G telegraf &&     chown -R telegraf:telegraf /etc/telegraf
+# Wed, 01 Feb 2023 21:42:39 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Tue, 29 Nov 2022 21:43:43 GMT
+# Wed, 01 Feb 2023 21:42:39 GMT
 COPY file:f41cb64129e03c46523c3acd2da77376a68d9785d775faf0d359051c20b4f1bf in /entrypoint.sh 
-# Tue, 29 Nov 2022 21:43:43 GMT
+# Wed, 01 Feb 2023 21:42:40 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Tue, 29 Nov 2022 21:43:43 GMT
+# Wed, 01 Feb 2023 21:42:40 GMT
 CMD ["telegraf"]
 ```
 
@@ -1184,19 +1184,19 @@ CMD ["telegraf"]
 		Last Modified: Sat, 12 Nov 2022 10:03:26 GMT  
 		Size: 3.3 MB (3298059 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2742b2df39f6a27cbf7a4ad7f41349ba8273b8d75e3e353ee528d2318b420621`  
-		Last Modified: Tue, 29 Nov 2022 21:44:33 GMT  
-		Size: 44.3 MB (44297833 bytes)  
+	-	`sha256:f65ea668ec7df7f50f53a7856922aa0885ea15b233b2a8272bd4fbb0375639b1`  
+		Last Modified: Wed, 01 Feb 2023 21:44:12 GMT  
+		Size: 44.3 MB (44297831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c12c991a997bd8392e8ad217b7f28e72804f920abefa588ed594646b7facdea`  
-		Last Modified: Tue, 29 Nov 2022 21:44:25 GMT  
-		Size: 328.0 B  
+	-	`sha256:266f21d86884f435a855689439601e152c3345dfb9d9e97d49dfebd93cc82c26`  
+		Last Modified: Wed, 01 Feb 2023 21:44:04 GMT  
+		Size: 327.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `telegraf:1.25`
 
 ```console
-$ docker pull telegraf@sha256:c240200154b41c42aed1e112a3e6c91024c6234e2997e0cf46f70b50e17ce0dc
+$ docker pull telegraf@sha256:c5f5595c6d84a0e910b893a443589fc7305bbc9cdf0e0c5aab4765d4c43d3a93
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1208,14 +1208,14 @@ $ docker pull telegraf@sha256:c240200154b41c42aed1e112a3e6c91024c6234e2997e0cf46
 ### `telegraf:1.25` - linux; amd64
 
 ```console
-$ docker pull telegraf@sha256:04a396cd8674d98edbefcf3c39beccc2dff47d9da4a149ff240d79e92f7ee539
+$ docker pull telegraf@sha256:31a3b9a2ee9b7bad1a71dab33a2a5f0acf9997d2d1c2e3553f3cd407dd80730d
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **135.9 MB (135928195 bytes)**  
+-	Total Size: **136.2 MB (136219479 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b129b91456c3f2e72beb402a19a4774cd63454dad166fcc792c70bf5af72b43b`
+-	Image ID: `sha256:af027acb9d759d245f1a7f07dac22b2f82a59ea9de7bfde58e26c00dc5eea88c`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
@@ -1230,19 +1230,19 @@ RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
 # Wed, 11 Jan 2023 18:34:59 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors libcap2-bin &&     rm -rf /var/lib/apt/lists/*
-# Wed, 11 Jan 2023 18:35:00 GMT
-RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done
-# Wed, 11 Jan 2023 18:35:20 GMT
-ENV TELEGRAF_VERSION=1.25.0
-# Wed, 11 Jan 2023 18:35:24 GMT
+# Wed, 01 Feb 2023 21:42:07 GMT
+RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     for key in         9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done
+# Wed, 01 Feb 2023 21:42:43 GMT
+ENV TELEGRAF_VERSION=1.25.1
+# Wed, 01 Feb 2023 21:42:48 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
-# Wed, 11 Jan 2023 18:35:25 GMT
+# Wed, 01 Feb 2023 21:42:48 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Wed, 11 Jan 2023 18:35:25 GMT
+# Wed, 01 Feb 2023 21:42:48 GMT
 COPY file:689e73cc90c23fa6e27f7d087886e186b6baf02bb95756b42136644d4f83a893 in /entrypoint.sh 
-# Wed, 11 Jan 2023 18:35:25 GMT
+# Wed, 01 Feb 2023 21:42:48 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 11 Jan 2023 18:35:25 GMT
+# Wed, 01 Feb 2023 21:42:49 GMT
 CMD ["telegraf"]
 ```
 
@@ -1263,17 +1263,17 @@ CMD ["telegraf"]
 		Last Modified: Wed, 11 Jan 2023 18:35:48 GMT  
 		Size: 18.8 MB (18759941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b157ae0cf7624cb887be9fcd579ac67f5747186833e41493cfa0570babbf04c6`  
-		Last Modified: Wed, 11 Jan 2023 18:35:45 GMT  
-		Size: 2.9 KB (2901 bytes)  
+	-	`sha256:51ee0af46436a6eec45f9f12f7e9315dd12718a5f42fad5b36ecf37196d46650`  
+		Last Modified: Wed, 01 Feb 2023 21:43:20 GMT  
+		Size: 1.8 KB (1812 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb71199dba8fd92431d8168d6fdd0c8c42d9184399cb162d54b84eac1df4e44b`  
-		Last Modified: Wed, 11 Jan 2023 18:36:25 GMT  
-		Size: 46.1 MB (46099695 bytes)  
+	-	`sha256:acac3f9c54d0497efb2b9cc91f6a4939e7b1b26a3caedfcbed8a19220c8697b5`  
+		Last Modified: Wed, 01 Feb 2023 21:44:27 GMT  
+		Size: 46.4 MB (46392069 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:75913725347278063c4a8bfd072ec83be5a2de52bcc42c81eb3516f2767f1f39`  
-		Last Modified: Wed, 11 Jan 2023 18:36:17 GMT  
-		Size: 345.0 B  
+	-	`sha256:a8c43f5d19642617ab1b624150ee8290f4583ff27f692232526cc9736c4df73f`  
+		Last Modified: Wed, 01 Feb 2023 21:44:20 GMT  
+		Size: 344.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `telegraf:1.25` - linux; arm variant v7
@@ -1421,7 +1421,7 @@ CMD ["telegraf"]
 ## `telegraf:1.25-alpine`
 
 ```console
-$ docker pull telegraf@sha256:f4dff8c2c490d8a14dc84f3fea20b8e74e3f48b4675b727790ccccc59ea986d7
+$ docker pull telegraf@sha256:d57e21d98c6b025a82b25766503efdb2aa16027611343cc1194b4003bdcb9c7d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1431,14 +1431,14 @@ $ docker pull telegraf@sha256:f4dff8c2c490d8a14dc84f3fea20b8e74e3f48b4675b727790
 ### `telegraf:1.25-alpine` - linux; amd64
 
 ```console
-$ docker pull telegraf@sha256:43f604bf461e7b32b89755ed10ad1c62027527dbef2a5cf0832222a8bb638ce8
+$ docker pull telegraf@sha256:15427dda77b98c6ec6a82f41f00f69feea4b2458e233e53f022a0c26d8276622
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **52.0 MB (52035696 bytes)**  
+-	Total Size: **52.3 MB (52333357 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fdd5a8721822dbe61765955a40c0cdf3c3848aabe92c643cf1d0625eee65521a`
+-	Image ID: `sha256:e68b84e6353ceb6b229600fb542b87a36b435a4a178a5930bd5114535e67ea45`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
@@ -1451,17 +1451,17 @@ CMD ["/bin/sh"]
 RUN echo 'hosts: files dns' >> /etc/nsswitch.conf
 # Sat, 12 Nov 2022 10:02:29 GMT
 RUN apk add --no-cache iputils ca-certificates net-snmp-tools procps lm_sensors tzdata su-exec libcap &&     update-ca-certificates
-# Mon, 12 Dec 2022 22:20:33 GMT
-ENV TELEGRAF_VERSION=1.25.0
-# Mon, 12 Dec 2022 22:20:39 GMT
-RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     apk add --no-cache --virtual .build-deps wget gnupg tar &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     gpg --batch --verify telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mkdir -p /usr/src /etc/telegraf &&     tar -C /usr/src -xzf telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mv /usr/src/telegraf*/etc/telegraf/telegraf.conf /etc/telegraf/ &&     mkdir /etc/telegraf/telegraf.d &&     cp -a /usr/src/telegraf*/usr/bin/telegraf /usr/bin/ &&     gpgconf --kill all &&     rm -rf *.tar.gz* /usr/src /root/.gnupg &&     apk del .build-deps &&     addgroup -S telegraf &&     adduser -S telegraf -G telegraf &&     chown -R telegraf:telegraf /etc/telegraf
-# Mon, 12 Dec 2022 22:20:39 GMT
+# Wed, 01 Feb 2023 21:42:52 GMT
+ENV TELEGRAF_VERSION=1.25.1
+# Wed, 01 Feb 2023 21:42:58 GMT
+RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     apk add --no-cache --virtual .build-deps wget gnupg tar &&     for key in         9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     gpg --batch --verify telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mkdir -p /usr/src /etc/telegraf &&     tar -C /usr/src -xzf telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mv /usr/src/telegraf*/etc/telegraf/telegraf.conf /etc/telegraf/ &&     mkdir /etc/telegraf/telegraf.d &&     cp -a /usr/src/telegraf*/usr/bin/telegraf /usr/bin/ &&     gpgconf --kill all &&     rm -rf *.tar.gz* /usr/src /root/.gnupg &&     apk del .build-deps &&     addgroup -S telegraf &&     adduser -S telegraf -G telegraf &&     chown -R telegraf:telegraf /etc/telegraf
+# Wed, 01 Feb 2023 21:42:58 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Mon, 12 Dec 2022 22:20:39 GMT
+# Wed, 01 Feb 2023 21:42:58 GMT
 COPY file:f41cb64129e03c46523c3acd2da77376a68d9785d775faf0d359051c20b4f1bf in /entrypoint.sh 
-# Mon, 12 Dec 2022 22:20:39 GMT
+# Wed, 01 Feb 2023 21:42:58 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Mon, 12 Dec 2022 22:20:39 GMT
+# Wed, 01 Feb 2023 21:42:58 GMT
 CMD ["telegraf"]
 ```
 
@@ -1478,25 +1478,97 @@ CMD ["telegraf"]
 		Last Modified: Sat, 12 Nov 2022 10:03:26 GMT  
 		Size: 3.3 MB (3298059 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0715fee794de076c344b92b63bd5d28e06b518b949249dbfc4034a6bca4b97a`  
-		Last Modified: Mon, 12 Dec 2022 22:21:27 GMT  
-		Size: 45.9 MB (45930754 bytes)  
+	-	`sha256:f8e7285372a06993b2631e1ec788fb2a4fcb5ed08aaf906d133269089f4a16dd`  
+		Last Modified: Wed, 01 Feb 2023 21:44:46 GMT  
+		Size: 46.2 MB (46228417 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8869fdddd72794ee2ce7bdd618e3ebc1917918c623b5fe3a5822907de519cc9`  
-		Last Modified: Mon, 12 Dec 2022 22:21:20 GMT  
-		Size: 329.0 B  
+	-	`sha256:805845b9c28f21f3d8930310952d796e96591bfd497d9ad0b7634118aa00fdc5`  
+		Last Modified: Wed, 01 Feb 2023 21:44:38 GMT  
+		Size: 327.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `telegraf:1.25.1`
 
 ```console
-$ docker pull telegraf@sha256:eefd35c07dcf99ab783bea97842a9c0291c1032dcbd52fbb5147a09b737d6cc3
+$ docker pull telegraf@sha256:c5f5595c6d84a0e910b893a443589fc7305bbc9cdf0e0c5aab4765d4c43d3a93
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 2
+-	Platforms: 3
+	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
+
+### `telegraf:1.25.1` - linux; amd64
+
+```console
+$ docker pull telegraf@sha256:31a3b9a2ee9b7bad1a71dab33a2a5f0acf9997d2d1c2e3553f3cd407dd80730d
+```
+
+-	Docker Version: 20.10.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **136.2 MB (136219479 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:af027acb9d759d245f1a7f07dac22b2f82a59ea9de7bfde58e26c00dc5eea88c`
+-	Entrypoint: `["\/entrypoint.sh"]`
+-	Default Command: `["telegraf"]`
+
+```dockerfile
+# Wed, 11 Jan 2023 02:34:29 GMT
+ADD file:917750a82b29f8f7f88a121017bd9dfeb0fbcc8f0697a009f08b6b58246eff4b in / 
+# Wed, 11 Jan 2023 02:34:30 GMT
+CMD ["bash"]
+# Wed, 11 Jan 2023 03:04:10 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
+# Wed, 11 Jan 2023 03:04:16 GMT
+RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
+# Wed, 11 Jan 2023 18:34:59 GMT
+RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors libcap2-bin &&     rm -rf /var/lib/apt/lists/*
+# Wed, 01 Feb 2023 21:42:07 GMT
+RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     for key in         9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done
+# Wed, 01 Feb 2023 21:42:43 GMT
+ENV TELEGRAF_VERSION=1.25.1
+# Wed, 01 Feb 2023 21:42:48 GMT
+RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
+# Wed, 01 Feb 2023 21:42:48 GMT
+EXPOSE 8092/udp 8094 8125/udp
+# Wed, 01 Feb 2023 21:42:48 GMT
+COPY file:689e73cc90c23fa6e27f7d087886e186b6baf02bb95756b42136644d4f83a893 in /entrypoint.sh 
+# Wed, 01 Feb 2023 21:42:48 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Wed, 01 Feb 2023 21:42:49 GMT
+CMD ["telegraf"]
+```
+
+-	Layers:
+	-	`sha256:bbeef03cda1f5d6c9e20c310c1c91382a6b0a1a2501c3436b28152f13896f082`  
+		Last Modified: Wed, 11 Jan 2023 02:38:42 GMT  
+		Size: 55.0 MB (55025206 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f049f75f014ee8fec2d4728b203c9cbee0502ce142aec030f874aa28359e25f1`  
+		Last Modified: Wed, 11 Jan 2023 03:12:03 GMT  
+		Size: 5.2 MB (5163370 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:56261d0e6b05ece42650b14830960db5b42a9f23479d868256f91d96869ac0c2`  
+		Last Modified: Wed, 11 Jan 2023 03:12:04 GMT  
+		Size: 10.9 MB (10876737 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:51c34ed523763b2d290c138fc5dacd8841655e6f3f3727016634afea375e232e`  
+		Last Modified: Wed, 11 Jan 2023 18:35:48 GMT  
+		Size: 18.8 MB (18759941 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:51ee0af46436a6eec45f9f12f7e9315dd12718a5f42fad5b36ecf37196d46650`  
+		Last Modified: Wed, 01 Feb 2023 21:43:20 GMT  
+		Size: 1.8 KB (1812 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:acac3f9c54d0497efb2b9cc91f6a4939e7b1b26a3caedfcbed8a19220c8697b5`  
+		Last Modified: Wed, 01 Feb 2023 21:44:27 GMT  
+		Size: 46.4 MB (46392069 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a8c43f5d19642617ab1b624150ee8290f4583ff27f692232526cc9736c4df73f`  
+		Last Modified: Wed, 01 Feb 2023 21:44:20 GMT  
+		Size: 344.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `telegraf:1.25.1` - linux; arm variant v7
 
@@ -1643,33 +1715,24 @@ CMD ["telegraf"]
 ## `telegraf:1.25.1-alpine`
 
 ```console
-$ docker pull telegraf@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
-```
-
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 0
-
-## `telegraf:alpine`
-
-```console
-$ docker pull telegraf@sha256:f4dff8c2c490d8a14dc84f3fea20b8e74e3f48b4675b727790ccccc59ea986d7
+$ docker pull telegraf@sha256:d57e21d98c6b025a82b25766503efdb2aa16027611343cc1194b4003bdcb9c7d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms: 1
 	-	linux; amd64
 
-### `telegraf:alpine` - linux; amd64
+### `telegraf:1.25.1-alpine` - linux; amd64
 
 ```console
-$ docker pull telegraf@sha256:43f604bf461e7b32b89755ed10ad1c62027527dbef2a5cf0832222a8bb638ce8
+$ docker pull telegraf@sha256:15427dda77b98c6ec6a82f41f00f69feea4b2458e233e53f022a0c26d8276622
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **52.0 MB (52035696 bytes)**  
+-	Total Size: **52.3 MB (52333357 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fdd5a8721822dbe61765955a40c0cdf3c3848aabe92c643cf1d0625eee65521a`
+-	Image ID: `sha256:e68b84e6353ceb6b229600fb542b87a36b435a4a178a5930bd5114535e67ea45`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
@@ -1682,17 +1745,17 @@ CMD ["/bin/sh"]
 RUN echo 'hosts: files dns' >> /etc/nsswitch.conf
 # Sat, 12 Nov 2022 10:02:29 GMT
 RUN apk add --no-cache iputils ca-certificates net-snmp-tools procps lm_sensors tzdata su-exec libcap &&     update-ca-certificates
-# Mon, 12 Dec 2022 22:20:33 GMT
-ENV TELEGRAF_VERSION=1.25.0
-# Mon, 12 Dec 2022 22:20:39 GMT
-RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     apk add --no-cache --virtual .build-deps wget gnupg tar &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     gpg --batch --verify telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mkdir -p /usr/src /etc/telegraf &&     tar -C /usr/src -xzf telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mv /usr/src/telegraf*/etc/telegraf/telegraf.conf /etc/telegraf/ &&     mkdir /etc/telegraf/telegraf.d &&     cp -a /usr/src/telegraf*/usr/bin/telegraf /usr/bin/ &&     gpgconf --kill all &&     rm -rf *.tar.gz* /usr/src /root/.gnupg &&     apk del .build-deps &&     addgroup -S telegraf &&     adduser -S telegraf -G telegraf &&     chown -R telegraf:telegraf /etc/telegraf
-# Mon, 12 Dec 2022 22:20:39 GMT
+# Wed, 01 Feb 2023 21:42:52 GMT
+ENV TELEGRAF_VERSION=1.25.1
+# Wed, 01 Feb 2023 21:42:58 GMT
+RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     apk add --no-cache --virtual .build-deps wget gnupg tar &&     for key in         9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     gpg --batch --verify telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mkdir -p /usr/src /etc/telegraf &&     tar -C /usr/src -xzf telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mv /usr/src/telegraf*/etc/telegraf/telegraf.conf /etc/telegraf/ &&     mkdir /etc/telegraf/telegraf.d &&     cp -a /usr/src/telegraf*/usr/bin/telegraf /usr/bin/ &&     gpgconf --kill all &&     rm -rf *.tar.gz* /usr/src /root/.gnupg &&     apk del .build-deps &&     addgroup -S telegraf &&     adduser -S telegraf -G telegraf &&     chown -R telegraf:telegraf /etc/telegraf
+# Wed, 01 Feb 2023 21:42:58 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Mon, 12 Dec 2022 22:20:39 GMT
+# Wed, 01 Feb 2023 21:42:58 GMT
 COPY file:f41cb64129e03c46523c3acd2da77376a68d9785d775faf0d359051c20b4f1bf in /entrypoint.sh 
-# Mon, 12 Dec 2022 22:20:39 GMT
+# Wed, 01 Feb 2023 21:42:58 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Mon, 12 Dec 2022 22:20:39 GMT
+# Wed, 01 Feb 2023 21:42:58 GMT
 CMD ["telegraf"]
 ```
 
@@ -1709,19 +1772,88 @@ CMD ["telegraf"]
 		Last Modified: Sat, 12 Nov 2022 10:03:26 GMT  
 		Size: 3.3 MB (3298059 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0715fee794de076c344b92b63bd5d28e06b518b949249dbfc4034a6bca4b97a`  
-		Last Modified: Mon, 12 Dec 2022 22:21:27 GMT  
-		Size: 45.9 MB (45930754 bytes)  
+	-	`sha256:f8e7285372a06993b2631e1ec788fb2a4fcb5ed08aaf906d133269089f4a16dd`  
+		Last Modified: Wed, 01 Feb 2023 21:44:46 GMT  
+		Size: 46.2 MB (46228417 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8869fdddd72794ee2ce7bdd618e3ebc1917918c623b5fe3a5822907de519cc9`  
-		Last Modified: Mon, 12 Dec 2022 22:21:20 GMT  
-		Size: 329.0 B  
+	-	`sha256:805845b9c28f21f3d8930310952d796e96591bfd497d9ad0b7634118aa00fdc5`  
+		Last Modified: Wed, 01 Feb 2023 21:44:38 GMT  
+		Size: 327.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `telegraf:alpine`
+
+```console
+$ docker pull telegraf@sha256:d57e21d98c6b025a82b25766503efdb2aa16027611343cc1194b4003bdcb9c7d
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 1
+	-	linux; amd64
+
+### `telegraf:alpine` - linux; amd64
+
+```console
+$ docker pull telegraf@sha256:15427dda77b98c6ec6a82f41f00f69feea4b2458e233e53f022a0c26d8276622
+```
+
+-	Docker Version: 20.10.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **52.3 MB (52333357 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:e68b84e6353ceb6b229600fb542b87a36b435a4a178a5930bd5114535e67ea45`
+-	Entrypoint: `["\/entrypoint.sh"]`
+-	Default Command: `["telegraf"]`
+
+```dockerfile
+# Sat, 12 Nov 2022 04:19:23 GMT
+ADD file:ceeb6e8632fafc657116cbf3afbd522185a16963230b57881073dad22eb0e1a3 in / 
+# Sat, 12 Nov 2022 04:19:23 GMT
+CMD ["/bin/sh"]
+# Sat, 12 Nov 2022 08:32:05 GMT
+RUN echo 'hosts: files dns' >> /etc/nsswitch.conf
+# Sat, 12 Nov 2022 10:02:29 GMT
+RUN apk add --no-cache iputils ca-certificates net-snmp-tools procps lm_sensors tzdata su-exec libcap &&     update-ca-certificates
+# Wed, 01 Feb 2023 21:42:52 GMT
+ENV TELEGRAF_VERSION=1.25.1
+# Wed, 01 Feb 2023 21:42:58 GMT
+RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     apk add --no-cache --virtual .build-deps wget gnupg tar &&     for key in         9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     gpg --batch --verify telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz.asc telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mkdir -p /usr/src /etc/telegraf &&     tar -C /usr/src -xzf telegraf-${TELEGRAF_VERSION}_static_linux_amd64.tar.gz &&     mv /usr/src/telegraf*/etc/telegraf/telegraf.conf /etc/telegraf/ &&     mkdir /etc/telegraf/telegraf.d &&     cp -a /usr/src/telegraf*/usr/bin/telegraf /usr/bin/ &&     gpgconf --kill all &&     rm -rf *.tar.gz* /usr/src /root/.gnupg &&     apk del .build-deps &&     addgroup -S telegraf &&     adduser -S telegraf -G telegraf &&     chown -R telegraf:telegraf /etc/telegraf
+# Wed, 01 Feb 2023 21:42:58 GMT
+EXPOSE 8092/udp 8094 8125/udp
+# Wed, 01 Feb 2023 21:42:58 GMT
+COPY file:f41cb64129e03c46523c3acd2da77376a68d9785d775faf0d359051c20b4f1bf in /entrypoint.sh 
+# Wed, 01 Feb 2023 21:42:58 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Wed, 01 Feb 2023 21:42:58 GMT
+CMD ["telegraf"]
+```
+
+-	Layers:
+	-	`sha256:ca7dd9ec2225f2385955c43b2379305acd51543c28cf1d4e94522b3d94cce3ce`  
+		Last Modified: Sat, 12 Nov 2022 02:52:15 GMT  
+		Size: 2.8 MB (2806272 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7ec8c4909872f004bb7fe69291336b9a1be138c76e18c8706b787cce0ddf850c`  
+		Last Modified: Sat, 12 Nov 2022 08:32:35 GMT  
+		Size: 282.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dcb65cee31d4b1da1248e34183af68dd614828735af79e4ec9c1967a3cfe0718`  
+		Last Modified: Sat, 12 Nov 2022 10:03:26 GMT  
+		Size: 3.3 MB (3298059 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f8e7285372a06993b2631e1ec788fb2a4fcb5ed08aaf906d133269089f4a16dd`  
+		Last Modified: Wed, 01 Feb 2023 21:44:46 GMT  
+		Size: 46.2 MB (46228417 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:805845b9c28f21f3d8930310952d796e96591bfd497d9ad0b7634118aa00fdc5`  
+		Last Modified: Wed, 01 Feb 2023 21:44:38 GMT  
+		Size: 327.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `telegraf:latest`
 
 ```console
-$ docker pull telegraf@sha256:c240200154b41c42aed1e112a3e6c91024c6234e2997e0cf46f70b50e17ce0dc
+$ docker pull telegraf@sha256:c5f5595c6d84a0e910b893a443589fc7305bbc9cdf0e0c5aab4765d4c43d3a93
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1733,14 +1865,14 @@ $ docker pull telegraf@sha256:c240200154b41c42aed1e112a3e6c91024c6234e2997e0cf46
 ### `telegraf:latest` - linux; amd64
 
 ```console
-$ docker pull telegraf@sha256:04a396cd8674d98edbefcf3c39beccc2dff47d9da4a149ff240d79e92f7ee539
+$ docker pull telegraf@sha256:31a3b9a2ee9b7bad1a71dab33a2a5f0acf9997d2d1c2e3553f3cd407dd80730d
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **135.9 MB (135928195 bytes)**  
+-	Total Size: **136.2 MB (136219479 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b129b91456c3f2e72beb402a19a4774cd63454dad166fcc792c70bf5af72b43b`
+-	Image ID: `sha256:af027acb9d759d245f1a7f07dac22b2f82a59ea9de7bfde58e26c00dc5eea88c`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
@@ -1755,19 +1887,19 @@ RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
 # Wed, 11 Jan 2023 18:34:59 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors libcap2-bin &&     rm -rf /var/lib/apt/lists/*
-# Wed, 11 Jan 2023 18:35:00 GMT
-RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done
-# Wed, 11 Jan 2023 18:35:20 GMT
-ENV TELEGRAF_VERSION=1.25.0
-# Wed, 11 Jan 2023 18:35:24 GMT
+# Wed, 01 Feb 2023 21:42:07 GMT
+RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     for key in         9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done
+# Wed, 01 Feb 2023 21:42:43 GMT
+ENV TELEGRAF_VERSION=1.25.1
+# Wed, 01 Feb 2023 21:42:48 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
-# Wed, 11 Jan 2023 18:35:25 GMT
+# Wed, 01 Feb 2023 21:42:48 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Wed, 11 Jan 2023 18:35:25 GMT
+# Wed, 01 Feb 2023 21:42:48 GMT
 COPY file:689e73cc90c23fa6e27f7d087886e186b6baf02bb95756b42136644d4f83a893 in /entrypoint.sh 
-# Wed, 11 Jan 2023 18:35:25 GMT
+# Wed, 01 Feb 2023 21:42:48 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 11 Jan 2023 18:35:25 GMT
+# Wed, 01 Feb 2023 21:42:49 GMT
 CMD ["telegraf"]
 ```
 
@@ -1788,17 +1920,17 @@ CMD ["telegraf"]
 		Last Modified: Wed, 11 Jan 2023 18:35:48 GMT  
 		Size: 18.8 MB (18759941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b157ae0cf7624cb887be9fcd579ac67f5747186833e41493cfa0570babbf04c6`  
-		Last Modified: Wed, 11 Jan 2023 18:35:45 GMT  
-		Size: 2.9 KB (2901 bytes)  
+	-	`sha256:51ee0af46436a6eec45f9f12f7e9315dd12718a5f42fad5b36ecf37196d46650`  
+		Last Modified: Wed, 01 Feb 2023 21:43:20 GMT  
+		Size: 1.8 KB (1812 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb71199dba8fd92431d8168d6fdd0c8c42d9184399cb162d54b84eac1df4e44b`  
-		Last Modified: Wed, 11 Jan 2023 18:36:25 GMT  
-		Size: 46.1 MB (46099695 bytes)  
+	-	`sha256:acac3f9c54d0497efb2b9cc91f6a4939e7b1b26a3caedfcbed8a19220c8697b5`  
+		Last Modified: Wed, 01 Feb 2023 21:44:27 GMT  
+		Size: 46.4 MB (46392069 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:75913725347278063c4a8bfd072ec83be5a2de52bcc42c81eb3516f2767f1f39`  
-		Last Modified: Wed, 11 Jan 2023 18:36:17 GMT  
-		Size: 345.0 B  
+	-	`sha256:a8c43f5d19642617ab1b624150ee8290f4583ff27f692232526cc9736c4df73f`  
+		Last Modified: Wed, 01 Feb 2023 21:44:20 GMT  
+		Size: 344.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `telegraf:latest` - linux; arm variant v7
