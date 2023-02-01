@@ -10,8 +10,8 @@
 -	[`amazonlinux:2.0.20230119.1-with-sources`](#amazonlinux20202301191-with-sources)
 -	[`amazonlinux:2018.03`](#amazonlinux201803)
 -	[`amazonlinux:2018.03-with-sources`](#amazonlinux201803-with-sources)
--	[`amazonlinux:2018.03.0.20221209.1`](#amazonlinux2018030202212091)
--	[`amazonlinux:2018.03.0.20221209.1-with-sources`](#amazonlinux2018030202212091-with-sources)
+-	[`amazonlinux:2018.03.0.20230124.1`](#amazonlinux2018030202301241)
+-	[`amazonlinux:2018.03.0.20230124.1-with-sources`](#amazonlinux2018030202301241-with-sources)
 -	[`amazonlinux:2022`](#amazonlinux2022)
 -	[`amazonlinux:2022-with-sources`](#amazonlinux2022-with-sources)
 -	[`amazonlinux:2022.0.20221207.4`](#amazonlinux20220202212074)
@@ -453,83 +453,13 @@ RUN mkdir /usr/src/srpm     && curl -o /usr/src/srpm/srpm-bundle.tar.gz "https:/
 		Size: 452.7 MB (452734120 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-## `amazonlinux:2018.03.0.20221209.1`
+## `amazonlinux:2018.03.0.20230124.1`
 
-```console
-$ docker pull amazonlinux@sha256:1356b67e56de9f90322de2a3b3003a39aeb47ef3ef22049990d31b51151238ad
-```
+**does not exist** (yet?)
 
--	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
-	-	linux; amd64
+## `amazonlinux:2018.03.0.20230124.1-with-sources`
 
-### `amazonlinux:2018.03.0.20221209.1` - linux; amd64
-
-```console
-$ docker pull amazonlinux@sha256:a49663f3d88d6f88fce90736668bde9da147de60a8f1418c7f9973165891969b
-```
-
--	Docker Version: 20.10.12
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.3 MB (62277141 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d6c7da45cac655a5173a8970af5a1c6c075db388078bb204cea5ccbaa1a56f55`
--	Default Command: `["\/bin\/bash"]`
-
-```dockerfile
-# Fri, 16 Dec 2022 01:20:28 GMT
-ADD file:aeff02a412eec40b7e2088801912f1cfc84db78256189500b286338b791c7818 in / 
-# Fri, 16 Dec 2022 01:20:28 GMT
-CMD ["/bin/bash"]
-```
-
--	Layers:
-	-	`sha256:2521bea679352d902cf8cfca09fc770b5655dcc5a1142ccc97bc67c0da92aa4f`  
-		Last Modified: Fri, 16 Dec 2022 01:22:50 GMT  
-		Size: 62.3 MB (62277141 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-
-## `amazonlinux:2018.03.0.20221209.1-with-sources`
-
-```console
-$ docker pull amazonlinux@sha256:c9b7d0462f3d9f924e9958a07559d555175dc0c03c8e12a48cd5db4d958db0f9
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
-	-	linux; amd64
-
-### `amazonlinux:2018.03.0.20221209.1-with-sources` - linux; amd64
-
-```console
-$ docker pull amazonlinux@sha256:3e21026ab020d1f390d0f7b35cf83f91bb4f7a8219cd45d53bf7f09d4df6d3eb
-```
-
--	Docker Version: 20.10.12
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **515.0 MB (515011261 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c65483cadfaad0e8c9559b12bfca121754bb3040c9911402841d22eb712403c1`
--	Default Command: `["\/bin\/bash"]`
-
-```dockerfile
-# Fri, 16 Dec 2022 01:20:28 GMT
-ADD file:aeff02a412eec40b7e2088801912f1cfc84db78256189500b286338b791c7818 in / 
-# Fri, 16 Dec 2022 01:20:28 GMT
-CMD ["/bin/bash"]
-# Fri, 16 Dec 2022 01:20:52 GMT
-RUN mkdir /usr/src/srpm     && curl -o /usr/src/srpm/srpm-bundle.tar.gz "https://amazon-linux-docker-sources.s3-accelerate.amazonaws.com/srpm-bundle-9c18de8662e5e9d6121bd1e9c0b0e64d5ecd6dc531f7887fad9209c406fb79a7.tar.gz"     && echo "46189d09ab457ff4fd0183269782c16602c1676f55e20a670f83a051d376b4b4  /usr/src/srpm/srpm-bundle.tar.gz" | sha256sum -c -
-```
-
--	Layers:
-	-	`sha256:2521bea679352d902cf8cfca09fc770b5655dcc5a1142ccc97bc67c0da92aa4f`  
-		Last Modified: Fri, 16 Dec 2022 01:22:50 GMT  
-		Size: 62.3 MB (62277141 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3e554b4cfa958701c452666d6fb250a74e229e8c33ebb75c2b49f5ae3585ec7`  
-		Last Modified: Fri, 16 Dec 2022 01:23:18 GMT  
-		Size: 452.7 MB (452734120 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+**does not exist** (yet?)
 
 ## `amazonlinux:2022`
 
