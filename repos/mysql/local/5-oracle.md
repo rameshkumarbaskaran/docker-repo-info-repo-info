@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9ec14ca3fec4d86d989ea6ac3f66af44da0298438e1082b0f1682dba5c912fdd`
-- Created: `2023-01-28T00:07:41.66234551Z`
-- Virtual Size: ~ 454.54 Mb  
+- Image ID: `sha256:be16cf2d832a9a54ce42144e25f5ae7cc66bccf0e003837e7b5eb1a455dc742b`
+- Created: `2023-02-01T04:24:58.661221479Z`
+- Virtual Size: ~ 454.61 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["mysqld"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `GOSU_VERSION=1.14`
+  - `GOSU_VERSION=1.16`
   - `MYSQL_MAJOR=5.7`
   - `MYSQL_VERSION=5.7.41-1.el7`
   - `MYSQL_SHELL_VERSION=8.0.32-1.el7`
