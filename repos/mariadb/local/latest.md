@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a748acbaccae4dc8152ded948fa5a304df7b0888b4cea9116385e5e3bd812bfc`
-- Created: `2022-12-09T02:27:17.846690861Z`
-- Virtual Size: ~ 409.60 Mb  
+- Image ID: `sha256:039bd724508bee8d3247e2219a9019b57eb788e1f6dac6cefa9906ce80e433e2`
+- Created: `2023-01-31T18:43:09.831338326Z`
+- Virtual Size: ~ 409.63 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -20,6 +20,7 @@
   - `org.opencontainers.image.description=MariaDB Database for relational SQL`
   - `org.opencontainers.image.documentation=https://hub.docker.com/_/mariadb/`
   - `org.opencontainers.image.licenses=GPL-2.0`
+  - `org.opencontainers.image.ref.name=ubuntu`
   - `org.opencontainers.image.source=https://github.com/MariaDB/mariadb-docker`
   - `org.opencontainers.image.title=MariaDB Database`
   - `org.opencontainers.image.url=https://github.com/MariaDB/mariadb-docker`
