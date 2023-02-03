@@ -2,14 +2,17 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d6547859cd2f8a9d8f1730ea25a2d5943fb8c8149be724229ce9078af13fcd79`
-- Created: `2022-12-09T01:20:40.944973137Z`
+- Image ID: `sha256:10c2f4041af137e6b0ba5c793df3dfdf4e72a4e011ce6847f4cc0247b9bbf7f2`
+- Created: `2023-01-26T11:51:15.003446747Z`
 - Virtual Size: ~ 70.24 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Command: `["bash"]`
+- Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+- Labels:
+  - `org.opencontainers.image.ref.name=ubuntu`
+  - `org.opencontainers.image.version=22.10`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1093,14 +1096,14 @@ $ apt-get source -qq --print-uris p11-kit=0.24.1-1ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/p/p11-kit/p11-kit_0.24.1-1ubuntu2.debian.tar.xz' p11-kit_0.24.1-1ubuntu2.debian.tar.xz 31176 SHA512:f3b3fc21a270f22dd0679aaf1c87907fdd3914de261ad61406bb2392deb25688229af775e7b170201d85489cd7420c5e9bda23c8f95bc7e9d955f4eb508454d3
 ```
 
-### `dpkg` source package: `pam=1.5.2-2ubuntu1`
+### `dpkg` source package: `pam=1.5.2-2ubuntu1.1`
 
 Binary Packages:
 
-- `libpam-modules:amd64=1.5.2-2ubuntu1`
-- `libpam-modules-bin=1.5.2-2ubuntu1`
-- `libpam-runtime=1.5.2-2ubuntu1`
-- `libpam0g:amd64=1.5.2-2ubuntu1`
+- `libpam-modules:amd64=1.5.2-2ubuntu1.1`
+- `libpam-modules-bin=1.5.2-2ubuntu1.1`
+- `libpam-runtime=1.5.2-2ubuntu1.1`
+- `libpam0g:amd64=1.5.2-2ubuntu1.1`
 
 Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/doc/libpam-modules-bin/copyright`, `/usr/share/doc/libpam-runtime/copyright`, `/usr/share/doc/libpam0g/copyright`)
 
@@ -1109,10 +1112,10 @@ Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/d
 Source:
 
 ```console
-$ apt-get source -qq --print-uris pam=1.5.2-2ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.5.2-2ubuntu1.dsc' pam_1.5.2-2ubuntu1.dsc 2655 SHA512:8b9e5fcd618f014f8d5b0b0569ce09311634e4c7a2921c3080fb95f7b1911fa1db59c0968c4aeaeb128774e1a9e747654c7ee13e2f20c5a1d0bccc0f3305169e
+$ apt-get source -qq --print-uris pam=1.5.2-2ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.5.2-2ubuntu1.1.dsc' pam_1.5.2-2ubuntu1.1.dsc 2496 SHA512:2ec188f60e6fb78f10db71550fd905f31974ec5cd01051765ba6c5f46dd8eae3aeeeab97b6d9b5bf1f427e71d25d4fadd4f19696cd745851c4b7ede554ccb018
 'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.5.2.orig.tar.xz' pam_1.5.2.orig.tar.xz 988784 SHA512:fa16350c132d3e5fb82b60d991768fb596582639841b8ece645c684705467305ccf1302a0147ec222ab78c01b2c9114c5496dc1ca565d2b56bf315f29a815144
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.5.2-2ubuntu1.debian.tar.xz' pam_1.5.2-2ubuntu1.debian.tar.xz 166536 SHA512:dc3c1a9c0f9020a636f8b97343a8258e5deffbfca480d22c5763fa351f70616a47fddb117eea148978a58eaa940df74e968c5af409b445b7eec4e3c071dcf38a
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.5.2-2ubuntu1.1.debian.tar.xz' pam_1.5.2-2ubuntu1.1.debian.tar.xz 168244 SHA512:bbb9627823fa1dbc825f084866623ac26f75e96322657e5d4e33cac96309e0113b2490c2dfe8a37795fff35c1d22026598096fca182b4c903a20e3de72843c13
 ```
 
 ### `dpkg` source package: `pcre2=10.40-1ubuntu1`

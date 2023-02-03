@@ -2,14 +2,17 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d5447fc01ae62c20beffbfa50bc51b2797f9d7ebae031b8c2245b5be8ff1c75b`
-- Created: `2022-12-09T01:20:21.654215477Z`
+- Image ID: `sha256:e40cf56b4be35b04f620bc9cfbef80038fd7370d4ed36d90676223174ecbf0b0`
+- Created: `2023-02-01T11:42:39.850025895Z`
 - Virtual Size: ~ 72.78 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Command: `["bash"]`
+- Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+- Labels:
+  - `org.opencontainers.image.ref.name=ubuntu`
+  - `org.opencontainers.image.version=20.04`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1028,22 +1031,27 @@ $ apt-get source -qq --print-uris p11-kit=0.23.20-1ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/p/p11-kit/p11-kit_0.23.20-1ubuntu0.1.debian.tar.xz' p11-kit_0.23.20-1ubuntu0.1.debian.tar.xz 24592 SHA512:b30c6640bb02f0651955447da65911942cd2e302bc5af0ab96787646e776486e317420682dd644079a47ac48d4e2732218545af56da7ec3d3af5fd0c7e55fb21
 ```
 
-### `dpkg` source package: `pam=1.3.1-5ubuntu4.3`
+### `dpkg` source package: `pam=1.3.1-5ubuntu4.4`
 
 Binary Packages:
 
-- `libpam-modules:amd64=1.3.1-5ubuntu4.3`
-- `libpam-modules-bin=1.3.1-5ubuntu4.3`
-- `libpam-runtime=1.3.1-5ubuntu4.3`
-- `libpam0g:amd64=1.3.1-5ubuntu4.3`
+- `libpam-modules:amd64=1.3.1-5ubuntu4.4`
+- `libpam-modules-bin=1.3.1-5ubuntu4.4`
+- `libpam-runtime=1.3.1-5ubuntu4.4`
+- `libpam0g:amd64=1.3.1-5ubuntu4.4`
 
 Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/doc/libpam-modules-bin/copyright`, `/usr/share/doc/libpam-runtime/copyright`, `/usr/share/doc/libpam0g/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris pam=1.3.1-5ubuntu4.4
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1-5ubuntu4.4.dsc' pam_1.3.1-5ubuntu4.4.dsc 2594 SHA512:9b3cfd9c1ef7609d9e6a166676bc3e2535c2c824722459c56bfd04b87706677684c8a96f73caa7e4623c10433627d25d8589c6c2fe3415d211f5ccbe870e4800
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1.orig.tar.xz' pam_1.3.1.orig.tar.xz 912332 SHA512:6bc8e2a5b64686f0a23846221c5228c88418ba485b17c53b3a12f91262b5bb73566d6b6a5daa1f63bbae54310aee918b987e44a72ce809b4e7c668f0fadfe08e
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1-5ubuntu4.4.debian.tar.xz' pam_1.3.1-5ubuntu4.4.debian.tar.xz 172340 SHA512:c4fab8883bac4b35cf95a02d4cd3ffa4207d41c32d48ffcc10e03754180fcee923e6d9980e291adc6fae6bd144fd7742b3adcd9456a6f95a3ba5ee85a12499c5
+```
 
 ### `dpkg` source package: `pcre2=10.34-7ubuntu0.1`
 

@@ -2,14 +2,17 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e28a50f651f9eefbc8883ddc64704d609f3d95bf1ea9e41f873a8da68ea5ec98`
-- Created: `2023-01-02T18:48:56.081327405Z`
+- Image ID: `sha256:5d2df19066aca89df8e5317544a1cb599dc657830184762ff6fdefaaf708db65`
+- Created: `2023-01-26T10:03:05.221824871Z`
 - Virtual Size: ~ 63.14 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Command: `["bash"]`
+- Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+- Labels:
+  - `org.opencontainers.image.ref.name=ubuntu`
+  - `org.opencontainers.image.version=18.04`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -994,22 +997,26 @@ $ apt-get source -qq --print-uris p11-kit=0.23.9-2ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/p/p11-kit/p11-kit_0.23.9-2ubuntu0.1.debian.tar.xz' p11-kit_0.23.9-2ubuntu0.1.debian.tar.xz 24380 SHA512:460f4179781768a4a4b686955f16f335565d50f7a2d74c298216fe6725ce4e04119f49605752026f65bf56e143e560718969c5983decc906d3246f0a01c46178
 ```
 
-### `dpkg` source package: `pam=1.1.8-3.6ubuntu2.18.04.3`
+### `dpkg` source package: `pam=1.1.8-3.6ubuntu2.18.04.4`
 
 Binary Packages:
 
-- `libpam-modules:amd64=1.1.8-3.6ubuntu2.18.04.3`
-- `libpam-modules-bin=1.1.8-3.6ubuntu2.18.04.3`
-- `libpam-runtime=1.1.8-3.6ubuntu2.18.04.3`
-- `libpam0g:amd64=1.1.8-3.6ubuntu2.18.04.3`
+- `libpam-modules:amd64=1.1.8-3.6ubuntu2.18.04.4`
+- `libpam-modules-bin=1.1.8-3.6ubuntu2.18.04.4`
+- `libpam-runtime=1.1.8-3.6ubuntu2.18.04.4`
+- `libpam0g:amd64=1.1.8-3.6ubuntu2.18.04.4`
 
 Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/doc/libpam-modules-bin/copyright`, `/usr/share/doc/libpam-runtime/copyright`, `/usr/share/doc/libpam0g/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris pam=1.1.8-3.6ubuntu2.18.04.4
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.1.8-3.6ubuntu2.18.04.4.dsc' pam_1.1.8-3.6ubuntu2.18.04.4.dsc 2427 SHA512:1c68ecf93dcfa4796c532f4dd3f139322f36403407ef48e26b33b368ba31eb8b9dd8ccb438899ec37634e415f36814a355e4169d595a07cac70bdb4db7d9a7ef
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.1.8-3.6ubuntu2.18.04.4.tar.gz' pam_1.1.8-3.6ubuntu2.18.04.4.tar.gz 2012662 SHA512:c9abf78f4b36d119f2ddeab3df389a4cdf3cd86f7c1c3637f3d552fc800893fee6268c063ec4720c84dfb00f292a4108f3354d6db7925f9f981d6750e0cc379f
+```
 
 ### `dpkg` source package: `pcre3=2:8.39-9ubuntu0.1`
 
