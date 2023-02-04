@@ -1,7 +1,7 @@
 ## `pypy:2-7-slim-buster`
 
 ```console
-$ docker pull pypy@sha256:c5fa6a3245d9e3d8e97f6dba5e5f8e6708c6dd3c0366ff25e07375589ec5ab4a
+$ docker pull pypy@sha256:c679d3c9b2e9aaa7da4c67f562ea92a0dda728362eab220765a85c3099a72f09
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13,57 +13,57 @@ $ docker pull pypy@sha256:c5fa6a3245d9e3d8e97f6dba5e5f8e6708c6dd3c0366ff25e07375
 ### `pypy:2-7-slim-buster` - linux; amd64
 
 ```console
-$ docker pull pypy@sha256:5c234c9069620deb775edbc2ab6ff7158204c82612193c96a9d25630c8a403c4
+$ docker pull pypy@sha256:430a833966a1317666c1a8af04a0e93a10acf9012bf9c347a272a4737100ab1e
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **63.2 MB (63203082 bytes)**  
+-	Total Size: **63.2 MB (63203044 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fedf636fcd5e33837549bd2d523f0d6df0cd5ae6de6b0c27eee6bf3df56b32b5`
+-	Image ID: `sha256:9e36438763042286ecacbd9c87e7d031f90ac9dcac0500a6c33e758cf64e0dde`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Wed, 11 Jan 2023 02:35:07 GMT
-ADD file:67ceb946e54c26c505b5f9f393d77befbd5e9b3b5c069ca301e314ecc74456b0 in / 
-# Wed, 11 Jan 2023 02:35:07 GMT
+# Sat, 04 Feb 2023 06:52:07 GMT
+ADD file:4fbe1e3712cf37c85529cc81e0d03c82085203de00d64b0d669b5996e975925a in / 
+# Sat, 04 Feb 2023 06:52:07 GMT
 CMD ["bash"]
-# Wed, 11 Jan 2023 09:01:40 GMT
+# Sat, 04 Feb 2023 10:15:43 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Jan 2023 09:01:40 GMT
+# Sat, 04 Feb 2023 10:15:43 GMT
 ENV LANG=C.UTF-8
-# Wed, 11 Jan 2023 09:01:40 GMT
+# Sat, 04 Feb 2023 10:15:43 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 11 Jan 2023 09:01:40 GMT
+# Sat, 04 Feb 2023 10:15:43 GMT
 ENV PYPY_VERSION=7.3.11
-# Wed, 11 Jan 2023 09:06:51 GMT
+# Sat, 04 Feb 2023 10:20:50 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.11-linux64.tar.bz2'; 			sha256='ba8ed958a905c0735a4cfff2875c25089954dc020e087d982b0ffa5b9da316cd'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.11-aarch64.tar.bz2'; 			sha256='ea924da1defe9325ef760e288b04f984614e405580f5321eb6a5c8f539bd415a'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.11-linux32.tar.bz2'; 			sha256='30fd245fab7068c96a75b9ff1323ac55174c64fc8c4751cceb4b7a9bedc1851e'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.11-s390x.tar.bz2'; 			sha256='8fe9481c473178e53266983678684a70fe0c42bafc95f1807bf3ef28770316d4'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Wed, 11 Jan 2023 09:06:51 GMT
+# Sat, 04 Feb 2023 10:20:51 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Wed, 11 Jan 2023 09:06:51 GMT
+# Sat, 04 Feb 2023 10:20:51 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Wed, 11 Jan 2023 09:07:01 GMT
+# Sat, 04 Feb 2023 10:21:00 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Wed, 11 Jan 2023 09:07:01 GMT
+# Sat, 04 Feb 2023 10:21:00 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:548fcab5fe888f589dd092c68b813bfd65359878bd1950d6b753f749e82ebd7c`  
-		Last Modified: Wed, 11 Jan 2023 02:39:48 GMT  
-		Size: 27.1 MB (27140352 bytes)  
+	-	`sha256:0cf508b37688dca559387b506062329202aaf08b48be5f55f9278b2a818ad2c9`  
+		Last Modified: Sat, 04 Feb 2023 06:56:58 GMT  
+		Size: 27.1 MB (27140353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a91d9a59fcac062cc044be02c6f754b093a401edb5015d073a449a8a79acd66e`  
-		Last Modified: Wed, 11 Jan 2023 09:10:26 GMT  
-		Size: 2.8 MB (2767991 bytes)  
+	-	`sha256:0ba671f1ac816666c845833c968d2ab63c176dd097ce3c090a69fbe5e9a4ba5c`  
+		Last Modified: Sat, 04 Feb 2023 10:24:28 GMT  
+		Size: 2.8 MB (2768005 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0eeeb2ff7a2a396f22434274852b98d6f2174b1cf8e500842c03a394f69bed85`  
-		Last Modified: Wed, 11 Jan 2023 09:13:59 GMT  
-		Size: 31.1 MB (31125260 bytes)  
+	-	`sha256:13ebf81ca758dc7e41991ef32aab61125a3b58bc48071879c23b6433eb8f73d7`  
+		Last Modified: Sat, 04 Feb 2023 10:27:56 GMT  
+		Size: 31.1 MB (31125241 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50f52251e116948736a387a9e44d3a05245b242a714fd56c66e2b28eaef64730`  
-		Last Modified: Wed, 11 Jan 2023 09:13:53 GMT  
-		Size: 2.2 MB (2169479 bytes)  
+	-	`sha256:52b5f7f00b9cf1513cb9d1e276efd3de8f2ef235ea0cface7748d34674c56f26`  
+		Last Modified: Sat, 04 Feb 2023 10:27:51 GMT  
+		Size: 2.2 MB (2169445 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2-7-slim-buster` - linux; arm64 variant v8
