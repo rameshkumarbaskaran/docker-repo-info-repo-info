@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:0d81b3714f63e39209a059ad85704328c2591e51a1a0529183297e1d08c3af1e`
-- Created: `2023-01-09T23:05:19.960683428Z`
-- Virtual Size: ~ 192.21 Mb  
+- Image ID: `sha256:04be71f49002bbfe9f62e88a36e1f06df99907a73095417b8ee2dbc0b2f9abca`
+- Created: `2023-02-03T01:04:53.958519376Z`
+- Virtual Size: ~ 192.92 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC`
-  - `PHP_VERSION=8.2.1`
-  - `PHP_URL=https://www.php.net/distributions/php-8.2.1.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.1.tar.xz.asc`
-  - `PHP_SHA256=650d3bd7a056cabf07f6a0f6f1dd8ba45cd369574bbeaa36de7d1ece212c17af`
+  - `PHP_VERSION=8.2.2`
+  - `PHP_URL=https://www.php.net/distributions/php-8.2.2.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.2.tar.xz.asc`
+  - `PHP_SHA256=bdc4aa38e652bac86039601840bae01c0c3653972eaa6f9f93d5f71953a7ee33`
   - `COMPOSER_ALLOW_SUPERUSER=1`
   - `COMPOSER_HOME=/tmp`
   - `COMPOSER_VERSION=2.5.1`
@@ -98,16 +98,16 @@ GPL-2.0-only
 ### `apk` package: `apr`
 
 ```console
-apr-1.7.0-r2 description:
+apr-1.7.2-r0 description:
 The Apache Portable Runtime
 
-apr-1.7.0-r2 webpage:
+apr-1.7.2-r0 webpage:
 https://apr.apache.org/
 
-apr-1.7.0-r2 installed size:
-220 KiB
+apr-1.7.2-r0 installed size:
+224 KiB
 
-apr-1.7.0-r2 license:
+apr-1.7.2-r0 license:
 Apache-2.0
 
 ```
@@ -115,16 +115,16 @@ Apache-2.0
 ### `apk` package: `apr-util`
 
 ```console
-apr-util-1.6.1-r14 description:
+apr-util-1.6.3-r0 description:
 The Apache Portable Runtime Utility Library
 
-apr-util-1.6.1-r14 webpage:
+apr-util-1.6.3-r0 webpage:
 https://apr.apache.org/
 
-apr-util-1.6.1-r14 installed size:
+apr-util-1.6.3-r0 installed size:
 200 KiB
 
-apr-util-1.6.1-r14 license:
+apr-util-1.6.3-r0 license:
 Apache-2.0
 
 ```
@@ -268,16 +268,16 @@ GPL-3.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-7.87.0-r0 description:
+curl-7.87.0-r1 description:
 URL retrival utility and library
 
-curl-7.87.0-r0 webpage:
+curl-7.87.0-r1 webpage:
 https://curl.se/
 
-curl-7.87.0-r0 installed size:
+curl-7.87.0-r1 installed size:
 264 KiB
 
-curl-7.87.0-r0 license:
+curl-7.87.0-r1 license:
 curl
 
 ```
@@ -302,16 +302,16 @@ GPL-3.0-or-later
 ### `apk` package: `git`
 
 ```console
-git-2.38.2-r0 description:
+git-2.38.3-r1 description:
 Distributed version control system
 
-git-2.38.2-r0 webpage:
+git-2.38.3-r1 webpage:
 https://www.git-scm.com/
 
-git-2.38.2-r0 installed size:
-6060 KiB
+git-2.38.3-r1 installed size:
+6068 KiB
 
-git-2.38.2-r0 license:
+git-2.38.3-r1 license:
 GPL-2.0-or-later
 
 ```
@@ -421,16 +421,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.87.0-r0 description:
+libcurl-7.87.0-r1 description:
 The multiprotocol file transfer library
 
-libcurl-7.87.0-r0 webpage:
+libcurl-7.87.0-r1 webpage:
 https://curl.se/
 
-libcurl-7.87.0-r0 installed size:
+libcurl-7.87.0-r1 installed size:
 540 KiB
 
-libcurl-7.87.0-r0 license:
+libcurl-7.87.0-r1 license:
 curl
 
 ```
@@ -795,16 +795,16 @@ BSD-2-Clause
 ### `apk` package: `openssh-client-common`
 
 ```console
-openssh-client-common-9.1_p1-r1 description:
+openssh-client-common-9.1_p1-r2 description:
 OpenBSD's SSH client common files
 
-openssh-client-common-9.1_p1-r1 webpage:
+openssh-client-common-9.1_p1-r2 webpage:
 https://www.openssh.com/portable.html
 
-openssh-client-common-9.1_p1-r1 installed size:
+openssh-client-common-9.1_p1-r2 installed size:
 2732 KiB
 
-openssh-client-common-9.1_p1-r1 license:
+openssh-client-common-9.1_p1-r2 license:
 BSD
 
 ```
@@ -812,16 +812,16 @@ BSD
 ### `apk` package: `openssh-client-default`
 
 ```console
-openssh-client-default-9.1_p1-r1 description:
+openssh-client-default-9.1_p1-r2 description:
 OpenBSD's SSH client
 
-openssh-client-default-9.1_p1-r1 webpage:
+openssh-client-default-9.1_p1-r2 webpage:
 https://www.openssh.com/portable.html
 
-openssh-client-default-9.1_p1-r1 installed size:
+openssh-client-default-9.1_p1-r2 installed size:
 900 KiB
 
-openssh-client-default-9.1_p1-r1 license:
+openssh-client-default-9.1_p1-r2 license:
 BSD
 
 ```
@@ -829,16 +829,16 @@ BSD
 ### `apk` package: `openssh-keygen`
 
 ```console
-openssh-keygen-9.1_p1-r1 description:
+openssh-keygen-9.1_p1-r2 description:
 ssh helper program for generating keys
 
-openssh-keygen-9.1_p1-r1 webpage:
+openssh-keygen-9.1_p1-r2 webpage:
 https://www.openssh.com/portable.html
 
-openssh-keygen-9.1_p1-r1 installed size:
+openssh-keygen-9.1_p1-r2 installed size:
 548 KiB
 
-openssh-keygen-9.1_p1-r1 license:
+openssh-keygen-9.1_p1-r2 license:
 BSD
 
 ```
