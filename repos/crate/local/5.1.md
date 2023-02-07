@@ -1,9 +1,9 @@
-# `crate:5.1.3`
+# `crate:5.1.4`
 
 ## Docker Metadata
 
-- Image ID: `sha256:b261459d37bd884b6428d11d93ad007514c31e21097e46320ee90355df769c19`
-- Created: `2023-01-17T20:27:24.746242062Z`
+- Image ID: `sha256:a8e7de268aa412ee75cd4a38650f7dd9cf080500cf54a54b4a1ff3af6705d8ba`
+- Created: `2023-02-07T02:30:27.434309797Z`
 - Virtual Size: ~ 823.88 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -19,14 +19,14 @@
   - `org.label-schema.name=CentOS Base Image`
   - `org.label-schema.schema-version=1.0`
   - `org.label-schema.vendor=CentOS`
-  - `org.opencontainers.image.created=2023-01-11T14:10:24.314070`
+  - `org.opencontainers.image.created=2023-02-01T11:51:38.179251`
   - `org.opencontainers.image.description=CrateDB is a distributed SQL database that handles massive amounts of machine data in real-time.`
   - `org.opencontainers.image.licenses=GPL-2.0-only`
   - `org.opencontainers.image.source=https://github.com/crate/docker-crate`
   - `org.opencontainers.image.title=crate`
   - `org.opencontainers.image.url=https://crate.io/products/cratedb/`
   - `org.opencontainers.image.vendor=Crate.io`
-  - `org.opencontainers.image.version=5.1.3`
+  - `org.opencontainers.image.version=5.1.4`
 
 ## `rpm` (`.rpm`-based packages)
 
