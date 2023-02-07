@@ -112,15 +112,9 @@ Licenses: (parsed from: `/usr/share/doc/libapr1/copyright`)
 
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apr=1.7.0-8build1
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apr/apr_1.7.0-8build1.dsc' apr_1.7.0-8build1.dsc 1951 SHA512:c9da10b8d05e62a7e5e25832408e97f2c512592bc9ea4f6d55e7edcb28ca3c7a9446492eef0c3c26ee67b31d99307b70e6bc4c655454fa983f5da263fd8a73c0
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apr/apr_1.7.0.orig.tar.bz2' apr_1.7.0.orig.tar.bz2 872238 SHA512:3dc42d5caf17aab16f5c154080f020d5aed761e22db4c5f6506917f6bfd2bf8becfb40af919042bd4ce1077d5de74aa666f5edfba7f275efba78e8893c115148
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apr/apr_1.7.0.orig.tar.bz2.asc' apr_1.7.0.orig.tar.bz2.asc 801 SHA512:19b2b128c7c4cb40db06149c75325013a716c783e28e366c1bacf289fdb5d305e5779d8dc55a63729250ad3338cd4c726e133c788fe53ab3519f1bc8d4da6f90
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apr/apr_1.7.0-8build1.debian.tar.xz' apr_1.7.0-8build1.debian.tar.xz 215944 SHA512:c11d784190391ea47706d34c7d324804ca9e8402bbb11cc9fecbb38827f0454a6ef8a8f8003f5e0b597fbc2e38da663e6bbeef371aa6a1685bb3c6f401030b6c
-```
 
 ### `dpkg` source package: `apt=2.5.5`
 
@@ -731,14 +725,9 @@ Licenses: (parsed from: `/usr/share/doc/libdjvulibre-dev/copyright`, `/usr/share
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris djvulibre=3.5.28-2build2
-'http://archive.ubuntu.com/ubuntu/pool/main/d/djvulibre/djvulibre_3.5.28-2build2.dsc' djvulibre_3.5.28-2build2.dsc 2046 SHA512:9f4f35666510ca672084a023227435af0b9adb08bddef262eda079d8b3d69718a218a2ae442068ef2c02a81da0bc783075ea833df23a499b1e7f5f8835f9491e
-'http://archive.ubuntu.com/ubuntu/pool/main/d/djvulibre/djvulibre_3.5.28.orig.tar.xz' djvulibre_3.5.28.orig.tar.xz 2959024 SHA512:4fdbecd2b7b583ee4211c9cda6638a3a831c883e2552b3c8ad09f69e8734831addc14f590faab8c58d7f9f017b527abccc384f6066e674e341cf43c96db49cb7
-'http://archive.ubuntu.com/ubuntu/pool/main/d/djvulibre/djvulibre_3.5.28-2build2.debian.tar.xz' djvulibre_3.5.28-2build2.debian.tar.xz 17552 SHA512:f66fd65d191043f0976a376668ec9ac60764491ec841577b4dd3bc868da1d293474a2fced48d87f86b6b0225a7e7322196803bd0a198993b838c823e50eee7e8
-```
 
 ### `dpkg` source package: `dpkg=1.21.18ubuntu3`
 
@@ -914,14 +903,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris fontconfig=2.13.1-4.4ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/f/fontconfig/fontconfig_2.13.1-4.4ubuntu1.dsc' fontconfig_2.13.1-4.4ubuntu1.dsc 2449 SHA512:dcfd5e5e0036b362b90dab6467384de285499e5478291d77e4e9bb6d28831bcbbdf1497514e4f649454d6acb51ea52ac6da378e86bbf00313d04c565b3051768
-'http://archive.ubuntu.com/ubuntu/pool/main/f/fontconfig/fontconfig_2.13.1.orig.tar.bz2' fontconfig_2.13.1.orig.tar.bz2 1723639 SHA512:f97f2a9db294fd72d416a7d76dd7db5934ade2cf76903764b09e7decc33e0e2eed1a1d35c5f1c7fd9ea39e2c7653b9e65365f0c6205e047e95e38ba5000dd100
-'http://archive.ubuntu.com/ubuntu/pool/main/f/fontconfig/fontconfig_2.13.1-4.4ubuntu1.debian.tar.xz' fontconfig_2.13.1-4.4ubuntu1.debian.tar.xz 29124 SHA512:8075b5d4ddb11b79ff05bb5292294784c6e0a4a36e92faac89d2b84585ed741ae4a482e7c03aa499aad161918627e635ef272022a6bbc3be4b9b17dc283bb685
-```
 
 ### `dpkg` source package: `fonts-dejavu=2.37-2build2`
 
@@ -1360,15 +1344,13 @@ Licenses: (parsed from: `/usr/share/doc/gir1.2-freedesktop/copyright`, `/usr/sha
 - `Unicode-DFS-2016`
 - `bzip2-1.0.6`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gobject-introspection=1.74.0-2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gobject-introspection/gobject-introspection_1.74.0-2.dsc' gobject-introspection_1.74.0-2.dsc 3364 SHA512:5f4641481edc64eea6594d845e4090680fcca66b41df6e619e7bcf31ea0e51b1fdde63776840f5ed7f9d4af0504265959c9abaf7b1acd72aae26dcf1a90d2c0b
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gobject-introspection/gobject-introspection_1.74.0.orig-glib.tar.xz' gobject-introspection_1.74.0.orig-glib.tar.xz 5183072 SHA512:5cdadd2f4568c0c3d45083b4d39699abf651e42e020f7bc880cce3ff33d28943118388d17a0632777e843f48009c1f97d5634fde3cb8c69c7c7f35b278ac8225
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gobject-introspection/gobject-introspection_1.74.0.orig.tar.xz' gobject-introspection_1.74.0.orig.tar.xz 1044008 SHA512:decff5dda0ec5ec0afda4d6bcd3bdadcbf34289002c0d9c0c77ecf8c5d3f15d196b24d8035041545031006acbdfe76af47c42da061c40e200c87f2c74cd301f0
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gobject-introspection/gobject-introspection_1.74.0-2.debian.tar.xz' gobject-introspection_1.74.0-2.debian.tar.xz 39336 SHA512:56fb44c1a20f4ff2f6c4f0955c572a136f339ff3bc41d5bde9e74c2fe48242400f805efad8c6d70b83cbfac2fefe3bf8fd31f8e3655475e45f7ce2fceb42356a
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/gobject-introspection/1.74.0-2/
+
 
 ### `dpkg` source package: `graphite2=1.3.14-1build2`
 
@@ -1587,15 +1569,9 @@ Licenses: (parsed from: `/usr/share/doc/libimath-3-1-29/copyright`, `/usr/share/
 
 - `imath`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris imath=3.1.5-1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/universe/i/imath/imath_3.1.5-1ubuntu2.dsc' imath_3.1.5-1ubuntu2.dsc 2612 SHA512:d2cde55c3a856a004a3923b7bb57429182d2dac242e154756a14e492afef3b49af08cf7a35ad99ae743efc1b0ce7b6c6b68c1b36dc3edb188989910a633de455
-'http://archive.ubuntu.com/ubuntu/pool/universe/i/imath/imath_3.1.5.orig.tar.gz' imath_3.1.5.orig.tar.gz 570875 SHA512:8344e42c75d8e4bb21facb837535f0c9e4a9489d9edebcc25d5d3c6063535f2bf54e4517d8fca3fedada248457aa07c9bd77d6e843a9d115278fc154de2cdc9d
-'http://archive.ubuntu.com/ubuntu/pool/universe/i/imath/imath_3.1.5.orig.tar.gz.asc' imath_3.1.5.orig.tar.gz.asc 287 SHA512:9b3978e44b531429aba42b9cc4969a470898d9d74652e3809edb0273ba9b127c471aec6570b5d352be738f59810091c0df2c70d39c16d2c32833d173b270f72c
-'http://archive.ubuntu.com/ubuntu/pool/universe/i/imath/imath_3.1.5-1ubuntu2.debian.tar.xz' imath_3.1.5-1ubuntu2.debian.tar.xz 9096 SHA512:612fc47b7629455c40bc89ce4e2572019d436757ac2305b52ef335c8873ca1646790c417e73dad80341dbcd3fb9bc7a32b48e42b844b86a1bc6fbf3f1256c80c
-```
 
 ### `dpkg` source package: `init-system-helpers=1.65.2`
 
@@ -1941,14 +1917,13 @@ Licenses: (parsed from: `/usr/share/doc/libde265-0/copyright`)
 - `public-domain-1`
 - `public-domain-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libde265=1.0.9-1.1
-'http://archive.ubuntu.com/ubuntu/pool/universe/libd/libde265/libde265_1.0.9-1.1.dsc' libde265_1.0.9-1.1.dsc 2191 SHA512:a026e082254fab06394dd6d61a985d64fda410de1cb1d92041ad74ba7b02cd822b10b771f356aa53877d7e4514cd537b7679495c78f817746d7ee2fc59f17c85
-'http://archive.ubuntu.com/ubuntu/pool/universe/libd/libde265/libde265_1.0.9.orig.tar.gz' libde265_1.0.9.orig.tar.gz 845520 SHA512:225f9aa25eb6565ebf4f549d9d427ae278c4f6f67c76c51bcad79188faac0f5c93e9538357b264a7e2e9043014ccbc07750fb7d1ce1e7bb87fe2e0d1782cba61
-'http://archive.ubuntu.com/ubuntu/pool/universe/libd/libde265/libde265_1.0.9-1.1.debian.tar.xz' libde265_1.0.9-1.1.debian.tar.xz 14692 SHA512:b47387c156c4dad33e89a602cead0442b7ed8a86754c92bad697df4a28cfde151aeb4e87ce5a1cdebd3ccfb28092255e9685f2f2fbe27bce48743c25639de4f5
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libde265/1.0.9-1.1/
+
 
 ### `dpkg` source package: `libdeflate=1.14-1`
 
@@ -3372,14 +3347,9 @@ Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/sha
 - `public-domain`
 - `zlib/libpng`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mysql-8.0=8.0.31-0ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.31-0ubuntu3.dsc' mysql-8.0_8.0.31-0ubuntu3.dsc 3487 SHA512:8cd48cd0b3ea698f945b9a335650a7436e57dbc0e6018278dd817eb415716c93f54c646a5be4f72236d7b4b4d2517c2ca08aa697606a3f82a6c16af513304bb5
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.31.orig.tar.gz' mysql-8.0_8.0.31.orig.tar.gz 334504577 SHA512:87b1678de8c2fd640fd6f3ae58266ea63fe240578330e3296d0e5fc209bbe9b0c22996214b6ca4cce8c0d9cc2f9897f4e6723d835b33fc4342983c82929c3d96
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.31-0ubuntu3.debian.tar.xz' mysql-8.0_8.0.31-0ubuntu3.debian.tar.xz 161204 SHA512:77da383cb5b71176826bafd04439bf325566d3650c61547866acf3cff4d2b9a00ec2f89aa376e2668d6cec990daaa4db27eba8d71eb443b3e1e01b65d579d10b
-```
 
 ### `dpkg` source package: `mysql-defaults=1.1.0`
 
@@ -3998,13 +3968,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-defaults=3.10.6-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.10.6-1ubuntu1.dsc' python3-defaults_3.10.6-1ubuntu1.dsc 3026 SHA512:72c01732183308d6e22c488a68c0a342628ba0f600e6d2f2d5bd9ea266e10e44281c9c023ff57d4881d2cb0a229a578516eca6db9eec44785612077298ad1fa2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.10.6-1ubuntu1.tar.gz' python3-defaults_3.10.6-1ubuntu1.tar.gz 145775 SHA512:abb48b789594cddcc9c41862c1ee6135738d6f51723d927fb224ac84d909a22fbfafe6c9f9efc572ba5c2bf2f86ae5e2ec6a877452e685a2ee7b2de3895b0f7e
-```
 
 ### `dpkg` source package: `python3-stdlib-extensions=3.10.8-1`
 
@@ -4299,15 +4265,13 @@ Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subv
 - `Unicode`
 - `Utfwidth`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris subversion=1.14.2-4
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/subversion/subversion_1.14.2-4.dsc' subversion_1.14.2-4.dsc 4046 SHA512:056d92339179d99a89eb2cc05fa08d8e201ad87c7266615940cc9388e4c463b23db502a6ae403f6076babc90bfad1abc5dc0b28421cd0882adaeca5aa9a9aa85
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/subversion/subversion_1.14.2.orig.tar.gz' subversion_1.14.2.orig.tar.gz 11626792 SHA512:053d9d38f675f5ddd6ad9c6bd061482f5e9ec9f0cb8ea6db76a91e0646af26dfdab2a882d09395df4e073d704be909160c230251957f86a452d32408da6d7468
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/subversion/subversion_1.14.2.orig.tar.gz.asc' subversion_1.14.2.orig.tar.gz.asc 3215 SHA512:e0bdc9fff6ec6a645005da9031e96c7ad5cc97b9fbac21b91be6efe91adc72d85bd4ad630b5ca28e9cf619b95ea6f6421033e2d4669473faf9ec0406fd2ed6b6
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/subversion/subversion_1.14.2-4.debian.tar.xz' subversion_1.14.2-4.debian.tar.xz 337148 SHA512:adce459d9c19ffc74cf27e41150ca914a2e59c00a07299a5aafcc510d5ac5e812c2b7a44dfb26be771b0e99f1880e4081129785a572b1b87d9f9f9cf855359f4
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/subversion/1.14.2-4/
+
 
 ### `dpkg` source package: `systemd=252.4-1ubuntu1`
 
@@ -4396,14 +4360,9 @@ Licenses: (parsed from: `/usr/share/doc/libtiff-dev/copyright`, `/usr/share/doc/
 
 - `Hylafax`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.4.0-6ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.4.0-6ubuntu1.dsc' tiff_4.4.0-6ubuntu1.dsc 2351 SHA512:68798b02316bb826cf66d8d87ed901972309ba5cb725421e05594d72a26d434b0464083d4c7650edd9a81e7a6755a6490bd0c1be3386fed61263c89a8671f40b
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.4.0.orig.tar.bz2' tiff_4.4.0.orig.tar.bz2 2072723 SHA512:202409ed93e12e5fbda403e8cb8cc778da394cea830e96712f67a6b856a63f82c0b87ffc4c9a41e618a941f30f8a574eae105c43d504373b60228599036c0a2e
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.4.0-6ubuntu1.debian.tar.xz' tiff_4.4.0-6ubuntu1.debian.tar.xz 33844 SHA512:f2a1d0fea6ab9b8352bcdfcb2bd437e280bfe97d3439641cb3f43c4cd07a90b09192798a53cf9f2286029a17c150108c93767c53e0f9521aa2511b89616aa9ce
-```
 
 ### `dpkg` source package: `tzdata=2022g-2ubuntu1`
 
