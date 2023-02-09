@@ -1,7 +1,7 @@
 ## `mysql:debian`
 
 ```console
-$ docker pull mysql@sha256:3cebdc40926f61eaac83b5ea26388f8fa770e7636c2ea930421cc5604a41a247
+$ docker pull mysql@sha256:a5a6abbcea1c4980cd26159a141e76e6b61c7bb4bd646c451e2de427ac109e5f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,106 +11,106 @@ $ docker pull mysql@sha256:3cebdc40926f61eaac83b5ea26388f8fa770e7636c2ea930421cc
 ### `mysql:debian` - linux; amd64
 
 ```console
-$ docker pull mysql@sha256:3463914132e73c14c172cd4a94da9c66d0baa1a315b16161f462921193e36aa6
+$ docker pull mysql@sha256:285a51d29dcd451bb19e8ea95ccdc3821623b479d4c4ac9502f7d8f7bb97770e
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **177.8 MB (177751835 bytes)**  
+-	Total Size: **177.8 MB (177766891 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bf20690ccd77820231956c3b7385b477bcd57afe216412e84b5c0166e04cab52`
+-	Image ID: `sha256:a0ee0d5c0bb6c6cba6e891921672f9db100ebb8de2cd4756a25534f5355d742d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Sat, 04 Feb 2023 06:51:41 GMT
-ADD file:1d256392bb7afe6942d157db84ca62774ac4114f8a3816fd50bace8d73130b57 in / 
-# Sat, 04 Feb 2023 06:51:41 GMT
+# Thu, 09 Feb 2023 03:20:20 GMT
+ADD file:3ea7c69e4bfac2ebb6f86baaedab31827c86a594dba8080a49928e211ad3c7a0 in / 
+# Thu, 09 Feb 2023 03:20:20 GMT
 CMD ["bash"]
-# Sat, 04 Feb 2023 14:47:32 GMT
+# Thu, 09 Feb 2023 10:25:56 GMT
 RUN groupadd -r mysql && useradd -r -g mysql mysql
-# Sat, 04 Feb 2023 14:47:38 GMT
+# Thu, 09 Feb 2023 10:26:01 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends gnupg dirmngr && rm -rf /var/lib/apt/lists/*
-# Sat, 04 Feb 2023 14:47:38 GMT
+# Thu, 09 Feb 2023 10:26:01 GMT
 ENV GOSU_VERSION=1.16
-# Sat, 04 Feb 2023 14:47:45 GMT
+# Thu, 09 Feb 2023 10:26:11 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates wget; 	rm -rf /var/lib/apt/lists/*; 	dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	chmod +x /usr/local/bin/gosu; 	gosu --version; 	gosu nobody true
-# Sat, 04 Feb 2023 14:47:46 GMT
+# Thu, 09 Feb 2023 10:26:12 GMT
 RUN mkdir /docker-entrypoint-initdb.d
-# Sat, 04 Feb 2023 14:47:52 GMT
+# Thu, 09 Feb 2023 10:26:17 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		openssl 		perl 		xz-utils 		zstd 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 04 Feb 2023 14:47:53 GMT
+# Thu, 09 Feb 2023 10:26:19 GMT
 RUN set -eux; 	key='859BE8D7C586F538430B19C2467B942D3A79BD29'; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 	mkdir -p /etc/apt/keyrings; 	gpg --batch --export "$key" > /etc/apt/keyrings/mysql.gpg; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"
-# Sat, 04 Feb 2023 14:47:53 GMT
+# Thu, 09 Feb 2023 10:26:19 GMT
 ENV MYSQL_MAJOR=8.0
-# Sat, 04 Feb 2023 14:47:53 GMT
+# Thu, 09 Feb 2023 10:26:19 GMT
 ENV MYSQL_VERSION=8.0.32-1debian11
-# Sat, 04 Feb 2023 14:47:54 GMT
+# Thu, 09 Feb 2023 10:26:19 GMT
 RUN echo 'deb [ signed-by=/etc/apt/keyrings/mysql.gpg ] http://repo.mysql.com/apt/debian/ bullseye mysql-8.0' > /etc/apt/sources.list.d/mysql.list
-# Sat, 04 Feb 2023 14:48:09 GMT
+# Thu, 09 Feb 2023 10:26:35 GMT
 RUN { 		echo mysql-community-server mysql-community-server/data-dir select ''; 		echo mysql-community-server mysql-community-server/root-pass password ''; 		echo mysql-community-server mysql-community-server/re-root-pass password ''; 		echo mysql-community-server mysql-community-server/remove-test-db select false; 	} | debconf-set-selections 	&& apt-get update 	&& apt-get install -y 		mysql-community-client="${MYSQL_VERSION}" 		mysql-community-server-core="${MYSQL_VERSION}" 	&& rm -rf /var/lib/apt/lists/* 	&& rm -rf /var/lib/mysql && mkdir -p /var/lib/mysql /var/run/mysqld 	&& chown -R mysql:mysql /var/lib/mysql /var/run/mysqld 	&& chmod 1777 /var/run/mysqld /var/lib/mysql
-# Sat, 04 Feb 2023 14:48:10 GMT
+# Thu, 09 Feb 2023 10:26:36 GMT
 VOLUME [/var/lib/mysql]
-# Sat, 04 Feb 2023 14:48:10 GMT
+# Thu, 09 Feb 2023 10:26:36 GMT
 COPY dir:2e040acc386ebd23b8571951a51e6cb93647df091bc26159b8c757ef82b3fcda in /etc/mysql/ 
-# Sat, 04 Feb 2023 14:48:10 GMT
+# Thu, 09 Feb 2023 10:26:36 GMT
 COPY file:e9c22353a1133b89c5bca24ecacd348acd094e50e5e5c45375a997c6b1f07192 in /usr/local/bin/ 
-# Sat, 04 Feb 2023 14:48:11 GMT
+# Thu, 09 Feb 2023 10:26:37 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
-# Sat, 04 Feb 2023 14:48:11 GMT
+# Thu, 09 Feb 2023 10:26:37 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Sat, 04 Feb 2023 14:48:11 GMT
+# Thu, 09 Feb 2023 10:26:37 GMT
 EXPOSE 3306 33060
-# Sat, 04 Feb 2023 14:48:11 GMT
+# Thu, 09 Feb 2023 10:26:37 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:01b5b2efb836d74b8b49da819514eca52e25290d1688db59420ffb9c6b65a03c`  
-		Last Modified: Sat, 04 Feb 2023 06:56:17 GMT  
-		Size: 31.4 MB (31396919 bytes)  
+	-	`sha256:bb263680fed18eecdc67f885094df6f589bafc19004839d7fdf141df236a61aa`  
+		Last Modified: Thu, 09 Feb 2023 03:25:13 GMT  
+		Size: 31.4 MB (31411810 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4957656d4d97b158dafcf9f7ea1e52ce85827e65d97a1fce33f22b024e0d659f`  
-		Last Modified: Sat, 04 Feb 2023 14:49:37 GMT  
-		Size: 1.7 KB (1734 bytes)  
+	-	`sha256:a8f7b95728f21c63976c276ca6f9698c7c3bf6930ebce75f7e4e8beb60a98321`  
+		Last Modified: Thu, 09 Feb 2023 10:28:00 GMT  
+		Size: 1.7 KB (1737 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6013719e001ed5ce0cbc7cdff4ae1f79c141597caa27a8006e92a6326e53345a`  
-		Last Modified: Sat, 04 Feb 2023 14:49:38 GMT  
-		Size: 4.4 MB (4414927 bytes)  
+	-	`sha256:3a2431a387ba17c6e7d4ef50e5c7bd6e47629b95792dded824c3566f3476c428`  
+		Last Modified: Thu, 09 Feb 2023 10:28:01 GMT  
+		Size: 4.4 MB (4414977 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1aa6814d598d5914d9926ec0a5a04fcc6e790afabc91f4766372af106c17acd2`  
-		Last Modified: Sat, 04 Feb 2023 14:49:36 GMT  
-		Size: 1.5 MB (1471342 bytes)  
+	-	`sha256:50f58cbce0349eb0706ae41c8f34c0955cc74f5cb4d9b0cb086682647b51ad87`  
+		Last Modified: Thu, 09 Feb 2023 10:27:59 GMT  
+		Size: 1.5 MB (1471388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62c8eaab45d1b1d84217a009b1ed704b791e724afbf410b70e19cccba16330e7`  
-		Last Modified: Sat, 04 Feb 2023 14:49:35 GMT  
+	-	`sha256:15447575be2a06f415c246f6060f8deb4b88876c9b0329c571c3a06678da08a1`  
+		Last Modified: Thu, 09 Feb 2023 10:27:59 GMT  
 		Size: 149.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cf5f646a9bb01ef05b95b959b0aa365de8bfd5b41ee6f963d2f9f053a176ac2d`  
-		Last Modified: Sat, 04 Feb 2023 14:49:38 GMT  
-		Size: 12.7 MB (12662023 bytes)  
+	-	`sha256:08fb8835dfec3abac8a936eb08eec9afdc5f4edd39a801d07b3954e659879dd5`  
+		Last Modified: Thu, 09 Feb 2023 10:28:01 GMT  
+		Size: 12.7 MB (12661942 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f77555863007461c120a08bff5a4064950f9480c943803faeab52ce0195ecd`  
-		Last Modified: Sat, 04 Feb 2023 14:49:35 GMT  
-		Size: 2.5 KB (2547 bytes)  
+	-	`sha256:1eda3df60cab197cb15b81a3da99ef596ae56fbe45ddfa11650c6abe3c0940ff`  
+		Last Modified: Thu, 09 Feb 2023 10:27:58 GMT  
+		Size: 2.5 KB (2548 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f26b2b4e771728df08c074cb278d9d41dd87e6048ec1eccfb1206e01d5e4f8f`  
-		Last Modified: Sat, 04 Feb 2023 14:49:33 GMT  
-		Size: 250.0 B  
+	-	`sha256:f06690264afdf54515ea7068b7360a33492348b29356423ae0e9eed4ae864fa0`  
+		Last Modified: Thu, 09 Feb 2023 10:27:57 GMT  
+		Size: 251.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b587ff3b05d9015e5d9471aceedbbdff6e371c2b9ae923af273addce00abfbd1`  
-		Last Modified: Sat, 04 Feb 2023 14:49:53 GMT  
-		Size: 127.8 MB (127795588 bytes)  
+	-	`sha256:31600770994e9b6b4057d325e15ec90db2d58a23222325600628798e05db9961`  
+		Last Modified: Thu, 09 Feb 2023 10:28:16 GMT  
+		Size: 127.8 MB (127795730 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:58f0c92d7ddeafcc2949667f9fbf63dfaff447ad17cff156957fe4e38ca45aac`  
-		Last Modified: Sat, 04 Feb 2023 14:49:33 GMT  
+	-	`sha256:982b2d3594118f5bdf0a1ce6add2e43506e888b8497eecd7601976cd3e9ac90f`  
+		Last Modified: Thu, 09 Feb 2023 10:27:57 GMT  
 		Size: 845.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5690a3da4b66efa9e50222b88182474283b4dda3ddd5e7bfee83568005657562`  
-		Last Modified: Sat, 04 Feb 2023 14:49:33 GMT  
-		Size: 5.4 KB (5390 bytes)  
+	-	`sha256:d0c7fa7652204a4ffee2cd5c11f585ddaa77004c0d20986521aea43345d01192`  
+		Last Modified: Thu, 09 Feb 2023 10:27:57 GMT  
+		Size: 5.4 KB (5393 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23b8d1d871af097f1efb61a6f8f1c623aa6b6201969f6367182c8d03aab0186e`  
-		Last Modified: Sat, 04 Feb 2023 14:49:33 GMT  
+	-	`sha256:69fda57e156ba0b60c0ca6cfbd16eb91fd9c3a8b1ad6d0ef6121631c0354a5d8`  
+		Last Modified: Thu, 09 Feb 2023 10:27:57 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
