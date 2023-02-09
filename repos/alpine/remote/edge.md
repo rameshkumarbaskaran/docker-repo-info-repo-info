@@ -1,7 +1,7 @@
 ## `alpine:edge`
 
 ```console
-$ docker pull alpine@sha256:213ce1796538bd832b23665db5274a4952184bd1302d62255936d373888283ad
+$ docker pull alpine@sha256:0b54becde038a7bae7662f6bea9cf2ff6a4d0a8d4b88af27197aee23162bd3f7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -122,27 +122,27 @@ CMD ["/bin/sh"]
 ### `alpine:edge` - linux; 386
 
 ```console
-$ docker pull alpine@sha256:e63ef267d32b76fff7d3a44ce83baba89de26f2d2231ca8d0d4186f8f4e2f02e
+$ docker pull alpine@sha256:7fb099973f372993ee1dbaa4a945b8777fd237e8509c3e4f02d6accb28008ea8
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **3.4 MB (3408728 bytes)**  
+-	Total Size: **3.4 MB (3409284 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:36746486005e1590f9d415b30a8d1af9bd64b30b1aec4c4474d1994e2145ac94`
+-	Image ID: `sha256:73980142d6f29f4919af5de6ad9ced3271913d22caaf4bf7e05b877d9e3473e6`
 -	Default Command: `["\/bin\/sh"]`
 
 ```dockerfile
-# Thu, 10 Nov 2022 20:38:32 GMT
-ADD file:d87251a8a46cb3eb62f9fc8f8298f300c52dea8064e974b23dbc5382b4118a4b in / 
-# Thu, 10 Nov 2022 20:38:33 GMT
+# Thu, 09 Feb 2023 05:08:50 GMT
+ADD file:283b34f16340963ecf0c7cee7d48a88bcca3b0b37e1d4643e8a80cf5bb347aed in / 
+# Thu, 09 Feb 2023 05:08:50 GMT
 CMD ["/bin/sh"]
 ```
 
 -	Layers:
-	-	`sha256:53875a713ff14c3b89284e31b43afe171ba043aa5c81393b446a8356177467a0`  
-		Last Modified: Thu, 10 Nov 2022 20:39:18 GMT  
-		Size: 3.4 MB (3408728 bytes)  
+	-	`sha256:202cc72952716e5c4f2f6f87674f57b1f2a6f7fe23765ef1cfe738d4be410d99`  
+		Last Modified: Thu, 09 Feb 2023 05:09:35 GMT  
+		Size: 3.4 MB (3409284 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `alpine:edge` - linux; ppc64le
