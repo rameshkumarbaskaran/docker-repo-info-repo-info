@@ -1,7 +1,7 @@
 ## `rust:alpine3.16`
 
 ```console
-$ docker pull rust@sha256:d1bebf89ffa8cdb3b875afd86cede2e1caa2d16016c79d3b5fb8315269033480
+$ docker pull rust@sha256:5f1d686518e9c417d650d24815565ec1f9c857b9bbc0160094d261bb16321698
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -52,14 +52,14 @@ RUN set -eux;     apkArch="$(apk --print-arch)";     case "$apkArch" in         
 ### `rust:alpine3.16` - linux; arm64 variant v8
 
 ```console
-$ docker pull rust@sha256:5556e82b268d05d1cbe0bf2c8c3cd570427ec644ee287755ab1fc8a11931d345
+$ docker pull rust@sha256:5ce8643f24b128f17ddb951e7a90593f3fcb7e9e77d6f73ea1e06ae1538ba2db
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **263.6 MB (263584466 bytes)**  
+-	Total Size: **263.5 MB (263537493 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c1dea26221aed09ba49e98c7c7eb3bbce28209f3ba8f135244afaca95a4bc2ae`
+-	Image ID: `sha256:36af39780d0ccb2a6e0a724f3fa9b4854ab80803d336d49ff69b417846f17858`
 -	Default Command: `["\/bin\/sh"]`
 
 ```dockerfile
@@ -69,10 +69,10 @@ ADD file:57d621536158358b14d15155826ef2dd4ca034278044111ec0aaf6717016e569 in /
 CMD ["/bin/sh"]
 # Sat, 12 Nov 2022 09:41:17 GMT
 RUN apk add --no-cache         ca-certificates         gcc
-# Fri, 27 Jan 2023 00:05:58 GMT
-ENV RUSTUP_HOME=/usr/local/rustup CARGO_HOME=/usr/local/cargo PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RUST_VERSION=1.67.0
-# Fri, 27 Jan 2023 00:06:13 GMT
-RUN set -eux;     apkArch="$(apk --print-arch)";     case "$apkArch" in         x86_64) rustArch='x86_64-unknown-linux-musl'; rustupSha256='95427cb0592e32ed39c8bd522fe2a40a746ba07afb8149f91e936cddb4d6eeac' ;;         aarch64) rustArch='aarch64-unknown-linux-musl'; rustupSha256='7855404cdc50c20040c743800c947b6f452490d47f8590a4a83bc6f75d1d8eda' ;;         *) echo >&2 "unsupported architecture: $apkArch"; exit 1 ;;     esac;     url="https://static.rust-lang.org/rustup/archive/1.25.1/${rustArch}/rustup-init";     wget "$url";     echo "${rustupSha256} *rustup-init" | sha256sum -c -;     chmod +x rustup-init;     ./rustup-init -y --no-modify-path --profile minimal --default-toolchain $RUST_VERSION --default-host ${rustArch};     rm rustup-init;     chmod -R a+w $RUSTUP_HOME $CARGO_HOME;     rustup --version;     cargo --version;     rustc --version;
+# Thu, 09 Feb 2023 21:35:10 GMT
+ENV RUSTUP_HOME=/usr/local/rustup CARGO_HOME=/usr/local/cargo PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RUST_VERSION=1.67.1
+# Thu, 09 Feb 2023 21:35:26 GMT
+RUN set -eux;     apkArch="$(apk --print-arch)";     case "$apkArch" in         x86_64) rustArch='x86_64-unknown-linux-musl'; rustupSha256='241a99ff02accd2e8e0ef3a46aaa59f8d6934b1bb6e4fba158e1806ae028eb25' ;;         aarch64) rustArch='aarch64-unknown-linux-musl'; rustupSha256='6a2691ced61ef616ca196bab4b6ba7b0fc5a092923955106a0c8e0afa31dbce4' ;;         *) echo >&2 "unsupported architecture: $apkArch"; exit 1 ;;     esac;     url="https://static.rust-lang.org/rustup/archive/1.25.2/${rustArch}/rustup-init";     wget "$url";     echo "${rustupSha256} *rustup-init" | sha256sum -c -;     chmod +x rustup-init;     ./rustup-init -y --no-modify-path --profile minimal --default-toolchain $RUST_VERSION --default-host ${rustArch};     rm rustup-init;     chmod -R a+w $RUSTUP_HOME $CARGO_HOME;     rustup --version;     cargo --version;     rustc --version;
 ```
 
 -	Layers:
@@ -84,7 +84,7 @@ RUN set -eux;     apkArch="$(apk --print-arch)";     case "$apkArch" in         
 		Last Modified: Sat, 12 Nov 2022 09:42:32 GMT  
 		Size: 37.2 MB (37190663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:befa2d850f56780dbf5acaa28401b4cbdfcd9a79bdb253f15426e304967a3d28`  
-		Last Modified: Fri, 27 Jan 2023 00:12:39 GMT  
-		Size: 223.7 MB (223686047 bytes)  
+	-	`sha256:c58a288d459812dd5f37400060b83aa43d920a5be679c472379c61308ea76d7f`  
+		Last Modified: Thu, 09 Feb 2023 21:42:06 GMT  
+		Size: 223.6 MB (223639074 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
