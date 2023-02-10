@@ -1,7 +1,7 @@
 ## `aerospike:ee-6.2.0.3`
 
 ```console
-$ docker pull aerospike@sha256:3362c9853fa6ade63d5edbfc847cf7127119f2f4c0a5da1fc921a3bba021b536
+$ docker pull aerospike@sha256:2300a1ede1149fdda8caaf9cf893670a62ca81f57eb0bc511f35a13dfa669d83
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -77,14 +77,14 @@ CMD ["asd"]
 ### `aerospike:ee-6.2.0.3` - linux; arm64 variant v8
 
 ```console
-$ docker pull aerospike@sha256:be1cde79abb12034654a8706208b8020ea3a97aa9f4cde3eec7c95ab0ab03212
+$ docker pull aerospike@sha256:effbd93ce894726ed8345238185f82880c291c5ac5c7ea7a8f6734a4c9819dc3
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **78.5 MB (78500825 bytes)**  
+-	Total Size: **78.5 MB (78500823 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bd0a5c359f5e1a5035c6bee301c904b0afbe64e41779205c89645139c9e8bd26`
+-	Image ID: `sha256:b273829641459de655d0bd7737825a11a3b10daaa1ddad618aa620943a2ad145`
 -	Entrypoint: `["\/usr\/bin\/as-tini-static","-r","SIGUSR1","-t","SIGTERM","--","\/entrypoint.sh"]`
 -	Default Command: `["asd"]`
 -	`SHELL`: `["\/bin\/bash","-Eeuo","pipefail","-c"]`
@@ -113,11 +113,11 @@ RUN {     export DEBIAN_FRONTEND=noninteractive;     apt-get update -y;     apt-
 COPY file:c76954551192450f2d9e2a428b0b3a3daeba46fccf29d07ceabb675e275a068e in /etc/aerospike/aerospike.template.conf 
 # Thu, 09 Feb 2023 09:03:05 GMT
 EXPOSE 3000 3001 3002
-# Thu, 09 Feb 2023 09:03:06 GMT
-COPY file:d50c4b59c6030f47e41221b7d152a3e0cf299b7e8bf38ea42e3c2e33b1c9cc1f in /entrypoint.sh 
-# Thu, 09 Feb 2023 09:03:06 GMT
+# Fri, 10 Feb 2023 19:39:15 GMT
+COPY file:57ed4c0390f91371a6d5ddbdf0ecf475b40dc8871b369f3100b157df0d753fc5 in /entrypoint.sh 
+# Fri, 10 Feb 2023 19:39:15 GMT
 ENTRYPOINT ["/usr/bin/as-tini-static" "-r" "SIGUSR1" "-t" "SIGTERM" "--" "/entrypoint.sh"]
-# Thu, 09 Feb 2023 09:03:06 GMT
+# Fri, 10 Feb 2023 19:39:15 GMT
 CMD ["asd"]
 ```
 
@@ -134,7 +134,7 @@ CMD ["asd"]
 		Last Modified: Thu, 09 Feb 2023 09:03:42 GMT  
 		Size: 1.1 KB (1089 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc39bbb7b499c57cd6c8f2bed54f01fcfaadd57fd1ef87521813eb89637f303d`  
-		Last Modified: Thu, 09 Feb 2023 09:03:42 GMT  
-		Size: 1.1 KB (1100 bytes)  
+	-	`sha256:c740d6a79f59848ed179f6e0d5ed3b7526c0aea72d4326f94a8651d68c5a0097`  
+		Last Modified: Fri, 10 Feb 2023 19:39:27 GMT  
+		Size: 1.1 KB (1098 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
