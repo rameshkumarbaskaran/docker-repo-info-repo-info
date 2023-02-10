@@ -1,7 +1,7 @@
 ## `rust:bullseye`
 
 ```console
-$ docker pull rust@sha256:9bd17fc3616bcd39e52fd77ec6db2fe2abd26200851eccd62350f126e5464938
+$ docker pull rust@sha256:b99222f926acbf46d3e0546cc4759ef41d5ef125109b82911fc2c26c30e3041b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -72,59 +72,59 @@ RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch#
 ### `rust:bullseye` - linux; arm variant v7
 
 ```console
-$ docker pull rust@sha256:198037aac04f6089d169c81a6eed042b0ad5da1f3a3e0b06fa1d3270ceade622
+$ docker pull rust@sha256:0660d8dc88b1ebe7705de4da74e820aa22b72a53b7cc9167c19e16ca78048abe
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **492.1 MB (492117046 bytes)**  
+-	Total Size: **492.1 MB (492106348 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:67fbdd4f58c2038f89cba41cbe20c01d8a0ae615bf80c80784df071e4e745ba1`
+-	Image ID: `sha256:5f2ddaf1e5511f33bb836201ed12ca3c5a0934de961927a9d413b0b807e90f85`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Sat, 04 Feb 2023 09:59:19 GMT
-ADD file:239b5255d05e0742f381f82fb7cd586fcc6d9a427263238a2be3372c494ae933 in / 
-# Sat, 04 Feb 2023 09:59:20 GMT
+# Thu, 09 Feb 2023 06:11:50 GMT
+ADD file:dec7deb02352cdd1425e3138d7352582848ea2b4bb65c69ea313e52e02e33f1b in / 
+# Thu, 09 Feb 2023 06:11:51 GMT
 CMD ["bash"]
-# Sat, 04 Feb 2023 10:49:06 GMT
+# Thu, 09 Feb 2023 17:37:11 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 04 Feb 2023 10:49:12 GMT
+# Thu, 09 Feb 2023 17:37:17 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Sat, 04 Feb 2023 10:49:37 GMT
+# Thu, 09 Feb 2023 17:37:38 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Sat, 04 Feb 2023 10:50:25 GMT
+# Thu, 09 Feb 2023 17:38:25 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 04 Feb 2023 21:08:02 GMT
-ENV RUSTUP_HOME=/usr/local/rustup CARGO_HOME=/usr/local/cargo PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RUST_VERSION=1.67.0
-# Sat, 04 Feb 2023 21:08:21 GMT
-RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch##*-}" in         amd64) rustArch='x86_64-unknown-linux-gnu'; rustupSha256='5cc9ffd1026e82e7fb2eec2121ad71f4b0f044e88bca39207b3f6b769aaa799c' ;;         armhf) rustArch='armv7-unknown-linux-gnueabihf'; rustupSha256='48c5ecfd1409da93164af20cf4ac2c6f00688b15eb6ba65047f654060c844d85' ;;         arm64) rustArch='aarch64-unknown-linux-gnu'; rustupSha256='e189948e396d47254103a49c987e7fb0e5dd8e34b200aa4481ecc4b8e41fb929' ;;         i386) rustArch='i686-unknown-linux-gnu'; rustupSha256='0e0be29c560ad958ba52fcf06b3ea04435cb3cd674fbe11ce7d954093b9504fd' ;;         *) echo >&2 "unsupported architecture: ${dpkgArch}"; exit 1 ;;     esac;     url="https://static.rust-lang.org/rustup/archive/1.25.1/${rustArch}/rustup-init";     wget "$url";     echo "${rustupSha256} *rustup-init" | sha256sum -c -;     chmod +x rustup-init;     ./rustup-init -y --no-modify-path --profile minimal --default-toolchain $RUST_VERSION --default-host ${rustArch};     rm rustup-init;     chmod -R a+w $RUSTUP_HOME $CARGO_HOME;     rustup --version;     cargo --version;     rustc --version;
+# Fri, 10 Feb 2023 05:37:31 GMT
+ENV RUSTUP_HOME=/usr/local/rustup CARGO_HOME=/usr/local/cargo PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RUST_VERSION=1.67.1
+# Fri, 10 Feb 2023 05:37:51 GMT
+RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch##*-}" in         amd64) rustArch='x86_64-unknown-linux-gnu'; rustupSha256='bb31eaf643926b2ee9f4d8d6fc0e2835e03c0a60f34d324048aa194f0b29a71c' ;;         armhf) rustArch='armv7-unknown-linux-gnueabihf'; rustupSha256='6626b90205d7fe7058754c8e993b7efd91dedc6833a11a225b296b7c2941194f' ;;         arm64) rustArch='aarch64-unknown-linux-gnu'; rustupSha256='4ccaa7de6b8be1569f6b764acc28e84f5eca342f5162cd5c810891bff7ed7f74' ;;         i386) rustArch='i686-unknown-linux-gnu'; rustupSha256='34392b53a25c56435b411d3e575b63aab962034dd1409ba405e708610c829607' ;;         *) echo >&2 "unsupported architecture: ${dpkgArch}"; exit 1 ;;     esac;     url="https://static.rust-lang.org/rustup/archive/1.25.2/${rustArch}/rustup-init";     wget "$url";     echo "${rustupSha256} *rustup-init" | sha256sum -c -;     chmod +x rustup-init;     ./rustup-init -y --no-modify-path --profile minimal --default-toolchain $RUST_VERSION --default-host ${rustArch};     rm rustup-init;     chmod -R a+w $RUSTUP_HOME $CARGO_HOME;     rustup --version;     cargo --version;     rustc --version;
 ```
 
 -	Layers:
-	-	`sha256:7a21a86b3957d8c99250334cfb78c55af4f8c9277f2f1d4abd53d0362f96323d`  
-		Last Modified: Sat, 04 Feb 2023 10:05:53 GMT  
-		Size: 50.2 MB (50190828 bytes)  
+	-	`sha256:7c2a4bcf178ec94fc012530fd1bfd4b70c9838e2776f9790691fce0d2dac0ff1`  
+		Last Modified: Thu, 09 Feb 2023 06:18:48 GMT  
+		Size: 50.2 MB (50213699 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aacc3c746ca1bd99005f184b00ee418e015c2090c72bda638766d9fb93d3f065`  
-		Last Modified: Sat, 04 Feb 2023 10:59:08 GMT  
-		Size: 4.9 MB (4933374 bytes)  
+	-	`sha256:87a2fff1078b66b8cce5e0fb8940f73d3369a304f0c72e76c768740f68dd6eb6`  
+		Last Modified: Thu, 09 Feb 2023 17:47:05 GMT  
+		Size: 4.9 MB (4934034 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1b393b343e4fb3b92027c4741418a04d6475259ee243fbf036c1be41df98212`  
-		Last Modified: Sat, 04 Feb 2023 10:59:09 GMT  
-		Size: 10.2 MB (10217742 bytes)  
+	-	`sha256:a29288d9697500ec9b229f20d8fb486702e9751dd06ca3b694bd49c34769b479`  
+		Last Modified: Thu, 09 Feb 2023 17:47:06 GMT  
+		Size: 10.2 MB (10217702 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3e55fdd5f0aba51b2504973439b1c887364b84bc0d7b211da07aba072b81520`  
-		Last Modified: Sat, 04 Feb 2023 10:59:32 GMT  
-		Size: 50.4 MB (50356141 bytes)  
+	-	`sha256:330483fdb25cbd6170995b12134822a7ccdef3b0b48bb46f7df1fd1b348fabbb`  
+		Last Modified: Thu, 09 Feb 2023 17:47:30 GMT  
+		Size: 50.4 MB (50356237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be64cd32ab1dd00c018103a465973562bcd243bfa513190390e3fc8043b7b9d0`  
-		Last Modified: Sat, 04 Feb 2023 11:00:11 GMT  
-		Size: 167.4 MB (167360700 bytes)  
+	-	`sha256:3750c694015a53198d0268272f4412823b067b710e494a91399ae3e76272e267`  
+		Last Modified: Thu, 09 Feb 2023 17:48:09 GMT  
+		Size: 167.4 MB (167365970 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:068c29064d5111ed8851d2c01147499ff6cdd43791a759edcbf786c7f0cd3f86`  
-		Last Modified: Sat, 04 Feb 2023 21:14:07 GMT  
-		Size: 209.1 MB (209058261 bytes)  
+	-	`sha256:bff542a80f3139fe7979bb2120a896094216bb5318726e08ce57104f02181fed`  
+		Last Modified: Fri, 10 Feb 2023 05:43:50 GMT  
+		Size: 209.0 MB (209018706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rust:bullseye` - linux; arm64 variant v8
