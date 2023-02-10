@@ -422,7 +422,7 @@ CMD ["sh"]
 ## `docker:20-dind`
 
 ```console
-$ docker pull docker@sha256:901c6805c0f1da51ca0ce879bb6566e26f8d8f9ebfb545a6f0a2b4e52c22ab69
+$ docker pull docker@sha256:671eb54b6e6f4530f0d105d97c05578b0c74463ff756980588909af0fc805300
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -556,14 +556,14 @@ CMD []
 ### `docker:20-dind` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:983cb0a95194cf49e6b1c11ffc02571754ff7f3213ae1e016e543987a11e5c8b
+$ docker pull docker@sha256:7794cfc6d111dfbd84f50b8f5d55f33942fc4a5e5d2a1ff7b8abbfd938203e7e
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.0 MB (101972537 bytes)**  
+-	Total Size: **102.0 MB (101972535 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0351ed2e1de673fbd6fb5746511f27dfc9002cd1132bf338d192035cf58409bb`
+-	Image ID: `sha256:864af14a71bc8886fbc18c7f468828e7b2b7a4db05d246f05fc365f319d551b7`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -610,15 +610,15 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Wed, 08 Feb 2023 23:40:04 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:18 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:58 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 CMD []
 ```
 
@@ -671,15 +671,15 @@ CMD []
 		Last Modified: Wed, 08 Feb 2023 23:42:45 GMT  
 		Size: 1.0 KB (1048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8f7f377b9529e3248c464543228e2bb5a9026712dc25cef21d1f19654be56a3`  
-		Last Modified: Fri, 10 Feb 2023 01:42:43 GMT  
-		Size: 2.8 KB (2822 bytes)  
+	-	`sha256:c85ec22222ef809521bdbd8735b646d6614d2d9cee600acffe0a3d48a0a6162a`  
+		Last Modified: Fri, 10 Feb 2023 19:43:40 GMT  
+		Size: 2.8 KB (2820 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:20-dind-rootless`
 
 ```console
-$ docker pull docker@sha256:b8feb031ef5ead5f164e005dcefc768ef33ab0ab6313db1ba51a05927d88a01e
+$ docker pull docker@sha256:3eee5a023b440da2aefbd5cb40af742dcf7739de59e2f904007b9e8bda5e9ab4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -847,14 +847,14 @@ USER rootless
 ### `docker:20-dind-rootless` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:c2db0c76de7f007539eac3fcc471b817fafc8ef1bfa32ad01f6a989fe6e7f985
+$ docker pull docker@sha256:89329cd5258c8619427d1faf9b603e3292c99774c9a7cf0351d815368d7bb921
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **125.3 MB (125257696 bytes)**  
+-	Total Size: **125.3 MB (125257686 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:97af933fec0f6c7f7a96cc947525e0c052c2009722276f1dfd470ad5b4fbe8b5`
+-	Image ID: `sha256:1589e1fded5b8d7daae08c8afa7da2d0eb04e5d6ca39760d02daf06b0ff0698b`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -901,29 +901,29 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Wed, 08 Feb 2023 23:40:04 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:18 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:58 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 CMD []
-# Fri, 10 Feb 2023 01:40:21 GMT
+# Fri, 10 Feb 2023 19:42:01 GMT
 RUN apk add --no-cache iproute2 fuse-overlayfs
-# Fri, 10 Feb 2023 01:40:22 GMT
+# Fri, 10 Feb 2023 19:42:02 GMT
 RUN mkdir /run/user && chmod 1777 /run/user
-# Fri, 10 Feb 2023 01:40:22 GMT
+# Fri, 10 Feb 2023 19:42:02 GMT
 RUN set -eux; 	adduser -h /home/rootless -g 'Rootless' -D -u 1000 rootless; 	echo 'rootless:100000:65536' >> /etc/subuid; 	echo 'rootless:100000:65536' >> /etc/subgid
-# Fri, 10 Feb 2023 01:40:25 GMT
+# Fri, 10 Feb 2023 19:42:04 GMT
 RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 			url='https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-20.10.23.tgz'; 			;; 		'aarch64') 			url='https://download.docker.com/linux/static/stable/aarch64/docker-rootless-extras-20.10.23.tgz'; 			;; 		*) echo >&2 "error: unsupported 'rootless.tgz' architecture ($apkArch)"; exit 1 ;; 	esac; 		wget -O 'rootless.tgz' "$url"; 		tar --extract 		--file rootless.tgz 		--strip-components 1 		--directory /usr/local/bin/ 		'docker-rootless-extras/rootlesskit' 		'docker-rootless-extras/rootlesskit-docker-proxy' 		'docker-rootless-extras/vpnkit' 	; 	rm rootless.tgz; 		rootlesskit --version; 	vpnkit --version
-# Fri, 10 Feb 2023 01:40:25 GMT
+# Fri, 10 Feb 2023 19:42:05 GMT
 RUN set -eux; 	mkdir -p /home/rootless/.local/share/docker; 	chown -R rootless:rootless /home/rootless/.local/share/docker
-# Fri, 10 Feb 2023 01:40:25 GMT
+# Fri, 10 Feb 2023 19:42:05 GMT
 VOLUME [/home/rootless/.local/share/docker]
-# Fri, 10 Feb 2023 01:40:25 GMT
+# Fri, 10 Feb 2023 19:42:05 GMT
 USER rootless
 ```
 
@@ -976,29 +976,29 @@ USER rootless
 		Last Modified: Wed, 08 Feb 2023 23:42:45 GMT  
 		Size: 1.0 KB (1048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8f7f377b9529e3248c464543228e2bb5a9026712dc25cef21d1f19654be56a3`  
-		Last Modified: Fri, 10 Feb 2023 01:42:43 GMT  
-		Size: 2.8 KB (2822 bytes)  
+	-	`sha256:c85ec22222ef809521bdbd8735b646d6614d2d9cee600acffe0a3d48a0a6162a`  
+		Last Modified: Fri, 10 Feb 2023 19:43:40 GMT  
+		Size: 2.8 KB (2820 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a10dcb13ac0c9efe482c70acb11888a8cab595cb59f34b9fb5238e4286284793`  
-		Last Modified: Fri, 10 Feb 2023 01:42:56 GMT  
-		Size: 1.4 MB (1401566 bytes)  
+	-	`sha256:61198b4e45bfcf09ad1cf3b4a200da2abf529a813ae02ef87323bb747e9ff768`  
+		Last Modified: Fri, 10 Feb 2023 19:43:53 GMT  
+		Size: 1.4 MB (1401562 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8a284f26ce91d88efa6100549509d51544cbd8821790a6acacd2ad53e552e11`  
-		Last Modified: Fri, 10 Feb 2023 01:42:56 GMT  
-		Size: 151.0 B  
+	-	`sha256:e8a78eaa386d0325bb42652c6d1f96c6510e92d7d77dbce4feffc587ff38e9f8`  
+		Last Modified: Fri, 10 Feb 2023 19:43:52 GMT  
+		Size: 150.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:13d877913246c4f79cd42bea937d784bcdeb12e67973b3449735dbec206fda0b`  
-		Last Modified: Fri, 10 Feb 2023 01:42:56 GMT  
-		Size: 1.4 KB (1353 bytes)  
+	-	`sha256:4ae62866da92fe81399756b6b83b2a1a19c64f8eff1cd3dc14a35e233f5769d1`  
+		Last Modified: Fri, 10 Feb 2023 19:43:52 GMT  
+		Size: 1.4 KB (1351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b734d91a07346c0013d8cb49d142b18f046aa4b3e6d0d83b3bdaf79f958688c`  
-		Last Modified: Fri, 10 Feb 2023 01:42:59 GMT  
+	-	`sha256:9b9a3d2b1071641bfe3ff7f83ebbcc239a6c7658d6be32007b5f3fc8ccf8c163`  
+		Last Modified: Fri, 10 Feb 2023 19:43:55 GMT  
 		Size: 21.9 MB (21881869 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da6404a64e6d572bba08511eb866e1a2984b29a1718bf23ba6c22de1a5ee41ce`  
-		Last Modified: Fri, 10 Feb 2023 01:42:56 GMT  
-		Size: 220.0 B  
+	-	`sha256:456475c41a734a551e0fb3be21d93c6845a71446196ea9edcfdb13bee05db13a`  
+		Last Modified: Fri, 10 Feb 2023 19:43:52 GMT  
+		Size: 219.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:20-git`
@@ -1798,7 +1798,7 @@ CMD ["sh"]
 ## `docker:20.10-dind`
 
 ```console
-$ docker pull docker@sha256:901c6805c0f1da51ca0ce879bb6566e26f8d8f9ebfb545a6f0a2b4e52c22ab69
+$ docker pull docker@sha256:671eb54b6e6f4530f0d105d97c05578b0c74463ff756980588909af0fc805300
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1932,14 +1932,14 @@ CMD []
 ### `docker:20.10-dind` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:983cb0a95194cf49e6b1c11ffc02571754ff7f3213ae1e016e543987a11e5c8b
+$ docker pull docker@sha256:7794cfc6d111dfbd84f50b8f5d55f33942fc4a5e5d2a1ff7b8abbfd938203e7e
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.0 MB (101972537 bytes)**  
+-	Total Size: **102.0 MB (101972535 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0351ed2e1de673fbd6fb5746511f27dfc9002cd1132bf338d192035cf58409bb`
+-	Image ID: `sha256:864af14a71bc8886fbc18c7f468828e7b2b7a4db05d246f05fc365f319d551b7`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -1986,15 +1986,15 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Wed, 08 Feb 2023 23:40:04 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:18 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:58 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 CMD []
 ```
 
@@ -2047,15 +2047,15 @@ CMD []
 		Last Modified: Wed, 08 Feb 2023 23:42:45 GMT  
 		Size: 1.0 KB (1048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8f7f377b9529e3248c464543228e2bb5a9026712dc25cef21d1f19654be56a3`  
-		Last Modified: Fri, 10 Feb 2023 01:42:43 GMT  
-		Size: 2.8 KB (2822 bytes)  
+	-	`sha256:c85ec22222ef809521bdbd8735b646d6614d2d9cee600acffe0a3d48a0a6162a`  
+		Last Modified: Fri, 10 Feb 2023 19:43:40 GMT  
+		Size: 2.8 KB (2820 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:20.10-dind-rootless`
 
 ```console
-$ docker pull docker@sha256:b8feb031ef5ead5f164e005dcefc768ef33ab0ab6313db1ba51a05927d88a01e
+$ docker pull docker@sha256:3eee5a023b440da2aefbd5cb40af742dcf7739de59e2f904007b9e8bda5e9ab4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2223,14 +2223,14 @@ USER rootless
 ### `docker:20.10-dind-rootless` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:c2db0c76de7f007539eac3fcc471b817fafc8ef1bfa32ad01f6a989fe6e7f985
+$ docker pull docker@sha256:89329cd5258c8619427d1faf9b603e3292c99774c9a7cf0351d815368d7bb921
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **125.3 MB (125257696 bytes)**  
+-	Total Size: **125.3 MB (125257686 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:97af933fec0f6c7f7a96cc947525e0c052c2009722276f1dfd470ad5b4fbe8b5`
+-	Image ID: `sha256:1589e1fded5b8d7daae08c8afa7da2d0eb04e5d6ca39760d02daf06b0ff0698b`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -2277,29 +2277,29 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Wed, 08 Feb 2023 23:40:04 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:18 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:58 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 CMD []
-# Fri, 10 Feb 2023 01:40:21 GMT
+# Fri, 10 Feb 2023 19:42:01 GMT
 RUN apk add --no-cache iproute2 fuse-overlayfs
-# Fri, 10 Feb 2023 01:40:22 GMT
+# Fri, 10 Feb 2023 19:42:02 GMT
 RUN mkdir /run/user && chmod 1777 /run/user
-# Fri, 10 Feb 2023 01:40:22 GMT
+# Fri, 10 Feb 2023 19:42:02 GMT
 RUN set -eux; 	adduser -h /home/rootless -g 'Rootless' -D -u 1000 rootless; 	echo 'rootless:100000:65536' >> /etc/subuid; 	echo 'rootless:100000:65536' >> /etc/subgid
-# Fri, 10 Feb 2023 01:40:25 GMT
+# Fri, 10 Feb 2023 19:42:04 GMT
 RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 			url='https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-20.10.23.tgz'; 			;; 		'aarch64') 			url='https://download.docker.com/linux/static/stable/aarch64/docker-rootless-extras-20.10.23.tgz'; 			;; 		*) echo >&2 "error: unsupported 'rootless.tgz' architecture ($apkArch)"; exit 1 ;; 	esac; 		wget -O 'rootless.tgz' "$url"; 		tar --extract 		--file rootless.tgz 		--strip-components 1 		--directory /usr/local/bin/ 		'docker-rootless-extras/rootlesskit' 		'docker-rootless-extras/rootlesskit-docker-proxy' 		'docker-rootless-extras/vpnkit' 	; 	rm rootless.tgz; 		rootlesskit --version; 	vpnkit --version
-# Fri, 10 Feb 2023 01:40:25 GMT
+# Fri, 10 Feb 2023 19:42:05 GMT
 RUN set -eux; 	mkdir -p /home/rootless/.local/share/docker; 	chown -R rootless:rootless /home/rootless/.local/share/docker
-# Fri, 10 Feb 2023 01:40:25 GMT
+# Fri, 10 Feb 2023 19:42:05 GMT
 VOLUME [/home/rootless/.local/share/docker]
-# Fri, 10 Feb 2023 01:40:25 GMT
+# Fri, 10 Feb 2023 19:42:05 GMT
 USER rootless
 ```
 
@@ -2352,29 +2352,29 @@ USER rootless
 		Last Modified: Wed, 08 Feb 2023 23:42:45 GMT  
 		Size: 1.0 KB (1048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8f7f377b9529e3248c464543228e2bb5a9026712dc25cef21d1f19654be56a3`  
-		Last Modified: Fri, 10 Feb 2023 01:42:43 GMT  
-		Size: 2.8 KB (2822 bytes)  
+	-	`sha256:c85ec22222ef809521bdbd8735b646d6614d2d9cee600acffe0a3d48a0a6162a`  
+		Last Modified: Fri, 10 Feb 2023 19:43:40 GMT  
+		Size: 2.8 KB (2820 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a10dcb13ac0c9efe482c70acb11888a8cab595cb59f34b9fb5238e4286284793`  
-		Last Modified: Fri, 10 Feb 2023 01:42:56 GMT  
-		Size: 1.4 MB (1401566 bytes)  
+	-	`sha256:61198b4e45bfcf09ad1cf3b4a200da2abf529a813ae02ef87323bb747e9ff768`  
+		Last Modified: Fri, 10 Feb 2023 19:43:53 GMT  
+		Size: 1.4 MB (1401562 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8a284f26ce91d88efa6100549509d51544cbd8821790a6acacd2ad53e552e11`  
-		Last Modified: Fri, 10 Feb 2023 01:42:56 GMT  
-		Size: 151.0 B  
+	-	`sha256:e8a78eaa386d0325bb42652c6d1f96c6510e92d7d77dbce4feffc587ff38e9f8`  
+		Last Modified: Fri, 10 Feb 2023 19:43:52 GMT  
+		Size: 150.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:13d877913246c4f79cd42bea937d784bcdeb12e67973b3449735dbec206fda0b`  
-		Last Modified: Fri, 10 Feb 2023 01:42:56 GMT  
-		Size: 1.4 KB (1353 bytes)  
+	-	`sha256:4ae62866da92fe81399756b6b83b2a1a19c64f8eff1cd3dc14a35e233f5769d1`  
+		Last Modified: Fri, 10 Feb 2023 19:43:52 GMT  
+		Size: 1.4 KB (1351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b734d91a07346c0013d8cb49d142b18f046aa4b3e6d0d83b3bdaf79f958688c`  
-		Last Modified: Fri, 10 Feb 2023 01:42:59 GMT  
+	-	`sha256:9b9a3d2b1071641bfe3ff7f83ebbcc239a6c7658d6be32007b5f3fc8ccf8c163`  
+		Last Modified: Fri, 10 Feb 2023 19:43:55 GMT  
 		Size: 21.9 MB (21881869 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da6404a64e6d572bba08511eb866e1a2984b29a1718bf23ba6c22de1a5ee41ce`  
-		Last Modified: Fri, 10 Feb 2023 01:42:56 GMT  
-		Size: 220.0 B  
+	-	`sha256:456475c41a734a551e0fb3be21d93c6845a71446196ea9edcfdb13bee05db13a`  
+		Last Modified: Fri, 10 Feb 2023 19:43:52 GMT  
+		Size: 219.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:20.10-git`
@@ -3528,7 +3528,7 @@ CMD ["sh"]
 ## `docker:20.10.23-dind`
 
 ```console
-$ docker pull docker@sha256:901c6805c0f1da51ca0ce879bb6566e26f8d8f9ebfb545a6f0a2b4e52c22ab69
+$ docker pull docker@sha256:671eb54b6e6f4530f0d105d97c05578b0c74463ff756980588909af0fc805300
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3662,14 +3662,14 @@ CMD []
 ### `docker:20.10.23-dind` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:983cb0a95194cf49e6b1c11ffc02571754ff7f3213ae1e016e543987a11e5c8b
+$ docker pull docker@sha256:7794cfc6d111dfbd84f50b8f5d55f33942fc4a5e5d2a1ff7b8abbfd938203e7e
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.0 MB (101972537 bytes)**  
+-	Total Size: **102.0 MB (101972535 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0351ed2e1de673fbd6fb5746511f27dfc9002cd1132bf338d192035cf58409bb`
+-	Image ID: `sha256:864af14a71bc8886fbc18c7f468828e7b2b7a4db05d246f05fc365f319d551b7`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -3716,15 +3716,15 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Wed, 08 Feb 2023 23:40:04 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:18 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:58 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 CMD []
 ```
 
@@ -3777,15 +3777,15 @@ CMD []
 		Last Modified: Wed, 08 Feb 2023 23:42:45 GMT  
 		Size: 1.0 KB (1048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8f7f377b9529e3248c464543228e2bb5a9026712dc25cef21d1f19654be56a3`  
-		Last Modified: Fri, 10 Feb 2023 01:42:43 GMT  
-		Size: 2.8 KB (2822 bytes)  
+	-	`sha256:c85ec22222ef809521bdbd8735b646d6614d2d9cee600acffe0a3d48a0a6162a`  
+		Last Modified: Fri, 10 Feb 2023 19:43:40 GMT  
+		Size: 2.8 KB (2820 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:20.10.23-dind-alpine3.17`
 
 ```console
-$ docker pull docker@sha256:901c6805c0f1da51ca0ce879bb6566e26f8d8f9ebfb545a6f0a2b4e52c22ab69
+$ docker pull docker@sha256:671eb54b6e6f4530f0d105d97c05578b0c74463ff756980588909af0fc805300
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3919,14 +3919,14 @@ CMD []
 ### `docker:20.10.23-dind-alpine3.17` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:983cb0a95194cf49e6b1c11ffc02571754ff7f3213ae1e016e543987a11e5c8b
+$ docker pull docker@sha256:7794cfc6d111dfbd84f50b8f5d55f33942fc4a5e5d2a1ff7b8abbfd938203e7e
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.0 MB (101972537 bytes)**  
+-	Total Size: **102.0 MB (101972535 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0351ed2e1de673fbd6fb5746511f27dfc9002cd1132bf338d192035cf58409bb`
+-	Image ID: `sha256:864af14a71bc8886fbc18c7f468828e7b2b7a4db05d246f05fc365f319d551b7`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -3973,15 +3973,15 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Wed, 08 Feb 2023 23:40:04 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:18 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:58 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 CMD []
 ```
 
@@ -4034,15 +4034,15 @@ CMD []
 		Last Modified: Wed, 08 Feb 2023 23:42:45 GMT  
 		Size: 1.0 KB (1048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8f7f377b9529e3248c464543228e2bb5a9026712dc25cef21d1f19654be56a3`  
-		Last Modified: Fri, 10 Feb 2023 01:42:43 GMT  
-		Size: 2.8 KB (2822 bytes)  
+	-	`sha256:c85ec22222ef809521bdbd8735b646d6614d2d9cee600acffe0a3d48a0a6162a`  
+		Last Modified: Fri, 10 Feb 2023 19:43:40 GMT  
+		Size: 2.8 KB (2820 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:20.10.23-dind-rootless`
 
 ```console
-$ docker pull docker@sha256:b8feb031ef5ead5f164e005dcefc768ef33ab0ab6313db1ba51a05927d88a01e
+$ docker pull docker@sha256:3eee5a023b440da2aefbd5cb40af742dcf7739de59e2f904007b9e8bda5e9ab4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4210,14 +4210,14 @@ USER rootless
 ### `docker:20.10.23-dind-rootless` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:c2db0c76de7f007539eac3fcc471b817fafc8ef1bfa32ad01f6a989fe6e7f985
+$ docker pull docker@sha256:89329cd5258c8619427d1faf9b603e3292c99774c9a7cf0351d815368d7bb921
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **125.3 MB (125257696 bytes)**  
+-	Total Size: **125.3 MB (125257686 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:97af933fec0f6c7f7a96cc947525e0c052c2009722276f1dfd470ad5b4fbe8b5`
+-	Image ID: `sha256:1589e1fded5b8d7daae08c8afa7da2d0eb04e5d6ca39760d02daf06b0ff0698b`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -4264,29 +4264,29 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Wed, 08 Feb 2023 23:40:04 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:18 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:58 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:18 GMT
+# Fri, 10 Feb 2023 19:41:58 GMT
 CMD []
-# Fri, 10 Feb 2023 01:40:21 GMT
+# Fri, 10 Feb 2023 19:42:01 GMT
 RUN apk add --no-cache iproute2 fuse-overlayfs
-# Fri, 10 Feb 2023 01:40:22 GMT
+# Fri, 10 Feb 2023 19:42:02 GMT
 RUN mkdir /run/user && chmod 1777 /run/user
-# Fri, 10 Feb 2023 01:40:22 GMT
+# Fri, 10 Feb 2023 19:42:02 GMT
 RUN set -eux; 	adduser -h /home/rootless -g 'Rootless' -D -u 1000 rootless; 	echo 'rootless:100000:65536' >> /etc/subuid; 	echo 'rootless:100000:65536' >> /etc/subgid
-# Fri, 10 Feb 2023 01:40:25 GMT
+# Fri, 10 Feb 2023 19:42:04 GMT
 RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 			url='https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-20.10.23.tgz'; 			;; 		'aarch64') 			url='https://download.docker.com/linux/static/stable/aarch64/docker-rootless-extras-20.10.23.tgz'; 			;; 		*) echo >&2 "error: unsupported 'rootless.tgz' architecture ($apkArch)"; exit 1 ;; 	esac; 		wget -O 'rootless.tgz' "$url"; 		tar --extract 		--file rootless.tgz 		--strip-components 1 		--directory /usr/local/bin/ 		'docker-rootless-extras/rootlesskit' 		'docker-rootless-extras/rootlesskit-docker-proxy' 		'docker-rootless-extras/vpnkit' 	; 	rm rootless.tgz; 		rootlesskit --version; 	vpnkit --version
-# Fri, 10 Feb 2023 01:40:25 GMT
+# Fri, 10 Feb 2023 19:42:05 GMT
 RUN set -eux; 	mkdir -p /home/rootless/.local/share/docker; 	chown -R rootless:rootless /home/rootless/.local/share/docker
-# Fri, 10 Feb 2023 01:40:25 GMT
+# Fri, 10 Feb 2023 19:42:05 GMT
 VOLUME [/home/rootless/.local/share/docker]
-# Fri, 10 Feb 2023 01:40:25 GMT
+# Fri, 10 Feb 2023 19:42:05 GMT
 USER rootless
 ```
 
@@ -4339,29 +4339,29 @@ USER rootless
 		Last Modified: Wed, 08 Feb 2023 23:42:45 GMT  
 		Size: 1.0 KB (1048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8f7f377b9529e3248c464543228e2bb5a9026712dc25cef21d1f19654be56a3`  
-		Last Modified: Fri, 10 Feb 2023 01:42:43 GMT  
-		Size: 2.8 KB (2822 bytes)  
+	-	`sha256:c85ec22222ef809521bdbd8735b646d6614d2d9cee600acffe0a3d48a0a6162a`  
+		Last Modified: Fri, 10 Feb 2023 19:43:40 GMT  
+		Size: 2.8 KB (2820 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a10dcb13ac0c9efe482c70acb11888a8cab595cb59f34b9fb5238e4286284793`  
-		Last Modified: Fri, 10 Feb 2023 01:42:56 GMT  
-		Size: 1.4 MB (1401566 bytes)  
+	-	`sha256:61198b4e45bfcf09ad1cf3b4a200da2abf529a813ae02ef87323bb747e9ff768`  
+		Last Modified: Fri, 10 Feb 2023 19:43:53 GMT  
+		Size: 1.4 MB (1401562 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8a284f26ce91d88efa6100549509d51544cbd8821790a6acacd2ad53e552e11`  
-		Last Modified: Fri, 10 Feb 2023 01:42:56 GMT  
-		Size: 151.0 B  
+	-	`sha256:e8a78eaa386d0325bb42652c6d1f96c6510e92d7d77dbce4feffc587ff38e9f8`  
+		Last Modified: Fri, 10 Feb 2023 19:43:52 GMT  
+		Size: 150.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:13d877913246c4f79cd42bea937d784bcdeb12e67973b3449735dbec206fda0b`  
-		Last Modified: Fri, 10 Feb 2023 01:42:56 GMT  
-		Size: 1.4 KB (1353 bytes)  
+	-	`sha256:4ae62866da92fe81399756b6b83b2a1a19c64f8eff1cd3dc14a35e233f5769d1`  
+		Last Modified: Fri, 10 Feb 2023 19:43:52 GMT  
+		Size: 1.4 KB (1351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b734d91a07346c0013d8cb49d142b18f046aa4b3e6d0d83b3bdaf79f958688c`  
-		Last Modified: Fri, 10 Feb 2023 01:42:59 GMT  
+	-	`sha256:9b9a3d2b1071641bfe3ff7f83ebbcc239a6c7658d6be32007b5f3fc8ccf8c163`  
+		Last Modified: Fri, 10 Feb 2023 19:43:55 GMT  
 		Size: 21.9 MB (21881869 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da6404a64e6d572bba08511eb866e1a2984b29a1718bf23ba6c22de1a5ee41ce`  
-		Last Modified: Fri, 10 Feb 2023 01:42:56 GMT  
-		Size: 220.0 B  
+	-	`sha256:456475c41a734a551e0fb3be21d93c6845a71446196ea9edcfdb13bee05db13a`  
+		Last Modified: Fri, 10 Feb 2023 19:43:52 GMT  
+		Size: 219.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:20.10.23-git`
@@ -4807,7 +4807,7 @@ RUN Write-Host ('Downloading {0} ...' -f $env:DOCKER_URL); 	Invoke-WebRequest -U
 ## `docker:23`
 
 ```console
-$ docker pull docker@sha256:82f534bca79c1b9222851511ed1e85e29d73185ecb820fc7fa24d6bc23f158de
+$ docker pull docker@sha256:45b980f6ec6e4ec7e2dd66bbe23a1fb2b5b2562514434498394315c1b5de2264
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4941,14 +4941,14 @@ CMD []
 ### `docker:23` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:4f1b7854dd6e08e6399d76d6407c940ff5256e3d908b67b6a3f2bc67339f0446
+$ docker pull docker@sha256:c9b3b7bb3403a45483675e20c7fa97f9952cd65d63fad958bcf57f1966d0fecc
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.8 MB (102767745 bytes)**  
+-	Total Size: **102.8 MB (102767744 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a8605baee59c3b6761d42902458231f8ff356810384858298e4cf9ac36475aa`
+-	Image ID: `sha256:7b8d5389f77fa5dd0517e00db61e4486bdf5aecacc4d85e10f115987ac579cb5`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -4995,15 +4995,15 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Fri, 10 Feb 2023 01:40:02 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:02 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:44 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:45 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 CMD []
 ```
 
@@ -5056,9 +5056,9 @@ CMD []
 		Last Modified: Fri, 10 Feb 2023 01:41:31 GMT  
 		Size: 1.0 KB (1044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f84de123a5489f602aa48c8eef3d1219355de45c8ee535c7644e1fec0c2168bb`  
-		Last Modified: Fri, 10 Feb 2023 01:41:30 GMT  
-		Size: 2.8 KB (2819 bytes)  
+	-	`sha256:7c095ca7729ce82ef72f68cd2de330f46b742aeb0346b42ba99b5005fa9119d0`  
+		Last Modified: Fri, 10 Feb 2023 19:42:49 GMT  
+		Size: 2.8 KB (2818 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:23-cli`
@@ -5241,7 +5241,7 @@ CMD ["sh"]
 ## `docker:23-dind`
 
 ```console
-$ docker pull docker@sha256:82f534bca79c1b9222851511ed1e85e29d73185ecb820fc7fa24d6bc23f158de
+$ docker pull docker@sha256:45b980f6ec6e4ec7e2dd66bbe23a1fb2b5b2562514434498394315c1b5de2264
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5375,14 +5375,14 @@ CMD []
 ### `docker:23-dind` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:4f1b7854dd6e08e6399d76d6407c940ff5256e3d908b67b6a3f2bc67339f0446
+$ docker pull docker@sha256:c9b3b7bb3403a45483675e20c7fa97f9952cd65d63fad958bcf57f1966d0fecc
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.8 MB (102767745 bytes)**  
+-	Total Size: **102.8 MB (102767744 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a8605baee59c3b6761d42902458231f8ff356810384858298e4cf9ac36475aa`
+-	Image ID: `sha256:7b8d5389f77fa5dd0517e00db61e4486bdf5aecacc4d85e10f115987ac579cb5`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -5429,15 +5429,15 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Fri, 10 Feb 2023 01:40:02 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:02 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:44 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:45 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 CMD []
 ```
 
@@ -5490,15 +5490,15 @@ CMD []
 		Last Modified: Fri, 10 Feb 2023 01:41:31 GMT  
 		Size: 1.0 KB (1044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f84de123a5489f602aa48c8eef3d1219355de45c8ee535c7644e1fec0c2168bb`  
-		Last Modified: Fri, 10 Feb 2023 01:41:30 GMT  
-		Size: 2.8 KB (2819 bytes)  
+	-	`sha256:7c095ca7729ce82ef72f68cd2de330f46b742aeb0346b42ba99b5005fa9119d0`  
+		Last Modified: Fri, 10 Feb 2023 19:42:49 GMT  
+		Size: 2.8 KB (2818 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:23-dind-rootless`
 
 ```console
-$ docker pull docker@sha256:92cd2395cb20fec3682222f7af3ad69820c591f44a17e5e1e467fb7a547e060d
+$ docker pull docker@sha256:d558c7eb76847aad77afff3390cea45868c1a161766bcb15b6c90cdd3534f3ae
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5666,14 +5666,14 @@ USER rootless
 ### `docker:23-dind-rootless` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:681fd333bfe151c44afc36dadc90d6c7a57739eec704f067a9e31c9ac64b4b04
+$ docker pull docker@sha256:9f89f190f75b609912c10d4f4e58712ac290d3db340cd3b3d66a2e5d15ffd4be
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **126.4 MB (126403269 bytes)**  
+-	Total Size: **126.4 MB (126403277 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:154cee901c71bc181226a8859dfdd45c7a8c964fdb6aa244f8456ca91887575e`
+-	Image ID: `sha256:fec0d3323d460d02eb4a41b01c052a73c43d618a4607268c4ff61efd718b51d1`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -5720,29 +5720,29 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Fri, 10 Feb 2023 01:40:02 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:02 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:44 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:45 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 CMD []
-# Fri, 10 Feb 2023 01:40:07 GMT
+# Fri, 10 Feb 2023 19:41:48 GMT
 RUN apk add --no-cache iproute2 fuse-overlayfs
-# Fri, 10 Feb 2023 01:40:08 GMT
+# Fri, 10 Feb 2023 19:41:49 GMT
 RUN mkdir /run/user && chmod 1777 /run/user
-# Fri, 10 Feb 2023 01:40:08 GMT
+# Fri, 10 Feb 2023 19:41:49 GMT
 RUN set -eux; 	adduser -h /home/rootless -g 'Rootless' -D -u 1000 rootless; 	echo 'rootless:100000:65536' >> /etc/subuid; 	echo 'rootless:100000:65536' >> /etc/subgid
-# Fri, 10 Feb 2023 01:40:10 GMT
+# Fri, 10 Feb 2023 19:41:51 GMT
 RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 			url='https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-23.0.1.tgz'; 			;; 		'aarch64') 			url='https://download.docker.com/linux/static/stable/aarch64/docker-rootless-extras-23.0.1.tgz'; 			;; 		*) echo >&2 "error: unsupported 'rootless.tgz' architecture ($apkArch)"; exit 1 ;; 	esac; 		wget -O 'rootless.tgz' "$url"; 		tar --extract 		--file rootless.tgz 		--strip-components 1 		--directory /usr/local/bin/ 		'docker-rootless-extras/rootlesskit' 		'docker-rootless-extras/rootlesskit-docker-proxy' 		'docker-rootless-extras/vpnkit' 	; 	rm rootless.tgz; 		rootlesskit --version; 	vpnkit --version
-# Fri, 10 Feb 2023 01:40:11 GMT
+# Fri, 10 Feb 2023 19:41:52 GMT
 RUN set -eux; 	mkdir -p /home/rootless/.local/share/docker; 	chown -R rootless:rootless /home/rootless/.local/share/docker
-# Fri, 10 Feb 2023 01:40:11 GMT
+# Fri, 10 Feb 2023 19:41:52 GMT
 VOLUME [/home/rootless/.local/share/docker]
-# Fri, 10 Feb 2023 01:40:11 GMT
+# Fri, 10 Feb 2023 19:41:52 GMT
 USER rootless
 ```
 
@@ -5795,29 +5795,29 @@ USER rootless
 		Last Modified: Fri, 10 Feb 2023 01:41:31 GMT  
 		Size: 1.0 KB (1044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f84de123a5489f602aa48c8eef3d1219355de45c8ee535c7644e1fec0c2168bb`  
-		Last Modified: Fri, 10 Feb 2023 01:41:30 GMT  
-		Size: 2.8 KB (2819 bytes)  
+	-	`sha256:7c095ca7729ce82ef72f68cd2de330f46b742aeb0346b42ba99b5005fa9119d0`  
+		Last Modified: Fri, 10 Feb 2023 19:42:49 GMT  
+		Size: 2.8 KB (2818 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b3dc53d7d003c42e619e0f0d987282b443cbd3c27f2ea7adb66fdd00ce482dc`  
-		Last Modified: Fri, 10 Feb 2023 01:42:07 GMT  
-		Size: 1.4 MB (1401559 bytes)  
+	-	`sha256:2434867c4905f4eae6f54a23d1444276448599b4ee6a71b86ef0be42c597156c`  
+		Last Modified: Fri, 10 Feb 2023 19:43:17 GMT  
+		Size: 1.4 MB (1401565 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee6a946dbd7e8b65ea508bf6da9de31a6ba5685341a96fea0f596e526e561943`  
-		Last Modified: Fri, 10 Feb 2023 01:42:07 GMT  
+	-	`sha256:8e634ec4e949968d88e402ceb0abd17b8cc5f3677e40d51b839013862c46f027`  
+		Last Modified: Fri, 10 Feb 2023 19:43:17 GMT  
 		Size: 151.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2ae187c227f61f574c537060340536d98e81b5a2dbf3fe54dab0ac8958276afd`  
-		Last Modified: Fri, 10 Feb 2023 01:42:07 GMT  
-		Size: 1.4 KB (1351 bytes)  
+	-	`sha256:ecea4036921886f6fd2da19b9a4130a8eaf8e16c765bcaa19b5b80f4a0748500`  
+		Last Modified: Fri, 10 Feb 2023 19:43:17 GMT  
+		Size: 1.4 KB (1352 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:781222ed4e59469046da1c4cce7fd70bb7547e5bf0039492c2f75eca75f0ed4c`  
-		Last Modified: Fri, 10 Feb 2023 01:42:10 GMT  
-		Size: 22.2 MB (22232243 bytes)  
+	-	`sha256:66a2dbcc705ff80b228c3ffa2f223f8d866a858c8f8438e0829dc6b923739809`  
+		Last Modified: Fri, 10 Feb 2023 19:43:20 GMT  
+		Size: 22.2 MB (22232247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7810d859f0d275a30b178e088500caf03121e6d1cf6754976db572876133b124`  
-		Last Modified: Fri, 10 Feb 2023 01:42:06 GMT  
-		Size: 220.0 B  
+	-	`sha256:971ff8610f8ef4a0f0d93ec721f416b9d361f1d9ec412547cb6d35108ff90a7a`  
+		Last Modified: Fri, 10 Feb 2023 19:43:17 GMT  
+		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:23-git`
@@ -6263,7 +6263,7 @@ RUN Write-Host ('Downloading {0} ...' -f $env:DOCKER_URL); 	Invoke-WebRequest -U
 ## `docker:23.0`
 
 ```console
-$ docker pull docker@sha256:82f534bca79c1b9222851511ed1e85e29d73185ecb820fc7fa24d6bc23f158de
+$ docker pull docker@sha256:45b980f6ec6e4ec7e2dd66bbe23a1fb2b5b2562514434498394315c1b5de2264
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6397,14 +6397,14 @@ CMD []
 ### `docker:23.0` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:4f1b7854dd6e08e6399d76d6407c940ff5256e3d908b67b6a3f2bc67339f0446
+$ docker pull docker@sha256:c9b3b7bb3403a45483675e20c7fa97f9952cd65d63fad958bcf57f1966d0fecc
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.8 MB (102767745 bytes)**  
+-	Total Size: **102.8 MB (102767744 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a8605baee59c3b6761d42902458231f8ff356810384858298e4cf9ac36475aa`
+-	Image ID: `sha256:7b8d5389f77fa5dd0517e00db61e4486bdf5aecacc4d85e10f115987ac579cb5`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -6451,15 +6451,15 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Fri, 10 Feb 2023 01:40:02 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:02 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:44 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:45 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 CMD []
 ```
 
@@ -6512,9 +6512,9 @@ CMD []
 		Last Modified: Fri, 10 Feb 2023 01:41:31 GMT  
 		Size: 1.0 KB (1044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f84de123a5489f602aa48c8eef3d1219355de45c8ee535c7644e1fec0c2168bb`  
-		Last Modified: Fri, 10 Feb 2023 01:41:30 GMT  
-		Size: 2.8 KB (2819 bytes)  
+	-	`sha256:7c095ca7729ce82ef72f68cd2de330f46b742aeb0346b42ba99b5005fa9119d0`  
+		Last Modified: Fri, 10 Feb 2023 19:42:49 GMT  
+		Size: 2.8 KB (2818 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:23.0-cli`
@@ -6697,7 +6697,7 @@ CMD ["sh"]
 ## `docker:23.0-dind`
 
 ```console
-$ docker pull docker@sha256:82f534bca79c1b9222851511ed1e85e29d73185ecb820fc7fa24d6bc23f158de
+$ docker pull docker@sha256:45b980f6ec6e4ec7e2dd66bbe23a1fb2b5b2562514434498394315c1b5de2264
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6831,14 +6831,14 @@ CMD []
 ### `docker:23.0-dind` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:4f1b7854dd6e08e6399d76d6407c940ff5256e3d908b67b6a3f2bc67339f0446
+$ docker pull docker@sha256:c9b3b7bb3403a45483675e20c7fa97f9952cd65d63fad958bcf57f1966d0fecc
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.8 MB (102767745 bytes)**  
+-	Total Size: **102.8 MB (102767744 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a8605baee59c3b6761d42902458231f8ff356810384858298e4cf9ac36475aa`
+-	Image ID: `sha256:7b8d5389f77fa5dd0517e00db61e4486bdf5aecacc4d85e10f115987ac579cb5`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -6885,15 +6885,15 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Fri, 10 Feb 2023 01:40:02 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:02 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:44 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:45 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 CMD []
 ```
 
@@ -6946,15 +6946,15 @@ CMD []
 		Last Modified: Fri, 10 Feb 2023 01:41:31 GMT  
 		Size: 1.0 KB (1044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f84de123a5489f602aa48c8eef3d1219355de45c8ee535c7644e1fec0c2168bb`  
-		Last Modified: Fri, 10 Feb 2023 01:41:30 GMT  
-		Size: 2.8 KB (2819 bytes)  
+	-	`sha256:7c095ca7729ce82ef72f68cd2de330f46b742aeb0346b42ba99b5005fa9119d0`  
+		Last Modified: Fri, 10 Feb 2023 19:42:49 GMT  
+		Size: 2.8 KB (2818 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:23.0-dind-rootless`
 
 ```console
-$ docker pull docker@sha256:92cd2395cb20fec3682222f7af3ad69820c591f44a17e5e1e467fb7a547e060d
+$ docker pull docker@sha256:d558c7eb76847aad77afff3390cea45868c1a161766bcb15b6c90cdd3534f3ae
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7122,14 +7122,14 @@ USER rootless
 ### `docker:23.0-dind-rootless` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:681fd333bfe151c44afc36dadc90d6c7a57739eec704f067a9e31c9ac64b4b04
+$ docker pull docker@sha256:9f89f190f75b609912c10d4f4e58712ac290d3db340cd3b3d66a2e5d15ffd4be
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **126.4 MB (126403269 bytes)**  
+-	Total Size: **126.4 MB (126403277 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:154cee901c71bc181226a8859dfdd45c7a8c964fdb6aa244f8456ca91887575e`
+-	Image ID: `sha256:fec0d3323d460d02eb4a41b01c052a73c43d618a4607268c4ff61efd718b51d1`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -7176,29 +7176,29 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Fri, 10 Feb 2023 01:40:02 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:02 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:44 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:45 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 CMD []
-# Fri, 10 Feb 2023 01:40:07 GMT
+# Fri, 10 Feb 2023 19:41:48 GMT
 RUN apk add --no-cache iproute2 fuse-overlayfs
-# Fri, 10 Feb 2023 01:40:08 GMT
+# Fri, 10 Feb 2023 19:41:49 GMT
 RUN mkdir /run/user && chmod 1777 /run/user
-# Fri, 10 Feb 2023 01:40:08 GMT
+# Fri, 10 Feb 2023 19:41:49 GMT
 RUN set -eux; 	adduser -h /home/rootless -g 'Rootless' -D -u 1000 rootless; 	echo 'rootless:100000:65536' >> /etc/subuid; 	echo 'rootless:100000:65536' >> /etc/subgid
-# Fri, 10 Feb 2023 01:40:10 GMT
+# Fri, 10 Feb 2023 19:41:51 GMT
 RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 			url='https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-23.0.1.tgz'; 			;; 		'aarch64') 			url='https://download.docker.com/linux/static/stable/aarch64/docker-rootless-extras-23.0.1.tgz'; 			;; 		*) echo >&2 "error: unsupported 'rootless.tgz' architecture ($apkArch)"; exit 1 ;; 	esac; 		wget -O 'rootless.tgz' "$url"; 		tar --extract 		--file rootless.tgz 		--strip-components 1 		--directory /usr/local/bin/ 		'docker-rootless-extras/rootlesskit' 		'docker-rootless-extras/rootlesskit-docker-proxy' 		'docker-rootless-extras/vpnkit' 	; 	rm rootless.tgz; 		rootlesskit --version; 	vpnkit --version
-# Fri, 10 Feb 2023 01:40:11 GMT
+# Fri, 10 Feb 2023 19:41:52 GMT
 RUN set -eux; 	mkdir -p /home/rootless/.local/share/docker; 	chown -R rootless:rootless /home/rootless/.local/share/docker
-# Fri, 10 Feb 2023 01:40:11 GMT
+# Fri, 10 Feb 2023 19:41:52 GMT
 VOLUME [/home/rootless/.local/share/docker]
-# Fri, 10 Feb 2023 01:40:11 GMT
+# Fri, 10 Feb 2023 19:41:52 GMT
 USER rootless
 ```
 
@@ -7251,29 +7251,29 @@ USER rootless
 		Last Modified: Fri, 10 Feb 2023 01:41:31 GMT  
 		Size: 1.0 KB (1044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f84de123a5489f602aa48c8eef3d1219355de45c8ee535c7644e1fec0c2168bb`  
-		Last Modified: Fri, 10 Feb 2023 01:41:30 GMT  
-		Size: 2.8 KB (2819 bytes)  
+	-	`sha256:7c095ca7729ce82ef72f68cd2de330f46b742aeb0346b42ba99b5005fa9119d0`  
+		Last Modified: Fri, 10 Feb 2023 19:42:49 GMT  
+		Size: 2.8 KB (2818 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b3dc53d7d003c42e619e0f0d987282b443cbd3c27f2ea7adb66fdd00ce482dc`  
-		Last Modified: Fri, 10 Feb 2023 01:42:07 GMT  
-		Size: 1.4 MB (1401559 bytes)  
+	-	`sha256:2434867c4905f4eae6f54a23d1444276448599b4ee6a71b86ef0be42c597156c`  
+		Last Modified: Fri, 10 Feb 2023 19:43:17 GMT  
+		Size: 1.4 MB (1401565 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee6a946dbd7e8b65ea508bf6da9de31a6ba5685341a96fea0f596e526e561943`  
-		Last Modified: Fri, 10 Feb 2023 01:42:07 GMT  
+	-	`sha256:8e634ec4e949968d88e402ceb0abd17b8cc5f3677e40d51b839013862c46f027`  
+		Last Modified: Fri, 10 Feb 2023 19:43:17 GMT  
 		Size: 151.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2ae187c227f61f574c537060340536d98e81b5a2dbf3fe54dab0ac8958276afd`  
-		Last Modified: Fri, 10 Feb 2023 01:42:07 GMT  
-		Size: 1.4 KB (1351 bytes)  
+	-	`sha256:ecea4036921886f6fd2da19b9a4130a8eaf8e16c765bcaa19b5b80f4a0748500`  
+		Last Modified: Fri, 10 Feb 2023 19:43:17 GMT  
+		Size: 1.4 KB (1352 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:781222ed4e59469046da1c4cce7fd70bb7547e5bf0039492c2f75eca75f0ed4c`  
-		Last Modified: Fri, 10 Feb 2023 01:42:10 GMT  
-		Size: 22.2 MB (22232243 bytes)  
+	-	`sha256:66a2dbcc705ff80b228c3ffa2f223f8d866a858c8f8438e0829dc6b923739809`  
+		Last Modified: Fri, 10 Feb 2023 19:43:20 GMT  
+		Size: 22.2 MB (22232247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7810d859f0d275a30b178e088500caf03121e6d1cf6754976db572876133b124`  
-		Last Modified: Fri, 10 Feb 2023 01:42:06 GMT  
-		Size: 220.0 B  
+	-	`sha256:971ff8610f8ef4a0f0d93ec721f416b9d361f1d9ec412547cb6d35108ff90a7a`  
+		Last Modified: Fri, 10 Feb 2023 19:43:17 GMT  
+		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:23.0-git`
@@ -7719,7 +7719,7 @@ RUN Write-Host ('Downloading {0} ...' -f $env:DOCKER_URL); 	Invoke-WebRequest -U
 ## `docker:23.0.1`
 
 ```console
-$ docker pull docker@sha256:82f534bca79c1b9222851511ed1e85e29d73185ecb820fc7fa24d6bc23f158de
+$ docker pull docker@sha256:45b980f6ec6e4ec7e2dd66bbe23a1fb2b5b2562514434498394315c1b5de2264
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7853,14 +7853,14 @@ CMD []
 ### `docker:23.0.1` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:4f1b7854dd6e08e6399d76d6407c940ff5256e3d908b67b6a3f2bc67339f0446
+$ docker pull docker@sha256:c9b3b7bb3403a45483675e20c7fa97f9952cd65d63fad958bcf57f1966d0fecc
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.8 MB (102767745 bytes)**  
+-	Total Size: **102.8 MB (102767744 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a8605baee59c3b6761d42902458231f8ff356810384858298e4cf9ac36475aa`
+-	Image ID: `sha256:7b8d5389f77fa5dd0517e00db61e4486bdf5aecacc4d85e10f115987ac579cb5`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -7907,15 +7907,15 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Fri, 10 Feb 2023 01:40:02 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:02 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:44 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:45 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 CMD []
 ```
 
@@ -7968,15 +7968,15 @@ CMD []
 		Last Modified: Fri, 10 Feb 2023 01:41:31 GMT  
 		Size: 1.0 KB (1044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f84de123a5489f602aa48c8eef3d1219355de45c8ee535c7644e1fec0c2168bb`  
-		Last Modified: Fri, 10 Feb 2023 01:41:30 GMT  
-		Size: 2.8 KB (2819 bytes)  
+	-	`sha256:7c095ca7729ce82ef72f68cd2de330f46b742aeb0346b42ba99b5005fa9119d0`  
+		Last Modified: Fri, 10 Feb 2023 19:42:49 GMT  
+		Size: 2.8 KB (2818 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:23.0.1-alpine3.17`
 
 ```console
-$ docker pull docker@sha256:82f534bca79c1b9222851511ed1e85e29d73185ecb820fc7fa24d6bc23f158de
+$ docker pull docker@sha256:45b980f6ec6e4ec7e2dd66bbe23a1fb2b5b2562514434498394315c1b5de2264
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8110,14 +8110,14 @@ CMD []
 ### `docker:23.0.1-alpine3.17` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:4f1b7854dd6e08e6399d76d6407c940ff5256e3d908b67b6a3f2bc67339f0446
+$ docker pull docker@sha256:c9b3b7bb3403a45483675e20c7fa97f9952cd65d63fad958bcf57f1966d0fecc
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.8 MB (102767745 bytes)**  
+-	Total Size: **102.8 MB (102767744 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a8605baee59c3b6761d42902458231f8ff356810384858298e4cf9ac36475aa`
+-	Image ID: `sha256:7b8d5389f77fa5dd0517e00db61e4486bdf5aecacc4d85e10f115987ac579cb5`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -8164,15 +8164,15 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Fri, 10 Feb 2023 01:40:02 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:02 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:44 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:45 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 CMD []
 ```
 
@@ -8225,9 +8225,9 @@ CMD []
 		Last Modified: Fri, 10 Feb 2023 01:41:31 GMT  
 		Size: 1.0 KB (1044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f84de123a5489f602aa48c8eef3d1219355de45c8ee535c7644e1fec0c2168bb`  
-		Last Modified: Fri, 10 Feb 2023 01:41:30 GMT  
-		Size: 2.8 KB (2819 bytes)  
+	-	`sha256:7c095ca7729ce82ef72f68cd2de330f46b742aeb0346b42ba99b5005fa9119d0`  
+		Last Modified: Fri, 10 Feb 2023 19:42:49 GMT  
+		Size: 2.8 KB (2818 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:23.0.1-cli`
@@ -8587,7 +8587,7 @@ CMD ["sh"]
 ## `docker:23.0.1-dind`
 
 ```console
-$ docker pull docker@sha256:82f534bca79c1b9222851511ed1e85e29d73185ecb820fc7fa24d6bc23f158de
+$ docker pull docker@sha256:45b980f6ec6e4ec7e2dd66bbe23a1fb2b5b2562514434498394315c1b5de2264
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8721,14 +8721,14 @@ CMD []
 ### `docker:23.0.1-dind` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:4f1b7854dd6e08e6399d76d6407c940ff5256e3d908b67b6a3f2bc67339f0446
+$ docker pull docker@sha256:c9b3b7bb3403a45483675e20c7fa97f9952cd65d63fad958bcf57f1966d0fecc
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.8 MB (102767745 bytes)**  
+-	Total Size: **102.8 MB (102767744 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a8605baee59c3b6761d42902458231f8ff356810384858298e4cf9ac36475aa`
+-	Image ID: `sha256:7b8d5389f77fa5dd0517e00db61e4486bdf5aecacc4d85e10f115987ac579cb5`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -8775,15 +8775,15 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Fri, 10 Feb 2023 01:40:02 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:02 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:44 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:45 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 CMD []
 ```
 
@@ -8836,15 +8836,15 @@ CMD []
 		Last Modified: Fri, 10 Feb 2023 01:41:31 GMT  
 		Size: 1.0 KB (1044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f84de123a5489f602aa48c8eef3d1219355de45c8ee535c7644e1fec0c2168bb`  
-		Last Modified: Fri, 10 Feb 2023 01:41:30 GMT  
-		Size: 2.8 KB (2819 bytes)  
+	-	`sha256:7c095ca7729ce82ef72f68cd2de330f46b742aeb0346b42ba99b5005fa9119d0`  
+		Last Modified: Fri, 10 Feb 2023 19:42:49 GMT  
+		Size: 2.8 KB (2818 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:23.0.1-dind-alpine3.17`
 
 ```console
-$ docker pull docker@sha256:82f534bca79c1b9222851511ed1e85e29d73185ecb820fc7fa24d6bc23f158de
+$ docker pull docker@sha256:45b980f6ec6e4ec7e2dd66bbe23a1fb2b5b2562514434498394315c1b5de2264
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8978,14 +8978,14 @@ CMD []
 ### `docker:23.0.1-dind-alpine3.17` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:4f1b7854dd6e08e6399d76d6407c940ff5256e3d908b67b6a3f2bc67339f0446
+$ docker pull docker@sha256:c9b3b7bb3403a45483675e20c7fa97f9952cd65d63fad958bcf57f1966d0fecc
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.8 MB (102767745 bytes)**  
+-	Total Size: **102.8 MB (102767744 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a8605baee59c3b6761d42902458231f8ff356810384858298e4cf9ac36475aa`
+-	Image ID: `sha256:7b8d5389f77fa5dd0517e00db61e4486bdf5aecacc4d85e10f115987ac579cb5`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -9032,15 +9032,15 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Fri, 10 Feb 2023 01:40:02 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:02 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:44 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:45 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 CMD []
 ```
 
@@ -9093,15 +9093,15 @@ CMD []
 		Last Modified: Fri, 10 Feb 2023 01:41:31 GMT  
 		Size: 1.0 KB (1044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f84de123a5489f602aa48c8eef3d1219355de45c8ee535c7644e1fec0c2168bb`  
-		Last Modified: Fri, 10 Feb 2023 01:41:30 GMT  
-		Size: 2.8 KB (2819 bytes)  
+	-	`sha256:7c095ca7729ce82ef72f68cd2de330f46b742aeb0346b42ba99b5005fa9119d0`  
+		Last Modified: Fri, 10 Feb 2023 19:42:49 GMT  
+		Size: 2.8 KB (2818 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:23.0.1-dind-rootless`
 
 ```console
-$ docker pull docker@sha256:92cd2395cb20fec3682222f7af3ad69820c591f44a17e5e1e467fb7a547e060d
+$ docker pull docker@sha256:d558c7eb76847aad77afff3390cea45868c1a161766bcb15b6c90cdd3534f3ae
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9269,14 +9269,14 @@ USER rootless
 ### `docker:23.0.1-dind-rootless` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:681fd333bfe151c44afc36dadc90d6c7a57739eec704f067a9e31c9ac64b4b04
+$ docker pull docker@sha256:9f89f190f75b609912c10d4f4e58712ac290d3db340cd3b3d66a2e5d15ffd4be
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **126.4 MB (126403269 bytes)**  
+-	Total Size: **126.4 MB (126403277 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:154cee901c71bc181226a8859dfdd45c7a8c964fdb6aa244f8456ca91887575e`
+-	Image ID: `sha256:fec0d3323d460d02eb4a41b01c052a73c43d618a4607268c4ff61efd718b51d1`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -9323,29 +9323,29 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Fri, 10 Feb 2023 01:40:02 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:02 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:44 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:45 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 CMD []
-# Fri, 10 Feb 2023 01:40:07 GMT
+# Fri, 10 Feb 2023 19:41:48 GMT
 RUN apk add --no-cache iproute2 fuse-overlayfs
-# Fri, 10 Feb 2023 01:40:08 GMT
+# Fri, 10 Feb 2023 19:41:49 GMT
 RUN mkdir /run/user && chmod 1777 /run/user
-# Fri, 10 Feb 2023 01:40:08 GMT
+# Fri, 10 Feb 2023 19:41:49 GMT
 RUN set -eux; 	adduser -h /home/rootless -g 'Rootless' -D -u 1000 rootless; 	echo 'rootless:100000:65536' >> /etc/subuid; 	echo 'rootless:100000:65536' >> /etc/subgid
-# Fri, 10 Feb 2023 01:40:10 GMT
+# Fri, 10 Feb 2023 19:41:51 GMT
 RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 			url='https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-23.0.1.tgz'; 			;; 		'aarch64') 			url='https://download.docker.com/linux/static/stable/aarch64/docker-rootless-extras-23.0.1.tgz'; 			;; 		*) echo >&2 "error: unsupported 'rootless.tgz' architecture ($apkArch)"; exit 1 ;; 	esac; 		wget -O 'rootless.tgz' "$url"; 		tar --extract 		--file rootless.tgz 		--strip-components 1 		--directory /usr/local/bin/ 		'docker-rootless-extras/rootlesskit' 		'docker-rootless-extras/rootlesskit-docker-proxy' 		'docker-rootless-extras/vpnkit' 	; 	rm rootless.tgz; 		rootlesskit --version; 	vpnkit --version
-# Fri, 10 Feb 2023 01:40:11 GMT
+# Fri, 10 Feb 2023 19:41:52 GMT
 RUN set -eux; 	mkdir -p /home/rootless/.local/share/docker; 	chown -R rootless:rootless /home/rootless/.local/share/docker
-# Fri, 10 Feb 2023 01:40:11 GMT
+# Fri, 10 Feb 2023 19:41:52 GMT
 VOLUME [/home/rootless/.local/share/docker]
-# Fri, 10 Feb 2023 01:40:11 GMT
+# Fri, 10 Feb 2023 19:41:52 GMT
 USER rootless
 ```
 
@@ -9398,29 +9398,29 @@ USER rootless
 		Last Modified: Fri, 10 Feb 2023 01:41:31 GMT  
 		Size: 1.0 KB (1044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f84de123a5489f602aa48c8eef3d1219355de45c8ee535c7644e1fec0c2168bb`  
-		Last Modified: Fri, 10 Feb 2023 01:41:30 GMT  
-		Size: 2.8 KB (2819 bytes)  
+	-	`sha256:7c095ca7729ce82ef72f68cd2de330f46b742aeb0346b42ba99b5005fa9119d0`  
+		Last Modified: Fri, 10 Feb 2023 19:42:49 GMT  
+		Size: 2.8 KB (2818 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b3dc53d7d003c42e619e0f0d987282b443cbd3c27f2ea7adb66fdd00ce482dc`  
-		Last Modified: Fri, 10 Feb 2023 01:42:07 GMT  
-		Size: 1.4 MB (1401559 bytes)  
+	-	`sha256:2434867c4905f4eae6f54a23d1444276448599b4ee6a71b86ef0be42c597156c`  
+		Last Modified: Fri, 10 Feb 2023 19:43:17 GMT  
+		Size: 1.4 MB (1401565 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee6a946dbd7e8b65ea508bf6da9de31a6ba5685341a96fea0f596e526e561943`  
-		Last Modified: Fri, 10 Feb 2023 01:42:07 GMT  
+	-	`sha256:8e634ec4e949968d88e402ceb0abd17b8cc5f3677e40d51b839013862c46f027`  
+		Last Modified: Fri, 10 Feb 2023 19:43:17 GMT  
 		Size: 151.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2ae187c227f61f574c537060340536d98e81b5a2dbf3fe54dab0ac8958276afd`  
-		Last Modified: Fri, 10 Feb 2023 01:42:07 GMT  
-		Size: 1.4 KB (1351 bytes)  
+	-	`sha256:ecea4036921886f6fd2da19b9a4130a8eaf8e16c765bcaa19b5b80f4a0748500`  
+		Last Modified: Fri, 10 Feb 2023 19:43:17 GMT  
+		Size: 1.4 KB (1352 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:781222ed4e59469046da1c4cce7fd70bb7547e5bf0039492c2f75eca75f0ed4c`  
-		Last Modified: Fri, 10 Feb 2023 01:42:10 GMT  
-		Size: 22.2 MB (22232243 bytes)  
+	-	`sha256:66a2dbcc705ff80b228c3ffa2f223f8d866a858c8f8438e0829dc6b923739809`  
+		Last Modified: Fri, 10 Feb 2023 19:43:20 GMT  
+		Size: 22.2 MB (22232247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7810d859f0d275a30b178e088500caf03121e6d1cf6754976db572876133b124`  
-		Last Modified: Fri, 10 Feb 2023 01:42:06 GMT  
-		Size: 220.0 B  
+	-	`sha256:971ff8610f8ef4a0f0d93ec721f416b9d361f1d9ec412547cb6d35108ff90a7a`  
+		Last Modified: Fri, 10 Feb 2023 19:43:17 GMT  
+		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:23.0.1-git`
@@ -10043,7 +10043,7 @@ CMD ["sh"]
 ## `docker:dind`
 
 ```console
-$ docker pull docker@sha256:82f534bca79c1b9222851511ed1e85e29d73185ecb820fc7fa24d6bc23f158de
+$ docker pull docker@sha256:45b980f6ec6e4ec7e2dd66bbe23a1fb2b5b2562514434498394315c1b5de2264
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10177,14 +10177,14 @@ CMD []
 ### `docker:dind` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:4f1b7854dd6e08e6399d76d6407c940ff5256e3d908b67b6a3f2bc67339f0446
+$ docker pull docker@sha256:c9b3b7bb3403a45483675e20c7fa97f9952cd65d63fad958bcf57f1966d0fecc
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.8 MB (102767745 bytes)**  
+-	Total Size: **102.8 MB (102767744 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a8605baee59c3b6761d42902458231f8ff356810384858298e4cf9ac36475aa`
+-	Image ID: `sha256:7b8d5389f77fa5dd0517e00db61e4486bdf5aecacc4d85e10f115987ac579cb5`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -10231,15 +10231,15 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Fri, 10 Feb 2023 01:40:02 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:02 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:44 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:45 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 CMD []
 ```
 
@@ -10292,15 +10292,15 @@ CMD []
 		Last Modified: Fri, 10 Feb 2023 01:41:31 GMT  
 		Size: 1.0 KB (1044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f84de123a5489f602aa48c8eef3d1219355de45c8ee535c7644e1fec0c2168bb`  
-		Last Modified: Fri, 10 Feb 2023 01:41:30 GMT  
-		Size: 2.8 KB (2819 bytes)  
+	-	`sha256:7c095ca7729ce82ef72f68cd2de330f46b742aeb0346b42ba99b5005fa9119d0`  
+		Last Modified: Fri, 10 Feb 2023 19:42:49 GMT  
+		Size: 2.8 KB (2818 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:dind-rootless`
 
 ```console
-$ docker pull docker@sha256:92cd2395cb20fec3682222f7af3ad69820c591f44a17e5e1e467fb7a547e060d
+$ docker pull docker@sha256:d558c7eb76847aad77afff3390cea45868c1a161766bcb15b6c90cdd3534f3ae
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10468,14 +10468,14 @@ USER rootless
 ### `docker:dind-rootless` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:681fd333bfe151c44afc36dadc90d6c7a57739eec704f067a9e31c9ac64b4b04
+$ docker pull docker@sha256:9f89f190f75b609912c10d4f4e58712ac290d3db340cd3b3d66a2e5d15ffd4be
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **126.4 MB (126403269 bytes)**  
+-	Total Size: **126.4 MB (126403277 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:154cee901c71bc181226a8859dfdd45c7a8c964fdb6aa244f8456ca91887575e`
+-	Image ID: `sha256:fec0d3323d460d02eb4a41b01c052a73c43d618a4607268c4ff61efd718b51d1`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -10522,29 +10522,29 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Fri, 10 Feb 2023 01:40:02 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:02 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:44 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:45 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 CMD []
-# Fri, 10 Feb 2023 01:40:07 GMT
+# Fri, 10 Feb 2023 19:41:48 GMT
 RUN apk add --no-cache iproute2 fuse-overlayfs
-# Fri, 10 Feb 2023 01:40:08 GMT
+# Fri, 10 Feb 2023 19:41:49 GMT
 RUN mkdir /run/user && chmod 1777 /run/user
-# Fri, 10 Feb 2023 01:40:08 GMT
+# Fri, 10 Feb 2023 19:41:49 GMT
 RUN set -eux; 	adduser -h /home/rootless -g 'Rootless' -D -u 1000 rootless; 	echo 'rootless:100000:65536' >> /etc/subuid; 	echo 'rootless:100000:65536' >> /etc/subgid
-# Fri, 10 Feb 2023 01:40:10 GMT
+# Fri, 10 Feb 2023 19:41:51 GMT
 RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 			url='https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-23.0.1.tgz'; 			;; 		'aarch64') 			url='https://download.docker.com/linux/static/stable/aarch64/docker-rootless-extras-23.0.1.tgz'; 			;; 		*) echo >&2 "error: unsupported 'rootless.tgz' architecture ($apkArch)"; exit 1 ;; 	esac; 		wget -O 'rootless.tgz' "$url"; 		tar --extract 		--file rootless.tgz 		--strip-components 1 		--directory /usr/local/bin/ 		'docker-rootless-extras/rootlesskit' 		'docker-rootless-extras/rootlesskit-docker-proxy' 		'docker-rootless-extras/vpnkit' 	; 	rm rootless.tgz; 		rootlesskit --version; 	vpnkit --version
-# Fri, 10 Feb 2023 01:40:11 GMT
+# Fri, 10 Feb 2023 19:41:52 GMT
 RUN set -eux; 	mkdir -p /home/rootless/.local/share/docker; 	chown -R rootless:rootless /home/rootless/.local/share/docker
-# Fri, 10 Feb 2023 01:40:11 GMT
+# Fri, 10 Feb 2023 19:41:52 GMT
 VOLUME [/home/rootless/.local/share/docker]
-# Fri, 10 Feb 2023 01:40:11 GMT
+# Fri, 10 Feb 2023 19:41:52 GMT
 USER rootless
 ```
 
@@ -10597,29 +10597,29 @@ USER rootless
 		Last Modified: Fri, 10 Feb 2023 01:41:31 GMT  
 		Size: 1.0 KB (1044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f84de123a5489f602aa48c8eef3d1219355de45c8ee535c7644e1fec0c2168bb`  
-		Last Modified: Fri, 10 Feb 2023 01:41:30 GMT  
-		Size: 2.8 KB (2819 bytes)  
+	-	`sha256:7c095ca7729ce82ef72f68cd2de330f46b742aeb0346b42ba99b5005fa9119d0`  
+		Last Modified: Fri, 10 Feb 2023 19:42:49 GMT  
+		Size: 2.8 KB (2818 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b3dc53d7d003c42e619e0f0d987282b443cbd3c27f2ea7adb66fdd00ce482dc`  
-		Last Modified: Fri, 10 Feb 2023 01:42:07 GMT  
-		Size: 1.4 MB (1401559 bytes)  
+	-	`sha256:2434867c4905f4eae6f54a23d1444276448599b4ee6a71b86ef0be42c597156c`  
+		Last Modified: Fri, 10 Feb 2023 19:43:17 GMT  
+		Size: 1.4 MB (1401565 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee6a946dbd7e8b65ea508bf6da9de31a6ba5685341a96fea0f596e526e561943`  
-		Last Modified: Fri, 10 Feb 2023 01:42:07 GMT  
+	-	`sha256:8e634ec4e949968d88e402ceb0abd17b8cc5f3677e40d51b839013862c46f027`  
+		Last Modified: Fri, 10 Feb 2023 19:43:17 GMT  
 		Size: 151.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2ae187c227f61f574c537060340536d98e81b5a2dbf3fe54dab0ac8958276afd`  
-		Last Modified: Fri, 10 Feb 2023 01:42:07 GMT  
-		Size: 1.4 KB (1351 bytes)  
+	-	`sha256:ecea4036921886f6fd2da19b9a4130a8eaf8e16c765bcaa19b5b80f4a0748500`  
+		Last Modified: Fri, 10 Feb 2023 19:43:17 GMT  
+		Size: 1.4 KB (1352 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:781222ed4e59469046da1c4cce7fd70bb7547e5bf0039492c2f75eca75f0ed4c`  
-		Last Modified: Fri, 10 Feb 2023 01:42:10 GMT  
-		Size: 22.2 MB (22232243 bytes)  
+	-	`sha256:66a2dbcc705ff80b228c3ffa2f223f8d866a858c8f8438e0829dc6b923739809`  
+		Last Modified: Fri, 10 Feb 2023 19:43:20 GMT  
+		Size: 22.2 MB (22232247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7810d859f0d275a30b178e088500caf03121e6d1cf6754976db572876133b124`  
-		Last Modified: Fri, 10 Feb 2023 01:42:06 GMT  
-		Size: 220.0 B  
+	-	`sha256:971ff8610f8ef4a0f0d93ec721f416b9d361f1d9ec412547cb6d35108ff90a7a`  
+		Last Modified: Fri, 10 Feb 2023 19:43:17 GMT  
+		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:git`
@@ -10814,7 +10814,7 @@ RUN apk add --no-cache git
 ## `docker:latest`
 
 ```console
-$ docker pull docker@sha256:82f534bca79c1b9222851511ed1e85e29d73185ecb820fc7fa24d6bc23f158de
+$ docker pull docker@sha256:45b980f6ec6e4ec7e2dd66bbe23a1fb2b5b2562514434498394315c1b5de2264
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10948,14 +10948,14 @@ CMD []
 ### `docker:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull docker@sha256:4f1b7854dd6e08e6399d76d6407c940ff5256e3d908b67b6a3f2bc67339f0446
+$ docker pull docker@sha256:c9b3b7bb3403a45483675e20c7fa97f9952cd65d63fad958bcf57f1966d0fecc
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.8 MB (102767745 bytes)**  
+-	Total Size: **102.8 MB (102767744 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a8605baee59c3b6761d42902458231f8ff356810384858298e4cf9ac36475aa`
+-	Image ID: `sha256:7b8d5389f77fa5dd0517e00db61e4486bdf5aecacc4d85e10f115987ac579cb5`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -11002,15 +11002,15 @@ RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 	
 ENV DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5
 # Fri, 10 Feb 2023 01:40:02 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 10 Feb 2023 01:40:02 GMT
-COPY file:adb1d28efd9d119c42d2a02a001281e9671f528b2fae1d982de1c5d1af55b3f9 in /usr/local/bin/ 
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:44 GMT
+COPY file:43a39857f9d05e4d332004b3092add05287d8e5c8bc3f32126e6c4b4c3a2c8bb in /usr/local/bin/ 
+# Fri, 10 Feb 2023 19:41:45 GMT
 VOLUME [/var/lib/docker]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 EXPOSE 2375 2376
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 10 Feb 2023 01:40:02 GMT
+# Fri, 10 Feb 2023 19:41:45 GMT
 CMD []
 ```
 
@@ -11063,9 +11063,9 @@ CMD []
 		Last Modified: Fri, 10 Feb 2023 01:41:31 GMT  
 		Size: 1.0 KB (1044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f84de123a5489f602aa48c8eef3d1219355de45c8ee535c7644e1fec0c2168bb`  
-		Last Modified: Fri, 10 Feb 2023 01:41:30 GMT  
-		Size: 2.8 KB (2819 bytes)  
+	-	`sha256:7c095ca7729ce82ef72f68cd2de330f46b742aeb0346b42ba99b5005fa9119d0`  
+		Last Modified: Fri, 10 Feb 2023 19:42:49 GMT  
+		Size: 2.8 KB (2818 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `docker:windowsservercore`
