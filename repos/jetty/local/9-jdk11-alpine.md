@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d0da07b9c38d8f755f18f890332e22a5ce9e41facd3e95e127e06e3843cbf297`
-- Created: `2023-01-24T22:56:54.793022697Z`
+- Image ID: `sha256:603a63c0f9bc5050845c2b254a102f9f6d10a5dad380f263f30007aa90721dc9`
+- Created: `2023-02-11T05:52:14.562105343Z`
 - Virtual Size: ~ 378.65 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -385,16 +385,16 @@ GPL-3.0-or-later
 ### `apk` package: `gnutls`
 
 ```console
-gnutls-3.7.8-r2 description:
+gnutls-3.7.8-r3 description:
 TLS protocol implementation
 
-gnutls-3.7.8-r2 webpage:
+gnutls-3.7.8-r3 webpage:
 https://www.gnutls.org/
 
-gnutls-3.7.8-r2 installed size:
+gnutls-3.7.8-r3 installed size:
 1936 KiB
 
-gnutls-3.7.8-r2 license:
+gnutls-3.7.8-r3 license:
 LGPL-2.1-or-later
 
 ```
@@ -538,16 +538,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.7-r2 description:
+libcrypto3-3.0.8-r0 description:
 Crypto library from openssl
 
-libcrypto3-3.0.7-r2 webpage:
+libcrypto3-3.0.8-r0 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.7-r2 installed size:
+libcrypto3-3.0.8-r0 installed size:
 4108 KiB
 
-libcrypto3-3.0.7-r2 license:
+libcrypto3-3.0.8-r0 license:
 Apache-2.0
 
 ```
@@ -742,16 +742,16 @@ custom
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.7-r2 description:
+libssl3-3.0.8-r0 description:
 SSL shared libraries
 
-libssl3-3.0.7-r2 webpage:
+libssl3-3.0.8-r0 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.7-r2 installed size:
+libssl3-3.0.8-r0 installed size:
 608 KiB
 
-libssl3-3.0.7-r2 license:
+libssl3-3.0.8-r0 license:
 Apache-2.0
 
 ```
