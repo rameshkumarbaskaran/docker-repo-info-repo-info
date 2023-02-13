@@ -1,17 +1,17 @@
-# `docker:23.0.0-cli`
+# `docker:23.0.1-cli`
 
 ## Docker Metadata
 
-- Image ID: `sha256:484f39f123318dcd3738e8557eb1bce3e20cb6669c9c2bcda9debb4569686f37`
-- Created: `2023-02-08T23:19:36.959322821Z`
-- Virtual Size: ~ 144.02 Mb  
+- Image ID: `sha256:06f9fee69b9731e4843f9415f9e087c42ec19a924c144ffe5cc78a7d136a40e0`
+- Created: `2023-02-11T04:50:25.787444141Z`
+- Virtual Size: ~ 144.03 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_VERSION=23.0.0`
+  - `DOCKER_VERSION=23.0.1`
   - `DOCKER_BUILDX_VERSION=0.10.2`
   - `DOCKER_COMPOSE_VERSION=2.16.0`
   - `DOCKER_TLS_CERTDIR=/certs`
@@ -191,16 +191,16 @@ MIT
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.7-r2 description:
+libcrypto3-3.0.8-r0 description:
 Crypto library from openssl
 
-libcrypto3-3.0.7-r2 webpage:
+libcrypto3-3.0.8-r0 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.7-r2 installed size:
+libcrypto3-3.0.8-r0 installed size:
 4108 KiB
 
-libcrypto3-3.0.7-r2 license:
+libcrypto3-3.0.8-r0 license:
 Apache-2.0
 
 ```
@@ -225,16 +225,16 @@ BSD-3-Clause
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.7-r2 description:
+libssl3-3.0.8-r0 description:
 SSL shared libraries
 
-libssl3-3.0.7-r2 webpage:
+libssl3-3.0.8-r0 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.7-r2 installed size:
+libssl3-3.0.8-r0 installed size:
 608 KiB
 
-libssl3-3.0.7-r2 license:
+libssl3-3.0.8-r0 license:
 Apache-2.0
 
 ```
@@ -310,16 +310,16 @@ MIT
 ### `apk` package: `openssh-client-common`
 
 ```console
-openssh-client-common-9.1_p1-r1 description:
+openssh-client-common-9.1_p1-r2 description:
 OpenBSD's SSH client common files
 
-openssh-client-common-9.1_p1-r1 webpage:
+openssh-client-common-9.1_p1-r2 webpage:
 https://www.openssh.com/portable.html
 
-openssh-client-common-9.1_p1-r1 installed size:
+openssh-client-common-9.1_p1-r2 installed size:
 2732 KiB
 
-openssh-client-common-9.1_p1-r1 license:
+openssh-client-common-9.1_p1-r2 license:
 BSD
 
 ```
@@ -327,16 +327,16 @@ BSD
 ### `apk` package: `openssh-client-default`
 
 ```console
-openssh-client-default-9.1_p1-r1 description:
+openssh-client-default-9.1_p1-r2 description:
 OpenBSD's SSH client
 
-openssh-client-default-9.1_p1-r1 webpage:
+openssh-client-default-9.1_p1-r2 webpage:
 https://www.openssh.com/portable.html
 
-openssh-client-default-9.1_p1-r1 installed size:
+openssh-client-default-9.1_p1-r2 installed size:
 900 KiB
 
-openssh-client-default-9.1_p1-r1 license:
+openssh-client-default-9.1_p1-r2 license:
 BSD
 
 ```
@@ -344,16 +344,16 @@ BSD
 ### `apk` package: `openssh-keygen`
 
 ```console
-openssh-keygen-9.1_p1-r1 description:
+openssh-keygen-9.1_p1-r2 description:
 ssh helper program for generating keys
 
-openssh-keygen-9.1_p1-r1 webpage:
+openssh-keygen-9.1_p1-r2 webpage:
 https://www.openssh.com/portable.html
 
-openssh-keygen-9.1_p1-r1 installed size:
+openssh-keygen-9.1_p1-r2 installed size:
 548 KiB
 
-openssh-keygen-9.1_p1-r1 license:
+openssh-keygen-9.1_p1-r2 license:
 BSD
 
 ```
