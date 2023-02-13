@@ -1,10 +1,10 @@
-# `postgres:15.1-alpine`
+# `postgres:15.2-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f8428074961ed299e3897ae0737f21761f64e29a473de2d5ebcda117ff443760`
-- Created: `2023-01-09T19:23:58.705171364Z`
-- Virtual Size: ~ 243.06 Mb  
+- Image ID: `sha256:6a35e2c987a69cd37f078e911ea336e0576d980fa5c3eceac3e24e3b3e90eeb1`
+- Created: `2023-02-11T05:05:31.465428029Z`
+- Virtual Size: ~ 243.08 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -13,8 +13,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=15`
-  - `PG_VERSION=15.1`
-  - `PG_SHA256=64fdf23d734afad0dfe4077daca96ac51dcd697e68ae2d3d4ca6c45cb14e21ae`
+  - `PG_VERSION=15.2`
+  - `PG_SHA256=99a2171fc3d6b5b5f56b757a7a3cb85d509a38e4273805def23941ed2b8468c7`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `apk` (`.apk`-based packages)
@@ -294,16 +294,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.7-r2 description:
+libcrypto3-3.0.8-r0 description:
 Crypto library from openssl
 
-libcrypto3-3.0.7-r2 webpage:
+libcrypto3-3.0.8-r0 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.7-r2 installed size:
+libcrypto3-3.0.8-r0 installed size:
 4108 KiB
 
-libcrypto3-3.0.7-r2 license:
+libcrypto3-3.0.8-r0 license:
 Apache-2.0
 
 ```
@@ -430,16 +430,16 @@ custom
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.7-r2 description:
+libssl3-3.0.8-r0 description:
 SSL shared libraries
 
-libssl3-3.0.7-r2 webpage:
+libssl3-3.0.8-r0 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.7-r2 installed size:
+libssl3-3.0.8-r0 installed size:
 608 KiB
 
-libssl3-3.0.7-r2 license:
+libssl3-3.0.8-r0 license:
 Apache-2.0
 
 ```
@@ -532,16 +532,16 @@ custom
 ### `apk` package: `llvm15-libs`
 
 ```console
-llvm15-libs-15.0.6-r0 description:
+llvm15-libs-15.0.7-r0 description:
 LLVM 15 runtime library
 
-llvm15-libs-15.0.6-r0 webpage:
+llvm15-libs-15.0.7-r0 webpage:
 https://llvm.org/
 
-llvm15-libs-15.0.6-r0 installed size:
+llvm15-libs-15.0.7-r0 installed size:
 125 MiB
 
-llvm15-libs-15.0.6-r0 license:
+llvm15-libs-15.0.7-r0 license:
 Apache-2.0
 
 ```
