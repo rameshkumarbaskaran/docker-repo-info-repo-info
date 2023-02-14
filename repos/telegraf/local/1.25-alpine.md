@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e68b84e6353ceb6b229600fb542b87a36b435a4a178a5930bd5114535e67ea45`
-- Created: `2023-02-01T21:42:58.921168815Z`
-- Virtual Size: ~ 176.58 Mb  
+- Image ID: `sha256:9649518e44c1b172c648867e3aa895eaad584f7ed4f64f512c6abad8dd6464d2`
+- Created: `2023-02-14T00:20:34.225557561Z`
+- Virtual Size: ~ 177.47 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Command: `["telegraf"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `TELEGRAF_VERSION=1.25.1`
+  - `TELEGRAF_VERSION=1.25.2`
 
 ## `apk` (`.apk`-based packages)
 
@@ -205,16 +205,16 @@ BSD-3-Clause OR GPL-2.0-only
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1s-r0 description:
+libcrypto1.1-1.1.1t-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1s-r0 webpage:
+libcrypto1.1-1.1.1t-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1s-r0 installed size:
-2708 KiB
+libcrypto1.1-1.1.1t-r0 installed size:
+2712 KiB
 
-libcrypto1.1-1.1.1s-r0 license:
+libcrypto1.1-1.1.1t-r0 license:
 OpenSSL
 
 ```
@@ -256,16 +256,16 @@ GPL-2.0-or-later AND LGPL-2.1-or-later
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1s-r0 description:
+libssl1.1-1.1.1t-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1s-r0 webpage:
+libssl1.1-1.1.1t-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1s-r0 installed size:
+libssl1.1-1.1.1t-r0 installed size:
 528 KiB
 
-libssl1.1-1.1.1s-r0 license:
+libssl1.1-1.1.1t-r0 license:
 OpenSSL
 
 ```
@@ -290,16 +290,16 @@ LGPL-2.1-or-later AND GPL-2.0-or-later
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.3-r1 description:
+musl-1.2.3-r2 description:
 the musl c library (libc) implementation
 
-musl-1.2.3-r1 webpage:
+musl-1.2.3-r2 webpage:
 https://musl.libc.org/
 
-musl-1.2.3-r1 installed size:
+musl-1.2.3-r2 installed size:
 608 KiB
 
-musl-1.2.3-r1 license:
+musl-1.2.3-r2 license:
 MIT
 
 ```
@@ -307,16 +307,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.2.3-r1 description:
+musl-utils-1.2.3-r2 description:
 the musl c library (libc) implementation
 
-musl-utils-1.2.3-r1 webpage:
+musl-utils-1.2.3-r2 webpage:
 https://musl.libc.org/
 
-musl-utils-1.2.3-r1 installed size:
+musl-utils-1.2.3-r2 installed size:
 132 KiB
 
-musl-utils-1.2.3-r1 license:
+musl-utils-1.2.3-r2 license:
 MIT BSD GPL2+
 
 ```
@@ -358,16 +358,16 @@ MIT
 ### `apk` package: `net-snmp-agent-libs`
 
 ```console
-net-snmp-agent-libs-5.9.3-r0 description:
+net-snmp-agent-libs-5.9.3-r1 description:
 The NET-SNMP runtime agent libraries
 
-net-snmp-agent-libs-5.9.3-r0 webpage:
+net-snmp-agent-libs-5.9.3-r1 webpage:
 http://www.net-snmp.org/
 
-net-snmp-agent-libs-5.9.3-r0 installed size:
+net-snmp-agent-libs-5.9.3-r1 installed size:
 1708 KiB
 
-net-snmp-agent-libs-5.9.3-r0 license:
+net-snmp-agent-libs-5.9.3-r1 license:
 Net-SNMP
 
 ```
@@ -375,16 +375,16 @@ Net-SNMP
 ### `apk` package: `net-snmp-libs`
 
 ```console
-net-snmp-libs-5.9.3-r0 description:
+net-snmp-libs-5.9.3-r1 description:
 The NET-SNMP runtime client libraries
 
-net-snmp-libs-5.9.3-r0 webpage:
+net-snmp-libs-5.9.3-r1 webpage:
 http://www.net-snmp.org/
 
-net-snmp-libs-5.9.3-r0 installed size:
+net-snmp-libs-5.9.3-r1 installed size:
 2512 KiB
 
-net-snmp-libs-5.9.3-r0 license:
+net-snmp-libs-5.9.3-r1 license:
 Net-SNMP
 
 ```
@@ -392,16 +392,16 @@ Net-SNMP
 ### `apk` package: `net-snmp-tools`
 
 ```console
-net-snmp-tools-5.9.3-r0 description:
+net-snmp-tools-5.9.3-r1 description:
 Network management utilities using SNMP
 
-net-snmp-tools-5.9.3-r0 webpage:
+net-snmp-tools-5.9.3-r1 webpage:
 http://www.net-snmp.org/
 
-net-snmp-tools-5.9.3-r0 installed size:
+net-snmp-tools-5.9.3-r1 installed size:
 520 KiB
 
-net-snmp-tools-5.9.3-r0 license:
+net-snmp-tools-5.9.3-r1 license:
 Net-SNMP
 
 ```
