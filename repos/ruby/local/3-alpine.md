@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ad9ed94e33646645b2b5754870d1770c54934af57b75204d58470ae978575d13`
-- Created: `2023-02-09T02:41:54.107019044Z`
-- Virtual Size: ~ 78.82 Mb  
+- Image ID: `sha256:ddecbf57a632bf57ed4f05e62db343c7d90242105e0c42fb032d18de062ab3f0`
+- Created: `2023-02-11T13:34:22.014419238Z`
+- Virtual Size: ~ 73.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["irb"]`
@@ -465,16 +465,16 @@ MIT
 ### `apk` package: `pkgconf`
 
 ```console
-pkgconf-1.9.3-r0 description:
+pkgconf-1.9.4-r0 description:
 development framework configuration tools
 
-pkgconf-1.9.3-r0 webpage:
+pkgconf-1.9.4-r0 webpage:
 https://git.sr.ht/~kaniini/pkgconf
 
-pkgconf-1.9.3-r0 installed size:
+pkgconf-1.9.4-r0 installed size:
 168 KiB
 
-pkgconf-1.9.3-r0 license:
+pkgconf-1.9.4-r0 license:
 ISC
 
 ```
