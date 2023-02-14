@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c433c51bbd66153269da1c592105c9c19bf353e9d7c3d1225ae2bbbeb888cc16`
-- Created: `2023-01-09T18:39:56.392222262Z`
-- Virtual Size: ~ 40.70 Mb  
+- Image ID: `sha256:2bc7edbc3cf2fce630a95d0586c48cd248e5df37df5b1244728a5c8c91becfe0`
+- Created: `2023-02-11T10:04:34.596569339Z`
+- Virtual Size: ~ 40.69 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -192,16 +192,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `curl`
 
 ```console
-curl-7.87.0-r0 description:
+curl-7.87.0-r1 description:
 URL retrival utility and library
 
-curl-7.87.0-r0 webpage:
+curl-7.87.0-r1 webpage:
 https://curl.se/
 
-curl-7.87.0-r0 installed size:
+curl-7.87.0-r1 installed size:
 264 KiB
 
-curl-7.87.0-r0 license:
+curl-7.87.0-r1 license:
 curl
 
 ```
@@ -328,16 +328,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.7-r2 description:
+libcrypto3-3.0.8-r0 description:
 Crypto library from openssl
 
-libcrypto3-3.0.7-r2 webpage:
+libcrypto3-3.0.8-r0 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.7-r2 installed size:
+libcrypto3-3.0.8-r0 installed size:
 4108 KiB
 
-libcrypto3-3.0.7-r2 license:
+libcrypto3-3.0.8-r0 license:
 Apache-2.0
 
 ```
@@ -345,16 +345,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.87.0-r0 description:
+libcurl-7.87.0-r1 description:
 The multiprotocol file transfer library
 
-libcurl-7.87.0-r0 webpage:
+libcurl-7.87.0-r1 webpage:
 https://curl.se/
 
-libcurl-7.87.0-r0 installed size:
+libcurl-7.87.0-r1 installed size:
 540 KiB
 
-libcurl-7.87.0-r0 license:
+libcurl-7.87.0-r1 license:
 curl
 
 ```
@@ -566,16 +566,16 @@ MIT
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.7-r2 description:
+libssl3-3.0.8-r0 description:
 SSL shared libraries
 
-libssl3-3.0.7-r2 webpage:
+libssl3-3.0.8-r0 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.7-r2 installed size:
+libssl3-3.0.8-r0 installed size:
 608 KiB
 
-libssl3-3.0.7-r2 license:
+libssl3-3.0.8-r0 license:
 Apache-2.0
 
 ```
@@ -617,16 +617,16 @@ BSD-3-Clause
 ### `apk` package: `libx11`
 
 ```console
-libx11-1.8.3-r0 description:
+libx11-1.8.4-r0 description:
 X11 client-side library
 
-libx11-1.8.3-r0 webpage:
+libx11-1.8.4-r0 webpage:
 http://xorg.freedesktop.org/
 
-libx11-1.8.3-r0 installed size:
-3180 KiB
+libx11-1.8.4-r0 installed size:
+3172 KiB
 
-libx11-1.8.3-r0 license:
+libx11-1.8.4-r0 license:
 custom:XFREE86
 
 ```
@@ -719,16 +719,16 @@ MIT
 ### `apk` package: `libxpm`
 
 ```console
-libxpm-3.5.14-r0 description:
+libxpm-3.5.15-r0 description:
 X11 pixmap library
 
-libxpm-3.5.14-r0 webpage:
+libxpm-3.5.15-r0 webpage:
 http://xorg.freedesktop.org/
 
-libxpm-3.5.14-r0 installed size:
+libxpm-3.5.15-r0 installed size:
 136 KiB
 
-libxpm-3.5.14-r0 license:
+libxpm-3.5.15-r0 license:
 custom:BELL
 
 ```
