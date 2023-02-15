@@ -1,7 +1,7 @@
 ## `drupal:7-apache`
 
 ```console
-$ docker pull drupal@sha256:6102fbe82eb6906730691e62ab483253d92707adb38ab4c22ee9332653d82835
+$ docker pull drupal@sha256:2008f65ed0e9f26926a19aefa0a27b7330ed4aa3d10271f821cca79260e7d353
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18,14 +18,14 @@ $ docker pull drupal@sha256:6102fbe82eb6906730691e62ab483253d92707adb38ab4c22ee9
 ### `drupal:7-apache` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:262214ecdcc0c4154e475ffc2c3be507794b11f44711ef2dc11604ace559eeee
+$ docker pull drupal@sha256:da7b3330b0a1c841e1994e4e8c12b6f45fa8f74437ac0766f8fb828cf3a80519
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **169.9 MB (169914485 bytes)**  
+-	Total Size: **169.9 MB (169913612 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9c76509f3822fc00921aa8ae073cb4456b1c48f3158f78aefe79aa65a543b038`
+-	Image ID: `sha256:829ad7d453438442edf529616d44b6df81e7e7a987862a69f537229b2a94ae44`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -62,43 +62,43 @@ ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D
 ENV PHP_LDFLAGS=-Wl,-O1 -pie
 # Thu, 09 Feb 2023 08:32:44 GMT
 ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F 2C16C765DBE54A088130F1BC4B9B5F600B55F3B4
-# Thu, 09 Feb 2023 08:32:44 GMT
-ENV PHP_VERSION=8.0.27
-# Thu, 09 Feb 2023 08:32:44 GMT
-ENV PHP_URL=https://www.php.net/distributions/php-8.0.27.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.0.27.tar.xz.asc
-# Thu, 09 Feb 2023 08:32:44 GMT
-ENV PHP_SHA256=f942cbfe2f7bacbb8039fb79bbec41c76ea779ac5c8157f21e1e0c1b28a5fc3a
-# Thu, 09 Feb 2023 08:32:56 GMT
+# Tue, 14 Feb 2023 22:03:35 GMT
+ENV PHP_VERSION=8.0.28
+# Tue, 14 Feb 2023 22:03:35 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.0.28.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.0.28.tar.xz.asc
+# Tue, 14 Feb 2023 22:03:36 GMT
+ENV PHP_SHA256=5e07278a1f315a67d36a676c01343ca2d4da5ec5bdb15d018e4248b3012bc0cd
+# Tue, 14 Feb 2023 22:03:47 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 09 Feb 2023 08:32:56 GMT
+# Tue, 14 Feb 2023 22:03:47 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Thu, 09 Feb 2023 08:35:47 GMT
+# Tue, 14 Feb 2023 22:06:42 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		apache2-dev 		libargon2-dev 		libcurl4-openssl-dev 		libonig-dev 		libreadline-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 	; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv 		--with-openssl 		--with-readline 		--with-zlib 				--disable-phpdbg 				--with-pear 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				--disable-cgi 				--with-apxs2 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
-# Thu, 09 Feb 2023 08:35:47 GMT
+# Tue, 14 Feb 2023 22:06:42 GMT
 COPY multi:e11221d43af7136e4dbad5a74e659bcfa753214a9e615c3daf357f1633d9d3d1 in /usr/local/bin/ 
-# Thu, 09 Feb 2023 08:35:47 GMT
+# Tue, 14 Feb 2023 22:06:43 GMT
 RUN docker-php-ext-enable sodium
-# Thu, 09 Feb 2023 08:35:48 GMT
+# Tue, 14 Feb 2023 22:06:43 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Thu, 09 Feb 2023 08:35:48 GMT
+# Tue, 14 Feb 2023 22:06:43 GMT
 STOPSIGNAL SIGWINCH
-# Thu, 09 Feb 2023 08:35:48 GMT
+# Tue, 14 Feb 2023 22:06:43 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Thu, 09 Feb 2023 08:35:48 GMT
+# Tue, 14 Feb 2023 22:06:43 GMT
 WORKDIR /var/www/html
-# Thu, 09 Feb 2023 08:35:48 GMT
+# Tue, 14 Feb 2023 22:06:43 GMT
 EXPOSE 80
-# Thu, 09 Feb 2023 08:35:48 GMT
+# Tue, 14 Feb 2023 22:06:43 GMT
 CMD ["apache2-foreground"]
-# Thu, 09 Feb 2023 16:21:26 GMT
+# Tue, 14 Feb 2023 23:30:20 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libwebp-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg=/usr 		--with-webp 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Thu, 09 Feb 2023 16:21:27 GMT
+# Tue, 14 Feb 2023 23:30:21 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Thu, 09 Feb 2023 16:29:11 GMT
+# Tue, 14 Feb 2023 23:39:07 GMT
 ENV DRUPAL_VERSION=7.94
-# Thu, 09 Feb 2023 16:29:11 GMT
+# Tue, 14 Feb 2023 23:39:07 GMT
 ENV DRUPAL_MD5=dae634ea0da005c5c435cfa9a9c5c322
-# Thu, 09 Feb 2023 16:29:12 GMT
+# Tue, 14 Feb 2023 23:39:08 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
@@ -131,41 +131,41 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 		Last Modified: Thu, 09 Feb 2023 08:58:29 GMT  
 		Size: 514.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bbfb0420e4c557e2c91bee44caa74a092e275bdd199c65b7de667239cb985809`  
-		Last Modified: Thu, 09 Feb 2023 09:04:34 GMT  
-		Size: 11.1 MB (11143418 bytes)  
+	-	`sha256:4caaa564818e28ed23c6f434ab601ab1358efd07292b86e49dbc3294fcf1727e`  
+		Last Modified: Tue, 14 Feb 2023 22:51:03 GMT  
+		Size: 11.1 MB (11142757 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eaeaf08e61de2d1f912afcde3f2648db95683ed02e96077f84a619097afe1aec`  
-		Last Modified: Thu, 09 Feb 2023 09:04:31 GMT  
-		Size: 493.0 B  
+	-	`sha256:62b240c2d6439c7a404a6352d4b1163d8ebef42bb920202fd5eed25a0b751026`  
+		Last Modified: Tue, 14 Feb 2023 22:51:00 GMT  
+		Size: 496.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a7f42d987792cd8932689fec37ff74a9f12c2d52e021132d517f798963161c70`  
-		Last Modified: Thu, 09 Feb 2023 09:04:33 GMT  
-		Size: 10.8 MB (10775890 bytes)  
+	-	`sha256:777fcd639ab6e1c6148bac2e5903fd4ce81025ea8020395af127417ca97ecd2a`  
+		Last Modified: Tue, 14 Feb 2023 22:51:02 GMT  
+		Size: 10.8 MB (10775716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:81c4a32340b6f0f521846d0c1d7bbd2240c8d58f56243a716c45b09de2a0f56c`  
-		Last Modified: Thu, 09 Feb 2023 09:04:31 GMT  
+	-	`sha256:d5443b4960685ba57ec3b9810c20a0f723b168d0520a3c9ae6be844674073c43`  
+		Last Modified: Tue, 14 Feb 2023 22:51:00 GMT  
 		Size: 2.5 KB (2462 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f4ca184d1e9bc7c6b1092b9c52de9d7058b32b3980a9c3923ea0724f77dd688`  
-		Last Modified: Thu, 09 Feb 2023 09:04:31 GMT  
-		Size: 244.0 B  
+	-	`sha256:9eeb44b3cac435e43dc8b81041f4d6cd58e51c98776f2f359bdacabbaa5bf7f9`  
+		Last Modified: Tue, 14 Feb 2023 22:51:00 GMT  
+		Size: 243.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79a9287f24414c22a3712a027edf3e238e4312f9042e35ffe2bff23c7b0667f6`  
-		Last Modified: Thu, 09 Feb 2023 09:04:31 GMT  
-		Size: 898.0 B  
+	-	`sha256:7138da2604625267494da5743c2cab87e06d228d0ce4205515369afe959a8f4b`  
+		Last Modified: Tue, 14 Feb 2023 22:51:00 GMT  
+		Size: 894.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0de218236c4cbd77b684bc99f72ee880ff955a5afa9bb052115d3f73f0ad9a50`  
-		Last Modified: Thu, 09 Feb 2023 16:41:24 GMT  
-		Size: 2.3 MB (2293913 bytes)  
+	-	`sha256:a67e20edb6bedef0301647405c6caff6dfaa5ec37babad3394d4e8fe8f473ad6`  
+		Last Modified: Tue, 14 Feb 2023 23:53:53 GMT  
+		Size: 2.3 MB (2293880 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:109376c26ded4cc0603ca2489180c6c2ac48fae848049b040a63e32bf32c016b`  
-		Last Modified: Thu, 09 Feb 2023 16:41:23 GMT  
-		Size: 312.0 B  
+	-	`sha256:ec43461fa9436d707474e0ab207cb985bbbb8e2c8dcc53a5ce0357fdad6970e4`  
+		Last Modified: Tue, 14 Feb 2023 23:53:52 GMT  
+		Size: 310.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8131c70ab619385589ce92abfb2270c59a9fb2e8a1bebfbaeaa6fc8e4d9bd318`  
-		Last Modified: Thu, 09 Feb 2023 16:46:05 GMT  
-		Size: 3.4 MB (3402620 bytes)  
+	-	`sha256:4a2796d4f01f6f7ff20a1a6cdc06c0c8aea8e6a1eb488d9f25aee05059928646`  
+		Last Modified: Tue, 14 Feb 2023 23:59:51 GMT  
+		Size: 3.4 MB (3402619 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:7-apache` - linux; arm variant v5
@@ -477,14 +477,14 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ### `drupal:7-apache` - linux; arm64 variant v8
 
 ```console
-$ docker pull drupal@sha256:4fce53e16143f84df4967d468918bd309c6283c2084c45d7181694f025515fa0
+$ docker pull drupal@sha256:1c12504c0a7762a9a1f2b613b634eef1a30bf2503ef06cee1ff629a35defd922
 ```
 
 -	Docker Version: 20.10.17
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **162.9 MB (162878116 bytes)**  
+-	Total Size: **162.9 MB (162878269 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a504baee4361f6cf50bd1cbcfb2412ed89d88ef97b04e31de3ad32580b4259ad`
+-	Image ID: `sha256:2e1ac2c6eeaeebf340cf4f11c8ef7f4bc5cec5dc2482943578328d7fda9a3968`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -521,43 +521,43 @@ ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D
 ENV PHP_LDFLAGS=-Wl,-O1 -pie
 # Thu, 09 Feb 2023 06:18:47 GMT
 ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F 2C16C765DBE54A088130F1BC4B9B5F600B55F3B4
-# Thu, 09 Feb 2023 06:18:47 GMT
-ENV PHP_VERSION=8.0.27
-# Thu, 09 Feb 2023 06:18:47 GMT
-ENV PHP_URL=https://www.php.net/distributions/php-8.0.27.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.0.27.tar.xz.asc
-# Thu, 09 Feb 2023 06:18:47 GMT
-ENV PHP_SHA256=f942cbfe2f7bacbb8039fb79bbec41c76ea779ac5c8157f21e1e0c1b28a5fc3a
-# Thu, 09 Feb 2023 06:18:58 GMT
+# Tue, 14 Feb 2023 22:24:24 GMT
+ENV PHP_VERSION=8.0.28
+# Tue, 14 Feb 2023 22:24:24 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.0.28.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.0.28.tar.xz.asc
+# Tue, 14 Feb 2023 22:24:24 GMT
+ENV PHP_SHA256=5e07278a1f315a67d36a676c01343ca2d4da5ec5bdb15d018e4248b3012bc0cd
+# Tue, 14 Feb 2023 22:24:34 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 09 Feb 2023 06:18:58 GMT
+# Tue, 14 Feb 2023 22:24:35 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Thu, 09 Feb 2023 06:20:55 GMT
+# Tue, 14 Feb 2023 22:26:31 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		apache2-dev 		libargon2-dev 		libcurl4-openssl-dev 		libonig-dev 		libreadline-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 	; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv 		--with-openssl 		--with-readline 		--with-zlib 				--disable-phpdbg 				--with-pear 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				--disable-cgi 				--with-apxs2 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
-# Thu, 09 Feb 2023 06:20:55 GMT
+# Tue, 14 Feb 2023 22:26:31 GMT
 COPY multi:e11221d43af7136e4dbad5a74e659bcfa753214a9e615c3daf357f1633d9d3d1 in /usr/local/bin/ 
-# Thu, 09 Feb 2023 06:20:55 GMT
+# Tue, 14 Feb 2023 22:26:31 GMT
 RUN docker-php-ext-enable sodium
-# Thu, 09 Feb 2023 06:20:55 GMT
+# Tue, 14 Feb 2023 22:26:31 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Thu, 09 Feb 2023 06:20:55 GMT
+# Tue, 14 Feb 2023 22:26:31 GMT
 STOPSIGNAL SIGWINCH
-# Thu, 09 Feb 2023 06:20:56 GMT
+# Tue, 14 Feb 2023 22:26:32 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Thu, 09 Feb 2023 06:20:56 GMT
+# Tue, 14 Feb 2023 22:26:32 GMT
 WORKDIR /var/www/html
-# Thu, 09 Feb 2023 06:20:56 GMT
+# Tue, 14 Feb 2023 22:26:32 GMT
 EXPOSE 80
-# Thu, 09 Feb 2023 06:20:56 GMT
+# Tue, 14 Feb 2023 22:26:32 GMT
 CMD ["apache2-foreground"]
-# Thu, 09 Feb 2023 14:34:37 GMT
+# Tue, 14 Feb 2023 23:48:37 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libwebp-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg=/usr 		--with-webp 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Thu, 09 Feb 2023 14:34:38 GMT
+# Tue, 14 Feb 2023 23:48:37 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Thu, 09 Feb 2023 14:40:37 GMT
+# Tue, 14 Feb 2023 23:56:10 GMT
 ENV DRUPAL_VERSION=7.94
-# Thu, 09 Feb 2023 14:40:37 GMT
+# Tue, 14 Feb 2023 23:56:10 GMT
 ENV DRUPAL_MD5=dae634ea0da005c5c435cfa9a9c5c322
-# Thu, 09 Feb 2023 14:40:38 GMT
+# Tue, 14 Feb 2023 23:56:11 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
@@ -590,41 +590,41 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 		Last Modified: Thu, 09 Feb 2023 06:38:18 GMT  
 		Size: 515.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59a7bdd084e37033edffe3a9b1e7e5e0e7af23c13a17a2eee0a3a8a2a51eecc1`  
-		Last Modified: Thu, 09 Feb 2023 06:44:07 GMT  
-		Size: 11.1 MB (11142642 bytes)  
+	-	`sha256:28d538e51c8ff0161559c546e0bae9d4ae0ae8f6f802aae0d16f727798d14c99`  
+		Last Modified: Tue, 14 Feb 2023 23:02:13 GMT  
+		Size: 11.1 MB (11141993 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a26591b159b0782ad3295c30baba9914f33b985c50d9f1ffed85cc3e828b340`  
-		Last Modified: Thu, 09 Feb 2023 06:44:05 GMT  
+	-	`sha256:3d810aab08eb8fd7426359882fe5edc9a3b1351cb9540f80eaa0ca5b58c183af`  
+		Last Modified: Tue, 14 Feb 2023 23:02:11 GMT  
 		Size: 493.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:546399e0dd44c6ee81a6ca27d07deb213f05f059ead9e79edec021adfb493571`  
-		Last Modified: Thu, 09 Feb 2023 06:44:06 GMT  
-		Size: 10.2 MB (10232457 bytes)  
+	-	`sha256:667058d37017ca5d5e51105420ed0ed70a383b3da5deb76787531f17580b2063`  
+		Last Modified: Tue, 14 Feb 2023 23:02:12 GMT  
+		Size: 10.2 MB (10233227 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aeb5e30c5f4b39b9c7381705d15861e8265678ba5e6855210150d2e3cf23c5ba`  
-		Last Modified: Thu, 09 Feb 2023 06:44:05 GMT  
-		Size: 2.5 KB (2459 bytes)  
+	-	`sha256:bbf4f5d5719c855aab5e40361e960d4a813b200f118b236e5a26c3f98526db43`  
+		Last Modified: Tue, 14 Feb 2023 23:02:11 GMT  
+		Size: 2.5 KB (2460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f5f8393624011694f864352e3347040fed387382596e62aab2b9e4a41dc15335`  
-		Last Modified: Thu, 09 Feb 2023 06:44:05 GMT  
-		Size: 242.0 B  
+	-	`sha256:a58059ea0f7c08651ab3c27fc1d9fa8d0f82ebe237f868c568d673f65ea9c539`  
+		Last Modified: Tue, 14 Feb 2023 23:02:10 GMT  
+		Size: 241.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:42cd44be1a3fde75d8901155075edf182faac03f030170551b23e853830a00e5`  
-		Last Modified: Thu, 09 Feb 2023 06:44:05 GMT  
-		Size: 897.0 B  
+	-	`sha256:7888f4f070f345dfeda13a09b3d2ca914a230c04299716796da1e4d0ef96682f`  
+		Last Modified: Tue, 14 Feb 2023 23:02:11 GMT  
+		Size: 894.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e1062412c8f3d71bb25d650b82a66afd9447f4cfca8c1557cee8371d087c219`  
-		Last Modified: Thu, 09 Feb 2023 14:52:30 GMT  
-		Size: 1.9 MB (1937218 bytes)  
+	-	`sha256:35cff41dbbe9067eaa6639780b9fc410d47a91b1d5164b4c069c2e063ec84e09`  
+		Last Modified: Wed, 15 Feb 2023 00:10:52 GMT  
+		Size: 1.9 MB (1937249 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4c44a23ea4925cdc2f4aebf866a22dbad11d550f57fa8e19525cc78cc9488de`  
-		Last Modified: Thu, 09 Feb 2023 14:52:29 GMT  
+	-	`sha256:e13b737c2ee7de8f9404ceee4ec593c1d87ebecd633b10aaf71b295238922911`  
+		Last Modified: Wed, 15 Feb 2023 00:10:52 GMT  
 		Size: 310.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:45b15ff81a100313476e9d056060890f3b496febfb53b6f3d2c5c0488ff6c5c4`  
-		Last Modified: Thu, 09 Feb 2023 14:57:01 GMT  
-		Size: 3.4 MB (3402615 bytes)  
+	-	`sha256:12247aeddab138a392b520a6a4783e9005229f64ee17eefa1333e3e530f6dd6b`  
+		Last Modified: Wed, 15 Feb 2023 00:16:56 GMT  
+		Size: 3.4 MB (3402619 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:7-apache` - linux; 386
@@ -936,14 +936,14 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ### `drupal:7-apache` - linux; ppc64le
 
 ```console
-$ docker pull drupal@sha256:8c44a88e4f8801334691d06d8eee24989f8e82ce8ca9506a87837c45c2c29aab
+$ docker pull drupal@sha256:31228193b8efed00c99510295a02d2dd1ed845a5e6fe58fd9cf3559297c3923a
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **170.3 MB (170278042 bytes)**  
+-	Total Size: **170.3 MB (170277384 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4c48aaf70e6e6583efedd9865520f12e4e15f3b0f01df5bc45860fa36c392a40`
+-	Image ID: `sha256:1c6ec9a107fdfb8c9f6068b06811e1bee055d8458abdc309a1886820ace35c30`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -980,43 +980,43 @@ ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D
 ENV PHP_LDFLAGS=-Wl,-O1 -pie
 # Thu, 09 Feb 2023 11:01:11 GMT
 ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F 2C16C765DBE54A088130F1BC4B9B5F600B55F3B4
-# Thu, 09 Feb 2023 11:01:11 GMT
-ENV PHP_VERSION=8.0.27
-# Thu, 09 Feb 2023 11:01:11 GMT
-ENV PHP_URL=https://www.php.net/distributions/php-8.0.27.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.0.27.tar.xz.asc
-# Thu, 09 Feb 2023 11:01:12 GMT
-ENV PHP_SHA256=f942cbfe2f7bacbb8039fb79bbec41c76ea779ac5c8157f21e1e0c1b28a5fc3a
-# Thu, 09 Feb 2023 11:01:34 GMT
+# Tue, 14 Feb 2023 21:55:14 GMT
+ENV PHP_VERSION=8.0.28
+# Tue, 14 Feb 2023 21:55:14 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.0.28.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.0.28.tar.xz.asc
+# Tue, 14 Feb 2023 21:55:15 GMT
+ENV PHP_SHA256=5e07278a1f315a67d36a676c01343ca2d4da5ec5bdb15d018e4248b3012bc0cd
+# Tue, 14 Feb 2023 21:55:37 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 09 Feb 2023 11:01:35 GMT
+# Tue, 14 Feb 2023 21:55:38 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Thu, 09 Feb 2023 11:05:33 GMT
+# Tue, 14 Feb 2023 21:59:42 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		apache2-dev 		libargon2-dev 		libcurl4-openssl-dev 		libonig-dev 		libreadline-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 	; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv 		--with-openssl 		--with-readline 		--with-zlib 				--disable-phpdbg 				--with-pear 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				--disable-cgi 				--with-apxs2 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
-# Thu, 09 Feb 2023 11:05:35 GMT
+# Tue, 14 Feb 2023 21:59:43 GMT
 COPY multi:e11221d43af7136e4dbad5a74e659bcfa753214a9e615c3daf357f1633d9d3d1 in /usr/local/bin/ 
-# Thu, 09 Feb 2023 11:05:36 GMT
+# Tue, 14 Feb 2023 21:59:45 GMT
 RUN docker-php-ext-enable sodium
-# Thu, 09 Feb 2023 11:05:37 GMT
+# Tue, 14 Feb 2023 21:59:45 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Thu, 09 Feb 2023 11:05:37 GMT
+# Tue, 14 Feb 2023 21:59:45 GMT
 STOPSIGNAL SIGWINCH
-# Thu, 09 Feb 2023 11:05:38 GMT
+# Tue, 14 Feb 2023 21:59:46 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Thu, 09 Feb 2023 11:05:38 GMT
+# Tue, 14 Feb 2023 21:59:46 GMT
 WORKDIR /var/www/html
-# Thu, 09 Feb 2023 11:05:38 GMT
+# Tue, 14 Feb 2023 21:59:46 GMT
 EXPOSE 80
-# Thu, 09 Feb 2023 11:05:39 GMT
+# Tue, 14 Feb 2023 21:59:47 GMT
 CMD ["apache2-foreground"]
-# Thu, 09 Feb 2023 16:41:10 GMT
+# Tue, 14 Feb 2023 23:23:57 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libwebp-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg=/usr 		--with-webp 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Thu, 09 Feb 2023 16:41:12 GMT
+# Tue, 14 Feb 2023 23:23:58 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Thu, 09 Feb 2023 16:46:49 GMT
+# Tue, 14 Feb 2023 23:33:34 GMT
 ENV DRUPAL_VERSION=7.94
-# Thu, 09 Feb 2023 16:46:50 GMT
+# Tue, 14 Feb 2023 23:33:34 GMT
 ENV DRUPAL_MD5=dae634ea0da005c5c435cfa9a9c5c322
-# Thu, 09 Feb 2023 16:46:52 GMT
+# Tue, 14 Feb 2023 23:33:37 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
@@ -1049,54 +1049,54 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 		Last Modified: Thu, 09 Feb 2023 11:20:42 GMT  
 		Size: 513.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e583c6ed55af926940c4030560fb4f7b9020de5641e67083eff736ef3766f4e9`  
-		Last Modified: Thu, 09 Feb 2023 11:25:58 GMT  
-		Size: 11.1 MB (11143333 bytes)  
+	-	`sha256:9f1f337dfdbcd5d0167d2dc09df3b9ea2f39a314f8ae417393923fb4766663ce`  
+		Last Modified: Tue, 14 Feb 2023 22:40:40 GMT  
+		Size: 11.1 MB (11142685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e910c41be0c0691838f84c7e5dd9f0b6d7cf0bfaa948a993439bee6daea2762e`  
-		Last Modified: Thu, 09 Feb 2023 11:25:55 GMT  
-		Size: 495.0 B  
+	-	`sha256:487f571376a41600165701b6c200d633a325351c70ad3f449cbdbd04ec28c878`  
+		Last Modified: Tue, 14 Feb 2023 22:40:37 GMT  
+		Size: 493.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:050acf626dd8d86e64de13213e7132f71aba259329fd825ddbe830452d8305aa`  
-		Last Modified: Thu, 09 Feb 2023 11:25:59 GMT  
-		Size: 11.1 MB (11139562 bytes)  
+	-	`sha256:7a00b30cff0ef68674b1670b91ed54d8c0a3f128dbc7b1abcf2e701161a52cc0`  
+		Last Modified: Tue, 14 Feb 2023 22:40:40 GMT  
+		Size: 11.1 MB (11139589 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:86e31ebb4a4ade1364e137ba8af35c5179bbdc89c8aa641566b8d4f5608c5460`  
-		Last Modified: Thu, 09 Feb 2023 11:25:55 GMT  
-		Size: 2.5 KB (2461 bytes)  
+	-	`sha256:540ecdad6c1538b369820e5accb8ea66bde4684aa5721ad4ad6a539af0c228c1`  
+		Last Modified: Tue, 14 Feb 2023 22:40:37 GMT  
+		Size: 2.5 KB (2463 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8da3dfdff4e3a952baf96ba82bec63b111777b2a0e7e7358883c3768c6c4bf19`  
-		Last Modified: Thu, 09 Feb 2023 11:25:55 GMT  
+	-	`sha256:7d9b716b6e4a20b2aa41cf44cd486d7cc2d50e691d9943339f98fa9dba58f004`  
+		Last Modified: Tue, 14 Feb 2023 22:40:37 GMT  
 		Size: 245.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6591318842b584580641de170d0fd1923659deeef7c642ea366cd0dc5b3eda3c`  
-		Last Modified: Thu, 09 Feb 2023 11:25:55 GMT  
-		Size: 896.0 B  
+	-	`sha256:1435d3d2c036c3598a80c124483b5e0177ce1f7800e51e38a08c92be87e4a542`  
+		Last Modified: Tue, 14 Feb 2023 22:40:37 GMT  
+		Size: 895.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdf7bc0a0a6436a9ac584f1f3c7d5e0742a94893227c4070ed144f19efcbaf34`  
-		Last Modified: Thu, 09 Feb 2023 17:02:32 GMT  
-		Size: 2.2 MB (2200169 bytes)  
+	-	`sha256:6f86eaceb98944ba0ed15510efeb9fe161d70853e7186060c799ebaa60e65f6b`  
+		Last Modified: Tue, 14 Feb 2023 23:56:21 GMT  
+		Size: 2.2 MB (2200138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:009400083bd4380d11710c28a7c78a8069f919b646d6bf39fd9c32697d6dd290`  
-		Last Modified: Thu, 09 Feb 2023 17:02:31 GMT  
-		Size: 311.0 B  
+	-	`sha256:8deab2354022d994c1b93315691c9905acd5183553d4279b926c38418b1b7d30`  
+		Last Modified: Tue, 14 Feb 2023 23:56:20 GMT  
+		Size: 312.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5ac68c83228c43461b77c42a88d9378eef9d8fd6939012fc9d44662a89884b9`  
-		Last Modified: Thu, 09 Feb 2023 17:07:02 GMT  
-		Size: 3.4 MB (3402620 bytes)  
+	-	`sha256:12a5ea1a76e31181f1d6c17c8a3e656456450b9b1ae86ee616acd393470b1eb1`  
+		Last Modified: Wed, 15 Feb 2023 00:05:12 GMT  
+		Size: 3.4 MB (3402614 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:7-apache` - linux; s390x
 
 ```console
-$ docker pull drupal@sha256:d902dc753cbb60b9725da631e3bc74f5ac0dd79e52ff5c50b4fad7639e5c109d
+$ docker pull drupal@sha256:b8c0abfba4778f1e91cb298cf9dd24c5e4c4d00931004ef47121fa4e0607b988
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **146.7 MB (146730897 bytes)**  
+-	Total Size: **146.7 MB (146730311 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:82a2f468b9a07433dae9d77e502ee7fd08aa8497d814119e1c55da955cb894db`
+-	Image ID: `sha256:6f08361723bbfd2385a5ada558a0800d6e803733ca8edf65cf3ce3b0fd90213a`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -1133,43 +1133,43 @@ ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D
 ENV PHP_LDFLAGS=-Wl,-O1 -pie
 # Thu, 09 Feb 2023 06:00:31 GMT
 ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F 2C16C765DBE54A088130F1BC4B9B5F600B55F3B4
-# Thu, 09 Feb 2023 06:00:32 GMT
-ENV PHP_VERSION=8.0.27
-# Thu, 09 Feb 2023 06:00:32 GMT
-ENV PHP_URL=https://www.php.net/distributions/php-8.0.27.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.0.27.tar.xz.asc
-# Thu, 09 Feb 2023 06:00:33 GMT
-ENV PHP_SHA256=f942cbfe2f7bacbb8039fb79bbec41c76ea779ac5c8157f21e1e0c1b28a5fc3a
-# Thu, 09 Feb 2023 06:00:42 GMT
+# Tue, 14 Feb 2023 21:55:00 GMT
+ENV PHP_VERSION=8.0.28
+# Tue, 14 Feb 2023 21:55:00 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.0.28.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.0.28.tar.xz.asc
+# Tue, 14 Feb 2023 21:55:00 GMT
+ENV PHP_SHA256=5e07278a1f315a67d36a676c01343ca2d4da5ec5bdb15d018e4248b3012bc0cd
+# Tue, 14 Feb 2023 21:55:08 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 09 Feb 2023 06:00:43 GMT
+# Tue, 14 Feb 2023 21:55:08 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Thu, 09 Feb 2023 06:03:03 GMT
+# Tue, 14 Feb 2023 21:57:05 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		apache2-dev 		libargon2-dev 		libcurl4-openssl-dev 		libonig-dev 		libreadline-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 	; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv 		--with-openssl 		--with-readline 		--with-zlib 				--disable-phpdbg 				--with-pear 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				--disable-cgi 				--with-apxs2 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
-# Thu, 09 Feb 2023 06:03:04 GMT
+# Tue, 14 Feb 2023 21:57:06 GMT
 COPY multi:e11221d43af7136e4dbad5a74e659bcfa753214a9e615c3daf357f1633d9d3d1 in /usr/local/bin/ 
-# Thu, 09 Feb 2023 06:03:05 GMT
+# Tue, 14 Feb 2023 21:57:07 GMT
 RUN docker-php-ext-enable sodium
-# Thu, 09 Feb 2023 06:03:05 GMT
+# Tue, 14 Feb 2023 21:57:07 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Thu, 09 Feb 2023 06:03:05 GMT
+# Tue, 14 Feb 2023 21:57:07 GMT
 STOPSIGNAL SIGWINCH
-# Thu, 09 Feb 2023 06:03:05 GMT
+# Tue, 14 Feb 2023 21:57:07 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Thu, 09 Feb 2023 06:03:06 GMT
+# Tue, 14 Feb 2023 21:57:07 GMT
 WORKDIR /var/www/html
-# Thu, 09 Feb 2023 06:03:06 GMT
+# Tue, 14 Feb 2023 21:57:07 GMT
 EXPOSE 80
-# Thu, 09 Feb 2023 06:03:06 GMT
+# Tue, 14 Feb 2023 21:57:07 GMT
 CMD ["apache2-foreground"]
-# Thu, 09 Feb 2023 11:56:11 GMT
+# Tue, 14 Feb 2023 22:53:23 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libwebp-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg=/usr 		--with-webp 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Thu, 09 Feb 2023 11:56:14 GMT
+# Tue, 14 Feb 2023 22:53:23 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Thu, 09 Feb 2023 12:03:57 GMT
+# Tue, 14 Feb 2023 23:01:41 GMT
 ENV DRUPAL_VERSION=7.94
-# Thu, 09 Feb 2023 12:03:57 GMT
+# Tue, 14 Feb 2023 23:01:41 GMT
 ENV DRUPAL_MD5=dae634ea0da005c5c435cfa9a9c5c322
-# Thu, 09 Feb 2023 12:04:03 GMT
+# Tue, 14 Feb 2023 23:01:42 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
@@ -1202,39 +1202,39 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 		Last Modified: Thu, 09 Feb 2023 06:14:20 GMT  
 		Size: 516.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:41bb6487a1282a62c510ecd5ab1fb376ce59659cc028a29453d0fc2df61f1d6d`  
-		Last Modified: Thu, 09 Feb 2023 06:17:42 GMT  
-		Size: 11.1 MB (11142456 bytes)  
+	-	`sha256:5444678e75409484d57d59c4e0f36c1819ed52d656591e99e42412a1fe8f3cb6`  
+		Last Modified: Tue, 14 Feb 2023 22:23:05 GMT  
+		Size: 11.1 MB (11141727 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c25a0e6718d323d680d70897dcf939ba5c5d930541115fc0794a41abbd08a8ea`  
-		Last Modified: Thu, 09 Feb 2023 06:17:40 GMT  
-		Size: 493.0 B  
+	-	`sha256:be21bb8ff83c345debf0698ce2e104e7134fc2a6a142b4508f56935c85233135`  
+		Last Modified: Tue, 14 Feb 2023 22:23:04 GMT  
+		Size: 494.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0a36e91a04bd1eb6061769cd2ce1ab695e00cead16085ca8a6ac1a4c2f23e324`  
-		Last Modified: Thu, 09 Feb 2023 06:17:42 GMT  
-		Size: 9.9 MB (9923374 bytes)  
+	-	`sha256:85e2d001b17c5dad051633bf0b34c098c0fbe855c21e63594500703bd7ef9a9d`  
+		Last Modified: Tue, 14 Feb 2023 22:23:05 GMT  
+		Size: 9.9 MB (9923600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de71164fb4f3279fed56d2104a14e98a4d57c412581820fe3d904217a2a41d2b`  
-		Last Modified: Thu, 09 Feb 2023 06:17:40 GMT  
-		Size: 2.5 KB (2460 bytes)  
+	-	`sha256:8759ec53f7be943c13b8e76ae1a8b2eebb59658b9af6d43100957b1b174e5c71`  
+		Last Modified: Tue, 14 Feb 2023 22:23:03 GMT  
+		Size: 2.5 KB (2461 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3f4aac8793a68bed9b69084ef5589103e4af081ca79ffa94b1efbd7e515c3c98`  
-		Last Modified: Thu, 09 Feb 2023 06:17:40 GMT  
-		Size: 246.0 B  
+	-	`sha256:1ac95287e9eed259121b19c4bd6099f03b47d81f2d0c45746cb23c74157efb4f`  
+		Last Modified: Tue, 14 Feb 2023 22:23:03 GMT  
+		Size: 245.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:98cd9e348fd85d2c37046e419182024b28e17be27f2185718214ca75158f34f5`  
-		Last Modified: Thu, 09 Feb 2023 06:17:40 GMT  
+	-	`sha256:9af20f50036ea36d86ffdda3d96fad9a02989ed75a61111efc7a2f4fec98c294`  
+		Last Modified: Tue, 14 Feb 2023 22:23:03 GMT  
 		Size: 894.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdbc22b953ec09f579a829efe92e4a8c2e4d7af87b809770b7e3ab94318cb34d`  
-		Last Modified: Thu, 09 Feb 2023 12:16:58 GMT  
-		Size: 1.9 MB (1907887 bytes)  
+	-	`sha256:a880d2d27d8e1156453627f6755f6a4eee424bb5abcd4e62d80705db2140655b`  
+		Last Modified: Tue, 14 Feb 2023 23:15:04 GMT  
+		Size: 1.9 MB (1907799 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e67188b36c26a55d7e394d28986ec8e59333c4416ffa53de840ecbab81c1a652`  
-		Last Modified: Thu, 09 Feb 2023 12:16:58 GMT  
-		Size: 313.0 B  
+	-	`sha256:ca9c39ef248a381534a4906bb08d77d1b4d3ec1b59fdfc83b8c0b12f15e888b6`  
+		Last Modified: Tue, 14 Feb 2023 23:15:04 GMT  
+		Size: 311.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2c402cef65e6def55694a1d51e7d2ce9d1dd6a3983af5d24dbf3171a95be97ad`  
-		Last Modified: Thu, 09 Feb 2023 12:19:29 GMT  
-		Size: 3.4 MB (3402612 bytes)  
+	-	`sha256:5fec244c0ab40a63d42f9c372a0b9d39e15ba2c1b9b6bc326e77dcbde305ffaa`  
+		Last Modified: Tue, 14 Feb 2023 23:18:28 GMT  
+		Size: 3.4 MB (3402618 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
