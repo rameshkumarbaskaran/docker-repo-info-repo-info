@@ -2927,7 +2927,7 @@ CMD ["composer"]
 ## `composer:2`
 
 ```console
-$ docker pull composer@sha256:3aa3b5473834466d578f0018f57f2a0b57680259af628ae433eff712a4218d87
+$ docker pull composer@sha256:11ba2330be08766d757b1f590729a60204cf8cb5dd6783f62d33d70c31f4919e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2943,13 +2943,13 @@ $ docker pull composer@sha256:3aa3b5473834466d578f0018f57f2a0b57680259af628ae433
 ### `composer:2` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:7c79dfc4c4cba48961eedf864ded41139849fa05119a4902e02be29dd7241523
+$ docker pull composer@sha256:082ed124b68e7e880721772a6bf22ad809e3bc87db8bbee9f0ec7127bb21ccad
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **70.2 MB (70158234 bytes)**  
+-	Total Size: **70.2 MB (70158266 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d47dead1d672406cdbfd5fbc45966178bc3a5cc1641570af2eeb3ee44aacddfd`
+-	Image ID: `sha256:518411a9bff338cc452761a73c2f00ed2c9baeab8d234fb53f76af2567decb59`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -3000,21 +3000,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Wed, 15 Feb 2023 02:28:57 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 ENV COMPOSER_HOME=/tmp
-# Wed, 15 Feb 2023 02:29:19 GMT
-ENV COMPOSER_VERSION=2.5.3
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 19:21:15 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 WORKDIR /app
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 CMD ["composer"]
 ```
 
@@ -3063,29 +3063,29 @@ CMD ["composer"]
 		Last Modified: Wed, 15 Feb 2023 02:31:36 GMT  
 		Size: 266.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:924e1ac23b04b21faa7c70ee0b2afaa7535069605babe86fac3459758338dae0`  
-		Last Modified: Wed, 15 Feb 2023 02:31:36 GMT  
-		Size: 1.1 MB (1141090 bytes)  
+	-	`sha256:8f9d96f62193eedd2fceeee566565e1906e88430534b6442d1f2cee4ba6bf2d5`  
+		Last Modified: Wed, 15 Feb 2023 19:22:11 GMT  
+		Size: 1.1 MB (1141120 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb1c43e0115cac3f5c1b3f0209539e1f54e5327613ea2e769a5a03609fd8eebf`  
-		Last Modified: Wed, 15 Feb 2023 02:31:35 GMT  
-		Size: 417.0 B  
+	-	`sha256:74b944693fa5bb022c73660a4a19ac563b3be355e52f6104d9611e3cabd8186a`  
+		Last Modified: Wed, 15 Feb 2023 19:22:11 GMT  
+		Size: 419.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e297e2f525cbeca6871e5201807fad39a2b9408a6a3d8c7682fa9c36dad56e94`  
-		Last Modified: Wed, 15 Feb 2023 02:31:35 GMT  
+	-	`sha256:609cb6132afbd219581d381cea00d17d20f6b7b789e6c78f678be0daad95f9cf`  
+		Last Modified: Wed, 15 Feb 2023 19:22:11 GMT  
 		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:3a0686a5c16747c64b16fd02d865ff3a05c139af9551e2e9092b3910a40f7c88
+$ docker pull composer@sha256:c0d7047cb632a5e8d2ab861d22514426cfbe0f07509e6e4d2cc40a9e43004559
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **63.0 MB (63039650 bytes)**  
+-	Total Size: **63.0 MB (63039683 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c0d3be5a6378c29b0cfffcb21ecb327905127a77db593cd302f165c1ab4ad2df`
+-	Image ID: `sha256:89d98990738fb2b95382a678145b3b3f1544e417e8cb98b90645a77d7a9b50f4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -3136,21 +3136,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Tue, 14 Feb 2023 21:38:04 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 ENV COMPOSER_HOME=/tmp
-# Tue, 14 Feb 2023 21:38:35 GMT
-ENV COMPOSER_VERSION=2.5.3
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 19:50:04 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 WORKDIR /app
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 CMD ["composer"]
 ```
 
@@ -3199,29 +3199,29 @@ CMD ["composer"]
 		Last Modified: Tue, 14 Feb 2023 21:41:51 GMT  
 		Size: 267.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee80f8a2232987a16d2dd951b187b63944486074543449f768718d1ef9b9783d`  
-		Last Modified: Tue, 14 Feb 2023 21:41:51 GMT  
-		Size: 1.1 MB (1140930 bytes)  
+	-	`sha256:a7071732611ce0c99d7ea1ba65681daae8952498b598283bdc464e8f76958829`  
+		Last Modified: Wed, 15 Feb 2023 19:51:40 GMT  
+		Size: 1.1 MB (1140961 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aea6276e88d9ba8c47f2c05a7b3d6cd31a690cd97197942ab294044efc879224`  
-		Last Modified: Tue, 14 Feb 2023 21:41:50 GMT  
-		Size: 417.0 B  
+	-	`sha256:46e41f2b97fecb11ef5ca8dd1eee87dbbccf4256820c2b9916dd327fb01fd190`  
+		Last Modified: Wed, 15 Feb 2023 19:51:39 GMT  
+		Size: 419.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ce97bf1624891b2bdef7a357d05e9f72a57877691f24002c187cf94c3668ee1`  
-		Last Modified: Tue, 14 Feb 2023 21:41:51 GMT  
+	-	`sha256:c1c86b4d33d0e73cca17d6cb8fc6a0cf4168ddde16a8f224d0b28336b4970851`  
+		Last Modified: Wed, 15 Feb 2023 19:51:39 GMT  
 		Size: 92.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:c1ab7eb0e069249f6fc0fc57ff91d9c4a0c04935b2ce5be5294c6ef21b59a963
+$ docker pull composer@sha256:b169f54a323b070c7ec4584b9148ec8394d90f763638dd2280513c2152996a76
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **64.4 MB (64372798 bytes)**  
+-	Total Size: **64.4 MB (64372830 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:39d7bda05fae88a0ea60e937a263430fc70d7de123aab5e057038d38f0086320`
+-	Image ID: `sha256:d1652ab59bf92865eaecb86c22c2681953353c5a6cf9bc8e6f31bcb5988cee09`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -3272,21 +3272,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Wed, 15 Feb 2023 01:40:22 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 ENV COMPOSER_HOME=/tmp
-# Wed, 15 Feb 2023 01:40:52 GMT
-ENV COMPOSER_VERSION=2.5.3
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 20:00:03 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 WORKDIR /app
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 CMD ["composer"]
 ```
 
@@ -3335,29 +3335,29 @@ CMD ["composer"]
 		Last Modified: Wed, 15 Feb 2023 01:44:41 GMT  
 		Size: 265.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1cacc5838790a26e1c382fd33caa8b20d3370dfe90c189edf014e7d1535e3c8e`  
-		Last Modified: Wed, 15 Feb 2023 01:44:42 GMT  
-		Size: 1.1 MB (1104227 bytes)  
+	-	`sha256:766a962e72df7233519213997b76d24d51a05ef06f5429137ccd21a8c7705670`  
+		Last Modified: Wed, 15 Feb 2023 20:01:40 GMT  
+		Size: 1.1 MB (1104258 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f75c9ee5752f86737cfbfc2348876c74d9a2fef1fbdeb2c0c5e2a1c4ed40492`  
-		Last Modified: Wed, 15 Feb 2023 01:44:41 GMT  
-		Size: 417.0 B  
+	-	`sha256:1a8b56af21e7d8f85042061c1030b1224fcb37203577a3502648b9c095d6b58a`  
+		Last Modified: Wed, 15 Feb 2023 20:01:39 GMT  
+		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:38082a673b18882d7a779412473c3e15637d52a1474311e46eb370e82ebd75d3`  
-		Last Modified: Wed, 15 Feb 2023 01:44:41 GMT  
+	-	`sha256:5c59438c35dbfdf3ee40d0ae688acbf9f3a69f67bf92c3fbafeb3a6e14d6d459`  
+		Last Modified: Wed, 15 Feb 2023 20:01:40 GMT  
 		Size: 92.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:f7f7c63312718f1a8536eab81d311f30130f68a1c9192a7a0874bba0bca02b21
+$ docker pull composer@sha256:fc71365e7c7ec262c6de71020964881caee9e4698e2f52b7d3b0846a775d61e9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.7 MB (69729968 bytes)**  
+-	Total Size: **69.7 MB (69730000 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ef9d0cdc57eefd4b142e2dea3df059a5d420e69eb00fa3ca9a82a1b17b47162e`
+-	Image ID: `sha256:140ec3510943c1e258cb82c87ba825b612b3de123c473c7af22a3aecbb7c9a49`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -3408,21 +3408,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Tue, 14 Feb 2023 23:23:09 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 ENV COMPOSER_HOME=/tmp
-# Tue, 14 Feb 2023 23:23:27 GMT
-ENV COMPOSER_VERSION=2.5.3
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 19:39:45 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 WORKDIR /app
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 CMD ["composer"]
 ```
 
@@ -3471,16 +3471,16 @@ CMD ["composer"]
 		Last Modified: Tue, 14 Feb 2023 23:25:22 GMT  
 		Size: 265.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25be4b83a1081e9738d8b0e68d93f5dddae836eee9a361988de82230ba29a6a4`  
-		Last Modified: Tue, 14 Feb 2023 23:25:22 GMT  
-		Size: 1.1 MB (1138156 bytes)  
+	-	`sha256:1f0245cd6d159e1859b910a4292b3df2e6fc12bb4c2bcbbbc8a4a7c9a2e98aa6`  
+		Last Modified: Wed, 15 Feb 2023 19:40:37 GMT  
+		Size: 1.1 MB (1138186 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c609e3a372227ce429358a63bda2c119cd071c20eadfa46c6754ea6612ce8e0`  
-		Last Modified: Tue, 14 Feb 2023 23:25:22 GMT  
-		Size: 417.0 B  
+	-	`sha256:a2838bbc6b757de012cd0375573e8aa888f673c8c3daf9ecb67243281161f783`  
+		Last Modified: Wed, 15 Feb 2023 19:40:36 GMT  
+		Size: 419.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f82176a0c738cc47fba481a1540ea4d72f2d6e8790c69137540e1b6c20fb4a29`  
-		Last Modified: Tue, 14 Feb 2023 23:25:22 GMT  
+	-	`sha256:38c5fdb49eecc6bd2232f347dcff6456763485ab85f34375bdf3bab648a1b9b2`  
+		Last Modified: Wed, 15 Feb 2023 19:40:36 GMT  
 		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -3760,13 +3760,13 @@ CMD ["composer"]
 ### `composer:2` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:7bb1d8b1f07cd3d7c3723134e643e17aca9975c65f8eef1bc0974f5541215eae
+$ docker pull composer@sha256:b82432d765d4a98bb0ad6844269ec7d07a481f69bd1510a3922ddbf3c389d3db
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **68.6 MB (68637387 bytes)**  
+-	Total Size: **68.6 MB (68637445 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6b838391dbeaa9f89200999b0d418b149047192925426258838a22e5d3263014`
+-	Image ID: `sha256:0c1bcec3e727782020b1ae187a4f27bf0f2545ac7d2a86120b43808ef08c874b`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -3817,21 +3817,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Tue, 14 Feb 2023 22:40:00 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 ENV COMPOSER_HOME=/tmp
-# Tue, 14 Feb 2023 22:40:20 GMT
-ENV COMPOSER_VERSION=2.5.3
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 19:42:12 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 WORKDIR /app
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 CMD ["composer"]
 ```
 
@@ -3880,23 +3880,23 @@ CMD ["composer"]
 		Last Modified: Tue, 14 Feb 2023 22:42:45 GMT  
 		Size: 267.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:47f6fad05445e4919ef67711fd21353fcbfb0c66bca1c0a211094b34be611596`  
-		Last Modified: Tue, 14 Feb 2023 22:42:45 GMT  
-		Size: 1.1 MB (1149078 bytes)  
+	-	`sha256:c6bb8d9e0302261d33bc0a247e534eacf477c5872889963fd77e6b0e12b2b19d`  
+		Last Modified: Wed, 15 Feb 2023 19:43:34 GMT  
+		Size: 1.1 MB (1149135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aaedb543fca048503d4a251a9be93d5decae64d0825fa3d6484946b493f7c202`  
-		Last Modified: Tue, 14 Feb 2023 22:42:45 GMT  
-		Size: 417.0 B  
+	-	`sha256:940798fd552a4ac54ad7931765656c28f54fd908c0c82e3aff494e3d39a7588b`  
+		Last Modified: Wed, 15 Feb 2023 19:43:33 GMT  
+		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:404a3b905ba2d8924a2cc33b89b902c11cf60da6160d3bb3b3ed68cab4a0babd`  
-		Last Modified: Tue, 14 Feb 2023 22:41:28 GMT  
+	-	`sha256:5977ba5da9a7c7dc931bc1b0709256489ba4072708af4b0a6940f14141ab2937`  
+		Last Modified: Wed, 15 Feb 2023 19:43:34 GMT  
 		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:2.2`
 
 ```console
-$ docker pull composer@sha256:60321aa715859e255c68d8835bd7b34fe2ac0acb2720e6b5f304cdc70419ad33
+$ docker pull composer@sha256:996383fba54bc7aebcdfe5436fc06b7a95625c84105f8239865a90d497e5a4e7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3912,13 +3912,13 @@ $ docker pull composer@sha256:60321aa715859e255c68d8835bd7b34fe2ac0acb2720e6b5f3
 ### `composer:2.2` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:aa8c8cb6702847cd36cfa2f7e2d7e924b75f6332b9584182b8413a4a4cfd4de1
+$ docker pull composer@sha256:b820cbdd4fb341d2371fe8128c8945b678da696c06b64f0751de871a2e54ae51
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **70.0 MB (70045919 bytes)**  
+-	Total Size: **70.0 MB (70045982 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:83a1ef858ecc5702d1d3f9367a4db3b43cc4a4578f4bc135b612be25ec382bdf`
+-	Image ID: `sha256:5aa9d9da1a778488dfc805ad7fcb3e11fb02bc5ea286e785698bc177dbc02d05`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -3969,21 +3969,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Wed, 15 Feb 2023 02:28:57 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Wed, 15 Feb 2023 02:30:46 GMT
+# Wed, 15 Feb 2023 19:21:46 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Wed, 15 Feb 2023 02:30:46 GMT
+# Wed, 15 Feb 2023 19:21:46 GMT
 ENV COMPOSER_HOME=/tmp
-# Wed, 15 Feb 2023 02:30:46 GMT
-ENV COMPOSER_VERSION=2.2.20
-# Wed, 15 Feb 2023 02:30:46 GMT
+# Wed, 15 Feb 2023 19:21:46 GMT
+ENV COMPOSER_VERSION=2.2.21
+# Wed, 15 Feb 2023 19:21:46 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Wed, 15 Feb 2023 02:30:46 GMT
+# Wed, 15 Feb 2023 19:21:46 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Wed, 15 Feb 2023 02:30:46 GMT
+# Wed, 15 Feb 2023 19:21:46 GMT
 WORKDIR /app
-# Wed, 15 Feb 2023 02:30:46 GMT
+# Wed, 15 Feb 2023 19:21:46 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 15 Feb 2023 02:30:46 GMT
+# Wed, 15 Feb 2023 19:21:46 GMT
 CMD ["composer"]
 ```
 
@@ -4032,29 +4032,29 @@ CMD ["composer"]
 		Last Modified: Wed, 15 Feb 2023 02:31:36 GMT  
 		Size: 266.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d157e1d8f91556a2bd37a9a9f2106754b3dea2c1f1b28f1c9ec852789f3a58b1`  
-		Last Modified: Wed, 15 Feb 2023 02:32:13 GMT  
-		Size: 1.0 MB (1028775 bytes)  
+	-	`sha256:31a362e7e54fbe0159af27e04b42872b38dee28c3aaf5c4a158ebf8dfda54d7c`  
+		Last Modified: Wed, 15 Feb 2023 19:22:30 GMT  
+		Size: 1.0 MB (1028837 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:409881f701237be146fe7715dbed7cd48fb9faba3fe5f395a0f7983b8a5cfc04`  
-		Last Modified: Wed, 15 Feb 2023 02:32:12 GMT  
-		Size: 417.0 B  
+	-	`sha256:93985d5cb3f102e47104604664704ac871dbc5daf0c94dbbdf16b588c5881a89`  
+		Last Modified: Wed, 15 Feb 2023 19:22:30 GMT  
+		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a7c520f90669b00d296f608e389770da17e35641a4a2211f0b9325039c0994ef`  
-		Last Modified: Wed, 15 Feb 2023 02:32:12 GMT  
+	-	`sha256:8e27af075c76eaedb96718ec121002b6e61d81a2195f3e625e199a60ba10a5ef`  
+		Last Modified: Wed, 15 Feb 2023 19:22:29 GMT  
 		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.2` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:3af4e87882057b7783c9a2fb473b3f16106fd0717e6dd2ea854212cd56026539
+$ docker pull composer@sha256:b7348898cf2e8f37eeb2ebcf2fb71c09cc9be4d85b2d3bccd5dd569e9a3f5f91
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.9 MB (62926917 bytes)**  
+-	Total Size: **62.9 MB (62926930 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:00e841af60cfe8f26090238693cf6a3ad4fc304e54a77a05938efa060bca9df3`
+-	Image ID: `sha256:4c3c959eeee584f96d1cfab75d0d4e0a44b543e5718b756a1c45371ec991f0c0`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -4105,21 +4105,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Tue, 14 Feb 2023 21:38:04 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Tue, 14 Feb 2023 21:40:26 GMT
+# Wed, 15 Feb 2023 19:50:46 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Tue, 14 Feb 2023 21:40:26 GMT
+# Wed, 15 Feb 2023 19:50:46 GMT
 ENV COMPOSER_HOME=/tmp
-# Tue, 14 Feb 2023 21:40:26 GMT
-ENV COMPOSER_VERSION=2.2.20
-# Tue, 14 Feb 2023 21:40:26 GMT
+# Wed, 15 Feb 2023 19:50:46 GMT
+ENV COMPOSER_VERSION=2.2.21
+# Wed, 15 Feb 2023 19:50:46 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Tue, 14 Feb 2023 21:40:26 GMT
+# Wed, 15 Feb 2023 19:50:46 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Tue, 14 Feb 2023 21:40:26 GMT
+# Wed, 15 Feb 2023 19:50:46 GMT
 WORKDIR /app
-# Tue, 14 Feb 2023 21:40:26 GMT
+# Wed, 15 Feb 2023 19:50:46 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 Feb 2023 21:40:26 GMT
+# Wed, 15 Feb 2023 19:50:46 GMT
 CMD ["composer"]
 ```
 
@@ -4168,29 +4168,29 @@ CMD ["composer"]
 		Last Modified: Tue, 14 Feb 2023 21:41:51 GMT  
 		Size: 267.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b2fbe7158d0d5bd77766ee4c4550b6db8fa59895e05bca74630bbd1b7fbe501`  
-		Last Modified: Tue, 14 Feb 2023 21:42:38 GMT  
-		Size: 1.0 MB (1028195 bytes)  
+	-	`sha256:9580cbdeebcde6445431c5226865d64186dfafb941590779bc094d8b431010cd`  
+		Last Modified: Wed, 15 Feb 2023 19:52:02 GMT  
+		Size: 1.0 MB (1028209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1943c3a47cf7cef1d807b60d53538e6f76c81036061ccd33d8c52bf769d2aebe`  
-		Last Modified: Tue, 14 Feb 2023 21:42:37 GMT  
-		Size: 419.0 B  
+	-	`sha256:6a21cb5419f6f9a2fc3af992acf6108f9b52b2081a03122ebd07568ec0282165`  
+		Last Modified: Wed, 15 Feb 2023 19:52:02 GMT  
+		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0573a858b0374dff3f910cd4f13ddd82869d51305ee42c1072fd341287699f4`  
-		Last Modified: Tue, 14 Feb 2023 21:42:38 GMT  
+	-	`sha256:1ea653ce8fddff233854f361e6cbf8474a003852e41301662a2884ceea2658df`  
+		Last Modified: Wed, 15 Feb 2023 19:52:02 GMT  
 		Size: 92.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.2` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:8f522197ff4194a9a180ff4f07ab4530db5aeb3529ec9e814b87910a795ad17c
+$ docker pull composer@sha256:04dd562f5697e931b8647ae7832a6e924f50cb7079e6a865591278ff85618db6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **64.3 MB (64260554 bytes)**  
+-	Total Size: **64.3 MB (64260578 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:94288f6958a2d19e39a3b550689730f1e18ca848d61d04343186ee956cfc6fde`
+-	Image ID: `sha256:36cb28ef540f9f6c38493179fccf011bd5f63e5dc25cfe8b80a789d4bdbfd092`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -4241,21 +4241,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Wed, 15 Feb 2023 01:40:22 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Wed, 15 Feb 2023 01:42:45 GMT
+# Wed, 15 Feb 2023 20:00:47 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Wed, 15 Feb 2023 01:42:45 GMT
+# Wed, 15 Feb 2023 20:00:47 GMT
 ENV COMPOSER_HOME=/tmp
-# Wed, 15 Feb 2023 01:42:45 GMT
-ENV COMPOSER_VERSION=2.2.20
-# Wed, 15 Feb 2023 01:42:45 GMT
+# Wed, 15 Feb 2023 20:00:47 GMT
+ENV COMPOSER_VERSION=2.2.21
+# Wed, 15 Feb 2023 20:00:47 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Wed, 15 Feb 2023 01:42:45 GMT
+# Wed, 15 Feb 2023 20:00:47 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Wed, 15 Feb 2023 01:42:45 GMT
+# Wed, 15 Feb 2023 20:00:47 GMT
 WORKDIR /app
-# Wed, 15 Feb 2023 01:42:45 GMT
+# Wed, 15 Feb 2023 20:00:47 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 15 Feb 2023 01:42:45 GMT
+# Wed, 15 Feb 2023 20:00:47 GMT
 CMD ["composer"]
 ```
 
@@ -4304,29 +4304,29 @@ CMD ["composer"]
 		Last Modified: Wed, 15 Feb 2023 01:44:41 GMT  
 		Size: 265.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:68f0cedeef477271e42aaccfd82a5728cb1846df35d818ff47e39824ce974d81`  
-		Last Modified: Wed, 15 Feb 2023 01:45:34 GMT  
-		Size: 992.0 KB (991983 bytes)  
+	-	`sha256:99709be50cc569638be1f2a36aaf146321a9f2afcff2c7abfa6acf88102cb13f`  
+		Last Modified: Wed, 15 Feb 2023 20:02:03 GMT  
+		Size: 992.0 KB (992006 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:81cc9a111014fe587abaadf506cfe3805e755a5820381e0d2db083481e83a493`  
-		Last Modified: Wed, 15 Feb 2023 01:45:33 GMT  
-		Size: 417.0 B  
+	-	`sha256:7eaa860e62e61d743659461bfcbf8a8aa3c842502691af0035b51a5cdc2da041`  
+		Last Modified: Wed, 15 Feb 2023 20:02:02 GMT  
+		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:91ede5ae0e6e6f8c27481773d85288029089ce2b3227a480c22d981f6ecac9e9`  
-		Last Modified: Wed, 15 Feb 2023 01:45:33 GMT  
+	-	`sha256:ca94b3246fc35f7ab68d298f1d7f374de3703aab400d49d6e28495d26d209f08`  
+		Last Modified: Wed, 15 Feb 2023 20:02:03 GMT  
 		Size: 92.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.2` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:26b405bfdb221e7ccca36ba305ab66a92cc379dd1be39bb10e11ebf2fe61b411
+$ docker pull composer@sha256:b341727b67a2aa2a8499623393e4c65dcc5d16a57634f1bf31f9427873cf83a3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.6 MB (69616585 bytes)**  
+-	Total Size: **69.6 MB (69616590 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7b4639ccf847235d1a63501e50dc6bb0efc8c4ef9cba9696d3f65d7a23da420e`
+-	Image ID: `sha256:4b7cd0b317c516a0e9d8cd4d71f183146cb5b6744296d45d362e438c0819c830`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -4377,21 +4377,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Tue, 14 Feb 2023 23:23:09 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Tue, 14 Feb 2023 23:24:38 GMT
+# Wed, 15 Feb 2023 19:40:14 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Tue, 14 Feb 2023 23:24:38 GMT
+# Wed, 15 Feb 2023 19:40:14 GMT
 ENV COMPOSER_HOME=/tmp
-# Tue, 14 Feb 2023 23:24:38 GMT
-ENV COMPOSER_VERSION=2.2.20
-# Tue, 14 Feb 2023 23:24:38 GMT
+# Wed, 15 Feb 2023 19:40:14 GMT
+ENV COMPOSER_VERSION=2.2.21
+# Wed, 15 Feb 2023 19:40:14 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Tue, 14 Feb 2023 23:24:38 GMT
+# Wed, 15 Feb 2023 19:40:14 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Tue, 14 Feb 2023 23:24:38 GMT
+# Wed, 15 Feb 2023 19:40:14 GMT
 WORKDIR /app
-# Tue, 14 Feb 2023 23:24:38 GMT
+# Wed, 15 Feb 2023 19:40:14 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 Feb 2023 23:24:38 GMT
+# Wed, 15 Feb 2023 19:40:14 GMT
 CMD ["composer"]
 ```
 
@@ -4440,17 +4440,17 @@ CMD ["composer"]
 		Last Modified: Tue, 14 Feb 2023 23:25:22 GMT  
 		Size: 265.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b61c1cb46ad15e331e71945aafd255e6734efbf4b01a932571018d4a7031623`  
-		Last Modified: Tue, 14 Feb 2023 23:25:57 GMT  
-		Size: 1.0 MB (1024773 bytes)  
+	-	`sha256:92f9cbf413c0c0c7967e7a12649fae0286c16b78416ee0ceebc56647ff23dfdf`  
+		Last Modified: Wed, 15 Feb 2023 19:40:57 GMT  
+		Size: 1.0 MB (1024777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:255bcde9a5b123d2159cc923e0c9bbad9a4ecafc1209b34f1b87cadda3d8d524`  
-		Last Modified: Tue, 14 Feb 2023 23:25:57 GMT  
+	-	`sha256:8cca0a090e36c7f90c9f3ca68fc5951d22a02a0c8b6c395e3d077b6515bfd2f4`  
+		Last Modified: Wed, 15 Feb 2023 19:40:56 GMT  
 		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:952528339f8489aee9ba4abddb2f9ad62ddb1f2c58b934f515d4ff9b784d9efa`  
-		Last Modified: Tue, 14 Feb 2023 23:25:57 GMT  
-		Size: 125.0 B  
+	-	`sha256:b8e3fea421c9bc62b14cc28a4c4b3791ecc5db3aa95a856f58c75e6550410fbd`  
+		Last Modified: Wed, 15 Feb 2023 19:40:57 GMT  
+		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.2` - linux; 386
@@ -4729,13 +4729,13 @@ CMD ["composer"]
 ### `composer:2.2` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:af24e8570a2f64ea961c305f18a1dd17a6fe231c51e950202b70a9564c5169a4
+$ docker pull composer@sha256:e1d5274a2762a57307563f787429d9bcdea915e54934d8cf7bb91ed4d6775d85
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **68.5 MB (68524260 bytes)**  
+-	Total Size: **68.5 MB (68524276 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5188ee560218b7430a8980b917aaa9d85beb021f44a82cc5c91cfb7f21eb4bac`
+-	Image ID: `sha256:21d9ca83ce72cd4d5b6258b04ffc2026272f1ba1b361421e15871102b4c76d71`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -4786,21 +4786,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Tue, 14 Feb 2023 22:40:00 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Tue, 14 Feb 2023 22:41:41 GMT
+# Wed, 15 Feb 2023 19:42:51 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Tue, 14 Feb 2023 22:41:41 GMT
+# Wed, 15 Feb 2023 19:42:51 GMT
 ENV COMPOSER_HOME=/tmp
-# Tue, 14 Feb 2023 22:41:41 GMT
-ENV COMPOSER_VERSION=2.2.20
-# Tue, 14 Feb 2023 22:41:41 GMT
+# Wed, 15 Feb 2023 19:42:51 GMT
+ENV COMPOSER_VERSION=2.2.21
+# Wed, 15 Feb 2023 19:42:51 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Tue, 14 Feb 2023 22:41:41 GMT
+# Wed, 15 Feb 2023 19:42:52 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Tue, 14 Feb 2023 22:41:41 GMT
+# Wed, 15 Feb 2023 19:42:52 GMT
 WORKDIR /app
-# Tue, 14 Feb 2023 22:41:41 GMT
+# Wed, 15 Feb 2023 19:42:52 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 Feb 2023 22:41:41 GMT
+# Wed, 15 Feb 2023 19:42:52 GMT
 CMD ["composer"]
 ```
 
@@ -4849,22 +4849,712 @@ CMD ["composer"]
 		Last Modified: Tue, 14 Feb 2023 22:42:45 GMT  
 		Size: 267.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f488f9842e4841d28b3c122be97012dd2b10bdf47404ea8341b1751689fbe8ba`  
-		Last Modified: Tue, 14 Feb 2023 22:43:14 GMT  
-		Size: 1.0 MB (1035949 bytes)  
+	-	`sha256:fe6e9bffe5383bbb50d92ef5afe94366f4181da1a720089baea6405497c60b07`  
+		Last Modified: Wed, 15 Feb 2023 19:43:49 GMT  
+		Size: 1.0 MB (1035966 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:521fe499ffcad731ce00c50c7fac485cd38bdc912e8a90ebb0911103af945e57`  
-		Last Modified: Tue, 14 Feb 2023 22:43:13 GMT  
-		Size: 419.0 B  
+	-	`sha256:151c3637dd46321c76ceebc63e3421982a4052dc6b72ed66066c9e423229639d`  
+		Last Modified: Wed, 15 Feb 2023 19:43:49 GMT  
+		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84f443adccfb8b2ec99d4a160b073e4d24d32d6eb230f9b1e133a5c98fd755d3`  
-		Last Modified: Tue, 14 Feb 2023 22:43:13 GMT  
+	-	`sha256:eacc0d5291ba98b0f339bca7e33d08bb9ed32406bc235c58ae4dafdc3a8524d5`  
+		Last Modified: Wed, 15 Feb 2023 19:43:49 GMT  
 		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:2.2.21`
 
-**does not exist** (yet?)
+```console
+$ docker pull composer@sha256:c4ecac4e8a532b800ada3eea46411c9a35e390d6932cab8adbfb2c032efe61c6
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 5
+	-	linux; amd64
+	-	linux; arm variant v6
+	-	linux; arm variant v7
+	-	linux; arm64 variant v8
+	-	linux; s390x
+
+### `composer:2.2.21` - linux; amd64
+
+```console
+$ docker pull composer@sha256:b820cbdd4fb341d2371fe8128c8945b678da696c06b64f0751de871a2e54ae51
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **70.0 MB (70045982 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:5aa9d9da1a778488dfc805ad7fcb3e11fb02bc5ea286e785698bc177dbc02d05`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["composer"]`
+
+```dockerfile
+# Sat, 11 Feb 2023 04:46:42 GMT
+ADD file:40887ab7c06977737e63c215c9bd297c0c74de8d12d16ebdf1c3d40ac392f62d in / 
+# Sat, 11 Feb 2023 04:46:42 GMT
+CMD ["/bin/sh"]
+# Sat, 11 Feb 2023 10:17:22 GMT
+ENV PHPIZE_DEPS=autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c
+# Sat, 11 Feb 2023 10:17:23 GMT
+RUN apk add --no-cache 		ca-certificates 		curl 		tar 		xz 		openssl
+# Sat, 11 Feb 2023 10:17:24 GMT
+RUN set -eux; 	adduser -u 82 -D -S -G www-data www-data
+# Sat, 11 Feb 2023 10:17:24 GMT
+ENV PHP_INI_DIR=/usr/local/etc/php
+# Sat, 11 Feb 2023 10:17:24 GMT
+RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
+# Sat, 11 Feb 2023 10:17:25 GMT
+ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 10:17:25 GMT
+ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 10:17:25 GMT
+ENV PHP_LDFLAGS=-Wl,-O1 -pie
+# Sat, 11 Feb 2023 10:17:25 GMT
+ENV GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC
+# Tue, 14 Feb 2023 20:46:14 GMT
+ENV PHP_VERSION=8.2.3
+# Tue, 14 Feb 2023 20:46:15 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.2.3.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.2.3.tar.xz.asc
+# Tue, 14 Feb 2023 20:46:15 GMT
+ENV PHP_SHA256=b9b566686e351125d67568a33291650eb8dfa26614d205d70d82e6e92613d457
+# Tue, 14 Feb 2023 20:46:22 GMT
+RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apk del --no-network .fetch-deps
+# Tue, 14 Feb 2023 20:46:22 GMT
+COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
+# Tue, 14 Feb 2023 20:49:57 GMT
+RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		gnu-libiconv-dev 		libsodium-dev 		libxml2-dev 		linux-headers 		oniguruma-dev 		openssl-dev 		readline-dev 		sqlite-dev 	; 		rm -vf /usr/include/iconv.h; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv=/usr 		--with-openssl 		--with-readline 		--with-zlib 				--enable-phpdbg 		--enable-phpdbg-readline 				--with-pear 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
+# Tue, 14 Feb 2023 20:49:57 GMT
+COPY multi:6edd033b037aa2d7697fc3b9f82c2f162146c1920a0c6d25a165dc56783204db in /usr/local/bin/ 
+# Tue, 14 Feb 2023 20:49:58 GMT
+RUN docker-php-ext-enable sodium
+# Tue, 14 Feb 2023 20:49:59 GMT
+ENTRYPOINT ["docker-php-entrypoint"]
+# Tue, 14 Feb 2023 20:49:59 GMT
+CMD ["php" "-a"]
+# Wed, 15 Feb 2023 02:28:57 GMT
+RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
+# Wed, 15 Feb 2023 02:28:57 GMT
+RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
+# Wed, 15 Feb 2023 19:21:46 GMT
+ENV COMPOSER_ALLOW_SUPERUSER=1
+# Wed, 15 Feb 2023 19:21:46 GMT
+ENV COMPOSER_HOME=/tmp
+# Wed, 15 Feb 2023 19:21:46 GMT
+ENV COMPOSER_VERSION=2.2.21
+# Wed, 15 Feb 2023 19:21:46 GMT
+RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
+# Wed, 15 Feb 2023 19:21:46 GMT
+COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
+# Wed, 15 Feb 2023 19:21:46 GMT
+WORKDIR /app
+# Wed, 15 Feb 2023 19:21:46 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Wed, 15 Feb 2023 19:21:46 GMT
+CMD ["composer"]
+```
+
+-	Layers:
+	-	`sha256:63b65145d645c1250c391b2d16ebe53b3747c295ca8ba2fcb6b0cf064a4dc21c`  
+		Last Modified: Fri, 10 Feb 2023 22:41:31 GMT  
+		Size: 3.4 MB (3374446 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e80fdb865a69a85ee910e603ec69d253469dd9367105df81057c89ef565ab971`  
+		Last Modified: Sat, 11 Feb 2023 11:20:06 GMT  
+		Size: 1.9 MB (1869555 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f4dbeadc75c19cda75784e259745d42dd938cf860218f8fec2103bf0852be3c7`  
+		Last Modified: Sat, 11 Feb 2023 11:20:06 GMT  
+		Size: 1.3 KB (1261 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:257b31b3391b9ce8882eab2c50f2cb64279987f785eeba45218d0b14aa3d74cb`  
+		Last Modified: Sat, 11 Feb 2023 11:20:05 GMT  
+		Size: 268.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:29e346bcb759d65a132cc5b610f3a4ecd7dfb6008a73f95c8d5246c6bb110b2d`  
+		Last Modified: Tue, 14 Feb 2023 22:44:12 GMT  
+		Size: 12.1 MB (12058821 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:de40f5bacc1bedf4d4100c35a0a22c29cc9b90ea8dc6f2492864da9d1049e7dd`  
+		Last Modified: Tue, 14 Feb 2023 22:44:11 GMT  
+		Size: 495.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fa433694c66f6722229cacb8892dce6c389511e7dc3ce645618955f625fb71af`  
+		Last Modified: Tue, 14 Feb 2023 22:44:14 GMT  
+		Size: 16.8 MB (16797999 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d0b9749a0e493f0074e674fb8f957a48b8ef6364fd052ecc369f6869f69fb81e`  
+		Last Modified: Tue, 14 Feb 2023 22:44:11 GMT  
+		Size: 2.5 KB (2450 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:46cd6428474b0b7f56b37dd826f3096a0af77584211905d2724a6c40e78a5790`  
+		Last Modified: Tue, 14 Feb 2023 22:44:11 GMT  
+		Size: 18.9 KB (18950 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:05ffb51cff59037e4bd33d51a37c607cfec25c50f2a24d2c919c0ff1625e27e3`  
+		Last Modified: Wed, 15 Feb 2023 02:31:41 GMT  
+		Size: 34.9 MB (34892090 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a8e6184f93ad2730f31cc108830194c9e9c1380981f1c52419a1bd9a8e632577`  
+		Last Modified: Wed, 15 Feb 2023 02:31:36 GMT  
+		Size: 266.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:31a362e7e54fbe0159af27e04b42872b38dee28c3aaf5c4a158ebf8dfda54d7c`  
+		Last Modified: Wed, 15 Feb 2023 19:22:30 GMT  
+		Size: 1.0 MB (1028837 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:93985d5cb3f102e47104604664704ac871dbc5daf0c94dbbdf16b588c5881a89`  
+		Last Modified: Wed, 15 Feb 2023 19:22:30 GMT  
+		Size: 418.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:8e27af075c76eaedb96718ec121002b6e61d81a2195f3e625e199a60ba10a5ef`  
+		Last Modified: Wed, 15 Feb 2023 19:22:29 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `composer:2.2.21` - linux; arm variant v6
+
+```console
+$ docker pull composer@sha256:b7348898cf2e8f37eeb2ebcf2fb71c09cc9be4d85b2d3bccd5dd569e9a3f5f91
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **62.9 MB (62926930 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:4c3c959eeee584f96d1cfab75d0d4e0a44b543e5718b756a1c45371ec991f0c0`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["composer"]`
+
+```dockerfile
+# Fri, 10 Feb 2023 20:49:28 GMT
+ADD file:d825d9aef59df0df23c0140a490998407ee0a62a051699b5c050aef7cb03f042 in / 
+# Fri, 10 Feb 2023 20:49:28 GMT
+CMD ["/bin/sh"]
+# Sat, 11 Feb 2023 02:33:58 GMT
+ENV PHPIZE_DEPS=autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c
+# Sat, 11 Feb 2023 02:34:00 GMT
+RUN apk add --no-cache 		ca-certificates 		curl 		tar 		xz 		openssl
+# Sat, 11 Feb 2023 02:34:00 GMT
+RUN set -eux; 	adduser -u 82 -D -S -G www-data www-data
+# Sat, 11 Feb 2023 02:34:00 GMT
+ENV PHP_INI_DIR=/usr/local/etc/php
+# Sat, 11 Feb 2023 02:34:01 GMT
+RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
+# Sat, 11 Feb 2023 02:34:01 GMT
+ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 02:34:01 GMT
+ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 02:34:01 GMT
+ENV PHP_LDFLAGS=-Wl,-O1 -pie
+# Sat, 11 Feb 2023 02:34:01 GMT
+ENV GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC
+# Tue, 14 Feb 2023 20:04:35 GMT
+ENV PHP_VERSION=8.2.3
+# Tue, 14 Feb 2023 20:04:35 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.2.3.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.2.3.tar.xz.asc
+# Tue, 14 Feb 2023 20:04:36 GMT
+ENV PHP_SHA256=b9b566686e351125d67568a33291650eb8dfa26614d205d70d82e6e92613d457
+# Tue, 14 Feb 2023 20:04:42 GMT
+RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apk del --no-network .fetch-deps
+# Tue, 14 Feb 2023 20:04:42 GMT
+COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
+# Tue, 14 Feb 2023 20:09:44 GMT
+RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		gnu-libiconv-dev 		libsodium-dev 		libxml2-dev 		linux-headers 		oniguruma-dev 		openssl-dev 		readline-dev 		sqlite-dev 	; 		rm -vf /usr/include/iconv.h; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv=/usr 		--with-openssl 		--with-readline 		--with-zlib 				--enable-phpdbg 		--enable-phpdbg-readline 				--with-pear 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
+# Tue, 14 Feb 2023 20:09:45 GMT
+COPY multi:6edd033b037aa2d7697fc3b9f82c2f162146c1920a0c6d25a165dc56783204db in /usr/local/bin/ 
+# Tue, 14 Feb 2023 20:09:46 GMT
+RUN docker-php-ext-enable sodium
+# Tue, 14 Feb 2023 20:09:46 GMT
+ENTRYPOINT ["docker-php-entrypoint"]
+# Tue, 14 Feb 2023 20:09:46 GMT
+CMD ["php" "-a"]
+# Tue, 14 Feb 2023 21:38:04 GMT
+RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
+# Tue, 14 Feb 2023 21:38:04 GMT
+RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
+# Wed, 15 Feb 2023 19:50:46 GMT
+ENV COMPOSER_ALLOW_SUPERUSER=1
+# Wed, 15 Feb 2023 19:50:46 GMT
+ENV COMPOSER_HOME=/tmp
+# Wed, 15 Feb 2023 19:50:46 GMT
+ENV COMPOSER_VERSION=2.2.21
+# Wed, 15 Feb 2023 19:50:46 GMT
+RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
+# Wed, 15 Feb 2023 19:50:46 GMT
+COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
+# Wed, 15 Feb 2023 19:50:46 GMT
+WORKDIR /app
+# Wed, 15 Feb 2023 19:50:46 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Wed, 15 Feb 2023 19:50:46 GMT
+CMD ["composer"]
+```
+
+-	Layers:
+	-	`sha256:6a6e4ab63e54442e16400f69d37f662d60cbd67565631eff6bf59b4176e482c3`  
+		Last Modified: Fri, 10 Feb 2023 20:50:22 GMT  
+		Size: 3.1 MB (3110885 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5bd0844e97aab008da4e3402bd5e9f05fccc9da4271e671d3a5b3558cdc8c7b4`  
+		Last Modified: Sat, 11 Feb 2023 03:28:22 GMT  
+		Size: 1.9 MB (1854736 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:75e73c80aa9d0900311ec06994f73a22af4ba38626fac03bdf190d772bc866b8`  
+		Last Modified: Sat, 11 Feb 2023 03:28:22 GMT  
+		Size: 1.2 KB (1232 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e6276b3cf1f8942a3370feaf7841911987d210858d87b988f5b85adaffdc6f52`  
+		Last Modified: Sat, 11 Feb 2023 03:28:22 GMT  
+		Size: 221.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6ef12dfcccd9348ff56c693ac0e909097bcc664599ec1be0cabb87ddb530d9e1`  
+		Last Modified: Tue, 14 Feb 2023 21:15:19 GMT  
+		Size: 12.1 MB (12058780 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6b61d201d06e962217961a0d550dacc95f98ba13ca68ee1d30685731fda739d9`  
+		Last Modified: Tue, 14 Feb 2023 21:15:18 GMT  
+		Size: 497.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fc29be95394e5c7b5b5d5b58ff0f7146094f69b42e7d22c2790d58c5da259fff`  
+		Last Modified: Tue, 14 Feb 2023 21:15:22 GMT  
+		Size: 15.3 MB (15299889 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:05171caa27b0336cc0468452ba53a4b0f26da715d214aa0eac3c045acdc9bc6a`  
+		Last Modified: Tue, 14 Feb 2023 21:15:18 GMT  
+		Size: 2.4 KB (2449 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0d6f89440645cbe9721a20943d726b18d065f0ef2926ebca345d3634d968b392`  
+		Last Modified: Tue, 14 Feb 2023 21:15:18 GMT  
+		Size: 18.7 KB (18730 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:8832b0d1e934a1c4a3af94ea4aab2da283dcbc7f5225f1909b1d80b7e1df59f2`  
+		Last Modified: Tue, 14 Feb 2023 21:41:57 GMT  
+		Size: 29.6 MB (29550525 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1df5666dcfda6e7eca8ddc310c6121e4f4d5877af2a2a05643920de7985a7357`  
+		Last Modified: Tue, 14 Feb 2023 21:41:51 GMT  
+		Size: 267.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9580cbdeebcde6445431c5226865d64186dfafb941590779bc094d8b431010cd`  
+		Last Modified: Wed, 15 Feb 2023 19:52:02 GMT  
+		Size: 1.0 MB (1028209 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6a21cb5419f6f9a2fc3af992acf6108f9b52b2081a03122ebd07568ec0282165`  
+		Last Modified: Wed, 15 Feb 2023 19:52:02 GMT  
+		Size: 418.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1ea653ce8fddff233854f361e6cbf8474a003852e41301662a2884ceea2658df`  
+		Last Modified: Wed, 15 Feb 2023 19:52:02 GMT  
+		Size: 92.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `composer:2.2.21` - linux; arm variant v7
+
+```console
+$ docker pull composer@sha256:04dd562f5697e931b8647ae7832a6e924f50cb7079e6a865591278ff85618db6
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **64.3 MB (64260578 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:36cb28ef540f9f6c38493179fccf011bd5f63e5dc25cfe8b80a789d4bdbfd092`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["composer"]`
+
+```dockerfile
+# Fri, 10 Feb 2023 21:51:31 GMT
+ADD file:143b601fcc6b5d7d95d3e5ccad3fec7081191a47e28d4f9294a7fb2499cab1af in / 
+# Fri, 10 Feb 2023 21:51:31 GMT
+CMD ["/bin/sh"]
+# Sat, 11 Feb 2023 06:54:04 GMT
+ENV PHPIZE_DEPS=autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c
+# Sat, 11 Feb 2023 06:54:07 GMT
+RUN apk add --no-cache 		ca-certificates 		curl 		tar 		xz 		openssl
+# Sat, 11 Feb 2023 06:54:08 GMT
+RUN set -eux; 	adduser -u 82 -D -S -G www-data www-data
+# Sat, 11 Feb 2023 06:54:08 GMT
+ENV PHP_INI_DIR=/usr/local/etc/php
+# Sat, 11 Feb 2023 06:54:09 GMT
+RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
+# Sat, 11 Feb 2023 06:54:09 GMT
+ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 06:54:09 GMT
+ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 06:54:09 GMT
+ENV PHP_LDFLAGS=-Wl,-O1 -pie
+# Sat, 11 Feb 2023 06:54:10 GMT
+ENV GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC
+# Tue, 14 Feb 2023 23:21:20 GMT
+ENV PHP_VERSION=8.2.3
+# Tue, 14 Feb 2023 23:21:20 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.2.3.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.2.3.tar.xz.asc
+# Tue, 14 Feb 2023 23:21:20 GMT
+ENV PHP_SHA256=b9b566686e351125d67568a33291650eb8dfa26614d205d70d82e6e92613d457
+# Tue, 14 Feb 2023 23:21:27 GMT
+RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apk del --no-network .fetch-deps
+# Tue, 14 Feb 2023 23:21:27 GMT
+COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
+# Tue, 14 Feb 2023 23:24:34 GMT
+RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		gnu-libiconv-dev 		libsodium-dev 		libxml2-dev 		linux-headers 		oniguruma-dev 		openssl-dev 		readline-dev 		sqlite-dev 	; 		rm -vf /usr/include/iconv.h; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv=/usr 		--with-openssl 		--with-readline 		--with-zlib 				--enable-phpdbg 		--enable-phpdbg-readline 				--with-pear 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
+# Tue, 14 Feb 2023 23:24:34 GMT
+COPY multi:6edd033b037aa2d7697fc3b9f82c2f162146c1920a0c6d25a165dc56783204db in /usr/local/bin/ 
+# Tue, 14 Feb 2023 23:24:35 GMT
+RUN docker-php-ext-enable sodium
+# Tue, 14 Feb 2023 23:24:36 GMT
+ENTRYPOINT ["docker-php-entrypoint"]
+# Tue, 14 Feb 2023 23:24:36 GMT
+CMD ["php" "-a"]
+# Wed, 15 Feb 2023 01:40:22 GMT
+RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
+# Wed, 15 Feb 2023 01:40:22 GMT
+RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
+# Wed, 15 Feb 2023 20:00:47 GMT
+ENV COMPOSER_ALLOW_SUPERUSER=1
+# Wed, 15 Feb 2023 20:00:47 GMT
+ENV COMPOSER_HOME=/tmp
+# Wed, 15 Feb 2023 20:00:47 GMT
+ENV COMPOSER_VERSION=2.2.21
+# Wed, 15 Feb 2023 20:00:47 GMT
+RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
+# Wed, 15 Feb 2023 20:00:47 GMT
+COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
+# Wed, 15 Feb 2023 20:00:47 GMT
+WORKDIR /app
+# Wed, 15 Feb 2023 20:00:47 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Wed, 15 Feb 2023 20:00:47 GMT
+CMD ["composer"]
+```
+
+-	Layers:
+	-	`sha256:6fb81ff47bd6d7db0ed86c9b951ad6417ec73ab60af6d22daa604076a902629c`  
+		Last Modified: Fri, 10 Feb 2023 21:52:33 GMT  
+		Size: 2.9 MB (2868494 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:604ba950458ab158bbd12d86fbd5f0cf48fe2fb333999564ff57c5b2be04415e`  
+		Last Modified: Sat, 11 Feb 2023 08:01:14 GMT  
+		Size: 1.7 MB (1706606 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0ad659c55815f53926f5eab8ed3cdbd96f94739c530da43e159b64603ce602be`  
+		Last Modified: Sat, 11 Feb 2023 08:01:13 GMT  
+		Size: 1.2 KB (1232 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7905e51486e32d6df802abec7bc9a94224bb0bf908a9ff8246e86af31aa5e54f`  
+		Last Modified: Sat, 11 Feb 2023 08:01:13 GMT  
+		Size: 222.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d5a484e831b0508c62de21268c4f70cec8b8a36b5773778d7f945ea4b953b36f`  
+		Last Modified: Wed, 15 Feb 2023 01:10:14 GMT  
+		Size: 12.1 MB (12058767 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d451a2f486b747c9f87fd835ffc9b76535207c66fce69e8e0d0659e5d6d9b8f3`  
+		Last Modified: Wed, 15 Feb 2023 01:10:12 GMT  
+		Size: 495.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9dcb75d6792dc9585752622d9430c4eab3a478e9ce8bb245d3dba77e520db187`  
+		Last Modified: Wed, 15 Feb 2023 01:10:15 GMT  
+		Size: 14.3 MB (14343072 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2df8fd2d65838436c406b8c5b590cb4fb9d793799e4d6349bd6d86f6a36f924e`  
+		Last Modified: Wed, 15 Feb 2023 01:10:13 GMT  
+		Size: 2.4 KB (2446 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cffe9c5a539b0ef0875483a06ee23a6f2cdb90a29d3af401c403c097ef5e85fa`  
+		Last Modified: Wed, 15 Feb 2023 01:10:12 GMT  
+		Size: 18.7 KB (18741 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:269c2689b2b9d9941f85fa9bfa658a78b13075e1b6b5fef7dd613c0e4b8fe45e`  
+		Last Modified: Wed, 15 Feb 2023 01:44:48 GMT  
+		Size: 32.3 MB (32267722 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:58041fda2d8d1d23d374d4ee2266d99c5dbcf8544bc19757d87e0c8cab821fdb`  
+		Last Modified: Wed, 15 Feb 2023 01:44:41 GMT  
+		Size: 265.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:99709be50cc569638be1f2a36aaf146321a9f2afcff2c7abfa6acf88102cb13f`  
+		Last Modified: Wed, 15 Feb 2023 20:02:03 GMT  
+		Size: 992.0 KB (992006 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7eaa860e62e61d743659461bfcbf8a8aa3c842502691af0035b51a5cdc2da041`  
+		Last Modified: Wed, 15 Feb 2023 20:02:02 GMT  
+		Size: 418.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ca94b3246fc35f7ab68d298f1d7f374de3703aab400d49d6e28495d26d209f08`  
+		Last Modified: Wed, 15 Feb 2023 20:02:03 GMT  
+		Size: 92.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `composer:2.2.21` - linux; arm64 variant v8
+
+```console
+$ docker pull composer@sha256:b341727b67a2aa2a8499623393e4c65dcc5d16a57634f1bf31f9427873cf83a3
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **69.6 MB (69616590 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:4b7cd0b317c516a0e9d8cd4d71f183146cb5b6744296d45d362e438c0819c830`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["composer"]`
+
+```dockerfile
+# Fri, 10 Feb 2023 21:24:08 GMT
+ADD file:9bd9ea42a9f3bdc769e80c6b8a4b117d65f73ae68e155a6172a1184e7ac8bcc1 in / 
+# Fri, 10 Feb 2023 21:24:08 GMT
+CMD ["/bin/sh"]
+# Sat, 11 Feb 2023 02:02:54 GMT
+ENV PHPIZE_DEPS=autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c
+# Sat, 11 Feb 2023 02:02:55 GMT
+RUN apk add --no-cache 		ca-certificates 		curl 		tar 		xz 		openssl
+# Sat, 11 Feb 2023 02:02:56 GMT
+RUN set -eux; 	adduser -u 82 -D -S -G www-data www-data
+# Sat, 11 Feb 2023 02:02:56 GMT
+ENV PHP_INI_DIR=/usr/local/etc/php
+# Sat, 11 Feb 2023 02:02:56 GMT
+RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
+# Sat, 11 Feb 2023 02:02:56 GMT
+ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 02:02:57 GMT
+ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 02:02:57 GMT
+ENV PHP_LDFLAGS=-Wl,-O1 -pie
+# Sat, 11 Feb 2023 02:02:57 GMT
+ENV GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC
+# Tue, 14 Feb 2023 21:10:51 GMT
+ENV PHP_VERSION=8.2.3
+# Tue, 14 Feb 2023 21:10:51 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.2.3.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.2.3.tar.xz.asc
+# Tue, 14 Feb 2023 21:10:52 GMT
+ENV PHP_SHA256=b9b566686e351125d67568a33291650eb8dfa26614d205d70d82e6e92613d457
+# Tue, 14 Feb 2023 21:10:59 GMT
+RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apk del --no-network .fetch-deps
+# Tue, 14 Feb 2023 21:10:59 GMT
+COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
+# Tue, 14 Feb 2023 21:14:31 GMT
+RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		gnu-libiconv-dev 		libsodium-dev 		libxml2-dev 		linux-headers 		oniguruma-dev 		openssl-dev 		readline-dev 		sqlite-dev 	; 		rm -vf /usr/include/iconv.h; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv=/usr 		--with-openssl 		--with-readline 		--with-zlib 				--enable-phpdbg 		--enable-phpdbg-readline 				--with-pear 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
+# Tue, 14 Feb 2023 21:14:31 GMT
+COPY multi:6edd033b037aa2d7697fc3b9f82c2f162146c1920a0c6d25a165dc56783204db in /usr/local/bin/ 
+# Tue, 14 Feb 2023 21:14:32 GMT
+RUN docker-php-ext-enable sodium
+# Tue, 14 Feb 2023 21:14:32 GMT
+ENTRYPOINT ["docker-php-entrypoint"]
+# Tue, 14 Feb 2023 21:14:32 GMT
+CMD ["php" "-a"]
+# Tue, 14 Feb 2023 23:23:09 GMT
+RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
+# Tue, 14 Feb 2023 23:23:09 GMT
+RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
+# Wed, 15 Feb 2023 19:40:14 GMT
+ENV COMPOSER_ALLOW_SUPERUSER=1
+# Wed, 15 Feb 2023 19:40:14 GMT
+ENV COMPOSER_HOME=/tmp
+# Wed, 15 Feb 2023 19:40:14 GMT
+ENV COMPOSER_VERSION=2.2.21
+# Wed, 15 Feb 2023 19:40:14 GMT
+RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
+# Wed, 15 Feb 2023 19:40:14 GMT
+COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
+# Wed, 15 Feb 2023 19:40:14 GMT
+WORKDIR /app
+# Wed, 15 Feb 2023 19:40:14 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Wed, 15 Feb 2023 19:40:14 GMT
+CMD ["composer"]
+```
+
+-	Layers:
+	-	`sha256:af6eaf76a39c2d3e7e0b8a0420486e3df33c4027d696c076a99a3d0ac09026af`  
+		Last Modified: Fri, 10 Feb 2023 21:24:39 GMT  
+		Size: 3.3 MB (3261959 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:65da1d1bbae15a06f79c4d79d885439cb51d02c27c69741770a1ace04a962454`  
+		Last Modified: Sat, 11 Feb 2023 03:02:23 GMT  
+		Size: 1.9 MB (1862646 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:53689469854ea07050d653c2567c0a362a36bf42c1db6ad7ca78f0ce04d4a862`  
+		Last Modified: Sat, 11 Feb 2023 03:02:22 GMT  
+		Size: 1.3 KB (1263 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:52c363c99e0af7af0ce7cc0c3b401461324b37d279159235d225fb19c056c4c1`  
+		Last Modified: Sat, 11 Feb 2023 03:02:22 GMT  
+		Size: 268.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:64b817c1a7fa6c273ce510ec285ad0c2c994c3165ffe02a2364e1df83ee51858`  
+		Last Modified: Tue, 14 Feb 2023 22:55:17 GMT  
+		Size: 12.1 MB (12058804 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b916cf7718f1f819300fe8df611c65816ca973049f9a9270ddcdd7cf8680bc60`  
+		Last Modified: Tue, 14 Feb 2023 22:55:16 GMT  
+		Size: 496.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:347f2e32cf9a8c8c7534272c0fb302b42fd0fbb6a345cb3bfaf99ebe708f3a6c`  
+		Last Modified: Tue, 14 Feb 2023 22:55:19 GMT  
+		Size: 16.7 MB (16703280 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6acf70a7174aa1b0ae938ec1b68adc0e47092069067ab60d2895206cd130c3a7`  
+		Last Modified: Tue, 14 Feb 2023 22:55:16 GMT  
+		Size: 2.4 KB (2448 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cca7a982b48b26c7926ca43b7a12a693f07d4c74310bad6cc2c80f8a00b86d31`  
+		Last Modified: Tue, 14 Feb 2023 22:55:17 GMT  
+		Size: 18.7 KB (18749 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:edd445cae95846cf880a91b5af859f352ab7158c366166523c93e9a8068e4b4e`  
+		Last Modified: Tue, 14 Feb 2023 23:25:26 GMT  
+		Size: 34.7 MB (34681091 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2c6ea446077d8205865badfb250cc33f7650a42398df5607fbaff5b2aca9f395`  
+		Last Modified: Tue, 14 Feb 2023 23:25:22 GMT  
+		Size: 265.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:92f9cbf413c0c0c7967e7a12649fae0286c16b78416ee0ceebc56647ff23dfdf`  
+		Last Modified: Wed, 15 Feb 2023 19:40:57 GMT  
+		Size: 1.0 MB (1024777 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:8cca0a090e36c7f90c9f3ca68fc5951d22a02a0c8b6c395e3d077b6515bfd2f4`  
+		Last Modified: Wed, 15 Feb 2023 19:40:56 GMT  
+		Size: 418.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b8e3fea421c9bc62b14cc28a4c4b3791ecc5db3aa95a856f58c75e6550410fbd`  
+		Last Modified: Wed, 15 Feb 2023 19:40:57 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `composer:2.2.21` - linux; s390x
+
+```console
+$ docker pull composer@sha256:e1d5274a2762a57307563f787429d9bcdea915e54934d8cf7bb91ed4d6775d85
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **68.5 MB (68524276 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:21d9ca83ce72cd4d5b6258b04ffc2026272f1ba1b361421e15871102b4c76d71`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["composer"]`
+
+```dockerfile
+# Fri, 10 Feb 2023 21:41:25 GMT
+ADD file:03b2fb4d732a294329449ff55c5d84f7d2735e6510985718979469994f3a607b in / 
+# Fri, 10 Feb 2023 21:41:26 GMT
+CMD ["/bin/sh"]
+# Sat, 11 Feb 2023 03:40:20 GMT
+ENV PHPIZE_DEPS=autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c
+# Sat, 11 Feb 2023 03:40:21 GMT
+RUN apk add --no-cache 		ca-certificates 		curl 		tar 		xz 		openssl
+# Sat, 11 Feb 2023 03:40:22 GMT
+RUN set -eux; 	adduser -u 82 -D -S -G www-data www-data
+# Sat, 11 Feb 2023 03:40:22 GMT
+ENV PHP_INI_DIR=/usr/local/etc/php
+# Sat, 11 Feb 2023 03:40:23 GMT
+RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
+# Sat, 11 Feb 2023 03:40:23 GMT
+ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 03:40:23 GMT
+ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 03:40:23 GMT
+ENV PHP_LDFLAGS=-Wl,-O1 -pie
+# Sat, 11 Feb 2023 03:40:23 GMT
+ENV GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC
+# Tue, 14 Feb 2023 20:59:29 GMT
+ENV PHP_VERSION=8.2.3
+# Tue, 14 Feb 2023 20:59:30 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.2.3.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.2.3.tar.xz.asc
+# Tue, 14 Feb 2023 20:59:30 GMT
+ENV PHP_SHA256=b9b566686e351125d67568a33291650eb8dfa26614d205d70d82e6e92613d457
+# Tue, 14 Feb 2023 20:59:38 GMT
+RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apk del --no-network .fetch-deps
+# Tue, 14 Feb 2023 20:59:39 GMT
+COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
+# Tue, 14 Feb 2023 21:03:45 GMT
+RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		gnu-libiconv-dev 		libsodium-dev 		libxml2-dev 		linux-headers 		oniguruma-dev 		openssl-dev 		readline-dev 		sqlite-dev 	; 		rm -vf /usr/include/iconv.h; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv=/usr 		--with-openssl 		--with-readline 		--with-zlib 				--enable-phpdbg 		--enable-phpdbg-readline 				--with-pear 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
+# Tue, 14 Feb 2023 21:03:49 GMT
+COPY multi:6edd033b037aa2d7697fc3b9f82c2f162146c1920a0c6d25a165dc56783204db in /usr/local/bin/ 
+# Tue, 14 Feb 2023 21:03:51 GMT
+RUN docker-php-ext-enable sodium
+# Tue, 14 Feb 2023 21:03:52 GMT
+ENTRYPOINT ["docker-php-entrypoint"]
+# Tue, 14 Feb 2023 21:03:52 GMT
+CMD ["php" "-a"]
+# Tue, 14 Feb 2023 22:40:00 GMT
+RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
+# Tue, 14 Feb 2023 22:40:00 GMT
+RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
+# Wed, 15 Feb 2023 19:42:51 GMT
+ENV COMPOSER_ALLOW_SUPERUSER=1
+# Wed, 15 Feb 2023 19:42:51 GMT
+ENV COMPOSER_HOME=/tmp
+# Wed, 15 Feb 2023 19:42:51 GMT
+ENV COMPOSER_VERSION=2.2.21
+# Wed, 15 Feb 2023 19:42:51 GMT
+RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
+# Wed, 15 Feb 2023 19:42:52 GMT
+COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
+# Wed, 15 Feb 2023 19:42:52 GMT
+WORKDIR /app
+# Wed, 15 Feb 2023 19:42:52 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Wed, 15 Feb 2023 19:42:52 GMT
+CMD ["composer"]
+```
+
+-	Layers:
+	-	`sha256:24c4f8de3549a39c64b0edc2cfa68769b373f35138d0f13725100160bb32d4e2`  
+		Last Modified: Fri, 10 Feb 2023 21:42:16 GMT  
+		Size: 3.2 MB (3175116 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d3e08f96f9a305daacf9ee42f9847666c785231f5db9684aae1648426463f923`  
+		Last Modified: Sat, 11 Feb 2023 04:35:13 GMT  
+		Size: 1.9 MB (1917113 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f2b2b7eda29298bc923307ecd06eca2607d89341d31329cad08c2ddd6d3dda03`  
+		Last Modified: Sat, 11 Feb 2023 04:35:13 GMT  
+		Size: 1.3 KB (1263 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:87dc1497b9a6351ab931f19c686d45bea176daa8f6da7db62dce416a091a4944`  
+		Last Modified: Sat, 11 Feb 2023 04:35:14 GMT  
+		Size: 268.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:52efec41bbcb04e5c0b961291eb6ce637a3a37ae4507f3a9dccf64250e8c422f`  
+		Last Modified: Tue, 14 Feb 2023 22:18:16 GMT  
+		Size: 12.1 MB (12058815 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:782a39d653aa337d1f599b77230399baa95696932c782f5bac34d7d48b19731d`  
+		Last Modified: Tue, 14 Feb 2023 22:18:14 GMT  
+		Size: 497.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3577d1e4d9ddfed09391e15414a4e99feb365fb14db85cbf3be48b8e20e09e35`  
+		Last Modified: Tue, 14 Feb 2023 22:18:17 GMT  
+		Size: 15.7 MB (15661937 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cb4fc1f4bb898fd8a29957ae6855951bc17b854e25f7399a7da6b6da7079f0be`  
+		Last Modified: Tue, 14 Feb 2023 22:18:14 GMT  
+		Size: 2.4 KB (2448 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:066dd0b96462a34ecdf195f0214cf4e59c326e1c08d650dfedd032af43021f55`  
+		Last Modified: Tue, 14 Feb 2023 22:18:14 GMT  
+		Size: 18.7 KB (18749 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:30dc1402f87796d6e833d54c38654f22bcea93ca78258ee88f64e288d673e416`  
+		Last Modified: Tue, 14 Feb 2023 22:42:50 GMT  
+		Size: 34.7 MB (34651293 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a31104a91a7c9a03743edf10a20181946e027a81c7cc5ff3e5d83a8bde0e0761`  
+		Last Modified: Tue, 14 Feb 2023 22:42:45 GMT  
+		Size: 267.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fe6e9bffe5383bbb50d92ef5afe94366f4181da1a720089baea6405497c60b07`  
+		Last Modified: Wed, 15 Feb 2023 19:43:49 GMT  
+		Size: 1.0 MB (1035966 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:151c3637dd46321c76ceebc63e3421982a4052dc6b72ed66066c9e423229639d`  
+		Last Modified: Wed, 15 Feb 2023 19:43:49 GMT  
+		Size: 418.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:eacc0d5291ba98b0f339bca7e33d08bb9ed32406bc235c58ae4dafdc3a8524d5`  
+		Last Modified: Wed, 15 Feb 2023 19:43:49 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:2.3`
 
@@ -8745,7 +9435,7 @@ CMD ["composer"]
 ## `composer:2.5`
 
 ```console
-$ docker pull composer@sha256:52529dfff5c0a6b3001a7fdbca768500667c364233019c543aef04f7f2e47022
+$ docker pull composer@sha256:d1c87410c4d48d592de5df63e0cacf380ace42259f0087b5d62f76ce6f08b49c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8760,13 +9450,13 @@ $ docker pull composer@sha256:52529dfff5c0a6b3001a7fdbca768500667c364233019c543a
 ### `composer:2.5` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:7c79dfc4c4cba48961eedf864ded41139849fa05119a4902e02be29dd7241523
+$ docker pull composer@sha256:082ed124b68e7e880721772a6bf22ad809e3bc87db8bbee9f0ec7127bb21ccad
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **70.2 MB (70158234 bytes)**  
+-	Total Size: **70.2 MB (70158266 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d47dead1d672406cdbfd5fbc45966178bc3a5cc1641570af2eeb3ee44aacddfd`
+-	Image ID: `sha256:518411a9bff338cc452761a73c2f00ed2c9baeab8d234fb53f76af2567decb59`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -8817,21 +9507,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Wed, 15 Feb 2023 02:28:57 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 ENV COMPOSER_HOME=/tmp
-# Wed, 15 Feb 2023 02:29:19 GMT
-ENV COMPOSER_VERSION=2.5.3
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 19:21:15 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 WORKDIR /app
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 CMD ["composer"]
 ```
 
@@ -8880,29 +9570,29 @@ CMD ["composer"]
 		Last Modified: Wed, 15 Feb 2023 02:31:36 GMT  
 		Size: 266.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:924e1ac23b04b21faa7c70ee0b2afaa7535069605babe86fac3459758338dae0`  
-		Last Modified: Wed, 15 Feb 2023 02:31:36 GMT  
-		Size: 1.1 MB (1141090 bytes)  
+	-	`sha256:8f9d96f62193eedd2fceeee566565e1906e88430534b6442d1f2cee4ba6bf2d5`  
+		Last Modified: Wed, 15 Feb 2023 19:22:11 GMT  
+		Size: 1.1 MB (1141120 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb1c43e0115cac3f5c1b3f0209539e1f54e5327613ea2e769a5a03609fd8eebf`  
-		Last Modified: Wed, 15 Feb 2023 02:31:35 GMT  
-		Size: 417.0 B  
+	-	`sha256:74b944693fa5bb022c73660a4a19ac563b3be355e52f6104d9611e3cabd8186a`  
+		Last Modified: Wed, 15 Feb 2023 19:22:11 GMT  
+		Size: 419.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e297e2f525cbeca6871e5201807fad39a2b9408a6a3d8c7682fa9c36dad56e94`  
-		Last Modified: Wed, 15 Feb 2023 02:31:35 GMT  
+	-	`sha256:609cb6132afbd219581d381cea00d17d20f6b7b789e6c78f678be0daad95f9cf`  
+		Last Modified: Wed, 15 Feb 2023 19:22:11 GMT  
 		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.5` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:3a0686a5c16747c64b16fd02d865ff3a05c139af9551e2e9092b3910a40f7c88
+$ docker pull composer@sha256:c0d7047cb632a5e8d2ab861d22514426cfbe0f07509e6e4d2cc40a9e43004559
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **63.0 MB (63039650 bytes)**  
+-	Total Size: **63.0 MB (63039683 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c0d3be5a6378c29b0cfffcb21ecb327905127a77db593cd302f165c1ab4ad2df`
+-	Image ID: `sha256:89d98990738fb2b95382a678145b3b3f1544e417e8cb98b90645a77d7a9b50f4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -8953,21 +9643,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Tue, 14 Feb 2023 21:38:04 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 ENV COMPOSER_HOME=/tmp
-# Tue, 14 Feb 2023 21:38:35 GMT
-ENV COMPOSER_VERSION=2.5.3
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 19:50:04 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 WORKDIR /app
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 CMD ["composer"]
 ```
 
@@ -9016,29 +9706,29 @@ CMD ["composer"]
 		Last Modified: Tue, 14 Feb 2023 21:41:51 GMT  
 		Size: 267.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee80f8a2232987a16d2dd951b187b63944486074543449f768718d1ef9b9783d`  
-		Last Modified: Tue, 14 Feb 2023 21:41:51 GMT  
-		Size: 1.1 MB (1140930 bytes)  
+	-	`sha256:a7071732611ce0c99d7ea1ba65681daae8952498b598283bdc464e8f76958829`  
+		Last Modified: Wed, 15 Feb 2023 19:51:40 GMT  
+		Size: 1.1 MB (1140961 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aea6276e88d9ba8c47f2c05a7b3d6cd31a690cd97197942ab294044efc879224`  
-		Last Modified: Tue, 14 Feb 2023 21:41:50 GMT  
-		Size: 417.0 B  
+	-	`sha256:46e41f2b97fecb11ef5ca8dd1eee87dbbccf4256820c2b9916dd327fb01fd190`  
+		Last Modified: Wed, 15 Feb 2023 19:51:39 GMT  
+		Size: 419.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ce97bf1624891b2bdef7a357d05e9f72a57877691f24002c187cf94c3668ee1`  
-		Last Modified: Tue, 14 Feb 2023 21:41:51 GMT  
+	-	`sha256:c1c86b4d33d0e73cca17d6cb8fc6a0cf4168ddde16a8f224d0b28336b4970851`  
+		Last Modified: Wed, 15 Feb 2023 19:51:39 GMT  
 		Size: 92.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.5` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:c1ab7eb0e069249f6fc0fc57ff91d9c4a0c04935b2ce5be5294c6ef21b59a963
+$ docker pull composer@sha256:b169f54a323b070c7ec4584b9148ec8394d90f763638dd2280513c2152996a76
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **64.4 MB (64372798 bytes)**  
+-	Total Size: **64.4 MB (64372830 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:39d7bda05fae88a0ea60e937a263430fc70d7de123aab5e057038d38f0086320`
+-	Image ID: `sha256:d1652ab59bf92865eaecb86c22c2681953353c5a6cf9bc8e6f31bcb5988cee09`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -9089,21 +9779,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Wed, 15 Feb 2023 01:40:22 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 ENV COMPOSER_HOME=/tmp
-# Wed, 15 Feb 2023 01:40:52 GMT
-ENV COMPOSER_VERSION=2.5.3
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 20:00:03 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 WORKDIR /app
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 CMD ["composer"]
 ```
 
@@ -9152,29 +9842,29 @@ CMD ["composer"]
 		Last Modified: Wed, 15 Feb 2023 01:44:41 GMT  
 		Size: 265.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1cacc5838790a26e1c382fd33caa8b20d3370dfe90c189edf014e7d1535e3c8e`  
-		Last Modified: Wed, 15 Feb 2023 01:44:42 GMT  
-		Size: 1.1 MB (1104227 bytes)  
+	-	`sha256:766a962e72df7233519213997b76d24d51a05ef06f5429137ccd21a8c7705670`  
+		Last Modified: Wed, 15 Feb 2023 20:01:40 GMT  
+		Size: 1.1 MB (1104258 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f75c9ee5752f86737cfbfc2348876c74d9a2fef1fbdeb2c0c5e2a1c4ed40492`  
-		Last Modified: Wed, 15 Feb 2023 01:44:41 GMT  
-		Size: 417.0 B  
+	-	`sha256:1a8b56af21e7d8f85042061c1030b1224fcb37203577a3502648b9c095d6b58a`  
+		Last Modified: Wed, 15 Feb 2023 20:01:39 GMT  
+		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:38082a673b18882d7a779412473c3e15637d52a1474311e46eb370e82ebd75d3`  
-		Last Modified: Wed, 15 Feb 2023 01:44:41 GMT  
+	-	`sha256:5c59438c35dbfdf3ee40d0ae688acbf9f3a69f67bf92c3fbafeb3a6e14d6d459`  
+		Last Modified: Wed, 15 Feb 2023 20:01:40 GMT  
 		Size: 92.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.5` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:f7f7c63312718f1a8536eab81d311f30130f68a1c9192a7a0874bba0bca02b21
+$ docker pull composer@sha256:fc71365e7c7ec262c6de71020964881caee9e4698e2f52b7d3b0846a775d61e9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.7 MB (69729968 bytes)**  
+-	Total Size: **69.7 MB (69730000 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ef9d0cdc57eefd4b142e2dea3df059a5d420e69eb00fa3ca9a82a1b17b47162e`
+-	Image ID: `sha256:140ec3510943c1e258cb82c87ba825b612b3de123c473c7af22a3aecbb7c9a49`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -9225,21 +9915,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Tue, 14 Feb 2023 23:23:09 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 ENV COMPOSER_HOME=/tmp
-# Tue, 14 Feb 2023 23:23:27 GMT
-ENV COMPOSER_VERSION=2.5.3
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 19:39:45 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 WORKDIR /app
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 CMD ["composer"]
 ```
 
@@ -9288,16 +9978,16 @@ CMD ["composer"]
 		Last Modified: Tue, 14 Feb 2023 23:25:22 GMT  
 		Size: 265.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25be4b83a1081e9738d8b0e68d93f5dddae836eee9a361988de82230ba29a6a4`  
-		Last Modified: Tue, 14 Feb 2023 23:25:22 GMT  
-		Size: 1.1 MB (1138156 bytes)  
+	-	`sha256:1f0245cd6d159e1859b910a4292b3df2e6fc12bb4c2bcbbbc8a4a7c9a2e98aa6`  
+		Last Modified: Wed, 15 Feb 2023 19:40:37 GMT  
+		Size: 1.1 MB (1138186 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c609e3a372227ce429358a63bda2c119cd071c20eadfa46c6754ea6612ce8e0`  
-		Last Modified: Tue, 14 Feb 2023 23:25:22 GMT  
-		Size: 417.0 B  
+	-	`sha256:a2838bbc6b757de012cd0375573e8aa888f673c8c3daf9ecb67243281161f783`  
+		Last Modified: Wed, 15 Feb 2023 19:40:36 GMT  
+		Size: 419.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f82176a0c738cc47fba481a1540ea4d72f2d6e8790c69137540e1b6c20fb4a29`  
-		Last Modified: Tue, 14 Feb 2023 23:25:22 GMT  
+	-	`sha256:38c5fdb49eecc6bd2232f347dcff6456763485ab85f34375bdf3bab648a1b9b2`  
+		Last Modified: Wed, 15 Feb 2023 19:40:36 GMT  
 		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -9440,13 +10130,13 @@ CMD ["composer"]
 ### `composer:2.5` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:7bb1d8b1f07cd3d7c3723134e643e17aca9975c65f8eef1bc0974f5541215eae
+$ docker pull composer@sha256:b82432d765d4a98bb0ad6844269ec7d07a481f69bd1510a3922ddbf3c389d3db
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **68.6 MB (68637387 bytes)**  
+-	Total Size: **68.6 MB (68637445 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6b838391dbeaa9f89200999b0d418b149047192925426258838a22e5d3263014`
+-	Image ID: `sha256:0c1bcec3e727782020b1ae187a4f27bf0f2545ac7d2a86120b43808ef08c874b`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -9497,21 +10187,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Tue, 14 Feb 2023 22:40:00 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 ENV COMPOSER_HOME=/tmp
-# Tue, 14 Feb 2023 22:40:20 GMT
-ENV COMPOSER_VERSION=2.5.3
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 19:42:12 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 WORKDIR /app
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 CMD ["composer"]
 ```
 
@@ -9560,49 +10250,43 @@ CMD ["composer"]
 		Last Modified: Tue, 14 Feb 2023 22:42:45 GMT  
 		Size: 267.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:47f6fad05445e4919ef67711fd21353fcbfb0c66bca1c0a211094b34be611596`  
-		Last Modified: Tue, 14 Feb 2023 22:42:45 GMT  
-		Size: 1.1 MB (1149078 bytes)  
+	-	`sha256:c6bb8d9e0302261d33bc0a247e534eacf477c5872889963fd77e6b0e12b2b19d`  
+		Last Modified: Wed, 15 Feb 2023 19:43:34 GMT  
+		Size: 1.1 MB (1149135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aaedb543fca048503d4a251a9be93d5decae64d0825fa3d6484946b493f7c202`  
-		Last Modified: Tue, 14 Feb 2023 22:42:45 GMT  
-		Size: 417.0 B  
+	-	`sha256:940798fd552a4ac54ad7931765656c28f54fd908c0c82e3aff494e3d39a7588b`  
+		Last Modified: Wed, 15 Feb 2023 19:43:33 GMT  
+		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:404a3b905ba2d8924a2cc33b89b902c11cf60da6160d3bb3b3ed68cab4a0babd`  
-		Last Modified: Tue, 14 Feb 2023 22:41:28 GMT  
+	-	`sha256:5977ba5da9a7c7dc931bc1b0709256489ba4072708af4b0a6940f14141ab2937`  
+		Last Modified: Wed, 15 Feb 2023 19:43:34 GMT  
 		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:2.5.4`
 
-**does not exist** (yet?)
-
-## `composer:latest`
-
 ```console
-$ docker pull composer@sha256:3aa3b5473834466d578f0018f57f2a0b57680259af628ae433eff712a4218d87
+$ docker pull composer@sha256:181efab0ad9367869894c60969a2d6458f56e447e2fb35b0b11332b898dbe584
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 7
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
-	-	linux; 386
-	-	linux; ppc64le
 	-	linux; s390x
 
-### `composer:latest` - linux; amd64
+### `composer:2.5.4` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:7c79dfc4c4cba48961eedf864ded41139849fa05119a4902e02be29dd7241523
+$ docker pull composer@sha256:082ed124b68e7e880721772a6bf22ad809e3bc87db8bbee9f0ec7127bb21ccad
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **70.2 MB (70158234 bytes)**  
+-	Total Size: **70.2 MB (70158266 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d47dead1d672406cdbfd5fbc45966178bc3a5cc1641570af2eeb3ee44aacddfd`
+-	Image ID: `sha256:518411a9bff338cc452761a73c2f00ed2c9baeab8d234fb53f76af2567decb59`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -9653,21 +10337,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Wed, 15 Feb 2023 02:28:57 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 ENV COMPOSER_HOME=/tmp
-# Wed, 15 Feb 2023 02:29:19 GMT
-ENV COMPOSER_VERSION=2.5.3
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 19:21:15 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 WORKDIR /app
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 15 Feb 2023 02:29:19 GMT
+# Wed, 15 Feb 2023 19:21:15 GMT
 CMD ["composer"]
 ```
 
@@ -9716,29 +10400,29 @@ CMD ["composer"]
 		Last Modified: Wed, 15 Feb 2023 02:31:36 GMT  
 		Size: 266.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:924e1ac23b04b21faa7c70ee0b2afaa7535069605babe86fac3459758338dae0`  
-		Last Modified: Wed, 15 Feb 2023 02:31:36 GMT  
-		Size: 1.1 MB (1141090 bytes)  
+	-	`sha256:8f9d96f62193eedd2fceeee566565e1906e88430534b6442d1f2cee4ba6bf2d5`  
+		Last Modified: Wed, 15 Feb 2023 19:22:11 GMT  
+		Size: 1.1 MB (1141120 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb1c43e0115cac3f5c1b3f0209539e1f54e5327613ea2e769a5a03609fd8eebf`  
-		Last Modified: Wed, 15 Feb 2023 02:31:35 GMT  
-		Size: 417.0 B  
+	-	`sha256:74b944693fa5bb022c73660a4a19ac563b3be355e52f6104d9611e3cabd8186a`  
+		Last Modified: Wed, 15 Feb 2023 19:22:11 GMT  
+		Size: 419.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e297e2f525cbeca6871e5201807fad39a2b9408a6a3d8c7682fa9c36dad56e94`  
-		Last Modified: Wed, 15 Feb 2023 02:31:35 GMT  
+	-	`sha256:609cb6132afbd219581d381cea00d17d20f6b7b789e6c78f678be0daad95f9cf`  
+		Last Modified: Wed, 15 Feb 2023 19:22:11 GMT  
 		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `composer:latest` - linux; arm variant v6
+### `composer:2.5.4` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:3a0686a5c16747c64b16fd02d865ff3a05c139af9551e2e9092b3910a40f7c88
+$ docker pull composer@sha256:c0d7047cb632a5e8d2ab861d22514426cfbe0f07509e6e4d2cc40a9e43004559
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **63.0 MB (63039650 bytes)**  
+-	Total Size: **63.0 MB (63039683 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c0d3be5a6378c29b0cfffcb21ecb327905127a77db593cd302f165c1ab4ad2df`
+-	Image ID: `sha256:89d98990738fb2b95382a678145b3b3f1544e417e8cb98b90645a77d7a9b50f4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -9789,21 +10473,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Tue, 14 Feb 2023 21:38:04 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 ENV COMPOSER_HOME=/tmp
-# Tue, 14 Feb 2023 21:38:35 GMT
-ENV COMPOSER_VERSION=2.5.3
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 19:50:04 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 WORKDIR /app
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 Feb 2023 21:38:35 GMT
+# Wed, 15 Feb 2023 19:50:04 GMT
 CMD ["composer"]
 ```
 
@@ -9852,29 +10536,29 @@ CMD ["composer"]
 		Last Modified: Tue, 14 Feb 2023 21:41:51 GMT  
 		Size: 267.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee80f8a2232987a16d2dd951b187b63944486074543449f768718d1ef9b9783d`  
-		Last Modified: Tue, 14 Feb 2023 21:41:51 GMT  
-		Size: 1.1 MB (1140930 bytes)  
+	-	`sha256:a7071732611ce0c99d7ea1ba65681daae8952498b598283bdc464e8f76958829`  
+		Last Modified: Wed, 15 Feb 2023 19:51:40 GMT  
+		Size: 1.1 MB (1140961 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aea6276e88d9ba8c47f2c05a7b3d6cd31a690cd97197942ab294044efc879224`  
-		Last Modified: Tue, 14 Feb 2023 21:41:50 GMT  
-		Size: 417.0 B  
+	-	`sha256:46e41f2b97fecb11ef5ca8dd1eee87dbbccf4256820c2b9916dd327fb01fd190`  
+		Last Modified: Wed, 15 Feb 2023 19:51:39 GMT  
+		Size: 419.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ce97bf1624891b2bdef7a357d05e9f72a57877691f24002c187cf94c3668ee1`  
-		Last Modified: Tue, 14 Feb 2023 21:41:51 GMT  
+	-	`sha256:c1c86b4d33d0e73cca17d6cb8fc6a0cf4168ddde16a8f224d0b28336b4970851`  
+		Last Modified: Wed, 15 Feb 2023 19:51:39 GMT  
 		Size: 92.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `composer:latest` - linux; arm variant v7
+### `composer:2.5.4` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:c1ab7eb0e069249f6fc0fc57ff91d9c4a0c04935b2ce5be5294c6ef21b59a963
+$ docker pull composer@sha256:b169f54a323b070c7ec4584b9148ec8394d90f763638dd2280513c2152996a76
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **64.4 MB (64372798 bytes)**  
+-	Total Size: **64.4 MB (64372830 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:39d7bda05fae88a0ea60e937a263430fc70d7de123aab5e057038d38f0086320`
+-	Image ID: `sha256:d1652ab59bf92865eaecb86c22c2681953353c5a6cf9bc8e6f31bcb5988cee09`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -9925,21 +10609,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Wed, 15 Feb 2023 01:40:22 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 ENV COMPOSER_HOME=/tmp
-# Wed, 15 Feb 2023 01:40:52 GMT
-ENV COMPOSER_VERSION=2.5.3
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 20:00:03 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 WORKDIR /app
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 15 Feb 2023 01:40:52 GMT
+# Wed, 15 Feb 2023 20:00:03 GMT
 CMD ["composer"]
 ```
 
@@ -9988,29 +10672,29 @@ CMD ["composer"]
 		Last Modified: Wed, 15 Feb 2023 01:44:41 GMT  
 		Size: 265.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1cacc5838790a26e1c382fd33caa8b20d3370dfe90c189edf014e7d1535e3c8e`  
-		Last Modified: Wed, 15 Feb 2023 01:44:42 GMT  
-		Size: 1.1 MB (1104227 bytes)  
+	-	`sha256:766a962e72df7233519213997b76d24d51a05ef06f5429137ccd21a8c7705670`  
+		Last Modified: Wed, 15 Feb 2023 20:01:40 GMT  
+		Size: 1.1 MB (1104258 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f75c9ee5752f86737cfbfc2348876c74d9a2fef1fbdeb2c0c5e2a1c4ed40492`  
-		Last Modified: Wed, 15 Feb 2023 01:44:41 GMT  
-		Size: 417.0 B  
+	-	`sha256:1a8b56af21e7d8f85042061c1030b1224fcb37203577a3502648b9c095d6b58a`  
+		Last Modified: Wed, 15 Feb 2023 20:01:39 GMT  
+		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:38082a673b18882d7a779412473c3e15637d52a1474311e46eb370e82ebd75d3`  
-		Last Modified: Wed, 15 Feb 2023 01:44:41 GMT  
+	-	`sha256:5c59438c35dbfdf3ee40d0ae688acbf9f3a69f67bf92c3fbafeb3a6e14d6d459`  
+		Last Modified: Wed, 15 Feb 2023 20:01:40 GMT  
 		Size: 92.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `composer:latest` - linux; arm64 variant v8
+### `composer:2.5.4` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:f7f7c63312718f1a8536eab81d311f30130f68a1c9192a7a0874bba0bca02b21
+$ docker pull composer@sha256:fc71365e7c7ec262c6de71020964881caee9e4698e2f52b7d3b0846a775d61e9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.7 MB (69729968 bytes)**  
+-	Total Size: **69.7 MB (69730000 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ef9d0cdc57eefd4b142e2dea3df059a5d420e69eb00fa3ca9a82a1b17b47162e`
+-	Image ID: `sha256:140ec3510943c1e258cb82c87ba825b612b3de123c473c7af22a3aecbb7c9a49`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -10061,21 +10745,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Tue, 14 Feb 2023 23:23:09 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 ENV COMPOSER_HOME=/tmp
-# Tue, 14 Feb 2023 23:23:27 GMT
-ENV COMPOSER_VERSION=2.5.3
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 19:39:45 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 WORKDIR /app
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 Feb 2023 23:23:27 GMT
+# Wed, 15 Feb 2023 19:39:45 GMT
 CMD ["composer"]
 ```
 
@@ -10124,16 +10808,712 @@ CMD ["composer"]
 		Last Modified: Tue, 14 Feb 2023 23:25:22 GMT  
 		Size: 265.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25be4b83a1081e9738d8b0e68d93f5dddae836eee9a361988de82230ba29a6a4`  
-		Last Modified: Tue, 14 Feb 2023 23:25:22 GMT  
-		Size: 1.1 MB (1138156 bytes)  
+	-	`sha256:1f0245cd6d159e1859b910a4292b3df2e6fc12bb4c2bcbbbc8a4a7c9a2e98aa6`  
+		Last Modified: Wed, 15 Feb 2023 19:40:37 GMT  
+		Size: 1.1 MB (1138186 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c609e3a372227ce429358a63bda2c119cd071c20eadfa46c6754ea6612ce8e0`  
-		Last Modified: Tue, 14 Feb 2023 23:25:22 GMT  
-		Size: 417.0 B  
+	-	`sha256:a2838bbc6b757de012cd0375573e8aa888f673c8c3daf9ecb67243281161f783`  
+		Last Modified: Wed, 15 Feb 2023 19:40:36 GMT  
+		Size: 419.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f82176a0c738cc47fba481a1540ea4d72f2d6e8790c69137540e1b6c20fb4a29`  
+	-	`sha256:38c5fdb49eecc6bd2232f347dcff6456763485ab85f34375bdf3bab648a1b9b2`  
+		Last Modified: Wed, 15 Feb 2023 19:40:36 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `composer:2.5.4` - linux; s390x
+
+```console
+$ docker pull composer@sha256:b82432d765d4a98bb0ad6844269ec7d07a481f69bd1510a3922ddbf3c389d3db
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **68.6 MB (68637445 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:0c1bcec3e727782020b1ae187a4f27bf0f2545ac7d2a86120b43808ef08c874b`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["composer"]`
+
+```dockerfile
+# Fri, 10 Feb 2023 21:41:25 GMT
+ADD file:03b2fb4d732a294329449ff55c5d84f7d2735e6510985718979469994f3a607b in / 
+# Fri, 10 Feb 2023 21:41:26 GMT
+CMD ["/bin/sh"]
+# Sat, 11 Feb 2023 03:40:20 GMT
+ENV PHPIZE_DEPS=autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c
+# Sat, 11 Feb 2023 03:40:21 GMT
+RUN apk add --no-cache 		ca-certificates 		curl 		tar 		xz 		openssl
+# Sat, 11 Feb 2023 03:40:22 GMT
+RUN set -eux; 	adduser -u 82 -D -S -G www-data www-data
+# Sat, 11 Feb 2023 03:40:22 GMT
+ENV PHP_INI_DIR=/usr/local/etc/php
+# Sat, 11 Feb 2023 03:40:23 GMT
+RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
+# Sat, 11 Feb 2023 03:40:23 GMT
+ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 03:40:23 GMT
+ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 03:40:23 GMT
+ENV PHP_LDFLAGS=-Wl,-O1 -pie
+# Sat, 11 Feb 2023 03:40:23 GMT
+ENV GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC
+# Tue, 14 Feb 2023 20:59:29 GMT
+ENV PHP_VERSION=8.2.3
+# Tue, 14 Feb 2023 20:59:30 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.2.3.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.2.3.tar.xz.asc
+# Tue, 14 Feb 2023 20:59:30 GMT
+ENV PHP_SHA256=b9b566686e351125d67568a33291650eb8dfa26614d205d70d82e6e92613d457
+# Tue, 14 Feb 2023 20:59:38 GMT
+RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apk del --no-network .fetch-deps
+# Tue, 14 Feb 2023 20:59:39 GMT
+COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
+# Tue, 14 Feb 2023 21:03:45 GMT
+RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		gnu-libiconv-dev 		libsodium-dev 		libxml2-dev 		linux-headers 		oniguruma-dev 		openssl-dev 		readline-dev 		sqlite-dev 	; 		rm -vf /usr/include/iconv.h; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv=/usr 		--with-openssl 		--with-readline 		--with-zlib 				--enable-phpdbg 		--enable-phpdbg-readline 				--with-pear 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
+# Tue, 14 Feb 2023 21:03:49 GMT
+COPY multi:6edd033b037aa2d7697fc3b9f82c2f162146c1920a0c6d25a165dc56783204db in /usr/local/bin/ 
+# Tue, 14 Feb 2023 21:03:51 GMT
+RUN docker-php-ext-enable sodium
+# Tue, 14 Feb 2023 21:03:52 GMT
+ENTRYPOINT ["docker-php-entrypoint"]
+# Tue, 14 Feb 2023 21:03:52 GMT
+CMD ["php" "-a"]
+# Tue, 14 Feb 2023 22:40:00 GMT
+RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
+# Tue, 14 Feb 2023 22:40:00 GMT
+RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
+# Wed, 15 Feb 2023 19:42:12 GMT
+ENV COMPOSER_ALLOW_SUPERUSER=1
+# Wed, 15 Feb 2023 19:42:12 GMT
+ENV COMPOSER_HOME=/tmp
+# Wed, 15 Feb 2023 19:42:12 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 19:42:12 GMT
+RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
+# Wed, 15 Feb 2023 19:42:12 GMT
+COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
+# Wed, 15 Feb 2023 19:42:12 GMT
+WORKDIR /app
+# Wed, 15 Feb 2023 19:42:12 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Wed, 15 Feb 2023 19:42:12 GMT
+CMD ["composer"]
+```
+
+-	Layers:
+	-	`sha256:24c4f8de3549a39c64b0edc2cfa68769b373f35138d0f13725100160bb32d4e2`  
+		Last Modified: Fri, 10 Feb 2023 21:42:16 GMT  
+		Size: 3.2 MB (3175116 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d3e08f96f9a305daacf9ee42f9847666c785231f5db9684aae1648426463f923`  
+		Last Modified: Sat, 11 Feb 2023 04:35:13 GMT  
+		Size: 1.9 MB (1917113 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f2b2b7eda29298bc923307ecd06eca2607d89341d31329cad08c2ddd6d3dda03`  
+		Last Modified: Sat, 11 Feb 2023 04:35:13 GMT  
+		Size: 1.3 KB (1263 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:87dc1497b9a6351ab931f19c686d45bea176daa8f6da7db62dce416a091a4944`  
+		Last Modified: Sat, 11 Feb 2023 04:35:14 GMT  
+		Size: 268.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:52efec41bbcb04e5c0b961291eb6ce637a3a37ae4507f3a9dccf64250e8c422f`  
+		Last Modified: Tue, 14 Feb 2023 22:18:16 GMT  
+		Size: 12.1 MB (12058815 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:782a39d653aa337d1f599b77230399baa95696932c782f5bac34d7d48b19731d`  
+		Last Modified: Tue, 14 Feb 2023 22:18:14 GMT  
+		Size: 497.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3577d1e4d9ddfed09391e15414a4e99feb365fb14db85cbf3be48b8e20e09e35`  
+		Last Modified: Tue, 14 Feb 2023 22:18:17 GMT  
+		Size: 15.7 MB (15661937 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cb4fc1f4bb898fd8a29957ae6855951bc17b854e25f7399a7da6b6da7079f0be`  
+		Last Modified: Tue, 14 Feb 2023 22:18:14 GMT  
+		Size: 2.4 KB (2448 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:066dd0b96462a34ecdf195f0214cf4e59c326e1c08d650dfedd032af43021f55`  
+		Last Modified: Tue, 14 Feb 2023 22:18:14 GMT  
+		Size: 18.7 KB (18749 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:30dc1402f87796d6e833d54c38654f22bcea93ca78258ee88f64e288d673e416`  
+		Last Modified: Tue, 14 Feb 2023 22:42:50 GMT  
+		Size: 34.7 MB (34651293 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a31104a91a7c9a03743edf10a20181946e027a81c7cc5ff3e5d83a8bde0e0761`  
+		Last Modified: Tue, 14 Feb 2023 22:42:45 GMT  
+		Size: 267.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c6bb8d9e0302261d33bc0a247e534eacf477c5872889963fd77e6b0e12b2b19d`  
+		Last Modified: Wed, 15 Feb 2023 19:43:34 GMT  
+		Size: 1.1 MB (1149135 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:940798fd552a4ac54ad7931765656c28f54fd908c0c82e3aff494e3d39a7588b`  
+		Last Modified: Wed, 15 Feb 2023 19:43:33 GMT  
+		Size: 418.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5977ba5da9a7c7dc931bc1b0709256489ba4072708af4b0a6940f14141ab2937`  
+		Last Modified: Wed, 15 Feb 2023 19:43:34 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `composer:latest`
+
+```console
+$ docker pull composer@sha256:11ba2330be08766d757b1f590729a60204cf8cb5dd6783f62d33d70c31f4919e
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
+	-	linux; amd64
+	-	linux; arm variant v6
+	-	linux; arm variant v7
+	-	linux; arm64 variant v8
+	-	linux; 386
+	-	linux; ppc64le
+	-	linux; s390x
+
+### `composer:latest` - linux; amd64
+
+```console
+$ docker pull composer@sha256:082ed124b68e7e880721772a6bf22ad809e3bc87db8bbee9f0ec7127bb21ccad
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **70.2 MB (70158266 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:518411a9bff338cc452761a73c2f00ed2c9baeab8d234fb53f76af2567decb59`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["composer"]`
+
+```dockerfile
+# Sat, 11 Feb 2023 04:46:42 GMT
+ADD file:40887ab7c06977737e63c215c9bd297c0c74de8d12d16ebdf1c3d40ac392f62d in / 
+# Sat, 11 Feb 2023 04:46:42 GMT
+CMD ["/bin/sh"]
+# Sat, 11 Feb 2023 10:17:22 GMT
+ENV PHPIZE_DEPS=autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c
+# Sat, 11 Feb 2023 10:17:23 GMT
+RUN apk add --no-cache 		ca-certificates 		curl 		tar 		xz 		openssl
+# Sat, 11 Feb 2023 10:17:24 GMT
+RUN set -eux; 	adduser -u 82 -D -S -G www-data www-data
+# Sat, 11 Feb 2023 10:17:24 GMT
+ENV PHP_INI_DIR=/usr/local/etc/php
+# Sat, 11 Feb 2023 10:17:24 GMT
+RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
+# Sat, 11 Feb 2023 10:17:25 GMT
+ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 10:17:25 GMT
+ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 10:17:25 GMT
+ENV PHP_LDFLAGS=-Wl,-O1 -pie
+# Sat, 11 Feb 2023 10:17:25 GMT
+ENV GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC
+# Tue, 14 Feb 2023 20:46:14 GMT
+ENV PHP_VERSION=8.2.3
+# Tue, 14 Feb 2023 20:46:15 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.2.3.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.2.3.tar.xz.asc
+# Tue, 14 Feb 2023 20:46:15 GMT
+ENV PHP_SHA256=b9b566686e351125d67568a33291650eb8dfa26614d205d70d82e6e92613d457
+# Tue, 14 Feb 2023 20:46:22 GMT
+RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apk del --no-network .fetch-deps
+# Tue, 14 Feb 2023 20:46:22 GMT
+COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
+# Tue, 14 Feb 2023 20:49:57 GMT
+RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		gnu-libiconv-dev 		libsodium-dev 		libxml2-dev 		linux-headers 		oniguruma-dev 		openssl-dev 		readline-dev 		sqlite-dev 	; 		rm -vf /usr/include/iconv.h; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv=/usr 		--with-openssl 		--with-readline 		--with-zlib 				--enable-phpdbg 		--enable-phpdbg-readline 				--with-pear 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
+# Tue, 14 Feb 2023 20:49:57 GMT
+COPY multi:6edd033b037aa2d7697fc3b9f82c2f162146c1920a0c6d25a165dc56783204db in /usr/local/bin/ 
+# Tue, 14 Feb 2023 20:49:58 GMT
+RUN docker-php-ext-enable sodium
+# Tue, 14 Feb 2023 20:49:59 GMT
+ENTRYPOINT ["docker-php-entrypoint"]
+# Tue, 14 Feb 2023 20:49:59 GMT
+CMD ["php" "-a"]
+# Wed, 15 Feb 2023 02:28:57 GMT
+RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
+# Wed, 15 Feb 2023 02:28:57 GMT
+RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
+# Wed, 15 Feb 2023 19:21:15 GMT
+ENV COMPOSER_ALLOW_SUPERUSER=1
+# Wed, 15 Feb 2023 19:21:15 GMT
+ENV COMPOSER_HOME=/tmp
+# Wed, 15 Feb 2023 19:21:15 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 19:21:15 GMT
+RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
+# Wed, 15 Feb 2023 19:21:15 GMT
+COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
+# Wed, 15 Feb 2023 19:21:15 GMT
+WORKDIR /app
+# Wed, 15 Feb 2023 19:21:15 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Wed, 15 Feb 2023 19:21:15 GMT
+CMD ["composer"]
+```
+
+-	Layers:
+	-	`sha256:63b65145d645c1250c391b2d16ebe53b3747c295ca8ba2fcb6b0cf064a4dc21c`  
+		Last Modified: Fri, 10 Feb 2023 22:41:31 GMT  
+		Size: 3.4 MB (3374446 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e80fdb865a69a85ee910e603ec69d253469dd9367105df81057c89ef565ab971`  
+		Last Modified: Sat, 11 Feb 2023 11:20:06 GMT  
+		Size: 1.9 MB (1869555 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f4dbeadc75c19cda75784e259745d42dd938cf860218f8fec2103bf0852be3c7`  
+		Last Modified: Sat, 11 Feb 2023 11:20:06 GMT  
+		Size: 1.3 KB (1261 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:257b31b3391b9ce8882eab2c50f2cb64279987f785eeba45218d0b14aa3d74cb`  
+		Last Modified: Sat, 11 Feb 2023 11:20:05 GMT  
+		Size: 268.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:29e346bcb759d65a132cc5b610f3a4ecd7dfb6008a73f95c8d5246c6bb110b2d`  
+		Last Modified: Tue, 14 Feb 2023 22:44:12 GMT  
+		Size: 12.1 MB (12058821 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:de40f5bacc1bedf4d4100c35a0a22c29cc9b90ea8dc6f2492864da9d1049e7dd`  
+		Last Modified: Tue, 14 Feb 2023 22:44:11 GMT  
+		Size: 495.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fa433694c66f6722229cacb8892dce6c389511e7dc3ce645618955f625fb71af`  
+		Last Modified: Tue, 14 Feb 2023 22:44:14 GMT  
+		Size: 16.8 MB (16797999 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d0b9749a0e493f0074e674fb8f957a48b8ef6364fd052ecc369f6869f69fb81e`  
+		Last Modified: Tue, 14 Feb 2023 22:44:11 GMT  
+		Size: 2.5 KB (2450 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:46cd6428474b0b7f56b37dd826f3096a0af77584211905d2724a6c40e78a5790`  
+		Last Modified: Tue, 14 Feb 2023 22:44:11 GMT  
+		Size: 18.9 KB (18950 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:05ffb51cff59037e4bd33d51a37c607cfec25c50f2a24d2c919c0ff1625e27e3`  
+		Last Modified: Wed, 15 Feb 2023 02:31:41 GMT  
+		Size: 34.9 MB (34892090 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a8e6184f93ad2730f31cc108830194c9e9c1380981f1c52419a1bd9a8e632577`  
+		Last Modified: Wed, 15 Feb 2023 02:31:36 GMT  
+		Size: 266.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:8f9d96f62193eedd2fceeee566565e1906e88430534b6442d1f2cee4ba6bf2d5`  
+		Last Modified: Wed, 15 Feb 2023 19:22:11 GMT  
+		Size: 1.1 MB (1141120 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:74b944693fa5bb022c73660a4a19ac563b3be355e52f6104d9611e3cabd8186a`  
+		Last Modified: Wed, 15 Feb 2023 19:22:11 GMT  
+		Size: 419.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:609cb6132afbd219581d381cea00d17d20f6b7b789e6c78f678be0daad95f9cf`  
+		Last Modified: Wed, 15 Feb 2023 19:22:11 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `composer:latest` - linux; arm variant v6
+
+```console
+$ docker pull composer@sha256:c0d7047cb632a5e8d2ab861d22514426cfbe0f07509e6e4d2cc40a9e43004559
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **63.0 MB (63039683 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:89d98990738fb2b95382a678145b3b3f1544e417e8cb98b90645a77d7a9b50f4`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["composer"]`
+
+```dockerfile
+# Fri, 10 Feb 2023 20:49:28 GMT
+ADD file:d825d9aef59df0df23c0140a490998407ee0a62a051699b5c050aef7cb03f042 in / 
+# Fri, 10 Feb 2023 20:49:28 GMT
+CMD ["/bin/sh"]
+# Sat, 11 Feb 2023 02:33:58 GMT
+ENV PHPIZE_DEPS=autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c
+# Sat, 11 Feb 2023 02:34:00 GMT
+RUN apk add --no-cache 		ca-certificates 		curl 		tar 		xz 		openssl
+# Sat, 11 Feb 2023 02:34:00 GMT
+RUN set -eux; 	adduser -u 82 -D -S -G www-data www-data
+# Sat, 11 Feb 2023 02:34:00 GMT
+ENV PHP_INI_DIR=/usr/local/etc/php
+# Sat, 11 Feb 2023 02:34:01 GMT
+RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
+# Sat, 11 Feb 2023 02:34:01 GMT
+ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 02:34:01 GMT
+ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 02:34:01 GMT
+ENV PHP_LDFLAGS=-Wl,-O1 -pie
+# Sat, 11 Feb 2023 02:34:01 GMT
+ENV GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC
+# Tue, 14 Feb 2023 20:04:35 GMT
+ENV PHP_VERSION=8.2.3
+# Tue, 14 Feb 2023 20:04:35 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.2.3.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.2.3.tar.xz.asc
+# Tue, 14 Feb 2023 20:04:36 GMT
+ENV PHP_SHA256=b9b566686e351125d67568a33291650eb8dfa26614d205d70d82e6e92613d457
+# Tue, 14 Feb 2023 20:04:42 GMT
+RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apk del --no-network .fetch-deps
+# Tue, 14 Feb 2023 20:04:42 GMT
+COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
+# Tue, 14 Feb 2023 20:09:44 GMT
+RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		gnu-libiconv-dev 		libsodium-dev 		libxml2-dev 		linux-headers 		oniguruma-dev 		openssl-dev 		readline-dev 		sqlite-dev 	; 		rm -vf /usr/include/iconv.h; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv=/usr 		--with-openssl 		--with-readline 		--with-zlib 				--enable-phpdbg 		--enable-phpdbg-readline 				--with-pear 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
+# Tue, 14 Feb 2023 20:09:45 GMT
+COPY multi:6edd033b037aa2d7697fc3b9f82c2f162146c1920a0c6d25a165dc56783204db in /usr/local/bin/ 
+# Tue, 14 Feb 2023 20:09:46 GMT
+RUN docker-php-ext-enable sodium
+# Tue, 14 Feb 2023 20:09:46 GMT
+ENTRYPOINT ["docker-php-entrypoint"]
+# Tue, 14 Feb 2023 20:09:46 GMT
+CMD ["php" "-a"]
+# Tue, 14 Feb 2023 21:38:04 GMT
+RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
+# Tue, 14 Feb 2023 21:38:04 GMT
+RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
+# Wed, 15 Feb 2023 19:50:04 GMT
+ENV COMPOSER_ALLOW_SUPERUSER=1
+# Wed, 15 Feb 2023 19:50:04 GMT
+ENV COMPOSER_HOME=/tmp
+# Wed, 15 Feb 2023 19:50:04 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 19:50:04 GMT
+RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
+# Wed, 15 Feb 2023 19:50:04 GMT
+COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
+# Wed, 15 Feb 2023 19:50:04 GMT
+WORKDIR /app
+# Wed, 15 Feb 2023 19:50:04 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Wed, 15 Feb 2023 19:50:04 GMT
+CMD ["composer"]
+```
+
+-	Layers:
+	-	`sha256:6a6e4ab63e54442e16400f69d37f662d60cbd67565631eff6bf59b4176e482c3`  
+		Last Modified: Fri, 10 Feb 2023 20:50:22 GMT  
+		Size: 3.1 MB (3110885 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5bd0844e97aab008da4e3402bd5e9f05fccc9da4271e671d3a5b3558cdc8c7b4`  
+		Last Modified: Sat, 11 Feb 2023 03:28:22 GMT  
+		Size: 1.9 MB (1854736 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:75e73c80aa9d0900311ec06994f73a22af4ba38626fac03bdf190d772bc866b8`  
+		Last Modified: Sat, 11 Feb 2023 03:28:22 GMT  
+		Size: 1.2 KB (1232 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e6276b3cf1f8942a3370feaf7841911987d210858d87b988f5b85adaffdc6f52`  
+		Last Modified: Sat, 11 Feb 2023 03:28:22 GMT  
+		Size: 221.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6ef12dfcccd9348ff56c693ac0e909097bcc664599ec1be0cabb87ddb530d9e1`  
+		Last Modified: Tue, 14 Feb 2023 21:15:19 GMT  
+		Size: 12.1 MB (12058780 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6b61d201d06e962217961a0d550dacc95f98ba13ca68ee1d30685731fda739d9`  
+		Last Modified: Tue, 14 Feb 2023 21:15:18 GMT  
+		Size: 497.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fc29be95394e5c7b5b5d5b58ff0f7146094f69b42e7d22c2790d58c5da259fff`  
+		Last Modified: Tue, 14 Feb 2023 21:15:22 GMT  
+		Size: 15.3 MB (15299889 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:05171caa27b0336cc0468452ba53a4b0f26da715d214aa0eac3c045acdc9bc6a`  
+		Last Modified: Tue, 14 Feb 2023 21:15:18 GMT  
+		Size: 2.4 KB (2449 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0d6f89440645cbe9721a20943d726b18d065f0ef2926ebca345d3634d968b392`  
+		Last Modified: Tue, 14 Feb 2023 21:15:18 GMT  
+		Size: 18.7 KB (18730 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:8832b0d1e934a1c4a3af94ea4aab2da283dcbc7f5225f1909b1d80b7e1df59f2`  
+		Last Modified: Tue, 14 Feb 2023 21:41:57 GMT  
+		Size: 29.6 MB (29550525 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1df5666dcfda6e7eca8ddc310c6121e4f4d5877af2a2a05643920de7985a7357`  
+		Last Modified: Tue, 14 Feb 2023 21:41:51 GMT  
+		Size: 267.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a7071732611ce0c99d7ea1ba65681daae8952498b598283bdc464e8f76958829`  
+		Last Modified: Wed, 15 Feb 2023 19:51:40 GMT  
+		Size: 1.1 MB (1140961 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:46e41f2b97fecb11ef5ca8dd1eee87dbbccf4256820c2b9916dd327fb01fd190`  
+		Last Modified: Wed, 15 Feb 2023 19:51:39 GMT  
+		Size: 419.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c1c86b4d33d0e73cca17d6cb8fc6a0cf4168ddde16a8f224d0b28336b4970851`  
+		Last Modified: Wed, 15 Feb 2023 19:51:39 GMT  
+		Size: 92.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `composer:latest` - linux; arm variant v7
+
+```console
+$ docker pull composer@sha256:b169f54a323b070c7ec4584b9148ec8394d90f763638dd2280513c2152996a76
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **64.4 MB (64372830 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:d1652ab59bf92865eaecb86c22c2681953353c5a6cf9bc8e6f31bcb5988cee09`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["composer"]`
+
+```dockerfile
+# Fri, 10 Feb 2023 21:51:31 GMT
+ADD file:143b601fcc6b5d7d95d3e5ccad3fec7081191a47e28d4f9294a7fb2499cab1af in / 
+# Fri, 10 Feb 2023 21:51:31 GMT
+CMD ["/bin/sh"]
+# Sat, 11 Feb 2023 06:54:04 GMT
+ENV PHPIZE_DEPS=autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c
+# Sat, 11 Feb 2023 06:54:07 GMT
+RUN apk add --no-cache 		ca-certificates 		curl 		tar 		xz 		openssl
+# Sat, 11 Feb 2023 06:54:08 GMT
+RUN set -eux; 	adduser -u 82 -D -S -G www-data www-data
+# Sat, 11 Feb 2023 06:54:08 GMT
+ENV PHP_INI_DIR=/usr/local/etc/php
+# Sat, 11 Feb 2023 06:54:09 GMT
+RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
+# Sat, 11 Feb 2023 06:54:09 GMT
+ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 06:54:09 GMT
+ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 06:54:09 GMT
+ENV PHP_LDFLAGS=-Wl,-O1 -pie
+# Sat, 11 Feb 2023 06:54:10 GMT
+ENV GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC
+# Tue, 14 Feb 2023 23:21:20 GMT
+ENV PHP_VERSION=8.2.3
+# Tue, 14 Feb 2023 23:21:20 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.2.3.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.2.3.tar.xz.asc
+# Tue, 14 Feb 2023 23:21:20 GMT
+ENV PHP_SHA256=b9b566686e351125d67568a33291650eb8dfa26614d205d70d82e6e92613d457
+# Tue, 14 Feb 2023 23:21:27 GMT
+RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apk del --no-network .fetch-deps
+# Tue, 14 Feb 2023 23:21:27 GMT
+COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
+# Tue, 14 Feb 2023 23:24:34 GMT
+RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		gnu-libiconv-dev 		libsodium-dev 		libxml2-dev 		linux-headers 		oniguruma-dev 		openssl-dev 		readline-dev 		sqlite-dev 	; 		rm -vf /usr/include/iconv.h; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv=/usr 		--with-openssl 		--with-readline 		--with-zlib 				--enable-phpdbg 		--enable-phpdbg-readline 				--with-pear 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
+# Tue, 14 Feb 2023 23:24:34 GMT
+COPY multi:6edd033b037aa2d7697fc3b9f82c2f162146c1920a0c6d25a165dc56783204db in /usr/local/bin/ 
+# Tue, 14 Feb 2023 23:24:35 GMT
+RUN docker-php-ext-enable sodium
+# Tue, 14 Feb 2023 23:24:36 GMT
+ENTRYPOINT ["docker-php-entrypoint"]
+# Tue, 14 Feb 2023 23:24:36 GMT
+CMD ["php" "-a"]
+# Wed, 15 Feb 2023 01:40:22 GMT
+RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
+# Wed, 15 Feb 2023 01:40:22 GMT
+RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
+# Wed, 15 Feb 2023 20:00:03 GMT
+ENV COMPOSER_ALLOW_SUPERUSER=1
+# Wed, 15 Feb 2023 20:00:03 GMT
+ENV COMPOSER_HOME=/tmp
+# Wed, 15 Feb 2023 20:00:03 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 20:00:03 GMT
+RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
+# Wed, 15 Feb 2023 20:00:03 GMT
+COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
+# Wed, 15 Feb 2023 20:00:03 GMT
+WORKDIR /app
+# Wed, 15 Feb 2023 20:00:03 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Wed, 15 Feb 2023 20:00:03 GMT
+CMD ["composer"]
+```
+
+-	Layers:
+	-	`sha256:6fb81ff47bd6d7db0ed86c9b951ad6417ec73ab60af6d22daa604076a902629c`  
+		Last Modified: Fri, 10 Feb 2023 21:52:33 GMT  
+		Size: 2.9 MB (2868494 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:604ba950458ab158bbd12d86fbd5f0cf48fe2fb333999564ff57c5b2be04415e`  
+		Last Modified: Sat, 11 Feb 2023 08:01:14 GMT  
+		Size: 1.7 MB (1706606 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0ad659c55815f53926f5eab8ed3cdbd96f94739c530da43e159b64603ce602be`  
+		Last Modified: Sat, 11 Feb 2023 08:01:13 GMT  
+		Size: 1.2 KB (1232 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7905e51486e32d6df802abec7bc9a94224bb0bf908a9ff8246e86af31aa5e54f`  
+		Last Modified: Sat, 11 Feb 2023 08:01:13 GMT  
+		Size: 222.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d5a484e831b0508c62de21268c4f70cec8b8a36b5773778d7f945ea4b953b36f`  
+		Last Modified: Wed, 15 Feb 2023 01:10:14 GMT  
+		Size: 12.1 MB (12058767 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d451a2f486b747c9f87fd835ffc9b76535207c66fce69e8e0d0659e5d6d9b8f3`  
+		Last Modified: Wed, 15 Feb 2023 01:10:12 GMT  
+		Size: 495.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9dcb75d6792dc9585752622d9430c4eab3a478e9ce8bb245d3dba77e520db187`  
+		Last Modified: Wed, 15 Feb 2023 01:10:15 GMT  
+		Size: 14.3 MB (14343072 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2df8fd2d65838436c406b8c5b590cb4fb9d793799e4d6349bd6d86f6a36f924e`  
+		Last Modified: Wed, 15 Feb 2023 01:10:13 GMT  
+		Size: 2.4 KB (2446 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cffe9c5a539b0ef0875483a06ee23a6f2cdb90a29d3af401c403c097ef5e85fa`  
+		Last Modified: Wed, 15 Feb 2023 01:10:12 GMT  
+		Size: 18.7 KB (18741 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:269c2689b2b9d9941f85fa9bfa658a78b13075e1b6b5fef7dd613c0e4b8fe45e`  
+		Last Modified: Wed, 15 Feb 2023 01:44:48 GMT  
+		Size: 32.3 MB (32267722 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:58041fda2d8d1d23d374d4ee2266d99c5dbcf8544bc19757d87e0c8cab821fdb`  
+		Last Modified: Wed, 15 Feb 2023 01:44:41 GMT  
+		Size: 265.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:766a962e72df7233519213997b76d24d51a05ef06f5429137ccd21a8c7705670`  
+		Last Modified: Wed, 15 Feb 2023 20:01:40 GMT  
+		Size: 1.1 MB (1104258 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1a8b56af21e7d8f85042061c1030b1224fcb37203577a3502648b9c095d6b58a`  
+		Last Modified: Wed, 15 Feb 2023 20:01:39 GMT  
+		Size: 418.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5c59438c35dbfdf3ee40d0ae688acbf9f3a69f67bf92c3fbafeb3a6e14d6d459`  
+		Last Modified: Wed, 15 Feb 2023 20:01:40 GMT  
+		Size: 92.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `composer:latest` - linux; arm64 variant v8
+
+```console
+$ docker pull composer@sha256:fc71365e7c7ec262c6de71020964881caee9e4698e2f52b7d3b0846a775d61e9
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **69.7 MB (69730000 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:140ec3510943c1e258cb82c87ba825b612b3de123c473c7af22a3aecbb7c9a49`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["composer"]`
+
+```dockerfile
+# Fri, 10 Feb 2023 21:24:08 GMT
+ADD file:9bd9ea42a9f3bdc769e80c6b8a4b117d65f73ae68e155a6172a1184e7ac8bcc1 in / 
+# Fri, 10 Feb 2023 21:24:08 GMT
+CMD ["/bin/sh"]
+# Sat, 11 Feb 2023 02:02:54 GMT
+ENV PHPIZE_DEPS=autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c
+# Sat, 11 Feb 2023 02:02:55 GMT
+RUN apk add --no-cache 		ca-certificates 		curl 		tar 		xz 		openssl
+# Sat, 11 Feb 2023 02:02:56 GMT
+RUN set -eux; 	adduser -u 82 -D -S -G www-data www-data
+# Sat, 11 Feb 2023 02:02:56 GMT
+ENV PHP_INI_DIR=/usr/local/etc/php
+# Sat, 11 Feb 2023 02:02:56 GMT
+RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
+# Sat, 11 Feb 2023 02:02:56 GMT
+ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 02:02:57 GMT
+ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Sat, 11 Feb 2023 02:02:57 GMT
+ENV PHP_LDFLAGS=-Wl,-O1 -pie
+# Sat, 11 Feb 2023 02:02:57 GMT
+ENV GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC
+# Tue, 14 Feb 2023 21:10:51 GMT
+ENV PHP_VERSION=8.2.3
+# Tue, 14 Feb 2023 21:10:51 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.2.3.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.2.3.tar.xz.asc
+# Tue, 14 Feb 2023 21:10:52 GMT
+ENV PHP_SHA256=b9b566686e351125d67568a33291650eb8dfa26614d205d70d82e6e92613d457
+# Tue, 14 Feb 2023 21:10:59 GMT
+RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apk del --no-network .fetch-deps
+# Tue, 14 Feb 2023 21:10:59 GMT
+COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
+# Tue, 14 Feb 2023 21:14:31 GMT
+RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		gnu-libiconv-dev 		libsodium-dev 		libxml2-dev 		linux-headers 		oniguruma-dev 		openssl-dev 		readline-dev 		sqlite-dev 	; 		rm -vf /usr/include/iconv.h; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv=/usr 		--with-openssl 		--with-readline 		--with-zlib 				--enable-phpdbg 		--enable-phpdbg-readline 				--with-pear 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
+# Tue, 14 Feb 2023 21:14:31 GMT
+COPY multi:6edd033b037aa2d7697fc3b9f82c2f162146c1920a0c6d25a165dc56783204db in /usr/local/bin/ 
+# Tue, 14 Feb 2023 21:14:32 GMT
+RUN docker-php-ext-enable sodium
+# Tue, 14 Feb 2023 21:14:32 GMT
+ENTRYPOINT ["docker-php-entrypoint"]
+# Tue, 14 Feb 2023 21:14:32 GMT
+CMD ["php" "-a"]
+# Tue, 14 Feb 2023 23:23:09 GMT
+RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
+# Tue, 14 Feb 2023 23:23:09 GMT
+RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
+# Wed, 15 Feb 2023 19:39:45 GMT
+ENV COMPOSER_ALLOW_SUPERUSER=1
+# Wed, 15 Feb 2023 19:39:45 GMT
+ENV COMPOSER_HOME=/tmp
+# Wed, 15 Feb 2023 19:39:45 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 19:39:45 GMT
+RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
+# Wed, 15 Feb 2023 19:39:45 GMT
+COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
+# Wed, 15 Feb 2023 19:39:45 GMT
+WORKDIR /app
+# Wed, 15 Feb 2023 19:39:45 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Wed, 15 Feb 2023 19:39:45 GMT
+CMD ["composer"]
+```
+
+-	Layers:
+	-	`sha256:af6eaf76a39c2d3e7e0b8a0420486e3df33c4027d696c076a99a3d0ac09026af`  
+		Last Modified: Fri, 10 Feb 2023 21:24:39 GMT  
+		Size: 3.3 MB (3261959 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:65da1d1bbae15a06f79c4d79d885439cb51d02c27c69741770a1ace04a962454`  
+		Last Modified: Sat, 11 Feb 2023 03:02:23 GMT  
+		Size: 1.9 MB (1862646 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:53689469854ea07050d653c2567c0a362a36bf42c1db6ad7ca78f0ce04d4a862`  
+		Last Modified: Sat, 11 Feb 2023 03:02:22 GMT  
+		Size: 1.3 KB (1263 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:52c363c99e0af7af0ce7cc0c3b401461324b37d279159235d225fb19c056c4c1`  
+		Last Modified: Sat, 11 Feb 2023 03:02:22 GMT  
+		Size: 268.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:64b817c1a7fa6c273ce510ec285ad0c2c994c3165ffe02a2364e1df83ee51858`  
+		Last Modified: Tue, 14 Feb 2023 22:55:17 GMT  
+		Size: 12.1 MB (12058804 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b916cf7718f1f819300fe8df611c65816ca973049f9a9270ddcdd7cf8680bc60`  
+		Last Modified: Tue, 14 Feb 2023 22:55:16 GMT  
+		Size: 496.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:347f2e32cf9a8c8c7534272c0fb302b42fd0fbb6a345cb3bfaf99ebe708f3a6c`  
+		Last Modified: Tue, 14 Feb 2023 22:55:19 GMT  
+		Size: 16.7 MB (16703280 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6acf70a7174aa1b0ae938ec1b68adc0e47092069067ab60d2895206cd130c3a7`  
+		Last Modified: Tue, 14 Feb 2023 22:55:16 GMT  
+		Size: 2.4 KB (2448 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cca7a982b48b26c7926ca43b7a12a693f07d4c74310bad6cc2c80f8a00b86d31`  
+		Last Modified: Tue, 14 Feb 2023 22:55:17 GMT  
+		Size: 18.7 KB (18749 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:edd445cae95846cf880a91b5af859f352ab7158c366166523c93e9a8068e4b4e`  
+		Last Modified: Tue, 14 Feb 2023 23:25:26 GMT  
+		Size: 34.7 MB (34681091 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2c6ea446077d8205865badfb250cc33f7650a42398df5607fbaff5b2aca9f395`  
 		Last Modified: Tue, 14 Feb 2023 23:25:22 GMT  
+		Size: 265.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1f0245cd6d159e1859b910a4292b3df2e6fc12bb4c2bcbbbc8a4a7c9a2e98aa6`  
+		Last Modified: Wed, 15 Feb 2023 19:40:37 GMT  
+		Size: 1.1 MB (1138186 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a2838bbc6b757de012cd0375573e8aa888f673c8c3daf9ecb67243281161f783`  
+		Last Modified: Wed, 15 Feb 2023 19:40:36 GMT  
+		Size: 419.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:38c5fdb49eecc6bd2232f347dcff6456763485ab85f34375bdf3bab648a1b9b2`  
+		Last Modified: Wed, 15 Feb 2023 19:40:36 GMT  
 		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -10413,13 +11793,13 @@ CMD ["composer"]
 ### `composer:latest` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:7bb1d8b1f07cd3d7c3723134e643e17aca9975c65f8eef1bc0974f5541215eae
+$ docker pull composer@sha256:b82432d765d4a98bb0ad6844269ec7d07a481f69bd1510a3922ddbf3c389d3db
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **68.6 MB (68637387 bytes)**  
+-	Total Size: **68.6 MB (68637445 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6b838391dbeaa9f89200999b0d418b149047192925426258838a22e5d3263014`
+-	Image ID: `sha256:0c1bcec3e727782020b1ae187a4f27bf0f2545ac7d2a86120b43808ef08c874b`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -10470,21 +11850,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Tue, 14 Feb 2023 22:40:00 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 ENV COMPOSER_HOME=/tmp
-# Tue, 14 Feb 2023 22:40:20 GMT
-ENV COMPOSER_VERSION=2.5.3
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
+ENV COMPOSER_VERSION=2.5.4
+# Wed, 15 Feb 2023 19:42:12 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 WORKDIR /app
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 Feb 2023 22:40:20 GMT
+# Wed, 15 Feb 2023 19:42:12 GMT
 CMD ["composer"]
 ```
 
@@ -10533,23 +11913,23 @@ CMD ["composer"]
 		Last Modified: Tue, 14 Feb 2023 22:42:45 GMT  
 		Size: 267.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:47f6fad05445e4919ef67711fd21353fcbfb0c66bca1c0a211094b34be611596`  
-		Last Modified: Tue, 14 Feb 2023 22:42:45 GMT  
-		Size: 1.1 MB (1149078 bytes)  
+	-	`sha256:c6bb8d9e0302261d33bc0a247e534eacf477c5872889963fd77e6b0e12b2b19d`  
+		Last Modified: Wed, 15 Feb 2023 19:43:34 GMT  
+		Size: 1.1 MB (1149135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aaedb543fca048503d4a251a9be93d5decae64d0825fa3d6484946b493f7c202`  
-		Last Modified: Tue, 14 Feb 2023 22:42:45 GMT  
-		Size: 417.0 B  
+	-	`sha256:940798fd552a4ac54ad7931765656c28f54fd908c0c82e3aff494e3d39a7588b`  
+		Last Modified: Wed, 15 Feb 2023 19:43:33 GMT  
+		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:404a3b905ba2d8924a2cc33b89b902c11cf60da6160d3bb3b3ed68cab4a0babd`  
-		Last Modified: Tue, 14 Feb 2023 22:41:28 GMT  
+	-	`sha256:5977ba5da9a7c7dc931bc1b0709256489ba4072708af4b0a6940f14141ab2937`  
+		Last Modified: Wed, 15 Feb 2023 19:43:34 GMT  
 		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:lts`
 
 ```console
-$ docker pull composer@sha256:359ffb01de664caac0926e2971e69bf2c4b2ea4afad6b4b6b7d837f8ee73f883
+$ docker pull composer@sha256:a14a0e614f81868e7be669536142a29766de657472846c768139e02a92a0f2fa
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10564,13 +11944,13 @@ $ docker pull composer@sha256:359ffb01de664caac0926e2971e69bf2c4b2ea4afad6b4b6b7
 ### `composer:lts` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:aa8c8cb6702847cd36cfa2f7e2d7e924b75f6332b9584182b8413a4a4cfd4de1
+$ docker pull composer@sha256:b820cbdd4fb341d2371fe8128c8945b678da696c06b64f0751de871a2e54ae51
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **70.0 MB (70045919 bytes)**  
+-	Total Size: **70.0 MB (70045982 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:83a1ef858ecc5702d1d3f9367a4db3b43cc4a4578f4bc135b612be25ec382bdf`
+-	Image ID: `sha256:5aa9d9da1a778488dfc805ad7fcb3e11fb02bc5ea286e785698bc177dbc02d05`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -10621,21 +12001,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Wed, 15 Feb 2023 02:28:57 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Wed, 15 Feb 2023 02:30:46 GMT
+# Wed, 15 Feb 2023 19:21:46 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Wed, 15 Feb 2023 02:30:46 GMT
+# Wed, 15 Feb 2023 19:21:46 GMT
 ENV COMPOSER_HOME=/tmp
-# Wed, 15 Feb 2023 02:30:46 GMT
-ENV COMPOSER_VERSION=2.2.20
-# Wed, 15 Feb 2023 02:30:46 GMT
+# Wed, 15 Feb 2023 19:21:46 GMT
+ENV COMPOSER_VERSION=2.2.21
+# Wed, 15 Feb 2023 19:21:46 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Wed, 15 Feb 2023 02:30:46 GMT
+# Wed, 15 Feb 2023 19:21:46 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Wed, 15 Feb 2023 02:30:46 GMT
+# Wed, 15 Feb 2023 19:21:46 GMT
 WORKDIR /app
-# Wed, 15 Feb 2023 02:30:46 GMT
+# Wed, 15 Feb 2023 19:21:46 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 15 Feb 2023 02:30:46 GMT
+# Wed, 15 Feb 2023 19:21:46 GMT
 CMD ["composer"]
 ```
 
@@ -10684,29 +12064,29 @@ CMD ["composer"]
 		Last Modified: Wed, 15 Feb 2023 02:31:36 GMT  
 		Size: 266.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d157e1d8f91556a2bd37a9a9f2106754b3dea2c1f1b28f1c9ec852789f3a58b1`  
-		Last Modified: Wed, 15 Feb 2023 02:32:13 GMT  
-		Size: 1.0 MB (1028775 bytes)  
+	-	`sha256:31a362e7e54fbe0159af27e04b42872b38dee28c3aaf5c4a158ebf8dfda54d7c`  
+		Last Modified: Wed, 15 Feb 2023 19:22:30 GMT  
+		Size: 1.0 MB (1028837 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:409881f701237be146fe7715dbed7cd48fb9faba3fe5f395a0f7983b8a5cfc04`  
-		Last Modified: Wed, 15 Feb 2023 02:32:12 GMT  
-		Size: 417.0 B  
+	-	`sha256:93985d5cb3f102e47104604664704ac871dbc5daf0c94dbbdf16b588c5881a89`  
+		Last Modified: Wed, 15 Feb 2023 19:22:30 GMT  
+		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a7c520f90669b00d296f608e389770da17e35641a4a2211f0b9325039c0994ef`  
-		Last Modified: Wed, 15 Feb 2023 02:32:12 GMT  
+	-	`sha256:8e27af075c76eaedb96718ec121002b6e61d81a2195f3e625e199a60ba10a5ef`  
+		Last Modified: Wed, 15 Feb 2023 19:22:29 GMT  
 		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:lts` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:3af4e87882057b7783c9a2fb473b3f16106fd0717e6dd2ea854212cd56026539
+$ docker pull composer@sha256:b7348898cf2e8f37eeb2ebcf2fb71c09cc9be4d85b2d3bccd5dd569e9a3f5f91
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.9 MB (62926917 bytes)**  
+-	Total Size: **62.9 MB (62926930 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:00e841af60cfe8f26090238693cf6a3ad4fc304e54a77a05938efa060bca9df3`
+-	Image ID: `sha256:4c3c959eeee584f96d1cfab75d0d4e0a44b543e5718b756a1c45371ec991f0c0`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -10757,21 +12137,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Tue, 14 Feb 2023 21:38:04 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Tue, 14 Feb 2023 21:40:26 GMT
+# Wed, 15 Feb 2023 19:50:46 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Tue, 14 Feb 2023 21:40:26 GMT
+# Wed, 15 Feb 2023 19:50:46 GMT
 ENV COMPOSER_HOME=/tmp
-# Tue, 14 Feb 2023 21:40:26 GMT
-ENV COMPOSER_VERSION=2.2.20
-# Tue, 14 Feb 2023 21:40:26 GMT
+# Wed, 15 Feb 2023 19:50:46 GMT
+ENV COMPOSER_VERSION=2.2.21
+# Wed, 15 Feb 2023 19:50:46 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Tue, 14 Feb 2023 21:40:26 GMT
+# Wed, 15 Feb 2023 19:50:46 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Tue, 14 Feb 2023 21:40:26 GMT
+# Wed, 15 Feb 2023 19:50:46 GMT
 WORKDIR /app
-# Tue, 14 Feb 2023 21:40:26 GMT
+# Wed, 15 Feb 2023 19:50:46 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 Feb 2023 21:40:26 GMT
+# Wed, 15 Feb 2023 19:50:46 GMT
 CMD ["composer"]
 ```
 
@@ -10820,29 +12200,29 @@ CMD ["composer"]
 		Last Modified: Tue, 14 Feb 2023 21:41:51 GMT  
 		Size: 267.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b2fbe7158d0d5bd77766ee4c4550b6db8fa59895e05bca74630bbd1b7fbe501`  
-		Last Modified: Tue, 14 Feb 2023 21:42:38 GMT  
-		Size: 1.0 MB (1028195 bytes)  
+	-	`sha256:9580cbdeebcde6445431c5226865d64186dfafb941590779bc094d8b431010cd`  
+		Last Modified: Wed, 15 Feb 2023 19:52:02 GMT  
+		Size: 1.0 MB (1028209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1943c3a47cf7cef1d807b60d53538e6f76c81036061ccd33d8c52bf769d2aebe`  
-		Last Modified: Tue, 14 Feb 2023 21:42:37 GMT  
-		Size: 419.0 B  
+	-	`sha256:6a21cb5419f6f9a2fc3af992acf6108f9b52b2081a03122ebd07568ec0282165`  
+		Last Modified: Wed, 15 Feb 2023 19:52:02 GMT  
+		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0573a858b0374dff3f910cd4f13ddd82869d51305ee42c1072fd341287699f4`  
-		Last Modified: Tue, 14 Feb 2023 21:42:38 GMT  
+	-	`sha256:1ea653ce8fddff233854f361e6cbf8474a003852e41301662a2884ceea2658df`  
+		Last Modified: Wed, 15 Feb 2023 19:52:02 GMT  
 		Size: 92.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:lts` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:8f522197ff4194a9a180ff4f07ab4530db5aeb3529ec9e814b87910a795ad17c
+$ docker pull composer@sha256:04dd562f5697e931b8647ae7832a6e924f50cb7079e6a865591278ff85618db6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **64.3 MB (64260554 bytes)**  
+-	Total Size: **64.3 MB (64260578 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:94288f6958a2d19e39a3b550689730f1e18ca848d61d04343186ee956cfc6fde`
+-	Image ID: `sha256:36cb28ef540f9f6c38493179fccf011bd5f63e5dc25cfe8b80a789d4bdbfd092`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -10893,21 +12273,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Wed, 15 Feb 2023 01:40:22 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Wed, 15 Feb 2023 01:42:45 GMT
+# Wed, 15 Feb 2023 20:00:47 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Wed, 15 Feb 2023 01:42:45 GMT
+# Wed, 15 Feb 2023 20:00:47 GMT
 ENV COMPOSER_HOME=/tmp
-# Wed, 15 Feb 2023 01:42:45 GMT
-ENV COMPOSER_VERSION=2.2.20
-# Wed, 15 Feb 2023 01:42:45 GMT
+# Wed, 15 Feb 2023 20:00:47 GMT
+ENV COMPOSER_VERSION=2.2.21
+# Wed, 15 Feb 2023 20:00:47 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Wed, 15 Feb 2023 01:42:45 GMT
+# Wed, 15 Feb 2023 20:00:47 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Wed, 15 Feb 2023 01:42:45 GMT
+# Wed, 15 Feb 2023 20:00:47 GMT
 WORKDIR /app
-# Wed, 15 Feb 2023 01:42:45 GMT
+# Wed, 15 Feb 2023 20:00:47 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 15 Feb 2023 01:42:45 GMT
+# Wed, 15 Feb 2023 20:00:47 GMT
 CMD ["composer"]
 ```
 
@@ -10956,29 +12336,29 @@ CMD ["composer"]
 		Last Modified: Wed, 15 Feb 2023 01:44:41 GMT  
 		Size: 265.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:68f0cedeef477271e42aaccfd82a5728cb1846df35d818ff47e39824ce974d81`  
-		Last Modified: Wed, 15 Feb 2023 01:45:34 GMT  
-		Size: 992.0 KB (991983 bytes)  
+	-	`sha256:99709be50cc569638be1f2a36aaf146321a9f2afcff2c7abfa6acf88102cb13f`  
+		Last Modified: Wed, 15 Feb 2023 20:02:03 GMT  
+		Size: 992.0 KB (992006 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:81cc9a111014fe587abaadf506cfe3805e755a5820381e0d2db083481e83a493`  
-		Last Modified: Wed, 15 Feb 2023 01:45:33 GMT  
-		Size: 417.0 B  
+	-	`sha256:7eaa860e62e61d743659461bfcbf8a8aa3c842502691af0035b51a5cdc2da041`  
+		Last Modified: Wed, 15 Feb 2023 20:02:02 GMT  
+		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:91ede5ae0e6e6f8c27481773d85288029089ce2b3227a480c22d981f6ecac9e9`  
-		Last Modified: Wed, 15 Feb 2023 01:45:33 GMT  
+	-	`sha256:ca94b3246fc35f7ab68d298f1d7f374de3703aab400d49d6e28495d26d209f08`  
+		Last Modified: Wed, 15 Feb 2023 20:02:03 GMT  
 		Size: 92.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:lts` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:26b405bfdb221e7ccca36ba305ab66a92cc379dd1be39bb10e11ebf2fe61b411
+$ docker pull composer@sha256:b341727b67a2aa2a8499623393e4c65dcc5d16a57634f1bf31f9427873cf83a3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.6 MB (69616585 bytes)**  
+-	Total Size: **69.6 MB (69616590 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7b4639ccf847235d1a63501e50dc6bb0efc8c4ef9cba9696d3f65d7a23da420e`
+-	Image ID: `sha256:4b7cd0b317c516a0e9d8cd4d71f183146cb5b6744296d45d362e438c0819c830`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -11029,21 +12409,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Tue, 14 Feb 2023 23:23:09 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Tue, 14 Feb 2023 23:24:38 GMT
+# Wed, 15 Feb 2023 19:40:14 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Tue, 14 Feb 2023 23:24:38 GMT
+# Wed, 15 Feb 2023 19:40:14 GMT
 ENV COMPOSER_HOME=/tmp
-# Tue, 14 Feb 2023 23:24:38 GMT
-ENV COMPOSER_VERSION=2.2.20
-# Tue, 14 Feb 2023 23:24:38 GMT
+# Wed, 15 Feb 2023 19:40:14 GMT
+ENV COMPOSER_VERSION=2.2.21
+# Wed, 15 Feb 2023 19:40:14 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Tue, 14 Feb 2023 23:24:38 GMT
+# Wed, 15 Feb 2023 19:40:14 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Tue, 14 Feb 2023 23:24:38 GMT
+# Wed, 15 Feb 2023 19:40:14 GMT
 WORKDIR /app
-# Tue, 14 Feb 2023 23:24:38 GMT
+# Wed, 15 Feb 2023 19:40:14 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 Feb 2023 23:24:38 GMT
+# Wed, 15 Feb 2023 19:40:14 GMT
 CMD ["composer"]
 ```
 
@@ -11092,17 +12472,17 @@ CMD ["composer"]
 		Last Modified: Tue, 14 Feb 2023 23:25:22 GMT  
 		Size: 265.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b61c1cb46ad15e331e71945aafd255e6734efbf4b01a932571018d4a7031623`  
-		Last Modified: Tue, 14 Feb 2023 23:25:57 GMT  
-		Size: 1.0 MB (1024773 bytes)  
+	-	`sha256:92f9cbf413c0c0c7967e7a12649fae0286c16b78416ee0ceebc56647ff23dfdf`  
+		Last Modified: Wed, 15 Feb 2023 19:40:57 GMT  
+		Size: 1.0 MB (1024777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:255bcde9a5b123d2159cc923e0c9bbad9a4ecafc1209b34f1b87cadda3d8d524`  
-		Last Modified: Tue, 14 Feb 2023 23:25:57 GMT  
+	-	`sha256:8cca0a090e36c7f90c9f3ca68fc5951d22a02a0c8b6c395e3d077b6515bfd2f4`  
+		Last Modified: Wed, 15 Feb 2023 19:40:56 GMT  
 		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:952528339f8489aee9ba4abddb2f9ad62ddb1f2c58b934f515d4ff9b784d9efa`  
-		Last Modified: Tue, 14 Feb 2023 23:25:57 GMT  
-		Size: 125.0 B  
+	-	`sha256:b8e3fea421c9bc62b14cc28a4c4b3791ecc5db3aa95a856f58c75e6550410fbd`  
+		Last Modified: Wed, 15 Feb 2023 19:40:57 GMT  
+		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:lts` - linux; ppc64le
@@ -11244,13 +12624,13 @@ CMD ["composer"]
 ### `composer:lts` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:af24e8570a2f64ea961c305f18a1dd17a6fe231c51e950202b70a9564c5169a4
+$ docker pull composer@sha256:e1d5274a2762a57307563f787429d9bcdea915e54934d8cf7bb91ed4d6775d85
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **68.5 MB (68524260 bytes)**  
+-	Total Size: **68.5 MB (68524276 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5188ee560218b7430a8980b917aaa9d85beb021f44a82cc5c91cfb7f21eb4bac`
+-	Image ID: `sha256:21d9ca83ce72cd4d5b6258b04ffc2026272f1ba1b361421e15871102b4c76d71`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["composer"]`
 
@@ -11301,21 +12681,21 @@ CMD ["php" "-a"]
 RUN set -eux ;   apk add --no-cache --virtual .composer-rundeps     bash     coreutils     git     make     openssh-client     patch     subversion     tini     unzip     zip     $([ "$(apk --print-arch)" != "x86" ] && echo mercurial)     $([ "$(apk --print-arch)" != "armhf" ] && echo p7zip) # buildkit
 # Tue, 14 Feb 2023 22:40:00 GMT
 RUN printf "# composer php cli ini settings\ndate.timezone=UTC\nmemory_limit=-1\n" > $PHP_INI_DIR/php-cli.ini # buildkit
-# Tue, 14 Feb 2023 22:41:41 GMT
+# Wed, 15 Feb 2023 19:42:51 GMT
 ENV COMPOSER_ALLOW_SUPERUSER=1
-# Tue, 14 Feb 2023 22:41:41 GMT
+# Wed, 15 Feb 2023 19:42:51 GMT
 ENV COMPOSER_HOME=/tmp
-# Tue, 14 Feb 2023 22:41:41 GMT
-ENV COMPOSER_VERSION=2.2.20
-# Tue, 14 Feb 2023 22:41:41 GMT
+# Wed, 15 Feb 2023 19:42:51 GMT
+ENV COMPOSER_VERSION=2.2.21
+# Wed, 15 Feb 2023 19:42:51 GMT
 RUN set -eux ;   curl     --silent     --fail     --location     --retry 3     --output /usr/local/bin/install-php-extensions     --url https://github.com/mlocati/docker-php-extension-installer/releases/download/1.2.58/install-php-extensions   ;   echo 182011b3dca5544a70fdeb587af44ed1760aa9a2ed37d787d0f280a99f92b008e638c37762360cd85583830a097665547849cb2293c4a0ee32c2a36ef7a349e2 /usr/local/bin/install-php-extensions | sha512sum --strict --check ;   chmod +x /usr/local/bin/install-php-extensions ;   install-php-extensions     bz2     zip   ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.dev.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/snapshots.pub   ;   echo 572b963c4b7512a7de3c71a788772440b1996d918b1d2b5354bf8ba2bb057fadec6f7ac4852f2f8a8c01ab94c18141ce0422aec3619354b057216e0597db5ac2 /tmp/keys.dev.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/keys.tags.pub     --url https://raw.githubusercontent.com/composer/composer.github.io/e7f28b7200249f8e5bc912b42837d4598c74153a/releases.pub   ;   echo 47f374b8840dcb0aa7b2327f13d24ab5f6ae9e58aa630af0d62b3d0ea114f4a315c5d97b21dcad3c7ffe2f0a95db2edec267adaba3f4f5a262abebe39aed3a28 /tmp/keys.tags.pub | sha512sum --strict --check ;   curl     --silent     --fail     --location     --retry 3     --output /tmp/installer.php     --url https://raw.githubusercontent.com/composer/getcomposer.org/f24b8f860b95b52167f91bbd3e3a7bcafe043038/web/installer   ;   echo 3137ad86bd990524ba1dedc2038309dfa6b63790d3ca52c28afea65dcc2eaead16fb33e9a72fd2a7a8240afaf26e065939a2d472f3b0eeaa575d1e8648f9bf19 /tmp/installer.php | sha512sum --strict --check ;   php /tmp/installer.php     --no-ansi     --install-dir=/usr/bin     --filename=composer     --version=${COMPOSER_VERSION}   ;   composer --ansi --version --no-interaction ;   composer diagnose ;   rm -f /tmp/installer.php ;   find /tmp -type d -exec chmod -v 1777 {} + # buildkit
-# Tue, 14 Feb 2023 22:41:41 GMT
+# Wed, 15 Feb 2023 19:42:52 GMT
 COPY docker-entrypoint.sh /docker-entrypoint.sh # buildkit
-# Tue, 14 Feb 2023 22:41:41 GMT
+# Wed, 15 Feb 2023 19:42:52 GMT
 WORKDIR /app
-# Tue, 14 Feb 2023 22:41:41 GMT
+# Wed, 15 Feb 2023 19:42:52 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 Feb 2023 22:41:41 GMT
+# Wed, 15 Feb 2023 19:42:52 GMT
 CMD ["composer"]
 ```
 
@@ -11364,15 +12744,15 @@ CMD ["composer"]
 		Last Modified: Tue, 14 Feb 2023 22:42:45 GMT  
 		Size: 267.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f488f9842e4841d28b3c122be97012dd2b10bdf47404ea8341b1751689fbe8ba`  
-		Last Modified: Tue, 14 Feb 2023 22:43:14 GMT  
-		Size: 1.0 MB (1035949 bytes)  
+	-	`sha256:fe6e9bffe5383bbb50d92ef5afe94366f4181da1a720089baea6405497c60b07`  
+		Last Modified: Wed, 15 Feb 2023 19:43:49 GMT  
+		Size: 1.0 MB (1035966 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:521fe499ffcad731ce00c50c7fac485cd38bdc912e8a90ebb0911103af945e57`  
-		Last Modified: Tue, 14 Feb 2023 22:43:13 GMT  
-		Size: 419.0 B  
+	-	`sha256:151c3637dd46321c76ceebc63e3421982a4052dc6b72ed66066c9e423229639d`  
+		Last Modified: Wed, 15 Feb 2023 19:43:49 GMT  
+		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84f443adccfb8b2ec99d4a160b073e4d24d32d6eb230f9b1e133a5c98fd755d3`  
-		Last Modified: Tue, 14 Feb 2023 22:43:13 GMT  
+	-	`sha256:eacc0d5291ba98b0f339bca7e33d08bb9ed32406bc235c58ae4dafdc3a8524d5`  
+		Last Modified: Wed, 15 Feb 2023 19:43:49 GMT  
 		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
