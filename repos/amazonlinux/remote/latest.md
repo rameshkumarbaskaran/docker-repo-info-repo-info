@@ -1,7 +1,7 @@
 ## `amazonlinux:latest`
 
 ```console
-$ docker pull amazonlinux@sha256:e7447f16f6f225875647ae10516456238147ccd1574a52f53f7657af5f5508ce
+$ docker pull amazonlinux@sha256:1bed949a5cbe3aa92107828d42f08f33dd2c1f1c46178831b3face787853f628
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,27 +12,27 @@ $ docker pull amazonlinux@sha256:e7447f16f6f225875647ae10516456238147ccd1574a52f
 ### `amazonlinux:latest` - linux; amd64
 
 ```console
-$ docker pull amazonlinux@sha256:db0bf55c548efbbb167c60ced2eb0ca60769de293667d18b92c0c089b8038279
+$ docker pull amazonlinux@sha256:ea15c2f28f8059473d48fb5c3069ebff7534e729845d605edcc2ebe2df85ba84
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.3 MB (62341068 bytes)**  
+-	Total Size: **62.4 MB (62386320 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:92310fbb9f4cb6ae7cbbfc7fdb22d61f35279bd4ceae30d7cf7dcddb9e5b2e41`
+-	Image ID: `sha256:51864d78b86c87b7c81f185ba2b050e79b5108fe7d5e3b5e78eeab383d224ec8`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 26 Jan 2023 22:20:04 GMT
-ADD file:6ebab25a4f1aa82238dbf1a48f38d22c6421052d0d158cf88cbc1a4d01b5c5c1 in / 
-# Thu, 26 Jan 2023 22:20:04 GMT
+# Thu, 16 Feb 2023 21:20:09 GMT
+ADD file:29cd40b7c56d98385ece53bcbadfefd25bc70ccf0326777986ef6a5720bdfe83 in / 
+# Thu, 16 Feb 2023 21:20:10 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:1e78b99dd1fd1031c6513834c4b5f594fa3cec5d06cdeb4b65ee104180bc0d4c`  
-		Last Modified: Thu, 26 Jan 2023 20:44:53 GMT  
-		Size: 62.3 MB (62341068 bytes)  
+	-	`sha256:d78505e615251c4f4af6eaa9507b67917d263d23551dcc5a1eed3c012d32a54d`  
+		Last Modified: Wed, 15 Feb 2023 00:09:42 GMT  
+		Size: 62.4 MB (62386320 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `amazonlinux:latest` - linux; arm64 variant v8
