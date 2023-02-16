@@ -1,63 +1,65 @@
 ## `caddy:2-builder-windowsservercore-1809`
 
 ```console
-$ docker pull caddy@sha256:e4b4bb126038410035c8c6962d643dbf73d0b1d8ee3108c4f005238402a9a0d1
+$ docker pull caddy@sha256:687ff9a9e85091470e7d84be08a4e96d119290226bfcd464502138db4b9f1542
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms: 1
-	-	windows version 10.0.17763.3887; amd64
+	-	windows version 10.0.17763.4010; amd64
 
-### `caddy:2-builder-windowsservercore-1809` - windows version 10.0.17763.3887; amd64
+### `caddy:2-builder-windowsservercore-1809` - windows version 10.0.17763.4010; amd64
 
 ```console
-$ docker pull caddy@sha256:bff20886c4e50c2ff56c65ce2b8b2f6f861b63544087ebc9828b8283abf3e9ea
+$ docker pull caddy@sha256:698c8dda106fb34e783e5030fd3ea5166df618f08c2a01204a7a82aabf6b20c9
 ```
 
 -	Docker Version: 20.10.21
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 GB (1893205034 bytes)**  
+-	Total Size: **2.1 GB (2148348831 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9666c08cd03c61fe14a234d3f8760533430f35e891dccd0f5540cb34fd9834a4`
+-	Image ID: `sha256:9cee813843af987f6985470a05839367529db056040844b778343ebd71743f6a`
 -	Default Command: `["c:\\windows\\system32\\cmd.exe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
 
 ```dockerfile
 # Sat, 07 Jan 2023 05:37:58 GMT
 RUN Apply image 10.0.17763.3887
-# Thu, 12 Jan 2023 01:43:02 GMT
+# Tue, 07 Feb 2023 10:44:53 GMT
+RUN Install update 10.0.17763.4010
+# Wed, 15 Feb 2023 22:41:28 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
-# Thu, 12 Jan 2023 03:01:55 GMT
+# Wed, 15 Feb 2023 23:47:41 GMT
 ENV GIT_VERSION=2.23.0
-# Thu, 12 Jan 2023 03:01:56 GMT
+# Wed, 15 Feb 2023 23:47:42 GMT
 ENV GIT_TAG=v2.23.0.windows.1
-# Thu, 12 Jan 2023 03:01:57 GMT
+# Wed, 15 Feb 2023 23:47:43 GMT
 ENV GIT_DOWNLOAD_URL=https://github.com/git-for-windows/git/releases/download/v2.23.0.windows.1/MinGit-2.23.0-64-bit.zip
-# Thu, 12 Jan 2023 03:01:58 GMT
+# Wed, 15 Feb 2023 23:47:44 GMT
 ENV GIT_DOWNLOAD_SHA256=8f65208f92c0b4c3ae4c0cf02d4b5f6791d539cd1a07b2df62b7116467724735
-# Thu, 12 Jan 2023 03:02:59 GMT
+# Wed, 15 Feb 2023 23:50:18 GMT
 RUN Write-Host ('Downloading {0} ...' -f $env:GIT_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $env:GIT_DOWNLOAD_URL -OutFile 'git.zip'; 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:GIT_DOWNLOAD_SHA256); 	if ((Get-FileHash git.zip -Algorithm sha256).Hash -ne $env:GIT_DOWNLOAD_SHA256) { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	Expand-Archive -Path git.zip -DestinationPath C:\git\.; 		Write-Host 'Removing ...'; 	Remove-Item git.zip -Force; 		Write-Host 'Updating PATH ...'; 	$env:PATH = 'C:\git\cmd;C:\git\mingw64\bin;C:\git\usr\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ("git version") ...'; 	git version; 		Write-Host 'Complete.';
-# Thu, 12 Jan 2023 03:03:01 GMT
+# Wed, 15 Feb 2023 23:50:19 GMT
 ENV GOPATH=C:\go
-# Thu, 12 Jan 2023 03:03:35 GMT
+# Wed, 15 Feb 2023 23:51:42 GMT
 RUN $newPath = ('{0}\bin;C:\Program Files\Go\bin;{1}' -f $env:GOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 14 Feb 2023 20:35:10 GMT
+# Thu, 16 Feb 2023 00:11:44 GMT
 ENV GOLANG_VERSION=1.19.6
-# Tue, 14 Feb 2023 20:39:32 GMT
+# Thu, 16 Feb 2023 00:17:12 GMT
 RUN $url = 'https://dl.google.com/go/go1.19.6.windows-amd64.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'go.zip'; 		$sha256 = '8d84af29e46c38b1eec77f9310310517c9e394ac7489e1c7329a94b443b0388d'; 	Write-Host ('Verifying sha256 ({0}) ...' -f $sha256); 	if ((Get-FileHash go.zip -Algorithm sha256).Hash -ne $sha256) { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	Expand-Archive go.zip -DestinationPath C:\; 		Write-Host 'Moving ...'; 	Move-Item -Path C:\go -Destination 'C:\Program Files\Go'; 		Write-Host 'Removing ...'; 	Remove-Item go.zip -Force; 		Write-Host 'Verifying install ("go version") ...'; 	go version; 		Write-Host 'Complete.';
-# Tue, 14 Feb 2023 20:39:34 GMT
+# Thu, 16 Feb 2023 00:17:13 GMT
 WORKDIR C:\go
-# Tue, 14 Feb 2023 21:16:09 GMT
+# Thu, 16 Feb 2023 02:48:15 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
-# Tue, 14 Feb 2023 21:16:10 GMT
+# Thu, 16 Feb 2023 02:48:16 GMT
 ENV XCADDY_VERSION=v0.3.2
-# Wed, 15 Feb 2023 19:20:04 GMT
+# Thu, 16 Feb 2023 02:48:17 GMT
 ENV CADDY_VERSION=v2.6.4
-# Wed, 15 Feb 2023 19:20:05 GMT
+# Thu, 16 Feb 2023 02:48:18 GMT
 ENV XCADDY_SKIP_CLEANUP=1
-# Wed, 15 Feb 2023 19:20:38 GMT
+# Thu, 16 Feb 2023 02:49:36 GMT
 RUN [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;     Invoke-WebRequest         -Uri "https://github.com/caddyserver/xcaddy/releases/download/v0.3.2/xcaddy_0.3.2_windows_amd64.zip"         -OutFile "/xcaddy.zip";     if (!(Get-FileHash -Path /xcaddy.zip -Algorithm SHA512).Hash.ToLower().Equals('8de1cb65e555e8d7f1124d384904cd53a37d1914106af6ec1cef92f1975bd66b5a1f0e066c2c6b68c85d67de54d52f170f539dff117ce97f4166d8e984a728ba')) { exit 1; };     Expand-Archive -Path "/xcaddy.zip" -DestinationPath "/" -Force;     Remove-Item "/xcaddy.zip" -Force
-# Wed, 15 Feb 2023 19:20:39 GMT
+# Thu, 16 Feb 2023 02:49:37 GMT
 WORKDIR C:\
 ```
 
@@ -66,71 +68,75 @@ WORKDIR C:\
 		Last Modified: Thu, 12 Jan 2023 02:40:02 GMT  
 		Size: 1.7 GB (1707943932 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:691d210e0841eeceff800f3b441be6db4bc689728f1bb771ce88f839d06f57d0`  
-		Last Modified: Thu, 12 Jan 2023 02:34:04 GMT  
-		Size: 1.4 KB (1433 bytes)  
+	-	`sha256:8f77c707e813c8220ab3c92b6eb7b445ee0b1a485686ff62014ae32c17d2b1b6`  
+		Last Modified: Thu, 16 Feb 2023 00:29:31 GMT  
+		Size: 255.0 MB (255014079 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:203425975bec1802428fad91a2e5f01172b161062c12eddf729e548bf7e134e0`  
-		Last Modified: Thu, 12 Jan 2023 03:48:09 GMT  
-		Size: 1.3 KB (1322 bytes)  
+	-	`sha256:4a5753d4956d637f7e88bedf0b91260e724500d9fa9b91c0a9ed419263659a9a`  
+		Last Modified: Thu, 16 Feb 2023 00:28:25 GMT  
+		Size: 1.3 KB (1316 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b80e42e19ab862b4adea06f1995e1f5cbb2c11ad8d68ae4a7bb5d0da5d0e6f38`  
-		Last Modified: Thu, 12 Jan 2023 03:48:06 GMT  
-		Size: 1.4 KB (1366 bytes)  
+	-	`sha256:f03ac75ee62e05ad7b8b8f97fb78a769177c49d210eedcf0a93035e9a07d0ff2`  
+		Last Modified: Thu, 16 Feb 2023 00:28:24 GMT  
+		Size: 1.4 KB (1429 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8be5d5df8cec6d1386f78a342668c3d2cb809372865459c1b35aa8d5a39a463b`  
-		Last Modified: Thu, 12 Jan 2023 03:48:06 GMT  
-		Size: 1.3 KB (1291 bytes)  
+	-	`sha256:4beb360c9024340aa5072ce67eab6b3cb005293938525c4f3b77c3bb03f9f501`  
+		Last Modified: Thu, 16 Feb 2023 00:28:19 GMT  
+		Size: 1.4 KB (1429 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e467d553c4972b55bf8e3d80b16f245e5bb38f28d80b91ca4f9f90c09a6c28d`  
-		Last Modified: Thu, 12 Jan 2023 03:48:05 GMT  
-		Size: 1.3 KB (1287 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a97054b77b205167acd5a303c8aa82e380f090ff4e2ded81d3425ec78500139d`  
-		Last Modified: Thu, 12 Jan 2023 03:48:14 GMT  
-		Size: 25.5 MB (25470784 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e150d9e1a1da09e17313cb3b6358d2f16cf2919c51e9addf30500de9d03292ef`  
-		Last Modified: Thu, 12 Jan 2023 03:48:03 GMT  
-		Size: 1.3 KB (1286 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35c0d792e2a7942826a61fdc26b6081ab404122751ff4f4dd8f5b8b0eca21399`  
-		Last Modified: Thu, 12 Jan 2023 03:48:03 GMT  
-		Size: 324.5 KB (324466 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd89ac843c0479ae40ca8c747e8a676229754549dbfeb9fe7157fdf1a60e685f`  
-		Last Modified: Tue, 14 Feb 2023 20:56:05 GMT  
-		Size: 1.4 KB (1438 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0892c7d4de38540a99ca06e09c0a995b2e119c5ae853eadc2f7558f69bf44bb1`  
-		Last Modified: Tue, 14 Feb 2023 20:56:57 GMT  
-		Size: 157.8 MB (157805981 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5b2ec2bef689e3f934369ec3ebb90a5b06c0cbd77b2364e23a776b4da7a68f5`  
-		Last Modified: Tue, 14 Feb 2023 20:56:05 GMT  
-		Size: 1.6 KB (1581 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:066daab446064e42a798fe1592cbb9befd18dc7c368cc287f403168c17647f44`  
-		Last Modified: Tue, 14 Feb 2023 21:18:46 GMT  
-		Size: 1.4 KB (1387 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:42ea7fb211a6a6bdf1db9842354942dfaf3dc66bb87b9ce2b1620b897655022d`  
-		Last Modified: Tue, 14 Feb 2023 21:18:44 GMT  
-		Size: 1.4 KB (1417 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7e1a9f71a17b653aeea9897c2da8205709b77073460fc648f6daa323ffffee8d`  
-		Last Modified: Wed, 15 Feb 2023 20:17:52 GMT  
-		Size: 1.4 KB (1414 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:53678f100709f21522f2dd0732c10bbb5a70107fa9a4fcdd4895786c68d0bb27`  
-		Last Modified: Wed, 15 Feb 2023 20:17:52 GMT  
+	-	`sha256:5051ce7a895da09ac63e7ca01ef4e30434d833dbd271107d6f96375f291752ad`  
+		Last Modified: Thu, 16 Feb 2023 00:28:19 GMT  
 		Size: 1.4 KB (1394 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a973e4e836b19e1ccb3104f7458b2ed9a0aee58d697b6b7a8f7b8800265560f4`  
-		Last Modified: Wed, 15 Feb 2023 20:17:53 GMT  
-		Size: 1.6 MB (1641852 bytes)  
+	-	`sha256:ea419e1594fbbef3584b4731c356499c7b8a5616af16968e6fd693eccd92012b`  
+		Last Modified: Thu, 16 Feb 2023 00:28:19 GMT  
+		Size: 1.4 KB (1356 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f9b2ad53ca032d7a1d8ef1944923a40be2d6c2fbd4945695a1d7cf5ea708613`  
-		Last Modified: Wed, 15 Feb 2023 20:17:52 GMT  
-		Size: 1.4 KB (1403 bytes)  
+	-	`sha256:cdb97c6a047d2cfcb6f0ef6846e78c4d5f60212639a9d1892e2af05033c217df`  
+		Last Modified: Thu, 16 Feb 2023 00:28:30 GMT  
+		Size: 25.6 MB (25606151 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:941d25224d4bab25ba0b2304a5811b0fc2970ba6385afdbefbfec898720c3beb`  
+		Last Modified: Thu, 16 Feb 2023 00:28:17 GMT  
+		Size: 1.4 KB (1427 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9fa161895f771062e6d8e8aa2e0e44c15c5affdacc8d409f6e70f1fa743a9bb1`  
+		Last Modified: Thu, 16 Feb 2023 00:28:17 GMT  
+		Size: 335.6 KB (335550 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:43bd14ed3be87ab223f1391d40c3cdcfcee876586e89fbeed2aeccb318734a22`  
+		Last Modified: Thu, 16 Feb 2023 00:32:40 GMT  
+		Size: 1.4 KB (1376 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:bddec1d087c619cf7156e3dba04dd6a73e704d66c60e3fbc4b32c73b4401471b`  
+		Last Modified: Thu, 16 Feb 2023 00:33:24 GMT  
+		Size: 157.8 MB (157798436 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:50612066f9b2d86b5cecd95ce6897d89929be6a819c3de13dd9ecc32948832cb`  
+		Last Modified: Thu, 16 Feb 2023 00:32:40 GMT  
+		Size: 1.5 KB (1544 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d3bbcb2df900a9ead208e08eefd6faa32bbd6c5a189212d97b94eec1e5807a24`  
+		Last Modified: Thu, 16 Feb 2023 02:51:49 GMT  
+		Size: 1.3 KB (1297 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b3b5e7db448c55e5e60ab1aefceb414700fb99de06cc1c047404e32031064e0c`  
+		Last Modified: Thu, 16 Feb 2023 02:51:47 GMT  
+		Size: 1.3 KB (1309 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a7af0982eb604918cfaece327a35d278b59d5f2ca440882b5e7d402e7cce80f6`  
+		Last Modified: Thu, 16 Feb 2023 02:51:47 GMT  
+		Size: 1.4 KB (1438 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3ad49ef8883b47edaa38ca21b422551a4da50f675370fc1596432938cd7de4d2`  
+		Last Modified: Thu, 16 Feb 2023 02:51:47 GMT  
+		Size: 1.3 KB (1310 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ce066417e925c257e21d7126cbbdcf5316022725a7ef7a89575b86fd534d133f`  
+		Last Modified: Thu, 16 Feb 2023 02:51:47 GMT  
+		Size: 1.6 MB (1632671 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cbbe58e4b6c6b7d8f16c2682325b6df5f61050915e6af7829adab49c1914e5c9`  
+		Last Modified: Thu, 16 Feb 2023 02:51:47 GMT  
+		Size: 1.4 KB (1387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
