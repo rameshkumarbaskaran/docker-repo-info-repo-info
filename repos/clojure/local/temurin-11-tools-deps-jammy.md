@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:dcf74daf737116555b74a8be6b4afe4b63773d1c5704d9ebe315223f23832058`
-- Created: `2023-02-01T03:17:19.510404807Z`
+- Image ID: `sha256:29d928e994231f9836286f7b007c29cf801f2a93d29c9d9ca088cf870b57a172`
+- Created: `2023-02-13T21:25:24.773384951Z`
 - Virtual Size: ~ 571.93 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -15,7 +15,7 @@
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
   - `JAVA_VERSION=jdk-11.0.18+10`
-  - `CLOJURE_VERSION=1.11.1.1208`
+  - `CLOJURE_VERSION=1.11.1.1224`
 - Labels:
   - `org.opencontainers.image.ref.name=ubuntu`
   - `org.opencontainers.image.version=22.04`
@@ -689,14 +689,9 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.34.1-1ubuntu1.6
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.34.1-1ubuntu1.6.dsc' git_2.34.1-1ubuntu1.6.dsc 2927 SHA512:2eaeb128f1932f5092ba1e350a1caaa06e7dd3339db1914a79488217a3e3261f7f0d8ed18bc2bacd3a0ef7bfb46124d61dab3e6b473d5b6c627b1b67ff8b29b5
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.34.1.orig.tar.xz' git_2.34.1.orig.tar.xz 6623760 SHA512:a1a8e9e6f64b1da25508fbd2f783564dcdbe181fb5ff1ebab3bdac6db6094e18acc334479a1abf22ac17ce4f733cc3e10a664db9ab234cd523735a3f027b42db
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.34.1-1ubuntu1.6.debian.tar.xz' git_2.34.1-1ubuntu1.6.debian.tar.xz 747252 SHA512:40e0bb3c9bda2809d49db789d3cea8a4d3602cc1176145ade3130869f24f833cd32eb8c509f9136370583a60d33eae397bbe5a7f82424ddf58b14a708c20736e
-```
 
 ### `dpkg` source package: `glibc=2.35-0ubuntu3.1`
 
@@ -934,11 +929,11 @@ $ apt-get source -qq --print-uris krb5=1.19.2-2ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.19.2-2ubuntu0.1.debian.tar.xz' krb5_1.19.2-2ubuntu0.1.debian.tar.xz 108128 SHA512:8d5e8eaf772e624d4cec35d96d76ec385a01653b0f0e271b5c0a8ca80e4f6ab9543d5d11736001966f6596c02210024b32ee2e7fa5a398db074762cf8ba08df1
 ```
 
-### `dpkg` source package: `less=590-1build1`
+### `dpkg` source package: `less=590-1ubuntu0.22.04.1`
 
 Binary Packages:
 
-- `less=590-1build1`
+- `less=590-1ubuntu0.22.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/less/copyright`)
 
@@ -947,10 +942,10 @@ Licenses: (parsed from: `/usr/share/doc/less/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris less=590-1build1
-'http://archive.ubuntu.com/ubuntu/pool/main/l/less/less_590-1build1.dsc' less_590-1build1.dsc 1913 SHA512:8f570f373b28541b806594ec94256c11f4aa74f5de80a097c90df2601e1ac431655af6b8b6aa05fb939d73e424812347982cbc2b5ef0610fd51c5987450f7061
+$ apt-get source -qq --print-uris less=590-1ubuntu0.22.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/l/less/less_590-1ubuntu0.22.04.1.dsc' less_590-1ubuntu0.22.04.1.dsc 1782 SHA512:14c13006db02e5055e0936907cb0f77c5bd81645f8ea27accc798085b98bc9605bc14b0e35622fd0f7d18aefda2f3ac30d74173f8f85bf5cee2cefa10ffb76a4
 'http://archive.ubuntu.com/ubuntu/pool/main/l/less/less_590.orig.tar.gz' less_590.orig.tar.gz 352574 SHA512:426fa5840fd43c17bd5a452ad35ad24f2d6684623c6914403fd0059af62266bf2138e6828c7d73a1cef26a736c0d2b8ed4ab180eea8297281dae79a4228eb903
-'http://archive.ubuntu.com/ubuntu/pool/main/l/less/less_590-1build1.debian.tar.xz' less_590-1build1.debian.tar.xz 19136 SHA512:05ce2187c1375bc54827e60c1085de80fdb78506d0732e1430df508256354ad994ddc9cbf182c942d1db2ceeb811ba59d25198b4ec1619e38056b0e570114c5d
+'http://archive.ubuntu.com/ubuntu/pool/main/l/less/less_590-1ubuntu0.22.04.1.debian.tar.xz' less_590-1ubuntu0.22.04.1.debian.tar.xz 19596 SHA512:5705bec012a65f0c21e85a6195248513a0d7c152c455bfcfbc71590270e0e01671af0fbfd4c55323175a98d8a2a7b12c2fa254cd85efbabce6b92370d789b348
 ```
 
 ### `dpkg` source package: `libbsd=0.11.5-1`

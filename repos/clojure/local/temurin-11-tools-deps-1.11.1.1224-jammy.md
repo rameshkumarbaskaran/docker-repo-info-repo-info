@@ -1,22 +1,21 @@
-# `clojure:temurin-19-jammy`
+# `clojure:temurin-11-jammy`
 
 ## Docker Metadata
 
-- Image ID: `sha256:8a2df03d58f9d9d3a0c09d23899c4ac42c411bf380b2997f81f3a5a8b787a207`
-- Created: `2023-02-01T03:25:22.363831071Z`
-- Virtual Size: ~ 596.98 Mb  
+- Image ID: `sha256:29d928e994231f9836286f7b007c29cf801f2a93d29c9d9ca088cf870b57a172`
+- Created: `2023-02-13T21:25:24.773384951Z`
+- Virtual Size: ~ 571.93 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Entrypoint: `["entrypoint"]`
-- Command: `["-M","--repl"]`
+- Command: `["clj"]`
 - Environment:
   - `PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/opt/java/openjdk`
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-19.0.2+7`
-  - `CLOJURE_VERSION=1.11.1.1208`
+  - `JAVA_VERSION=jdk-11.0.18+10`
+  - `CLOJURE_VERSION=1.11.1.1224`
 - Labels:
   - `org.opencontainers.image.ref.name=ubuntu`
   - `org.opencontainers.image.version=22.04`
@@ -183,32 +182,6 @@ $ apt-get source -qq --print-uris bash=5.1-6ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.1-6ubuntu1.dsc' bash_5.1-6ubuntu1.dsc 2426 SHA512:9c808b5b8a281e01c5a4a503eca84fca8b21a2153dc4e7abbedda21346ae4005c806ffe7afd689b7ff66af8d431b9b4bebf2f1324745c01ed5f3ee219a515a88
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.1.orig.tar.xz' bash_5.1.orig.tar.xz 5802740 SHA512:95d3acc542231cb893e1347c7d9dd66687f68cd347a0e9e126fde2d14e68c5b5530d1a5866eafa781e88aa013fcf72b4ad56d2e484c2ac7a69bd90bb149a9b86
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.1-6ubuntu1.debian.tar.xz' bash_5.1-6ubuntu1.debian.tar.xz 99652 SHA512:da77655882d0977656b75c750589307c54c7d5dd28b1cfc357d4a474ebf26399a91cfa19c4ba381e0a59a8f115f8381d432e82f2e659cb9bcbebf3fa0cd77bc1
-```
-
-### `dpkg` source package: `binutils=2.38-4ubuntu2.1`
-
-Binary Packages:
-
-- `binutils=2.38-4ubuntu2.1`
-- `binutils-common:amd64=2.38-4ubuntu2.1`
-- `binutils-x86-64-linux-gnu=2.38-4ubuntu2.1`
-- `libbinutils:amd64=2.38-4ubuntu2.1`
-- `libctf-nobfd0:amd64=2.38-4ubuntu2.1`
-- `libctf0:amd64=2.38-4ubuntu2.1`
-
-Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/binutils-common/copyright`, `/usr/share/doc/binutils-x86-64-linux-gnu/copyright`, `/usr/share/doc/libbinutils/copyright`, `/usr/share/doc/libctf-nobfd0/copyright`, `/usr/share/doc/libctf0/copyright`)
-
-- `GFDL`
-- `GPL`
-- `LGPL`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris binutils=2.38-4ubuntu2.1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.38-4ubuntu2.1.dsc' binutils_2.38-4ubuntu2.1.dsc 8861 SHA512:fe634cc317cc0773d21e482750877a1561d4783dffd0f1ddca5b4409fee6409cbbd8e22fbc373b6582381f9d7f50a3cb48913707390165e91b0611db10cd84cd
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.38.orig.tar.xz' binutils_2.38.orig.tar.xz 23651408 SHA512:8bf0b0d193c9c010e0518ee2b2e5a830898af206510992483b427477ed178396cd210235e85fd7bd99a96fc6d5eedbeccbd48317a10f752b7336ada8b2bb826d
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.38-4ubuntu2.1.debian.tar.xz' binutils_2.38-4ubuntu2.1.debian.tar.xz 289140 SHA512:7e92fadaad3ed3483e8765668f285f9fd60492caf96c1092d5fe3b91d83984d66d3188b35486cf6a6168e70a3ecd545fb5fa4c0cbf9568e032c73fe489c57982
 ```
 
 ### `dpkg` source package: `brotli=1.0.9-2build6`
@@ -716,14 +689,9 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.34.1-1ubuntu1.6
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.34.1-1ubuntu1.6.dsc' git_2.34.1-1ubuntu1.6.dsc 2927 SHA512:2eaeb128f1932f5092ba1e350a1caaa06e7dd3339db1914a79488217a3e3261f7f0d8ed18bc2bacd3a0ef7bfb46124d61dab3e6b473d5b6c627b1b67ff8b29b5
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.34.1.orig.tar.xz' git_2.34.1.orig.tar.xz 6623760 SHA512:a1a8e9e6f64b1da25508fbd2f783564dcdbe181fb5ff1ebab3bdac6db6094e18acc334479a1abf22ac17ce4f733cc3e10a664db9ab234cd523735a3f027b42db
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.34.1-1ubuntu1.6.debian.tar.xz' git_2.34.1-1ubuntu1.6.debian.tar.xz 747252 SHA512:40e0bb3c9bda2809d49db789d3cea8a4d3602cc1176145ade3130869f24f833cd32eb8c509f9136370583a60d33eae397bbe5a7f82424ddf58b14a708c20736e
-```
 
 ### `dpkg` source package: `glibc=2.35-0ubuntu3.1`
 
@@ -961,11 +929,11 @@ $ apt-get source -qq --print-uris krb5=1.19.2-2ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.19.2-2ubuntu0.1.debian.tar.xz' krb5_1.19.2-2ubuntu0.1.debian.tar.xz 108128 SHA512:8d5e8eaf772e624d4cec35d96d76ec385a01653b0f0e271b5c0a8ca80e4f6ab9543d5d11736001966f6596c02210024b32ee2e7fa5a398db074762cf8ba08df1
 ```
 
-### `dpkg` source package: `less=590-1build1`
+### `dpkg` source package: `less=590-1ubuntu0.22.04.1`
 
 Binary Packages:
 
-- `less=590-1build1`
+- `less=590-1ubuntu0.22.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/less/copyright`)
 
@@ -974,10 +942,10 @@ Licenses: (parsed from: `/usr/share/doc/less/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris less=590-1build1
-'http://archive.ubuntu.com/ubuntu/pool/main/l/less/less_590-1build1.dsc' less_590-1build1.dsc 1913 SHA512:8f570f373b28541b806594ec94256c11f4aa74f5de80a097c90df2601e1ac431655af6b8b6aa05fb939d73e424812347982cbc2b5ef0610fd51c5987450f7061
+$ apt-get source -qq --print-uris less=590-1ubuntu0.22.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/l/less/less_590-1ubuntu0.22.04.1.dsc' less_590-1ubuntu0.22.04.1.dsc 1782 SHA512:14c13006db02e5055e0936907cb0f77c5bd81645f8ea27accc798085b98bc9605bc14b0e35622fd0f7d18aefda2f3ac30d74173f8f85bf5cee2cefa10ffb76a4
 'http://archive.ubuntu.com/ubuntu/pool/main/l/less/less_590.orig.tar.gz' less_590.orig.tar.gz 352574 SHA512:426fa5840fd43c17bd5a452ad35ad24f2d6684623c6914403fd0059af62266bf2138e6828c7d73a1cef26a736c0d2b8ed4ab180eea8297281dae79a4228eb903
-'http://archive.ubuntu.com/ubuntu/pool/main/l/less/less_590-1build1.debian.tar.xz' less_590-1build1.debian.tar.xz 19136 SHA512:05ce2187c1375bc54827e60c1085de80fdb78506d0732e1430df508256354ad994ddc9cbf182c942d1db2ceeb811ba59d25198b4ec1619e38056b0e570114c5d
+'http://archive.ubuntu.com/ubuntu/pool/main/l/less/less_590-1ubuntu0.22.04.1.debian.tar.xz' less_590-1ubuntu0.22.04.1.debian.tar.xz 19596 SHA512:5705bec012a65f0c21e85a6195248513a0d7c152c455bfcfbc71590270e0e01671af0fbfd4c55323175a98d8a2a7b12c2fa254cd85efbabce6b92370d789b348
 ```
 
 ### `dpkg` source package: `libbsd=0.11.5-1`

@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:cd724230d751d4e6f49f64ce1707de50502741710dbed3b13bf2ff081fd63302`
-- Created: `2023-02-01T23:19:47.965140598Z`
+- Image ID: `sha256:370b003b860cfec7b0636df583df00f6ac8c923b99d52eb374a42539b9203fcc`
+- Created: `2023-02-13T21:27:05.615434437Z`
 - Virtual Size: ~ 604.06 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -16,7 +16,7 @@
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
   - `JAVA_VERSION=jdk-17.0.6+10`
-  - `CLOJURE_VERSION=1.11.1.1208`
+  - `CLOJURE_VERSION=1.11.1.1224`
 - Labels:
   - `org.opencontainers.image.ref.name=ubuntu`
   - `org.opencontainers.image.version=20.04`
@@ -723,14 +723,9 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.25.1-1ubuntu3.8
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1-1ubuntu3.8.dsc' git_2.25.1-1ubuntu3.8.dsc 2962 SHA512:9de11f42828c52fc6ac10f1feba306b8b21fd5ae320f9a0c6119b08e2bce1ddd6973e26eec9067d8375d8c1c2d5dfd291189a2394a552e0dc9094f69af9b70c5
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1.orig.tar.xz' git_2.25.1.orig.tar.xz 5875548 SHA512:15241143acfd8542d85d2709ac3c80dbd6e8d5234438f70c4f33cc71a2bdec3e32938df7f6351e2746d570b021d3bd0b70474ea4beec0c51d1fc45f9c287b344
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1-1ubuntu3.8.debian.tar.xz' git_2.25.1-1ubuntu3.8.debian.tar.xz 697772 SHA512:089e5eee0f8be77d52725f1862ebe964f45c527b9a392ef67141a75cd79bd802665c30f87a9d4bfdb78e9710d55d970d9036dfdc26990b15b056286530c4a6fe
-```
 
 ### `dpkg` source package: `glibc=2.31-0ubuntu9.9`
 
