@@ -171,13 +171,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=12ubuntu4.2
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_12ubuntu4.2.dsc' base-files_12ubuntu4.2.dsc 1277 SHA512:14aed43f2bf225436e7ae287baa58de6ae7496a16e73167fe622393781b2739affec3a56a7552231bf06fb36374570ca882a9f75688ef881e221f5ecbae1245c
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_12ubuntu4.2.tar.xz' base-files_12ubuntu4.2.tar.xz 81776 SHA512:2c9cf8f29892a765b50b3317854bde6f63a790b493d7df826df86ec7c8b46f61d6d2fbb4763487880bf18f64a5ebc2aaebbfe8b50275e239fcc2cf3d2bf2385f
-```
 
 ### `dpkg` source package: `base-passwd=3.5.52build1`
 
@@ -646,14 +642,9 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.34.1-1ubuntu1.6
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.34.1-1ubuntu1.6.dsc' git_2.34.1-1ubuntu1.6.dsc 2927 SHA512:2eaeb128f1932f5092ba1e350a1caaa06e7dd3339db1914a79488217a3e3261f7f0d8ed18bc2bacd3a0ef7bfb46124d61dab3e6b473d5b6c627b1b67ff8b29b5
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.34.1.orig.tar.xz' git_2.34.1.orig.tar.xz 6623760 SHA512:a1a8e9e6f64b1da25508fbd2f783564dcdbe181fb5ff1ebab3bdac6db6094e18acc334479a1abf22ac17ce4f733cc3e10a664db9ab234cd523735a3f027b42db
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.34.1-1ubuntu1.6.debian.tar.xz' git_2.34.1-1ubuntu1.6.debian.tar.xz 747252 SHA512:40e0bb3c9bda2809d49db789d3cea8a4d3602cc1176145ade3130869f24f833cd32eb8c509f9136370583a60d33eae397bbe5a7f82424ddf58b14a708c20736e
-```
 
 ### `dpkg` source package: `glibc=2.35-0ubuntu3.1`
 

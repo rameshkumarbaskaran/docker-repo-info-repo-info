@@ -907,20 +907,13 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.39.1-0.1
-'http://deb.debian.org/debian/pool/main/g/git/git_2.39.1-0.1.dsc' git_2.39.1-0.1.dsc 2459 SHA256:87f9907d0f775692103217101fb7a08a37f3ba688f03d3f12ae3d51e7dc4c4a7
-'http://deb.debian.org/debian/pool/main/g/git/git_2.39.1.orig.tar.xz' git_2.39.1.orig.tar.xz 7160744 SHA256:40a38a0847b30c371b35873b3afcf123885dd41ea3ecbbf510efa97f3ce5c161
-'http://deb.debian.org/debian/pool/main/g/git/git_2.39.1-0.1.debian.tar.xz' git_2.39.1-0.1.debian.tar.xz 739356 SHA256:2cf3a5cf45404a182e2b8dda108958ce9de37403d662a83d41d8d125dfc0e8d2
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/git/1:2.39.1-0.1/
 
-- https://sources.debian.net/src/git/1:2.39.1-0.1/ (for browsing the source)
-- https://sources.debian.net/src/git/1:2.39.1-0.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/git/1:2.39.1-0.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.36-8`
 
@@ -2628,19 +2621,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-defaults=3.11.1-3
-'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.11.1-3.dsc' python3-defaults_3.11.1-3.dsc 2359 SHA256:d3d8f2c3b63fef43a4aefedd4c3ca67b7c2d5d2e21b05dec4bf59c2a2500eeb8
-'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.11.1-3.tar.gz' python3-defaults_3.11.1-3.tar.gz 146451 SHA256:777098b1274b171ded60c06bb18bed8fc4694a00f09808062f4456485783dd75
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3-defaults/3.11.1-3/
 
-- https://sources.debian.net/src/python3-defaults/3.11.1-3/ (for browsing the source)
-- https://sources.debian.net/src/python3-defaults/3.11.1-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3-defaults/3.11.1-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3.11=3.11.2-2`
 

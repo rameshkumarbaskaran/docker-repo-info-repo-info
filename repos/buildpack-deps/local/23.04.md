@@ -1926,14 +1926,13 @@ Licenses: (parsed from: `/usr/share/doc/libdeflate-dev/copyright`, `/usr/share/d
 
 - `Expat`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libdeflate=1.14-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdeflate/libdeflate_1.14-1.dsc' libdeflate_1.14-1.dsc 2214 SHA512:758342a09e7f445ad5d32970d37749b62637bc0b4be63bcc9bb00a69024bab1a4afc5e0933feb6243e59390f16053500be395c1e8a15459a0e8387bd565c1746
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdeflate/libdeflate_1.14.orig.tar.gz' libdeflate_1.14.orig.tar.gz 180182 SHA512:4b3812fa1cac405676810186161aace295ffb0f049aae795b390dadf40cba18e814ef503051554053df8341d7275e709a1233a9435eb965ba84f6e84cad7988b
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdeflate/libdeflate_1.14-1.debian.tar.xz' libdeflate_1.14-1.debian.tar.xz 4784 SHA512:5b3b386d4fc3e37e278a299ddd7b4623131faf4ffd8f3ca54605ab494d333ef08a4ae77b8b8d13b00fc1120c4a3e09b82bd8563487c244cb7793228162a58645
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libdeflate/1.14-1/
+
 
 ### `dpkg` source package: `libedit=3.1-20221030-2`
 

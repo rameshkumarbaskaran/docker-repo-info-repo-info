@@ -1219,20 +1219,13 @@ Licenses: (parsed from: `/usr/share/doc/fonts-dejavu-core/copyright`)
 - `GPL-2+`
 - `bitstream-vera`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris fonts-dejavu=2.37-3
-'http://deb.debian.org/debian/pool/main/f/fonts-dejavu/fonts-dejavu_2.37-3.dsc' fonts-dejavu_2.37-3.dsc 2460 SHA256:4f4b58a96a9eec4d89467884716c3f4e5bd0e18c499dcce4851dfc55c3b3d933
-'http://deb.debian.org/debian/pool/main/f/fonts-dejavu/fonts-dejavu_2.37.orig.tar.bz2' fonts-dejavu_2.37.orig.tar.bz2 12050109 SHA256:4b21c5203f792343d5e90ab1cb0cf07e99887218abe3d83cd9a98cea9085e799
-'http://deb.debian.org/debian/pool/main/f/fonts-dejavu/fonts-dejavu_2.37-3.debian.tar.xz' fonts-dejavu_2.37-3.debian.tar.xz 12656 SHA256:6c01dd5e31f9909d57c06dac3e5c5265c108cc166b4028d60aec42564503c0a7
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/fonts-dejavu/2.37-3/
 
-- https://sources.debian.net/src/fonts-dejavu/2.37-3/ (for browsing the source)
-- https://sources.debian.net/src/fonts-dejavu/2.37-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/fonts-dejavu/2.37-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `freetype=2.12.1+dfsg-4`
 
@@ -1470,20 +1463,13 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.39.1-0.1
-'http://deb.debian.org/debian/pool/main/g/git/git_2.39.1-0.1.dsc' git_2.39.1-0.1.dsc 2459 SHA256:87f9907d0f775692103217101fb7a08a37f3ba688f03d3f12ae3d51e7dc4c4a7
-'http://deb.debian.org/debian/pool/main/g/git/git_2.39.1.orig.tar.xz' git_2.39.1.orig.tar.xz 7160744 SHA256:40a38a0847b30c371b35873b3afcf123885dd41ea3ecbbf510efa97f3ce5c161
-'http://deb.debian.org/debian/pool/main/g/git/git_2.39.1-0.1.debian.tar.xz' git_2.39.1-0.1.debian.tar.xz 739356 SHA256:2cf3a5cf45404a182e2b8dda108958ce9de37403d662a83d41d8d125dfc0e8d2
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/git/1:2.39.1-0.1/
 
-- https://sources.debian.net/src/git/1:2.39.1-0.1/ (for browsing the source)
-- https://sources.debian.net/src/git/1:2.39.1-0.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/git/1:2.39.1-0.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glib2.0=2.74.5-1`
 
@@ -1991,20 +1977,13 @@ Licenses: (parsed from: `/usr/share/doc/imagemagick/copyright`, `/usr/share/doc/
 - `TatcherUlrichPublicDomain`
 - `aclocal`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris imagemagick=8:6.9.11.60+dfsg-1.5
-'http://deb.debian.org/debian/pool/main/i/imagemagick/imagemagick_6.9.11.60%2bdfsg-1.5.dsc' imagemagick_6.9.11.60+dfsg-1.5.dsc 5074 SHA256:21e3a4ede229ca2ebfc68cbad9ace30238d95a105e8f7ecc47d3dbfc703b408f
-'http://deb.debian.org/debian/pool/main/i/imagemagick/imagemagick_6.9.11.60%2bdfsg.orig.tar.xz' imagemagick_6.9.11.60+dfsg.orig.tar.xz 9395144 SHA256:472fb516df842ee9c819ed80099c188463b9e961303511c36ae24d0eaa8959c4
-'http://deb.debian.org/debian/pool/main/i/imagemagick/imagemagick_6.9.11.60%2bdfsg-1.5.debian.tar.xz' imagemagick_6.9.11.60+dfsg-1.5.debian.tar.xz 253360 SHA256:77c786e41d5922e9a13cd468342bf0896f4c7a3ba1c5873a456c0243c699ec83
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/imagemagick/8:6.9.11.60+dfsg-1.5/
 
-- https://sources.debian.net/src/imagemagick/8:6.9.11.60+dfsg-1.5/ (for browsing the source)
-- https://sources.debian.net/src/imagemagick/8:6.9.11.60+dfsg-1.5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/imagemagick/8:6.9.11.60+dfsg-1.5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `imath=3.1.6-1`
 
@@ -4986,19 +4965,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-defaults=3.11.1-3
-'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.11.1-3.dsc' python3-defaults_3.11.1-3.dsc 2359 SHA256:d3d8f2c3b63fef43a4aefedd4c3ca67b7c2d5d2e21b05dec4bf59c2a2500eeb8
-'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.11.1-3.tar.gz' python3-defaults_3.11.1-3.tar.gz 146451 SHA256:777098b1274b171ded60c06bb18bed8fc4694a00f09808062f4456485783dd75
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3-defaults/3.11.1-3/
 
-- https://sources.debian.net/src/python3-defaults/3.11.1-3/ (for browsing the source)
-- https://sources.debian.net/src/python3-defaults/3.11.1-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3-defaults/3.11.1-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3-stdlib-extensions=3.10.8-1`
 
@@ -5011,20 +4984,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.10.8-1
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.8-1.dsc' python3-stdlib-extensions_3.10.8-1.dsc 2575 SHA256:1fa18c34aa7f1793313c08d3b90930a83d181f587e4de09d87c540d42cbaad58
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.8.orig.tar.xz' python3-stdlib-extensions_3.10.8.orig.tar.xz 1118220 SHA256:7df3daa415b5295898067c30aab0bb7e3922406f1e7b772400d0789e102c6976
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.8-1.debian.tar.xz' python3-stdlib-extensions_3.10.8-1.debian.tar.xz 25824 SHA256:7d2c9a6360ae75a1312673f656d8495ff2f11fdfdac4217f0571bf460ad4cbfc
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3-stdlib-extensions/3.10.8-1/
 
-- https://sources.debian.net/src/python3-stdlib-extensions/3.10.8-1/ (for browsing the source)
-- https://sources.debian.net/src/python3-stdlib-extensions/3.10.8-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3-stdlib-extensions/3.10.8-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3.11=3.11.2-2`
 
