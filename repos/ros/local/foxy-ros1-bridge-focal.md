@@ -1230,14 +1230,9 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.25.1-1ubuntu3.8
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1-1ubuntu3.8.dsc' git_2.25.1-1ubuntu3.8.dsc 2962 SHA512:9de11f42828c52fc6ac10f1feba306b8b21fd5ae320f9a0c6119b08e2bce1ddd6973e26eec9067d8375d8c1c2d5dfd291189a2394a552e0dc9094f69af9b70c5
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1.orig.tar.xz' git_2.25.1.orig.tar.xz 5875548 SHA512:15241143acfd8542d85d2709ac3c80dbd6e8d5234438f70c4f33cc71a2bdec3e32938df7f6351e2746d570b021d3bd0b70474ea4beec0c51d1fc45f9c287b344
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1-1ubuntu3.8.debian.tar.xz' git_2.25.1-1ubuntu3.8.debian.tar.xz 697772 SHA512:089e5eee0f8be77d52725f1862ebe964f45c527b9a392ef67141a75cd79bd802665c30f87a9d4bfdb78e9710d55d970d9036dfdc26990b15b056286530c4a6fe
-```
 
 ### `dpkg` source package: `glib2.0=2.64.6-1~ubuntu20.04.4`
 
@@ -4533,14 +4528,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-output=0.2.12-2
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-colcon-output/python3-colcon-output_0.2.12-2.debian.tar.xz' python3-colcon-output_0.2.12-2.debian.tar.xz 1092 SHA512:c462965e6bad1a6911aac816a9edfe090af6c4f339ca3660ab508da8b57a07837f78b41e656e2218e07f11bfe54e4070a371bd68b827672e067039388ac44995
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-colcon-output/python3-colcon-output_0.2.12-2.dsc' python3-colcon-output_0.2.12-2.dsc 971 SHA512:e6d1eb88336be76b66b7bdd9846597bb3c9a08a1d70e7968eaab1a3dea2fd875697cf1f142479c0932497f4a5bdf9fc05ccb7a4fc42603031f4eef529d2f6ef0
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-colcon-output/python3-colcon-output_0.2.12.orig.tar.gz' python3-colcon-output_0.2.12.orig.tar.gz 6909 SHA512:58a44c2507cf4406fcf597aa8089cde6164679e42ed0a2cd2e2f222d030a65426e91001ac3d13e306c17d6d634b8a3267ccf09867dc33da7adba8f1c108f6f3b
-```
 
 ### `dpkg` source package: `python3-colcon-package-information=0.3.3-1`
 
