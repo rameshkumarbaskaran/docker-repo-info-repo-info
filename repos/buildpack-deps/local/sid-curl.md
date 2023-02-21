@@ -377,21 +377,13 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `X11`
 - `curl`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.87.0-2
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.87.0-2.dsc' curl_7.87.0-2.dsc 2955 SHA256:5804459238d85ac101795d5beda17253b24ec2841529a967ff39911978e98b1e
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.87.0.orig.tar.gz' curl_7.87.0.orig.tar.gz 4291127 SHA256:8a063d664d1c23d35526b87a2bf15514962ffdd8ef7fd40519191b3c23e39548
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.87.0.orig.tar.gz.asc' curl_7.87.0.orig.tar.gz.asc 488 SHA256:0b2d605653367adeaee6f33d190c0791b6809afd6b6469468bd2c1d532409ab8
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.87.0-2.debian.tar.xz' curl_7.87.0-2.debian.tar.xz 40004 SHA256:ea9a2ad643fcc498204bc257a3411208e94ae02d37137493ed6840128bcd6ac0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/curl/7.87.0-2/
 
-- https://sources.debian.net/src/curl/7.87.0-2/ (for browsing the source)
-- https://sources.debian.net/src/curl/7.87.0-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/curl/7.87.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.28+dfsg-10`
 
@@ -1777,20 +1769,13 @@ Licenses: (parsed from: `/usr/share/doc/libnghttp2-14/copyright`)
 - `MIT`
 - `all-permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nghttp2=1.51.0-1
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.51.0-1.dsc' nghttp2_1.51.0-1.dsc 2508 SHA256:20edb802982a8cb6144428eae4274bb72b8a637451aeb0d3cc46149fb4a1368b
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.51.0.orig.tar.gz' nghttp2_1.51.0.orig.tar.gz 3899746 SHA256:dfcf41e0b093765a79c9f1fc0ba6dc3d524555e94483ea9ba8b87a6d454971ba
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.51.0-1.debian.tar.xz' nghttp2_1.51.0-1.debian.tar.xz 11608 SHA256:d43f4062abe774271220d8facb07b5b0012346186f2100833848b42d0d0da786
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/nghttp2/1.51.0-1/
 
-- https://sources.debian.net/src/nghttp2/1.51.0-1/ (for browsing the source)
-- https://sources.debian.net/src/nghttp2/1.51.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/nghttp2/1.51.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `npth=1.6-3`
 

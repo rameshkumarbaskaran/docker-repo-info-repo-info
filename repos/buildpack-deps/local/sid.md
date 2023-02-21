@@ -615,21 +615,13 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `X11`
 - `curl`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.87.0-2
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.87.0-2.dsc' curl_7.87.0-2.dsc 2955 SHA256:5804459238d85ac101795d5beda17253b24ec2841529a967ff39911978e98b1e
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.87.0.orig.tar.gz' curl_7.87.0.orig.tar.gz 4291127 SHA256:8a063d664d1c23d35526b87a2bf15514962ffdd8ef7fd40519191b3c23e39548
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.87.0.orig.tar.gz.asc' curl_7.87.0.orig.tar.gz.asc 488 SHA256:0b2d605653367adeaee6f33d190c0791b6809afd6b6469468bd2c1d532409ab8
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.87.0-2.debian.tar.xz' curl_7.87.0-2.debian.tar.xz 40004 SHA256:ea9a2ad643fcc498204bc257a3411208e94ae02d37137493ed6840128bcd6ac0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/curl/7.87.0-2/
 
-- https://sources.debian.net/src/curl/7.87.0-2/ (for browsing the source)
-- https://sources.debian.net/src/curl/7.87.0-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/curl/7.87.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.28+dfsg-10`
 
@@ -2196,20 +2188,13 @@ Licenses: (parsed from: `/usr/share/doc/liblcms2-2/copyright`, `/usr/share/doc/l
 - `IJG`
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lcms2=2.14-1
-'http://deb.debian.org/debian/pool/main/l/lcms2/lcms2_2.14-1.dsc' lcms2_2.14-1.dsc 1944 SHA256:3c7d2bfffb77611b4f22119258c355cfb9fa29f97ed59c05fc736b94567255b7
-'http://deb.debian.org/debian/pool/main/l/lcms2/lcms2_2.14.orig.tar.gz' lcms2_2.14.orig.tar.gz 7406694 SHA256:28474ea6f6591c4d4cee972123587001a4e6e353412a41b3e9e82219818d5740
-'http://deb.debian.org/debian/pool/main/l/lcms2/lcms2_2.14-1.debian.tar.xz' lcms2_2.14-1.debian.tar.xz 11208 SHA256:5c2a4818b780c7d08d2e4605268ec0f485492b0de389bd32ceec9c42e6db7690
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/lcms2/2.14-1/
 
-- https://sources.debian.net/src/lcms2/2.14-1/ (for browsing the source)
-- https://sources.debian.net/src/lcms2/2.14-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/lcms2/2.14-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lerc=4.0.0+ds-2`
 
@@ -4105,21 +4090,13 @@ Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/me
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mercurial=6.3.1-2
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_6.3.1-2.dsc' mercurial_6.3.1-2.dsc 2848 SHA256:b50ccd69eedabc7eb2c88fdf185065628f68d95965ac36be708d1feb9755cdbd
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_6.3.1.orig.tar.gz' mercurial_6.3.1.orig.tar.gz 8089720 SHA256:6c39ab8732948d89cf1208751dd7d85d4042aa82153977451b9eb13367585072
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_6.3.1.orig.tar.gz.asc' mercurial_6.3.1.orig.tar.gz.asc 659 SHA256:79061d5dfa734f48e8aee56fbf4b6bc90655f28e96d4cf558bebb1ed4bc95214
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_6.3.1-2.debian.tar.xz' mercurial_6.3.1-2.debian.tar.xz 70616 SHA256:75ec52a259c6c7bdc39ffdd1b0953684226a97aad9a1710dc25221f5b9f576ab
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mercurial/6.3.1-2/
 
-- https://sources.debian.net/src/mercurial/6.3.1-2/ (for browsing the source)
-- https://sources.debian.net/src/mercurial/6.3.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mercurial/6.3.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mpclib3=1.3.1-1`
 
@@ -4337,20 +4314,13 @@ Licenses: (parsed from: `/usr/share/doc/libnghttp2-14/copyright`)
 - `MIT`
 - `all-permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nghttp2=1.51.0-1
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.51.0-1.dsc' nghttp2_1.51.0-1.dsc 2508 SHA256:20edb802982a8cb6144428eae4274bb72b8a637451aeb0d3cc46149fb4a1368b
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.51.0.orig.tar.gz' nghttp2_1.51.0.orig.tar.gz 3899746 SHA256:dfcf41e0b093765a79c9f1fc0ba6dc3d524555e94483ea9ba8b87a6d454971ba
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.51.0-1.debian.tar.xz' nghttp2_1.51.0-1.debian.tar.xz 11608 SHA256:d43f4062abe774271220d8facb07b5b0012346186f2100833848b42d0d0da786
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/nghttp2/1.51.0-1/
 
-- https://sources.debian.net/src/nghttp2/1.51.0-1/ (for browsing the source)
-- https://sources.debian.net/src/nghttp2/1.51.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/nghttp2/1.51.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `npth=1.6-3`
 
@@ -4938,20 +4908,13 @@ Licenses: (parsed from: `/usr/share/doc/libproc2-0/copyright`, `/usr/share/doc/p
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris procps=2:4.0.2-3
-'http://deb.debian.org/debian/pool/main/p/procps/procps_4.0.2-3.dsc' procps_4.0.2-3.dsc 2127 SHA256:927de59c0fb3b3f1ccfd685ebd578fdd9ca524135f15810f766be2f6be5a7e83
-'http://deb.debian.org/debian/pool/main/p/procps/procps_4.0.2.orig.tar.xz' procps_4.0.2.orig.tar.xz 1279196 SHA256:ee3fcd2ea6ff94aa43a81ba5cc7912b7c9615acd2911c7a3d3ea081287fdf47a
-'http://deb.debian.org/debian/pool/main/p/procps/procps_4.0.2-3.debian.tar.xz' procps_4.0.2-3.debian.tar.xz 28540 SHA256:64d3bd71b6a65f8888c5aa0da0e39b48498787c34eb95babd6ef46c5c5a3a910
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/procps/2:4.0.2-3/
 
-- https://sources.debian.net/src/procps/2:4.0.2-3/ (for browsing the source)
-- https://sources.debian.net/src/procps/2:4.0.2-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/procps/2:4.0.2-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3-defaults=3.11.1-3`
 
@@ -5433,20 +5396,13 @@ Licenses: (parsed from: `/usr/share/doc/libtiff-dev/copyright`, `/usr/share/doc/
 
 - `Hylafax`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.5.0-4
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.5.0-4.dsc' tiff_4.5.0-4.dsc 2255 SHA256:35eaca1eab069814aa7b64e98f2428b436d3425d72ac798d0c889bbd88c97bc5
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.5.0.orig.tar.bz2' tiff_4.5.0.orig.tar.bz2 2050377 SHA256:638f43d7dea33948d5dee7f39572fc0194d9cc3c74195de9dd26a4388a1f880a
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.5.0-4.debian.tar.xz' tiff_4.5.0-4.debian.tar.xz 22828 SHA256:7d8458ee58d296f1f176c26debb053aeb26e0fd908933bf9bd0742ae25a458f5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tiff/4.5.0-4/
 
-- https://sources.debian.net/src/tiff/4.5.0-4/ (for browsing the source)
-- https://sources.debian.net/src/tiff/4.5.0-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tiff/4.5.0-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tzdata=2022g-3`
 
@@ -5500,20 +5456,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris unzip=6.0-27
-'http://deb.debian.org/debian/pool/main/u/unzip/unzip_6.0-27.dsc' unzip_6.0-27.dsc 1351 SHA256:e8cfa689ee6b99aefaec32985dee849d4b3308d9ae1f01ca36bea5f496cb8f1d
-'http://deb.debian.org/debian/pool/main/u/unzip/unzip_6.0.orig.tar.gz' unzip_6.0.orig.tar.gz 1376845 SHA256:036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37
-'http://deb.debian.org/debian/pool/main/u/unzip/unzip_6.0-27.debian.tar.xz' unzip_6.0-27.debian.tar.xz 24980 SHA256:67bde7c71d52afd61aa936d4415c8d12fd90ca26e9637a3cd67cae9b71298c12
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/unzip/6.0-27/
 
-- https://sources.debian.net/src/unzip/6.0-27/ (for browsing the source)
-- https://sources.debian.net/src/unzip/6.0-27/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/unzip/6.0-27/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `usrmerge=35`
 
