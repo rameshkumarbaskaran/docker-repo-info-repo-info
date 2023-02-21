@@ -1,7 +1,7 @@
 ## `photon:latest`
 
 ```console
-$ docker pull photon@sha256:eaacded6efbd97cac525ea7f416381aa03b4c2efeb1b6e1e9961ea65568236f8
+$ docker pull photon@sha256:8c2a9823a5e9ac79041e39bae9c365d6ba15d8d9fb5fa487e4d9742e72c7900f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -40,27 +40,27 @@ CMD ["/bin/bash"]
 ### `photon:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull photon@sha256:3a823aacbaf352771ddea50db09074c1124cd5fe186836ed00adea04e37a7c35
+$ docker pull photon@sha256:91fd502f72fd0641affc5d53b09f82b42f34de94ff28ef8e4ed94c5f2e013255
 ```
 
--	Docker Version: 20.10.17
+-	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **15.2 MB (15168720 bytes)**  
+-	Total Size: **15.2 MB (15169681 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:60584ed5dfee5062e4850e8be8e143006adf1a4490311569c8e9cfd2d4da9b11`
+-	Image ID: `sha256:623e8eba4ea55efeda150848fad3deed9fbd0bdd1a4604712d79cda39c99bd36`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Mon, 13 Feb 2023 20:58:27 GMT
-ADD file:aefc8b465df0ba7d5685deeeaf1d9d489f0023c098259957f338d103ae7e08e6 in / 
-# Mon, 13 Feb 2023 20:58:27 GMT
-LABEL name=Photon OS aarch64/4.0 Base Image vendor=VMware build-date=20230211
-# Mon, 13 Feb 2023 20:58:27 GMT
+# Tue, 21 Feb 2023 19:39:51 GMT
+ADD file:ac48847d3443fd55c6592566c87a3d1428d5c0d2fe79dc3ac78d5eccfcce3595 in / 
+# Tue, 21 Feb 2023 19:39:51 GMT
+LABEL name=Photon OS aarch64/4.0 Base Image vendor=VMware build-date=20230218
+# Tue, 21 Feb 2023 19:39:51 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:2cd5d44a3065aefb87ea1614a47dd937989d0b8e3f4ea5fef257ad17135df09a`  
-		Last Modified: Mon, 13 Feb 2023 20:58:45 GMT  
-		Size: 15.2 MB (15168720 bytes)  
+	-	`sha256:78fc252384f0c98cfb27baa954ffea481a0a1ce98eb2d74131984e44bb0055f7`  
+		Last Modified: Tue, 21 Feb 2023 19:40:09 GMT  
+		Size: 15.2 MB (15169681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
