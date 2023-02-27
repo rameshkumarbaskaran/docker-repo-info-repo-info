@@ -1,10 +1,10 @@
-# `consul:1.14.4`
+# `consul:1.15.0`
 
 ## Docker Metadata
 
-- Image ID: `sha256:041dc476cc20f574ae7816f88da51c47f055f94053ad6d018e4d27bf8c5753a7`
-- Created: `2023-02-11T07:42:24.149163282Z`
-- Virtual Size: ~ 149.17 Mb  
+- Image ID: `sha256:cb9976413d3a8199bbdc513bff41028d8b638395ea76387dc3e9989316ba6936`
+- Created: `2023-02-25T00:36:46.807772604Z`
+- Virtual Size: ~ 152.62 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -20,7 +20,7 @@
   - `org.opencontainers.image.title=consul`
   - `org.opencontainers.image.url=https://www.consul.io/`
   - `org.opencontainers.image.vendor=HashiCorp`
-  - `org.opencontainers.image.version=1.14.4`
+  - `org.opencontainers.image.version=1.15.0`
 
 ## `apk` (`.apk`-based packages)
 
@@ -146,16 +146,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `curl`
 
 ```console
-curl-7.80.0-r5 description:
+curl-7.80.0-r6 description:
 URL retrival utility and library
 
-curl-7.80.0-r5 webpage:
+curl-7.80.0-r6 webpage:
 https://curl.se/
 
-curl-7.80.0-r5 installed size:
+curl-7.80.0-r6 installed size:
 248 KiB
 
-curl-7.80.0-r5 license:
+curl-7.80.0-r6 license:
 MIT
 
 ```
@@ -299,16 +299,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.80.0-r5 description:
+libcurl-7.80.0-r6 description:
 The multiprotocol file transfer library
 
-libcurl-7.80.0-r5 webpage:
+libcurl-7.80.0-r6 webpage:
 https://curl.se/
 
-libcurl-7.80.0-r5 installed size:
+libcurl-7.80.0-r6 installed size:
 504 KiB
 
-libcurl-7.80.0-r5 license:
+libcurl-7.80.0-r6 license:
 MIT
 
 ```
