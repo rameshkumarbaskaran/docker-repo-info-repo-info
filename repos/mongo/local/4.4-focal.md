@@ -1,10 +1,10 @@
-# `mongo:4.4.18-focal`
+# `mongo:4.4.19-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f0bbeaaea8c38c99c547152a83a6e21d9e3e589ae06f4c94faccfb12c6f3bda6`
-- Created: `2023-02-01T19:28:25.936463649Z`
-- Virtual Size: ~ 438.33 Mb  
+- Image ID: `sha256:9ec294f2707c5505a08a87d386c4a0b5122a217f7032817d156de3e39026336d`
+- Created: `2023-02-25T00:38:25.993927023Z`
+- Virtual Size: ~ 438.43 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -16,7 +16,7 @@
   - `MONGO_PACKAGE=mongodb-org`
   - `MONGO_REPO=repo.mongodb.org`
   - `MONGO_MAJOR=4.4`
-  - `MONGO_VERSION=4.4.18`
+  - `MONGO_VERSION=4.4.19`
   - `HOME=/data/db`
 - Labels:
   - `org.opencontainers.image.ref.name=ubuntu`
@@ -298,14 +298,9 @@ Licenses: (parsed from: `/usr/share/doc/libcurl4/copyright`)
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.68.0-1ubuntu2.15
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.15.dsc' curl_7.68.0-1ubuntu2.15.dsc 2737 SHA512:26c41b8eac11f5274527ae5b19f1cbaa529a8688f7196cf4dcc42f96a6bd10e236c205a311d2c14a323e44681a3f4ea6fb0d31dfb94f0ffe7add6f9bfdc2cc9f
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0.orig.tar.gz' curl_7.68.0.orig.tar.gz 4096350 SHA512:58b42c08b1cf4cb6e68f8e469d5b5f6298eebe286ba2677ad29e1a7eefd15b8609af54544f4c5a7dadebbd3b23bd77700830f2f60fbea7ae3f2f306e640010b0
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.15.debian.tar.xz' curl_7.68.0-1ubuntu2.15.debian.tar.xz 58376 SHA512:1f20c6fbcb594e6a79af4578029d840e5f054c1bacbed44cd16f6ed420cb6a55f383c09f2b0caf5b1cb3d82aa4ca6aa5dfbe3c1129c6e7511e7065b3738c6b62
-```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-2ubuntu0.1`
 
@@ -1279,16 +1274,16 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `mongodb-org=4.4.18`
+### `dpkg` source package: `mongodb-org=4.4.19`
 
 Binary Packages:
 
-- `mongodb-org=4.4.18`
-- `mongodb-org-database-tools-extra=4.4.18`
-- `mongodb-org-mongos=4.4.18`
-- `mongodb-org-server=4.4.18`
-- `mongodb-org-shell=4.4.18`
-- `mongodb-org-tools=4.4.18`
+- `mongodb-org=4.4.19`
+- `mongodb-org-database-tools-extra=4.4.19`
+- `mongodb-org-mongos=4.4.19`
+- `mongodb-org-server=4.4.19`
+- `mongodb-org-shell=4.4.19`
+- `mongodb-org-tools=4.4.19`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
