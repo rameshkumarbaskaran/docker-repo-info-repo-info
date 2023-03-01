@@ -1,7 +1,7 @@
 ## `ruby:2-slim-bullseye`
 
 ```console
-$ docker pull ruby@sha256:438a0abbe57acc84d12225d546a2033ced71fd9c295ae5bc8b6e3f53b5367da8
+$ docker pull ruby@sha256:985301e282edafb8f6c3623e96211bacddbbe110dc194a1db5ddcc8697d234ab
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -150,67 +150,67 @@ CMD ["irb"]
 ### `ruby:2-slim-bullseye` - linux; arm variant v7
 
 ```console
-$ docker pull ruby@sha256:50974aaa779725d1fce679567960fe42cfb59ddf2a172d06e797aba6204230e5
+$ docker pull ruby@sha256:6563f5632fd0f33233ef46fd743e57feeb5f92b3d1115af07f8982dd179e0136
 ```
 
--	Docker Version: 20.10.17
+-	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **48.5 MB (48524495 bytes)**  
+-	Total Size: **48.5 MB (48524307 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3d5b7bb864cd5aacfde44bd55cf2993baefba010a5276e69e41d1a3da87743b4`
+-	Image ID: `sha256:1863cd39f5a7635446cbfe882089ef861b6c0823676d80766334ac7362928559`
 -	Default Command: `["irb"]`
 
 ```dockerfile
-# Thu, 09 Feb 2023 06:12:09 GMT
-ADD file:5f1a343224e8486690bd90dd1e50c8d84b3d770c51bb6829544e5cf650c0419c in / 
-# Thu, 09 Feb 2023 06:12:10 GMT
+# Wed, 01 Mar 2023 01:57:55 GMT
+ADD file:182fe91b8976a8871aba0d2ff9d4400a60317c8dec282261ba94247500c8d3dc in / 
+# Wed, 01 Mar 2023 01:57:55 GMT
 CMD ["bash"]
-# Thu, 09 Feb 2023 14:30:59 GMT
+# Wed, 01 Mar 2023 15:55:53 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		ca-certificates 		libffi-dev 		libgmp-dev 		libssl-dev 		libyaml-dev 		procps 		zlib1g-dev 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 09 Feb 2023 14:30:59 GMT
+# Wed, 01 Mar 2023 15:55:53 GMT
 RUN set -eux; 	mkdir -p /usr/local/etc; 	{ 		echo 'install: --no-document'; 		echo 'update: --no-document'; 	} >> /usr/local/etc/gemrc
-# Thu, 09 Feb 2023 14:30:59 GMT
+# Wed, 01 Mar 2023 15:55:53 GMT
 ENV LANG=C.UTF-8
-# Thu, 09 Feb 2023 14:47:28 GMT
+# Wed, 01 Mar 2023 16:31:10 GMT
 ENV RUBY_MAJOR=2.7
-# Thu, 09 Feb 2023 14:47:28 GMT
+# Wed, 01 Mar 2023 16:31:10 GMT
 ENV RUBY_VERSION=2.7.7
-# Thu, 09 Feb 2023 14:47:28 GMT
+# Wed, 01 Mar 2023 16:31:10 GMT
 ENV RUBY_DOWNLOAD_SHA256=b38dff2e1f8ce6e5b7d433f8758752987a6b2adfd9bc7571dbc42ea5d04e3e4c
-# Thu, 09 Feb 2023 14:49:25 GMT
+# Wed, 01 Mar 2023 16:32:46 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bison 		dpkg-dev 		libgdbm-dev 		ruby 		autoconf 		g++ 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -vE '^/usr/local/lib/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	if dpkg -l | grep -i ruby; then exit 1; fi; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
-# Thu, 09 Feb 2023 14:49:25 GMT
+# Wed, 01 Mar 2023 16:32:46 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Thu, 09 Feb 2023 14:49:25 GMT
+# Wed, 01 Mar 2023 16:32:46 GMT
 ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Thu, 09 Feb 2023 14:49:25 GMT
+# Wed, 01 Mar 2023 16:32:46 GMT
 ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 09 Feb 2023 14:49:26 GMT
+# Wed, 01 Mar 2023 16:32:47 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Thu, 09 Feb 2023 14:49:26 GMT
+# Wed, 01 Mar 2023 16:32:47 GMT
 CMD ["irb"]
 ```
 
 -	Layers:
-	-	`sha256:e7318f6106ad75d7d482ae9dddf4d927b0872ef3ddb6e1330aa691fc8d17279e`  
-		Last Modified: Thu, 09 Feb 2023 06:19:19 GMT  
-		Size: 26.6 MB (26577666 bytes)  
+	-	`sha256:b4770fcf2ef78c1e46693da734476bfaf03cbe1d0b6e0a0f22c2c2e53419e803`  
+		Last Modified: Wed, 01 Mar 2023 02:03:02 GMT  
+		Size: 26.6 MB (26577290 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0458c93001c3310ceaaf1a73435586731c4a6d5b445327c193476def8a8f9c`  
-		Last Modified: Thu, 09 Feb 2023 14:55:58 GMT  
-		Size: 8.1 MB (8145378 bytes)  
+	-	`sha256:1a5dbcf9603f934e1a3763c8fc5593cb29a77efe968826bed84d53cfe859ff17`  
+		Last Modified: Wed, 01 Mar 2023 16:42:08 GMT  
+		Size: 8.1 MB (8145381 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c058c4d2e60d7885c420c20cc3b7998758ed431ae195bd8c6d6a6cc9a680bca4`  
-		Last Modified: Thu, 09 Feb 2023 14:55:56 GMT  
-		Size: 200.0 B  
+	-	`sha256:6b4497e2298b0ff2741d5a9b03f36b59dfd52bb9b356d6567ce8168303592da6`  
+		Last Modified: Wed, 01 Mar 2023 16:42:07 GMT  
+		Size: 199.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62cc49125fc2d59a0f0530fc37eb25df4d83a6f3aa71bdae5c559b9ea788715e`  
-		Last Modified: Thu, 09 Feb 2023 14:58:48 GMT  
-		Size: 13.8 MB (13801108 bytes)  
+	-	`sha256:8687f5bd57d6e6e75e7619c7696df45d7bed265a3f040fa052bcaccef5ebe4a4`  
+		Last Modified: Wed, 01 Mar 2023 16:47:37 GMT  
+		Size: 13.8 MB (13801261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a1c4975a003a8dced0db6da989caf171d38a534d5458b8a4245fe85b1e76b42`  
-		Last Modified: Thu, 09 Feb 2023 14:58:46 GMT  
-		Size: 143.0 B  
+	-	`sha256:3706d2eeeb2fa3dd24d63985a4164a1b8b307cee3a0076e3d5a7ece26e2fd923`  
+		Last Modified: Wed, 01 Mar 2023 16:47:36 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `ruby:2-slim-bullseye` - linux; arm64 variant v8
