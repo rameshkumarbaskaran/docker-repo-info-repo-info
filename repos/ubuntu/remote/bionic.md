@@ -1,7 +1,7 @@
 ## `ubuntu:bionic`
 
 ```console
-$ docker pull ubuntu@sha256:eb25b45bdceafdab343223bb76a5cd5c2491c6ac666d0dfa69530a87b06b8500
+$ docker pull ubuntu@sha256:fb876748b139b3f9fc9b1de51f2f01b7195fc3ec56bc799a1e702af0bf8b5a2d
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -16,35 +16,35 @@ $ docker pull ubuntu@sha256:eb25b45bdceafdab343223bb76a5cd5c2491c6ac666d0dfa6953
 ### `ubuntu:bionic` - linux; amd64
 
 ```console
-$ docker pull ubuntu@sha256:fdd3c9372c19afa928f99afde58f0f80a008ebb695a8c5ee37de5adb7feb46de
+$ docker pull ubuntu@sha256:3420178c357dc693532d8c2e592784d0c7f27ce2412cfb029bbbd618fe6ab39d
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **25.7 MB (25688613 bytes)**  
+-	Total Size: **25.7 MB (25688299 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5d2df19066aca89df8e5317544a1cb599dc657830184762ff6fdefaaf708db65`
+-	Image ID: `sha256:b89fba62bc15f5e402dfc9e1cb0056e72d392301c324359e486d0a043286f642`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 26 Jan 2023 10:03:03 GMT
+# Wed, 01 Mar 2023 03:18:00 GMT
 ARG RELEASE
-# Thu, 26 Jan 2023 10:03:03 GMT
+# Wed, 01 Mar 2023 03:18:00 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Thu, 26 Jan 2023 10:03:03 GMT
+# Wed, 01 Mar 2023 03:18:00 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Thu, 26 Jan 2023 10:03:03 GMT
+# Wed, 01 Mar 2023 03:18:00 GMT
 LABEL org.opencontainers.image.version=18.04
-# Thu, 26 Jan 2023 10:03:04 GMT
-ADD file:365c129e10f7ef1594e8086543b45f524313e36dd6a25b68f4da542a09491f04 in / 
-# Thu, 26 Jan 2023 10:03:05 GMT
+# Wed, 01 Mar 2023 03:18:02 GMT
+ADD file:66eb2ef5574cdf80bc0cb3af1637407620c1869f58cc7514395e3f5aea45cc3b in / 
+# Wed, 01 Mar 2023 03:18:02 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:72d9f18d70f395ff9bfae4d193077ccea3ca583e3da3dd66f5c84520c0100727`  
-		Last Modified: Thu, 26 Jan 2023 10:11:57 GMT  
-		Size: 25.7 MB (25688613 bytes)  
+	-	`sha256:58289280d3c7925e901df9362a9787a557d2fdee0680e1e4251f9ae50b36cf30`  
+		Last Modified: Wed, 01 Mar 2023 03:48:46 GMT  
+		Size: 25.7 MB (25688299 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `ubuntu:bionic` - linux; arm variant v7
@@ -152,35 +152,35 @@ CMD ["/bin/bash"]
 ### `ubuntu:bionic` - linux; ppc64le
 
 ```console
-$ docker pull ubuntu@sha256:da6bd15c918442485ea09b9b4a679ccddef764b03c04a94fa2f0ee75bf9ae709
+$ docker pull ubuntu@sha256:3ba412c58b060771f8ef3a36eccf1805aa34df8220ccf1390987398483278dd3
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **29.4 MB (29351018 bytes)**  
+-	Total Size: **29.4 MB (29350470 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d4e533a2e815a6606d93392dd9f8ff6938a39080b67cfd575045cfe820ede7af`
+-	Image ID: `sha256:34fc95142eb9a2fdf17beb483748fffd37108cdbc19904ba48db92163df614ec`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 26 Jan 2023 09:55:44 GMT
+# Wed, 01 Mar 2023 03:15:24 GMT
 ARG RELEASE
-# Thu, 26 Jan 2023 09:55:44 GMT
+# Wed, 01 Mar 2023 03:15:24 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Thu, 26 Jan 2023 09:55:44 GMT
+# Wed, 01 Mar 2023 03:15:24 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Thu, 26 Jan 2023 09:55:44 GMT
+# Wed, 01 Mar 2023 03:15:24 GMT
 LABEL org.opencontainers.image.version=18.04
-# Thu, 26 Jan 2023 09:55:47 GMT
-ADD file:108aadd723beb46031bfaca610c036aea506955578347dda4a01cfb0c6bdc135 in / 
-# Thu, 26 Jan 2023 09:55:48 GMT
+# Wed, 01 Mar 2023 03:15:27 GMT
+ADD file:ca5a453351fddb6d7937e334f0331321829a5bebca3d726ef3dddad1f23b35c8 in / 
+# Wed, 01 Mar 2023 03:15:27 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:6c790564dfb49a61552a6e89c63c7abf84177d16d0f0fb604df022bfcdc6497b`  
-		Last Modified: Thu, 26 Jan 2023 10:12:31 GMT  
-		Size: 29.4 MB (29351018 bytes)  
+	-	`sha256:e6f8d1896a16aa85108b67cccf98712456398f6d3b69d1a0a55deb6dcceb4f31`  
+		Last Modified: Wed, 01 Mar 2023 03:49:10 GMT  
+		Size: 29.4 MB (29350470 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `ubuntu:bionic` - linux; s390x
