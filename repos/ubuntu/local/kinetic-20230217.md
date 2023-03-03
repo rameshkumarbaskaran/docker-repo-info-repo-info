@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:10c2f4041af137e6b0ba5c793df3dfdf4e72a4e011ce6847f4cc0247b9bbf7f2`
-- Created: `2023-01-26T11:51:15.003446747Z`
+- Image ID: `sha256:e897cc6288c30ff29bd23718aabd3886f58e1bc2b74f6cbfd74de07349471efe`
+- Created: `2023-02-20T11:43:10.085001419Z`
 - Virtual Size: ~ 70.25 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1096,22 +1096,27 @@ $ apt-get source -qq --print-uris p11-kit=0.24.1-1ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/p/p11-kit/p11-kit_0.24.1-1ubuntu2.debian.tar.xz' p11-kit_0.24.1-1ubuntu2.debian.tar.xz 31176 SHA512:f3b3fc21a270f22dd0679aaf1c87907fdd3914de261ad61406bb2392deb25688229af775e7b170201d85489cd7420c5e9bda23c8f95bc7e9d955f4eb508454d3
 ```
 
-### `dpkg` source package: `pam=1.5.2-2ubuntu1.1`
+### `dpkg` source package: `pam=1.5.2-2ubuntu1.3`
 
 Binary Packages:
 
-- `libpam-modules:amd64=1.5.2-2ubuntu1.1`
-- `libpam-modules-bin=1.5.2-2ubuntu1.1`
-- `libpam-runtime=1.5.2-2ubuntu1.1`
-- `libpam0g:amd64=1.5.2-2ubuntu1.1`
+- `libpam-modules:amd64=1.5.2-2ubuntu1.3`
+- `libpam-modules-bin=1.5.2-2ubuntu1.3`
+- `libpam-runtime=1.5.2-2ubuntu1.3`
+- `libpam0g:amd64=1.5.2-2ubuntu1.3`
 
 Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/doc/libpam-modules-bin/copyright`, `/usr/share/doc/libpam-runtime/copyright`, `/usr/share/doc/libpam0g/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris pam=1.5.2-2ubuntu1.3
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.5.2-2ubuntu1.3.dsc' pam_1.5.2-2ubuntu1.3.dsc 2496 SHA512:892c76b9b962c597ab86c9a67aff77b8c25079df247336c07f56fb2b864b8bcc765817140b09966c1bc27313e4463ee7e1bcf7f3a0f89a80e95cc822091127ff
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.5.2.orig.tar.xz' pam_1.5.2.orig.tar.xz 988784 SHA512:fa16350c132d3e5fb82b60d991768fb596582639841b8ece645c684705467305ccf1302a0147ec222ab78c01b2c9114c5496dc1ca565d2b56bf315f29a815144
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.5.2-2ubuntu1.3.debian.tar.xz' pam_1.5.2-2ubuntu1.3.debian.tar.xz 168236 SHA512:f5e999a52f87ea8fede350104db52f4408077bda09363b7ff554d76db5c281f49f4ae8794cd681f59b32fdeca708b7689ed3a8b053566bb1808160de21bc3a4a
+```
 
 ### `dpkg` source package: `pcre2=10.40-1ubuntu1`
 
