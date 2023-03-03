@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f6e52394552445cf9d5737c577fa1965800808b68a3ffc22df827bed7ad473b7`
-- Created: `2023-02-21T21:42:52.175023821Z`
+- Image ID: `sha256:149b90954aecf4f6d31eaede7f12c08ffffa3694100f8b8d623f7d935b9cce51`
+- Created: `2023-03-01T11:29:22.264290961Z`
 - Virtual Size: ~ 169.95 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -684,11 +684,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gnupg2/2.2.12-1+deb10u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gnupg2/2.2.12-1+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `gnutls28=3.6.7-4+deb10u9`
+### `dpkg` source package: `gnutls28=3.6.7-4+deb10u10`
 
 Binary Packages:
 
-- `libgnutls30:amd64=3.6.7-4+deb10u9`
+- `libgnutls30:amd64=3.6.7-4+deb10u10`
 
 Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 
@@ -704,13 +704,20 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `The MIT License (MIT)`
 - `The main library is licensed under GNU Lesser`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris gnutls28=3.6.7-4+deb10u10
+'http://deb.debian.org/debian-security/pool/updates/main/g/gnutls28/gnutls28_3.6.7-4%2bdeb10u10.dsc' gnutls28_3.6.7-4+deb10u10.dsc 3265 SHA256:12f471baebedb368b8ea0c85cfecdf16b4c2bb5b0ed191587fce28424d6ff46e
+'http://deb.debian.org/debian-security/pool/updates/main/g/gnutls28/gnutls28_3.6.7.orig.tar.xz' gnutls28_3.6.7.orig.tar.xz 8153728 SHA256:5b3409ad5aaf239808730d1ee12fdcd148c0be00262c7edf157af655a8a188e2
+'http://deb.debian.org/debian-security/pool/updates/main/g/gnutls28/gnutls28_3.6.7-4%2bdeb10u10.debian.tar.xz' gnutls28_3.6.7-4+deb10u10.debian.tar.xz 102420 SHA256:7f2bfec4727b90b7d81267098f997bf847494c0c9ff2906606398a40a730ec7f
+```
 
-- http://snapshot.debian.org/package/gnutls28/3.6.7-4+deb10u9/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/gnutls28/3.6.7-4+deb10u10/ (for browsing the source)
+- https://sources.debian.net/src/gnutls28/3.6.7-4+deb10u10/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gnutls28/3.6.7-4+deb10u10/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `grep=3.3-1`
 
