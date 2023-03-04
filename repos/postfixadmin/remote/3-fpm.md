@@ -1,7 +1,7 @@
 ## `postfixadmin:3-fpm`
 
 ```console
-$ docker pull postfixadmin@sha256:bc8ffac67482a7a030c4105348f860e73075fd4834756faa444f8bd355975e27
+$ docker pull postfixadmin@sha256:2628423c10e313c622f3c2035ecc30e3f585f14db008a7db6d94f60925e12141
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -753,14 +753,14 @@ CMD ["php-fpm"]
 ### `postfixadmin:3-fpm` - linux; mips64le
 
 ```console
-$ docker pull postfixadmin@sha256:d3d56e2cafc357aae409e589e5fda4b916e2ca82b6e08be098372fb33ebe1574
+$ docker pull postfixadmin@sha256:52f15ef998aeab408732c7782ae3bce8d614e279f4232e032d476b97a8628a95
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **142.3 MB (142264585 bytes)**  
+-	Total Size: **142.3 MB (142264714 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d0f5df5fd267c958a2ffa23508a147c4308eb1b6923f65e76feaa67071e8f933`
+-	Image ID: `sha256:5b0046477e7aaaf0f07ac8b8a17f9109b56aec6a4b420af83d2c1744ee829af6`
 -	Entrypoint: `["\/usr\/local\/bin\/docker-entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -807,35 +807,35 @@ RUN docker-php-ext-enable sodium
 ENTRYPOINT ["docker-php-entrypoint"]
 # Wed, 01 Mar 2023 09:14:02 GMT
 WORKDIR /var/www/html
-# Wed, 01 Mar 2023 09:14:08 GMT
-RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; echo '; https://github.com/docker-library/php/pull/725#issuecomment-443540114'; echo 'log_limit = 8192'; 		echo; 		echo '[www]'; 		echo '; if we send this to /proc/self/fd/1, it never appears'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 		echo 'decorate_workers_output = no'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	{ 		echo '; https://github.com/docker-library/php/issues/878#issuecomment-938595965'; 		echo 'fastcgi.logging = Off'; 	} > "$PHP_INI_DIR/conf.d/docker-fpm.ini"
-# Wed, 01 Mar 2023 09:14:11 GMT
+# Sat, 04 Mar 2023 03:30:31 GMT
+RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; echo '; https://github.com/docker-library/php/pull/725#issuecomment-443540114'; echo 'log_limit = 8192'; 		echo; 		echo '[www]'; 		echo '; php-fpm closes STDOUT on startup, so sending logs to /proc/self/fd/1 does not work.'; 		echo '; https://bugs.php.net/bug.php?id=73886'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 		echo 'decorate_workers_output = no'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	{ 		echo '; https://github.com/docker-library/php/issues/878#issuecomment-938595965'; 		echo 'fastcgi.logging = Off'; 	} > "$PHP_INI_DIR/conf.d/docker-fpm.ini"
+# Sat, 04 Mar 2023 03:30:34 GMT
 STOPSIGNAL SIGQUIT
-# Wed, 01 Mar 2023 09:14:14 GMT
+# Sat, 04 Mar 2023 03:30:37 GMT
 EXPOSE 9000
-# Wed, 01 Mar 2023 09:14:18 GMT
+# Sat, 04 Mar 2023 03:30:41 GMT
 CMD ["php-fpm"]
-# Thu, 02 Mar 2023 00:01:44 GMT
+# Sat, 04 Mar 2023 05:12:46 GMT
 LABEL maintainer=David Goodwin <david@codepoets.co.uk> (@DavidGoodwin)
-# Thu, 02 Mar 2023 00:02:01 GMT
+# Sat, 04 Mar 2023 05:13:03 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gosu 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 02 Mar 2023 00:04:02 GMT
+# Sat, 04 Mar 2023 05:15:07 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 	libc-client2007e-dev 	libkrb5-dev 	libpq-dev 	libsqlite3-dev 	; 		docker-php-ext-configure 		imap --with-imap-ssl --with-kerberos 	; 		docker-php-ext-install -j "$(nproc)" 		imap 		pdo_mysql 		pdo_pgsql 		pdo_sqlite 		pgsql 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 		ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 			apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Thu, 02 Mar 2023 00:04:05 GMT
+# Sat, 04 Mar 2023 05:15:10 GMT
 ARG POSTFIXADMIN_VERSION=3.3.13
-# Thu, 02 Mar 2023 00:04:09 GMT
+# Sat, 04 Mar 2023 05:15:13 GMT
 ARG POSTFIXADMIN_SHA512=bf7daaa089ee3adc4b557f1a7d0509d78979ef688fb725bab795f5c9d81e8774296245fde0cb184db51e9185cad381682c3ecc0bfadf852388b499a0a95cca64
-# Thu, 02 Mar 2023 00:04:12 GMT
+# Sat, 04 Mar 2023 05:15:17 GMT
 ENV POSTFIXADMIN_VERSION=3.3.13
-# Thu, 02 Mar 2023 00:04:16 GMT
+# Sat, 04 Mar 2023 05:15:20 GMT
 ENV POSTFIXADMIN_SHA512=bf7daaa089ee3adc4b557f1a7d0509d78979ef688fb725bab795f5c9d81e8774296245fde0cb184db51e9185cad381682c3ecc0bfadf852388b499a0a95cca64
-# Thu, 02 Mar 2023 00:04:24 GMT
+# Sat, 04 Mar 2023 05:15:28 GMT
 RUN set -eu; 	curl -fsSL -o postfixadmin.tar.gz "https://github.com/postfixadmin/postfixadmin/archive/postfixadmin-${POSTFIXADMIN_VERSION}.tar.gz"; 	echo "$POSTFIXADMIN_SHA512 *postfixadmin.tar.gz" | sha512sum -c -; 	mkdir /usr/src/postfixadmin; 	tar -xf postfixadmin.tar.gz -C /usr/src/postfixadmin --strip-components=1; 	rm postfixadmin.tar.gz; 	mkdir -p /usr/src/postfixadmin/templates_c; 	chown -R www-data:www-data /usr/src/postfixadmin
-# Thu, 02 Mar 2023 00:04:27 GMT
+# Sat, 04 Mar 2023 05:15:31 GMT
 COPY file:0330067c04a06041dac55442e16abfe0ed234a7c50cf07812b84b1921c7cb5e3 in /usr/local/bin/ 
-# Thu, 02 Mar 2023 00:04:30 GMT
+# Sat, 04 Mar 2023 05:15:35 GMT
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-# Thu, 02 Mar 2023 00:04:34 GMT
+# Sat, 04 Mar 2023 05:15:38 GMT
 CMD ["php-fpm"]
 ```
 
@@ -876,25 +876,25 @@ CMD ["php-fpm"]
 		Last Modified: Wed, 01 Mar 2023 10:29:06 GMT  
 		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:307b6f9cf219ebdc0a994adc812ddc48fafadafae0fea438a2496c937a62b762`  
-		Last Modified: Wed, 01 Mar 2023 10:29:06 GMT  
-		Size: 8.9 KB (8856 bytes)  
+	-	`sha256:145959ca31c46029a15f75349985869b54413dd15e16578c0437284764f434f5`  
+		Last Modified: Sat, 04 Mar 2023 03:37:20 GMT  
+		Size: 8.9 KB (8893 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:73401c022f4f9d4286e41b511afa28c4824aded68ea7ff6b7498003211ad7991`  
-		Last Modified: Thu, 02 Mar 2023 00:05:25 GMT  
-		Size: 920.7 KB (920697 bytes)  
+	-	`sha256:68c0960b965eb591261df2717c5e4c0f92f49d18bac2dc7d459f9521a2a64bb6`  
+		Last Modified: Sat, 04 Mar 2023 05:16:09 GMT  
+		Size: 920.7 KB (920713 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0d831534ddf518b5181aa8f5ba6f85840979320421fb316fe58bfe232e7deba7`  
-		Last Modified: Thu, 02 Mar 2023 00:05:25 GMT  
-		Size: 918.5 KB (918546 bytes)  
+	-	`sha256:34522a50ac6fe6ae8cad8da6a4fc7b7b8f604df5ee1e871b69714ee02cfd6741`  
+		Last Modified: Sat, 04 Mar 2023 05:16:09 GMT  
+		Size: 918.6 KB (918597 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:96a376a37876fb2e7f6e9b5b6c95ceccb34c513103b09946c6725c706285b26d`  
-		Last Modified: Thu, 02 Mar 2023 00:05:26 GMT  
-		Size: 1.9 MB (1862544 bytes)  
+	-	`sha256:641bd922585b3e9f43793f1508b12eeefcf2c9f0ce84433fa0ffef7f6f10d24a`  
+		Last Modified: Sat, 04 Mar 2023 05:16:10 GMT  
+		Size: 1.9 MB (1862568 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74e62e4fc804207290c39fa8791216ea3e208077b79c5f2895fd0f187882a79f`  
-		Last Modified: Thu, 02 Mar 2023 00:05:24 GMT  
-		Size: 1.6 KB (1600 bytes)  
+	-	`sha256:57ffb14ae122ada9315370f5dfe290fa34adca8b4b2e657d2b2f773ae426ee1a`  
+		Last Modified: Sat, 04 Mar 2023 05:16:08 GMT  
+		Size: 1.6 KB (1601 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `postfixadmin:3-fpm` - linux; ppc64le
