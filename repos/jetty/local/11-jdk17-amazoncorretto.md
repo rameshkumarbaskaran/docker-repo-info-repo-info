@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:adfba6e1903e0174dfbc51ca0ec7b6c29fcfdef50cbecf0bd4d9447688eddd53`
-- Created: `2023-02-16T22:21:07.656161153Z`
-- Virtual Size: ~ 497.40 Mb  
+- Image ID: `sha256:84f6bb9783c912e62b0f036500cfd9d54f02d8efbc86ec9d791b7f38022dae48`
+- Created: `2023-03-03T00:03:56.61639176Z`
+- Virtual Size: ~ 499.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -77,15 +77,15 @@ $ dnf --quiet download --source --url bzip2-libs-1.0.6-13.amzn2.0.3
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/94c3d7884e52947d91910c016ac2491472033baef4e6afa6883ce5967653a62d/../../../../../blobstore/5eb7c8b4ed1b326f5e640d655f92f498451c8013b223ad5702abb108358ef0dc/bzip2-1.0.6-13.amzn2.0.3.src.rpm
 ```
 
-### `rpm` package: `ca-certificates-2021.2.50-72.amzn2.0.4.noarch`
+### `rpm` package: `ca-certificates-2021.2.50-72.amzn2.0.5.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url ca-certificates-2021.2.50-72.amzn2.0.4.noarch
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/94c3d7884e52947d91910c016ac2491472033baef4e6afa6883ce5967653a62d/../../../../../blobstore/3ebca5449eacd95953d0900c3169c63ddb0fe00ab8069d7cbfc00975a472d128/ca-certificates-2021.2.50-72.amzn2.0.4.src.rpm
+$ dnf --quiet download --source --url ca-certificates-2021.2.50-72.amzn2.0.5.noarch
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/94c3d7884e52947d91910c016ac2491472033baef4e6afa6883ce5967653a62d/../../../../../blobstore/58be084f8370d91cadec7a0ec2b4e0873b37cdda44ec52d21546fed90e1532d8/ca-certificates-2021.2.50-72.amzn2.0.5.src.rpm
 ```
 
 ### `rpm` package: `chkconfig-1.7.4-1.amzn2.0.2.x86_64`
@@ -1217,15 +1217,15 @@ $ dnf --quiet download --source --url tar-1.26-35.amzn2
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/94c3d7884e52947d91910c016ac2491472033baef4e6afa6883ce5967653a62d/../../../../../blobstore/3249d58314be6399ecbfcf70476bb2a0039af066ed4fc79942090302f6b214f6/tar-1.26-35.amzn2.src.rpm
 ```
 
-### `rpm` package: `tzdata-2022f-1.amzn2.0.1.noarch`
+### `rpm` package: `tzdata-2022g-1.amzn2.0.2.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url tzdata-2022f-1.amzn2.0.1.noarch
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/94c3d7884e52947d91910c016ac2491472033baef4e6afa6883ce5967653a62d/../../../../../blobstore/8efe7e76e2a650c345a20deda6f2039b4b47569bbf1604aa75938188918e169b/tzdata-2022f-1.amzn2.0.1.src.rpm
+$ dnf --quiet download --source --url tzdata-2022g-1.amzn2.0.2.noarch
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/94c3d7884e52947d91910c016ac2491472033baef4e6afa6883ce5967653a62d/../../../../../blobstore/5e7e3cdde5c3196a8442caa97d0aa153fcf121bbc81334c91d3b066dca97a80d/tzdata-2022g-1.amzn2.0.2.src.rpm
 ```
 
 ### `rpm` package: `ustr-1.0.4-16.amzn2.0.3.x86_64`
