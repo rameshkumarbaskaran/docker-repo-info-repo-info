@@ -1,7 +1,7 @@
 ## `mongo:6-jammy`
 
 ```console
-$ docker pull mongo@sha256:52bd7909cb6ee9ea8d31c1125d8e0d1c9b17ae4c291b09193856df061274e467
+$ docker pull mongo@sha256:705531f3c932d17301bdbbcdcda9ff78df9402a486f03d62303abab2c0537cfc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull mongo@sha256:52bd7909cb6ee9ea8d31c1125d8e0d1c9b17ae4c291b09193856d
 ### `mongo:6-jammy` - linux; amd64
 
 ```console
-$ docker pull mongo@sha256:563661ecc6d8851152fcc6d632ee1cba5551b5e4ad90e4b20f9484b506968213
+$ docker pull mongo@sha256:3c8dd1b08f8a2ec0338902affd432b40130e5acf49d6e3a1ca05ff5168100059
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **235.5 MB (235522135 bytes)**  
+-	Total Size: **235.5 MB (235522189 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f80ae918b5f6f0963ef1c30beb6496f10ca84af20758754285dfd286f66968d4`
+-	Image ID: `sha256:dcfda10b61c5f8c18ca946b8356309ba1b400509782a14321d9b619db6e51423`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mongod"]`
 
@@ -68,13 +68,13 @@ RUN set -x 	&& export DEBIAN_FRONTEND=noninteractive 	&& apt-get update 	&& apt-
 VOLUME [/data/db /data/configdb]
 # Thu, 02 Mar 2023 04:53:17 GMT
 ENV HOME=/data/db
-# Thu, 02 Mar 2023 04:53:17 GMT
-COPY file:82adc06ee9084caf92c64e3fbb536f06b2a724aa0c1f122d17c10c70a5a1b90e in /usr/local/bin/ 
-# Thu, 02 Mar 2023 04:53:17 GMT
+# Sat, 04 Mar 2023 00:24:53 GMT
+COPY file:e3d6a34db83fe880626bff5d0b8d720ae43720caac9c739cbd1d336a129dad2d in /usr/local/bin/ 
+# Sat, 04 Mar 2023 00:24:53 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 02 Mar 2023 04:53:17 GMT
+# Sat, 04 Mar 2023 00:24:53 GMT
 EXPOSE 27017
-# Thu, 02 Mar 2023 04:53:17 GMT
+# Sat, 04 Mar 2023 00:24:53 GMT
 CMD ["mongod"]
 ```
 
@@ -111,22 +111,22 @@ CMD ["mongod"]
 		Last Modified: Thu, 02 Mar 2023 04:56:22 GMT  
 		Size: 198.8 MB (198803089 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a65d2f992e92c5c19cc7f19160cb474b22a6e6c1579de19882e7ffd32b66775c`  
-		Last Modified: Thu, 02 Mar 2023 04:55:58 GMT  
-		Size: 5.0 KB (4963 bytes)  
+	-	`sha256:39e93bf7666c5363fa87407fa9698b7cf4024b3edf909fd717891f08e06c7d88`  
+		Last Modified: Sat, 04 Mar 2023 00:25:27 GMT  
+		Size: 5.0 KB (5017 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:6-jammy` - linux; arm64 variant v8
 
 ```console
-$ docker pull mongo@sha256:437dcfcd38e72b2d504bb19ad1407619c3bb2191a9f76b51473831628e66287e
+$ docker pull mongo@sha256:cf1ce5ffdd61137beeda844700fe14559300a5285fb4414b6b43e7b9115d04d3
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **229.2 MB (229183040 bytes)**  
+-	Total Size: **229.2 MB (229183098 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3681738498c404f92569bddcfa0cfb5448561c3f361bb8d4afa32c1ce3b3e566`
+-	Image ID: `sha256:bd066eec4864037a6568f98fb88a6e9a8339627d8eeaa54a0defcc67489efc6c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mongod"]`
 
@@ -175,13 +175,13 @@ RUN set -x 	&& export DEBIAN_FRONTEND=noninteractive 	&& apt-get update 	&& apt-
 VOLUME [/data/db /data/configdb]
 # Thu, 02 Mar 2023 03:08:24 GMT
 ENV HOME=/data/db
-# Thu, 02 Mar 2023 03:08:24 GMT
-COPY file:82adc06ee9084caf92c64e3fbb536f06b2a724aa0c1f122d17c10c70a5a1b90e in /usr/local/bin/ 
-# Thu, 02 Mar 2023 03:08:24 GMT
+# Sat, 04 Mar 2023 00:10:17 GMT
+COPY file:e3d6a34db83fe880626bff5d0b8d720ae43720caac9c739cbd1d336a129dad2d in /usr/local/bin/ 
+# Sat, 04 Mar 2023 00:10:17 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 02 Mar 2023 03:08:24 GMT
+# Sat, 04 Mar 2023 00:10:17 GMT
 EXPOSE 27017
-# Thu, 02 Mar 2023 03:08:25 GMT
+# Sat, 04 Mar 2023 00:10:17 GMT
 CMD ["mongod"]
 ```
 
@@ -218,7 +218,7 @@ CMD ["mongod"]
 		Last Modified: Thu, 02 Mar 2023 03:11:25 GMT  
 		Size: 194.6 MB (194632911 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6fdf08f14ccf2d273094645d76bd596ecedfd768b3b9e6b2f1685ece1389ecd4`  
-		Last Modified: Thu, 02 Mar 2023 03:11:08 GMT  
-		Size: 5.0 KB (4962 bytes)  
+	-	`sha256:98c4148c49d4f74f8e8d3d745d4aa1bfa434c8afc86c2a0f1ee153ddc9436072`  
+		Last Modified: Sat, 04 Mar 2023 00:10:49 GMT  
+		Size: 5.0 KB (5020 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
