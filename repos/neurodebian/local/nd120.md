@@ -1606,8 +1606,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris neurodebian=0.41.2
-'http://deb.debian.org/debian/pool/main/n/neurodebian/neurodebian_0.41.2.dsc' neurodebian_0.41.2.dsc 2136 SHA256:cd22e55c8b26c869f86579c622f6ee66262a5c7c2abe09bfd91fa613b34e04bf
-'http://deb.debian.org/debian/pool/main/n/neurodebian/neurodebian_0.41.2.tar.xz' neurodebian_0.41.2.tar.xz 8319308 SHA256:0f84ba29ad00704c67c641bcdc96fe6fed4709b02d35668b4ddc23de96829486
+'http://deb.debian.org/debian/pool/main/n/neurodebian/neurodebian_0.41.2%2bnmu1.dsc' neurodebian_0.41.2+nmu1.dsc 2156 SHA256:9aa0a1cf2750dd93ea22999b06ce11223ecba25ce546559ff35c4cf7b351ba5c
+'http://deb.debian.org/debian/pool/main/n/neurodebian/neurodebian_0.41.2%2bnmu1.tar.xz' neurodebian_0.41.2+nmu1.tar.xz 8320356 SHA256:aec6de4c163671951bb1e151040c79600b9a73f2918be1f1e49b5f16dec528d9
 ```
 
 Other potentially useful URLs:
