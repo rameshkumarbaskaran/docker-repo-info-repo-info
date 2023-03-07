@@ -1,7 +1,7 @@
 ## `redmine:5-alpine`
 
 ```console
-$ docker pull redmine@sha256:d2971c6da84a90e5fd241441218fa68bf8c57ca39946f63ffd2b2917b39f2f7a
+$ docker pull redmine@sha256:1f9dd52eb988e27bb45694ac824f23dc265b683bd019d1cc77b87772e80aa50a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -17,14 +17,14 @@ $ docker pull redmine@sha256:d2971c6da84a90e5fd241441218fa68bf8c57ca39946f63ffd2
 ### `redmine:5-alpine` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:7720c8e7ac515a40dd724142d71ba9b29623231cd70e7386285620016476d367
+$ docker pull redmine@sha256:5f7bfebbf66b4d0b4b84b5cde0a9aaaa0e4b2708e24cb333e8bffce7d17e7588
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **199.7 MB (199746361 bytes)**  
+-	Total Size: **199.8 MB (199791392 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:496b9f7a0908276841e363f8193fc39bbe86a3d995667c032523a0d9135d2332`
+-	Image ID: `sha256:60e1646a33d195bcec8bdaf1c703c733e4d069dc09ffde583b72ca8de96a9554`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -69,27 +69,27 @@ WORKDIR /usr/src/redmine
 ENV HOME=/home/redmine
 # Sat, 11 Feb 2023 17:14:00 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 11 Feb 2023 17:14:00 GMT
-ENV REDMINE_VERSION=5.0.4
-# Sat, 11 Feb 2023 17:14:00 GMT
-ENV REDMINE_DOWNLOAD_URL=https://www.redmine.org/releases/redmine-5.0.4.tar.gz
-# Sat, 11 Feb 2023 17:14:00 GMT
-ENV REDMINE_DOWNLOAD_SHA256=39436f5f8d26f5b7ce17e79903a3112e556e924da4f51c05b57f5defbe6f2924
-# Sat, 11 Feb 2023 17:14:04 GMT
+# Mon, 06 Mar 2023 23:22:53 GMT
+ENV REDMINE_VERSION=5.0.5
+# Mon, 06 Mar 2023 23:22:53 GMT
+ENV REDMINE_DOWNLOAD_URL=https://www.redmine.org/releases/redmine-5.0.5.tar.gz
+# Mon, 06 Mar 2023 23:22:53 GMT
+ENV REDMINE_DOWNLOAD_SHA256=a89ad1c4bb9bf025e6527c77ab18c8faf7749c94a975caf2cfdbba00eb12a481
+# Mon, 06 Mar 2023 23:22:57 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "$REDMINE_DOWNLOAD_URL"; 	echo "$REDMINE_DOWNLOAD_SHA256 *redmine.tar.gz" | sha256sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 11 Feb 2023 17:14:04 GMT
+# Mon, 06 Mar 2023 23:22:57 GMT
 ENV BUNDLE_FORCE_RUBY_PLATFORM=1
-# Sat, 11 Feb 2023 17:15:55 GMT
+# Mon, 06 Mar 2023 23:24:52 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetds-dev 		gcc 		make 		mariadb-dev 		musl-dev 		patch 		postgresql-dev 		sqlite-dev 		ttf2ufm 		zlib-dev 	; 		su-exec redmine bundle config --local without 'development test'; 	puma="$(grep -E "^[[:space:]]*gem [:'\"]puma['\",[:space:]].*\$" Gemfile)"; 	{ echo; echo "$puma"; } | sed -re 's/^[[:space:]]+//' >> Gemfile; 	echo '# the following entries only exist to force `bundle install` to pre-install all database adapter dependencies -- they can be safely removed/ignored' > ./config/database.yml; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$adapter:" >> ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 	done; 	su-exec redmine bundle install --jobs "$(nproc)"; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		rm /usr/local/bundle/gems/rbpdf-font-1.19.*/lib/fonts/ttf2ufm/ttf2ufm; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .redmine-rundeps $runDeps; 	apk del --no-network .build-deps
-# Sat, 11 Feb 2023 17:15:55 GMT
+# Mon, 06 Mar 2023 23:24:53 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 11 Feb 2023 17:15:55 GMT
+# Mon, 06 Mar 2023 23:24:53 GMT
 COPY file:f2dac8fc10b4b9c85d18ffc54f3822ba7f98c858ad133cc1c0a63d9d52731204 in / 
-# Sat, 11 Feb 2023 17:15:55 GMT
+# Mon, 06 Mar 2023 23:24:53 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 11 Feb 2023 17:15:56 GMT
+# Mon, 06 Mar 2023 23:24:53 GMT
 EXPOSE 3000
-# Sat, 11 Feb 2023 17:15:56 GMT
+# Mon, 06 Mar 2023 23:24:53 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -130,30 +130,30 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 11 Feb 2023 17:19:10 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7cba5f51178df2f1b282ba0638cb3d360d0070443c52cd9e3336701afc007a9f`  
-		Last Modified: Sat, 11 Feb 2023 17:19:11 GMT  
-		Size: 3.1 MB (3143962 bytes)  
+	-	`sha256:f386bea0e08e95ffdc7825865fe156979bc5342fa1e1333c94031e448a0dc2df`  
+		Last Modified: Mon, 06 Mar 2023 23:29:47 GMT  
+		Size: 3.1 MB (3145747 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd0d99239672f04d0aa9aa8b6612c08b1cc17b841c4660333d0bd0a32409040a`  
-		Last Modified: Sat, 11 Feb 2023 17:19:17 GMT  
-		Size: 70.2 MB (70192520 bytes)  
+	-	`sha256:2ff8d86945551d9ea943e240d4a85882d3102d3f2457f59872f879214c597c1c`  
+		Last Modified: Mon, 06 Mar 2023 23:29:53 GMT  
+		Size: 70.2 MB (70235765 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:52ef7ae6ad3ed267335b6a01e2b42db7e00152409365ee130bc1cf649057d9b1`  
-		Last Modified: Sat, 11 Feb 2023 17:19:10 GMT  
-		Size: 2.0 KB (2012 bytes)  
+	-	`sha256:b2a69b9cf113f271f516489eeef269b36e291600a647923ca89c5bfee9f2b49f`  
+		Last Modified: Mon, 06 Mar 2023 23:29:46 GMT  
+		Size: 2.0 KB (2013 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:5-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull redmine@sha256:6e617196d84a3642e26d348c1abe8a5effdbd5238f1165733d16af13f08981a6
+$ docker pull redmine@sha256:ac6ce917f41bb61558e3dd72235035f4e20a7a42aaea4edfc777e1f95a2459b2
 ```
 
--	Docker Version: 20.10.17
+-	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **190.0 MB (190027858 bytes)**  
+-	Total Size: **190.1 MB (190073204 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:189571283146701c48f469a0696ba0edbd8c4bcf0be44bdfb57d244228b39322`
+-	Image ID: `sha256:28a53f07685cad0d25e5da3150dddb59ab703f005aa1ef03ec7ee4160b880747`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -186,39 +186,39 @@ ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
 # Sat, 11 Feb 2023 07:04:21 GMT
 CMD ["irb"]
-# Sat, 11 Feb 2023 10:02:34 GMT
+# Mon, 06 Mar 2023 22:51:02 GMT
 RUN addgroup -S -g 1000 redmine && adduser -S -H -G redmine -u 999 redmine
-# Sat, 11 Feb 2023 10:02:49 GMT
+# Mon, 06 Mar 2023 22:51:19 GMT
 RUN set -eux; 	apk add --no-cache 		bash 		ca-certificates 		findutils 		su-exec 		tini 		tzdata 		wget 				breezy 		git 		mercurial 		openssh-client 		subversion 				ghostscript 		ghostscript-fonts 		imagemagick 	;
-# Sat, 11 Feb 2023 10:02:50 GMT
+# Mon, 06 Mar 2023 22:51:21 GMT
 ENV RAILS_ENV=production
-# Sat, 11 Feb 2023 10:02:50 GMT
+# Mon, 06 Mar 2023 22:51:21 GMT
 WORKDIR /usr/src/redmine
-# Sat, 11 Feb 2023 10:02:50 GMT
+# Mon, 06 Mar 2023 22:51:21 GMT
 ENV HOME=/home/redmine
-# Sat, 11 Feb 2023 10:02:51 GMT
+# Mon, 06 Mar 2023 22:51:22 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 11 Feb 2023 10:02:51 GMT
-ENV REDMINE_VERSION=5.0.4
-# Sat, 11 Feb 2023 10:02:51 GMT
-ENV REDMINE_DOWNLOAD_URL=https://www.redmine.org/releases/redmine-5.0.4.tar.gz
-# Sat, 11 Feb 2023 10:02:51 GMT
-ENV REDMINE_DOWNLOAD_SHA256=39436f5f8d26f5b7ce17e79903a3112e556e924da4f51c05b57f5defbe6f2924
-# Sat, 11 Feb 2023 10:02:55 GMT
+# Mon, 06 Mar 2023 22:51:22 GMT
+ENV REDMINE_VERSION=5.0.5
+# Mon, 06 Mar 2023 22:51:22 GMT
+ENV REDMINE_DOWNLOAD_URL=https://www.redmine.org/releases/redmine-5.0.5.tar.gz
+# Mon, 06 Mar 2023 22:51:22 GMT
+ENV REDMINE_DOWNLOAD_SHA256=a89ad1c4bb9bf025e6527c77ab18c8faf7749c94a975caf2cfdbba00eb12a481
+# Mon, 06 Mar 2023 22:51:25 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "$REDMINE_DOWNLOAD_URL"; 	echo "$REDMINE_DOWNLOAD_SHA256 *redmine.tar.gz" | sha256sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 11 Feb 2023 10:02:56 GMT
+# Mon, 06 Mar 2023 22:51:26 GMT
 ENV BUNDLE_FORCE_RUBY_PLATFORM=1
-# Sat, 11 Feb 2023 10:05:33 GMT
+# Mon, 06 Mar 2023 22:53:24 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetds-dev 		gcc 		make 		mariadb-dev 		musl-dev 		patch 		postgresql-dev 		sqlite-dev 		ttf2ufm 		zlib-dev 	; 		su-exec redmine bundle config --local without 'development test'; 	puma="$(grep -E "^[[:space:]]*gem [:'\"]puma['\",[:space:]].*\$" Gemfile)"; 	{ echo; echo "$puma"; } | sed -re 's/^[[:space:]]+//' >> Gemfile; 	echo '# the following entries only exist to force `bundle install` to pre-install all database adapter dependencies -- they can be safely removed/ignored' > ./config/database.yml; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$adapter:" >> ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 	done; 	su-exec redmine bundle install --jobs "$(nproc)"; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		rm /usr/local/bundle/gems/rbpdf-font-1.19.*/lib/fonts/ttf2ufm/ttf2ufm; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .redmine-rundeps $runDeps; 	apk del --no-network .build-deps
-# Sat, 11 Feb 2023 10:05:34 GMT
+# Mon, 06 Mar 2023 22:53:24 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 11 Feb 2023 10:05:34 GMT
+# Mon, 06 Mar 2023 22:53:24 GMT
 COPY file:f2dac8fc10b4b9c85d18ffc54f3822ba7f98c858ad133cc1c0a63d9d52731204 in / 
-# Sat, 11 Feb 2023 10:05:34 GMT
+# Mon, 06 Mar 2023 22:53:24 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 11 Feb 2023 10:05:35 GMT
+# Mon, 06 Mar 2023 22:53:25 GMT
 EXPOSE 3000
-# Sat, 11 Feb 2023 10:05:35 GMT
+# Mon, 06 Mar 2023 22:53:25 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -243,46 +243,46 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 11 Feb 2023 07:12:59 GMT  
 		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3fba15ae0859e126c6ef736838f5af31dca8553f50f4ad2f189d12e27022fa3a`  
-		Last Modified: Sat, 11 Feb 2023 10:10:28 GMT  
-		Size: 1.2 KB (1201 bytes)  
+	-	`sha256:b6ca423cbf2b428250632c5beade9745fd4325bd7318997be9f8dba6ff69000c`  
+		Last Modified: Mon, 06 Mar 2023 22:56:58 GMT  
+		Size: 1.2 KB (1204 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6dd4c522d4014bfd39f6434b2fcecbfbe722ce7bf517e360c20502cef83cf654`  
-		Last Modified: Sat, 11 Feb 2023 10:10:49 GMT  
-		Size: 83.9 MB (83929157 bytes)  
+	-	`sha256:276743f7cbd2e9064103c21b9e71d9b536593bbd89be8e396fe22ede6bc1cca8`  
+		Last Modified: Mon, 06 Mar 2023 22:57:11 GMT  
+		Size: 83.9 MB (83937187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b01776626dd5ba7625f3cc1f55252e8e6310c3047f4a51e36cc6f76d587d7ab`  
-		Last Modified: Sat, 11 Feb 2023 10:10:26 GMT  
-		Size: 136.0 B  
+	-	`sha256:d3c248a488e1441b22ada1017f35d549283cb3559c4102d34dfe0452cceab4c9`  
+		Last Modified: Mon, 06 Mar 2023 22:56:56 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8ca5b985aaa8fb19ae427903f737521760d4912273fd01c89d0c0eb79280426f`  
-		Last Modified: Sat, 11 Feb 2023 10:10:26 GMT  
-		Size: 128.0 B  
+	-	`sha256:bf48f4483fb1ee5e40ad6dfa6ec321223f0013c28ad04c3816df0dc43b8a15bc`  
+		Last Modified: Mon, 06 Mar 2023 22:56:56 GMT  
+		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e724d6161c32cfc3ed8a694462ec8b54c0f5ad8d48052f0b3d184ed3554150af`  
-		Last Modified: Sat, 11 Feb 2023 10:10:27 GMT  
-		Size: 3.1 MB (3143393 bytes)  
+	-	`sha256:5d13fc55aa0005de6bfabddae8de16822d87a2cd28fd5bd970f0b3262edf57d8`  
+		Last Modified: Mon, 06 Mar 2023 22:56:57 GMT  
+		Size: 3.1 MB (3145807 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c580e93e9ee6d8a1581e68fc38ba0ec3d405c7db7eb0fff87ba07da82dd24779`  
-		Last Modified: Sat, 11 Feb 2023 10:10:40 GMT  
-		Size: 68.5 MB (68474345 bytes)  
+	-	`sha256:df893da50ceab09ed0da5582f2e3dfe27dcc3093fb16781568599358a8e3b1f6`  
+		Last Modified: Mon, 06 Mar 2023 22:57:04 GMT  
+		Size: 68.5 MB (68509179 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bf34dcd9089fb180a04aa610884ccd893c9ca9365c71d1197b5bc55d2ec54ef`  
-		Last Modified: Sat, 11 Feb 2023 10:10:26 GMT  
-		Size: 2.0 KB (2012 bytes)  
+	-	`sha256:d766de2958c8144a7522c6ea5ee0b21eb1bc55d25ffdf51994d92c715c7b2b14`  
+		Last Modified: Mon, 06 Mar 2023 22:56:56 GMT  
+		Size: 2.0 KB (2013 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:5-alpine` - linux; arm variant v7
 
 ```console
-$ docker pull redmine@sha256:af51af3a5007b9afd0b77644a631efceea6e58b3c075ad3c1954e67b97367d92
+$ docker pull redmine@sha256:f9f56a4cf790139685acf1b445d7c4ae28f4456ad791a7f0becac7d6c962898d
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **187.3 MB (187320100 bytes)**  
+-	Total Size: **187.4 MB (187360933 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:77ae2bbd84efaa276a0ab52c6cd83725ede1af046df1f41fb5cee1700ede3a9c`
+-	Image ID: `sha256:c6b99b3a4dc0f2483ce2fc055ff8a8fce26e47298d52487c9897007978571677`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -327,27 +327,27 @@ WORKDIR /usr/src/redmine
 ENV HOME=/home/redmine
 # Thu, 02 Mar 2023 06:02:32 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Thu, 02 Mar 2023 06:02:32 GMT
-ENV REDMINE_VERSION=5.0.4
-# Thu, 02 Mar 2023 06:02:32 GMT
-ENV REDMINE_DOWNLOAD_URL=https://www.redmine.org/releases/redmine-5.0.4.tar.gz
-# Thu, 02 Mar 2023 06:02:32 GMT
-ENV REDMINE_DOWNLOAD_SHA256=39436f5f8d26f5b7ce17e79903a3112e556e924da4f51c05b57f5defbe6f2924
-# Thu, 02 Mar 2023 06:02:36 GMT
+# Mon, 06 Mar 2023 23:02:24 GMT
+ENV REDMINE_VERSION=5.0.5
+# Mon, 06 Mar 2023 23:02:24 GMT
+ENV REDMINE_DOWNLOAD_URL=https://www.redmine.org/releases/redmine-5.0.5.tar.gz
+# Mon, 06 Mar 2023 23:02:25 GMT
+ENV REDMINE_DOWNLOAD_SHA256=a89ad1c4bb9bf025e6527c77ab18c8faf7749c94a975caf2cfdbba00eb12a481
+# Mon, 06 Mar 2023 23:02:28 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "$REDMINE_DOWNLOAD_URL"; 	echo "$REDMINE_DOWNLOAD_SHA256 *redmine.tar.gz" | sha256sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Thu, 02 Mar 2023 06:02:36 GMT
+# Mon, 06 Mar 2023 23:02:28 GMT
 ENV BUNDLE_FORCE_RUBY_PLATFORM=1
-# Thu, 02 Mar 2023 06:04:31 GMT
+# Mon, 06 Mar 2023 23:04:23 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetds-dev 		gcc 		make 		mariadb-dev 		musl-dev 		patch 		postgresql-dev 		sqlite-dev 		ttf2ufm 		zlib-dev 	; 		su-exec redmine bundle config --local without 'development test'; 	puma="$(grep -E "^[[:space:]]*gem [:'\"]puma['\",[:space:]].*\$" Gemfile)"; 	{ echo; echo "$puma"; } | sed -re 's/^[[:space:]]+//' >> Gemfile; 	echo '# the following entries only exist to force `bundle install` to pre-install all database adapter dependencies -- they can be safely removed/ignored' > ./config/database.yml; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$adapter:" >> ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 	done; 	su-exec redmine bundle install --jobs "$(nproc)"; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		rm /usr/local/bundle/gems/rbpdf-font-1.19.*/lib/fonts/ttf2ufm/ttf2ufm; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .redmine-rundeps $runDeps; 	apk del --no-network .build-deps
-# Thu, 02 Mar 2023 06:04:32 GMT
+# Mon, 06 Mar 2023 23:04:23 GMT
 VOLUME [/usr/src/redmine/files]
-# Thu, 02 Mar 2023 06:04:32 GMT
+# Mon, 06 Mar 2023 23:04:23 GMT
 COPY file:f2dac8fc10b4b9c85d18ffc54f3822ba7f98c858ad133cc1c0a63d9d52731204 in / 
-# Thu, 02 Mar 2023 06:04:32 GMT
+# Mon, 06 Mar 2023 23:04:23 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 02 Mar 2023 06:04:32 GMT
+# Mon, 06 Mar 2023 23:04:24 GMT
 EXPOSE 3000
-# Thu, 02 Mar 2023 06:04:32 GMT
+# Mon, 06 Mar 2023 23:04:24 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -388,17 +388,17 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Thu, 02 Mar 2023 06:11:35 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342a4ac07592f211f43821d14cb97a676c6d117887fa41b289a33ef9edec103b`  
-		Last Modified: Thu, 02 Mar 2023 06:11:37 GMT  
-		Size: 3.1 MB (3143985 bytes)  
+	-	`sha256:02f9f3ef69d888c97808371870f208ccb030f69087fde6c662519bd9ed37a625`  
+		Last Modified: Mon, 06 Mar 2023 23:10:59 GMT  
+		Size: 3.1 MB (3145785 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aafdd5d37f4c3bb0d25e466877663027baac6f66aafa37d648e8b19c8b4c25c8`  
-		Last Modified: Thu, 02 Mar 2023 06:11:43 GMT  
-		Size: 68.1 MB (68085369 bytes)  
+	-	`sha256:b718ba8111c7f50ae43197141582fc83fb082705c61117af5a60a7d44646ac60`  
+		Last Modified: Mon, 06 Mar 2023 23:11:05 GMT  
+		Size: 68.1 MB (68124404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cee41d0bfdda3752bd8810a83e826c6e5e247358e71a814fb1ca3a8a9a1cc493`  
-		Last Modified: Thu, 02 Mar 2023 06:11:36 GMT  
-		Size: 2.0 KB (2013 bytes)  
+	-	`sha256:ca339d3ecb98c1e36dc9df8d7ee7ddd55f155a5fc85b57e4221dd9bb665e6179`  
+		Last Modified: Mon, 06 Mar 2023 23:10:58 GMT  
+		Size: 2.0 KB (2011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:5-alpine` - linux; arm64 variant v8
@@ -662,14 +662,14 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 ### `redmine:5-alpine` - linux; ppc64le
 
 ```console
-$ docker pull redmine@sha256:e3b1821074789ae01c59107c9c272e0d069f16472322704f9397b52c5891aab8
+$ docker pull redmine@sha256:7dc1066891a6b7014b9730fe8a8371250b92f0f34c222b749870cfc380e044ad
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **206.8 MB (206750911 bytes)**  
+-	Total Size: **206.8 MB (206817187 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a8c637ba07733b0d55a573a17473c6e1a67e0fee7e4c329a675e4f5783ff1411`
+-	Image ID: `sha256:b97d5da11caa721e1711b06c9b141cff17fa785f045609f74a17710b9c4ebb40`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -714,27 +714,27 @@ WORKDIR /usr/src/redmine
 ENV HOME=/home/redmine
 # Sat, 11 Feb 2023 12:54:25 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 11 Feb 2023 12:54:26 GMT
-ENV REDMINE_VERSION=5.0.4
-# Sat, 11 Feb 2023 12:54:26 GMT
-ENV REDMINE_DOWNLOAD_URL=https://www.redmine.org/releases/redmine-5.0.4.tar.gz
-# Sat, 11 Feb 2023 12:54:27 GMT
-ENV REDMINE_DOWNLOAD_SHA256=39436f5f8d26f5b7ce17e79903a3112e556e924da4f51c05b57f5defbe6f2924
-# Sat, 11 Feb 2023 12:54:33 GMT
+# Mon, 06 Mar 2023 23:22:48 GMT
+ENV REDMINE_VERSION=5.0.5
+# Mon, 06 Mar 2023 23:22:48 GMT
+ENV REDMINE_DOWNLOAD_URL=https://www.redmine.org/releases/redmine-5.0.5.tar.gz
+# Mon, 06 Mar 2023 23:22:49 GMT
+ENV REDMINE_DOWNLOAD_SHA256=a89ad1c4bb9bf025e6527c77ab18c8faf7749c94a975caf2cfdbba00eb12a481
+# Mon, 06 Mar 2023 23:22:56 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "$REDMINE_DOWNLOAD_URL"; 	echo "$REDMINE_DOWNLOAD_SHA256 *redmine.tar.gz" | sha256sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 11 Feb 2023 12:54:34 GMT
+# Mon, 06 Mar 2023 23:22:58 GMT
 ENV BUNDLE_FORCE_RUBY_PLATFORM=1
-# Sat, 11 Feb 2023 12:58:29 GMT
+# Mon, 06 Mar 2023 23:27:06 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetds-dev 		gcc 		make 		mariadb-dev 		musl-dev 		patch 		postgresql-dev 		sqlite-dev 		ttf2ufm 		zlib-dev 	; 		su-exec redmine bundle config --local without 'development test'; 	puma="$(grep -E "^[[:space:]]*gem [:'\"]puma['\",[:space:]].*\$" Gemfile)"; 	{ echo; echo "$puma"; } | sed -re 's/^[[:space:]]+//' >> Gemfile; 	echo '# the following entries only exist to force `bundle install` to pre-install all database adapter dependencies -- they can be safely removed/ignored' > ./config/database.yml; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$adapter:" >> ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 	done; 	su-exec redmine bundle install --jobs "$(nproc)"; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		rm /usr/local/bundle/gems/rbpdf-font-1.19.*/lib/fonts/ttf2ufm/ttf2ufm; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .redmine-rundeps $runDeps; 	apk del --no-network .build-deps
-# Sat, 11 Feb 2023 12:58:32 GMT
+# Mon, 06 Mar 2023 23:27:10 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 11 Feb 2023 12:58:32 GMT
+# Mon, 06 Mar 2023 23:27:10 GMT
 COPY file:f2dac8fc10b4b9c85d18ffc54f3822ba7f98c858ad133cc1c0a63d9d52731204 in / 
-# Sat, 11 Feb 2023 12:58:33 GMT
+# Mon, 06 Mar 2023 23:27:10 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 11 Feb 2023 12:58:34 GMT
+# Mon, 06 Mar 2023 23:27:11 GMT
 EXPOSE 3000
-# Sat, 11 Feb 2023 12:58:34 GMT
+# Mon, 06 Mar 2023 23:27:11 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -775,16 +775,16 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 11 Feb 2023 13:05:16 GMT  
 		Size: 158.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fcdd58e09dbb71739fe280a3b680dc7ff5a1b302e1552f1c896f2f7ac7b9038c`  
-		Last Modified: Sat, 11 Feb 2023 13:05:18 GMT  
-		Size: 3.1 MB (3143931 bytes)  
+	-	`sha256:483dc1b3e0db6836e9526de5eecd304462a76e1c7da92cb3796db872b010221f`  
+		Last Modified: Mon, 06 Mar 2023 23:38:46 GMT  
+		Size: 3.1 MB (3145840 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:892b73b40e1b57cc7319089d1a8fc50f582d6ccdaf279b17301cda490dd04972`  
-		Last Modified: Sat, 11 Feb 2023 13:05:29 GMT  
-		Size: 71.0 MB (70989292 bytes)  
+	-	`sha256:bbe76161a6ae4998a1ed91d3c2ce19e3c491b52623c9741d58d0ec68fa93f229`  
+		Last Modified: Mon, 06 Mar 2023 23:38:57 GMT  
+		Size: 71.1 MB (71053659 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3bbd0e306095df79ee9d5bc2309cdfc01fabe33ca21e312412348004b10110ba`  
-		Last Modified: Sat, 11 Feb 2023 13:05:16 GMT  
+	-	`sha256:492b42f3cb1bc5a92841840bf835aa34441a77fe5a1964a378a49e7eaf953dbd`  
+		Last Modified: Mon, 06 Mar 2023 23:38:45 GMT  
 		Size: 2.0 KB (2013 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
