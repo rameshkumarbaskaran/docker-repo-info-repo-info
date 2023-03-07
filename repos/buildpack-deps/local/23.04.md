@@ -369,14 +369,9 @@ Licenses: (parsed from: `/usr/share/doc/libbrotli-dev/copyright`, `/usr/share/do
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris brotli=1.0.9-2build7
-'http://archive.ubuntu.com/ubuntu/pool/main/b/brotli/brotli_1.0.9-2build7.dsc' brotli_1.0.9-2build7.dsc 2285 SHA512:ae62b6933300cd10c65559f6d94e03a4fa6404168042a52481cfbc87715f05258a5c3b1cec00e1dd33c5111fa3d46d43dd3ea53667e71559ae88a9eae81e56f6
-'http://archive.ubuntu.com/ubuntu/pool/main/b/brotli/brotli_1.0.9.orig.tar.gz' brotli_1.0.9.orig.tar.gz 486984 SHA512:b8e2df955e8796ac1f022eb4ebad29532cb7e3aa6a4b6aee91dbd2c7d637eee84d9a144d3e878895bb5e62800875c2c01c8f737a1261020c54feacf9f676b5f5
-'http://archive.ubuntu.com/ubuntu/pool/main/b/brotli/brotli_1.0.9-2build7.debian.tar.xz' brotli_1.0.9-2build7.debian.tar.xz 5836 SHA512:03247406da55d9742fcf3aed6a4ba6837887483b9e737b9fc7b8554e5103dd09cd0f48dd7832aabaa50ab06a2a7076856d6a95dc6debd3c4bb8d9557ae35d1b5
-```
 
 ### `dpkg` source package: `bzip2=1.0.8-5build1`
 
@@ -856,14 +851,9 @@ Licenses: (parsed from: `/usr/share/doc/libfftw3-double3/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris fftw3=3.3.8-2ubuntu8
-'http://archive.ubuntu.com/ubuntu/pool/main/f/fftw3/fftw3_3.3.8-2ubuntu8.dsc' fftw3_3.3.8-2ubuntu8.dsc 2673 SHA512:f0e7a1991fe120a3048d22a02f90adf7d934ad95a82ecc36360fa760a5125cf58d3e2dc6167dc847723af6f61720f95019895fcb8f8d0fc6902e39017aed944c
-'http://archive.ubuntu.com/ubuntu/pool/main/f/fftw3/fftw3_3.3.8.orig.tar.gz' fftw3_3.3.8.orig.tar.gz 4110137 SHA512:ab918b742a7c7dcb56390a0a0014f517a6dff9a2e4b4591060deeb2c652bf3c6868aa74559a422a276b853289b4b701bdcbd3d4d8c08943acf29167a7be81a38
-'http://archive.ubuntu.com/ubuntu/pool/main/f/fftw3/fftw3_3.3.8-2ubuntu8.debian.tar.xz' fftw3_3.3.8-2ubuntu8.debian.tar.xz 14356 SHA512:99280a373b3c5a19d472e8bd23495759aa905aec12c3c01b3f3399fd1a300b4a0cb847369efad9690ec85bf8e9206428f9bf707edc0c665485362aa6cfaf1722
-```
 
 ### `dpkg` source package: `file=1:5.44-3`
 
@@ -1031,14 +1021,9 @@ Licenses: (parsed from: `/usr/share/doc/cpp-12/copyright`, `/usr/share/doc/g++-1
 - `GPL-3`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-12=12.2.0-14ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-12/gcc-12_12.2.0-14ubuntu2.dsc' gcc-12_12.2.0-14ubuntu2.dsc 22350 SHA512:569eb3cc1d3e49d9d1bcb63cdf30d23e01408241eb58bbfac1aad6ee6bf55dba6d98cb1d4cff603cb639d3f2dd525855cb786e48fc561244d2f821ffb9dbde7e
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-12/gcc-12_12.2.0.orig.tar.gz' gcc-12_12.2.0.orig.tar.gz 91338630 SHA512:f614d673deaf6d586993be859052930db80dbbb030bc0a14d3e3517788262db8ad1ff3e992a68198195b3b283207d96720e2196d3556cf1f4788ed106f62e48e
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-12/gcc-12_12.2.0-14ubuntu2.debian.tar.xz' gcc-12_12.2.0-14ubuntu2.debian.tar.xz 1730996 SHA512:59ffbac3cf40a3673920688357e93f8392f89aebf55cfb66be51c69a60bb696ee92b88d762c22aa38cb40345b8dea02b132c08d89739337cadb75d795d62b7ab
-```
 
 ### `dpkg` source package: `gcc-13=13-20230215-1ubuntu2`
 
@@ -2317,14 +2302,9 @@ Licenses: (parsed from: `/usr/share/doc/libjpeg-turbo8/copyright`, `/usr/share/d
 - `JPEG`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libjpeg-turbo=2.1.2-0ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_2.1.2-0ubuntu1.dsc' libjpeg-turbo_2.1.2-0ubuntu1.dsc 1690 SHA512:401a75e62575352db079bd268f00f94c8ea1e8e6c38bda852628729e6dfd3135804e3c9ee5b18b1254fed827e6073b0078553bcbc2c1df30d628bbb717a5ed47
-'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_2.1.2.orig.tar.gz' libjpeg-turbo_2.1.2.orig.tar.gz 2257645 SHA512:172c3d8bdad62c32c4560754422fb36f0e80c8316e44d08708f0cba8ee9fd0830f5295d380de34d0f90ec07df6ab4dbe2f0c8451bc60553371c022c9077447c2
-'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_2.1.2-0ubuntu1.debian.tar.xz' libjpeg-turbo_2.1.2-0ubuntu1.debian.tar.xz 17240 SHA512:5cfc1e73012f3251e385f0288dece2e3862977fb3975c61c344afc464a2fd329c3fa027fc07edc40097afaad052bdf6f0dad55c665c20ccdde9f2231ec191410
-```
 
 ### `dpkg` source package: `libjpeg8-empty=8c-2ubuntu10`
 
@@ -2338,13 +2318,9 @@ Licenses: (parsed from: `/usr/share/doc/libjpeg-dev/copyright`, `/usr/share/doc/
 
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libjpeg8-empty=8c-2ubuntu10
-'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg8-empty/libjpeg8-empty_8c-2ubuntu10.dsc' libjpeg8-empty_8c-2ubuntu10.dsc 1655 SHA512:1085be8a159c716c4ca89e6bfb2b1a5ce7b66ad8bc8f4cf3796c2c4ac3dad5169ac5be045f2a9ce103858b42585b1ce52d6dc6986995d073785170d45fe4d29d
-'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg8-empty/libjpeg8-empty_8c-2ubuntu10.tar.gz' libjpeg8-empty_8c-2ubuntu10.tar.gz 1912 SHA512:1c21044013df62225f861ec6f88b2a43e0f6254522ed379ad081b92f4f89b64686d4e68d70e8384289cd8222df2288400c2d0e8b8ccae87dd079164bdc3f3cf3
-```
 
 ### `dpkg` source package: `libksba=1.6.3-2`
 
@@ -3170,13 +3146,13 @@ Licenses: (parsed from: `/usr/share/doc/lsb-base/copyright`)
 - `BSD-3-clause`
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lsb=11.5
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lsb/lsb_11.5.dsc' lsb_11.5.dsc 1614 SHA512:1335711764722a7e00911ad0ee62a2e01a8b7567632ea30815cc046209ca44d631fa586fbc7dc9c5ae5af90b6728f6f4e9048eec46f75a5f7d006a424b652120
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lsb/lsb_11.5.tar.xz' lsb_11.5.tar.xz 38756 SHA512:87f7d1753de13a08cfc292ccc33dd94ffb0a0d7d9a634952a60da56c198791d76a5b6b2d4c59d7ae8bd5c35bfdb372a1d6e1466d80a9f12c24a876589d042d54
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/lsb/11.5/
+
 
 ### `dpkg` source package: `lto-disabled-list=38`
 
@@ -4004,14 +3980,9 @@ Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/li
 - `double-metaphone`
 - `nagaysau-ishii`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-15=15.1-1build1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-15/postgresql-15_15.1-1build1.dsc' postgresql-15_15.1-1build1.dsc 3902 SHA512:958598e7f62998c1c735e49c6a72732b8e68087ea778c268eac1e936efcb1d817df1397130a9b25acc34dbbf6c62baeaba8aacc1ee4f6829fed295722e8e25c3
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-15/postgresql-15_15.1.orig.tar.bz2' postgresql-15_15.1.orig.tar.bz2 22666134 SHA512:803900363106d2e343305e6d1546016b6a6a37bbd49d7a84a9a6467c1dc3fc4eb52698411af9c2178590c2f7680967466b1a211a76955dcec5445d0b8b254202
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-15/postgresql-15_15.1-1build1.debian.tar.xz' postgresql-15_15.1-1build1.debian.tar.xz 22264 SHA512:4c0351094ea2b92b9413daeab6bd28b0e673330db11f2a2a7db14f4eda1c65990a267eb5ff7ccbaadb658a0c9fde75c90ec306865ce08b3db7fc539c685299dc
-```
 
 ### `dpkg` source package: `procps=2:3.3.17-7ubuntu1`
 
@@ -4379,14 +4350,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=252.4-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_252.4-1ubuntu1.dsc' systemd_252.4-1ubuntu1.dsc 6601 SHA512:73583721109976bc851456ecbe461d7a501e089a97c407cf4077388c52245deb2ff0fe74b641fadb5719c56c8b7c1cfe10f13148500409416112c91a95c6bc4a
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_252.4.orig.tar.gz' systemd_252.4.orig.tar.gz 11753300 SHA512:d4e99a67c59091dae78f654433a6c5e114ae66256b72d9d43292c43a986ee6a58e2d06f12866cbd7ec821b61580ec003af1725f60fd4b038b4a981b3ca839ee2
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_252.4-1ubuntu1.debian.tar.xz' systemd_252.4-1ubuntu1.debian.tar.xz 227284 SHA512:fb9cbea6acee6f4e0ce29612cae6866b6089c0b034b0c3ea14244bf2d6329a9276acd37183abf383b8b3b01ca3f1482b84a15d00339a355db824fde1cc526a00
-```
 
 ### `dpkg` source package: `sysvinit=3.05-7ubuntu2`
 

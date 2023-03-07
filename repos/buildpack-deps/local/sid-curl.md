@@ -79,19 +79,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.5.6
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.5.6.dsc' apt_2.5.6.dsc 2933 SHA256:64ad6d1a7ea851478a8745077234d88ec45414d3ea54996d77f24ca0302a1eac
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.5.6.tar.xz' apt_2.5.6.tar.xz 2323780 SHA256:8c0848a4d8d6b5c9b50c4a33d579f3622b84c318b02e8b4dc696f0703711c4f3
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/apt/2.5.6/
 
-- https://sources.debian.net/src/apt/2.5.6/ (for browsing the source)
-- https://sources.debian.net/src/apt/2.5.6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/2.5.6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.5.1-4`
 
@@ -678,21 +672,13 @@ Licenses: (parsed from: `/usr/share/doc/e2fsprogs/copyright`, `/usr/share/doc/li
 - `Latex2e`
 - `MIT-US-export`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris e2fsprogs=1.47.0-1
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.47.0-1.dsc' e2fsprogs_1.47.0-1.dsc 2846 SHA256:857e16b0376d33aa52e8221ecb5d9208302671c1de8aa1b8d64a45be88327812
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.47.0.orig.tar.gz' e2fsprogs_1.47.0.orig.tar.gz 9637717 SHA256:6667afde56eef0c6af26684974400e4d2288ea49e9441bf5e6229195d51a3578
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.47.0.orig.tar.gz.asc' e2fsprogs_1.47.0.orig.tar.gz.asc 488 SHA256:704928204a52ddaa0ac8ef549c1bfba3c38e66c361d3853c8a4c38e6082b90f1
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.47.0-1.debian.tar.xz' e2fsprogs_1.47.0-1.debian.tar.xz 86808 SHA256:c33f1e172a45649c2940caf0383fce5911bda3abac25ad0e037f697bb13d003e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/e2fsprogs/1.47.0-1/
 
-- https://sources.debian.net/src/e2fsprogs/1.47.0-1/ (for browsing the source)
-- https://sources.debian.net/src/e2fsprogs/1.47.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/e2fsprogs/1.47.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.9.0-4`
 
