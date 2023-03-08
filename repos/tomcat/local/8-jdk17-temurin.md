@@ -1,9 +1,9 @@
-# `tomcat:8.5.86-jdk17-temurin-jammy`
+# `tomcat:8.5.87-jdk17-temurin-jammy`
 
 ## Docker Metadata
 
-- Image ID: `sha256:049c88de46f60c8ebf4490d1a97c08ade5c9e50785588ecd3efbdab9ad624621`
-- Created: `2023-03-02T10:53:14.774121673Z`
+- Image ID: `sha256:f0c780d2991f5cc13c1911035c212ab732839fa47bd88a6b2efa05fef6425580`
+- Created: `2023-03-06T23:35:47.116177091Z`
 - Virtual Size: ~ 474.41 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -20,8 +20,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 5C3C5F3E314C866292F359A8F3AD5C94A67F707E 765908099ACF92702C7D949BFA0C35EA8AA299F1 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
   - `TOMCAT_MAJOR=8`
-  - `TOMCAT_VERSION=8.5.86`
-  - `TOMCAT_SHA512=0fc6da94ec8c83dda6e5f0e7502e25eb35a62993f6ce362a395ce269fbd1a01bd4bc96a55debb49adc48c9647bee9743c5bed8cc2aba9d58968f8e3640b80d1b`
+  - `TOMCAT_VERSION=8.5.87`
+  - `TOMCAT_SHA512=e303b45adaccef4c6c93546bd445e40caa690e0a80c850e2176178afd94dfa4402137820ffa40dc9005d625ec96c3c3b41124a6c4a1c90621a24b34932ae3b5e`
 - Labels:
   - `org.opencontainers.image.ref.name=ubuntu`
   - `org.opencontainers.image.version=22.04`
@@ -1802,14 +1802,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=249.11-0ubuntu3.6
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_249.11-0ubuntu3.6.dsc' systemd_249.11-0ubuntu3.6.dsc 5903 SHA512:566d0b0ad0291049e0341d707945791c76a0e537e49ea68f8971bacb4420c17674d0675b03f3902ab11612dc66c7e2cc667186e1c20821d5230026cf6d122820
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_249.11.orig.tar.gz' systemd_249.11.orig.tar.gz 10622702 SHA512:fed7f81933648945a4bfac9fb12150ecd84d32181f79be0e14e0b3a789343a87569f868670e0b8dfc2801fab39f7490f95ee8c29ba831d7611f78c14ace5ddd8
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_249.11-0ubuntu3.6.debian.tar.xz' systemd_249.11-0ubuntu3.6.debian.tar.xz 236508 SHA512:6100ead57f27e5b965ff2849db45c67e6885c45db022356c5a9a67055199bc667692967cde4b416038fe37e2b82efdd6d6777bbc65a3fa2aeb0b909d76efc2bc
-```
 
 ### `dpkg` source package: `sysvinit=3.01-1ubuntu1`
 
