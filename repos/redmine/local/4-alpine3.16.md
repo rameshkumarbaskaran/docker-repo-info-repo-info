@@ -1,10 +1,10 @@
-# `redmine:4.2.9-alpine`
+# `redmine:4.2.10-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:18416909653da5e522a0e714588bd17975eca5315e3ce82bebfce1d4bbdaeaae`
-- Created: `2023-02-11T17:18:26.405627808Z`
-- Virtual Size: ~ 419.38 Mb  
+- Image ID: `sha256:9268696744a517aec202329b0fa80a90ac6bf34253822bff010c551e26dc1601`
+- Created: `2023-03-06T23:28:44.429670872Z`
+- Virtual Size: ~ 419.40 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -20,9 +20,9 @@
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
   - `RAILS_ENV=production`
   - `HOME=/home/redmine`
-  - `REDMINE_VERSION=4.2.9`
-  - `REDMINE_DOWNLOAD_URL=https://www.redmine.org/releases/redmine-4.2.9.tar.gz`
-  - `REDMINE_DOWNLOAD_SHA256=d38741345f6efd10c079898093b259d8dc4dcd8e41dfc4f64649685ae7a8cb1e`
+  - `REDMINE_VERSION=4.2.10`
+  - `REDMINE_DOWNLOAD_URL=https://www.redmine.org/releases/redmine-4.2.10.tar.gz`
+  - `REDMINE_DOWNLOAD_SHA256=6f26388c23892962552ca491d5efedabd42dac88861dd9d80bc33458f65be1e9`
   - `BUNDLE_FORCE_RUBY_PLATFORM=1`
 
 ## `apk` (`.apk`-based packages)
