@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:be16cf2d832a9a54ce42144e25f5ae7cc66bccf0e003837e7b5eb1a455dc742b`
-- Created: `2023-02-01T04:24:58.661221479Z`
-- Virtual Size: ~ 454.61 Mb  
+- Image ID: `sha256:0018a8d838923d94318aa8dd3195510226b31540901a6f4c643aacec69f7ab62`
+- Created: `2023-03-08T20:43:09.144123882Z`
+- Virtual Size: ~ 454.68 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -139,15 +139,15 @@ $ dnf --quiet download --source --url cyrus-sasl-lib-2.1.26-24.0.1.el7_9
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/cyrus-sasl-2.1.26-24.0.1.el7_9.src.rpm
 ```
 
-### `rpm` package: `diffutils-3.3-5.el7.x86_64`
+### `rpm` package: `diffutils-3.3-6.el7_9.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url diffutils-3.3-5.el7
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/diffutils-3.3-5.el7.src.rpm
+$ dnf --quiet download --source --url diffutils-3.3-6.el7_9
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/diffutils-3.3-6.el7_9.src.rpm
 ```
 
 ### `rpm` package: `elfutils-libelf-0.176-5.el7.x86_64`
@@ -1302,24 +1302,24 @@ $ dnf --quiet download --source --url yum-utils-1.1.31-54.0.1.el7_8.noarch
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/yum-utils-1.1.31-54.0.1.el7_8.src.rpm
 ```
 
-### `rpm` package: `zlib-1.2.7-20.0.1.el7_9.x86_64`
+### `rpm` package: `zlib-1.2.7-21.el7_9.x86_64`
 
 Licenses (from `rpm --query`): zlib and Boost
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url zlib-1.2.7-20.0.1.el7_9
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/zlib-1.2.7-20.0.1.el7_9.src.rpm
+$ dnf --quiet download --source --url zlib-1.2.7-21.el7_9
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/zlib-1.2.7-21.el7_9.src.rpm
 ```
 
-### `rpm` package: `zstd-1.5.2-1.el7.x86_64`
+### `rpm` package: `zstd-1.5.4-1.el7.x86_64`
 
 Licenses (from `rpm --query`): BSD and GPLv2
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url zstd-1.5.2-1.el7
-https://yum.oracle.com/repo/OracleLinux/OL7/developer_EPEL/x86_64/getPackageSource/zstd-1.5.2-1.el7.src.rpm
+$ dnf --quiet download --source --url zstd-1.5.4-1.el7
+https://yum.oracle.com/repo/OracleLinux/OL7/developer_EPEL/x86_64/getPackageSource/zstd-1.5.4-1.el7.src.rpm
 ```
