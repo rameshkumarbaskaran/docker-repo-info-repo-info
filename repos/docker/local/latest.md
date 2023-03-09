@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:cd27a71ea4555b89fda3a6fd0118200e247b9f05cd07d3c16c58e67bee7c290d`
-- Created: `2023-02-17T19:26:06.379672488Z`
+- Image ID: `sha256:c365741dcfc2b1d1fd3dbd7ded480a147a334836444f0335456f3e7e1b363505`
+- Created: `2023-03-07T19:40:15.98022695Z`
 - Virtual Size: ~ 310.92 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_VERSION=23.0.1`
-  - `DOCKER_BUILDX_VERSION=0.10.3`
+  - `DOCKER_BUILDX_VERSION=0.10.4`
   - `DOCKER_COMPOSE_VERSION=2.16.0`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5`
@@ -174,16 +174,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `e2fsprogs`
 
 ```console
-e2fsprogs-1.46.5-r4 description:
+e2fsprogs-1.46.6-r0 description:
 Standard Ext2/3/4 filesystem utilities
 
-e2fsprogs-1.46.5-r4 webpage:
+e2fsprogs-1.46.6-r0 webpage:
 https://e2fsprogs.sourceforge.net/
 
-e2fsprogs-1.46.5-r4 installed size:
+e2fsprogs-1.46.6-r0 installed size:
 420 KiB
 
-e2fsprogs-1.46.5-r4 license:
+e2fsprogs-1.46.6-r0 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
@@ -191,16 +191,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `e2fsprogs-extra`
 
 ```console
-e2fsprogs-extra-1.46.5-r4 description:
+e2fsprogs-extra-1.46.6-r0 description:
 Ext2/3/4 filesystem extra utilities
 
-e2fsprogs-extra-1.46.5-r4 webpage:
+e2fsprogs-extra-1.46.6-r0 webpage:
 https://e2fsprogs.sourceforge.net/
 
-e2fsprogs-extra-1.46.5-r4 installed size:
-660 KiB
+e2fsprogs-extra-1.46.6-r0 installed size:
+656 KiB
 
-e2fsprogs-extra-1.46.5-r4 license:
+e2fsprogs-extra-1.46.6-r0 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
@@ -208,16 +208,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `e2fsprogs-libs`
 
 ```console
-e2fsprogs-libs-1.46.5-r4 description:
+e2fsprogs-libs-1.46.6-r0 description:
 Standard Ext2/3/4 filesystem utilities (libraries)
 
-e2fsprogs-libs-1.46.5-r4 webpage:
+e2fsprogs-libs-1.46.6-r0 webpage:
 https://e2fsprogs.sourceforge.net/
 
-e2fsprogs-libs-1.46.5-r4 installed size:
-464 KiB
+e2fsprogs-libs-1.46.6-r0 installed size:
+468 KiB
 
-e2fsprogs-libs-1.46.5-r4 license:
+e2fsprogs-libs-1.46.6-r0 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
@@ -395,16 +395,16 @@ MIT
 ### `apk` package: `libcom_err`
 
 ```console
-libcom_err-1.46.5-r4 description:
+libcom_err-1.46.6-r0 description:
 Common error description library
 
-libcom_err-1.46.5-r4 webpage:
+libcom_err-1.46.6-r0 webpage:
 https://e2fsprogs.sourceforge.net/
 
-libcom_err-1.46.5-r4 installed size:
+libcom_err-1.46.6-r0 installed size:
 28 KiB
 
-libcom_err-1.46.5-r4 license:
+libcom_err-1.46.6-r0 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
