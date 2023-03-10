@@ -440,14 +440,9 @@ Licenses: (parsed from: `/usr/share/doc/gcc-13-base/copyright`, `/usr/share/doc/
 - `GPL-3`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-13=13-20230215-1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/gcc-13_13-20230215-1ubuntu2.dsc' gcc-13_13-20230215-1ubuntu2.dsc 27878 SHA512:40420c326666257a75fe583a73e0d1693e9b196ebf1a98b0d33d168fac9a110e544f4ac754197ae19f62fc7af7b3edf285aa4d9e5ffcee2121c8c5c7b62f7035
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/gcc-13_13-20230215.orig.tar.gz' gcc-13_13-20230215.orig.tar.gz 87845313 SHA512:5009465ba6b292c8915d8dab8f9c3a9e139e43f0389d187d477a9e2410e761e39697f5723a6a8105882d498ea53ab28407d309f6b30ca0971db29e020ae8bcad
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/gcc-13_13-20230215-1ubuntu2.debian.tar.xz' gcc-13_13-20230215-1ubuntu2.debian.tar.xz 530440 SHA512:b4fec4f9b6177e06d9803944206907feac165a4b18be3012e70c5bd5ae6040c9ca171f75180a95dffabe94a11892d4b68a9668a68cabafe5d35acab329f64ffe
-```
 
 ### `dpkg` source package: `glibc=2.36-0ubuntu4`
 
@@ -839,15 +834,9 @@ Licenses: (parsed from: `/usr/share/doc/libselinux1/copyright`)
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libselinux=3.4-1build3
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux_3.4-1build3.dsc' libselinux_3.4-1build3.dsc 2908 SHA512:c5d3bda0e675bc167c785dfabc4b9d676c84fa643e8874eccf635249df60fcc293bc859343b20c387c1a70123099d75904a1781a5aa5a648cf11407328b9061b
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux_3.4.orig.tar.gz' libselinux_3.4.orig.tar.gz 210061 SHA512:7ffa6d2159d2333d836bde3f75dfc78a278283b66ae1e441c178371adb6f463aa6f2d62439079e2068d1135c39dd2b367b001d917c0bdc6871a73630919ef81e
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux_3.4.orig.tar.gz.asc' libselinux_3.4.orig.tar.gz.asc 833 SHA512:de1e0431cbf8526c4de77e1ebe9fa40111ea4a0e71d6b0e9ec6c975b61f4090ec5df4386af362bbd5cc8faffb24c21febc13356fe081df642bbfa52010a00ba0
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux_3.4-1build3.debian.tar.xz' libselinux_3.4-1build3.debian.tar.xz 29572 SHA512:f32f0ce97c712e4a68966383d190cc519d0d1c11d98e45f8c33760dd67e7443bac3c9b9ed6f90156dfd27e24e9078767ca83ebee5db326c24cad763d8c68849d
-```
 
 ### `dpkg` source package: `libsemanage=3.4-1build3`
 
