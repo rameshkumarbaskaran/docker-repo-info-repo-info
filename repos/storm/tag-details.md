@@ -11,7 +11,7 @@
 ## `storm:1.2-temurin`
 
 ```console
-$ docker pull storm@sha256:04fbaed4a1926b6a1f0ca581d622f7a4ba65709bbd1213b22c81bfaf578a1884
+$ docker pull storm@sha256:973e46e13fb1082eedc1aa3b4a2f22553db3e2a0fb98483911c48a7525c630f5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -22,201 +22,201 @@ $ docker pull storm@sha256:04fbaed4a1926b6a1f0ca581d622f7a4ba65709bbd1213b22c81b
 ### `storm:1.2-temurin` - linux; amd64
 
 ```console
-$ docker pull storm@sha256:02c9a433e9a6e1bc65bab2c245ca783c71cb86fb157dc4ca951aca69a158fb3b
+$ docker pull storm@sha256:2d6d30d4e48a645266f213455112fe5612c7244793e619216fcde1bfaeaf6018
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **265.4 MB (265379315 bytes)**  
+-	Total Size: **265.4 MB (265379241 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f74cdd373181ebef05452e5776e9b4b93f69d9362a95c1486e822423375f0af8`
+-	Image ID: `sha256:ed1ce7e5496e7342a7c59110d6beb3ff87c9ad473a38ad77be35ba2c396c14cc`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 
 ```dockerfile
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 ARG RELEASE
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 LABEL org.opencontainers.image.version=22.04
-# Wed, 01 Mar 2023 04:38:48 GMT
-ADD file:fb4c8244f4468cdd3f666932f05805a3882d34010d3a0c14b7c20589bf619a9c in / 
-# Wed, 01 Mar 2023 04:38:49 GMT
+# Wed, 08 Mar 2023 04:44:27 GMT
+ADD file:c8ef6447752cab2541ffca9e3cfa27d581f3491bc8f356f6eafd951243609341 in / 
+# Wed, 08 Mar 2023 04:44:27 GMT
 CMD ["/bin/bash"]
-# Thu, 02 Mar 2023 04:01:37 GMT
+# Thu, 16 Mar 2023 02:44:03 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 02 Mar 2023 04:01:37 GMT
+# Thu, 16 Mar 2023 02:44:03 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 02 Mar 2023 04:01:37 GMT
+# Thu, 16 Mar 2023 02:44:04 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 02 Mar 2023 04:01:51 GMT
+# Thu, 16 Mar 2023 02:44:26 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 02 Mar 2023 04:01:51 GMT
+# Thu, 16 Mar 2023 02:44:26 GMT
 ENV JAVA_VERSION=jdk8u362-b09
-# Thu, 02 Mar 2023 04:02:19 GMT
+# Thu, 16 Mar 2023 02:44:53 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='cbe45788fa2d9d04d6b10f8aec7dbb15a018dbafe897ed75e31876d0367d56a5';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_aarch64_linux_hotspot_8u362b09.tar.gz';          ;;        armhf|arm)          ESUM='82d8524838b07ee438d42f4c33b6ecfe89ae83efac9af0605c76d75195bdcd99';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_arm_linux_hotspot_8u362b09.tar.gz';          apt-get update          && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libatomic1          && rm -rf /var/lib/apt/lists/*          ;;        ppc64el|powerpc:common64)          ESUM='5ec3e07126fedc23b58bb0f5b2dd05b5e9599ce1a3567fc2c7b27587f39faa3b';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_ppc64le_linux_hotspot_8u362b09.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='c8c4e180f915fc7c163240bf363dcdf2b481cd2723fabfc3d08ccf12e049611f';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_x64_linux_hotspot_8u362b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;
-# Thu, 02 Mar 2023 04:02:19 GMT
+# Thu, 16 Mar 2023 02:44:54 GMT
 RUN echo Verifying install ...     && echo java -version && java -version     && echo Complete.
-# Thu, 02 Mar 2023 10:42:02 GMT
+# Thu, 16 Mar 2023 07:58:52 GMT
 ENV STORM_CONF_DIR=/conf STORM_DATA_DIR=/data STORM_LOG_DIR=/logs
-# Thu, 02 Mar 2023 10:42:02 GMT
+# Thu, 16 Mar 2023 07:58:53 GMT
 RUN set -eux;     groupadd -r storm --gid=1000;     useradd -r -g storm --uid=1000 storm;     mkdir -p "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR";     chown -R storm:storm "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR"``
-# Thu, 02 Mar 2023 10:42:15 GMT
+# Thu, 16 Mar 2023 07:59:06 GMT
 RUN set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive     apt-get install -y --no-install-recommends         bash         ca-certificates         dirmngr         gosu         gnupg         python2         procps         wget;     rm -rf /var/lib/apt/lists/*;     gosu nobody true;     update-alternatives --install /usr/bin/python python /usr/bin/python2 0
-# Thu, 02 Mar 2023 10:42:16 GMT
+# Thu, 16 Mar 2023 07:59:06 GMT
 ARG GPG_KEY=5167DE337E7370373499FC1DA4A672F11B5050C8
-# Thu, 02 Mar 2023 10:42:16 GMT
+# Thu, 16 Mar 2023 07:59:06 GMT
 ARG DISTRO_NAME=apache-storm-1.2.4
-# Thu, 02 Mar 2023 10:42:25 GMT
+# Thu, 16 Mar 2023 07:59:14 GMT
 # ARGS: DISTRO_NAME=apache-storm-1.2.4 GPG_KEY=5167DE337E7370373499FC1DA4A672F11B5050C8
 RUN set -eux;     ddist() {         local f="$1"; shift;         local distFile="$1"; shift;         local success=;         local distUrl=;         for distUrl in             'https://www.apache.org/dyn/closer.cgi?action=download&filename='             https://www-us.apache.org/dist/             https://www.apache.org/dist/             https://archive.apache.org/dist/         ; do             if wget -q -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then                 success=1;                 break;             fi;         done;         [ -n "$success" ];     };     ddist "$DISTRO_NAME.tar.gz" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz";     ddist "$DISTRO_NAME.tar.gz.asc" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --keyserver hkps://keyserver.pgp.com --recv-key "$GPG_KEY" ||     gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY" ||     gpg --keyserver hkps://pgp.mit.edu --recv-keys "$GPG_KEY";     gpg --batch --verify "$DISTRO_NAME.tar.gz.asc" "$DISTRO_NAME.tar.gz";     tar -xzf "$DISTRO_NAME.tar.gz";     rm -rf "$GNUPGHOME" "$DISTRO_NAME.tar.gz" "$DISTRO_NAME.tar.gz.asc";     chown -R storm:storm "$DISTRO_NAME"
-# Thu, 02 Mar 2023 10:42:25 GMT
+# Thu, 16 Mar 2023 07:59:14 GMT
 WORKDIR /apache-storm-1.2.4
-# Thu, 02 Mar 2023 10:42:25 GMT
+# Thu, 16 Mar 2023 07:59:14 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/apache-storm-1.2.4/bin
-# Thu, 02 Mar 2023 10:42:25 GMT
+# Thu, 16 Mar 2023 07:59:14 GMT
 COPY file:c74c732450146abc9cc672380c7829a8d892099ec5aa1f81e3fe02c4e8f97f32 in / 
-# Thu, 02 Mar 2023 10:42:25 GMT
+# Thu, 16 Mar 2023 07:59:14 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:b65bcf19d1445822c0d6f15ea82c9ed82ac1d903cfd6c1284ba7b2409a092845`  
-		Last Modified: Wed, 01 Mar 2023 09:07:16 GMT  
-		Size: 30.4 MB (30430002 bytes)  
+	-	`sha256:74ac377868f863e123f24c409f79709f7563fa464557c36a09cf6f85c8b92b7f`  
+		Last Modified: Wed, 08 Mar 2023 09:03:15 GMT  
+		Size: 30.4 MB (30429963 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e3e3d5d30a242b64d6ee4089176f1459cdfe9d3aeb58e2114cc14b420ad71e5`  
-		Last Modified: Thu, 02 Mar 2023 04:07:58 GMT  
-		Size: 12.4 MB (12432173 bytes)  
+	-	`sha256:b9cabe75b440d785eb2f20422368c248b28fd9c219a5d5db5aacb7de3d43f02c`  
+		Last Modified: Thu, 16 Mar 2023 02:50:26 GMT  
+		Size: 12.4 MB (12432056 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be66b727d0420bf9ca0a1c4ea43efad105c7cf92d3477ec2be1d236b4c30ea1a`  
-		Last Modified: Thu, 02 Mar 2023 04:08:35 GMT  
-		Size: 41.8 MB (41823540 bytes)  
+	-	`sha256:530f234ee0dbdaea2169335688b60dd0ddb9ed693d829a64d1bd3ed1c05b793c`  
+		Last Modified: Thu, 16 Mar 2023 02:51:03 GMT  
+		Size: 41.8 MB (41823534 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:161f5bd3c987cb3d2ac3105d736dd5e93d631263049c691cd1720f3cf164eace`  
-		Last Modified: Thu, 02 Mar 2023 04:08:29 GMT  
+	-	`sha256:64261527ab13e8ee1efeb6ac3f971f8dc2b0e7c3263e78185cbe2efe6a5dd205`  
+		Last Modified: Thu, 16 Mar 2023 02:50:59 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1fee8a7e9cd7ebfb393a1ebde5d0bbd9a8cc2563afe747bd43dc261b52aee3f0`  
-		Last Modified: Thu, 02 Mar 2023 10:43:02 GMT  
-		Size: 1.8 KB (1848 bytes)  
+	-	`sha256:cabb5cff6c3c453e2c9ee90109c498e76507c365c60ac0c062ecf1cf9f3d9db2`  
+		Last Modified: Thu, 16 Mar 2023 08:00:01 GMT  
+		Size: 1.8 KB (1846 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:15cfc70719ff7181aad31e3d315f5d9b4c8f0d996610516670677263b6f4b8fb`  
-		Last Modified: Thu, 02 Mar 2023 10:43:04 GMT  
-		Size: 11.6 MB (11553230 bytes)  
+	-	`sha256:078c0e7cb7a589bc38a378be259ff6d587fc1416a73ccac6eda63958cdee96a0`  
+		Last Modified: Thu, 16 Mar 2023 08:00:07 GMT  
+		Size: 11.6 MB (11553329 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:591bf74f021c67f44ac266dcc1763ab1c125cb1ce6bfc7e9f81d08268fdf731d`  
-		Last Modified: Thu, 02 Mar 2023 10:43:10 GMT  
-		Size: 169.1 MB (169137949 bytes)  
+	-	`sha256:3b80daee75dd14c6a10f5958affc8c9a4c3cba4f094cfccb01bf8976b67991bd`  
+		Last Modified: Thu, 16 Mar 2023 08:00:10 GMT  
+		Size: 169.1 MB (169137941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:711ab4642db802f36cf9efc02d217cc34e069c01c007431c6542df8a41b6f2c2`  
-		Last Modified: Thu, 02 Mar 2023 10:43:02 GMT  
-		Size: 414.0 B  
+	-	`sha256:9eb2217cc5145f7d71f4b42e6113d3012d3adfffe064fcf24027ca49c3159f8f`  
+		Last Modified: Thu, 16 Mar 2023 08:00:01 GMT  
+		Size: 413.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `storm:1.2-temurin` - linux; arm64 variant v8
 
 ```console
-$ docker pull storm@sha256:4604930f3c5cea8f606762236fa670ab7ece7137b71877d5fab2adc22f08a732
+$ docker pull storm@sha256:580e50e41aee5ddc1f92dacc8b307cb99c7199ff843fa9e22ead83be39409681
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **262.2 MB (262211874 bytes)**  
+-	Total Size: **262.2 MB (262210726 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7e10d431ce3d9198e78d7e7ab22ab224f5a4ed8ced7c3578dca00db18d0040b5`
+-	Image ID: `sha256:e94aab857f16b1ea9800eee7cf0e74906f14d80bf4d7ee68ebf37ac97463da63`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 
 ```dockerfile
-# Wed, 01 Mar 2023 04:47:53 GMT
+# Wed, 08 Mar 2023 04:32:38 GMT
 ARG RELEASE
-# Wed, 01 Mar 2023 04:47:53 GMT
+# Wed, 08 Mar 2023 04:32:38 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 01 Mar 2023 04:47:54 GMT
+# Wed, 08 Mar 2023 04:32:38 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 01 Mar 2023 04:47:54 GMT
+# Wed, 08 Mar 2023 04:32:39 GMT
 LABEL org.opencontainers.image.version=22.04
-# Wed, 01 Mar 2023 04:48:01 GMT
-ADD file:cf91de9ab30abab112d58c0a7f3bbb35853a02b2e406c65c89430ff049573c47 in / 
-# Wed, 01 Mar 2023 04:48:01 GMT
+# Wed, 08 Mar 2023 04:32:40 GMT
+ADD file:79b36308bc382d9cae7197b4cecc21430f4e8f3e8bec3547d0f00bcff7681e60 in / 
+# Wed, 08 Mar 2023 04:32:41 GMT
 CMD ["/bin/bash"]
-# Thu, 02 Mar 2023 04:27:42 GMT
+# Thu, 16 Mar 2023 01:52:25 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 02 Mar 2023 04:27:42 GMT
+# Thu, 16 Mar 2023 01:52:25 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 02 Mar 2023 04:27:42 GMT
+# Thu, 16 Mar 2023 01:52:26 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 02 Mar 2023 04:27:55 GMT
+# Thu, 16 Mar 2023 01:52:57 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 02 Mar 2023 04:27:55 GMT
+# Thu, 16 Mar 2023 01:52:57 GMT
 ENV JAVA_VERSION=jdk8u362-b09
-# Thu, 02 Mar 2023 04:28:18 GMT
+# Thu, 16 Mar 2023 01:53:17 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='cbe45788fa2d9d04d6b10f8aec7dbb15a018dbafe897ed75e31876d0367d56a5';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_aarch64_linux_hotspot_8u362b09.tar.gz';          ;;        armhf|arm)          ESUM='82d8524838b07ee438d42f4c33b6ecfe89ae83efac9af0605c76d75195bdcd99';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_arm_linux_hotspot_8u362b09.tar.gz';          apt-get update          && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libatomic1          && rm -rf /var/lib/apt/lists/*          ;;        ppc64el|powerpc:common64)          ESUM='5ec3e07126fedc23b58bb0f5b2dd05b5e9599ce1a3567fc2c7b27587f39faa3b';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_ppc64le_linux_hotspot_8u362b09.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='c8c4e180f915fc7c163240bf363dcdf2b481cd2723fabfc3d08ccf12e049611f';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_x64_linux_hotspot_8u362b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;
-# Thu, 02 Mar 2023 04:28:18 GMT
+# Thu, 16 Mar 2023 01:53:18 GMT
 RUN echo Verifying install ...     && echo java -version && java -version     && echo Complete.
-# Thu, 02 Mar 2023 07:39:43 GMT
+# Thu, 16 Mar 2023 07:39:02 GMT
 ENV STORM_CONF_DIR=/conf STORM_DATA_DIR=/data STORM_LOG_DIR=/logs
-# Thu, 02 Mar 2023 07:39:44 GMT
+# Thu, 16 Mar 2023 07:39:02 GMT
 RUN set -eux;     groupadd -r storm --gid=1000;     useradd -r -g storm --uid=1000 storm;     mkdir -p "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR";     chown -R storm:storm "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR"``
-# Thu, 02 Mar 2023 07:39:58 GMT
+# Thu, 16 Mar 2023 07:39:22 GMT
 RUN set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive     apt-get install -y --no-install-recommends         bash         ca-certificates         dirmngr         gosu         gnupg         python2         procps         wget;     rm -rf /var/lib/apt/lists/*;     gosu nobody true;     update-alternatives --install /usr/bin/python python /usr/bin/python2 0
-# Thu, 02 Mar 2023 07:39:58 GMT
+# Thu, 16 Mar 2023 07:39:23 GMT
 ARG GPG_KEY=5167DE337E7370373499FC1DA4A672F11B5050C8
-# Thu, 02 Mar 2023 07:39:58 GMT
+# Thu, 16 Mar 2023 07:39:23 GMT
 ARG DISTRO_NAME=apache-storm-1.2.4
-# Thu, 02 Mar 2023 07:40:16 GMT
+# Thu, 16 Mar 2023 07:39:40 GMT
 # ARGS: DISTRO_NAME=apache-storm-1.2.4 GPG_KEY=5167DE337E7370373499FC1DA4A672F11B5050C8
 RUN set -eux;     ddist() {         local f="$1"; shift;         local distFile="$1"; shift;         local success=;         local distUrl=;         for distUrl in             'https://www.apache.org/dyn/closer.cgi?action=download&filename='             https://www-us.apache.org/dist/             https://www.apache.org/dist/             https://archive.apache.org/dist/         ; do             if wget -q -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then                 success=1;                 break;             fi;         done;         [ -n "$success" ];     };     ddist "$DISTRO_NAME.tar.gz" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz";     ddist "$DISTRO_NAME.tar.gz.asc" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --keyserver hkps://keyserver.pgp.com --recv-key "$GPG_KEY" ||     gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY" ||     gpg --keyserver hkps://pgp.mit.edu --recv-keys "$GPG_KEY";     gpg --batch --verify "$DISTRO_NAME.tar.gz.asc" "$DISTRO_NAME.tar.gz";     tar -xzf "$DISTRO_NAME.tar.gz";     rm -rf "$GNUPGHOME" "$DISTRO_NAME.tar.gz" "$DISTRO_NAME.tar.gz.asc";     chown -R storm:storm "$DISTRO_NAME"
-# Thu, 02 Mar 2023 07:40:17 GMT
+# Thu, 16 Mar 2023 07:39:41 GMT
 WORKDIR /apache-storm-1.2.4
-# Thu, 02 Mar 2023 07:40:17 GMT
+# Thu, 16 Mar 2023 07:39:41 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/apache-storm-1.2.4/bin
-# Thu, 02 Mar 2023 07:40:17 GMT
+# Thu, 16 Mar 2023 07:39:41 GMT
 COPY file:c74c732450146abc9cc672380c7829a8d892099ec5aa1f81e3fe02c4e8f97f32 in / 
-# Thu, 02 Mar 2023 07:40:17 GMT
+# Thu, 16 Mar 2023 07:39:41 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:986c4f6be3072d9528a459c780295bd053806536d2295a6de6aad327eaf19fad`  
-		Last Modified: Wed, 01 Mar 2023 09:02:52 GMT  
-		Size: 28.4 MB (28387922 bytes)  
+	-	`sha256:b2ddfd337773edbf5766dce2fdbeef139ba8c42724e29eda157c84e9f97f1bce`  
+		Last Modified: Wed, 08 Mar 2023 12:37:24 GMT  
+		Size: 28.4 MB (28387554 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:219ba20309dcd99cff3a43c2f3c01df9170ee1fe02df71ead98cfcef30b9c450`  
-		Last Modified: Thu, 02 Mar 2023 04:33:24 GMT  
-		Size: 12.4 MB (12390219 bytes)  
+	-	`sha256:35794a35c4aa2299e9a7a69f4eafa7f96eb1832e2a04b3d85773522111018ca6`  
+		Last Modified: Thu, 16 Mar 2023 01:58:19 GMT  
+		Size: 12.4 MB (12389767 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:591a50343e8681bd502ff222aecd18d8abefa72d3e7b924186d2591cb3c93c28`  
-		Last Modified: Thu, 02 Mar 2023 04:33:56 GMT  
-		Size: 40.8 MB (40807778 bytes)  
+	-	`sha256:152af1a9cbde48b51c20b7a1c2b0b3b37f1fc53f0cac876e115ee4a1111a8833`  
+		Last Modified: Thu, 16 Mar 2023 01:58:51 GMT  
+		Size: 40.8 MB (40807784 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee122a13c2df69f7adef6234e639c81b9eb2cac7e112d9250634ea111c5be448`  
-		Last Modified: Thu, 02 Mar 2023 04:33:52 GMT  
-		Size: 161.0 B  
+	-	`sha256:7d3db1828ae58f408ce72b2ba4feec378517ceaa250235b897cf24ca9767869a`  
+		Last Modified: Thu, 16 Mar 2023 01:58:48 GMT  
+		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f54b5bf11b69de7b9ad923472665f642aa088aff6ad2395035fbfa5d6adb2bf0`  
-		Last Modified: Thu, 02 Mar 2023 07:41:12 GMT  
-		Size: 1.9 KB (1852 bytes)  
+	-	`sha256:b4390a0d0b87de5eeaed6ee9eb7405b4444c843e3f03fafa7b6052db0352da2b`  
+		Last Modified: Thu, 16 Mar 2023 07:40:45 GMT  
+		Size: 1.8 KB (1849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8066d19dd2ddfc23bdb959c5cb7830a2ab7c17b0977719d5e42fa310629dae68`  
-		Last Modified: Thu, 02 Mar 2023 07:41:14 GMT  
-		Size: 11.5 MB (11485749 bytes)  
+	-	`sha256:19e1ed4d43620a495aa2fad14f892cdef529c3e034da480068267cedd2eaabd1`  
+		Last Modified: Thu, 16 Mar 2023 07:40:47 GMT  
+		Size: 11.5 MB (11485320 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af502b870d55db11de6b67f006f3d9a405e5908c834277f248e4f3465a395211`  
-		Last Modified: Thu, 02 Mar 2023 07:41:19 GMT  
-		Size: 169.1 MB (169137781 bytes)  
+	-	`sha256:2434f40c60b5e44c4a316a03b1d3aacd225c78e76f9e2d13c6c271d4cb27cd67`  
+		Last Modified: Thu, 16 Mar 2023 07:40:52 GMT  
+		Size: 169.1 MB (169137877 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0948e2f9e48afd29d68c2e637f2eb08347382efbb549fadb0e03636c49378e81`  
-		Last Modified: Thu, 02 Mar 2023 07:41:12 GMT  
-		Size: 412.0 B  
+	-	`sha256:765baa8bb720b7b5ca6fa3b1d1ca375713779d9dfc6016b89e2bce87ddd2e697`  
+		Last Modified: Thu, 16 Mar 2023 07:40:45 GMT  
+		Size: 413.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `storm:1.2.4-temurin`
 
 ```console
-$ docker pull storm@sha256:04fbaed4a1926b6a1f0ca581d622f7a4ba65709bbd1213b22c81bfaf578a1884
+$ docker pull storm@sha256:973e46e13fb1082eedc1aa3b4a2f22553db3e2a0fb98483911c48a7525c630f5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -227,201 +227,201 @@ $ docker pull storm@sha256:04fbaed4a1926b6a1f0ca581d622f7a4ba65709bbd1213b22c81b
 ### `storm:1.2.4-temurin` - linux; amd64
 
 ```console
-$ docker pull storm@sha256:02c9a433e9a6e1bc65bab2c245ca783c71cb86fb157dc4ca951aca69a158fb3b
+$ docker pull storm@sha256:2d6d30d4e48a645266f213455112fe5612c7244793e619216fcde1bfaeaf6018
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **265.4 MB (265379315 bytes)**  
+-	Total Size: **265.4 MB (265379241 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f74cdd373181ebef05452e5776e9b4b93f69d9362a95c1486e822423375f0af8`
+-	Image ID: `sha256:ed1ce7e5496e7342a7c59110d6beb3ff87c9ad473a38ad77be35ba2c396c14cc`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 
 ```dockerfile
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 ARG RELEASE
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 LABEL org.opencontainers.image.version=22.04
-# Wed, 01 Mar 2023 04:38:48 GMT
-ADD file:fb4c8244f4468cdd3f666932f05805a3882d34010d3a0c14b7c20589bf619a9c in / 
-# Wed, 01 Mar 2023 04:38:49 GMT
+# Wed, 08 Mar 2023 04:44:27 GMT
+ADD file:c8ef6447752cab2541ffca9e3cfa27d581f3491bc8f356f6eafd951243609341 in / 
+# Wed, 08 Mar 2023 04:44:27 GMT
 CMD ["/bin/bash"]
-# Thu, 02 Mar 2023 04:01:37 GMT
+# Thu, 16 Mar 2023 02:44:03 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 02 Mar 2023 04:01:37 GMT
+# Thu, 16 Mar 2023 02:44:03 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 02 Mar 2023 04:01:37 GMT
+# Thu, 16 Mar 2023 02:44:04 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 02 Mar 2023 04:01:51 GMT
+# Thu, 16 Mar 2023 02:44:26 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 02 Mar 2023 04:01:51 GMT
+# Thu, 16 Mar 2023 02:44:26 GMT
 ENV JAVA_VERSION=jdk8u362-b09
-# Thu, 02 Mar 2023 04:02:19 GMT
+# Thu, 16 Mar 2023 02:44:53 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='cbe45788fa2d9d04d6b10f8aec7dbb15a018dbafe897ed75e31876d0367d56a5';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_aarch64_linux_hotspot_8u362b09.tar.gz';          ;;        armhf|arm)          ESUM='82d8524838b07ee438d42f4c33b6ecfe89ae83efac9af0605c76d75195bdcd99';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_arm_linux_hotspot_8u362b09.tar.gz';          apt-get update          && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libatomic1          && rm -rf /var/lib/apt/lists/*          ;;        ppc64el|powerpc:common64)          ESUM='5ec3e07126fedc23b58bb0f5b2dd05b5e9599ce1a3567fc2c7b27587f39faa3b';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_ppc64le_linux_hotspot_8u362b09.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='c8c4e180f915fc7c163240bf363dcdf2b481cd2723fabfc3d08ccf12e049611f';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_x64_linux_hotspot_8u362b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;
-# Thu, 02 Mar 2023 04:02:19 GMT
+# Thu, 16 Mar 2023 02:44:54 GMT
 RUN echo Verifying install ...     && echo java -version && java -version     && echo Complete.
-# Thu, 02 Mar 2023 10:42:02 GMT
+# Thu, 16 Mar 2023 07:58:52 GMT
 ENV STORM_CONF_DIR=/conf STORM_DATA_DIR=/data STORM_LOG_DIR=/logs
-# Thu, 02 Mar 2023 10:42:02 GMT
+# Thu, 16 Mar 2023 07:58:53 GMT
 RUN set -eux;     groupadd -r storm --gid=1000;     useradd -r -g storm --uid=1000 storm;     mkdir -p "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR";     chown -R storm:storm "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR"``
-# Thu, 02 Mar 2023 10:42:15 GMT
+# Thu, 16 Mar 2023 07:59:06 GMT
 RUN set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive     apt-get install -y --no-install-recommends         bash         ca-certificates         dirmngr         gosu         gnupg         python2         procps         wget;     rm -rf /var/lib/apt/lists/*;     gosu nobody true;     update-alternatives --install /usr/bin/python python /usr/bin/python2 0
-# Thu, 02 Mar 2023 10:42:16 GMT
+# Thu, 16 Mar 2023 07:59:06 GMT
 ARG GPG_KEY=5167DE337E7370373499FC1DA4A672F11B5050C8
-# Thu, 02 Mar 2023 10:42:16 GMT
+# Thu, 16 Mar 2023 07:59:06 GMT
 ARG DISTRO_NAME=apache-storm-1.2.4
-# Thu, 02 Mar 2023 10:42:25 GMT
+# Thu, 16 Mar 2023 07:59:14 GMT
 # ARGS: DISTRO_NAME=apache-storm-1.2.4 GPG_KEY=5167DE337E7370373499FC1DA4A672F11B5050C8
 RUN set -eux;     ddist() {         local f="$1"; shift;         local distFile="$1"; shift;         local success=;         local distUrl=;         for distUrl in             'https://www.apache.org/dyn/closer.cgi?action=download&filename='             https://www-us.apache.org/dist/             https://www.apache.org/dist/             https://archive.apache.org/dist/         ; do             if wget -q -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then                 success=1;                 break;             fi;         done;         [ -n "$success" ];     };     ddist "$DISTRO_NAME.tar.gz" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz";     ddist "$DISTRO_NAME.tar.gz.asc" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --keyserver hkps://keyserver.pgp.com --recv-key "$GPG_KEY" ||     gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY" ||     gpg --keyserver hkps://pgp.mit.edu --recv-keys "$GPG_KEY";     gpg --batch --verify "$DISTRO_NAME.tar.gz.asc" "$DISTRO_NAME.tar.gz";     tar -xzf "$DISTRO_NAME.tar.gz";     rm -rf "$GNUPGHOME" "$DISTRO_NAME.tar.gz" "$DISTRO_NAME.tar.gz.asc";     chown -R storm:storm "$DISTRO_NAME"
-# Thu, 02 Mar 2023 10:42:25 GMT
+# Thu, 16 Mar 2023 07:59:14 GMT
 WORKDIR /apache-storm-1.2.4
-# Thu, 02 Mar 2023 10:42:25 GMT
+# Thu, 16 Mar 2023 07:59:14 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/apache-storm-1.2.4/bin
-# Thu, 02 Mar 2023 10:42:25 GMT
+# Thu, 16 Mar 2023 07:59:14 GMT
 COPY file:c74c732450146abc9cc672380c7829a8d892099ec5aa1f81e3fe02c4e8f97f32 in / 
-# Thu, 02 Mar 2023 10:42:25 GMT
+# Thu, 16 Mar 2023 07:59:14 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:b65bcf19d1445822c0d6f15ea82c9ed82ac1d903cfd6c1284ba7b2409a092845`  
-		Last Modified: Wed, 01 Mar 2023 09:07:16 GMT  
-		Size: 30.4 MB (30430002 bytes)  
+	-	`sha256:74ac377868f863e123f24c409f79709f7563fa464557c36a09cf6f85c8b92b7f`  
+		Last Modified: Wed, 08 Mar 2023 09:03:15 GMT  
+		Size: 30.4 MB (30429963 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e3e3d5d30a242b64d6ee4089176f1459cdfe9d3aeb58e2114cc14b420ad71e5`  
-		Last Modified: Thu, 02 Mar 2023 04:07:58 GMT  
-		Size: 12.4 MB (12432173 bytes)  
+	-	`sha256:b9cabe75b440d785eb2f20422368c248b28fd9c219a5d5db5aacb7de3d43f02c`  
+		Last Modified: Thu, 16 Mar 2023 02:50:26 GMT  
+		Size: 12.4 MB (12432056 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be66b727d0420bf9ca0a1c4ea43efad105c7cf92d3477ec2be1d236b4c30ea1a`  
-		Last Modified: Thu, 02 Mar 2023 04:08:35 GMT  
-		Size: 41.8 MB (41823540 bytes)  
+	-	`sha256:530f234ee0dbdaea2169335688b60dd0ddb9ed693d829a64d1bd3ed1c05b793c`  
+		Last Modified: Thu, 16 Mar 2023 02:51:03 GMT  
+		Size: 41.8 MB (41823534 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:161f5bd3c987cb3d2ac3105d736dd5e93d631263049c691cd1720f3cf164eace`  
-		Last Modified: Thu, 02 Mar 2023 04:08:29 GMT  
+	-	`sha256:64261527ab13e8ee1efeb6ac3f971f8dc2b0e7c3263e78185cbe2efe6a5dd205`  
+		Last Modified: Thu, 16 Mar 2023 02:50:59 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1fee8a7e9cd7ebfb393a1ebde5d0bbd9a8cc2563afe747bd43dc261b52aee3f0`  
-		Last Modified: Thu, 02 Mar 2023 10:43:02 GMT  
-		Size: 1.8 KB (1848 bytes)  
+	-	`sha256:cabb5cff6c3c453e2c9ee90109c498e76507c365c60ac0c062ecf1cf9f3d9db2`  
+		Last Modified: Thu, 16 Mar 2023 08:00:01 GMT  
+		Size: 1.8 KB (1846 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:15cfc70719ff7181aad31e3d315f5d9b4c8f0d996610516670677263b6f4b8fb`  
-		Last Modified: Thu, 02 Mar 2023 10:43:04 GMT  
-		Size: 11.6 MB (11553230 bytes)  
+	-	`sha256:078c0e7cb7a589bc38a378be259ff6d587fc1416a73ccac6eda63958cdee96a0`  
+		Last Modified: Thu, 16 Mar 2023 08:00:07 GMT  
+		Size: 11.6 MB (11553329 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:591bf74f021c67f44ac266dcc1763ab1c125cb1ce6bfc7e9f81d08268fdf731d`  
-		Last Modified: Thu, 02 Mar 2023 10:43:10 GMT  
-		Size: 169.1 MB (169137949 bytes)  
+	-	`sha256:3b80daee75dd14c6a10f5958affc8c9a4c3cba4f094cfccb01bf8976b67991bd`  
+		Last Modified: Thu, 16 Mar 2023 08:00:10 GMT  
+		Size: 169.1 MB (169137941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:711ab4642db802f36cf9efc02d217cc34e069c01c007431c6542df8a41b6f2c2`  
-		Last Modified: Thu, 02 Mar 2023 10:43:02 GMT  
-		Size: 414.0 B  
+	-	`sha256:9eb2217cc5145f7d71f4b42e6113d3012d3adfffe064fcf24027ca49c3159f8f`  
+		Last Modified: Thu, 16 Mar 2023 08:00:01 GMT  
+		Size: 413.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `storm:1.2.4-temurin` - linux; arm64 variant v8
 
 ```console
-$ docker pull storm@sha256:4604930f3c5cea8f606762236fa670ab7ece7137b71877d5fab2adc22f08a732
+$ docker pull storm@sha256:580e50e41aee5ddc1f92dacc8b307cb99c7199ff843fa9e22ead83be39409681
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **262.2 MB (262211874 bytes)**  
+-	Total Size: **262.2 MB (262210726 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7e10d431ce3d9198e78d7e7ab22ab224f5a4ed8ced7c3578dca00db18d0040b5`
+-	Image ID: `sha256:e94aab857f16b1ea9800eee7cf0e74906f14d80bf4d7ee68ebf37ac97463da63`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 
 ```dockerfile
-# Wed, 01 Mar 2023 04:47:53 GMT
+# Wed, 08 Mar 2023 04:32:38 GMT
 ARG RELEASE
-# Wed, 01 Mar 2023 04:47:53 GMT
+# Wed, 08 Mar 2023 04:32:38 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 01 Mar 2023 04:47:54 GMT
+# Wed, 08 Mar 2023 04:32:38 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 01 Mar 2023 04:47:54 GMT
+# Wed, 08 Mar 2023 04:32:39 GMT
 LABEL org.opencontainers.image.version=22.04
-# Wed, 01 Mar 2023 04:48:01 GMT
-ADD file:cf91de9ab30abab112d58c0a7f3bbb35853a02b2e406c65c89430ff049573c47 in / 
-# Wed, 01 Mar 2023 04:48:01 GMT
+# Wed, 08 Mar 2023 04:32:40 GMT
+ADD file:79b36308bc382d9cae7197b4cecc21430f4e8f3e8bec3547d0f00bcff7681e60 in / 
+# Wed, 08 Mar 2023 04:32:41 GMT
 CMD ["/bin/bash"]
-# Thu, 02 Mar 2023 04:27:42 GMT
+# Thu, 16 Mar 2023 01:52:25 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 02 Mar 2023 04:27:42 GMT
+# Thu, 16 Mar 2023 01:52:25 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 02 Mar 2023 04:27:42 GMT
+# Thu, 16 Mar 2023 01:52:26 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 02 Mar 2023 04:27:55 GMT
+# Thu, 16 Mar 2023 01:52:57 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 02 Mar 2023 04:27:55 GMT
+# Thu, 16 Mar 2023 01:52:57 GMT
 ENV JAVA_VERSION=jdk8u362-b09
-# Thu, 02 Mar 2023 04:28:18 GMT
+# Thu, 16 Mar 2023 01:53:17 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='cbe45788fa2d9d04d6b10f8aec7dbb15a018dbafe897ed75e31876d0367d56a5';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_aarch64_linux_hotspot_8u362b09.tar.gz';          ;;        armhf|arm)          ESUM='82d8524838b07ee438d42f4c33b6ecfe89ae83efac9af0605c76d75195bdcd99';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_arm_linux_hotspot_8u362b09.tar.gz';          apt-get update          && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libatomic1          && rm -rf /var/lib/apt/lists/*          ;;        ppc64el|powerpc:common64)          ESUM='5ec3e07126fedc23b58bb0f5b2dd05b5e9599ce1a3567fc2c7b27587f39faa3b';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_ppc64le_linux_hotspot_8u362b09.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='c8c4e180f915fc7c163240bf363dcdf2b481cd2723fabfc3d08ccf12e049611f';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_x64_linux_hotspot_8u362b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;
-# Thu, 02 Mar 2023 04:28:18 GMT
+# Thu, 16 Mar 2023 01:53:18 GMT
 RUN echo Verifying install ...     && echo java -version && java -version     && echo Complete.
-# Thu, 02 Mar 2023 07:39:43 GMT
+# Thu, 16 Mar 2023 07:39:02 GMT
 ENV STORM_CONF_DIR=/conf STORM_DATA_DIR=/data STORM_LOG_DIR=/logs
-# Thu, 02 Mar 2023 07:39:44 GMT
+# Thu, 16 Mar 2023 07:39:02 GMT
 RUN set -eux;     groupadd -r storm --gid=1000;     useradd -r -g storm --uid=1000 storm;     mkdir -p "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR";     chown -R storm:storm "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR"``
-# Thu, 02 Mar 2023 07:39:58 GMT
+# Thu, 16 Mar 2023 07:39:22 GMT
 RUN set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive     apt-get install -y --no-install-recommends         bash         ca-certificates         dirmngr         gosu         gnupg         python2         procps         wget;     rm -rf /var/lib/apt/lists/*;     gosu nobody true;     update-alternatives --install /usr/bin/python python /usr/bin/python2 0
-# Thu, 02 Mar 2023 07:39:58 GMT
+# Thu, 16 Mar 2023 07:39:23 GMT
 ARG GPG_KEY=5167DE337E7370373499FC1DA4A672F11B5050C8
-# Thu, 02 Mar 2023 07:39:58 GMT
+# Thu, 16 Mar 2023 07:39:23 GMT
 ARG DISTRO_NAME=apache-storm-1.2.4
-# Thu, 02 Mar 2023 07:40:16 GMT
+# Thu, 16 Mar 2023 07:39:40 GMT
 # ARGS: DISTRO_NAME=apache-storm-1.2.4 GPG_KEY=5167DE337E7370373499FC1DA4A672F11B5050C8
 RUN set -eux;     ddist() {         local f="$1"; shift;         local distFile="$1"; shift;         local success=;         local distUrl=;         for distUrl in             'https://www.apache.org/dyn/closer.cgi?action=download&filename='             https://www-us.apache.org/dist/             https://www.apache.org/dist/             https://archive.apache.org/dist/         ; do             if wget -q -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then                 success=1;                 break;             fi;         done;         [ -n "$success" ];     };     ddist "$DISTRO_NAME.tar.gz" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz";     ddist "$DISTRO_NAME.tar.gz.asc" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --keyserver hkps://keyserver.pgp.com --recv-key "$GPG_KEY" ||     gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY" ||     gpg --keyserver hkps://pgp.mit.edu --recv-keys "$GPG_KEY";     gpg --batch --verify "$DISTRO_NAME.tar.gz.asc" "$DISTRO_NAME.tar.gz";     tar -xzf "$DISTRO_NAME.tar.gz";     rm -rf "$GNUPGHOME" "$DISTRO_NAME.tar.gz" "$DISTRO_NAME.tar.gz.asc";     chown -R storm:storm "$DISTRO_NAME"
-# Thu, 02 Mar 2023 07:40:17 GMT
+# Thu, 16 Mar 2023 07:39:41 GMT
 WORKDIR /apache-storm-1.2.4
-# Thu, 02 Mar 2023 07:40:17 GMT
+# Thu, 16 Mar 2023 07:39:41 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/apache-storm-1.2.4/bin
-# Thu, 02 Mar 2023 07:40:17 GMT
+# Thu, 16 Mar 2023 07:39:41 GMT
 COPY file:c74c732450146abc9cc672380c7829a8d892099ec5aa1f81e3fe02c4e8f97f32 in / 
-# Thu, 02 Mar 2023 07:40:17 GMT
+# Thu, 16 Mar 2023 07:39:41 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:986c4f6be3072d9528a459c780295bd053806536d2295a6de6aad327eaf19fad`  
-		Last Modified: Wed, 01 Mar 2023 09:02:52 GMT  
-		Size: 28.4 MB (28387922 bytes)  
+	-	`sha256:b2ddfd337773edbf5766dce2fdbeef139ba8c42724e29eda157c84e9f97f1bce`  
+		Last Modified: Wed, 08 Mar 2023 12:37:24 GMT  
+		Size: 28.4 MB (28387554 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:219ba20309dcd99cff3a43c2f3c01df9170ee1fe02df71ead98cfcef30b9c450`  
-		Last Modified: Thu, 02 Mar 2023 04:33:24 GMT  
-		Size: 12.4 MB (12390219 bytes)  
+	-	`sha256:35794a35c4aa2299e9a7a69f4eafa7f96eb1832e2a04b3d85773522111018ca6`  
+		Last Modified: Thu, 16 Mar 2023 01:58:19 GMT  
+		Size: 12.4 MB (12389767 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:591a50343e8681bd502ff222aecd18d8abefa72d3e7b924186d2591cb3c93c28`  
-		Last Modified: Thu, 02 Mar 2023 04:33:56 GMT  
-		Size: 40.8 MB (40807778 bytes)  
+	-	`sha256:152af1a9cbde48b51c20b7a1c2b0b3b37f1fc53f0cac876e115ee4a1111a8833`  
+		Last Modified: Thu, 16 Mar 2023 01:58:51 GMT  
+		Size: 40.8 MB (40807784 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee122a13c2df69f7adef6234e639c81b9eb2cac7e112d9250634ea111c5be448`  
-		Last Modified: Thu, 02 Mar 2023 04:33:52 GMT  
-		Size: 161.0 B  
+	-	`sha256:7d3db1828ae58f408ce72b2ba4feec378517ceaa250235b897cf24ca9767869a`  
+		Last Modified: Thu, 16 Mar 2023 01:58:48 GMT  
+		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f54b5bf11b69de7b9ad923472665f642aa088aff6ad2395035fbfa5d6adb2bf0`  
-		Last Modified: Thu, 02 Mar 2023 07:41:12 GMT  
-		Size: 1.9 KB (1852 bytes)  
+	-	`sha256:b4390a0d0b87de5eeaed6ee9eb7405b4444c843e3f03fafa7b6052db0352da2b`  
+		Last Modified: Thu, 16 Mar 2023 07:40:45 GMT  
+		Size: 1.8 KB (1849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8066d19dd2ddfc23bdb959c5cb7830a2ab7c17b0977719d5e42fa310629dae68`  
-		Last Modified: Thu, 02 Mar 2023 07:41:14 GMT  
-		Size: 11.5 MB (11485749 bytes)  
+	-	`sha256:19e1ed4d43620a495aa2fad14f892cdef529c3e034da480068267cedd2eaabd1`  
+		Last Modified: Thu, 16 Mar 2023 07:40:47 GMT  
+		Size: 11.5 MB (11485320 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af502b870d55db11de6b67f006f3d9a405e5908c834277f248e4f3465a395211`  
-		Last Modified: Thu, 02 Mar 2023 07:41:19 GMT  
-		Size: 169.1 MB (169137781 bytes)  
+	-	`sha256:2434f40c60b5e44c4a316a03b1d3aacd225c78e76f9e2d13c6c271d4cb27cd67`  
+		Last Modified: Thu, 16 Mar 2023 07:40:52 GMT  
+		Size: 169.1 MB (169137877 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0948e2f9e48afd29d68c2e637f2eb08347382efbb549fadb0e03636c49378e81`  
-		Last Modified: Thu, 02 Mar 2023 07:41:12 GMT  
-		Size: 412.0 B  
+	-	`sha256:765baa8bb720b7b5ca6fa3b1d1ca375713779d9dfc6016b89e2bce87ddd2e697`  
+		Last Modified: Thu, 16 Mar 2023 07:40:45 GMT  
+		Size: 413.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `storm:2.4-temurin`
 
 ```console
-$ docker pull storm@sha256:b3d3b2a3d639aec5d96c1854f753750c5be563b589c442aea0dffd4ec3111348
+$ docker pull storm@sha256:e4c41fa65e3b56eb51de0335624a0e8e8fb227d09703bf34a36a3ba8cfc73de6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -432,215 +432,215 @@ $ docker pull storm@sha256:b3d3b2a3d639aec5d96c1854f753750c5be563b589c442aea0dff
 ### `storm:2.4-temurin` - linux; amd64
 
 ```console
-$ docker pull storm@sha256:9217dd979b42333b6a4e1c431285036362892f0d18b49cd37208941640924fd7
+$ docker pull storm@sha256:cb3607ea7d161f0071e9ad2802546a796004ca9ed90c0b68916c1e6aa3ddf3ef
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **433.2 MB (433193523 bytes)**  
+-	Total Size: **433.2 MB (433193494 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:dca7f79e19dc6c6de656282382d5284aadb83d5a565d87e1659b84751d051688`
+-	Image ID: `sha256:638225427c68f1269e803a93cfa5a2224cfb1a2f8af05f6f227bf57a146c25cc`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 
 ```dockerfile
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 ARG RELEASE
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 LABEL org.opencontainers.image.version=22.04
-# Wed, 01 Mar 2023 04:38:48 GMT
-ADD file:fb4c8244f4468cdd3f666932f05805a3882d34010d3a0c14b7c20589bf619a9c in / 
-# Wed, 01 Mar 2023 04:38:49 GMT
+# Wed, 08 Mar 2023 04:44:27 GMT
+ADD file:c8ef6447752cab2541ffca9e3cfa27d581f3491bc8f356f6eafd951243609341 in / 
+# Wed, 08 Mar 2023 04:44:27 GMT
 CMD ["/bin/bash"]
-# Thu, 02 Mar 2023 04:01:37 GMT
+# Thu, 16 Mar 2023 02:44:03 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 02 Mar 2023 04:01:37 GMT
+# Thu, 16 Mar 2023 02:44:03 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 02 Mar 2023 04:01:37 GMT
+# Thu, 16 Mar 2023 02:44:04 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 02 Mar 2023 04:01:51 GMT
+# Thu, 16 Mar 2023 02:44:26 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 02 Mar 2023 04:02:42 GMT
+# Thu, 16 Mar 2023 02:45:18 GMT
 ENV JAVA_VERSION=jdk-11.0.18+10
-# Thu, 02 Mar 2023 04:03:16 GMT
+# Thu, 16 Mar 2023 02:45:50 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='89bc6e93d48a37a5eff7ec5afa515c60eb3369d106d1736f5e845b3dcf8fb72c';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.18_10.tar.gz';          ;;        armhf|arm)          ESUM='949482ac232e756f342de6a8592d56b58803e10d3956abff14c4958e711a0b7c';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_arm_linux_hotspot_11.0.18_10.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='df32e80d5b6db60a1ed9ed04eaf267eaf17835ed2ae2c1708d8d94328c03a0a5';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.18_10.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='c07df5081f78021bed0d169622e470ebd4a4525a45f84192a52580ddb912959b';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_s390x_linux_hotspot_11.0.18_10.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='0e7b196ef8603ac3d38caaf7768b7b0a3c613d60e15a6511bcfb2c894b609e99';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_x64_linux_hotspot_11.0.18_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 02 Mar 2023 04:03:17 GMT
+# Thu, 16 Mar 2023 02:45:50 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 02 Mar 2023 10:42:30 GMT
+# Thu, 16 Mar 2023 07:59:20 GMT
 ENV STORM_CONF_DIR=/conf STORM_DATA_DIR=/data STORM_LOG_DIR=/logs
-# Thu, 02 Mar 2023 10:42:31 GMT
+# Thu, 16 Mar 2023 07:59:21 GMT
 RUN set -eux;     groupadd -r storm --gid=1000;     useradd -r -g storm --uid=1000 storm;     mkdir -p "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR";     chown -R storm:storm "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR"``
-# Thu, 02 Mar 2023 10:42:38 GMT
+# Thu, 16 Mar 2023 07:59:28 GMT
 RUN set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive     apt-get install -y --no-install-recommends         bash         ca-certificates         dirmngr         gosu         gnupg         python2         procps         wget;     rm -rf /var/lib/apt/lists/*;     gosu nobody true;     update-alternatives --install /usr/bin/python python /usr/bin/python2 0
-# Thu, 02 Mar 2023 10:42:39 GMT
+# Thu, 16 Mar 2023 07:59:29 GMT
 ARG GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
-# Thu, 02 Mar 2023 10:42:39 GMT
+# Thu, 16 Mar 2023 07:59:29 GMT
 ARG DISTRO_NAME=apache-storm-2.4.0
-# Thu, 02 Mar 2023 10:42:51 GMT
+# Thu, 16 Mar 2023 07:59:40 GMT
 # ARGS: DISTRO_NAME=apache-storm-2.4.0 GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
 RUN set -eux;     ddist() {         local f="$1"; shift;         local distFile="$1"; shift;         local success=;         local distUrl=;         for distUrl in             'https://www.apache.org/dyn/closer.cgi?action=download&filename='             https://www-us.apache.org/dist/             https://www.apache.org/dist/             https://archive.apache.org/dist/         ; do             if wget -q -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then                 success=1;                 break;             fi;         done;         [ -n "$success" ];     };     ddist "$DISTRO_NAME.tar.gz" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz";     ddist "$DISTRO_NAME.tar.gz.asc" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --keyserver hkps://keyserver.pgp.com --recv-key "$GPG_KEY" ||     gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY" ||     gpg --keyserver hkps://pgp.mit.edu --recv-keys "$GPG_KEY";     gpg --batch --verify "$DISTRO_NAME.tar.gz.asc" "$DISTRO_NAME.tar.gz";     tar -xzf "$DISTRO_NAME.tar.gz";     rm -rf "$GNUPGHOME" "$DISTRO_NAME.tar.gz" "$DISTRO_NAME.tar.gz.asc";     chown -R storm:storm "$DISTRO_NAME"
-# Thu, 02 Mar 2023 10:42:52 GMT
+# Thu, 16 Mar 2023 07:59:40 GMT
 WORKDIR /apache-storm-2.4.0
-# Wed, 15 Mar 2023 23:11:14 GMT
+# Thu, 16 Mar 2023 07:59:47 GMT
 # ARGS: DISTRO_NAME=apache-storm-2.4.0 GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
 RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends         zip         unzip;     for jar in         lib/storm-client-2.4.0.jar         lib-worker/storm-client-2.4.0.jar     ; do         unzip "$jar" defaults.yaml;         sed -i 's/worker.childopts: "/&-XX:+IgnoreUnrecognizedVMOptions /' defaults.yaml;         zip -u "$jar" defaults.yaml;         rm defaults.yaml;     done;     apt-get purge -y --auto-remove         zip         unzip;     rm -rf /var/lib/apt/lists/*
-# Wed, 15 Mar 2023 23:11:14 GMT
+# Thu, 16 Mar 2023 07:59:47 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/apache-storm-2.4.0/bin
-# Wed, 15 Mar 2023 23:11:14 GMT
+# Thu, 16 Mar 2023 07:59:47 GMT
 COPY file:c74c732450146abc9cc672380c7829a8d892099ec5aa1f81e3fe02c4e8f97f32 in / 
-# Wed, 15 Mar 2023 23:11:14 GMT
+# Thu, 16 Mar 2023 07:59:47 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:b65bcf19d1445822c0d6f15ea82c9ed82ac1d903cfd6c1284ba7b2409a092845`  
-		Last Modified: Wed, 01 Mar 2023 09:07:16 GMT  
-		Size: 30.4 MB (30430002 bytes)  
+	-	`sha256:74ac377868f863e123f24c409f79709f7563fa464557c36a09cf6f85c8b92b7f`  
+		Last Modified: Wed, 08 Mar 2023 09:03:15 GMT  
+		Size: 30.4 MB (30429963 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e3e3d5d30a242b64d6ee4089176f1459cdfe9d3aeb58e2114cc14b420ad71e5`  
-		Last Modified: Thu, 02 Mar 2023 04:07:58 GMT  
-		Size: 12.4 MB (12432173 bytes)  
+	-	`sha256:b9cabe75b440d785eb2f20422368c248b28fd9c219a5d5db5aacb7de3d43f02c`  
+		Last Modified: Thu, 16 Mar 2023 02:50:26 GMT  
+		Size: 12.4 MB (12432056 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1afd9b3f07bf59f1db11ac95908fa4840bb36ea5ca2e38380ceb99feadec711`  
-		Last Modified: Thu, 02 Mar 2023 04:10:00 GMT  
-		Size: 46.6 MB (46635570 bytes)  
+	-	`sha256:9f3fc5460b4b76e852651fec42e4cde1337c4bf503657efbe5521f379b19748a`  
+		Last Modified: Thu, 16 Mar 2023 02:52:30 GMT  
+		Size: 46.6 MB (46635547 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24c021f0294c1a9786718db8f4082e50bb41ec03fdc866e6fdb1e624b899367f`  
-		Last Modified: Thu, 02 Mar 2023 04:09:54 GMT  
-		Size: 158.0 B  
+	-	`sha256:a7a8054900958099c4da9d407d5b7d023cf76df2b891f916546c0ddb7e26a697`  
+		Last Modified: Thu, 16 Mar 2023 02:52:23 GMT  
+		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2eea477f8e01e8f6d395c8c21be64a92885bf4dfdfe3dbc17e8f205ea80fbd5`  
-		Last Modified: Thu, 02 Mar 2023 10:43:19 GMT  
-		Size: 1.9 KB (1850 bytes)  
+	-	`sha256:437c9d647a3759a7d17598ee3dedb3035b10dc166d11362ad9c3aa4f2bcbe9e4`  
+		Last Modified: Thu, 16 Mar 2023 08:00:21 GMT  
+		Size: 1.8 KB (1849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e650a5392b8d877e7f4cf0b895989a7be8edf39d5fc35678310d3b4c9eca11d5`  
-		Last Modified: Thu, 02 Mar 2023 10:43:21 GMT  
-		Size: 11.6 MB (11553230 bytes)  
+	-	`sha256:f34a7d88bf7fcacba44259417449ec7d40abf67c42eb93929bbd785ae3ad8bf7`  
+		Last Modified: Thu, 16 Mar 2023 08:00:23 GMT  
+		Size: 11.6 MB (11553317 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57c84e8f705602c8de976b95fa1ba9c906dccc462706a4e8cae197aca764591b`  
-		Last Modified: Thu, 02 Mar 2023 10:43:33 GMT  
-		Size: 322.6 MB (322584232 bytes)  
+	-	`sha256:cf578390a23c8830b28afd4a81312ff023d5850ae4cf808f2e7b2ab89c7f27de`  
+		Last Modified: Thu, 16 Mar 2023 08:00:35 GMT  
+		Size: 322.6 MB (322584267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e857d2713511a430ea77e11b9992d2546f6a67e2dc10d646d01d03e08a7576a`  
-		Last Modified: Wed, 15 Mar 2023 23:11:27 GMT  
-		Size: 9.6 MB (9555896 bytes)  
+	-	`sha256:04c57faf418f0482eaa4134511b7a4683c415fe2510f0a78a7d28a0bbf27717b`  
+		Last Modified: Thu, 16 Mar 2023 08:00:22 GMT  
+		Size: 9.6 MB (9555922 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9f4c1f014a5e5623b6b421ec36bf3d2dafe3944c254de71547cbdfea2ca5092d`  
-		Last Modified: Wed, 15 Mar 2023 23:11:26 GMT  
-		Size: 412.0 B  
+	-	`sha256:5bd6f24047fc4ab4476a618e9185c0cffb4808b68a57e64605f4ef6c431f4fac`  
+		Last Modified: Thu, 16 Mar 2023 08:00:21 GMT  
+		Size: 414.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `storm:2.4-temurin` - linux; arm64 variant v8
 
 ```console
-$ docker pull storm@sha256:c81caf5e82c7018c7d42c36608b8fc67718e26f8fe48ab97cf123faf6f1e0b5e
+$ docker pull storm@sha256:2db18b6051586339fe0ee6470f8cbcc92bc0eba883a7ab07151815e40d2dcad9
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **429.4 MB (429385125 bytes)**  
+-	Total Size: **429.4 MB (429383529 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:68381ffeb88e0386fdcad514ea22aa3e4eb1dea78205182c85d1361f5a8dfaa5`
+-	Image ID: `sha256:c9b1b73d058f595e9e0e250ec1facf2848efe719bf2158d3d29f7a4351da26bf`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 
 ```dockerfile
-# Wed, 01 Mar 2023 04:47:53 GMT
+# Wed, 08 Mar 2023 04:32:38 GMT
 ARG RELEASE
-# Wed, 01 Mar 2023 04:47:53 GMT
+# Wed, 08 Mar 2023 04:32:38 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 01 Mar 2023 04:47:54 GMT
+# Wed, 08 Mar 2023 04:32:38 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 01 Mar 2023 04:47:54 GMT
+# Wed, 08 Mar 2023 04:32:39 GMT
 LABEL org.opencontainers.image.version=22.04
-# Wed, 01 Mar 2023 04:48:01 GMT
-ADD file:cf91de9ab30abab112d58c0a7f3bbb35853a02b2e406c65c89430ff049573c47 in / 
-# Wed, 01 Mar 2023 04:48:01 GMT
+# Wed, 08 Mar 2023 04:32:40 GMT
+ADD file:79b36308bc382d9cae7197b4cecc21430f4e8f3e8bec3547d0f00bcff7681e60 in / 
+# Wed, 08 Mar 2023 04:32:41 GMT
 CMD ["/bin/bash"]
-# Thu, 02 Mar 2023 04:27:42 GMT
+# Thu, 16 Mar 2023 01:52:25 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 02 Mar 2023 04:27:42 GMT
+# Thu, 16 Mar 2023 01:52:25 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 02 Mar 2023 04:27:42 GMT
+# Thu, 16 Mar 2023 01:52:26 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 02 Mar 2023 04:27:55 GMT
+# Thu, 16 Mar 2023 01:52:57 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 02 Mar 2023 04:28:47 GMT
+# Thu, 16 Mar 2023 01:53:41 GMT
 ENV JAVA_VERSION=jdk-11.0.18+10
-# Thu, 02 Mar 2023 04:29:16 GMT
+# Thu, 16 Mar 2023 01:54:08 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='89bc6e93d48a37a5eff7ec5afa515c60eb3369d106d1736f5e845b3dcf8fb72c';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.18_10.tar.gz';          ;;        armhf|arm)          ESUM='949482ac232e756f342de6a8592d56b58803e10d3956abff14c4958e711a0b7c';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_arm_linux_hotspot_11.0.18_10.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='df32e80d5b6db60a1ed9ed04eaf267eaf17835ed2ae2c1708d8d94328c03a0a5';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.18_10.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='c07df5081f78021bed0d169622e470ebd4a4525a45f84192a52580ddb912959b';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_s390x_linux_hotspot_11.0.18_10.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='0e7b196ef8603ac3d38caaf7768b7b0a3c613d60e15a6511bcfb2c894b609e99';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_x64_linux_hotspot_11.0.18_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 02 Mar 2023 04:29:17 GMT
+# Thu, 16 Mar 2023 01:54:09 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 02 Mar 2023 07:40:24 GMT
+# Thu, 16 Mar 2023 07:39:50 GMT
 ENV STORM_CONF_DIR=/conf STORM_DATA_DIR=/data STORM_LOG_DIR=/logs
-# Thu, 02 Mar 2023 07:40:24 GMT
+# Thu, 16 Mar 2023 07:39:50 GMT
 RUN set -eux;     groupadd -r storm --gid=1000;     useradd -r -g storm --uid=1000 storm;     mkdir -p "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR";     chown -R storm:storm "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR"``
-# Thu, 02 Mar 2023 07:40:30 GMT
+# Thu, 16 Mar 2023 07:39:56 GMT
 RUN set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive     apt-get install -y --no-install-recommends         bash         ca-certificates         dirmngr         gosu         gnupg         python2         procps         wget;     rm -rf /var/lib/apt/lists/*;     gosu nobody true;     update-alternatives --install /usr/bin/python python /usr/bin/python2 0
-# Thu, 02 Mar 2023 07:40:30 GMT
+# Thu, 16 Mar 2023 07:39:56 GMT
 ARG GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
-# Thu, 02 Mar 2023 07:40:30 GMT
+# Thu, 16 Mar 2023 07:39:56 GMT
 ARG DISTRO_NAME=apache-storm-2.4.0
-# Thu, 02 Mar 2023 07:40:57 GMT
+# Thu, 16 Mar 2023 07:40:21 GMT
 # ARGS: DISTRO_NAME=apache-storm-2.4.0 GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
 RUN set -eux;     ddist() {         local f="$1"; shift;         local distFile="$1"; shift;         local success=;         local distUrl=;         for distUrl in             'https://www.apache.org/dyn/closer.cgi?action=download&filename='             https://www-us.apache.org/dist/             https://www.apache.org/dist/             https://archive.apache.org/dist/         ; do             if wget -q -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then                 success=1;                 break;             fi;         done;         [ -n "$success" ];     };     ddist "$DISTRO_NAME.tar.gz" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz";     ddist "$DISTRO_NAME.tar.gz.asc" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --keyserver hkps://keyserver.pgp.com --recv-key "$GPG_KEY" ||     gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY" ||     gpg --keyserver hkps://pgp.mit.edu --recv-keys "$GPG_KEY";     gpg --batch --verify "$DISTRO_NAME.tar.gz.asc" "$DISTRO_NAME.tar.gz";     tar -xzf "$DISTRO_NAME.tar.gz";     rm -rf "$GNUPGHOME" "$DISTRO_NAME.tar.gz" "$DISTRO_NAME.tar.gz.asc";     chown -R storm:storm "$DISTRO_NAME"
-# Thu, 02 Mar 2023 07:40:59 GMT
+# Thu, 16 Mar 2023 07:40:23 GMT
 WORKDIR /apache-storm-2.4.0
-# Wed, 15 Mar 2023 23:10:40 GMT
+# Thu, 16 Mar 2023 07:40:29 GMT
 # ARGS: DISTRO_NAME=apache-storm-2.4.0 GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
 RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends         zip         unzip;     for jar in         lib/storm-client-2.4.0.jar         lib-worker/storm-client-2.4.0.jar     ; do         unzip "$jar" defaults.yaml;         sed -i 's/worker.childopts: "/&-XX:+IgnoreUnrecognizedVMOptions /' defaults.yaml;         zip -u "$jar" defaults.yaml;         rm defaults.yaml;     done;     apt-get purge -y --auto-remove         zip         unzip;     rm -rf /var/lib/apt/lists/*
-# Wed, 15 Mar 2023 23:10:40 GMT
+# Thu, 16 Mar 2023 07:40:29 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/apache-storm-2.4.0/bin
-# Wed, 15 Mar 2023 23:10:40 GMT
+# Thu, 16 Mar 2023 07:40:29 GMT
 COPY file:c74c732450146abc9cc672380c7829a8d892099ec5aa1f81e3fe02c4e8f97f32 in / 
-# Wed, 15 Mar 2023 23:10:40 GMT
+# Thu, 16 Mar 2023 07:40:29 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:986c4f6be3072d9528a459c780295bd053806536d2295a6de6aad327eaf19fad`  
-		Last Modified: Wed, 01 Mar 2023 09:02:52 GMT  
-		Size: 28.4 MB (28387922 bytes)  
+	-	`sha256:b2ddfd337773edbf5766dce2fdbeef139ba8c42724e29eda157c84e9f97f1bce`  
+		Last Modified: Wed, 08 Mar 2023 12:37:24 GMT  
+		Size: 28.4 MB (28387554 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:219ba20309dcd99cff3a43c2f3c01df9170ee1fe02df71ead98cfcef30b9c450`  
-		Last Modified: Thu, 02 Mar 2023 04:33:24 GMT  
-		Size: 12.4 MB (12390219 bytes)  
+	-	`sha256:35794a35c4aa2299e9a7a69f4eafa7f96eb1832e2a04b3d85773522111018ca6`  
+		Last Modified: Thu, 16 Mar 2023 01:58:19 GMT  
+		Size: 12.4 MB (12389767 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:82d5722bd69e931b1cf3e955e992893a8ea2e124b586c19b553fbe8a2d94f988`  
-		Last Modified: Thu, 02 Mar 2023 04:35:11 GMT  
-		Size: 45.0 MB (44977970 bytes)  
+	-	`sha256:26126947450108b9349ce5c70904451e6ada86d51dde32223e9d9de1e567f89f`  
+		Last Modified: Thu, 16 Mar 2023 02:00:06 GMT  
+		Size: 45.0 MB (44977990 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a2d1016d6ffd5bed4cc6724687b1659787f8e3d1c112f02173b5efcb5425180`  
-		Last Modified: Thu, 02 Mar 2023 04:35:06 GMT  
-		Size: 159.0 B  
+	-	`sha256:48a873c16c3848ad12697e893cb753bb353c55c7d09fbbcdb67983aafbbd885b`  
+		Last Modified: Thu, 16 Mar 2023 02:00:02 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5e3969e4a6ef397f087f36a4cc0756398736e40e6c61adc5982ec9c173f356a`  
-		Last Modified: Thu, 02 Mar 2023 07:41:28 GMT  
-		Size: 1.9 KB (1850 bytes)  
+	-	`sha256:b956de8234a45ce80b72106b3d7e18edbf04260814c31a6cf2f1548e12d69dcc`  
+		Last Modified: Thu, 16 Mar 2023 07:41:01 GMT  
+		Size: 1.9 KB (1854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1dd4ea6d303116242a7c1a3aee44055ca318991417eaeccb6efb105a8abc729b`  
-		Last Modified: Thu, 02 Mar 2023 07:41:30 GMT  
-		Size: 11.5 MB (11485825 bytes)  
+	-	`sha256:8cc77ebe89145194f5cf59d1aadb46e90b9cfd8e23eeb0b96a2218f5d47eaf5d`  
+		Last Modified: Thu, 16 Mar 2023 07:41:03 GMT  
+		Size: 11.5 MB (11485347 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cc46384cae5e9ab8787d7b80e99a7ccb59cffbd23e26c6fcdfe291bef3f4a01`  
-		Last Modified: Thu, 02 Mar 2023 07:41:40 GMT  
-		Size: 322.6 MB (322584263 bytes)  
+	-	`sha256:bd3119763a0d6cf3228b490faa6029247de637a3846b5e44bafe010c0f40561d`  
+		Last Modified: Thu, 16 Mar 2023 07:41:12 GMT  
+		Size: 322.6 MB (322584358 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6eaef12f7801cee19bc49b6ca7143c82f7e8756c957399557b4ff88d1ce7977`  
-		Last Modified: Wed, 15 Mar 2023 23:10:54 GMT  
-		Size: 9.6 MB (9556505 bytes)  
+	-	`sha256:048bfc8e659089c65af0e5edfa04fd3a2dcf19ac95876cd2eccd014ada3f585f`  
+		Last Modified: Thu, 16 Mar 2023 07:41:01 GMT  
+		Size: 9.6 MB (9556086 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e80e4ead22ac5dd25ec5ec5ae9f37da72bc4cfad188012e09635c0e694fba1f0`  
-		Last Modified: Wed, 15 Mar 2023 23:10:53 GMT  
-		Size: 412.0 B  
+	-	`sha256:65c65ba63a780b1a9e72eac002c2c799c3b703fd974ead671bead44760902700`  
+		Last Modified: Thu, 16 Mar 2023 07:41:01 GMT  
+		Size: 413.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `storm:2.4.0-temurin`
 
 ```console
-$ docker pull storm@sha256:b3d3b2a3d639aec5d96c1854f753750c5be563b589c442aea0dffd4ec3111348
+$ docker pull storm@sha256:e4c41fa65e3b56eb51de0335624a0e8e8fb227d09703bf34a36a3ba8cfc73de6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -651,215 +651,215 @@ $ docker pull storm@sha256:b3d3b2a3d639aec5d96c1854f753750c5be563b589c442aea0dff
 ### `storm:2.4.0-temurin` - linux; amd64
 
 ```console
-$ docker pull storm@sha256:9217dd979b42333b6a4e1c431285036362892f0d18b49cd37208941640924fd7
+$ docker pull storm@sha256:cb3607ea7d161f0071e9ad2802546a796004ca9ed90c0b68916c1e6aa3ddf3ef
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **433.2 MB (433193523 bytes)**  
+-	Total Size: **433.2 MB (433193494 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:dca7f79e19dc6c6de656282382d5284aadb83d5a565d87e1659b84751d051688`
+-	Image ID: `sha256:638225427c68f1269e803a93cfa5a2224cfb1a2f8af05f6f227bf57a146c25cc`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 
 ```dockerfile
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 ARG RELEASE
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 LABEL org.opencontainers.image.version=22.04
-# Wed, 01 Mar 2023 04:38:48 GMT
-ADD file:fb4c8244f4468cdd3f666932f05805a3882d34010d3a0c14b7c20589bf619a9c in / 
-# Wed, 01 Mar 2023 04:38:49 GMT
+# Wed, 08 Mar 2023 04:44:27 GMT
+ADD file:c8ef6447752cab2541ffca9e3cfa27d581f3491bc8f356f6eafd951243609341 in / 
+# Wed, 08 Mar 2023 04:44:27 GMT
 CMD ["/bin/bash"]
-# Thu, 02 Mar 2023 04:01:37 GMT
+# Thu, 16 Mar 2023 02:44:03 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 02 Mar 2023 04:01:37 GMT
+# Thu, 16 Mar 2023 02:44:03 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 02 Mar 2023 04:01:37 GMT
+# Thu, 16 Mar 2023 02:44:04 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 02 Mar 2023 04:01:51 GMT
+# Thu, 16 Mar 2023 02:44:26 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 02 Mar 2023 04:02:42 GMT
+# Thu, 16 Mar 2023 02:45:18 GMT
 ENV JAVA_VERSION=jdk-11.0.18+10
-# Thu, 02 Mar 2023 04:03:16 GMT
+# Thu, 16 Mar 2023 02:45:50 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='89bc6e93d48a37a5eff7ec5afa515c60eb3369d106d1736f5e845b3dcf8fb72c';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.18_10.tar.gz';          ;;        armhf|arm)          ESUM='949482ac232e756f342de6a8592d56b58803e10d3956abff14c4958e711a0b7c';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_arm_linux_hotspot_11.0.18_10.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='df32e80d5b6db60a1ed9ed04eaf267eaf17835ed2ae2c1708d8d94328c03a0a5';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.18_10.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='c07df5081f78021bed0d169622e470ebd4a4525a45f84192a52580ddb912959b';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_s390x_linux_hotspot_11.0.18_10.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='0e7b196ef8603ac3d38caaf7768b7b0a3c613d60e15a6511bcfb2c894b609e99';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_x64_linux_hotspot_11.0.18_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 02 Mar 2023 04:03:17 GMT
+# Thu, 16 Mar 2023 02:45:50 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 02 Mar 2023 10:42:30 GMT
+# Thu, 16 Mar 2023 07:59:20 GMT
 ENV STORM_CONF_DIR=/conf STORM_DATA_DIR=/data STORM_LOG_DIR=/logs
-# Thu, 02 Mar 2023 10:42:31 GMT
+# Thu, 16 Mar 2023 07:59:21 GMT
 RUN set -eux;     groupadd -r storm --gid=1000;     useradd -r -g storm --uid=1000 storm;     mkdir -p "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR";     chown -R storm:storm "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR"``
-# Thu, 02 Mar 2023 10:42:38 GMT
+# Thu, 16 Mar 2023 07:59:28 GMT
 RUN set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive     apt-get install -y --no-install-recommends         bash         ca-certificates         dirmngr         gosu         gnupg         python2         procps         wget;     rm -rf /var/lib/apt/lists/*;     gosu nobody true;     update-alternatives --install /usr/bin/python python /usr/bin/python2 0
-# Thu, 02 Mar 2023 10:42:39 GMT
+# Thu, 16 Mar 2023 07:59:29 GMT
 ARG GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
-# Thu, 02 Mar 2023 10:42:39 GMT
+# Thu, 16 Mar 2023 07:59:29 GMT
 ARG DISTRO_NAME=apache-storm-2.4.0
-# Thu, 02 Mar 2023 10:42:51 GMT
+# Thu, 16 Mar 2023 07:59:40 GMT
 # ARGS: DISTRO_NAME=apache-storm-2.4.0 GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
 RUN set -eux;     ddist() {         local f="$1"; shift;         local distFile="$1"; shift;         local success=;         local distUrl=;         for distUrl in             'https://www.apache.org/dyn/closer.cgi?action=download&filename='             https://www-us.apache.org/dist/             https://www.apache.org/dist/             https://archive.apache.org/dist/         ; do             if wget -q -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then                 success=1;                 break;             fi;         done;         [ -n "$success" ];     };     ddist "$DISTRO_NAME.tar.gz" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz";     ddist "$DISTRO_NAME.tar.gz.asc" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --keyserver hkps://keyserver.pgp.com --recv-key "$GPG_KEY" ||     gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY" ||     gpg --keyserver hkps://pgp.mit.edu --recv-keys "$GPG_KEY";     gpg --batch --verify "$DISTRO_NAME.tar.gz.asc" "$DISTRO_NAME.tar.gz";     tar -xzf "$DISTRO_NAME.tar.gz";     rm -rf "$GNUPGHOME" "$DISTRO_NAME.tar.gz" "$DISTRO_NAME.tar.gz.asc";     chown -R storm:storm "$DISTRO_NAME"
-# Thu, 02 Mar 2023 10:42:52 GMT
+# Thu, 16 Mar 2023 07:59:40 GMT
 WORKDIR /apache-storm-2.4.0
-# Wed, 15 Mar 2023 23:11:14 GMT
+# Thu, 16 Mar 2023 07:59:47 GMT
 # ARGS: DISTRO_NAME=apache-storm-2.4.0 GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
 RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends         zip         unzip;     for jar in         lib/storm-client-2.4.0.jar         lib-worker/storm-client-2.4.0.jar     ; do         unzip "$jar" defaults.yaml;         sed -i 's/worker.childopts: "/&-XX:+IgnoreUnrecognizedVMOptions /' defaults.yaml;         zip -u "$jar" defaults.yaml;         rm defaults.yaml;     done;     apt-get purge -y --auto-remove         zip         unzip;     rm -rf /var/lib/apt/lists/*
-# Wed, 15 Mar 2023 23:11:14 GMT
+# Thu, 16 Mar 2023 07:59:47 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/apache-storm-2.4.0/bin
-# Wed, 15 Mar 2023 23:11:14 GMT
+# Thu, 16 Mar 2023 07:59:47 GMT
 COPY file:c74c732450146abc9cc672380c7829a8d892099ec5aa1f81e3fe02c4e8f97f32 in / 
-# Wed, 15 Mar 2023 23:11:14 GMT
+# Thu, 16 Mar 2023 07:59:47 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:b65bcf19d1445822c0d6f15ea82c9ed82ac1d903cfd6c1284ba7b2409a092845`  
-		Last Modified: Wed, 01 Mar 2023 09:07:16 GMT  
-		Size: 30.4 MB (30430002 bytes)  
+	-	`sha256:74ac377868f863e123f24c409f79709f7563fa464557c36a09cf6f85c8b92b7f`  
+		Last Modified: Wed, 08 Mar 2023 09:03:15 GMT  
+		Size: 30.4 MB (30429963 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e3e3d5d30a242b64d6ee4089176f1459cdfe9d3aeb58e2114cc14b420ad71e5`  
-		Last Modified: Thu, 02 Mar 2023 04:07:58 GMT  
-		Size: 12.4 MB (12432173 bytes)  
+	-	`sha256:b9cabe75b440d785eb2f20422368c248b28fd9c219a5d5db5aacb7de3d43f02c`  
+		Last Modified: Thu, 16 Mar 2023 02:50:26 GMT  
+		Size: 12.4 MB (12432056 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1afd9b3f07bf59f1db11ac95908fa4840bb36ea5ca2e38380ceb99feadec711`  
-		Last Modified: Thu, 02 Mar 2023 04:10:00 GMT  
-		Size: 46.6 MB (46635570 bytes)  
+	-	`sha256:9f3fc5460b4b76e852651fec42e4cde1337c4bf503657efbe5521f379b19748a`  
+		Last Modified: Thu, 16 Mar 2023 02:52:30 GMT  
+		Size: 46.6 MB (46635547 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24c021f0294c1a9786718db8f4082e50bb41ec03fdc866e6fdb1e624b899367f`  
-		Last Modified: Thu, 02 Mar 2023 04:09:54 GMT  
-		Size: 158.0 B  
+	-	`sha256:a7a8054900958099c4da9d407d5b7d023cf76df2b891f916546c0ddb7e26a697`  
+		Last Modified: Thu, 16 Mar 2023 02:52:23 GMT  
+		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2eea477f8e01e8f6d395c8c21be64a92885bf4dfdfe3dbc17e8f205ea80fbd5`  
-		Last Modified: Thu, 02 Mar 2023 10:43:19 GMT  
-		Size: 1.9 KB (1850 bytes)  
+	-	`sha256:437c9d647a3759a7d17598ee3dedb3035b10dc166d11362ad9c3aa4f2bcbe9e4`  
+		Last Modified: Thu, 16 Mar 2023 08:00:21 GMT  
+		Size: 1.8 KB (1849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e650a5392b8d877e7f4cf0b895989a7be8edf39d5fc35678310d3b4c9eca11d5`  
-		Last Modified: Thu, 02 Mar 2023 10:43:21 GMT  
-		Size: 11.6 MB (11553230 bytes)  
+	-	`sha256:f34a7d88bf7fcacba44259417449ec7d40abf67c42eb93929bbd785ae3ad8bf7`  
+		Last Modified: Thu, 16 Mar 2023 08:00:23 GMT  
+		Size: 11.6 MB (11553317 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57c84e8f705602c8de976b95fa1ba9c906dccc462706a4e8cae197aca764591b`  
-		Last Modified: Thu, 02 Mar 2023 10:43:33 GMT  
-		Size: 322.6 MB (322584232 bytes)  
+	-	`sha256:cf578390a23c8830b28afd4a81312ff023d5850ae4cf808f2e7b2ab89c7f27de`  
+		Last Modified: Thu, 16 Mar 2023 08:00:35 GMT  
+		Size: 322.6 MB (322584267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e857d2713511a430ea77e11b9992d2546f6a67e2dc10d646d01d03e08a7576a`  
-		Last Modified: Wed, 15 Mar 2023 23:11:27 GMT  
-		Size: 9.6 MB (9555896 bytes)  
+	-	`sha256:04c57faf418f0482eaa4134511b7a4683c415fe2510f0a78a7d28a0bbf27717b`  
+		Last Modified: Thu, 16 Mar 2023 08:00:22 GMT  
+		Size: 9.6 MB (9555922 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9f4c1f014a5e5623b6b421ec36bf3d2dafe3944c254de71547cbdfea2ca5092d`  
-		Last Modified: Wed, 15 Mar 2023 23:11:26 GMT  
-		Size: 412.0 B  
+	-	`sha256:5bd6f24047fc4ab4476a618e9185c0cffb4808b68a57e64605f4ef6c431f4fac`  
+		Last Modified: Thu, 16 Mar 2023 08:00:21 GMT  
+		Size: 414.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `storm:2.4.0-temurin` - linux; arm64 variant v8
 
 ```console
-$ docker pull storm@sha256:c81caf5e82c7018c7d42c36608b8fc67718e26f8fe48ab97cf123faf6f1e0b5e
+$ docker pull storm@sha256:2db18b6051586339fe0ee6470f8cbcc92bc0eba883a7ab07151815e40d2dcad9
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **429.4 MB (429385125 bytes)**  
+-	Total Size: **429.4 MB (429383529 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:68381ffeb88e0386fdcad514ea22aa3e4eb1dea78205182c85d1361f5a8dfaa5`
+-	Image ID: `sha256:c9b1b73d058f595e9e0e250ec1facf2848efe719bf2158d3d29f7a4351da26bf`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 
 ```dockerfile
-# Wed, 01 Mar 2023 04:47:53 GMT
+# Wed, 08 Mar 2023 04:32:38 GMT
 ARG RELEASE
-# Wed, 01 Mar 2023 04:47:53 GMT
+# Wed, 08 Mar 2023 04:32:38 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 01 Mar 2023 04:47:54 GMT
+# Wed, 08 Mar 2023 04:32:38 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 01 Mar 2023 04:47:54 GMT
+# Wed, 08 Mar 2023 04:32:39 GMT
 LABEL org.opencontainers.image.version=22.04
-# Wed, 01 Mar 2023 04:48:01 GMT
-ADD file:cf91de9ab30abab112d58c0a7f3bbb35853a02b2e406c65c89430ff049573c47 in / 
-# Wed, 01 Mar 2023 04:48:01 GMT
+# Wed, 08 Mar 2023 04:32:40 GMT
+ADD file:79b36308bc382d9cae7197b4cecc21430f4e8f3e8bec3547d0f00bcff7681e60 in / 
+# Wed, 08 Mar 2023 04:32:41 GMT
 CMD ["/bin/bash"]
-# Thu, 02 Mar 2023 04:27:42 GMT
+# Thu, 16 Mar 2023 01:52:25 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 02 Mar 2023 04:27:42 GMT
+# Thu, 16 Mar 2023 01:52:25 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 02 Mar 2023 04:27:42 GMT
+# Thu, 16 Mar 2023 01:52:26 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 02 Mar 2023 04:27:55 GMT
+# Thu, 16 Mar 2023 01:52:57 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 02 Mar 2023 04:28:47 GMT
+# Thu, 16 Mar 2023 01:53:41 GMT
 ENV JAVA_VERSION=jdk-11.0.18+10
-# Thu, 02 Mar 2023 04:29:16 GMT
+# Thu, 16 Mar 2023 01:54:08 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='89bc6e93d48a37a5eff7ec5afa515c60eb3369d106d1736f5e845b3dcf8fb72c';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.18_10.tar.gz';          ;;        armhf|arm)          ESUM='949482ac232e756f342de6a8592d56b58803e10d3956abff14c4958e711a0b7c';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_arm_linux_hotspot_11.0.18_10.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='df32e80d5b6db60a1ed9ed04eaf267eaf17835ed2ae2c1708d8d94328c03a0a5';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.18_10.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='c07df5081f78021bed0d169622e470ebd4a4525a45f84192a52580ddb912959b';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_s390x_linux_hotspot_11.0.18_10.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='0e7b196ef8603ac3d38caaf7768b7b0a3c613d60e15a6511bcfb2c894b609e99';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_x64_linux_hotspot_11.0.18_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 02 Mar 2023 04:29:17 GMT
+# Thu, 16 Mar 2023 01:54:09 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 02 Mar 2023 07:40:24 GMT
+# Thu, 16 Mar 2023 07:39:50 GMT
 ENV STORM_CONF_DIR=/conf STORM_DATA_DIR=/data STORM_LOG_DIR=/logs
-# Thu, 02 Mar 2023 07:40:24 GMT
+# Thu, 16 Mar 2023 07:39:50 GMT
 RUN set -eux;     groupadd -r storm --gid=1000;     useradd -r -g storm --uid=1000 storm;     mkdir -p "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR";     chown -R storm:storm "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR"``
-# Thu, 02 Mar 2023 07:40:30 GMT
+# Thu, 16 Mar 2023 07:39:56 GMT
 RUN set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive     apt-get install -y --no-install-recommends         bash         ca-certificates         dirmngr         gosu         gnupg         python2         procps         wget;     rm -rf /var/lib/apt/lists/*;     gosu nobody true;     update-alternatives --install /usr/bin/python python /usr/bin/python2 0
-# Thu, 02 Mar 2023 07:40:30 GMT
+# Thu, 16 Mar 2023 07:39:56 GMT
 ARG GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
-# Thu, 02 Mar 2023 07:40:30 GMT
+# Thu, 16 Mar 2023 07:39:56 GMT
 ARG DISTRO_NAME=apache-storm-2.4.0
-# Thu, 02 Mar 2023 07:40:57 GMT
+# Thu, 16 Mar 2023 07:40:21 GMT
 # ARGS: DISTRO_NAME=apache-storm-2.4.0 GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
 RUN set -eux;     ddist() {         local f="$1"; shift;         local distFile="$1"; shift;         local success=;         local distUrl=;         for distUrl in             'https://www.apache.org/dyn/closer.cgi?action=download&filename='             https://www-us.apache.org/dist/             https://www.apache.org/dist/             https://archive.apache.org/dist/         ; do             if wget -q -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then                 success=1;                 break;             fi;         done;         [ -n "$success" ];     };     ddist "$DISTRO_NAME.tar.gz" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz";     ddist "$DISTRO_NAME.tar.gz.asc" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --keyserver hkps://keyserver.pgp.com --recv-key "$GPG_KEY" ||     gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY" ||     gpg --keyserver hkps://pgp.mit.edu --recv-keys "$GPG_KEY";     gpg --batch --verify "$DISTRO_NAME.tar.gz.asc" "$DISTRO_NAME.tar.gz";     tar -xzf "$DISTRO_NAME.tar.gz";     rm -rf "$GNUPGHOME" "$DISTRO_NAME.tar.gz" "$DISTRO_NAME.tar.gz.asc";     chown -R storm:storm "$DISTRO_NAME"
-# Thu, 02 Mar 2023 07:40:59 GMT
+# Thu, 16 Mar 2023 07:40:23 GMT
 WORKDIR /apache-storm-2.4.0
-# Wed, 15 Mar 2023 23:10:40 GMT
+# Thu, 16 Mar 2023 07:40:29 GMT
 # ARGS: DISTRO_NAME=apache-storm-2.4.0 GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
 RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends         zip         unzip;     for jar in         lib/storm-client-2.4.0.jar         lib-worker/storm-client-2.4.0.jar     ; do         unzip "$jar" defaults.yaml;         sed -i 's/worker.childopts: "/&-XX:+IgnoreUnrecognizedVMOptions /' defaults.yaml;         zip -u "$jar" defaults.yaml;         rm defaults.yaml;     done;     apt-get purge -y --auto-remove         zip         unzip;     rm -rf /var/lib/apt/lists/*
-# Wed, 15 Mar 2023 23:10:40 GMT
+# Thu, 16 Mar 2023 07:40:29 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/apache-storm-2.4.0/bin
-# Wed, 15 Mar 2023 23:10:40 GMT
+# Thu, 16 Mar 2023 07:40:29 GMT
 COPY file:c74c732450146abc9cc672380c7829a8d892099ec5aa1f81e3fe02c4e8f97f32 in / 
-# Wed, 15 Mar 2023 23:10:40 GMT
+# Thu, 16 Mar 2023 07:40:29 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:986c4f6be3072d9528a459c780295bd053806536d2295a6de6aad327eaf19fad`  
-		Last Modified: Wed, 01 Mar 2023 09:02:52 GMT  
-		Size: 28.4 MB (28387922 bytes)  
+	-	`sha256:b2ddfd337773edbf5766dce2fdbeef139ba8c42724e29eda157c84e9f97f1bce`  
+		Last Modified: Wed, 08 Mar 2023 12:37:24 GMT  
+		Size: 28.4 MB (28387554 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:219ba20309dcd99cff3a43c2f3c01df9170ee1fe02df71ead98cfcef30b9c450`  
-		Last Modified: Thu, 02 Mar 2023 04:33:24 GMT  
-		Size: 12.4 MB (12390219 bytes)  
+	-	`sha256:35794a35c4aa2299e9a7a69f4eafa7f96eb1832e2a04b3d85773522111018ca6`  
+		Last Modified: Thu, 16 Mar 2023 01:58:19 GMT  
+		Size: 12.4 MB (12389767 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:82d5722bd69e931b1cf3e955e992893a8ea2e124b586c19b553fbe8a2d94f988`  
-		Last Modified: Thu, 02 Mar 2023 04:35:11 GMT  
-		Size: 45.0 MB (44977970 bytes)  
+	-	`sha256:26126947450108b9349ce5c70904451e6ada86d51dde32223e9d9de1e567f89f`  
+		Last Modified: Thu, 16 Mar 2023 02:00:06 GMT  
+		Size: 45.0 MB (44977990 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a2d1016d6ffd5bed4cc6724687b1659787f8e3d1c112f02173b5efcb5425180`  
-		Last Modified: Thu, 02 Mar 2023 04:35:06 GMT  
-		Size: 159.0 B  
+	-	`sha256:48a873c16c3848ad12697e893cb753bb353c55c7d09fbbcdb67983aafbbd885b`  
+		Last Modified: Thu, 16 Mar 2023 02:00:02 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5e3969e4a6ef397f087f36a4cc0756398736e40e6c61adc5982ec9c173f356a`  
-		Last Modified: Thu, 02 Mar 2023 07:41:28 GMT  
-		Size: 1.9 KB (1850 bytes)  
+	-	`sha256:b956de8234a45ce80b72106b3d7e18edbf04260814c31a6cf2f1548e12d69dcc`  
+		Last Modified: Thu, 16 Mar 2023 07:41:01 GMT  
+		Size: 1.9 KB (1854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1dd4ea6d303116242a7c1a3aee44055ca318991417eaeccb6efb105a8abc729b`  
-		Last Modified: Thu, 02 Mar 2023 07:41:30 GMT  
-		Size: 11.5 MB (11485825 bytes)  
+	-	`sha256:8cc77ebe89145194f5cf59d1aadb46e90b9cfd8e23eeb0b96a2218f5d47eaf5d`  
+		Last Modified: Thu, 16 Mar 2023 07:41:03 GMT  
+		Size: 11.5 MB (11485347 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cc46384cae5e9ab8787d7b80e99a7ccb59cffbd23e26c6fcdfe291bef3f4a01`  
-		Last Modified: Thu, 02 Mar 2023 07:41:40 GMT  
-		Size: 322.6 MB (322584263 bytes)  
+	-	`sha256:bd3119763a0d6cf3228b490faa6029247de637a3846b5e44bafe010c0f40561d`  
+		Last Modified: Thu, 16 Mar 2023 07:41:12 GMT  
+		Size: 322.6 MB (322584358 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6eaef12f7801cee19bc49b6ca7143c82f7e8756c957399557b4ff88d1ce7977`  
-		Last Modified: Wed, 15 Mar 2023 23:10:54 GMT  
-		Size: 9.6 MB (9556505 bytes)  
+	-	`sha256:048bfc8e659089c65af0e5edfa04fd3a2dcf19ac95876cd2eccd014ada3f585f`  
+		Last Modified: Thu, 16 Mar 2023 07:41:01 GMT  
+		Size: 9.6 MB (9556086 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e80e4ead22ac5dd25ec5ec5ae9f37da72bc4cfad188012e09635c0e694fba1f0`  
-		Last Modified: Wed, 15 Mar 2023 23:10:53 GMT  
-		Size: 412.0 B  
+	-	`sha256:65c65ba63a780b1a9e72eac002c2c799c3b703fd974ead671bead44760902700`  
+		Last Modified: Thu, 16 Mar 2023 07:41:01 GMT  
+		Size: 413.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `storm:latest`
 
 ```console
-$ docker pull storm@sha256:b3d3b2a3d639aec5d96c1854f753750c5be563b589c442aea0dffd4ec3111348
+$ docker pull storm@sha256:e4c41fa65e3b56eb51de0335624a0e8e8fb227d09703bf34a36a3ba8cfc73de6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -870,207 +870,207 @@ $ docker pull storm@sha256:b3d3b2a3d639aec5d96c1854f753750c5be563b589c442aea0dff
 ### `storm:latest` - linux; amd64
 
 ```console
-$ docker pull storm@sha256:9217dd979b42333b6a4e1c431285036362892f0d18b49cd37208941640924fd7
+$ docker pull storm@sha256:cb3607ea7d161f0071e9ad2802546a796004ca9ed90c0b68916c1e6aa3ddf3ef
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **433.2 MB (433193523 bytes)**  
+-	Total Size: **433.2 MB (433193494 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:dca7f79e19dc6c6de656282382d5284aadb83d5a565d87e1659b84751d051688`
+-	Image ID: `sha256:638225427c68f1269e803a93cfa5a2224cfb1a2f8af05f6f227bf57a146c25cc`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 
 ```dockerfile
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 ARG RELEASE
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 01 Mar 2023 04:38:47 GMT
+# Wed, 08 Mar 2023 04:44:25 GMT
 LABEL org.opencontainers.image.version=22.04
-# Wed, 01 Mar 2023 04:38:48 GMT
-ADD file:fb4c8244f4468cdd3f666932f05805a3882d34010d3a0c14b7c20589bf619a9c in / 
-# Wed, 01 Mar 2023 04:38:49 GMT
+# Wed, 08 Mar 2023 04:44:27 GMT
+ADD file:c8ef6447752cab2541ffca9e3cfa27d581f3491bc8f356f6eafd951243609341 in / 
+# Wed, 08 Mar 2023 04:44:27 GMT
 CMD ["/bin/bash"]
-# Thu, 02 Mar 2023 04:01:37 GMT
+# Thu, 16 Mar 2023 02:44:03 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 02 Mar 2023 04:01:37 GMT
+# Thu, 16 Mar 2023 02:44:03 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 02 Mar 2023 04:01:37 GMT
+# Thu, 16 Mar 2023 02:44:04 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 02 Mar 2023 04:01:51 GMT
+# Thu, 16 Mar 2023 02:44:26 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 02 Mar 2023 04:02:42 GMT
+# Thu, 16 Mar 2023 02:45:18 GMT
 ENV JAVA_VERSION=jdk-11.0.18+10
-# Thu, 02 Mar 2023 04:03:16 GMT
+# Thu, 16 Mar 2023 02:45:50 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='89bc6e93d48a37a5eff7ec5afa515c60eb3369d106d1736f5e845b3dcf8fb72c';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.18_10.tar.gz';          ;;        armhf|arm)          ESUM='949482ac232e756f342de6a8592d56b58803e10d3956abff14c4958e711a0b7c';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_arm_linux_hotspot_11.0.18_10.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='df32e80d5b6db60a1ed9ed04eaf267eaf17835ed2ae2c1708d8d94328c03a0a5';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.18_10.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='c07df5081f78021bed0d169622e470ebd4a4525a45f84192a52580ddb912959b';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_s390x_linux_hotspot_11.0.18_10.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='0e7b196ef8603ac3d38caaf7768b7b0a3c613d60e15a6511bcfb2c894b609e99';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_x64_linux_hotspot_11.0.18_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 02 Mar 2023 04:03:17 GMT
+# Thu, 16 Mar 2023 02:45:50 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 02 Mar 2023 10:42:30 GMT
+# Thu, 16 Mar 2023 07:59:20 GMT
 ENV STORM_CONF_DIR=/conf STORM_DATA_DIR=/data STORM_LOG_DIR=/logs
-# Thu, 02 Mar 2023 10:42:31 GMT
+# Thu, 16 Mar 2023 07:59:21 GMT
 RUN set -eux;     groupadd -r storm --gid=1000;     useradd -r -g storm --uid=1000 storm;     mkdir -p "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR";     chown -R storm:storm "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR"``
-# Thu, 02 Mar 2023 10:42:38 GMT
+# Thu, 16 Mar 2023 07:59:28 GMT
 RUN set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive     apt-get install -y --no-install-recommends         bash         ca-certificates         dirmngr         gosu         gnupg         python2         procps         wget;     rm -rf /var/lib/apt/lists/*;     gosu nobody true;     update-alternatives --install /usr/bin/python python /usr/bin/python2 0
-# Thu, 02 Mar 2023 10:42:39 GMT
+# Thu, 16 Mar 2023 07:59:29 GMT
 ARG GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
-# Thu, 02 Mar 2023 10:42:39 GMT
+# Thu, 16 Mar 2023 07:59:29 GMT
 ARG DISTRO_NAME=apache-storm-2.4.0
-# Thu, 02 Mar 2023 10:42:51 GMT
+# Thu, 16 Mar 2023 07:59:40 GMT
 # ARGS: DISTRO_NAME=apache-storm-2.4.0 GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
 RUN set -eux;     ddist() {         local f="$1"; shift;         local distFile="$1"; shift;         local success=;         local distUrl=;         for distUrl in             'https://www.apache.org/dyn/closer.cgi?action=download&filename='             https://www-us.apache.org/dist/             https://www.apache.org/dist/             https://archive.apache.org/dist/         ; do             if wget -q -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then                 success=1;                 break;             fi;         done;         [ -n "$success" ];     };     ddist "$DISTRO_NAME.tar.gz" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz";     ddist "$DISTRO_NAME.tar.gz.asc" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --keyserver hkps://keyserver.pgp.com --recv-key "$GPG_KEY" ||     gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY" ||     gpg --keyserver hkps://pgp.mit.edu --recv-keys "$GPG_KEY";     gpg --batch --verify "$DISTRO_NAME.tar.gz.asc" "$DISTRO_NAME.tar.gz";     tar -xzf "$DISTRO_NAME.tar.gz";     rm -rf "$GNUPGHOME" "$DISTRO_NAME.tar.gz" "$DISTRO_NAME.tar.gz.asc";     chown -R storm:storm "$DISTRO_NAME"
-# Thu, 02 Mar 2023 10:42:52 GMT
+# Thu, 16 Mar 2023 07:59:40 GMT
 WORKDIR /apache-storm-2.4.0
-# Wed, 15 Mar 2023 23:11:14 GMT
+# Thu, 16 Mar 2023 07:59:47 GMT
 # ARGS: DISTRO_NAME=apache-storm-2.4.0 GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
 RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends         zip         unzip;     for jar in         lib/storm-client-2.4.0.jar         lib-worker/storm-client-2.4.0.jar     ; do         unzip "$jar" defaults.yaml;         sed -i 's/worker.childopts: "/&-XX:+IgnoreUnrecognizedVMOptions /' defaults.yaml;         zip -u "$jar" defaults.yaml;         rm defaults.yaml;     done;     apt-get purge -y --auto-remove         zip         unzip;     rm -rf /var/lib/apt/lists/*
-# Wed, 15 Mar 2023 23:11:14 GMT
+# Thu, 16 Mar 2023 07:59:47 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/apache-storm-2.4.0/bin
-# Wed, 15 Mar 2023 23:11:14 GMT
+# Thu, 16 Mar 2023 07:59:47 GMT
 COPY file:c74c732450146abc9cc672380c7829a8d892099ec5aa1f81e3fe02c4e8f97f32 in / 
-# Wed, 15 Mar 2023 23:11:14 GMT
+# Thu, 16 Mar 2023 07:59:47 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:b65bcf19d1445822c0d6f15ea82c9ed82ac1d903cfd6c1284ba7b2409a092845`  
-		Last Modified: Wed, 01 Mar 2023 09:07:16 GMT  
-		Size: 30.4 MB (30430002 bytes)  
+	-	`sha256:74ac377868f863e123f24c409f79709f7563fa464557c36a09cf6f85c8b92b7f`  
+		Last Modified: Wed, 08 Mar 2023 09:03:15 GMT  
+		Size: 30.4 MB (30429963 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e3e3d5d30a242b64d6ee4089176f1459cdfe9d3aeb58e2114cc14b420ad71e5`  
-		Last Modified: Thu, 02 Mar 2023 04:07:58 GMT  
-		Size: 12.4 MB (12432173 bytes)  
+	-	`sha256:b9cabe75b440d785eb2f20422368c248b28fd9c219a5d5db5aacb7de3d43f02c`  
+		Last Modified: Thu, 16 Mar 2023 02:50:26 GMT  
+		Size: 12.4 MB (12432056 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1afd9b3f07bf59f1db11ac95908fa4840bb36ea5ca2e38380ceb99feadec711`  
-		Last Modified: Thu, 02 Mar 2023 04:10:00 GMT  
-		Size: 46.6 MB (46635570 bytes)  
+	-	`sha256:9f3fc5460b4b76e852651fec42e4cde1337c4bf503657efbe5521f379b19748a`  
+		Last Modified: Thu, 16 Mar 2023 02:52:30 GMT  
+		Size: 46.6 MB (46635547 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24c021f0294c1a9786718db8f4082e50bb41ec03fdc866e6fdb1e624b899367f`  
-		Last Modified: Thu, 02 Mar 2023 04:09:54 GMT  
-		Size: 158.0 B  
+	-	`sha256:a7a8054900958099c4da9d407d5b7d023cf76df2b891f916546c0ddb7e26a697`  
+		Last Modified: Thu, 16 Mar 2023 02:52:23 GMT  
+		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2eea477f8e01e8f6d395c8c21be64a92885bf4dfdfe3dbc17e8f205ea80fbd5`  
-		Last Modified: Thu, 02 Mar 2023 10:43:19 GMT  
-		Size: 1.9 KB (1850 bytes)  
+	-	`sha256:437c9d647a3759a7d17598ee3dedb3035b10dc166d11362ad9c3aa4f2bcbe9e4`  
+		Last Modified: Thu, 16 Mar 2023 08:00:21 GMT  
+		Size: 1.8 KB (1849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e650a5392b8d877e7f4cf0b895989a7be8edf39d5fc35678310d3b4c9eca11d5`  
-		Last Modified: Thu, 02 Mar 2023 10:43:21 GMT  
-		Size: 11.6 MB (11553230 bytes)  
+	-	`sha256:f34a7d88bf7fcacba44259417449ec7d40abf67c42eb93929bbd785ae3ad8bf7`  
+		Last Modified: Thu, 16 Mar 2023 08:00:23 GMT  
+		Size: 11.6 MB (11553317 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57c84e8f705602c8de976b95fa1ba9c906dccc462706a4e8cae197aca764591b`  
-		Last Modified: Thu, 02 Mar 2023 10:43:33 GMT  
-		Size: 322.6 MB (322584232 bytes)  
+	-	`sha256:cf578390a23c8830b28afd4a81312ff023d5850ae4cf808f2e7b2ab89c7f27de`  
+		Last Modified: Thu, 16 Mar 2023 08:00:35 GMT  
+		Size: 322.6 MB (322584267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e857d2713511a430ea77e11b9992d2546f6a67e2dc10d646d01d03e08a7576a`  
-		Last Modified: Wed, 15 Mar 2023 23:11:27 GMT  
-		Size: 9.6 MB (9555896 bytes)  
+	-	`sha256:04c57faf418f0482eaa4134511b7a4683c415fe2510f0a78a7d28a0bbf27717b`  
+		Last Modified: Thu, 16 Mar 2023 08:00:22 GMT  
+		Size: 9.6 MB (9555922 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9f4c1f014a5e5623b6b421ec36bf3d2dafe3944c254de71547cbdfea2ca5092d`  
-		Last Modified: Wed, 15 Mar 2023 23:11:26 GMT  
-		Size: 412.0 B  
+	-	`sha256:5bd6f24047fc4ab4476a618e9185c0cffb4808b68a57e64605f4ef6c431f4fac`  
+		Last Modified: Thu, 16 Mar 2023 08:00:21 GMT  
+		Size: 414.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `storm:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull storm@sha256:c81caf5e82c7018c7d42c36608b8fc67718e26f8fe48ab97cf123faf6f1e0b5e
+$ docker pull storm@sha256:2db18b6051586339fe0ee6470f8cbcc92bc0eba883a7ab07151815e40d2dcad9
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **429.4 MB (429385125 bytes)**  
+-	Total Size: **429.4 MB (429383529 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:68381ffeb88e0386fdcad514ea22aa3e4eb1dea78205182c85d1361f5a8dfaa5`
+-	Image ID: `sha256:c9b1b73d058f595e9e0e250ec1facf2848efe719bf2158d3d29f7a4351da26bf`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 
 ```dockerfile
-# Wed, 01 Mar 2023 04:47:53 GMT
+# Wed, 08 Mar 2023 04:32:38 GMT
 ARG RELEASE
-# Wed, 01 Mar 2023 04:47:53 GMT
+# Wed, 08 Mar 2023 04:32:38 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 01 Mar 2023 04:47:54 GMT
+# Wed, 08 Mar 2023 04:32:38 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 01 Mar 2023 04:47:54 GMT
+# Wed, 08 Mar 2023 04:32:39 GMT
 LABEL org.opencontainers.image.version=22.04
-# Wed, 01 Mar 2023 04:48:01 GMT
-ADD file:cf91de9ab30abab112d58c0a7f3bbb35853a02b2e406c65c89430ff049573c47 in / 
-# Wed, 01 Mar 2023 04:48:01 GMT
+# Wed, 08 Mar 2023 04:32:40 GMT
+ADD file:79b36308bc382d9cae7197b4cecc21430f4e8f3e8bec3547d0f00bcff7681e60 in / 
+# Wed, 08 Mar 2023 04:32:41 GMT
 CMD ["/bin/bash"]
-# Thu, 02 Mar 2023 04:27:42 GMT
+# Thu, 16 Mar 2023 01:52:25 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 02 Mar 2023 04:27:42 GMT
+# Thu, 16 Mar 2023 01:52:25 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 02 Mar 2023 04:27:42 GMT
+# Thu, 16 Mar 2023 01:52:26 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 02 Mar 2023 04:27:55 GMT
+# Thu, 16 Mar 2023 01:52:57 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 02 Mar 2023 04:28:47 GMT
+# Thu, 16 Mar 2023 01:53:41 GMT
 ENV JAVA_VERSION=jdk-11.0.18+10
-# Thu, 02 Mar 2023 04:29:16 GMT
+# Thu, 16 Mar 2023 01:54:08 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='89bc6e93d48a37a5eff7ec5afa515c60eb3369d106d1736f5e845b3dcf8fb72c';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.18_10.tar.gz';          ;;        armhf|arm)          ESUM='949482ac232e756f342de6a8592d56b58803e10d3956abff14c4958e711a0b7c';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_arm_linux_hotspot_11.0.18_10.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='df32e80d5b6db60a1ed9ed04eaf267eaf17835ed2ae2c1708d8d94328c03a0a5';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.18_10.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='c07df5081f78021bed0d169622e470ebd4a4525a45f84192a52580ddb912959b';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_s390x_linux_hotspot_11.0.18_10.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='0e7b196ef8603ac3d38caaf7768b7b0a3c613d60e15a6511bcfb2c894b609e99';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_x64_linux_hotspot_11.0.18_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 02 Mar 2023 04:29:17 GMT
+# Thu, 16 Mar 2023 01:54:09 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 02 Mar 2023 07:40:24 GMT
+# Thu, 16 Mar 2023 07:39:50 GMT
 ENV STORM_CONF_DIR=/conf STORM_DATA_DIR=/data STORM_LOG_DIR=/logs
-# Thu, 02 Mar 2023 07:40:24 GMT
+# Thu, 16 Mar 2023 07:39:50 GMT
 RUN set -eux;     groupadd -r storm --gid=1000;     useradd -r -g storm --uid=1000 storm;     mkdir -p "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR";     chown -R storm:storm "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR"``
-# Thu, 02 Mar 2023 07:40:30 GMT
+# Thu, 16 Mar 2023 07:39:56 GMT
 RUN set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive     apt-get install -y --no-install-recommends         bash         ca-certificates         dirmngr         gosu         gnupg         python2         procps         wget;     rm -rf /var/lib/apt/lists/*;     gosu nobody true;     update-alternatives --install /usr/bin/python python /usr/bin/python2 0
-# Thu, 02 Mar 2023 07:40:30 GMT
+# Thu, 16 Mar 2023 07:39:56 GMT
 ARG GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
-# Thu, 02 Mar 2023 07:40:30 GMT
+# Thu, 16 Mar 2023 07:39:56 GMT
 ARG DISTRO_NAME=apache-storm-2.4.0
-# Thu, 02 Mar 2023 07:40:57 GMT
+# Thu, 16 Mar 2023 07:40:21 GMT
 # ARGS: DISTRO_NAME=apache-storm-2.4.0 GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
 RUN set -eux;     ddist() {         local f="$1"; shift;         local distFile="$1"; shift;         local success=;         local distUrl=;         for distUrl in             'https://www.apache.org/dyn/closer.cgi?action=download&filename='             https://www-us.apache.org/dist/             https://www.apache.org/dist/             https://archive.apache.org/dist/         ; do             if wget -q -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then                 success=1;                 break;             fi;         done;         [ -n "$success" ];     };     ddist "$DISTRO_NAME.tar.gz" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz";     ddist "$DISTRO_NAME.tar.gz.asc" "storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --keyserver hkps://keyserver.pgp.com --recv-key "$GPG_KEY" ||     gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY" ||     gpg --keyserver hkps://pgp.mit.edu --recv-keys "$GPG_KEY";     gpg --batch --verify "$DISTRO_NAME.tar.gz.asc" "$DISTRO_NAME.tar.gz";     tar -xzf "$DISTRO_NAME.tar.gz";     rm -rf "$GNUPGHOME" "$DISTRO_NAME.tar.gz" "$DISTRO_NAME.tar.gz.asc";     chown -R storm:storm "$DISTRO_NAME"
-# Thu, 02 Mar 2023 07:40:59 GMT
+# Thu, 16 Mar 2023 07:40:23 GMT
 WORKDIR /apache-storm-2.4.0
-# Wed, 15 Mar 2023 23:10:40 GMT
+# Thu, 16 Mar 2023 07:40:29 GMT
 # ARGS: DISTRO_NAME=apache-storm-2.4.0 GPG_KEY=51379DA8A7AE5B02674EF15C134716AF768D9B6E
 RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends         zip         unzip;     for jar in         lib/storm-client-2.4.0.jar         lib-worker/storm-client-2.4.0.jar     ; do         unzip "$jar" defaults.yaml;         sed -i 's/worker.childopts: "/&-XX:+IgnoreUnrecognizedVMOptions /' defaults.yaml;         zip -u "$jar" defaults.yaml;         rm defaults.yaml;     done;     apt-get purge -y --auto-remove         zip         unzip;     rm -rf /var/lib/apt/lists/*
-# Wed, 15 Mar 2023 23:10:40 GMT
+# Thu, 16 Mar 2023 07:40:29 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/apache-storm-2.4.0/bin
-# Wed, 15 Mar 2023 23:10:40 GMT
+# Thu, 16 Mar 2023 07:40:29 GMT
 COPY file:c74c732450146abc9cc672380c7829a8d892099ec5aa1f81e3fe02c4e8f97f32 in / 
-# Wed, 15 Mar 2023 23:10:40 GMT
+# Thu, 16 Mar 2023 07:40:29 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:986c4f6be3072d9528a459c780295bd053806536d2295a6de6aad327eaf19fad`  
-		Last Modified: Wed, 01 Mar 2023 09:02:52 GMT  
-		Size: 28.4 MB (28387922 bytes)  
+	-	`sha256:b2ddfd337773edbf5766dce2fdbeef139ba8c42724e29eda157c84e9f97f1bce`  
+		Last Modified: Wed, 08 Mar 2023 12:37:24 GMT  
+		Size: 28.4 MB (28387554 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:219ba20309dcd99cff3a43c2f3c01df9170ee1fe02df71ead98cfcef30b9c450`  
-		Last Modified: Thu, 02 Mar 2023 04:33:24 GMT  
-		Size: 12.4 MB (12390219 bytes)  
+	-	`sha256:35794a35c4aa2299e9a7a69f4eafa7f96eb1832e2a04b3d85773522111018ca6`  
+		Last Modified: Thu, 16 Mar 2023 01:58:19 GMT  
+		Size: 12.4 MB (12389767 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:82d5722bd69e931b1cf3e955e992893a8ea2e124b586c19b553fbe8a2d94f988`  
-		Last Modified: Thu, 02 Mar 2023 04:35:11 GMT  
-		Size: 45.0 MB (44977970 bytes)  
+	-	`sha256:26126947450108b9349ce5c70904451e6ada86d51dde32223e9d9de1e567f89f`  
+		Last Modified: Thu, 16 Mar 2023 02:00:06 GMT  
+		Size: 45.0 MB (44977990 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a2d1016d6ffd5bed4cc6724687b1659787f8e3d1c112f02173b5efcb5425180`  
-		Last Modified: Thu, 02 Mar 2023 04:35:06 GMT  
-		Size: 159.0 B  
+	-	`sha256:48a873c16c3848ad12697e893cb753bb353c55c7d09fbbcdb67983aafbbd885b`  
+		Last Modified: Thu, 16 Mar 2023 02:00:02 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5e3969e4a6ef397f087f36a4cc0756398736e40e6c61adc5982ec9c173f356a`  
-		Last Modified: Thu, 02 Mar 2023 07:41:28 GMT  
-		Size: 1.9 KB (1850 bytes)  
+	-	`sha256:b956de8234a45ce80b72106b3d7e18edbf04260814c31a6cf2f1548e12d69dcc`  
+		Last Modified: Thu, 16 Mar 2023 07:41:01 GMT  
+		Size: 1.9 KB (1854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1dd4ea6d303116242a7c1a3aee44055ca318991417eaeccb6efb105a8abc729b`  
-		Last Modified: Thu, 02 Mar 2023 07:41:30 GMT  
-		Size: 11.5 MB (11485825 bytes)  
+	-	`sha256:8cc77ebe89145194f5cf59d1aadb46e90b9cfd8e23eeb0b96a2218f5d47eaf5d`  
+		Last Modified: Thu, 16 Mar 2023 07:41:03 GMT  
+		Size: 11.5 MB (11485347 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cc46384cae5e9ab8787d7b80e99a7ccb59cffbd23e26c6fcdfe291bef3f4a01`  
-		Last Modified: Thu, 02 Mar 2023 07:41:40 GMT  
-		Size: 322.6 MB (322584263 bytes)  
+	-	`sha256:bd3119763a0d6cf3228b490faa6029247de637a3846b5e44bafe010c0f40561d`  
+		Last Modified: Thu, 16 Mar 2023 07:41:12 GMT  
+		Size: 322.6 MB (322584358 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6eaef12f7801cee19bc49b6ca7143c82f7e8756c957399557b4ff88d1ce7977`  
-		Last Modified: Wed, 15 Mar 2023 23:10:54 GMT  
-		Size: 9.6 MB (9556505 bytes)  
+	-	`sha256:048bfc8e659089c65af0e5edfa04fd3a2dcf19ac95876cd2eccd014ada3f585f`  
+		Last Modified: Thu, 16 Mar 2023 07:41:01 GMT  
+		Size: 9.6 MB (9556086 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e80e4ead22ac5dd25ec5ec5ae9f37da72bc4cfad188012e09635c0e694fba1f0`  
-		Last Modified: Wed, 15 Mar 2023 23:10:53 GMT  
-		Size: 412.0 B  
+	-	`sha256:65c65ba63a780b1a9e72eac002c2c799c3b703fd974ead671bead44760902700`  
+		Last Modified: Thu, 16 Mar 2023 07:41:01 GMT  
+		Size: 413.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
