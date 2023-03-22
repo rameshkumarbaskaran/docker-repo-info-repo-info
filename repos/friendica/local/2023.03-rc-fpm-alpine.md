@@ -1,9 +1,9 @@
-# `friendica:2023.03-dev-fpm-alpine`
+# `friendica:2023.03-rc-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:b50c8ce2f6647ad7a9ce91cdd6339e2bec9de2fb64a6c8326b180ebd0d8bc334`
-- Created: `2023-03-15T22:24:59.1071052Z`
+- Image ID: `sha256:061d2cc704090bcd5cf50d261c45f762637acb41ac6765e011224b0671529096`
+- Created: `2023-03-15T22:25:22.651011408Z`
 - Virtual Size: ~ 248.74 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -25,8 +25,8 @@
   - `PHP_MEMORY_LIMIT=512M`
   - `PHP_UPLOAD_LIMIT=512M`
   - `FRIENDICA_SYSLOG_FLAGS=39`
-  - `FRIENDICA_VERSION=2023.03-dev`
-  - `FRIENDICA_ADDONS=2023.03-dev`
+  - `FRIENDICA_VERSION=2023.03-rc`
+  - `FRIENDICA_ADDONS=2023.03-rc`
 
 ## `apk` (`.apk`-based packages)
 
