@@ -1,7 +1,7 @@
 ## `maven:3-amazoncorretto`
 
 ```console
-$ docker pull maven@sha256:2e398e290580e9e93c72b07a952786967b280672b3bd114253fd46819aa0f67f
+$ docker pull maven@sha256:81d80dc7e11058b7b009cec5aed90c81f4922e57126a48b4b5df0b1499ab23a1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,13 +12,13 @@ $ docker pull maven@sha256:2e398e290580e9e93c72b07a952786967b280672b3bd114253fd4
 ### `maven:3-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:8559214d0f100fd65f3b80180643ade7959c36157e6dc6a9070f3f713745fb0b
+$ docker pull maven@sha256:1279edd56750d1d071fed986b27b272e772c2403719bf47976e195883c6d9ff1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **366.4 MB (366431590 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b2858d3ed0b4fdb2cdd5662cb904f160c426d5f5579b1b495f6d3dd7a9948060`
+-	Image ID: `sha256:92823be8580b741554dace9e54d4bd9abcd0f7249acc999c8d97aaf25e8db68e`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -36,27 +36,27 @@ RUN set -eux     && export GNUPGHOME="$(mktemp -d)"     && curl -fL -o corretto.
 ENV LANG=C.UTF-8
 # Fri, 10 Mar 2023 01:39:17 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
-# Thu, 16 Mar 2023 19:23:37 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 RUN yum install -y tar which gzip # TODO remove # buildkit
-# Thu, 16 Mar 2023 19:23:37 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Thu, 16 Mar 2023 19:23:37 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 COPY /usr/share/maven /usr/share/maven # buildkit
-# Thu, 16 Mar 2023 19:23:37 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 COPY /usr/local/bin/mvn-entrypoint.sh /usr/local/bin/mvn-entrypoint.sh # buildkit
-# Thu, 16 Mar 2023 19:23:38 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 COPY /usr/share/maven/ref/settings-docker.xml /usr/share/maven/ref/settings-docker.xml # buildkit
-# Thu, 16 Mar 2023 19:23:38 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 RUN ln -s ${MAVEN_HOME}/bin/mvn /usr/bin/mvn # buildkit
-# Thu, 16 Mar 2023 19:23:38 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ARG MAVEN_VERSION=3.9.0
-# Thu, 16 Mar 2023 19:23:38 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ARG USER_HOME_DIR=/root
-# Thu, 16 Mar 2023 19:23:38 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Thu, 16 Mar 2023 19:23:38 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Thu, 16 Mar 2023 19:23:38 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 CMD ["mvn"]
 ```
 
@@ -93,13 +93,13 @@ CMD ["mvn"]
 ### `maven:3-amazoncorretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:287ec8dd71d76c0ccfc97addeae84e493b5f2dd36be824264cc19835228c4e8f
+$ docker pull maven@sha256:6eb711702328fc626f6ec6052ba73d58464d3180ec19f8e589a8209a26df2e42
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **330.4 MB (330380955 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:945d39d53cbaca8914d6d67e8d49e2b57b7922c6fbae8df5b10fed37f552a6c2`
+-	Image ID: `sha256:9db50419f5c25d0929c2f78ed90aba748b5a1b309128c64d2c176592952055cf`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -117,27 +117,27 @@ RUN set -eux     && export GNUPGHOME="$(mktemp -d)"     && curl -fL -o corretto.
 ENV LANG=C.UTF-8
 # Fri, 10 Mar 2023 02:03:57 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
-# Thu, 16 Mar 2023 19:57:20 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 RUN yum install -y tar which gzip # TODO remove # buildkit
-# Thu, 16 Mar 2023 19:57:20 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Thu, 16 Mar 2023 19:57:20 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 COPY /usr/share/maven /usr/share/maven # buildkit
-# Thu, 16 Mar 2023 19:57:20 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 COPY /usr/local/bin/mvn-entrypoint.sh /usr/local/bin/mvn-entrypoint.sh # buildkit
-# Thu, 16 Mar 2023 19:57:20 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 COPY /usr/share/maven/ref/settings-docker.xml /usr/share/maven/ref/settings-docker.xml # buildkit
-# Thu, 16 Mar 2023 19:57:21 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 RUN ln -s ${MAVEN_HOME}/bin/mvn /usr/bin/mvn # buildkit
-# Thu, 16 Mar 2023 19:57:21 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ARG MAVEN_VERSION=3.9.0
-# Thu, 16 Mar 2023 19:57:21 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ARG USER_HOME_DIR=/root
-# Thu, 16 Mar 2023 19:57:21 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Thu, 16 Mar 2023 19:57:21 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Thu, 16 Mar 2023 19:57:21 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 CMD ["mvn"]
 ```
 

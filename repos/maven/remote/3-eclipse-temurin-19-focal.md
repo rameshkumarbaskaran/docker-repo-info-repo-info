@@ -1,7 +1,7 @@
 ## `maven:3-eclipse-temurin-19-focal`
 
 ```console
-$ docker pull maven@sha256:9957ed2fdad307786a87eed46c7a47ba84745bd3e863327a785c71a01087c7c9
+$ docker pull maven@sha256:72410474267d1230f4ed098a7d55e1bac7867497115f4d4075bcef0a5f0a5c88
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -15,13 +15,13 @@ $ docker pull maven@sha256:9957ed2fdad307786a87eed46c7a47ba84745bd3e863327a785c7
 ### `maven:3-eclipse-temurin-19-focal` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:1ff4c5025e036d7e4c659ec42e7f0d19bc86c3c2a5681b2bbc193137c59cb411
+$ docker pull maven@sha256:80092b3e2f9d6fc618c955078242b4f2110196fb40779947563d55e80ee91fc1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **286.9 MB (286850299 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:782f9888a37a77c25e9f6bce4cdf9b00ef916c23a8466c6b4fd1d40c1c9462e8`
+-	Image ID: `sha256:c4f966d2f583bf6ba10ff96229a70e8e42a01965729b8da04ebaee870f648701`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -54,27 +54,27 @@ RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in    
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
 # Thu, 16 Mar 2023 02:47:42 GMT
 CMD ["jshell"]
-# Thu, 16 Mar 2023 19:22:04 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
-# Thu, 16 Mar 2023 19:22:04 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Thu, 16 Mar 2023 19:22:04 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 COPY /usr/share/maven /usr/share/maven # buildkit
-# Thu, 16 Mar 2023 19:22:04 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 COPY /usr/local/bin/mvn-entrypoint.sh /usr/local/bin/mvn-entrypoint.sh # buildkit
-# Thu, 16 Mar 2023 19:22:04 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 COPY /usr/share/maven/ref/settings-docker.xml /usr/share/maven/ref/settings-docker.xml # buildkit
-# Thu, 16 Mar 2023 19:22:05 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 RUN ln -s ${MAVEN_HOME}/bin/mvn /usr/bin/mvn # buildkit
-# Thu, 16 Mar 2023 19:22:05 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ARG MAVEN_VERSION=3.9.0
-# Thu, 16 Mar 2023 19:22:05 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ARG USER_HOME_DIR=/root
-# Thu, 16 Mar 2023 19:22:05 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Thu, 16 Mar 2023 19:22:05 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Thu, 16 Mar 2023 19:22:05 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 CMD ["mvn"]
 ```
 
@@ -223,13 +223,13 @@ CMD ["mvn"]
 ### `maven:3-eclipse-temurin-19-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:d69ed046c516e4af1c919f6ca119b2baa738ccfdc7b9514894e22742c1638c18
+$ docker pull maven@sha256:65f7e84aafa98e36a8a762ec21d52fd5015428705d598dfff19714356573f1c6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **285.0 MB (284960590 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:80011e06ac390f728f9b130a67ef4c33cf57478c74a56406c63efc5894cb0133`
+-	Image ID: `sha256:ad9abd075953b2c3babbf7d19b52dffa137c84cbbf247672df63b34b21fd5462`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -262,27 +262,27 @@ RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in    
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
 # Thu, 16 Mar 2023 01:55:50 GMT
 CMD ["jshell"]
-# Thu, 16 Mar 2023 19:56:26 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
-# Thu, 16 Mar 2023 19:56:26 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Thu, 16 Mar 2023 19:56:26 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 COPY /usr/share/maven /usr/share/maven # buildkit
-# Thu, 16 Mar 2023 19:56:26 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 COPY /usr/local/bin/mvn-entrypoint.sh /usr/local/bin/mvn-entrypoint.sh # buildkit
-# Thu, 16 Mar 2023 19:56:26 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 COPY /usr/share/maven/ref/settings-docker.xml /usr/share/maven/ref/settings-docker.xml # buildkit
-# Thu, 16 Mar 2023 19:56:26 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 RUN ln -s ${MAVEN_HOME}/bin/mvn /usr/bin/mvn # buildkit
-# Thu, 16 Mar 2023 19:56:26 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ARG MAVEN_VERSION=3.9.0
-# Thu, 16 Mar 2023 19:56:26 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ARG USER_HOME_DIR=/root
-# Thu, 16 Mar 2023 19:56:26 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Thu, 16 Mar 2023 19:56:26 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Thu, 16 Mar 2023 19:56:26 GMT
+# Thu, 16 Mar 2023 16:09:38 GMT
 CMD ["mvn"]
 ```
 
