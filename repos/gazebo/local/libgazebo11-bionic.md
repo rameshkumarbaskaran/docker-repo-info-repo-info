@@ -729,14 +729,9 @@ Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.58.0-2ubuntu3.23
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0-2ubuntu3.23.dsc' curl_7.58.0-2ubuntu3.23.dsc 2781 SHA512:248561407f16c0dbdc18cf4bf2975b9f73e43129ada2063dfcc165519ebf237533cfb59202b8feead4560bcd2bbc74b06069efbc7dbb07ab739f8ee74cede0ec
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0.orig.tar.gz' curl_7.58.0.orig.tar.gz 3879728 SHA512:7b12b79107558bb266672d6e128615fe5a8149c37f4ae540197e3298f5d312beb2d78fbb23e3ea84ea7afc41549898a1e5cd38509f0388b11707b48d5efb8ca3
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0-2ubuntu3.23.debian.tar.xz' curl_7.58.0-2ubuntu3.23.debian.tar.xz 74624 SHA512:b8c9b7c235ba5a10dc64cd334e9e0420975917eb323231fde51a36ba91f165edcc702604897e7661704c7a7ec9a4121342fcac1bc613ff8fad5515bf9bd038e7
-```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27~101-g0780600+dfsg-3ubuntu2.4`
 
@@ -2207,14 +2202,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-fuel-tools4/copyright`, `/us
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-fuel-tools4=4.8.1-1~bionic
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.8.1-1%7ebionic.dsc' ignition-fuel-tools4_4.8.1-1~bionic.dsc 1542 SHA256:2e4c676a37b2c9c8d2ec7b56ac93ddf05767cc0d54b885e65c53378b862cba85
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.8.1.orig.tar.bz2' ignition-fuel-tools4_4.8.1.orig.tar.bz2 274509 SHA256:28119b4347c80d7c1d07c7409bc2ae230b30493df51e3ade2e453118cd998f24
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.8.1-1%7ebionic.debian.tar.xz' ignition-fuel-tools4_4.8.1-1~bionic.debian.tar.xz 1904 SHA256:a3df5a4efb9b33de2a033209a2c0acf8086d54f2f9a9e86fe26fb7354589db59
-```
 
 ### `dpkg` source package: `ignition-math6=6.13.0-3~bionic`
 
@@ -2496,14 +2486,9 @@ Licenses: (parsed from: `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris krb5=1.16-2ubuntu0.3
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.16-2ubuntu0.3.dsc' krb5_1.16-2ubuntu0.3.dsc 3262 SHA512:ebeba4c5ba7f867eb3cea1d194f21c730a917c7e10ba760866563d02ea466793ca319c0924e6d5efc85294c810b65415317abc3c1354c18a7177138ec5320767
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.16.orig.tar.gz' krb5_1.16.orig.tar.gz 9474479 SHA512:7e162467b95dad2b6aaa11686d08a00f1cc4eb08247fca8f0e5a8bcaa5f9f7b42cdf00db69c5c6111bdf9eb8063d53cef3bb207ce5d6a287615ca10b710153f9
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.16-2ubuntu0.3.debian.tar.xz' krb5_1.16-2ubuntu0.3.debian.tar.xz 103772 SHA512:8951682ee6a265c88f1e8380073698238fc45b6283c4968e1203d59e4c4193e4897a53b5e5df0ef531b4e065d1afd9c01167ef9ab1b4a00f2c12765826084dad
-```
 
 ### `dpkg` source package: `lame=3.100-2`
 
@@ -6203,14 +6188,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7/copyright`, `/usr/share/doc
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.17-1~18.04ubuntu1.10
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17-1%7e18.04ubuntu1.10.dsc' python2.7_2.7.17-1~18.04ubuntu1.10.dsc 3487 SHA512:cae83b4698aa976ec3c98f11be1c970ad4aee8e7fd3a394f674ecdc92d5ca7f76fd24d2538e1a73c746a8ea52d2a7a5ffab7b5431f98fccb32fddbbc43394c94
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17.orig.tar.gz' python2.7_2.7.17.orig.tar.gz 17535962 SHA512:f526baff7f1a9451244edb04e2aca63336b656aac178f4f64c135390b5b1185990ccff0c48f602914dd1c49c9e075951d372b4f2daac39e336c23ae84ef4ca16
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17-1%7e18.04ubuntu1.10.diff.gz' python2.7_2.7.17-1~18.04ubuntu1.10.diff.gz 305168 SHA512:b9656b2e96971b43b9535a5b29f1c290a9949cee7bad579a1029a6165b3327a557ff024b59562eb5e5335a37ef981c823d8699c0030351c79bd10535ad7dd19e
-```
 
 ### `dpkg` source package: `python3-defaults=3.6.7-1~18.04`
 
@@ -6286,14 +6266,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.6/copyright`, `/usr/share/doc
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.6=3.6.9-1~18.04ubuntu1.10
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9-1%7e18.04ubuntu1.10.dsc' python3.6_3.6.9-1~18.04ubuntu1.10.dsc 3474 SHA512:8d856398ab36482104d8503b0590b341df526f5670abca9416ea43d7b116f5ab464a1df92b2b5deb081c7639b69b3d45a874f1323ae42712c49a37b30796f3a2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9.orig.tar.xz' python3.6_3.6.9.orig.tar.xz 17212164 SHA512:05de9c6f44d96a52bfce10ede4312de892573edaf8bece65926d19973a3a800d65eed7a857af945f69efcfb25efa3788e7a54016b03d80b611eb51c3ea074819
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9-1%7e18.04ubuntu1.10.debian.tar.xz' python3.6_3.6.9-1~18.04ubuntu1.10.debian.tar.xz 232900 SHA512:7e79bebe4d46ad37a75ebc44449abf8d0be8bbf56f0ed8b4f19e240e91a3eefba0d98eb1adbd65ea6b5daf8555b5f43dc4c16445ccbb895f211b971419dfa58b
-```
 
 ### `dpkg` source package: `qhull=2015.2-4`
 
