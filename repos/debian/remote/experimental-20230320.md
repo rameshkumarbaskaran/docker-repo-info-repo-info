@@ -1,12 +1,13 @@
 ## `debian:experimental-20230320`
 
 ```console
-$ docker pull debian@sha256:5e737f096aee9704a413d098a865672f924649fd74d588babfc0ab104ebefd27
+$ docker pull debian@sha256:504b0288d6e7586d1304353d4cf345b5317665d82c48451c3f77045d7563bb5b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 7
+-	Platforms: 8
 	-	linux; amd64
+	-	linux; arm variant v5
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -44,6 +45,38 @@ RUN echo 'deb http://deb.debian.org/debian experimental main' > /etc/apt/sources
 	-	`sha256:73cb0295dabfda3e6054c805b74cdb7c35c24a822001285659738bb6d92fde81`  
 		Last Modified: Thu, 23 Mar 2023 01:37:46 GMT  
 		Size: 218.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `debian:experimental-20230320` - linux; arm variant v5
+
+```console
+$ docker pull debian@sha256:08eb82f7532a983fb63d7a82fd6848f3e4e2bb4a66d87df4c9251b4b193f8aa1
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **48.1 MB (48135430 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:a4d8002d21a3cb54d3736884603941ee4ac2b04c33af4f92f0d3277edbff871f`
+-	Default Command: `["bash"]`
+
+```dockerfile
+# Thu, 23 Mar 2023 00:50:31 GMT
+ADD file:f0d2a41457812e5fe7bac3f26b985fcae39fcf0dab841618dba260c3d2efbccb in / 
+# Thu, 23 Mar 2023 00:50:31 GMT
+CMD ["bash"]
+# Thu, 23 Mar 2023 00:50:57 GMT
+RUN echo 'deb http://deb.debian.org/debian experimental main' > /etc/apt/sources.list.d/experimental.list
+```
+
+-	Layers:
+	-	`sha256:88af21ccc43da78e4ea114dc4c878c5f6ec5794fd9587b13daf630936ed47ffd`  
+		Last Modified: Thu, 23 Mar 2023 02:23:27 GMT  
+		Size: 48.1 MB (48135210 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:05154327e81e796c7f93e939d97f2da1dc3abd3073fcd299cdbbddbe91f63c2a`  
+		Last Modified: Thu, 23 Mar 2023 02:23:51 GMT  
+		Size: 220.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:experimental-20230320` - linux; arm variant v7
