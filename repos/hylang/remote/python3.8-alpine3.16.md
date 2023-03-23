@@ -1,7 +1,7 @@
 ## `hylang:python3.8-alpine3.16`
 
 ```console
-$ docker pull hylang@sha256:cb7c6ad045b70c54b06034504be46507dd3cba8d05b144ef6e5212b1fc3e73ae
+$ docker pull hylang@sha256:3ddb3e72e84914a36b6e449b0440f7eab3e8dea32fe425a088251c23d684e8db
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -497,14 +497,14 @@ CMD ["hy"]
 ### `hylang:python3.8-alpine3.16` - linux; s390x
 
 ```console
-$ docker pull hylang@sha256:557725df5e0b4a69076cc066be02538c94698624351e41c7a69a594916d2fa75
+$ docker pull hylang@sha256:7aaa4dcd33c233fdf1039b25b73cd1c172036cd69b0057833a7534944f3926fb
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **21.4 MB (21392013 bytes)**  
+-	Total Size: **22.8 MB (22790301 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:909a278bf6f37402aa4f820f3f51a681e7558eea2166ffe66933c59409978e3f`
+-	Image ID: `sha256:45ca11393e0c93bf57d91243d6b2e7c19b24313b5da3a3b0eec406734cecbbf6`
 -	Default Command: `["hy"]`
 
 ```dockerfile
@@ -512,39 +512,39 @@ $ docker pull hylang@sha256:557725df5e0b4a69076cc066be02538c94698624351e41c7a69a
 ADD file:17af250b49631cf2acf655c85df90977eddab4c9afd67bda3c577db5200364f1 in / 
 # Fri, 10 Feb 2023 21:41:32 GMT
 CMD ["/bin/sh"]
-# Sat, 11 Feb 2023 06:07:33 GMT
+# Fri, 10 Mar 2023 23:32:52 GMT
 ENV PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 11 Feb 2023 06:07:33 GMT
+# Fri, 10 Mar 2023 23:32:52 GMT
 ENV LANG=C.UTF-8
-# Sat, 11 Feb 2023 06:07:34 GMT
-RUN set -eux; 	apk add --no-cache 		ca-certificates 		tzdata 	;
-# Sat, 11 Feb 2023 07:26:16 GMT
+# Fri, 10 Mar 2023 23:32:52 GMT
+RUN set -eux; 	apk add --no-cache 		ca-certificates 		tzdata 	; # buildkit
+# Fri, 10 Mar 2023 23:32:52 GMT
 ENV GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568
-# Sat, 11 Feb 2023 07:32:05 GMT
+# Fri, 10 Mar 2023 23:32:52 GMT
 ENV PYTHON_VERSION=3.8.16
-# Tue, 14 Mar 2023 02:54:46 GMT
-RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		tar 		xz 				bluez-dev 		bzip2-dev 		dpkg-dev dpkg 		expat-dev 		findutils 		gcc 		gdbm-dev 		libc-dev 		libffi-dev 		libnsl-dev 		libtirpc-dev 		linux-headers 		make 		ncurses-dev 		openssl-dev 		pax-utils 		readline-dev 		sqlite-dev 		tcl-dev 		tk 		tk-dev 		util-linux-dev 		xz-dev 		zlib-dev 	; 		wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz"; 	wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc"; 	GNUPGHOME="$(mktemp -d)"; export GNUPGHOME; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$GPG_KEY"; 	gpg --batch --verify python.tar.xz.asc python.tar.xz; 	command -v gpgconf > /dev/null && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME" python.tar.xz.asc; 	mkdir -p /usr/src/python; 	tar --extract --directory /usr/src/python --strip-components=1 --file python.tar.xz; 	rm python.tar.xz; 		cd /usr/src/python; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--enable-loadable-sqlite-extensions 		--enable-optimizations 		--enable-option-checking=fatal 		--enable-shared 		--with-system-expat 		--without-ensurepip 	; 	nproc="$(nproc)"; 	EXTRA_CFLAGS="-DTHREAD_STACK_SIZE=0x100000"; 	LDFLAGS="${LDFLAGS:--Wl},--strip-all"; 	make -j "$nproc" 		"EXTRA_CFLAGS=${EXTRA_CFLAGS:-}" 		"LDFLAGS=${LDFLAGS:-}" 		"PROFILE_TASK=${PROFILE_TASK:-}" 	; 	rm python; 	make -j "$nproc" 		"EXTRA_CFLAGS=${EXTRA_CFLAGS:-}" 		"LDFLAGS=${LDFLAGS:--Wl},-rpath='\$\$ORIGIN/../lib'" 		"PROFILE_TASK=${PROFILE_TASK:-}" 		python 	; 	make install; 		cd /; 	rm -rf /usr/src/python; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o \( -type f -a \( -name '*.pyc' -o -name '*.pyo' -o -name 'libpython*.a' \) \) 			-o \( -type f -a -name 'wininst-*.exe' \) 		\) -exec rm -rf '{}' + 	; 		find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec scanelf --needed --nobanner --format '%n#p' '{}' ';' 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 		| xargs -rt apk add --no-network --virtual .python-rundeps 	; 	apk del --no-network .build-deps; 		python3 --version
-# Tue, 14 Mar 2023 02:54:46 GMT
-RUN set -eux; 	for src in idle3 pydoc3 python3 python3-config; do 		dst="$(echo "$src" | tr -d 3)"; 		[ -s "/usr/local/bin/$src" ]; 		[ ! -e "/usr/local/bin/$dst" ]; 		ln -svT "$src" "/usr/local/bin/$dst"; 	done
-# Tue, 14 Mar 2023 02:54:47 GMT
+# Fri, 10 Mar 2023 23:32:52 GMT
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		tar 		xz 				bluez-dev 		bzip2-dev 		dpkg-dev dpkg 		expat-dev 		findutils 		gcc 		gdbm-dev 		libc-dev 		libffi-dev 		libnsl-dev 		libtirpc-dev 		linux-headers 		make 		ncurses-dev 		openssl-dev 		pax-utils 		readline-dev 		sqlite-dev 		tcl-dev 		tk 		tk-dev 		util-linux-dev 		xz-dev 		zlib-dev 	; 		wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz"; 	wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc"; 	GNUPGHOME="$(mktemp -d)"; export GNUPGHOME; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$GPG_KEY"; 	gpg --batch --verify python.tar.xz.asc python.tar.xz; 	command -v gpgconf > /dev/null && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME" python.tar.xz.asc; 	mkdir -p /usr/src/python; 	tar --extract --directory /usr/src/python --strip-components=1 --file python.tar.xz; 	rm python.tar.xz; 		cd /usr/src/python; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--enable-loadable-sqlite-extensions 		--enable-optimizations 		--enable-option-checking=fatal 		--enable-shared 		--with-system-expat 		--without-ensurepip 	; 	nproc="$(nproc)"; 	EXTRA_CFLAGS="-DTHREAD_STACK_SIZE=0x100000"; 	LDFLAGS="${LDFLAGS:--Wl},--strip-all"; 	make -j "$nproc" 		"EXTRA_CFLAGS=${EXTRA_CFLAGS:-}" 		"LDFLAGS=${LDFLAGS:-}" 		"PROFILE_TASK=${PROFILE_TASK:-}" 	; 	rm python; 	make -j "$nproc" 		"EXTRA_CFLAGS=${EXTRA_CFLAGS:-}" 		"LDFLAGS=${LDFLAGS:--Wl},-rpath='\$\$ORIGIN/../lib'" 		"PROFILE_TASK=${PROFILE_TASK:-}" 		python 	; 	make install; 		cd /; 	rm -rf /usr/src/python; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o \( -type f -a \( -name '*.pyc' -o -name '*.pyo' -o -name 'libpython*.a' \) \) 			-o \( -type f -a -name 'wininst-*.exe' \) 		\) -exec rm -rf '{}' + 	; 		find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec scanelf --needed --nobanner --format '%n#p' '{}' ';' 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 		| xargs -rt apk add --no-network --virtual .python-rundeps 	; 	apk del --no-network .build-deps; 		python3 --version # buildkit
+# Fri, 10 Mar 2023 23:32:52 GMT
+RUN set -eux; 	for src in idle3 pydoc3 python3 python3-config; do 		dst="$(echo "$src" | tr -d 3)"; 		[ -s "/usr/local/bin/$src" ]; 		[ ! -e "/usr/local/bin/$dst" ]; 		ln -svT "$src" "/usr/local/bin/$dst"; 	done # buildkit
+# Fri, 10 Mar 2023 23:32:52 GMT
 ENV PYTHON_PIP_VERSION=22.0.4
-# Tue, 14 Mar 2023 02:54:47 GMT
+# Fri, 10 Mar 2023 23:32:52 GMT
 ENV PYTHON_SETUPTOOLS_VERSION=57.5.0
-# Tue, 14 Mar 2023 02:54:47 GMT
+# Fri, 10 Mar 2023 23:32:52 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/d5cb0afaf23b8520f1bbcfed521017b4a95f5c01/public/get-pip.py
-# Tue, 14 Mar 2023 02:54:47 GMT
+# Fri, 10 Mar 2023 23:32:52 GMT
 ENV PYTHON_GET_PIP_SHA256=394be00f13fa1b9aaa47e911bdb59a09c3b2986472130f30aa0bfaf7f3980637
-# Tue, 14 Mar 2023 02:54:52 GMT
-RUN set -eux; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum -c -; 		export PYTHONDONTWRITEBYTECODE=1; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		--no-compile 		"pip==$PYTHON_PIP_VERSION" 		"setuptools==$PYTHON_SETUPTOOLS_VERSION" 	; 	rm -f get-pip.py; 		pip --version
-# Tue, 14 Mar 2023 02:54:53 GMT
+# Fri, 10 Mar 2023 23:32:52 GMT
+RUN set -eux; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum -c -; 		export PYTHONDONTWRITEBYTECODE=1; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		--no-compile 		"pip==$PYTHON_PIP_VERSION" 		"setuptools==$PYTHON_SETUPTOOLS_VERSION" 	; 	rm -f get-pip.py; 		pip --version # buildkit
+# Fri, 10 Mar 2023 23:32:52 GMT
 CMD ["python3"]
-# Tue, 14 Mar 2023 03:44:35 GMT
+# Thu, 23 Mar 2023 13:01:24 GMT
 ENV HY_VERSION=0.26.0
-# Tue, 14 Mar 2023 03:44:35 GMT
+# Thu, 23 Mar 2023 13:01:24 GMT
 ENV HYRULE_VERSION=0.3.0
-# Tue, 14 Mar 2023 03:44:47 GMT
+# Thu, 23 Mar 2023 13:01:37 GMT
 RUN pip install --no-cache-dir "hy == $HY_VERSION" "hyrule == $HYRULE_VERSION"
-# Tue, 14 Mar 2023 03:44:48 GMT
+# Thu, 23 Mar 2023 13:01:38 GMT
 CMD ["hy"]
 ```
 
@@ -553,23 +553,23 @@ CMD ["hy"]
 		Last Modified: Fri, 10 Feb 2023 21:42:26 GMT  
 		Size: 2.6 MB (2593581 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2adb0ada542e535816922b2b2d2d4ff2af513d5807aef216c21245e5a6dc576d`  
-		Last Modified: Sat, 11 Feb 2023 10:45:10 GMT  
-		Size: 666.7 KB (666653 bytes)  
+	-	`sha256:c246f87be0a690061b3c69f7fba3c5cd52e35ce11405e3bad340dff598ca0615`  
+		Last Modified: Thu, 23 Mar 2023 06:48:44 GMT  
+		Size: 666.7 KB (666706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:812ed7cc6c4ee6e00a94322a675e0e04831bfb3d599ea11aa9567eca4e027ca9`  
-		Last Modified: Tue, 14 Mar 2023 03:24:46 GMT  
-		Size: 11.4 MB (11437228 bytes)  
+	-	`sha256:e26f8640da6d1641e08c1abd5d5a2e297f10373e73624ed1d6e2d918753d5d35`  
+		Last Modified: Thu, 23 Mar 2023 06:51:06 GMT  
+		Size: 12.8 MB (12783580 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cad022d39faadbcce7ca7f834bd762efb57f85606a90f238fee220cc5966a3cb`  
-		Last Modified: Tue, 14 Mar 2023 03:24:45 GMT  
-		Size: 229.0 B  
+	-	`sha256:f3e2b3b611d09f993f93ab50982ac9c2dbf82fb0b85284ed8aba4a70d761418d`  
+		Last Modified: Thu, 23 Mar 2023 06:51:04 GMT  
+		Size: 243.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:651f318fd044153f903332be94743e4adb267f5e1b6031b96e33d1e5d5aa11e7`  
-		Last Modified: Tue, 14 Mar 2023 03:24:45 GMT  
-		Size: 2.9 MB (2881816 bytes)  
+	-	`sha256:cfa4f905d618a59af169abe9fcee3072473682f188b349a720f3b6f174b0a0ad`  
+		Last Modified: Thu, 23 Mar 2023 06:51:05 GMT  
+		Size: 2.9 MB (2905732 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7e18f01e63577b132c6ab4b2171dbf1591fd7cc914bec95456e87efd0f2abbd8`  
-		Last Modified: Tue, 14 Mar 2023 03:51:37 GMT  
-		Size: 3.8 MB (3812506 bytes)  
+	-	`sha256:45b9c4f65feb338f9a06da61fc2bc0cbc36955c6e694a5c3d552ca6e83152cd2`  
+		Last Modified: Thu, 23 Mar 2023 13:05:31 GMT  
+		Size: 3.8 MB (3840459 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
