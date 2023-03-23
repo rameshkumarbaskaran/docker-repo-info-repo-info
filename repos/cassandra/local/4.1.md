@@ -1,10 +1,10 @@
-# `cassandra:4.1.0`
+# `cassandra:4.1.1`
 
 ## Docker Metadata
 
-- Image ID: `sha256:7a7e2ce2d4daf2d6eec4f131e73d821a69ce3604ed6b059fae4fe579476ad554`
-- Created: `2023-03-02T08:46:58.315894719Z`
-- Virtual Size: ~ 356.13 Mb  
+- Image ID: `sha256:8c5f38006851197935a590e50514fbc7f0742d9cddba0339b6dbceccdf20eb9f`
+- Created: `2023-03-23T00:27:40.307547391Z`
+- Virtual Size: ~ 355.12 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -20,8 +20,8 @@
   - `CASSANDRA_HOME=/opt/cassandra`
   - `CASSANDRA_CONF=/etc/cassandra`
   - `GPG_KEYS=CEC86BB4A0BA9D0F90397CAEF8358FA2F2833C93 	C4965EE9E3015D192CCCF2B6F758CE318D77295D 	5AED1BF378E9A19DADE1BCB34BD736A82B5C1B00 	514A2AD631A57A16DD0047EC749D6EEC0353B12C 	A26E528B271F19B9E5D8E19EA278B781FE4B2BDA 	A4C465FEA0C552561A392A61E91335D77E3E87CB 	9E66CEC6106D578D0B1EB9BFF1000962B7F6840C 	C4009872C59B49561310D966D0062876AF30F054 	B7842CDAF36E6A3214FAE35D5E85B9AE0B84C041 	3E9C876907A560ACA00964F363E9BAD215BBF5F0 	F8B7FD00E05C932991A2CD6150EE103D162C5A55 	7464AAD9068241C50BA6A26232F35CB2F546D93E 	CEC5C50B9C629EF0F5AB2706650B72EB14CCD622`
-  - `CASSANDRA_VERSION=4.1.0`
-  - `CASSANDRA_SHA512=d8cb800e99d8905e85a62d1d658c1c3056459e7ba0b27e0997e1c537918be8ab333f2a89cf38cafc04ab4d711fd8c542593548fb30bf6a81329f2b47370389e9`
+  - `CASSANDRA_VERSION=4.1.1`
+  - `CASSANDRA_SHA512=dc11ce5c0485d2d54d0fff3ae35d1b7f1c3e32055c0699206f59a5bbe983b50972ceb4638bfe65a7c80a6db5052b70ad75718525eef812ba9ae6a301fd5bc8be`
 - Labels:
   - `org.opencontainers.image.ref.name=ubuntu`
   - `org.opencontainers.image.version=20.04`
@@ -299,14 +299,9 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.68.0-1ubuntu2.16
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.16.dsc' curl_7.68.0-1ubuntu2.16.dsc 2737 SHA512:084010e4474492ba4c675f00002a08f9632714cbf4641447db08fc804fdf3184ff69b9c62818bedb60a8b7093550e8ae39deca7b826c0134dc1065aa8d419aab
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0.orig.tar.gz' curl_7.68.0.orig.tar.gz 4096350 SHA512:58b42c08b1cf4cb6e68f8e469d5b5f6298eebe286ba2677ad29e1a7eefd15b8609af54544f4c5a7dadebbd3b23bd77700830f2f60fbea7ae3f2f306e640010b0
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.16.debian.tar.xz' curl_7.68.0-1ubuntu2.16.debian.tar.xz 58988 SHA512:2cd8b40e90e1cfd369d138ec42934d128cfdbd15eaf7cc5e1156b69288b0ed5fc171fe7312cbb397fc36bb740b756a647c9ea4d6a4d427b516320c14a0619419
-```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-2ubuntu0.1`
 
@@ -956,14 +951,9 @@ Licenses: (parsed from: `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris krb5=1.17-6ubuntu4.2
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17-6ubuntu4.2.dsc' krb5_1.17-6ubuntu4.2.dsc 3333 SHA512:8d5615ae42239eac937b7c84fedbb73e04a2cf07d7aa49f6c6f741d87fc66778b0e533f020dba1cf9c15f58f55aaba1b342214da007124514cbec130ebf5c706
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17.orig.tar.gz' krb5_1.17.orig.tar.gz 8761763 SHA512:7462a578b936bd17f155a362dbb5d388e157a80a096549028be6c55400b11361c7f8a28e424fd5674801873651df4e694d536cae66728b7ae5e840e532358c52
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17-6ubuntu4.2.debian.tar.xz' krb5_1.17-6ubuntu4.2.debian.tar.xz 146636 SHA512:646106fbcb40a804694110a4c98a265bda3432f82219272d91a65c409ce5222a5840f460166019b7cd18184c4ec58185bce2c23e92702182316831fdd4b9c2f5
-```
 
 ### `dpkg` source package: `libbsd=0.10.0-1`
 
@@ -1842,14 +1832,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.8-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.8=3.8.10-0ubuntu1~20.04.6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.10-0ubuntu1%7e20.04.6.dsc' python3.8_3.8.10-0ubuntu1~20.04.6.dsc 3504 SHA512:f6bfc8939d2a04e0d58db66ddb68afbe66688a24a59ccf9b692c336026a57341b1ad9e29575a23b8bbccad6d48ea5f530ff6b22189238b3b2df37c28209bb0a1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.10.orig.tar.xz' python3.8_3.8.10.orig.tar.xz 18433456 SHA512:0be69705483ff9692e12048a96180e586f9d84c8d53066629f7fb2389585eb75c0f3506bb8182936e322508f58b71f4d8c6dfebbab9049b31b49da11d3b98e80
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.10-0ubuntu1%7e20.04.6.debian.tar.xz' python3.8_3.8.10-0ubuntu1~20.04.6.debian.tar.xz 220316 SHA512:394532719e9c667e0fa24adfb4509f30718bd08748680328b683e69ec9a505fc8ae4fe1d4b06c4f411460d8e60f84470243dc0bee11c8a724cfccee4924ff21d
-```
 
 ### `dpkg` source package: `readline=8.0-4`
 
@@ -1975,12 +1960,12 @@ $ apt-get source -qq --print-uris sqlite3=3.31.1-4ubuntu0.5
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.31.1-4ubuntu0.5.debian.tar.xz' sqlite3_3.31.1-4ubuntu0.5.debian.tar.xz 35824 SHA512:9a0a273044c4dd39856ba378c3c70c3bf3796179bb4e8e66e38b1895148cf286eceb1aac8fd8a45a026c4c6c9a311f64e3baee93d82fdb1b844806df1f41c20a
 ```
 
-### `dpkg` source package: `systemd=245.4-4ubuntu3.19`
+### `dpkg` source package: `systemd=245.4-4ubuntu3.20`
 
 Binary Packages:
 
-- `libsystemd0:amd64=245.4-4ubuntu3.19`
-- `libudev1:amd64=245.4-4ubuntu3.19`
+- `libsystemd0:amd64=245.4-4ubuntu3.20`
+- `libudev1:amd64=245.4-4ubuntu3.20`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -1993,9 +1978,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=245.4-4ubuntu3.20
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.20.dsc' systemd_245.4-4ubuntu3.20.dsc 5132 SHA512:c2abc0869d8e4200d5a3989a1c27a90f39d1c24eb00abfa6471d891f8de190f755e80990614699917893fa9f94028c42f0b939ed31a46c05066ed970928fde5f
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4.orig.tar.gz' systemd_245.4.orig.tar.gz 9000780 SHA512:02036bb1ab05301a9d0dfdd4b9c9376e90134474482531e6e292122380be2f24f99177493dd3af6f8af1a8ed2599ee0996da91a3b1b7872bbfaf26a1c3e61b4c
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.20.debian.tar.xz' systemd_245.4-4ubuntu3.20.debian.tar.xz 286732 SHA512:604967de8b405dd9a7597640967d29f3dd9fc57f1e7d78cbaf09c5bf010851ef3c826bcf5a3a7e5f1903c2c622d1bdb0f7f48a9bcb3f7d340c0fb221b79dfa75
+```
 
 ### `dpkg` source package: `sysvinit=2.96-2.1ubuntu1`
 
