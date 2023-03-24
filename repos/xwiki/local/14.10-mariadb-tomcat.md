@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:021fcb98d13c0d7e2de305199eed91365b158a28a27c8caeb0583b8919e2ddcb`
-- Created: `2023-03-16T12:13:17.764842955Z`
+- Image ID: `sha256:805f9a16bae08cfc6221dfe54e75e0ac36c714e3b9264d40fbccd5da2d62df31`
+- Created: `2023-03-22T23:58:04.978754796Z`
 - Virtual Size: ~ 1.16 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -23,9 +23,9 @@
   - `TOMCAT_MAJOR=9`
   - `TOMCAT_VERSION=9.0.73`
   - `TOMCAT_SHA512=d43fbd6c5ae00bc0ffc2559743f91abd3547c827426cb0acdc8428e060e8659b6bb41b3877deb061ab6202980de39b9558525a4256725b647d5bff93e47a5664`
-  - `XWIKI_VERSION=14.10.6`
-  - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/14.10.6`
-  - `XWIKI_DOWNLOAD_SHA256=258285234a7c41f9ddc1434457e10640b7c5a7ed2c2f1782c8320a8ebc04c9a4`
+  - `XWIKI_VERSION=14.10.7`
+  - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/14.10.7`
+  - `XWIKI_DOWNLOAD_SHA256=83f1b5b7ad1845a62c43d536e5082c8315d20a7c0a66126f2d6bcd91d007104f`
   - `MARIADB_JDBC_VERSION=3.1.2`
   - `MARIADB_JDBC_SHA256=aaec1ad348d030a65b25c93c65cdaf472bf8b4b6b314b965e5ba13aec81bc622`
   - `MARIADB_JDBC_PREFIX=https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/3.1.2`
