@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e4dcb21548e74700bd38714985b7fb30d41a975ed179ce31a787f951606a45c1`
-- Created: `2023-03-20T23:54:05.880395179Z`
+- Image ID: `sha256:793f39a334d7dde45c5bdd9e127b7d50e87650c344e739e0e194f3c69d0ff1ff`
+- Created: `2023-03-23T16:45:00.871025476Z`
 - Virtual Size: ~ 680.34 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -2389,11 +2389,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/pam/1.3.1-5/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/pam/1.3.1-5/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `pcre2=10.32-5`
+### `dpkg` source package: `pcre2=10.32-5+deb10u1`
 
 Binary Packages:
 
-- `libpcre2-8-0:amd64=10.32-5`
+- `libpcre2-8-0:amd64=10.32-5+deb10u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2402,17 +2402,17 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris pcre2=10.32-5
-'http://deb.debian.org/debian/pool/main/p/pcre2/pcre2_10.32-5.dsc' pcre2_10.32-5.dsc 2342 SHA256:df327f59608e018603b138cf5a557fe5febfa5f24281152d68f3a52ba542d504
-'http://deb.debian.org/debian/pool/main/p/pcre2/pcre2_10.32.orig.tar.gz' pcre2_10.32.orig.tar.gz 2169349 SHA256:9ca9be72e1a04f22be308323caa8c06ebd0c51efe99ee11278186cafbc4fe3af
-'http://deb.debian.org/debian/pool/main/p/pcre2/pcre2_10.32-5.diff.gz' pcre2_10.32-5.diff.gz 5187 SHA256:bfe23d2661bf5727a10a1c1e49660c35afc0a4ad1c151bdcefb7c5a52e71e685
+$ apt-get source -qq --print-uris pcre2=10.32-5+deb10u1
+'http://deb.debian.org/debian-security/pool/updates/main/p/pcre2/pcre2_10.32-5%2bdeb10u1.dsc' pcre2_10.32-5+deb10u1.dsc 2234 SHA256:84b64673e5b8f4d2f2b75e293a151df97020ecc32871961a6dfc30a588f5fc57
+'http://deb.debian.org/debian-security/pool/updates/main/p/pcre2/pcre2_10.32.orig.tar.gz' pcre2_10.32.orig.tar.gz 2169349 SHA256:9ca9be72e1a04f22be308323caa8c06ebd0c51efe99ee11278186cafbc4fe3af
+'http://deb.debian.org/debian-security/pool/updates/main/p/pcre2/pcre2_10.32-5%2bdeb10u1.diff.gz' pcre2_10.32-5+deb10u1.diff.gz 9691 SHA256:1a425dd654d2ffd1e7e3456865a0d0ec2fd04639469a2f73f18138f01df1377b
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/pcre2/10.32-5/ (for browsing the source)
-- https://sources.debian.net/src/pcre2/10.32-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/pcre2/10.32-5/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/pcre2/10.32-5+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/pcre2/10.32-5+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/pcre2/10.32-5+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pcre3=2:8.39-12`
 
