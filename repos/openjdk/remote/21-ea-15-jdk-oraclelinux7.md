@@ -1,12 +1,61 @@
 ## `openjdk:21-ea-15-jdk-oraclelinux7`
 
 ```console
-$ docker pull openjdk@sha256:e54ae8923494f76655746ad9c0e44f562cacef6bd2d9ef66dd72d937c0857ac5
+$ docker pull openjdk@sha256:9549516c16c0ad2c0652002caabddd4556815cdfb7cd092c3b1ee9e5d7e2708c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
+-	Platforms: 2
+	-	linux; amd64
 	-	linux; arm64 variant v8
+
+### `openjdk:21-ea-15-jdk-oraclelinux7` - linux; amd64
+
+```console
+$ docker pull openjdk@sha256:fcfeea2bb5db1913fb4358a0af4273536f8b115b1216d1e95a653f99786b6868
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **266.3 MB (266293923 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:d964ab7e4c406dcb0b8833be2ebdce34b7269bd91705a280e1da6999a41ff68d`
+-	Default Command: `["jshell"]`
+
+```dockerfile
+# Tue, 21 Mar 2023 19:26:42 GMT
+ADD file:c2562ae661b3cd914b2c0dd27aba7ee36bffbeb92415b7b80c111a5d563d07ed in / 
+# Tue, 21 Mar 2023 19:26:43 GMT
+CMD ["/bin/bash"]
+# Tue, 21 Mar 2023 20:47:46 GMT
+RUN set -eux; 	yum install -y --setopt=skip_missing_names_on_install=False 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
+# Tue, 21 Mar 2023 20:47:46 GMT
+ENV JAVA_HOME=/usr/java/openjdk-21
+# Tue, 21 Mar 2023 20:47:46 GMT
+ENV PATH=/usr/java/openjdk-21/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 21 Mar 2023 20:47:46 GMT
+ENV LANG=en_US.UTF-8
+# Tue, 28 Mar 2023 01:03:31 GMT
+ENV JAVA_VERSION=21-ea+15
+# Tue, 28 Mar 2023 01:03:42 GMT
+RUN set -eux; 		arch="$(objdump="$(command -v objdump)" && objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		'i386:x86-64') 			downloadUrl='https://download.java.net/java/early_access/jdk21/15/GPL/openjdk-21-ea+15_linux-x64_bin.tar.gz'; 			downloadSha256='0fec1002b8c8975b181bd6966a817028d6b373cbc759254231f9b96db1fe6edd'; 			;; 		'aarch64') 			downloadUrl='https://download.java.net/java/early_access/jdk21/15/GPL/openjdk-21-ea+15_linux-aarch64_bin.tar.gz'; 			downloadSha256='93cc1eb6202093a127f1f9ed2e866a51dff29321f878085c18f317cefb113ffc'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		rm -rf "$JAVA_HOME/lib/security/cacerts"; 	ln -sT /etc/pki/ca-trust/extracted/java/cacerts "$JAVA_HOME/lib/security/cacerts"; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
+# Tue, 28 Mar 2023 01:03:42 GMT
+CMD ["jshell"]
+```
+
+-	Layers:
+	-	`sha256:2ec521688c56b41126476e7ab1f7ab7305384f5b5326e80a8ba52b8d4deead22`  
+		Last Modified: Tue, 21 Mar 2023 19:27:26 GMT  
+		Size: 50.5 MB (50471128 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cea283652a57d33ca137043965b4c70fa3e5d30b9487b344159545deda829f9b`  
+		Last Modified: Tue, 21 Mar 2023 20:49:09 GMT  
+		Size: 14.3 MB (14252036 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5c735bf8e2d7e2de1de2a11d27f7c773dd4e4869fdbd86ddd7022ace56719f79`  
+		Last Modified: Tue, 28 Mar 2023 01:06:11 GMT  
+		Size: 201.6 MB (201570759 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:21-ea-15-jdk-oraclelinux7` - linux; arm64 variant v8
 
