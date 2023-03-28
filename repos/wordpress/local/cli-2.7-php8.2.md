@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7d9250a5401634b9602fae09b2678daea94e2c83db307229353be510506e7fe8`
-- Created: `2023-03-17T01:22:34.349908005Z`
-- Virtual Size: ~ 160.90 Mb  
+- Image ID: `sha256:a923375ad3b0b14131da46a7d11e740d852c1a6149d22afd516036e3ba05158e`
+- Created: `2023-03-28T02:01:33.795416795Z`
+- Virtual Size: ~ 165.85 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -438,16 +438,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.8-r0 description:
+libcrypto3-3.0.8-r1 description:
 Crypto library from openssl
 
-libcrypto3-3.0.8-r0 webpage:
+libcrypto3-3.0.8-r1 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.8-r0 installed size:
+libcrypto3-3.0.8-r1 installed size:
 4108 KiB
 
-libcrypto3-3.0.8-r0 license:
+libcrypto3-3.0.8-r1 license:
 Apache-2.0
 
 ```
@@ -455,16 +455,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.88.1-r0 description:
+libcurl-7.88.1-r1 description:
 The multiprotocol file transfer library
 
-libcurl-7.88.1-r0 webpage:
+libcurl-7.88.1-r1 webpage:
 https://curl.se/
 
-libcurl-7.88.1-r0 installed size:
+libcurl-7.88.1-r1 installed size:
 552 KiB
 
-libcurl-7.88.1-r0 license:
+libcurl-7.88.1-r1 license:
 curl
 
 ```
@@ -608,16 +608,16 @@ ISC
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.8-r0 description:
+libssl3-3.0.8-r1 description:
 SSL shared libraries
 
-libssl3-3.0.8-r0 webpage:
+libssl3-3.0.8-r1 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.8-r0 installed size:
+libssl3-3.0.8-r1 installed size:
 608 KiB
 
-libssl3-3.0.8-r0 license:
+libssl3-3.0.8-r1 license:
 Apache-2.0
 
 ```

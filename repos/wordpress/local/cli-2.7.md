@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:40cc2112251173e88e0f27360ce2cd5393ff55a82c38b4565d746d4e851b8f8b`
-- Created: `2023-02-15T01:13:57.765140098Z`
-- Virtual Size: ~ 149.99 Mb  
+- Image ID: `sha256:c7253c3100bd5e8f894ee5050b8f7b5afc77204c4d9563b5cdcf7704e88b7673`
+- Created: `2023-03-28T01:59:10.625241338Z`
+- Virtual Size: ~ 153.95 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -421,16 +421,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1t-r0 description:
+libcrypto1.1-1.1.1t-r1 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1t-r0 webpage:
+libcrypto1.1-1.1.1t-r1 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1t-r0 installed size:
+libcrypto1.1-1.1.1t-r1 installed size:
 2712 KiB
 
-libcrypto1.1-1.1.1t-r0 license:
+libcrypto1.1-1.1.1t-r1 license:
 OpenSSL
 
 ```
@@ -438,16 +438,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.83.1-r5 description:
+libcurl-7.83.1-r6 description:
 The multiprotocol file transfer library
 
-libcurl-7.83.1-r5 webpage:
+libcurl-7.83.1-r6 webpage:
 https://curl.se/
 
-libcurl-7.83.1-r5 installed size:
-512 KiB
+libcurl-7.83.1-r6 installed size:
+516 KiB
 
-libcurl-7.83.1-r5 license:
+libcurl-7.83.1-r6 license:
 curl
 
 ```
@@ -557,16 +557,16 @@ ISC
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1t-r0 description:
+libssl1.1-1.1.1t-r1 description:
 SSL shared libraries
 
-libssl1.1-1.1.1t-r0 webpage:
+libssl1.1-1.1.1t-r1 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1t-r0 installed size:
+libssl1.1-1.1.1t-r1 installed size:
 528 KiB
 
-libssl1.1-1.1.1t-r0 license:
+libssl1.1-1.1.1t-r1 license:
 OpenSSL
 
 ```
