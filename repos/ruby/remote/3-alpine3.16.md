@@ -1,7 +1,7 @@
 ## `ruby:3-alpine3.16`
 
 ```console
-$ docker pull ruby@sha256:6850eea789121631c327e766ed9181431b18881a85317b165ab4b55fa3156da5
+$ docker pull ruby@sha256:d82ba28ecb16d40dbd4e237cc167bd136f93aee4e128a9b8231f0c045090bfb1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -83,14 +83,14 @@ CMD ["irb"]
 ### `ruby:3-alpine3.16` - linux; arm variant v6
 
 ```console
-$ docker pull ruby@sha256:f7e2279dee1495aa38f7dce3dfc198cf81da373b4433aa8306da5d2b71e64037
+$ docker pull ruby@sha256:9c7c95913ce40e6ca98a823e34a9e835cdc27cb82c7c0aafcba79954d8cb3081
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **34.2 MB (34171960 bytes)**  
+-	Total Size: **34.2 MB (34171964 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a2d30130cbfa8d95143a6a73334195d532299db8334cb80bdf72dc5a6fe42a90`
+-	Image ID: `sha256:eaab227673c5fc6a6fd3dda0f5601a348f0ca7fc2967a8585c1a5a22203bc989`
 -	Default Command: `["irb"]`
 
 ```dockerfile
@@ -118,9 +118,9 @@ ENV GEM_HOME=/usr/local/bundle
 ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
 # Tue, 14 Mar 2023 01:16:35 GMT
 ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 14 Mar 2023 01:16:35 GMT
-RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Tue, 14 Mar 2023 01:16:35 GMT
+# Mon, 27 Mar 2023 23:58:06 GMT
+RUN mkdir -p "$GEM_HOME" && chmod 1777 "$GEM_HOME"
+# Mon, 27 Mar 2023 23:58:06 GMT
 CMD ["irb"]
 ```
 
@@ -141,9 +141,9 @@ CMD ["irb"]
 		Last Modified: Tue, 14 Mar 2023 01:28:39 GMT  
 		Size: 28.0 MB (27960815 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:02e04e7b1435c020c3bd9feb09d4d1d9fd0aa11a02c2588578f8713ae83b59e9`  
-		Last Modified: Tue, 14 Mar 2023 01:28:36 GMT  
-		Size: 172.0 B  
+	-	`sha256:2aeb3db6746c7bbf9170ccfee82618f5c9d9a9c34f69c3cfa9f9903340eaf677`  
+		Last Modified: Tue, 28 Mar 2023 04:07:45 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `ruby:3-alpine3.16` - linux; arm variant v7
