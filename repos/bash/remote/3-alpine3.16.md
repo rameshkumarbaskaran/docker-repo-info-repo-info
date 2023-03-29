@@ -1,7 +1,7 @@
 ## `bash:3-alpine3.16`
 
 ```console
-$ docker pull bash@sha256:022e1760a32bd7ac825ce688ebca4cc5874d79576c2aaa02e088945298069b39
+$ docker pull bash@sha256:b15a7495e6a3ae79bb5988f7d04bdaf37a9da53d3b12cf96953d03334cb6b444
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -221,52 +221,52 @@ CMD ["bash"]
 ### `bash:3-alpine3.16` - linux; 386
 
 ```console
-$ docker pull bash@sha256:3f4d559e13e4f1bb771a6e8f45f0de095eacca01a7d0b834c6f0629af73047c9
+$ docker pull bash@sha256:900da2f1bc41866a93425ede07cb96f0b76cb9a844469aa62564ba276aa44a18
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **4.4 MB (4441434 bytes)**  
+-	Total Size: **4.4 MB (4441599 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f38051314869558ca4f8e4ee7a8aa02a3e2e22e17f5e26292b75e978a2391bbb`
+-	Image ID: `sha256:7e94a0dd000d2e1296cd59a38f7f6edd155d66c5a1f5d87349af716e4f7533fc`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Fri, 10 Feb 2023 21:24:29 GMT
-ADD file:59ac1f8f33f9b9727892b7e45b33f54ef3c20d9d876c49d6a4c057641821d68f in / 
-# Fri, 10 Feb 2023 21:24:29 GMT
+# Wed, 29 Mar 2023 17:38:33 GMT
+ADD file:c9d37b1a7eee54b1a8c1ebde284829510ec289f7b7db2c16059b26f01b416fe0 in / 
+# Wed, 29 Mar 2023 17:38:33 GMT
 CMD ["/bin/sh"]
-# Wed, 01 Mar 2023 00:26:39 GMT
+# Wed, 29 Mar 2023 19:40:17 GMT
 ENV _BASH_VERSION=3.2.57
-# Wed, 01 Mar 2023 00:26:39 GMT
+# Wed, 29 Mar 2023 19:40:17 GMT
 ENV _BASH_BASELINE=3.2.57
-# Wed, 01 Mar 2023 00:26:40 GMT
+# Wed, 29 Mar 2023 19:40:17 GMT
 ENV _BASH_BASELINE_PATCH=57
-# Wed, 01 Mar 2023 00:26:40 GMT
+# Wed, 29 Mar 2023 19:40:17 GMT
 ENV _BASH_LATEST_PATCH=57
-# Wed, 01 Mar 2023 00:28:30 GMT
+# Wed, 29 Mar 2023 19:42:07 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		bison 		coreutils 		dpkg-dev dpkg 		gcc 		libc-dev 		make 		ncurses-dev 		tar 	; 		wget -O bash.tar.gz "https://ftp.gnu.org/gnu/bash/bash-$_BASH_BASELINE.tar.gz"; 	wget -O bash.tar.gz.sig "https://ftp.gnu.org/gnu/bash/bash-$_BASH_BASELINE.tar.gz.sig"; 		: "${_BASH_BASELINE_PATCH:=0}" "${_BASH_LATEST_PATCH:=0}"; 	if [ "$_BASH_LATEST_PATCH" -gt "$_BASH_BASELINE_PATCH" ]; then 		mkdir -p bash-patches; 		first="$(printf '%03d' "$(( _BASH_BASELINE_PATCH + 1 ))")"; 		last="$(printf '%03d' "$_BASH_LATEST_PATCH")"; 		majorMinor="${_BASH_VERSION%.*}"; 		for patch in $(seq -w "$first" "$last"); do 			url="https://ftp.gnu.org/gnu/bash/bash-$majorMinor-patches/bash${majorMinor//./}-$patch"; 			wget -O "bash-patches/$patch" "$url"; 			wget -O "bash-patches/$patch.sig" "$url.sig"; 		done; 	fi; 		apk add --no-cache --virtual .gpg-deps gnupg; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 7C0135FB088AAF6C66C650B9BB5869F064EA74AB; 	gpg --batch --verify bash.tar.gz.sig bash.tar.gz; 	rm bash.tar.gz.sig; 	if [ -d bash-patches ]; then 		for sig in bash-patches/*.sig; do 			p="${sig%.sig}"; 			gpg --batch --verify "$sig" "$p"; 			rm "$sig"; 		done; 	fi; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	apk del --no-network .gpg-deps; 		mkdir -p /usr/src/bash; 	tar 		--extract 		--file=bash.tar.gz 		--strip-components=1 		--directory=/usr/src/bash 	; 	rm bash.tar.gz; 		if [ -d bash-patches ]; then 		apk add --no-cache --virtual .patch-deps patch; 		for p in bash-patches/*; do 			patch 				--directory=/usr/src/bash 				--input="$(readlink -f "$p")" 				--strip=0 			; 			rm "$p"; 		done; 		rmdir bash-patches; 		apk del --no-network .patch-deps; 	fi; 		cd /usr/src/bash; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	for f in config.guess config.sub; do 		wget -O "support/$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 	done; 	./configure 		--build="$gnuArch" 		--enable-readline 		--with-curses 		--without-bash-malloc 	|| { 		cat >&2 config.log; 		false; 	}; 	make y.tab.c; make builtins/libbuiltins.a; 	make -j "$(nproc)"; 	make install; 	cd /; 	rm -r /usr/src/bash; 		rm -rf 		/usr/local/share/doc/bash/*.html 		/usr/local/share/info 		/usr/local/share/locale 		/usr/local/share/man 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .bash-rundeps $runDeps; 	apk del --no-network .build-deps; 		[ "$(which bash)" = '/usr/local/bin/bash' ]; 	bash --version; 	[ "$(bash -c 'echo "${BASH_VERSION%%[^0-9.]*}"')" = "$_BASH_VERSION" ]; 	bash -c 'help' > /dev/null
-# Wed, 01 Mar 2023 00:28:30 GMT
+# Wed, 29 Mar 2023 19:42:08 GMT
 COPY file:651b3bebeba8be9162c56b3eb561199905235f3e1c7811232b6c9f48ac333651 in /usr/local/bin/ 
-# Wed, 01 Mar 2023 00:28:31 GMT
+# Wed, 29 Mar 2023 19:42:08 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 01 Mar 2023 00:28:31 GMT
+# Wed, 29 Mar 2023 19:42:08 GMT
 CMD ["bash"]
 ```
 
 -	Layers:
-	-	`sha256:0987f51cd58a7d03bc7d6ff0a3a0a843c1a3fefcd41e3c8adc3999ddde7441e8`  
-		Last Modified: Fri, 10 Feb 2023 21:25:30 GMT  
-		Size: 2.8 MB (2810653 bytes)  
+	-	`sha256:dea45757091f21722aec41fb20845e57a04f4bb8c199531491f1dc070480a574`  
+		Last Modified: Wed, 29 Mar 2023 17:39:11 GMT  
+		Size: 2.8 MB (2810814 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:56435eabda4528b5f099f7bb7218262c4687238a864f54a5a4fc64b77ba76ecc`  
-		Last Modified: Wed, 01 Mar 2023 00:37:47 GMT  
+	-	`sha256:6a363132ab3b84969c65742d626427e9e31a48b77bd569e6a7d3acf21e242537`  
+		Last Modified: Wed, 29 Mar 2023 19:48:45 GMT  
 		Size: 1.6 MB (1630445 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:13a84156d78c5014b15d2201a02b22c8cf10d73beaf6932a5c9825b9e8d0f59e`  
-		Last Modified: Wed, 01 Mar 2023 00:37:47 GMT  
-		Size: 336.0 B  
+	-	`sha256:b2c57eefa1815b4f536fd0e193b7992b49a0ce875e7b45a9382d7c481463789d`  
+		Last Modified: Wed, 29 Mar 2023 19:48:45 GMT  
+		Size: 340.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `bash:3-alpine3.16` - linux; ppc64le
