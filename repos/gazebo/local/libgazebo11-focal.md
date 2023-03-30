@@ -117,14 +117,9 @@ Licenses: (parsed from: `/usr/share/doc/libapparmor1/copyright`)
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apparmor=2.13.3-7ubuntu5.1
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apparmor/apparmor_2.13.3-7ubuntu5.1.dsc' apparmor_2.13.3-7ubuntu5.1.dsc 3322 SHA512:90869fc59de29022722beb99cc0274ea16fa93e45d1e80a59ff3b6dd51ce3a3a9de3e1f110ad0c1a7f67a1a8c85f76589989375dcdb2cc1e85d81d8f6aa11fc1
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apparmor/apparmor_2.13.3.orig.tar.gz' apparmor_2.13.3.orig.tar.gz 7384974 SHA512:137b2bf026ec655b662e9c264d7d48d878db474a3f1cc5a38bfd7df2f85b682bddb77b091ab5595178231a0a262c9ae9cdd61409461cd889bdee156906ef1141
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apparmor/apparmor_2.13.3-7ubuntu5.1.debian.tar.xz' apparmor_2.13.3-7ubuntu5.1.debian.tar.xz 107436 SHA512:f107a0427aaca7dc706613952cbc159ca31613af71d930c7f53d91928ee9937d7c8030d4677109214dc121af322028382ecdec698d71c94c12423f178450224e
-```
 
 ### `dpkg` source package: `apt=2.0.9`
 
@@ -5249,14 +5244,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.4.0-144.161
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-144.161.dsc' linux_5.4.0-144.161.dsc 7380 SHA512:c15abb903d69c2cf3e2ad3b67ab11a5e36f02d189b6865706dbddba82524ee5c24a76785aba49a3cde57c4fa4c3a1e9686e26a4cd89cf3b91af280a26d5c9204
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA512:62b09a7231fd793973c5f59b16c4f6ffce621188b02a71915874b05e8e3f956fb6146d4a4fb1a4475bebe463949ca5a18da12842c3ce7c52e996e6bc4012a074
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-144.161.diff.gz' linux_5.4.0-144.161.diff.gz 10543900 SHA512:d3f55846771f39f735e954ba4bdbb35be1523ff4c743f0ce0c9577680647ee69ba82d3e549ad6e1f427f925dbc74d75854f419c849f187de58d632307cde3571
-```
 
 ### `dpkg` source package: `llvm-toolchain-12=1:12.0.0-3ubuntu1~20.04.5`
 
