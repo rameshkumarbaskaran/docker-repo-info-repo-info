@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:49ea612ceed722807d5d145f23ba1ca2c0f160523722cd1d38713805c3dc014b`
-- Created: `2023-03-21T19:26:43.056365184Z`
-- Virtual Size: ~ 138.11 Mb  
+- Image ID: `sha256:92278de55ef2bd9e98644c80c22b9d78c523bd1c4d0ff912c88f8e6bc80095d2`
+- Created: `2023-03-29T00:21:55.753535709Z`
+- Virtual Size: ~ 138.17 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -1103,15 +1103,15 @@ $ dnf --quiet download --source --url tar-1.26-35.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/tar-1.26-35.el7.src.rpm
 ```
 
-### `rpm` package: `tzdata-2022g-1.el7.noarch`
+### `rpm` package: `tzdata-2023b-1.el7.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url tzdata-2022g-1.el7.noarch
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/tzdata-2022g-1.el7.src.rpm
+$ dnf --quiet download --source --url tzdata-2023b-1.el7.noarch
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/tzdata-2023b-1.el7.src.rpm
 ```
 
 ### `rpm` package: `ustr-1.0.4-16.el7.x86_64`
