@@ -1,10 +1,10 @@
-# `wordpress:6.1.1-php8.1-fpm-alpine`
+# `wordpress:6.2.0-php8.1-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:516cf891b45ac696d4aa8fcabc182db154a88e453887faf6fe006a20b94b2af4`
-- Created: `2023-03-28T01:53:38.674773169Z`
-- Virtual Size: ~ 310.59 Mb  
+- Image ID: `sha256:a05041cf67ce83ec375f2e5399e9321885b11422bd9dfebf16bc22b53957659f`
+- Created: `2023-03-31T00:20:51.707099356Z`
+- Virtual Size: ~ 305.93 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -299,16 +299,16 @@ GPL-2.0-only
 ### `apk` package: `curl`
 
 ```console
-curl-7.87.0-r1 description:
+curl-7.88.1-r1 description:
 URL retrival utility and library
 
-curl-7.87.0-r1 webpage:
+curl-7.88.1-r1 webpage:
 https://curl.se/
 
-curl-7.87.0-r1 installed size:
+curl-7.88.1-r1 installed size:
 264 KiB
 
-curl-7.87.0-r1 license:
+curl-7.88.1-r1 license:
 curl
 
 ```
@@ -707,16 +707,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.8-r1 description:
+libcrypto3-3.0.8-r3 description:
 Crypto library from openssl
 
-libcrypto3-3.0.8-r1 webpage:
+libcrypto3-3.0.8-r3 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.8-r1 installed size:
+libcrypto3-3.0.8-r3 installed size:
 4108 KiB
 
-libcrypto3-3.0.8-r1 license:
+libcrypto3-3.0.8-r3 license:
 Apache-2.0
 
 ```
@@ -741,16 +741,16 @@ curl
 ### `apk` package: `libde265`
 
 ```console
-libde265-1.0.11-r0 description:
+libde265-1.0.11-r1 description:
 Open h.265 video codec implementation
 
-libde265-1.0.11-r0 webpage:
+libde265-1.0.11-r1 webpage:
 https://github.com/strukturag/libde265
 
-libde265-1.0.11-r0 installed size:
+libde265-1.0.11-r1 installed size:
 444 KiB
 
-libde265-1.0.11-r0 license:
+libde265-1.0.11-r1 license:
 LGPL-3.0-or-later
 
 ```
@@ -996,16 +996,16 @@ ISC
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.8-r1 description:
+libssl3-3.0.8-r3 description:
 SSL shared libraries
 
-libssl3-3.0.8-r1 webpage:
+libssl3-3.0.8-r3 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.8-r1 installed size:
+libssl3-3.0.8-r3 installed size:
 608 KiB
 
-libssl3-3.0.8-r1 license:
+libssl3-3.0.8-r3 license:
 Apache-2.0
 
 ```
@@ -1370,16 +1370,16 @@ BSD-2-Clause
 ### `apk` package: `openssl`
 
 ```console
-openssl-3.0.8-r0 description:
+openssl-3.0.8-r3 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-3.0.8-r0 webpage:
+openssl-3.0.8-r3 webpage:
 https://www.openssl.org/
 
-openssl-3.0.8-r0 installed size:
+openssl-3.0.8-r3 installed size:
 868 KiB
 
-openssl-3.0.8-r0 license:
+openssl-3.0.8-r3 license:
 Apache-2.0
 
 ```
@@ -1557,16 +1557,16 @@ GPL-2.0-only
 ### `apk` package: `tar`
 
 ```console
-tar-1.34-r1 description:
+tar-1.34-r2 description:
 Utility used to store, backup, and transport files
 
-tar-1.34-r1 webpage:
+tar-1.34-r2 webpage:
 https://www.gnu.org/software/tar/
 
-tar-1.34-r1 installed size:
+tar-1.34-r2 installed size:
 488 KiB
 
-tar-1.34-r1 license:
+tar-1.34-r2 license:
 GPL-3.0-or-later
 
 ```
