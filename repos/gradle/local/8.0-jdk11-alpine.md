@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c433d50d59549ae85708c4195eacdbc952761cc37d8f8186609544b115cdd035`
-- Created: `2023-03-03T23:20:45.372210955Z`
-- Virtual Size: ~ 579.01 Mb  
+- Image ID: `sha256:4c9a99f8ae47003817143f3913b863511660492cd042426633795f7503bb172e`
+- Created: `2023-03-30T03:10:46.243896831Z`
+- Virtual Size: ~ 579.05 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["gradle"]`
@@ -295,16 +295,16 @@ GPL-3.0-or-later
 ### `apk` package: `git`
 
 ```console
-git-2.38.3-r1 description:
+git-2.38.4-r1 description:
 Distributed version control system
 
-git-2.38.3-r1 webpage:
+git-2.38.4-r1 webpage:
 https://www.git-scm.com/
 
-git-2.38.3-r1 installed size:
+git-2.38.4-r1 installed size:
 6068 KiB
 
-git-2.38.3-r1 license:
+git-2.38.4-r1 license:
 GPL-2.0-or-later
 
 ```
@@ -312,16 +312,16 @@ GPL-2.0-or-later
 ### `apk` package: `git-lfs`
 
 ```console
-git-lfs-3.2.0-r3 description:
+git-lfs-3.2.0-r4 description:
 Git extension for versioning large files
 
-git-lfs-3.2.0-r3 webpage:
+git-lfs-3.2.0-r4 webpage:
 https://git-lfs.github.io/
 
-git-lfs-3.2.0-r3 installed size:
+git-lfs-3.2.0-r4 installed size:
 11 MiB
 
-git-lfs-3.2.0-r3 license:
+git-lfs-3.2.0-r4 license:
 MIT
 
 ```
@@ -363,16 +363,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.8-r0 description:
+libcrypto3-3.0.8-r3 description:
 Crypto library from openssl
 
-libcrypto3-3.0.8-r0 webpage:
+libcrypto3-3.0.8-r3 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.8-r0 installed size:
+libcrypto3-3.0.8-r3 installed size:
 4108 KiB
 
-libcrypto3-3.0.8-r0 license:
+libcrypto3-3.0.8-r3 license:
 Apache-2.0
 
 ```
@@ -380,16 +380,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.87.0-r1 description:
+libcurl-7.88.1-r1 description:
 The multiprotocol file transfer library
 
-libcurl-7.87.0-r1 webpage:
+libcurl-7.88.1-r1 webpage:
 https://curl.se/
 
-libcurl-7.87.0-r1 installed size:
-540 KiB
+libcurl-7.88.1-r1 installed size:
+552 KiB
 
-libcurl-7.87.0-r1 license:
+libcurl-7.88.1-r1 license:
 curl
 
 ```
@@ -516,16 +516,16 @@ custom
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.8-r0 description:
+libssl3-3.0.8-r3 description:
 SSL shared libraries
 
-libssl3-3.0.8-r0 webpage:
+libssl3-3.0.8-r3 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.8-r0 installed size:
+libssl3-3.0.8-r3 installed size:
 608 KiB
 
-libssl3-3.0.8-r0 license:
+libssl3-3.0.8-r3 license:
 Apache-2.0
 
 ```
@@ -907,16 +907,16 @@ Apache-2.0 BSD
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2022f-r1 description:
+tzdata-2023c-r0 description:
 Timezone data
 
-tzdata-2022f-r1 webpage:
+tzdata-2023c-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2022f-r1 installed size:
+tzdata-2023c-r0 installed size:
 3068 KiB
 
-tzdata-2022f-r1 license:
+tzdata-2023c-r0 license:
 Public-Domain
 
 ```
