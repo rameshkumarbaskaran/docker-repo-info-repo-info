@@ -1,9 +1,9 @@
-# `nginx:1.23.3-alpine-slim`
+# `nginx:1.23.4-alpine-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c590972254923ed7847ab22756bdd8d6a3529a099cb1ea59663daabfa3fd940b`
-- Created: `2023-02-11T10:04:00.793725955Z`
+- Image ID: `sha256:dd0d41fe48dbba258c57acd1febeff44711ad87772c6de8e4546f0a50328ffa0`
+- Created: `2023-03-29T22:31:16.921795894Z`
 - Virtual Size: ~ 11.51 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Command: `["nginx","-g","daemon off;"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NGINX_VERSION=1.23.3`
+  - `NGINX_VERSION=1.23.4`
   - `PKG_RELEASE=1`
 - Labels:
   - `maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>`
@@ -157,16 +157,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.8-r0 description:
+libcrypto3-3.0.8-r3 description:
 Crypto library from openssl
 
-libcrypto3-3.0.8-r0 webpage:
+libcrypto3-3.0.8-r3 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.8-r0 installed size:
+libcrypto3-3.0.8-r3 installed size:
 4108 KiB
 
-libcrypto3-3.0.8-r0 license:
+libcrypto3-3.0.8-r3 license:
 Apache-2.0
 
 ```
@@ -191,16 +191,16 @@ LGPL-2.1-or-later
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.8-r0 description:
+libssl3-3.0.8-r3 description:
 SSL shared libraries
 
-libssl3-3.0.8-r0 webpage:
+libssl3-3.0.8-r3 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.8-r0 installed size:
+libssl3-3.0.8-r3 installed size:
 608 KiB
 
-libssl3-3.0.8-r0 license:
+libssl3-3.0.8-r3 license:
 Apache-2.0
 
 ```
@@ -242,16 +242,16 @@ MIT AND BSD-2-Clause AND GPL-2.0-or-later
 ### `apk` package: `nginx`
 
 ```console
-nginx-1.23.3-r1 description:
+nginx-1.23.4-r1 description:
 High performance web server
 
-nginx-1.23.3-r1 webpage:
+nginx-1.23.4-r1 webpage:
 https://nginx.org/
 
-nginx-1.23.3-r1 installed size:
+nginx-1.23.4-r1 installed size:
 2608 KiB
 
-nginx-1.23.3-r1 license:
+nginx-1.23.4-r1 license:
 2-clause BSD-like license
 
 ```
@@ -310,16 +310,16 @@ GPL-2.0-only
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2022f-r1 description:
+tzdata-2023c-r0 description:
 Timezone data
 
-tzdata-2022f-r1 webpage:
+tzdata-2023c-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2022f-r1 installed size:
+tzdata-2023c-r0 installed size:
 3068 KiB
 
-tzdata-2022f-r1 license:
+tzdata-2023c-r0 license:
 Public-Domain
 
 ```

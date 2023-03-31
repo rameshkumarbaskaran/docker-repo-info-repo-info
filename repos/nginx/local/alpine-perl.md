@@ -1,19 +1,19 @@
-# `nginx:1.23.3-alpine-perl`
+# `nginx:1.23.4-alpine-perl`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3105750f5d72b28bfa331acf1211d8141a00b4f1992299d861de2609ddee8795`
-- Created: `2023-02-11T10:04:40.76614406Z`
-- Virtual Size: ~ 76.18 Mb  
+- Image ID: `sha256:f7cfde6d48ff27fbbf3079d1edb9917e766e3c360313fb06fab89b219629cd3b`
+- Created: `2023-03-29T22:31:41.772690379Z`
+- Virtual Size: ~ 76.46 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["nginx","-g","daemon off;"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NGINX_VERSION=1.23.3`
+  - `NGINX_VERSION=1.23.4`
   - `PKG_RELEASE=1`
-  - `NJS_VERSION=0.7.9`
+  - `NJS_VERSION=0.7.11`
 - Labels:
   - `maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>`
 
@@ -192,16 +192,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `curl`
 
 ```console
-curl-7.87.0-r1 description:
+curl-7.88.1-r1 description:
 URL retrival utility and library
 
-curl-7.87.0-r1 webpage:
+curl-7.88.1-r1 webpage:
 https://curl.se/
 
-curl-7.87.0-r1 installed size:
+curl-7.88.1-r1 installed size:
 264 KiB
 
-curl-7.87.0-r1 license:
+curl-7.88.1-r1 license:
 curl
 
 ```
@@ -328,16 +328,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.8-r0 description:
+libcrypto3-3.0.8-r3 description:
 Crypto library from openssl
 
-libcrypto3-3.0.8-r0 webpage:
+libcrypto3-3.0.8-r3 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.8-r0 installed size:
+libcrypto3-3.0.8-r3 installed size:
 4108 KiB
 
-libcrypto3-3.0.8-r0 license:
+libcrypto3-3.0.8-r3 license:
 Apache-2.0
 
 ```
@@ -345,16 +345,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.87.0-r1 description:
+libcurl-7.88.1-r1 description:
 The multiprotocol file transfer library
 
-libcurl-7.87.0-r1 webpage:
+libcurl-7.88.1-r1 webpage:
 https://curl.se/
 
-libcurl-7.87.0-r1 installed size:
-540 KiB
+libcurl-7.88.1-r1 installed size:
+552 KiB
 
-libcurl-7.87.0-r1 license:
+libcurl-7.88.1-r1 license:
 curl
 
 ```
@@ -566,16 +566,16 @@ MIT
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.8-r0 description:
+libssl3-3.0.8-r3 description:
 SSL shared libraries
 
-libssl3-3.0.8-r0 webpage:
+libssl3-3.0.8-r3 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.8-r0 installed size:
+libssl3-3.0.8-r3 installed size:
 608 KiB
 
-libssl3-3.0.8-r0 license:
+libssl3-3.0.8-r3 license:
 Apache-2.0
 
 ```
@@ -736,16 +736,16 @@ custom:BELL
 ### `apk` package: `libxslt`
 
 ```console
-libxslt-1.1.37-r0 description:
+libxslt-1.1.37-r1 description:
 XML stylesheet transformation library
 
-libxslt-1.1.37-r0 webpage:
+libxslt-1.1.37-r1 webpage:
 http://xmlsoft.org/XSLT/
 
-libxslt-1.1.37-r0 installed size:
+libxslt-1.1.37-r1 installed size:
 360 KiB
 
-libxslt-1.1.37-r0 license:
+libxslt-1.1.37-r1 license:
 custom
 
 ```
@@ -855,16 +855,16 @@ MIT
 ### `apk` package: `nginx`
 
 ```console
-nginx-1.23.3-r1 description:
+nginx-1.23.4-r1 description:
 High performance web server
 
-nginx-1.23.3-r1 webpage:
+nginx-1.23.4-r1 webpage:
 https://nginx.org/
 
-nginx-1.23.3-r1 installed size:
+nginx-1.23.4-r1 installed size:
 2608 KiB
 
-nginx-1.23.3-r1 license:
+nginx-1.23.4-r1 license:
 2-clause BSD-like license
 
 ```
@@ -872,16 +872,16 @@ nginx-1.23.3-r1 license:
 ### `apk` package: `nginx-module-geoip`
 
 ```console
-nginx-module-geoip-1.23.3-r1 description:
+nginx-module-geoip-1.23.4-r1 description:
 nginx GeoIP dynamic modules
 
-nginx-module-geoip-1.23.3-r1 webpage:
+nginx-module-geoip-1.23.4-r1 webpage:
 https://nginx.org/
 
-nginx-module-geoip-1.23.3-r1 installed size:
+nginx-module-geoip-1.23.4-r1 installed size:
 116 KiB
 
-nginx-module-geoip-1.23.3-r1 license:
+nginx-module-geoip-1.23.4-r1 license:
 2-clause BSD-like license
 
 ```
@@ -889,16 +889,16 @@ nginx-module-geoip-1.23.3-r1 license:
 ### `apk` package: `nginx-module-image-filter`
 
 ```console
-nginx-module-image-filter-1.23.3-r1 description:
+nginx-module-image-filter-1.23.4-r1 description:
 nginx image filter dynamic module
 
-nginx-module-image-filter-1.23.3-r1 webpage:
+nginx-module-image-filter-1.23.4-r1 webpage:
 https://nginx.org/
 
-nginx-module-image-filter-1.23.3-r1 installed size:
+nginx-module-image-filter-1.23.4-r1 installed size:
 88 KiB
 
-nginx-module-image-filter-1.23.3-r1 license:
+nginx-module-image-filter-1.23.4-r1 license:
 2-clause BSD-like license
 
 ```
@@ -906,16 +906,16 @@ nginx-module-image-filter-1.23.3-r1 license:
 ### `apk` package: `nginx-module-njs`
 
 ```console
-nginx-module-njs-1.23.3.0.7.9-r1 description:
+nginx-module-njs-1.23.4.0.7.11-r1 description:
 nginx njs dynamic modules
 
-nginx-module-njs-1.23.3.0.7.9-r1 webpage:
+nginx-module-njs-1.23.4.0.7.11-r1 webpage:
 https://nginx.org/
 
-nginx-module-njs-1.23.3.0.7.9-r1 installed size:
-3952 KiB
+nginx-module-njs-1.23.4.0.7.11-r1 installed size:
+4208 KiB
 
-nginx-module-njs-1.23.3.0.7.9-r1 license:
+nginx-module-njs-1.23.4.0.7.11-r1 license:
 2-clause BSD-like license
 
 ```
@@ -923,16 +923,16 @@ nginx-module-njs-1.23.3.0.7.9-r1 license:
 ### `apk` package: `nginx-module-perl`
 
 ```console
-nginx-module-perl-1.23.3-r1 description:
+nginx-module-perl-1.23.4-r1 description:
 nginx Perl dynamic module
 
-nginx-module-perl-1.23.3-r1 webpage:
+nginx-module-perl-1.23.4-r1 webpage:
 https://nginx.org/
 
-nginx-module-perl-1.23.3-r1 installed size:
+nginx-module-perl-1.23.4-r1 installed size:
 156 KiB
 
-nginx-module-perl-1.23.3-r1 license:
+nginx-module-perl-1.23.4-r1 license:
 2-clause BSD-like license
 
 ```
@@ -940,16 +940,16 @@ nginx-module-perl-1.23.3-r1 license:
 ### `apk` package: `nginx-module-xslt`
 
 ```console
-nginx-module-xslt-1.23.3-r1 description:
+nginx-module-xslt-1.23.4-r1 description:
 nginx xslt dynamic module
 
-nginx-module-xslt-1.23.3-r1 webpage:
+nginx-module-xslt-1.23.4-r1 webpage:
 https://nginx.org/
 
-nginx-module-xslt-1.23.3-r1 installed size:
+nginx-module-xslt-1.23.4-r1 installed size:
 84 KiB
 
-nginx-module-xslt-1.23.3-r1 license:
+nginx-module-xslt-1.23.4-r1 license:
 2-clause BSD-like license
 
 ```
@@ -1025,16 +1025,16 @@ GPL-2.0-only
 ### `apk` package: `tiff`
 
 ```console
-tiff-4.4.0-r1 description:
+tiff-4.4.0-r3 description:
 Provides support for the Tag Image File Format or TIFF
 
-tiff-4.4.0-r1 webpage:
+tiff-4.4.0-r3 webpage:
 https://gitlab.com/libtiff/libtiff
 
-tiff-4.4.0-r1 installed size:
+tiff-4.4.0-r3 installed size:
 476 KiB
 
-tiff-4.4.0-r1 license:
+tiff-4.4.0-r3 license:
 libtiff
 
 ```
@@ -1042,16 +1042,16 @@ libtiff
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2022f-r1 description:
+tzdata-2023c-r0 description:
 Timezone data
 
-tzdata-2022f-r1 webpage:
+tzdata-2023c-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2022f-r1 installed size:
+tzdata-2023c-r0 installed size:
 3068 KiB
 
-tzdata-2022f-r1 license:
+tzdata-2023c-r0 license:
 Public-Domain
 
 ```
