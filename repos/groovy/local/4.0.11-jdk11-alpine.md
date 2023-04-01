@@ -1,10 +1,10 @@
-# `groovy:4.0.10-jdk11-alpine`
+# `groovy:4.0.11-jdk11-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ae053d4f705b250703937d4ddc12f4de47a43960da2282c549d6e9ff4c6c7513`
-- Created: `2023-03-15T22:28:41.334689008Z`
-- Virtual Size: ~ 384.52 Mb  
+- Image ID: `sha256:08223a0ef92d8077844171ed6daa6d517f0cdfc82f31064874268dfce705fc64`
+- Created: `2023-03-31T22:24:47.60917075Z`
+- Virtual Size: ~ 384.53 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["groovysh"]`
@@ -16,7 +16,7 @@
   - `LC_ALL=en_US.UTF-8`
   - `JAVA_VERSION=jdk-11.0.18+10`
   - `GROOVY_HOME=/opt/groovy`
-  - `GROOVY_VERSION=4.0.10`
+  - `GROOVY_VERSION=4.0.11`
 
 ## `apk` (`.apk`-based packages)
 
@@ -261,16 +261,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.8-r0 description:
+libcrypto3-3.0.8-r3 description:
 Crypto library from openssl
 
-libcrypto3-3.0.8-r0 webpage:
+libcrypto3-3.0.8-r3 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.8-r0 installed size:
+libcrypto3-3.0.8-r3 installed size:
 4108 KiB
 
-libcrypto3-3.0.8-r0 license:
+libcrypto3-3.0.8-r3 license:
 Apache-2.0
 
 ```
@@ -346,16 +346,16 @@ ISC AND ( BSD-3-Clause OR MIT )
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.8-r0 description:
+libssl3-3.0.8-r3 description:
 SSL shared libraries
 
-libssl3-3.0.8-r0 webpage:
+libssl3-3.0.8-r3 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.8-r0 installed size:
+libssl3-3.0.8-r3 installed size:
 608 KiB
 
-libssl3-3.0.8-r0 license:
+libssl3-3.0.8-r3 license:
 Apache-2.0
 
 ```
@@ -482,16 +482,16 @@ GPL-2.0-only
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2022f-r1 description:
+tzdata-2023c-r0 description:
 Timezone data
 
-tzdata-2022f-r1 webpage:
+tzdata-2023c-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2022f-r1 installed size:
+tzdata-2023c-r0 installed size:
 3068 KiB
 
-tzdata-2022f-r1 license:
+tzdata-2023c-r0 license:
 Public-Domain
 
 ```
