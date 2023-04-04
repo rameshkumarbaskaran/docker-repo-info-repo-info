@@ -1,10 +1,10 @@
-# `openjdk:21-ea-15-jdk-oraclelinux8`
+# `openjdk:21-ea-16-jdk-oraclelinux8`
 
 ## Docker Metadata
 
-- Image ID: `sha256:7c451870e361cf7f6dc5c0c57a64b1acb82c67c89864da9030edd65bca9c266a`
-- Created: `2023-03-29T00:39:29.366876963Z`
-- Virtual Size: ~ 499.27 Mb  
+- Image ID: `sha256:488b8b286a2c8721e645f8386cfb55f40ea2aee73234e6e769916bae16e1880b`
+- Created: `2023-04-03T23:13:49.957851059Z`
+- Virtual Size: ~ 499.11 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/java/openjdk-21/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/usr/java/openjdk-21`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=21-ea+15`
+  - `JAVA_VERSION=21-ea+16`
 
 ## `rpm` (`.rpm`-based packages)
 
@@ -1246,16 +1246,16 @@ $ dnf --quiet download --source --url tar-1.30-6.el8_7.1
 https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackageSource/tar-1.30-6.el8_7.1.src.rpm
 ```
 
-### `rpm` package: `tzdata-2023b-1.el8.noarch`
+### `rpm` package: `tzdata-2023c-1.el8.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url tzdata-2023b-1.el8.noarch
-https://yum.oracle.com/repo/OracleLinux/OL8/appstream/x86_64/getPackageSource/tzdata-2023b-1.el8.src.rpm
-https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackageSource/tzdata-2023b-1.el8.src.rpm
+$ dnf --quiet download --source --url tzdata-2023c-1.el8.noarch
+https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackageSource/tzdata-2023c-1.el8.src.rpm
+https://yum.oracle.com/repo/OracleLinux/OL8/appstream/x86_64/getPackageSource/tzdata-2023c-1.el8.src.rpm
 ```
 
 ### `rpm` package: `xz-libs-5.2.4-4.el8_6.x86_64`

@@ -1,10 +1,10 @@
-# `openjdk:21-ea-15-jdk-oraclelinux7`
+# `openjdk:21-ea-16-jdk-oraclelinux7`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5a6358ed5445810bc538b0928dad4925fd2031a603e6fd22948d99a79ff5d82c`
-- Created: `2023-03-29T00:40:04.121018856Z`
-- Virtual Size: ~ 524.94 Mb  
+- Image ID: `sha256:f27db691b068755def15c74a4d2219b8b9eaf16a517bbe18a0f1fb3e2b6a268d`
+- Created: `2023-04-03T23:14:03.011443873Z`
+- Virtual Size: ~ 524.78 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/java/openjdk-21/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/usr/java/openjdk-21`
   - `LANG=en_US.UTF-8`
-  - `JAVA_VERSION=21-ea+15`
+  - `JAVA_VERSION=21-ea+16`
 
 ## `rpm` (`.rpm`-based packages)
 
@@ -1194,15 +1194,15 @@ $ dnf --quiet download --source --url tar-1.26-35.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/tar-1.26-35.el7.src.rpm
 ```
 
-### `rpm` package: `tzdata-2023b-1.el7.noarch`
+### `rpm` package: `tzdata-2023c-1.el7.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url tzdata-2023b-1.el7.noarch
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/tzdata-2023b-1.el7.src.rpm
+$ dnf --quiet download --source --url tzdata-2023c-1.el7.noarch
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/tzdata-2023c-1.el7.src.rpm
 ```
 
 ### `rpm` package: `ustr-1.0.4-16.el7.x86_64`
