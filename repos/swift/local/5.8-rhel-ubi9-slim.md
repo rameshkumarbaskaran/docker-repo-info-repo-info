@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:bc226ffcdf3122d84859b62744d6d7e410dda186d1a4d9dc60323c32480d6d02`
-- Created: `2023-03-31T21:30:47.810936357Z`
-- Virtual Size: ~ 467.98 Mb  
+- Image ID: `sha256:2eafbabfd2497f966367bb961b4f23827df38d647a201193affefdf1b261c3c7`
+- Created: `2023-04-13T00:08:14.890620639Z`
+- Virtual Size: ~ 467.99 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -18,7 +18,7 @@
   - `SWIFT_WEBROOT=https://download.swift.org`
 - Labels:
   - `architecture=x86_64`
-  - `build-date=2023-02-22T09:23:14`
+  - `build-date=2023-04-04T12:59:33`
   - `com.redhat.component=ubi9-container`
   - `com.redhat.license_terms=https://www.redhat.com/en/about/red-hat-end-user-license-agreements#UBI`
   - `description=Docker Container for the Swift programming language`
@@ -30,9 +30,9 @@
   - `io.openshift.tags=base rhel9`
   - `maintainer=Swift Infrastructure <swift-infrastructure@forums.swift.org>`
   - `name=ubi9`
-  - `release=1782`
+  - `release=1817`
   - `summary=Provides the latest release of Red Hat Universal Base Image 9.`
-  - `url=https://access.redhat.com/containers/#/registry.access.redhat.com/ubi9/images/9.1.0-1782`
+  - `url=https://access.redhat.com/containers/#/registry.access.redhat.com/ubi9/images/9.1.0-1817`
   - `vcs-ref=cf87ad00feaef3d9d7a442dad55ab6a14f6a3f81`
   - `vcs-type=git`
   - `vendor=Red Hat, Inc.`
@@ -118,7 +118,7 @@ Licenses (from `rpm --query`): GPLv2+ and LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `curl-minimal-7.76.1-19.el9_1.1.x86_64`
+### `rpm` package: `curl-minimal-7.76.1-19.el9_1.2.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -292,7 +292,7 @@ Licenses (from `rpm --query`): GPLv3+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `gnutls-3.7.6-12.el9_0.x86_64`
+### `rpm` package: `gnutls-3.7.6-18.el9_1.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+ and LGPLv2+
 
@@ -442,7 +442,7 @@ Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libcurl-minimal-7.76.1-19.el9_1.1.x86_64`
+### `rpm` package: `libcurl-minimal-7.76.1-19.el9_1.2.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -496,7 +496,7 @@ Licenses (from `rpm --query`): GPLv3+ and GPLv3+ with exceptions and GPLv2+ with
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libgcrypt-1.10.0-8.el9_0.x86_64`
+### `rpm` package: `libgcrypt-1.10.0-10.el9_1.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
@@ -1084,7 +1084,7 @@ Licenses (from `rpm --query`): BSD and TCGL
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `tzdata-2022g-1.el9_1.noarch`
+### `rpm` package: `tzdata-2023c-1.el9.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
