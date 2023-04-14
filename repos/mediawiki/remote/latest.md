@@ -1,7 +1,7 @@
 ## `mediawiki:latest`
 
 ```console
-$ docker pull mediawiki@sha256:245acfc4f1863cd8ac924deed6779b80af1480019cf8000d0e75a637eb12d412
+$ docker pull mediawiki@sha256:c121410d59bb479b465df080180c271d272b8976530d9cc62a182c2b84eb760f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -195,14 +195,14 @@ CMD ["apache2-foreground"]
 ### `mediawiki:latest` - linux; arm variant v5
 
 ```console
-$ docker pull mediawiki@sha256:90f8072d7d9e185d711ad2f6045f9f76d83fd26e6e3ce48960386123f0ab6d4b
+$ docker pull mediawiki@sha256:71e14b24810fe21a868dbcd35d1e1f7954c0888e2e959ed505c4665ada094684
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **239.6 MB (239552794 bytes)**  
+-	Total Size: **239.5 MB (239532150 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:853981741002b4de14fb608520b92a0a7f3f2f0bfc66b68ec3c77e0613060eec`
+-	Image ID: `sha256:b108d9937378661d075edb80afcb6079aa08d65e8e601ca3481d888b5c8eec5f`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -239,53 +239,53 @@ ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D
 ENV PHP_LDFLAGS=-Wl,-O1 -pie
 # Wed, 12 Apr 2023 04:40:29 GMT
 ENV GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD
-# Wed, 12 Apr 2023 04:50:46 GMT
-ENV PHP_VERSION=8.1.17
-# Wed, 12 Apr 2023 04:50:46 GMT
-ENV PHP_URL=https://www.php.net/distributions/php-8.1.17.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.1.17.tar.xz.asc
-# Wed, 12 Apr 2023 04:50:46 GMT
-ENV PHP_SHA256=b5c48f95b8e1d8624dd05fc2eab7be13277f9a203ccba97bdca5a1a0fb4a1460
-# Wed, 12 Apr 2023 04:50:59 GMT
+# Fri, 14 Apr 2023 18:04:01 GMT
+ENV PHP_VERSION=8.1.18
+# Fri, 14 Apr 2023 18:04:01 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.1.18.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.1.18.tar.xz.asc
+# Fri, 14 Apr 2023 18:04:01 GMT
+ENV PHP_SHA256=f3553370f8ba42729a9ce75eed17a2111d32433a43b615694f6a571b8bad0e39
+# Fri, 14 Apr 2023 18:04:16 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Wed, 12 Apr 2023 04:50:59 GMT
+# Fri, 14 Apr 2023 18:04:17 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Wed, 12 Apr 2023 04:53:21 GMT
+# Fri, 14 Apr 2023 18:07:17 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		apache2-dev 		libargon2-dev 		libcurl4-openssl-dev 		libonig-dev 		libreadline-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 	; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv 		--with-openssl 		--with-readline 		--with-zlib 				--disable-phpdbg 				--with-pear 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				--disable-cgi 				--with-apxs2 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
-# Wed, 12 Apr 2023 04:53:21 GMT
+# Fri, 14 Apr 2023 18:07:18 GMT
 COPY multi:e11221d43af7136e4dbad5a74e659bcfa753214a9e615c3daf357f1633d9d3d1 in /usr/local/bin/ 
-# Wed, 12 Apr 2023 04:53:22 GMT
+# Fri, 14 Apr 2023 18:07:18 GMT
 RUN docker-php-ext-enable sodium
-# Wed, 12 Apr 2023 04:53:22 GMT
+# Fri, 14 Apr 2023 18:07:18 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Wed, 12 Apr 2023 04:53:22 GMT
+# Fri, 14 Apr 2023 18:07:19 GMT
 STOPSIGNAL SIGWINCH
-# Wed, 12 Apr 2023 04:53:22 GMT
+# Fri, 14 Apr 2023 18:07:19 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Wed, 12 Apr 2023 04:53:22 GMT
+# Fri, 14 Apr 2023 18:07:19 GMT
 WORKDIR /var/www/html
-# Wed, 12 Apr 2023 04:53:23 GMT
+# Fri, 14 Apr 2023 18:07:19 GMT
 EXPOSE 80
-# Wed, 12 Apr 2023 04:53:23 GMT
+# Fri, 14 Apr 2023 18:07:19 GMT
 CMD ["apache2-foreground"]
-# Wed, 12 Apr 2023 10:58:10 GMT
+# Fri, 14 Apr 2023 18:47:01 GMT
 RUN set -eux; 		apt-get update; 	apt-get install -y --no-install-recommends 		git 		librsvg2-bin 		imagemagick 		python3 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 12 Apr 2023 10:58:57 GMT
+# Fri, 14 Apr 2023 18:47:57 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libicu-dev 		libonig-dev 	; 		docker-php-ext-install -j "$(nproc)" 		calendar 		intl 		mbstring 		mysqli 		opcache 	; 		pecl install APCu-5.1.21; 	docker-php-ext-enable 		apcu 	; 	rm -r /tmp/pear; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Wed, 12 Apr 2023 10:58:58 GMT
+# Fri, 14 Apr 2023 18:47:57 GMT
 RUN set -eux; 	a2enmod rewrite; 	{ 		echo "<Directory /var/www/html>"; 		echo "  RewriteEngine On"; 		echo "  RewriteCond %{REQUEST_FILENAME} !-f"; 		echo "  RewriteCond %{REQUEST_FILENAME} !-d"; 		echo "  RewriteRule ^ %{DOCUMENT_ROOT}/index.php [L]"; 		echo "</Directory>"; 	} > "$APACHE_CONFDIR/conf-available/short-url.conf"; 	a2enconf short-url
-# Wed, 12 Apr 2023 10:58:58 GMT
+# Fri, 14 Apr 2023 18:47:58 GMT
 RUN sed -i "s/<\/VirtualHost>/\tAllowEncodedSlashes NoDecode\n<\/VirtualHost>/" "$APACHE_CONFDIR/sites-available/000-default.conf"
-# Wed, 12 Apr 2023 10:58:59 GMT
+# Fri, 14 Apr 2023 18:47:58 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 12 Apr 2023 10:58:59 GMT
+# Fri, 14 Apr 2023 18:47:59 GMT
 RUN set -eux; 	mkdir -p /var/www/data; 	chown -R www-data:www-data /var/www/data
-# Wed, 12 Apr 2023 10:58:59 GMT
+# Fri, 14 Apr 2023 18:47:59 GMT
 ENV MEDIAWIKI_MAJOR_VERSION=1.39
-# Wed, 12 Apr 2023 10:59:00 GMT
+# Fri, 14 Apr 2023 18:47:59 GMT
 ENV MEDIAWIKI_VERSION=1.39.3
-# Wed, 12 Apr 2023 10:59:23 GMT
+# Fri, 14 Apr 2023 18:48:22 GMT
 RUN set -eux; 	fetchDeps=" 		gnupg 		dirmngr 	"; 	apt-get update; 	apt-get install -y --no-install-recommends $fetchDeps; 		curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz.sig" -o mediawiki.tar.gz.sig; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 		D7D6767D135A514BEB86E9BA75682B08E8A3FEC4 		441276E9CCD15F44F6D97D18C119E1A64D70938E 		F7F780D82EBFB8A56556E7EE82403E59F9F8CD79 		1D98867E82982C8FE0ABC25F9B69B3109D3BB7B0 	; 	gpg --batch --verify mediawiki.tar.gz.sig mediawiki.tar.gz; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" mediawiki.tar.gz.sig mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
-# Wed, 12 Apr 2023 10:59:24 GMT
+# Fri, 14 Apr 2023 18:48:23 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -318,57 +318,57 @@ CMD ["apache2-foreground"]
 		Last Modified: Wed, 12 Apr 2023 05:09:39 GMT  
 		Size: 515.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:439f6634eccbd2abda24a444821bef9cf8a311be58ff55a887cea962bde28368`  
-		Last Modified: Wed, 12 Apr 2023 05:14:01 GMT  
-		Size: 12.2 MB (12158832 bytes)  
+	-	`sha256:31608ffbe77088ea405cccdc14ee455b8f1bbe80dbab12ff1534bc175b0e7992`  
+		Last Modified: Fri, 14 Apr 2023 18:17:31 GMT  
+		Size: 12.1 MB (12121281 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:959a7002d1c1eabdd6277d8d5557e61ce6661a13ea892d28d9cb56c9132b73a9`  
-		Last Modified: Wed, 12 Apr 2023 05:13:58 GMT  
-		Size: 493.0 B  
+	-	`sha256:c761b5611e99a9e9a1685ff0a92508ab507356e545db5e4a2bec0d780c21bc3a`  
+		Last Modified: Fri, 14 Apr 2023 18:17:28 GMT  
+		Size: 492.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8c7da8cf4edd5caef96ab64edb57dbf361344b6c34c829ac872b80acfd9b09f`  
-		Last Modified: Wed, 12 Apr 2023 05:14:00 GMT  
-		Size: 10.1 MB (10068468 bytes)  
+	-	`sha256:f599d5bbc36f059f9e11df288fe99adb01464c17be1c22c80971abd4c14f4af0`  
+		Last Modified: Fri, 14 Apr 2023 18:17:31 GMT  
+		Size: 10.1 MB (10082310 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0116e300c849c6055c830868022b95b4018553f5f5afb35b9d7353b3b04fb60e`  
-		Last Modified: Wed, 12 Apr 2023 05:13:58 GMT  
-		Size: 2.5 KB (2458 bytes)  
+	-	`sha256:8208fc57974d470a4e125f107774ba2232ba7b08af6ca08f66d4695b54fba7c6`  
+		Last Modified: Fri, 14 Apr 2023 18:17:28 GMT  
+		Size: 2.5 KB (2459 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f6e8f51fb801c431faff3ea26058e48544c966c135da14492a3ec25bfe0ce79`  
-		Last Modified: Wed, 12 Apr 2023 05:13:58 GMT  
-		Size: 244.0 B  
+	-	`sha256:3c0c788c59e8b1a6e9e9f9a37461ce6f6fd238e4ffefa5513b69ada958e40663`  
+		Last Modified: Fri, 14 Apr 2023 18:17:28 GMT  
+		Size: 246.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e6f1ddfe46025d0089abf140a906f5b05cdb1bc8c74e656718fea4f084aae502`  
-		Last Modified: Wed, 12 Apr 2023 05:13:58 GMT  
-		Size: 893.0 B  
+	-	`sha256:33472bfe0b53388b741921296610aa43ddaa450e5f4adcd7becd673bb6aa61c8`  
+		Last Modified: Fri, 14 Apr 2023 18:17:28 GMT  
+		Size: 895.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:96369dc8853e6a9684d51077aa9107ba543824a5b497042abf0875787bcbfc43`  
-		Last Modified: Wed, 12 Apr 2023 11:05:45 GMT  
-		Size: 38.2 MB (38201096 bytes)  
+	-	`sha256:a0b0875720ed42db4b83c1187df71484beee26d0bcf70b6ef6a12c657773edf8`  
+		Last Modified: Fri, 14 Apr 2023 18:51:16 GMT  
+		Size: 38.2 MB (38201235 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5c3e9f10381ea146b8b3e2dcc27483418850af0296a9ce83bae9971f6f315c9e`  
-		Last Modified: Wed, 12 Apr 2023 11:05:40 GMT  
-		Size: 1.5 MB (1523015 bytes)  
+	-	`sha256:876909d63ddb2157dc8658cf5813c0818ddf3c3bdde2694321aa0e716770069e`  
+		Last Modified: Fri, 14 Apr 2023 18:51:11 GMT  
+		Size: 1.5 MB (1525746 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2b20e90ec2a36d24c321d272901ff452e09e8cba4723bde50ad0724d3888739d`  
-		Last Modified: Wed, 12 Apr 2023 11:05:38 GMT  
-		Size: 576.0 B  
+	-	`sha256:9bedc28a026a8030b63e79e720fc1363c08339f2824fd96e585ada64405ec6a8`  
+		Last Modified: Fri, 14 Apr 2023 18:51:08 GMT  
+		Size: 574.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ea16c3ef9ea037fef8cb04aac68dffa9125f500d8644d512f32c3fd094499a7`  
-		Last Modified: Wed, 12 Apr 2023 11:05:37 GMT  
-		Size: 933.0 B  
+	-	`sha256:7e7efb1552688d7bd6e8750c08ac90076fe445f1ed6094567a36137a35e62b00`  
+		Last Modified: Fri, 14 Apr 2023 18:51:08 GMT  
+		Size: 936.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:300932ed16c4514e635ee2fe07664b3973f55fb6bbd7a7ce120bb7380b32ba54`  
-		Last Modified: Wed, 12 Apr 2023 11:05:37 GMT  
+	-	`sha256:282e5183dd7890d9652c1c8bd47473c3c8db2244a4fcde34bc808f1644c2f4cf`  
+		Last Modified: Fri, 14 Apr 2023 18:51:08 GMT  
 		Size: 312.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3cfcecbf7afe5b21ba5c28783ec66408501a32a24188d73fb277da65cfbca0a2`  
-		Last Modified: Wed, 12 Apr 2023 11:05:38 GMT  
-		Size: 169.0 B  
+	-	`sha256:c898690793b514ae93a0e86404b48286cc44130031f556ddc78468968f0306dc`  
+		Last Modified: Fri, 14 Apr 2023 18:51:08 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cc3cd6e2a58b7633eebb4742c9691e60d0d90a1fc125e11f4167611c2bb954a4`  
-		Last Modified: Wed, 12 Apr 2023 11:05:52 GMT  
-		Size: 56.4 MB (56440234 bytes)  
+	-	`sha256:d75dd5d1aeba2c795bef006d942866d01f8b524a093a3b7a83f80a1027c737ea`  
+		Last Modified: Fri, 14 Apr 2023 18:51:23 GMT  
+		Size: 56.4 MB (56440423 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:latest` - linux; arm variant v7
