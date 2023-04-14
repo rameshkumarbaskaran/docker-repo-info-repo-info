@@ -1,18 +1,18 @@
-# `nginx:1.22.1`
+# `nginx:1.24.0`
 
 ## Docker Metadata
 
-- Image ID: `sha256:0f8498f13f3adef3f3c8b52cdf069ecc880b081159be6349163d144e8aa5fb29`
-- Created: `2023-03-28T22:20:54.277869356Z`
-- Virtual Size: ~ 142.11 Mb  
+- Image ID: `sha256:2a06ffcd98fb669a2b4bd4dd764a41c630ba23d5ade111fbf79688f46147cfec`
+- Created: `2023-04-12T08:51:59.722344577Z`
+- Virtual Size: ~ 142.19 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["nginx","-g","daemon off;"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NGINX_VERSION=1.22.1`
-  - `NJS_VERSION=0.7.11`
+  - `NGINX_VERSION=1.24.0`
+  - `NJS_VERSION=0.7.12`
   - `PKG_RELEASE=1~bullseye`
 - Labels:
   - `maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>`
@@ -2305,11 +2305,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/nghttp2/1.43.0-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/nghttp2/1.43.0-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `nginx-module-geoip=1.22.1-1~bullseye`
+### `dpkg` source package: `nginx-module-geoip=1.24.0-1~bullseye`
 
 Binary Packages:
 
-- `nginx-module-geoip=1.22.1-1~bullseye`
+- `nginx-module-geoip=1.24.0-1~bullseye`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2319,11 +2319,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx-module-image-filter=1.22.1-1~bullseye`
+### `dpkg` source package: `nginx-module-image-filter=1.24.0-1~bullseye`
 
 Binary Packages:
 
-- `nginx-module-image-filter=1.22.1-1~bullseye`
+- `nginx-module-image-filter=1.24.0-1~bullseye`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2333,11 +2333,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx-module-njs=1.22.1+0.7.11-1~bullseye`
+### `dpkg` source package: `nginx-module-njs=1.24.0+0.7.12-1~bullseye`
 
 Binary Packages:
 
-- `nginx-module-njs=1.22.1+0.7.11-1~bullseye`
+- `nginx-module-njs=1.24.0+0.7.12-1~bullseye`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2347,11 +2347,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx-module-xslt=1.22.1-1~bullseye`
+### `dpkg` source package: `nginx-module-xslt=1.24.0-1~bullseye`
 
 Binary Packages:
 
-- `nginx-module-xslt=1.22.1-1~bullseye`
+- `nginx-module-xslt=1.24.0-1~bullseye`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2361,11 +2361,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx=1.22.1-1~bullseye`
+### `dpkg` source package: `nginx=1.24.0-1~bullseye`
 
 Binary Packages:
 
-- `nginx=1.22.1-1~bullseye`
+- `nginx=1.24.0-1~bullseye`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2830,11 +2830,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/tiff/4.2.0-1+deb11u4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/tiff/4.2.0-1+deb11u4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `tzdata=2021a-1+deb11u8`
+### `dpkg` source package: `tzdata=2021a-1+deb11u9`
 
 Binary Packages:
 
-- `tzdata=2021a-1+deb11u8`
+- `tzdata=2021a-1+deb11u9`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2843,18 +2843,18 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris tzdata=2021a-1+deb11u8
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-1%2bdeb11u8.dsc' tzdata_2021a-1+deb11u8.dsc 2269 SHA256:14db9f37ed6c5d294081edc708f262a4dcd627d22e08789362c88d4a3988f63d
+$ apt-get source -qq --print-uris tzdata=2021a-1+deb11u9
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-1%2bdeb11u9.dsc' tzdata_2021a-1+deb11u9.dsc 2269 SHA256:979b0e163b9b577042c6da617f044dbf4d200d96d20c7f90a8c1b380c60a86b1
 'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz' tzdata_2021a.orig.tar.gz 411892 SHA256:39e7d2ba08c68cbaefc8de3227aab0dec2521be8042cf56855f7dc3a9fb14e08
 'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz.asc' tzdata_2021a.orig.tar.gz.asc 833 SHA256:9dc5f54674166f4ffbc2d4485e656227430ab5f39c9006e6ed9986281117f058
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-1%2bdeb11u8.debian.tar.xz' tzdata_2021a-1+deb11u8.debian.tar.xz 116136 SHA256:36ec850e434ba28da2a525f3a068c8b17fdddec05c65fd3093505750d0890c8d
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-1%2bdeb11u9.debian.tar.xz' tzdata_2021a-1+deb11u9.debian.tar.xz 123220 SHA256:b38cd78b9cd18d02ea84b8229976fda0d174333ea28133b995d6be61ad3f7c03
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/tzdata/2021a-1+deb11u8/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2021a-1+deb11u8/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2021a-1+deb11u8/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/tzdata/2021a-1+deb11u9/ (for browsing the source)
+- https://sources.debian.net/src/tzdata/2021a-1+deb11u9/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tzdata/2021a-1+deb11u9/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0043`
 

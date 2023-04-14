@@ -1,19 +1,19 @@
-# `nginx:1.22.1-alpine`
+# `nginx:1.24.0-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:88db8eea1453741dc43ce2acd43e45265e8a78cc1638a5039d0347acf202db78`
-- Created: `2023-03-29T22:31:49.861618559Z`
-- Virtual Size: ~ 40.98 Mb  
+- Image ID: `sha256:1266a3a46e967b44a063058d2efa42097e2a55be287a62f9a6343b231f585f9d`
+- Created: `2023-04-11T21:20:56.006670027Z`
+- Virtual Size: ~ 41.07 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["nginx","-g","daemon off;"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NGINX_VERSION=1.22.1`
+  - `NGINX_VERSION=1.24.0`
   - `PKG_RELEASE=1`
-  - `NJS_VERSION=0.7.11`
+  - `NJS_VERSION=0.7.12`
 - Labels:
   - `maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>`
 
@@ -702,16 +702,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.10.3-r1 description:
+libxml2-2.10.4-r0 description:
 XML parsing library, version 2
 
-libxml2-2.10.3-r1 webpage:
+libxml2-2.10.4-r0 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.10.3-r1 installed size:
+libxml2-2.10.4-r0 installed size:
 1188 KiB
 
-libxml2-2.10.3-r1 license:
+libxml2-2.10.4-r0 license:
 MIT
 
 ```
@@ -855,16 +855,16 @@ MIT
 ### `apk` package: `nginx`
 
 ```console
-nginx-1.22.1-r1 description:
+nginx-1.24.0-r1 description:
 High performance web server
 
-nginx-1.22.1-r1 webpage:
+nginx-1.24.0-r1 webpage:
 https://nginx.org/
 
-nginx-1.22.1-r1 installed size:
-2592 KiB
+nginx-1.24.0-r1 installed size:
+2608 KiB
 
-nginx-1.22.1-r1 license:
+nginx-1.24.0-r1 license:
 2-clause BSD-like license
 
 ```
@@ -872,16 +872,16 @@ nginx-1.22.1-r1 license:
 ### `apk` package: `nginx-module-geoip`
 
 ```console
-nginx-module-geoip-1.22.1-r1 description:
+nginx-module-geoip-1.24.0-r1 description:
 nginx GeoIP dynamic modules
 
-nginx-module-geoip-1.22.1-r1 webpage:
+nginx-module-geoip-1.24.0-r1 webpage:
 https://nginx.org/
 
-nginx-module-geoip-1.22.1-r1 installed size:
+nginx-module-geoip-1.24.0-r1 installed size:
 116 KiB
 
-nginx-module-geoip-1.22.1-r1 license:
+nginx-module-geoip-1.24.0-r1 license:
 2-clause BSD-like license
 
 ```
@@ -889,16 +889,16 @@ nginx-module-geoip-1.22.1-r1 license:
 ### `apk` package: `nginx-module-image-filter`
 
 ```console
-nginx-module-image-filter-1.22.1-r1 description:
+nginx-module-image-filter-1.24.0-r1 description:
 nginx image filter dynamic module
 
-nginx-module-image-filter-1.22.1-r1 webpage:
+nginx-module-image-filter-1.24.0-r1 webpage:
 https://nginx.org/
 
-nginx-module-image-filter-1.22.1-r1 installed size:
+nginx-module-image-filter-1.24.0-r1 installed size:
 88 KiB
 
-nginx-module-image-filter-1.22.1-r1 license:
+nginx-module-image-filter-1.24.0-r1 license:
 2-clause BSD-like license
 
 ```
@@ -906,16 +906,16 @@ nginx-module-image-filter-1.22.1-r1 license:
 ### `apk` package: `nginx-module-njs`
 
 ```console
-nginx-module-njs-1.22.1.0.7.11-r1 description:
+nginx-module-njs-1.24.0.0.7.12-r1 description:
 nginx njs dynamic modules
 
-nginx-module-njs-1.22.1.0.7.11-r1 webpage:
+nginx-module-njs-1.24.0.0.7.12-r1 webpage:
 https://nginx.org/
 
-nginx-module-njs-1.22.1.0.7.11-r1 installed size:
-4208 KiB
+nginx-module-njs-1.24.0.0.7.12-r1 installed size:
+4252 KiB
 
-nginx-module-njs-1.22.1.0.7.11-r1 license:
+nginx-module-njs-1.24.0.0.7.12-r1 license:
 2-clause BSD-like license
 
 ```
@@ -923,16 +923,16 @@ nginx-module-njs-1.22.1.0.7.11-r1 license:
 ### `apk` package: `nginx-module-xslt`
 
 ```console
-nginx-module-xslt-1.22.1-r1 description:
+nginx-module-xslt-1.24.0-r1 description:
 nginx xslt dynamic module
 
-nginx-module-xslt-1.22.1-r1 webpage:
+nginx-module-xslt-1.24.0-r1 webpage:
 https://nginx.org/
 
-nginx-module-xslt-1.22.1-r1 installed size:
+nginx-module-xslt-1.24.0-r1 installed size:
 84 KiB
 
-nginx-module-xslt-1.22.1-r1 license:
+nginx-module-xslt-1.24.0-r1 license:
 2-clause BSD-like license
 
 ```
@@ -1059,16 +1059,16 @@ Zlib
 ### `apk` package: `zstd-libs`
 
 ```console
-zstd-libs-1.5.2-r9 description:
+zstd-libs-1.5.5-r0 description:
 Zstandard - Fast real-time compression algorithm (libraries)
 
-zstd-libs-1.5.2-r9 webpage:
+zstd-libs-1.5.5-r0 webpage:
 https://www.zstd.net/
 
-zstd-libs-1.5.2-r9 installed size:
-488 KiB
+zstd-libs-1.5.5-r0 installed size:
+520 KiB
 
-zstd-libs-1.5.2-r9 license:
+zstd-libs-1.5.5-r0 license:
 BSD-3-Clause GPL-2.0-or-later
 
 ```
