@@ -1803,9 +1803,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris systemd=251.4-1ubuntu7.1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_251.4-1ubuntu7.1.dsc' systemd_251.4-1ubuntu7.1.dsc 6342 SHA512:b46dce1e5dac86737e498f99a8c212d1d1723207cb460e763f93a1b35cfbaf612dd35ba76bae8118f413dd679138c6ca9c3c00042b2b2755d07cecf6b538820e
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_251.4.orig.tar.gz' systemd_251.4.orig.tar.gz 11440203 SHA512:7bbfadd80b88a4c3510a5e4e3572e4eab71dafbf6289da038e552988e09ee8da16da3c9bb8a4fbbde6c6236e0e3c352b0a33f9ee0b84f10241f3499383387738
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_251.4-1ubuntu7.1.debian.tar.xz' systemd_251.4-1ubuntu7.1.debian.tar.xz 231224 SHA512:1e89cbd379f5d692d6907088fdc26ea957b53cdbdc3f98d300f2c4ba994397c173da20156ef6249ae128ceeda9d708cac596ba821c0d3483cff23bd8044ea553
+'http://security.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_251.4-1ubuntu7.1.dsc' systemd_251.4-1ubuntu7.1.dsc 6342 SHA512:b46dce1e5dac86737e498f99a8c212d1d1723207cb460e763f93a1b35cfbaf612dd35ba76bae8118f413dd679138c6ca9c3c00042b2b2755d07cecf6b538820e
+'http://security.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_251.4.orig.tar.gz' systemd_251.4.orig.tar.gz 11440203 SHA512:7bbfadd80b88a4c3510a5e4e3572e4eab71dafbf6289da038e552988e09ee8da16da3c9bb8a4fbbde6c6236e0e3c352b0a33f9ee0b84f10241f3499383387738
+'http://security.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_251.4-1ubuntu7.1.debian.tar.xz' systemd_251.4-1ubuntu7.1.debian.tar.xz 231224 SHA512:1e89cbd379f5d692d6907088fdc26ea957b53cdbdc3f98d300f2c4ba994397c173da20156ef6249ae128ceeda9d708cac596ba821c0d3483cff23bd8044ea553
 ```
 
 ### `dpkg` source package: `sysvinit=3.04-1ubuntu1`
@@ -1858,15 +1858,9 @@ Licenses: (parsed from: `/usr/share/doc/tzdata/copyright`)
 
 - `ICU`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2022g-0ubuntu0.22.10.1
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2022g-0ubuntu0.22.10.1.dsc' tzdata_2022g-0ubuntu0.22.10.1.dsc 2429 SHA512:dfbf3e1f20926fe0731f13ad6d714439a9aa09feb9a35b5843b9a878c8da398a3ff6924abe441d008d6628c602f8d3112484fde552154136534f5f86896adaec
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2022g.orig.tar.gz' tzdata_2022g.orig.tar.gz 439731 SHA512:7f79394295e00e3a24ebdbf9af3bc454a65f432a93b517e7e96c7f9db9949f6f5fdae9892a9d3789ff44ae0eb1bfe4744d36976b4624659af951d26414f94e65
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2022g.orig.tar.gz.asc' tzdata_2022g.orig.tar.gz.asc 833 SHA512:3474a05373ec4397e17133c54708e1f9efd1f1c5e7ee6945f0972809ceda2214cc4962238773818d04ab4f29dcdf0b3e87247ab19795d06a62b8769dd85cf76b
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2022g-0ubuntu0.22.10.1.debian.tar.xz' tzdata_2022g-0ubuntu0.22.10.1.debian.tar.xz 172008 SHA512:7db0d26e82dd1a1b8341d1f6b3c320aeabde77c69d1d47156216839d36fa4c60d7e498f4c9caffc44a555e53b1caad8f9cfcf56009a3a92ada3cc13e370e2b27
-```
 
 ### `dpkg` source package: `ubuntu-keyring=2021.03.26`
 

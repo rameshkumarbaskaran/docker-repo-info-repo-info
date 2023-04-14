@@ -1535,15 +1535,9 @@ Licenses: (parsed from: `/usr/share/doc/icu-devtools/copyright`, `/usr/share/doc
 - `GPL-3`
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris icu=72.1-3ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/i/icu/icu_72.1-3ubuntu1.dsc' icu_72.1-3ubuntu1.dsc 2359 SHA512:4a61d6f9918f90744820812020935f60632b7a615255711df51491d70c8caea67b428fc200c63803ec3899184b7cf789b973f58a6273f678e9b35a8a92173374
-'http://archive.ubuntu.com/ubuntu/pool/main/i/icu/icu_72.1.orig.tar.gz' icu_72.1.orig.tar.gz 26303933 SHA512:848c341b37c0ff077e34a95d92c6200d5aaddd0ee5e06134101a74e04deb08256a5e817c8aefab020986abe810b7827dd7b2169a60dacd250c298870518dcae8
-'http://archive.ubuntu.com/ubuntu/pool/main/i/icu/icu_72.1.orig.tar.gz.asc' icu_72.1.orig.tar.gz.asc 659 SHA512:8b5e841a3baa317a13cadf7deb3582a80cfab8e5bdae6bd04612ee7be3006d9acf07b015de01a94990fa350109a3c11e547482e4cb4ca986161cc701a8cd427b
-'http://archive.ubuntu.com/ubuntu/pool/main/i/icu/icu_72.1-3ubuntu1.debian.tar.xz' icu_72.1-3ubuntu1.debian.tar.xz 62724 SHA512:63ef3360e9a72f0d52faa4f6f264e41df4c66e93187c507473eddac1c9b35a8b7da1451663d2c8c1d12d29d6475b982df8c798435c50955ea94fa46e51a2d4d1
-```
 
 ### `dpkg` source package: `imagemagick=8:6.9.11.60+dfsg-1.6`
 
