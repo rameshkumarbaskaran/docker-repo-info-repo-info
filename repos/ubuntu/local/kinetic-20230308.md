@@ -1334,9 +1334,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris systemd=251.4-1ubuntu7.1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_251.4-1ubuntu7.1.dsc' systemd_251.4-1ubuntu7.1.dsc 6342 SHA512:b46dce1e5dac86737e498f99a8c212d1d1723207cb460e763f93a1b35cfbaf612dd35ba76bae8118f413dd679138c6ca9c3c00042b2b2755d07cecf6b538820e
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_251.4.orig.tar.gz' systemd_251.4.orig.tar.gz 11440203 SHA512:7bbfadd80b88a4c3510a5e4e3572e4eab71dafbf6289da038e552988e09ee8da16da3c9bb8a4fbbde6c6236e0e3c352b0a33f9ee0b84f10241f3499383387738
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_251.4-1ubuntu7.1.debian.tar.xz' systemd_251.4-1ubuntu7.1.debian.tar.xz 231224 SHA512:1e89cbd379f5d692d6907088fdc26ea957b53cdbdc3f98d300f2c4ba994397c173da20156ef6249ae128ceeda9d708cac596ba821c0d3483cff23bd8044ea553
+'http://security.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_251.4-1ubuntu7.1.dsc' systemd_251.4-1ubuntu7.1.dsc 6342 SHA512:b46dce1e5dac86737e498f99a8c212d1d1723207cb460e763f93a1b35cfbaf612dd35ba76bae8118f413dd679138c6ca9c3c00042b2b2755d07cecf6b538820e
+'http://security.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_251.4.orig.tar.gz' systemd_251.4.orig.tar.gz 11440203 SHA512:7bbfadd80b88a4c3510a5e4e3572e4eab71dafbf6289da038e552988e09ee8da16da3c9bb8a4fbbde6c6236e0e3c352b0a33f9ee0b84f10241f3499383387738
+'http://security.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_251.4-1ubuntu7.1.debian.tar.xz' systemd_251.4-1ubuntu7.1.debian.tar.xz 231224 SHA512:1e89cbd379f5d692d6907088fdc26ea957b53cdbdc3f98d300f2c4ba994397c173da20156ef6249ae128ceeda9d708cac596ba821c0d3483cff23bd8044ea553
 ```
 
 ### `dpkg` source package: `sysvinit=3.04-1ubuntu1`
