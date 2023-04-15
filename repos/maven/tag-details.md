@@ -5,10 +5,20 @@
 -	[`maven:3`](#maven3)
 -	[`maven:3-amazoncorretto`](#maven3-amazoncorretto)
 -	[`maven:3-amazoncorretto-11`](#maven3-amazoncorretto-11)
+-	[`maven:3-amazoncorretto-11-debian`](#maven3-amazoncorretto-11-debian)
+-	[`maven:3-amazoncorretto-11-debian-bullseye`](#maven3-amazoncorretto-11-debian-bullseye)
 -	[`maven:3-amazoncorretto-17`](#maven3-amazoncorretto-17)
+-	[`maven:3-amazoncorretto-17-debian`](#maven3-amazoncorretto-17-debian)
+-	[`maven:3-amazoncorretto-17-debian-bullseye`](#maven3-amazoncorretto-17-debian-bullseye)
 -	[`maven:3-amazoncorretto-19`](#maven3-amazoncorretto-19)
+-	[`maven:3-amazoncorretto-19-debian`](#maven3-amazoncorretto-19-debian)
+-	[`maven:3-amazoncorretto-19-debian-bullseye`](#maven3-amazoncorretto-19-debian-bullseye)
 -	[`maven:3-amazoncorretto-20`](#maven3-amazoncorretto-20)
+-	[`maven:3-amazoncorretto-20-debian`](#maven3-amazoncorretto-20-debian)
+-	[`maven:3-amazoncorretto-20-debian-bullseye`](#maven3-amazoncorretto-20-debian-bullseye)
 -	[`maven:3-amazoncorretto-8`](#maven3-amazoncorretto-8)
+-	[`maven:3-amazoncorretto-8-debian`](#maven3-amazoncorretto-8-debian)
+-	[`maven:3-amazoncorretto-8-debian-bullseye`](#maven3-amazoncorretto-8-debian-bullseye)
 -	[`maven:3-eclipse-temurin`](#maven3-eclipse-temurin)
 -	[`maven:3-eclipse-temurin-11`](#maven3-eclipse-temurin-11)
 -	[`maven:3-eclipse-temurin-11-alpine`](#maven3-eclipse-temurin-11-alpine)
@@ -31,10 +41,20 @@
 -	[`maven:3.9`](#maven39)
 -	[`maven:3.9-amazoncorretto`](#maven39-amazoncorretto)
 -	[`maven:3.9-amazoncorretto-11`](#maven39-amazoncorretto-11)
+-	[`maven:3.9-amazoncorretto-11-debian`](#maven39-amazoncorretto-11-debian)
+-	[`maven:3.9-amazoncorretto-11-debian-bullseye`](#maven39-amazoncorretto-11-debian-bullseye)
 -	[`maven:3.9-amazoncorretto-17`](#maven39-amazoncorretto-17)
+-	[`maven:3.9-amazoncorretto-17-debian`](#maven39-amazoncorretto-17-debian)
+-	[`maven:3.9-amazoncorretto-17-debian-bullseye`](#maven39-amazoncorretto-17-debian-bullseye)
 -	[`maven:3.9-amazoncorretto-19`](#maven39-amazoncorretto-19)
+-	[`maven:3.9-amazoncorretto-19-debian`](#maven39-amazoncorretto-19-debian)
+-	[`maven:3.9-amazoncorretto-19-debian-bullseye`](#maven39-amazoncorretto-19-debian-bullseye)
 -	[`maven:3.9-amazoncorretto-20`](#maven39-amazoncorretto-20)
+-	[`maven:3.9-amazoncorretto-20-debian`](#maven39-amazoncorretto-20-debian)
+-	[`maven:3.9-amazoncorretto-20-debian-bullseye`](#maven39-amazoncorretto-20-debian-bullseye)
 -	[`maven:3.9-amazoncorretto-8`](#maven39-amazoncorretto-8)
+-	[`maven:3.9-amazoncorretto-8-debian`](#maven39-amazoncorretto-8-debian)
+-	[`maven:3.9-amazoncorretto-8-debian-bullseye`](#maven39-amazoncorretto-8-debian-bullseye)
 -	[`maven:3.9-eclipse-temurin`](#maven39-eclipse-temurin)
 -	[`maven:3.9-eclipse-temurin-11`](#maven39-eclipse-temurin-11)
 -	[`maven:3.9-eclipse-temurin-11-alpine`](#maven39-eclipse-temurin-11-alpine)
@@ -57,10 +77,20 @@
 -	[`maven:3.9.1`](#maven391)
 -	[`maven:3.9.1-amazoncorretto`](#maven391-amazoncorretto)
 -	[`maven:3.9.1-amazoncorretto-11`](#maven391-amazoncorretto-11)
+-	[`maven:3.9.1-amazoncorretto-11-debian`](#maven391-amazoncorretto-11-debian)
+-	[`maven:3.9.1-amazoncorretto-11-debian-bullseye`](#maven391-amazoncorretto-11-debian-bullseye)
 -	[`maven:3.9.1-amazoncorretto-17`](#maven391-amazoncorretto-17)
+-	[`maven:3.9.1-amazoncorretto-17-debian`](#maven391-amazoncorretto-17-debian)
+-	[`maven:3.9.1-amazoncorretto-17-debian-bullseye`](#maven391-amazoncorretto-17-debian-bullseye)
 -	[`maven:3.9.1-amazoncorretto-19`](#maven391-amazoncorretto-19)
+-	[`maven:3.9.1-amazoncorretto-19-debian`](#maven391-amazoncorretto-19-debian)
+-	[`maven:3.9.1-amazoncorretto-19-debian-bullseye`](#maven391-amazoncorretto-19-debian-bullseye)
 -	[`maven:3.9.1-amazoncorretto-20`](#maven391-amazoncorretto-20)
+-	[`maven:3.9.1-amazoncorretto-20-debian`](#maven391-amazoncorretto-20-debian)
+-	[`maven:3.9.1-amazoncorretto-20-debian-bullseye`](#maven391-amazoncorretto-20-debian-bullseye)
 -	[`maven:3.9.1-amazoncorretto-8`](#maven391-amazoncorretto-8)
+-	[`maven:3.9.1-amazoncorretto-8-debian`](#maven391-amazoncorretto-8-debian)
+-	[`maven:3.9.1-amazoncorretto-8-debian-bullseye`](#maven391-amazoncorretto-8-debian-bullseye)
 -	[`maven:3.9.1-eclipse-temurin`](#maven391-eclipse-temurin)
 -	[`maven:3.9.1-eclipse-temurin-11`](#maven391-eclipse-temurin-11)
 -	[`maven:3.9.1-eclipse-temurin-11-alpine`](#maven391-eclipse-temurin-11-alpine)
@@ -756,6 +786,14 @@ CMD ["mvn"]
 		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3-amazoncorretto-11-debian`
+
+**does not exist** (yet?)
+
+## `maven:3-amazoncorretto-11-debian-bullseye`
+
+**does not exist** (yet?)
+
 ## `maven:3-amazoncorretto-17`
 
 ```console
@@ -928,6 +966,14 @@ CMD ["mvn"]
 		Last Modified: Wed, 05 Apr 2023 16:43:50 GMT  
 		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3-amazoncorretto-17-debian`
+
+**does not exist** (yet?)
+
+## `maven:3-amazoncorretto-17-debian-bullseye`
+
+**does not exist** (yet?)
 
 ## `maven:3-amazoncorretto-19`
 
@@ -1102,6 +1148,14 @@ CMD ["mvn"]
 		Size: 168.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3-amazoncorretto-19-debian`
+
+**does not exist** (yet?)
+
+## `maven:3-amazoncorretto-19-debian-bullseye`
+
+**does not exist** (yet?)
+
 ## `maven:3-amazoncorretto-20`
 
 ```console
@@ -1275,6 +1329,14 @@ CMD ["mvn"]
 		Size: 167.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3-amazoncorretto-20-debian`
+
+**does not exist** (yet?)
+
+## `maven:3-amazoncorretto-20-debian-bullseye`
+
+**does not exist** (yet?)
+
 ## `maven:3-amazoncorretto-8`
 
 ```console
@@ -1447,6 +1509,14 @@ CMD ["mvn"]
 		Last Modified: Wed, 05 Apr 2023 16:44:32 GMT  
 		Size: 168.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3-amazoncorretto-8-debian`
+
+**does not exist** (yet?)
+
+## `maven:3-amazoncorretto-8-debian-bullseye`
+
+**does not exist** (yet?)
 
 ## `maven:3-eclipse-temurin`
 
@@ -8476,6 +8546,14 @@ CMD ["mvn"]
 		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.9-amazoncorretto-11-debian`
+
+**does not exist** (yet?)
+
+## `maven:3.9-amazoncorretto-11-debian-bullseye`
+
+**does not exist** (yet?)
+
 ## `maven:3.9-amazoncorretto-17`
 
 ```console
@@ -8648,6 +8726,14 @@ CMD ["mvn"]
 		Last Modified: Wed, 05 Apr 2023 16:43:50 GMT  
 		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3.9-amazoncorretto-17-debian`
+
+**does not exist** (yet?)
+
+## `maven:3.9-amazoncorretto-17-debian-bullseye`
+
+**does not exist** (yet?)
 
 ## `maven:3.9-amazoncorretto-19`
 
@@ -8822,6 +8908,14 @@ CMD ["mvn"]
 		Size: 168.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.9-amazoncorretto-19-debian`
+
+**does not exist** (yet?)
+
+## `maven:3.9-amazoncorretto-19-debian-bullseye`
+
+**does not exist** (yet?)
+
 ## `maven:3.9-amazoncorretto-20`
 
 ```console
@@ -8995,6 +9089,14 @@ CMD ["mvn"]
 		Size: 167.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.9-amazoncorretto-20-debian`
+
+**does not exist** (yet?)
+
+## `maven:3.9-amazoncorretto-20-debian-bullseye`
+
+**does not exist** (yet?)
+
 ## `maven:3.9-amazoncorretto-8`
 
 ```console
@@ -9167,6 +9269,14 @@ CMD ["mvn"]
 		Last Modified: Wed, 05 Apr 2023 16:44:32 GMT  
 		Size: 168.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3.9-amazoncorretto-8-debian`
+
+**does not exist** (yet?)
+
+## `maven:3.9-amazoncorretto-8-debian-bullseye`
+
+**does not exist** (yet?)
 
 ## `maven:3.9-eclipse-temurin`
 
@@ -16196,6 +16306,14 @@ CMD ["mvn"]
 		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.9.1-amazoncorretto-11-debian`
+
+**does not exist** (yet?)
+
+## `maven:3.9.1-amazoncorretto-11-debian-bullseye`
+
+**does not exist** (yet?)
+
 ## `maven:3.9.1-amazoncorretto-17`
 
 ```console
@@ -16368,6 +16486,14 @@ CMD ["mvn"]
 		Last Modified: Wed, 05 Apr 2023 16:43:50 GMT  
 		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3.9.1-amazoncorretto-17-debian`
+
+**does not exist** (yet?)
+
+## `maven:3.9.1-amazoncorretto-17-debian-bullseye`
+
+**does not exist** (yet?)
 
 ## `maven:3.9.1-amazoncorretto-19`
 
@@ -16542,6 +16668,14 @@ CMD ["mvn"]
 		Size: 168.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.9.1-amazoncorretto-19-debian`
+
+**does not exist** (yet?)
+
+## `maven:3.9.1-amazoncorretto-19-debian-bullseye`
+
+**does not exist** (yet?)
+
 ## `maven:3.9.1-amazoncorretto-20`
 
 ```console
@@ -16715,6 +16849,14 @@ CMD ["mvn"]
 		Size: 167.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.9.1-amazoncorretto-20-debian`
+
+**does not exist** (yet?)
+
+## `maven:3.9.1-amazoncorretto-20-debian-bullseye`
+
+**does not exist** (yet?)
+
 ## `maven:3.9.1-amazoncorretto-8`
 
 ```console
@@ -16887,6 +17029,14 @@ CMD ["mvn"]
 		Last Modified: Wed, 05 Apr 2023 16:44:32 GMT  
 		Size: 168.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3.9.1-amazoncorretto-8-debian`
+
+**does not exist** (yet?)
+
+## `maven:3.9.1-amazoncorretto-8-debian-bullseye`
+
+**does not exist** (yet?)
 
 ## `maven:3.9.1-eclipse-temurin`
 
