@@ -1,10 +1,10 @@
-# `orientdb:3.2.17`
+# `orientdb:3.2.18`
 
 ## Docker Metadata
 
-- Image ID: `sha256:dc0f4525316a5df391b04399e99ed9dcd5eef4a9bd66442e7fc5faab82d56f45`
-- Created: `2023-03-16T07:05:16.650248761Z`
-- Virtual Size: ~ 358.02 Mb  
+- Image ID: `sha256:a19c9a3f922811dc3a7c9a68395307ed1bf8bab44c62f7b3125e46a0e950587c`
+- Created: `2023-04-14T21:34:22.580299372Z`
+- Virtual Size: ~ 360.39 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["server.sh"]`
@@ -15,10 +15,10 @@
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
   - `JAVA_VERSION=jdk8u362-b09`
-  - `ORIENTDB_VERSION=3.2.17`
-  - `ORIENTDB_DOWNLOAD_MD5=b558525eece93e8b25bd7422a5aadab2`
-  - `ORIENTDB_DOWNLOAD_SHA1=c99b8edc062949769642c1f4f9493894147745fc`
-  - `ORIENTDB_DOWNLOAD_URL=https://repo1.maven.org/maven2/com/orientechnologies/orientdb-community/3.2.17/orientdb-community-3.2.17.tar.gz`
+  - `ORIENTDB_VERSION=3.2.18`
+  - `ORIENTDB_DOWNLOAD_MD5=ebb79d5e8f947c0d031cfaad8ce1d153`
+  - `ORIENTDB_DOWNLOAD_SHA1=f1b1f452032092f5f3c9704b12adeb95e9b21969`
+  - `ORIENTDB_DOWNLOAD_URL=https://repo1.maven.org/maven2/com/orientechnologies/orientdb-community/3.2.18/orientdb-community-3.2.18.tar.gz`
 - Labels:
   - `org.opencontainers.image.ref.name=ubuntu`
   - `org.opencontainers.image.version=22.04`
@@ -284,12 +284,12 @@ $ apt-get source -qq --print-uris coreutils=8.32-4.1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.32-4.1ubuntu1.debian.tar.xz' coreutils_8.32-4.1ubuntu1.debian.tar.xz 41096 SHA512:74adfa2f2a85af8d7024ad6d13942e915217dcb10e29caa9c314e0a15da6ec019e7aa52ac5351c35ccea1bace7a05c6dc7569b7b0487c8fcd46b3ba42d66d89d
 ```
 
-### `dpkg` source package: `curl=7.81.0-1ubuntu1.8`
+### `dpkg` source package: `curl=7.81.0-1ubuntu1.10`
 
 Binary Packages:
 
-- `curl=7.81.0-1ubuntu1.8`
-- `libcurl4:amd64=7.81.0-1ubuntu1.8`
+- `curl=7.81.0-1ubuntu1.10`
+- `libcurl4:amd64=7.81.0-1ubuntu1.10`
 
 Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
@@ -300,9 +300,15 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris curl=7.81.0-1ubuntu1.10
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.81.0-1ubuntu1.10.dsc' curl_7.81.0-1ubuntu1.10.dsc 3143 SHA512:e0d97195afd5b541522656a1faaa2f9d0909ad068f10705deace4371bf25f81edbe4a33dd5e36c9c61641977244f0af443fc5e3f2765198b83bbc3bac96c6ec9
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.81.0.orig.tar.gz' curl_7.81.0.orig.tar.gz 4188040 SHA512:e3084f0fa083f7f93eac923edbfdddb5fd0a372b94673ba9d4427a2b95508898c15ecdf63b99a1c1f6cf3215e27b06cbaa2b7073df038d43b362e586f92495d3
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.81.0.orig.tar.gz.asc' curl_7.81.0.orig.tar.gz.asc 488 SHA512:92bc5ede831551285d67b03abe8400c609ad31c9d33e324ee5c41b92dd5c2a0245a09a396bd76807b3e44bcfef944b1e16ac266264f7b85d27cc1c072a6e82bd
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.81.0-1ubuntu1.10.debian.tar.xz' curl_7.81.0-1ubuntu1.10.debian.tar.xz 65220 SHA512:28f86e3e9cb4d7a6380e0901c5d95097d42aa3dbde73856de61b425f16036941ff25b8df13437e0c420e66bc9bc671d9b704403fc1642703a41183de0c40ddf0
+```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg2-3ubuntu1.2`
 
