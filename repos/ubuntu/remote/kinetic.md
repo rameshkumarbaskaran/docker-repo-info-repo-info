@@ -1,7 +1,7 @@
 ## `ubuntu:kinetic`
 
 ```console
-$ docker pull ubuntu@sha256:a82eebb42083a134e009a6b81a7e5d2eecc37112fa8ae40642bd3c5153b7e4f0
+$ docker pull ubuntu@sha256:4a6ce3cbf8ca08ffec2e69ec71a0635664d2911a2d5985f9e44d2a264e756706
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -15,35 +15,35 @@ $ docker pull ubuntu@sha256:a82eebb42083a134e009a6b81a7e5d2eecc37112fa8ae40642bd
 ### `ubuntu:kinetic` - linux; amd64
 
 ```console
-$ docker pull ubuntu@sha256:8c8f22bacbfba9678edddcc3b6d1e56cce02eff9cbf27ab46116de30cb79a3d6
+$ docker pull ubuntu@sha256:d69f6ed3c483abe6ed19d7310acacd14012fd62874ea98edccddf6ac7af3ce93
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.21
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **26.7 MB (26695001 bytes)**  
+-	Total Size: **26.7 MB (26695202 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:558d44db75c8f69c29f427cf88e6a71c39320f7607584baa6860f6e4f6121892`
+-	Image ID: `sha256:f15f05d8742509cfc142f79dfe4cc2fa4e1b7bd20415675f7b52d3e22fd53670`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Wed, 08 Mar 2023 05:58:05 GMT
+# Thu, 13 Apr 2023 13:03:38 GMT
 ARG RELEASE
-# Wed, 08 Mar 2023 05:58:05 GMT
+# Thu, 13 Apr 2023 13:03:38 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 08 Mar 2023 05:58:05 GMT
+# Thu, 13 Apr 2023 13:03:38 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 08 Mar 2023 05:58:05 GMT
+# Thu, 13 Apr 2023 13:03:38 GMT
 LABEL org.opencontainers.image.version=22.10
-# Wed, 08 Mar 2023 05:58:07 GMT
-ADD file:3492508b382c909e968c4d8467b9acbd5f61ed6ca69c8a47241f930d90de7158 in / 
-# Wed, 08 Mar 2023 05:58:07 GMT
+# Thu, 13 Apr 2023 13:03:39 GMT
+ADD file:ba742ddbebcc8282f5094275969bfb2ff4b2973e385c198b6897bea2a9cb4b85 in / 
+# Thu, 13 Apr 2023 13:03:39 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:5c19388d38e1ea904672812dd0aac505220c9254e2621a1684e0fe29e2dba80e`  
-		Last Modified: Wed, 08 Mar 2023 06:38:37 GMT  
-		Size: 26.7 MB (26695001 bytes)  
+	-	`sha256:0963d61c5d36e157f4d244438f1a5213d8590b724d49300d6df8ebf5d70342a9`  
+		Last Modified: Fri, 14 Apr 2023 11:09:15 GMT  
+		Size: 26.7 MB (26695202 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `ubuntu:kinetic` - linux; arm variant v7
@@ -117,35 +117,35 @@ CMD ["/bin/bash"]
 ### `ubuntu:kinetic` - linux; ppc64le
 
 ```console
-$ docker pull ubuntu@sha256:fec18179ce4b8f8215f04ea75ca752d4c7865d1a06f1d9a3d961927ed2916589
+$ docker pull ubuntu@sha256:56185868328c6dcfff4b9f97915a8868905668fa8ffab0b2b0285dac1dfd84cf
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.21
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **31.1 MB (31114002 bytes)**  
+-	Total Size: **31.1 MB (31113926 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:817a0842655ee55d34c1866729026d8d7fd4de6cc4ea4fcbdaac3cbc1dc10a73`
+-	Image ID: `sha256:eeaa908635f261aa7b8aa52c329990cdc01c4716fdac960a6f3cfff6706f2b56`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Wed, 08 Mar 2023 05:58:03 GMT
+# Thu, 13 Apr 2023 13:21:42 GMT
 ARG RELEASE
-# Wed, 08 Mar 2023 05:58:03 GMT
+# Thu, 13 Apr 2023 13:21:42 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 08 Mar 2023 05:58:03 GMT
+# Thu, 13 Apr 2023 13:21:42 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 08 Mar 2023 05:58:03 GMT
+# Thu, 13 Apr 2023 13:21:43 GMT
 LABEL org.opencontainers.image.version=22.10
-# Wed, 08 Mar 2023 05:58:06 GMT
-ADD file:583061e8201c03de4747860e734200b6c35b449443a1382ad8e8efc6f7e9ea13 in / 
-# Wed, 08 Mar 2023 05:58:06 GMT
+# Thu, 13 Apr 2023 13:21:45 GMT
+ADD file:2f24914c3a2e66342aa7cf589af143b01a1cd7532c92c4263d251fb826b8b810 in / 
+# Thu, 13 Apr 2023 13:21:46 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:e9acd60127e6a1f919659d03fc820b762a3f49f62bae6caafbd919cdbd8e4f7b`  
-		Last Modified: Wed, 08 Mar 2023 06:38:55 GMT  
-		Size: 31.1 MB (31114002 bytes)  
+	-	`sha256:c6864d2efca45377dbba7535ab73bb2a64f10d73c7d97bfbd768b173970bf455`  
+		Last Modified: Fri, 14 Apr 2023 11:09:34 GMT  
+		Size: 31.1 MB (31113926 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `ubuntu:kinetic` - linux; s390x
