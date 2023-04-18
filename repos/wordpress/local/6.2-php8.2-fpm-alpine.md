@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:2773b4a05315138591718c2c3e8660fb129a51712c6ca718597874a10d7c5370`
-- Created: `2023-03-31T00:21:11.050272755Z`
-- Virtual Size: ~ 306.42 Mb  
+- Image ID: `sha256:525824225e9c614e3158adc4cef637a7dcdf80205ca3088f6ed03a77cc58a603`
+- Created: `2023-04-14T21:01:18.598108284Z`
+- Virtual Size: ~ 307.02 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC`
-  - `PHP_VERSION=8.2.4`
-  - `PHP_URL=https://www.php.net/distributions/php-8.2.4.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.4.tar.xz.asc`
-  - `PHP_SHA256=bc7bf4ca7ed0dd17647e3ea870b6f062fcb56b243bfdef3f59ff7f94e96176a8`
+  - `PHP_VERSION=8.2.5`
+  - `PHP_URL=https://www.php.net/distributions/php-8.2.5.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.5.tar.xz.asc`
+  - `PHP_SHA256=800738c359b7f1e67e40c22713d2d90276bc85ba1c21b43d99edd43c254c5f76`
 
 ## `apk` (`.apk`-based packages)
 
@@ -401,16 +401,16 @@ LGPL-2.0-or-later
 ### `apk` package: `ghostscript`
 
 ```console
-ghostscript-10.0.0-r0 description:
+ghostscript-10.0.0-r1 description:
 An interpreter for the PostScript language and for PDF
 
-ghostscript-10.0.0-r0 webpage:
+ghostscript-10.0.0-r1 webpage:
 https://ghostscript.com/
 
-ghostscript-10.0.0-r0 installed size:
+ghostscript-10.0.0-r1 installed size:
 67 MiB
 
-ghostscript-10.0.0-r0 license:
+ghostscript-10.0.0-r1 license:
 AGPL-3.0-or-later
 
 ```
@@ -554,16 +554,16 @@ MIT ICU Unicode-TOU
 ### `apk` package: `imagemagick`
 
 ```console
-imagemagick-7.1.0.52-r0 description:
+imagemagick-7.1.0.62-r0 description:
 Collection of tools and libraries for many image formats
 
-imagemagick-7.1.0.52-r0 webpage:
+imagemagick-7.1.0.62-r0 webpage:
 https://imagemagick.org/
 
-imagemagick-7.1.0.52-r0 installed size:
-4704 KiB
+imagemagick-7.1.0.62-r0 installed size:
+4716 KiB
 
-imagemagick-7.1.0.52-r0 license:
+imagemagick-7.1.0.62-r0 license:
 ImageMagick
 
 ```
@@ -571,16 +571,16 @@ ImageMagick
 ### `apk` package: `imagemagick-libs`
 
 ```console
-imagemagick-libs-7.1.0.52-r0 description:
+imagemagick-libs-7.1.0.62-r0 description:
 Collection of tools and libraries for many image formats (libraries)
 
-imagemagick-libs-7.1.0.52-r0 webpage:
+imagemagick-libs-7.1.0.62-r0 webpage:
 https://imagemagick.org/
 
-imagemagick-libs-7.1.0.52-r0 installed size:
+imagemagick-libs-7.1.0.62-r0 installed size:
 3304 KiB
 
-imagemagick-libs-7.1.0.52-r0 license:
+imagemagick-libs-7.1.0.62-r0 license:
 ImageMagick
 
 ```
@@ -724,16 +724,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.88.1-r1 description:
+libcurl-8.0.1-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.88.1-r1 webpage:
+libcurl-8.0.1-r0 webpage:
 https://curl.se/
 
-libcurl-7.88.1-r1 installed size:
-552 KiB
+libcurl-8.0.1-r0 installed size:
+556 KiB
 
-libcurl-7.88.1-r1 license:
+libcurl-8.0.1-r0 license:
 curl
 
 ```
@@ -1183,16 +1183,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.10.3-r1 description:
+libxml2-2.10.4-r0 description:
 XML parsing library, version 2
 
-libxml2-2.10.3-r1 webpage:
+libxml2-2.10.4-r0 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.10.3-r1 installed size:
+libxml2-2.10.4-r0 installed size:
 1188 KiB
 
-libxml2-2.10.3-r1 license:
+libxml2-2.10.4-r0 license:
 MIT
 
 ```
@@ -1659,16 +1659,16 @@ Zlib
 ### `apk` package: `zstd-libs`
 
 ```console
-zstd-libs-1.5.2-r9 description:
+zstd-libs-1.5.5-r0 description:
 Zstandard - Fast real-time compression algorithm (libraries)
 
-zstd-libs-1.5.2-r9 webpage:
+zstd-libs-1.5.5-r0 webpage:
 https://www.zstd.net/
 
-zstd-libs-1.5.2-r9 installed size:
-488 KiB
+zstd-libs-1.5.5-r0 installed size:
+520 KiB
 
-zstd-libs-1.5.2-r9 license:
+zstd-libs-1.5.5-r0 license:
 BSD-3-Clause GPL-2.0-or-later
 
 ```
