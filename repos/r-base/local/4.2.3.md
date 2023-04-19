@@ -2999,20 +2999,13 @@ Licenses: (parsed from: `/usr/share/doc/r-base/copyright`, `/usr/share/doc/r-bas
 - `LGPL-2.1`
 - `LGPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris r-base=4.2.3-1
-'http://deb.debian.org/debian/pool/main/r/r-base/r-base_4.2.3-1.dsc' r-base_4.2.3-1.dsc 2939 SHA256:f26d87084c96966eec48982ca8fcb6df679cbeb8cf2f0400ef89246913f1a96c
-'http://deb.debian.org/debian/pool/main/r/r-base/r-base_4.2.3.orig.tar.gz' r-base_4.2.3.orig.tar.gz 34010655 SHA256:55e4a9a6d43be314e2c03d0266a6fa5444afdce50b303bfc3b82b3979516e074
-'http://deb.debian.org/debian/pool/main/r/r-base/r-base_4.2.3-1.debian.tar.xz' r-base_4.2.3-1.debian.tar.xz 99124 SHA256:0cbc86337ddeff452723d1030ca3061f8bb8504689612e6fd38f9525349bb131
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/r-base/4.2.3-1/
 
-- https://sources.debian.net/src/r-base/4.2.3-1/ (for browsing the source)
-- https://sources.debian.net/src/r-base/4.2.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/r-base/4.2.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `r-cran-class=7.3-21-1`
 
