@@ -1,7 +1,7 @@
 ## `maven:sapmachine`
 
 ```console
-$ docker pull maven@sha256:b32ae11f0bd98aefbbea5ef8d677164e0dc203c1e036a984b9a4f8e307bc0c29
+$ docker pull maven@sha256:53b206975aa88bddc06bf3538c930f8288429cd935727b337002a5c74b30db77
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -105,13 +105,13 @@ CMD ["mvn"]
 ### `maven:sapmachine` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:340de08b646aaf72d67a1001dac8cc4bf8bb8734266851f82211ff9d6b16b916
+$ docker pull maven@sha256:976cb2c8ecea030f4951e2b60050950b7532e1207ad0e5701a3d434705442c5d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **258.9 MB (258872704 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:947aa058f872f8d633b64ea3bf4511b27b1ea68924ea23ed14efec7e350806b3`
+-	Image ID: `sha256:3a1b7ba42f1b5b9b2ceeeaff5bab5cbc5f4bcc1237d61e2708a3524e7dd5aaca`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -136,27 +136,27 @@ RUN export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver hkps://keys.o
 ENV JAVA_HOME=/usr/lib/jvm/sapmachine-17
 # Thu, 20 Apr 2023 18:58:05 GMT
 CMD ["jshell"]
-# Thu, 20 Apr 2023 18:58:05 GMT
+# Wed, 26 Apr 2023 19:40:40 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
-# Thu, 20 Apr 2023 18:58:05 GMT
+# Wed, 26 Apr 2023 19:40:40 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Thu, 20 Apr 2023 18:58:05 GMT
+# Wed, 26 Apr 2023 19:40:40 GMT
 COPY /usr/share/maven /usr/share/maven # buildkit
-# Thu, 20 Apr 2023 18:58:05 GMT
+# Wed, 26 Apr 2023 19:40:40 GMT
 COPY /usr/local/bin/mvn-entrypoint.sh /usr/local/bin/mvn-entrypoint.sh # buildkit
-# Thu, 20 Apr 2023 18:58:05 GMT
+# Wed, 26 Apr 2023 19:40:40 GMT
 COPY /usr/share/maven/ref/settings-docker.xml /usr/share/maven/ref/settings-docker.xml # buildkit
-# Thu, 20 Apr 2023 18:58:05 GMT
+# Wed, 26 Apr 2023 19:40:40 GMT
 RUN ln -s ${MAVEN_HOME}/bin/mvn /usr/bin/mvn # buildkit
-# Thu, 20 Apr 2023 18:58:05 GMT
+# Wed, 26 Apr 2023 19:40:40 GMT
 ARG MAVEN_VERSION=3.9.1
-# Thu, 20 Apr 2023 18:58:05 GMT
+# Wed, 26 Apr 2023 19:40:40 GMT
 ARG USER_HOME_DIR=/root
-# Thu, 20 Apr 2023 18:58:05 GMT
+# Wed, 26 Apr 2023 19:40:40 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Thu, 20 Apr 2023 18:58:05 GMT
+# Wed, 26 Apr 2023 19:40:40 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Thu, 20 Apr 2023 18:58:05 GMT
+# Wed, 26 Apr 2023 19:40:40 GMT
 CMD ["mvn"]
 ```
 
