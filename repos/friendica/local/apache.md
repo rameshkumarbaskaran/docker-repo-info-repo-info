@@ -1,10 +1,10 @@
-# `friendica:2023.01-apache`
+# `friendica:2023.04-apache`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d030259bd5c94fb12282d6c85d46a0fe2207c8c8ca550f78af13ac0305f67c58`
-- Created: `2023-04-12T12:01:09.410869122Z`
-- Virtual Size: ~ 651.46 Mb  
+- Image ID: `sha256:fc92d84c6a8411bcaf3d9a49fed38475f4d3966c798a2eb121eca9f469ce4a66`
+- Created: `2023-04-24T19:24:25.150336979Z`
+- Virtual Size: ~ 654.98 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -27,10 +27,10 @@
   - `PHP_MEMORY_LIMIT=512M`
   - `PHP_UPLOAD_LIMIT=512M`
   - `FRIENDICA_SYSLOG_FLAGS=39`
-  - `FRIENDICA_VERSION=2023.01`
-  - `FRIENDICA_ADDONS=2023.01`
-  - `FRIENDICA_DOWNLOAD_SHA256=4496990805142d20051a5273904a47809ae12f1cadd74de305d5ae167b7cdf6e`
-  - `FRIENDICA_DOWNLOAD_ADDONS_SHA256=48117926a6ffeb58aaf81795cfbd5ad24acf76693744e92817593e310acc5262`
+  - `FRIENDICA_VERSION=2023.04`
+  - `FRIENDICA_ADDONS=2023.04`
+  - `FRIENDICA_DOWNLOAD_SHA256=a0ef5b13deb13c6e54c6af47d5ea528ac36dc5b624805c42b0b438cd204649c5`
+  - `FRIENDICA_DOWNLOAD_ADDONS_SHA256=46ce8f9ab69bbe1d82bba8ab49dcf72a7f2308511edb9eaa8a4e306aa6c1507c`
 
 ## `dpkg` (`.deb`-based packages)
 
