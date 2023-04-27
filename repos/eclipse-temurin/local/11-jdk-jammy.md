@@ -1,10 +1,10 @@
-# `eclipse-temurin:11.0.18_10-jdk-jammy`
+# `eclipse-temurin:11.0.19_7-jdk-jammy`
 
 ## Docker Metadata
 
-- Image ID: `sha256:04b47402fe65fa5e94ae7854bfa9c01b563b39a6df755a16a6529f5fbbe91467`
-- Created: `2023-03-16T02:45:28.711101231Z`
-- Virtual Size: ~ 447.34 Mb  
+- Image ID: `sha256:7eee4a4270d52603b6323767e8a88efac045e4cf3813a99644495cf3c4e44fab`
+- Created: `2023-04-26T19:21:32.522877126Z`
+- Virtual Size: ~ 447.50 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -14,7 +14,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.18+10`
+  - `JAVA_VERSION=jdk-11.0.19+7`
 - Labels:
   - `org.opencontainers.image.ref.name=ubuntu`
   - `org.opencontainers.image.version=22.04`
@@ -1466,15 +1466,9 @@ Licenses: (parsed from: `/usr/share/doc/libssl3/copyright`, `/usr/share/doc/open
 - `GPL-1`
 - `GPL-1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=3.0.2-0ubuntu1.8
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.2-0ubuntu1.8.dsc' openssl_3.0.2-0ubuntu1.8.dsc 2726 SHA512:c875bf656e21afc53474955a51b05d15fc46f8379547e63651e1839bf5265d24983e2270f00910a02735eb5a9d8cebe90800aec55ac9673fc8ce8755e1793dc6
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.2.orig.tar.gz' openssl_3.0.2.orig.tar.gz 15038141 SHA512:f986850d5be908b4d6b5fd7091bc4652d7378c9bccebfbc5becd7753843c04c1eb61a1749c432139d263dfac33df0b1f6c773664b485cad47542266823a4eb03
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.2.orig.tar.gz.asc' openssl_3.0.2.orig.tar.gz.asc 488 SHA512:4303391a58107c76ad9b05510f5bfc95f687f4cb2f9ff5b03fb262ba99b573423ab83f0437471199954496799b343191b889ad9ef8fabdd7ee4ec3ec9b5f1d81
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.2-0ubuntu1.8.debian.tar.xz' openssl_3.0.2-0ubuntu1.8.debian.tar.xz 184100 SHA512:1d5813a8a99c35280a51bc8be36ccdb256824e61e85a3d6c318869415533eb3ea11f6f4770ba33ddcc1b1c3fc7a6217c05bc5a4b74a2bad03a001ef9cfd59568
-```
 
 ### `dpkg` source package: `p11-kit=0.24.0-6build1`
 
