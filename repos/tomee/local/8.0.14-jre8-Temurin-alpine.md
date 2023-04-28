@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:089010bf8be536aa833c62d58ae2e1922202d06cdd395b88f77ea41188d1a23a`
-- Created: `2023-03-30T03:24:24.434378688Z`
-- Virtual Size: ~ 208.45 Mb  
+- Image ID: `sha256:9c826b35659a31e4e00eb8a1feefff5f31c924c82889c246e084e8a4ca7bec2c`
+- Created: `2023-04-26T22:05:43.371625808Z`
+- Virtual Size: ~ 208.51 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -14,7 +14,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk8u362-b09`
+  - `JAVA_VERSION=jdk8u372-b07`
   - `TOMEE_VER=8.0.14`
   - `TOMEE_BUILD=webprofile`
 
@@ -176,16 +176,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `curl`
 
 ```console
-curl-7.88.1-r1 description:
+curl-8.0.1-r0 description:
 URL retrival utility and library
 
-curl-7.88.1-r1 webpage:
+curl-8.0.1-r0 webpage:
 https://curl.se/
 
-curl-7.88.1-r1 installed size:
+curl-8.0.1-r0 installed size:
 264 KiB
 
-curl-7.88.1-r1 license:
+curl-8.0.1-r0 license:
 curl
 
 ```
@@ -448,16 +448,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.88.1-r1 description:
+libcurl-8.0.1-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.88.1-r1 webpage:
+libcurl-8.0.1-r0 webpage:
 https://curl.se/
 
-libcurl-7.88.1-r1 installed size:
-552 KiB
+libcurl-8.0.1-r0 installed size:
+556 KiB
 
-libcurl-7.88.1-r1 license:
+libcurl-8.0.1-r0 license:
 curl
 
 ```
