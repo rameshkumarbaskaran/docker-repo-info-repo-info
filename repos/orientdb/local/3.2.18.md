@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a19c9a3f922811dc3a7c9a68395307ed1bf8bab44c62f7b3125e46a0e950587c`
-- Created: `2023-04-14T21:34:22.580299372Z`
-- Virtual Size: ~ 360.39 Mb  
+- Image ID: `sha256:1a8478938d98951f829b6744ed241214f207ddc0bc72ab3fb289d43788071fb9`
+- Created: `2023-04-26T23:11:53.940507374Z`
+- Virtual Size: ~ 360.43 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["server.sh"]`
@@ -14,7 +14,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk8u362-b09`
+  - `JAVA_VERSION=jdk8u372-b07`
   - `ORIENTDB_VERSION=3.2.18`
   - `ORIENTDB_DOWNLOAD_MD5=ebb79d5e8f947c0d031cfaad8ce1d153`
   - `ORIENTDB_DOWNLOAD_SHA1=f1b1f452032092f5f3c9704b12adeb95e9b21969`
