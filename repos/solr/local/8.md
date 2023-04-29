@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7fee171281dcf64fb86a69dad1e9390dee50678fea5dc79f0259935b9760cd04`
-- Created: `2023-04-18T05:39:21.122269187Z`
-- Virtual Size: ~ 516.16 Mb  
+- Image ID: `sha256:0406c2fa547fd0689f448a7456071186b31df8ff583cd687789c09dbf1704b51`
+- Created: `2023-04-26T23:19:26.799589841Z`
+- Virtual Size: ~ 516.27 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -15,7 +15,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.18+10`
+  - `JAVA_VERSION=jdk-11.0.19+7`
   - `SOLR_USER=solr`
   - `SOLR_UID=8983`
   - `SOLR_GROUP=solr`
@@ -2004,10 +2004,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tzdata=2023c-0ubuntu0.20.04.0
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023c-0ubuntu0.20.04.0.dsc' tzdata_2023c-0ubuntu0.20.04.0.dsc 2524 SHA512:d57e78161341181f751b4a384701c0baa7d1e36ec02c8e017be251b5e4f502f040bbff631f5f56b98b6263d0ef07efbe7acb97b8690aa75b422f6e012edccbaa
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023c.orig.tar.gz' tzdata_2023c.orig.tar.gz 443902 SHA512:608bd286ebcbd0004cfdc1da183273f08aff61f90c8867661154453d77a05d421e4c46ad6d066a1fe2e87d5c82ec0f1c0224667a3b35f3180a3eb7f6ff84cbf5
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023c.orig.tar.gz.asc' tzdata_2023c.orig.tar.gz.asc 833 SHA512:15da6e01a12a0390f736fe5bacf27595c8f7080a4b27eccfae7f244bc38d5839e7d25622e325f874db17f9e723777e9cfe0f460fbd595b66772f1642dd603b6b
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023c-0ubuntu0.20.04.0.debian.tar.xz' tzdata_2023c-0ubuntu0.20.04.0.debian.tar.xz 169620 SHA512:c388c49077f507dfda13c7511b4bae43f962ee016f81693fbd4c6b42584b80180b1b36f7f0e8b04f04fb86a5d1cdca1e4a7959d75755f7aaa708ea9bf44d85c2
+'http://security.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023c-0ubuntu0.20.04.0.dsc' tzdata_2023c-0ubuntu0.20.04.0.dsc 2524 SHA512:d57e78161341181f751b4a384701c0baa7d1e36ec02c8e017be251b5e4f502f040bbff631f5f56b98b6263d0ef07efbe7acb97b8690aa75b422f6e012edccbaa
+'http://security.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023c.orig.tar.gz' tzdata_2023c.orig.tar.gz 443902 SHA512:608bd286ebcbd0004cfdc1da183273f08aff61f90c8867661154453d77a05d421e4c46ad6d066a1fe2e87d5c82ec0f1c0224667a3b35f3180a3eb7f6ff84cbf5
+'http://security.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023c.orig.tar.gz.asc' tzdata_2023c.orig.tar.gz.asc 833 SHA512:15da6e01a12a0390f736fe5bacf27595c8f7080a4b27eccfae7f244bc38d5839e7d25622e325f874db17f9e723777e9cfe0f460fbd595b66772f1642dd603b6b
+'http://security.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023c-0ubuntu0.20.04.0.debian.tar.xz' tzdata_2023c-0ubuntu0.20.04.0.debian.tar.xz 169620 SHA512:c388c49077f507dfda13c7511b4bae43f962ee016f81693fbd4c6b42584b80180b1b36f7f0e8b04f04fb86a5d1cdca1e4a7959d75755f7aaa708ea9bf44d85c2
 ```
 
 ### `dpkg` source package: `ubuntu-keyring=2020.02.11.4`
