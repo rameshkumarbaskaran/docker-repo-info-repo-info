@@ -1,7 +1,7 @@
 ## `ubuntu:jammy`
 
 ```console
-$ docker pull ubuntu@sha256:1e0fc95b856ec6592c530b522fe0500af9bff5ed1f962216d3c45063bd26e09b
+$ docker pull ubuntu@sha256:0b8a884ad7ed20e50a68108895a6e7db54b303ad73b22b6b9ff5f60740dc03e2
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -117,35 +117,35 @@ CMD ["/bin/bash"]
 ### `ubuntu:jammy` - linux; ppc64le
 
 ```console
-$ docker pull ubuntu@sha256:f23b7ade9f88f91c8d5932a48b721712ed509a607d9a05cdeae4cd06de09e5f7
+$ docker pull ubuntu@sha256:93fbac516e3f64e076e953306215d0a05e691e8350bf7c2e6b600ed2678990e5
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.21
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **34.6 MB (34593661 bytes)**  
+-	Total Size: **34.6 MB (34594820 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4220c61b3ab7b82dd3ff3395f9efe2b63e730c3f24284d1519013cf3cda822f8`
+-	Image ID: `sha256:048699846e4395b96648953c996e16964162e51473be900161346bb6ee97a45b`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Wed, 08 Mar 2023 04:39:16 GMT
+# Tue, 25 Apr 2023 17:30:17 GMT
 ARG RELEASE
-# Wed, 08 Mar 2023 04:39:16 GMT
+# Tue, 25 Apr 2023 17:30:17 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 08 Mar 2023 04:39:16 GMT
+# Tue, 25 Apr 2023 17:30:18 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 08 Mar 2023 04:39:16 GMT
+# Tue, 25 Apr 2023 17:30:18 GMT
 LABEL org.opencontainers.image.version=22.04
-# Wed, 08 Mar 2023 04:39:20 GMT
-ADD file:d7434a52d8d8aa6288e788f6fe7e156f0e11bf9b8275efaf70aab0bfc4d919cf in / 
-# Wed, 08 Mar 2023 04:39:20 GMT
+# Tue, 25 Apr 2023 17:30:21 GMT
+ADD file:e75f08a67f0576b5441bb2fe454cad4b5b31a9d4efea23be791af62e1e0c712f in / 
+# Tue, 25 Apr 2023 17:30:21 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:2561b3b559ec9b25bafa07804afa433803291265f7dd847de711224b0f238237`  
-		Last Modified: Wed, 08 Mar 2023 05:10:39 GMT  
-		Size: 34.6 MB (34593661 bytes)  
+	-	`sha256:680addf267238cca0a5d13b4eb4be2f06465f4b0f7865751e1109069a1971f46`  
+		Last Modified: Tue, 25 Apr 2023 18:17:14 GMT  
+		Size: 34.6 MB (34594820 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `ubuntu:jammy` - linux; s390x
