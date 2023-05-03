@@ -13,7 +13,7 @@
 ## `hitch:1`
 
 ```console
-$ docker pull hitch@sha256:1bb024efefcd2746926fa62958f6be8985f6a5e377bcbdbc003656772a944ca6
+$ docker pull hitch@sha256:cc875cfdfbeaf45fff45a75952e205cd83996c308fe3fb436d8c720e0e9305e3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -28,58 +28,58 @@ $ docker pull hitch@sha256:1bb024efefcd2746926fa62958f6be8985f6a5e377bcbdbc00365
 ### `hitch:1` - linux; amd64
 
 ```console
-$ docker pull hitch@sha256:bbff3ae2e1c3f7397e9eac53ca3b01bde101b37a678ce5ba74072ad1c67be690
+$ docker pull hitch@sha256:ca330d657f8c093a47de0a3fa1fac6de63e910c0d4c0fb4e3b31a3bcee4a92bd
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **33.0 MB (33044179 bytes)**  
+-	Total Size: **33.0 MB (33029490 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7414dcf5e4396abdb690b4d0da8664a23f4b049d943c78a7b18bf9f51890b510`
+-	Image ID: `sha256:565dce13d52a485bf741af18a4b7ba34bcb5116aa517f9979f6bd772d1a9e14d`
 -	Entrypoint: `["docker-hitch-entrypoint"]`
 -	Default Command: `[]`
 
 ```dockerfile
-# Wed, 12 Apr 2023 00:20:06 GMT
-ADD file:11b1acca3f68b5c5787e292ff8dbdd114964a7272bf3519ab07710cbc01a0838 in / 
-# Wed, 12 Apr 2023 00:20:06 GMT
+# Tue, 02 May 2023 23:46:59 GMT
+ADD file:a2378c1b12e95db69e24b9d347441678c6f23239292cce3c822b1524992b6ec4 in / 
+# Tue, 02 May 2023 23:47:00 GMT
 CMD ["bash"]
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG SRCVER=1.7.3
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG PKGVER=1
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG DISTVER=bullseye
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG PKGCOMMIT=f12ab7958bc4885f3f00311cbca5103d9e6ba794
-# Wed, 12 Apr 2023 08:06:06 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG SHASUM=88de82e639e7f9b7873bb7226fcbcbc4cd5779c75a5bd21fca8e1ca927a2a3ae9eb455d73d1f42d4dc45546118c718d1b58396836ed9c8acac281d487c9fe8fd
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 # ARGS: DISTVER=bullseye PKGCOMMIT=f12ab7958bc4885f3f00311cbca5103d9e6ba794 PKGVER=1 SHASUM=88de82e639e7f9b7873bb7226fcbcbc4cd5779c75a5bd21fca8e1ca927a2a3ae9eb455d73d1f42d4dc45546118c718d1b58396836ed9c8acac281d487c9fe8fd SRCVER=1.7.3
 RUN set -ex;     BASE_PKGS="apt-utils curl dirmngr dpkg-dev debhelper devscripts equivs fakeroot git gnupg pkg-config";     export DEBIAN_FRONTEND=noninteractive;     export DEBCONF_NONINTERACTIVE_SEEN=true;     tmpdir="$(mktemp -d)";     cd "$tmpdir";     apt-get update;     apt-get install -y $BASE_PKGS;     git clone https://github.com/varnish/pkg-hitch.git;     cd pkg-hitch;     git checkout ${PKGCOMMIT};     rm -rf .git;     curl -Lf https://hitch-tls.org/source/hitch-${SRCVER}.tar.gz -o $tmpdir/orig.tgz;     echo "${SHASUM}  $tmpdir/orig.tgz" | sha512sum -c -;     tar xavf $tmpdir/orig.tgz --strip 1;     sed -i         -e "s/@SRCVER@/${SRCVER}/g"         -e "s/@PKGVER@/${PKGVER:-1}/g"         -e "s/@DISTVER@/$DISTVER/g" debian/changelog;     mk-build-deps --install --tool="apt-get -o Debug::pkgProblemResolver=yes --yes" debian/control;     sed -i '' debian/hitch*;     dpkg-buildpackage -us -uc -j"$(nproc)";     apt-get -y purge --auto-remove hitch-build-deps $BASE_PKGS;     apt-get -y install ../*.deb;     sed -i 's/daemon = on/daemon = off/' /etc/hitch/hitch.conf;     rm -rf /var/lib/apt/lists/* "$tmpdir"
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 WORKDIR /etc/hitch
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 COPY file:1abf3c94dce5dc9f6617dc8d36a6fe6f4f7236189d4819f16cefb54288e80e0d in /usr/local/bin/ 
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 ENTRYPOINT ["docker-hitch-entrypoint"]
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 EXPOSE 443
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 CMD []
 ```
 
 -	Layers:
-	-	`sha256:26c5c85e47da3022f1bdb9a112103646c5c29517d757e95426f16e4bd9533405`  
-		Last Modified: Wed, 12 Apr 2023 00:23:43 GMT  
-		Size: 31.4 MB (31418228 bytes)  
+	-	`sha256:9e3ea8720c6de96cc9ad544dddc695a3ab73f5581c5d954e0504cc4f80fb5e5c`  
+		Last Modified: Tue, 02 May 2023 23:50:22 GMT  
+		Size: 31.4 MB (31403516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5787287fbbde0f9827780a321af93215533050d8cc14a11b37385519f950df45`  
-		Last Modified: Wed, 12 Apr 2023 08:10:00 GMT  
-		Size: 1.6 MB (1625536 bytes)  
+	-	`sha256:5068fb84d96c68410d2be20fc4225f48dfa270dbc5b30b989f758f1ad5321d29`  
+		Last Modified: Wed, 03 May 2023 20:47:06 GMT  
+		Size: 1.6 MB (1625559 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1224c2ada7c864cc8570b7cfbc972b10c2ac35bcdc3c6d44f71be5b0f65f246a`  
-		Last Modified: Wed, 12 Apr 2023 08:10:00 GMT  
+	-	`sha256:536fe63701960687ec7375f35e1c4a462045d6268be880184143f7a144bfb5f9`  
+		Last Modified: Wed, 03 May 2023 20:47:06 GMT  
 		Size: 415.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -376,7 +376,7 @@ CMD []
 ## `hitch:1.7`
 
 ```console
-$ docker pull hitch@sha256:1bb024efefcd2746926fa62958f6be8985f6a5e377bcbdbc003656772a944ca6
+$ docker pull hitch@sha256:cc875cfdfbeaf45fff45a75952e205cd83996c308fe3fb436d8c720e0e9305e3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -391,58 +391,58 @@ $ docker pull hitch@sha256:1bb024efefcd2746926fa62958f6be8985f6a5e377bcbdbc00365
 ### `hitch:1.7` - linux; amd64
 
 ```console
-$ docker pull hitch@sha256:bbff3ae2e1c3f7397e9eac53ca3b01bde101b37a678ce5ba74072ad1c67be690
+$ docker pull hitch@sha256:ca330d657f8c093a47de0a3fa1fac6de63e910c0d4c0fb4e3b31a3bcee4a92bd
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **33.0 MB (33044179 bytes)**  
+-	Total Size: **33.0 MB (33029490 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7414dcf5e4396abdb690b4d0da8664a23f4b049d943c78a7b18bf9f51890b510`
+-	Image ID: `sha256:565dce13d52a485bf741af18a4b7ba34bcb5116aa517f9979f6bd772d1a9e14d`
 -	Entrypoint: `["docker-hitch-entrypoint"]`
 -	Default Command: `[]`
 
 ```dockerfile
-# Wed, 12 Apr 2023 00:20:06 GMT
-ADD file:11b1acca3f68b5c5787e292ff8dbdd114964a7272bf3519ab07710cbc01a0838 in / 
-# Wed, 12 Apr 2023 00:20:06 GMT
+# Tue, 02 May 2023 23:46:59 GMT
+ADD file:a2378c1b12e95db69e24b9d347441678c6f23239292cce3c822b1524992b6ec4 in / 
+# Tue, 02 May 2023 23:47:00 GMT
 CMD ["bash"]
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG SRCVER=1.7.3
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG PKGVER=1
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG DISTVER=bullseye
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG PKGCOMMIT=f12ab7958bc4885f3f00311cbca5103d9e6ba794
-# Wed, 12 Apr 2023 08:06:06 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG SHASUM=88de82e639e7f9b7873bb7226fcbcbc4cd5779c75a5bd21fca8e1ca927a2a3ae9eb455d73d1f42d4dc45546118c718d1b58396836ed9c8acac281d487c9fe8fd
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 # ARGS: DISTVER=bullseye PKGCOMMIT=f12ab7958bc4885f3f00311cbca5103d9e6ba794 PKGVER=1 SHASUM=88de82e639e7f9b7873bb7226fcbcbc4cd5779c75a5bd21fca8e1ca927a2a3ae9eb455d73d1f42d4dc45546118c718d1b58396836ed9c8acac281d487c9fe8fd SRCVER=1.7.3
 RUN set -ex;     BASE_PKGS="apt-utils curl dirmngr dpkg-dev debhelper devscripts equivs fakeroot git gnupg pkg-config";     export DEBIAN_FRONTEND=noninteractive;     export DEBCONF_NONINTERACTIVE_SEEN=true;     tmpdir="$(mktemp -d)";     cd "$tmpdir";     apt-get update;     apt-get install -y $BASE_PKGS;     git clone https://github.com/varnish/pkg-hitch.git;     cd pkg-hitch;     git checkout ${PKGCOMMIT};     rm -rf .git;     curl -Lf https://hitch-tls.org/source/hitch-${SRCVER}.tar.gz -o $tmpdir/orig.tgz;     echo "${SHASUM}  $tmpdir/orig.tgz" | sha512sum -c -;     tar xavf $tmpdir/orig.tgz --strip 1;     sed -i         -e "s/@SRCVER@/${SRCVER}/g"         -e "s/@PKGVER@/${PKGVER:-1}/g"         -e "s/@DISTVER@/$DISTVER/g" debian/changelog;     mk-build-deps --install --tool="apt-get -o Debug::pkgProblemResolver=yes --yes" debian/control;     sed -i '' debian/hitch*;     dpkg-buildpackage -us -uc -j"$(nproc)";     apt-get -y purge --auto-remove hitch-build-deps $BASE_PKGS;     apt-get -y install ../*.deb;     sed -i 's/daemon = on/daemon = off/' /etc/hitch/hitch.conf;     rm -rf /var/lib/apt/lists/* "$tmpdir"
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 WORKDIR /etc/hitch
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 COPY file:1abf3c94dce5dc9f6617dc8d36a6fe6f4f7236189d4819f16cefb54288e80e0d in /usr/local/bin/ 
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 ENTRYPOINT ["docker-hitch-entrypoint"]
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 EXPOSE 443
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 CMD []
 ```
 
 -	Layers:
-	-	`sha256:26c5c85e47da3022f1bdb9a112103646c5c29517d757e95426f16e4bd9533405`  
-		Last Modified: Wed, 12 Apr 2023 00:23:43 GMT  
-		Size: 31.4 MB (31418228 bytes)  
+	-	`sha256:9e3ea8720c6de96cc9ad544dddc695a3ab73f5581c5d954e0504cc4f80fb5e5c`  
+		Last Modified: Tue, 02 May 2023 23:50:22 GMT  
+		Size: 31.4 MB (31403516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5787287fbbde0f9827780a321af93215533050d8cc14a11b37385519f950df45`  
-		Last Modified: Wed, 12 Apr 2023 08:10:00 GMT  
-		Size: 1.6 MB (1625536 bytes)  
+	-	`sha256:5068fb84d96c68410d2be20fc4225f48dfa270dbc5b30b989f758f1ad5321d29`  
+		Last Modified: Wed, 03 May 2023 20:47:06 GMT  
+		Size: 1.6 MB (1625559 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1224c2ada7c864cc8570b7cfbc972b10c2ac35bcdc3c6d44f71be5b0f65f246a`  
-		Last Modified: Wed, 12 Apr 2023 08:10:00 GMT  
+	-	`sha256:536fe63701960687ec7375f35e1c4a462045d6268be880184143f7a144bfb5f9`  
+		Last Modified: Wed, 03 May 2023 20:47:06 GMT  
 		Size: 415.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -739,7 +739,7 @@ CMD []
 ## `hitch:1.7.2`
 
 ```console
-$ docker pull hitch@sha256:e4cc2ee1ffa749a7268190cfa8214307bf8451a673de499ce696783af6d78dd5
+$ docker pull hitch@sha256:8d1b5b3431683ff3ec3ec27feab27ea8975e913d570bd9b4dd5c516f55d679bc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -754,59 +754,59 @@ $ docker pull hitch@sha256:e4cc2ee1ffa749a7268190cfa8214307bf8451a673de499ce6967
 ### `hitch:1.7.2` - linux; amd64
 
 ```console
-$ docker pull hitch@sha256:d8b5711ce3867e3d394e5d57b0f85be2db934e1f21eb51b4f88efe47f3b295d6
+$ docker pull hitch@sha256:74019dbc698afbd5a10e2cb347aa8a572d2571ec2c6165d60200502949a2fbd2
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **33.0 MB (33043526 bytes)**  
+-	Total Size: **33.0 MB (33028904 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:50ec202e238a8fbe02be90fca5307f3dd317194d49445ad688b1997abfed8b46`
+-	Image ID: `sha256:e16c661aa6168abc4305003226ec94a5d122946ca62303526e0574a7a1606a6b`
 -	Entrypoint: `["docker-hitch-entrypoint"]`
 -	Default Command: `[]`
 
 ```dockerfile
-# Wed, 12 Apr 2023 00:20:06 GMT
-ADD file:11b1acca3f68b5c5787e292ff8dbdd114964a7272bf3519ab07710cbc01a0838 in / 
-# Wed, 12 Apr 2023 00:20:06 GMT
+# Tue, 02 May 2023 23:46:59 GMT
+ADD file:a2378c1b12e95db69e24b9d347441678c6f23239292cce3c822b1524992b6ec4 in / 
+# Tue, 02 May 2023 23:47:00 GMT
 CMD ["bash"]
-# Wed, 12 Apr 2023 08:07:58 GMT
+# Wed, 03 May 2023 20:45:05 GMT
 ARG SRCVER=1.7.2
-# Wed, 12 Apr 2023 08:07:58 GMT
+# Wed, 03 May 2023 20:45:05 GMT
 ARG PKGVER=1
-# Wed, 12 Apr 2023 08:07:58 GMT
+# Wed, 03 May 2023 20:45:05 GMT
 ARG DISTVER=bullseye
-# Wed, 12 Apr 2023 08:07:58 GMT
+# Wed, 03 May 2023 20:45:05 GMT
 ARG PKGCOMMIT=f12ab7958bc4885f3f00311cbca5103d9e6ba794
-# Wed, 12 Apr 2023 08:07:58 GMT
+# Wed, 03 May 2023 20:45:05 GMT
 ARG SHASUM=7b35b5f4a3b6dab2599643c0bc90880a77ea518a627b31813f45a7ee8c52982ba4ac07228b640a0bcf90ea7d63421b62884a091fed6664732585585e5ec15bcf
-# Wed, 12 Apr 2023 08:09:37 GMT
+# Wed, 03 May 2023 20:46:43 GMT
 # ARGS: DISTVER=bullseye PKGCOMMIT=f12ab7958bc4885f3f00311cbca5103d9e6ba794 PKGVER=1 SHASUM=7b35b5f4a3b6dab2599643c0bc90880a77ea518a627b31813f45a7ee8c52982ba4ac07228b640a0bcf90ea7d63421b62884a091fed6664732585585e5ec15bcf SRCVER=1.7.2
 RUN set -ex;     BASE_PKGS="apt-utils curl dirmngr dpkg-dev debhelper devscripts equivs fakeroot git gnupg pkg-config";     export DEBIAN_FRONTEND=noninteractive;     export DEBCONF_NONINTERACTIVE_SEEN=true;     tmpdir="$(mktemp -d)";     cd "$tmpdir";     apt-get update;     apt-get install -y $BASE_PKGS;     git clone https://github.com/varnish/pkg-hitch.git;     cd pkg-hitch;     git checkout ${PKGCOMMIT};     rm -rf .git;     curl -Lf https://hitch-tls.org/source/hitch-${SRCVER}.tar.gz -o $tmpdir/orig.tgz;     echo "${SHASUM}  $tmpdir/orig.tgz" | sha512sum -c -;     tar xavf $tmpdir/orig.tgz --strip 1;     sed -i         -e "s/@SRCVER@/${SRCVER}/g"         -e "s/@PKGVER@/${PKGVER:-1}/g"         -e "s/@DISTVER@/$DISTVER/g" debian/changelog;     mk-build-deps --install --tool="apt-get -o Debug::pkgProblemResolver=yes --yes" debian/control;     sed -i '' debian/hitch*;     dpkg-buildpackage -us -uc -j"$(nproc)";     apt-get -y purge --auto-remove hitch-build-deps $BASE_PKGS;     apt-get -y install ../*.deb;     sed -i 's/daemon = on/daemon = off/' /etc/hitch/hitch.conf;     rm -rf /var/lib/apt/lists/* "$tmpdir"
-# Wed, 12 Apr 2023 08:09:37 GMT
+# Wed, 03 May 2023 20:46:43 GMT
 WORKDIR /etc/hitch
-# Wed, 12 Apr 2023 08:09:37 GMT
+# Wed, 03 May 2023 20:46:43 GMT
 COPY file:1abf3c94dce5dc9f6617dc8d36a6fe6f4f7236189d4819f16cefb54288e80e0d in /usr/local/bin/ 
-# Wed, 12 Apr 2023 08:09:37 GMT
+# Wed, 03 May 2023 20:46:44 GMT
 ENTRYPOINT ["docker-hitch-entrypoint"]
-# Wed, 12 Apr 2023 08:09:37 GMT
+# Wed, 03 May 2023 20:46:44 GMT
 EXPOSE 443
-# Wed, 12 Apr 2023 08:09:37 GMT
+# Wed, 03 May 2023 20:46:44 GMT
 CMD []
 ```
 
 -	Layers:
-	-	`sha256:26c5c85e47da3022f1bdb9a112103646c5c29517d757e95426f16e4bd9533405`  
-		Last Modified: Wed, 12 Apr 2023 00:23:43 GMT  
-		Size: 31.4 MB (31418228 bytes)  
+	-	`sha256:9e3ea8720c6de96cc9ad544dddc695a3ab73f5581c5d954e0504cc4f80fb5e5c`  
+		Last Modified: Tue, 02 May 2023 23:50:22 GMT  
+		Size: 31.4 MB (31403516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6cddb07b1fe1906940f8e80bb43845a6a760818a8eccbe4c2cdd1990c268865`  
-		Last Modified: Wed, 12 Apr 2023 08:10:14 GMT  
-		Size: 1.6 MB (1624882 bytes)  
+	-	`sha256:75e518832e83e5a7eb0bf2a0295b8c6d08b29bb23364493f95292cb13942e82b`  
+		Last Modified: Wed, 03 May 2023 20:47:20 GMT  
+		Size: 1.6 MB (1624971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:598166d10297b1a136b988894181b49898961cae5664e2835b88eee9fb75fa98`  
-		Last Modified: Wed, 12 Apr 2023 08:10:14 GMT  
-		Size: 416.0 B  
+	-	`sha256:75974984593c40e0f28f2e885deb4eb76eddb49913122f7c37420e3bcaa8ea3c`  
+		Last Modified: Wed, 03 May 2023 20:47:20 GMT  
+		Size: 417.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `hitch:1.7.2` - linux; arm variant v7
@@ -1102,7 +1102,7 @@ CMD []
 ## `hitch:1.7.2-1`
 
 ```console
-$ docker pull hitch@sha256:e4cc2ee1ffa749a7268190cfa8214307bf8451a673de499ce696783af6d78dd5
+$ docker pull hitch@sha256:8d1b5b3431683ff3ec3ec27feab27ea8975e913d570bd9b4dd5c516f55d679bc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1117,59 +1117,59 @@ $ docker pull hitch@sha256:e4cc2ee1ffa749a7268190cfa8214307bf8451a673de499ce6967
 ### `hitch:1.7.2-1` - linux; amd64
 
 ```console
-$ docker pull hitch@sha256:d8b5711ce3867e3d394e5d57b0f85be2db934e1f21eb51b4f88efe47f3b295d6
+$ docker pull hitch@sha256:74019dbc698afbd5a10e2cb347aa8a572d2571ec2c6165d60200502949a2fbd2
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **33.0 MB (33043526 bytes)**  
+-	Total Size: **33.0 MB (33028904 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:50ec202e238a8fbe02be90fca5307f3dd317194d49445ad688b1997abfed8b46`
+-	Image ID: `sha256:e16c661aa6168abc4305003226ec94a5d122946ca62303526e0574a7a1606a6b`
 -	Entrypoint: `["docker-hitch-entrypoint"]`
 -	Default Command: `[]`
 
 ```dockerfile
-# Wed, 12 Apr 2023 00:20:06 GMT
-ADD file:11b1acca3f68b5c5787e292ff8dbdd114964a7272bf3519ab07710cbc01a0838 in / 
-# Wed, 12 Apr 2023 00:20:06 GMT
+# Tue, 02 May 2023 23:46:59 GMT
+ADD file:a2378c1b12e95db69e24b9d347441678c6f23239292cce3c822b1524992b6ec4 in / 
+# Tue, 02 May 2023 23:47:00 GMT
 CMD ["bash"]
-# Wed, 12 Apr 2023 08:07:58 GMT
+# Wed, 03 May 2023 20:45:05 GMT
 ARG SRCVER=1.7.2
-# Wed, 12 Apr 2023 08:07:58 GMT
+# Wed, 03 May 2023 20:45:05 GMT
 ARG PKGVER=1
-# Wed, 12 Apr 2023 08:07:58 GMT
+# Wed, 03 May 2023 20:45:05 GMT
 ARG DISTVER=bullseye
-# Wed, 12 Apr 2023 08:07:58 GMT
+# Wed, 03 May 2023 20:45:05 GMT
 ARG PKGCOMMIT=f12ab7958bc4885f3f00311cbca5103d9e6ba794
-# Wed, 12 Apr 2023 08:07:58 GMT
+# Wed, 03 May 2023 20:45:05 GMT
 ARG SHASUM=7b35b5f4a3b6dab2599643c0bc90880a77ea518a627b31813f45a7ee8c52982ba4ac07228b640a0bcf90ea7d63421b62884a091fed6664732585585e5ec15bcf
-# Wed, 12 Apr 2023 08:09:37 GMT
+# Wed, 03 May 2023 20:46:43 GMT
 # ARGS: DISTVER=bullseye PKGCOMMIT=f12ab7958bc4885f3f00311cbca5103d9e6ba794 PKGVER=1 SHASUM=7b35b5f4a3b6dab2599643c0bc90880a77ea518a627b31813f45a7ee8c52982ba4ac07228b640a0bcf90ea7d63421b62884a091fed6664732585585e5ec15bcf SRCVER=1.7.2
 RUN set -ex;     BASE_PKGS="apt-utils curl dirmngr dpkg-dev debhelper devscripts equivs fakeroot git gnupg pkg-config";     export DEBIAN_FRONTEND=noninteractive;     export DEBCONF_NONINTERACTIVE_SEEN=true;     tmpdir="$(mktemp -d)";     cd "$tmpdir";     apt-get update;     apt-get install -y $BASE_PKGS;     git clone https://github.com/varnish/pkg-hitch.git;     cd pkg-hitch;     git checkout ${PKGCOMMIT};     rm -rf .git;     curl -Lf https://hitch-tls.org/source/hitch-${SRCVER}.tar.gz -o $tmpdir/orig.tgz;     echo "${SHASUM}  $tmpdir/orig.tgz" | sha512sum -c -;     tar xavf $tmpdir/orig.tgz --strip 1;     sed -i         -e "s/@SRCVER@/${SRCVER}/g"         -e "s/@PKGVER@/${PKGVER:-1}/g"         -e "s/@DISTVER@/$DISTVER/g" debian/changelog;     mk-build-deps --install --tool="apt-get -o Debug::pkgProblemResolver=yes --yes" debian/control;     sed -i '' debian/hitch*;     dpkg-buildpackage -us -uc -j"$(nproc)";     apt-get -y purge --auto-remove hitch-build-deps $BASE_PKGS;     apt-get -y install ../*.deb;     sed -i 's/daemon = on/daemon = off/' /etc/hitch/hitch.conf;     rm -rf /var/lib/apt/lists/* "$tmpdir"
-# Wed, 12 Apr 2023 08:09:37 GMT
+# Wed, 03 May 2023 20:46:43 GMT
 WORKDIR /etc/hitch
-# Wed, 12 Apr 2023 08:09:37 GMT
+# Wed, 03 May 2023 20:46:43 GMT
 COPY file:1abf3c94dce5dc9f6617dc8d36a6fe6f4f7236189d4819f16cefb54288e80e0d in /usr/local/bin/ 
-# Wed, 12 Apr 2023 08:09:37 GMT
+# Wed, 03 May 2023 20:46:44 GMT
 ENTRYPOINT ["docker-hitch-entrypoint"]
-# Wed, 12 Apr 2023 08:09:37 GMT
+# Wed, 03 May 2023 20:46:44 GMT
 EXPOSE 443
-# Wed, 12 Apr 2023 08:09:37 GMT
+# Wed, 03 May 2023 20:46:44 GMT
 CMD []
 ```
 
 -	Layers:
-	-	`sha256:26c5c85e47da3022f1bdb9a112103646c5c29517d757e95426f16e4bd9533405`  
-		Last Modified: Wed, 12 Apr 2023 00:23:43 GMT  
-		Size: 31.4 MB (31418228 bytes)  
+	-	`sha256:9e3ea8720c6de96cc9ad544dddc695a3ab73f5581c5d954e0504cc4f80fb5e5c`  
+		Last Modified: Tue, 02 May 2023 23:50:22 GMT  
+		Size: 31.4 MB (31403516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6cddb07b1fe1906940f8e80bb43845a6a760818a8eccbe4c2cdd1990c268865`  
-		Last Modified: Wed, 12 Apr 2023 08:10:14 GMT  
-		Size: 1.6 MB (1624882 bytes)  
+	-	`sha256:75e518832e83e5a7eb0bf2a0295b8c6d08b29bb23364493f95292cb13942e82b`  
+		Last Modified: Wed, 03 May 2023 20:47:20 GMT  
+		Size: 1.6 MB (1624971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:598166d10297b1a136b988894181b49898961cae5664e2835b88eee9fb75fa98`  
-		Last Modified: Wed, 12 Apr 2023 08:10:14 GMT  
-		Size: 416.0 B  
+	-	`sha256:75974984593c40e0f28f2e885deb4eb76eddb49913122f7c37420e3bcaa8ea3c`  
+		Last Modified: Wed, 03 May 2023 20:47:20 GMT  
+		Size: 417.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `hitch:1.7.2-1` - linux; arm variant v7
@@ -1465,7 +1465,7 @@ CMD []
 ## `hitch:1.7.3`
 
 ```console
-$ docker pull hitch@sha256:1bb024efefcd2746926fa62958f6be8985f6a5e377bcbdbc003656772a944ca6
+$ docker pull hitch@sha256:cc875cfdfbeaf45fff45a75952e205cd83996c308fe3fb436d8c720e0e9305e3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1480,58 +1480,58 @@ $ docker pull hitch@sha256:1bb024efefcd2746926fa62958f6be8985f6a5e377bcbdbc00365
 ### `hitch:1.7.3` - linux; amd64
 
 ```console
-$ docker pull hitch@sha256:bbff3ae2e1c3f7397e9eac53ca3b01bde101b37a678ce5ba74072ad1c67be690
+$ docker pull hitch@sha256:ca330d657f8c093a47de0a3fa1fac6de63e910c0d4c0fb4e3b31a3bcee4a92bd
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **33.0 MB (33044179 bytes)**  
+-	Total Size: **33.0 MB (33029490 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7414dcf5e4396abdb690b4d0da8664a23f4b049d943c78a7b18bf9f51890b510`
+-	Image ID: `sha256:565dce13d52a485bf741af18a4b7ba34bcb5116aa517f9979f6bd772d1a9e14d`
 -	Entrypoint: `["docker-hitch-entrypoint"]`
 -	Default Command: `[]`
 
 ```dockerfile
-# Wed, 12 Apr 2023 00:20:06 GMT
-ADD file:11b1acca3f68b5c5787e292ff8dbdd114964a7272bf3519ab07710cbc01a0838 in / 
-# Wed, 12 Apr 2023 00:20:06 GMT
+# Tue, 02 May 2023 23:46:59 GMT
+ADD file:a2378c1b12e95db69e24b9d347441678c6f23239292cce3c822b1524992b6ec4 in / 
+# Tue, 02 May 2023 23:47:00 GMT
 CMD ["bash"]
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG SRCVER=1.7.3
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG PKGVER=1
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG DISTVER=bullseye
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG PKGCOMMIT=f12ab7958bc4885f3f00311cbca5103d9e6ba794
-# Wed, 12 Apr 2023 08:06:06 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG SHASUM=88de82e639e7f9b7873bb7226fcbcbc4cd5779c75a5bd21fca8e1ca927a2a3ae9eb455d73d1f42d4dc45546118c718d1b58396836ed9c8acac281d487c9fe8fd
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 # ARGS: DISTVER=bullseye PKGCOMMIT=f12ab7958bc4885f3f00311cbca5103d9e6ba794 PKGVER=1 SHASUM=88de82e639e7f9b7873bb7226fcbcbc4cd5779c75a5bd21fca8e1ca927a2a3ae9eb455d73d1f42d4dc45546118c718d1b58396836ed9c8acac281d487c9fe8fd SRCVER=1.7.3
 RUN set -ex;     BASE_PKGS="apt-utils curl dirmngr dpkg-dev debhelper devscripts equivs fakeroot git gnupg pkg-config";     export DEBIAN_FRONTEND=noninteractive;     export DEBCONF_NONINTERACTIVE_SEEN=true;     tmpdir="$(mktemp -d)";     cd "$tmpdir";     apt-get update;     apt-get install -y $BASE_PKGS;     git clone https://github.com/varnish/pkg-hitch.git;     cd pkg-hitch;     git checkout ${PKGCOMMIT};     rm -rf .git;     curl -Lf https://hitch-tls.org/source/hitch-${SRCVER}.tar.gz -o $tmpdir/orig.tgz;     echo "${SHASUM}  $tmpdir/orig.tgz" | sha512sum -c -;     tar xavf $tmpdir/orig.tgz --strip 1;     sed -i         -e "s/@SRCVER@/${SRCVER}/g"         -e "s/@PKGVER@/${PKGVER:-1}/g"         -e "s/@DISTVER@/$DISTVER/g" debian/changelog;     mk-build-deps --install --tool="apt-get -o Debug::pkgProblemResolver=yes --yes" debian/control;     sed -i '' debian/hitch*;     dpkg-buildpackage -us -uc -j"$(nproc)";     apt-get -y purge --auto-remove hitch-build-deps $BASE_PKGS;     apt-get -y install ../*.deb;     sed -i 's/daemon = on/daemon = off/' /etc/hitch/hitch.conf;     rm -rf /var/lib/apt/lists/* "$tmpdir"
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 WORKDIR /etc/hitch
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 COPY file:1abf3c94dce5dc9f6617dc8d36a6fe6f4f7236189d4819f16cefb54288e80e0d in /usr/local/bin/ 
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 ENTRYPOINT ["docker-hitch-entrypoint"]
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 EXPOSE 443
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 CMD []
 ```
 
 -	Layers:
-	-	`sha256:26c5c85e47da3022f1bdb9a112103646c5c29517d757e95426f16e4bd9533405`  
-		Last Modified: Wed, 12 Apr 2023 00:23:43 GMT  
-		Size: 31.4 MB (31418228 bytes)  
+	-	`sha256:9e3ea8720c6de96cc9ad544dddc695a3ab73f5581c5d954e0504cc4f80fb5e5c`  
+		Last Modified: Tue, 02 May 2023 23:50:22 GMT  
+		Size: 31.4 MB (31403516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5787287fbbde0f9827780a321af93215533050d8cc14a11b37385519f950df45`  
-		Last Modified: Wed, 12 Apr 2023 08:10:00 GMT  
-		Size: 1.6 MB (1625536 bytes)  
+	-	`sha256:5068fb84d96c68410d2be20fc4225f48dfa270dbc5b30b989f758f1ad5321d29`  
+		Last Modified: Wed, 03 May 2023 20:47:06 GMT  
+		Size: 1.6 MB (1625559 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1224c2ada7c864cc8570b7cfbc972b10c2ac35bcdc3c6d44f71be5b0f65f246a`  
-		Last Modified: Wed, 12 Apr 2023 08:10:00 GMT  
+	-	`sha256:536fe63701960687ec7375f35e1c4a462045d6268be880184143f7a144bfb5f9`  
+		Last Modified: Wed, 03 May 2023 20:47:06 GMT  
 		Size: 415.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -1828,7 +1828,7 @@ CMD []
 ## `hitch:1.7.3-1`
 
 ```console
-$ docker pull hitch@sha256:1bb024efefcd2746926fa62958f6be8985f6a5e377bcbdbc003656772a944ca6
+$ docker pull hitch@sha256:cc875cfdfbeaf45fff45a75952e205cd83996c308fe3fb436d8c720e0e9305e3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1843,58 +1843,58 @@ $ docker pull hitch@sha256:1bb024efefcd2746926fa62958f6be8985f6a5e377bcbdbc00365
 ### `hitch:1.7.3-1` - linux; amd64
 
 ```console
-$ docker pull hitch@sha256:bbff3ae2e1c3f7397e9eac53ca3b01bde101b37a678ce5ba74072ad1c67be690
+$ docker pull hitch@sha256:ca330d657f8c093a47de0a3fa1fac6de63e910c0d4c0fb4e3b31a3bcee4a92bd
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **33.0 MB (33044179 bytes)**  
+-	Total Size: **33.0 MB (33029490 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7414dcf5e4396abdb690b4d0da8664a23f4b049d943c78a7b18bf9f51890b510`
+-	Image ID: `sha256:565dce13d52a485bf741af18a4b7ba34bcb5116aa517f9979f6bd772d1a9e14d`
 -	Entrypoint: `["docker-hitch-entrypoint"]`
 -	Default Command: `[]`
 
 ```dockerfile
-# Wed, 12 Apr 2023 00:20:06 GMT
-ADD file:11b1acca3f68b5c5787e292ff8dbdd114964a7272bf3519ab07710cbc01a0838 in / 
-# Wed, 12 Apr 2023 00:20:06 GMT
+# Tue, 02 May 2023 23:46:59 GMT
+ADD file:a2378c1b12e95db69e24b9d347441678c6f23239292cce3c822b1524992b6ec4 in / 
+# Tue, 02 May 2023 23:47:00 GMT
 CMD ["bash"]
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG SRCVER=1.7.3
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG PKGVER=1
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG DISTVER=bullseye
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG PKGCOMMIT=f12ab7958bc4885f3f00311cbca5103d9e6ba794
-# Wed, 12 Apr 2023 08:06:06 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG SHASUM=88de82e639e7f9b7873bb7226fcbcbc4cd5779c75a5bd21fca8e1ca927a2a3ae9eb455d73d1f42d4dc45546118c718d1b58396836ed9c8acac281d487c9fe8fd
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 # ARGS: DISTVER=bullseye PKGCOMMIT=f12ab7958bc4885f3f00311cbca5103d9e6ba794 PKGVER=1 SHASUM=88de82e639e7f9b7873bb7226fcbcbc4cd5779c75a5bd21fca8e1ca927a2a3ae9eb455d73d1f42d4dc45546118c718d1b58396836ed9c8acac281d487c9fe8fd SRCVER=1.7.3
 RUN set -ex;     BASE_PKGS="apt-utils curl dirmngr dpkg-dev debhelper devscripts equivs fakeroot git gnupg pkg-config";     export DEBIAN_FRONTEND=noninteractive;     export DEBCONF_NONINTERACTIVE_SEEN=true;     tmpdir="$(mktemp -d)";     cd "$tmpdir";     apt-get update;     apt-get install -y $BASE_PKGS;     git clone https://github.com/varnish/pkg-hitch.git;     cd pkg-hitch;     git checkout ${PKGCOMMIT};     rm -rf .git;     curl -Lf https://hitch-tls.org/source/hitch-${SRCVER}.tar.gz -o $tmpdir/orig.tgz;     echo "${SHASUM}  $tmpdir/orig.tgz" | sha512sum -c -;     tar xavf $tmpdir/orig.tgz --strip 1;     sed -i         -e "s/@SRCVER@/${SRCVER}/g"         -e "s/@PKGVER@/${PKGVER:-1}/g"         -e "s/@DISTVER@/$DISTVER/g" debian/changelog;     mk-build-deps --install --tool="apt-get -o Debug::pkgProblemResolver=yes --yes" debian/control;     sed -i '' debian/hitch*;     dpkg-buildpackage -us -uc -j"$(nproc)";     apt-get -y purge --auto-remove hitch-build-deps $BASE_PKGS;     apt-get -y install ../*.deb;     sed -i 's/daemon = on/daemon = off/' /etc/hitch/hitch.conf;     rm -rf /var/lib/apt/lists/* "$tmpdir"
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 WORKDIR /etc/hitch
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 COPY file:1abf3c94dce5dc9f6617dc8d36a6fe6f4f7236189d4819f16cefb54288e80e0d in /usr/local/bin/ 
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 ENTRYPOINT ["docker-hitch-entrypoint"]
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 EXPOSE 443
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 CMD []
 ```
 
 -	Layers:
-	-	`sha256:26c5c85e47da3022f1bdb9a112103646c5c29517d757e95426f16e4bd9533405`  
-		Last Modified: Wed, 12 Apr 2023 00:23:43 GMT  
-		Size: 31.4 MB (31418228 bytes)  
+	-	`sha256:9e3ea8720c6de96cc9ad544dddc695a3ab73f5581c5d954e0504cc4f80fb5e5c`  
+		Last Modified: Tue, 02 May 2023 23:50:22 GMT  
+		Size: 31.4 MB (31403516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5787287fbbde0f9827780a321af93215533050d8cc14a11b37385519f950df45`  
-		Last Modified: Wed, 12 Apr 2023 08:10:00 GMT  
-		Size: 1.6 MB (1625536 bytes)  
+	-	`sha256:5068fb84d96c68410d2be20fc4225f48dfa270dbc5b30b989f758f1ad5321d29`  
+		Last Modified: Wed, 03 May 2023 20:47:06 GMT  
+		Size: 1.6 MB (1625559 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1224c2ada7c864cc8570b7cfbc972b10c2ac35bcdc3c6d44f71be5b0f65f246a`  
-		Last Modified: Wed, 12 Apr 2023 08:10:00 GMT  
+	-	`sha256:536fe63701960687ec7375f35e1c4a462045d6268be880184143f7a144bfb5f9`  
+		Last Modified: Wed, 03 May 2023 20:47:06 GMT  
 		Size: 415.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -2191,7 +2191,7 @@ CMD []
 ## `hitch:latest`
 
 ```console
-$ docker pull hitch@sha256:1bb024efefcd2746926fa62958f6be8985f6a5e377bcbdbc003656772a944ca6
+$ docker pull hitch@sha256:cc875cfdfbeaf45fff45a75952e205cd83996c308fe3fb436d8c720e0e9305e3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2206,58 +2206,58 @@ $ docker pull hitch@sha256:1bb024efefcd2746926fa62958f6be8985f6a5e377bcbdbc00365
 ### `hitch:latest` - linux; amd64
 
 ```console
-$ docker pull hitch@sha256:bbff3ae2e1c3f7397e9eac53ca3b01bde101b37a678ce5ba74072ad1c67be690
+$ docker pull hitch@sha256:ca330d657f8c093a47de0a3fa1fac6de63e910c0d4c0fb4e3b31a3bcee4a92bd
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **33.0 MB (33044179 bytes)**  
+-	Total Size: **33.0 MB (33029490 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7414dcf5e4396abdb690b4d0da8664a23f4b049d943c78a7b18bf9f51890b510`
+-	Image ID: `sha256:565dce13d52a485bf741af18a4b7ba34bcb5116aa517f9979f6bd772d1a9e14d`
 -	Entrypoint: `["docker-hitch-entrypoint"]`
 -	Default Command: `[]`
 
 ```dockerfile
-# Wed, 12 Apr 2023 00:20:06 GMT
-ADD file:11b1acca3f68b5c5787e292ff8dbdd114964a7272bf3519ab07710cbc01a0838 in / 
-# Wed, 12 Apr 2023 00:20:06 GMT
+# Tue, 02 May 2023 23:46:59 GMT
+ADD file:a2378c1b12e95db69e24b9d347441678c6f23239292cce3c822b1524992b6ec4 in / 
+# Tue, 02 May 2023 23:47:00 GMT
 CMD ["bash"]
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG SRCVER=1.7.3
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG PKGVER=1
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG DISTVER=bullseye
-# Wed, 12 Apr 2023 08:06:05 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG PKGCOMMIT=f12ab7958bc4885f3f00311cbca5103d9e6ba794
-# Wed, 12 Apr 2023 08:06:06 GMT
+# Wed, 03 May 2023 20:42:42 GMT
 ARG SHASUM=88de82e639e7f9b7873bb7226fcbcbc4cd5779c75a5bd21fca8e1ca927a2a3ae9eb455d73d1f42d4dc45546118c718d1b58396836ed9c8acac281d487c9fe8fd
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 # ARGS: DISTVER=bullseye PKGCOMMIT=f12ab7958bc4885f3f00311cbca5103d9e6ba794 PKGVER=1 SHASUM=88de82e639e7f9b7873bb7226fcbcbc4cd5779c75a5bd21fca8e1ca927a2a3ae9eb455d73d1f42d4dc45546118c718d1b58396836ed9c8acac281d487c9fe8fd SRCVER=1.7.3
 RUN set -ex;     BASE_PKGS="apt-utils curl dirmngr dpkg-dev debhelper devscripts equivs fakeroot git gnupg pkg-config";     export DEBIAN_FRONTEND=noninteractive;     export DEBCONF_NONINTERACTIVE_SEEN=true;     tmpdir="$(mktemp -d)";     cd "$tmpdir";     apt-get update;     apt-get install -y $BASE_PKGS;     git clone https://github.com/varnish/pkg-hitch.git;     cd pkg-hitch;     git checkout ${PKGCOMMIT};     rm -rf .git;     curl -Lf https://hitch-tls.org/source/hitch-${SRCVER}.tar.gz -o $tmpdir/orig.tgz;     echo "${SHASUM}  $tmpdir/orig.tgz" | sha512sum -c -;     tar xavf $tmpdir/orig.tgz --strip 1;     sed -i         -e "s/@SRCVER@/${SRCVER}/g"         -e "s/@PKGVER@/${PKGVER:-1}/g"         -e "s/@DISTVER@/$DISTVER/g" debian/changelog;     mk-build-deps --install --tool="apt-get -o Debug::pkgProblemResolver=yes --yes" debian/control;     sed -i '' debian/hitch*;     dpkg-buildpackage -us -uc -j"$(nproc)";     apt-get -y purge --auto-remove hitch-build-deps $BASE_PKGS;     apt-get -y install ../*.deb;     sed -i 's/daemon = on/daemon = off/' /etc/hitch/hitch.conf;     rm -rf /var/lib/apt/lists/* "$tmpdir"
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 WORKDIR /etc/hitch
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 COPY file:1abf3c94dce5dc9f6617dc8d36a6fe6f4f7236189d4819f16cefb54288e80e0d in /usr/local/bin/ 
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 ENTRYPOINT ["docker-hitch-entrypoint"]
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 EXPOSE 443
-# Wed, 12 Apr 2023 08:07:47 GMT
+# Wed, 03 May 2023 20:45:00 GMT
 CMD []
 ```
 
 -	Layers:
-	-	`sha256:26c5c85e47da3022f1bdb9a112103646c5c29517d757e95426f16e4bd9533405`  
-		Last Modified: Wed, 12 Apr 2023 00:23:43 GMT  
-		Size: 31.4 MB (31418228 bytes)  
+	-	`sha256:9e3ea8720c6de96cc9ad544dddc695a3ab73f5581c5d954e0504cc4f80fb5e5c`  
+		Last Modified: Tue, 02 May 2023 23:50:22 GMT  
+		Size: 31.4 MB (31403516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5787287fbbde0f9827780a321af93215533050d8cc14a11b37385519f950df45`  
-		Last Modified: Wed, 12 Apr 2023 08:10:00 GMT  
-		Size: 1.6 MB (1625536 bytes)  
+	-	`sha256:5068fb84d96c68410d2be20fc4225f48dfa270dbc5b30b989f758f1ad5321d29`  
+		Last Modified: Wed, 03 May 2023 20:47:06 GMT  
+		Size: 1.6 MB (1625559 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1224c2ada7c864cc8570b7cfbc972b10c2ac35bcdc3c6d44f71be5b0f65f246a`  
-		Last Modified: Wed, 12 Apr 2023 08:10:00 GMT  
+	-	`sha256:536fe63701960687ec7375f35e1c4a462045d6268be880184143f7a144bfb5f9`  
+		Last Modified: Wed, 03 May 2023 20:47:06 GMT  
 		Size: 415.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
