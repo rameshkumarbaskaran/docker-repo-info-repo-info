@@ -1,7 +1,7 @@
 ## `maven:3-amazoncorretto-8`
 
 ```console
-$ docker pull maven@sha256:cfc555be65a1d020f84b961c3e123d3b7de5495f17d516f09ad84df27943c59a
+$ docker pull maven@sha256:0aca1ef96718af117e42cbf2e05fb7d1e874a8a7b9372949a24af7a6c0bf9b6b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -93,13 +93,13 @@ CMD ["mvn"]
 ### `maven:3-amazoncorretto-8` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:ca10e32d4f132a9241d02c74ee6fc5f899398d32071708437a4edb2579d54f19
+$ docker pull maven@sha256:10f8848bf1a3a8440d76c68efbe5ad3993728e99e8d3b25fdc0e70f3c473ad2b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **247.6 MB (247638918 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:49d924a093ddfeefb5d9c6f7ee0ca41ae0807ea4eb507addac5833cf9e6f69cf`
+-	Image ID: `sha256:1c01f454c76ebf6d7a19fba14f3c5493cf4e0430a6e755afc4d626dd53f8d2e8`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -117,27 +117,27 @@ RUN set -eux     && export GNUPGHOME="$(mktemp -d)"     && curl -fL -o corretto.
 ENV LANG=C.UTF-8
 # Thu, 20 Apr 2023 17:39:37 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Wed, 26 Apr 2023 19:40:40 GMT
+# Thu, 04 May 2023 03:25:59 GMT
 RUN yum install -y tar which gzip # TODO remove # buildkit
-# Wed, 26 Apr 2023 19:40:40 GMT
+# Thu, 04 May 2023 03:25:59 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Wed, 26 Apr 2023 19:40:40 GMT
+# Thu, 04 May 2023 03:25:59 GMT
 COPY /usr/share/maven /usr/share/maven # buildkit
-# Wed, 26 Apr 2023 19:40:40 GMT
+# Thu, 04 May 2023 03:25:59 GMT
 COPY /usr/local/bin/mvn-entrypoint.sh /usr/local/bin/mvn-entrypoint.sh # buildkit
-# Wed, 26 Apr 2023 19:40:40 GMT
+# Thu, 04 May 2023 03:25:59 GMT
 COPY /usr/share/maven/ref/settings-docker.xml /usr/share/maven/ref/settings-docker.xml # buildkit
-# Wed, 26 Apr 2023 19:40:40 GMT
+# Thu, 04 May 2023 03:25:59 GMT
 RUN ln -s ${MAVEN_HOME}/bin/mvn /usr/bin/mvn # buildkit
-# Wed, 26 Apr 2023 19:40:40 GMT
+# Thu, 04 May 2023 03:25:59 GMT
 ARG MAVEN_VERSION=3.9.1
-# Wed, 26 Apr 2023 19:40:40 GMT
+# Thu, 04 May 2023 03:25:59 GMT
 ARG USER_HOME_DIR=/root
-# Wed, 26 Apr 2023 19:40:40 GMT
+# Thu, 04 May 2023 03:25:59 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Wed, 26 Apr 2023 19:40:40 GMT
+# Thu, 04 May 2023 03:25:59 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Wed, 26 Apr 2023 19:40:40 GMT
+# Thu, 04 May 2023 03:25:59 GMT
 CMD ["mvn"]
 ```
 
