@@ -773,13 +773,9 @@ Licenses: (parsed from: `/usr/share/doc/distro-info-data/copyright`)
 
 - `ISC`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris distro-info-data=0.43ubuntu1.12
-'http://archive.ubuntu.com/ubuntu/pool/main/d/distro-info-data/distro-info-data_0.43ubuntu1.12.dsc' distro-info-data_0.43ubuntu1.12.dsc 1742 SHA512:5a0ddb0c812aa490038c46f101ce962d72a077a6f08edb4d6e84ba032fcf6612215f8de64b894f909507d731cddcb97bb13c8ba4a92c1dedcba0ca98ef8bb776
-'http://archive.ubuntu.com/ubuntu/pool/main/d/distro-info-data/distro-info-data_0.43ubuntu1.12.tar.xz' distro-info-data_0.43ubuntu1.12.tar.xz 7972 SHA512:dd520385a2de5be8c406a0908bd3242601f248afacb0334b455e07d999071236696d569c7585e4f5917ac1f35b5bb3b294c349612eec5be83d11e299167499f1
-```
 
 ### `dpkg` source package: `double-conversion=3.1.5-4ubuntu1`
 
@@ -1796,14 +1792,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-fuel-tools4/copyright`)
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-fuel-tools4=4.8.3-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.8.3-1%7efocal.dsc' ignition-fuel-tools4_4.8.3-1~focal.dsc 1538 SHA256:944c485f59c7a57e0c548e9f012c489abe8363c07491afee164ab4569dbff69d
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.8.3.orig.tar.bz2' ignition-fuel-tools4_4.8.3.orig.tar.bz2 276368 SHA256:c28f2934533693a5bdf172a692e61ac8a1f8e85cdecbd32e6d4531a946e1cb49
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.8.3-1%7efocal.debian.tar.xz' ignition-fuel-tools4_4.8.3-1~focal.debian.tar.xz 1904 SHA256:27c8fc8ff75c45baf05d71705d9823f049e56cf5ac84283eebcc8bb5d85541ad
-```
 
 ### `dpkg` source package: `ignition-math6=6.14.0-1~focal`
 
