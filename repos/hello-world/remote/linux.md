@@ -1,7 +1,7 @@
 ## `hello-world:linux`
 
 ```console
-$ docker pull hello-world@sha256:a096c672111bc0ad6108757401770351e82392d80850fd32affe698cf945e985
+$ docker pull hello-world@sha256:896812d8a3cd9aaf19ae56a1f9d49cda7f667b5f9627c00471d878768fe91c05
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -97,27 +97,27 @@ CMD ["/hello"]
 ### `hello-world:linux` - linux; arm64 variant v8
 
 ```console
-$ docker pull hello-world@sha256:432f982638b3aefab73cc58ab28f5c16e96fdb504e8c134fc58dff4bae8bf338
+$ docker pull hello-world@sha256:efebf0f7aee69450f99deafe11121afa720abed733943e50581a9dc7540689c8
 ```
 
--	Docker Version: 20.10.12
+-	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **3.2 KB (3208 bytes)**  
+-	Total Size: **3.2 KB (3190 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:46331d942d6350436f64e614d75725f6de3bb5c63e266e236e04389820a234c4`
+-	Image ID: `sha256:b038788ddb222cb7d6025b411759e4f5abe9910486c8f98534ead97befd77dd7`
 -	Default Command: `["\/hello"]`
 
 ```dockerfile
-# Sat, 19 Mar 2022 16:12:58 GMT
-COPY file:a79dd5bda1e77203401956a93401d3aef45221fc750295a4291896f3386f4f54 in / 
-# Sat, 19 Mar 2022 16:12:58 GMT
+# Thu, 04 May 2023 08:43:21 GMT
+COPY file:f56689f2cf47e7530b9a14ed69e80d2ce38371866c8776256c24d80d148ff825 in / 
+# Thu, 04 May 2023 08:43:21 GMT
 CMD ["/hello"]
 ```
 
 -	Layers:
-	-	`sha256:7050e35b49f5e348c4809f5eff915842962cb813f32062d3bbdd35c750dd7d01`  
-		Last Modified: Sat, 19 Mar 2022 16:13:11 GMT  
-		Size: 3.2 KB (3208 bytes)  
+	-	`sha256:70f5ac315c5af948332962ff4678084ebcc215809506e4b8cd9e509660417205`  
+		Last Modified: Thu, 04 May 2023 08:43:30 GMT  
+		Size: 3.2 KB (3190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `hello-world:linux` - linux; 386
