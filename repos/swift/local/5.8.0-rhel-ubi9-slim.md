@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:2eafbabfd2497f966367bb961b4f23827df38d647a201193affefdf1b261c3c7`
-- Created: `2023-04-13T00:08:14.890620639Z`
-- Virtual Size: ~ 467.99 Mb  
+- Image ID: `sha256:beb997154854ea43365ed4ab67d9479db5cd200e3fffa71d27a7f38ac1564e22`
+- Created: `2023-05-10T01:25:09.765992482Z`
+- Virtual Size: ~ 466.12 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -18,7 +18,7 @@
   - `SWIFT_WEBROOT=https://download.swift.org`
 - Labels:
   - `architecture=x86_64`
-  - `build-date=2023-04-04T12:59:33`
+  - `build-date=2023-05-03T08:55:49`
   - `com.redhat.component=ubi9-container`
   - `com.redhat.license_terms=https://www.redhat.com/en/about/red-hat-end-user-license-agreements#UBI`
   - `description=Docker Container for the Swift programming language`
@@ -30,13 +30,13 @@
   - `io.openshift.tags=base rhel9`
   - `maintainer=Swift Infrastructure <swift-infrastructure@forums.swift.org>`
   - `name=ubi9`
-  - `release=1817`
+  - `release=489`
   - `summary=Provides the latest release of Red Hat Universal Base Image 9.`
-  - `url=https://access.redhat.com/containers/#/registry.access.redhat.com/ubi9/images/9.1.0-1817`
-  - `vcs-ref=cf87ad00feaef3d9d7a442dad55ab6a14f6a3f81`
+  - `url=https://access.redhat.com/containers/#/registry.access.redhat.com/ubi9/images/9.2-489`
+  - `vcs-ref=6b5892a11894993e819f9a93ee1d7aaa80dc3a17`
   - `vcs-type=git`
   - `vendor=Red Hat, Inc.`
-  - `version=9.1.0`
+  - `version=9.2`
 
 ## `rpm` (`.rpm`-based packages)
 
@@ -82,7 +82,7 @@ Licenses (from `rpm --query`): Public Domain
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `coreutils-single-8.32-32.el9.x86_64`
+### `rpm` package: `coreutils-single-8.32-34.el9.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+
 
@@ -100,31 +100,25 @@ Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `crypto-policies-20220815-1.git0fbe86f.el9.noarch`
+### `rpm` package: `crypto-policies-20221215-1.git9a18988.el9.noarch`
 
 Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `crypto-policies-scripts-20220815-1.git0fbe86f.el9.noarch`
+### `rpm` package: `crypto-policies-scripts-20221215-1.git9a18988.el9.noarch`
 
 Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `cryptsetup-libs-2.4.3-5.el9_1.1.x86_64`
-
-Licenses (from `rpm --query`): GPLv2+ and LGPLv2+
-
-**WARNING:** unable to find source (`dnf download` failed or returned no results)!
-
-### `rpm` package: `curl-minimal-7.76.1-19.el9_1.2.x86_64`
+### `rpm` package: `curl-minimal-7.76.1-23.el9_2.1.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `cyrus-sasl-lib-2.1.27-20.el9.x86_64`
+### `rpm` package: `cyrus-sasl-lib-2.1.27-21.el9.x86_64`
 
 Licenses (from `rpm --query`): BSD with advertising
 
@@ -160,61 +154,49 @@ Licenses (from `rpm --query`): Bitstream Vera and Public Domain
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `device-mapper-1.02.185-3.el9.x86_64`
-
-Licenses (from `rpm --query`): GPLv2
-
-**WARNING:** unable to find source (`dnf download` failed or returned no results)!
-
-### `rpm` package: `device-mapper-libs-1.02.185-3.el9.x86_64`
-
-Licenses (from `rpm --query`): LGPLv2
-
-**WARNING:** unable to find source (`dnf download` failed or returned no results)!
-
 ### `rpm` package: `dmidecode-3.3-7.el9.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `dnf-4.12.0-4.el9.noarch`
+### `rpm` package: `dnf-4.14.0-5.el9_2.noarch`
 
 Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `dnf-data-4.12.0-4.el9.noarch`
+### `rpm` package: `dnf-data-4.14.0-5.el9_2.noarch`
 
 Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `elfutils-default-yama-scope-0.187-5.el9.noarch`
+### `rpm` package: `elfutils-default-yama-scope-0.188-3.el9.noarch`
 
 Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `elfutils-libelf-0.187-5.el9.x86_64`
+### `rpm` package: `elfutils-libelf-0.188-3.el9.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `elfutils-libs-0.187-5.el9.x86_64`
+### `rpm` package: `elfutils-libs-0.188-3.el9.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `expat-2.4.9-1.el9_1.1.x86_64`
+### `rpm` package: `expat-2.5.0-1.el9.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `file-libs-5.39-10.el9.x86_64`
+### `rpm` package: `file-libs-5.39-12.el9.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
@@ -256,25 +238,25 @@ Licenses (from `rpm --query`): GPLv3+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `glib2-2.68.4-5.el9.x86_64`
+### `rpm` package: `glib2-2.68.4-6.el9.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `glibc-2.34-40.el9_1.1.x86_64`
+### `rpm` package: `glibc-2.34-60.el9.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and LGPLv2+ with exceptions and GPLv2+ and GPLv2+ with exceptions and BSD and Inner-Net and ISC and Public Domain and GFDL
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `glibc-common-2.34-40.el9_1.1.x86_64`
+### `rpm` package: `glibc-common-2.34-60.el9.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and LGPLv2+ with exceptions and GPLv2+ and GPLv2+ with exceptions and BSD and Inner-Net and ISC and Public Domain and GFDL
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `glibc-minimal-langpack-2.34-40.el9_1.1.x86_64`
+### `rpm` package: `glibc-minimal-langpack-2.34-60.el9.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and LGPLv2+ with exceptions and GPLv2+ and GPLv2+ with exceptions and BSD and Inner-Net and ISC and Public Domain and GFDL
 
@@ -292,13 +274,13 @@ Licenses (from `rpm --query`): GPLv3+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `gnutls-3.7.6-18.el9_1.x86_64`
+### `rpm` package: `gnutls-3.7.6-20.el9_2.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+ and LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `gobject-introspection-1.68.0-10.el9.x86_64`
+### `rpm` package: `gobject-introspection-1.68.0-11.el9.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+ and LGPLv2+ and MIT
 
@@ -352,7 +334,7 @@ Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `keyutils-libs-1.6.1-4.el9.x86_64`
+### `rpm` package: `keyutils-libs-1.6.3-1.el9.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+ and LGPLv2+
 
@@ -364,7 +346,7 @@ Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `krb5-libs-1.19.1-24.el9_1.x86_64`
+### `rpm` package: `krb5-libs-1.20.1-8.el9.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -394,7 +376,7 @@ Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libarchive-3.5.3-3.el9.x86_64`
+### `rpm` package: `libarchive-3.5.3-4.el9.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
@@ -412,7 +394,7 @@ Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libblkid-2.37.4-9.el9.x86_64`
+### `rpm` package: `libblkid-2.37.4-11.el9_2.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
@@ -442,7 +424,7 @@ Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libcurl-minimal-7.76.1-19.el9_1.2.x86_64`
+### `rpm` package: `libcurl-minimal-7.76.1-23.el9_2.1.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -454,13 +436,13 @@ Licenses (from `rpm --query`): BSD and LGPLv2 and Sleepycat
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libdnf-0.67.0-3.el9.x86_64`
+### `rpm` package: `libdnf-0.69.0-3.el9_2.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libdnf-plugin-subscription-manager-1.29.30.1-1.el9_1.x86_64`
+### `rpm` package: `libdnf-plugin-subscription-manager-1.29.33.1-1.el9_2.x86_64`
 
 Licenses (from `rpm --query`): GPLv2
 
@@ -478,7 +460,7 @@ Licenses (from `rpm --query`): BSD and ISC
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libfdisk-2.37.4-9.el9.x86_64`
+### `rpm` package: `libfdisk-2.37.4-11.el9_2.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
@@ -490,19 +472,19 @@ Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libgcc-11.3.1-2.1.el9.x86_64`
+### `rpm` package: `libgcc-11.3.1-4.3.el9.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libgcrypt-1.10.0-10.el9_1.x86_64`
+### `rpm` package: `libgcrypt-1.10.0-10.el9_2.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libgomp-11.3.1-2.1.el9.x86_64`
+### `rpm` package: `libgomp-11.3.1-4.3.el9.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD
 
@@ -532,7 +514,7 @@ Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libmount-2.37.4-9.el9.x86_64`
+### `rpm` package: `libmount-2.37.4-11.el9_2.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
@@ -556,7 +538,7 @@ Licenses (from `rpm --query`): BSD or GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `librepo-1.14.2-3.el9.x86_64`
+### `rpm` package: `librepo-1.14.5-1.el9.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
@@ -580,19 +562,19 @@ Licenses (from `rpm --query`): LGPLv2
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libselinux-3.4-3.el9.x86_64`
+### `rpm` package: `libselinux-3.5-1.el9.x86_64`
 
 Licenses (from `rpm --query`): Public Domain
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libsemanage-3.4-2.el9.x86_64`
+### `rpm` package: `libsemanage-3.5-1.el9.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libsepol-3.4-1.1.el9.x86_64`
+### `rpm` package: `libsepol-3.5-1.el9.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
@@ -604,19 +586,19 @@ Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libsmartcols-2.37.4-9.el9.x86_64`
+### `rpm` package: `libsmartcols-2.37.4-11.el9_2.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libsolv-0.7.22-1.el9.x86_64`
+### `rpm` package: `libsolv-0.7.22-4.el9.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libstdc++-11.3.1-2.1.el9.x86_64`
+### `rpm` package: `libstdc++-11.3.1-4.3.el9.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD
 
@@ -634,7 +616,7 @@ Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libuser-0.63-11.el9.x86_64`
+### `rpm` package: `libuser-0.63-12.el9.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
@@ -646,7 +628,7 @@ Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libuuid-2.37.4-9.el9.x86_64`
+### `rpm` package: `libuuid-2.37.4-11.el9_2.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
@@ -682,7 +664,7 @@ Licenses (from `rpm --query`): BSD and GPLv2
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `lua-libs-5.4.4-2.el9_1.x86_64`
+### `rpm` package: `lua-libs-5.4.4-3.el9.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -736,13 +718,13 @@ Licenses (from `rpm --query`): OpenLDAP
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `openssl-3.0.1-47.el9_1.x86_64`
+### `rpm` package: `openssl-3.0.7-6.el9_2.x86_64`
 
 Licenses (from `rpm --query`): ASL 2.0
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `openssl-libs-3.0.1-47.el9_1.x86_64`
+### `rpm` package: `openssl-libs-3.0.7-6.el9_2.x86_64`
 
 Licenses (from `rpm --query`): ASL 2.0
 
@@ -760,7 +742,7 @@ Licenses (from `rpm --query`): BSD
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `pam-1.5.1-12.el9.x86_64`
+### `rpm` package: `pam-1.5.1-14.el9.x86_64`
 
 Licenses (from `rpm --query`): BSD and GPLv2+
 
@@ -796,7 +778,7 @@ Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `python3-3.9.14-1.el9_1.2.x86_64`
+### `rpm` package: `python3-3.9.16-1.el9.x86_64`
 
 Licenses (from `rpm --query`): Python
 
@@ -808,7 +790,7 @@ Licenses (from `rpm --query`): LGPLv2
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `python3-cloud-what-1.29.30.1-1.el9_1.x86_64`
+### `rpm` package: `python3-cloud-what-1.29.33.1-1.el9_2.x86_64`
 
 Licenses (from `rpm --query`): GPLv2
 
@@ -832,13 +814,13 @@ Licenses (from `rpm --query`): BSD
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `python3-dnf-4.12.0-4.el9.noarch`
+### `rpm` package: `python3-dnf-4.14.0-5.el9_2.noarch`
 
 Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `python3-dnf-plugins-core-4.1.0-3.el9.noarch`
+### `rpm` package: `python3-dnf-plugins-core-4.3.0-5.el9_2.noarch`
 
 Licenses (from `rpm --query`): GPLv2+
 
@@ -868,7 +850,7 @@ Licenses (from `rpm --query`): LGPLv2+ and GPLv3+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `python3-hawkey-0.67.0-3.el9.x86_64`
+### `rpm` package: `python3-hawkey-0.69.0-3.el9_2.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
@@ -898,19 +880,19 @@ Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `python3-libdnf-0.67.0-3.el9.x86_64`
+### `rpm` package: `python3-libdnf-0.69.0-3.el9_2.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `python3-librepo-1.14.2-3.el9.x86_64`
+### `rpm` package: `python3-librepo-1.14.5-1.el9.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `python3-libs-3.9.14-1.el9_1.2.x86_64`
+### `rpm` package: `python3-libs-3.9.16-1.el9.x86_64`
 
 Licenses (from `rpm --query`): Python
 
@@ -934,19 +916,19 @@ Licenses (from `rpm --query`): ASL 2.0
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `python3-rpm-4.16.1.3-19.el9_1.x86_64`
+### `rpm` package: `python3-rpm-4.16.1.3-22.el9.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `python3-setuptools-53.0.0-10.el9_1.1.noarch`
+### `rpm` package: `python3-setuptools-53.0.0-12.el9.noarch`
 
 Licenses (from `rpm --query`): MIT and (BSD or ASL 2.0)
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `python3-setuptools-wheel-53.0.0-10.el9_1.1.noarch`
+### `rpm` package: `python3-setuptools-wheel-53.0.0-12.el9.noarch`
 
 Licenses (from `rpm --query`): MIT and (BSD or ASL 2.0)
 
@@ -958,9 +940,15 @@ Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `python3-subscription-manager-rhsm-1.29.30.1-1.el9_1.x86_64`
+### `rpm` package: `python3-subscription-manager-rhsm-1.29.33.1-1.el9_2.x86_64`
 
 Licenses (from `rpm --query`): GPLv2
+
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
+
+### `rpm` package: `python3-systemd-234-18.el9.x86_64`
+
+Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
@@ -976,7 +964,7 @@ Licenses (from `rpm --query`): GPLv3+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `redhat-release-9.1-1.9.el9.x86_64`
+### `rpm` package: `redhat-release-9.2-0.13.el9.x86_64`
 
 Licenses (from `rpm --query`): GPLv2
 
@@ -988,25 +976,25 @@ Licenses (from `rpm --query`): Public Domain
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `rpm-4.16.1.3-19.el9_1.x86_64`
+### `rpm` package: `rpm-4.16.1.3-22.el9.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `rpm-build-libs-4.16.1.3-19.el9_1.x86_64`
+### `rpm` package: `rpm-build-libs-4.16.1.3-22.el9.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+ and LGPLv2+ with exceptions
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `rpm-libs-4.16.1.3-19.el9_1.x86_64`
+### `rpm` package: `rpm-libs-4.16.1.3-22.el9.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+ and LGPLv2+ with exceptions
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `rpm-sign-libs-4.16.1.3-19.el9_1.x86_64`
+### `rpm` package: `rpm-sign-libs-4.16.1.3-22.el9.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+ and LGPLv2+ with exceptions
 
@@ -1018,13 +1006,13 @@ Licenses (from `rpm --query`): GPLv3+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `setup-2.13.7-7.el9.noarch`
+### `rpm` package: `setup-2.13.7-9.el9.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `shadow-utils-4.9-5.el9.x86_64`
+### `rpm` package: `shadow-utils-4.9-6.el9.x86_64`
 
 Licenses (from `rpm --query`): BSD and GPLv2+
 
@@ -1036,7 +1024,7 @@ Licenses (from `rpm --query`): Public Domain
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `subscription-manager-1.29.30.1-1.el9_1.x86_64`
+### `rpm` package: `subscription-manager-1.29.33.1-1.el9_2.x86_64`
 
 Licenses (from `rpm --query`): GPLv2
 
@@ -1048,25 +1036,25 @@ Licenses (from `rpm --query`): GPLv2
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `systemd-250-12.el9_1.3.x86_64`
+### `rpm` package: `systemd-252-13.el9_2.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and MIT and GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `systemd-libs-250-12.el9_1.3.x86_64`
+### `rpm` package: `systemd-libs-252-13.el9_2.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and MIT
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `systemd-pam-250-12.el9_1.3.x86_64`
+### `rpm` package: `systemd-pam-252-13.el9_2.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and MIT and GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `systemd-rpm-macros-250-12.el9_1.3.noarch`
+### `rpm` package: `systemd-rpm-macros-252-13.el9_2.noarch`
 
 Licenses (from `rpm --query`): LGPLv2+ and MIT and GPLv2+
 
@@ -1096,13 +1084,13 @@ Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `util-linux-2.37.4-9.el9.x86_64`
+### `rpm` package: `util-linux-2.37.4-11.el9_2.x86_64`
 
 Licenses (from `rpm --query`): GPLv2 and GPLv2+ and LGPLv2+ and BSD with advertising and Public Domain
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `util-linux-core-2.37.4-9.el9.x86_64`
+### `rpm` package: `util-linux-core-2.37.4-11.el9_2.x86_64`
 
 Licenses (from `rpm --query`): GPLv2 and GPLv2+ and LGPLv2+ and BSD with advertising and Public Domain
 
@@ -1114,7 +1102,7 @@ Licenses (from `rpm --query`): Vim and MIT
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `virt-what-1.25-1.el9.x86_64`
+### `rpm` package: `virt-what-1.25-3.el9.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+
 
@@ -1132,13 +1120,13 @@ Licenses (from `rpm --query`): Public Domain
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `yum-4.12.0-4.el9.noarch`
+### `rpm` package: `yum-4.14.0-5.el9_2.noarch`
 
 Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `zlib-1.2.11-35.el9_1.x86_64`
+### `rpm` package: `zlib-1.2.11-39.el9.x86_64`
 
 Licenses (from `rpm --query`): zlib and Boost
 
