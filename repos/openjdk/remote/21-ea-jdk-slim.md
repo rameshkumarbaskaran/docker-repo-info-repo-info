@@ -1,7 +1,7 @@
 ## `openjdk:21-ea-jdk-slim`
 
 ```console
-$ docker pull openjdk@sha256:e62b6ac4c5baf87e7042c6197d76f738b8dfdd994e845b1342e86c31a930e42f
+$ docker pull openjdk@sha256:12e4988f95b3b8cbba49457ebf244575499370b1e7dec446169df35a944e523e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -60,14 +60,14 @@ CMD ["jshell"]
 ### `openjdk:21-ea-jdk-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:060b3c085885da698894fd5552ef5227b2f0475bda33797b9eecae5ba20018ad
+$ docker pull openjdk@sha256:f7033bdd7ed7b64f61a20b66a0e46ac7f07e8903331c245bcfd7adff31e7607d
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **232.2 MB (232226599 bytes)**  
+-	Total Size: **232.5 MB (232548102 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9ef10ad549c9ddc177a2327661ffa38dd57ae6f05377fd35b7d5c4d7e3afa988`
+-	Image ID: `sha256:b68e102c8d5f89ca906c583dd1c00b21c57730ca1f0cbe6eb349090eb81b8b7b`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
@@ -83,11 +83,11 @@ ENV JAVA_HOME=/usr/local/openjdk-21
 ENV PATH=/usr/local/openjdk-21/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 03 May 2023 17:04:36 GMT
 ENV LANG=C.UTF-8
-# Fri, 05 May 2023 00:02:58 GMT
-ENV JAVA_VERSION=21-ea+21
-# Fri, 05 May 2023 00:03:11 GMT
-RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/early_access/jdk21/21/GPL/openjdk-21-ea+21_linux-x64_bin.tar.gz'; 			downloadSha256='218aa2d9ef829851d8eafe470922cefd372aa31b68cdab3aa0691c0492e6adde'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/early_access/jdk21/21/GPL/openjdk-21-ea+21_linux-aarch64_bin.tar.gz'; 			downloadSha256='449a26a88e27c331c9565a95892533f33792094f23f28a71b880a60588ddf0c2'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Fri, 05 May 2023 00:03:12 GMT
+# Thu, 11 May 2023 23:23:19 GMT
+ENV JAVA_VERSION=21-ea+22
+# Thu, 11 May 2023 23:23:32 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/early_access/jdk21/22/GPL/openjdk-21-ea+22_linux-x64_bin.tar.gz'; 			downloadSha256='6ae3958a32809960b925b0fc4fae2236b5640c92b015274035fe3fb3ceb94f98'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/early_access/jdk21/22/GPL/openjdk-21-ea+22_linux-aarch64_bin.tar.gz'; 			downloadSha256='c9afb1a0be1b35ed1e61bab79d5fec466f7e5c42b65bd8a65595d6699d0e77cb'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
+# Thu, 11 May 2023 23:23:34 GMT
 CMD ["jshell"]
 ```
 
@@ -100,7 +100,7 @@ CMD ["jshell"]
 		Last Modified: Wed, 03 May 2023 17:06:46 GMT  
 		Size: 1.6 MB (1566435 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:706751f7109584a3bbf5860927bebf3890d43c5d41070562ee968f0bd4d31441`  
-		Last Modified: Fri, 05 May 2023 00:05:57 GMT  
-		Size: 200.6 MB (200607431 bytes)  
+	-	`sha256:c1b46b745879d332a97787e4e74d1dd1922c3333a81790a4e11f731c0ed663cb`  
+		Last Modified: Thu, 11 May 2023 23:26:18 GMT  
+		Size: 200.9 MB (200928934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
