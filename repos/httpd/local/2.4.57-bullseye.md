@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:28505717e3ae12e583ada837918dcf1af6c39743cebd10665d0b38bcce689e8c`
-- Created: `2023-05-03T20:52:16.83909327Z`
+- Image ID: `sha256:b4f91978e2cc957fae60ace7fc0b8f13f3da1f23941c0314413afd51aff64ef3`
+- Created: `2023-05-11T19:38:10.410550591Z`
 - Virtual Size: ~ 145.19 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -13,7 +13,7 @@
   - `HTTPD_PREFIX=/usr/local/apache2`
   - `HTTPD_VERSION=2.4.57`
   - `HTTPD_SHA256=dbccb84aee95e095edfbb81e5eb926ccd24e6ada55dcd83caecb262e5cf94d2a`
-  - `HTTPD_PATCHES=`
+  - `HTTPD_PATCHES=rewrite-windows-testchar-h.patch 1d5620574fa03b483262dc5b9a66a6906553389952ab5d3070a02f887cc20193`
 
 ## `dpkg` (`.deb`-based packages)
 
