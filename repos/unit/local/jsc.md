@@ -1,10 +1,10 @@
-# `unit:1.29.1-jsc11`
+# `unit:1.30.0-jsc11`
 
 ## Docker Metadata
 
-- Image ID: `sha256:7d7ac2e74951876c39eb3724a728fb9f6dc7c478e9e3c64cae178ef4b09c4e03`
-- Created: `2023-05-04T13:52:17.972495745Z`
-- Virtual Size: ~ 495.19 Mb  
+- Image ID: `sha256:1d55e694eabd84a58aa14b1137bf89927a2030b1cd6cc3e222ab29f928969535`
+- Created: `2023-05-10T23:22:50.901205267Z`
+- Virtual Size: ~ 522.88 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/docker-entrypoint.sh"]`
@@ -24,7 +24,7 @@
   - `org.opencontainers.image.title=Unit`
   - `org.opencontainers.image.url=https://unit.nginx.org`
   - `org.opencontainers.image.vendor=NGINX Docker Maintainers <docker-maint@nginx.com>`
-  - `org.opencontainers.image.version=1.29.1`
+  - `org.opencontainers.image.version=1.30.0`
 
 ## `dpkg` (`.deb`-based packages)
 

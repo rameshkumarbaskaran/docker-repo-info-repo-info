@@ -1,10 +1,10 @@
-# `unit:1.29.1-node18`
+# `unit:1.30.0-node18`
 
 ## Docker Metadata
 
-- Image ID: `sha256:64bd55c31eef0190fb1c6d5cd1ddfe3959f72ceb217e8e8e859b77535945561d`
-- Created: `2023-05-04T13:53:06.197130483Z`
-- Virtual Size: ~ 1.07 Gb  
+- Image ID: `sha256:856dc7257ca30c8e657afa09c274a6bda0c37b9c1cfee3c075adb2707bedcc3b`
+- Created: `2023-05-10T23:23:52.398737354Z`
+- Virtual Size: ~ 1.10 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/docker-entrypoint.sh"]`
@@ -20,7 +20,7 @@
   - `org.opencontainers.image.title=Unit`
   - `org.opencontainers.image.url=https://unit.nginx.org`
   - `org.opencontainers.image.vendor=NGINX Docker Maintainers <docker-maint@nginx.com>`
-  - `org.opencontainers.image.version=1.29.1`
+  - `org.opencontainers.image.version=1.30.0`
 
 ## `dpkg` (`.deb`-based packages)
 

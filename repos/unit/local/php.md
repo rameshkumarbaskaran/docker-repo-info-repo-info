@@ -1,10 +1,10 @@
-# `unit:1.29.1-php8.2`
+# `unit:1.30.0-php8.2`
 
 ## Docker Metadata
 
-- Image ID: `sha256:066e2cd3b410b8fee4d4b42434ea9e6959c1f70b77142e48b81431b00770e287`
-- Created: `2023-05-03T22:44:56.387632147Z`
-- Virtual Size: ~ 508.37 Mb  
+- Image ID: `sha256:d98b9fbd0081d56136996d3891a0bc254676ec41131c9b6b30edb721248cde56`
+- Created: `2023-05-11T21:21:26.987862708Z`
+- Virtual Size: ~ 540.15 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC`
-  - `PHP_VERSION=8.2.5`
-  - `PHP_URL=https://www.php.net/distributions/php-8.2.5.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.5.tar.xz.asc`
-  - `PHP_SHA256=800738c359b7f1e67e40c22713d2d90276bc85ba1c21b43d99edd43c254c5f76`
+  - `PHP_VERSION=8.2.6`
+  - `PHP_URL=https://www.php.net/distributions/php-8.2.6.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.6.tar.xz.asc`
+  - `PHP_SHA256=10b796f0ed45574229851212b30a596a76e70ae365322bcaaaf9c00fa7d58cca`
 - Labels:
   - `org.opencontainers.image.description=Official build of Unit for Docker.`
   - `org.opencontainers.image.documentation=https://unit.nginx.org/installation/#docker-images`
@@ -28,7 +28,7 @@
   - `org.opencontainers.image.title=Unit`
   - `org.opencontainers.image.url=https://unit.nginx.org`
   - `org.opencontainers.image.vendor=NGINX Docker Maintainers <docker-maint@nginx.com>`
-  - `org.opencontainers.image.version=1.29.1`
+  - `org.opencontainers.image.version=1.30.0`
 
 ## `dpkg` (`.deb`-based packages)
 

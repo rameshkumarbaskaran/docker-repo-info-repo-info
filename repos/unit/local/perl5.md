@@ -1,10 +1,10 @@
-# `unit:1.29.1-perl5.36`
+# `unit:1.30.0-perl5.36`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c40b46a49596d20bfdc1af0304512ef40150a80898f2d90c1de282e0cb0638ea`
-- Created: `2023-05-04T13:53:49.02935429Z`
-- Virtual Size: ~ 916.82 Mb  
+- Image ID: `sha256:b32fa370216ab48e30f49643edeb54f51d8772c00a98d293392cc9f7066ab97d`
+- Created: `2023-05-10T23:24:44.190931623Z`
+- Virtual Size: ~ 948.61 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/docker-entrypoint.sh"]`
@@ -19,7 +19,7 @@
   - `org.opencontainers.image.title=Unit`
   - `org.opencontainers.image.url=https://unit.nginx.org`
   - `org.opencontainers.image.vendor=NGINX Docker Maintainers <docker-maint@nginx.com>`
-  - `org.opencontainers.image.version=1.29.1`
+  - `org.opencontainers.image.version=1.30.0`
 
 ## `dpkg` (`.deb`-based packages)
 

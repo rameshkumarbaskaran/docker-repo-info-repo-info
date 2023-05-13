@@ -1,10 +1,10 @@
-# `unit:1.29.1-python3.11`
+# `unit:1.30.0-python3.11`
 
 ## Docker Metadata
 
-- Image ID: `sha256:7cb52b297467c5af11161f1ae0c9b7fd3ff455bec507c99c06bdf73a035a16bb`
-- Created: `2023-05-04T13:54:38.94135349Z`
-- Virtual Size: ~ 944.59 Mb  
+- Image ID: `sha256:d4cd3000f605b67df9e9f13998cc28cd1d4df13f6d1d4835a46741d8238082ab`
+- Created: `2023-05-10T23:26:51.246315504Z`
+- Virtual Size: ~ 976.39 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/docker-entrypoint.sh"]`
@@ -25,7 +25,7 @@
   - `org.opencontainers.image.title=Unit`
   - `org.opencontainers.image.url=https://unit.nginx.org`
   - `org.opencontainers.image.vendor=NGINX Docker Maintainers <docker-maint@nginx.com>`
-  - `org.opencontainers.image.version=1.29.1`
+  - `org.opencontainers.image.version=1.30.0`
 
 ## `dpkg` (`.deb`-based packages)
 
