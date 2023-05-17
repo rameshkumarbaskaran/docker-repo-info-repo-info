@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:871bd1447a652760afa584aa3aca16fa106ae285167181ae4e6fef1312a17055`
-- Created: `2023-04-20T20:39:44.476731568Z`
-- Virtual Size: ~ 716.86 Mb  
+- Image ID: `sha256:38a705f72b4b48b6d55abd66a69caafd8b9e70ff241e2927a1e55f32f4ed30f1`
+- Created: `2023-05-13T02:49:37.90384028Z`
+- Virtual Size: ~ 724.27 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
-  - `PHP_VERSION=8.1.18`
-  - `PHP_URL=https://www.php.net/distributions/php-8.1.18.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.18.tar.xz.asc`
-  - `PHP_SHA256=f3553370f8ba42729a9ce75eed17a2111d32433a43b615694f6a571b8bad0e39`
+  - `PHP_VERSION=8.1.19`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.19.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.19.tar.xz.asc`
+  - `PHP_SHA256=f42f0e93467415b2d30aa5b7ac825f0079a74207e0033010383cdc1e13657379`
   - `PHP_MEMORY_LIMIT=512M`
   - `PHP_UPLOAD_LIMIT=512M`
   - `NEXTCLOUD_VERSION=26.0.1`
@@ -404,16 +404,16 @@ LGPL-2.0-or-later
 ### `apk` package: `ghostscript`
 
 ```console
-ghostscript-10.0.0-r1 description:
+ghostscript-10.01.1-r0 description:
 An interpreter for the PostScript language and for PDF
 
-ghostscript-10.0.0-r1 webpage:
+ghostscript-10.01.1-r0 webpage:
 https://ghostscript.com/
 
-ghostscript-10.0.0-r1 installed size:
-67 MiB
+ghostscript-10.01.1-r0 installed size:
+69 MiB
 
-ghostscript-10.0.0-r1 license:
+ghostscript-10.01.1-r0 license:
 AGPL-3.0-or-later
 
 ```
@@ -710,16 +710,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.8-r3 description:
+libcrypto3-3.0.8-r4 description:
 Crypto library from openssl
 
-libcrypto3-3.0.8-r3 webpage:
+libcrypto3-3.0.8-r4 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.8-r3 installed size:
+libcrypto3-3.0.8-r4 installed size:
 4108 KiB
 
-libcrypto3-3.0.8-r3 license:
+libcrypto3-3.0.8-r4 license:
 Apache-2.0
 
 ```
@@ -999,16 +999,16 @@ Libpng
 ### `apk` package: `libpq`
 
 ```console
-libpq-15.2-r0 description:
+libpq-15.3-r0 description:
 PostgreSQL client library
 
-libpq-15.2-r0 webpage:
+libpq-15.3-r0 webpage:
 https://www.postgresql.org/
 
-libpq-15.2-r0 installed size:
+libpq-15.3-r0 installed size:
 336 KiB
 
-libpq-15.2-r0 license:
+libpq-15.3-r0 license:
 PostgreSQL
 
 ```
@@ -1067,16 +1067,16 @@ ISC
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.8-r3 description:
+libssl3-3.0.8-r4 description:
 SSL shared libraries
 
-libssl3-3.0.8-r3 webpage:
+libssl3-3.0.8-r4 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.8-r3 installed size:
+libssl3-3.0.8-r4 installed size:
 608 KiB
 
-libssl3-3.0.8-r3 license:
+libssl3-3.0.8-r4 license:
 Apache-2.0
 
 ```
