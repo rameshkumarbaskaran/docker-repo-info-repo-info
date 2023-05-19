@@ -1,7 +1,7 @@
 ## `clojure:temurin-11-alpine`
 
 ```console
-$ docker pull clojure@sha256:3d3fb9b4acce5edfd667a67dc97aaeda712f922dd4406d92dabcd646126c3476
+$ docker pull clojure@sha256:e44359fd6f2c1eff0399655a4bbb318e71fcd0018e42d7debcb0e7d76f683883
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull clojure@sha256:3d3fb9b4acce5edfd667a67dc97aaeda712f922dd4406d92dab
 ### `clojure:temurin-11-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:0a754bdde3c24b74e352c06a5505b001afa6d7b1738466d099db5784a2eb7130
+$ docker pull clojure@sha256:22df1806bc70437ee443a7de1c815c7f6a1196e03f3392b78acf711c767b7cce
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **236.6 MB (236638119 bytes)**  
+-	Total Size: **236.7 MB (236650046 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f1e8f6285f3e0290030a207565edf3a14a60c4f2bcc3674717198c438e965570`
+-	Image ID: `sha256:fd55fc4a1a02b73bec8c4975a26884f5cf715ee99452de8be3bcb343176cf9dd`
 -	Default Command: `["clj"]`
 
 ```dockerfile
@@ -42,15 +42,15 @@ RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
 # Wed, 26 Apr 2023 19:21:04 GMT
 CMD ["jshell"]
-# Wed, 26 Apr 2023 20:07:12 GMT
-ENV CLOJURE_VERSION=1.11.1.1273
-# Wed, 26 Apr 2023 20:07:12 GMT
+# Fri, 19 May 2023 20:28:30 GMT
+ENV CLOJURE_VERSION=1.11.1.1323
+# Fri, 19 May 2023 20:28:30 GMT
 WORKDIR /tmp
-# Wed, 26 Apr 2023 20:07:17 GMT
-RUN apk add --no-cache curl bash make git && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "4938afe6c0690d2a6553141857742d94a7350c02b4fa57cd6a9c1b7cbe66492e *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl
-# Wed, 26 Apr 2023 20:07:17 GMT
+# Fri, 19 May 2023 20:28:35 GMT
+RUN apk add --no-cache curl bash make git && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "c4666f0e2c2397b91554befd71ff6149b2e89acbf90400e1dcf557526cfb593d *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl
+# Fri, 19 May 2023 20:28:36 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Wed, 26 Apr 2023 20:07:17 GMT
+# Fri, 19 May 2023 20:28:36 GMT
 CMD ["clj"]
 ```
 
@@ -71,11 +71,11 @@ CMD ["clj"]
 		Last Modified: Wed, 26 Apr 2023 19:28:58 GMT  
 		Size: 179.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24141961a52ad66bc09e80742c78f4f997bed1083341577d60c09d70572e6295`  
-		Last Modified: Wed, 26 Apr 2023 20:22:26 GMT  
-		Size: 27.3 MB (27331280 bytes)  
+	-	`sha256:fe4b9fc7eb3f410d1e84d2be55342457e47072bece39b0d4df65a03eb9eb22ea`  
+		Last Modified: Fri, 19 May 2023 20:39:33 GMT  
+		Size: 27.3 MB (27343207 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c206619d8ed76eef8405ec88e8e4d155c1e474a7fcfa7d23c4e3af7cbfe7f14`  
-		Last Modified: Wed, 26 Apr 2023 20:22:24 GMT  
+	-	`sha256:ab4b6e058ba98670bda199302c10f1001c1cf89e9721a2ba0eb5c30629bc4765`  
+		Last Modified: Fri, 19 May 2023 20:39:31 GMT  
 		Size: 622.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
