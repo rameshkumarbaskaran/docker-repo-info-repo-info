@@ -430,11 +430,17 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris curl=7.88.1-9
-'http://http.debian.net/debian/pool/main/c/curl/curl_7.88.1-9.dsc' curl_7.88.1-9.dsc 3159 SHA256:ea17267b98b453fa7f0629f62a0302cbc56385701c9d31ecc50bfa7fb2425a9d
-'http://http.debian.net/debian/pool/main/c/curl/curl_7.88.1.orig.tar.gz' curl_7.88.1.orig.tar.gz 4343562 SHA256:cdb38b72e36bc5d33d5b8810f8018ece1baa29a8f215b4495e495ded82bbf3c7
-'http://http.debian.net/debian/pool/main/c/curl/curl_7.88.1.orig.tar.gz.asc' curl_7.88.1.orig.tar.gz.asc 488 SHA256:7a5a55d7123149a1b357f298cf895bd0a601e3a2807005ef6c95f3752803485f
-'http://http.debian.net/debian/pool/main/c/curl/curl_7.88.1-9.debian.tar.xz' curl_7.88.1-9.debian.tar.xz 47920 SHA256:b1bac4b0deb1488f2b0d39f8bf990067080a5abfc7efaf938cec1267e0333030
+'http://deb.debian.org/debian/pool/main/c/curl/curl_7.88.1-9.dsc' curl_7.88.1-9.dsc 3159 SHA256:ea17267b98b453fa7f0629f62a0302cbc56385701c9d31ecc50bfa7fb2425a9d
+'http://deb.debian.org/debian/pool/main/c/curl/curl_7.88.1.orig.tar.gz' curl_7.88.1.orig.tar.gz 4343562 SHA256:cdb38b72e36bc5d33d5b8810f8018ece1baa29a8f215b4495e495ded82bbf3c7
+'http://deb.debian.org/debian/pool/main/c/curl/curl_7.88.1.orig.tar.gz.asc' curl_7.88.1.orig.tar.gz.asc 488 SHA256:7a5a55d7123149a1b357f298cf895bd0a601e3a2807005ef6c95f3752803485f
+'http://deb.debian.org/debian/pool/main/c/curl/curl_7.88.1-9.debian.tar.xz' curl_7.88.1-9.debian.tar.xz 47920 SHA256:b1bac4b0deb1488f2b0d39f8bf990067080a5abfc7efaf938cec1267e0333030
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/curl/7.88.1-9/ (for browsing the source)
+- https://sources.debian.net/src/curl/7.88.1-9/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/curl/7.88.1-9/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.28+dfsg-10`
 
@@ -646,9 +652,15 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris dpkg=1.21.21
-'http://http.debian.net/debian/pool/main/d/dpkg/dpkg_1.21.21.dsc' dpkg_1.21.21.dsc 3061 SHA256:9b8e9bd7bef0be5214f5ef8358b21c53e4ddfa949d399563de865b22d8d6b00c
-'http://http.debian.net/debian/pool/main/d/dpkg/dpkg_1.21.21.tar.xz' dpkg_1.21.21.tar.xz 5395164 SHA256:985073817aa0512122f1a7e77598a6b0be168d6c71ac56a3383927eb0813e089
+'http://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.21.21.dsc' dpkg_1.21.21.dsc 3061 SHA256:9b8e9bd7bef0be5214f5ef8358b21c53e4ddfa949d399563de865b22d8d6b00c
+'http://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.21.21.tar.xz' dpkg_1.21.21.tar.xz 5395164 SHA256:985073817aa0512122f1a7e77598a6b0be168d6c71ac56a3383927eb0813e089
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/dpkg/1.21.21/ (for browsing the source)
+- https://sources.debian.net/src/dpkg/1.21.21/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/dpkg/1.21.21/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `e2fsprogs=1.47.0-2`
 
@@ -2141,11 +2153,17 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libwebp=1.2.4-0.1
-'http://http.debian.net/debian/pool/main/libw/libwebp/libwebp_1.2.4-0.1.dsc' libwebp_1.2.4-0.1.dsc 2401 SHA256:78443a7e59704d1c60e862b6482cff5c50ca5f47adc5d94638cd740d86782353
-'http://http.debian.net/debian/pool/main/libw/libwebp/libwebp_1.2.4.orig.tar.gz' libwebp_1.2.4.orig.tar.gz 4141376 SHA256:7bf5a8a28cc69bcfa8cb214f2c3095703c6b73ac5fba4d5480c205331d9494df
-'http://http.debian.net/debian/pool/main/libw/libwebp/libwebp_1.2.4.orig.tar.gz.asc' libwebp_1.2.4.orig.tar.gz.asc 833 SHA256:4c546cf7f757a70d8803ab850e69d28e7ce06e66dbee003fd3ede7346543851a
-'http://http.debian.net/debian/pool/main/libw/libwebp/libwebp_1.2.4-0.1.debian.tar.xz' libwebp_1.2.4-0.1.debian.tar.xz 7156 SHA256:af583ae1943db329440623ccf1e7aeb11a477cae24a306985c6c0c5e60ce41ae
+'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_1.2.4-0.1.dsc' libwebp_1.2.4-0.1.dsc 2401 SHA256:78443a7e59704d1c60e862b6482cff5c50ca5f47adc5d94638cd740d86782353
+'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_1.2.4.orig.tar.gz' libwebp_1.2.4.orig.tar.gz 4141376 SHA256:7bf5a8a28cc69bcfa8cb214f2c3095703c6b73ac5fba4d5480c205331d9494df
+'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_1.2.4.orig.tar.gz.asc' libwebp_1.2.4.orig.tar.gz.asc 833 SHA256:4c546cf7f757a70d8803ab850e69d28e7ce06e66dbee003fd3ede7346543851a
+'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_1.2.4-0.1.debian.tar.xz' libwebp_1.2.4-0.1.debian.tar.xz 7156 SHA256:af583ae1943db329440623ccf1e7aeb11a477cae24a306985c6c0c5e60ce41ae
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libwebp/1.2.4-0.1/ (for browsing the source)
+- https://sources.debian.net/src/libwebp/1.2.4-0.1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libwebp/1.2.4-0.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libx11=2:1.8.4-2`
 
@@ -2567,11 +2585,17 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris ncurses=6.4-2
-'http://http.debian.net/debian/pool/main/n/ncurses/ncurses_6.4-2.dsc' ncurses_6.4-2.dsc 4110 SHA256:32af7dee7301dad824671a08a66f0c9327498fcd8295d3830eb07e12272460ce
-'http://http.debian.net/debian/pool/main/n/ncurses/ncurses_6.4.orig.tar.gz' ncurses_6.4.orig.tar.gz 3612591 SHA256:6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159
-'http://http.debian.net/debian/pool/main/n/ncurses/ncurses_6.4.orig.tar.gz.asc' ncurses_6.4.orig.tar.gz.asc 729 SHA256:f9096c5311eab61908c142e77e58f503f9228e13d351365b3c331ca5ad5a67db
-'http://http.debian.net/debian/pool/main/n/ncurses/ncurses_6.4-2.debian.tar.xz' ncurses_6.4-2.debian.tar.xz 55492 SHA256:edce466824e276ec7f86ff8fa926e46e6e7340b96b81cfadfc5fb73ae869d27a
+'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.4-2.dsc' ncurses_6.4-2.dsc 4110 SHA256:32af7dee7301dad824671a08a66f0c9327498fcd8295d3830eb07e12272460ce
+'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.4.orig.tar.gz' ncurses_6.4.orig.tar.gz 3612591 SHA256:6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159
+'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.4.orig.tar.gz.asc' ncurses_6.4.orig.tar.gz.asc 729 SHA256:f9096c5311eab61908c142e77e58f503f9228e13d351365b3c331ca5ad5a67db
+'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.4-2.debian.tar.xz' ncurses_6.4-2.debian.tar.xz 55492 SHA256:edce466824e276ec7f86ff8fa926e46e6e7340b96b81cfadfc5fb73ae869d27a
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/ncurses/6.4-2/ (for browsing the source)
+- https://sources.debian.net/src/ncurses/6.4-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/ncurses/6.4-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `nettle=3.8.1-2`
 
@@ -3469,10 +3493,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tiff=4.5.0-5
-'http://http.debian.net/debian/pool/main/t/tiff/tiff_4.5.0-5.dsc' tiff_4.5.0-5.dsc 2255 SHA256:cec33019d88624f8ad8a771c8a4cac4b0d07f18e69171c997dab87e7c69c1914
-'http://http.debian.net/debian/pool/main/t/tiff/tiff_4.5.0.orig.tar.bz2' tiff_4.5.0.orig.tar.bz2 2050377 SHA256:638f43d7dea33948d5dee7f39572fc0194d9cc3c74195de9dd26a4388a1f880a
-'http://http.debian.net/debian/pool/main/t/tiff/tiff_4.5.0-5.debian.tar.xz' tiff_4.5.0-5.debian.tar.xz 26516 SHA256:3fc31dfe0aef671343b84ce23e7baf64789e306838fb176819c18d0754b3811f
+'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.5.0-5.dsc' tiff_4.5.0-5.dsc 2255 SHA256:cec33019d88624f8ad8a771c8a4cac4b0d07f18e69171c997dab87e7c69c1914
+'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.5.0.orig.tar.bz2' tiff_4.5.0.orig.tar.bz2 2050377 SHA256:638f43d7dea33948d5dee7f39572fc0194d9cc3c74195de9dd26a4388a1f880a
+'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.5.0-5.debian.tar.xz' tiff_4.5.0-5.debian.tar.xz 26516 SHA256:3fc31dfe0aef671343b84ce23e7baf64789e306838fb176819c18d0754b3811f
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/tiff/4.5.0-5/ (for browsing the source)
+- https://sources.debian.net/src/tiff/4.5.0-5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tiff/4.5.0-5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tk8.6=8.6.13-2`
 
