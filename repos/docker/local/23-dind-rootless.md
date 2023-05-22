@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e5b46f459fd9e5a7bcc8a2035117ba979cd26e30cb776918eead898cc924fa82`
-- Created: `2023-05-16T17:59:38Z`
+- Image ID: `sha256:9a13d824dead24ed6b2a965488bf8c76248149e6b71356773575e8b1fa348430`
+- Created: `2023-05-17T23:04:13Z`
 - Virtual Size: ~ 374.16 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_VERSION=23.0.6`
   - `DOCKER_BUILDX_VERSION=0.10.4`
-  - `DOCKER_COMPOSE_VERSION=2.18.0`
+  - `DOCKER_COMPOSE_VERSION=2.18.1`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5`
 
@@ -599,16 +599,16 @@ BSD-3-Clause
 ### `apk` package: `libelf`
 
 ```console
-libelf-0.189-r1 description:
+libelf-0.189-r2 description:
 Utilities and DSOs to handle ELF files and DWARF data - runtime libraries
 
-libelf-0.189-r1 webpage:
+libelf-0.189-r2 webpage:
 http://elfutils.org/
 
-libelf-0.189-r1 installed size:
+libelf-0.189-r2 installed size:
 636 KiB
 
-libelf-0.189-r1 license:
+libelf-0.189-r2 license:
 GPL-3.0-or-later AND ( GPL-2.0-or-later OR LGPL-3.0-or-later )
 
 ```

@@ -1,9 +1,9 @@
-# `docker:24.0.0-cli`
+# `docker:24.0.1-cli`
 
 ## Docker Metadata
 
-- Image ID: `sha256:74351ab338fd4cbbf00c22dd6858e70699511d59539d85f6427d7ed4c6d6cce2`
-- Created: `2023-05-16T17:59:38Z`
+- Image ID: `sha256:23ba134128b5a27ca156bbd582a4121d587e91483ab54074f4c42db65dec9277`
+- Created: `2023-05-19T23:41:44Z`
 - Virtual Size: ~ 151.31 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,9 +11,9 @@
 - Command: `["sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_VERSION=24.0.0`
+  - `DOCKER_VERSION=24.0.1`
   - `DOCKER_BUILDX_VERSION=0.10.4`
-  - `DOCKER_COMPOSE_VERSION=2.18.0`
+  - `DOCKER_COMPOSE_VERSION=2.18.1`
   - `DOCKER_TLS_CERTDIR=/certs`
 
 ## `apk` (`.apk`-based packages)
