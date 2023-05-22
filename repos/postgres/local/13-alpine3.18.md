@@ -1,10 +1,10 @@
-# `postgres:13.11-alpine`
+# `postgres:13.11-alpine3.18`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a5c4f87dd940ec4497cfafef578cdd4142fa179bb9ff79c93d3a6dfe2dc9993f`
-- Created: `2023-05-13T04:17:10.737810794Z`
-- Virtual Size: ~ 231.56 Mb  
+- Image ID: `sha256:cd66005c15ebd87442a43acba326ba6ff6d976ebcd5c0840c140dc20ebff1044`
+- Created: `2023-05-19T17:43:42.48152592Z`
+- Virtual Size: ~ 231.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -516,16 +516,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.11.3-r0 description:
+libxml2-2.11.4-r0 description:
 XML parsing library, version 2
 
-libxml2-2.11.3-r0 webpage:
+libxml2-2.11.4-r0 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.11.3-r0 installed size:
-1104 KiB
+libxml2-2.11.4-r0 installed size:
+1108 KiB
 
-libxml2-2.11.3-r0 license:
+libxml2-2.11.4-r0 license:
 MIT
 
 ```
