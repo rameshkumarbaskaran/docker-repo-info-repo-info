@@ -4,9 +4,11 @@
 
 -	[`oraclelinux:7`](#oraclelinux7)
 -	[`oraclelinux:7-slim`](#oraclelinux7-slim)
+-	[`oraclelinux:7-slim-fips`](#oraclelinux7-slim-fips)
 -	[`oraclelinux:7.9`](#oraclelinux79)
 -	[`oraclelinux:8`](#oraclelinux8)
 -	[`oraclelinux:8-slim`](#oraclelinux8-slim)
+-	[`oraclelinux:8-slim-fips`](#oraclelinux8-slim-fips)
 -	[`oraclelinux:8.7`](#oraclelinux87)
 -	[`oraclelinux:9`](#oraclelinux9)
 -	[`oraclelinux:9-slim`](#oraclelinux9-slim)
@@ -136,6 +138,10 @@ CMD ["/bin/bash"]
 		Last Modified: Fri, 31 Mar 2023 21:42:01 GMT  
 		Size: 51.1 MB (51054832 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `oraclelinux:7-slim-fips`
+
+**does not exist** (yet?)
 
 ## `oraclelinux:7.9`
 
@@ -325,6 +331,10 @@ CMD ["/bin/bash"]
 		Last Modified: Thu, 06 Apr 2023 18:40:43 GMT  
 		Size: 43.5 MB (43477048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `oraclelinux:8-slim-fips`
+
+**does not exist** (yet?)
 
 ## `oraclelinux:8.7`
 
