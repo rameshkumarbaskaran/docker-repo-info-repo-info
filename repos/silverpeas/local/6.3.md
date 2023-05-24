@@ -587,13 +587,9 @@ Licenses: (parsed from: `/usr/share/doc/ca-certificates/copyright`)
 - `GPL-2+`
 - `MPL-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ca-certificates=20211016ubuntu0.20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20211016ubuntu0.20.04.1.dsc' ca-certificates_20211016ubuntu0.20.04.1.dsc 1945 SHA512:0b5042d12f3bae34aacf5a7818825d0a7599004a46c7259d92523ccacfbd9d5198322fe0eeaf6326e20cf7a4ce921ee78b31810be23f236d6b3934662097dfd2
-'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20211016ubuntu0.20.04.1.tar.xz' ca-certificates_20211016ubuntu0.20.04.1.tar.xz 239136 SHA512:4c277cc5d56f1b1bb7c715db8a0040e9fb87dba66c584c466c6960dd152c07da7810df06fee2d8247665668d81cb258ffb7f5bd91da77742a348a080b18740a1
-```
 
 ### `dpkg` source package: `cairo=1.16.0-4ubuntu1`
 
@@ -7985,14 +7981,9 @@ Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`)
 - `nagaysau-ishii`
 - `rijndael`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-12=12.14-0ubuntu0.20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-12/postgresql-12_12.14-0ubuntu0.20.04.1.dsc' postgresql-12_12.14-0ubuntu0.20.04.1.dsc 3764 SHA512:b1d42b204de54fbb0b2ef9f8c4b8414b030cfdd21924f02592fbab4de1da76a94a5e3a0cdf38e2a40ff2d4fb0c86a4659a64a06432b26b0554b5bba25f498cbe
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-12/postgresql-12_12.14.orig.tar.gz' postgresql-12_12.14.orig.tar.gz 27689086 SHA512:f016682084d99dda824b9fc4aa9aa4215158fb91b0f062701ff776d45d49fd47b347e90d52cd6bf89a6b02420b4c1cf2a3d07cb246a58daa5653cb9cfd5e6f31
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-12/postgresql-12_12.14-0ubuntu0.20.04.1.debian.tar.xz' postgresql-12_12.14-0ubuntu0.20.04.1.debian.tar.xz 26944 SHA512:679612a6681298b1822538e69998bf660867fc891519ff0ae797899fecdc1a168dae6d8d2e233d090e791e4f0ee641e16b5880debe041c40316f5802921bd0db
-```
 
 ### `dpkg` source package: `procps=2:3.3.16-1ubuntu2.3`
 
