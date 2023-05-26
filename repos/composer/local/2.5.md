@@ -1,10 +1,10 @@
-# `composer:2.5.5`
+# `composer:2.5.7`
 
 ## Docker Metadata
 
-- Image ID: `sha256:b52a5c01f12e959ca7995ea1283855d1c814e27f5d5575da0c01162da7076745`
-- Created: `2023-05-11T20:15:29Z`
-- Virtual Size: ~ 184.03 Mb  
+- Image ID: `sha256:62036ae50a68830a59fd3c830d996698c80c9881819a10ad687dc59d63ccbae0`
+- Created: `2023-05-24T13:08:57Z`
+- Virtual Size: ~ 187.22 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -23,7 +23,7 @@
   - `PHP_SHA256=10b796f0ed45574229851212b30a596a76e70ae365322bcaaaf9c00fa7d58cca`
   - `COMPOSER_ALLOW_SUPERUSER=1`
   - `COMPOSER_HOME=/tmp`
-  - `COMPOSER_VERSION=2.5.5`
+  - `COMPOSER_VERSION=2.5.7`
 
 ## `apk` (`.apk`-based packages)
 
@@ -166,16 +166,16 @@ Apache-2.0 OR CC0-1.0
 ### `apk` package: `bash`
 
 ```console
-bash-5.2.15-r3 description:
+bash-5.2.15-r4 description:
 The GNU Bourne Again shell
 
-bash-5.2.15-r3 webpage:
+bash-5.2.15-r4 webpage:
 https://www.gnu.org/software/bash/bash.html
 
-bash-5.2.15-r3 installed size:
+bash-5.2.15-r4 installed size:
 1360 KiB
 
-bash-5.2.15-r3 license:
+bash-5.2.15-r4 license:
 GPL-3.0-or-later
 
 ```
@@ -285,16 +285,16 @@ GPL-3.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-8.0.1-r2 description:
+curl-8.1.1-r0 description:
 URL retrival utility and library
 
-curl-8.0.1-r2 webpage:
+curl-8.1.1-r0 webpage:
 https://curl.se/
 
-curl-8.0.1-r2 installed size:
-232 KiB
+curl-8.1.1-r0 installed size:
+236 KiB
 
-curl-8.0.1-r2 license:
+curl-8.1.1-r0 license:
 curl
 
 ```
@@ -438,16 +438,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.0.1-r2 description:
+libcurl-8.1.1-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.0.1-r2 webpage:
+libcurl-8.1.1-r0 webpage:
 https://curl.se/
 
-libcurl-8.0.1-r2 installed size:
-532 KiB
+libcurl-8.1.1-r0 installed size:
+552 KiB
 
-libcurl-8.0.1-r2 license:
+libcurl-8.1.1-r0 license:
 curl
 
 ```
@@ -676,16 +676,16 @@ BSD-3-Clause
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.11.2-r0 description:
+libxml2-2.11.4-r0 description:
 XML parsing library, version 2
 
-libxml2-2.11.2-r0 webpage:
+libxml2-2.11.4-r0 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.11.2-r0 installed size:
-1104 KiB
+libxml2-2.11.4-r0 installed size:
+1108 KiB
 
-libxml2-2.11.2-r0 license:
+libxml2-2.11.4-r0 license:
 MIT
 
 ```
