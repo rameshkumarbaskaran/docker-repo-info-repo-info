@@ -491,19 +491,13 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 - `GPL-2+`
 - `public-domain-s-s-d`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dpkg=1.21.21
-'http://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.21.21.dsc' dpkg_1.21.21.dsc 3061 SHA256:9b8e9bd7bef0be5214f5ef8358b21c53e4ddfa949d399563de865b22d8d6b00c
-'http://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.21.21.tar.xz' dpkg_1.21.21.tar.xz 5395164 SHA256:985073817aa0512122f1a7e77598a6b0be168d6c71ac56a3383927eb0813e089
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/dpkg/1.21.21/
 
-- https://sources.debian.net/src/dpkg/1.21.21/ (for browsing the source)
-- https://sources.debian.net/src/dpkg/1.21.21/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/dpkg/1.21.21/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `e2fsprogs=1.47.0-2`
 
