@@ -1665,14 +1665,9 @@ Licenses: (parsed from: `/usr/share/doc/gazebo11/copyright`, `/usr/share/doc/gaz
 - `LGPL-3+`
 - `ZLIB`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gazebo11=11.12.0-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/g/gazebo11/gazebo11_11.12.0-1%7efocal.dsc' gazebo11_11.12.0-1~focal.dsc 2682 SHA256:44142c0360cb68edacafc054ed14e6b1c7b8c760e970f50f8bf2f0f6f2553591
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/g/gazebo11/gazebo11_11.12.0.orig.tar.bz2' gazebo11_11.12.0.orig.tar.bz2 56542859 SHA256:c40ca1ec71b6ab427e7feb83c922bfb262e84e11ebf6bb91f99bc3cca75bcd97
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/g/gazebo11/gazebo11_11.12.0-1%7efocal.debian.tar.xz' gazebo11_11.12.0-1~focal.debian.tar.xz 6956 SHA256:f389f67af5ffbd1c1192e6cfb05eabd2979f7fbcb8a75cf3f9ae48d2f5139fe4
-```
 
 ### `dpkg` source package: `gcc-10=10.3.0-1ubuntu1~20.04`
 
