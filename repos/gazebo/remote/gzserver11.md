@@ -1,7 +1,7 @@
 ## `gazebo:gzserver11`
 
 ```console
-$ docker pull gazebo@sha256:e809188041869aa766393f32c981542254f29b63f5ee1d36696f9fefcc885682
+$ docker pull gazebo@sha256:9f53fdd4121756c8eda6f712bd1d595d6b52a6ad8710f6aafb9fcd112c7a8dda
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull gazebo@sha256:e809188041869aa766393f32c981542254f29b63f5ee1d36696f
 ### `gazebo:gzserver11` - linux; amd64
 
 ```console
-$ docker pull gazebo@sha256:d2e0b326450385e5e95a365dece2c7ec31ebe796442fa928b58023daa579003e
+$ docker pull gazebo@sha256:47bd8f67024bcbe075eea11f9adc8a0c07f5994e7d035c413d4a61b02de4d23c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **321.9 MB (321944943 bytes)**  
+-	Total Size: **321.9 MB (321940227 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a188b772441e0357de96a5a95c2f7e6aa46341dd44ee7ccb4dc3be7eae634d19`
+-	Image ID: `sha256:79cf6ff8643c32540c683008fa9d4253af7fcb049493739dc48b04e4dbc6468d`
 -	Entrypoint: `["\/gzserver_entrypoint.sh"]`
 -	Default Command: `["gzserver"]`
 
@@ -43,15 +43,15 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends     dirmngr 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
 # Tue, 18 Apr 2023 01:37:55 GMT
 RUN . /etc/os-release     && echo "deb http://packages.osrfoundation.org/gazebo/$ID-stable `lsb_release -sc` main" > /etc/apt/sources.list.d/gazebo-latest.list
-# Tue, 18 Apr 2023 01:40:23 GMT
-RUN apt-get update && apt-get install -y --no-install-recommends     gazebo11=11.12.0-1*     && rm -rf /var/lib/apt/lists/*
-# Tue, 18 Apr 2023 01:40:25 GMT
+# Tue, 30 May 2023 20:33:17 GMT
+RUN apt-get update && apt-get install -y --no-install-recommends     gazebo11=11.13.0-1*     && rm -rf /var/lib/apt/lists/*
+# Tue, 30 May 2023 20:33:19 GMT
 EXPOSE 11345
-# Tue, 18 Apr 2023 01:40:25 GMT
+# Tue, 30 May 2023 20:33:19 GMT
 COPY file:b79966dec12c55a0a5c9e673326cc3faf9cbbeee0ea5f172e863df237eb8a601 in / 
-# Tue, 18 Apr 2023 01:40:25 GMT
+# Tue, 30 May 2023 20:33:19 GMT
 ENTRYPOINT ["/gzserver_entrypoint.sh"]
-# Tue, 18 Apr 2023 01:40:25 GMT
+# Tue, 30 May 2023 20:33:19 GMT
 CMD ["gzserver"]
 ```
 
@@ -76,11 +76,11 @@ CMD ["gzserver"]
 		Last Modified: Tue, 18 Apr 2023 01:44:08 GMT  
 		Size: 5.5 KB (5496 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0a8dd91972dc975c857536f92325d9f0b5a1b7102146c2494e6ae3472f651d08`  
-		Last Modified: Tue, 18 Apr 2023 01:44:39 GMT  
-		Size: 276.0 MB (276022850 bytes)  
+	-	`sha256:93f6e42ae9614142514184e116ba0d99a8c9ebc37ff5abe076fa79ed7ba856f0`  
+		Last Modified: Tue, 30 May 2023 20:39:54 GMT  
+		Size: 276.0 MB (276018134 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc219bbaa3f2a4b2d0b1315219fc2cbc3b1b54df78f27171081f8c298ef9f7cd`  
-		Last Modified: Tue, 18 Apr 2023 01:44:08 GMT  
+	-	`sha256:447fecdc814f32d47afd2534f0e2d24fd8f9005f09d15a01de1d369174c4a429`  
+		Last Modified: Tue, 30 May 2023 20:39:24 GMT  
 		Size: 189.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
