@@ -352,14 +352,9 @@ Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/bin
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris binutils=2.40-2ubuntu5
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.40-2ubuntu5.dsc' binutils_2.40-2ubuntu5.dsc 9183 SHA512:78b0ab455c94d1626c95f2bfc34c970c44bd39405cac019db99157e0501dfecf98a4d2d5b540e0afcf79bf60df8c71fb5fcd1634c5b89695c6fc7bd3e234d088
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.40.orig.tar.xz' binutils_2.40.orig.tar.xz 25241484 SHA512:a37e042523bc46494d99d5637c3f3d8f9956d9477b748b3b1f6d7dfbb8d968ed52c932e88a4e946c6f77b8f48f1e1b360ca54c3d298f17193f3b4963472f6925
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.40-2ubuntu5.debian.tar.xz' binutils_2.40-2ubuntu5.debian.tar.xz 364944 SHA512:3614a0f19b8fda5eed67b4fca00e4caeb8169bded0f5ecaec2c09b826e8fab9bf8ae816c7d0478502b1e4a4c22c7d18e969eb51a79dcb2d97d1180c699303864
-```
 
 ### `dpkg` source package: `brotli=1.0.9-2build8`
 
@@ -2641,15 +2636,13 @@ Licenses: (parsed from: `/usr/share/doc/libsepol-dev/copyright`, `/usr/share/doc
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libsepol=3.4-2
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol_3.4-2.dsc' libsepol_3.4-2.dsc 2005 SHA512:dfac0d64c2e2a2f68643a65091aeabc6175387e935a9fcf33834d29e52e0d5a6cb747462f656c82eb368915c71c7f6f38010eb3868ba9e2214de0f4eb3c867f8
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol_3.4.orig.tar.gz' libsepol_3.4.orig.tar.gz 490628 SHA512:5e47e6ac626f2bfc10a9f2f24c2e66c4d7f291ca778ebd81c7d565326e036e821d3eb92e5d7540517b1c715466232a7d7da895ab48811d037ad92d423ed934b6
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol_3.4.orig.tar.gz.asc' libsepol_3.4.orig.tar.gz.asc 833 SHA512:df3631f5f5b27e5893cfb14080089bd5a662d909257045c4b0cfe95e2abbb86d108f954248acd73121a65d9ab5fce771836e1aba4d3003c327ae9eecffefe791
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol_3.4-2.debian.tar.xz' libsepol_3.4-2.debian.tar.xz 21516 SHA512:571122e4656dce9a761db4f05777d51e7da95bb344fe74e62871bed744d4b30c7b80920106728b1039a47694f567181f6f3bba5e4782f97ce119e0975f7ed62f
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libsepol/3.4-2/
+
 
 ### `dpkg` source package: `libsm=2:1.2.3-1build2`
 
@@ -3568,14 +3561,9 @@ Licenses: (parsed from: `/usr/share/doc/libopenjp2-7/copyright`, `/usr/share/doc
 - `ZLIB`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openjpeg2=2.5.0-1build1
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjpeg2/openjpeg2_2.5.0-1build1.dsc' openjpeg2_2.5.0-1build1.dsc 2697 SHA512:a6fd34c66fd32c32a13dde632eb915cb22822c784b416e3679a313111fe312066f50b706667397f3fcc3f77c666fce05bc9e814067220a375953aee1cf68eea7
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjpeg2/openjpeg2_2.5.0.orig.tar.xz' openjpeg2_2.5.0.orig.tar.xz 1221108 SHA512:a266297d60ff93e14dbee890b01a76870bda69f082dbe8932fc444ccd260c27aaaac8b22e3c00ca71930b2555a1cad6cf6ed0d5d882d9d13f472cc494cab8234
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjpeg2/openjpeg2_2.5.0-1build1.debian.tar.xz' openjpeg2_2.5.0-1build1.debian.tar.xz 17412 SHA512:b10d4b1ce14689c35459c7e4899e69e02e1c4cb350fd0a93b1d76603f61b718795bbe878e6d49a6cc60118377721e12a6785dbfff6eac12b4dba259ed7e144e1
-```
 
 ### `dpkg` source package: `openldap=2.6.3+dfsg-1~exp1ubuntu2`
 

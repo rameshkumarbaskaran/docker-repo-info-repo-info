@@ -1875,14 +1875,9 @@ Licenses: (parsed from: `/usr/share/doc/libssl3/copyright`, `/usr/share/doc/open
 - `GPL-1`
 - `GPL-1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=3.0.8-1ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.8-1ubuntu1.1.dsc' openssl_3.0.8-1ubuntu1.1.dsc 2186 SHA512:81a1d09e6ce74e8148332bc18648265dbc327963b9b6bcd84ae98219d80f1cf7a797e861c7bbdc1fe2a8bd950b5fd3cb33249e7a36d36819599ba4812d6067ed
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.8.orig.tar.gz' openssl_3.0.8.orig.tar.gz 15151328 SHA512:8ce10be000d7d4092c8efc5b96b1d2f7da04c1c3a624d3a7923899c6b1de06f369016be957e36e8ab6d4c9102eaeec5d1973295d547f7893a7f11f132ae42b0d
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.8-1ubuntu1.1.debian.tar.xz' openssl_3.0.8-1ubuntu1.1.debian.tar.xz 120836 SHA512:d1fe7b0bff8c62cc9da36796c1c00a28af07469b08c3d411cb87596f6fa361ad0f3da6c7dd6dfd8acd9a13b9a7e4dbd7d4a5f1fdb8597701dbf385e84674b08f
-```
 
 ### `dpkg` source package: `p11-kit=0.24.1-2ubuntu1`
 
