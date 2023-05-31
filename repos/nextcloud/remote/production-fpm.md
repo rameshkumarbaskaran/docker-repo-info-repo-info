@@ -1,7 +1,7 @@
 ## `nextcloud:production-fpm`
 
 ```console
-$ docker pull nextcloud@sha256:75704049310db8465c91b8af11584355e66d8cde8e8408efcacc4bcb62e4ce14
+$ docker pull nextcloud@sha256:f52959e2b3f84f05fe422731d766d92ff1eeae0ae0a54584f79325c1090c8171
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -960,14 +960,14 @@ CMD ["php-fpm"]
 ### `nextcloud:production-fpm` - linux; ppc64le
 
 ```console
-$ docker pull nextcloud@sha256:15939190f7aefef0adae12f77acd6a05b4e01c8406fa3c5afd2a7273fea6cb42
+$ docker pull nextcloud@sha256:6659407f3800acad16b67383ac11071bf3fff9698896a52ddf7570c3438afe0a
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **345.9 MB (345881078 bytes)**  
+-	Total Size: **347.0 MB (347030906 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d81b2291195d11d460901e74527cea1b3a15aaeff81eda7f7a43ccd643b9e850`
+-	Image ID: `sha256:3a3204806f5f46bc75ef1e408099b84202ddb8dc2f5766d61eac66eb185dfa7e`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -1034,17 +1034,17 @@ RUN set -ex;         savedAptMark="$(apt-mark showmanual)";         apt-get upda
 RUN {         echo 'opcache.enable=1';         echo 'opcache.interned_strings_buffer=32';         echo 'opcache.max_accelerated_files=10000';         echo 'opcache.memory_consumption=128';         echo 'opcache.save_comments=1';         echo 'opcache.revalidate_freq=60';         echo 'opcache.jit=1255';         echo 'opcache.jit_buffer_size=128M';     } > "${PHP_INI_DIR}/conf.d/opcache-recommended.ini";         echo 'apc.enable_cli=1' >> "${PHP_INI_DIR}/conf.d/docker-php-ext-apcu.ini";         {         echo 'memory_limit=${PHP_MEMORY_LIMIT}';         echo 'upload_max_filesize=${PHP_UPLOAD_LIMIT}';         echo 'post_max_size=${PHP_UPLOAD_LIMIT}';     } > "${PHP_INI_DIR}/conf.d/nextcloud.ini";         mkdir /var/www/data;     chown -R www-data:root /var/www;     chmod -R g=u /var/www
 # Tue, 23 May 2023 21:11:17 GMT
 VOLUME [/var/www/html]
-# Tue, 23 May 2023 21:11:18 GMT
-ENV NEXTCLOUD_VERSION=25.0.6
-# Tue, 23 May 2023 21:12:38 GMT
-RUN set -ex;     fetchDeps="         gnupg         dirmngr     ";     apt-get update;     apt-get install -y --no-install-recommends $fetchDeps;         curl -fsSL -o nextcloud.tar.bz2         "https://download.nextcloud.com/server/releases/nextcloud-${NEXTCLOUD_VERSION}.tar.bz2";     curl -fsSL -o nextcloud.tar.bz2.asc         "https://download.nextcloud.com/server/releases/nextcloud-${NEXTCLOUD_VERSION}.tar.bz2.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 28806A878AE423A28372792ED75899B9A724937A;     gpg --batch --verify nextcloud.tar.bz2.asc nextcloud.tar.bz2;     tar -xjf nextcloud.tar.bz2 -C /usr/src/;     gpgconf --kill all;     rm nextcloud.tar.bz2.asc nextcloud.tar.bz2;     rm -rf "$GNUPGHOME" /usr/src/nextcloud/updater;     mkdir -p /usr/src/nextcloud/data;     mkdir -p /usr/src/nextcloud/custom_apps;     chmod +x /usr/src/nextcloud/occ;         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps;     rm -rf /var/lib/apt/lists/*
-# Tue, 23 May 2023 21:12:49 GMT
+# Wed, 31 May 2023 19:17:02 GMT
+ENV NEXTCLOUD_VERSION=25.0.7
+# Wed, 31 May 2023 19:18:22 GMT
+RUN set -ex;     fetchDeps="         gnupg         dirmngr     ";     apt-get update;     apt-get install -y --no-install-recommends $fetchDeps;         curl -fsSL -o nextcloud.tar.bz2 "https://download.nextcloud.com/server/releases/nextcloud-25.0.7.tar.bz2";     curl -fsSL -o nextcloud.tar.bz2.asc "https://download.nextcloud.com/server/releases/nextcloud-25.0.7.tar.bz2.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 28806A878AE423A28372792ED75899B9A724937A;     gpg --batch --verify nextcloud.tar.bz2.asc nextcloud.tar.bz2;     tar -xjf nextcloud.tar.bz2 -C /usr/src/;     gpgconf --kill all;     rm nextcloud.tar.bz2.asc nextcloud.tar.bz2;     rm -rf "$GNUPGHOME" /usr/src/nextcloud/updater;     mkdir -p /usr/src/nextcloud/data;     mkdir -p /usr/src/nextcloud/custom_apps;     chmod +x /usr/src/nextcloud/occ;         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps;     rm -rf /var/lib/apt/lists/*
+# Wed, 31 May 2023 19:18:26 GMT
 COPY multi:38a4739a7ce38db03075117346fff2453db5ff29d27e30f506b9d2fc6a4b4a9a in / 
-# Tue, 23 May 2023 21:12:50 GMT
+# Wed, 31 May 2023 19:18:27 GMT
 COPY multi:1aa0c68034f207c7e2fb6f047fda45b55878afe2781ef10723107e35ee22547e in /usr/src/nextcloud/config/ 
-# Tue, 23 May 2023 21:12:51 GMT
+# Wed, 31 May 2023 19:18:27 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Tue, 23 May 2023 21:12:52 GMT
+# Wed, 31 May 2023 19:18:27 GMT
 CMD ["php-fpm"]
 ```
 
@@ -1101,17 +1101,17 @@ CMD ["php-fpm"]
 		Last Modified: Tue, 23 May 2023 21:30:40 GMT  
 		Size: 619.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fcd80e8fcf7eae228db09c7eca2e91c8ede15c8cc03eec19ab6055fc083f658a`  
-		Last Modified: Tue, 23 May 2023 21:31:16 GMT  
-		Size: 161.0 MB (161009010 bytes)  
+	-	`sha256:3ee2b86225a2dfd6df64988cfac7a33a7872c30ccd9e184f15ddd4de51fcfef1`  
+		Last Modified: Wed, 31 May 2023 19:45:32 GMT  
+		Size: 162.2 MB (162158842 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19c9414251acc174dca7e9f0ca4c56c7bbb7129fc4e76be42411988b7e2b1e98`  
-		Last Modified: Tue, 23 May 2023 21:30:40 GMT  
+	-	`sha256:b7915e0b821b956a4e864296f0f925cf52cc2092a01f92b9731f5eb40b719745`  
+		Last Modified: Wed, 31 May 2023 19:44:56 GMT  
 		Size: 3.1 KB (3058 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3f8ab847eeb661c63c1a9b9528e461b44efd5b7ba90ee3278bbb0891a1c8eb11`  
-		Last Modified: Tue, 23 May 2023 21:30:40 GMT  
-		Size: 2.2 KB (2226 bytes)  
+	-	`sha256:9208d8d7a752e1fe7a61161466819f8eb96c4dabdf73ec35e390c19d56d49145`  
+		Last Modified: Wed, 31 May 2023 19:44:56 GMT  
+		Size: 2.2 KB (2222 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `nextcloud:production-fpm` - linux; s390x
