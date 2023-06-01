@@ -2,7 +2,7 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:cb8b5132965e918f69ba1e117c81d33b58ad831e273499399c9cdb2176f57fc3`
+- Image ID: `sha256:475f5c539c95e2b58734094291fc2890b3d09b0f11110a9264442e06a16f0efb`
 - Created: `2023-05-26T11:04:23Z`
 - Virtual Size: ~ 379.79 Mb  
   (total size of all layers on-disk)
@@ -14,7 +14,7 @@
   - `DOCKER_BUILDX_VERSION=0.10.5`
   - `DOCKER_COMPOSE_VERSION=2.18.1`
   - `DOCKER_TLS_CERTDIR=/certs`
-  - `DIND_COMMIT=1f32e3c95d72a29b3eaacba156ed675dba976cb5`
+  - `DIND_COMMIT=d58df1fc6c866447ce2cd129af10e5b507705624`
 
 ## `apk` (`.apk`-based packages)
 
