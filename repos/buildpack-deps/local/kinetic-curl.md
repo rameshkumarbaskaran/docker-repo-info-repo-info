@@ -1874,15 +1874,9 @@ Licenses: (parsed from: `/usr/share/doc/tzdata/copyright`)
 
 - `ICU`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2023c-0ubuntu0.22.10.1
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023c-0ubuntu0.22.10.1.dsc' tzdata_2023c-0ubuntu0.22.10.1.dsc 2511 SHA512:b437e884b4c9b33b0c9b0a024e47a3ec150f37ab3d4db604eff8021c78cbb92b9b5eb184c3ee7fc8557a00d2816b012fda2fc213fc1f9a802c2dcbd0748ce5ec
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023c.orig.tar.gz' tzdata_2023c.orig.tar.gz 443902 SHA512:608bd286ebcbd0004cfdc1da183273f08aff61f90c8867661154453d77a05d421e4c46ad6d066a1fe2e87d5c82ec0f1c0224667a3b35f3180a3eb7f6ff84cbf5
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023c.orig.tar.gz.asc' tzdata_2023c.orig.tar.gz.asc 833 SHA512:15da6e01a12a0390f736fe5bacf27595c8f7080a4b27eccfae7f244bc38d5839e7d25622e325f874db17f9e723777e9cfe0f460fbd595b66772f1642dd603b6b
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023c-0ubuntu0.22.10.1.debian.tar.xz' tzdata_2023c-0ubuntu0.22.10.1.debian.tar.xz 174668 SHA512:75c30d2f319e57bb8e70e141ebaea1e8882b4b0876118669b3e74ccd83ba281a5d74cab5350bf89041dc0f49d8e24a3b5ce5732c6458bd5fe138378f64b550b4
-```
 
 ### `dpkg` source package: `ubuntu-keyring=2021.03.26`
 
