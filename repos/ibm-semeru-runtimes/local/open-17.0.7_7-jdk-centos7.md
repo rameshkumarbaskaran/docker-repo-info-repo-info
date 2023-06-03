@@ -1,10 +1,10 @@
-# `ibm-semeru-runtimes:open-11.0.18_10-jdk-centos7`
+# `ibm-semeru-runtimes:open-17.0.7_7-jdk-centos7`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3bb7dc40e8738cd424f69a1f13fd79390598ce2a3f7134a7cbec60a9cad37e2a`
-- Created: `2023-03-01T01:41:18.908765935Z`
-- Virtual Size: ~ 601.02 Mb  
+- Image ID: `sha256:eff4b94b6879fe7dd7d54fe570ac380f7bd06fdae9c69d188db16ec3f96547e7`
+- Created: `2023-06-01T00:31:48.759964762Z`
+- Virtual Size: ~ 610.47 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -13,7 +13,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.18+10_openj9-0.36.0`
+  - `JAVA_VERSION=jdk-17.0.7+7_openj9-0.38.0`
   - `JAVA_HOME=/opt/java/openjdk`
   - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal`
 - Labels:
@@ -1023,8 +1023,8 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url libxml2-2.9.1-6.el7.5
-http://vault.centos.org/centos/7/os/Source/SPackages/libxml2-2.9.1-6.el7.5.src.rpm
 http://vault.centos.org/centos/7/updates/Source/SPackages/libxml2-2.9.1-6.el7.5.src.rpm
+http://vault.centos.org/centos/7/os/Source/SPackages/libxml2-2.9.1-6.el7.5.src.rpm
 ```
 
 ### `rpm` package: `libxml2-python-2.9.1-6.el7.5.x86_64`
@@ -1035,8 +1035,8 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url libxml2-python-2.9.1-6.el7.5
-http://vault.centos.org/centos/7/os/Source/SPackages/libxml2-2.9.1-6.el7.5.src.rpm
 http://vault.centos.org/centos/7/updates/Source/SPackages/libxml2-2.9.1-6.el7.5.src.rpm
+http://vault.centos.org/centos/7/os/Source/SPackages/libxml2-2.9.1-6.el7.5.src.rpm
 ```
 
 ### `rpm` package: `lua-5.1.4-15.el7.x86_64`
