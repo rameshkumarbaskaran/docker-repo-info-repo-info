@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d7e1a81848a79844fa91eb4319165df1903fffded759bf076732c1cb1f472f94`
-- Created: `2023-04-20T20:49:34.992629944Z`
-- Virtual Size: ~ 814.11 Mb  
+- Image ID: `sha256:607ce7573a8f79198dc1a22cb9b7064925ab7121a715de6d116f9bbc53d90590`
+- Created: `2023-06-04T18:15:45.177022258Z`
+- Virtual Size: ~ 830.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/sh"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUSTUP_HOME=/usr/local/rustup`
   - `CARGO_HOME=/usr/local/cargo`
-  - `RUST_VERSION=1.69.0`
+  - `RUST_VERSION=1.70.0`
 
 ## `apk` (`.apk`-based packages)
 
