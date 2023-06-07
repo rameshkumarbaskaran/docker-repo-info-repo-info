@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:5b924a3f5c1feb0b07e208355f411a0ecff971b4b651b89fe145af11c5fab9cb`
-- Created: `2023-05-13T03:59:13.317007593Z`
-- Virtual Size: ~ 496.83 Mb  
+- Image ID: `sha256:b7e4baa8483eb19700594db6bf42219eb726943dc87232870a463e083504aced`
+- Created: `2023-06-05T20:25:41.389464882Z`
+- Virtual Size: ~ 496.84 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -286,15 +286,15 @@ $ dnf --quiet download --source --url gdbm-1.13-6.amzn2.0.2
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/e5756b881dd10f379f337f77c404dbc4c557dcbacab9b1b8a3aea0fb859ea0fb/../../../../../blobstore/e2866f1817e24bcd350768bf85c8bbddde135513ced29ce315df75f311cf77cf/gdbm-1.13-6.amzn2.0.2.src.rpm
 ```
 
-### `rpm` package: `glib2-2.56.1-9.amzn2.0.2.x86_64`
+### `rpm` package: `glib2-2.56.1-9.amzn2.0.3.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url glib2-2.56.1-9.amzn2.0.2
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/e5756b881dd10f379f337f77c404dbc4c557dcbacab9b1b8a3aea0fb859ea0fb/../../../../../blobstore/537aafe4cf68cea22ab5412acfe3a1febc5525de48f0bd82d10ea71e7e916899/glib2-2.56.1-9.amzn2.0.2.src.rpm
+$ dnf --quiet download --source --url glib2-2.56.1-9.amzn2.0.3
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/e5756b881dd10f379f337f77c404dbc4c557dcbacab9b1b8a3aea0fb859ea0fb/../../../../../blobstore/c302d4bd2ff6eaf7795a641d115ed5bde0107ac022ce486ae22ab5cbe5e9798e/glib2-2.56.1-9.amzn2.0.3.src.rpm
 ```
 
 ### `rpm` package: `glibc-2.26-63.amzn2.x86_64`
@@ -667,15 +667,15 @@ $ dnf --quiet download --source --url libsepol-2.5-8.1.amzn2.0.2
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/e5756b881dd10f379f337f77c404dbc4c557dcbacab9b1b8a3aea0fb859ea0fb/../../../../../blobstore/c5597168fd76decdd14b8c307ea2ab87a22f7e2236cf9c2ff4cf438c0e6d4120/libsepol-2.5-8.1.amzn2.0.2.src.rpm
 ```
 
-### `rpm` package: `libssh2-1.4.3-12.amzn2.2.3.x86_64`
+### `rpm` package: `libssh2-1.4.3-12.amzn2.2.4.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url libssh2-1.4.3-12.amzn2.2.3
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/e5756b881dd10f379f337f77c404dbc4c557dcbacab9b1b8a3aea0fb859ea0fb/../../../../../blobstore/ef9036126023044ebfb64786bbf29621695f9fd357830ccf39bebb19932fdde0/libssh2-1.4.3-12.amzn2.2.3.src.rpm
+$ dnf --quiet download --source --url libssh2-1.4.3-12.amzn2.2.4
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/e5756b881dd10f379f337f77c404dbc4c557dcbacab9b1b8a3aea0fb859ea0fb/../../../../../blobstore/3435fd82101df268400855a9be4eb676bbc3ad4f06c94baf50009949e28de491/libssh2-1.4.3-12.amzn2.2.4.src.rpm
 ```
 
 ### `rpm` package: `libstdc++-7.3.1-15.amzn2.x86_64`
@@ -898,15 +898,15 @@ $ dnf --quiet download --source --url openssl-libs-1.0.2k-24.amzn2.0.6
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/e5756b881dd10f379f337f77c404dbc4c557dcbacab9b1b8a3aea0fb859ea0fb/../../../../../blobstore/31026d0a2be875867098a01cb6d33f1b81d3fd8e3ef0c4ff4f391f848e2e3442/openssl-1.0.2k-24.amzn2.0.6.src.rpm
 ```
 
-### `rpm` package: `openssl11-libs-1.1.1g-12.amzn2.0.13.x86_64`
+### `rpm` package: `openssl11-libs-1.1.1g-12.amzn2.0.14.x86_64`
 
 Licenses (from `rpm --query`): OpenSSL and ASL 2.0
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url openssl11-libs-1.1.1g-12.amzn2.0.13
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/e5756b881dd10f379f337f77c404dbc4c557dcbacab9b1b8a3aea0fb859ea0fb/../../../../../blobstore/82b0cbb6b751ec05905d9600e33ce1d504d4faf99790f6ee9f8f229308cd5415/openssl11-1.1.1g-12.amzn2.0.13.src.rpm
+$ dnf --quiet download --source --url openssl11-libs-1.1.1g-12.amzn2.0.14
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/e5756b881dd10f379f337f77c404dbc4c557dcbacab9b1b8a3aea0fb859ea0fb/../../../../../blobstore/a556d2bdde36ad6eaf1e8be096c618341d2060ed865dbfd96785e10afcf52e37/openssl11-1.1.1g-12.amzn2.0.14.src.rpm
 ```
 
 ### `rpm` package: `openssl11-pkcs11-0.4.10-6.amzn2.0.1.x86_64`
