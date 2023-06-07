@@ -219,12 +219,115 @@ CMD ["eswrapper"]
 ## `elasticsearch:8.8.0`
 
 ```console
-$ docker pull elasticsearch@sha256:5e1be8dff7d8d9e46113e3df93b37a774d60bebe7be7f30301eb30d4861fc5bf
+$ docker pull elasticsearch@sha256:5c28849be5e91610761fcd4a49c2561dfae72be9ac0a3e7b5c42c9576aa9157b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
+-	Platforms: 2
+	-	linux; amd64
 	-	linux; arm64 variant v8
+
+### `elasticsearch:8.8.0` - linux; amd64
+
+```console
+$ docker pull elasticsearch@sha256:341770933f5a39ca28963fba43f8eddbf9e44a86a63e90402c71f7760028e791
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **640.8 MB (640796874 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:c3f4505a1c221306684530aa32fc7af22efd65483c960f9e5b5bb9531d5f6dda`
+-	Entrypoint: `["\/bin\/tini","--","\/usr\/local\/bin\/docker-entrypoint.sh"]`
+-	Default Command: `["eswrapper"]`
+
+```dockerfile
+# Thu, 13 Apr 2023 13:05:13 GMT
+ARG RELEASE
+# Thu, 13 Apr 2023 13:05:13 GMT
+ARG LAUNCHPAD_BUILD_ARCH
+# Thu, 13 Apr 2023 13:05:13 GMT
+LABEL org.opencontainers.image.ref.name=ubuntu
+# Thu, 13 Apr 2023 13:05:13 GMT
+LABEL org.opencontainers.image.version=20.04
+# Thu, 13 Apr 2023 13:05:15 GMT
+ADD file:d05d1c0936b046937bd5755876db2f8da3ed8ccbcf464bb56c312fbc7ed78589 in / 
+# Thu, 13 Apr 2023 13:05:15 GMT
+CMD ["/bin/bash"]
+# Tue, 23 May 2023 17:24:08 GMT
+RUN yes no | dpkg-reconfigure dash &&     for iter in 1 2 3 4 5 6 7 8 9 10; do       export DEBIAN_FRONTEND=noninteractive &&       apt-get update &&       apt-get upgrade -y &&       apt-get install -y --no-install-recommends         ca-certificates curl netcat p11-kit unzip zip  &&       apt-get clean &&       rm -rf /var/lib/apt/lists/* &&       exit_code=0 && break ||         exit_code=$? && echo "apt-get error: retry $iter in 10s" && sleep 10;     done;     exit $exit_code # buildkit
+# Tue, 23 May 2023 17:24:09 GMT
+RUN groupadd -g 1000 elasticsearch &&     adduser --uid 1000 --gid 1000 --home /usr/share/elasticsearch elasticsearch &&     adduser elasticsearch root &&     chown -R 0:0 /usr/share/elasticsearch # buildkit
+# Tue, 23 May 2023 17:24:09 GMT
+ENV ELASTIC_CONTAINER=true
+# Tue, 23 May 2023 17:24:09 GMT
+WORKDIR /usr/share/elasticsearch
+# Tue, 23 May 2023 17:24:39 GMT
+COPY /usr/share/elasticsearch /usr/share/elasticsearch # buildkit
+# Tue, 23 May 2023 17:24:39 GMT
+COPY /bin/tini /bin/tini # buildkit
+# Tue, 23 May 2023 17:24:39 GMT
+ENV PATH=/usr/share/elasticsearch/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 23 May 2023 17:24:39 GMT
+COPY bin/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh # buildkit
+# Tue, 23 May 2023 17:24:40 GMT
+RUN chmod g=u /etc/passwd &&     chmod 0555 /usr/local/bin/docker-entrypoint.sh &&     find / -xdev -perm -4000 -exec chmod ug-s {} + &&     chmod 0775 /usr/share/elasticsearch &&     chown elasticsearch bin config config/jvm.options.d data logs plugins # buildkit
+# Tue, 23 May 2023 17:24:40 GMT
+COPY bin/docker-openjdk /etc/ca-certificates/update.d/docker-openjdk # buildkit
+# Tue, 23 May 2023 17:24:41 GMT
+RUN /etc/ca-certificates/update.d/docker-openjdk # buildkit
+# Tue, 23 May 2023 17:24:41 GMT
+EXPOSE map[9200/tcp:{} 9300/tcp:{}]
+# Tue, 23 May 2023 17:24:41 GMT
+LABEL org.label-schema.build-date=2023-05-23T17:16:07.179039820Z org.label-schema.license=Elastic-License-2.0 org.label-schema.name=Elasticsearch org.label-schema.schema-version=1.0 org.label-schema.url=https://www.elastic.co/products/elasticsearch org.label-schema.usage=https://www.elastic.co/guide/en/elasticsearch/reference/index.html org.label-schema.vcs-ref=c01029875a091076ed42cdb3a41c10b1a9a5a20f org.label-schema.vcs-url=https://github.com/elastic/elasticsearch org.label-schema.vendor=Elastic org.label-schema.version=8.8.0 org.opencontainers.image.created=2023-05-23T17:16:07.179039820Z org.opencontainers.image.documentation=https://www.elastic.co/guide/en/elasticsearch/reference/index.html org.opencontainers.image.licenses=Elastic-License-2.0 org.opencontainers.image.revision=c01029875a091076ed42cdb3a41c10b1a9a5a20f org.opencontainers.image.source=https://github.com/elastic/elasticsearch org.opencontainers.image.title=Elasticsearch org.opencontainers.image.url=https://www.elastic.co/products/elasticsearch org.opencontainers.image.vendor=Elastic org.opencontainers.image.version=8.8.0
+# Tue, 23 May 2023 17:24:41 GMT
+ENTRYPOINT ["/bin/tini" "--" "/usr/local/bin/docker-entrypoint.sh"]
+# Tue, 23 May 2023 17:24:41 GMT
+CMD ["eswrapper"]
+# Tue, 23 May 2023 17:24:41 GMT
+USER 1000:0
+```
+
+-	Layers:
+	-	`sha256:99803d4b97f3db529ae9ca4174b0951afac6b309e7deaa8ec3214c584e02b3a8`  
+		Last Modified: Thu, 13 Apr 2023 03:03:13 GMT  
+		Size: 28.6 MB (28578563 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e67356b01b53871881d345c37729cb544ce3443a561fe0a0bc8fd30d08edfabd`  
+		Last Modified: Thu, 25 May 2023 20:13:09 GMT  
+		Size: 8.0 MB (8011830 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:588f11bb0a41ff9c76e7d72b2c5e4c9cb52220e899a278b8369f460f6f8b5d1f`  
+		Last Modified: Thu, 25 May 2023 20:13:05 GMT  
+		Size: 4.3 KB (4343 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1`  
+		Last Modified: Tue, 07 Mar 2017 15:01:14 GMT  
+		Size: 32.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6f0167e33b7865699c2b9023628dad339773adff0a394b0e567e0be93b5c5b28`  
+		Last Modified: Thu, 25 May 2023 20:15:46 GMT  
+		Size: 603.9 MB (603898583 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e177b2345e32ebfc2ee99a4b6674c7b821f691fcd2d4254c8898908cf7824b3e`  
+		Last Modified: Thu, 25 May 2023 20:13:03 GMT  
+		Size: 9.5 KB (9530 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1049907083929f74b71d0eaf7707d8e34aca0f9e2aadb8c557407fa6dff1ad15`  
+		Last Modified: Thu, 25 May 2023 20:13:03 GMT  
+		Size: 1.7 KB (1723 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cd27bce2d83d968db912b671598fc9a13bf46102af4caaa4e50f97935504d6f2`  
+		Last Modified: Thu, 25 May 2023 20:13:03 GMT  
+		Size: 191.9 KB (191878 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:23b462ff69abaae36c0d92216f9b4620ec7343503b86ee78df493ce291cf80e5`  
+		Last Modified: Thu, 25 May 2023 20:13:03 GMT  
+		Size: 405.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2184b88a74fd9ebf775339eabce3590ccfc3602ce81e2f3e5b8204871df952bf`  
+		Last Modified: Thu, 25 May 2023 20:13:03 GMT  
+		Size: 100.0 KB (99987 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `elasticsearch:8.8.0` - linux; arm64 variant v8
 
