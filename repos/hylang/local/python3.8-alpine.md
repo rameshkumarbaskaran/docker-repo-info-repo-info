@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:4c1b5e391b76b52fd5b3e76966bfe4cd5ed725b6e36f4287a18ae2f26de409fa`
-- Created: `2023-05-13T00:31:14.84877775Z`
-- Virtual Size: ~ 57.16 Mb  
+- Image ID: `sha256:aaaeabb8f7c765ba2146600a846983134146f19431230087bed1d7538447b410`
+- Created: `2023-06-07T00:28:47.4418007Z`
+- Virtual Size: ~ 63.85 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -12,8 +12,8 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568`
-  - `PYTHON_VERSION=3.8.16`
-  - `PYTHON_PIP_VERSION=22.0.4`
+  - `PYTHON_VERSION=3.8.17`
+  - `PYTHON_PIP_VERSION=23.0.1`
   - `PYTHON_SETUPTOOLS_VERSION=57.5.0`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/0d8570dc44796f4369b652222cf176b3db6ac70e/public/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=96461deced5c2a487ddc65207ec5a9cffeca0d34e7af7ea1afc470ff0d746207`
@@ -280,16 +280,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.1.0-r4 description:
+libcrypto3-3.1.1-r1 description:
 Crypto library from openssl
 
-libcrypto3-3.1.0-r4 webpage:
+libcrypto3-3.1.1-r1 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.1.0-r4 installed size:
-4460 KiB
+libcrypto3-3.1.1-r1 installed size:
+4464 KiB
 
-libcrypto3-3.1.0-r4 license:
+libcrypto3-3.1.1-r1 license:
 Apache-2.0
 
 ```
@@ -331,16 +331,16 @@ MIT
 ### `apk` package: `libintl`
 
 ```console
-libintl-0.21.1-r5 description:
+libintl-0.21.1-r7 description:
 GNU gettext runtime library
 
-libintl-0.21.1-r5 webpage:
+libintl-0.21.1-r7 webpage:
 https://www.gnu.org/software/gettext/gettext.html
 
-libintl-0.21.1-r5 installed size:
+libintl-0.21.1-r7 installed size:
 56 KiB
 
-libintl-0.21.1-r5 license:
+libintl-0.21.1-r7 license:
 LGPL-2.1-or-later
 
 ```
@@ -399,16 +399,16 @@ X11
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.1.0-r4 description:
+libssl3-3.1.1-r1 description:
 SSL shared libraries
 
-libssl3-3.1.0-r4 webpage:
+libssl3-3.1.1-r1 webpage:
 https://www.openssl.org/
 
-libssl3-3.1.0-r4 installed size:
+libssl3-3.1.1-r1 installed size:
 552 KiB
 
-libssl3-3.1.0-r4 license:
+libssl3-3.1.1-r1 license:
 Apache-2.0
 
 ```

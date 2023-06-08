@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:21d894632df4dea5313b930bf12b557accef983d263a5854d8f966f9ca15e344`
-- Created: `2023-05-04T06:41:41.143491652Z`
-- Virtual Size: ~ 72.42 Mb  
+- Image ID: `sha256:4c5028fa7e8b2fdd754ec8076730a118fbf4f8fd0cd68e592abb64225561e89b`
+- Created: `2023-06-07T21:10:29.407290646Z`
+- Virtual Size: ~ 73.20 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -12,8 +12,8 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D`
-  - `PYTHON_VERSION=3.11.3`
-  - `PYTHON_PIP_VERSION=22.3.1`
+  - `PYTHON_VERSION=3.11.4`
+  - `PYTHON_PIP_VERSION=23.1.2`
   - `PYTHON_SETUPTOOLS_VERSION=65.5.1`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/0d8570dc44796f4369b652222cf176b3db6ac70e/public/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=96461deced5c2a487ddc65207ec5a9cffeca0d34e7af7ea1afc470ff0d746207`
@@ -280,16 +280,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.8-r4 description:
+libcrypto3-3.0.9-r1 description:
 Crypto library from openssl
 
-libcrypto3-3.0.8-r4 webpage:
+libcrypto3-3.0.9-r1 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.8-r4 installed size:
+libcrypto3-3.0.9-r1 installed size:
 4108 KiB
 
-libcrypto3-3.0.8-r4 license:
+libcrypto3-3.0.9-r1 license:
 Apache-2.0
 
 ```
@@ -365,16 +365,16 @@ LGPL-2.0-or-later
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.8-r4 description:
+libssl3-3.0.9-r1 description:
 SSL shared libraries
 
-libssl3-3.0.8-r4 webpage:
+libssl3-3.0.9-r1 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.8-r4 installed size:
+libssl3-3.0.9-r1 installed size:
 608 KiB
 
-libssl3-3.0.8-r4 license:
+libssl3-3.0.9-r1 license:
 Apache-2.0
 
 ```
@@ -450,16 +450,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.3-r4 description:
+musl-1.2.3-r5 description:
 the musl c library (libc) implementation
 
-musl-1.2.3-r4 webpage:
+musl-1.2.3-r5 webpage:
 https://musl.libc.org/
 
-musl-1.2.3-r4 installed size:
+musl-1.2.3-r5 installed size:
 620 KiB
 
-musl-1.2.3-r4 license:
+musl-1.2.3-r5 license:
 MIT
 
 ```
@@ -484,16 +484,16 @@ MIT AND BSD-2-Clause AND GPL-2.0-or-later
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.3_p20221119-r0 description:
+ncurses-libs-6.3_p20221119-r1 description:
 Ncurses libraries
 
-ncurses-libs-6.3_p20221119-r0 webpage:
+ncurses-libs-6.3_p20221119-r1 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-libs-6.3_p20221119-r0 installed size:
+ncurses-libs-6.3_p20221119-r1 installed size:
 500 KiB
 
-ncurses-libs-6.3_p20221119-r0 license:
+ncurses-libs-6.3_p20221119-r1 license:
 MIT
 
 ```
@@ -501,16 +501,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.3_p20221119-r0 description:
+ncurses-terminfo-base-6.3_p20221119-r1 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.3_p20221119-r0 webpage:
+ncurses-terminfo-base-6.3_p20221119-r1 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-terminfo-base-6.3_p20221119-r0 installed size:
+ncurses-terminfo-base-6.3_p20221119-r1 installed size:
 216 KiB
 
-ncurses-terminfo-base-6.3_p20221119-r0 license:
+ncurses-terminfo-base-6.3_p20221119-r1 license:
 MIT
 
 ```
