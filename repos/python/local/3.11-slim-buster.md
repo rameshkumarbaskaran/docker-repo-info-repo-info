@@ -1,10 +1,10 @@
-# `python:3.11.3-slim-buster`
+# `python:3.11.4-slim-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3b265d33c8ebb45b025979c398ec13b7bdd162151d5a3e58df96344630e73a07`
-- Created: `2023-05-23T01:20:37Z`
-- Virtual Size: ~ 120.30 Mb  
+- Image ID: `sha256:4fe2c1b721ad38c7f0fabf9e52928b94f3ec530e2eda960bb75b7b9835f5046d`
+- Created: `2023-06-07T09:49:17Z`
+- Virtual Size: ~ 120.41 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python3"]`
@@ -12,8 +12,8 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D`
-  - `PYTHON_VERSION=3.11.3`
-  - `PYTHON_PIP_VERSION=22.3.1`
+  - `PYTHON_VERSION=3.11.4`
+  - `PYTHON_PIP_VERSION=23.1.2`
   - `PYTHON_SETUPTOOLS_VERSION=65.5.1`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/0d8570dc44796f4369b652222cf176b3db6ac70e/public/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=96461deced5c2a487ddc65207ec5a9cffeca0d34e7af7ea1afc470ff0d746207`
@@ -1369,21 +1369,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=1.1.1n-0+deb10u4
-'http://deb.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n-0%2bdeb10u4.dsc' openssl_1.1.1n-0+deb10u4.dsc 2649 SHA256:0625512a546b6d1e0a508b22c1df8e349e6fb52dd61a47186689b69fff6a906f
-'http://deb.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n.orig.tar.gz' openssl_1.1.1n.orig.tar.gz 9850712 SHA256:40dceb51a4f6a5275bde0e6bf20ef4b91bfc32ed57c0552e2e8e15463372b17a
-'http://deb.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n.orig.tar.gz.asc' openssl_1.1.1n.orig.tar.gz.asc 488 SHA256:e0e89e9467102880ee6f2ee8c1413933eb1268969afb97b9bec61e2190a62fd0
-'http://deb.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n-0%2bdeb10u4.debian.tar.xz' openssl_1.1.1n-0+deb10u4.debian.tar.xz 131140 SHA256:5ad36ad381457ffce084f6c1373caff025027ef522d627d3eabf7a91b9ea684e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openssl/1.1.1n-0+deb10u4/
 
-- https://sources.debian.net/src/openssl/1.1.1n-0+deb10u4/ (for browsing the source)
-- https://sources.debian.net/src/openssl/1.1.1n-0+deb10u4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl/1.1.1n-0+deb10u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `p11-kit=0.23.15-2+deb10u1`
 

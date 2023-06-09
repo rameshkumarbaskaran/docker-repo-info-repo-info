@@ -1,10 +1,10 @@
-# `python:3.11.3-alpine3.18`
+# `python:3.11.4-alpine3.18`
 
 ## Docker Metadata
 
-- Image ID: `sha256:b6b068cda0cf592463549591ed736c4e87a6c5404335c09e01ba5b3eb0e9970b`
-- Created: `2023-05-10T10:10:11Z`
-- Virtual Size: ~ 51.87 Mb  
+- Image ID: `sha256:35f8462d36fe25f1117df6aa781567fe73dcd0796c859252c0894b1e308e27ce`
+- Created: `2023-06-07T09:49:17Z`
+- Virtual Size: ~ 57.24 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python3"]`
@@ -12,8 +12,8 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D`
-  - `PYTHON_VERSION=3.11.3`
-  - `PYTHON_PIP_VERSION=22.3.1`
+  - `PYTHON_VERSION=3.11.4`
+  - `PYTHON_PIP_VERSION=23.1.2`
   - `PYTHON_SETUPTOOLS_VERSION=65.5.1`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/0d8570dc44796f4369b652222cf176b3db6ac70e/public/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=96461deced5c2a487ddc65207ec5a9cffeca0d34e7af7ea1afc470ff0d746207`
@@ -278,16 +278,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.1.0-r4 description:
+libcrypto3-3.1.1-r1 description:
 Crypto library from openssl
 
-libcrypto3-3.1.0-r4 webpage:
+libcrypto3-3.1.1-r1 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.1.0-r4 installed size:
-4460 KiB
+libcrypto3-3.1.1-r1 installed size:
+4464 KiB
 
-libcrypto3-3.1.0-r4 license:
+libcrypto3-3.1.1-r1 license:
 Apache-2.0
 
 ```
@@ -329,16 +329,16 @@ MIT
 ### `apk` package: `libintl`
 
 ```console
-libintl-0.21.1-r5 description:
+libintl-0.21.1-r7 description:
 GNU gettext runtime library
 
-libintl-0.21.1-r5 webpage:
+libintl-0.21.1-r7 webpage:
 https://www.gnu.org/software/gettext/gettext.html
 
-libintl-0.21.1-r5 installed size:
+libintl-0.21.1-r7 installed size:
 56 KiB
 
-libintl-0.21.1-r5 license:
+libintl-0.21.1-r7 license:
 LGPL-2.1-or-later
 
 ```
@@ -397,16 +397,16 @@ X11
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.1.0-r4 description:
+libssl3-3.1.1-r1 description:
 SSL shared libraries
 
-libssl3-3.1.0-r4 webpage:
+libssl3-3.1.1-r1 webpage:
 https://www.openssl.org/
 
-libssl3-3.1.0-r4 installed size:
+libssl3-3.1.1-r1 installed size:
 552 KiB
 
-libssl3-3.1.0-r4 license:
+libssl3-3.1.1-r1 license:
 Apache-2.0
 
 ```
@@ -448,16 +448,16 @@ BSD-3-Clause
 ### `apk` package: `libuuid`
 
 ```console
-libuuid-2.38.1-r7 description:
+libuuid-2.38.1-r8 description:
 DCE compatible Universally Unique Identifier library
 
-libuuid-2.38.1-r7 webpage:
+libuuid-2.38.1-r8 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libuuid-2.38.1-r7 installed size:
+libuuid-2.38.1-r8 installed size:
 40 KiB
 
-libuuid-2.38.1-r7 license:
+libuuid-2.38.1-r8 license:
 BSD-3-Clause
 
 ```
