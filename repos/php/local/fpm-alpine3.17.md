@@ -1,10 +1,10 @@
-# `php:8.2.6-fpm-alpine3.17`
+# `php:8.2.7-fpm-alpine3.17`
 
 ## Docker Metadata
 
-- Image ID: `sha256:03615625b39c138c8098d2a6c39648188d93203b06ed2a015932caf43c180cc5`
-- Created: `2023-05-11T20:30:29.434166605Z`
-- Virtual Size: ~ 81.29 Mb  
+- Image ID: `sha256:bba3002a896057c390c992c19880ff0291821395ffe3d1581ff760f4cda32622`
+- Created: `2023-06-09T00:56:01.806938116Z`
+- Virtual Size: ~ 81.92 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC`
-  - `PHP_VERSION=8.2.6`
-  - `PHP_URL=https://www.php.net/distributions/php-8.2.6.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.6.tar.xz.asc`
-  - `PHP_SHA256=10b796f0ed45574229851212b30a596a76e70ae365322bcaaaf9c00fa7d58cca`
+  - `PHP_VERSION=8.2.7`
+  - `PHP_URL=https://www.php.net/distributions/php-8.2.7.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.7.tar.xz.asc`
+  - `PHP_SHA256=4b9fb3dcd7184fe7582d7e44544ec7c5153852a2528de3b6754791258ffbdfa0`
 
 ## `apk` (`.apk`-based packages)
 
@@ -265,16 +265,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.8-r4 description:
+libcrypto3-3.0.9-r1 description:
 Crypto library from openssl
 
-libcrypto3-3.0.8-r4 webpage:
+libcrypto3-3.0.9-r1 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.8-r4 installed size:
+libcrypto3-3.0.9-r1 installed size:
 4108 KiB
 
-libcrypto3-3.0.8-r4 license:
+libcrypto3-3.0.9-r1 license:
 Apache-2.0
 
 ```
@@ -282,16 +282,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.0.1-r0 description:
+libcurl-8.1.2-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.0.1-r0 webpage:
+libcurl-8.1.2-r0 webpage:
 https://curl.se/
 
-libcurl-8.0.1-r0 installed size:
-556 KiB
+libcurl-8.1.2-r0 installed size:
+572 KiB
 
-libcurl-8.0.1-r0 license:
+libcurl-8.1.2-r0 license:
 curl
 
 ```
@@ -333,16 +333,16 @@ ISC
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.8-r4 description:
+libssl3-3.0.9-r1 description:
 SSL shared libraries
 
-libssl3-3.0.8-r4 webpage:
+libssl3-3.0.9-r1 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.8-r4 installed size:
+libssl3-3.0.9-r1 installed size:
 608 KiB
 
-libssl3-3.0.8-r4 license:
+libssl3-3.0.9-r1 license:
 Apache-2.0
 
 ```
@@ -367,16 +367,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.3-r4 description:
+musl-1.2.3-r5 description:
 the musl c library (libc) implementation
 
-musl-1.2.3-r4 webpage:
+musl-1.2.3-r5 webpage:
 https://musl.libc.org/
 
-musl-1.2.3-r4 installed size:
+musl-1.2.3-r5 installed size:
 620 KiB
 
-musl-1.2.3-r4 license:
+musl-1.2.3-r5 license:
 MIT
 
 ```
@@ -401,16 +401,16 @@ MIT AND BSD-2-Clause AND GPL-2.0-or-later
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.3_p20221119-r0 description:
+ncurses-libs-6.3_p20221119-r1 description:
 Ncurses libraries
 
-ncurses-libs-6.3_p20221119-r0 webpage:
+ncurses-libs-6.3_p20221119-r1 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-libs-6.3_p20221119-r0 installed size:
+ncurses-libs-6.3_p20221119-r1 installed size:
 500 KiB
 
-ncurses-libs-6.3_p20221119-r0 license:
+ncurses-libs-6.3_p20221119-r1 license:
 MIT
 
 ```
@@ -418,16 +418,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.3_p20221119-r0 description:
+ncurses-terminfo-base-6.3_p20221119-r1 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.3_p20221119-r0 webpage:
+ncurses-terminfo-base-6.3_p20221119-r1 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-terminfo-base-6.3_p20221119-r0 installed size:
+ncurses-terminfo-base-6.3_p20221119-r1 installed size:
 216 KiB
 
-ncurses-terminfo-base-6.3_p20221119-r0 license:
+ncurses-terminfo-base-6.3_p20221119-r1 license:
 MIT
 
 ```
