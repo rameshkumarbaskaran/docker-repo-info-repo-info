@@ -1,10 +1,10 @@
-# `wordpress:cli-2.7.1-php8.1`
+# `wordpress:cli-2.8.1-php8.2`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c3ee0f95f7f21991f4cf5e6f6e5247e8b4429593d3ccd476e67352956deb3c0a`
-- Created: `2023-05-13T03:40:39.857845451Z`
-- Virtual Size: ~ 204.03 Mb  
+- Image ID: `sha256:8685a5602b39e2e8333fc35e7c33aa8b3f0d98d6b7c2ec18a26f8cf699cfd8fc`
+- Created: `2023-06-09T06:17:45.412814105Z`
+- Virtual Size: ~ 210.75 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -16,14 +16,14 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
-  - `PHP_VERSION=8.1.19`
-  - `PHP_URL=https://www.php.net/distributions/php-8.1.19.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.19.tar.xz.asc`
-  - `PHP_SHA256=f42f0e93467415b2d30aa5b7ac825f0079a74207e0033010383cdc1e13657379`
+  - `GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC`
+  - `PHP_VERSION=8.2.7`
+  - `PHP_URL=https://www.php.net/distributions/php-8.2.7.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.7.tar.xz.asc`
+  - `PHP_SHA256=4b9fb3dcd7184fe7582d7e44544ec7c5153852a2528de3b6754791258ffbdfa0`
   - `WORDPRESS_CLI_GPG_KEY=63AF7AA15067C05616FDDD88A3A2E8F226F0BC06`
-  - `WORDPRESS_CLI_VERSION=2.7.1`
-  - `WORDPRESS_CLI_SHA512=956b5e3e1a076bd5441c082ee754e3ff4517ec965b93c621f455c2bf5719358c36e67d52f676492700b59d42cacb34a50d382535c035f19da7a0b98bc41860de`
+  - `WORDPRESS_CLI_VERSION=2.8.1`
+  - `WORDPRESS_CLI_SHA512=c1d40ee90b330ca1f8ddbed14b938b41ec5d9ff723c7c1cf3f41a2d9a1b271079a51a37ea3d1c9aa9c628fdd43449dba3995a8de150a68abbd505b06b91d9d2b`
 
 ## `apk` (`.apk`-based packages)
 
@@ -115,16 +115,16 @@ Apache-2.0 OR CC0-1.0
 ### `apk` package: `bash`
 
 ```console
-bash-5.2.15-r3 description:
+bash-5.2.15-r5 description:
 The GNU Bourne Again shell
 
-bash-5.2.15-r3 webpage:
+bash-5.2.15-r5 webpage:
 https://www.gnu.org/software/bash/bash.html
 
-bash-5.2.15-r3 installed size:
+bash-5.2.15-r5 installed size:
 1360 KiB
 
-bash-5.2.15-r3 license:
+bash-5.2.15-r5 license:
 GPL-3.0-or-later
 
 ```
@@ -217,16 +217,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `curl`
 
 ```console
-curl-8.0.1-r2 description:
+curl-8.1.2-r0 description:
 URL retrival utility and library
 
-curl-8.0.1-r2 webpage:
+curl-8.1.2-r0 webpage:
 https://curl.se/
 
-curl-8.0.1-r2 installed size:
-232 KiB
+curl-8.1.2-r0 installed size:
+236 KiB
 
-curl-8.0.1-r2 license:
+curl-8.1.2-r0 license:
 curl
 
 ```
@@ -319,16 +319,16 @@ ICU
 ### `apk` package: `imagemagick-libs`
 
 ```console
-imagemagick-libs-7.1.1.8-r1 description:
+imagemagick-libs-7.1.1.10-r0 description:
 Collection of tools and libraries for many image formats (libraries)
 
-imagemagick-libs-7.1.1.8-r1 webpage:
+imagemagick-libs-7.1.1.10-r0 webpage:
 https://imagemagick.org/
 
-imagemagick-libs-7.1.1.8-r1 installed size:
-3240 KiB
+imagemagick-libs-7.1.1.10-r0 installed size:
+3248 KiB
 
-imagemagick-libs-7.1.1.8-r1 license:
+imagemagick-libs-7.1.1.10-r0 license:
 ImageMagick
 
 ```
@@ -438,16 +438,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.1.0-r4 description:
+libcrypto3-3.1.1-r1 description:
 Crypto library from openssl
 
-libcrypto3-3.1.0-r4 webpage:
+libcrypto3-3.1.1-r1 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.1.0-r4 installed size:
-4460 KiB
+libcrypto3-3.1.1-r1 installed size:
+4464 KiB
 
-libcrypto3-3.1.0-r4 license:
+libcrypto3-3.1.1-r1 license:
 Apache-2.0
 
 ```
@@ -455,16 +455,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.0.1-r2 description:
+libcurl-8.1.2-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.0.1-r2 webpage:
+libcurl-8.1.2-r0 webpage:
 https://curl.se/
 
-libcurl-8.0.1-r2 installed size:
-532 KiB
+libcurl-8.1.2-r0 installed size:
+548 KiB
 
-libcurl-8.0.1-r2 license:
+libcurl-8.1.2-r0 license:
 curl
 
 ```
@@ -642,16 +642,16 @@ ISC
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.1.0-r4 description:
+libssl3-3.1.1-r1 description:
 SSL shared libraries
 
-libssl3-3.1.0-r4 webpage:
+libssl3-3.1.1-r1 webpage:
 https://www.openssl.org/
 
-libssl3-3.1.0-r4 installed size:
+libssl3-3.1.1-r1 installed size:
 552 KiB
 
-libssl3-3.1.0-r4 license:
+libssl3-3.1.1-r1 license:
 Apache-2.0
 
 ```
@@ -693,16 +693,16 @@ GPL-2.0-or-later OR LGPL-3.0-or-later
 ### `apk` package: `libwebp`
 
 ```console
-libwebp-1.3.0-r1 description:
+libwebp-1.3.0-r2 description:
 Libraries for working with WebP images
 
-libwebp-1.3.0-r1 webpage:
+libwebp-1.3.0-r2 webpage:
 https://developers.google.com/speed/webp
 
-libwebp-1.3.0-r1 installed size:
+libwebp-1.3.0-r2 installed size:
 596 KiB
 
-libwebp-1.3.0-r1 license:
+libwebp-1.3.0-r2 license:
 BSD-3-Clause
 
 ```
@@ -795,16 +795,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.11.3-r0 description:
+libxml2-2.11.4-r0 description:
 XML parsing library, version 2
 
-libxml2-2.11.3-r0 webpage:
+libxml2-2.11.4-r0 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.11.3-r0 installed size:
-1104 KiB
+libxml2-2.11.4-r0 installed size:
+1108 KiB
 
-libxml2-2.11.3-r0 license:
+libxml2-2.11.4-r0 license:
 MIT
 
 ```
@@ -829,16 +829,16 @@ BSD-3-Clause
 ### `apk` package: `mariadb-client`
 
 ```console
-mariadb-client-10.11.3-r0 description:
+mariadb-client-10.11.4-r0 description:
 Client for the MariaDB database
 
-mariadb-client-10.11.3-r0 webpage:
+mariadb-client-10.11.4-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-client-10.11.3-r0 installed size:
+mariadb-client-10.11.4-r0 installed size:
 35 MiB
 
-mariadb-client-10.11.3-r0 license:
+mariadb-client-10.11.4-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -846,16 +846,16 @@ GPL-2.0-or-later
 ### `apk` package: `mariadb-common`
 
 ```console
-mariadb-common-10.11.3-r0 description:
+mariadb-common-10.11.4-r0 description:
 MariaDB common files for both server and client
 
-mariadb-common-10.11.3-r0 webpage:
+mariadb-common-10.11.4-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-common-10.11.3-r0 installed size:
+mariadb-common-10.11.4-r0 installed size:
 2260 KiB
 
-mariadb-common-10.11.3-r0 license:
+mariadb-common-10.11.4-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -897,16 +897,16 @@ MIT AND BSD-2-Clause AND GPL-2.0-or-later
 ### `apk` package: `mysql-client`
 
 ```console
-mysql-client-10.11.3-r0 description:
+mysql-client-10.11.4-r0 description:
 Dummy package for mysql-client migration
 
-mysql-client-10.11.3-r0 webpage:
+mysql-client-10.11.4-r0 webpage:
 https://www.mariadb.org/
 
-mysql-client-10.11.3-r0 installed size:
+mysql-client-10.11.4-r0 installed size:
 4096 B
 
-mysql-client-10.11.3-r0 license:
+mysql-client-10.11.4-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -982,16 +982,16 @@ Apache-2.0
 ### `apk` package: `perl`
 
 ```console
-perl-5.36.1-r1 description:
+perl-5.36.1-r2 description:
 Larry Wall's Practical Extraction and Report Language
 
-perl-5.36.1-r1 webpage:
+perl-5.36.1-r2 webpage:
 https://www.perl.org/
 
-perl-5.36.1-r1 installed size:
+perl-5.36.1-r2 installed size:
 38 MiB
 
-perl-5.36.1-r1 license:
+perl-5.36.1-r2 license:
 Artistic-Perl OR GPL-1.0-or-later
 
 ```

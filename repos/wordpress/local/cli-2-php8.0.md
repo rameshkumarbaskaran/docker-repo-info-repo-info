@@ -1,10 +1,10 @@
-# `wordpress:cli-2.7.1`
+# `wordpress:cli-2.8.1`
 
 ## Docker Metadata
 
-- Image ID: `sha256:836d611bb5723613aa62f78b15ef3c6ca4175ee7c825e0199620a98503f2a2d4`
-- Created: `2023-03-30T04:56:54.000328885Z`
-- Virtual Size: ~ 150.00 Mb  
+- Image ID: `sha256:ad53964e73f848b6e382eddb9e50bdff2db38b3fc3751e8bc6b0d94855587a19`
+- Created: `2023-06-09T06:15:20.843309707Z`
+- Virtual Size: ~ 154.83 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,13 +17,13 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F 2C16C765DBE54A088130F1BC4B9B5F600B55F3B4`
-  - `PHP_VERSION=8.0.28`
-  - `PHP_URL=https://www.php.net/distributions/php-8.0.28.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.28.tar.xz.asc`
-  - `PHP_SHA256=5e07278a1f315a67d36a676c01343ca2d4da5ec5bdb15d018e4248b3012bc0cd`
+  - `PHP_VERSION=8.0.29`
+  - `PHP_URL=https://www.php.net/distributions/php-8.0.29.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.29.tar.xz.asc`
+  - `PHP_SHA256=14db2fbf26c07d0eb2c9fab25dbde7e27726a3e88452cca671f0896bbb683ca9`
   - `WORDPRESS_CLI_GPG_KEY=63AF7AA15067C05616FDDD88A3A2E8F226F0BC06`
-  - `WORDPRESS_CLI_VERSION=2.7.1`
-  - `WORDPRESS_CLI_SHA512=956b5e3e1a076bd5441c082ee754e3ff4517ec965b93c621f455c2bf5719358c36e67d52f676492700b59d42cacb34a50d382535c035f19da7a0b98bc41860de`
+  - `WORDPRESS_CLI_VERSION=2.8.1`
+  - `WORDPRESS_CLI_SHA512=c1d40ee90b330ca1f8ddbed14b938b41ec5d9ff723c7c1cf3f41a2d9a1b271079a51a37ea3d1c9aa9c628fdd43449dba3995a8de150a68abbd505b06b91d9d2b`
 
 ## `apk` (`.apk`-based packages)
 
@@ -421,16 +421,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1t-r2 description:
+libcrypto1.1-1.1.1u-r1 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1t-r2 webpage:
+libcrypto1.1-1.1.1u-r1 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1t-r2 installed size:
-2712 KiB
+libcrypto1.1-1.1.1u-r1 installed size:
+2708 KiB
 
-libcrypto1.1-1.1.1t-r2 license:
+libcrypto1.1-1.1.1u-r1 license:
 OpenSSL
 
 ```
@@ -438,16 +438,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.83.1-r6 description:
+libcurl-8.1.2-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.83.1-r6 webpage:
+libcurl-8.1.2-r0 webpage:
 https://curl.se/
 
-libcurl-7.83.1-r6 installed size:
-516 KiB
+libcurl-8.1.2-r0 installed size:
+564 KiB
 
-libcurl-7.83.1-r6 license:
+libcurl-8.1.2-r0 license:
 curl
 
 ```
@@ -557,16 +557,16 @@ ISC
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1t-r2 description:
+libssl1.1-1.1.1u-r1 description:
 SSL shared libraries
 
-libssl1.1-1.1.1t-r2 webpage:
+libssl1.1-1.1.1u-r1 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1t-r2 installed size:
+libssl1.1-1.1.1u-r1 installed size:
 528 KiB
 
-libssl1.1-1.1.1t-r2 license:
+libssl1.1-1.1.1u-r1 license:
 OpenSSL
 
 ```
@@ -591,16 +591,16 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `libwebp`
 
 ```console
-libwebp-1.2.3-r0 description:
+libwebp-1.2.3-r1 description:
 Libraries for working with WebP images
 
-libwebp-1.2.3-r0 webpage:
+libwebp-1.2.3-r1 webpage:
 https://developers.google.com/speed/webp
 
-libwebp-1.2.3-r0 installed size:
+libwebp-1.2.3-r1 installed size:
 584 KiB
 
-libwebp-1.2.3-r0 license:
+libwebp-1.2.3-r1 license:
 BSD-3-Clause
 
 ```
@@ -727,16 +727,16 @@ BSD-3-Clause
 ### `apk` package: `mariadb-client`
 
 ```console
-mariadb-client-10.6.12-r0 description:
+mariadb-client-10.6.14-r0 description:
 Client for the MariaDB database
 
-mariadb-client-10.6.12-r0 webpage:
+mariadb-client-10.6.14-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-client-10.6.12-r0 installed size:
+mariadb-client-10.6.14-r0 installed size:
 28 MiB
 
-mariadb-client-10.6.12-r0 license:
+mariadb-client-10.6.14-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -744,16 +744,16 @@ GPL-2.0-or-later
 ### `apk` package: `mariadb-common`
 
 ```console
-mariadb-common-10.6.12-r0 description:
+mariadb-common-10.6.14-r0 description:
 MariaDB common files for both server and client
 
-mariadb-common-10.6.12-r0 webpage:
+mariadb-common-10.6.14-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-common-10.6.12-r0 installed size:
+mariadb-common-10.6.14-r0 installed size:
 2260 KiB
 
-mariadb-common-10.6.12-r0 license:
+mariadb-common-10.6.14-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -761,16 +761,16 @@ GPL-2.0-or-later
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.3-r2 description:
+musl-1.2.3-r3 description:
 the musl c library (libc) implementation
 
-musl-1.2.3-r2 webpage:
+musl-1.2.3-r3 webpage:
 https://musl.libc.org/
 
-musl-1.2.3-r2 installed size:
+musl-1.2.3-r3 installed size:
 608 KiB
 
-musl-1.2.3-r2 license:
+musl-1.2.3-r3 license:
 MIT
 
 ```
@@ -795,16 +795,16 @@ MIT BSD GPL2+
 ### `apk` package: `mysql-client`
 
 ```console
-mysql-client-10.6.12-r0 description:
+mysql-client-10.6.14-r0 description:
 Dummy package for mysql-client migration
 
-mysql-client-10.6.12-r0 webpage:
+mysql-client-10.6.14-r0 webpage:
 https://www.mariadb.org/
 
-mysql-client-10.6.12-r0 installed size:
+mysql-client-10.6.14-r0 installed size:
 4096 B
 
-mysql-client-10.6.12-r0 license:
+mysql-client-10.6.14-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -812,16 +812,16 @@ GPL-2.0-or-later
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.3_p20220521-r0 description:
+ncurses-libs-6.3_p20220521-r1 description:
 Ncurses libraries
 
-ncurses-libs-6.3_p20220521-r0 webpage:
+ncurses-libs-6.3_p20220521-r1 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-libs-6.3_p20220521-r0 installed size:
+ncurses-libs-6.3_p20220521-r1 installed size:
 500 KiB
 
-ncurses-libs-6.3_p20220521-r0 license:
+ncurses-libs-6.3_p20220521-r1 license:
 MIT
 
 ```
@@ -829,16 +829,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.3_p20220521-r0 description:
+ncurses-terminfo-base-6.3_p20220521-r1 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.3_p20220521-r0 webpage:
+ncurses-terminfo-base-6.3_p20220521-r1 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-terminfo-base-6.3_p20220521-r0 installed size:
+ncurses-terminfo-base-6.3_p20220521-r1 installed size:
 216 KiB
 
-ncurses-terminfo-base-6.3_p20220521-r0 license:
+ncurses-terminfo-base-6.3_p20220521-r1 license:
 MIT
 
 ```
@@ -931,16 +931,16 @@ GPL-2.0-only
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.38.5-r0 description:
+sqlite-libs-3.40.1-r0 description:
 Sqlite3 library
 
-sqlite-libs-3.38.5-r0 webpage:
+sqlite-libs-3.40.1-r0 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.38.5-r0 installed size:
-992 KiB
+sqlite-libs-3.40.1-r0 installed size:
+1008 KiB
 
-sqlite-libs-3.38.5-r0 license:
+sqlite-libs-3.40.1-r0 license:
 blessing
 
 ```
