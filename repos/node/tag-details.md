@@ -6,6 +6,8 @@
 -	[`node:16-alpine`](#node16-alpine)
 -	[`node:16-alpine3.17`](#node16-alpine317)
 -	[`node:16-alpine3.18`](#node16-alpine318)
+-	[`node:16-bookworm`](#node16-bookworm)
+-	[`node:16-bookworm-slim`](#node16-bookworm-slim)
 -	[`node:16-bullseye`](#node16-bullseye)
 -	[`node:16-bullseye-slim`](#node16-bullseye-slim)
 -	[`node:16-buster`](#node16-buster)
@@ -15,6 +17,8 @@
 -	[`node:16.20-alpine`](#node1620-alpine)
 -	[`node:16.20-alpine3.17`](#node1620-alpine317)
 -	[`node:16.20-alpine3.18`](#node1620-alpine318)
+-	[`node:16.20-bookworm`](#node1620-bookworm)
+-	[`node:16.20-bookworm-slim`](#node1620-bookworm-slim)
 -	[`node:16.20-bullseye`](#node1620-bullseye)
 -	[`node:16.20-bullseye-slim`](#node1620-bullseye-slim)
 -	[`node:16.20-buster`](#node1620-buster)
@@ -24,6 +28,8 @@
 -	[`node:16.20.0-alpine`](#node16200-alpine)
 -	[`node:16.20.0-alpine3.17`](#node16200-alpine317)
 -	[`node:16.20.0-alpine3.18`](#node16200-alpine318)
+-	[`node:16.20.0-bookworm`](#node16200-bookworm)
+-	[`node:16.20.0-bookworm-slim`](#node16200-bookworm-slim)
 -	[`node:16.20.0-bullseye`](#node16200-bullseye)
 -	[`node:16.20.0-bullseye-slim`](#node16200-bullseye-slim)
 -	[`node:16.20.0-buster`](#node16200-buster)
@@ -33,6 +39,8 @@
 -	[`node:18-alpine`](#node18-alpine)
 -	[`node:18-alpine3.17`](#node18-alpine317)
 -	[`node:18-alpine3.18`](#node18-alpine318)
+-	[`node:18-bookworm`](#node18-bookworm)
+-	[`node:18-bookworm-slim`](#node18-bookworm-slim)
 -	[`node:18-bullseye`](#node18-bullseye)
 -	[`node:18-bullseye-slim`](#node18-bullseye-slim)
 -	[`node:18-buster`](#node18-buster)
@@ -42,6 +50,8 @@
 -	[`node:18.16-alpine`](#node1816-alpine)
 -	[`node:18.16-alpine3.17`](#node1816-alpine317)
 -	[`node:18.16-alpine3.18`](#node1816-alpine318)
+-	[`node:18.16-bookworm`](#node1816-bookworm)
+-	[`node:18.16-bookworm-slim`](#node1816-bookworm-slim)
 -	[`node:18.16-bullseye`](#node1816-bullseye)
 -	[`node:18.16-bullseye-slim`](#node1816-bullseye-slim)
 -	[`node:18.16-buster`](#node1816-buster)
@@ -51,6 +61,8 @@
 -	[`node:18.16.0-alpine`](#node18160-alpine)
 -	[`node:18.16.0-alpine3.17`](#node18160-alpine317)
 -	[`node:18.16.0-alpine3.18`](#node18160-alpine318)
+-	[`node:18.16.0-bookworm`](#node18160-bookworm)
+-	[`node:18.16.0-bookworm-slim`](#node18160-bookworm-slim)
 -	[`node:18.16.0-bullseye`](#node18160-bullseye)
 -	[`node:18.16.0-bullseye-slim`](#node18160-bullseye-slim)
 -	[`node:18.16.0-buster`](#node18160-buster)
@@ -60,6 +72,8 @@
 -	[`node:20-alpine`](#node20-alpine)
 -	[`node:20-alpine3.17`](#node20-alpine317)
 -	[`node:20-alpine3.18`](#node20-alpine318)
+-	[`node:20-bookworm`](#node20-bookworm)
+-	[`node:20-bookworm-slim`](#node20-bookworm-slim)
 -	[`node:20-bullseye`](#node20-bullseye)
 -	[`node:20-bullseye-slim`](#node20-bullseye-slim)
 -	[`node:20-buster`](#node20-buster)
@@ -69,6 +83,8 @@
 -	[`node:20.3-alpine`](#node203-alpine)
 -	[`node:20.3-alpine3.17`](#node203-alpine317)
 -	[`node:20.3-alpine3.18`](#node203-alpine318)
+-	[`node:20.3-bookworm`](#node203-bookworm)
+-	[`node:20.3-bookworm-slim`](#node203-bookworm-slim)
 -	[`node:20.3-bullseye`](#node203-bullseye)
 -	[`node:20.3-bullseye-slim`](#node203-bullseye-slim)
 -	[`node:20.3-buster`](#node203-buster)
@@ -78,6 +94,8 @@
 -	[`node:20.3.0-alpine`](#node2030-alpine)
 -	[`node:20.3.0-alpine3.17`](#node2030-alpine317)
 -	[`node:20.3.0-alpine3.18`](#node2030-alpine318)
+-	[`node:20.3.0-bookworm`](#node2030-bookworm)
+-	[`node:20.3.0-bookworm-slim`](#node2030-bookworm-slim)
 -	[`node:20.3.0-bullseye`](#node2030-bullseye)
 -	[`node:20.3.0-bullseye-slim`](#node2030-bullseye-slim)
 -	[`node:20.3.0-buster`](#node2030-buster)
@@ -86,6 +104,8 @@
 -	[`node:alpine`](#nodealpine)
 -	[`node:alpine3.17`](#nodealpine317)
 -	[`node:alpine3.18`](#nodealpine318)
+-	[`node:bookworm`](#nodebookworm)
+-	[`node:bookworm-slim`](#nodebookworm-slim)
 -	[`node:bullseye`](#nodebullseye)
 -	[`node:bullseye-slim`](#nodebullseye-slim)
 -	[`node:buster`](#nodebuster)
@@ -94,6 +114,8 @@
 -	[`node:current-alpine`](#nodecurrent-alpine)
 -	[`node:current-alpine3.17`](#nodecurrent-alpine317)
 -	[`node:current-alpine3.18`](#nodecurrent-alpine318)
+-	[`node:current-bookworm`](#nodecurrent-bookworm)
+-	[`node:current-bookworm-slim`](#nodecurrent-bookworm-slim)
 -	[`node:current-bullseye`](#nodecurrent-bullseye)
 -	[`node:current-bullseye-slim`](#nodecurrent-bullseye-slim)
 -	[`node:current-buster`](#nodecurrent-buster)
@@ -103,6 +125,8 @@
 -	[`node:gallium-alpine`](#nodegallium-alpine)
 -	[`node:gallium-alpine3.17`](#nodegallium-alpine317)
 -	[`node:gallium-alpine3.18`](#nodegallium-alpine318)
+-	[`node:gallium-bookworm`](#nodegallium-bookworm)
+-	[`node:gallium-bookworm-slim`](#nodegallium-bookworm-slim)
 -	[`node:gallium-bullseye`](#nodegallium-bullseye)
 -	[`node:gallium-bullseye-slim`](#nodegallium-bullseye-slim)
 -	[`node:gallium-buster`](#nodegallium-buster)
@@ -112,6 +136,8 @@
 -	[`node:hydrogen-alpine`](#nodehydrogen-alpine)
 -	[`node:hydrogen-alpine3.17`](#nodehydrogen-alpine317)
 -	[`node:hydrogen-alpine3.18`](#nodehydrogen-alpine318)
+-	[`node:hydrogen-bookworm`](#nodehydrogen-bookworm)
+-	[`node:hydrogen-bookworm-slim`](#nodehydrogen-bookworm-slim)
 -	[`node:hydrogen-bullseye`](#nodehydrogen-bullseye)
 -	[`node:hydrogen-bullseye-slim`](#nodehydrogen-bullseye-slim)
 -	[`node:hydrogen-buster`](#nodehydrogen-buster)
@@ -122,6 +148,8 @@
 -	[`node:lts-alpine`](#nodelts-alpine)
 -	[`node:lts-alpine3.17`](#nodelts-alpine317)
 -	[`node:lts-alpine3.18`](#nodelts-alpine318)
+-	[`node:lts-bookworm`](#nodelts-bookworm)
+-	[`node:lts-bookworm-slim`](#nodelts-bookworm-slim)
 -	[`node:lts-bullseye`](#nodelts-bullseye)
 -	[`node:lts-bullseye-slim`](#nodelts-bullseye-slim)
 -	[`node:lts-buster`](#nodelts-buster)
@@ -1371,6 +1399,14 @@ CMD ["node"]
 		Last Modified: Sat, 03 Jun 2023 04:12:10 GMT  
 		Size: 448.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `node:16-bookworm`
+
+**does not exist** (yet?)
+
+## `node:16-bookworm-slim`
+
+**does not exist** (yet?)
 
 ## `node:16-bullseye`
 
@@ -3943,6 +3979,14 @@ CMD ["node"]
 		Size: 448.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `node:16.20-bookworm`
+
+**does not exist** (yet?)
+
+## `node:16.20-bookworm-slim`
+
+**does not exist** (yet?)
+
 ## `node:16.20-bullseye`
 
 ```console
@@ -6513,6 +6557,14 @@ CMD ["node"]
 		Last Modified: Sat, 03 Jun 2023 04:12:10 GMT  
 		Size: 448.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `node:16.20.0-bookworm`
+
+**does not exist** (yet?)
+
+## `node:16.20.0-bookworm-slim`
+
+**does not exist** (yet?)
 
 ## `node:16.20.0-bullseye`
 
@@ -9240,6 +9292,14 @@ CMD ["node"]
 		Last Modified: Sat, 03 Jun 2023 04:11:30 GMT  
 		Size: 448.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `node:18-bookworm`
+
+**does not exist** (yet?)
+
+## `node:18-bookworm-slim`
+
+**does not exist** (yet?)
 
 ## `node:18-bullseye`
 
@@ -12088,6 +12148,14 @@ CMD ["node"]
 		Size: 448.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `node:18.16-bookworm`
+
+**does not exist** (yet?)
+
+## `node:18.16-bookworm-slim`
+
+**does not exist** (yet?)
+
 ## `node:18.16-bullseye`
 
 ```console
@@ -14934,6 +15002,14 @@ CMD ["node"]
 		Last Modified: Sat, 03 Jun 2023 04:11:30 GMT  
 		Size: 448.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `node:18.16.0-bookworm`
+
+**does not exist** (yet?)
+
+## `node:18.16.0-bookworm-slim`
+
+**does not exist** (yet?)
 
 ## `node:18.16.0-bullseye`
 
@@ -17782,6 +17858,14 @@ CMD ["node"]
 		Size: 451.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `node:20-bookworm`
+
+**does not exist** (yet?)
+
+## `node:20-bookworm-slim`
+
+**does not exist** (yet?)
+
 ## `node:20-bullseye`
 
 ```console
@@ -20328,6 +20412,14 @@ CMD ["node"]
 		Last Modified: Fri, 09 Jun 2023 23:10:48 GMT  
 		Size: 449.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `node:20.3-bookworm`
+
+**does not exist** (yet?)
+
+## `node:20.3-bookworm-slim`
+
+**does not exist** (yet?)
 
 ## `node:20.3-bullseye`
 
@@ -22876,6 +22968,14 @@ CMD ["node"]
 		Size: 449.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `node:20.3.0-bookworm`
+
+**does not exist** (yet?)
+
+## `node:20.3.0-bookworm-slim`
+
+**does not exist** (yet?)
+
 ## `node:20.3.0-bullseye`
 
 ```console
@@ -25185,6 +25285,14 @@ CMD ["node"]
 		Last Modified: Sat, 03 Jun 2023 04:10:14 GMT  
 		Size: 451.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `node:bookworm`
+
+**does not exist** (yet?)
+
+## `node:bookworm-slim`
+
+**does not exist** (yet?)
 
 ## `node:bullseye`
 
@@ -27729,6 +27837,14 @@ CMD ["node"]
 		Last Modified: Sat, 03 Jun 2023 04:10:14 GMT  
 		Size: 451.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `node:current-bookworm`
+
+**does not exist** (yet?)
+
+## `node:current-bookworm-slim`
+
+**does not exist** (yet?)
 
 ## `node:current-bullseye`
 
@@ -30426,6 +30542,14 @@ CMD ["node"]
 		Last Modified: Sat, 03 Jun 2023 04:12:10 GMT  
 		Size: 448.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `node:gallium-bookworm`
+
+**does not exist** (yet?)
+
+## `node:gallium-bookworm-slim`
+
+**does not exist** (yet?)
 
 ## `node:gallium-bullseye`
 
@@ -33153,6 +33277,14 @@ CMD ["node"]
 		Last Modified: Sat, 03 Jun 2023 04:11:30 GMT  
 		Size: 448.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `node:hydrogen-bookworm`
+
+**does not exist** (yet?)
+
+## `node:hydrogen-bookworm-slim`
+
+**does not exist** (yet?)
 
 ## `node:hydrogen-bullseye`
 
@@ -36399,6 +36531,14 @@ CMD ["node"]
 		Last Modified: Sat, 03 Jun 2023 04:11:30 GMT  
 		Size: 448.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `node:lts-bookworm`
+
+**does not exist** (yet?)
+
+## `node:lts-bookworm-slim`
+
+**does not exist** (yet?)
 
 ## `node:lts-bullseye`
 
