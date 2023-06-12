@@ -1,10 +1,10 @@
-# `drupal:7.97-php8.0-apache-buster`
+# `drupal:7.98-php8.0-apache-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:51d16106c9a6821f2072e16c81a652005204105110be5745be404a3d19b021db`
-- Created: `2023-05-23T21:48:24.198365344Z`
-- Virtual Size: ~ 419.27 Mb  
+- Image ID: `sha256:3a995bbd274b207ef602ee18d0781da10060d7e50c3d7ed01b996c9eb4ad0e6a`
+- Created: `2023-06-09T03:39:57.760144769Z`
+- Virtual Size: ~ 423.26 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -19,12 +19,12 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F 2C16C765DBE54A088130F1BC4B9B5F600B55F3B4`
-  - `PHP_VERSION=8.0.28`
-  - `PHP_URL=https://www.php.net/distributions/php-8.0.28.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.28.tar.xz.asc`
-  - `PHP_SHA256=5e07278a1f315a67d36a676c01343ca2d4da5ec5bdb15d018e4248b3012bc0cd`
-  - `DRUPAL_VERSION=7.97`
-  - `DRUPAL_MD5=37b63299e115a9e8863f564780a026e9`
+  - `PHP_VERSION=8.0.29`
+  - `PHP_URL=https://www.php.net/distributions/php-8.0.29.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.29.tar.xz.asc`
+  - `PHP_SHA256=14db2fbf26c07d0eb2c9fab25dbde7e27726a3e88452cca671f0896bbb683ca9`
+  - `DRUPAL_VERSION=7.98`
+  - `DRUPAL_MD5=4139f0feecb44a53645242194809b73a`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1953,11 +1953,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libunistring/0.9.10-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libunistring/0.9.10-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libwebp=0.6.1-2+deb10u1`
+### `dpkg` source package: `libwebp=0.6.1-2+deb10u2`
 
 Binary Packages:
 
-- `libwebp6:amd64=0.6.1-2+deb10u1`
+- `libwebp6:amd64=0.6.1-2+deb10u2`
 
 Licenses: (parsed from: `/usr/share/doc/libwebp6/copyright`)
 
@@ -1966,17 +1966,17 @@ Licenses: (parsed from: `/usr/share/doc/libwebp6/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libwebp=0.6.1-2+deb10u1
-'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.6.1-2%2bdeb10u1.dsc' libwebp_0.6.1-2+deb10u1.dsc 2078 SHA256:8e049c4699d3e1196642782f14052d8558225d1c713fe1718d21f23524b81bd5
-'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.6.1.orig.tar.gz' libwebp_0.6.1.orig.tar.gz 3554290 SHA256:a86045e3ec24704bddbaa369ca30980d6bf4f2625f4cdca03715e91f9c08bbb4
-'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.6.1-2%2bdeb10u1.debian.tar.xz' libwebp_0.6.1-2+deb10u1.debian.tar.xz 13612 SHA256:35121925b3a22ee41f4704f0118d30dae58f642e76565ab73d427b3e648d7961
+$ apt-get source -qq --print-uris libwebp=0.6.1-2+deb10u2
+'http://deb.debian.org/debian-security/pool/updates/main/libw/libwebp/libwebp_0.6.1-2%2bdeb10u2.dsc' libwebp_0.6.1-2+deb10u2.dsc 2078 SHA256:e57554e788414a5b38c1d31844bb0c56694bcc8cb1bde282432d7796333d7e75
+'http://deb.debian.org/debian-security/pool/updates/main/libw/libwebp/libwebp_0.6.1.orig.tar.gz' libwebp_0.6.1.orig.tar.gz 3554290 SHA256:a86045e3ec24704bddbaa369ca30980d6bf4f2625f4cdca03715e91f9c08bbb4
+'http://deb.debian.org/debian-security/pool/updates/main/libw/libwebp/libwebp_0.6.1-2%2bdeb10u2.debian.tar.xz' libwebp_0.6.1-2+deb10u2.debian.tar.xz 14396 SHA256:f84d655f88949b4a38ef09c28adf864423f9a35a9ef4f9342495e7cce985118e
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libwebp/0.6.1-2+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/libwebp/0.6.1-2+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libwebp/0.6.1-2+deb10u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libwebp/0.6.1-2+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/libwebp/0.6.1-2+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libwebp/0.6.1-2+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxml2=2.9.4+dfsg1-7+deb10u6`
 
@@ -2447,8 +2447,25 @@ Other potentially useful URLs:
 
 Binary Packages:
 
-- `libssl1.1:amd64=1.1.1n-0+deb10u4`
 - `openssl=1.1.1n-0+deb10u4`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
+
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/openssl/1.1.1n-0+deb10u4/
+
+
+### `dpkg` source package: `openssl=1.1.1n-0+deb10u5`
+
+Binary Packages:
+
+- `libssl1.1:amd64=1.1.1n-0+deb10u5`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2457,18 +2474,18 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openssl=1.1.1n-0+deb10u4
-'http://deb.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n-0%2bdeb10u4.dsc' openssl_1.1.1n-0+deb10u4.dsc 2649 SHA256:0625512a546b6d1e0a508b22c1df8e349e6fb52dd61a47186689b69fff6a906f
+$ apt-get source -qq --print-uris openssl=1.1.1n-0+deb10u5
+'http://deb.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n-0%2bdeb10u5.dsc' openssl_1.1.1n-0+deb10u5.dsc 2649 SHA256:e3425b95ac7d834456045c3404067d494e8592ca74ee893bb5c603a124778668
 'http://deb.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n.orig.tar.gz' openssl_1.1.1n.orig.tar.gz 9850712 SHA256:40dceb51a4f6a5275bde0e6bf20ef4b91bfc32ed57c0552e2e8e15463372b17a
 'http://deb.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n.orig.tar.gz.asc' openssl_1.1.1n.orig.tar.gz.asc 488 SHA256:e0e89e9467102880ee6f2ee8c1413933eb1268969afb97b9bec61e2190a62fd0
-'http://deb.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n-0%2bdeb10u4.debian.tar.xz' openssl_1.1.1n-0+deb10u4.debian.tar.xz 131140 SHA256:5ad36ad381457ffce084f6c1373caff025027ef522d627d3eabf7a91b9ea684e
+'http://deb.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n-0%2bdeb10u5.debian.tar.xz' openssl_1.1.1n-0+deb10u5.debian.tar.xz 141656 SHA256:3eea17893cc08d1c10abee2e99ec7b5d91aec0ac3d3367e7db8aab0e26fec771
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openssl/1.1.1n-0+deb10u4/ (for browsing the source)
-- https://sources.debian.net/src/openssl/1.1.1n-0+deb10u4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl/1.1.1n-0+deb10u4/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openssl/1.1.1n-0+deb10u5/ (for browsing the source)
+- https://sources.debian.net/src/openssl/1.1.1n-0+deb10u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openssl/1.1.1n-0+deb10u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `p11-kit=0.23.15-2+deb10u1`
 

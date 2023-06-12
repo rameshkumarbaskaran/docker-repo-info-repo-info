@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:2521968980a044425b691633bee1b07779edd80e771426c781bfa374273f2007`
-- Created: `2023-05-24T22:53:25.997276763Z`
-- Virtual Size: ~ 161.13 Mb  
+- Image ID: `sha256:cdafde195072a8af55bb1d9ff1c76f22f447b0bc8c323a87b7ed14d4c331e1e4`
+- Created: `2023-06-09T03:20:30.076725146Z`
+- Virtual Size: ~ 167.16 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC`
-  - `PHP_VERSION=8.2.6`
-  - `PHP_URL=https://www.php.net/distributions/php-8.2.6.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.6.tar.xz.asc`
-  - `PHP_SHA256=10b796f0ed45574229851212b30a596a76e70ae365322bcaaaf9c00fa7d58cca`
+  - `PHP_VERSION=8.2.7`
+  - `PHP_URL=https://www.php.net/distributions/php-8.2.7.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.7.tar.xz.asc`
+  - `PHP_SHA256=4b9fb3dcd7184fe7582d7e44544ec7c5153852a2528de3b6754791258ffbdfa0`
   - `DRUPAL_VERSION=10.0.9`
 
 ## `apk` (`.apk`-based packages)
@@ -198,16 +198,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `curl`
 
 ```console
-curl-8.0.1-r2 description:
+curl-8.1.2-r0 description:
 URL retrival utility and library
 
-curl-8.0.1-r2 webpage:
+curl-8.1.2-r0 webpage:
 https://curl.se/
 
-curl-8.0.1-r2 installed size:
-232 KiB
+curl-8.1.2-r0 installed size:
+236 KiB
 
-curl-8.0.1-r2 license:
+curl-8.1.2-r0 license:
 curl
 
 ```
@@ -300,16 +300,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.1.0-r4 description:
+libcrypto3-3.1.1-r1 description:
 Crypto library from openssl
 
-libcrypto3-3.1.0-r4 webpage:
+libcrypto3-3.1.1-r1 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.1.0-r4 installed size:
-4460 KiB
+libcrypto3-3.1.1-r1 installed size:
+4464 KiB
 
-libcrypto3-3.1.0-r4 license:
+libcrypto3-3.1.1-r1 license:
 Apache-2.0
 
 ```
@@ -317,16 +317,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.0.1-r2 description:
+libcurl-8.1.2-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.0.1-r2 webpage:
+libcurl-8.1.2-r0 webpage:
 https://curl.se/
 
-libcurl-8.0.1-r2 installed size:
-532 KiB
+libcurl-8.1.2-r0 installed size:
+548 KiB
 
-libcurl-8.0.1-r2 license:
+libcurl-8.1.2-r0 license:
 curl
 
 ```
@@ -453,16 +453,16 @@ ISC
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.1.0-r4 description:
+libssl3-3.1.1-r1 description:
 SSL shared libraries
 
-libssl3-3.1.0-r4 webpage:
+libssl3-3.1.1-r1 webpage:
 https://www.openssl.org/
 
-libssl3-3.1.0-r4 installed size:
+libssl3-3.1.1-r1 installed size:
 552 KiB
 
-libssl3-3.1.0-r4 license:
+libssl3-3.1.1-r1 license:
 Apache-2.0
 
 ```
@@ -487,16 +487,16 @@ GPL-2.0-or-later OR LGPL-3.0-or-later
 ### `apk` package: `libwebp`
 
 ```console
-libwebp-1.3.0-r1 description:
+libwebp-1.3.0-r2 description:
 Libraries for working with WebP images
 
-libwebp-1.3.0-r1 webpage:
+libwebp-1.3.0-r2 webpage:
 https://developers.google.com/speed/webp
 
-libwebp-1.3.0-r1 installed size:
+libwebp-1.3.0-r2 installed size:
 596 KiB
 
-libwebp-1.3.0-r1 license:
+libwebp-1.3.0-r2 license:
 BSD-3-Clause
 
 ```
@@ -504,16 +504,16 @@ BSD-3-Clause
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.11.2-r0 description:
+libxml2-2.11.4-r0 description:
 XML parsing library, version 2
 
-libxml2-2.11.2-r0 webpage:
+libxml2-2.11.4-r0 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.11.2-r0 installed size:
-1104 KiB
+libxml2-2.11.4-r0 installed size:
+1108 KiB
 
-libxml2-2.11.2-r0 license:
+libxml2-2.11.4-r0 license:
 MIT
 
 ```

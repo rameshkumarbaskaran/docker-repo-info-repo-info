@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:99aea2007b429ced0fc52c6b71fad6262aa34310a9b3b88e687f4bf4a22cf71f`
-- Created: `2023-05-24T22:53:40.274135761Z`
-- Virtual Size: ~ 164.74 Mb  
+- Image ID: `sha256:07697dbe914bce9b1e0b8f6da22a16530ce07c9fa52be41291bf5fb2b523db2b`
+- Created: `2023-06-09T03:21:42.979917015Z`
+- Virtual Size: ~ 165.37 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC`
-  - `PHP_VERSION=8.2.6`
-  - `PHP_URL=https://www.php.net/distributions/php-8.2.6.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.6.tar.xz.asc`
-  - `PHP_SHA256=10b796f0ed45574229851212b30a596a76e70ae365322bcaaaf9c00fa7d58cca`
+  - `PHP_VERSION=8.2.7`
+  - `PHP_URL=https://www.php.net/distributions/php-8.2.7.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.7.tar.xz.asc`
+  - `PHP_SHA256=4b9fb3dcd7184fe7582d7e44544ec7c5153852a2528de3b6754791258ffbdfa0`
   - `DRUPAL_VERSION=10.0.9`
 
 ## `apk` (`.apk`-based packages)
@@ -300,16 +300,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.8-r4 description:
+libcrypto3-3.0.9-r1 description:
 Crypto library from openssl
 
-libcrypto3-3.0.8-r4 webpage:
+libcrypto3-3.0.9-r1 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.8-r4 installed size:
+libcrypto3-3.0.9-r1 installed size:
 4108 KiB
 
-libcrypto3-3.0.8-r4 license:
+libcrypto3-3.0.9-r1 license:
 Apache-2.0
 
 ```
@@ -317,16 +317,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.0.1-r0 description:
+libcurl-8.1.2-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.0.1-r0 webpage:
+libcurl-8.1.2-r0 webpage:
 https://curl.se/
 
-libcurl-8.0.1-r0 installed size:
-556 KiB
+libcurl-8.1.2-r0 installed size:
+572 KiB
 
-libcurl-8.0.1-r0 license:
+libcurl-8.1.2-r0 license:
 curl
 
 ```
@@ -419,16 +419,16 @@ ISC
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.8-r4 description:
+libssl3-3.0.9-r1 description:
 SSL shared libraries
 
-libssl3-3.0.8-r4 webpage:
+libssl3-3.0.9-r1 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.8-r4 installed size:
+libssl3-3.0.9-r1 installed size:
 608 KiB
 
-libssl3-3.0.8-r4 license:
+libssl3-3.0.9-r1 license:
 Apache-2.0
 
 ```
@@ -436,16 +436,16 @@ Apache-2.0
 ### `apk` package: `libwebp`
 
 ```console
-libwebp-1.2.4-r1 description:
+libwebp-1.2.4-r2 description:
 Libraries for working with WebP images
 
-libwebp-1.2.4-r1 webpage:
+libwebp-1.2.4-r2 webpage:
 https://developers.google.com/speed/webp
 
-libwebp-1.2.4-r1 installed size:
+libwebp-1.2.4-r2 installed size:
 584 KiB
 
-libwebp-1.2.4-r1 license:
+libwebp-1.2.4-r2 license:
 BSD-3-Clause
 
 ```
@@ -487,16 +487,16 @@ BSD-3-Clause
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.3-r4 description:
+musl-1.2.3-r5 description:
 the musl c library (libc) implementation
 
-musl-1.2.3-r4 webpage:
+musl-1.2.3-r5 webpage:
 https://musl.libc.org/
 
-musl-1.2.3-r4 installed size:
+musl-1.2.3-r5 installed size:
 620 KiB
 
-musl-1.2.3-r4 license:
+musl-1.2.3-r5 license:
 MIT
 
 ```
@@ -521,16 +521,16 @@ MIT AND BSD-2-Clause AND GPL-2.0-or-later
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.3_p20221119-r0 description:
+ncurses-libs-6.3_p20221119-r1 description:
 Ncurses libraries
 
-ncurses-libs-6.3_p20221119-r0 webpage:
+ncurses-libs-6.3_p20221119-r1 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-libs-6.3_p20221119-r0 installed size:
+ncurses-libs-6.3_p20221119-r1 installed size:
 500 KiB
 
-ncurses-libs-6.3_p20221119-r0 license:
+ncurses-libs-6.3_p20221119-r1 license:
 MIT
 
 ```
@@ -538,16 +538,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.3_p20221119-r0 description:
+ncurses-terminfo-base-6.3_p20221119-r1 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.3_p20221119-r0 webpage:
+ncurses-terminfo-base-6.3_p20221119-r1 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-terminfo-base-6.3_p20221119-r0 installed size:
+ncurses-terminfo-base-6.3_p20221119-r1 installed size:
 216 KiB
 
-ncurses-terminfo-base-6.3_p20221119-r0 license:
+ncurses-terminfo-base-6.3_p20221119-r1 license:
 MIT
 
 ```
