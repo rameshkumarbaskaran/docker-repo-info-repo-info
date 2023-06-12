@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:0df754e521a9d718f97a442cfbf816c855a8afe155651666e15f845ef4aa6b9f`
-- Created: `2023-05-13T03:22:37.236587892Z`
-- Virtual Size: ~ 514.39 Mb  
+- Image ID: `sha256:55f61c6d40d94f68f426b24c6af388aca6155ac397ba8bacb54aaf18d52bc7b4`
+- Created: `2023-06-09T04:59:27.838544483Z`
+- Virtual Size: ~ 519.56 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
-  - `PHP_VERSION=8.1.19`
-  - `PHP_URL=https://www.php.net/distributions/php-8.1.19.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.19.tar.xz.asc`
-  - `PHP_SHA256=f42f0e93467415b2d30aa5b7ac825f0079a74207e0033010383cdc1e13657379`
+  - `PHP_VERSION=8.1.20`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.20.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.20.tar.xz.asc`
+  - `PHP_SHA256=4c9973f599e93ed5e8ce2b45ce1d41bb8fb54ce642824fd23e56b52fd75029a6`
   - `MEDIAWIKI_MAJOR_VERSION=1.39`
   - `MEDIAWIKI_VERSION=1.39.3`
 
@@ -267,16 +267,16 @@ LGPL-2.1-or-later OR MPL-1.1
 ### `apk` package: `cups-libs`
 
 ```console
-cups-libs-2.4.2-r5 description:
+cups-libs-2.4.4-r0 description:
 CUPS libraries
 
-cups-libs-2.4.2-r5 webpage:
+cups-libs-2.4.4-r0 webpage:
 https://github.com/OpenPrinting/cups/
 
-cups-libs-2.4.2-r5 installed size:
-572 KiB
+cups-libs-2.4.4-r0 installed size:
+576 KiB
 
-cups-libs-2.4.2-r5 license:
+cups-libs-2.4.4-r0 license:
 Apache-2.0
 
 ```
@@ -284,16 +284,16 @@ Apache-2.0
 ### `apk` package: `curl`
 
 ```console
-curl-8.0.1-r2 description:
+curl-8.1.2-r0 description:
 URL retrival utility and library
 
-curl-8.0.1-r2 webpage:
+curl-8.1.2-r0 webpage:
 https://curl.se/
 
-curl-8.0.1-r2 installed size:
-232 KiB
+curl-8.1.2-r0 installed size:
+236 KiB
 
-curl-8.0.1-r2 license:
+curl-8.1.2-r0 license:
 curl
 
 ```
@@ -301,16 +301,16 @@ curl
 ### `apk` package: `dbus-libs`
 
 ```console
-dbus-libs-1.14.6-r3 description:
+dbus-libs-1.14.8-r0 description:
 D-BUS access libraries
 
-dbus-libs-1.14.6-r3 webpage:
+dbus-libs-1.14.8-r0 webpage:
 https://www.freedesktop.org/Software/dbus
 
-dbus-libs-1.14.6-r3 installed size:
+dbus-libs-1.14.8-r0 installed size:
 292 KiB
 
-dbus-libs-1.14.6-r3 license:
+dbus-libs-1.14.8-r0 license:
 AFL-2.1 OR GPL-2.0-or-later
 
 ```
@@ -352,16 +352,16 @@ FTL OR GPL-2.0-or-later
 ### `apk` package: `fribidi`
 
 ```console
-fribidi-1.0.12-r2 description:
+fribidi-1.0.13-r0 description:
 Free Implementation of the Unicode Bidirectional Algorithm
 
-fribidi-1.0.12-r2 webpage:
+fribidi-1.0.13-r0 webpage:
 https://github.com/fribidi/fribidi
 
-fribidi-1.0.12-r2 installed size:
+fribidi-1.0.13-r0 installed size:
 156 KiB
 
-fribidi-1.0.12-r2 license:
+fribidi-1.0.13-r0 license:
 LGPL-2.1-or-later
 
 ```
@@ -437,16 +437,16 @@ GPL-2.0-only
 ### `apk` package: `glib`
 
 ```console
-glib-2.76.2-r0 description:
+glib-2.76.3-r0 description:
 Common C routines used by Gtk+ and other libs
 
-glib-2.76.2-r0 webpage:
+glib-2.76.3-r0 webpage:
 https://developer.gnome.org/glib/
 
-glib-2.76.2-r0 installed size:
+glib-2.76.3-r0 installed size:
 3824 KiB
 
-glib-2.76.2-r0 license:
+glib-2.76.3-r0 license:
 LGPL-2.1-or-later
 
 ```
@@ -573,16 +573,16 @@ ICU
 ### `apk` package: `imagemagick`
 
 ```console
-imagemagick-7.1.1.8-r1 description:
+imagemagick-7.1.1.10-r0 description:
 Collection of tools and libraries for many image formats
 
-imagemagick-7.1.1.8-r1 webpage:
+imagemagick-7.1.1.10-r0 webpage:
 https://imagemagick.org/
 
-imagemagick-7.1.1.8-r1 installed size:
-4596 KiB
+imagemagick-7.1.1.10-r0 installed size:
+4600 KiB
 
-imagemagick-7.1.1.8-r1 license:
+imagemagick-7.1.1.10-r0 license:
 ImageMagick
 
 ```
@@ -590,16 +590,16 @@ ImageMagick
 ### `apk` package: `imagemagick-libs`
 
 ```console
-imagemagick-libs-7.1.1.8-r1 description:
+imagemagick-libs-7.1.1.10-r0 description:
 Collection of tools and libraries for many image formats (libraries)
 
-imagemagick-libs-7.1.1.8-r1 webpage:
+imagemagick-libs-7.1.1.10-r0 webpage:
 https://imagemagick.org/
 
-imagemagick-libs-7.1.1.8-r1 installed size:
-3240 KiB
+imagemagick-libs-7.1.1.10-r0 installed size:
+3248 KiB
 
-imagemagick-libs-7.1.1.8-r1 license:
+imagemagick-libs-7.1.1.10-r0 license:
 ImageMagick
 
 ```
@@ -658,16 +658,16 @@ LGPL-2.1-or-later AND GPL-2.0-or-later
 ### `apk` package: `libblkid`
 
 ```console
-libblkid-2.38.1-r7 description:
+libblkid-2.38.1-r8 description:
 Block device identification library from util-linux
 
-libblkid-2.38.1-r7 webpage:
+libblkid-2.38.1-r8 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libblkid-2.38.1-r7 installed size:
+libblkid-2.38.1-r8 installed size:
 300 KiB
 
-libblkid-2.38.1-r7 license:
+libblkid-2.38.1-r8 license:
 LGPL-2.1-or-later
 
 ```
@@ -726,16 +726,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.1.0-r4 description:
+libcrypto3-3.1.1-r1 description:
 Crypto library from openssl
 
-libcrypto3-3.1.0-r4 webpage:
+libcrypto3-3.1.1-r1 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.1.0-r4 installed size:
-4460 KiB
+libcrypto3-3.1.1-r1 installed size:
+4464 KiB
 
-libcrypto3-3.1.0-r4 license:
+libcrypto3-3.1.1-r1 license:
 Apache-2.0
 
 ```
@@ -743,16 +743,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.0.1-r2 description:
+libcurl-8.1.2-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.0.1-r2 webpage:
+libcurl-8.1.2-r0 webpage:
 https://curl.se/
 
-libcurl-8.0.1-r2 installed size:
-532 KiB
+libcurl-8.1.2-r0 installed size:
+548 KiB
 
-libcurl-8.0.1-r2 license:
+libcurl-8.1.2-r0 license:
 curl
 
 ```
@@ -825,19 +825,36 @@ GPL-2.0-or-later AND LGPL-2.1-or-later
 
 ```
 
+### `apk` package: `libgomp`
+
+```console
+libgomp-12.2.1_git20220924-r10 description:
+GCC shared-memory parallel programming API library
+
+libgomp-12.2.1_git20220924-r10 webpage:
+https://gcc.gnu.org
+
+libgomp-12.2.1_git20220924-r10 installed size:
+292 KiB
+
+libgomp-12.2.1_git20220924-r10 license:
+GPL-2.0-or-later AND LGPL-2.1-or-later
+
+```
+
 ### `apk` package: `libheif`
 
 ```console
-libheif-1.16.1-r1 description:
+libheif-1.16.2-r0 description:
 ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 
-libheif-1.16.1-r1 webpage:
+libheif-1.16.2-r0 webpage:
 https://www.libde265.org/
 
-libheif-1.16.1-r1 installed size:
+libheif-1.16.2-r0 installed size:
 636 KiB
 
-libheif-1.16.1-r1 license:
+libheif-1.16.2-r0 license:
 LGPL-3.0-or-later
 
 ```
@@ -879,16 +896,16 @@ GPL-2.0-or-later AND LGPL-3.0-or-later
 ### `apk` package: `libintl`
 
 ```console
-libintl-0.21.1-r5 description:
+libintl-0.21.1-r7 description:
 GNU gettext runtime library
 
-libintl-0.21.1-r5 webpage:
+libintl-0.21.1-r7 webpage:
 https://www.gnu.org/software/gettext/gettext.html
 
-libintl-0.21.1-r5 installed size:
+libintl-0.21.1-r7 installed size:
 56 KiB
 
-libintl-0.21.1-r5 license:
+libintl-0.21.1-r7 license:
 LGPL-2.1-or-later
 
 ```
@@ -964,16 +981,16 @@ BSD-3-Clause AND BSD-2-Clause AND ISC AND Beerware AND Public Domain
 ### `apk` package: `libmount`
 
 ```console
-libmount-2.38.1-r7 description:
+libmount-2.38.1-r8 description:
 Block device identification library from util-linux
 
-libmount-2.38.1-r7 webpage:
+libmount-2.38.1-r8 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libmount-2.38.1-r7 installed size:
+libmount-2.38.1-r8 installed size:
 336 KiB
 
-libmount-2.38.1-r7 license:
+libmount-2.38.1-r8 license:
 LGPL-2.1-or-later
 
 ```
@@ -1029,19 +1046,36 @@ Libpng
 
 ```
 
+### `apk` package: `libraw`
+
+```console
+libraw-0.21.1-r0 description:
+Library for reading RAW files obtained from digital photo cameras
+
+libraw-0.21.1-r0 webpage:
+https://www.libraw.org/
+
+libraw-0.21.1-r0 installed size:
+2400 KiB
+
+libraw-0.21.1-r0 license:
+CDDL-1.0 OR LGPL-2.1-only
+
+```
+
 ### `apk` package: `librsvg`
 
 ```console
-librsvg-2.56.0-r4 description:
+librsvg-2.56.1-r0 description:
 SAX-based renderer for SVG files into a GdkPixbuf
 
-librsvg-2.56.0-r4 webpage:
+librsvg-2.56.1-r0 webpage:
 https://wiki.gnome.org/Projects/LibRsvg
 
-librsvg-2.56.0-r4 installed size:
-6716 KiB
+librsvg-2.56.1-r0 installed size:
+3164 KiB
 
-librsvg-2.56.0-r4 license:
+librsvg-2.56.1-r0 license:
 LGPL-2.1-or-later
 
 ```
@@ -1066,16 +1100,16 @@ ISC
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.1.0-r4 description:
+libssl3-3.1.1-r1 description:
 SSL shared libraries
 
-libssl3-3.1.0-r4 webpage:
+libssl3-3.1.1-r1 webpage:
 https://www.openssl.org/
 
-libssl3-3.1.0-r4 installed size:
+libssl3-3.1.1-r1 installed size:
 552 KiB
 
-libssl3-3.1.0-r4 license:
+libssl3-3.1.1-r1 license:
 Apache-2.0
 
 ```
@@ -1134,16 +1168,16 @@ GPL-2.0-or-later OR LGPL-3.0-or-later
 ### `apk` package: `libwebp`
 
 ```console
-libwebp-1.3.0-r1 description:
+libwebp-1.3.0-r2 description:
 Libraries for working with WebP images
 
-libwebp-1.3.0-r1 webpage:
+libwebp-1.3.0-r2 webpage:
 https://developers.google.com/speed/webp
 
-libwebp-1.3.0-r1 installed size:
+libwebp-1.3.0-r2 installed size:
 596 KiB
 
-libwebp-1.3.0-r1 license:
+libwebp-1.3.0-r2 license:
 BSD-3-Clause
 
 ```
@@ -1253,16 +1287,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.11.3-r0 description:
+libxml2-2.11.4-r0 description:
 XML parsing library, version 2
 
-libxml2-2.11.3-r0 webpage:
+libxml2-2.11.4-r0 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.11.3-r0 installed size:
-1104 KiB
+libxml2-2.11.4-r0 installed size:
+1108 KiB
 
-libxml2-2.11.3-r0 license:
+libxml2-2.11.4-r0 license:
 MIT
 
 ```
@@ -1542,16 +1576,16 @@ MIT
 ### `apk` package: `python3`
 
 ```console
-python3-3.11.3-r11 description:
-A high-level scripting language
+python3-3.11.4-r0 description:
+High-level scripting language
 
-python3-3.11.3-r11 webpage:
+python3-3.11.4-r0 webpage:
 https://www.python.org/
 
-python3-3.11.3-r11 installed size:
+python3-3.11.4-r0 installed size:
 24 MiB
 
-python3-3.11.3-r11 license:
+python3-3.11.4-r0 license:
 PSF-2.0
 
 ```
@@ -1559,16 +1593,16 @@ PSF-2.0
 ### `apk` package: `python3-pyc`
 
 ```console
-python3-pyc-3.11.3-r11 description:
-A high-level scripting language (install .pyc cache files)
+python3-pyc-3.11.4-r0 description:
+High-level scripting language (install .pyc cache files)
 
-python3-pyc-3.11.3-r11 webpage:
+python3-pyc-3.11.4-r0 webpage:
 https://www.python.org/
 
-python3-pyc-3.11.3-r11 installed size:
+python3-pyc-3.11.4-r0 installed size:
 4096 B
 
-python3-pyc-3.11.3-r11 license:
+python3-pyc-3.11.4-r0 license:
 PSF-2.0
 
 ```
@@ -1576,16 +1610,16 @@ PSF-2.0
 ### `apk` package: `python3-pycache-pyc0`
 
 ```console
-python3-pycache-pyc0-3.11.3-r11 description:
-A high-level scripting language (.pyc pycache files)
+python3-pycache-pyc0-3.11.4-r0 description:
+High-level scripting language (.pyc pycache files)
 
-python3-pycache-pyc0-3.11.3-r11 webpage:
+python3-pycache-pyc0-3.11.4-r0 webpage:
 https://www.python.org/
 
-python3-pycache-pyc0-3.11.3-r11 installed size:
+python3-pycache-pyc0-3.11.4-r0 installed size:
 13 MiB
 
-python3-pycache-pyc0-3.11.3-r11 license:
+python3-pycache-pyc0-3.11.4-r0 license:
 PSF-2.0
 
 ```
