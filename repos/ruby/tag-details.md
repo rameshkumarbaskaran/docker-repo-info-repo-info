@@ -2168,7 +2168,12 @@ CMD ["irb"]
 
 ## `ruby:3-bookworm`
 
-**does not exist** (yet?)
+```console
+$ docker pull ruby@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `ruby:3-bullseye`
 
@@ -3358,7 +3363,12 @@ CMD ["irb"]
 
 ## `ruby:3-slim-bookworm`
 
-**does not exist** (yet?)
+```console
+$ docker pull ruby@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `ruby:3-slim-bullseye`
 
@@ -13842,7 +13852,12 @@ CMD ["irb"]
 
 ## `ruby:3.1-bookworm`
 
-**does not exist** (yet?)
+```console
+$ docker pull ruby@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `ruby:3.1-bullseye`
 
@@ -15032,7 +15047,12 @@ CMD ["irb"]
 
 ## `ruby:3.1-slim-bookworm`
 
-**does not exist** (yet?)
+```console
+$ docker pull ruby@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `ruby:3.1-slim-bullseye`
 
@@ -17656,7 +17676,12 @@ CMD ["irb"]
 
 ## `ruby:3.1.4-bookworm`
 
-**does not exist** (yet?)
+```console
+$ docker pull ruby@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `ruby:3.1.4-bullseye`
 
@@ -18846,7 +18871,12 @@ CMD ["irb"]
 
 ## `ruby:3.1.4-slim-bookworm`
 
-**does not exist** (yet?)
+```console
+$ docker pull ruby@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `ruby:3.1.4-slim-bullseye`
 
@@ -21470,7 +21500,12 @@ CMD ["irb"]
 
 ## `ruby:3.2-bookworm`
 
-**does not exist** (yet?)
+```console
+$ docker pull ruby@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `ruby:3.2-bullseye`
 
@@ -22660,7 +22695,12 @@ CMD ["irb"]
 
 ## `ruby:3.2-slim-bookworm`
 
-**does not exist** (yet?)
+```console
+$ docker pull ruby@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `ruby:3.2-slim-bullseye`
 
@@ -25284,7 +25324,12 @@ CMD ["irb"]
 
 ## `ruby:3.2.2-bookworm`
 
-**does not exist** (yet?)
+```console
+$ docker pull ruby@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `ruby:3.2.2-bullseye`
 
@@ -26474,7 +26519,12 @@ CMD ["irb"]
 
 ## `ruby:3.2.2-slim-bookworm`
 
-**does not exist** (yet?)
+```console
+$ docker pull ruby@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `ruby:3.2.2-slim-bullseye`
 
@@ -29098,7 +29148,12 @@ CMD ["irb"]
 
 ## `ruby:3.3-rc-bookworm`
 
-**does not exist** (yet?)
+```console
+$ docker pull ruby@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `ruby:3.3-rc-bullseye`
 
@@ -30288,7 +30343,12 @@ CMD ["irb"]
 
 ## `ruby:3.3-rc-slim-bookworm`
 
-**does not exist** (yet?)
+```console
+$ docker pull ruby@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `ruby:3.3-rc-slim-bullseye`
 
@@ -32912,7 +32972,12 @@ CMD ["irb"]
 
 ## `ruby:3.3.0-preview1-bookworm`
 
-**does not exist** (yet?)
+```console
+$ docker pull ruby@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `ruby:3.3.0-preview1-bullseye`
 
@@ -34102,7 +34167,12 @@ CMD ["irb"]
 
 ## `ruby:3.3.0-preview1-slim-bookworm`
 
-**does not exist** (yet?)
+```console
+$ docker pull ruby@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `ruby:3.3.0-preview1-slim-bullseye`
 
@@ -36085,7 +36155,12 @@ CMD ["irb"]
 
 ## `ruby:bookworm`
 
-**does not exist** (yet?)
+```console
+$ docker pull ruby@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `ruby:bullseye`
 
@@ -37916,7 +37991,12 @@ CMD ["irb"]
 
 ## `ruby:slim-bookworm`
 
-**does not exist** (yet?)
+```console
+$ docker pull ruby@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `ruby:slim-bullseye`
 
