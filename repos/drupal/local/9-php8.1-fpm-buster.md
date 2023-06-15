@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:68e700816158b968953f892733b0617acae9f836898ad1cce74d2c5b2b5ded49`
-- Created: `2023-06-09T03:30:20.014642041Z`
-- Virtual Size: ~ 500.95 Mb  
+- Image ID: `sha256:7e6cbcbe0be7f99e88e3b81500a3470bf7679e26482b3b067f1ab669ebd9ea68`
+- Created: `2023-06-13T20:50:18.769599244Z`
+- Virtual Size: ~ 496.19 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -2194,29 +2194,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openldap/2.4.47+dfsg-3+deb10u7/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openldap/2.4.47+dfsg-3+deb10u7/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openssl=1.1.1n-0+deb10u4`
-
-Binary Packages:
-
-- `openssl=1.1.1n-0+deb10u4`
-
-**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
-If source is available (seen below), check the contents of `debian/copyright` within it.
-
-
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
-
-The source package *may* still be available for download from:
-
-- http://snapshot.debian.org/package/openssl/1.1.1n-0+deb10u4/
-
-
 ### `dpkg` source package: `openssl=1.1.1n-0+deb10u5`
 
 Binary Packages:
 
 - `libssl1.1:amd64=1.1.1n-0+deb10u5`
+- `openssl=1.1.1n-0+deb10u5`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
