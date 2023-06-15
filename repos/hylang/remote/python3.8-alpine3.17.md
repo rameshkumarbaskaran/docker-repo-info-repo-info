@@ -1,7 +1,7 @@
 ## `hylang:python3.8-alpine3.17`
 
 ```console
-$ docker pull hylang@sha256:2c6e3766db0fbc0cf5ca9d5e990278f8aadffd710aaa9fe9c63069a9f7674901
+$ docker pull hylang@sha256:84da08b81f689639ed43d60cb0c427cfca2b6bb179ebcfbc4f0577a4296d1185
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -177,20 +177,20 @@ CMD ["hy"]
 ### `hylang:python3.8-alpine3.17` - linux; arm variant v7
 
 ```console
-$ docker pull hylang@sha256:37dbcc50740219527b8a03c78ea097ca6cd092ea95ef6b2beb4091569a80c0ac
+$ docker pull hylang@sha256:42691deec407cb6b26e91b495393de9fc24f490c769fd17a0ed27aeb37bc71ec
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **24.8 MB (24812244 bytes)**  
+-	Total Size: **22.7 MB (22721698 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d31824d17b172ecca90efdb38190f12b2ffde6ff7193546da91dfa023abbd8cb`
+-	Image ID: `sha256:45e80fe3844de8c727da8a055bfc0f6f8c330c6ca40543b24f23c8716f620ffc`
 -	Default Command: `["hy"]`
 
 ```dockerfile
-# Wed, 29 Mar 2023 18:03:38 GMT
-ADD file:959fa0ffb60c37c4fdc0d32ac31511f8dead32ef7f4bd848b11ff144a6b37012 in / 
-# Wed, 29 Mar 2023 18:03:38 GMT
+# Wed, 14 Jun 2023 22:36:20 GMT
+ADD file:5e92075a8d9a5898d661caf9c2be8a83fb25742251b4ebdc0c3d448a6dc58e4a in / 
+# Wed, 14 Jun 2023 22:36:20 GMT
 CMD ["/bin/sh"]
 # Tue, 06 Jun 2023 15:50:21 GMT
 ENV PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
@@ -218,40 +218,40 @@ ENV PYTHON_GET_PIP_SHA256=96461deced5c2a487ddc65207ec5a9cffeca0d34e7af7ea1afc470
 RUN set -eux; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum -c -; 		export PYTHONDONTWRITEBYTECODE=1; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		--no-compile 		"pip==$PYTHON_PIP_VERSION" 		"setuptools==$PYTHON_SETUPTOOLS_VERSION" 	; 	rm -f get-pip.py; 		pip --version # buildkit
 # Tue, 06 Jun 2023 15:50:21 GMT
 CMD ["python3"]
-# Wed, 07 Jun 2023 00:05:59 GMT
+# Thu, 15 Jun 2023 10:55:26 GMT
 ENV HY_VERSION=0.26.0
-# Wed, 07 Jun 2023 00:05:59 GMT
+# Thu, 15 Jun 2023 10:55:26 GMT
 ENV HYRULE_VERSION=0.3.0
-# Wed, 07 Jun 2023 00:06:15 GMT
+# Thu, 15 Jun 2023 10:55:42 GMT
 RUN pip install --no-cache-dir "hy == $HY_VERSION" "hyrule == $HYRULE_VERSION"
-# Wed, 07 Jun 2023 00:06:15 GMT
+# Thu, 15 Jun 2023 10:55:42 GMT
 CMD ["hy"]
 ```
 
 -	Layers:
-	-	`sha256:fd4b2aeb476b6c2c0c3049dae919de20fe09e90deac95e3181d717055cbe6707`  
-		Last Modified: Wed, 29 Mar 2023 18:06:56 GMT  
-		Size: 2.9 MB (2868519 bytes)  
+	-	`sha256:f929d112168394cf1fbe294a86fbe5173dd92df4daac8cb09437b17dfc5df802`  
+		Last Modified: Wed, 14 Jun 2023 22:37:01 GMT  
+		Size: 2.9 MB (2868554 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:076a9ab44767f047661f5face75434e9f445a4eb51049a29432fee27378d95c6`  
-		Last Modified: Thu, 30 Mar 2023 04:26:12 GMT  
-		Size: 623.4 KB (623369 bytes)  
+	-	`sha256:24773b9a79d56938dfbf77c24906cab0ed1b0c5832b79ef46921f1820378b622`  
+		Last Modified: Thu, 15 Jun 2023 08:48:38 GMT  
+		Size: 623.5 KB (623526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fbebfc2b45a956d64ba59b356770ccfa478d6dff38f38fbb7bd312b9b0ca644b`  
-		Last Modified: Tue, 06 Jun 2023 23:48:09 GMT  
-		Size: 14.7 MB (14725566 bytes)  
+	-	`sha256:bf691ce8bf67fa21682a644b489aeb1a7cc386ee080601d5808867eb03f2e676`  
+		Last Modified: Thu, 15 Jun 2023 08:50:34 GMT  
+		Size: 12.6 MB (12634771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8062a738a2eb6f1f93a88c3fa34b80ccb7cc300994bd9af849972aa977619a89`  
-		Last Modified: Tue, 06 Jun 2023 23:48:06 GMT  
+	-	`sha256:1eb876ec762d2a284587d04787f0b702ef42ff5bdcfbb718bbb9b526427a207d`  
+		Last Modified: Thu, 15 Jun 2023 08:50:32 GMT  
 		Size: 240.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44936cd47e18b93fc1b02c7288776c301509175777f0a5e011a973b6e98181d5`  
-		Last Modified: Tue, 06 Jun 2023 23:48:07 GMT  
-		Size: 2.8 MB (2848374 bytes)  
+	-	`sha256:110ac6823b7e670340068a3d8fde9f054c132bf122e26a5cf6916ffe80e023b5`  
+		Last Modified: Thu, 15 Jun 2023 08:50:33 GMT  
+		Size: 2.8 MB (2848363 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f46c885dea831c2d86b275688527cececd25bb27d4f36d224a390264251282f7`  
-		Last Modified: Wed, 07 Jun 2023 00:09:17 GMT  
-		Size: 3.7 MB (3746176 bytes)  
+	-	`sha256:b1e83602a96d83b9653c081eda58037c27d298f7d9746db80b9fc7413044a39d`  
+		Last Modified: Thu, 15 Jun 2023 11:00:29 GMT  
+		Size: 3.7 MB (3746244 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `hylang:python3.8-alpine3.17` - linux; arm64 variant v8
