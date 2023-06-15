@@ -429,14 +429,9 @@ Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/bin
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris binutils=2.34-6ubuntu1.5
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.34-6ubuntu1.5.dsc' binutils_2.34-6ubuntu1.5.dsc 8699 SHA512:d2f107b0b676e295e39a3b091426b44a61d382f01ea04c7453f924220e931342382205bf6d64b2b7e8fca6ae0c67f6d030c818762f6315eeb520ac4626b4c292
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.34.orig.tar.xz' binutils_2.34.orig.tar.xz 21637796 SHA512:2c7976939dcf5e8c5b7374cccd39bfe803b1bec73c6abfa0eb17c24e1942574c6bdb874c66a092a82adc443182eacd8a5a8001c19a76101f0c7ba40c27de0bbd
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.34-6ubuntu1.5.debian.tar.xz' binutils_2.34-6ubuntu1.5.debian.tar.xz 162176 SHA512:a8ce6b856047cf667f3f6f8485d3577051c57c12dff1b0c46cbc22a0ac28ab49fa03792dcf851ceb95fbd2cc036c1836afe370ad8590b557db975f1092ca58c1
-```
 
 ### `dpkg` source package: `boost-defaults=1.71.0.0ubuntu2`
 
@@ -1960,14 +1955,9 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc
 - `GPL-2+`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.64.6-1~ubuntu20.04.4
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.64.6-1%7eubuntu20.04.4.dsc' glib2.0_2.64.6-1~ubuntu20.04.4.dsc 3338 SHA512:536d1dd6d47741e816ebe94008cef11cf754a46070329723cf0cec45e49126fe43f5f58c9db5c6d425c9730d9acda4d1f4acb468d41d1d7e35a8141b13434f01
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.64.6.orig.tar.xz' glib2.0_2.64.6.orig.tar.xz 4781576 SHA512:5cd82c4d9b143e7aa130c24e25fb9def06dd915ef8ad8ed3883931bf5cddecf69c2e669ef6aa1d910484ede75b671e7c48a4f3fe50aa78955bff57b04f0cf958
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.64.6-1%7eubuntu20.04.4.debian.tar.xz' glib2.0_2.64.6-1~ubuntu20.04.4.debian.tar.xz 111852 SHA512:4b4f05731fd40715aefa1c70aa06ae03ad8e11d77732246d9b0457fc1ae8b226a3a75b4c5ee86ed143dca4cd60e65504d903c4063735a5c1021bc5f86a17d059
-```
 
 ### `dpkg` source package: `glibc=2.31-0ubuntu9.9`
 
@@ -2351,13 +2341,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-common3/copyright`, `/usr/sh
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-common3=3.15.1-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-common3/ignition-common3_3.15.1-1%7efocal.dsc' ignition-common3_3.15.1-1~focal.dsc 2691 SHA256:75ebaf43520c83ccb4276cbc9400494a563b91a197038509c3e12e654e990bbd
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-common3/ignition-common3_3.15.1-1%7efocal.tar.xz' ignition-common3_3.15.1-1~focal.tar.xz 6736212 SHA256:f5427133f18903d5a1cfa504c0d1842cfc891fec3efddfca647e9f5e1d3dd284
-```
 
 ### `dpkg` source package: `ignition-fuel-tools4=4.9.0-1~focal`
 
@@ -7529,14 +7515,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=245.4-4ubuntu3.21
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.21.dsc' systemd_245.4-4ubuntu3.21.dsc 5262 SHA512:60e443b8b437e8f07d56d2c559dcc390551fd31a693c3af33a0ea78801f72496eda655a2a9944fde15e830a9f811fb25c5bcc93a9b362a95d14e4cc6a3661d56
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4.orig.tar.gz' systemd_245.4.orig.tar.gz 9000780 SHA512:02036bb1ab05301a9d0dfdd4b9c9376e90134474482531e6e292122380be2f24f99177493dd3af6f8af1a8ed2599ee0996da91a3b1b7872bbfaf26a1c3e61b4c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.21.debian.tar.xz' systemd_245.4-4ubuntu3.21.debian.tar.xz 288904 SHA512:351a6c5c1c6ae5bcfd9cebbea476ebb1fd5927d4a582783549bfeeff415c6c228df9f5f76a5558a49e7792925a97e7e7fdb4f4d7d7a15c7088464898acc07ad8
-```
 
 ### `dpkg` source package: `sysvinit=2.96-2.1ubuntu1`
 
@@ -7891,9 +7872,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris util-linux=2.34-0.1ubuntu9.3
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34-0.1ubuntu9.3.dsc' util-linux_2.34-0.1ubuntu9.3.dsc 4042 SHA512:e65684c641d175110008f865369c35adb734f8a80626c0eb3b3f3f47e05c1a6277c9f92b4032e30bb69711d67c2a5ad651adb3ec9ac4ef67d45a2858ce48cc6a
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34.orig.tar.xz' util-linux_2.34.orig.tar.xz 4974812 SHA512:2d0b76f63d32e7afb7acf61a83fabbfd58baa34ab78b3a331ce87f9c676a5fd71c56a493ded95039540d2c46b6048caaa38d7fb4491eb3d52d7b09dc54655cd7
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34-0.1ubuntu9.3.debian.tar.xz' util-linux_2.34-0.1ubuntu9.3.debian.tar.xz 94976 SHA512:b6e55588aea32de6481dad01f194e6f71b8a859019e5c8d6d816c65f32c8b31821d1ab73f13ec34c5d3551311c43b7e24ac01c2af5878a85df72326293c3a71a
+'http://security.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34-0.1ubuntu9.3.dsc' util-linux_2.34-0.1ubuntu9.3.dsc 4042 SHA512:e65684c641d175110008f865369c35adb734f8a80626c0eb3b3f3f47e05c1a6277c9f92b4032e30bb69711d67c2a5ad651adb3ec9ac4ef67d45a2858ce48cc6a
+'http://security.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34.orig.tar.xz' util-linux_2.34.orig.tar.xz 4974812 SHA512:2d0b76f63d32e7afb7acf61a83fabbfd58baa34ab78b3a331ce87f9c676a5fd71c56a493ded95039540d2c46b6048caaa38d7fb4491eb3d52d7b09dc54655cd7
+'http://security.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34-0.1ubuntu9.3.debian.tar.xz' util-linux_2.34-0.1ubuntu9.3.debian.tar.xz 94976 SHA512:b6e55588aea32de6481dad01f194e6f71b8a859019e5c8d6d816c65f32c8b31821d1ab73f13ec34c5d3551311c43b7e24ac01c2af5878a85df72326293c3a71a
 ```
 
 ### `dpkg` source package: `vulkan-loader=1.2.131.2-1`
