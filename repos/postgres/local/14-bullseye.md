@@ -1,10 +1,10 @@
-# `postgres:14.8`
+# `postgres:14.8-bullseye`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ab8f641699b40602a5f3fa56fdd292735cd11ee064c6fe98978bcf038b904250`
-- Created: `2023-05-23T09:18:05.468796108Z`
-- Virtual Size: ~ 376.58 Mb  
+- Image ID: `sha256:cb988f73c27857fed94fefe8c05a70184d589d1d060d85b5183d93fe8f159e14`
+- Created: `2023-06-13T12:50:22.996986869Z`
+- Virtual Size: ~ 376.60 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`

@@ -1,10 +1,10 @@
-# `postgres:12.15`
+# `postgres:12.15-bullseye`
 
 ## Docker Metadata
 
-- Image ID: `sha256:89542e4c88b91c08e6d19156c4b208339d9feec3567a4807b9085ea62660c6b3`
-- Created: `2023-05-23T09:19:00.028395786Z`
-- Virtual Size: ~ 373.10 Mb  
+- Image ID: `sha256:d771c223ba510c0ffa7501c967b42582012cdeadc39404ffbe273ce595f57618`
+- Created: `2023-06-13T12:51:23.910632528Z`
+- Virtual Size: ~ 373.12 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
