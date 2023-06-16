@@ -1096,14 +1096,9 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`)
 - `GPL-2+`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.64.6-1~ubuntu20.04.4
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.64.6-1%7eubuntu20.04.4.dsc' glib2.0_2.64.6-1~ubuntu20.04.4.dsc 3338 SHA512:536d1dd6d47741e816ebe94008cef11cf754a46070329723cf0cec45e49126fe43f5f58c9db5c6d425c9730d9acda4d1f4acb468d41d1d7e35a8141b13434f01
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.64.6.orig.tar.xz' glib2.0_2.64.6.orig.tar.xz 4781576 SHA512:5cd82c4d9b143e7aa130c24e25fb9def06dd915ef8ad8ed3883931bf5cddecf69c2e669ef6aa1d910484ede75b671e7c48a4f3fe50aa78955bff57b04f0cf958
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.64.6-1%7eubuntu20.04.4.debian.tar.xz' glib2.0_2.64.6-1~ubuntu20.04.4.debian.tar.xz 111852 SHA512:4b4f05731fd40715aefa1c70aa06ae03ad8e11d77732246d9b0457fc1ae8b226a3a75b4c5ee86ed143dca4cd60e65504d903c4063735a5c1021bc5f86a17d059
-```
 
 ### `dpkg` source package: `glibc=2.31-0ubuntu9.9`
 
@@ -2249,15 +2244,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libx11=2:1.6.9-2ubuntu1.2
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.6.9-2ubuntu1.2.dsc' libx11_1.6.9-2ubuntu1.2.dsc 2671 SHA512:1468c2b4f7240b9e59dc7a5fa528383dab4787aec56fb9a0d6d4cbb182eb95e59c0f6478e37aa03ef45e1fffcb73e8b30cdf04b14a656f6edff2f3a6a2a18471
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.6.9.orig.tar.gz' libx11_1.6.9.orig.tar.gz 2994329 SHA512:c79cf0924e920a2e8d2e9af45e73ed42b565dea79ac68d4c3889033738274694b29cedb62c057fec1aa7f7ad7dcf843334fccb43470bbae7922d42373c1c6045
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.6.9.orig.tar.gz.asc' libx11_1.6.9.orig.tar.gz.asc 659 SHA512:56e53d1481be4e12f89af2fbcd297a3612996f5ca1eae39d6fe336f9b52832ea430ac0568e556b9e57291562c56590086871c08ec7ac046f15af4211f680adee
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.6.9-2ubuntu1.2.diff.gz' libx11_1.6.9-2ubuntu1.2.diff.gz 67310 SHA512:f2f28664298eff341177a3bb5bc1f1290d2e0c94fa2c39771b51ec69d987a75b38cc03fbe0a0561a7807da9ac1e32c5b3c617dc7020922c6f2c1c0ca060f99de
-```
 
 ### `dpkg` source package: `libxau=1:1.0.9-0ubuntu1`
 
@@ -5269,14 +5258,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=245.4-4ubuntu3.21
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.21.dsc' systemd_245.4-4ubuntu3.21.dsc 5262 SHA512:60e443b8b437e8f07d56d2c559dcc390551fd31a693c3af33a0ea78801f72496eda655a2a9944fde15e830a9f811fb25c5bcc93a9b362a95d14e4cc6a3661d56
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4.orig.tar.gz' systemd_245.4.orig.tar.gz 9000780 SHA512:02036bb1ab05301a9d0dfdd4b9c9376e90134474482531e6e292122380be2f24f99177493dd3af6f8af1a8ed2599ee0996da91a3b1b7872bbfaf26a1c3e61b4c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.21.debian.tar.xz' systemd_245.4-4ubuntu3.21.debian.tar.xz 288904 SHA512:351a6c5c1c6ae5bcfd9cebbea476ebb1fd5927d4a582783549bfeeff415c6c228df9f5f76a5558a49e7792925a97e7e7fdb4f4d7d7a15c7088464898acc07ad8
-```
 
 ### `dpkg` source package: `sysvinit=2.96-2.1ubuntu1`
 

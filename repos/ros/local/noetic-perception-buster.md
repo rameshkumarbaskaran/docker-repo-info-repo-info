@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a6d05d361671e5f86b254c9b2d26943f3a1ecc3b8a35b5bccf598c2bd6945a81`
-- Created: `2023-05-23T11:22:52.921871296Z`
+- Image ID: `sha256:cd145224d3c8d30ebeb7650719a9f02291b3c603d878da5572f3d8f9547d9b28`
+- Created: `2023-06-13T17:16:14.725645348Z`
 - Virtual Size: ~ 2.89 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1389,11 +1389,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/crystalhd/1:0.0~git20110715.fdd2f19-13/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/crystalhd/1:0.0~git20110715.fdd2f19-13/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `cups=2.2.10-6+deb10u6`
+### `dpkg` source package: `cups=2.2.10-6+deb10u7`
 
 Binary Packages:
 
-- `libcups2:amd64=2.2.10-6+deb10u6`
+- `libcups2:amd64=2.2.10-6+deb10u7`
 
 Licenses: (parsed from: `/usr/share/doc/libcups2/copyright`)
 
@@ -1407,18 +1407,18 @@ Licenses: (parsed from: `/usr/share/doc/libcups2/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris cups=2.2.10-6+deb10u6
-'http://deb.debian.org/debian/pool/main/c/cups/cups_2.2.10-6%2bdeb10u6.dsc' cups_2.2.10-6+deb10u6.dsc 3512 SHA256:774fdbd68609ae6ca9fd791aa0e966da6874f5b5890544cd7eb383354bcc48f4
-'http://deb.debian.org/debian/pool/main/c/cups/cups_2.2.10.orig.tar.gz' cups_2.2.10.orig.tar.gz 10403568 SHA256:77c8b2b3bb7fe8b5fbfffc307f2c817b2d7ec67b657f261a1dd1c61ab81205bb
-'http://deb.debian.org/debian/pool/main/c/cups/cups_2.2.10.orig.tar.gz.asc' cups_2.2.10.orig.tar.gz.asc 864 SHA256:be235dd0cc526e5bde2a67f0dc2888be5d8dc40d1dfa44ab1a322d83f606e82d
-'http://deb.debian.org/debian/pool/main/c/cups/cups_2.2.10-6%2bdeb10u6.debian.tar.xz' cups_2.2.10-6+deb10u6.debian.tar.xz 362100 SHA256:c06ed37a1f8841b22ad14357a5e01f6b556725ca27d2bf3bee6045c4425c0447
+$ apt-get source -qq --print-uris cups=2.2.10-6+deb10u7
+'http://deb.debian.org/debian-security/pool/updates/main/c/cups/cups_2.2.10-6%2bdeb10u7.dsc' cups_2.2.10-6+deb10u7.dsc 3512 SHA256:54c2fc46ea07d2bcc1259fdc97d18166b4f955a0b004748653a5ec0b3218043a
+'http://deb.debian.org/debian-security/pool/updates/main/c/cups/cups_2.2.10.orig.tar.gz' cups_2.2.10.orig.tar.gz 10403568 SHA256:77c8b2b3bb7fe8b5fbfffc307f2c817b2d7ec67b657f261a1dd1c61ab81205bb
+'http://deb.debian.org/debian-security/pool/updates/main/c/cups/cups_2.2.10.orig.tar.gz.asc' cups_2.2.10.orig.tar.gz.asc 864 SHA256:be235dd0cc526e5bde2a67f0dc2888be5d8dc40d1dfa44ab1a322d83f606e82d
+'http://deb.debian.org/debian-security/pool/updates/main/c/cups/cups_2.2.10-6%2bdeb10u7.debian.tar.xz' cups_2.2.10-6+deb10u7.debian.tar.xz 362272 SHA256:b79c71228ffc80293ae21f11a3f962cbf5ecf9471cfc1f8913007e9c24ba1073
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/cups/2.2.10-6+deb10u6/ (for browsing the source)
-- https://sources.debian.net/src/cups/2.2.10-6+deb10u6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/cups/2.2.10-6+deb10u6/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/cups/2.2.10-6+deb10u7/ (for browsing the source)
+- https://sources.debian.net/src/cups/2.2.10-6+deb10u7/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/cups/2.2.10-6+deb10u7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `curl=7.64.0-4+deb10u6`
 
@@ -1983,22 +1983,22 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/expat/2.2.6-2+deb10u6/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/expat/2.2.6-2+deb10u6/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `ffmpeg=7:4.1.10-0+deb10u1`
+### `dpkg` source package: `ffmpeg=7:4.1.11-0+deb10u1`
 
 Binary Packages:
 
-- `libavcodec-dev:amd64=7:4.1.10-0+deb10u1`
-- `libavcodec58:amd64=7:4.1.10-0+deb10u1`
-- `libavformat-dev:amd64=7:4.1.10-0+deb10u1`
-- `libavformat58:amd64=7:4.1.10-0+deb10u1`
-- `libavresample-dev:amd64=7:4.1.10-0+deb10u1`
-- `libavresample4:amd64=7:4.1.10-0+deb10u1`
-- `libavutil-dev:amd64=7:4.1.10-0+deb10u1`
-- `libavutil56:amd64=7:4.1.10-0+deb10u1`
-- `libswresample-dev:amd64=7:4.1.10-0+deb10u1`
-- `libswresample3:amd64=7:4.1.10-0+deb10u1`
-- `libswscale-dev:amd64=7:4.1.10-0+deb10u1`
-- `libswscale5:amd64=7:4.1.10-0+deb10u1`
+- `libavcodec-dev:amd64=7:4.1.11-0+deb10u1`
+- `libavcodec58:amd64=7:4.1.11-0+deb10u1`
+- `libavformat-dev:amd64=7:4.1.11-0+deb10u1`
+- `libavformat58:amd64=7:4.1.11-0+deb10u1`
+- `libavresample-dev:amd64=7:4.1.11-0+deb10u1`
+- `libavresample4:amd64=7:4.1.11-0+deb10u1`
+- `libavutil-dev:amd64=7:4.1.11-0+deb10u1`
+- `libavutil56:amd64=7:4.1.11-0+deb10u1`
+- `libswresample-dev:amd64=7:4.1.11-0+deb10u1`
+- `libswresample3:amd64=7:4.1.11-0+deb10u1`
+- `libswscale-dev:amd64=7:4.1.11-0+deb10u1`
+- `libswscale5:amd64=7:4.1.11-0+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libavcodec-dev/copyright`, `/usr/share/doc/libavcodec58/copyright`, `/usr/share/doc/libavformat-dev/copyright`, `/usr/share/doc/libavformat58/copyright`, `/usr/share/doc/libavresample-dev/copyright`, `/usr/share/doc/libavresample4/copyright`, `/usr/share/doc/libavutil-dev/copyright`, `/usr/share/doc/libavutil56/copyright`, `/usr/share/doc/libswresample-dev/copyright`, `/usr/share/doc/libswresample3/copyright`, `/usr/share/doc/libswscale-dev/copyright`, `/usr/share/doc/libswscale5/copyright`)
 
@@ -2026,18 +2026,18 @@ Licenses: (parsed from: `/usr/share/doc/libavcodec-dev/copyright`, `/usr/share/d
 Source:
 
 ```console
-$ apt-get source -qq --print-uris ffmpeg=7:4.1.10-0+deb10u1
-'http://deb.debian.org/debian-security/pool/updates/main/f/ffmpeg/ffmpeg_4.1.10-0%2bdeb10u1.dsc' ffmpeg_4.1.10-0+deb10u1.dsc 5221 SHA256:7946ee0885b983b9a90229623558d7c6253fcbae3575a8091076270ea752395c
-'http://deb.debian.org/debian-security/pool/updates/main/f/ffmpeg/ffmpeg_4.1.10.orig.tar.xz' ffmpeg_4.1.10.orig.tar.xz 8924908 SHA256:d8e423696c2e17dae2d37387f105310990e39c4f96d1f11b013c26ec93e7cef7
-'http://deb.debian.org/debian-security/pool/updates/main/f/ffmpeg/ffmpeg_4.1.10.orig.tar.xz.asc' ffmpeg_4.1.10.orig.tar.xz.asc 520 SHA256:3d2f1f8f58c29cfc890f5d2bceb405c9b06fb087937eb4c5b85ea100ca396053
-'http://deb.debian.org/debian-security/pool/updates/main/f/ffmpeg/ffmpeg_4.1.10-0%2bdeb10u1.debian.tar.xz' ffmpeg_4.1.10-0+deb10u1.debian.tar.xz 47836 SHA256:8202c6b6c958f54fdd26c28dfa11d38158c1326cea69ca0e59a27cbc28635213
+$ apt-get source -qq --print-uris ffmpeg=7:4.1.11-0+deb10u1
+'http://deb.debian.org/debian-security/pool/updates/main/f/ffmpeg/ffmpeg_4.1.11-0%2bdeb10u1.dsc' ffmpeg_4.1.11-0+deb10u1.dsc 5221 SHA256:0fd622bb20c4d41cb6301feef9ea0d0d517d92ec96bf2ea4f88c8b2e30547acd
+'http://deb.debian.org/debian-security/pool/updates/main/f/ffmpeg/ffmpeg_4.1.11.orig.tar.xz' ffmpeg_4.1.11.orig.tar.xz 8925740 SHA256:10af4b401cd719d969eb52185a6566556dd6770b9578860dd312ad2ed84ea5f4
+'http://deb.debian.org/debian-security/pool/updates/main/f/ffmpeg/ffmpeg_4.1.11.orig.tar.xz.asc' ffmpeg_4.1.11.orig.tar.xz.asc 520 SHA256:7efd3f367780c903e104657f03bb69e3c8cb236a91c1a29bfb8e06e860d20af4
+'http://deb.debian.org/debian-security/pool/updates/main/f/ffmpeg/ffmpeg_4.1.11-0%2bdeb10u1.debian.tar.xz' ffmpeg_4.1.11-0+deb10u1.debian.tar.xz 47952 SHA256:c326ada373030c8aa66a13f31f5f09ba2e6669b5a0ee94ea57669864c1d4e8f2
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/ffmpeg/7:4.1.10-0+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/ffmpeg/7:4.1.10-0+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/ffmpeg/7:4.1.10-0+deb10u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/ffmpeg/7:4.1.11-0+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/ffmpeg/7:4.1.11-0+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/ffmpeg/7:4.1.11-0+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.6.0+git+20190209-2`
 
@@ -5809,11 +5809,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libssh2/1.8.0-2.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libssh2/1.8.0-2.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libssh=0.8.7-1+deb10u1`
+### `dpkg` source package: `libssh=0.8.7-1+deb10u2`
 
 Binary Packages:
 
-- `libssh-gcrypt-4:amd64=0.8.7-1+deb10u1`
+- `libssh-gcrypt-4:amd64=0.8.7-1+deb10u2`
 
 Licenses: (parsed from: `/usr/share/doc/libssh-gcrypt-4/copyright`)
 
@@ -5826,17 +5826,17 @@ Licenses: (parsed from: `/usr/share/doc/libssh-gcrypt-4/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libssh=0.8.7-1+deb10u1
-'http://deb.debian.org/debian/pool/main/libs/libssh/libssh_0.8.7-1%2bdeb10u1.dsc' libssh_0.8.7-1+deb10u1.dsc 2143 SHA256:d5008ee4ec3aa601bbfa1da617cdda31d0ba26066f66e070a943a3db4f77ffd4
-'http://deb.debian.org/debian/pool/main/libs/libssh/libssh_0.8.7.orig.tar.xz' libssh_0.8.7.orig.tar.xz 430104 SHA256:43304ca22f0ba0b654e14b574a39816bc70212fdea5858a6637cc26cade3d592
-'http://deb.debian.org/debian/pool/main/libs/libssh/libssh_0.8.7-1%2bdeb10u1.debian.tar.xz' libssh_0.8.7-1+deb10u1.debian.tar.xz 26788 SHA256:45b691db8ea5ac344215ceb44d6654a986170a43c68d697213dafb4a1be165f3
+$ apt-get source -qq --print-uris libssh=0.8.7-1+deb10u2
+'http://deb.debian.org/debian-security/pool/updates/main/libs/libssh/libssh_0.8.7-1%2bdeb10u2.dsc' libssh_0.8.7-1+deb10u2.dsc 2468 SHA256:d9cefbd128e71cb81ed2ff81d896e1a6c5f1fd4f919ebe5bcae2685b9b922756
+'http://deb.debian.org/debian-security/pool/updates/main/libs/libssh/libssh_0.8.7.orig.tar.xz' libssh_0.8.7.orig.tar.xz 430104 SHA256:43304ca22f0ba0b654e14b574a39816bc70212fdea5858a6637cc26cade3d592
+'http://deb.debian.org/debian-security/pool/updates/main/libs/libssh/libssh_0.8.7-1%2bdeb10u2.debian.tar.xz' libssh_0.8.7-1+deb10u2.debian.tar.xz 40300 SHA256:202ed6952ec8c1acda3d09ff9154d27e3ce647474a04347f88d97f8ec7d9847e
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libssh/0.8.7-1+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/libssh/0.8.7-1+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libssh/0.8.7-1+deb10u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libssh/0.8.7-1+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/libssh/0.8.7-1+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libssh/0.8.7-1+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libtasn1-6=4.13-3+deb10u1`
 
@@ -6182,14 +6182,14 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libwacom/0.32-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libwacom/0.32-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libwebp=0.6.1-2+deb10u1`
+### `dpkg` source package: `libwebp=0.6.1-2+deb10u2`
 
 Binary Packages:
 
-- `libwebp-dev:amd64=0.6.1-2+deb10u1`
-- `libwebp6:amd64=0.6.1-2+deb10u1`
-- `libwebpdemux2:amd64=0.6.1-2+deb10u1`
-- `libwebpmux3:amd64=0.6.1-2+deb10u1`
+- `libwebp-dev:amd64=0.6.1-2+deb10u2`
+- `libwebp6:amd64=0.6.1-2+deb10u2`
+- `libwebpdemux2:amd64=0.6.1-2+deb10u2`
+- `libwebpmux3:amd64=0.6.1-2+deb10u2`
 
 Licenses: (parsed from: `/usr/share/doc/libwebp-dev/copyright`, `/usr/share/doc/libwebp6/copyright`, `/usr/share/doc/libwebpdemux2/copyright`, `/usr/share/doc/libwebpmux3/copyright`)
 
@@ -6198,17 +6198,17 @@ Licenses: (parsed from: `/usr/share/doc/libwebp-dev/copyright`, `/usr/share/doc/
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libwebp=0.6.1-2+deb10u1
-'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.6.1-2%2bdeb10u1.dsc' libwebp_0.6.1-2+deb10u1.dsc 2078 SHA256:8e049c4699d3e1196642782f14052d8558225d1c713fe1718d21f23524b81bd5
-'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.6.1.orig.tar.gz' libwebp_0.6.1.orig.tar.gz 3554290 SHA256:a86045e3ec24704bddbaa369ca30980d6bf4f2625f4cdca03715e91f9c08bbb4
-'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.6.1-2%2bdeb10u1.debian.tar.xz' libwebp_0.6.1-2+deb10u1.debian.tar.xz 13612 SHA256:35121925b3a22ee41f4704f0118d30dae58f642e76565ab73d427b3e648d7961
+$ apt-get source -qq --print-uris libwebp=0.6.1-2+deb10u2
+'http://deb.debian.org/debian-security/pool/updates/main/libw/libwebp/libwebp_0.6.1-2%2bdeb10u2.dsc' libwebp_0.6.1-2+deb10u2.dsc 2078 SHA256:e57554e788414a5b38c1d31844bb0c56694bcc8cb1bde282432d7796333d7e75
+'http://deb.debian.org/debian-security/pool/updates/main/libw/libwebp/libwebp_0.6.1.orig.tar.gz' libwebp_0.6.1.orig.tar.gz 3554290 SHA256:a86045e3ec24704bddbaa369ca30980d6bf4f2625f4cdca03715e91f9c08bbb4
+'http://deb.debian.org/debian-security/pool/updates/main/libw/libwebp/libwebp_0.6.1-2%2bdeb10u2.debian.tar.xz' libwebp_0.6.1-2+deb10u2.debian.tar.xz 14396 SHA256:f84d655f88949b4a38ef09c28adf864423f9a35a9ef4f9342495e7cce985118e
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libwebp/0.6.1-2+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/libwebp/0.6.1-2+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libwebp/0.6.1-2+deb10u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libwebp/0.6.1-2+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/libwebp/0.6.1-2+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libwebp/0.6.1-2+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libx11=2:1.6.7-1+deb10u2`
 
@@ -7181,14 +7181,14 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/make-dfsg/4.2.1-1.2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/make-dfsg/4.2.1-1.2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `mariadb-10.3=1:10.3.38-0+deb10u1`
+### `dpkg` source package: `mariadb-10.3=1:10.3.39-0+deb10u1`
 
 Binary Packages:
 
-- `libmariadb-dev=1:10.3.38-0+deb10u1`
-- `libmariadb-dev-compat:amd64=1:10.3.38-0+deb10u1`
-- `libmariadb3:amd64=1:10.3.38-0+deb10u1`
-- `mariadb-common=1:10.3.38-0+deb10u1`
+- `libmariadb-dev=1:10.3.39-0+deb10u1`
+- `libmariadb-dev-compat:amd64=1:10.3.39-0+deb10u1`
+- `libmariadb3:amd64=1:10.3.39-0+deb10u1`
+- `mariadb-common=1:10.3.39-0+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libmariadb-dev/copyright`, `/usr/share/doc/libmariadb-dev-compat/copyright`, `/usr/share/doc/libmariadb3/copyright`, `/usr/share/doc/mariadb-common/copyright`)
 
@@ -7212,13 +7212,21 @@ Licenses: (parsed from: `/usr/share/doc/libmariadb-dev/copyright`, `/usr/share/d
 - `unlimited-free-doc`
 - `zlib/libpng`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris mariadb-10.3=1:10.3.39-0+deb10u1
+'http://deb.debian.org/debian-security/pool/updates/main/m/mariadb-10.3/mariadb-10.3_10.3.39-0%2bdeb10u1.dsc' mariadb-10.3_10.3.39-0+deb10u1.dsc 4812 SHA256:1de6109f7add1c78acc27f684953b9ec9b1d3e72da0bd22884ac78545a41430c
+'http://deb.debian.org/debian-security/pool/updates/main/m/mariadb-10.3/mariadb-10.3_10.3.39.orig.tar.gz' mariadb-10.3_10.3.39.orig.tar.gz 74469177 SHA256:18bd51c847565af4da18748b052ab9bcbb569ab6e6766ca8da7dcca1f941f876
+'http://deb.debian.org/debian-security/pool/updates/main/m/mariadb-10.3/mariadb-10.3_10.3.39.orig.tar.gz.asc' mariadb-10.3_10.3.39.orig.tar.gz.asc 833 SHA256:c7ae557f5d41c280da680be37e554c49d0512a28bda695cace61eab14ebe01d5
+'http://deb.debian.org/debian-security/pool/updates/main/m/mariadb-10.3/mariadb-10.3_10.3.39-0%2bdeb10u1.debian.tar.xz' mariadb-10.3_10.3.39-0+deb10u1.debian.tar.xz 230756 SHA256:342c3969406ee6b4b9087e50d5c8b71b53a12eef195b9f797b4553a328c4e034
+```
 
-- http://snapshot.debian.org/package/mariadb-10.3/1:10.3.38-0+deb10u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/mariadb-10.3/1:10.3.39-0+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/mariadb-10.3/1:10.3.39-0+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/mariadb-10.3/1:10.3.39-0+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mawk=1.3.3-17`
 
@@ -8239,25 +8247,33 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openssh/1:7.9p1-10+deb10u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openssh/1:7.9p1-10+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openssl=1.1.1n-0+deb10u4`
+### `dpkg` source package: `openssl=1.1.1n-0+deb10u5`
 
 Binary Packages:
 
-- `libssl-dev:amd64=1.1.1n-0+deb10u4`
-- `libssl1.1:amd64=1.1.1n-0+deb10u4`
-- `openssl=1.1.1n-0+deb10u4`
+- `libssl-dev:amd64=1.1.1n-0+deb10u5`
+- `libssl1.1:amd64=1.1.1n-0+deb10u5`
+- `openssl=1.1.1n-0+deb10u5`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris openssl=1.1.1n-0+deb10u5
+'http://deb.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n-0%2bdeb10u5.dsc' openssl_1.1.1n-0+deb10u5.dsc 2649 SHA256:e3425b95ac7d834456045c3404067d494e8592ca74ee893bb5c603a124778668
+'http://deb.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n.orig.tar.gz' openssl_1.1.1n.orig.tar.gz 9850712 SHA256:40dceb51a4f6a5275bde0e6bf20ef4b91bfc32ed57c0552e2e8e15463372b17a
+'http://deb.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n.orig.tar.gz.asc' openssl_1.1.1n.orig.tar.gz.asc 488 SHA256:e0e89e9467102880ee6f2ee8c1413933eb1268969afb97b9bec61e2190a62fd0
+'http://deb.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n-0%2bdeb10u5.debian.tar.xz' openssl_1.1.1n-0+deb10u5.debian.tar.xz 141656 SHA256:3eea17893cc08d1c10abee2e99ec7b5d91aec0ac3d3367e7db8aab0e26fec771
+```
 
-- http://snapshot.debian.org/package/openssl/1.1.1n-0+deb10u4/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/openssl/1.1.1n-0+deb10u5/ (for browsing the source)
+- https://sources.debian.net/src/openssl/1.1.1n-0+deb10u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openssl/1.1.1n-0+deb10u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `opus=1.3-1`
 
@@ -9677,17 +9693,17 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/python-wsaccel/0.6.2-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/python-wsaccel/0.6.2-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `python2.7=2.7.16-2+deb10u1`
+### `dpkg` source package: `python2.7=2.7.16-2+deb10u2`
 
 Binary Packages:
 
-- `libpython2.7:amd64=2.7.16-2+deb10u1`
-- `libpython2.7-dev:amd64=2.7.16-2+deb10u1`
-- `libpython2.7-minimal:amd64=2.7.16-2+deb10u1`
-- `libpython2.7-stdlib:amd64=2.7.16-2+deb10u1`
-- `python2.7=2.7.16-2+deb10u1`
-- `python2.7-dev=2.7.16-2+deb10u1`
-- `python2.7-minimal=2.7.16-2+deb10u1`
+- `libpython2.7:amd64=2.7.16-2+deb10u2`
+- `libpython2.7-dev:amd64=2.7.16-2+deb10u2`
+- `libpython2.7-minimal:amd64=2.7.16-2+deb10u2`
+- `libpython2.7-stdlib:amd64=2.7.16-2+deb10u2`
+- `python2.7=2.7.16-2+deb10u2`
+- `python2.7-dev=2.7.16-2+deb10u2`
+- `python2.7-minimal=2.7.16-2+deb10u2`
 
 Licenses: (parsed from: `/usr/share/doc/libpython2.7/copyright`, `/usr/share/doc/libpython2.7-dev/copyright`, `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/share/doc/libpython2.7-stdlib/copyright`, `/usr/share/doc/python2.7/copyright`, `/usr/share/doc/python2.7-dev/copyright`, `/usr/share/doc/python2.7-minimal/copyright`)
 
@@ -9711,17 +9727,17 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7/copyright`, `/usr/share/doc
 Source:
 
 ```console
-$ apt-get source -qq --print-uris python2.7=2.7.16-2+deb10u1
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16-2%2bdeb10u1.dsc' python2.7_2.7.16-2+deb10u1.dsc 3362 SHA256:c976ba9e854cf611131aacb06f3ddca206b5c799871cb269dbef1ee629be6066
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16.orig.tar.gz' python2.7_2.7.16.orig.tar.gz 17431748 SHA256:01da813a3600876f03f46db11cc5c408175e99f03af2ba942ef324389a83bad5
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16-2%2bdeb10u1.diff.gz' python2.7_2.7.16-2+deb10u1.diff.gz 293706 SHA256:37150412430a010c1f0cd816ff1c2b0d90459ecc37c8aa5df5d68f698ececeed
+$ apt-get source -qq --print-uris python2.7=2.7.16-2+deb10u2
+'http://deb.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.16-2%2bdeb10u2.dsc' python2.7_2.7.16-2+deb10u2.dsc 3362 SHA256:ed151f77cef4975e2bfdc160bb74bcc77f22166df6a2203bc65c3e9b3b6f337c
+'http://deb.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.16.orig.tar.gz' python2.7_2.7.16.orig.tar.gz 17431748 SHA256:01da813a3600876f03f46db11cc5c408175e99f03af2ba942ef324389a83bad5
+'http://deb.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.16-2%2bdeb10u2.diff.gz' python2.7_2.7.16-2+deb10u2.diff.gz 312327 SHA256:731d6555fae2ab902cca90dfb555a4807ffde06314c1071c5921722dc8c1d0bc
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/python2.7/2.7.16-2+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/python2.7/2.7.16-2+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python2.7/2.7.16-2+deb10u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/python2.7/2.7.16-2+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/python2.7/2.7.16-2+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/python2.7/2.7.16-2+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3-catkin-pkg-modules=0.5.2-1`
 
