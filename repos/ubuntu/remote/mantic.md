@@ -1,7 +1,7 @@
 ## `ubuntu:mantic`
 
 ```console
-$ docker pull ubuntu@sha256:93c55b20cc3b34b0492ea90fe2fad93f1dfba56005bb56ba9bcc3f83d6495c16
+$ docker pull ubuntu@sha256:bd1e0eb3171a6e499c84211e73c4f5f5b2a585507256f772f5c4f4420a3d8591
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -151,33 +151,33 @@ CMD ["/bin/bash"]
 ### `ubuntu:mantic` - linux; s390x
 
 ```console
-$ docker pull ubuntu@sha256:b2c200b149a4e921a060610533f68a963a408bc84c577b8ba20b48a92d0f95fa
+$ docker pull ubuntu@sha256:441bef6aaac131b562992783cb31ac363fb5fa5592c928be1fc6ec01b45fb0e8
 ```
 
 -	Docker Version: 20.10.21
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **25.7 MB (25698480 bytes)**  
+-	Total Size: **25.8 MB (25750156 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4da1786faa70195e4008ab4d55834d2c10535f234b350eb74843b9a3f28d9739`
+-	Image ID: `sha256:deb4b1b351b9ab4eff7e955188cbe7a5b818325f441be917beee6a25cbf66783`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Sat, 20 May 2023 16:59:20 GMT
+# Wed, 07 Jun 2023 04:42:36 GMT
 ARG RELEASE
-# Sat, 20 May 2023 16:59:20 GMT
+# Wed, 07 Jun 2023 04:42:36 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Sat, 20 May 2023 16:59:20 GMT
+# Wed, 07 Jun 2023 04:42:36 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Sat, 20 May 2023 16:59:20 GMT
+# Wed, 07 Jun 2023 04:42:36 GMT
 LABEL org.opencontainers.image.version=23.10
-# Sat, 20 May 2023 16:59:22 GMT
-ADD file:fb602b3f6c251d8267de1cf0525d0b38aab5966c848182d037bb2890557f0a6e in / 
-# Sat, 20 May 2023 16:59:22 GMT
+# Wed, 07 Jun 2023 04:42:38 GMT
+ADD file:4e8ca8820de4a27d67ad223be645ce7a7a48289dfcbc01b4e1dbe3bc74ebbc56 in / 
+# Wed, 07 Jun 2023 04:42:38 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:dabe55d229048645c6b502641876395c6a479819d8566c06fa2d15b894e68605`  
-		Last Modified: Sat, 20 May 2023 17:08:47 GMT  
-		Size: 25.7 MB (25698480 bytes)  
+	-	`sha256:906d24b8296f0e80ba93ccd8c8a85183d978d41115e21f9aba3044ad0d38b45e`  
+		Last Modified: Wed, 07 Jun 2023 04:58:03 GMT  
+		Size: 25.8 MB (25750156 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
