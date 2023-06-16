@@ -1,17 +1,17 @@
-# `nginx:1.25.0-alpine-perl`
+# `nginx:1.25.1-alpine-perl`
 
 ## Docker Metadata
 
-- Image ID: `sha256:98808a2efacca29946766f5a1d4e150e4422e6f3e970237dc18083a552299d5b`
-- Created: `2023-05-24T22:44:30.856377713Z`
-- Virtual Size: ~ 76.87 Mb  
+- Image ID: `sha256:069eaad956e55f4d04260685b8b6d7a58d42efdb189829bd43f49d01abf361b8`
+- Created: `2023-06-15T00:20:32.937508356Z`
+- Virtual Size: ~ 76.85 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["nginx","-g","daemon off;"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NGINX_VERSION=1.25.0`
+  - `NGINX_VERSION=1.25.1`
   - `PKG_RELEASE=1`
   - `NJS_VERSION=0.7.12`
 - Labels:
@@ -175,16 +175,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `ca-certificates-bundle`
 
 ```console
-ca-certificates-bundle-20220614-r4 description:
+ca-certificates-bundle-20230506-r0 description:
 Pre generated bundle of Mozilla certificates
 
-ca-certificates-bundle-20220614-r4 webpage:
+ca-certificates-bundle-20230506-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-bundle-20220614-r4 installed size:
+ca-certificates-bundle-20230506-r0 installed size:
 232 KiB
 
-ca-certificates-bundle-20220614-r4 license:
+ca-certificates-bundle-20230506-r0 license:
 MPL-2.0 AND MIT
 
 ```
@@ -192,16 +192,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `curl`
 
 ```console
-curl-8.1.1-r0 description:
+curl-8.1.2-r0 description:
 URL retrival utility and library
 
-curl-8.1.1-r0 webpage:
+curl-8.1.2-r0 webpage:
 https://curl.se/
 
-curl-8.1.1-r0 installed size:
+curl-8.1.2-r0 installed size:
 268 KiB
 
-curl-8.1.1-r0 license:
+curl-8.1.2-r0 license:
 curl
 
 ```
@@ -328,16 +328,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.8-r3 description:
+libcrypto3-3.0.9-r1 description:
 Crypto library from openssl
 
-libcrypto3-3.0.8-r3 webpage:
+libcrypto3-3.0.9-r1 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.8-r3 installed size:
+libcrypto3-3.0.9-r1 installed size:
 4108 KiB
 
-libcrypto3-3.0.8-r3 license:
+libcrypto3-3.0.9-r1 license:
 Apache-2.0
 
 ```
@@ -345,16 +345,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.1.1-r0 description:
+libcurl-8.1.2-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.1.1-r0 webpage:
+libcurl-8.1.2-r0 webpage:
 https://curl.se/
 
-libcurl-8.1.1-r0 installed size:
-576 KiB
+libcurl-8.1.2-r0 installed size:
+572 KiB
 
-libcurl-8.1.1-r0 license:
+libcurl-8.1.2-r0 license:
 curl
 
 ```
@@ -566,16 +566,16 @@ MIT
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.8-r3 description:
+libssl3-3.0.9-r1 description:
 SSL shared libraries
 
-libssl3-3.0.8-r3 webpage:
+libssl3-3.0.9-r1 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.8-r3 installed size:
+libssl3-3.0.9-r1 installed size:
 608 KiB
 
-libssl3-3.0.8-r3 license:
+libssl3-3.0.9-r1 license:
 Apache-2.0
 
 ```
@@ -770,16 +770,16 @@ custom
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.3-r4 description:
+musl-1.2.3-r5 description:
 the musl c library (libc) implementation
 
-musl-1.2.3-r4 webpage:
+musl-1.2.3-r5 webpage:
 https://musl.libc.org/
 
-musl-1.2.3-r4 installed size:
+musl-1.2.3-r5 installed size:
 620 KiB
 
-musl-1.2.3-r4 license:
+musl-1.2.3-r5 license:
 MIT
 
 ```
@@ -787,16 +787,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.2.3-r4 description:
+musl-utils-1.2.3-r5 description:
 the musl c library (libc) implementation
 
-musl-utils-1.2.3-r4 webpage:
+musl-utils-1.2.3-r5 webpage:
 https://musl.libc.org/
 
-musl-utils-1.2.3-r4 installed size:
+musl-utils-1.2.3-r5 installed size:
 132 KiB
 
-musl-utils-1.2.3-r4 license:
+musl-utils-1.2.3-r5 license:
 MIT AND BSD-2-Clause AND GPL-2.0-or-later
 
 ```
@@ -804,16 +804,16 @@ MIT AND BSD-2-Clause AND GPL-2.0-or-later
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.3_p20221119-r0 description:
+ncurses-libs-6.3_p20221119-r1 description:
 Ncurses libraries
 
-ncurses-libs-6.3_p20221119-r0 webpage:
+ncurses-libs-6.3_p20221119-r1 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-libs-6.3_p20221119-r0 installed size:
+ncurses-libs-6.3_p20221119-r1 installed size:
 500 KiB
 
-ncurses-libs-6.3_p20221119-r0 license:
+ncurses-libs-6.3_p20221119-r1 license:
 MIT
 
 ```
@@ -821,16 +821,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.3_p20221119-r0 description:
+ncurses-terminfo-base-6.3_p20221119-r1 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.3_p20221119-r0 webpage:
+ncurses-terminfo-base-6.3_p20221119-r1 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-terminfo-base-6.3_p20221119-r0 installed size:
+ncurses-terminfo-base-6.3_p20221119-r1 installed size:
 216 KiB
 
-ncurses-terminfo-base-6.3_p20221119-r0 license:
+ncurses-terminfo-base-6.3_p20221119-r1 license:
 MIT
 
 ```
@@ -855,16 +855,16 @@ MIT
 ### `apk` package: `nginx`
 
 ```console
-nginx-1.25.0-r1 description:
+nginx-1.25.1-r1 description:
 High performance web server
 
-nginx-1.25.0-r1 webpage:
+nginx-1.25.1-r1 webpage:
 https://nginx.org/
 
-nginx-1.25.0-r1 installed size:
-2904 KiB
+nginx-1.25.1-r1 installed size:
+2888 KiB
 
-nginx-1.25.0-r1 license:
+nginx-1.25.1-r1 license:
 2-clause BSD-like license
 
 ```
@@ -872,16 +872,16 @@ nginx-1.25.0-r1 license:
 ### `apk` package: `nginx-module-geoip`
 
 ```console
-nginx-module-geoip-1.25.0-r1 description:
+nginx-module-geoip-1.25.1-r1 description:
 nginx GeoIP dynamic modules
 
-nginx-module-geoip-1.25.0-r1 webpage:
+nginx-module-geoip-1.25.1-r1 webpage:
 https://nginx.org/
 
-nginx-module-geoip-1.25.0-r1 installed size:
+nginx-module-geoip-1.25.1-r1 installed size:
 116 KiB
 
-nginx-module-geoip-1.25.0-r1 license:
+nginx-module-geoip-1.25.1-r1 license:
 2-clause BSD-like license
 
 ```
@@ -889,16 +889,16 @@ nginx-module-geoip-1.25.0-r1 license:
 ### `apk` package: `nginx-module-image-filter`
 
 ```console
-nginx-module-image-filter-1.25.0-r1 description:
+nginx-module-image-filter-1.25.1-r1 description:
 nginx image filter dynamic module
 
-nginx-module-image-filter-1.25.0-r1 webpage:
+nginx-module-image-filter-1.25.1-r1 webpage:
 https://nginx.org/
 
-nginx-module-image-filter-1.25.0-r1 installed size:
+nginx-module-image-filter-1.25.1-r1 installed size:
 88 KiB
 
-nginx-module-image-filter-1.25.0-r1 license:
+nginx-module-image-filter-1.25.1-r1 license:
 2-clause BSD-like license
 
 ```
@@ -906,16 +906,16 @@ nginx-module-image-filter-1.25.0-r1 license:
 ### `apk` package: `nginx-module-njs`
 
 ```console
-nginx-module-njs-1.25.0.0.7.12-r1 description:
+nginx-module-njs-1.25.1.0.7.12-r1 description:
 nginx njs dynamic modules
 
-nginx-module-njs-1.25.0.0.7.12-r1 webpage:
+nginx-module-njs-1.25.1.0.7.12-r1 webpage:
 https://nginx.org/
 
-nginx-module-njs-1.25.0.0.7.12-r1 installed size:
+nginx-module-njs-1.25.1.0.7.12-r1 installed size:
 4252 KiB
 
-nginx-module-njs-1.25.0.0.7.12-r1 license:
+nginx-module-njs-1.25.1.0.7.12-r1 license:
 2-clause BSD-like license
 
 ```
@@ -923,16 +923,16 @@ nginx-module-njs-1.25.0.0.7.12-r1 license:
 ### `apk` package: `nginx-module-perl`
 
 ```console
-nginx-module-perl-1.25.0-r1 description:
+nginx-module-perl-1.25.1-r1 description:
 nginx Perl dynamic module
 
-nginx-module-perl-1.25.0-r1 webpage:
+nginx-module-perl-1.25.1-r1 webpage:
 https://nginx.org/
 
-nginx-module-perl-1.25.0-r1 installed size:
+nginx-module-perl-1.25.1-r1 installed size:
 156 KiB
 
-nginx-module-perl-1.25.0-r1 license:
+nginx-module-perl-1.25.1-r1 license:
 2-clause BSD-like license
 
 ```
@@ -940,16 +940,16 @@ nginx-module-perl-1.25.0-r1 license:
 ### `apk` package: `nginx-module-xslt`
 
 ```console
-nginx-module-xslt-1.25.0-r1 description:
+nginx-module-xslt-1.25.1-r1 description:
 nginx xslt dynamic module
 
-nginx-module-xslt-1.25.0-r1 webpage:
+nginx-module-xslt-1.25.1-r1 webpage:
 https://nginx.org/
 
-nginx-module-xslt-1.25.0-r1 installed size:
+nginx-module-xslt-1.25.1-r1 installed size:
 84 KiB
 
-nginx-module-xslt-1.25.0-r1 license:
+nginx-module-xslt-1.25.1-r1 license:
 2-clause BSD-like license
 
 ```
