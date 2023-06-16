@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:856ab904a291d25ebca29e55e9515519a8c3946d6747756b53b5d69c4e377890`
-- Created: `2023-06-12T22:26:57.288863043Z`
-- Virtual Size: ~ 530.21 Mb  
+- Image ID: `sha256:573a5dbf2fdf44ab1b691dd23805a4bea05531fa53d6c3990f9322fc4437a906`
+- Created: `2023-06-14T09:57:01.348102199Z`
+- Virtual Size: ~ 530.22 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -776,15 +776,15 @@ $ dnf --quiet download --source --url nss-3.79.0-5.el7_9
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/nss-3.79.0-5.el7_9.src.rpm
 ```
 
-### `rpm` package: `nss-pem-1.0.3-7.el7.x86_64`
+### `rpm` package: `nss-pem-1.0.3-7.el7_9.1.x86_64`
 
 Licenses (from `rpm --query`): MPLv1.1
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url nss-pem-1.0.3-7.el7
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/nss-pem-1.0.3-7.el7.src.rpm
+$ dnf --quiet download --source --url nss-pem-1.0.3-7.el7_9.1
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/nss-pem-1.0.3-7.el7_9.1.src.rpm
 ```
 
 ### `rpm` package: `nss-softokn-3.79.0-4.0.1.el7_9.x86_64`
@@ -864,15 +864,15 @@ $ dnf --quiet download --source --url openssl-libs-1.0.2k-26.el7_9
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/openssl-1.0.2k-26.el7_9.src.rpm
 ```
 
-### `rpm` package: `oraclelinux-release-7.9-1.0.9.el7.x86_64`
+### `rpm` package: `oraclelinux-release-7.9-1.0.11.el7.x86_64`
 
 Licenses (from `rpm --query`): GPL
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url oraclelinux-release-7.9-1.0.9.el7
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/oraclelinux-release-7.9-1.0.9.el7.src.rpm
+$ dnf --quiet download --source --url oraclelinux-release-7.9-1.0.11.el7
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/oraclelinux-release-7.9-1.0.11.el7.src.rpm
 ```
 
 ### `rpm` package: `oraclelinux-release-el7-1.0-17.el7.x86_64`
@@ -974,15 +974,15 @@ $ dnf --quiet download --source --url pyliblzma-0.5.3-11.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/pyliblzma-0.5.3-11.el7.src.rpm
 ```
 
-### `rpm` package: `python-2.7.5-92.0.1.el7_9.x86_64`
+### `rpm` package: `python-2.7.5-93.0.1.el7_9.x86_64`
 
 Licenses (from `rpm --query`): Python
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url python-2.7.5-92.0.1.el7_9
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/python-2.7.5-92.0.1.el7_9.src.rpm
+$ dnf --quiet download --source --url python-2.7.5-93.0.1.el7_9
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/python-2.7.5-93.0.1.el7_9.src.rpm
 ```
 
 ### `rpm` package: `python-chardet-2.2.1-3.el7.noarch`
@@ -1018,15 +1018,15 @@ $ dnf --quiet download --source --url python-kitchen-1.1.1-5.el7.noarch
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/python-kitchen-1.1.1-5.el7.src.rpm
 ```
 
-### `rpm` package: `python-libs-2.7.5-92.0.1.el7_9.x86_64`
+### `rpm` package: `python-libs-2.7.5-93.0.1.el7_9.x86_64`
 
 Licenses (from `rpm --query`): Python
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url python-libs-2.7.5-92.0.1.el7_9
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/python-2.7.5-92.0.1.el7_9.src.rpm
+$ dnf --quiet download --source --url python-libs-2.7.5-93.0.1.el7_9
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/python-2.7.5-93.0.1.el7_9.src.rpm
 ```
 
 ### `rpm` package: `python-pycurl-7.19.0-19.el7.x86_64`
