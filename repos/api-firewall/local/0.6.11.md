@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7e38530f647b5d3ba25cba838b86300f8700f4a87f0c72c02945dc7bd5a8a0e3`
-- Created: `2023-03-29T19:33:27.629708437Z`
+- Image ID: `sha256:fde1cf559be6badf237436d453d610a668e5dda7462b15f06ddaac749eb14b49`
+- Created: `2023-06-15T05:33:13.688480163Z`
 - Virtual Size: ~ 20.30 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -121,16 +121,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates-bundle`
 
 ```console
-ca-certificates-bundle-20220614-r4 description:
+ca-certificates-bundle-20230506-r0 description:
 Pre generated bundle of Mozilla certificates
 
-ca-certificates-bundle-20220614-r4 webpage:
+ca-certificates-bundle-20230506-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-bundle-20220614-r4 installed size:
+ca-certificates-bundle-20230506-r0 installed size:
 232 KiB
 
-ca-certificates-bundle-20220614-r4 license:
+ca-certificates-bundle-20230506-r0 license:
 MPL-2.0 AND MIT
 
 ```
@@ -155,16 +155,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.8-r3 description:
+libcrypto3-3.0.9-r1 description:
 Crypto library from openssl
 
-libcrypto3-3.0.8-r3 webpage:
+libcrypto3-3.0.9-r1 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.8-r3 installed size:
+libcrypto3-3.0.9-r1 installed size:
 4108 KiB
 
-libcrypto3-3.0.8-r3 license:
+libcrypto3-3.0.9-r1 license:
 Apache-2.0
 
 ```
@@ -189,16 +189,16 @@ GPL-2.0-or-later AND LGPL-3.0-or-later
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.8-r3 description:
+libssl3-3.0.9-r1 description:
 SSL shared libraries
 
-libssl3-3.0.8-r3 webpage:
+libssl3-3.0.9-r1 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.8-r3 installed size:
+libssl3-3.0.9-r1 installed size:
 608 KiB
 
-libssl3-3.0.8-r3 license:
+libssl3-3.0.9-r1 license:
 Apache-2.0
 
 ```
@@ -223,16 +223,16 @@ GPL-2.0-or-later OR LGPL-3.0-or-later
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.3-r4 description:
+musl-1.2.3-r5 description:
 the musl c library (libc) implementation
 
-musl-1.2.3-r4 webpage:
+musl-1.2.3-r5 webpage:
 https://musl.libc.org/
 
-musl-1.2.3-r4 installed size:
+musl-1.2.3-r5 installed size:
 620 KiB
 
-musl-1.2.3-r4 license:
+musl-1.2.3-r5 license:
 MIT
 
 ```
@@ -240,16 +240,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.2.3-r4 description:
+musl-utils-1.2.3-r5 description:
 the musl c library (libc) implementation
 
-musl-utils-1.2.3-r4 webpage:
+musl-utils-1.2.3-r5 webpage:
 https://musl.libc.org/
 
-musl-utils-1.2.3-r4 installed size:
+musl-utils-1.2.3-r5 installed size:
 132 KiB
 
-musl-utils-1.2.3-r4 license:
+musl-utils-1.2.3-r5 license:
 MIT AND BSD-2-Clause AND GPL-2.0-or-later
 
 ```
@@ -308,16 +308,16 @@ GPL-2.0-only
 ### `apk` package: `wget`
 
 ```console
-wget-1.21.3-r2 description:
+wget-1.21.4-r0 description:
 Network utility to retrieve files from the Web
 
-wget-1.21.3-r2 webpage:
+wget-1.21.4-r0 webpage:
 https://www.gnu.org/software/wget/wget.html
 
-wget-1.21.3-r2 installed size:
+wget-1.21.4-r0 installed size:
 488 KiB
 
-wget-1.21.3-r2 license:
+wget-1.21.4-r0 license:
 GPL-3.0-or-later WITH OpenSSL-Exception
 
 ```
