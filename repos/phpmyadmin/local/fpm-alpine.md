@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:4388b343ff793bfc6e6c1f3759aa17832d1059c97ab1eaf8947f64e1dc1b5048`
-- Created: `2023-06-09T05:13:50.42473466Z`
-- Virtual Size: ~ 145.70 Mb  
+- Image ID: `sha256:d7860680e16d8c3157f7029ec75096a7b7a97dcbe86c7a650835dda7a7bc9131`
+- Created: `2023-06-15T08:13:13.712786563Z`
+- Virtual Size: ~ 139.70 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -95,16 +95,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.14.0-r0 description:
+apk-tools-2.14.0-r2 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.14.0-r0 webpage:
+apk-tools-2.14.0-r2 webpage:
 https://gitlab.alpinelinux.org/alpine/apk-tools
 
-apk-tools-2.14.0-r0 installed size:
+apk-tools-2.14.0-r2 installed size:
 304 KiB
 
-apk-tools-2.14.0-r0 license:
+apk-tools-2.14.0-r2 license:
 GPL-2.0-only
 
 ```
@@ -163,16 +163,16 @@ MIT
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.36.0-r9 description:
+busybox-1.36.1-r0 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.36.0-r9 webpage:
+busybox-1.36.1-r0 webpage:
 https://busybox.net/
 
-busybox-1.36.0-r9 installed size:
+busybox-1.36.1-r0 installed size:
 924 KiB
 
-busybox-1.36.0-r9 license:
+busybox-1.36.1-r0 license:
 GPL-2.0-only
 
 ```
@@ -180,16 +180,16 @@ GPL-2.0-only
 ### `apk` package: `busybox-binsh`
 
 ```console
-busybox-binsh-1.36.0-r9 description:
+busybox-binsh-1.36.1-r0 description:
 busybox ash /bin/sh
 
-busybox-binsh-1.36.0-r9 webpage:
+busybox-binsh-1.36.1-r0 webpage:
 https://busybox.net/
 
-busybox-binsh-1.36.0-r9 installed size:
+busybox-binsh-1.36.1-r0 installed size:
 8192 B
 
-busybox-binsh-1.36.0-r9 license:
+busybox-binsh-1.36.1-r0 license:
 GPL-2.0-only
 
 ```
@@ -435,16 +435,16 @@ GPL-2.0-or-later AND LGPL-3.0-or-later
 ### `apk` package: `libjpeg-turbo`
 
 ```console
-libjpeg-turbo-2.1.5.1-r2 description:
+libjpeg-turbo-2.1.5.1-r3 description:
 Accelerated baseline JPEG compression and decompression library
 
-libjpeg-turbo-2.1.5.1-r2 webpage:
+libjpeg-turbo-2.1.5.1-r3 webpage:
 https://libjpeg-turbo.org/
 
-libjpeg-turbo-2.1.5.1-r2 installed size:
+libjpeg-turbo-2.1.5.1-r3 installed size:
 1112 KiB
 
-libjpeg-turbo-2.1.5.1-r2 license:
+libjpeg-turbo-2.1.5.1-r3 license:
 BSD-3-Clause AND IJG AND Zlib
 
 ```
@@ -843,16 +843,16 @@ BSD-2-Clause
 ### `apk` package: `openssl`
 
 ```console
-openssl-3.1.0-r4 description:
+openssl-3.1.1-r1 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-3.1.0-r4 webpage:
+openssl-3.1.1-r1 webpage:
 https://www.openssl.org/
 
-openssl-3.1.0-r4 installed size:
+openssl-3.1.1-r1 installed size:
 748 KiB
 
-openssl-3.1.0-r4 license:
+openssl-3.1.1-r1 license:
 Apache-2.0
 
 ```
@@ -911,16 +911,16 @@ blessing
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.36.0-r9 description:
+ssl_client-1.36.1-r0 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.36.0-r9 webpage:
+ssl_client-1.36.1-r0 webpage:
 https://busybox.net/
 
-ssl_client-1.36.0-r9 installed size:
+ssl_client-1.36.1-r0 installed size:
 28 KiB
 
-ssl_client-1.36.0-r9 license:
+ssl_client-1.36.1-r0 license:
 GPL-2.0-only
 
 ```
