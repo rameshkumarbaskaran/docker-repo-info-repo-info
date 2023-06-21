@@ -1,9 +1,9 @@
-# `nats:2.9.18-scratch`
+# `nats:2.9.19-scratch`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5890e892d1ad969919c44edd59234aba90bed05efa593466e4febb8894ffcdd0`
-- Created: `2023-06-14T04:35:23.131013523Z`
+- Image ID: `sha256:0ca39502494bbde906154629d4c0a6e88389a16bf77d69e274587dd1dc8afa4c`
+- Created: `2023-06-21T00:17:35.427344651Z`
 - Virtual Size: ~ 12.91 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
