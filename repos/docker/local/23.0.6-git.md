@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:299f45b2d672625502e6a403277940394758778a72ba4b1aa07b9d2e23892607`
+- Image ID: `sha256:65c599ef78968f4bc778b81c0db66f158c3101ca893c41569cfbe3518b0ad331`
 - Created: `2023-05-16T17:59:38Z`
-- Virtual Size: ~ 333.78 Mb  
+- Virtual Size: ~ 339.67 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_VERSION=23.0.6`
   - `DOCKER_BUILDX_VERSION=0.11.0`
-  - `DOCKER_COMPOSE_VERSION=2.18.1`
+  - `DOCKER_COMPOSE_VERSION=2.19.0`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=d58df1fc6c866447ce2cd129af10e5b507705624`
 
@@ -106,16 +106,16 @@ MIT
 ### `apk` package: `btrfs-progs`
 
 ```console
-btrfs-progs-6.3.1-r0 description:
+btrfs-progs-6.3.2-r0 description:
 BTRFS filesystem utilities
 
-btrfs-progs-6.3.1-r0 webpage:
+btrfs-progs-6.3.2-r0 webpage:
 https://btrfs.wiki.kernel.org
 
-btrfs-progs-6.3.1-r0 installed size:
+btrfs-progs-6.3.2-r0 installed size:
 1508 KiB
 
-btrfs-progs-6.3.1-r0 license:
+btrfs-progs-6.3.2-r0 license:
 GPL-2.0-or-later
 
 ```
