@@ -82,20 +82,13 @@ Licenses: (parsed from: `/usr/share/doc/libaom3/copyright`)
 - `ISC`
 - `public-domain-md5`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris aom=3.6.0-1
-'http://deb.debian.org/debian/pool/main/a/aom/aom_3.6.0-1.dsc' aom_3.6.0-1.dsc 2207 SHA256:0c3821ac951332661da78d59e81fa8e79decc7af5ba4f894e5370bf95cf46ea3
-'http://deb.debian.org/debian/pool/main/a/aom/aom_3.6.0.orig.tar.gz' aom_3.6.0.orig.tar.gz 5268170 SHA256:2ba213822cb1528b5558d6727125654e14d1b2d7505bd1fc8afa36c2e9e9f94a
-'http://deb.debian.org/debian/pool/main/a/aom/aom_3.6.0-1.debian.tar.xz' aom_3.6.0-1.debian.tar.xz 18348 SHA256:408cc4438867e7d082fb93b08c54164d3c097cca9b19e2d5eb48246b4d058ba0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/aom/3.6.0-1/
 
-- https://sources.debian.net/src/aom/3.6.0-1/ (for browsing the source)
-- https://sources.debian.net/src/aom/3.6.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/aom/3.6.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `apr-util=1.6.3-1`
 
@@ -2496,20 +2489,13 @@ Licenses: (parsed from: `/usr/share/doc/libde265-0/copyright`)
 - `other-1`
 - `public-domain-1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libde265=1.0.11-1
-'http://deb.debian.org/debian/pool/main/libd/libde265/libde265_1.0.11-1.dsc' libde265_1.0.11-1.dsc 2190 SHA256:a54839bcd8ae39957d66900216bf46d1a9be06dd3a7899a3b92db93020520d75
-'http://deb.debian.org/debian/pool/main/libd/libde265/libde265_1.0.11.orig.tar.gz' libde265_1.0.11.orig.tar.gz 845996 SHA256:2f8f12cabbdb15e53532b7c1eb964d4e15d444db1be802505e6ac97a25035bab
-'http://deb.debian.org/debian/pool/main/libd/libde265/libde265_1.0.11-1.debian.tar.xz' libde265_1.0.11-1.debian.tar.xz 13820 SHA256:3c94de5e293205f96b9df240b37e25594cfeef05733f41eb0c3c0feb0c32f349
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libde265/1.0.11-1/
 
-- https://sources.debian.net/src/libde265/1.0.11-1/ (for browsing the source)
-- https://sources.debian.net/src/libde265/1.0.11-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libde265/1.0.11-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libdeflate=1.14-1`
 
@@ -5494,20 +5480,13 @@ Licenses: (parsed from: `/usr/share/doc/libtiff-dev/copyright`, `/usr/share/doc/
 
 - `Hylafax`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.5.1~rc3-1
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.5.1%7erc3-1.dsc' tiff_4.5.1~rc3-1.dsc 2283 SHA256:c9f5ab085dacbd5e2d90236db420428906c33a6e79681484a553b37ed3c3ceaa
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.5.1%7erc3.orig.tar.bz2' tiff_4.5.1~rc3.orig.tar.bz2 2059965 SHA256:dee24a6f0d4ff10ddc8afe16e731bb622bbdec4ce64d9e01f6515df0a7aabe50
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.5.1%7erc3-1.debian.tar.xz' tiff_4.5.1~rc3-1.debian.tar.xz 21800 SHA256:39bb39d826e401a6b40ef22388dbc023eda5ba417ce6781d716292532c2117c2
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tiff/4.5.1~rc3-1/
 
-- https://sources.debian.net/src/tiff/4.5.1~rc3-1/ (for browsing the source)
-- https://sources.debian.net/src/tiff/4.5.1~rc3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tiff/4.5.1~rc3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tzdata=2023c-5`
 

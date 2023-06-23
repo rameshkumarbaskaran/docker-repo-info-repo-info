@@ -2013,14 +2013,13 @@ Licenses: (parsed from: `/usr/share/doc/libde265-0/copyright`)
 - `other-1`
 - `public-domain-1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libde265=1.0.11-1
-'http://archive.ubuntu.com/ubuntu/pool/universe/libd/libde265/libde265_1.0.11-1.dsc' libde265_1.0.11-1.dsc 2190 SHA512:6858cd87e0da7cb8300b7afb2e525d0a712c5a54bf5500fc5058c66a625e27e9102d659ffc3e39d6c1895787dd1cb96c03fc5b9e9d8b766cc3106c77bd0a1ebb
-'http://archive.ubuntu.com/ubuntu/pool/universe/libd/libde265/libde265_1.0.11.orig.tar.gz' libde265_1.0.11.orig.tar.gz 845996 SHA512:2ce28558c66e20714c07bf3011bc10dccabb770649903616bc32f1c4f18beba559ef7e0e42365ead77d7e813316b8c051039dc393cd351221cbab7248b3fa34c
-'http://archive.ubuntu.com/ubuntu/pool/universe/libd/libde265/libde265_1.0.11-1.debian.tar.xz' libde265_1.0.11-1.debian.tar.xz 13820 SHA512:e3dfa5814398567db9f9b28122d2f7e30c711d98f31c226af5d553f23780f3459adb48377cf1e16cc0f93882bb81586c953909c871ca6bcc520b5ffc6ffb4730
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libde265/1.0.11-1/
+
 
 ### `dpkg` source package: `libdeflate=1.15-1`
 
@@ -3167,14 +3166,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=6.2.0-21.21
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_6.2.0-21.21.dsc' linux_6.2.0-21.21.dsc 8226 SHA512:6eea970f0a87bc7b9cf65ebcb0922de8e8e7830ab05c62b58a87fde0a98689a73237e374559e5a6640a92c8eec3a7d8da31303c9ef9f9611dac404390112d9f8
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_6.2.0.orig.tar.gz' linux_6.2.0.orig.tar.gz 218562620 SHA512:b26c4524f2d7a162b6b65f8ade9c6484d27ebfc0ffab52f7b569a71b704d56a3d1cf2e281c72fc9be72349a8eeaf610a05f91cf534130109781031a227b21377
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_6.2.0-21.21.diff.gz' linux_6.2.0-21.21.diff.gz 4192303 SHA512:13d30f561f0fb1fa37176c455dfd38c45db979b3df809105c91075d0f7c361b0613c3a4b55e975bac428cafd8d4d742ef9a578191189789f72beb14ae91c4197
-```
 
 ### `dpkg` source package: `lto-disabled-list=41`
 
