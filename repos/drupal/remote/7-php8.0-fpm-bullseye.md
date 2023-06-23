@@ -1,7 +1,7 @@
 ## `drupal:7-php8.0-fpm-bullseye`
 
 ```console
-$ docker pull drupal@sha256:c27a505fde9ca104dfed35370988fad4322f67cd9c5f99d7012fb092d8971026
+$ docker pull drupal@sha256:d6d0a447f797298fc63c2f0b7b5eba7e2dd8f9a256e100f1b602b624c48ae091
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18,14 +18,14 @@ $ docker pull drupal@sha256:c27a505fde9ca104dfed35370988fad4322f67cd9c5f99d7012f
 ### `drupal:7-php8.0-fpm-bullseye` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:df3166454ed1a619f4cf3e05a5177836bdd813e518a86c6a44b71425a15063a3
+$ docker pull drupal@sha256:6beb8290b704424ca5c7455ca8c62fe33e1272b0b5c78e270e60020b922a6b71
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **165.8 MB (165836256 bytes)**  
+-	Total Size: **165.8 MB (165836287 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d6f147ff1c8cdb81c4e6921c71a974658cf6eb053264c28125a1544e4c005ba0`
+-	Image ID: `sha256:23f149c1a5c9473d80f5c6294ca1aa60e8ff3e4707718e7e1e208ed404a8bee9`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
@@ -80,15 +80,15 @@ STOPSIGNAL SIGQUIT
 EXPOSE 9000
 # Wed, 14 Jun 2023 06:30:05 GMT
 CMD ["php-fpm"]
-# Wed, 14 Jun 2023 07:44:27 GMT
-RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libwebp-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg=/usr 		--with-webp 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Wed, 14 Jun 2023 07:44:28 GMT
+# Thu, 22 Jun 2023 23:34:38 GMT
+RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libwebp-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg=/usr 		--with-webp 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
+# Thu, 22 Jun 2023 23:34:39 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 14 Jun 2023 07:48:49 GMT
+# Thu, 22 Jun 2023 23:42:20 GMT
 ENV DRUPAL_VERSION=7.98
-# Wed, 14 Jun 2023 07:48:50 GMT
+# Thu, 22 Jun 2023 23:42:20 GMT
 ENV DRUPAL_MD5=4139f0feecb44a53645242194809b73a
-# Wed, 14 Jun 2023 07:48:51 GMT
+# Thu, 22 Jun 2023 23:42:21 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
@@ -133,30 +133,30 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 		Last Modified: Wed, 14 Jun 2023 06:56:43 GMT  
 		Size: 8.7 KB (8717 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f12293dd622f3b72cdeaf2b5845526c33998a6119798dc3fcbfbc9b7ca8f64ee`  
-		Last Modified: Wed, 14 Jun 2023 07:55:47 GMT  
-		Size: 2.3 MB (2267656 bytes)  
+	-	`sha256:113f02fa5974ef186324f7d2a1a5eef94a8ec6736abdc0f61bc094d44d066ace`  
+		Last Modified: Thu, 22 Jun 2023 23:54:52 GMT  
+		Size: 2.3 MB (2267683 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:117b48850c5d26ff03504406ba10c410fb6ff93c16cf337ab0c2f2f8006a5fd4`  
-		Last Modified: Wed, 14 Jun 2023 07:55:46 GMT  
-		Size: 314.0 B  
+	-	`sha256:c01e0560234a49dbe11315cf06ab7122e8d25a8223f5ee84d4089f7d96b6679c`  
+		Last Modified: Thu, 22 Jun 2023 23:54:52 GMT  
+		Size: 316.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:db1c6a4eabd07786486956265a6b982f262a88c29052fa5f371979306137ccc3`  
-		Last Modified: Wed, 14 Jun 2023 07:59:33 GMT  
-		Size: 3.4 MB (3410779 bytes)  
+	-	`sha256:e25d6d41135ca035d3148aa17c3268483d63c838ef8612d3bc2083db49806cb8`  
+		Last Modified: Fri, 23 Jun 2023 00:03:42 GMT  
+		Size: 3.4 MB (3410781 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:7-php8.0-fpm-bullseye` - linux; arm variant v5
 
 ```console
-$ docker pull drupal@sha256:7b45aeb218800b82545a2eeba6486eddb6898e0528b438afafa1659518d1589d
+$ docker pull drupal@sha256:18febc01bd8f046d5604a35cc2e7f710a465aa3cdd8b546271232795821163b7
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **143.5 MB (143470023 bytes)**  
+-	Total Size: **143.5 MB (143470028 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:25855641980ecd5f391db00b7ef8f1ee8275b71487a5a1068e5f33dba00345a0`
+-	Image ID: `sha256:f21a0a2f049a3056165801f927fc206c8def46f95a7e8866460ed1ee2e0c3859`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
@@ -211,15 +211,15 @@ STOPSIGNAL SIGQUIT
 EXPOSE 9000
 # Tue, 13 Jun 2023 23:43:12 GMT
 CMD ["php-fpm"]
-# Wed, 14 Jun 2023 02:05:12 GMT
-RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libwebp-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg=/usr 		--with-webp 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Wed, 14 Jun 2023 02:05:13 GMT
+# Thu, 22 Jun 2023 23:55:26 GMT
+RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libwebp-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg=/usr 		--with-webp 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
+# Thu, 22 Jun 2023 23:55:26 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 14 Jun 2023 02:05:13 GMT
+# Thu, 22 Jun 2023 23:55:26 GMT
 ENV DRUPAL_VERSION=7.98
-# Wed, 14 Jun 2023 02:05:13 GMT
+# Thu, 22 Jun 2023 23:55:26 GMT
 ENV DRUPAL_MD5=4139f0feecb44a53645242194809b73a
-# Wed, 14 Jun 2023 02:05:14 GMT
+# Thu, 22 Jun 2023 23:55:28 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
@@ -264,30 +264,30 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 		Last Modified: Tue, 13 Jun 2023 23:57:50 GMT  
 		Size: 8.7 KB (8716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:542ee7ec7cecb6093f9abe5259b69f1c995579f197eada53b052f054861a5c76`  
-		Last Modified: Wed, 14 Jun 2023 02:06:13 GMT  
-		Size: 1.8 MB (1770777 bytes)  
+	-	`sha256:c963c50ca7ced81a393b5276f51d2967103019c3efea3dafe6bbc3cd7ad1642f`  
+		Last Modified: Thu, 22 Jun 2023 23:58:15 GMT  
+		Size: 1.8 MB (1770782 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:919004091f0cfdc66a14148e822682eefbad6a50bb75bb68a3e469c6e8940a92`  
-		Last Modified: Wed, 14 Jun 2023 02:06:12 GMT  
+	-	`sha256:52ba72bc92f7315e0450792dbaf487d6d13c70b9367a3dfade69ad3a3b51e405`  
+		Last Modified: Thu, 22 Jun 2023 23:58:15 GMT  
 		Size: 316.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fbc1f19d767e2847a32ba8ae6d5f5a92fe8752990070484ece5d5d9bb85fce9b`  
-		Last Modified: Wed, 14 Jun 2023 02:06:13 GMT  
+	-	`sha256:831f25bcf8df2ece04d72dc7b19d739c22bb793a0e227b48ad3b6e6f87081bc7`  
+		Last Modified: Thu, 22 Jun 2023 23:58:16 GMT  
 		Size: 3.4 MB (3410779 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:7-php8.0-fpm-bullseye` - linux; arm variant v7
 
 ```console
-$ docker pull drupal@sha256:3a75d89a3510d91d603d1beba4e2a36e590b3ad71e597b28f2a9f8c9a5fb980d
+$ docker pull drupal@sha256:6acbeadf13e6960c28aeb47cb3e2fea6d6d1bbb8730a7568ec443de2c01a08f9
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **135.8 MB (135838597 bytes)**  
+-	Total Size: **135.8 MB (135838609 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:de62770f506bd769597dc4eb8bd5eb07d59d8d3883a70bc5ce10749aa555803f`
+-	Image ID: `sha256:119b76fe172c8c141eebc268fd4e3f0d61f95c4d5b929fdd90aedaabc32c1d8a`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
@@ -342,15 +342,15 @@ STOPSIGNAL SIGQUIT
 EXPOSE 9000
 # Wed, 14 Jun 2023 06:23:27 GMT
 CMD ["php-fpm"]
-# Wed, 14 Jun 2023 08:16:54 GMT
-RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libwebp-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg=/usr 		--with-webp 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Wed, 14 Jun 2023 08:16:54 GMT
+# Thu, 22 Jun 2023 23:08:27 GMT
+RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libwebp-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg=/usr 		--with-webp 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
+# Thu, 22 Jun 2023 23:08:28 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 14 Jun 2023 08:22:23 GMT
+# Thu, 22 Jun 2023 23:16:45 GMT
 ENV DRUPAL_VERSION=7.98
-# Wed, 14 Jun 2023 08:22:23 GMT
+# Thu, 22 Jun 2023 23:16:45 GMT
 ENV DRUPAL_MD5=4139f0feecb44a53645242194809b73a
-# Wed, 14 Jun 2023 08:22:24 GMT
+# Thu, 22 Jun 2023 23:16:46 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
@@ -395,17 +395,17 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 		Last Modified: Wed, 14 Jun 2023 06:47:39 GMT  
 		Size: 8.7 KB (8719 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a4994b62ce292ddaa1bc112ad005ef99ea250db4730890850869fdb79827c67`  
-		Last Modified: Wed, 14 Jun 2023 08:29:23 GMT  
-		Size: 1.6 MB (1640477 bytes)  
+	-	`sha256:5953b51ddc7c0fdf26b6af0a48f3de2b5c0e2d49dc370c402c0448d7e2f3c8d4`  
+		Last Modified: Thu, 22 Jun 2023 23:31:54 GMT  
+		Size: 1.6 MB (1640488 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25eda10d1678ca23671974f97e6661c4649a7fd71bb6edcf7c89e6ded6d11343`  
-		Last Modified: Wed, 14 Jun 2023 08:29:23 GMT  
+	-	`sha256:538c6196747347d429a3793ca899fed4b44d5e1f69c51f9a17b9c819e2af364b`  
+		Last Modified: Thu, 22 Jun 2023 23:31:54 GMT  
 		Size: 315.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1c5b0f87118cf49dda231c746750d7efce0c8048262f85a846105018264865d`  
-		Last Modified: Wed, 14 Jun 2023 08:33:19 GMT  
-		Size: 3.4 MB (3410781 bytes)  
+	-	`sha256:d1a7c0379906234ccc98aed70509e3cdf7c254dd2ccf08df67ded0e166de7e0c`  
+		Last Modified: Thu, 22 Jun 2023 23:40:22 GMT  
+		Size: 3.4 MB (3410782 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:7-php8.0-fpm-bullseye` - linux; arm64 variant v8
@@ -673,14 +673,14 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ### `drupal:7-php8.0-fpm-bullseye` - linux; mips64le
 
 ```console
-$ docker pull drupal@sha256:70956a58d782815ebb39659717c18cb6429e94e64c82683fc1fd1636f1d9ea1e
+$ docker pull drupal@sha256:5430c3296ed4fa036ceb866541c4de7d182701aed5a9292c522a9065c5293600
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **142.4 MB (142402868 bytes)**  
+-	Total Size: **142.4 MB (142402878 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:784b7a7d563e82a3280b9e97a39fda259fc0b8d78d3c89c8b8914cdd286a73cb`
+-	Image ID: `sha256:20ab1884f54c19c2dc8fdfb8c87eda08343e7accf5911f5415badfc9bac7303f`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
@@ -735,15 +735,15 @@ STOPSIGNAL SIGQUIT
 EXPOSE 9000
 # Wed, 14 Jun 2023 05:39:38 GMT
 CMD ["php-fpm"]
-# Wed, 14 Jun 2023 07:59:45 GMT
-RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libwebp-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg=/usr 		--with-webp 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Wed, 14 Jun 2023 07:59:51 GMT
+# Thu, 22 Jun 2023 23:36:40 GMT
+RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libwebp-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg=/usr 		--with-webp 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
+# Thu, 22 Jun 2023 23:36:46 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 14 Jun 2023 07:59:55 GMT
+# Thu, 22 Jun 2023 23:36:49 GMT
 ENV DRUPAL_VERSION=7.98
-# Wed, 14 Jun 2023 07:59:58 GMT
+# Thu, 22 Jun 2023 23:36:52 GMT
 ENV DRUPAL_MD5=4139f0feecb44a53645242194809b73a
-# Wed, 14 Jun 2023 08:00:07 GMT
+# Thu, 22 Jun 2023 23:37:01 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
@@ -788,17 +788,17 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 		Last Modified: Wed, 14 Jun 2023 06:11:30 GMT  
 		Size: 8.7 KB (8720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:962c8e2b0950ac03838c1d37d9e93f73b296f612f75b488c2a93b20ff20ab7aa`  
-		Last Modified: Wed, 14 Jun 2023 08:01:40 GMT  
-		Size: 1.7 MB (1665683 bytes)  
+	-	`sha256:a9a273d20eeb23018481e9d43e9d5f33c75537f06877cc4e7ca9b1a2e87ac62f`  
+		Last Modified: Thu, 22 Jun 2023 23:40:40 GMT  
+		Size: 1.7 MB (1665681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5fbfb9728dd48420e653de56c75fb73b77c1b8b2eb2932948c91ceb80864ec22`  
-		Last Modified: Wed, 14 Jun 2023 08:01:38 GMT  
-		Size: 315.0 B  
+	-	`sha256:6d3f063a093cd16e2c085af78b485a0a58e6cacd8d3779a7bf14767f7574962d`  
+		Last Modified: Thu, 22 Jun 2023 23:40:38 GMT  
+		Size: 316.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:70fbd5bb0407c91de2af188dbbcf70f541298400e1b5bd753305a325d0bd1092`  
-		Last Modified: Wed, 14 Jun 2023 08:01:42 GMT  
-		Size: 3.4 MB (3410415 bytes)  
+	-	`sha256:35b5fc4b3c95308f6a2b69dc42eeff0dc0c22229581113389eca8a960f4aac82`  
+		Last Modified: Thu, 22 Jun 2023 23:40:42 GMT  
+		Size: 3.4 MB (3410426 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:7-php8.0-fpm-bullseye` - linux; ppc64le
