@@ -1,7 +1,7 @@
 ## `ros:foxy-ros-base-focal`
 
 ```console
-$ docker pull ros@sha256:e831548b8afc7ed345a1234196c07859ef8e0658c108f9a636aeab7f1940eeb2
+$ docker pull ros@sha256:76c5e4eed92c4db513c9894de98fe119980b85bd9490cefb80cd0cdba9791ae9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull ros@sha256:e831548b8afc7ed345a1234196c07859ef8e0658c108f9a636aeab7
 ### `ros:foxy-ros-base-focal` - linux; amd64
 
 ```console
-$ docker pull ros@sha256:09edbc23d95bb24b6d32b963ab231915dc5f53ebbe1a485ed80c3cc65ea30eb0
+$ docker pull ros@sha256:07284f6fda4137bcf00d11a15f884c92b69b8b13b11eed51861a36f90265ffd5
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **251.2 MB (251192581 bytes)**  
+-	Total Size: **251.2 MB (251213327 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3015a604ff49c3abae5860bb6178f04b00a5eb77f9e1cdd750eb71dc025aea1e`
+-	Image ID: `sha256:c1ad770f562e60103fd507d5753a007592cfb4152eefc67647992f9b74d73c98`
 -	Entrypoint: `["\/ros_entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -40,31 +40,31 @@ CMD ["/bin/bash"]
 RUN echo 'Etc/UTC' > /etc/timezone &&     ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime &&     apt-get update &&     apt-get install -q -y --no-install-recommends tzdata &&     rm -rf /var/lib/apt/lists/*
 # Fri, 16 Jun 2023 03:30:03 GMT
 RUN apt-get update && apt-get install -q -y --no-install-recommends     dirmngr     gnupg2     && rm -rf /var/lib/apt/lists/*
-# Fri, 16 Jun 2023 03:38:43 GMT
-RUN echo "deb http://packages.ros.org/ros2/ubuntu focal main" > /etc/apt/sources.list.d/ros2-latest.list
-# Fri, 16 Jun 2023 03:38:44 GMT
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-# Fri, 16 Jun 2023 03:38:44 GMT
+# Tue, 27 Jun 2023 01:29:26 GMT
+RUN echo "deb http://snapshots.ros.org/foxy/final/ubuntu focal main" > /etc/apt/sources.list.d/ros2-snapshots.list
+# Tue, 27 Jun 2023 01:29:27 GMT
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 4B63CF8FDE49746E98FA01DDAD19BAB3CBF125EA
+# Tue, 27 Jun 2023 01:29:28 GMT
 ENV LANG=C.UTF-8
-# Fri, 16 Jun 2023 03:38:44 GMT
+# Tue, 27 Jun 2023 01:29:28 GMT
 ENV LC_ALL=C.UTF-8
-# Fri, 16 Jun 2023 03:38:44 GMT
+# Tue, 27 Jun 2023 01:29:28 GMT
 ENV ROS_DISTRO=foxy
-# Fri, 16 Jun 2023 03:39:42 GMT
+# Tue, 27 Jun 2023 01:31:32 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends     ros-foxy-ros-core=0.9.2-1*     && rm -rf /var/lib/apt/lists/*
-# Fri, 16 Jun 2023 03:39:44 GMT
+# Tue, 27 Jun 2023 01:31:34 GMT
 COPY file:ec5b16a0e777d7d7d041a72ffc817bf5f7b375662afa0c404f3ca36fad1afb90 in / 
-# Fri, 16 Jun 2023 03:39:44 GMT
+# Tue, 27 Jun 2023 01:31:34 GMT
 ENTRYPOINT ["/ros_entrypoint.sh"]
-# Fri, 16 Jun 2023 03:39:44 GMT
+# Tue, 27 Jun 2023 01:31:34 GMT
 CMD ["bash"]
-# Fri, 16 Jun 2023 03:40:12 GMT
+# Tue, 27 Jun 2023 01:32:38 GMT
 RUN apt-get update && apt-get install --no-install-recommends -y     build-essential     git     python3-colcon-common-extensions     python3-colcon-mixin     python3-rosdep     python3-vcstool     && rm -rf /var/lib/apt/lists/*
-# Fri, 16 Jun 2023 03:40:17 GMT
+# Tue, 27 Jun 2023 01:32:43 GMT
 RUN rosdep init &&   rosdep update --rosdistro $ROS_DISTRO
-# Fri, 16 Jun 2023 03:40:22 GMT
+# Tue, 27 Jun 2023 01:32:48 GMT
 RUN colcon mixin add default       https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml &&     colcon mixin update &&     colcon metadata add default       https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml &&     colcon metadata update
-# Fri, 16 Jun 2023 03:40:37 GMT
+# Tue, 27 Jun 2023 01:33:35 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends     ros-foxy-ros-base=0.9.2-1*     && rm -rf /var/lib/apt/lists/*
 ```
 
@@ -81,37 +81,37 @@ RUN apt-get update && apt-get install -y --no-install-recommends     ros-foxy-ro
 		Last Modified: Fri, 16 Jun 2023 03:59:52 GMT  
 		Size: 5.6 MB (5553799 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be3eff5a20cb49beeb08300ad92aa92769ff55b41f28ffa912b7629fc9508a40`  
-		Last Modified: Fri, 16 Jun 2023 04:02:22 GMT  
-		Size: 231.0 B  
+	-	`sha256:c74a3b07252b944b4ea5463c9fdd65f55bd7b46d44ca3316395ba9bf84c0a427`  
+		Last Modified: Tue, 27 Jun 2023 01:38:49 GMT  
+		Size: 236.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:654c3018234b0bd67a2e90bcf0f12b25a7181a9e32ea10b02709553e0adbb4b0`  
-		Last Modified: Fri, 16 Jun 2023 04:02:22 GMT  
-		Size: 2.0 KB (1990 bytes)  
+	-	`sha256:20eb6b1e59f8d211aded68a06cfa5675f43f3fd0db8c28eca135aa6150228079`  
+		Last Modified: Tue, 27 Jun 2023 01:38:49 GMT  
+		Size: 3.2 KB (3217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c4bcc91e8004fdeae5d2bab3940341e63b96c2766ef5f2f45d6a7b5ffe821366`  
-		Last Modified: Fri, 16 Jun 2023 04:02:40 GMT  
-		Size: 120.4 MB (120399883 bytes)  
+	-	`sha256:a3d888ae97575093a5fa68bf21033f4f40fcba809edb8d0be31d93adf559a990`  
+		Last Modified: Tue, 27 Jun 2023 01:39:08 GMT  
+		Size: 120.4 MB (120424933 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:744aeb09540670851e8f96bcacb101e8090a2534fbd1bb18eb684a89d58fc91d`  
-		Last Modified: Fri, 16 Jun 2023 04:02:22 GMT  
-		Size: 196.0 B  
+	-	`sha256:17a47a9caf44acbe4edf6fd3f71ae01efc21add261266da6cc6f5e2f520428c3`  
+		Last Modified: Tue, 27 Jun 2023 01:38:49 GMT  
+		Size: 198.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:182ad8f3506144a52c5952ed7d4be11cd8822f3ae42f6afb94ba566cdc6d52a8`  
-		Last Modified: Fri, 16 Jun 2023 04:03:00 GMT  
-		Size: 73.5 MB (73508184 bytes)  
+	-	`sha256:7a7e8c04c766471734e7b28ed1b76ecc23cb788e674764853e0ee71244ce7b52`  
+		Last Modified: Tue, 27 Jun 2023 01:39:27 GMT  
+		Size: 73.5 MB (73507288 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce78a2bf00b16f0e8daf34d88fe85a54eab1a2821f5514eea122ce7bf1da2cbd`  
-		Last Modified: Fri, 16 Jun 2023 04:02:50 GMT  
-		Size: 264.4 KB (264358 bytes)  
+	-	`sha256:bae845ad132a5dfb24be6ecd01d9223d39adf2c844effaccad994dd0e6370168`  
+		Last Modified: Tue, 27 Jun 2023 01:39:17 GMT  
+		Size: 264.9 KB (264879 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f1a6aa18dfe5594b8571bdc1b66f3e981ec81f1ab084ffa08ce041987d10a31c`  
-		Last Modified: Fri, 16 Jun 2023 04:02:50 GMT  
-		Size: 2.5 KB (2458 bytes)  
+	-	`sha256:459004dc4722ae66298bcfed7d63d39426386f62cfd25fad5d68bd1574ffe157`  
+		Last Modified: Tue, 27 Jun 2023 01:39:17 GMT  
+		Size: 2.4 KB (2431 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39897cab3d6cf7dc6fa6da86db99df7cc33048644cb1671b7258c48b1bfb353f`  
-		Last Modified: Fri, 16 Jun 2023 04:02:53 GMT  
-		Size: 21.7 MB (21682241 bytes)  
+	-	`sha256:6bcaec1daf5e724808e7de45067614a1f6262ae1896aefc0f3c2a1c30bd1c00e`  
+		Last Modified: Tue, 27 Jun 2023 01:39:20 GMT  
+		Size: 21.7 MB (21677105 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `ros:foxy-ros-base-focal` - linux; arm64 variant v8
