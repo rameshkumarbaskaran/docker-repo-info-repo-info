@@ -1,10 +1,10 @@
-# `groovy:4.0.12-jdk11`
+# `groovy:4.0.13-jdk11`
 
 ## Docker Metadata
 
-- Image ID: `sha256:8dc3cb0823da784c5529aa44b6b924b521d355963ce4b0e8e4c0cced171859eb`
-- Created: `2023-06-16T07:02:47.508225067Z`
-- Virtual Size: ~ 489.69 Mb  
+- Image ID: `sha256:59b8178fd58777e8b409c139b295379ce8d2297bce21a4e30edbbd58eae64976`
+- Created: `2023-06-30T23:28:46.572452772Z`
+- Virtual Size: ~ 489.58 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["groovysh"]`
@@ -16,7 +16,7 @@
   - `LC_ALL=en_US.UTF-8`
   - `JAVA_VERSION=jdk-11.0.19+7`
   - `GROOVY_HOME=/opt/groovy`
-  - `GROOVY_VERSION=4.0.12`
+  - `GROOVY_VERSION=4.0.13`
 - Labels:
   - `org.opencontainers.image.ref.name=ubuntu`
   - `org.opencontainers.image.version=22.04`
