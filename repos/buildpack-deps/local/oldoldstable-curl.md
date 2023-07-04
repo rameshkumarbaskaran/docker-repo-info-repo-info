@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d0aef6fab6bc9843476c668743258f76db1c92e3d473f1305386f8fa2d713272`
-- Created: `2023-06-13T03:31:27.874873403Z`
+- Image ID: `sha256:fba93f010c9f896ebc93161f6655c1b59d288182d9e9e6d2e1bbecc0f8c94e4f`
+- Created: `2023-07-04T03:32:05.81768812Z`
 - Virtual Size: ~ 147.15 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -2152,12 +2152,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/sqlite3/3.27.2-3+deb10u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/sqlite3/3.27.2-3+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `systemd=241-7~deb10u9`
+### `dpkg` source package: `systemd=241-7~deb10u10`
 
 Binary Packages:
 
-- `libsystemd0:amd64=241-7~deb10u9`
-- `libudev1:amd64=241-7~deb10u9`
+- `libsystemd0:amd64=241-7~deb10u10`
+- `libudev1:amd64=241-7~deb10u10`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -2169,13 +2169,20 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris systemd=241-7~deb10u10
+'http://deb.debian.org/debian-security/pool/updates/main/s/systemd/systemd_241-7%7edeb10u10.dsc' systemd_241-7~deb10u10.dsc 4950 SHA256:a3a53f8d6966cff56a75a7a0026e93c6aca2e86838f4271fee1be9eb0cca3336
+'http://deb.debian.org/debian-security/pool/updates/main/s/systemd/systemd_241.orig.tar.gz' systemd_241.orig.tar.gz 7640538 SHA256:b2561a8e1d10a2c248253f0dda31a85dd6d69f2b54177de55e02cd1d2778316e
+'http://deb.debian.org/debian-security/pool/updates/main/s/systemd/systemd_241-7%7edeb10u10.debian.tar.xz' systemd_241-7~deb10u10.debian.tar.xz 187636 SHA256:50eea7b07c8b989ab70c1ff672c84546026b6529115bb621c35dfec3e42ac76b
+```
 
-- http://snapshot.debian.org/package/systemd/241-7~deb10u9/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/systemd/241-7~deb10u10/ (for browsing the source)
+- https://sources.debian.net/src/systemd/241-7~deb10u10/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/systemd/241-7~deb10u10/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=2.93-8`
 

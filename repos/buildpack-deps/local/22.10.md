@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:562a717e0775af1594514720e96eaab6ef8d92ed71375f11868402c17bee8a51`
-- Created: `2023-06-16T01:46:03.515262277Z`
-- Virtual Size: ~ 769.65 Mb  
+- Image ID: `sha256:1957599663a9fb73a6c45227894308eee2990917cb02b30a6fa23a66f56f5b74`
+- Created: `2023-07-04T03:46:40.311928639Z`
+- Virtual Size: ~ 769.64 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -1540,14 +1540,9 @@ Licenses: (parsed from: `/usr/share/doc/imagemagick/copyright`, `/usr/share/doc/
 - `TatcherUlrichPublicDomain`
 - `aclocal`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris imagemagick=8:6.9.11.60+dfsg-1.3ubuntu0.22.10.4
-'http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/imagemagick_6.9.11.60%2bdfsg-1.3ubuntu0.22.10.4.dsc' imagemagick_6.9.11.60+dfsg-1.3ubuntu0.22.10.4.dsc 5246 SHA512:e697b8795729a2a8379e807572cebd6fe5cac42f9c7c53af76d1f0cd84beff4a98da81f8e681ff4d280ad8e3f55dd46865fb11765db3722832f13169f4d82029
-'http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/imagemagick_6.9.11.60%2bdfsg.orig.tar.xz' imagemagick_6.9.11.60+dfsg.orig.tar.xz 9395144 SHA512:345a23eda96516fc7a213bd4a322bca4c8b690efe40ff7b498a448f8cedd7f0d600fae2cb6fff45bc995779a90d8c04b58288273eee97833ddebb4f9f2a3d14c
-'http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/imagemagick_6.9.11.60%2bdfsg-1.3ubuntu0.22.10.4.debian.tar.xz' imagemagick_6.9.11.60+dfsg-1.3ubuntu0.22.10.4.debian.tar.xz 254488 SHA512:049509f9e8a48bbc1541bfd0b3c7bca8616fd6b4f7f1fe28f97d735b35abc9dbc49e26fbc35cfa95c81e087815998e057763fd0fa56df1d52cb865cfee9ee1d2
-```
 
 ### `dpkg` source package: `imath=3.1.5-1ubuntu2`
 
@@ -1816,11 +1811,11 @@ $ apt-get source -qq --print-uris libcap-ng=0.8.3-1
 'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcap-ng/libcap-ng_0.8.3-1.debian.tar.xz' libcap-ng_0.8.3-1.debian.tar.xz 10488 SHA512:32ee300de7c327d1c58f6a95eccda98afe522134fe7de899d074825bbe6cf7269fac1c20bb10f6d62155cb2207303b638e836870d84e5180dfb863a42575e511
 ```
 
-### `dpkg` source package: `libcap2=1:2.44-1build3`
+### `dpkg` source package: `libcap2=1:2.44-1ubuntu0.22.10.1`
 
 Binary Packages:
 
-- `libcap2:amd64=1:2.44-1build3`
+- `libcap2:amd64=1:2.44-1ubuntu0.22.10.1`
 
 Licenses: (parsed from: `/usr/share/doc/libcap2/copyright`)
 
@@ -1831,10 +1826,10 @@ Licenses: (parsed from: `/usr/share/doc/libcap2/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libcap2=1:2.44-1build3
-'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcap2/libcap2_2.44-1build3.dsc' libcap2_2.44-1build3.dsc 2311 SHA512:30fa503d6bffa093ceafc07a26f48b88da855c2957bc0bce99f83461dbf7e656b0460d58752eb60a3699c1c250e6135bb086461af5e3734f1802adbbd5d39be2
+$ apt-get source -qq --print-uris libcap2=1:2.44-1ubuntu0.22.10.1
+'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcap2/libcap2_2.44-1ubuntu0.22.10.1.dsc' libcap2_2.44-1ubuntu0.22.10.1.dsc 2318 SHA512:cdaaffe4c0c75b342499b44da314fd5c9cbee5ac4aba7c8ab3e598669877230c762fdbf99d1f1dbfa15e2609581b7c323b7113c34115f422c18051092c5d4016
 'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcap2/libcap2_2.44.orig.tar.xz' libcap2_2.44.orig.tar.xz 125568 SHA512:1bb323ca362923bd6bd0e2e4639cf8726975165a620a243b31e797056439eb7efb2bfbc8e5521636783a86c7415b2037b1638c98747b79183ca7d3d42a04ff20
-'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcap2/libcap2_2.44-1build3.debian.tar.xz' libcap2_2.44-1build3.debian.tar.xz 21312 SHA512:b1c5c20092fe0cb13318f84e585ea9095dd552332a23c8d3162ca1013f02f3b16f7c5a94d407ef88aee62aadfa1f50e67959a3f5206653a801af878f8d89ce24
+'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcap2/libcap2_2.44-1ubuntu0.22.10.1.debian.tar.xz' libcap2_2.44-1ubuntu0.22.10.1.debian.tar.xz 22568 SHA512:742d9f76e3c770c36af83ba96b1bc652de76d9aa840c506f3661497dd61ebeb10e5ddb6467caaf83f27c303086bf31624a7e6b322c576d149c1aaebfec4160eb
 ```
 
 ### `dpkg` source package: `libcbor=0.8.0-2ubuntu1`
@@ -3033,19 +3028,24 @@ $ apt-get source -qq --print-uris libzstd=1.5.2+dfsg-1
 'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.5.2%2bdfsg-1.debian.tar.xz' libzstd_1.5.2+dfsg-1.debian.tar.xz 11820 SHA512:052c0f849654f47d3503a966f23c8c89db29e7f99dea3f400c082e4c2c9dad83ad4986ecad6f4400d90127ed120c006569221cd5ee5438152fb0d3bfca92fa50
 ```
 
-### `dpkg` source package: `linux=5.19.0-45.46`
+### `dpkg` source package: `linux=5.19.0-46.47`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=5.19.0-45.46`
+- `linux-libc-dev:amd64=5.19.0-46.47`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=5.19.0-46.47
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.19.0-46.47.dsc' linux_5.19.0-46.47.dsc 8469 SHA512:8a4613de47cada91024f025e9100ce4113f4d99371fecd8db64581e9994e1a58ff802c776db5ca492deadc6157479ae10d2b18c6d14f1b0ba13bc616e52bdd41
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.19.0.orig.tar.gz' linux_5.19.0.orig.tar.gz 208263574 SHA512:9c018ef5d2b3f861f721a4541e547eb712352e8d6cfd4a6803c5a7ce96ce2a7e7baf1d83f9963f2244e7fae420731d95d198bf222e2b5079da624df0e0c78668
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.19.0-46.47.diff.gz' linux_5.19.0-46.47.diff.gz 6431422 SHA512:ca0bc9e073536a4835d46361fcba2b6fb09486540d8c6f8dcc56f203ca38e832430b2c3843c42d86490fafe75ac91fa7f61090c58bce3ac4af73a2fdd62c09e1
+```
 
 ### `dpkg` source package: `lsb=11.2ubuntu1`
 

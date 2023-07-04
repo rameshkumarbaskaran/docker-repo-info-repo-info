@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:1b1c19dbf6dfffb6375d0daeeb99fefd2cf265f8ed16202f9c324e9a86c38d17`
-- Created: `2023-06-16T01:43:08.10080361Z`
-- Virtual Size: ~ 229.38 Mb  
+- Image ID: `sha256:4ec8c6e4d643fed5a6197bd272d12574893b6727b71d0bddc0526d40019fb457`
+- Created: `2023-07-04T03:44:19.511957181Z`
+- Virtual Size: ~ 229.39 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -1011,11 +1011,11 @@ $ apt-get source -qq --print-uris libcap-ng=0.8.3-1
 'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcap-ng/libcap-ng_0.8.3-1.debian.tar.xz' libcap-ng_0.8.3-1.debian.tar.xz 10488 SHA512:32ee300de7c327d1c58f6a95eccda98afe522134fe7de899d074825bbe6cf7269fac1c20bb10f6d62155cb2207303b638e836870d84e5180dfb863a42575e511
 ```
 
-### `dpkg` source package: `libcap2=1:2.44-1build3`
+### `dpkg` source package: `libcap2=1:2.44-1ubuntu0.22.10.1`
 
 Binary Packages:
 
-- `libcap2:amd64=1:2.44-1build3`
+- `libcap2:amd64=1:2.44-1ubuntu0.22.10.1`
 
 Licenses: (parsed from: `/usr/share/doc/libcap2/copyright`)
 
@@ -1026,10 +1026,10 @@ Licenses: (parsed from: `/usr/share/doc/libcap2/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libcap2=1:2.44-1build3
-'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcap2/libcap2_2.44-1build3.dsc' libcap2_2.44-1build3.dsc 2311 SHA512:30fa503d6bffa093ceafc07a26f48b88da855c2957bc0bce99f83461dbf7e656b0460d58752eb60a3699c1c250e6135bb086461af5e3734f1802adbbd5d39be2
+$ apt-get source -qq --print-uris libcap2=1:2.44-1ubuntu0.22.10.1
+'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcap2/libcap2_2.44-1ubuntu0.22.10.1.dsc' libcap2_2.44-1ubuntu0.22.10.1.dsc 2318 SHA512:cdaaffe4c0c75b342499b44da314fd5c9cbee5ac4aba7c8ab3e598669877230c762fdbf99d1f1dbfa15e2609581b7c323b7113c34115f422c18051092c5d4016
 'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcap2/libcap2_2.44.orig.tar.xz' libcap2_2.44.orig.tar.xz 125568 SHA512:1bb323ca362923bd6bd0e2e4639cf8726975165a620a243b31e797056439eb7efb2bfbc8e5521636783a86c7415b2037b1638c98747b79183ca7d3d42a04ff20
-'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcap2/libcap2_2.44-1build3.debian.tar.xz' libcap2_2.44-1build3.debian.tar.xz 21312 SHA512:b1c5c20092fe0cb13318f84e585ea9095dd552332a23c8d3162ca1013f02f3b16f7c5a94d407ef88aee62aadfa1f50e67959a3f5206653a801af878f8d89ce24
+'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcap2/libcap2_2.44-1ubuntu0.22.10.1.debian.tar.xz' libcap2_2.44-1ubuntu0.22.10.1.debian.tar.xz 22568 SHA512:742d9f76e3c770c36af83ba96b1bc652de76d9aa840c506f3661497dd61ebeb10e5ddb6467caaf83f27c303086bf31624a7e6b322c576d149c1aaebfec4160eb
 ```
 
 ### `dpkg` source package: `libcbor=0.8.0-2ubuntu1`
