@@ -1,7 +1,7 @@
 ## `ubuntu:focal`
 
 ```console
-$ docker pull ubuntu@sha256:5c2c5828d42b603726d850974597df0838e6a79fd0569249df2f710878a148c5
+$ docker pull ubuntu@sha256:c9820a44b950956a790c354700c1166a7ec648bc0d215fa438d3a339812f1d01
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -49,35 +49,35 @@ CMD ["/bin/bash"]
 ### `ubuntu:focal` - linux; arm variant v7
 
 ```console
-$ docker pull ubuntu@sha256:3831296f7467818605f4c8782b1a74a3488547102640e9cb8b41c42b44e7f526
+$ docker pull ubuntu@sha256:9b996ae92d0d9f629f0c952ee9cc66187d331373b40fdf38dbd7b6f26510a145
 ```
 
 -	Docker Version: 20.10.21
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **23.6 MB (23611936 bytes)**  
+-	Total Size: **23.6 MB (23609514 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3ef263d65a04f7a877f4868d790eef952ec3a69e4143477edc9f3cc80c4f9c43`
+-	Image ID: `sha256:c604f2e64a63f028ceef598b09237c1f12abbd0b2bc9ba741afff628e0b9bbf1`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Mon, 05 Jun 2023 17:19:26 GMT
+# Wed, 28 Jun 2023 09:58:19 GMT
 ARG RELEASE
-# Mon, 05 Jun 2023 17:19:26 GMT
+# Wed, 28 Jun 2023 09:58:20 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Mon, 05 Jun 2023 17:19:26 GMT
+# Wed, 28 Jun 2023 09:58:20 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Mon, 05 Jun 2023 17:19:27 GMT
+# Wed, 28 Jun 2023 09:58:20 GMT
 LABEL org.opencontainers.image.version=20.04
-# Mon, 05 Jun 2023 17:19:31 GMT
-ADD file:114d6f55f8c1c4ec7f7d2ba3c803116a188eece1d1b6dbb3bb40c11082194234 in / 
-# Mon, 05 Jun 2023 17:19:31 GMT
+# Wed, 28 Jun 2023 09:58:22 GMT
+ADD file:8bedca16bf416520f5df29175a99b07585281465c459544b9f9679016f59762a in / 
+# Wed, 28 Jun 2023 09:58:22 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:4f6069ed163b7975b49dc9e8925a15a02473293dca6513363fb11c08764520b8`  
-		Last Modified: Mon, 05 Jun 2023 17:26:46 GMT  
-		Size: 23.6 MB (23611936 bytes)  
+	-	`sha256:4eb99abaa83d514d01f419b511a391c5d9d4b1c2cefde8f51e786d8b1c946a7c`  
+		Last Modified: Wed, 28 Jun 2023 10:13:49 GMT  
+		Size: 23.6 MB (23609514 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `ubuntu:focal` - linux; arm64 variant v8
