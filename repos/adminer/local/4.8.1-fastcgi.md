@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:452a956cc7253ee0c04d3736127b355e67a5cd14dda7c0aaf0c2d18ab50277f1`
-- Created: `2023-06-13T03:25:38.070333463Z`
+- Image ID: `sha256:98e5a487eafbb1e1c54550a075a220d824e930146fccd78c5a4afdb74a2bc50a`
+- Created: `2023-07-04T03:26:44.841753467Z`
 - Virtual Size: ~ 250.12 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -2262,22 +2262,22 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/php-defaults/76/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/php-defaults/76/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `php7.4=7.4.33-1+deb11u3`
+### `dpkg` source package: `php7.4=7.4.33-1+deb11u4`
 
 Binary Packages:
 
-- `php7.4-cli=7.4.33-1+deb11u3`
-- `php7.4-common=7.4.33-1+deb11u3`
-- `php7.4-fpm=7.4.33-1+deb11u3`
-- `php7.4-json=7.4.33-1+deb11u3`
-- `php7.4-mbstring=7.4.33-1+deb11u3`
-- `php7.4-mysql=7.4.33-1+deb11u3`
-- `php7.4-odbc=7.4.33-1+deb11u3`
-- `php7.4-opcache=7.4.33-1+deb11u3`
-- `php7.4-pgsql=7.4.33-1+deb11u3`
-- `php7.4-readline=7.4.33-1+deb11u3`
-- `php7.4-sqlite3=7.4.33-1+deb11u3`
-- `php7.4-sybase=7.4.33-1+deb11u3`
+- `php7.4-cli=7.4.33-1+deb11u4`
+- `php7.4-common=7.4.33-1+deb11u4`
+- `php7.4-fpm=7.4.33-1+deb11u4`
+- `php7.4-json=7.4.33-1+deb11u4`
+- `php7.4-mbstring=7.4.33-1+deb11u4`
+- `php7.4-mysql=7.4.33-1+deb11u4`
+- `php7.4-odbc=7.4.33-1+deb11u4`
+- `php7.4-opcache=7.4.33-1+deb11u4`
+- `php7.4-pgsql=7.4.33-1+deb11u4`
+- `php7.4-readline=7.4.33-1+deb11u4`
+- `php7.4-sqlite3=7.4.33-1+deb11u4`
+- `php7.4-sybase=7.4.33-1+deb11u4`
 
 Licenses: (parsed from: `/usr/share/doc/php7.4-cli/copyright`, `/usr/share/doc/php7.4-common/copyright`, `/usr/share/doc/php7.4-fpm/copyright`, `/usr/share/doc/php7.4-json/copyright`, `/usr/share/doc/php7.4-mbstring/copyright`, `/usr/share/doc/php7.4-mysql/copyright`, `/usr/share/doc/php7.4-odbc/copyright`, `/usr/share/doc/php7.4-opcache/copyright`, `/usr/share/doc/php7.4-pgsql/copyright`, `/usr/share/doc/php7.4-readline/copyright`, `/usr/share/doc/php7.4-sqlite3/copyright`, `/usr/share/doc/php7.4-sybase/copyright`)
 
@@ -2304,18 +2304,18 @@ Licenses: (parsed from: `/usr/share/doc/php7.4-cli/copyright`, `/usr/share/doc/p
 Source:
 
 ```console
-$ apt-get source -qq --print-uris php7.4=7.4.33-1+deb11u3
-'http://deb.debian.org/debian/pool/main/p/php7.4/php7.4_7.4.33-1%2bdeb11u3.dsc' php7.4_7.4.33-1+deb11u3.dsc 5825 SHA256:a91c7cbcdc5a2528d1aaa13e2c82c6ef68b0548c163a9665b640e82a4059253b
-'http://deb.debian.org/debian/pool/main/p/php7.4/php7.4_7.4.33.orig.tar.xz' php7.4_7.4.33.orig.tar.xz 10420144 SHA256:924846abf93bc613815c55dd3f5809377813ac62a9ec4eb3778675b82a27b927
-'http://deb.debian.org/debian/pool/main/p/php7.4/php7.4_7.4.33.orig.tar.xz.asc' php7.4_7.4.33.orig.tar.xz.asc 833 SHA256:569a01c7c605a4571fdf7dfadfff4215cc4a63ea5d474c7ec92bd7b4fecfffcb
-'http://deb.debian.org/debian/pool/main/p/php7.4/php7.4_7.4.33-1%2bdeb11u3.debian.tar.xz' php7.4_7.4.33-1+deb11u3.debian.tar.xz 75552 SHA256:5ab383611b38b05a838036a70bdfa7ba4970f2370f419a674ca8647cff511693
+$ apt-get source -qq --print-uris php7.4=7.4.33-1+deb11u4
+'http://deb.debian.org/debian-security/pool/updates/main/p/php7.4/php7.4_7.4.33-1%2bdeb11u4.dsc' php7.4_7.4.33-1+deb11u4.dsc 5825 SHA256:98b39be4aaebd6887ca18b03b2605faba6ce959e461a358d3b02ad146694088a
+'http://deb.debian.org/debian-security/pool/updates/main/p/php7.4/php7.4_7.4.33.orig.tar.xz' php7.4_7.4.33.orig.tar.xz 10420144 SHA256:924846abf93bc613815c55dd3f5809377813ac62a9ec4eb3778675b82a27b927
+'http://deb.debian.org/debian-security/pool/updates/main/p/php7.4/php7.4_7.4.33.orig.tar.xz.asc' php7.4_7.4.33.orig.tar.xz.asc 833 SHA256:569a01c7c605a4571fdf7dfadfff4215cc4a63ea5d474c7ec92bd7b4fecfffcb
+'http://deb.debian.org/debian-security/pool/updates/main/p/php7.4/php7.4_7.4.33-1%2bdeb11u4.debian.tar.xz' php7.4_7.4.33-1+deb11u4.debian.tar.xz 77184 SHA256:66b1476f1ea7d5c158d5d1641a71b618f47bacb8794f1e22ab6146086694312e
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/php7.4/7.4.33-1+deb11u3/ (for browsing the source)
-- https://sources.debian.net/src/php7.4/7.4.33-1+deb11u3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/php7.4/7.4.33-1+deb11u3/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/php7.4/7.4.33-1+deb11u4/ (for browsing the source)
+- https://sources.debian.net/src/php7.4/7.4.33-1+deb11u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/php7.4/7.4.33-1+deb11u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `postgresql-13=13.11-0+deb11u1`
 
