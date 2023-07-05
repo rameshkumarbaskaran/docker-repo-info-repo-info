@@ -1,7 +1,7 @@
 ## `clojure:temurin-17-tools-deps-1.11.1.1347-jammy`
 
 ```console
-$ docker pull clojure@sha256:f309e5f0d501dfcca13d751176cf0a525d19fa6e547a913b34fe62ec7092281f
+$ docker pull clojure@sha256:ced74ef47a07a8a0c07643baf7b144d6f96b5315c3373d155e9763e2257b5eec
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -101,88 +101,88 @@ CMD ["-M" "--repl"]
 ### `clojure:temurin-17-tools-deps-1.11.1.1347-jammy` - linux; arm64 variant v8
 
 ```console
-$ docker pull clojure@sha256:8217c8e8dcea6e3650a3adca06e88e84e3ee9ad09655ed96da3c0d8a5c2048f5
+$ docker pull clojure@sha256:97e02b13281a45beb75fc46e1c0cdcf3e96b22e081a485450ba37fb0ce7f3e98
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **292.8 MB (292765167 bytes)**  
+-	Total Size: **292.8 MB (292769035 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a2415f90f12066f8c464049d0e6865d07989d3b295cd95c2beebbe09bf868cc`
+-	Image ID: `sha256:1e616ce93f9ce7a6983905ae75fbd02823f94e92f63ebb22f4852f490f4cd16b`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["-M","--repl"]`
 
 ```dockerfile
-# Mon, 05 Jun 2023 17:11:17 GMT
+# Wed, 28 Jun 2023 08:42:48 GMT
 ARG RELEASE
-# Mon, 05 Jun 2023 17:11:17 GMT
+# Wed, 28 Jun 2023 08:42:48 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Mon, 05 Jun 2023 17:11:17 GMT
+# Wed, 28 Jun 2023 08:42:48 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Mon, 05 Jun 2023 17:11:17 GMT
+# Wed, 28 Jun 2023 08:42:48 GMT
 LABEL org.opencontainers.image.version=22.04
-# Mon, 05 Jun 2023 17:11:19 GMT
-ADD file:1043594b482384e967c94378b65ec4bc7a38190649a94f0325b7fb00be0a623e in / 
-# Mon, 05 Jun 2023 17:11:19 GMT
+# Wed, 28 Jun 2023 08:42:50 GMT
+ADD file:262490f82459c14632f5c9a6d6a5cf6c07b4f307e8fd380fa764662cda46e88f in / 
+# Wed, 28 Jun 2023 08:42:50 GMT
 CMD ["/bin/bash"]
-# Fri, 16 Jun 2023 02:45:39 GMT
+# Tue, 04 Jul 2023 15:32:45 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Fri, 16 Jun 2023 02:45:39 GMT
+# Tue, 04 Jul 2023 15:32:45 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 16 Jun 2023 02:45:39 GMT
+# Tue, 04 Jul 2023 15:32:45 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 16 Jun 2023 02:47:57 GMT
+# Tue, 04 Jul 2023 15:34:51 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Fri, 16 Jun 2023 02:47:57 GMT
+# Tue, 04 Jul 2023 15:34:51 GMT
 ENV JAVA_VERSION=jdk-17.0.7+7
-# Fri, 16 Jun 2023 02:48:04 GMT
+# Tue, 04 Jul 2023 15:34:58 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0084272404b89442871e0a1f112779844090532978ad4d4191b8d03fc6adfade';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%2B7/OpenJDK17U-jdk_aarch64_linux_hotspot_17.0.7_7.tar.gz';          ;;        armhf|arm)          ESUM='e7a84c3e59704588510d7e6cce1f732f397b54a3b558c521912a18a1b4d0abdc';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%2B7/OpenJDK17U-jdk_arm_linux_hotspot_17.0.7_7.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='8f4366ff1eddb548b1744cd82a1a56ceee60abebbcbad446bfb3ead7ac0f0f85';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%2B7/OpenJDK17U-jdk_ppc64le_linux_hotspot_17.0.7_7.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='2d75540ae922d0c4162729267a8c741e2414881a468fd2ce4140b4069ba47ca9';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%2B7/OpenJDK17U-jdk_s390x_linux_hotspot_17.0.7_7.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='e9458b38e97358850902c2936a1bb5f35f6cffc59da9fcd28c63eab8dbbfbc3b';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.7_7.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Fri, 16 Jun 2023 02:48:07 GMT
+# Tue, 04 Jul 2023 15:35:01 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Fri, 16 Jun 2023 02:48:08 GMT
+# Tue, 04 Jul 2023 15:35:02 GMT
 CMD ["jshell"]
-# Fri, 16 Jun 2023 04:50:08 GMT
+# Wed, 05 Jul 2023 03:42:57 GMT
 ENV CLOJURE_VERSION=1.11.1.1347
-# Fri, 16 Jun 2023 04:50:08 GMT
+# Wed, 05 Jul 2023 03:42:57 GMT
 WORKDIR /tmp
-# Fri, 16 Jun 2023 04:50:20 GMT
+# Wed, 05 Jul 2023 03:43:08 GMT
 RUN apt-get update && apt-get install -y make git rlwrap wget && rm -rf /var/lib/apt/lists/* && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "d9158bf3a1d92fbf8551656e47a86f42e93d10f1db9defa2124bfee206ce8c8f *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apt-get purge -y --auto-remove wget
-# Fri, 16 Jun 2023 04:50:21 GMT
+# Wed, 05 Jul 2023 03:43:09 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Fri, 16 Jun 2023 04:50:21 GMT
+# Wed, 05 Jul 2023 03:43:09 GMT
 COPY file:137b40904568e30898cd031ef34f77e7f132846ba4eec91d04ae4b93dddfbb8d in /usr/local/bin/entrypoint 
-# Fri, 16 Jun 2023 04:50:21 GMT
+# Wed, 05 Jul 2023 03:43:09 GMT
 ENTRYPOINT ["entrypoint"]
-# Fri, 16 Jun 2023 04:50:21 GMT
+# Wed, 05 Jul 2023 03:43:09 GMT
 CMD ["-M" "--repl"]
 ```
 
 -	Layers:
-	-	`sha256:a1df1d4a17c6a461a5967be8a40f1158e55e0ae4dc3b3b7ae64f57cae69eb7e7`  
-		Last Modified: Wed, 07 Jun 2023 02:07:18 GMT  
-		Size: 28.4 MB (28389201 bytes)  
+	-	`sha256:ac34a2e0269ced3acc355be706239ee0f3f1e73a035c40dd2fac74827164ee53`  
+		Last Modified: Wed, 28 Jun 2023 23:23:40 GMT  
+		Size: 28.4 MB (28391011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5168066327b37e44f2a0ef7f788219bdbcd9013e4320cf4b9229ea9dfb73b561`  
-		Last Modified: Fri, 16 Jun 2023 02:52:08 GMT  
-		Size: 18.5 MB (18465563 bytes)  
+	-	`sha256:92f85d89e7da0f3af0f527e7300cced784d0ba64249b8c376690599d313cb056`  
+		Last Modified: Tue, 04 Jul 2023 15:39:09 GMT  
+		Size: 18.5 MB (18466568 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f179c8917628f1ddb3f13eb6d671a6403592b83d92bb7fb2395402d62fd4055`  
-		Last Modified: Fri, 16 Jun 2023 02:52:17 GMT  
-		Size: 191.4 MB (191400686 bytes)  
+	-	`sha256:a9968813c364026c446630e0331e26f07c025a57cbb5d2b6d07c5e441093e0a0`  
+		Last Modified: Tue, 04 Jul 2023 15:39:17 GMT  
+		Size: 191.4 MB (191400543 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ca158460daea7d915a55c643b1c7bc677541c2fe563f2273de586613f92eab1c`  
-		Last Modified: Fri, 16 Jun 2023 02:52:05 GMT  
-		Size: 173.0 B  
+	-	`sha256:f585b1f8ce4db981a9aaa9b593252136e27ab45bd7a5056fb49a4c122fa6d6fb`  
+		Last Modified: Tue, 04 Jul 2023 15:39:06 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fbae62b8246ed03eca54f35a90ff92b2ada548d766699bb5fe76ffa9c6cbef5c`  
-		Last Modified: Fri, 16 Jun 2023 04:59:51 GMT  
-		Size: 54.5 MB (54508526 bytes)  
+	-	`sha256:4fdc26720628ca8bf0c78f6674d2cb3b4074a93e0b1578af84e4a2a9b7faca02`  
+		Last Modified: Wed, 05 Jul 2023 03:52:27 GMT  
+		Size: 54.5 MB (54509721 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2df4a990e9fbf0c1c363dd86f35a09b05a41f7f7668b33a9b350ecf6c4e909ff`  
-		Last Modified: Fri, 16 Jun 2023 04:59:45 GMT  
-		Size: 618.0 B  
+	-	`sha256:b426103f8ece44207b29dd3c0af1b7951906fcab0548c88ca9e1f406f01106b2`  
+		Last Modified: Wed, 05 Jul 2023 03:52:22 GMT  
+		Size: 620.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:631be768684f427ddcaeb6768cc75aca023f2cf8db41f7448642893401235145`  
-		Last Modified: Fri, 16 Jun 2023 04:59:45 GMT  
+	-	`sha256:a769c4a82904d4b31e247d8d9aceae30654133dc12931469a222fe0ff835e431`  
+		Last Modified: Wed, 05 Jul 2023 03:52:22 GMT  
 		Size: 400.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
