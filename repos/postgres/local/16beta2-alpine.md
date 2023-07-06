@@ -1,10 +1,10 @@
-# `postgres:16beta1-alpine3.18`
+# `postgres:16beta2-alpine3.18`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f25bf131c8ffa06b9baaead91f89fedfc79182da809df7919b6e8d5b7f11ea4e`
-- Created: `2023-06-14T21:12:58.137506915Z`
-- Virtual Size: ~ 238.83 Mb  
+- Image ID: `sha256:338ccfade89d2f4e9c8989038d977d7bd6408e625a46ed6184b947236c038703`
+- Created: `2023-07-04T02:11:00.792283911Z`
+- Virtual Size: ~ 238.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -13,8 +13,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=16`
-  - `PG_VERSION=16beta1`
-  - `PG_SHA256=59e248d434aa515fa2d31c0d161c4148f30d511dcde91f6e888684823b6849a8`
+  - `PG_VERSION=16beta2`
+  - `PG_SHA256=ba653197465180c93775b4949a89dc6fbfebae2a44587ae7168fdfd24f519b50`
   - `DOCKER_PG_LLVM_DEPS=llvm15-dev 		clang15`
   - `PGDATA=/var/lib/postgresql/data`
 
@@ -176,16 +176,16 @@ GPL-3.0-or-later
 ### `apk` package: `icu-data-full`
 
 ```console
-icu-data-full-73.1-r1 description:
+icu-data-full-73.2-r1 description:
 Full ICU data
 
-icu-data-full-73.1-r1 webpage:
+icu-data-full-73.2-r1 webpage:
 https://icu.unicode.org/
 
-icu-data-full-73.1-r1 installed size:
+icu-data-full-73.2-r1 installed size:
 30 MiB
 
-icu-data-full-73.1-r1 license:
+icu-data-full-73.2-r1 license:
 ICU
 
 ```
@@ -193,16 +193,16 @@ ICU
 ### `apk` package: `icu-libs`
 
 ```console
-icu-libs-73.1-r1 description:
+icu-libs-73.2-r1 description:
 International Components for Unicode library (libraries)
 
-icu-libs-73.1-r1 webpage:
+icu-libs-73.2-r1 webpage:
 https://icu.unicode.org/
 
-icu-libs-73.1-r1 installed size:
+icu-libs-73.2-r1 installed size:
 4328 KiB
 
-icu-libs-73.1-r1 license:
+icu-libs-73.2-r1 license:
 ICU
 
 ```
