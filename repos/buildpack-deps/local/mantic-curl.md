@@ -445,14 +445,13 @@ Licenses: (parsed from: `/usr/share/doc/debianutils/copyright`)
 - `SMAIL-GPL`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris debianutils=5.7-0.4
-'http://archive.ubuntu.com/ubuntu/pool/main/d/debianutils/debianutils_5.7-0.4.dsc' debianutils_5.7-0.4.dsc 1737 SHA512:91f750cac588110e2790b886a5408152411fa0a1df78f6e6544fedc19200a5efc7e9da417ee152b077ddb5a87c68bd8130314f628879acb30724fe240fc4293e
-'http://archive.ubuntu.com/ubuntu/pool/main/d/debianutils/debianutils_5.7.orig.tar.gz' debianutils_5.7.orig.tar.gz 257231 SHA512:79acd8885abca93842d696167171a359011c49a40f38deeb25bc94d62905f95afa3a7b2540d3bd4b0ffd363c5c48a439a1a68139a29d6c033980b019cea75d92
-'http://archive.ubuntu.com/ubuntu/pool/main/d/debianutils/debianutils_5.7-0.4.debian.tar.xz' debianutils_5.7-0.4.debian.tar.xz 22412 SHA512:dff3affac8165446b05a911fcc54c4d0db0491f0bdba3f0e1464f2f6bc3020f607a4df324edbc59b72a02df5cd3351804763bb7a2b20785f0453fd30c0fec25f
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/debianutils/5.7-0.4/
+
 
 ### `dpkg` source package: `diffutils=1:3.8-4`
 
@@ -573,14 +572,9 @@ Licenses: (parsed from: `/usr/share/doc/findutils/copyright`)
 - `X11`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris findutils=4.9.0-4ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.9.0-4ubuntu1.dsc' findutils_4.9.0-4ubuntu1.dsc 2161 SHA512:93e5dab8b1209122f866793d02b506d84aa6e64540440b36a1e536934927c07cf13fa5e9b79add7a6c8114d90996fbe2d42dbaa8d88cd9b1344be109fea0d6d2
-'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.9.0.orig.tar.xz' findutils_4.9.0.orig.tar.xz 2046252 SHA512:ba4844f4403de0148ad14b46a3dbefd5a721f6257c864bf41a6789b11705408524751c627420b15a52af95564d8e5b52f0978474f640a62ab86a41d20cf14be9
-'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.9.0-4ubuntu1.debian.tar.xz' findutils_4.9.0-4ubuntu1.debian.tar.xz 33712 SHA512:060ea45c12bc8d56ec614262dd5f4097748c86ef86b9abb7d002b6d6bb6ea31acbdf3dc3b4638d46002c28bc7bd642462d5e0ae7ce41ffb0185313da4d893754
-```
 
 ### `dpkg` source package: `gcc-13=13.1.0-6ubuntu1`
 
@@ -599,14 +593,9 @@ Licenses: (parsed from: `/usr/share/doc/gcc-13-base/copyright`, `/usr/share/doc/
 - `GPL-3`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-13=13.1.0-6ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/gcc-13_13.1.0-6ubuntu1.dsc' gcc-13_13.1.0-6ubuntu1.dsc 27910 SHA512:0a32cdf878d6b754f9342e8425f30a5335e04e3d8c8d9d4b2a3400aae4e1dfdffa5dd4cbd702167916bf79c3b343613870b6bdf1f276e339c36bf65bb66e805d
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/gcc-13_13.1.0.orig.tar.gz' gcc-13_13.1.0.orig.tar.gz 92188593 SHA512:81da5b2e1447652f895cc90ae6b7f106d0bb8e7d4741396ddea0e23fe06a13208469fcbefa6affe7b17271af9efb64464cbd5c76bba283b8f3710843a739b687
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/gcc-13_13.1.0-6ubuntu1.debian.tar.xz' gcc-13_13.1.0-6ubuntu1.debian.tar.xz 1277788 SHA512:309dfd7e6ae80a36ec6e95ed667e03d8a1323b4c40d66cd36c3d18dccbdbe78f5bd5af3b390fe585d079b77dc639ac3af1a3d5be8014fcaa9731ecaf78be1770
-```
 
 ### `dpkg` source package: `glibc=2.37-0ubuntu2`
 
@@ -1955,15 +1944,9 @@ Licenses: (parsed from: `/usr/share/doc/tzdata/copyright`)
 - `ICU`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2023c-4exp1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023c-4exp1ubuntu1.dsc' tzdata_2023c-4exp1ubuntu1.dsc 2716 SHA512:4ba8775c8404fd71a1cabfdc7273327a658b78df5bc09187bf7ffb372d00a6e295ea3bcc415547b4920c84f898b563359cb35cef48afdbac63667416d9769eb1
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023c.orig.tar.gz' tzdata_2023c.orig.tar.gz 443902 SHA512:608bd286ebcbd0004cfdc1da183273f08aff61f90c8867661154453d77a05d421e4c46ad6d066a1fe2e87d5c82ec0f1c0224667a3b35f3180a3eb7f6ff84cbf5
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023c.orig.tar.gz.asc' tzdata_2023c.orig.tar.gz.asc 833 SHA512:15da6e01a12a0390f736fe5bacf27595c8f7080a4b27eccfae7f244bc38d5839e7d25622e325f874db17f9e723777e9cfe0f460fbd595b66772f1642dd603b6b
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023c-4exp1ubuntu1.debian.tar.xz' tzdata_2023c-4exp1ubuntu1.debian.tar.xz 180916 SHA512:b6b6bf1c6bba989e32f19a17addb9180bbed8735ff4e968b51120fdbee97ff63610789310ac1e5fc70712c23d354791b811ebe3e9d4ac92acc5df29ce9f51a63
-```
 
 ### `dpkg` source package: `ubuntu-keyring=2021.03.26`
 
