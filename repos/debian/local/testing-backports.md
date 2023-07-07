@@ -603,21 +603,13 @@ Licenses: (parsed from: `/usr/share/doc/findutils/copyright`)
 - `X11`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris findutils=4.9.0-4
-'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.9.0-4.dsc' findutils_4.9.0-4.dsc 2304 SHA256:3bb39a6a5f96101f9bb28fed234db186fcec198e064478fef3c0fdf2434f0681
-'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.9.0.orig.tar.xz' findutils_4.9.0.orig.tar.xz 2046252 SHA256:a2bfb8c09d436770edc59f50fa483e785b161a3b7b9d547573cb08065fd462fe
-'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.9.0.orig.tar.xz.asc' findutils_4.9.0.orig.tar.xz.asc 488 SHA256:924c3719d066eda1b3e47175f8b83e90e9a23f0a639ebe7445621917b283c385
-'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.9.0-4.debian.tar.xz' findutils_4.9.0-4.debian.tar.xz 33192 SHA256:ae73dc487b02fb00b2135e43f93733d5561fc8ca7f0997075f21247f6742ec54
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/findutils/4.9.0-4/
 
-- https://sources.debian.net/src/findutils/4.9.0-4/ (for browsing the source)
-- https://sources.debian.net/src/findutils/4.9.0-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/findutils/4.9.0-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-13=13.1.0-6`
 
@@ -1227,21 +1219,13 @@ Licenses: (parsed from: `/usr/share/doc/libtasn1-6/copyright`)
 - `LGPL`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libtasn1-6=4.19.0-2
-'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.19.0-2.dsc' libtasn1-6_4.19.0-2.dsc 2662 SHA256:cbecbd9b784af6dedde9ca685a4cc13e1ead027ea051150ff8186af57c547109
-'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.19.0.orig.tar.gz' libtasn1-6_4.19.0.orig.tar.gz 1786576 SHA256:1613f0ac1cf484d6ec0ce3b8c06d56263cc7242f1c23b30d82d23de345a63f7a
-'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.19.0.orig.tar.gz.asc' libtasn1-6_4.19.0.orig.tar.gz.asc 228 SHA256:8410c0c004f3509c218a98b276b3308b9c46f48068e8b1a6d9ebfd61ea9f357a
-'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.19.0-2.debian.tar.xz' libtasn1-6_4.19.0-2.debian.tar.xz 22012 SHA256:21fe6b16fb27cca47b51893708964ddfe04ea5227d1608560b4988e6fca74ae9
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libtasn1-6/4.19.0-2/
 
-- https://sources.debian.net/src/libtasn1-6/4.19.0-2/ (for browsing the source)
-- https://sources.debian.net/src/libtasn1-6/4.19.0-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libtasn1-6/4.19.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libunistring=1.0-2`
 
@@ -1718,20 +1702,13 @@ Licenses: (parsed from: `/usr/share/doc/sysvinit-utils/copyright`)
 - `GPL-3`
 - `GPL-3.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sysvinit=3.06-4
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_3.06-4.dsc' sysvinit_3.06-4.dsc 2359 SHA256:f153cd1ef48698089494aac14cebdcb8130ce4d4af5533a41cd3f1950e9e42fa
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_3.06.orig.tar.gz' sysvinit_3.06.orig.tar.gz 466092 SHA256:233d784ca152ce2b4b42a0723948f0cd2d36d4eae5acb9dab1457c1dd85b1a66
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_3.06-4.debian.tar.xz' sysvinit_3.06-4.debian.tar.xz 134904 SHA256:a64de1c40fe55a5b5f1ed0aaf471a7b35a294292530637fab016cbcebd600a43
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/sysvinit/3.06-4/
 
-- https://sources.debian.net/src/sysvinit/3.06-4/ (for browsing the source)
-- https://sources.debian.net/src/sysvinit/3.06-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/sysvinit/3.06-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tar=1.34+dfsg-1.2`
 
@@ -1774,21 +1751,13 @@ Licenses: (parsed from: `/usr/share/doc/tzdata/copyright`)
 
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2023c-6
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2023c-6.dsc' tzdata_2023c-6.dsc 2429 SHA256:18ec812d6f9b65ba85916e42eff62f221a80222cc986b06e5fa52e1823290a7f
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2023c.orig.tar.gz' tzdata_2023c.orig.tar.gz 443902 SHA256:3f510b5d1b4ae9bb38e485aa302a776b317fb3637bdb6404c4adf7b6cadd965c
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2023c.orig.tar.gz.asc' tzdata_2023c.orig.tar.gz.asc 833 SHA256:d5ec7b6ceddc46aa137c0ef85fa5c87445509d7997c067ee0fd2e2a23f833557
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2023c-6.debian.tar.xz' tzdata_2023c-6.debian.tar.xz 120144 SHA256:da631f8bd187b043bb0ac4a562b42cd8f4b22984dfada6af1aea677e2493af8b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tzdata/2023c-6/
 
-- https://sources.debian.net/src/tzdata/2023c-6/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2023c-6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2023c-6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `usrmerge=35`
 
