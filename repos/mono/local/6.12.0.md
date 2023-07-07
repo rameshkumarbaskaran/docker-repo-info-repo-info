@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e895c4bf71d1086770c2c093cad65fb396a6b7c6ccc43c260793ab456c761476`
-- Created: `2023-06-13T06:57:44.446954744Z`
-- Virtual Size: ~ 787.57 Mb  
+- Image ID: `sha256:23966e2d25119bd46a787344546d41b0da2233dc4af20802a8c3e536e5a63b97`
+- Created: `2023-07-04T13:03:43.17791899Z`
+- Virtual Size: ~ 787.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -1949,12 +1949,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libwebp/0.6.1-2+deb10u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libwebp/0.6.1-2+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libx11=2:1.6.7-1+deb10u2`
+### `dpkg` source package: `libx11=2:1.6.7-1+deb10u3`
 
 Binary Packages:
 
-- `libx11-6:amd64=2:1.6.7-1+deb10u2`
-- `libx11-data=2:1.6.7-1+deb10u2`
+- `libx11-6:amd64=2:1.6.7-1+deb10u3`
+- `libx11-data=2:1.6.7-1+deb10u3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1963,18 +1963,18 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libx11=2:1.6.7-1+deb10u2
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7-1%2bdeb10u2.dsc' libx11_1.6.7-1+deb10u2.dsc 2680 SHA256:49e4b4ea6c4f4c4d6dcb31e09450dd285a9dc6f232ee5aa727b8a5b7fc4f42c1
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7.orig.tar.gz' libx11_1.6.7.orig.tar.gz 2972354 SHA256:f62ab88c2a87b55e1dc338726a55bb6ed8048084fe6a3294a7ae324ca45159d1
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7.orig.tar.gz.asc' libx11_1.6.7.orig.tar.gz.asc 404 SHA256:01a06afbe0574a30721d98f1c80b668ebc46410a9e8b2eb81e69b4bd8667c386
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7-1%2bdeb10u2.diff.gz' libx11_1.6.7-1+deb10u2.diff.gz 53354 SHA256:a2ba03e672aab422b356352406c827eaeecd3e3ffbdf39022556a6a459d08b16
+$ apt-get source -qq --print-uris libx11=2:1.6.7-1+deb10u3
+'http://deb.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.7-1%2bdeb10u3.dsc' libx11_1.6.7-1+deb10u3.dsc 2651 SHA256:905952f62ab103f2f695929429199ad3fb6d9a576dc2b7d60270d9d64795de75
+'http://deb.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.7.orig.tar.gz' libx11_1.6.7.orig.tar.gz 2972354 SHA256:f62ab88c2a87b55e1dc338726a55bb6ed8048084fe6a3294a7ae324ca45159d1
+'http://deb.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.7.orig.tar.gz.asc' libx11_1.6.7.orig.tar.gz.asc 404 SHA256:01a06afbe0574a30721d98f1c80b668ebc46410a9e8b2eb81e69b4bd8667c386
+'http://deb.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.7-1%2bdeb10u3.diff.gz' libx11_1.6.7-1+deb10u3.diff.gz 54595 SHA256:a4eea30cb49f6ab0fb302a50d9eae2b8ec33ec01cae6bd4a4e6a6f409f2cb92f
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libx11/2:1.6.7-1+deb10u2/ (for browsing the source)
-- https://sources.debian.net/src/libx11/2:1.6.7-1+deb10u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libx11/2:1.6.7-1+deb10u2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libx11/2:1.6.7-1+deb10u3/ (for browsing the source)
+- https://sources.debian.net/src/libx11/2:1.6.7-1+deb10u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libx11/2:1.6.7-1+deb10u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxau=1:1.0.8-1`
 
@@ -2621,20 +2621,25 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/nghttp2/1.36.0-2+deb10u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/nghttp2/1.36.0-2+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `nuget=6.3.1.1.bin-0xamarin1+debian10b1`
+### `dpkg` source package: `nuget=6.6.1.2.bin-0xamarin3+debian10b1`
 
 Binary Packages:
 
-- `nuget=6.3.1.1.bin-0xamarin1+debian10b1`
+- `nuget=6.6.1.2.bin-0xamarin3+debian10b1`
 
 Licenses: (parsed from: `/usr/share/doc/nuget/copyright`)
 
 - `Apache-2.0`
 - `MIT`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris nuget=6.6.1.2.bin-0xamarin3+debian10b1
+'https://download.mono-project.com/repo/debian/pool/main/n/nuget/nuget_6.6.1.2.bin-0xamarin3%2bdebian10b1.dsc' nuget_6.6.1.2.bin-0xamarin3+debian10b1.dsc 1174 SHA256:3f06da69a2ced1e65f57404eaeeacf344fd1309495a550002e9f0d81efee50e8
+'https://download.mono-project.com/repo/debian/pool/main/n/nuget/nuget_6.6.1.2.bin.orig.tar.xz' nuget_6.6.1.2.bin.orig.tar.xz 1617828 SHA256:2dd6b9a58cedd192900606527442996960a4a9e0c81b0a9b139450b2aa8c41a8
+'https://download.mono-project.com/repo/debian/pool/main/n/nuget/nuget_6.6.1.2.bin-0xamarin3%2bdebian10b1.debian.tar.xz' nuget_6.6.1.2.bin-0xamarin3+debian10b1.debian.tar.xz 3444 SHA256:de634705eac840d141d29bac2ab7278631ef5032bc263893bec64cd0bc14e5e4
+```
 
 ### `dpkg` source package: `openldap=2.4.47+dfsg-3+deb10u7`
 
@@ -3081,12 +3086,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/sqlite3/3.27.2-3+deb10u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/sqlite3/3.27.2-3+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `systemd=241-7~deb10u9`
+### `dpkg` source package: `systemd=241-7~deb10u10`
 
 Binary Packages:
 
-- `libsystemd0:amd64=241-7~deb10u9`
-- `libudev1:amd64=241-7~deb10u9`
+- `libsystemd0:amd64=241-7~deb10u10`
+- `libudev1:amd64=241-7~deb10u10`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -3098,13 +3103,20 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris systemd=241-7~deb10u10
+'http://deb.debian.org/debian-security/pool/updates/main/s/systemd/systemd_241-7%7edeb10u10.dsc' systemd_241-7~deb10u10.dsc 4950 SHA256:a3a53f8d6966cff56a75a7a0026e93c6aca2e86838f4271fee1be9eb0cca3336
+'http://deb.debian.org/debian-security/pool/updates/main/s/systemd/systemd_241.orig.tar.gz' systemd_241.orig.tar.gz 7640538 SHA256:b2561a8e1d10a2c248253f0dda31a85dd6d69f2b54177de55e02cd1d2778316e
+'http://deb.debian.org/debian-security/pool/updates/main/s/systemd/systemd_241-7%7edeb10u10.debian.tar.xz' systemd_241-7~deb10u10.debian.tar.xz 187636 SHA256:50eea7b07c8b989ab70c1ff672c84546026b6529115bb621c35dfec3e42ac76b
+```
 
-- http://snapshot.debian.org/package/systemd/241-7~deb10u9/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/systemd/241-7~deb10u10/ (for browsing the source)
+- https://sources.debian.net/src/systemd/241-7~deb10u10/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/systemd/241-7~deb10u10/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=2.93-8`
 
