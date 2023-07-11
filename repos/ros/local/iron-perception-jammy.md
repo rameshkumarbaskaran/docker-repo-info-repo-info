@@ -5839,14 +5839,9 @@ Licenses: (parsed from: `/usr/share/doc/libllvm15/copyright`)
 - `Python`
 - `solar-public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris llvm-toolchain-15=1:15.0.7-0ubuntu0.22.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/l/llvm-toolchain-15/llvm-toolchain-15_15.0.7-0ubuntu0.22.04.1.dsc' llvm-toolchain-15_15.0.7-0ubuntu0.22.04.1.dsc 7373 SHA512:c72c79b192051853fa873c1b98adf084454bd7b50a4e25522a98bc8799c7b027e895874f9db6f25749231c1b46fe6a2cf11161b41d3437f1da0c31774704daac
-'http://archive.ubuntu.com/ubuntu/pool/main/l/llvm-toolchain-15/llvm-toolchain-15_15.0.7.orig.tar.xz' llvm-toolchain-15_15.0.7.orig.tar.xz 138500556 SHA512:d4e2c3be6bb5f6f780b07839c5398d0d976f392b64b18288578e77f01ec8f4f7bee28ff71250d0fe740b07bc1f47a2178f6b1371e4ba13a76cd7b3e393db9b6e
-'http://archive.ubuntu.com/ubuntu/pool/main/l/llvm-toolchain-15/llvm-toolchain-15_15.0.7-0ubuntu0.22.04.1.debian.tar.xz' llvm-toolchain-15_15.0.7-0ubuntu0.22.04.1.debian.tar.xz 162416 SHA512:001ae1778d95ad022847d15fd7c636938515890f091e715b1a7e27380616bbc3ea5f9e7cda5cc262e53b08663342b8e361305de66370051438690354d249ce2b
-```
 
 ### `dpkg` source package: `lm-sensors=1:3.6.0-7ubuntu1`
 
