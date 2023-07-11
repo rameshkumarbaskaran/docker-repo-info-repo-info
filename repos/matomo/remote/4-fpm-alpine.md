@@ -1,7 +1,7 @@
 ## `matomo:4-fpm-alpine`
 
 ```console
-$ docker pull matomo@sha256:0c7ca99f59780f76263257d3e982bc5e75956b60bab40f67665e3a49cb613808
+$ docker pull matomo@sha256:18bacb9c02ad7077f5e6e857a63b45372292c24ccc9c804be08936023a4419f3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -166,14 +166,14 @@ CMD ["php-fpm"]
 ### `matomo:4-fpm-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull matomo@sha256:4291b0872d274d9e3061f5abc6b4d27fd6a6ab55cc411af2c2f1ed595f02a360
+$ docker pull matomo@sha256:4fc449472e881d6d3dd44eb8c46f4a4e6584c8916a317754fc29f17430f7377d
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **49.4 MB (49401908 bytes)**  
+-	Total Size: **49.5 MB (49473181 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ddf6029927047d28ab8fd5c93d48b06f6953502c8fe08a213c25142995113d57`
+-	Image ID: `sha256:6dc99e034664e3c9aff02278cd1fbde3a4901de2cb6b8fe54b8b39fbf3c1913c`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -200,53 +200,53 @@ ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D
 ENV PHP_LDFLAGS=-Wl,-O1 -pie
 # Thu, 15 Jun 2023 00:39:58 GMT
 ENV GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD
-# Thu, 15 Jun 2023 00:39:58 GMT
-ENV PHP_VERSION=8.1.20
-# Thu, 15 Jun 2023 00:39:58 GMT
-ENV PHP_URL=https://www.php.net/distributions/php-8.1.20.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.1.20.tar.xz.asc
-# Thu, 15 Jun 2023 00:39:58 GMT
-ENV PHP_SHA256=4c9973f599e93ed5e8ce2b45ce1d41bb8fb54ce642824fd23e56b52fd75029a6
-# Thu, 15 Jun 2023 00:40:05 GMT
+# Mon, 10 Jul 2023 21:06:26 GMT
+ENV PHP_VERSION=8.1.21
+# Mon, 10 Jul 2023 21:06:27 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.1.21.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.1.21.tar.xz.asc
+# Mon, 10 Jul 2023 21:06:27 GMT
+ENV PHP_SHA256=e634a00b0c6a8cd39e840e9fb30b5227b820b7a9ace95b7b001053c1411c4821
+# Mon, 10 Jul 2023 21:06:34 GMT
 RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apk del --no-network .fetch-deps
-# Thu, 15 Jun 2023 00:40:06 GMT
+# Mon, 10 Jul 2023 21:06:34 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Thu, 15 Jun 2023 00:45:19 GMT
+# Mon, 10 Jul 2023 21:15:40 GMT
 RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		gnu-libiconv-dev 		libsodium-dev 		libxml2-dev 		linux-headers 		oniguruma-dev 		openssl-dev 		readline-dev 		sqlite-dev 	; 		rm -vf /usr/include/iconv.h; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv=/usr 		--with-openssl 		--with-readline 		--with-zlib 				--disable-phpdbg 				--with-pear 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 				--disable-cgi 				--enable-fpm 		--with-fpm-user=www-data 		--with-fpm-group=www-data 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
-# Thu, 15 Jun 2023 00:45:20 GMT
+# Mon, 10 Jul 2023 21:15:41 GMT
 COPY multi:869bde9dbeae74886a05c9e2107b3e3b4877116db8c6d9adbaff2719f9fb5262 in /usr/local/bin/ 
-# Thu, 15 Jun 2023 00:45:21 GMT
+# Mon, 10 Jul 2023 21:15:42 GMT
 RUN docker-php-ext-enable sodium
-# Thu, 15 Jun 2023 00:45:21 GMT
+# Mon, 10 Jul 2023 21:15:43 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Thu, 15 Jun 2023 00:45:21 GMT
+# Mon, 10 Jul 2023 21:15:43 GMT
 WORKDIR /var/www/html
-# Thu, 15 Jun 2023 00:45:21 GMT
+# Mon, 10 Jul 2023 21:15:44 GMT
 RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; echo '; https://github.com/docker-library/php/pull/725#issuecomment-443540114'; echo 'log_limit = 8192'; 		echo; 		echo '[www]'; 		echo '; php-fpm closes STDOUT on startup, so sending logs to /proc/self/fd/1 does not work.'; 		echo '; https://bugs.php.net/bug.php?id=73886'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 		echo 'decorate_workers_output = no'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	{ 		echo '; https://github.com/docker-library/php/issues/878#issuecomment-938595965'; 		echo 'fastcgi.logging = Off'; 	} > "$PHP_INI_DIR/conf.d/docker-fpm.ini"
-# Thu, 15 Jun 2023 00:45:21 GMT
+# Mon, 10 Jul 2023 21:15:44 GMT
 STOPSIGNAL SIGQUIT
-# Thu, 15 Jun 2023 00:45:22 GMT
+# Mon, 10 Jul 2023 21:15:44 GMT
 EXPOSE 9000
-# Thu, 15 Jun 2023 00:45:22 GMT
+# Mon, 10 Jul 2023 21:15:44 GMT
 CMD ["php-fpm"]
-# Thu, 22 Jun 2023 21:49:17 GMT
+# Mon, 10 Jul 2023 23:56:09 GMT
 ENV PHP_MEMORY_LIMIT=256M
-# Thu, 22 Jun 2023 21:50:27 GMT
+# Mon, 10 Jul 2023 23:57:40 GMT
 RUN set -ex; 		apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		autoconf 		freetype-dev 		icu-dev 		libjpeg-turbo-dev 		libpng-dev 		libzip-dev 		openldap-dev 		pcre-dev 		procps 	; 		docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap; 	docker-php-ext-install -j "$(nproc)" 		gd 		bcmath 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.21; 	pecl install redis-5.3.6; 		docker-php-ext-enable 		apcu 		redis 	; 	rm -r /tmp/pear; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .matomo-phpext-rundeps $runDeps; 	apk del --no-network .build-deps
-# Thu, 22 Jun 2023 21:50:28 GMT
+# Mon, 10 Jul 2023 23:57:41 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Mon, 10 Jul 2023 20:00:24 GMT
+# Mon, 10 Jul 2023 23:57:41 GMT
 ENV MATOMO_VERSION=4.15.0
-# Mon, 10 Jul 2023 20:00:35 GMT
+# Mon, 10 Jul 2023 23:57:50 GMT
 RUN set -ex; 	apk add --no-cache --virtual .fetch-deps 		gnupg 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys F529A27008477483777FC23D63BB30D0E5D2C749; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apk del .fetch-deps
-# Mon, 10 Jul 2023 20:00:36 GMT
+# Mon, 10 Jul 2023 23:57:50 GMT
 COPY file:f4ea35cff07e183c01b4e508329d1f5c342d9f4d330bda7f28faa530ced0d166 in /usr/local/etc/php/conf.d/php-matomo.ini 
-# Mon, 10 Jul 2023 20:00:36 GMT
+# Mon, 10 Jul 2023 23:57:51 GMT
 COPY file:900c144bc42a0cece349bbd3acad78e18e4d9e022616b0b2897604ea1fa1c744 in /entrypoint.sh 
-# Mon, 10 Jul 2023 20:00:36 GMT
+# Mon, 10 Jul 2023 23:57:51 GMT
 VOLUME [/var/www/html]
-# Mon, 10 Jul 2023 20:00:37 GMT
+# Mon, 10 Jul 2023 23:57:51 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Mon, 10 Jul 2023 20:00:37 GMT
+# Mon, 10 Jul 2023 23:57:51 GMT
 CMD ["php-fpm"]
 ```
 
@@ -267,48 +267,48 @@ CMD ["php-fpm"]
 		Last Modified: Thu, 15 Jun 2023 01:17:09 GMT  
 		Size: 269.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5724f38ea5a7cd6e9cb5a788f5a96e259c10a10b227f4db034691d451dcd223f`  
-		Last Modified: Thu, 15 Jun 2023 01:21:03 GMT  
-		Size: 11.8 MB (11813939 bytes)  
+	-	`sha256:1eea0c420db9b4effeb72025cdf58eee910c9fc9fadc852e69af6017e9bc487a`  
+		Last Modified: Mon, 10 Jul 2023 21:56:53 GMT  
+		Size: 11.9 MB (11882770 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1a51f3bf5021d0ae7d403f6514e557d327fdbd22e2c41e95c65bf1aeb2e5f5ae`  
-		Last Modified: Thu, 15 Jun 2023 01:21:02 GMT  
-		Size: 492.0 B  
+	-	`sha256:63288476ce984f628959221bec241e566eef69f04b6bceb92840e1a4e1ad9b67`  
+		Last Modified: Mon, 10 Jul 2023 21:56:52 GMT  
+		Size: 495.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3c28b5879092af4e45b385832bc4313aee06551ea43744329bb6cfe496cb4d8a`  
-		Last Modified: Thu, 15 Jun 2023 01:21:27 GMT  
-		Size: 11.3 MB (11311399 bytes)  
+	-	`sha256:d4cfa3792cd97d59ecbc680beec1b056ca13d913c3e0a0dd575116889e8ed7d7`  
+		Last Modified: Mon, 10 Jul 2023 21:57:22 GMT  
+		Size: 11.3 MB (11313668 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b0a402e0b116a9ebd67acd8dede2f64c480cd29f1c3d65e2fd93b967c162b79`  
-		Last Modified: Thu, 15 Jun 2023 01:21:25 GMT  
-		Size: 2.4 KB (2448 bytes)  
+	-	`sha256:98152c81668a5fddd5ab81d3299bb758609ddcc7c5aba78ffe704e1e4c8d475b`  
+		Last Modified: Mon, 10 Jul 2023 21:57:19 GMT  
+		Size: 2.5 KB (2450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5dbc7f3767839baa038a2ffa79f4005ba0aea53a673a8087f419055008433e32`  
-		Last Modified: Thu, 15 Jun 2023 01:21:25 GMT  
-		Size: 18.7 KB (18745 bytes)  
+	-	`sha256:73bcdf5bc58f2b2856a74498e166b635110a41f59203effabc6d13671fd55e9b`  
+		Last Modified: Mon, 10 Jul 2023 21:57:19 GMT  
+		Size: 18.8 KB (18751 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dbece0c05ff188d6c441a529366bc31ff9643726d14c877de853cbf6720f21f`  
-		Last Modified: Thu, 15 Jun 2023 01:21:25 GMT  
+	-	`sha256:7f889716504e1225f6acdcf6f33864fb4825bb9620e5d36155ee24abc6e9009a`  
+		Last Modified: Mon, 10 Jul 2023 21:57:19 GMT  
 		Size: 8.9 KB (8877 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4560ed3b1e7b648055d51e64879ce7615f6489b0fbb8b55d39226e5b7c1615c8`  
-		Last Modified: Thu, 22 Jun 2023 21:50:47 GMT  
-		Size: 3.1 MB (3081426 bytes)  
+	-	`sha256:dd59d7738002d78a7e960214feda983be9d1ba5e3553955039c7f35b584b9171`  
+		Last Modified: Mon, 10 Jul 2023 23:58:08 GMT  
+		Size: 3.1 MB (3081568 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1ccd32d40a4817ce28d5a466014ed9fd952d2f9d800013d2e9ac7ccf1f8b2534`  
-		Last Modified: Thu, 22 Jun 2023 21:50:46 GMT  
-		Size: 326.0 B  
+	-	`sha256:0a2bea37705ad7344082c1e2760d327cc34a6922ca628d86d8f08fad9e1587fd`  
+		Last Modified: Mon, 10 Jul 2023 23:58:08 GMT  
+		Size: 325.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:15c1ddb591a619b8a082f5b190b68edb1c0a04f449b4bdf808d6faca9eda059d`  
-		Last Modified: Mon, 10 Jul 2023 20:00:52 GMT  
-		Size: 17.4 MB (17353504 bytes)  
+	-	`sha256:7c12bc6ad54f8136e6256152cfe55b9c85f7b33d490d97b1c2bc0f488b211ae1`  
+		Last Modified: Mon, 10 Jul 2023 23:58:12 GMT  
+		Size: 17.4 MB (17353527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dcf79d92d61ceb423d7596ae794b87b5d4e3220b0b82915fec25df1df92238a`  
-		Last Modified: Mon, 10 Jul 2023 20:00:47 GMT  
-		Size: 343.0 B  
+	-	`sha256:1c384c5989d7ed52d89403c15a6b755c12986595970a03cb79bf48bf8144f191`  
+		Last Modified: Mon, 10 Jul 2023 23:58:08 GMT  
+		Size: 341.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d18cdf495dc39a653cb92b1640461093820b90ceff4350ff09b69f9bbac6cdb9`  
-		Last Modified: Mon, 10 Jul 2023 20:00:47 GMT  
+	-	`sha256:aff3fcb95c2dc7635dee131bc649119bc474a5b250c24fcceab3356db3764986`  
+		Last Modified: Mon, 10 Jul 2023 23:58:08 GMT  
 		Size: 823.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
