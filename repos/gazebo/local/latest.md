@@ -7162,14 +7162,9 @@ Licenses: (parsed from: `/usr/share/doc/libruby2.7/copyright`, `/usr/share/doc/r
 - `Unicode`
 - `zlib/libpng`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ruby2.7=2.7.0-5ubuntu1.11
-'http://archive.ubuntu.com/ubuntu/pool/main/r/ruby2.7/ruby2.7_2.7.0-5ubuntu1.11.dsc' ruby2.7_2.7.0-5ubuntu1.11.dsc 2611 SHA512:b5de33ca7d57ab3473fc0bcd364fb69f60ec043fdcffc9909df680528077112160a95156672e10dda2c5b455a515ecb28322a3313015a5ad345d2201282d2cee
-'http://archive.ubuntu.com/ubuntu/pool/main/r/ruby2.7/ruby2.7_2.7.0.orig.tar.xz' ruby2.7_2.7.0.orig.tar.xz 10734268 SHA512:0d39eeb8da43d9f026465df00b30e0e54e726f584e73825486402c940f634464b6f886b2b7badc7786822b4ef0814d9da6bad4479939676d438301c4cf15c881
-'http://archive.ubuntu.com/ubuntu/pool/main/r/ruby2.7/ruby2.7_2.7.0-5ubuntu1.11.debian.tar.xz' ruby2.7_2.7.0-5ubuntu1.11.debian.tar.xz 132560 SHA512:e13958bfae92b295e86bf3714bd965589fdcf3b7164499d7b91180d01e3193fcca0536f5f0440ab5d13ef0bfd4989ba4fe5eb1f583780f71751358e20918b4b9
-```
 
 ### `dpkg` source package: `rubygems-integration=1.16`
 
