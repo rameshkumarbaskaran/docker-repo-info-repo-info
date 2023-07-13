@@ -1,7 +1,7 @@
 ## `caddy:builder`
 
 ```console
-$ docker pull caddy@sha256:5ddd55fb783222b373e356894225461a2ed0ede31e79b34479f9740cac5b8d18
+$ docker pull caddy@sha256:f73c83a10f8e22f3a1c0e9aac660136ee0ef1dd86416a477b07d9284e201c405
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -428,14 +428,14 @@ WORKDIR /usr/bin
 ### `caddy:builder` - linux; s390x
 
 ```console
-$ docker pull caddy@sha256:fc037bfd1457aef01b882400ffb60f90c25441dfb38ed6e961a95f899a32c3b9
+$ docker pull caddy@sha256:20afa33b9e4aee20b87bdf3f1da3a22a3d8a6878f5f9d49ee35ec30e2cb84450
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **130.8 MB (130769012 bytes)**  
+-	Total Size: **130.8 MB (130769215 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ab979f861fd7a4df499e8dc83fb875d48711cd2b598d4c0758cc33a7e70ecdce`
+-	Image ID: `sha256:d183ef8cac47ea38bba53eede1b843eac5d3a5a9d709ffa92dd933b67e3c2170`
 -	Default Command: `["\/bin\/sh"]`
 
 ```dockerfile
@@ -449,31 +449,31 @@ RUN apk add --no-cache ca-certificates
 ENV PATH=/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Tue, 11 Jul 2023 19:48:06 GMT
 ENV GOLANG_VERSION=1.19.11
-# Tue, 11 Jul 2023 19:49:49 GMT
-RUN set -eux; 	apk add --no-cache --virtual .fetch-deps gnupg; 	arch="$(apk --print-arch)"; 	url=; 	case "$arch" in 		'x86_64') 			export GOAMD64='v1' GOARCH='amd64' GOOS='linux'; 			;; 		'armhf') 			export GOARCH='arm' GOARM='6' GOOS='linux'; 			;; 		'armv7') 			export GOARCH='arm' GOARM='7' GOOS='linux'; 			;; 		'aarch64') 			export GOARCH='arm64' GOOS='linux'; 			;; 		'x86') 			export GO386='softfloat' GOARCH='386' GOOS='linux'; 			;; 		'ppc64le') 			export GOARCH='ppc64le' GOOS='linux'; 			;; 		's390x') 			export GOARCH='s390x' GOOS='linux'; 			;; 		*) echo >&2 "error: unsupported architecture '$arch' (likely packaging update needed)"; exit 1 ;; 	esac; 	build=; 	if [ -z "$url" ]; then 		build=1; 		url='https://dl.google.com/go/go1.19.11.src.tar.gz'; 		sha256='e25c9ab72d811142b7f41ff6da5165fec2d1be5feec3ef2c66bc0bdecb431489'; 	fi; 		wget -O go.tgz.asc "$url.asc"; 	wget -O go.tgz "$url"; 	echo "$sha256 *go.tgz" | sha256sum -c -; 		GNUPGHOME="$(mktemp -d)"; export GNUPGHOME; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 'EB4C 1BFD 4F04 2F6D DDCC  EC91 7721 F63B D38B 4796'; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys '2F52 8D36 D67B 69ED F998  D857 78BD 6547 3CB3 BD13'; 	gpg --batch --verify go.tgz.asc go.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" go.tgz.asc; 		tar -C /usr/local -xzf go.tgz; 	rm go.tgz; 		if [ -n "$build" ]; then 		apk add --no-cache --virtual .build-deps 			bash 			gcc 			go 			musl-dev 		; 				export GOCACHE='/tmp/gocache'; 				( 			cd /usr/local/go/src; 			export GOROOT_BOOTSTRAP="$(go env GOROOT)" GOHOSTOS="$GOOS" GOHOSTARCH="$GOARCH"; 			if [ "${GOARCH:-}" = '386' ]; then 				export CGO_CFLAGS='-fno-stack-protector'; 			fi; 			./make.bash; 		); 				apk del --no-network .build-deps; 				rm -rf 			/usr/local/go/pkg/*/cmd 			/usr/local/go/pkg/bootstrap 			/usr/local/go/pkg/obj 			/usr/local/go/pkg/tool/*/api 			/usr/local/go/pkg/tool/*/go_bootstrap 			/usr/local/go/src/cmd/dist/dist 			"$GOCACHE" 		; 	fi; 		apk del --no-network .fetch-deps; 		go version
-# Tue, 11 Jul 2023 19:49:55 GMT
+# Thu, 13 Jul 2023 21:22:44 GMT
+RUN set -eux; 	apk add --no-cache --virtual .fetch-deps gnupg; 	arch="$(apk --print-arch)"; 	url=; 	case "$arch" in 		'x86_64') 			export GOAMD64='v1' GOARCH='amd64' GOOS='linux'; 			;; 		'armhf') 			export GOARCH='arm' GOARM='6' GOOS='linux'; 			;; 		'armv7') 			export GOARCH='arm' GOARM='7' GOOS='linux'; 			;; 		'aarch64') 			export GOARCH='arm64' GOOS='linux'; 			;; 		'x86') 			export GO386='softfloat' GOARCH='386' GOOS='linux'; 			;; 		'ppc64le') 			export GOARCH='ppc64le' GOOS='linux'; 			;; 		'riscv64') 			export GOARCH='riscv64' GOOS='linux'; 			;; 		's390x') 			export GOARCH='s390x' GOOS='linux'; 			;; 		*) echo >&2 "error: unsupported architecture '$arch' (likely packaging update needed)"; exit 1 ;; 	esac; 	build=; 	if [ -z "$url" ]; then 		build=1; 		url='https://dl.google.com/go/go1.19.11.src.tar.gz'; 		sha256='e25c9ab72d811142b7f41ff6da5165fec2d1be5feec3ef2c66bc0bdecb431489'; 	fi; 		wget -O go.tgz.asc "$url.asc"; 	wget -O go.tgz "$url"; 	echo "$sha256 *go.tgz" | sha256sum -c -; 		GNUPGHOME="$(mktemp -d)"; export GNUPGHOME; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 'EB4C 1BFD 4F04 2F6D DDCC  EC91 7721 F63B D38B 4796'; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys '2F52 8D36 D67B 69ED F998  D857 78BD 6547 3CB3 BD13'; 	gpg --batch --verify go.tgz.asc go.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" go.tgz.asc; 		tar -C /usr/local -xzf go.tgz; 	rm go.tgz; 		if [ -n "$build" ]; then 		apk add --no-cache --virtual .build-deps 			bash 			gcc 			go 			musl-dev 		; 				export GOCACHE='/tmp/gocache'; 				( 			cd /usr/local/go/src; 			export GOROOT_BOOTSTRAP="$(go env GOROOT)" GOHOSTOS="$GOOS" GOHOSTARCH="$GOARCH"; 			if [ "${GOARCH:-}" = '386' ]; then 				export CGO_CFLAGS='-fno-stack-protector'; 			fi; 			./make.bash; 		); 				apk del --no-network .build-deps; 				rm -rf 			/usr/local/go/pkg/*/cmd 			/usr/local/go/pkg/bootstrap 			/usr/local/go/pkg/obj 			/usr/local/go/pkg/tool/*/api 			/usr/local/go/pkg/tool/*/go_bootstrap 			/usr/local/go/src/cmd/dist/dist 			"$GOCACHE" 		; 	fi; 		apk del --no-network .fetch-deps; 		go version
+# Thu, 13 Jul 2023 21:22:51 GMT
 ENV GOPATH=/go
-# Tue, 11 Jul 2023 19:49:55 GMT
+# Thu, 13 Jul 2023 21:22:51 GMT
 ENV PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 11 Jul 2023 19:49:56 GMT
+# Thu, 13 Jul 2023 21:22:52 GMT
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 1777 "$GOPATH"
-# Tue, 11 Jul 2023 19:49:56 GMT
+# Thu, 13 Jul 2023 21:22:52 GMT
 WORKDIR /go
-# Tue, 11 Jul 2023 20:12:14 GMT
+# Thu, 13 Jul 2023 21:43:36 GMT
 RUN apk add --no-cache 	ca-certificates 	git 	libcap
-# Tue, 11 Jul 2023 20:12:14 GMT
+# Thu, 13 Jul 2023 21:43:36 GMT
 ENV XCADDY_VERSION=v0.3.4
-# Tue, 11 Jul 2023 20:12:14 GMT
+# Thu, 13 Jul 2023 21:43:37 GMT
 ENV CADDY_VERSION=v2.6.4
-# Tue, 11 Jul 2023 20:12:14 GMT
+# Thu, 13 Jul 2023 21:43:37 GMT
 ENV XCADDY_SKIP_CLEANUP=1
-# Tue, 11 Jul 2023 20:12:14 GMT
+# Thu, 13 Jul 2023 21:43:37 GMT
 ENV XCADDY_SETCAP=1
-# Tue, 11 Jul 2023 20:12:16 GMT
+# Thu, 13 Jul 2023 21:43:38 GMT
 RUN set -eux; 	apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		x86_64)  binArch='amd64'; checksum='68ab15d90eb70c23e8b13c3935b194fc1b638f8c0fee6506a109dcee082c20d6e07890320a876b13eb23b5a7a0617daa28fe8af24dcb0dcb3eca9ea74dc76713' ;; 		armhf)   binArch='armv6'; checksum='2853413e63ac29f296b1c44696022febc8b29c4b37fb20442b635903a0b79d523ca00896dfce3e40f5894dd297b345ac007af0ddffccaada843c7de61d334134' ;; 		armv7)   binArch='armv7'; checksum='c59e93ba270705b2312f6a70552f2a345cec91cc3504233785cb46fa4b644a47e520bb29dfbf519f814bb13d0bbea213976fd7b059883eab2b091913f9ed393f' ;; 		aarch64) binArch='arm64'; checksum='df4c58e97931ca58b7a38d245948912b817e952a2961ff583744039ca68a584a303f7cbfdb33392c84d8f76f5b30f206d9f84a04f547043a3d1fa5282b0fd544' ;; 		ppc64el|ppc64le) binArch='ppc64le'; checksum='2795d5b7546bd10ff3cd21a393597281e42e1043164536e01e18fb56047ba5b396493a086bb2d90e8ede9a54b5208e947ecaacccca4a8550704fb3f8a17dd771' ;; 		s390x)   binArch='s390x'; checksum='2ed85231aac36e3af873e3fdf4f6b6378b55dcc17743d24b28b3b48d6622fde73aae58eed124082478a0b841c338d64caa0b0be302545a79092a97cf205f1b29' ;; 		*) echo >&2 "error: unsupported architecture ($apkArch)"; exit 1 ;;	esac; 	wget -O /tmp/xcaddy.tar.gz "https://github.com/caddyserver/xcaddy/releases/download/v0.3.4/xcaddy_0.3.4_linux_${binArch}.tar.gz"; 	echo "$checksum  /tmp/xcaddy.tar.gz" | sha512sum -c; 	tar x -z -f /tmp/xcaddy.tar.gz -C /usr/bin xcaddy; 	rm -f /tmp/xcaddy.tar.gz; 	chmod +x /usr/bin/xcaddy;
-# Tue, 11 Jul 2023 20:12:16 GMT
+# Thu, 13 Jul 2023 21:43:38 GMT
 COPY file:3284b89c053fa1b60b278653bdca42a092891284e07e11d2fe66ee30b14e3081 in /usr/bin/caddy-builder 
-# Tue, 11 Jul 2023 20:12:16 GMT
+# Thu, 13 Jul 2023 21:43:38 GMT
 WORKDIR /usr/bin
 ```
 
@@ -486,24 +486,24 @@ WORKDIR /usr/bin
 		Last Modified: Thu, 15 Jun 2023 06:04:00 GMT  
 		Size: 285.1 KB (285091 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8436ebd3a0daa3a7d299caff786ac72608b97ca7a1dd8cd3b6031d74b08e9776`  
-		Last Modified: Tue, 11 Jul 2023 19:55:37 GMT  
-		Size: 120.9 MB (120908736 bytes)  
+	-	`sha256:44e82b599cdbed0ad1b5fa411c5cc09db9b7be42d548a6735843531940882ae7`  
+		Last Modified: Thu, 13 Jul 2023 21:27:32 GMT  
+		Size: 120.9 MB (120908969 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1bddef8073800e0a7db688ae633b35699b7873078967bda25b9d81033132f68d`  
-		Last Modified: Tue, 11 Jul 2023 19:55:22 GMT  
+	-	`sha256:065f8658be02ff204ec6aff0e5b001e14a0340a2bd94275069b923fe6c4ec75e`  
+		Last Modified: Thu, 13 Jul 2023 21:27:17 GMT  
 		Size: 155.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bbb3c3b77aaf5edf8aa12f86205f615dc88cfa8d05302cd8a13d86592be3e51b`  
-		Last Modified: Tue, 11 Jul 2023 20:13:00 GMT  
-		Size: 5.1 MB (5099722 bytes)  
+	-	`sha256:c4b2850fc756e6845a44aa48b6fe837af96097f551be8e4c0ce0d1420a02442e`  
+		Last Modified: Thu, 13 Jul 2023 21:44:22 GMT  
+		Size: 5.1 MB (5099695 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:241b6adabe3e4e55652ee3c4b048d07195de3555d107036650cc54cd93c511ac`  
-		Last Modified: Tue, 11 Jul 2023 20:13:00 GMT  
-		Size: 1.3 MB (1261406 bytes)  
+	-	`sha256:0da702f7598a86104738b06d561d98bcf9bd3ad0d1b3764ad6c9032d04b522a5`  
+		Last Modified: Thu, 13 Jul 2023 21:44:21 GMT  
+		Size: 1.3 MB (1261403 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:123e63e6f62469b676c03e81eb43348fc3fab4f46024e068146d0b441c3fc0fd`  
-		Last Modified: Tue, 11 Jul 2023 20:13:00 GMT  
+	-	`sha256:3d735874bbecedd63659e5d01c02827f03732818cd971647640e4c93ced74b17`  
+		Last Modified: Thu, 13 Jul 2023 21:44:21 GMT  
 		Size: 405.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
