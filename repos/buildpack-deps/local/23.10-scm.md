@@ -156,14 +156,13 @@ Licenses: (parsed from: `/usr/share/doc/libaudit-common/copyright`, `/usr/share/
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris audit=1:3.0.9-1
-'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_3.0.9-1.dsc' audit_3.0.9-1.dsc 2402 SHA512:ab978ec49d49c040ffd9202c017b86b0d9d84013e9da82a3d557b03eb22d57832d94b5dfbe42288d45eda36c06244a45efc2431232f407565f84c5b15a296dca
-'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_3.0.9.orig.tar.gz' audit_3.0.9.orig.tar.gz 1210655 SHA512:5219eb0b41746eca3406008a97731c0083e7be50ec88563a39537de22cb69fe88490f5fe5a11535930f360b11a62538e2ff6cbe39e059cd760038363954ef4d6
-'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_3.0.9-1.debian.tar.xz' audit_3.0.9-1.debian.tar.xz 18784 SHA512:4369817e498acc2f59efac80e646e0b0ebc84bc03bbf17ecc1c41f2a5a611dad413f86441c2f375002364a30ac55f8b248e370cbedf0e8c22d71d4195763841c
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/audit/1:3.0.9-1/
+
 
 ### `dpkg` source package: `base-files=13ubuntu1`
 
@@ -1665,15 +1664,13 @@ Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/me
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mercurial=6.3.2-1
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_6.3.2-1.dsc' mercurial_6.3.2-1.dsc 2848 SHA512:ec64fdcb51a719debce8dac1d0c932cc2061c0ad73112f3c54d2566ccb86a9c771d7cd6c05902454e9c09307e768cc7c5b6f4854308abc9c67255e41274626d6
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_6.3.2.orig.tar.gz' mercurial_6.3.2.orig.tar.gz 8092710 SHA512:5ca7e448bf336c2a2d4db174c4f486f66f41eef33db14f152abb09b8d82416124d251784cb5898499580083ca104113d0763e27baa9b77feb90ba2fd96d40be5
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_6.3.2.orig.tar.gz.asc' mercurial_6.3.2.orig.tar.gz.asc 659 SHA512:7a05f805afc256878187afc9679c03e9cdefc4d3adb47420684010f35045c507e4bd0bf78960121e28d51b9525b37fc661045e9c9dbed77a15d0aa2f656aaa72
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_6.3.2-1.debian.tar.xz' mercurial_6.3.2-1.debian.tar.xz 90164 SHA512:99e49af80ad0d22a6d7b09d468dc881af27c18e7732391243d2cb3a994178ac4a3adf9cd59b6cf5b5d8a9ea587ef065940502c10f1c4f461d08f05b09e6ca466
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/mercurial/6.3.2-1/
+
 
 ### `dpkg` source package: `ncurses=6.4-4`
 
@@ -1850,15 +1847,9 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:9.2p1-2ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_9.2p1-2ubuntu3.dsc' openssh_9.2p1-2ubuntu3.dsc 3313 SHA512:2ec80a9f6c7c30d7c62e2c9cea240d5d5c3bd7606101599fa8e4ac5e95346efb684f65095112bae043b4c1e1a9065cb34ed10ab7c7ddbabf21fe7ffc75488c07
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_9.2p1.orig.tar.gz' openssh_9.2p1.orig.tar.gz 1852380 SHA512:c4b79ef3a05b96bfc477ffb31f734635bffd5be213ab58e043111c3232dbe999ff24665fa1069518237cffa5126ded0dda8984e1b8f098f4f09b8c1dae20e604
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_9.2p1.orig.tar.gz.asc' openssh_9.2p1.orig.tar.gz.asc 833 SHA512:2a56f8946ed00fcd5a92935e090523d40b5c3747e25661d575b799b1825bf5e47a95eed5e7ed968fe042349c2c7d94d6b0e6bf2d9145b5c6ff5df2ca538d56e5
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_9.2p1-2ubuntu3.debian.tar.xz' openssh_9.2p1-2ubuntu3.debian.tar.xz 187764 SHA512:b35256b7bf867667bc416cfb6f1c76f0eb947bd263f3d91eba1d3794a658653b123ac95a9113cba7c62dc498eec92050ad4e391f2419c5373bdcfd35654bd27e
-```
 
 ### `dpkg` source package: `openssl=3.0.9-1ubuntu1`
 
