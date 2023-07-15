@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f91632539124720015216fc162c62509875f9943a7cdd4ad032bd20a38e841db`
-- Created: `2023-06-27T23:21:42.192365597Z`
-- Virtual Size: ~ 505.50 Mb  
+- Image ID: `sha256:3ed4b48d516c571c4144df1121e64c80c3d3054368d43d2e2b7d7192bd2e98f9`
+- Created: `2023-07-13T01:39:40.104858217Z`
+- Virtual Size: ~ 495.03 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -1617,37 +1617,37 @@ $ dnf --quiet download --source --url mesa-libglapi-18.3.4-5.amzn2.0.1
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/95051b33cb06275a2be90f45ee8fbd12a95dc2afe7ba94bff90e197f4d6a9403/../../../../../blobstore/6a8b6b5fe494d93ba576820d4cfa246c67108428b877558a3fbc9c4f2fe9e8af/mesa-18.3.4-5.amzn2.0.1.src.rpm
 ```
 
-### `rpm` package: `ncurses-6.0-8.20170212.amzn2.1.4.x86_64`
+### `rpm` package: `ncurses-6.0-8.20170212.amzn2.1.5.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url ncurses-6.0-8.20170212.amzn2.1.4
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/95051b33cb06275a2be90f45ee8fbd12a95dc2afe7ba94bff90e197f4d6a9403/../../../../../blobstore/cc80432d7622927e509bbb5b04fac26019cd3ff487c79177d8a127ccd611b0d4/ncurses-6.0-8.20170212.amzn2.1.4.src.rpm
+$ dnf --quiet download --source --url ncurses-6.0-8.20170212.amzn2.1.5
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/95051b33cb06275a2be90f45ee8fbd12a95dc2afe7ba94bff90e197f4d6a9403/../../../../../blobstore/98b847c530961f8735cf280258cb3e0d448497f1190b269e450aedb4a175dddc/ncurses-6.0-8.20170212.amzn2.1.5.src.rpm
 ```
 
-### `rpm` package: `ncurses-base-6.0-8.20170212.amzn2.1.4.noarch`
+### `rpm` package: `ncurses-base-6.0-8.20170212.amzn2.1.5.noarch`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url ncurses-base-6.0-8.20170212.amzn2.1.4.noarch
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/95051b33cb06275a2be90f45ee8fbd12a95dc2afe7ba94bff90e197f4d6a9403/../../../../../blobstore/cc80432d7622927e509bbb5b04fac26019cd3ff487c79177d8a127ccd611b0d4/ncurses-6.0-8.20170212.amzn2.1.4.src.rpm
+$ dnf --quiet download --source --url ncurses-base-6.0-8.20170212.amzn2.1.5.noarch
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/95051b33cb06275a2be90f45ee8fbd12a95dc2afe7ba94bff90e197f4d6a9403/../../../../../blobstore/98b847c530961f8735cf280258cb3e0d448497f1190b269e450aedb4a175dddc/ncurses-6.0-8.20170212.amzn2.1.5.src.rpm
 ```
 
-### `rpm` package: `ncurses-libs-6.0-8.20170212.amzn2.1.4.x86_64`
+### `rpm` package: `ncurses-libs-6.0-8.20170212.amzn2.1.5.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url ncurses-libs-6.0-8.20170212.amzn2.1.4
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/95051b33cb06275a2be90f45ee8fbd12a95dc2afe7ba94bff90e197f4d6a9403/../../../../../blobstore/cc80432d7622927e509bbb5b04fac26019cd3ff487c79177d8a127ccd611b0d4/ncurses-6.0-8.20170212.amzn2.1.4.src.rpm
+$ dnf --quiet download --source --url ncurses-libs-6.0-8.20170212.amzn2.1.5
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/95051b33cb06275a2be90f45ee8fbd12a95dc2afe7ba94bff90e197f4d6a9403/../../../../../blobstore/98b847c530961f8735cf280258cb3e0d448497f1190b269e450aedb4a175dddc/ncurses-6.0-8.20170212.amzn2.1.5.src.rpm
 ```
 
 ### `rpm` package: `nspr-4.34.0-3.1.amzn2.x86_64`
@@ -1738,15 +1738,15 @@ $ dnf --quiet download --source --url nss-util-3.79.0-1.amzn2
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/95051b33cb06275a2be90f45ee8fbd12a95dc2afe7ba94bff90e197f4d6a9403/../../../../../blobstore/993c341e2f134b55e52fa3fb761b5ee3193aaf6e60b55993cd1b6ab67f1f890b/nss-util-3.79.0-1.amzn2.src.rpm
 ```
 
-### `rpm` package: `openldap-2.4.44-25.amzn2.0.5.x86_64`
+### `rpm` package: `openldap-2.4.44-25.amzn2.0.6.x86_64`
 
 Licenses (from `rpm --query`): OpenLDAP
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url openldap-2.4.44-25.amzn2.0.5
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/95051b33cb06275a2be90f45ee8fbd12a95dc2afe7ba94bff90e197f4d6a9403/../../../../../blobstore/0f2a26c2bbe23a674ba4eb80bb1ce7fe04b82a772e6d484d45db9837c5731e10/openldap-2.4.44-25.amzn2.0.5.src.rpm
+$ dnf --quiet download --source --url openldap-2.4.44-25.amzn2.0.6
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/95051b33cb06275a2be90f45ee8fbd12a95dc2afe7ba94bff90e197f4d6a9403/../../../../../blobstore/ae8e254ddbbc47f99792fe6ecadd8a936248a5069c1d74f9e94a1c70abd98828/openldap-2.4.44-25.amzn2.0.6.src.rpm
 ```
 
 ### `rpm` package: `openssl-libs-1.0.2k-24.amzn2.0.7.x86_64`
