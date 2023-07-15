@@ -87,9 +87,15 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris apt=2.6.1
-'http://http.debian.net/debian/pool/main/a/apt/apt_2.6.1.dsc' apt_2.6.1.dsc 2933 SHA256:e258c1b9c24e1747100271db9d6e5af7127bd3ef812a69bdf63de263abfdc6fd
-'http://http.debian.net/debian/pool/main/a/apt/apt_2.6.1.tar.xz' apt_2.6.1.tar.xz 2328508 SHA256:86b888c901fa2e78f1bf52a2aaa2f400ff82a472b94ff0ac6631939ee68fa6fd
+'http://deb.debian.org/debian/pool/main/a/apt/apt_2.6.1.dsc' apt_2.6.1.dsc 2933 SHA256:e258c1b9c24e1747100271db9d6e5af7127bd3ef812a69bdf63de263abfdc6fd
+'http://deb.debian.org/debian/pool/main/a/apt/apt_2.6.1.tar.xz' apt_2.6.1.tar.xz 2328508 SHA256:86b888c901fa2e78f1bf52a2aaa2f400ff82a472b94ff0ac6631939ee68fa6fd
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/apt/2.6.1/ (for browsing the source)
+- https://sources.debian.net/src/apt/2.6.1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/apt/2.6.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.5.1-4`
 
@@ -127,20 +133,13 @@ Licenses: (parsed from: `/usr/share/doc/libaudit-common/copyright`, `/usr/share/
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris audit=1:3.0.9-1
-'http://deb.debian.org/debian/pool/main/a/audit/audit_3.0.9-1.dsc' audit_3.0.9-1.dsc 2402 SHA256:39d4efdc4e15420f4a1df2b8d7efd17864f2d7da6d84f3122a7c53b6c66a2a1d
-'http://deb.debian.org/debian/pool/main/a/audit/audit_3.0.9.orig.tar.gz' audit_3.0.9.orig.tar.gz 1210655 SHA256:fd9570444df1573a274ca8ba23590082298a083cfc0618138957f590e845bc78
-'http://deb.debian.org/debian/pool/main/a/audit/audit_3.0.9-1.debian.tar.xz' audit_3.0.9-1.debian.tar.xz 18784 SHA256:b80d2685b79a617098a3389f41356ffd77d8d62d59bee03b189e31dd9b81580e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/audit/1:3.0.9-1/
 
-- https://sources.debian.net/src/audit/1:3.0.9-1/ (for browsing the source)
-- https://sources.debian.net/src/audit/1:3.0.9-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/audit/1:3.0.9-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-files=13`
 
@@ -914,10 +913,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gcc-12=12.3.0-4
-'http://http.debian.net/debian/pool/main/g/gcc-12/gcc-12_12.3.0-4.dsc' gcc-12_12.3.0-4.dsc 21854 SHA256:41f8cc464ca3daa39aef28f373a4cdb66e0af6a2abe17f50c15df20a0bedd427
-'http://http.debian.net/debian/pool/main/g/gcc-12/gcc-12_12.3.0.orig.tar.gz' gcc-12_12.3.0.orig.tar.gz 86568509 SHA256:5f46ba2253eefc2d6bbc8c6054a44275955a25d275ae94798bcc9e52d26f9fba
-'http://http.debian.net/debian/pool/main/g/gcc-12/gcc-12_12.3.0-4.debian.tar.xz' gcc-12_12.3.0-4.debian.tar.xz 753932 SHA256:5a2267e0022b3fdc429c740d668bb724d64c35b7f4341b3432585005f6d0a81b
+'http://deb.debian.org/debian/pool/main/g/gcc-12/gcc-12_12.3.0-4.dsc' gcc-12_12.3.0-4.dsc 21854 SHA256:41f8cc464ca3daa39aef28f373a4cdb66e0af6a2abe17f50c15df20a0bedd427
+'http://deb.debian.org/debian/pool/main/g/gcc-12/gcc-12_12.3.0.orig.tar.gz' gcc-12_12.3.0.orig.tar.gz 86568509 SHA256:5f46ba2253eefc2d6bbc8c6054a44275955a25d275ae94798bcc9e52d26f9fba
+'http://deb.debian.org/debian/pool/main/g/gcc-12/gcc-12_12.3.0-4.debian.tar.xz' gcc-12_12.3.0-4.debian.tar.xz 753932 SHA256:5a2267e0022b3fdc429c740d668bb724d64c35b7f4341b3432585005f6d0a81b
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/gcc-12/12.3.0-4/ (for browsing the source)
+- https://sources.debian.net/src/gcc-12/12.3.0-4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gcc-12/12.3.0-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-13=13.1.0-6`
 
@@ -972,9 +977,15 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gcc-defaults=1.205
-'http://http.debian.net/debian/pool/main/g/gcc-defaults/gcc-defaults_1.205.dsc' gcc-defaults_1.205.dsc 12592 SHA256:3ef6aee4482ff1b38bd7bdcfc683fdd0f12abeff5a9c6553d7be0d1dfe332e71
-'http://http.debian.net/debian/pool/main/g/gcc-defaults/gcc-defaults_1.205.tar.xz' gcc-defaults_1.205.tar.xz 45168 SHA256:968a384baaffa1d119689029fe336f4f048bc9f278c5d909b63c1c6c4adfd643
+'http://deb.debian.org/debian/pool/main/g/gcc-defaults/gcc-defaults_1.205.dsc' gcc-defaults_1.205.dsc 12592 SHA256:3ef6aee4482ff1b38bd7bdcfc683fdd0f12abeff5a9c6553d7be0d1dfe332e71
+'http://deb.debian.org/debian/pool/main/g/gcc-defaults/gcc-defaults_1.205.tar.xz' gcc-defaults_1.205.tar.xz 45168 SHA256:968a384baaffa1d119689029fe336f4f048bc9f278c5d909b63c1c6c4adfd643
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/gcc-defaults/1.205/ (for browsing the source)
+- https://sources.debian.net/src/gcc-defaults/1.205/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gcc-defaults/1.205/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gdbm=1.23-3`
 
@@ -3449,20 +3460,13 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=252.11-1
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_252.11-1.dsc' systemd_252.11-1.dsc 6578 SHA256:057c63d0cb36d8c8b9f3fd60ca9c11b1273929f73ae2699de55aec50b09e1e56
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_252.11.orig.tar.gz' systemd_252.11.orig.tar.gz 11845530 SHA256:b13c9429794f8606f96ce2f5f3b7a1ce54271378544eb7a6ae85577c332da2ad
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_252.11-1.debian.tar.xz' systemd_252.11-1.debian.tar.xz 170420 SHA256:d4f0386ca467f4a4f1e1343e344aa6789f710033bd3f8d0e0b991285a746c38e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/systemd/252.11-1/
 
-- https://sources.debian.net/src/systemd/252.11-1/ (for browsing the source)
-- https://sources.debian.net/src/systemd/252.11-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/systemd/252.11-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=3.06-4`
 
