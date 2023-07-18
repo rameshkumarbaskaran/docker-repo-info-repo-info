@@ -25,11 +25,21 @@
 -	[`sapmachine:jdk-ubuntu-20.0.1`](#sapmachinejdk-ubuntu-2001)
 -	[`sapmachine:jdk-ubuntu-lts`](#sapmachinejdk-ubuntu-lts)
 -	[`sapmachine:jre-headless-ubuntu`](#sapmachinejre-headless-ubuntu)
+-	[`sapmachine:jre-headless-ubuntu-11`](#sapmachinejre-headless-ubuntu-11)
+-	[`sapmachine:jre-headless-ubuntu-11.0.19`](#sapmachinejre-headless-ubuntu-11019)
+-	[`sapmachine:jre-headless-ubuntu-17`](#sapmachinejre-headless-ubuntu-17)
+-	[`sapmachine:jre-headless-ubuntu-17.0.7`](#sapmachinejre-headless-ubuntu-1707)
 -	[`sapmachine:jre-headless-ubuntu-20`](#sapmachinejre-headless-ubuntu-20)
 -	[`sapmachine:jre-headless-ubuntu-20.0.1`](#sapmachinejre-headless-ubuntu-2001)
+-	[`sapmachine:jre-headless-ubuntu-lts`](#sapmachinejre-headless-ubuntu-lts)
 -	[`sapmachine:jre-ubuntu`](#sapmachinejre-ubuntu)
+-	[`sapmachine:jre-ubuntu-11`](#sapmachinejre-ubuntu-11)
+-	[`sapmachine:jre-ubuntu-11.0.19`](#sapmachinejre-ubuntu-11019)
+-	[`sapmachine:jre-ubuntu-17`](#sapmachinejre-ubuntu-17)
+-	[`sapmachine:jre-ubuntu-17.0.7`](#sapmachinejre-ubuntu-1707)
 -	[`sapmachine:jre-ubuntu-20`](#sapmachinejre-ubuntu-20)
 -	[`sapmachine:jre-ubuntu-20.0.1`](#sapmachinejre-ubuntu-2001)
+-	[`sapmachine:jre-ubuntu-lts`](#sapmachinejre-ubuntu-lts)
 -	[`sapmachine:latest`](#sapmachinelatest)
 -	[`sapmachine:lts`](#sapmachinelts)
 
@@ -3345,6 +3355,42 @@ CMD ["jshell"]
 		Size: 56.6 MB (56633367 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `sapmachine:jre-headless-ubuntu-11`
+
+```console
+$ docker pull sapmachine@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
+## `sapmachine:jre-headless-ubuntu-11.0.19`
+
+```console
+$ docker pull sapmachine@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
+## `sapmachine:jre-headless-ubuntu-17`
+
+```console
+$ docker pull sapmachine@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
+## `sapmachine:jre-headless-ubuntu-17.0.7`
+
+```console
+$ docker pull sapmachine@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
 ## `sapmachine:jre-headless-ubuntu-20`
 
 ```console
@@ -3633,6 +3679,15 @@ CMD ["jshell"]
 		Size: 56.6 MB (56633367 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `sapmachine:jre-headless-ubuntu-lts`
+
+```console
+$ docker pull sapmachine@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
 ## `sapmachine:jre-ubuntu`
 
 ```console
@@ -3776,6 +3831,42 @@ CMD ["jshell"]
 		Last Modified: Mon, 17 Jul 2023 19:35:38 GMT  
 		Size: 58.0 MB (58026978 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `sapmachine:jre-ubuntu-11`
+
+```console
+$ docker pull sapmachine@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
+## `sapmachine:jre-ubuntu-11.0.19`
+
+```console
+$ docker pull sapmachine@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
+## `sapmachine:jre-ubuntu-17`
+
+```console
+$ docker pull sapmachine@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
+## `sapmachine:jre-ubuntu-17.0.7`
+
+```console
+$ docker pull sapmachine@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `sapmachine:jre-ubuntu-20`
 
@@ -4064,6 +4155,15 @@ CMD ["jshell"]
 		Last Modified: Mon, 17 Jul 2023 19:35:38 GMT  
 		Size: 58.0 MB (58026978 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `sapmachine:jre-ubuntu-lts`
+
+```console
+$ docker pull sapmachine@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `sapmachine:latest`
 
