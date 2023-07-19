@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9de81ef143c726ec6d9d687f469d5f095d283bb48c56e5f07f260fc22c9962d9`
-- Created: `2023-05-24T23:33:15.860533056Z`
-- Virtual Size: ~ 93.71 Mb  
+- Image ID: `sha256:8cf43889fd4a838eab96148076adad737f11f06fc5269e06c37ccca6297f014f`
+- Created: `2023-07-18T19:20:10.476938989Z`
+- Virtual Size: ~ 93.79 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -338,15 +338,15 @@ $ dnf --quiet download --source --url keyutils-libs-1.5.10-9.el8
 http://repo.almalinux.org/vault/8.8/BaseOS/Source/Packages/keyutils-1.5.10-9.el8.src.rpm
 ```
 
-### `rpm` package: `krb5-libs-1.18.2-22.el8_7.x86_64`
+### `rpm` package: `krb5-libs-1.18.2-25.el8_8.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url krb5-libs-1.18.2-22.el8_7
-http://repo.almalinux.org/vault/8.8/BaseOS/Source/Packages/krb5-1.18.2-22.el8_7.src.rpm
+$ dnf --quiet download --source --url krb5-libs-1.18.2-25.el8_8
+http://repo.almalinux.org/vault/8.8/BaseOS/Source/Packages/krb5-1.18.2-25.el8_8.src.rpm
 ```
 
 ### `rpm` package: `langpacks-en-1.0-12.el8.noarch`
@@ -679,26 +679,26 @@ $ dnf --quiet download --source --url libsolv-0.7.20-4.el8_7
 http://repo.almalinux.org/vault/8.8/BaseOS/Source/Packages/libsolv-0.7.20-4.el8_7.src.rpm
 ```
 
-### `rpm` package: `libssh-0.9.6-6.el8.x86_64`
+### `rpm` package: `libssh-0.9.6-10.el8_8.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url libssh-0.9.6-6.el8
-http://repo.almalinux.org/vault/8.8/BaseOS/Source/Packages/libssh-0.9.6-6.el8.src.rpm
+$ dnf --quiet download --source --url libssh-0.9.6-10.el8_8
+http://repo.almalinux.org/vault/8.8/BaseOS/Source/Packages/libssh-0.9.6-10.el8_8.src.rpm
 ```
 
-### `rpm` package: `libssh-config-0.9.6-6.el8.noarch`
+### `rpm` package: `libssh-config-0.9.6-10.el8_8.noarch`
 
 Licenses (from `rpm --query`): LGPLv2+
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url libssh-config-0.9.6-6.el8.noarch
-http://repo.almalinux.org/vault/8.8/BaseOS/Source/Packages/libssh-0.9.6-6.el8.src.rpm
+$ dnf --quiet download --source --url libssh-config-0.9.6-10.el8_8.noarch
+http://repo.almalinux.org/vault/8.8/BaseOS/Source/Packages/libssh-0.9.6-10.el8_8.src.rpm
 ```
 
 ### `rpm` package: `libstdc++-8.5.0-18.el8.alma.x86_64`
@@ -1053,26 +1053,26 @@ $ dnf --quiet download --source --url setup-2.12.2-9.el8.noarch
 http://repo.almalinux.org/vault/8.8/BaseOS/Source/Packages/setup-2.12.2-9.el8.src.rpm
 ```
 
-### `rpm` package: `sqlite-libs-3.26.0-17.el8_7.x86_64`
+### `rpm` package: `sqlite-libs-3.26.0-18.el8_8.x86_64`
 
 Licenses (from `rpm --query`): Public Domain
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url sqlite-libs-3.26.0-17.el8_7
-http://repo.almalinux.org/vault/8.8/BaseOS/Source/Packages/sqlite-3.26.0-17.el8_7.src.rpm
+$ dnf --quiet download --source --url sqlite-libs-3.26.0-18.el8_8
+http://repo.almalinux.org/vault/8.8/BaseOS/Source/Packages/sqlite-3.26.0-18.el8_8.src.rpm
 ```
 
-### `rpm` package: `systemd-libs-239-74.el8_8.x86_64`
+### `rpm` package: `systemd-libs-239-74.el8_8.2.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and MIT
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url systemd-libs-239-74.el8_8
-http://repo.almalinux.org/vault/8.8/BaseOS/Source/Packages/systemd-239-74.el8_8.src.rpm
+$ dnf --quiet download --source --url systemd-libs-239-74.el8_8.2
+http://repo.almalinux.org/vault/8.8/BaseOS/Source/Packages/systemd-239-74.el8_8.2.src.rpm
 ```
 
 ### `rpm` package: `tzdata-2023c-1.el8.noarch`
