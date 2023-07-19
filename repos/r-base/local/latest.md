@@ -1212,11 +1212,17 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris grep=3.8-5
-'http://http.debian.net/debian/pool/main/g/grep/grep_3.8-5.dsc' grep_3.8-5.dsc 1608 SHA256:12b8d98e0112683e0439e61d5b3b7cdeafdfc579641c35aa25199bc0431061d0
-'http://http.debian.net/debian/pool/main/g/grep/grep_3.8.orig.tar.xz' grep_3.8.orig.tar.xz 1709536 SHA256:498d7cc1b4fb081904d87343febb73475cf771e424fb7e6141aff66013abc382
-'http://http.debian.net/debian/pool/main/g/grep/grep_3.8.orig.tar.xz.asc' grep_3.8.orig.tar.xz.asc 833 SHA256:347aec924499df3fa41a0d782f3cd3e4a51a15de98b44eaab04084cd34060cd0
-'http://http.debian.net/debian/pool/main/g/grep/grep_3.8-5.debian.tar.xz' grep_3.8-5.debian.tar.xz 21048 SHA256:c49bb8ab9ed98fd1aa76f8af838ac9abd664e65042c0e40f99983c60ba03fba1
+'http://deb.debian.org/debian/pool/main/g/grep/grep_3.8-5.dsc' grep_3.8-5.dsc 1608 SHA256:12b8d98e0112683e0439e61d5b3b7cdeafdfc579641c35aa25199bc0431061d0
+'http://deb.debian.org/debian/pool/main/g/grep/grep_3.8.orig.tar.xz' grep_3.8.orig.tar.xz 1709536 SHA256:498d7cc1b4fb081904d87343febb73475cf771e424fb7e6141aff66013abc382
+'http://deb.debian.org/debian/pool/main/g/grep/grep_3.8.orig.tar.xz.asc' grep_3.8.orig.tar.xz.asc 833 SHA256:347aec924499df3fa41a0d782f3cd3e4a51a15de98b44eaab04084cd34060cd0
+'http://deb.debian.org/debian/pool/main/g/grep/grep_3.8-5.debian.tar.xz' grep_3.8-5.debian.tar.xz 21048 SHA256:c49bb8ab9ed98fd1aa76f8af838ac9abd664e65042c0e40f99983c60ba03fba1
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/grep/3.8-5/ (for browsing the source)
+- https://sources.debian.net/src/grep/3.8-5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/grep/3.8-5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gzip=1.12-1`
 
@@ -1413,20 +1419,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris kernsmooth=2.23-20-1
-'http://deb.debian.org/debian/pool/main/k/kernsmooth/kernsmooth_2.23-20-1.dsc' kernsmooth_2.23-20-1.dsc 1891 SHA256:2b09ccd2ac359365bd3cb32aa688b1cabb89beb2e25e21a5768da6604cf11c1d
-'http://deb.debian.org/debian/pool/main/k/kernsmooth/kernsmooth_2.23-20.orig.tar.gz' kernsmooth_2.23-20.orig.tar.gz 25946 SHA256:20eb75051e2473933d41eedc9945b03c632847fd581e2207d452cf317fa5ec39
-'http://deb.debian.org/debian/pool/main/k/kernsmooth/kernsmooth_2.23-20-1.debian.tar.xz' kernsmooth_2.23-20-1.debian.tar.xz 3356 SHA256:900201f86061c4ebdbe9f0bfd888574169fb0ed5f254e993a00c80a0b59a8942
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/kernsmooth/2.23-20-1/
 
-- https://sources.debian.net/src/kernsmooth/2.23-20-1/ (for browsing the source)
-- https://sources.debian.net/src/kernsmooth/2.23-20-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/kernsmooth/2.23-20-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `keyutils=1.6.3-2`
 
@@ -2014,21 +2013,13 @@ Licenses: (parsed from: `/usr/share/doc/libsemanage-common/copyright`, `/usr/sha
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libsemanage=3.4-1
-'http://deb.debian.org/debian/pool/main/libs/libsemanage/libsemanage_3.4-1.dsc' libsemanage_3.4-1.dsc 2570 SHA256:be300e01bbd08706fb6f0ecd349b3585a535d9ff0957265a7c634545ac3515c8
-'http://deb.debian.org/debian/pool/main/libs/libsemanage/libsemanage_3.4.orig.tar.gz' libsemanage_3.4.orig.tar.gz 185177 SHA256:93b423a21600b8e3fb59bb925d4583d1258f45bebf63c29bde304dfd3d52efd6
-'http://deb.debian.org/debian/pool/main/libs/libsemanage/libsemanage_3.4.orig.tar.gz.asc' libsemanage_3.4.orig.tar.gz.asc 833 SHA256:58da87dd662c135b70c065a0b1ca800cd4b075b365f3d71e0ff02d71c7457883
-'http://deb.debian.org/debian/pool/main/libs/libsemanage/libsemanage_3.4-1.debian.tar.xz' libsemanage_3.4-1.debian.tar.xz 23248 SHA256:531c5294d5ec881ef4bc4396a9e1f38895558cd88c4fd6d3f6a673a4b2297a5c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libsemanage/3.4-1/
 
-- https://sources.debian.net/src/libsemanage/3.4-1/ (for browsing the source)
-- https://sources.debian.net/src/libsemanage/3.4-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libsemanage/3.4-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libsepol=3.4-2.1`
 
@@ -2044,21 +2035,13 @@ Licenses: (parsed from: `/usr/share/doc/libsepol2/copyright`)
 - `LGPL-2.1+`
 - `Zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libsepol=3.4-2.1
-'http://deb.debian.org/debian/pool/main/libs/libsepol/libsepol_3.4-2.1.dsc' libsepol_3.4-2.1.dsc 2334 SHA256:465877b26b9f0a3d71999691686a08bdd656ce354889e2cde9eba463306ce4ed
-'http://deb.debian.org/debian/pool/main/libs/libsepol/libsepol_3.4.orig.tar.gz' libsepol_3.4.orig.tar.gz 490628 SHA256:fc277ac5b52d59d2cd81eec8b1cccd450301d8b54d9dd48a993aea0577cf0336
-'http://deb.debian.org/debian/pool/main/libs/libsepol/libsepol_3.4.orig.tar.gz.asc' libsepol_3.4.orig.tar.gz.asc 833 SHA256:ed127c08353dbc2c442d47d77e323e79e5bd47791a0a5bd4dfd077868f4346bc
-'http://deb.debian.org/debian/pool/main/libs/libsepol/libsepol_3.4-2.1.debian.tar.xz' libsepol_3.4-2.1.debian.tar.xz 22040 SHA256:98829ceaf6d497a7e9ff7750c261fdc48cdb41ee5258c437eb3b6a271bc3aeba
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libsepol/3.4-2.1/
 
-- https://sources.debian.net/src/libsepol/3.4-2.1/ (for browsing the source)
-- https://sources.debian.net/src/libsepol/3.4-2.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libsepol/3.4-2.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libsm=2:1.2.3-1`
 
@@ -2477,20 +2460,13 @@ Licenses: (parsed from: `/usr/share/doc/littler/copyright`, `/usr/share/doc/r-cr
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris littler=0.3.17-1
-'http://deb.debian.org/debian/pool/main/l/littler/littler_0.3.17-1.dsc' littler_0.3.17-1.dsc 1874 SHA256:498188a08a83118674afc3856d0341714b1aba98f001978a41e076723673f5ce
-'http://deb.debian.org/debian/pool/main/l/littler/littler_0.3.17.orig.tar.gz' littler_0.3.17.orig.tar.gz 118131 SHA256:4cebe1fe21eb28bea13d1118d611021603e7354b5f77f29854b60002cb2ca554
-'http://deb.debian.org/debian/pool/main/l/littler/littler_0.3.17-1.debian.tar.xz' littler_0.3.17-1.debian.tar.xz 7000 SHA256:2e23a273ffea5e9d44b7bc08d21c87e3ea8ef311f3494350f273e66c9de459d1
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/littler/0.3.17-1/
 
-- https://sources.debian.net/src/littler/0.3.17-1/ (for browsing the source)
-- https://sources.debian.net/src/littler/0.3.17-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/littler/0.3.17-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lz4=1.9.4-1`
 
@@ -2565,20 +2541,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-mgcv/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mgcv=1.8-42-1
-'http://deb.debian.org/debian/pool/main/m/mgcv/mgcv_1.8-42-1.dsc' mgcv_1.8-42-1.dsc 1833 SHA256:bf92980e02514f03bf2ad935e94d1b391408c2d674dcb06a2bde125be3fa9596
-'http://deb.debian.org/debian/pool/main/m/mgcv/mgcv_1.8-42.orig.tar.gz' mgcv_1.8-42.orig.tar.gz 1076221 SHA256:087fc38b64ad06f2149eafc54f2679dd8840cf6fc488e66cf131e3c1de2db6c7
-'http://deb.debian.org/debian/pool/main/m/mgcv/mgcv_1.8-42-1.debian.tar.xz' mgcv_1.8-42-1.debian.tar.xz 5484 SHA256:b953ab9d7ce2ab321c0a03936db35850ad613eb166eb41cf169a4d15d830abe3
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mgcv/1.8-42-1/
 
-- https://sources.debian.net/src/mgcv/1.8-42-1/ (for browsing the source)
-- https://sources.debian.net/src/mgcv/1.8-42-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mgcv/1.8-42-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mpclib3=1.3.1-1`
 
@@ -3114,20 +3083,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-class/copyright`)
 - `GPL-2`
 - `GPL-2 | GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris r-cran-class=7.3-21-1
-'http://deb.debian.org/debian/pool/main/r/r-cran-class/r-cran-class_7.3-21-1.dsc' r-cran-class_7.3-21-1.dsc 1873 SHA256:10ae439e889843ad9717de58086cac9930bf2162c491a6d6a281f9bad33fed15
-'http://deb.debian.org/debian/pool/main/r/r-cran-class/r-cran-class_7.3-21.orig.tar.gz' r-cran-class_7.3-21.orig.tar.gz 20812 SHA256:0c19404aa4d2da61a62495e788b07c8e429c4c5ee64486ea5e6dd347bcaecddf
-'http://deb.debian.org/debian/pool/main/r/r-cran-class/r-cran-class_7.3-21-1.debian.tar.xz' r-cran-class_7.3-21-1.debian.tar.xz 3240 SHA256:b04341e179c40c56ad93116a1dc4e4386f03792101643ed796d768f4b346f160
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/r-cran-class/7.3-21-1/
 
-- https://sources.debian.net/src/r-cran-class/7.3-21-1/ (for browsing the source)
-- https://sources.debian.net/src/r-cran-class/7.3-21-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/r-cran-class/7.3-21-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `r-cran-docopt=0.7.1-2`
 
@@ -3185,20 +3147,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-nnet/copyright`)
 - `GPL-2`
 - `GPL-2 | GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris r-cran-nnet=7.3-18-1
-'http://deb.debian.org/debian/pool/main/r/r-cran-nnet/r-cran-nnet_7.3-18-1.dsc' r-cran-nnet_7.3-18-1.dsc 1848 SHA256:72f8e7ab7bd771fe59dc7a5ab09d0bece9cd3d45e818edb36f72e316c92fc5ed
-'http://deb.debian.org/debian/pool/main/r/r-cran-nnet/r-cran-nnet_7.3-18.orig.tar.gz' r-cran-nnet_7.3-18.orig.tar.gz 29146 SHA256:d29aebfb5cb00071eecf754d55db5d474a6fda88860df5c9d31ba89aa8d9e3d0
-'http://deb.debian.org/debian/pool/main/r/r-cran-nnet/r-cran-nnet_7.3-18-1.debian.tar.xz' r-cran-nnet_7.3-18-1.debian.tar.xz 3268 SHA256:030e75928fbdff50c16adf02c0ad967878c7cd77a487f8ebad4f2aa88b202eb8
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/r-cran-nnet/7.3-18-1/
 
-- https://sources.debian.net/src/r-cran-nnet/7.3-18-1/ (for browsing the source)
-- https://sources.debian.net/src/r-cran-nnet/7.3-18-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/r-cran-nnet/7.3-18-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `r-cran-spatial=7.3-16-1`
 
@@ -3427,20 +3382,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-survival/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris survival=3.5-3-1
-'http://deb.debian.org/debian/pool/main/s/survival/survival_3.5-3-1.dsc' survival_3.5-3-1.dsc 1861 SHA256:15f6d75cd992eb2b77f7f896390d4072fc8c6e255f95872061048a1aa1b6f057
-'http://deb.debian.org/debian/pool/main/s/survival/survival_3.5-3.orig.tar.gz' survival_3.5-3.orig.tar.gz 6247942 SHA256:bfa082fd938760fa06f76d70fe2a613c70620e4d2870f14270d8e20f1fbc44c6
-'http://deb.debian.org/debian/pool/main/s/survival/survival_3.5-3-1.debian.tar.xz' survival_3.5-3-1.debian.tar.xz 6244 SHA256:c8227f3ea3babc73fc7b0dad526c2188dd72574f0110cc3241a0b5e805494573
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/survival/3.5-3-1/
 
-- https://sources.debian.net/src/survival/3.5-3-1/ (for browsing the source)
-- https://sources.debian.net/src/survival/3.5-3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/survival/3.5-3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `systemd=252.11-1`
 
