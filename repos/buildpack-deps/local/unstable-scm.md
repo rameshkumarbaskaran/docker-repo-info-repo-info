@@ -2166,20 +2166,13 @@ Licenses: (parsed from: `/usr/share/doc/libnghttp2-14/copyright`)
 - `MIT`
 - `all-permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nghttp2=1.54.0-1
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.54.0-1.dsc' nghttp2_1.54.0-1.dsc 2534 SHA256:c8d6e56000a35d36298be544b90dec1437a8aa5392696c138d679e52c1c64cf9
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.54.0.orig.tar.gz' nghttp2_1.54.0.orig.tar.gz 1069605 SHA256:aae8bda9e06d7c51a12488175086edc44a46c230561dc7c45d779e00e43d4b8e
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.54.0-1.debian.tar.xz' nghttp2_1.54.0-1.debian.tar.xz 11684 SHA256:ab6827dfcdcb4063238c0f746389771dea2da32ce3dbfd985a87ea68e404601a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/nghttp2/1.54.0-1/
 
-- https://sources.debian.net/src/nghttp2/1.54.0-1/ (for browsing the source)
-- https://sources.debian.net/src/nghttp2/1.54.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/nghttp2/1.54.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `npth=1.6-3`
 
@@ -2271,21 +2264,13 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:9.3p1-1
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_9.3p1-1.dsc' openssh_9.3p1-1.dsc 3312 SHA256:a16311299ca945c2818aa4a4f2847c70a68eb3a677cfef1efd2837c4ba05faff
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_9.3p1.orig.tar.gz' openssh_9.3p1.orig.tar.gz 1856839 SHA256:e9baba7701a76a51f3d85a62c383a3c9dcd97fa900b859bc7db114c1868af8a8
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_9.3p1.orig.tar.gz.asc' openssh_9.3p1.orig.tar.gz.asc 833 SHA256:6d96d2ff60d8d3545f0fa1709cb4c273d9a2fe086afa90f70951cffc01c8fa68
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_9.3p1-1.debian.tar.xz' openssh_9.3p1-1.debian.tar.xz 183616 SHA256:523656c543f08138ad65665020b34ec157fefc0117bf8b81fbea57655b73e463
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openssh/1:9.3p1-1/
 
-- https://sources.debian.net/src/openssh/1:9.3p1-1/ (for browsing the source)
-- https://sources.debian.net/src/openssh/1:9.3p1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssh/1:9.3p1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=3.0.9-1`
 

@@ -297,15 +297,9 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `X11`
 - `curl`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.85.0-1ubuntu0.5
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.85.0-1ubuntu0.5.dsc' curl_7.85.0-1ubuntu0.5.dsc 3070 SHA512:f61e29c79a70b23857af539b7aac98a046c86df486601060c6deb638e9b3c8139209cf848bc5cebbdef60ff7f692a0cea39c400307697fc37d3c2e75838bcbb1
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.85.0.orig.tar.gz' curl_7.85.0.orig.tar.gz 4182153 SHA512:bbad693bcde9c55e5942499950d76011f53ad43d3270eee2c8db486bcf46f5fc92b32dd8752caf4c5976fe493d083e2d34fa299cb96fb8e76d8f5fcc2cc56a36
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.85.0.orig.tar.gz.asc' curl_7.85.0.orig.tar.gz.asc 488 SHA512:2816f15dea2f564baae13e63bcb2881af4297f44b529631f1dc18839f2ada0a085e3033dfc177246a9f8229c7e0e4d28f41c12640544f047ddca6cebe38a63a7
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.85.0-1ubuntu0.5.debian.tar.xz' curl_7.85.0-1ubuntu0.5.debian.tar.xz 54524 SHA512:be74664b9e0d2fd7083435e80d396b0f181b9e91de7b650d5acd22bb6aeee4e1fafa1baa396b1ae04a3437aa0b5a7a776d492cef1862e59188ba6934239aaa77
-```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.28+dfsg-6ubuntu2`
 
