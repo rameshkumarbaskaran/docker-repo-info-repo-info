@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:538c173d7d577730d1c611986ad4ee9272981f00cc783ed5e30d29f9abc99123`
-- Created: `2023-07-20T20:24:56.01037608Z`
-- Virtual Size: ~ 504.06 Mb  
+- Image ID: `sha256:c5297ed93aec42115fd4245235492db460dc97568fe1e8452c660a548561aa69`
+- Created: `2023-07-22T01:41:38.639503611Z`
+- Virtual Size: ~ 504.14 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -430,15 +430,15 @@ $ dnf --quiet download --source --url keyutils-libs-1.5.10-9.el8
 https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackageSource/keyutils-1.5.10-9.el8.src.rpm
 ```
 
-### `rpm` package: `krb5-libs-1.18.2-22.0.1.el8_7.x86_64`
+### `rpm` package: `krb5-libs-1.18.2-25.0.1.el8_8.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url krb5-libs-1.18.2-22.0.1.el8_7
-https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackageSource/krb5-1.18.2-22.0.1.el8_7.src.rpm
+$ dnf --quiet download --source --url krb5-libs-1.18.2-25.0.1.el8_8
+https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackageSource/krb5-1.18.2-25.0.1.el8_8.src.rpm
 ```
 
 ### `rpm` package: `libacl-2.2.53-1.el8.x86_64`
@@ -1224,15 +1224,15 @@ https://yum.oracle.com/repo/OracleLinux/OL8/appstream/x86_64/getPackageSource/sq
 https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackageSource/sqlite-3.26.0-18.0.1.el8_8.src.rpm
 ```
 
-### `rpm` package: `systemd-libs-239-74.0.2.el8_8.x86_64`
+### `rpm` package: `systemd-libs-239-74.0.4.el8_8.2.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and MIT
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url systemd-libs-239-74.0.2.el8_8
-https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackageSource/systemd-239-74.0.2.el8_8.src.rpm
+$ dnf --quiet download --source --url systemd-libs-239-74.0.4.el8_8.2
+https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackageSource/systemd-239-74.0.4.el8_8.2.src.rpm
 ```
 
 ### `rpm` package: `tar-1.30-9.el8.x86_64`
