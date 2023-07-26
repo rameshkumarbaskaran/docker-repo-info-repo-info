@@ -903,20 +903,13 @@ Licenses: (parsed from: `/usr/share/doc/cpp-12/copyright`, `/usr/share/doc/g++-1
 - `GPL-3`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-12=12.3.0-4
-'http://deb.debian.org/debian/pool/main/g/gcc-12/gcc-12_12.3.0-4.dsc' gcc-12_12.3.0-4.dsc 21854 SHA256:41f8cc464ca3daa39aef28f373a4cdb66e0af6a2abe17f50c15df20a0bedd427
-'http://deb.debian.org/debian/pool/main/g/gcc-12/gcc-12_12.3.0.orig.tar.gz' gcc-12_12.3.0.orig.tar.gz 86568509 SHA256:5f46ba2253eefc2d6bbc8c6054a44275955a25d275ae94798bcc9e52d26f9fba
-'http://deb.debian.org/debian/pool/main/g/gcc-12/gcc-12_12.3.0-4.debian.tar.xz' gcc-12_12.3.0-4.debian.tar.xz 753932 SHA256:5a2267e0022b3fdc429c740d668bb724d64c35b7f4341b3432585005f6d0a81b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gcc-12/12.3.0-4/
 
-- https://sources.debian.net/src/gcc-12/12.3.0-4/ (for browsing the source)
-- https://sources.debian.net/src/gcc-12/12.3.0-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gcc-12/12.3.0-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-13=13.1.0-6`
 
@@ -1070,10 +1063,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris glibc=2.36-9
-'http://http.debian.net/debian/pool/main/g/glibc/glibc_2.36-9.dsc' glibc_2.36-9.dsc 9729 SHA256:dbb3e0a62b277118f0268171fae750c2d0bf37749bb42289380a1e679758a6dd
-'http://http.debian.net/debian/pool/main/g/glibc/glibc_2.36.orig.tar.xz' glibc_2.36.orig.tar.xz 19363988 SHA256:a543c02070d46ccaf866957efd13f10c924daa74c86a90a0254db09a92a708ee
-'http://http.debian.net/debian/pool/main/g/glibc/glibc_2.36-9.debian.tar.xz' glibc_2.36-9.debian.tar.xz 836988 SHA256:e87e7df56380102fad8a011b352eefa9d28bf2d241142d451c0e99452f4d61ae
+'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.36-9.dsc' glibc_2.36-9.dsc 9729 SHA256:dbb3e0a62b277118f0268171fae750c2d0bf37749bb42289380a1e679758a6dd
+'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.36.orig.tar.xz' glibc_2.36.orig.tar.xz 19363988 SHA256:a543c02070d46ccaf866957efd13f10c924daa74c86a90a0254db09a92a708ee
+'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.36-9.debian.tar.xz' glibc_2.36-9.debian.tar.xz 836988 SHA256:e87e7df56380102fad8a011b352eefa9d28bf2d241142d451c0e99452f4d61ae
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/glibc/2.36-9/ (for browsing the source)
+- https://sources.debian.net/src/glibc/2.36-9/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/glibc/2.36-9/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gmp=2:6.2.1+dfsg1-1.1`
 
@@ -1778,21 +1777,13 @@ Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`)
 - `LGPL-3+`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libidn2=2.3.3-1
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.3.3-1.dsc' libidn2_2.3.3-1.dsc 2206 SHA256:13865e96a0fed8dcb82767db65c946b56ed44fc1806d80d407c512ded2a83984
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.3.3.orig.tar.gz' libidn2_2.3.3.orig.tar.gz 2116946 SHA256:f3ac987522c00d33d44b323cae424e2cffcb4c63c6aa6cd1376edacbf1c36eb0
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.3.3.orig.tar.gz.asc' libidn2_2.3.3.orig.tar.gz.asc 228 SHA256:e8f2bdce5def6c239c2cc3220e808b19b14d3f7eb3a0e14851dd5c16fc9ad0ec
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.3.3-1.debian.tar.xz' libidn2_2.3.3-1.debian.tar.xz 15964 SHA256:b040c12276e1128394c2f84c97f7e45f340867fa9d0d0a0b9d8f043b1977db99
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libidn2/2.3.3-1/
 
-- https://sources.debian.net/src/libidn2/2.3.3-1/ (for browsing the source)
-- https://sources.debian.net/src/libidn2/2.3.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libidn2/2.3.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libjpeg-turbo=1:2.1.5-2`
 
@@ -3141,10 +3132,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris r-cran-spatial=7.3-16-1
-'http://http.debian.net/debian/pool/main/r/r-cran-spatial/r-cran-spatial_7.3-16-1.dsc' r-cran-spatial_7.3-16-1.dsc 1884 SHA256:c28cbd1546fc782777a0e53807edb0f023ae6dcbd0c7bf603d2d87448c15cfb5
-'http://http.debian.net/debian/pool/main/r/r-cran-spatial/r-cran-spatial_7.3-16.orig.tar.gz' r-cran-spatial_7.3-16.orig.tar.gz 44631 SHA256:e46565a64c5ec148a77789867e5103746462a41de294539b230bad2a0e16e406
-'http://http.debian.net/debian/pool/main/r/r-cran-spatial/r-cran-spatial_7.3-16-1.debian.tar.xz' r-cran-spatial_7.3-16-1.debian.tar.xz 3204 SHA256:c698569124b560ff42ebb6e3731115197967d78475fbcaec7c937444d6db0f96
+'http://deb.debian.org/debian/pool/main/r/r-cran-spatial/r-cran-spatial_7.3-16-1.dsc' r-cran-spatial_7.3-16-1.dsc 1884 SHA256:c28cbd1546fc782777a0e53807edb0f023ae6dcbd0c7bf603d2d87448c15cfb5
+'http://deb.debian.org/debian/pool/main/r/r-cran-spatial/r-cran-spatial_7.3-16.orig.tar.gz' r-cran-spatial_7.3-16.orig.tar.gz 44631 SHA256:e46565a64c5ec148a77789867e5103746462a41de294539b230bad2a0e16e406
+'http://deb.debian.org/debian/pool/main/r/r-cran-spatial/r-cran-spatial_7.3-16-1.debian.tar.xz' r-cran-spatial_7.3-16-1.debian.tar.xz 3204 SHA256:c698569124b560ff42ebb6e3731115197967d78475fbcaec7c937444d6db0f96
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/r-cran-spatial/7.3-16-1/ (for browsing the source)
+- https://sources.debian.net/src/r-cran-spatial/7.3-16-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/r-cran-spatial/7.3-16-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=8.2-1.3`
 
