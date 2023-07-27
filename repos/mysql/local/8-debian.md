@@ -1,10 +1,10 @@
-# `mysql:8.0.33-debian`
+# `mysql:8.0.34-debian`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5557a1823e3010b0b659f0f388f7fddd2df56326896370cf7a16767089753ae9`
-- Created: `2023-07-04T16:40:39.028525491Z`
-- Virtual Size: ~ 602.07 Mb  
+- Image ID: `sha256:f8b746d14d1a955938b5a739381210993616e020e85557679b5878e99fec8fc7`
+- Created: `2023-07-25T01:39:15.803414507Z`
+- Virtual Size: ~ 601.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -13,7 +13,7 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `GOSU_VERSION=1.16`
   - `MYSQL_MAJOR=8.0`
-  - `MYSQL_VERSION=8.0.33-1debian11`
+  - `MYSQL_VERSION=8.0.34-1debian11`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1630,23 +1630,28 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/mecab/0.996-14/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/mecab/0.996-14/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `mysql-community=8.0.33-1debian11`
+### `dpkg` source package: `mysql-community=8.0.34-1debian11`
 
 Binary Packages:
 
-- `mysql-common=8.0.33-1debian11`
-- `mysql-community-client=8.0.33-1debian11`
-- `mysql-community-client-core=8.0.33-1debian11`
-- `mysql-community-client-plugins=8.0.33-1debian11`
-- `mysql-community-server-core=8.0.33-1debian11`
+- `mysql-common=8.0.34-1debian11`
+- `mysql-community-client=8.0.34-1debian11`
+- `mysql-community-client-core=8.0.34-1debian11`
+- `mysql-community-client-plugins=8.0.34-1debian11`
+- `mysql-community-server-core=8.0.34-1debian11`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris mysql-community=8.0.34-1debian11
+'http://repo.mysql.com/apt/debian/pool/mysql-8.0/m/mysql-community/mysql-community_8.0.34-1debian11.dsc' mysql-community_8.0.34-1debian11.dsc 3233 SHA256:72bb9b2760ac7b35f412a26c42c056938eb297d6adbd6f675d899886be26a58f
+'http://repo.mysql.com/apt/debian/pool/mysql-8.0/m/mysql-community/mysql-community_8.0.34.orig.tar.gz' mysql-community_8.0.34.orig.tar.gz 431888012 SHA256:e65d03a3c42618b5fbf99042aed33209402e9b27aa62c7c8743ffd4788d8db1d
+'http://repo.mysql.com/apt/debian/pool/mysql-8.0/m/mysql-community/mysql-community_8.0.34-1debian11.debian.tar.xz' mysql-community_8.0.34-1debian11.debian.tar.xz 22040 SHA256:f1789f41472be6835ab191b8a6acf9e0d3379982f78ba700ccc7b120aab79d56
+```
 
 ### `dpkg` source package: `ncurses=6.2+20201114-2+deb11u1`
 

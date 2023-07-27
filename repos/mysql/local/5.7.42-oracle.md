@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:2be84dd575ee2ecdb186dc43a9cd951890a764d2cefbd31a72cdf4410c43a2d0`
-- Created: `2023-06-14T09:55:17.321153148Z`
-- Virtual Size: ~ 568.67 Mb  
+- Image ID: `sha256:d7b085374dbc1ca6ee83a18b488b9da0425749c87051e8bd8287dc2a2c775ecb`
+- Created: `2023-07-25T01:40:08.386158483Z`
+- Virtual Size: ~ 581.08 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -14,7 +14,7 @@
   - `GOSU_VERSION=1.16`
   - `MYSQL_MAJOR=5.7`
   - `MYSQL_VERSION=5.7.42-1.el7`
-  - `MYSQL_SHELL_VERSION=8.0.33-1.el7`
+  - `MYSQL_SHELL_VERSION=8.0.34-1.el7`
 
 ## `rpm` (`.rpm`-based packages)
 
@@ -944,7 +944,7 @@ Licenses (from `rpm --query`): Copyright (c) 2000, 2023, Oracle and/or its affil
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `mysql-shell-8.0.33-1.el7.x86_64`
+### `rpm` package: `mysql-shell-8.0.34-1.el7.x86_64`
 
 Licenses (from `rpm --query`): GPLv2
 
