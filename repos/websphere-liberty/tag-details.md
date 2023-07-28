@@ -6842,27 +6842,57 @@ CMD ["/opt/ibm/wlp/bin/server" "run" "defaultServer"]
 
 ## `websphere-liberty:23.0.0.7-full-java11-openj9`
 
-**does not exist** (yet?)
+```console
+$ docker pull websphere-liberty@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `websphere-liberty:23.0.0.7-full-java17-openj9`
 
-**does not exist** (yet?)
+```console
+$ docker pull websphere-liberty@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `websphere-liberty:23.0.0.7-full-java8-ibmjava`
 
-**does not exist** (yet?)
+```console
+$ docker pull websphere-liberty@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `websphere-liberty:23.0.0.7-kernel-java11-openj9`
 
-**does not exist** (yet?)
+```console
+$ docker pull websphere-liberty@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `websphere-liberty:23.0.0.7-kernel-java17-openj9`
 
-**does not exist** (yet?)
+```console
+$ docker pull websphere-liberty@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `websphere-liberty:23.0.0.7-kernel-java8-ibmjava`
 
-**does not exist** (yet?)
+```console
+$ docker pull websphere-liberty@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `websphere-liberty:full`
 
