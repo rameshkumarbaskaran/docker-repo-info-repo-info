@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:194747d23d7f3ac1dbb3796e434bba692b7ff026dcd1fafd999dc94c7d176b8e`
-- Created: `2023-07-19T17:21:56.65440557Z`
+- Image ID: `sha256:09cef7c257e46e6bf09e206e522eb2414ee600984faace7d1ab4a8900d10c049`
+- Created: `2023-07-26T02:36:07.823612404Z`
 - Virtual Size: ~ 1.31 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -14,7 +14,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.19+7`
+  - `JAVA_VERSION=jdk-11.0.20+8`
   - `SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz`
   - `SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz.asc`
   - `GPG_KEY=F28C9C925C188C35E345614DEDA00CE834F0FC5C`
@@ -3702,19 +3702,24 @@ $ apt-get source -qq --print-uris libzstd=1.4.4+dfsg-3ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.4.4%2bdfsg-3ubuntu0.1.debian.tar.xz' libzstd_1.4.4+dfsg-3ubuntu0.1.debian.tar.xz 17300 SHA512:0484891be5603d00bd57b799c708b9395fccbaa8c6c44f535377f6fa2c7ac22c01c8a3c1b45e1c1f3c30f19dc74d510626bf82067fcbfb53c39f1bcc2249affe
 ```
 
-### `dpkg` source package: `linux=5.4.0-153.170`
+### `dpkg` source package: `linux=5.4.0-155.172`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=5.4.0-153.170`
+- `linux-libc-dev:amd64=5.4.0-155.172`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=5.4.0-155.172
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-155.172.dsc' linux_5.4.0-155.172.dsc 7067 SHA512:061e4e1c699f3a4360a272996ff6035193a49bab6d7d39a0cd5b5ca03a99f4d17250edff06f689de541a070549a7575d42b422d1ca73a5bc410e2594e06442a2
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA512:62b09a7231fd793973c5f59b16c4f6ffce621188b02a71915874b05e8e3f956fb6146d4a4fb1a4475bebe463949ca5a18da12842c3ce7c52e996e6bc4012a074
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-155.172.diff.gz' linux_5.4.0-155.172.diff.gz 10759016 SHA512:d3a03a566b03f3a1da4c9459c937e86f149e1622994b25b2c78b9e23cb1de6f98b003cded9bcc243b38788009a1147fbeb3c6f44774b5081cdfbd9c2434d7f4e
+```
 
 ### `dpkg` source package: `llvm-toolchain-12=1:12.0.0-3ubuntu1~20.04.5`
 
