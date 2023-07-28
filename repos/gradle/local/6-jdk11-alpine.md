@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:916f9e91b5606707de0d97cfb481b718aad83aba0b4ff58cac8cfedbbd251761`
-- Created: `2023-06-15T09:10:53.453601109Z`
-- Virtual Size: ~ 556.39 Mb  
+- Image ID: `sha256:16284223d6bb744ee15337a21bf90b5c436141f8e24426edb7268f9ffd8ee707`
+- Created: `2023-07-26T02:03:32.931253012Z`
+- Virtual Size: ~ 498.58 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["gradle"]`
@@ -14,7 +14,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.19+7`
+  - `JAVA_VERSION=jdk-11.0.20+8`
   - `GRADLE_HOME=/opt/gradle`
   - `GRADLE_VERSION=6.9.4`
 
@@ -380,16 +380,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.1.2-r0 description:
+libcurl-8.2.0-r1 description:
 The multiprotocol file transfer library
 
-libcurl-8.1.2-r0 webpage:
+libcurl-8.2.0-r1 webpage:
 https://curl.se/
 
-libcurl-8.1.2-r0 installed size:
-548 KiB
+libcurl-8.2.0-r1 installed size:
+552 KiB
 
-libcurl-8.1.2-r0 license:
+libcurl-8.2.0-r1 license:
 curl
 
 ```
@@ -669,16 +669,16 @@ BSD-2-Clause AND GPL-2.0-only
 ### `apk` package: `mercurial`
 
 ```console
-mercurial-6.4.3-r0 description:
+mercurial-6.4.5-r0 description:
 Scalable distributed SCM tool
 
-mercurial-6.4.3-r0 webpage:
+mercurial-6.4.5-r0 webpage:
 https://www.mercurial-scm.org/
 
-mercurial-6.4.3-r0 installed size:
+mercurial-6.4.5-r0 installed size:
 12 MiB
 
-mercurial-6.4.3-r0 license:
+mercurial-6.4.5-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -686,16 +686,16 @@ GPL-2.0-or-later
 ### `apk` package: `mercurial-pyc`
 
 ```console
-mercurial-pyc-6.4.3-r0 description:
+mercurial-pyc-6.4.5-r0 description:
 Precompiled Python bytecode for mercurial
 
-mercurial-pyc-6.4.3-r0 webpage:
+mercurial-pyc-6.4.5-r0 webpage:
 https://www.mercurial-scm.org/
 
-mercurial-pyc-6.4.3-r0 installed size:
+mercurial-pyc-6.4.5-r0 installed size:
 11 MiB
 
-mercurial-pyc-6.4.3-r0 license:
+mercurial-pyc-6.4.5-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -822,16 +822,16 @@ X11
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.53.0-r0 description:
+nghttp2-libs-1.55.1-r0 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.53.0-r0 webpage:
+nghttp2-libs-1.55.1-r0 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.53.0-r0 installed size:
+nghttp2-libs-1.55.1-r0 installed size:
 152 KiB
 
-nghttp2-libs-1.53.0-r0 license:
+nghttp2-libs-1.55.1-r0 license:
 MIT
 
 ```

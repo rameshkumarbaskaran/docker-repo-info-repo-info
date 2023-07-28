@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:35203e7424a54f20e4e7a8b29e01c88d14012d3e689503b2aa2d2776a7569c50`
-- Created: `2023-07-05T12:44:25.905399075Z`
-- Virtual Size: ~ 787.18 Mb  
+- Image ID: `sha256:5304ca17ae6e2f83670d858e950f5ea4d0b6e7e4c48f8f4ec05b96a7ee3e9aaf`
+- Created: `2023-07-25T23:52:09.300725844Z`
+- Virtual Size: ~ 736.60 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["gradle"]`
@@ -14,7 +14,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-17.0.7+7`
+  - `JAVA_VERSION=jdk-17.0.8+7`
   - `GRADLE_HOME=/opt/gradle`
   - `GRADLE_VERSION=7.6.2`
 - Labels:
@@ -412,10 +412,9 @@ $ apt-get source -qq --print-uris coreutils=8.30-3ubuntu2
 Binary Packages:
 
 - `curl=7.68.0-1ubuntu2.18`
-- `libcurl3-gnutls:amd64=7.68.0-1ubuntu2.18`
 - `libcurl4:amd64=7.68.0-1ubuntu2.18`
 
-Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/doc/libcurl4/copyright`)
+Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
 - `BSD-3-Clause`
 - `BSD-4-Clause`
@@ -427,6 +426,30 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
 
+
+### `dpkg` source package: `curl=7.68.0-1ubuntu2.19`
+
+Binary Packages:
+
+- `libcurl3-gnutls:amd64=7.68.0-1ubuntu2.19`
+
+Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`)
+
+- `BSD-3-Clause`
+- `BSD-4-Clause`
+- `ISC`
+- `curl`
+- `other`
+- `public-domain`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris curl=7.68.0-1ubuntu2.19
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.19.dsc' curl_7.68.0-1ubuntu2.19.dsc 2737 SHA512:86dfd3a26b645e5ce9d2a8d58a7e5f1fd4b7aa5944c85ffba8f9e3e36e93028a18e8d6b4bdf5f95809407df593c63e86a954488d2ab4c744cb2f02c2c4f8b9bf
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0.orig.tar.gz' curl_7.68.0.orig.tar.gz 4096350 SHA512:58b42c08b1cf4cb6e68f8e469d5b5f6298eebe286ba2677ad29e1a7eefd15b8609af54544f4c5a7dadebbd3b23bd77700830f2f60fbea7ae3f2f306e640010b0
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.19.debian.tar.xz' curl_7.68.0-1ubuntu2.19.debian.tar.xz 68292 SHA512:268714df9abeaebc38df547dd7b0dfee02c605b7fa8a8054818d9f5c608135a70e0d0e3492c1cf504d138bbddd457421486bf1b2e00464f206bb7172c4bc74bf
+```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-2ubuntu0.1`
 
@@ -1796,11 +1819,11 @@ $ apt-get source -qq --print-uris openldap=2.4.49+dfsg-2ubuntu1.9
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.49%2bdfsg-2ubuntu1.9.debian.tar.xz' openldap_2.4.49+dfsg-2ubuntu1.9.debian.tar.xz 189676 SHA512:bf7e4ff9f710404704526a912932d7445fab4c6ce30a099dd890adc78b8afe740ac773596cb4fe409d495406e5bd103d186bd0b2993265cdafd3eb9a71d6a3b5
 ```
 
-### `dpkg` source package: `openssh=1:8.2p1-4ubuntu0.7`
+### `dpkg` source package: `openssh=1:8.2p1-4ubuntu0.8`
 
 Binary Packages:
 
-- `openssh-client=1:8.2p1-4ubuntu0.7`
+- `openssh-client=1:8.2p1-4ubuntu0.8`
 
 Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 
@@ -1813,9 +1836,14 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openssh=1:8.2p1-4ubuntu0.8
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1-4ubuntu0.8.dsc' openssh_8.2p1-4ubuntu0.8.dsc 3098 SHA512:7fefded83d2dfbc8823df2045f99f6f6a57d0ad346031b90b58a51def20480c5ec5edd4f136a620aaae74a54c0ef1ec21fc246f56aba291b71dbf0251da463d4
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1.orig.tar.gz' openssh_8.2p1.orig.tar.gz 1701197 SHA512:c4db64e52a3a4c410de9de49f9cb104dd493b10250af3599b92457dd986277b3fd99a6f51cec94892fd1be5bd0369c5757262ea7805f0de464b245c3d34c120a
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1-4ubuntu0.8.debian.tar.xz' openssh_8.2p1-4ubuntu0.8.debian.tar.xz 179372 SHA512:2399a0916f04ab1e7748726087612d357d09eb9a4abe4750ddb996991fc7ee3e459dcbf0203b776699725256779255ef07a1122dc5390b17d6945f7b4d0bd695
+```
 
 ### `dpkg` source package: `openssl=1.1.1f-1ubuntu2.19`
 
