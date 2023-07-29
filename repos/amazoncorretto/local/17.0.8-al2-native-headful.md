@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e5fa61ea7e1fa82fdc3de9a7f87360bc2a0cda6dc68aae4277fe9ea1a4124afe`
-- Created: `2023-07-19T00:29:20.856669641Z`
-- Virtual Size: ~ 417.36 Mb  
+- Image ID: `sha256:24374af2ee44bb238ee7d36eb511a3f14a60d78efac13e34252cb1dd521df069`
+- Created: `2023-07-26T20:21:36.522841468Z`
+- Virtual Size: ~ 415.70 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -604,37 +604,37 @@ $ dnf --quiet download --source --url libSM-1.2.2-2.amzn2.0.2
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/c7c43bb10d4100f9580a69349277657c6f44557b61f4305c5462d31f8895ad03/../../../../../blobstore/282e50e8814f0760a3c2624f3a16250666d871524fc028aa2dce0f5d2dbd94a1/libSM-1.2.2-2.amzn2.0.2.src.rpm
 ```
 
-### `rpm` package: `libX11-1.6.7-3.amzn2.0.2.i686`
+### `rpm` package: `libX11-1.6.7-3.amzn2.0.3.i686`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url libX11-1.6.7-3.amzn2.0.2
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/c7c43bb10d4100f9580a69349277657c6f44557b61f4305c5462d31f8895ad03/../../../../../blobstore/727081eacf7760e307809c4c54054156089adba0737b076bf94c3a55b656ba73/libX11-1.6.7-3.amzn2.0.2.src.rpm
+$ dnf --quiet download --source --url libX11-1.6.7-3.amzn2.0.3
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/c7c43bb10d4100f9580a69349277657c6f44557b61f4305c5462d31f8895ad03/../../../../../blobstore/6894065ae799501de06f4b01b840e9d01f758317f07763ab27c4edf9862979d6/libX11-1.6.7-3.amzn2.0.3.src.rpm
 ```
 
-### `rpm` package: `libX11-1.6.7-3.amzn2.0.2.x86_64`
+### `rpm` package: `libX11-1.6.7-3.amzn2.0.3.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url libX11-1.6.7-3.amzn2.0.2
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/c7c43bb10d4100f9580a69349277657c6f44557b61f4305c5462d31f8895ad03/../../../../../blobstore/727081eacf7760e307809c4c54054156089adba0737b076bf94c3a55b656ba73/libX11-1.6.7-3.amzn2.0.2.src.rpm
+$ dnf --quiet download --source --url libX11-1.6.7-3.amzn2.0.3
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/c7c43bb10d4100f9580a69349277657c6f44557b61f4305c5462d31f8895ad03/../../../../../blobstore/6894065ae799501de06f4b01b840e9d01f758317f07763ab27c4edf9862979d6/libX11-1.6.7-3.amzn2.0.3.src.rpm
 ```
 
-### `rpm` package: `libX11-common-1.6.7-3.amzn2.0.2.noarch`
+### `rpm` package: `libX11-common-1.6.7-3.amzn2.0.3.noarch`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url libX11-common-1.6.7-3.amzn2.0.2.noarch
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/c7c43bb10d4100f9580a69349277657c6f44557b61f4305c5462d31f8895ad03/../../../../../blobstore/727081eacf7760e307809c4c54054156089adba0737b076bf94c3a55b656ba73/libX11-1.6.7-3.amzn2.0.2.src.rpm
+$ dnf --quiet download --source --url libX11-common-1.6.7-3.amzn2.0.3.noarch
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/c7c43bb10d4100f9580a69349277657c6f44557b61f4305c5462d31f8895ad03/../../../../../blobstore/6894065ae799501de06f4b01b840e9d01f758317f07763ab27c4edf9862979d6/libX11-1.6.7-3.amzn2.0.3.src.rpm
 ```
 
 ### `rpm` package: `libXau-1.0.8-2.1.amzn2.0.2.i686`
@@ -857,15 +857,15 @@ $ dnf --quiet download --source --url libblkid-2.30.2-2.amzn2.0.11
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/c7c43bb10d4100f9580a69349277657c6f44557b61f4305c5462d31f8895ad03/../../../../../blobstore/c3d8b01e2190e686623eb8551a13a4a33cc08e086036e951fe5ed1b99c7b2b8e/util-linux-2.30.2-2.amzn2.0.11.src.rpm
 ```
 
-### `rpm` package: `libcap-2.54-1.amzn2.0.1.x86_64`
+### `rpm` package: `libcap-2.54-1.amzn2.0.2.x86_64`
 
 Licenses (from `rpm --query`): BSD or GPLv2
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url libcap-2.54-1.amzn2.0.1
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/c7c43bb10d4100f9580a69349277657c6f44557b61f4305c5462d31f8895ad03/../../../../../blobstore/9506a32eb696ab4f98e895d6b89a80ab76cf7674eb2eba3221e10ace4844b77e/libcap-2.54-1.amzn2.0.1.src.rpm
+$ dnf --quiet download --source --url libcap-2.54-1.amzn2.0.2
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/c7c43bb10d4100f9580a69349277657c6f44557b61f4305c5462d31f8895ad03/../../../../../blobstore/ab5e39e42f4b1dd512a49eb9ca2c71cebf3647d3f63d147f5b20e7229596ba54/libcap-2.54-1.amzn2.0.2.src.rpm
 ```
 
 ### `rpm` package: `libcom_err-1.42.9-19.amzn2.0.1.x86_64`
