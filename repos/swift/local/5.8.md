@@ -2062,14 +2062,9 @@ Licenses: (parsed from: `/usr/share/doc/libclang-cpp13/copyright`, `/usr/share/d
 - `Python`
 - `solar-public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris llvm-toolchain-13=1:13.0.1-2ubuntu2.1
-'http://archive.ubuntu.com/ubuntu/pool/main/l/llvm-toolchain-13/llvm-toolchain-13_13.0.1-2ubuntu2.1.dsc' llvm-toolchain-13_13.0.1-2ubuntu2.1.dsc 6868 SHA512:b25065e121490853ada77c7bd65d13521d37321c7a0890bd7644a6e54ea5022db23608689e6659cebc2a7f1da6c17e045d1f1956f41f5ddf0019cb8a68ac1029
-'http://archive.ubuntu.com/ubuntu/pool/main/l/llvm-toolchain-13/llvm-toolchain-13_13.0.1.orig.tar.xz' llvm-toolchain-13_13.0.1.orig.tar.xz 121050160 SHA512:1387fabc239ba982bf7845cf8c611d87fb005a554d3d11701b4c0de1ee280c3402c32eca7e221d4c6c2b2d6b2782891606dbc33f2a7ae1c85211826009b19eac
-'http://archive.ubuntu.com/ubuntu/pool/main/l/llvm-toolchain-13/llvm-toolchain-13_13.0.1-2ubuntu2.1.debian.tar.xz' llvm-toolchain-13_13.0.1-2ubuntu2.1.debian.tar.xz 157532 SHA512:aa341098e4ccfe3d337876a385115e986a004c693d73ad2c2e70758cf05f21e1fde9510c0a3dfa18fab82394fa6cf433290ef6fcddcff2dca0070afaa281473f
-```
 
 ### `dpkg` source package: `lsb=11.1.0ubuntu4`
 
