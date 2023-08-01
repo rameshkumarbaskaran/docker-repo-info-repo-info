@@ -325,14 +325,9 @@ Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/bin
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris binutils=2.40.90.20230705-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.40.90.20230705-1ubuntu1.dsc' binutils_2.40.90.20230705-1ubuntu1.dsc 9584 SHA512:0fa11f3e4b9aec1d00fe31c67238234a9cb1cab90bed9a8c9d521eaad95035d2988008f562dbc4d8bac61d9067eea0e366c4896ef9bb3995f6d7f01727949157
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.40.90.20230705.orig.tar.xz' binutils_2.40.90.20230705.orig.tar.xz 23401432 SHA512:ceff2a06203131c96c7c03708120c1bb47335442e9b41b327d9d0c43827f9a0132a88f8069ddb7104cf274a9d60d415aace2b96689f47f746d600a9184724f3c
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.40.90.20230705-1ubuntu1.debian.tar.xz' binutils_2.40.90.20230705-1ubuntu1.debian.tar.xz 111184 SHA512:e68fcd44def9801e32d027c8f21a9479ddbcdc611ab15ed6d7b580b717494111df408e424822d4193ffe9a4cccb9206cf4c25757b2d43d560eaf92eb80645e4e
-```
 
 ### `dpkg` source package: `brotli=1.0.9-2build8`
 
@@ -431,13 +426,9 @@ Licenses: (parsed from: `/usr/share/doc/libdebconfclient0/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris cdebconf=0.267ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cdebconf/cdebconf_0.267ubuntu1.dsc' cdebconf_0.267ubuntu1.dsc 2898 SHA512:4b65ba0ddac9efb1c816566b61ce536e7906ddce22a9bd577bc67c73bd8613739e999474aaa5e09b2fb429e6f6c813e193306d6e5daf4dc5427ed7639594f41a
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cdebconf/cdebconf_0.267ubuntu1.tar.xz' cdebconf_0.267ubuntu1.tar.xz 284400 SHA512:c69be9679c689ef12cd1b385c26e044e251900a60a911a6e9bdddf3eda8ee743e30fc9b9f352fc55cee96683c6f41daf3671768b8aaaaec3a29f513b4a912c6b
-```
 
 ### `dpkg` source package: `coreutils=9.1-1ubuntu2`
 
@@ -1042,14 +1033,9 @@ Licenses: (parsed from: `/usr/share/doc/gcc-13-base/copyright`, `/usr/share/doc/
 - `GPL-3`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-13=13.1.0-8ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/gcc-13_13.1.0-8ubuntu1.dsc' gcc-13_13.1.0-8ubuntu1.dsc 27910 SHA512:c40a7ca5b0d1cbf2385947d51e786b0a0aee4166f5c0e432e235c66317bbee74d6757c8c0168e83d1216c77afcff2b57d74488440f26352fdde9d9481b894537
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/gcc-13_13.1.0.orig.tar.gz' gcc-13_13.1.0.orig.tar.gz 92188593 SHA512:81da5b2e1447652f895cc90ae6b7f106d0bb8e7d4741396ddea0e23fe06a13208469fcbefa6affe7b17271af9efb64464cbd5c76bba283b8f3710843a739b687
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/gcc-13_13.1.0-8ubuntu1.debian.tar.xz' gcc-13_13.1.0-8ubuntu1.debian.tar.xz 1337948 SHA512:6af2d04a95bfd04706cead31af8e005da402a5999691de2b253812b8d6715646e1ec636e013dc6f8960335eee9fea8870defe1d942875247175ac0d9216210ac
-```
 
 ### `dpkg` source package: `gcc-defaults=1.205ubuntu2`
 
@@ -1198,15 +1184,9 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc
 - `Unicode-DFS-2016`
 - `bzip2-1.0.6`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.76.3-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.76.3-1ubuntu1.dsc' glib2.0_2.76.3-1ubuntu1.dsc 3766 SHA512:2e26031b1e1d17dc3d9ad4cae4206320b453b64000598df838b6a1763a4177d9521c472949b6d51d901eee7647de6a963256a0781f28dbabb8a1d381b83eea08
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.76.3.orig-unicode-data.tar.xz' glib2.0_2.76.3.orig-unicode-data.tar.xz 267596 SHA512:60ea55718ac4d36b469b23324cfa54c68fdd7ac30a5bfe7513017f10b789e849379d212080e8da855854cd1a60f422dbf6967986e3439a543fc7d16f5b309179
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.76.3.orig.tar.xz' glib2.0_2.76.3.orig.tar.xz 5273460 SHA512:291b8913918d411b679442b888f56893a857a77decfe428086c8bd1da1949498938ddb0bf254ed99d192e4a09b5e8cee1905fd6932ee642463fb229cac7c226e
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.76.3-1ubuntu1.debian.tar.xz' glib2.0_2.76.3-1ubuntu1.debian.tar.xz 117760 SHA512:4a8a5ba5237c97ddcd563c256725083ded66c3034641c7d19c4065a441363440aede03c3846b9b792dd5eb0676be0f580d34350d40ba0e297c975403c9631c70
-```
 
 ### `dpkg` source package: `glibc=2.37-0ubuntu2`
 
@@ -1363,15 +1343,13 @@ Licenses: (parsed from: `/usr/share/doc/gir1.2-freedesktop/copyright`, `/usr/sha
 - `Unicode-DFS-2016`
 - `bzip2-1.0.6`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gobject-introspection=1.76.1-1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gobject-introspection/gobject-introspection_1.76.1-1.dsc' gobject-introspection_1.76.1-1.dsc 3277 SHA512:ca870b6e5a28358853d8d465cac03ecc317427efefa1dfc872ad13082e54a618aecfeb2ffffc833e06f3c61abe8916f19d1136bf384c59818b8b4b580e5aa2d4
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gobject-introspection/gobject-introspection_1.76.1.orig-glib.tar.xz' gobject-introspection_1.76.1.orig-glib.tar.xz 5270936 SHA512:7ab8740925fa4ed2d860a35544c475ae905df5fa7fc0cc64ffa8c543df6073794e44c8ff39e3e1de1d677016ef9d27e9bc709d2505d13090faa8d6c47cd64bd0
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gobject-introspection/gobject-introspection_1.76.1.orig.tar.xz' gobject-introspection_1.76.1.orig.tar.xz 1055416 SHA512:84331a30f8854d2259609650c21aadd6363ea1417a75828bd395f8f4346da1c6d6550cff5f2c9f5f6fd6fbf2a9d27b5880c2ee1616fa905c5f362384d481a916
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gobject-introspection/gobject-introspection_1.76.1-1.debian.tar.xz' gobject-introspection_1.76.1-1.debian.tar.xz 48816 SHA512:2bd80f6d2c566f47656392631e675b836f82ab918516a1da53c919760cc5a82cc0afff6d88de186fcfe87d9930952eeafa21d583d901f75bdde3213fab29dc65
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/gobject-introspection/1.76.1-1/
+
 
 ### `dpkg` source package: `graphite2=1.3.14-1build2`
 
@@ -2497,14 +2475,9 @@ Licenses: (parsed from: `/usr/share/doc/gir1.2-rsvg-2.0/copyright`, `/usr/share/
 - `Unlicense,`
 - `zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris librsvg=2.54.5+dfsg-1ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/librsvg/librsvg_2.54.5%2bdfsg-1ubuntu3.dsc' librsvg_2.54.5+dfsg-1ubuntu3.dsc 2457 SHA512:ea7a8b81dc2a24ff5a1cf24abcaa7c9a0a8de33622182dc7f4dcff59d099195b82b34943430a0854b83bc9623ea53c8a723f14ff011a98155fb4920232761e00
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/librsvg/librsvg_2.54.5%2bdfsg.orig.tar.xz' librsvg_2.54.5+dfsg.orig.tar.xz 14613132 SHA512:67f9ce0bbcc11db52c370b45708e5cccc3d9bf2b6e6898a8d0a9905f4315b50e6a53321ee140b9eabc47d3b6d773316e5c63e1f933f4f87dd434203668eac517
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/librsvg/librsvg_2.54.5%2bdfsg-1ubuntu3.debian.tar.xz' librsvg_2.54.5+dfsg-1ubuntu3.debian.tar.xz 34596 SHA512:04d9f6c30fc0b820c4ef511d93ceb3aed8af11abc61535a7140ce4beaa347cfe041d839baad324cf21cd40df6e9e3a17f9e3d63c8cd68d244fa630f086814049
-```
 
 ### `dpkg` source package: `libseccomp=2.5.4-1ubuntu3`
 
@@ -3394,15 +3367,13 @@ Licenses: (parsed from: `/usr/share/doc/libhogweed6/copyright`, `/usr/share/doc/
 - `LGPL-3+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nettle=3.8.1-2
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.8.1-2.dsc' nettle_3.8.1-2.dsc 2274 SHA512:441e46fd50c9626864ea1cb848230ea032cd06a5242ff496e9e5cd22ab44ad28016412d12ccd113baf114672e026334ef11a472116ef41bb9509917df091f080
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.8.1.orig.tar.gz' nettle_3.8.1.orig.tar.gz 2406251 SHA512:a405da3438d185d96917b03b00abb9ab43e04f58f770f657f716c25d64bb258ee170a71328e74736caa7121f50c0c89d3cc840c1201d2a92cfaf1357d24bdc6a
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.8.1.orig.tar.gz.asc' nettle_3.8.1.orig.tar.gz.asc 573 SHA512:5856cfe4f0e907734af2ad699f0c26ad46e1a80828fd587ac1122b6493ad8527f832c2042ad936e139128a79a2f2478f5888d3a6ad92185984472f788f5e865a
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.8.1-2.debian.tar.xz' nettle_3.8.1-2.debian.tar.xz 23396 SHA512:54d32e6ccb8da1ea1ea66bbbeef4e3c6a878e8e067ffe29156c8727c256f2fa3134115d818961460c87f6ad226e6c70a4de7d67e54a14b965ff67abe0c604036
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/nettle/3.8.1-2/
+
 
 ### `dpkg` source package: `nghttp2=1.54.0-1`
 

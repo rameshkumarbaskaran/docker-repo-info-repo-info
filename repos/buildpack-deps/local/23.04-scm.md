@@ -2091,14 +2091,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.11-minimal/copyright`, `/usr/
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.11=3.11.2-6ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.11/python3.11_3.11.2-6ubuntu0.1.dsc' python3.11_3.11.2-6ubuntu0.1.dsc 3731 SHA512:866843d83aad4115b4d2dacaeeab4a76c51972c56cdcc8989cadcafcf87650c10ff7d99360768b325b6d41a28cdd7dc94f73d3a1a7da2be78d6a93d7fe0591d5
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.11/python3.11_3.11.2.orig.tar.gz' python3.11_3.11.2.orig.tar.gz 26437858 SHA512:e2dcba35afbceb0e321e7f4edc1a9beabd33ed6093493dc017c952a195beb034301de72d955855a1d143d219fd28a961231e3bd172df0c8c3c3ae531ecaacc37
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.11/python3.11_3.11.2-6ubuntu0.1.debian.tar.xz' python3.11_3.11.2-6ubuntu0.1.debian.tar.xz 216776 SHA512:bc779d82bc77222c596997434cab371ddad4c8caf2c70bc2b5620a9de4093fa631cecb7de64b4575a64ee9a26c672f09dd4619ebc64ebe8d1e30d773dfd18d84
-```
 
 ### `dpkg` source package: `readline=8.2-1.3`
 
