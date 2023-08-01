@@ -743,14 +743,9 @@ Licenses: (parsed from: `/usr/share/doc/gcc-12-base/copyright`, `/usr/share/doc/
 - `GPL-3`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-12=12.1.0-2ubuntu1~22.04
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-12/gcc-12_12.1.0-2ubuntu1%7e22.04.dsc' gcc-12_12.1.0-2ubuntu1~22.04.dsc 27770 SHA512:9aaf720a29cf2b0d98a445c2d0ee693176972735f97b03de46e1d6c7f50b8380e7ddcc2127658727492e9b5098cd0bddf1dedb5662e1adc6c82de9d5ab22b079
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-12/gcc-12_12.1.0.orig.tar.gz' gcc-12_12.1.0.orig.tar.gz 89394971 SHA512:9132ef095fcc5d683c71b9dc1b77b3af0f4f09b4b00d0e1f6ae1a46d5a4f7faf9e1112967722b6e3fcf72b6692326d036b1d370103b5362a7e19cd430b1ad18d
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-12/gcc-12_12.1.0-2ubuntu1%7e22.04.debian.tar.xz' gcc-12_12.1.0-2ubuntu1~22.04.debian.tar.xz 1660876 SHA512:488d7b5e080c0d6e2d4e16b8a88e0376da76912a68af3f5ce9ef69bbe787650a353a8a25004f861b9424317191a445567e38d838fbcbe5e3c5c0f5339bf454fa
-```
 
 ### `dpkg` source package: `gdbm=1.23-1`
 
@@ -2980,14 +2975,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.10.6-1~22.04
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.6-1%7e22.04.dsc' python3-stdlib-extensions_3.10.6-1~22.04.dsc 2599 SHA512:0ac6d3f4f37c6e1901264aa9019f9ffdd706dc0d4d770ff845ddb4b3dde7b7f8181619b94bcfc718e84d295bfed9adf27bef2c027dacfc5c2ee183fd45ba1368
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.6.orig.tar.xz' python3-stdlib-extensions_3.10.6.orig.tar.xz 1087948 SHA512:f7b54ed10a3d43626340a57b5368bf4e94a23759d91ca759da8f7045151944a89c4259286cccbfbc139106dfe92fefc498e8ce47051d05f7a55d671bd69b094c
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.6-1%7e22.04.debian.tar.xz' python3-stdlib-extensions_3.10.6-1~22.04.debian.tar.xz 25792 SHA512:8efc49379f1893bcf766eab17466cef4ccf544f1d6ea54c848506ce51602ab15385e5f1d491d489ca2d0574a5f2deb7cf4b8ee66013527578e45b710a765ec97
-```
 
 ### `dpkg` source package: `python3.10=3.10.6-1~22.04.2ubuntu1.1`
 
@@ -3021,14 +3011,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.10/copyright`, `/usr/share/do
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.10=3.10.6-1~22.04.2ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.10/python3.10_3.10.6-1%7e22.04.2ubuntu1.1.dsc' python3.10_3.10.6-1~22.04.2ubuntu1.1.dsc 3766 SHA512:192e30c1a1759d22255d24d3fe1fa32e3ec8dd52eba0441778273c6d9a47a1be2f27d732c6f50518fe9dfadaad40fc038b50439f1008a4a1263c6cea3461a156
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.10/python3.10_3.10.6.orig.tar.xz' python3.10_3.10.6.orig.tar.xz 19600672 SHA512:f2bf424bf4f4caa524ee1248b431e8e06d0745c3fc3ba457710d75f3698e653733feb4b059cd124f1de2a9e851c30d847f567aa47abef12898c9dc8a6507b476
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.10/python3.10_3.10.6-1%7e22.04.2ubuntu1.1.debian.tar.xz' python3.10_3.10.6-1~22.04.2ubuntu1.1.debian.tar.xz 226728 SHA512:48a192563ab28665dfd78deb509ce488f9d16606f5df8aa5df0a3396dda9da534f6c18406dfccb5078f48ec919a5cd5a95b22ad576f71d07695ce8f8127dfe8a
-```
 
 ### `dpkg` source package: `pyyaml=5.4.1-1ubuntu1`
 
