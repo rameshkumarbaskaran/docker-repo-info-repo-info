@@ -1766,14 +1766,9 @@ Licenses: (parsed from: `/usr/share/doc/gcc-10-base/copyright`, `/usr/share/doc/
 - `GPL-3`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-10=10.3.0-1ubuntu1~20.04
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.3.0-1ubuntu1%7e20.04.dsc' gcc-10_10.3.0-1ubuntu1~20.04.dsc 31155 SHA512:c67d612edfbf2a97d4c3f436b1fdbc08b7387907a3e0cc49a9ba2a360db054b3d07082097c4b98abc9ace7b8902637f8d7126de229c164cab743eff4fd5d7520
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.3.0.orig.tar.gz' gcc-10_10.3.0.orig.tar.gz 83679201 SHA512:c7f0fb09c79bc8c372171df7f23af6970a389dcc1237ebc0821c0a754d93c6e4065433f7ad63aed9f9b8fce2da7fce3caa61ae2e2afab494d06bf33b06a10775
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.3.0-1ubuntu1%7e20.04.debian.tar.xz' gcc-10_10.3.0-1ubuntu1~20.04.debian.tar.xz 580864 SHA512:3ae060b517a67ae2410b48c83a7836ec25e83422cb3db5dbe55cce9e97609aff82062aa55a84c64ca9c52f405a41d2da20c1d016b15521102cac3b82895f3975
-```
 
 ### `dpkg` source package: `gcc-9=9.4.0-1ubuntu1~20.04.1`
 
@@ -5317,14 +5312,9 @@ Licenses: (parsed from: `/usr/share/doc/librsvg2-2/copyright`, `/usr/share/doc/l
 - `Sun-permissive`
 - `Unlicense`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris librsvg=2.48.9-1ubuntu0.20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/librsvg/librsvg_2.48.9-1ubuntu0.20.04.1.dsc' librsvg_2.48.9-1ubuntu0.20.04.1.dsc 2643 SHA512:31d3922daecaec10ef5f0dceb49067183cfcc4fe5f4422785def2b7c1056908753ebe7db31ba89a9b6fbaef0ee4c3435edc06cede57bb5a82ab8a8599ad21643
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/librsvg/librsvg_2.48.9.orig.tar.xz' librsvg_2.48.9.orig.tar.xz 12661188 SHA512:4edfba4d667536ef921e72da53e4a357e56cae6db5e7e93c23d6792241b31b2397e68633dbb0df465129ce68f0ef1ba55cc51f2321adc6f4874fe7089715bb5c
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/librsvg/librsvg_2.48.9-1ubuntu0.20.04.1.debian.tar.xz' librsvg_2.48.9-1ubuntu0.20.04.1.debian.tar.xz 24260 SHA512:11d05100ea44f7d3474907516f0869b5b43517eaccd56cc70780418935f39de97294e3a0b31fa8e36382d3a6809ca1812220931b9673842a1e2a236e153a3e40
-```
 
 ### `dpkg` source package: `libsamplerate=0.1.9-2`
 
@@ -7583,14 +7573,9 @@ Licenses: (parsed from: `/usr/share/doc/openjdk-11-jdk/copyright`, `/usr/share/d
 - `LGPL-2`
 - `LGPL-2-1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openjdk-lts=11.0.19+7~us1-0ubuntu1~20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.19%2b7%7eus1-0ubuntu1%7e20.04.1.dsc' openjdk-lts_11.0.19+7~us1-0ubuntu1~20.04.1.dsc 4679 SHA512:f81b24e214021a17f49375965e2ade05fb0d9c15463e09e1e497f772274477e3946902b6287451777dc3a14d3bac83029089bea6e68482dd3a5f687c9c58910b
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.19%2b7%7eus1.orig.tar.xz' openjdk-lts_11.0.19+7~us1.orig.tar.xz 78706772 SHA512:d78d0d72c6e41600f457503d4fdce786fd04f3a284e1885c92d21abb7ba4fedc327004a45ea0485ab98fefad729084502bb5d60e082697a1bd13726686407a0f
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.19%2b7%7eus1-0ubuntu1%7e20.04.1.debian.tar.xz' openjdk-lts_11.0.19+7~us1-0ubuntu1~20.04.1.debian.tar.xz 161468 SHA512:68d28bb5970f42d2055787da05e19c6c9b864472422d1c79d2091b06f1d2ed479c86d28cd80c8466627470824bcf9f968ab8cc610dfde55194134b2d3935b918
-```
 
 ### `dpkg` source package: `openjpeg2=2.3.1-1ubuntu4.20.04.1`
 
