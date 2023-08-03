@@ -1,9 +1,9 @@
-# `mysql:5.7.42`
+# `mysql:5.7.43`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d7b085374dbc1ca6ee83a18b488b9da0425749c87051e8bd8287dc2a2c775ecb`
-- Created: `2023-07-25T01:40:08.386158483Z`
+- Image ID: `sha256:92034fe9a41f4344b97f3fc88a8796248e2cfa9b934be58379f3dbc150d07d9d`
+- Created: `2023-08-03T01:43:32.567458788Z`
 - Virtual Size: ~ 581.08 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -13,7 +13,7 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `GOSU_VERSION=1.16`
   - `MYSQL_MAJOR=5.7`
-  - `MYSQL_VERSION=5.7.42-1.el7`
+  - `MYSQL_VERSION=5.7.43-1.el7`
   - `MYSQL_SHELL_VERSION=8.0.34-1.el7`
 
 ## `rpm` (`.rpm`-based packages)
@@ -938,7 +938,7 @@ $ dnf --quiet download --source --url make-3.82-24.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackageSource/make-3.82-24.el7.src.rpm
 ```
 
-### `rpm` package: `mysql-community-server-minimal-5.7.42-1.el7.x86_64`
+### `rpm` package: `mysql-community-server-minimal-5.7.43-1.el7.x86_64`
 
 Licenses (from `rpm --query`): Copyright (c) 2000, 2023, Oracle and/or its affiliates. All rights reserved. Under GPLv2 license as shown in the Description field.
 
