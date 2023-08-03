@@ -110,7 +110,7 @@
 ## `maven:3`
 
 ```console
-$ docker pull maven@sha256:7791921e7473cbc580ed1542e16f4083ce90c960b53c6a6bbdcad8ff5217f265
+$ docker pull maven@sha256:bae5871b5e78c2886a3535c844129b9698ab3e45ecf9e3098eb32c430ec3c319
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -225,13 +225,13 @@ CMD ["mvn"]
 ### `maven:3` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:14274982b1c279937ede5fa89f909603081a4035d177d30197c997ae53b6e03f
+$ docker pull maven@sha256:1acec15fd4c7a1dbcffc1488892c969ee697463c83bf2684f480c020303fc024
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.8 MB (227776302 bytes)**  
+-	Total Size: **227.7 MB (227712284 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0269dc4a8e685c7249ef23cb579b1906e1a85a6133406189eaa3a2c75a2ac0b0`
+-	Image ID: `sha256:927a93770c68ff6678e4e123e980b108ed8181406da6d1aa949ca687b8299b8c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -254,15 +254,19 @@ ENV JAVA_HOME=/opt/java/openjdk
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Tue, 04 Jul 2023 15:32:45 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:34:51 GMT
-RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Mon, 24 Jul 2023 22:42:39 GMT
+# Thu, 03 Aug 2023 01:08:59 GMT
+RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Thu, 03 Aug 2023 01:08:59 GMT
 ENV JAVA_VERSION=jdk-20.0.2+9
-# Mon, 24 Jul 2023 22:42:48 GMT
+# Thu, 03 Aug 2023 01:09:09 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='b475bcc23db0bd618c815bb8f11d8e084dc58288ea3bcdf4e7f389ed41c89f56';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_aarch64_linux_hotspot_20.0.2_9.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='3d91842e9c172967ac397076523249d05a82ead51b0006838f5f0315ad52222c';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_x64_linux_hotspot_20.0.2_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
+COPY file:0673fe0a4a716089bcd96321c8de60149aea8a94ae7c4ba827ecc4a74a9789a3 in / 
+# Thu, 03 Aug 2023 01:09:13 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Thu, 03 Aug 2023 01:09:13 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -293,37 +297,41 @@ CMD ["mvn"]
 		Last Modified: Wed, 28 Jun 2023 23:23:40 GMT  
 		Size: 28.4 MB (28391011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92f85d89e7da0f3af0f527e7300cced784d0ba64249b8c376690599d313cb056`  
-		Last Modified: Tue, 04 Jul 2023 15:39:09 GMT  
-		Size: 18.5 MB (18466568 bytes)  
+	-	`sha256:4df65dff856d09c8b168dd7068823e6f97f3afb0fc6276b56a61cfbc2fc700d4`  
+		Last Modified: Thu, 03 Aug 2023 01:12:32 GMT  
+		Size: 18.9 MB (18858729 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c618fd14ec82d3df12cb6aadc4cca972a5d98ea6890021a44a8f106fffdebb7`  
-		Last Modified: Mon, 24 Jul 2023 22:44:45 GMT  
-		Size: 152.1 MB (152127099 bytes)  
+	-	`sha256:c182dd525d4acf4fd30b43a086932ed78fb4b92224f57ad0f7902fcdd6ce5f5e`  
+		Last Modified: Thu, 03 Aug 2023 01:12:39 GMT  
+		Size: 152.1 MB (152127049 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7141731e557558245eec1f619e96b2788f2a2dac72e3f2074784f092766f9fa`  
-		Last Modified: Mon, 24 Jul 2023 22:44:36 GMT  
+	-	`sha256:abe008c6267f42405de6e0e83dbd6d914ef7c3fb528bec8438e015a02e0e4347`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6deca075b33c631c62ceac429e9bc6429d4b9aefc5a9316800b185953a18dbe0`  
-		Last Modified: Tue, 25 Jul 2023 01:09:28 GMT  
-		Size: 19.5 MB (19462491 bytes)  
+	-	`sha256:c4d4f0d670a3f16cd33b11a95cc6530b3c5125f3b15f7c82e1e18b792bf8655d`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
+		Size: 667.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5868788e60ed4618156df0c82077e5a23a6535a295609f3dbeb2b9a74a55eea3`  
-		Last Modified: Tue, 25 Jul 2023 01:09:26 GMT  
-		Size: 9.3 MB (9327590 bytes)  
+	-	`sha256:6e7c21188c7df85a0f2006bc08c5a496fdc6c9bca6598395bf09379b5983cd6a`  
+		Last Modified: Thu, 03 Aug 2023 03:53:30 GMT  
+		Size: 19.0 MB (19005687 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74b4f59785940c4a060255fa43ae80c4bf098e7f714571c49de3e195f3ec64ee`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 857.0 B  
+	-	`sha256:1c0d86a87be29cba0093e6aed4e270194cf15a359c4d072b8cb63b19749ddc43`  
+		Last Modified: Thu, 03 Aug 2023 03:53:28 GMT  
+		Size: 9.3 MB (9327596 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1a30731f1381b2bf632fec2bfb8a3700a49cb3d3cddad9339c441ca6ff011e5a`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 359.0 B  
+	-	`sha256:1c9e4c26a2cb521fa74ce02a4343b6d4d24b07731bb07128e5858fea8d271d21`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 856.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:604990e15f57d12976c97e454a8c49d86c1b887bdc899573fa122ed43e7cb491`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 155.0 B  
+	-	`sha256:b35860b914781e5f8fbab7249c53b58b76d7eea3f6dee8ae01cfbde49fa64ecd`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 361.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:121ec3ea501be989167e3b95dc124083804c42b1bd43d148cdf5926f6d4a5098`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3-amazoncorretto`
@@ -2370,7 +2378,7 @@ CMD ["mvn"]
 ## `maven:3-eclipse-temurin`
 
 ```console
-$ docker pull maven@sha256:7791921e7473cbc580ed1542e16f4083ce90c960b53c6a6bbdcad8ff5217f265
+$ docker pull maven@sha256:bae5871b5e78c2886a3535c844129b9698ab3e45ecf9e3098eb32c430ec3c319
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2485,13 +2493,13 @@ CMD ["mvn"]
 ### `maven:3-eclipse-temurin` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:14274982b1c279937ede5fa89f909603081a4035d177d30197c997ae53b6e03f
+$ docker pull maven@sha256:1acec15fd4c7a1dbcffc1488892c969ee697463c83bf2684f480c020303fc024
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.8 MB (227776302 bytes)**  
+-	Total Size: **227.7 MB (227712284 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0269dc4a8e685c7249ef23cb579b1906e1a85a6133406189eaa3a2c75a2ac0b0`
+-	Image ID: `sha256:927a93770c68ff6678e4e123e980b108ed8181406da6d1aa949ca687b8299b8c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -2514,15 +2522,19 @@ ENV JAVA_HOME=/opt/java/openjdk
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Tue, 04 Jul 2023 15:32:45 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:34:51 GMT
-RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Mon, 24 Jul 2023 22:42:39 GMT
+# Thu, 03 Aug 2023 01:08:59 GMT
+RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Thu, 03 Aug 2023 01:08:59 GMT
 ENV JAVA_VERSION=jdk-20.0.2+9
-# Mon, 24 Jul 2023 22:42:48 GMT
+# Thu, 03 Aug 2023 01:09:09 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='b475bcc23db0bd618c815bb8f11d8e084dc58288ea3bcdf4e7f389ed41c89f56';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_aarch64_linux_hotspot_20.0.2_9.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='3d91842e9c172967ac397076523249d05a82ead51b0006838f5f0315ad52222c';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_x64_linux_hotspot_20.0.2_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
+COPY file:0673fe0a4a716089bcd96321c8de60149aea8a94ae7c4ba827ecc4a74a9789a3 in / 
+# Thu, 03 Aug 2023 01:09:13 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Thu, 03 Aug 2023 01:09:13 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -2553,37 +2565,41 @@ CMD ["mvn"]
 		Last Modified: Wed, 28 Jun 2023 23:23:40 GMT  
 		Size: 28.4 MB (28391011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92f85d89e7da0f3af0f527e7300cced784d0ba64249b8c376690599d313cb056`  
-		Last Modified: Tue, 04 Jul 2023 15:39:09 GMT  
-		Size: 18.5 MB (18466568 bytes)  
+	-	`sha256:4df65dff856d09c8b168dd7068823e6f97f3afb0fc6276b56a61cfbc2fc700d4`  
+		Last Modified: Thu, 03 Aug 2023 01:12:32 GMT  
+		Size: 18.9 MB (18858729 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c618fd14ec82d3df12cb6aadc4cca972a5d98ea6890021a44a8f106fffdebb7`  
-		Last Modified: Mon, 24 Jul 2023 22:44:45 GMT  
-		Size: 152.1 MB (152127099 bytes)  
+	-	`sha256:c182dd525d4acf4fd30b43a086932ed78fb4b92224f57ad0f7902fcdd6ce5f5e`  
+		Last Modified: Thu, 03 Aug 2023 01:12:39 GMT  
+		Size: 152.1 MB (152127049 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7141731e557558245eec1f619e96b2788f2a2dac72e3f2074784f092766f9fa`  
-		Last Modified: Mon, 24 Jul 2023 22:44:36 GMT  
+	-	`sha256:abe008c6267f42405de6e0e83dbd6d914ef7c3fb528bec8438e015a02e0e4347`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6deca075b33c631c62ceac429e9bc6429d4b9aefc5a9316800b185953a18dbe0`  
-		Last Modified: Tue, 25 Jul 2023 01:09:28 GMT  
-		Size: 19.5 MB (19462491 bytes)  
+	-	`sha256:c4d4f0d670a3f16cd33b11a95cc6530b3c5125f3b15f7c82e1e18b792bf8655d`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
+		Size: 667.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5868788e60ed4618156df0c82077e5a23a6535a295609f3dbeb2b9a74a55eea3`  
-		Last Modified: Tue, 25 Jul 2023 01:09:26 GMT  
-		Size: 9.3 MB (9327590 bytes)  
+	-	`sha256:6e7c21188c7df85a0f2006bc08c5a496fdc6c9bca6598395bf09379b5983cd6a`  
+		Last Modified: Thu, 03 Aug 2023 03:53:30 GMT  
+		Size: 19.0 MB (19005687 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74b4f59785940c4a060255fa43ae80c4bf098e7f714571c49de3e195f3ec64ee`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 857.0 B  
+	-	`sha256:1c0d86a87be29cba0093e6aed4e270194cf15a359c4d072b8cb63b19749ddc43`  
+		Last Modified: Thu, 03 Aug 2023 03:53:28 GMT  
+		Size: 9.3 MB (9327596 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1a30731f1381b2bf632fec2bfb8a3700a49cb3d3cddad9339c441ca6ff011e5a`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 359.0 B  
+	-	`sha256:1c9e4c26a2cb521fa74ce02a4343b6d4d24b07731bb07128e5858fea8d271d21`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 856.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:604990e15f57d12976c97e454a8c49d86c1b887bdc899573fa122ed43e7cb491`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 155.0 B  
+	-	`sha256:b35860b914781e5f8fbab7249c53b58b76d7eea3f6dee8ae01cfbde49fa64ecd`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 361.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:121ec3ea501be989167e3b95dc124083804c42b1bd43d148cdf5926f6d4a5098`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3-eclipse-temurin-11`
@@ -3229,7 +3245,7 @@ CMD ["mvn"]
 ## `maven:3-eclipse-temurin-11-focal`
 
 ```console
-$ docker pull maven@sha256:6ea7e71d99f21e3e710700072641c61d3b942bd2c1e7f57a610418a6286f66df
+$ docker pull maven@sha256:a03c9e35c0c781c9bb8f61a6de8d84966a75ca850d8b8add56b8d498286ff6f5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3451,44 +3467,44 @@ CMD ["mvn"]
 ### `maven:3-eclipse-temurin-11-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:726185699bebd36495642969b5e0225ad86d8d1fb9e418c8aee4bff83542682d
+$ docker pull maven@sha256:ee7c61fd9fc4786731d67bdb49b2b47a10f35e4c5eddb8f3bb91657838ede35b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **223.0 MB (222952708 bytes)**  
+-	Total Size: **222.6 MB (222560558 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bc734fe0799b293fa7d33985d26c5e3778f16c588bf73393400f789914dd179d`
+-	Image ID: `sha256:a90ef39f278329f65732cbeda8b66d2928e2453abf6912fbe411a888abd1c4b4`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG RELEASE
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:57 GMT
 LABEL org.opencontainers.image.version=20.04
-# Wed, 28 Jun 2023 09:54:48 GMT
-ADD file:a6db9f7789e57b7119f68e4e4ec9ec5aab8c3c8bd53fd932f3c59c54b1c20a26 in / 
-# Wed, 28 Jun 2023 09:54:49 GMT
+# Tue, 01 Aug 2023 06:21:03 GMT
+ADD file:ef6e767091d76c1461d099d5bc7a18c526ec80834cf87280803ab6480192f766 in / 
+# Tue, 01 Aug 2023 06:21:03 GMT
 CMD ["/bin/bash"]
-# Tue, 04 Jul 2023 15:32:11 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:32:32 GMT
+# Thu, 03 Aug 2023 01:05:58 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Wed, 26 Jul 2023 00:37:09 GMT
+# Thu, 03 Aug 2023 01:06:22 GMT
 ENV JAVA_VERSION=jdk-11.0.20+8
-# Wed, 26 Jul 2023 00:37:16 GMT
+# Thu, 03 Aug 2023 01:06:32 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='eb821c049c2d2f7c3fbf8ddcce2d608d3aa7d488700e76bfbbebabba93021748';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.20_8.tar.gz';          ;;        armhf|arm)          ESUM='fdf98d94ac3fd49a73a534fd88cf60e757e885c04791d15f76ccfcecb43a25e0';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_arm_linux_hotspot_11.0.20_8.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='1125931b3a38e6e305a1932fc6cfd0b023a0fbec2cab10e835a2ee2c50848b42';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.20_8.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='688c83d9edf2204220df94ce5bab4a6d19f3d91bc0e500f31dda41e16d9a383f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.20_8.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='7a99258af2e3ee9047e90f1c0c1775fd6285085759501295358d934d662e01f9';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_x64_linux_hotspot_11.0.20_8.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Wed, 26 Jul 2023 00:37:19 GMT
+# Thu, 03 Aug 2023 01:06:35 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Wed, 26 Jul 2023 00:37:19 GMT
+# Thu, 03 Aug 2023 01:06:35 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -3515,41 +3531,41 @@ CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1e77eb131c5c9032ce8e6e512f601714ce7ba48e296f5b7a5191703bdcbc904d`  
-		Last Modified: Tue, 04 Jul 2023 04:05:23 GMT  
-		Size: 27.2 MB (27198330 bytes)  
+	-	`sha256:edab87ea811e56041127f5e9eb4115fb62cb96d0e6a14056e0d2dbf51a945a22`  
+		Last Modified: Wed, 02 Aug 2023 04:28:23 GMT  
+		Size: 27.2 MB (27200587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f18a6ed3004a374532e52161ba803de458ea0c89faf66c28c12d9858ee1796c1`  
-		Last Modified: Tue, 04 Jul 2023 15:36:40 GMT  
-		Size: 16.3 MB (16268149 bytes)  
+	-	`sha256:f221141d5aed1dcc474efaed0a5cf9edc344638b5ca5ddaadfd26d4442e4773c`  
+		Last Modified: Thu, 03 Aug 2023 01:10:30 GMT  
+		Size: 16.3 MB (16269103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01667d51126eb3547a25ed4ab4d0727aa63d686cfe86a64fc49d6e31bcd8e749`  
-		Last Modified: Wed, 26 Jul 2023 00:39:45 GMT  
-		Size: 141.6 MB (141571670 bytes)  
+	-	`sha256:970189d908782ebfe605fa0a9edcf6e3f295cafe36699e42ffd13d7061edf601`  
+		Last Modified: Thu, 03 Aug 2023 01:11:18 GMT  
+		Size: 141.6 MB (141573677 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba568dc03cb84e46293cb29d636585e3d0f5c390d072fa1314f03d6b2fca2774`  
-		Last Modified: Wed, 26 Jul 2023 00:39:36 GMT  
-		Size: 175.0 B  
+	-	`sha256:056e71b8461dc080e8c155f6aaab5462a53f679ebc05e98e1bc5f0ff162a33cf`  
+		Last Modified: Thu, 03 Aug 2023 01:11:08 GMT  
+		Size: 173.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49a36fb2c3326bee6a923006ccc5aa566f3730f0bf349d587321e5b893f3a806`  
-		Last Modified: Wed, 26 Jul 2023 01:28:41 GMT  
-		Size: 28.6 MB (28585448 bytes)  
+	-	`sha256:c28af99f2a7dd90192db3a2375edc8380e476a6f5fee6dbd66cadf4c22ed13e0`  
+		Last Modified: Thu, 03 Aug 2023 03:53:03 GMT  
+		Size: 28.2 MB (28188056 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:470b783ee8791dc39052f60056a6f2b8f61c6d7c980489981c70087c41c39b88`  
-		Last Modified: Wed, 26 Jul 2023 01:28:39 GMT  
-		Size: 9.3 MB (9327571 bytes)  
+	-	`sha256:d689ad57bedbfff8759c8107ee23b073a8e43a6ccac315586b1b953f51faa09c`  
+		Last Modified: Thu, 03 Aug 2023 03:53:00 GMT  
+		Size: 9.3 MB (9327596 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10c1af67ada7bff420b38a51ec39926325d9074edf33d8fc062f21d53af225fb`  
-		Last Modified: Wed, 26 Jul 2023 01:28:38 GMT  
-		Size: 853.0 B  
+	-	`sha256:059b8fdcbec1027f03cfe4a377fe9e81f8a0c8121b8d03ccdf924ac39f34ee5e`  
+		Last Modified: Thu, 03 Aug 2023 03:52:59 GMT  
+		Size: 854.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7605118fd28144c27339783f65b93af443eedc0d0f1bf89dcaaf2c316f567cd`  
-		Last Modified: Wed, 26 Jul 2023 01:28:38 GMT  
-		Size: 356.0 B  
+	-	`sha256:28ae736b5fe41195aa293c5ea5b34e24cf167a22d31e54a71b384a3cc2236bdd`  
+		Last Modified: Thu, 03 Aug 2023 03:52:59 GMT  
+		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d118a50389e8ab9177dc5fd7af66cd6014d91ec0bcf8147a3407b566010832e7`  
-		Last Modified: Wed, 26 Jul 2023 01:28:38 GMT  
-		Size: 156.0 B  
+	-	`sha256:9b4687878c2c670fdfecc207861855606c8df9e05eb442d7902e59265aebf7ed`  
+		Last Modified: Thu, 03 Aug 2023 03:52:59 GMT  
+		Size: 154.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3-eclipse-temurin-11-focal` - linux; ppc64le
@@ -4403,7 +4419,7 @@ CMD ["mvn"]
 ## `maven:3-eclipse-temurin-17-focal`
 
 ```console
-$ docker pull maven@sha256:88064e9ac1d71fb2fcafdbdc9b7bc2db3b9fdaecd060ea283a96a1b1f5f5043a
+$ docker pull maven@sha256:a1d0a55ac115bf814031c3f99240ee4912fab5d731a569ff198c9d5146971df5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4625,44 +4641,44 @@ CMD ["mvn"]
 ### `maven:3-eclipse-temurin-17-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:0550e4da1f1114f031c41aa075b11d19a54d88123cbacce27e05ca62d32cc92e
+$ docker pull maven@sha256:b8c8f865c5242ac87d172c83ba047e874c9879fba1d922da39e9b940ce5e52a7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **229.5 MB (229539398 bytes)**  
+-	Total Size: **229.1 MB (229145265 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:094e8854ae8063bd0e2ceba16fee9a15536e1d7f8e5b1ce4453f7abfdf3fdd63`
+-	Image ID: `sha256:a90b7b8241ce7dab5c1046de43bbd37964ae340192f071f5ab701a3c0e35d2a6`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG RELEASE
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:57 GMT
 LABEL org.opencontainers.image.version=20.04
-# Wed, 28 Jun 2023 09:54:48 GMT
-ADD file:a6db9f7789e57b7119f68e4e4ec9ec5aab8c3c8bd53fd932f3c59c54b1c20a26 in / 
-# Wed, 28 Jun 2023 09:54:49 GMT
+# Tue, 01 Aug 2023 06:21:03 GMT
+ADD file:ef6e767091d76c1461d099d5bc7a18c526ec80834cf87280803ab6480192f766 in / 
+# Tue, 01 Aug 2023 06:21:03 GMT
 CMD ["/bin/bash"]
-# Tue, 04 Jul 2023 15:32:11 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:34:24 GMT
+# Thu, 03 Aug 2023 01:07:06 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Tue, 25 Jul 2023 22:26:03 GMT
+# Thu, 03 Aug 2023 01:07:06 GMT
 ENV JAVA_VERSION=jdk-17.0.8+7
-# Tue, 25 Jul 2023 22:26:12 GMT
+# Thu, 03 Aug 2023 01:07:15 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='c43688163cfdcb1a6e6fe202cc06a51891df746b954c55dbd01430e7d7326d00';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8%2B7/OpenJDK17U-jdk_aarch64_linux_hotspot_17.0.8_7.tar.gz';          ;;        armhf|arm)          ESUM='33d972efd78b70a07aed793a6ebcb52a5129707e8c62268e478d1c2df15898e1';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8%2B7/OpenJDK17U-jdk_arm_linux_hotspot_17.0.8_7.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='88f5d14cc84a4bcfe50aa275092ae97a0edf7205269ed12c1972bf613bc52b1e';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8%2B7/OpenJDK17U-jdk_ppc64le_linux_hotspot_17.0.8_7.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='055d8bd0eebf137cf3506fb84817ce2d858597f21067d9a1268f08916738b435';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8%2B7/OpenJDK17U-jdk_s390x_linux_hotspot_17.0.8_7.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='aa5fc7d388fe544e5d85902e68399d5299e931f9b280d358a3cbee218d6017b0';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.8_7.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Tue, 25 Jul 2023 22:26:15 GMT
+# Thu, 03 Aug 2023 01:07:18 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Tue, 25 Jul 2023 22:26:15 GMT
+# Thu, 03 Aug 2023 01:07:18 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -4689,40 +4705,40 @@ CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1e77eb131c5c9032ce8e6e512f601714ce7ba48e296f5b7a5191703bdcbc904d`  
-		Last Modified: Tue, 04 Jul 2023 04:05:23 GMT  
-		Size: 27.2 MB (27198330 bytes)  
+	-	`sha256:edab87ea811e56041127f5e9eb4115fb62cb96d0e6a14056e0d2dbf51a945a22`  
+		Last Modified: Wed, 02 Aug 2023 04:28:23 GMT  
+		Size: 27.2 MB (27200587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1684b62594f0c379e1487e5985d72ce7fa30b5c0f4697d3813e6cea825d0487`  
-		Last Modified: Tue, 04 Jul 2023 15:38:48 GMT  
-		Size: 20.9 MB (20872213 bytes)  
+	-	`sha256:3eff9c6d8e6772cfd5642229054ff5e86119666a9a2f1c26aca1c00b71b63c6a`  
+		Last Modified: Thu, 03 Aug 2023 01:11:51 GMT  
+		Size: 20.9 MB (20873106 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb65bf10eb4ae5266c5f96553a53ff92faf1eba777905e9f30c9e9d44845763d`  
-		Last Modified: Tue, 25 Jul 2023 22:28:59 GMT  
-		Size: 143.6 MB (143551716 bytes)  
+	-	`sha256:3cbb4fab237fb231ab6330f6ab4f206b59b2ab70d12c6451a69103db151b8bb5`  
+		Last Modified: Thu, 03 Aug 2023 01:11:58 GMT  
+		Size: 143.6 MB (143551699 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29c29d83ef77e4815b2c09f644fd6855dfdc6069d16fc25af32489733a99848b`  
-		Last Modified: Tue, 25 Jul 2023 22:28:50 GMT  
-		Size: 170.0 B  
+	-	`sha256:6ba622c211763f5e507ab0249b792e640889cbb6bbbd3c9ddc08bc8796367bdc`  
+		Last Modified: Thu, 03 Aug 2023 01:11:48 GMT  
+		Size: 173.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cc5cef3b9dc175315853a008b2aa54885ce6b445bfbb1faaa306e505350082e2`  
-		Last Modified: Wed, 26 Jul 2023 00:09:11 GMT  
-		Size: 28.6 MB (28587988 bytes)  
+	-	`sha256:7531867993399e58f6df757140071fc9e1f37209fcfd4dd7702d0b03f9828b30`  
+		Last Modified: Thu, 03 Aug 2023 03:53:17 GMT  
+		Size: 28.2 MB (28190762 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:14ee0898953d1345374fe74cb3b1aba9124c0f56756fa095dab5d5cc9096ec55`  
-		Last Modified: Wed, 26 Jul 2023 00:09:08 GMT  
-		Size: 9.3 MB (9327606 bytes)  
+	-	`sha256:4f2cee394cee127bcd66964ac96597adb94dcdd464aa0aa654030445db0eade6`  
+		Last Modified: Thu, 03 Aug 2023 03:53:15 GMT  
+		Size: 9.3 MB (9327570 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20867af94d2c725656636b1099373e081808ab3a1a5fd0965ce594a4f683acb2`  
-		Last Modified: Wed, 26 Jul 2023 00:09:07 GMT  
-		Size: 857.0 B  
+	-	`sha256:d1729dce71f84c531fbade289c5add377856aee0138bce6e4644493d1230b729`  
+		Last Modified: Thu, 03 Aug 2023 03:53:13 GMT  
+		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a7222e7c8894b6bee6e2afda44e0f213ab2d73a792e74447db45a85b23023d5`  
-		Last Modified: Wed, 26 Jul 2023 00:09:07 GMT  
-		Size: 363.0 B  
+	-	`sha256:ea22fbc4aa5dd48a99e093ccf9ffe2ea6a244ab90a77f2f8c4ab6268ba6a909c`  
+		Last Modified: Thu, 03 Aug 2023 03:53:13 GMT  
+		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d0c10f180ba964d31f6d10736104a0a4f29f5de1e0efc504df6c4ff041065da0`  
-		Last Modified: Wed, 26 Jul 2023 00:09:07 GMT  
+	-	`sha256:18ccf2b22bc0d8017f1201e801c299c639bba98121f7496c6bf890aef71974b6`  
+		Last Modified: Thu, 03 Aug 2023 03:53:13 GMT  
 		Size: 155.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -4937,7 +4953,7 @@ CMD ["mvn"]
 ## `maven:3-eclipse-temurin-20`
 
 ```console
-$ docker pull maven@sha256:7791921e7473cbc580ed1542e16f4083ce90c960b53c6a6bbdcad8ff5217f265
+$ docker pull maven@sha256:bae5871b5e78c2886a3535c844129b9698ab3e45ecf9e3098eb32c430ec3c319
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5052,13 +5068,13 @@ CMD ["mvn"]
 ### `maven:3-eclipse-temurin-20` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:14274982b1c279937ede5fa89f909603081a4035d177d30197c997ae53b6e03f
+$ docker pull maven@sha256:1acec15fd4c7a1dbcffc1488892c969ee697463c83bf2684f480c020303fc024
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.8 MB (227776302 bytes)**  
+-	Total Size: **227.7 MB (227712284 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0269dc4a8e685c7249ef23cb579b1906e1a85a6133406189eaa3a2c75a2ac0b0`
+-	Image ID: `sha256:927a93770c68ff6678e4e123e980b108ed8181406da6d1aa949ca687b8299b8c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -5081,15 +5097,19 @@ ENV JAVA_HOME=/opt/java/openjdk
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Tue, 04 Jul 2023 15:32:45 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:34:51 GMT
-RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Mon, 24 Jul 2023 22:42:39 GMT
+# Thu, 03 Aug 2023 01:08:59 GMT
+RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Thu, 03 Aug 2023 01:08:59 GMT
 ENV JAVA_VERSION=jdk-20.0.2+9
-# Mon, 24 Jul 2023 22:42:48 GMT
+# Thu, 03 Aug 2023 01:09:09 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='b475bcc23db0bd618c815bb8f11d8e084dc58288ea3bcdf4e7f389ed41c89f56';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_aarch64_linux_hotspot_20.0.2_9.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='3d91842e9c172967ac397076523249d05a82ead51b0006838f5f0315ad52222c';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_x64_linux_hotspot_20.0.2_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
+COPY file:0673fe0a4a716089bcd96321c8de60149aea8a94ae7c4ba827ecc4a74a9789a3 in / 
+# Thu, 03 Aug 2023 01:09:13 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Thu, 03 Aug 2023 01:09:13 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -5120,37 +5140,41 @@ CMD ["mvn"]
 		Last Modified: Wed, 28 Jun 2023 23:23:40 GMT  
 		Size: 28.4 MB (28391011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92f85d89e7da0f3af0f527e7300cced784d0ba64249b8c376690599d313cb056`  
-		Last Modified: Tue, 04 Jul 2023 15:39:09 GMT  
-		Size: 18.5 MB (18466568 bytes)  
+	-	`sha256:4df65dff856d09c8b168dd7068823e6f97f3afb0fc6276b56a61cfbc2fc700d4`  
+		Last Modified: Thu, 03 Aug 2023 01:12:32 GMT  
+		Size: 18.9 MB (18858729 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c618fd14ec82d3df12cb6aadc4cca972a5d98ea6890021a44a8f106fffdebb7`  
-		Last Modified: Mon, 24 Jul 2023 22:44:45 GMT  
-		Size: 152.1 MB (152127099 bytes)  
+	-	`sha256:c182dd525d4acf4fd30b43a086932ed78fb4b92224f57ad0f7902fcdd6ce5f5e`  
+		Last Modified: Thu, 03 Aug 2023 01:12:39 GMT  
+		Size: 152.1 MB (152127049 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7141731e557558245eec1f619e96b2788f2a2dac72e3f2074784f092766f9fa`  
-		Last Modified: Mon, 24 Jul 2023 22:44:36 GMT  
+	-	`sha256:abe008c6267f42405de6e0e83dbd6d914ef7c3fb528bec8438e015a02e0e4347`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6deca075b33c631c62ceac429e9bc6429d4b9aefc5a9316800b185953a18dbe0`  
-		Last Modified: Tue, 25 Jul 2023 01:09:28 GMT  
-		Size: 19.5 MB (19462491 bytes)  
+	-	`sha256:c4d4f0d670a3f16cd33b11a95cc6530b3c5125f3b15f7c82e1e18b792bf8655d`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
+		Size: 667.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5868788e60ed4618156df0c82077e5a23a6535a295609f3dbeb2b9a74a55eea3`  
-		Last Modified: Tue, 25 Jul 2023 01:09:26 GMT  
-		Size: 9.3 MB (9327590 bytes)  
+	-	`sha256:6e7c21188c7df85a0f2006bc08c5a496fdc6c9bca6598395bf09379b5983cd6a`  
+		Last Modified: Thu, 03 Aug 2023 03:53:30 GMT  
+		Size: 19.0 MB (19005687 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74b4f59785940c4a060255fa43ae80c4bf098e7f714571c49de3e195f3ec64ee`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 857.0 B  
+	-	`sha256:1c0d86a87be29cba0093e6aed4e270194cf15a359c4d072b8cb63b19749ddc43`  
+		Last Modified: Thu, 03 Aug 2023 03:53:28 GMT  
+		Size: 9.3 MB (9327596 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1a30731f1381b2bf632fec2bfb8a3700a49cb3d3cddad9339c441ca6ff011e5a`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 359.0 B  
+	-	`sha256:1c9e4c26a2cb521fa74ce02a4343b6d4d24b07731bb07128e5858fea8d271d21`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 856.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:604990e15f57d12976c97e454a8c49d86c1b887bdc899573fa122ed43e7cb491`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 155.0 B  
+	-	`sha256:b35860b914781e5f8fbab7249c53b58b76d7eea3f6dee8ae01cfbde49fa64ecd`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 361.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:121ec3ea501be989167e3b95dc124083804c42b1bd43d148cdf5926f6d4a5098`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3-eclipse-temurin-20-alpine`
@@ -5787,7 +5811,7 @@ CMD ["mvn"]
 ## `maven:3-eclipse-temurin-8-focal`
 
 ```console
-$ docker pull maven@sha256:7965b00d92cf58ac6023bca5d5cda31486c336023dcd70c5c6fce2d7608568e1
+$ docker pull maven@sha256:a0a384a8bb17786576a1c9b23e10f297e4bb7b7703a7e80a1f49fc93d0de3341
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6004,42 +6028,42 @@ CMD ["mvn"]
 ### `maven:3-eclipse-temurin-8-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:0363903aefb18dd27d9dc9f783e98d3d3efd8452384fe79211d46dd74cbde5f1
+$ docker pull maven@sha256:5f6a13f832fe946270c2ec39948c61d86f0624793b902f2fb87c0a07d58ceaec
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **184.1 MB (184069819 bytes)**  
+-	Total Size: **183.7 MB (183676127 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c58f49d7a05329b3baf509bf60a1211fedf1baf812a120b1b3af9a04ddc63bc0`
+-	Image ID: `sha256:da56b750a225e7bacf8afe387896ae7588d9e919827ff432cfe2230ae8ef243c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG RELEASE
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:57 GMT
 LABEL org.opencontainers.image.version=20.04
-# Wed, 28 Jun 2023 09:54:48 GMT
-ADD file:a6db9f7789e57b7119f68e4e4ec9ec5aab8c3c8bd53fd932f3c59c54b1c20a26 in / 
-# Wed, 28 Jun 2023 09:54:49 GMT
+# Tue, 01 Aug 2023 06:21:03 GMT
+ADD file:ef6e767091d76c1461d099d5bc7a18c526ec80834cf87280803ab6480192f766 in / 
+# Tue, 01 Aug 2023 06:21:03 GMT
 CMD ["/bin/bash"]
-# Tue, 04 Jul 2023 15:32:11 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:32:32 GMT
+# Thu, 03 Aug 2023 01:05:58 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Tue, 01 Aug 2023 21:39:28 GMT
+# Thu, 03 Aug 2023 01:05:58 GMT
 ENV JAVA_VERSION=jdk8u382-b05
-# Tue, 01 Aug 2023 21:39:34 GMT
+# Thu, 03 Aug 2023 01:06:03 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0951398197b7bef39ab987b59c22852812ee2c2da6549953eed7fced4c08e13d';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_aarch64_linux_hotspot_8u382b05.tar.gz';          ;;        armhf|arm)          ESUM='5d805ff157f272acf0f7d192f21af4a3b68c840333ca95568e4e07142efc369d';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_arm_linux_hotspot_8u382b05.tar.gz';          apt-get update          && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libatomic1          && rm -rf /var/lib/apt/lists/*          ;;        ppc64el|powerpc:common64)          ESUM='509c923c308d1f4f28fd0068831a59250a05b8ca173ca92fb2be2e2e1f9ff3f9';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u382b05.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='789ad24dc0d9618294e3ba564c9bfda9d3f3a218604350e0ce0381bbc8f28db3';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_x64_linux_hotspot_8u382b05.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;
-# Tue, 01 Aug 2023 21:39:35 GMT
+# Thu, 03 Aug 2023 01:06:04 GMT
 RUN echo Verifying install ...     && echo javac -version && javac -version     && echo java -version && java -version     && echo Complete.
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -6066,41 +6090,41 @@ CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1e77eb131c5c9032ce8e6e512f601714ce7ba48e296f5b7a5191703bdcbc904d`  
-		Last Modified: Tue, 04 Jul 2023 04:05:23 GMT  
-		Size: 27.2 MB (27198330 bytes)  
+	-	`sha256:edab87ea811e56041127f5e9eb4115fb62cb96d0e6a14056e0d2dbf51a945a22`  
+		Last Modified: Wed, 02 Aug 2023 04:28:23 GMT  
+		Size: 27.2 MB (27200587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f18a6ed3004a374532e52161ba803de458ea0c89faf66c28c12d9858ee1796c1`  
-		Last Modified: Tue, 04 Jul 2023 15:36:40 GMT  
-		Size: 16.3 MB (16268149 bytes)  
+	-	`sha256:f221141d5aed1dcc474efaed0a5cf9edc344638b5ca5ddaadfd26d4442e4773c`  
+		Last Modified: Thu, 03 Aug 2023 01:10:30 GMT  
+		Size: 16.3 MB (16269103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f464a50ffa9d53851d7ba423e766bbfdc0eb7554d0eb4e666371308c0c5e04a`  
-		Last Modified: Tue, 01 Aug 2023 21:41:55 GMT  
-		Size: 102.7 MB (102689811 bytes)  
+	-	`sha256:1bd054603f369c7cfaf92097ef227b8c7f6dcf1e41de2f613201a70171e05aa9`  
+		Last Modified: Thu, 03 Aug 2023 01:10:37 GMT  
+		Size: 102.7 MB (102689748 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e846de271f159db5665333363bfc1d584f82fd1b7db9925166ccb9ea27dc60ce`  
-		Last Modified: Tue, 01 Aug 2023 21:41:47 GMT  
-		Size: 162.0 B  
+	-	`sha256:e5c2f93ca6e94a62102fe3d2bf453457d7d6617506bc040485b8e1c9402ba7ab`  
+		Last Modified: Thu, 03 Aug 2023 01:10:28 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dda856182a1f96ac821f8775183369e23540eebd2e2a2f1986b45a46d118c63a`  
-		Last Modified: Tue, 01 Aug 2023 23:04:57 GMT  
-		Size: 28.6 MB (28584426 bytes)  
+	-	`sha256:d089b0c47db89f7d65edaef559f93eccb709e497794855ba4aeff9f40ed6e282`  
+		Last Modified: Thu, 03 Aug 2023 03:54:02 GMT  
+		Size: 28.2 MB (28187568 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0a6b68f91e4685faa1d65a8d0c040131022af5ee56b6e80d9e515331b4434eb0`  
-		Last Modified: Tue, 01 Aug 2023 23:04:55 GMT  
-		Size: 9.3 MB (9327570 bytes)  
+	-	`sha256:f493f97258ef13006f6b36aae5fa10fe63ec550c530a7482ce077e4fb6a44bfb`  
+		Last Modified: Thu, 03 Aug 2023 03:53:59 GMT  
+		Size: 9.3 MB (9327592 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f23daaa706b46a79db63187a7b72f534703fb75440315c8af7c0deecd3705c98`  
-		Last Modified: Tue, 01 Aug 2023 23:04:53 GMT  
+	-	`sha256:d5491bc87ccf2e14d9e187b897433ebff944bedf6880ce977e7536841a66ca0e`  
+		Last Modified: Thu, 03 Aug 2023 03:53:58 GMT  
 		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:76ef1700e8186f1b2c8969aec24e52a5fc34aedc4845886fe337bf8391a5d6a8`  
-		Last Modified: Tue, 01 Aug 2023 23:04:53 GMT  
+	-	`sha256:dd87f2bb4e8f213518c125f9d83f40752f28cc61b7213abb2bb0f10a4774f06c`  
+		Last Modified: Thu, 03 Aug 2023 03:53:59 GMT  
 		Size: 359.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f42e1377f7b183c05a33642607ab439b53008f3b6d5fd653ff2575a7f17a013b`  
-		Last Modified: Tue, 01 Aug 2023 23:04:54 GMT  
-		Size: 157.0 B  
+	-	`sha256:d86add698d75694cbd5b9b4d3fe634e740da45d4a4a93d94ea3c430c681f74ea`  
+		Last Modified: Thu, 03 Aug 2023 03:53:58 GMT  
+		Size: 155.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3-eclipse-temurin-8-focal` - linux; ppc64le
@@ -6208,7 +6232,7 @@ CMD ["mvn"]
 ## `maven:3-ibm-semeru-11-focal`
 
 ```console
-$ docker pull maven@sha256:9829838968660418dd357c6cb4dc7a7edb8c87dec45b13a5700ab116b0edfb35
+$ docker pull maven@sha256:85224af208c4d8e112257ab34f8af904c19445d35c0bc5fad95b9d01adec87f7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6325,44 +6349,44 @@ CMD ["mvn"]
 ### `maven:3-ibm-semeru-11-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:3519abad5aa3eebd2c1fede472c31cc4dc4a951653a5c553ab6b07636236747e
+$ docker pull maven@sha256:4ff1cd79dd81e80644e3ebb70b7765bfae21da69f214f7407023de73cb33f914
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **286.9 MB (286917680 bytes)**  
+-	Total Size: **286.9 MB (286944254 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d5de278d501cd66183af5ec385e6234fb09541ed02d3f5ef02d0baec3e2b7a61`
+-	Image ID: `sha256:5629fe2710fb9d366071feaf61ed6638159b64f7e92b422b301c38622772b788`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG RELEASE
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:57 GMT
 LABEL org.opencontainers.image.version=20.04
-# Wed, 28 Jun 2023 09:54:48 GMT
-ADD file:a6db9f7789e57b7119f68e4e4ec9ec5aab8c3c8bd53fd932f3c59c54b1c20a26 in / 
-# Wed, 28 Jun 2023 09:54:49 GMT
+# Tue, 01 Aug 2023 06:21:03 GMT
+ADD file:ef6e767091d76c1461d099d5bc7a18c526ec80834cf87280803ab6480192f766 in / 
+# Tue, 01 Aug 2023 06:21:03 GMT
 CMD ["/bin/bash"]
-# Tue, 04 Jul 2023 15:59:53 GMT
+# Thu, 03 Aug 2023 00:55:09 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 16:00:05 GMT
+# Thu, 03 Aug 2023 00:55:21 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Tue, 04 Jul 2023 16:03:11 GMT
+# Thu, 03 Aug 2023 00:56:52 GMT
 ENV JAVA_VERSION=jdk-11.0.19+7_openj9-0.38.0
-# Tue, 04 Jul 2023 16:03:21 GMT
+# Thu, 03 Aug 2023 00:57:03 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='335200c0ee6a3386798ba6d9dd95a5fae30621f8dab91256427f20f2e4cb1e67';          BINARY_URL='https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.19%2B7_openj9-0.38.0/ibm-semeru-open-jdk_aarch64_linux_11.0.19_7_openj9-0.38.0.tar.gz';          ;;        amd64|x86_64)          ESUM='9d76c901480fba1a2611f783450bb3424ee3294b73b00d3290dbfad6d277f9a4';          BINARY_URL='https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.19%2B7_openj9-0.38.0/ibm-semeru-open-jdk_x64_linux_11.0.19_7_openj9-0.38.0.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='82e3e9e4637df8affed065922d4ac64a84a2b252fe689222fda43312487b154b';          BINARY_URL='https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.19%2B7_openj9-0.38.0/ibm-semeru-open-jdk_ppc64le_linux_11.0.19_7_openj9-0.38.0.tar.gz';          ;;        s390x)          ESUM='a85b2af83f2b026b6aa963d17f6a5cde10237878426fd35bf57db2ebdf56cbcd';          BINARY_URL='https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.19%2B7_openj9-0.38.0/ibm-semeru-open-jdk_s390x_linux_11.0.19_7_openj9-0.38.0.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Tue, 04 Jul 2023 16:03:23 GMT
+# Thu, 03 Aug 2023 00:57:04 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 04 Jul 2023 16:03:23 GMT
+# Thu, 03 Aug 2023 00:57:04 GMT
 ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal
-# Tue, 04 Jul 2023 16:03:58 GMT
+# Thu, 03 Aug 2023 00:57:38 GMT
 RUN set -eux;     unset OPENJ9_JAVA_OPTIONS;     SCC_SIZE="50m";     DOWNLOAD_PATH_TOMCAT=/tmp/tomcat;     INSTALL_PATH_TOMCAT=/opt/tomcat-home;     TOMCAT_CHECKSUM="0db27185d9fc3174f2c670f814df3dda8a008b89d1a38a5d96cbbe119767ebfb1cf0bce956b27954aee9be19c4a7b91f2579d967932207976322033a86075f98";     TOMCAT_DWNLD_URL="https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.35/bin/apache-tomcat-9.0.35.tar.gz";         mkdir -p "${DOWNLOAD_PATH_TOMCAT}" "${INSTALL_PATH_TOMCAT}";     curl -LfsSo "${DOWNLOAD_PATH_TOMCAT}"/tomcat.tar.gz "${TOMCAT_DWNLD_URL}";     echo "${TOMCAT_CHECKSUM} *${DOWNLOAD_PATH_TOMCAT}/tomcat.tar.gz" | sha512sum -c -;     tar -xf "${DOWNLOAD_PATH_TOMCAT}"/tomcat.tar.gz -C "${INSTALL_PATH_TOMCAT}" --strip-components=1;     rm -rf "${DOWNLOAD_PATH_TOMCAT}";         java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal,createLayer -Xscmx$SCC_SIZE -version;     export OPENJ9_JAVA_OPTIONS="-Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal";     "${INSTALL_PATH_TOMCAT}"/bin/startup.sh;     sleep 5;     "${INSTALL_PATH_TOMCAT}"/bin/shutdown.sh -force;     sleep 15;     FULL=$( (java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,printallStats 2>&1 || true) | awk '/^Cache is [0-9.]*% .*full/ {print substr($3, 1, length($3)-1)}');     DST_CACHE=$(java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,destroy 2>&1 || true);     SCC_SIZE=$(echo $SCC_SIZE | sed 's/.$//');     SCC_SIZE=$(awk "BEGIN {print int($SCC_SIZE * $FULL / 100.0)}");     [ "${SCC_SIZE}" -eq 0 ] && SCC_SIZE=1;     SCC_SIZE="${SCC_SIZE}m";     java -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal,createLayer -Xscmx$SCC_SIZE -version;     unset OPENJ9_JAVA_OPTIONS;         export OPENJ9_JAVA_OPTIONS="-Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal";     "${INSTALL_PATH_TOMCAT}"/bin/startup.sh;     sleep 5;     "${INSTALL_PATH_TOMCAT}"/bin/shutdown.sh -force;     sleep 5;     FULL=$( (java -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,printallStats 2>&1 || true) | awk '/^Cache is [0-9.]*% .*full/ {print substr($3, 1, length($3)-1)}');     echo "SCC layer is $FULL% full.";     rm -rf "${INSTALL_PATH_TOMCAT}";     if [ -d "/opt/java/.scc" ]; then           chmod -R 0777 /opt/java/.scc;     fi;         echo "SCC generation phase completed";
-# Tue, 04 Jul 2023 16:03:58 GMT
+# Thu, 03 Aug 2023 00:57:39 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -6389,41 +6413,41 @@ CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1e77eb131c5c9032ce8e6e512f601714ce7ba48e296f5b7a5191703bdcbc904d`  
-		Last Modified: Tue, 04 Jul 2023 04:05:23 GMT  
-		Size: 27.2 MB (27198330 bytes)  
+	-	`sha256:edab87ea811e56041127f5e9eb4115fb62cb96d0e6a14056e0d2dbf51a945a22`  
+		Last Modified: Wed, 02 Aug 2023 04:28:23 GMT  
+		Size: 27.2 MB (27200587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:32b09734daedc0304878798a71791219640fa2ef7b562635c4ca5be781b33a7f`  
-		Last Modified: Tue, 04 Jul 2023 16:13:21 GMT  
-		Size: 15.9 MB (15925683 bytes)  
+	-	`sha256:5eae2ee7745e0fa467ea92017613d1e461c4a3fc5840314a824bb704c09891f2`  
+		Last Modified: Thu, 03 Aug 2023 01:02:39 GMT  
+		Size: 15.9 MB (15926156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5c7be160a318ea59f857af91fd6c4c34c129839ebc19fe42900a239f494f67b5`  
-		Last Modified: Tue, 04 Jul 2023 16:14:31 GMT  
-		Size: 201.3 MB (201338440 bytes)  
+	-	`sha256:f8fbb5d0c66733f5054eb2cb567d33c044d1359a724c1ca89414e7607a92e3ea`  
+		Last Modified: Thu, 03 Aug 2023 01:03:24 GMT  
+		Size: 201.3 MB (201338404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4e4cd7cf6a982e3dfc5b689a624ba39ce051abdc90d775e39c22f09793cc2f4`  
-		Last Modified: Tue, 04 Jul 2023 16:14:20 GMT  
-		Size: 4.9 MB (4940728 bytes)  
+	-	`sha256:93a69fe0848b08812460085873cc776812bd5422a91f7a1efe7b8628307f19b3`  
+		Last Modified: Thu, 03 Aug 2023 01:03:13 GMT  
+		Size: 5.0 MB (4963903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac65a3aaf58b7cc9d62258566ba6f6dda47cd4c18d0d0049302f0ca1a554d322`  
-		Last Modified: Wed, 05 Jul 2023 03:30:35 GMT  
-		Size: 28.2 MB (28185567 bytes)  
+	-	`sha256:f564e761673fd99ed90411a958709500cfa45735420bb1e3f9a80672d703c561`  
+		Last Modified: Thu, 03 Aug 2023 03:54:16 GMT  
+		Size: 28.2 MB (28186240 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:06da61d0d0648e7125e425e8d986e4ecdb16808dc9d5a22a3d7537b60817b46f`  
-		Last Modified: Wed, 05 Jul 2023 03:30:32 GMT  
-		Size: 9.3 MB (9327566 bytes)  
+	-	`sha256:60704bd0b222f1da2094ff72d21cb24e24aa1987bb15bdc015c3e3469ca41fdd`  
+		Last Modified: Thu, 03 Aug 2023 03:54:14 GMT  
+		Size: 9.3 MB (9327595 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1ef2dcafee351df340640c7cfda9514f1b808b2731968874997ad3579b72d2a6`  
-		Last Modified: Wed, 05 Jul 2023 03:30:31 GMT  
-		Size: 852.0 B  
+	-	`sha256:65e730674b939274a8d31d393045d2b8baec45b6b840956b243d6c57813ab788`  
+		Last Modified: Thu, 03 Aug 2023 03:54:12 GMT  
+		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b0488107eca15aa52b9eaf4a3f54d3895136aa436aae8ff2ae3b4b98003e1e65`  
-		Last Modified: Wed, 05 Jul 2023 03:30:31 GMT  
-		Size: 358.0 B  
+	-	`sha256:6eb25f795b1d8f35143e701f6090239b54163f87dbf4f595f6a103deaeeff392`  
+		Last Modified: Thu, 03 Aug 2023 03:54:12 GMT  
+		Size: 359.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ca480e4a9beec11a37e839affc1e4ce190a74fc60a0fc3f70c172ac8c8ee29e4`  
-		Last Modified: Wed, 05 Jul 2023 03:30:32 GMT  
-		Size: 156.0 B  
+	-	`sha256:abddad3e8b78e3959e1489685ed73608978616bcc6fc140a2cb0f8b276bc0274`  
+		Last Modified: Thu, 03 Aug 2023 03:54:12 GMT  
+		Size: 155.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3-ibm-semeru-11-focal` - linux; ppc64le
@@ -6637,7 +6661,7 @@ CMD ["mvn"]
 ## `maven:3-ibm-semeru-17-focal`
 
 ```console
-$ docker pull maven@sha256:919c39abcca0c2beda230cb56e34f739a8b59aa59a0db7ed15817861ceb7c1be
+$ docker pull maven@sha256:dbb185b9b241dcef5f8a670b7e95ee65958be8b5364e34bcb53e5a34e6c543dd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6754,44 +6778,44 @@ CMD ["mvn"]
 ### `maven:3-ibm-semeru-17-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:abf886466d72ccfb6c2173df700d00032dd4127bf1a683e576dbdfc2c8cc8117
+$ docker pull maven@sha256:062a8efbf8c622ff477a0b6f7def73e1c2726237bdb7221f63c2359edcc09069
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **291.8 MB (291803772 bytes)**  
+-	Total Size: **291.9 MB (291882024 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:68dc35ab433b362faa2af2154e6d738d8c0922c4b767bdfb7c2bd155d7e2d5ed`
+-	Image ID: `sha256:91a8a6e66b91428683b391c8f24379da59631742bf545b368ef13d34c156cb7c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG RELEASE
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:57 GMT
 LABEL org.opencontainers.image.version=20.04
-# Wed, 28 Jun 2023 09:54:48 GMT
-ADD file:a6db9f7789e57b7119f68e4e4ec9ec5aab8c3c8bd53fd932f3c59c54b1c20a26 in / 
-# Wed, 28 Jun 2023 09:54:49 GMT
+# Tue, 01 Aug 2023 06:21:03 GMT
+ADD file:ef6e767091d76c1461d099d5bc7a18c526ec80834cf87280803ab6480192f766 in / 
+# Tue, 01 Aug 2023 06:21:03 GMT
 CMD ["/bin/bash"]
-# Tue, 04 Jul 2023 15:59:53 GMT
+# Thu, 03 Aug 2023 00:55:09 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 16:00:05 GMT
+# Thu, 03 Aug 2023 00:55:21 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Tue, 04 Jul 2023 16:06:10 GMT
+# Thu, 03 Aug 2023 00:58:27 GMT
 ENV JAVA_VERSION=jdk-17.0.7+7_openj9-0.38.0
-# Tue, 04 Jul 2023 16:06:20 GMT
+# Thu, 03 Aug 2023 00:58:36 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='f1669d85687be17744ba835107504227caf03c00c88dba7461fda11a8c442734';          BINARY_URL='https://github.com/ibmruntimes/semeru17-binaries/releases/download/jdk-17.0.7%2B7_openj9-0.38.0/ibm-semeru-open-jdk_aarch64_linux_17.0.7_7_openj9-0.38.0.tar.gz';          ;;        amd64|x86_64)          ESUM='b46177ab82a2506cb858894fafbbbb922bbeefa4be441796e0ef5a8029599dca';          BINARY_URL='https://github.com/ibmruntimes/semeru17-binaries/releases/download/jdk-17.0.7%2B7_openj9-0.38.0/ibm-semeru-open-jdk_x64_linux_17.0.7_7_openj9-0.38.0.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='5759bea739befea5730d5aedc51ebe4a2bd808914d0a6ceb7a1895d36f1b2066';          BINARY_URL='https://github.com/ibmruntimes/semeru17-binaries/releases/download/jdk-17.0.7%2B7_openj9-0.38.0/ibm-semeru-open-jdk_ppc64le_linux_17.0.7_7_openj9-0.38.0.tar.gz';          ;;        s390x)          ESUM='a21823c8c400ba1535b2aace96b0de3ee36e0811d566ccf6cb06b15e9efe4906';          BINARY_URL='https://github.com/ibmruntimes/semeru17-binaries/releases/download/jdk-17.0.7%2B7_openj9-0.38.0/ibm-semeru-open-jdk_s390x_linux_17.0.7_7_openj9-0.38.0.tar.gz';          ;;       *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Tue, 04 Jul 2023 16:06:22 GMT
+# Thu, 03 Aug 2023 00:58:38 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 04 Jul 2023 16:06:22 GMT
+# Thu, 03 Aug 2023 00:58:38 GMT
 ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal
-# Tue, 04 Jul 2023 16:06:57 GMT
+# Thu, 03 Aug 2023 00:59:13 GMT
 RUN set -eux;     unset OPENJ9_JAVA_OPTIONS;     SCC_SIZE="50m";     DOWNLOAD_PATH_TOMCAT=/tmp/tomcat;     INSTALL_PATH_TOMCAT=/opt/tomcat-home;     TOMCAT_CHECKSUM="0db27185d9fc3174f2c670f814df3dda8a008b89d1a38a5d96cbbe119767ebfb1cf0bce956b27954aee9be19c4a7b91f2579d967932207976322033a86075f98";     TOMCAT_DWNLD_URL="https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.35/bin/apache-tomcat-9.0.35.tar.gz";         mkdir -p "${DOWNLOAD_PATH_TOMCAT}" "${INSTALL_PATH_TOMCAT}";     curl -LfsSo "${DOWNLOAD_PATH_TOMCAT}"/tomcat.tar.gz "${TOMCAT_DWNLD_URL}";     echo "${TOMCAT_CHECKSUM} *${DOWNLOAD_PATH_TOMCAT}/tomcat.tar.gz" | sha512sum -c -;     tar -xf "${DOWNLOAD_PATH_TOMCAT}"/tomcat.tar.gz -C "${INSTALL_PATH_TOMCAT}" --strip-components=1;     rm -rf "${DOWNLOAD_PATH_TOMCAT}";         java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal,createLayer -Xscmx$SCC_SIZE -version;     export OPENJ9_JAVA_OPTIONS="-Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal";     "${INSTALL_PATH_TOMCAT}"/bin/startup.sh;     sleep 5;     "${INSTALL_PATH_TOMCAT}"/bin/shutdown.sh -force;     sleep 15;     FULL=$( (java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,printallStats 2>&1 || true) | awk '/^Cache is [0-9.]*% .*full/ {print substr($3, 1, length($3)-1)}');     DST_CACHE=$(java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,destroy 2>&1 || true);     SCC_SIZE=$(echo $SCC_SIZE | sed 's/.$//');     SCC_SIZE=$(awk "BEGIN {print int($SCC_SIZE * $FULL / 100.0)}");     [ "${SCC_SIZE}" -eq 0 ] && SCC_SIZE=1;     SCC_SIZE="${SCC_SIZE}m";     java -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal,createLayer -Xscmx$SCC_SIZE -version;     unset OPENJ9_JAVA_OPTIONS;         export OPENJ9_JAVA_OPTIONS="-Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal";     "${INSTALL_PATH_TOMCAT}"/bin/startup.sh;     sleep 5;     "${INSTALL_PATH_TOMCAT}"/bin/shutdown.sh -force;     sleep 5;     FULL=$( (java -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,printallStats 2>&1 || true) | awk '/^Cache is [0-9.]*% .*full/ {print substr($3, 1, length($3)-1)}');     echo "SCC layer is $FULL% full.";     rm -rf "${INSTALL_PATH_TOMCAT}";     if [ -d "/opt/java/.scc" ]; then           chmod -R 0777 /opt/java/.scc;     fi;         echo "SCC generation phase completed";
-# Tue, 04 Jul 2023 16:06:57 GMT
+# Thu, 03 Aug 2023 00:59:13 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -6818,41 +6842,41 @@ CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1e77eb131c5c9032ce8e6e512f601714ce7ba48e296f5b7a5191703bdcbc904d`  
-		Last Modified: Tue, 04 Jul 2023 04:05:23 GMT  
-		Size: 27.2 MB (27198330 bytes)  
+	-	`sha256:edab87ea811e56041127f5e9eb4115fb62cb96d0e6a14056e0d2dbf51a945a22`  
+		Last Modified: Wed, 02 Aug 2023 04:28:23 GMT  
+		Size: 27.2 MB (27200587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:32b09734daedc0304878798a71791219640fa2ef7b562635c4ca5be781b33a7f`  
-		Last Modified: Tue, 04 Jul 2023 16:13:21 GMT  
-		Size: 15.9 MB (15925683 bytes)  
+	-	`sha256:5eae2ee7745e0fa467ea92017613d1e461c4a3fc5840314a824bb704c09891f2`  
+		Last Modified: Thu, 03 Aug 2023 01:02:39 GMT  
+		Size: 15.9 MB (15926156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94449c5ae11be5fd217769b9ed0f1887c02dcdef72680e222533385277b5d059`  
-		Last Modified: Tue, 04 Jul 2023 16:15:40 GMT  
-		Size: 205.5 MB (205490158 bytes)  
+	-	`sha256:a2be84bfa672bbb00ec344984e068c81eeec17b4c248b053aebd8fb0f73321fb`  
+		Last Modified: Thu, 03 Aug 2023 01:04:08 GMT  
+		Size: 205.5 MB (205490171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fa475f644a6dd9eb8ce11e3555102a166410899069200b04c5abf3141995bea7`  
-		Last Modified: Tue, 04 Jul 2023 16:15:29 GMT  
-		Size: 5.7 MB (5675015 bytes)  
+	-	`sha256:4ef4765109b3920b2d36a7c5bc8b05f396363b4db468822f3af144c3a60e51e4`  
+		Last Modified: Thu, 03 Aug 2023 01:03:55 GMT  
+		Size: 5.7 MB (5749886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3831a1dc56b7859ea2439eb74a24032a2a9adb2c13b287df40bcaf7f33ceabde`  
-		Last Modified: Wed, 05 Jul 2023 03:30:49 GMT  
-		Size: 28.2 MB (28185653 bytes)  
+	-	`sha256:6635c48c03e7821ca8c612b60d89b1719490c9768f9926676ebdfdff0b546a8f`  
+		Last Modified: Thu, 03 Aug 2023 03:54:29 GMT  
+		Size: 28.2 MB (28186263 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:98bcf4df507f240824075c34aad4082d4f4136d100e677bb01396b8c314c6cf8`  
-		Last Modified: Wed, 05 Jul 2023 03:30:46 GMT  
-		Size: 9.3 MB (9327566 bytes)  
+	-	`sha256:062a103d3896426b5aa3db24de9ac84eeb8a2663d1c76add71bf9a524a683345`  
+		Last Modified: Thu, 03 Aug 2023 03:54:27 GMT  
+		Size: 9.3 MB (9327592 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:abde3bb49d3c8bfa6a1bfeeab7f6de440c249b2b0ebb214a40440ac384dbbb0a`  
-		Last Modified: Wed, 05 Jul 2023 03:30:45 GMT  
-		Size: 853.0 B  
+	-	`sha256:c35d58b2bb4cb49b779193cffc4b35b47e90f8a31cab9403b03f104ed981e083`  
+		Last Modified: Thu, 03 Aug 2023 03:54:25 GMT  
+		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5651a6e99acd65550f2a6a3de5a1574a1a0382508092304ebb0b090831e91d6`  
-		Last Modified: Wed, 05 Jul 2023 03:30:45 GMT  
-		Size: 358.0 B  
+	-	`sha256:3ad7e6ef03f116087895f619d13c5a59fc519f63f8d280e8d06961994caac714`  
+		Last Modified: Thu, 03 Aug 2023 03:54:25 GMT  
+		Size: 359.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:76da25bf5623d490ae209ffd5ee0d8f673c1be426345e1aa5f60e6503353fd0e`  
-		Last Modified: Wed, 05 Jul 2023 03:30:45 GMT  
-		Size: 156.0 B  
+	-	`sha256:94eea43522cee68489c2cb971e4e1bfb4932dc7dbe1ce32e23c040126f4e5909`  
+		Last Modified: Thu, 03 Aug 2023 03:54:25 GMT  
+		Size: 155.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3-ibm-semeru-17-focal` - linux; ppc64le
@@ -8464,7 +8488,7 @@ CMD ["mvn"]
 ## `maven:3.9`
 
 ```console
-$ docker pull maven@sha256:7791921e7473cbc580ed1542e16f4083ce90c960b53c6a6bbdcad8ff5217f265
+$ docker pull maven@sha256:bae5871b5e78c2886a3535c844129b9698ab3e45ecf9e3098eb32c430ec3c319
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8579,13 +8603,13 @@ CMD ["mvn"]
 ### `maven:3.9` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:14274982b1c279937ede5fa89f909603081a4035d177d30197c997ae53b6e03f
+$ docker pull maven@sha256:1acec15fd4c7a1dbcffc1488892c969ee697463c83bf2684f480c020303fc024
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.8 MB (227776302 bytes)**  
+-	Total Size: **227.7 MB (227712284 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0269dc4a8e685c7249ef23cb579b1906e1a85a6133406189eaa3a2c75a2ac0b0`
+-	Image ID: `sha256:927a93770c68ff6678e4e123e980b108ed8181406da6d1aa949ca687b8299b8c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -8608,15 +8632,19 @@ ENV JAVA_HOME=/opt/java/openjdk
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Tue, 04 Jul 2023 15:32:45 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:34:51 GMT
-RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Mon, 24 Jul 2023 22:42:39 GMT
+# Thu, 03 Aug 2023 01:08:59 GMT
+RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Thu, 03 Aug 2023 01:08:59 GMT
 ENV JAVA_VERSION=jdk-20.0.2+9
-# Mon, 24 Jul 2023 22:42:48 GMT
+# Thu, 03 Aug 2023 01:09:09 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='b475bcc23db0bd618c815bb8f11d8e084dc58288ea3bcdf4e7f389ed41c89f56';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_aarch64_linux_hotspot_20.0.2_9.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='3d91842e9c172967ac397076523249d05a82ead51b0006838f5f0315ad52222c';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_x64_linux_hotspot_20.0.2_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
+COPY file:0673fe0a4a716089bcd96321c8de60149aea8a94ae7c4ba827ecc4a74a9789a3 in / 
+# Thu, 03 Aug 2023 01:09:13 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Thu, 03 Aug 2023 01:09:13 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -8647,37 +8675,41 @@ CMD ["mvn"]
 		Last Modified: Wed, 28 Jun 2023 23:23:40 GMT  
 		Size: 28.4 MB (28391011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92f85d89e7da0f3af0f527e7300cced784d0ba64249b8c376690599d313cb056`  
-		Last Modified: Tue, 04 Jul 2023 15:39:09 GMT  
-		Size: 18.5 MB (18466568 bytes)  
+	-	`sha256:4df65dff856d09c8b168dd7068823e6f97f3afb0fc6276b56a61cfbc2fc700d4`  
+		Last Modified: Thu, 03 Aug 2023 01:12:32 GMT  
+		Size: 18.9 MB (18858729 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c618fd14ec82d3df12cb6aadc4cca972a5d98ea6890021a44a8f106fffdebb7`  
-		Last Modified: Mon, 24 Jul 2023 22:44:45 GMT  
-		Size: 152.1 MB (152127099 bytes)  
+	-	`sha256:c182dd525d4acf4fd30b43a086932ed78fb4b92224f57ad0f7902fcdd6ce5f5e`  
+		Last Modified: Thu, 03 Aug 2023 01:12:39 GMT  
+		Size: 152.1 MB (152127049 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7141731e557558245eec1f619e96b2788f2a2dac72e3f2074784f092766f9fa`  
-		Last Modified: Mon, 24 Jul 2023 22:44:36 GMT  
+	-	`sha256:abe008c6267f42405de6e0e83dbd6d914ef7c3fb528bec8438e015a02e0e4347`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6deca075b33c631c62ceac429e9bc6429d4b9aefc5a9316800b185953a18dbe0`  
-		Last Modified: Tue, 25 Jul 2023 01:09:28 GMT  
-		Size: 19.5 MB (19462491 bytes)  
+	-	`sha256:c4d4f0d670a3f16cd33b11a95cc6530b3c5125f3b15f7c82e1e18b792bf8655d`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
+		Size: 667.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5868788e60ed4618156df0c82077e5a23a6535a295609f3dbeb2b9a74a55eea3`  
-		Last Modified: Tue, 25 Jul 2023 01:09:26 GMT  
-		Size: 9.3 MB (9327590 bytes)  
+	-	`sha256:6e7c21188c7df85a0f2006bc08c5a496fdc6c9bca6598395bf09379b5983cd6a`  
+		Last Modified: Thu, 03 Aug 2023 03:53:30 GMT  
+		Size: 19.0 MB (19005687 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74b4f59785940c4a060255fa43ae80c4bf098e7f714571c49de3e195f3ec64ee`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 857.0 B  
+	-	`sha256:1c0d86a87be29cba0093e6aed4e270194cf15a359c4d072b8cb63b19749ddc43`  
+		Last Modified: Thu, 03 Aug 2023 03:53:28 GMT  
+		Size: 9.3 MB (9327596 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1a30731f1381b2bf632fec2bfb8a3700a49cb3d3cddad9339c441ca6ff011e5a`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 359.0 B  
+	-	`sha256:1c9e4c26a2cb521fa74ce02a4343b6d4d24b07731bb07128e5858fea8d271d21`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 856.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:604990e15f57d12976c97e454a8c49d86c1b887bdc899573fa122ed43e7cb491`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 155.0 B  
+	-	`sha256:b35860b914781e5f8fbab7249c53b58b76d7eea3f6dee8ae01cfbde49fa64ecd`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 361.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:121ec3ea501be989167e3b95dc124083804c42b1bd43d148cdf5926f6d4a5098`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3.9-amazoncorretto`
@@ -10724,7 +10756,7 @@ CMD ["mvn"]
 ## `maven:3.9-eclipse-temurin`
 
 ```console
-$ docker pull maven@sha256:7791921e7473cbc580ed1542e16f4083ce90c960b53c6a6bbdcad8ff5217f265
+$ docker pull maven@sha256:bae5871b5e78c2886a3535c844129b9698ab3e45ecf9e3098eb32c430ec3c319
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10839,13 +10871,13 @@ CMD ["mvn"]
 ### `maven:3.9-eclipse-temurin` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:14274982b1c279937ede5fa89f909603081a4035d177d30197c997ae53b6e03f
+$ docker pull maven@sha256:1acec15fd4c7a1dbcffc1488892c969ee697463c83bf2684f480c020303fc024
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.8 MB (227776302 bytes)**  
+-	Total Size: **227.7 MB (227712284 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0269dc4a8e685c7249ef23cb579b1906e1a85a6133406189eaa3a2c75a2ac0b0`
+-	Image ID: `sha256:927a93770c68ff6678e4e123e980b108ed8181406da6d1aa949ca687b8299b8c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -10868,15 +10900,19 @@ ENV JAVA_HOME=/opt/java/openjdk
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Tue, 04 Jul 2023 15:32:45 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:34:51 GMT
-RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Mon, 24 Jul 2023 22:42:39 GMT
+# Thu, 03 Aug 2023 01:08:59 GMT
+RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Thu, 03 Aug 2023 01:08:59 GMT
 ENV JAVA_VERSION=jdk-20.0.2+9
-# Mon, 24 Jul 2023 22:42:48 GMT
+# Thu, 03 Aug 2023 01:09:09 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='b475bcc23db0bd618c815bb8f11d8e084dc58288ea3bcdf4e7f389ed41c89f56';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_aarch64_linux_hotspot_20.0.2_9.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='3d91842e9c172967ac397076523249d05a82ead51b0006838f5f0315ad52222c';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_x64_linux_hotspot_20.0.2_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
+COPY file:0673fe0a4a716089bcd96321c8de60149aea8a94ae7c4ba827ecc4a74a9789a3 in / 
+# Thu, 03 Aug 2023 01:09:13 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Thu, 03 Aug 2023 01:09:13 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -10907,37 +10943,41 @@ CMD ["mvn"]
 		Last Modified: Wed, 28 Jun 2023 23:23:40 GMT  
 		Size: 28.4 MB (28391011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92f85d89e7da0f3af0f527e7300cced784d0ba64249b8c376690599d313cb056`  
-		Last Modified: Tue, 04 Jul 2023 15:39:09 GMT  
-		Size: 18.5 MB (18466568 bytes)  
+	-	`sha256:4df65dff856d09c8b168dd7068823e6f97f3afb0fc6276b56a61cfbc2fc700d4`  
+		Last Modified: Thu, 03 Aug 2023 01:12:32 GMT  
+		Size: 18.9 MB (18858729 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c618fd14ec82d3df12cb6aadc4cca972a5d98ea6890021a44a8f106fffdebb7`  
-		Last Modified: Mon, 24 Jul 2023 22:44:45 GMT  
-		Size: 152.1 MB (152127099 bytes)  
+	-	`sha256:c182dd525d4acf4fd30b43a086932ed78fb4b92224f57ad0f7902fcdd6ce5f5e`  
+		Last Modified: Thu, 03 Aug 2023 01:12:39 GMT  
+		Size: 152.1 MB (152127049 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7141731e557558245eec1f619e96b2788f2a2dac72e3f2074784f092766f9fa`  
-		Last Modified: Mon, 24 Jul 2023 22:44:36 GMT  
+	-	`sha256:abe008c6267f42405de6e0e83dbd6d914ef7c3fb528bec8438e015a02e0e4347`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6deca075b33c631c62ceac429e9bc6429d4b9aefc5a9316800b185953a18dbe0`  
-		Last Modified: Tue, 25 Jul 2023 01:09:28 GMT  
-		Size: 19.5 MB (19462491 bytes)  
+	-	`sha256:c4d4f0d670a3f16cd33b11a95cc6530b3c5125f3b15f7c82e1e18b792bf8655d`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
+		Size: 667.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5868788e60ed4618156df0c82077e5a23a6535a295609f3dbeb2b9a74a55eea3`  
-		Last Modified: Tue, 25 Jul 2023 01:09:26 GMT  
-		Size: 9.3 MB (9327590 bytes)  
+	-	`sha256:6e7c21188c7df85a0f2006bc08c5a496fdc6c9bca6598395bf09379b5983cd6a`  
+		Last Modified: Thu, 03 Aug 2023 03:53:30 GMT  
+		Size: 19.0 MB (19005687 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74b4f59785940c4a060255fa43ae80c4bf098e7f714571c49de3e195f3ec64ee`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 857.0 B  
+	-	`sha256:1c0d86a87be29cba0093e6aed4e270194cf15a359c4d072b8cb63b19749ddc43`  
+		Last Modified: Thu, 03 Aug 2023 03:53:28 GMT  
+		Size: 9.3 MB (9327596 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1a30731f1381b2bf632fec2bfb8a3700a49cb3d3cddad9339c441ca6ff011e5a`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 359.0 B  
+	-	`sha256:1c9e4c26a2cb521fa74ce02a4343b6d4d24b07731bb07128e5858fea8d271d21`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 856.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:604990e15f57d12976c97e454a8c49d86c1b887bdc899573fa122ed43e7cb491`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 155.0 B  
+	-	`sha256:b35860b914781e5f8fbab7249c53b58b76d7eea3f6dee8ae01cfbde49fa64ecd`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 361.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:121ec3ea501be989167e3b95dc124083804c42b1bd43d148cdf5926f6d4a5098`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3.9-eclipse-temurin-11`
@@ -11583,7 +11623,7 @@ CMD ["mvn"]
 ## `maven:3.9-eclipse-temurin-11-focal`
 
 ```console
-$ docker pull maven@sha256:6ea7e71d99f21e3e710700072641c61d3b942bd2c1e7f57a610418a6286f66df
+$ docker pull maven@sha256:a03c9e35c0c781c9bb8f61a6de8d84966a75ca850d8b8add56b8d498286ff6f5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11805,44 +11845,44 @@ CMD ["mvn"]
 ### `maven:3.9-eclipse-temurin-11-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:726185699bebd36495642969b5e0225ad86d8d1fb9e418c8aee4bff83542682d
+$ docker pull maven@sha256:ee7c61fd9fc4786731d67bdb49b2b47a10f35e4c5eddb8f3bb91657838ede35b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **223.0 MB (222952708 bytes)**  
+-	Total Size: **222.6 MB (222560558 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bc734fe0799b293fa7d33985d26c5e3778f16c588bf73393400f789914dd179d`
+-	Image ID: `sha256:a90ef39f278329f65732cbeda8b66d2928e2453abf6912fbe411a888abd1c4b4`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG RELEASE
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:57 GMT
 LABEL org.opencontainers.image.version=20.04
-# Wed, 28 Jun 2023 09:54:48 GMT
-ADD file:a6db9f7789e57b7119f68e4e4ec9ec5aab8c3c8bd53fd932f3c59c54b1c20a26 in / 
-# Wed, 28 Jun 2023 09:54:49 GMT
+# Tue, 01 Aug 2023 06:21:03 GMT
+ADD file:ef6e767091d76c1461d099d5bc7a18c526ec80834cf87280803ab6480192f766 in / 
+# Tue, 01 Aug 2023 06:21:03 GMT
 CMD ["/bin/bash"]
-# Tue, 04 Jul 2023 15:32:11 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:32:32 GMT
+# Thu, 03 Aug 2023 01:05:58 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Wed, 26 Jul 2023 00:37:09 GMT
+# Thu, 03 Aug 2023 01:06:22 GMT
 ENV JAVA_VERSION=jdk-11.0.20+8
-# Wed, 26 Jul 2023 00:37:16 GMT
+# Thu, 03 Aug 2023 01:06:32 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='eb821c049c2d2f7c3fbf8ddcce2d608d3aa7d488700e76bfbbebabba93021748';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.20_8.tar.gz';          ;;        armhf|arm)          ESUM='fdf98d94ac3fd49a73a534fd88cf60e757e885c04791d15f76ccfcecb43a25e0';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_arm_linux_hotspot_11.0.20_8.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='1125931b3a38e6e305a1932fc6cfd0b023a0fbec2cab10e835a2ee2c50848b42';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.20_8.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='688c83d9edf2204220df94ce5bab4a6d19f3d91bc0e500f31dda41e16d9a383f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.20_8.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='7a99258af2e3ee9047e90f1c0c1775fd6285085759501295358d934d662e01f9';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_x64_linux_hotspot_11.0.20_8.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Wed, 26 Jul 2023 00:37:19 GMT
+# Thu, 03 Aug 2023 01:06:35 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Wed, 26 Jul 2023 00:37:19 GMT
+# Thu, 03 Aug 2023 01:06:35 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -11869,41 +11909,41 @@ CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1e77eb131c5c9032ce8e6e512f601714ce7ba48e296f5b7a5191703bdcbc904d`  
-		Last Modified: Tue, 04 Jul 2023 04:05:23 GMT  
-		Size: 27.2 MB (27198330 bytes)  
+	-	`sha256:edab87ea811e56041127f5e9eb4115fb62cb96d0e6a14056e0d2dbf51a945a22`  
+		Last Modified: Wed, 02 Aug 2023 04:28:23 GMT  
+		Size: 27.2 MB (27200587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f18a6ed3004a374532e52161ba803de458ea0c89faf66c28c12d9858ee1796c1`  
-		Last Modified: Tue, 04 Jul 2023 15:36:40 GMT  
-		Size: 16.3 MB (16268149 bytes)  
+	-	`sha256:f221141d5aed1dcc474efaed0a5cf9edc344638b5ca5ddaadfd26d4442e4773c`  
+		Last Modified: Thu, 03 Aug 2023 01:10:30 GMT  
+		Size: 16.3 MB (16269103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01667d51126eb3547a25ed4ab4d0727aa63d686cfe86a64fc49d6e31bcd8e749`  
-		Last Modified: Wed, 26 Jul 2023 00:39:45 GMT  
-		Size: 141.6 MB (141571670 bytes)  
+	-	`sha256:970189d908782ebfe605fa0a9edcf6e3f295cafe36699e42ffd13d7061edf601`  
+		Last Modified: Thu, 03 Aug 2023 01:11:18 GMT  
+		Size: 141.6 MB (141573677 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba568dc03cb84e46293cb29d636585e3d0f5c390d072fa1314f03d6b2fca2774`  
-		Last Modified: Wed, 26 Jul 2023 00:39:36 GMT  
-		Size: 175.0 B  
+	-	`sha256:056e71b8461dc080e8c155f6aaab5462a53f679ebc05e98e1bc5f0ff162a33cf`  
+		Last Modified: Thu, 03 Aug 2023 01:11:08 GMT  
+		Size: 173.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49a36fb2c3326bee6a923006ccc5aa566f3730f0bf349d587321e5b893f3a806`  
-		Last Modified: Wed, 26 Jul 2023 01:28:41 GMT  
-		Size: 28.6 MB (28585448 bytes)  
+	-	`sha256:c28af99f2a7dd90192db3a2375edc8380e476a6f5fee6dbd66cadf4c22ed13e0`  
+		Last Modified: Thu, 03 Aug 2023 03:53:03 GMT  
+		Size: 28.2 MB (28188056 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:470b783ee8791dc39052f60056a6f2b8f61c6d7c980489981c70087c41c39b88`  
-		Last Modified: Wed, 26 Jul 2023 01:28:39 GMT  
-		Size: 9.3 MB (9327571 bytes)  
+	-	`sha256:d689ad57bedbfff8759c8107ee23b073a8e43a6ccac315586b1b953f51faa09c`  
+		Last Modified: Thu, 03 Aug 2023 03:53:00 GMT  
+		Size: 9.3 MB (9327596 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10c1af67ada7bff420b38a51ec39926325d9074edf33d8fc062f21d53af225fb`  
-		Last Modified: Wed, 26 Jul 2023 01:28:38 GMT  
-		Size: 853.0 B  
+	-	`sha256:059b8fdcbec1027f03cfe4a377fe9e81f8a0c8121b8d03ccdf924ac39f34ee5e`  
+		Last Modified: Thu, 03 Aug 2023 03:52:59 GMT  
+		Size: 854.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7605118fd28144c27339783f65b93af443eedc0d0f1bf89dcaaf2c316f567cd`  
-		Last Modified: Wed, 26 Jul 2023 01:28:38 GMT  
-		Size: 356.0 B  
+	-	`sha256:28ae736b5fe41195aa293c5ea5b34e24cf167a22d31e54a71b384a3cc2236bdd`  
+		Last Modified: Thu, 03 Aug 2023 03:52:59 GMT  
+		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d118a50389e8ab9177dc5fd7af66cd6014d91ec0bcf8147a3407b566010832e7`  
-		Last Modified: Wed, 26 Jul 2023 01:28:38 GMT  
-		Size: 156.0 B  
+	-	`sha256:9b4687878c2c670fdfecc207861855606c8df9e05eb442d7902e59265aebf7ed`  
+		Last Modified: Thu, 03 Aug 2023 03:52:59 GMT  
+		Size: 154.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3.9-eclipse-temurin-11-focal` - linux; ppc64le
@@ -12757,7 +12797,7 @@ CMD ["mvn"]
 ## `maven:3.9-eclipse-temurin-17-focal`
 
 ```console
-$ docker pull maven@sha256:88064e9ac1d71fb2fcafdbdc9b7bc2db3b9fdaecd060ea283a96a1b1f5f5043a
+$ docker pull maven@sha256:a1d0a55ac115bf814031c3f99240ee4912fab5d731a569ff198c9d5146971df5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12979,44 +13019,44 @@ CMD ["mvn"]
 ### `maven:3.9-eclipse-temurin-17-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:0550e4da1f1114f031c41aa075b11d19a54d88123cbacce27e05ca62d32cc92e
+$ docker pull maven@sha256:b8c8f865c5242ac87d172c83ba047e874c9879fba1d922da39e9b940ce5e52a7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **229.5 MB (229539398 bytes)**  
+-	Total Size: **229.1 MB (229145265 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:094e8854ae8063bd0e2ceba16fee9a15536e1d7f8e5b1ce4453f7abfdf3fdd63`
+-	Image ID: `sha256:a90b7b8241ce7dab5c1046de43bbd37964ae340192f071f5ab701a3c0e35d2a6`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG RELEASE
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:57 GMT
 LABEL org.opencontainers.image.version=20.04
-# Wed, 28 Jun 2023 09:54:48 GMT
-ADD file:a6db9f7789e57b7119f68e4e4ec9ec5aab8c3c8bd53fd932f3c59c54b1c20a26 in / 
-# Wed, 28 Jun 2023 09:54:49 GMT
+# Tue, 01 Aug 2023 06:21:03 GMT
+ADD file:ef6e767091d76c1461d099d5bc7a18c526ec80834cf87280803ab6480192f766 in / 
+# Tue, 01 Aug 2023 06:21:03 GMT
 CMD ["/bin/bash"]
-# Tue, 04 Jul 2023 15:32:11 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:34:24 GMT
+# Thu, 03 Aug 2023 01:07:06 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Tue, 25 Jul 2023 22:26:03 GMT
+# Thu, 03 Aug 2023 01:07:06 GMT
 ENV JAVA_VERSION=jdk-17.0.8+7
-# Tue, 25 Jul 2023 22:26:12 GMT
+# Thu, 03 Aug 2023 01:07:15 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='c43688163cfdcb1a6e6fe202cc06a51891df746b954c55dbd01430e7d7326d00';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8%2B7/OpenJDK17U-jdk_aarch64_linux_hotspot_17.0.8_7.tar.gz';          ;;        armhf|arm)          ESUM='33d972efd78b70a07aed793a6ebcb52a5129707e8c62268e478d1c2df15898e1';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8%2B7/OpenJDK17U-jdk_arm_linux_hotspot_17.0.8_7.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='88f5d14cc84a4bcfe50aa275092ae97a0edf7205269ed12c1972bf613bc52b1e';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8%2B7/OpenJDK17U-jdk_ppc64le_linux_hotspot_17.0.8_7.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='055d8bd0eebf137cf3506fb84817ce2d858597f21067d9a1268f08916738b435';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8%2B7/OpenJDK17U-jdk_s390x_linux_hotspot_17.0.8_7.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='aa5fc7d388fe544e5d85902e68399d5299e931f9b280d358a3cbee218d6017b0';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.8_7.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Tue, 25 Jul 2023 22:26:15 GMT
+# Thu, 03 Aug 2023 01:07:18 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Tue, 25 Jul 2023 22:26:15 GMT
+# Thu, 03 Aug 2023 01:07:18 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -13043,40 +13083,40 @@ CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1e77eb131c5c9032ce8e6e512f601714ce7ba48e296f5b7a5191703bdcbc904d`  
-		Last Modified: Tue, 04 Jul 2023 04:05:23 GMT  
-		Size: 27.2 MB (27198330 bytes)  
+	-	`sha256:edab87ea811e56041127f5e9eb4115fb62cb96d0e6a14056e0d2dbf51a945a22`  
+		Last Modified: Wed, 02 Aug 2023 04:28:23 GMT  
+		Size: 27.2 MB (27200587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1684b62594f0c379e1487e5985d72ce7fa30b5c0f4697d3813e6cea825d0487`  
-		Last Modified: Tue, 04 Jul 2023 15:38:48 GMT  
-		Size: 20.9 MB (20872213 bytes)  
+	-	`sha256:3eff9c6d8e6772cfd5642229054ff5e86119666a9a2f1c26aca1c00b71b63c6a`  
+		Last Modified: Thu, 03 Aug 2023 01:11:51 GMT  
+		Size: 20.9 MB (20873106 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb65bf10eb4ae5266c5f96553a53ff92faf1eba777905e9f30c9e9d44845763d`  
-		Last Modified: Tue, 25 Jul 2023 22:28:59 GMT  
-		Size: 143.6 MB (143551716 bytes)  
+	-	`sha256:3cbb4fab237fb231ab6330f6ab4f206b59b2ab70d12c6451a69103db151b8bb5`  
+		Last Modified: Thu, 03 Aug 2023 01:11:58 GMT  
+		Size: 143.6 MB (143551699 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29c29d83ef77e4815b2c09f644fd6855dfdc6069d16fc25af32489733a99848b`  
-		Last Modified: Tue, 25 Jul 2023 22:28:50 GMT  
-		Size: 170.0 B  
+	-	`sha256:6ba622c211763f5e507ab0249b792e640889cbb6bbbd3c9ddc08bc8796367bdc`  
+		Last Modified: Thu, 03 Aug 2023 01:11:48 GMT  
+		Size: 173.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cc5cef3b9dc175315853a008b2aa54885ce6b445bfbb1faaa306e505350082e2`  
-		Last Modified: Wed, 26 Jul 2023 00:09:11 GMT  
-		Size: 28.6 MB (28587988 bytes)  
+	-	`sha256:7531867993399e58f6df757140071fc9e1f37209fcfd4dd7702d0b03f9828b30`  
+		Last Modified: Thu, 03 Aug 2023 03:53:17 GMT  
+		Size: 28.2 MB (28190762 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:14ee0898953d1345374fe74cb3b1aba9124c0f56756fa095dab5d5cc9096ec55`  
-		Last Modified: Wed, 26 Jul 2023 00:09:08 GMT  
-		Size: 9.3 MB (9327606 bytes)  
+	-	`sha256:4f2cee394cee127bcd66964ac96597adb94dcdd464aa0aa654030445db0eade6`  
+		Last Modified: Thu, 03 Aug 2023 03:53:15 GMT  
+		Size: 9.3 MB (9327570 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20867af94d2c725656636b1099373e081808ab3a1a5fd0965ce594a4f683acb2`  
-		Last Modified: Wed, 26 Jul 2023 00:09:07 GMT  
-		Size: 857.0 B  
+	-	`sha256:d1729dce71f84c531fbade289c5add377856aee0138bce6e4644493d1230b729`  
+		Last Modified: Thu, 03 Aug 2023 03:53:13 GMT  
+		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a7222e7c8894b6bee6e2afda44e0f213ab2d73a792e74447db45a85b23023d5`  
-		Last Modified: Wed, 26 Jul 2023 00:09:07 GMT  
-		Size: 363.0 B  
+	-	`sha256:ea22fbc4aa5dd48a99e093ccf9ffe2ea6a244ab90a77f2f8c4ab6268ba6a909c`  
+		Last Modified: Thu, 03 Aug 2023 03:53:13 GMT  
+		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d0c10f180ba964d31f6d10736104a0a4f29f5de1e0efc504df6c4ff041065da0`  
-		Last Modified: Wed, 26 Jul 2023 00:09:07 GMT  
+	-	`sha256:18ccf2b22bc0d8017f1201e801c299c639bba98121f7496c6bf890aef71974b6`  
+		Last Modified: Thu, 03 Aug 2023 03:53:13 GMT  
 		Size: 155.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -13291,7 +13331,7 @@ CMD ["mvn"]
 ## `maven:3.9-eclipse-temurin-20`
 
 ```console
-$ docker pull maven@sha256:7791921e7473cbc580ed1542e16f4083ce90c960b53c6a6bbdcad8ff5217f265
+$ docker pull maven@sha256:bae5871b5e78c2886a3535c844129b9698ab3e45ecf9e3098eb32c430ec3c319
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13406,13 +13446,13 @@ CMD ["mvn"]
 ### `maven:3.9-eclipse-temurin-20` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:14274982b1c279937ede5fa89f909603081a4035d177d30197c997ae53b6e03f
+$ docker pull maven@sha256:1acec15fd4c7a1dbcffc1488892c969ee697463c83bf2684f480c020303fc024
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.8 MB (227776302 bytes)**  
+-	Total Size: **227.7 MB (227712284 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0269dc4a8e685c7249ef23cb579b1906e1a85a6133406189eaa3a2c75a2ac0b0`
+-	Image ID: `sha256:927a93770c68ff6678e4e123e980b108ed8181406da6d1aa949ca687b8299b8c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -13435,15 +13475,19 @@ ENV JAVA_HOME=/opt/java/openjdk
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Tue, 04 Jul 2023 15:32:45 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:34:51 GMT
-RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Mon, 24 Jul 2023 22:42:39 GMT
+# Thu, 03 Aug 2023 01:08:59 GMT
+RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Thu, 03 Aug 2023 01:08:59 GMT
 ENV JAVA_VERSION=jdk-20.0.2+9
-# Mon, 24 Jul 2023 22:42:48 GMT
+# Thu, 03 Aug 2023 01:09:09 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='b475bcc23db0bd618c815bb8f11d8e084dc58288ea3bcdf4e7f389ed41c89f56';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_aarch64_linux_hotspot_20.0.2_9.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='3d91842e9c172967ac397076523249d05a82ead51b0006838f5f0315ad52222c';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_x64_linux_hotspot_20.0.2_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
+COPY file:0673fe0a4a716089bcd96321c8de60149aea8a94ae7c4ba827ecc4a74a9789a3 in / 
+# Thu, 03 Aug 2023 01:09:13 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Thu, 03 Aug 2023 01:09:13 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -13474,37 +13518,41 @@ CMD ["mvn"]
 		Last Modified: Wed, 28 Jun 2023 23:23:40 GMT  
 		Size: 28.4 MB (28391011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92f85d89e7da0f3af0f527e7300cced784d0ba64249b8c376690599d313cb056`  
-		Last Modified: Tue, 04 Jul 2023 15:39:09 GMT  
-		Size: 18.5 MB (18466568 bytes)  
+	-	`sha256:4df65dff856d09c8b168dd7068823e6f97f3afb0fc6276b56a61cfbc2fc700d4`  
+		Last Modified: Thu, 03 Aug 2023 01:12:32 GMT  
+		Size: 18.9 MB (18858729 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c618fd14ec82d3df12cb6aadc4cca972a5d98ea6890021a44a8f106fffdebb7`  
-		Last Modified: Mon, 24 Jul 2023 22:44:45 GMT  
-		Size: 152.1 MB (152127099 bytes)  
+	-	`sha256:c182dd525d4acf4fd30b43a086932ed78fb4b92224f57ad0f7902fcdd6ce5f5e`  
+		Last Modified: Thu, 03 Aug 2023 01:12:39 GMT  
+		Size: 152.1 MB (152127049 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7141731e557558245eec1f619e96b2788f2a2dac72e3f2074784f092766f9fa`  
-		Last Modified: Mon, 24 Jul 2023 22:44:36 GMT  
+	-	`sha256:abe008c6267f42405de6e0e83dbd6d914ef7c3fb528bec8438e015a02e0e4347`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6deca075b33c631c62ceac429e9bc6429d4b9aefc5a9316800b185953a18dbe0`  
-		Last Modified: Tue, 25 Jul 2023 01:09:28 GMT  
-		Size: 19.5 MB (19462491 bytes)  
+	-	`sha256:c4d4f0d670a3f16cd33b11a95cc6530b3c5125f3b15f7c82e1e18b792bf8655d`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
+		Size: 667.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5868788e60ed4618156df0c82077e5a23a6535a295609f3dbeb2b9a74a55eea3`  
-		Last Modified: Tue, 25 Jul 2023 01:09:26 GMT  
-		Size: 9.3 MB (9327590 bytes)  
+	-	`sha256:6e7c21188c7df85a0f2006bc08c5a496fdc6c9bca6598395bf09379b5983cd6a`  
+		Last Modified: Thu, 03 Aug 2023 03:53:30 GMT  
+		Size: 19.0 MB (19005687 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74b4f59785940c4a060255fa43ae80c4bf098e7f714571c49de3e195f3ec64ee`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 857.0 B  
+	-	`sha256:1c0d86a87be29cba0093e6aed4e270194cf15a359c4d072b8cb63b19749ddc43`  
+		Last Modified: Thu, 03 Aug 2023 03:53:28 GMT  
+		Size: 9.3 MB (9327596 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1a30731f1381b2bf632fec2bfb8a3700a49cb3d3cddad9339c441ca6ff011e5a`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 359.0 B  
+	-	`sha256:1c9e4c26a2cb521fa74ce02a4343b6d4d24b07731bb07128e5858fea8d271d21`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 856.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:604990e15f57d12976c97e454a8c49d86c1b887bdc899573fa122ed43e7cb491`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 155.0 B  
+	-	`sha256:b35860b914781e5f8fbab7249c53b58b76d7eea3f6dee8ae01cfbde49fa64ecd`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 361.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:121ec3ea501be989167e3b95dc124083804c42b1bd43d148cdf5926f6d4a5098`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3.9-eclipse-temurin-20-alpine`
@@ -14141,7 +14189,7 @@ CMD ["mvn"]
 ## `maven:3.9-eclipse-temurin-8-focal`
 
 ```console
-$ docker pull maven@sha256:7965b00d92cf58ac6023bca5d5cda31486c336023dcd70c5c6fce2d7608568e1
+$ docker pull maven@sha256:a0a384a8bb17786576a1c9b23e10f297e4bb7b7703a7e80a1f49fc93d0de3341
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14358,42 +14406,42 @@ CMD ["mvn"]
 ### `maven:3.9-eclipse-temurin-8-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:0363903aefb18dd27d9dc9f783e98d3d3efd8452384fe79211d46dd74cbde5f1
+$ docker pull maven@sha256:5f6a13f832fe946270c2ec39948c61d86f0624793b902f2fb87c0a07d58ceaec
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **184.1 MB (184069819 bytes)**  
+-	Total Size: **183.7 MB (183676127 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c58f49d7a05329b3baf509bf60a1211fedf1baf812a120b1b3af9a04ddc63bc0`
+-	Image ID: `sha256:da56b750a225e7bacf8afe387896ae7588d9e919827ff432cfe2230ae8ef243c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG RELEASE
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:57 GMT
 LABEL org.opencontainers.image.version=20.04
-# Wed, 28 Jun 2023 09:54:48 GMT
-ADD file:a6db9f7789e57b7119f68e4e4ec9ec5aab8c3c8bd53fd932f3c59c54b1c20a26 in / 
-# Wed, 28 Jun 2023 09:54:49 GMT
+# Tue, 01 Aug 2023 06:21:03 GMT
+ADD file:ef6e767091d76c1461d099d5bc7a18c526ec80834cf87280803ab6480192f766 in / 
+# Tue, 01 Aug 2023 06:21:03 GMT
 CMD ["/bin/bash"]
-# Tue, 04 Jul 2023 15:32:11 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:32:32 GMT
+# Thu, 03 Aug 2023 01:05:58 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Tue, 01 Aug 2023 21:39:28 GMT
+# Thu, 03 Aug 2023 01:05:58 GMT
 ENV JAVA_VERSION=jdk8u382-b05
-# Tue, 01 Aug 2023 21:39:34 GMT
+# Thu, 03 Aug 2023 01:06:03 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0951398197b7bef39ab987b59c22852812ee2c2da6549953eed7fced4c08e13d';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_aarch64_linux_hotspot_8u382b05.tar.gz';          ;;        armhf|arm)          ESUM='5d805ff157f272acf0f7d192f21af4a3b68c840333ca95568e4e07142efc369d';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_arm_linux_hotspot_8u382b05.tar.gz';          apt-get update          && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libatomic1          && rm -rf /var/lib/apt/lists/*          ;;        ppc64el|powerpc:common64)          ESUM='509c923c308d1f4f28fd0068831a59250a05b8ca173ca92fb2be2e2e1f9ff3f9';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u382b05.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='789ad24dc0d9618294e3ba564c9bfda9d3f3a218604350e0ce0381bbc8f28db3';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_x64_linux_hotspot_8u382b05.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;
-# Tue, 01 Aug 2023 21:39:35 GMT
+# Thu, 03 Aug 2023 01:06:04 GMT
 RUN echo Verifying install ...     && echo javac -version && javac -version     && echo java -version && java -version     && echo Complete.
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -14420,41 +14468,41 @@ CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1e77eb131c5c9032ce8e6e512f601714ce7ba48e296f5b7a5191703bdcbc904d`  
-		Last Modified: Tue, 04 Jul 2023 04:05:23 GMT  
-		Size: 27.2 MB (27198330 bytes)  
+	-	`sha256:edab87ea811e56041127f5e9eb4115fb62cb96d0e6a14056e0d2dbf51a945a22`  
+		Last Modified: Wed, 02 Aug 2023 04:28:23 GMT  
+		Size: 27.2 MB (27200587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f18a6ed3004a374532e52161ba803de458ea0c89faf66c28c12d9858ee1796c1`  
-		Last Modified: Tue, 04 Jul 2023 15:36:40 GMT  
-		Size: 16.3 MB (16268149 bytes)  
+	-	`sha256:f221141d5aed1dcc474efaed0a5cf9edc344638b5ca5ddaadfd26d4442e4773c`  
+		Last Modified: Thu, 03 Aug 2023 01:10:30 GMT  
+		Size: 16.3 MB (16269103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f464a50ffa9d53851d7ba423e766bbfdc0eb7554d0eb4e666371308c0c5e04a`  
-		Last Modified: Tue, 01 Aug 2023 21:41:55 GMT  
-		Size: 102.7 MB (102689811 bytes)  
+	-	`sha256:1bd054603f369c7cfaf92097ef227b8c7f6dcf1e41de2f613201a70171e05aa9`  
+		Last Modified: Thu, 03 Aug 2023 01:10:37 GMT  
+		Size: 102.7 MB (102689748 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e846de271f159db5665333363bfc1d584f82fd1b7db9925166ccb9ea27dc60ce`  
-		Last Modified: Tue, 01 Aug 2023 21:41:47 GMT  
-		Size: 162.0 B  
+	-	`sha256:e5c2f93ca6e94a62102fe3d2bf453457d7d6617506bc040485b8e1c9402ba7ab`  
+		Last Modified: Thu, 03 Aug 2023 01:10:28 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dda856182a1f96ac821f8775183369e23540eebd2e2a2f1986b45a46d118c63a`  
-		Last Modified: Tue, 01 Aug 2023 23:04:57 GMT  
-		Size: 28.6 MB (28584426 bytes)  
+	-	`sha256:d089b0c47db89f7d65edaef559f93eccb709e497794855ba4aeff9f40ed6e282`  
+		Last Modified: Thu, 03 Aug 2023 03:54:02 GMT  
+		Size: 28.2 MB (28187568 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0a6b68f91e4685faa1d65a8d0c040131022af5ee56b6e80d9e515331b4434eb0`  
-		Last Modified: Tue, 01 Aug 2023 23:04:55 GMT  
-		Size: 9.3 MB (9327570 bytes)  
+	-	`sha256:f493f97258ef13006f6b36aae5fa10fe63ec550c530a7482ce077e4fb6a44bfb`  
+		Last Modified: Thu, 03 Aug 2023 03:53:59 GMT  
+		Size: 9.3 MB (9327592 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f23daaa706b46a79db63187a7b72f534703fb75440315c8af7c0deecd3705c98`  
-		Last Modified: Tue, 01 Aug 2023 23:04:53 GMT  
+	-	`sha256:d5491bc87ccf2e14d9e187b897433ebff944bedf6880ce977e7536841a66ca0e`  
+		Last Modified: Thu, 03 Aug 2023 03:53:58 GMT  
 		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:76ef1700e8186f1b2c8969aec24e52a5fc34aedc4845886fe337bf8391a5d6a8`  
-		Last Modified: Tue, 01 Aug 2023 23:04:53 GMT  
+	-	`sha256:dd87f2bb4e8f213518c125f9d83f40752f28cc61b7213abb2bb0f10a4774f06c`  
+		Last Modified: Thu, 03 Aug 2023 03:53:59 GMT  
 		Size: 359.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f42e1377f7b183c05a33642607ab439b53008f3b6d5fd653ff2575a7f17a013b`  
-		Last Modified: Tue, 01 Aug 2023 23:04:54 GMT  
-		Size: 157.0 B  
+	-	`sha256:d86add698d75694cbd5b9b4d3fe634e740da45d4a4a93d94ea3c430c681f74ea`  
+		Last Modified: Thu, 03 Aug 2023 03:53:58 GMT  
+		Size: 155.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3.9-eclipse-temurin-8-focal` - linux; ppc64le
@@ -14562,7 +14610,7 @@ CMD ["mvn"]
 ## `maven:3.9-ibm-semeru-11-focal`
 
 ```console
-$ docker pull maven@sha256:9829838968660418dd357c6cb4dc7a7edb8c87dec45b13a5700ab116b0edfb35
+$ docker pull maven@sha256:85224af208c4d8e112257ab34f8af904c19445d35c0bc5fad95b9d01adec87f7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14679,44 +14727,44 @@ CMD ["mvn"]
 ### `maven:3.9-ibm-semeru-11-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:3519abad5aa3eebd2c1fede472c31cc4dc4a951653a5c553ab6b07636236747e
+$ docker pull maven@sha256:4ff1cd79dd81e80644e3ebb70b7765bfae21da69f214f7407023de73cb33f914
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **286.9 MB (286917680 bytes)**  
+-	Total Size: **286.9 MB (286944254 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d5de278d501cd66183af5ec385e6234fb09541ed02d3f5ef02d0baec3e2b7a61`
+-	Image ID: `sha256:5629fe2710fb9d366071feaf61ed6638159b64f7e92b422b301c38622772b788`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG RELEASE
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:57 GMT
 LABEL org.opencontainers.image.version=20.04
-# Wed, 28 Jun 2023 09:54:48 GMT
-ADD file:a6db9f7789e57b7119f68e4e4ec9ec5aab8c3c8bd53fd932f3c59c54b1c20a26 in / 
-# Wed, 28 Jun 2023 09:54:49 GMT
+# Tue, 01 Aug 2023 06:21:03 GMT
+ADD file:ef6e767091d76c1461d099d5bc7a18c526ec80834cf87280803ab6480192f766 in / 
+# Tue, 01 Aug 2023 06:21:03 GMT
 CMD ["/bin/bash"]
-# Tue, 04 Jul 2023 15:59:53 GMT
+# Thu, 03 Aug 2023 00:55:09 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 16:00:05 GMT
+# Thu, 03 Aug 2023 00:55:21 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Tue, 04 Jul 2023 16:03:11 GMT
+# Thu, 03 Aug 2023 00:56:52 GMT
 ENV JAVA_VERSION=jdk-11.0.19+7_openj9-0.38.0
-# Tue, 04 Jul 2023 16:03:21 GMT
+# Thu, 03 Aug 2023 00:57:03 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='335200c0ee6a3386798ba6d9dd95a5fae30621f8dab91256427f20f2e4cb1e67';          BINARY_URL='https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.19%2B7_openj9-0.38.0/ibm-semeru-open-jdk_aarch64_linux_11.0.19_7_openj9-0.38.0.tar.gz';          ;;        amd64|x86_64)          ESUM='9d76c901480fba1a2611f783450bb3424ee3294b73b00d3290dbfad6d277f9a4';          BINARY_URL='https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.19%2B7_openj9-0.38.0/ibm-semeru-open-jdk_x64_linux_11.0.19_7_openj9-0.38.0.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='82e3e9e4637df8affed065922d4ac64a84a2b252fe689222fda43312487b154b';          BINARY_URL='https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.19%2B7_openj9-0.38.0/ibm-semeru-open-jdk_ppc64le_linux_11.0.19_7_openj9-0.38.0.tar.gz';          ;;        s390x)          ESUM='a85b2af83f2b026b6aa963d17f6a5cde10237878426fd35bf57db2ebdf56cbcd';          BINARY_URL='https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.19%2B7_openj9-0.38.0/ibm-semeru-open-jdk_s390x_linux_11.0.19_7_openj9-0.38.0.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Tue, 04 Jul 2023 16:03:23 GMT
+# Thu, 03 Aug 2023 00:57:04 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 04 Jul 2023 16:03:23 GMT
+# Thu, 03 Aug 2023 00:57:04 GMT
 ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal
-# Tue, 04 Jul 2023 16:03:58 GMT
+# Thu, 03 Aug 2023 00:57:38 GMT
 RUN set -eux;     unset OPENJ9_JAVA_OPTIONS;     SCC_SIZE="50m";     DOWNLOAD_PATH_TOMCAT=/tmp/tomcat;     INSTALL_PATH_TOMCAT=/opt/tomcat-home;     TOMCAT_CHECKSUM="0db27185d9fc3174f2c670f814df3dda8a008b89d1a38a5d96cbbe119767ebfb1cf0bce956b27954aee9be19c4a7b91f2579d967932207976322033a86075f98";     TOMCAT_DWNLD_URL="https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.35/bin/apache-tomcat-9.0.35.tar.gz";         mkdir -p "${DOWNLOAD_PATH_TOMCAT}" "${INSTALL_PATH_TOMCAT}";     curl -LfsSo "${DOWNLOAD_PATH_TOMCAT}"/tomcat.tar.gz "${TOMCAT_DWNLD_URL}";     echo "${TOMCAT_CHECKSUM} *${DOWNLOAD_PATH_TOMCAT}/tomcat.tar.gz" | sha512sum -c -;     tar -xf "${DOWNLOAD_PATH_TOMCAT}"/tomcat.tar.gz -C "${INSTALL_PATH_TOMCAT}" --strip-components=1;     rm -rf "${DOWNLOAD_PATH_TOMCAT}";         java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal,createLayer -Xscmx$SCC_SIZE -version;     export OPENJ9_JAVA_OPTIONS="-Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal";     "${INSTALL_PATH_TOMCAT}"/bin/startup.sh;     sleep 5;     "${INSTALL_PATH_TOMCAT}"/bin/shutdown.sh -force;     sleep 15;     FULL=$( (java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,printallStats 2>&1 || true) | awk '/^Cache is [0-9.]*% .*full/ {print substr($3, 1, length($3)-1)}');     DST_CACHE=$(java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,destroy 2>&1 || true);     SCC_SIZE=$(echo $SCC_SIZE | sed 's/.$//');     SCC_SIZE=$(awk "BEGIN {print int($SCC_SIZE * $FULL / 100.0)}");     [ "${SCC_SIZE}" -eq 0 ] && SCC_SIZE=1;     SCC_SIZE="${SCC_SIZE}m";     java -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal,createLayer -Xscmx$SCC_SIZE -version;     unset OPENJ9_JAVA_OPTIONS;         export OPENJ9_JAVA_OPTIONS="-Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal";     "${INSTALL_PATH_TOMCAT}"/bin/startup.sh;     sleep 5;     "${INSTALL_PATH_TOMCAT}"/bin/shutdown.sh -force;     sleep 5;     FULL=$( (java -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,printallStats 2>&1 || true) | awk '/^Cache is [0-9.]*% .*full/ {print substr($3, 1, length($3)-1)}');     echo "SCC layer is $FULL% full.";     rm -rf "${INSTALL_PATH_TOMCAT}";     if [ -d "/opt/java/.scc" ]; then           chmod -R 0777 /opt/java/.scc;     fi;         echo "SCC generation phase completed";
-# Tue, 04 Jul 2023 16:03:58 GMT
+# Thu, 03 Aug 2023 00:57:39 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -14743,41 +14791,41 @@ CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1e77eb131c5c9032ce8e6e512f601714ce7ba48e296f5b7a5191703bdcbc904d`  
-		Last Modified: Tue, 04 Jul 2023 04:05:23 GMT  
-		Size: 27.2 MB (27198330 bytes)  
+	-	`sha256:edab87ea811e56041127f5e9eb4115fb62cb96d0e6a14056e0d2dbf51a945a22`  
+		Last Modified: Wed, 02 Aug 2023 04:28:23 GMT  
+		Size: 27.2 MB (27200587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:32b09734daedc0304878798a71791219640fa2ef7b562635c4ca5be781b33a7f`  
-		Last Modified: Tue, 04 Jul 2023 16:13:21 GMT  
-		Size: 15.9 MB (15925683 bytes)  
+	-	`sha256:5eae2ee7745e0fa467ea92017613d1e461c4a3fc5840314a824bb704c09891f2`  
+		Last Modified: Thu, 03 Aug 2023 01:02:39 GMT  
+		Size: 15.9 MB (15926156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5c7be160a318ea59f857af91fd6c4c34c129839ebc19fe42900a239f494f67b5`  
-		Last Modified: Tue, 04 Jul 2023 16:14:31 GMT  
-		Size: 201.3 MB (201338440 bytes)  
+	-	`sha256:f8fbb5d0c66733f5054eb2cb567d33c044d1359a724c1ca89414e7607a92e3ea`  
+		Last Modified: Thu, 03 Aug 2023 01:03:24 GMT  
+		Size: 201.3 MB (201338404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4e4cd7cf6a982e3dfc5b689a624ba39ce051abdc90d775e39c22f09793cc2f4`  
-		Last Modified: Tue, 04 Jul 2023 16:14:20 GMT  
-		Size: 4.9 MB (4940728 bytes)  
+	-	`sha256:93a69fe0848b08812460085873cc776812bd5422a91f7a1efe7b8628307f19b3`  
+		Last Modified: Thu, 03 Aug 2023 01:03:13 GMT  
+		Size: 5.0 MB (4963903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac65a3aaf58b7cc9d62258566ba6f6dda47cd4c18d0d0049302f0ca1a554d322`  
-		Last Modified: Wed, 05 Jul 2023 03:30:35 GMT  
-		Size: 28.2 MB (28185567 bytes)  
+	-	`sha256:f564e761673fd99ed90411a958709500cfa45735420bb1e3f9a80672d703c561`  
+		Last Modified: Thu, 03 Aug 2023 03:54:16 GMT  
+		Size: 28.2 MB (28186240 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:06da61d0d0648e7125e425e8d986e4ecdb16808dc9d5a22a3d7537b60817b46f`  
-		Last Modified: Wed, 05 Jul 2023 03:30:32 GMT  
-		Size: 9.3 MB (9327566 bytes)  
+	-	`sha256:60704bd0b222f1da2094ff72d21cb24e24aa1987bb15bdc015c3e3469ca41fdd`  
+		Last Modified: Thu, 03 Aug 2023 03:54:14 GMT  
+		Size: 9.3 MB (9327595 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1ef2dcafee351df340640c7cfda9514f1b808b2731968874997ad3579b72d2a6`  
-		Last Modified: Wed, 05 Jul 2023 03:30:31 GMT  
-		Size: 852.0 B  
+	-	`sha256:65e730674b939274a8d31d393045d2b8baec45b6b840956b243d6c57813ab788`  
+		Last Modified: Thu, 03 Aug 2023 03:54:12 GMT  
+		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b0488107eca15aa52b9eaf4a3f54d3895136aa436aae8ff2ae3b4b98003e1e65`  
-		Last Modified: Wed, 05 Jul 2023 03:30:31 GMT  
-		Size: 358.0 B  
+	-	`sha256:6eb25f795b1d8f35143e701f6090239b54163f87dbf4f595f6a103deaeeff392`  
+		Last Modified: Thu, 03 Aug 2023 03:54:12 GMT  
+		Size: 359.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ca480e4a9beec11a37e839affc1e4ce190a74fc60a0fc3f70c172ac8c8ee29e4`  
-		Last Modified: Wed, 05 Jul 2023 03:30:32 GMT  
-		Size: 156.0 B  
+	-	`sha256:abddad3e8b78e3959e1489685ed73608978616bcc6fc140a2cb0f8b276bc0274`  
+		Last Modified: Thu, 03 Aug 2023 03:54:12 GMT  
+		Size: 155.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3.9-ibm-semeru-11-focal` - linux; ppc64le
@@ -14991,7 +15039,7 @@ CMD ["mvn"]
 ## `maven:3.9-ibm-semeru-17-focal`
 
 ```console
-$ docker pull maven@sha256:919c39abcca0c2beda230cb56e34f739a8b59aa59a0db7ed15817861ceb7c1be
+$ docker pull maven@sha256:dbb185b9b241dcef5f8a670b7e95ee65958be8b5364e34bcb53e5a34e6c543dd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -15108,44 +15156,44 @@ CMD ["mvn"]
 ### `maven:3.9-ibm-semeru-17-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:abf886466d72ccfb6c2173df700d00032dd4127bf1a683e576dbdfc2c8cc8117
+$ docker pull maven@sha256:062a8efbf8c622ff477a0b6f7def73e1c2726237bdb7221f63c2359edcc09069
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **291.8 MB (291803772 bytes)**  
+-	Total Size: **291.9 MB (291882024 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:68dc35ab433b362faa2af2154e6d738d8c0922c4b767bdfb7c2bd155d7e2d5ed`
+-	Image ID: `sha256:91a8a6e66b91428683b391c8f24379da59631742bf545b368ef13d34c156cb7c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG RELEASE
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:57 GMT
 LABEL org.opencontainers.image.version=20.04
-# Wed, 28 Jun 2023 09:54:48 GMT
-ADD file:a6db9f7789e57b7119f68e4e4ec9ec5aab8c3c8bd53fd932f3c59c54b1c20a26 in / 
-# Wed, 28 Jun 2023 09:54:49 GMT
+# Tue, 01 Aug 2023 06:21:03 GMT
+ADD file:ef6e767091d76c1461d099d5bc7a18c526ec80834cf87280803ab6480192f766 in / 
+# Tue, 01 Aug 2023 06:21:03 GMT
 CMD ["/bin/bash"]
-# Tue, 04 Jul 2023 15:59:53 GMT
+# Thu, 03 Aug 2023 00:55:09 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 16:00:05 GMT
+# Thu, 03 Aug 2023 00:55:21 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Tue, 04 Jul 2023 16:06:10 GMT
+# Thu, 03 Aug 2023 00:58:27 GMT
 ENV JAVA_VERSION=jdk-17.0.7+7_openj9-0.38.0
-# Tue, 04 Jul 2023 16:06:20 GMT
+# Thu, 03 Aug 2023 00:58:36 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='f1669d85687be17744ba835107504227caf03c00c88dba7461fda11a8c442734';          BINARY_URL='https://github.com/ibmruntimes/semeru17-binaries/releases/download/jdk-17.0.7%2B7_openj9-0.38.0/ibm-semeru-open-jdk_aarch64_linux_17.0.7_7_openj9-0.38.0.tar.gz';          ;;        amd64|x86_64)          ESUM='b46177ab82a2506cb858894fafbbbb922bbeefa4be441796e0ef5a8029599dca';          BINARY_URL='https://github.com/ibmruntimes/semeru17-binaries/releases/download/jdk-17.0.7%2B7_openj9-0.38.0/ibm-semeru-open-jdk_x64_linux_17.0.7_7_openj9-0.38.0.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='5759bea739befea5730d5aedc51ebe4a2bd808914d0a6ceb7a1895d36f1b2066';          BINARY_URL='https://github.com/ibmruntimes/semeru17-binaries/releases/download/jdk-17.0.7%2B7_openj9-0.38.0/ibm-semeru-open-jdk_ppc64le_linux_17.0.7_7_openj9-0.38.0.tar.gz';          ;;        s390x)          ESUM='a21823c8c400ba1535b2aace96b0de3ee36e0811d566ccf6cb06b15e9efe4906';          BINARY_URL='https://github.com/ibmruntimes/semeru17-binaries/releases/download/jdk-17.0.7%2B7_openj9-0.38.0/ibm-semeru-open-jdk_s390x_linux_17.0.7_7_openj9-0.38.0.tar.gz';          ;;       *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Tue, 04 Jul 2023 16:06:22 GMT
+# Thu, 03 Aug 2023 00:58:38 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 04 Jul 2023 16:06:22 GMT
+# Thu, 03 Aug 2023 00:58:38 GMT
 ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal
-# Tue, 04 Jul 2023 16:06:57 GMT
+# Thu, 03 Aug 2023 00:59:13 GMT
 RUN set -eux;     unset OPENJ9_JAVA_OPTIONS;     SCC_SIZE="50m";     DOWNLOAD_PATH_TOMCAT=/tmp/tomcat;     INSTALL_PATH_TOMCAT=/opt/tomcat-home;     TOMCAT_CHECKSUM="0db27185d9fc3174f2c670f814df3dda8a008b89d1a38a5d96cbbe119767ebfb1cf0bce956b27954aee9be19c4a7b91f2579d967932207976322033a86075f98";     TOMCAT_DWNLD_URL="https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.35/bin/apache-tomcat-9.0.35.tar.gz";         mkdir -p "${DOWNLOAD_PATH_TOMCAT}" "${INSTALL_PATH_TOMCAT}";     curl -LfsSo "${DOWNLOAD_PATH_TOMCAT}"/tomcat.tar.gz "${TOMCAT_DWNLD_URL}";     echo "${TOMCAT_CHECKSUM} *${DOWNLOAD_PATH_TOMCAT}/tomcat.tar.gz" | sha512sum -c -;     tar -xf "${DOWNLOAD_PATH_TOMCAT}"/tomcat.tar.gz -C "${INSTALL_PATH_TOMCAT}" --strip-components=1;     rm -rf "${DOWNLOAD_PATH_TOMCAT}";         java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal,createLayer -Xscmx$SCC_SIZE -version;     export OPENJ9_JAVA_OPTIONS="-Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal";     "${INSTALL_PATH_TOMCAT}"/bin/startup.sh;     sleep 5;     "${INSTALL_PATH_TOMCAT}"/bin/shutdown.sh -force;     sleep 15;     FULL=$( (java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,printallStats 2>&1 || true) | awk '/^Cache is [0-9.]*% .*full/ {print substr($3, 1, length($3)-1)}');     DST_CACHE=$(java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,destroy 2>&1 || true);     SCC_SIZE=$(echo $SCC_SIZE | sed 's/.$//');     SCC_SIZE=$(awk "BEGIN {print int($SCC_SIZE * $FULL / 100.0)}");     [ "${SCC_SIZE}" -eq 0 ] && SCC_SIZE=1;     SCC_SIZE="${SCC_SIZE}m";     java -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal,createLayer -Xscmx$SCC_SIZE -version;     unset OPENJ9_JAVA_OPTIONS;         export OPENJ9_JAVA_OPTIONS="-Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal";     "${INSTALL_PATH_TOMCAT}"/bin/startup.sh;     sleep 5;     "${INSTALL_PATH_TOMCAT}"/bin/shutdown.sh -force;     sleep 5;     FULL=$( (java -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,printallStats 2>&1 || true) | awk '/^Cache is [0-9.]*% .*full/ {print substr($3, 1, length($3)-1)}');     echo "SCC layer is $FULL% full.";     rm -rf "${INSTALL_PATH_TOMCAT}";     if [ -d "/opt/java/.scc" ]; then           chmod -R 0777 /opt/java/.scc;     fi;         echo "SCC generation phase completed";
-# Tue, 04 Jul 2023 16:06:57 GMT
+# Thu, 03 Aug 2023 00:59:13 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -15172,41 +15220,41 @@ CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1e77eb131c5c9032ce8e6e512f601714ce7ba48e296f5b7a5191703bdcbc904d`  
-		Last Modified: Tue, 04 Jul 2023 04:05:23 GMT  
-		Size: 27.2 MB (27198330 bytes)  
+	-	`sha256:edab87ea811e56041127f5e9eb4115fb62cb96d0e6a14056e0d2dbf51a945a22`  
+		Last Modified: Wed, 02 Aug 2023 04:28:23 GMT  
+		Size: 27.2 MB (27200587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:32b09734daedc0304878798a71791219640fa2ef7b562635c4ca5be781b33a7f`  
-		Last Modified: Tue, 04 Jul 2023 16:13:21 GMT  
-		Size: 15.9 MB (15925683 bytes)  
+	-	`sha256:5eae2ee7745e0fa467ea92017613d1e461c4a3fc5840314a824bb704c09891f2`  
+		Last Modified: Thu, 03 Aug 2023 01:02:39 GMT  
+		Size: 15.9 MB (15926156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94449c5ae11be5fd217769b9ed0f1887c02dcdef72680e222533385277b5d059`  
-		Last Modified: Tue, 04 Jul 2023 16:15:40 GMT  
-		Size: 205.5 MB (205490158 bytes)  
+	-	`sha256:a2be84bfa672bbb00ec344984e068c81eeec17b4c248b053aebd8fb0f73321fb`  
+		Last Modified: Thu, 03 Aug 2023 01:04:08 GMT  
+		Size: 205.5 MB (205490171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fa475f644a6dd9eb8ce11e3555102a166410899069200b04c5abf3141995bea7`  
-		Last Modified: Tue, 04 Jul 2023 16:15:29 GMT  
-		Size: 5.7 MB (5675015 bytes)  
+	-	`sha256:4ef4765109b3920b2d36a7c5bc8b05f396363b4db468822f3af144c3a60e51e4`  
+		Last Modified: Thu, 03 Aug 2023 01:03:55 GMT  
+		Size: 5.7 MB (5749886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3831a1dc56b7859ea2439eb74a24032a2a9adb2c13b287df40bcaf7f33ceabde`  
-		Last Modified: Wed, 05 Jul 2023 03:30:49 GMT  
-		Size: 28.2 MB (28185653 bytes)  
+	-	`sha256:6635c48c03e7821ca8c612b60d89b1719490c9768f9926676ebdfdff0b546a8f`  
+		Last Modified: Thu, 03 Aug 2023 03:54:29 GMT  
+		Size: 28.2 MB (28186263 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:98bcf4df507f240824075c34aad4082d4f4136d100e677bb01396b8c314c6cf8`  
-		Last Modified: Wed, 05 Jul 2023 03:30:46 GMT  
-		Size: 9.3 MB (9327566 bytes)  
+	-	`sha256:062a103d3896426b5aa3db24de9ac84eeb8a2663d1c76add71bf9a524a683345`  
+		Last Modified: Thu, 03 Aug 2023 03:54:27 GMT  
+		Size: 9.3 MB (9327592 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:abde3bb49d3c8bfa6a1bfeeab7f6de440c249b2b0ebb214a40440ac384dbbb0a`  
-		Last Modified: Wed, 05 Jul 2023 03:30:45 GMT  
-		Size: 853.0 B  
+	-	`sha256:c35d58b2bb4cb49b779193cffc4b35b47e90f8a31cab9403b03f104ed981e083`  
+		Last Modified: Thu, 03 Aug 2023 03:54:25 GMT  
+		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5651a6e99acd65550f2a6a3de5a1574a1a0382508092304ebb0b090831e91d6`  
-		Last Modified: Wed, 05 Jul 2023 03:30:45 GMT  
-		Size: 358.0 B  
+	-	`sha256:3ad7e6ef03f116087895f619d13c5a59fc519f63f8d280e8d06961994caac714`  
+		Last Modified: Thu, 03 Aug 2023 03:54:25 GMT  
+		Size: 359.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:76da25bf5623d490ae209ffd5ee0d8f673c1be426345e1aa5f60e6503353fd0e`  
-		Last Modified: Wed, 05 Jul 2023 03:30:45 GMT  
-		Size: 156.0 B  
+	-	`sha256:94eea43522cee68489c2cb971e4e1bfb4932dc7dbe1ce32e23c040126f4e5909`  
+		Last Modified: Thu, 03 Aug 2023 03:54:25 GMT  
+		Size: 155.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3.9-ibm-semeru-17-focal` - linux; ppc64le
@@ -16818,7 +16866,7 @@ CMD ["mvn"]
 ## `maven:3.9.3`
 
 ```console
-$ docker pull maven@sha256:7791921e7473cbc580ed1542e16f4083ce90c960b53c6a6bbdcad8ff5217f265
+$ docker pull maven@sha256:bae5871b5e78c2886a3535c844129b9698ab3e45ecf9e3098eb32c430ec3c319
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16933,13 +16981,13 @@ CMD ["mvn"]
 ### `maven:3.9.3` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:14274982b1c279937ede5fa89f909603081a4035d177d30197c997ae53b6e03f
+$ docker pull maven@sha256:1acec15fd4c7a1dbcffc1488892c969ee697463c83bf2684f480c020303fc024
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.8 MB (227776302 bytes)**  
+-	Total Size: **227.7 MB (227712284 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0269dc4a8e685c7249ef23cb579b1906e1a85a6133406189eaa3a2c75a2ac0b0`
+-	Image ID: `sha256:927a93770c68ff6678e4e123e980b108ed8181406da6d1aa949ca687b8299b8c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -16962,15 +17010,19 @@ ENV JAVA_HOME=/opt/java/openjdk
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Tue, 04 Jul 2023 15:32:45 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:34:51 GMT
-RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Mon, 24 Jul 2023 22:42:39 GMT
+# Thu, 03 Aug 2023 01:08:59 GMT
+RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Thu, 03 Aug 2023 01:08:59 GMT
 ENV JAVA_VERSION=jdk-20.0.2+9
-# Mon, 24 Jul 2023 22:42:48 GMT
+# Thu, 03 Aug 2023 01:09:09 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='b475bcc23db0bd618c815bb8f11d8e084dc58288ea3bcdf4e7f389ed41c89f56';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_aarch64_linux_hotspot_20.0.2_9.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='3d91842e9c172967ac397076523249d05a82ead51b0006838f5f0315ad52222c';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_x64_linux_hotspot_20.0.2_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
+COPY file:0673fe0a4a716089bcd96321c8de60149aea8a94ae7c4ba827ecc4a74a9789a3 in / 
+# Thu, 03 Aug 2023 01:09:13 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Thu, 03 Aug 2023 01:09:13 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -17001,37 +17053,41 @@ CMD ["mvn"]
 		Last Modified: Wed, 28 Jun 2023 23:23:40 GMT  
 		Size: 28.4 MB (28391011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92f85d89e7da0f3af0f527e7300cced784d0ba64249b8c376690599d313cb056`  
-		Last Modified: Tue, 04 Jul 2023 15:39:09 GMT  
-		Size: 18.5 MB (18466568 bytes)  
+	-	`sha256:4df65dff856d09c8b168dd7068823e6f97f3afb0fc6276b56a61cfbc2fc700d4`  
+		Last Modified: Thu, 03 Aug 2023 01:12:32 GMT  
+		Size: 18.9 MB (18858729 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c618fd14ec82d3df12cb6aadc4cca972a5d98ea6890021a44a8f106fffdebb7`  
-		Last Modified: Mon, 24 Jul 2023 22:44:45 GMT  
-		Size: 152.1 MB (152127099 bytes)  
+	-	`sha256:c182dd525d4acf4fd30b43a086932ed78fb4b92224f57ad0f7902fcdd6ce5f5e`  
+		Last Modified: Thu, 03 Aug 2023 01:12:39 GMT  
+		Size: 152.1 MB (152127049 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7141731e557558245eec1f619e96b2788f2a2dac72e3f2074784f092766f9fa`  
-		Last Modified: Mon, 24 Jul 2023 22:44:36 GMT  
+	-	`sha256:abe008c6267f42405de6e0e83dbd6d914ef7c3fb528bec8438e015a02e0e4347`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6deca075b33c631c62ceac429e9bc6429d4b9aefc5a9316800b185953a18dbe0`  
-		Last Modified: Tue, 25 Jul 2023 01:09:28 GMT  
-		Size: 19.5 MB (19462491 bytes)  
+	-	`sha256:c4d4f0d670a3f16cd33b11a95cc6530b3c5125f3b15f7c82e1e18b792bf8655d`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
+		Size: 667.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5868788e60ed4618156df0c82077e5a23a6535a295609f3dbeb2b9a74a55eea3`  
-		Last Modified: Tue, 25 Jul 2023 01:09:26 GMT  
-		Size: 9.3 MB (9327590 bytes)  
+	-	`sha256:6e7c21188c7df85a0f2006bc08c5a496fdc6c9bca6598395bf09379b5983cd6a`  
+		Last Modified: Thu, 03 Aug 2023 03:53:30 GMT  
+		Size: 19.0 MB (19005687 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74b4f59785940c4a060255fa43ae80c4bf098e7f714571c49de3e195f3ec64ee`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 857.0 B  
+	-	`sha256:1c0d86a87be29cba0093e6aed4e270194cf15a359c4d072b8cb63b19749ddc43`  
+		Last Modified: Thu, 03 Aug 2023 03:53:28 GMT  
+		Size: 9.3 MB (9327596 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1a30731f1381b2bf632fec2bfb8a3700a49cb3d3cddad9339c441ca6ff011e5a`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 359.0 B  
+	-	`sha256:1c9e4c26a2cb521fa74ce02a4343b6d4d24b07731bb07128e5858fea8d271d21`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 856.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:604990e15f57d12976c97e454a8c49d86c1b887bdc899573fa122ed43e7cb491`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 155.0 B  
+	-	`sha256:b35860b914781e5f8fbab7249c53b58b76d7eea3f6dee8ae01cfbde49fa64ecd`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 361.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:121ec3ea501be989167e3b95dc124083804c42b1bd43d148cdf5926f6d4a5098`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3.9.3-amazoncorretto`
@@ -19078,7 +19134,7 @@ CMD ["mvn"]
 ## `maven:3.9.3-eclipse-temurin`
 
 ```console
-$ docker pull maven@sha256:7791921e7473cbc580ed1542e16f4083ce90c960b53c6a6bbdcad8ff5217f265
+$ docker pull maven@sha256:bae5871b5e78c2886a3535c844129b9698ab3e45ecf9e3098eb32c430ec3c319
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -19193,13 +19249,13 @@ CMD ["mvn"]
 ### `maven:3.9.3-eclipse-temurin` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:14274982b1c279937ede5fa89f909603081a4035d177d30197c997ae53b6e03f
+$ docker pull maven@sha256:1acec15fd4c7a1dbcffc1488892c969ee697463c83bf2684f480c020303fc024
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.8 MB (227776302 bytes)**  
+-	Total Size: **227.7 MB (227712284 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0269dc4a8e685c7249ef23cb579b1906e1a85a6133406189eaa3a2c75a2ac0b0`
+-	Image ID: `sha256:927a93770c68ff6678e4e123e980b108ed8181406da6d1aa949ca687b8299b8c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -19222,15 +19278,19 @@ ENV JAVA_HOME=/opt/java/openjdk
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Tue, 04 Jul 2023 15:32:45 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:34:51 GMT
-RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Mon, 24 Jul 2023 22:42:39 GMT
+# Thu, 03 Aug 2023 01:08:59 GMT
+RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Thu, 03 Aug 2023 01:08:59 GMT
 ENV JAVA_VERSION=jdk-20.0.2+9
-# Mon, 24 Jul 2023 22:42:48 GMT
+# Thu, 03 Aug 2023 01:09:09 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='b475bcc23db0bd618c815bb8f11d8e084dc58288ea3bcdf4e7f389ed41c89f56';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_aarch64_linux_hotspot_20.0.2_9.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='3d91842e9c172967ac397076523249d05a82ead51b0006838f5f0315ad52222c';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_x64_linux_hotspot_20.0.2_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
+COPY file:0673fe0a4a716089bcd96321c8de60149aea8a94ae7c4ba827ecc4a74a9789a3 in / 
+# Thu, 03 Aug 2023 01:09:13 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Thu, 03 Aug 2023 01:09:13 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -19261,37 +19321,41 @@ CMD ["mvn"]
 		Last Modified: Wed, 28 Jun 2023 23:23:40 GMT  
 		Size: 28.4 MB (28391011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92f85d89e7da0f3af0f527e7300cced784d0ba64249b8c376690599d313cb056`  
-		Last Modified: Tue, 04 Jul 2023 15:39:09 GMT  
-		Size: 18.5 MB (18466568 bytes)  
+	-	`sha256:4df65dff856d09c8b168dd7068823e6f97f3afb0fc6276b56a61cfbc2fc700d4`  
+		Last Modified: Thu, 03 Aug 2023 01:12:32 GMT  
+		Size: 18.9 MB (18858729 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c618fd14ec82d3df12cb6aadc4cca972a5d98ea6890021a44a8f106fffdebb7`  
-		Last Modified: Mon, 24 Jul 2023 22:44:45 GMT  
-		Size: 152.1 MB (152127099 bytes)  
+	-	`sha256:c182dd525d4acf4fd30b43a086932ed78fb4b92224f57ad0f7902fcdd6ce5f5e`  
+		Last Modified: Thu, 03 Aug 2023 01:12:39 GMT  
+		Size: 152.1 MB (152127049 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7141731e557558245eec1f619e96b2788f2a2dac72e3f2074784f092766f9fa`  
-		Last Modified: Mon, 24 Jul 2023 22:44:36 GMT  
+	-	`sha256:abe008c6267f42405de6e0e83dbd6d914ef7c3fb528bec8438e015a02e0e4347`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6deca075b33c631c62ceac429e9bc6429d4b9aefc5a9316800b185953a18dbe0`  
-		Last Modified: Tue, 25 Jul 2023 01:09:28 GMT  
-		Size: 19.5 MB (19462491 bytes)  
+	-	`sha256:c4d4f0d670a3f16cd33b11a95cc6530b3c5125f3b15f7c82e1e18b792bf8655d`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
+		Size: 667.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5868788e60ed4618156df0c82077e5a23a6535a295609f3dbeb2b9a74a55eea3`  
-		Last Modified: Tue, 25 Jul 2023 01:09:26 GMT  
-		Size: 9.3 MB (9327590 bytes)  
+	-	`sha256:6e7c21188c7df85a0f2006bc08c5a496fdc6c9bca6598395bf09379b5983cd6a`  
+		Last Modified: Thu, 03 Aug 2023 03:53:30 GMT  
+		Size: 19.0 MB (19005687 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74b4f59785940c4a060255fa43ae80c4bf098e7f714571c49de3e195f3ec64ee`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 857.0 B  
+	-	`sha256:1c0d86a87be29cba0093e6aed4e270194cf15a359c4d072b8cb63b19749ddc43`  
+		Last Modified: Thu, 03 Aug 2023 03:53:28 GMT  
+		Size: 9.3 MB (9327596 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1a30731f1381b2bf632fec2bfb8a3700a49cb3d3cddad9339c441ca6ff011e5a`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 359.0 B  
+	-	`sha256:1c9e4c26a2cb521fa74ce02a4343b6d4d24b07731bb07128e5858fea8d271d21`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 856.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:604990e15f57d12976c97e454a8c49d86c1b887bdc899573fa122ed43e7cb491`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 155.0 B  
+	-	`sha256:b35860b914781e5f8fbab7249c53b58b76d7eea3f6dee8ae01cfbde49fa64ecd`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 361.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:121ec3ea501be989167e3b95dc124083804c42b1bd43d148cdf5926f6d4a5098`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3.9.3-eclipse-temurin-11`
@@ -19937,7 +20001,7 @@ CMD ["mvn"]
 ## `maven:3.9.3-eclipse-temurin-11-focal`
 
 ```console
-$ docker pull maven@sha256:6ea7e71d99f21e3e710700072641c61d3b942bd2c1e7f57a610418a6286f66df
+$ docker pull maven@sha256:a03c9e35c0c781c9bb8f61a6de8d84966a75ca850d8b8add56b8d498286ff6f5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -20159,44 +20223,44 @@ CMD ["mvn"]
 ### `maven:3.9.3-eclipse-temurin-11-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:726185699bebd36495642969b5e0225ad86d8d1fb9e418c8aee4bff83542682d
+$ docker pull maven@sha256:ee7c61fd9fc4786731d67bdb49b2b47a10f35e4c5eddb8f3bb91657838ede35b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **223.0 MB (222952708 bytes)**  
+-	Total Size: **222.6 MB (222560558 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bc734fe0799b293fa7d33985d26c5e3778f16c588bf73393400f789914dd179d`
+-	Image ID: `sha256:a90ef39f278329f65732cbeda8b66d2928e2453abf6912fbe411a888abd1c4b4`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG RELEASE
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:57 GMT
 LABEL org.opencontainers.image.version=20.04
-# Wed, 28 Jun 2023 09:54:48 GMT
-ADD file:a6db9f7789e57b7119f68e4e4ec9ec5aab8c3c8bd53fd932f3c59c54b1c20a26 in / 
-# Wed, 28 Jun 2023 09:54:49 GMT
+# Tue, 01 Aug 2023 06:21:03 GMT
+ADD file:ef6e767091d76c1461d099d5bc7a18c526ec80834cf87280803ab6480192f766 in / 
+# Tue, 01 Aug 2023 06:21:03 GMT
 CMD ["/bin/bash"]
-# Tue, 04 Jul 2023 15:32:11 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:32:32 GMT
+# Thu, 03 Aug 2023 01:05:58 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Wed, 26 Jul 2023 00:37:09 GMT
+# Thu, 03 Aug 2023 01:06:22 GMT
 ENV JAVA_VERSION=jdk-11.0.20+8
-# Wed, 26 Jul 2023 00:37:16 GMT
+# Thu, 03 Aug 2023 01:06:32 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='eb821c049c2d2f7c3fbf8ddcce2d608d3aa7d488700e76bfbbebabba93021748';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.20_8.tar.gz';          ;;        armhf|arm)          ESUM='fdf98d94ac3fd49a73a534fd88cf60e757e885c04791d15f76ccfcecb43a25e0';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_arm_linux_hotspot_11.0.20_8.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='1125931b3a38e6e305a1932fc6cfd0b023a0fbec2cab10e835a2ee2c50848b42';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.20_8.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='688c83d9edf2204220df94ce5bab4a6d19f3d91bc0e500f31dda41e16d9a383f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.20_8.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='7a99258af2e3ee9047e90f1c0c1775fd6285085759501295358d934d662e01f9';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_x64_linux_hotspot_11.0.20_8.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Wed, 26 Jul 2023 00:37:19 GMT
+# Thu, 03 Aug 2023 01:06:35 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Wed, 26 Jul 2023 00:37:19 GMT
+# Thu, 03 Aug 2023 01:06:35 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -20223,41 +20287,41 @@ CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1e77eb131c5c9032ce8e6e512f601714ce7ba48e296f5b7a5191703bdcbc904d`  
-		Last Modified: Tue, 04 Jul 2023 04:05:23 GMT  
-		Size: 27.2 MB (27198330 bytes)  
+	-	`sha256:edab87ea811e56041127f5e9eb4115fb62cb96d0e6a14056e0d2dbf51a945a22`  
+		Last Modified: Wed, 02 Aug 2023 04:28:23 GMT  
+		Size: 27.2 MB (27200587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f18a6ed3004a374532e52161ba803de458ea0c89faf66c28c12d9858ee1796c1`  
-		Last Modified: Tue, 04 Jul 2023 15:36:40 GMT  
-		Size: 16.3 MB (16268149 bytes)  
+	-	`sha256:f221141d5aed1dcc474efaed0a5cf9edc344638b5ca5ddaadfd26d4442e4773c`  
+		Last Modified: Thu, 03 Aug 2023 01:10:30 GMT  
+		Size: 16.3 MB (16269103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01667d51126eb3547a25ed4ab4d0727aa63d686cfe86a64fc49d6e31bcd8e749`  
-		Last Modified: Wed, 26 Jul 2023 00:39:45 GMT  
-		Size: 141.6 MB (141571670 bytes)  
+	-	`sha256:970189d908782ebfe605fa0a9edcf6e3f295cafe36699e42ffd13d7061edf601`  
+		Last Modified: Thu, 03 Aug 2023 01:11:18 GMT  
+		Size: 141.6 MB (141573677 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba568dc03cb84e46293cb29d636585e3d0f5c390d072fa1314f03d6b2fca2774`  
-		Last Modified: Wed, 26 Jul 2023 00:39:36 GMT  
-		Size: 175.0 B  
+	-	`sha256:056e71b8461dc080e8c155f6aaab5462a53f679ebc05e98e1bc5f0ff162a33cf`  
+		Last Modified: Thu, 03 Aug 2023 01:11:08 GMT  
+		Size: 173.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49a36fb2c3326bee6a923006ccc5aa566f3730f0bf349d587321e5b893f3a806`  
-		Last Modified: Wed, 26 Jul 2023 01:28:41 GMT  
-		Size: 28.6 MB (28585448 bytes)  
+	-	`sha256:c28af99f2a7dd90192db3a2375edc8380e476a6f5fee6dbd66cadf4c22ed13e0`  
+		Last Modified: Thu, 03 Aug 2023 03:53:03 GMT  
+		Size: 28.2 MB (28188056 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:470b783ee8791dc39052f60056a6f2b8f61c6d7c980489981c70087c41c39b88`  
-		Last Modified: Wed, 26 Jul 2023 01:28:39 GMT  
-		Size: 9.3 MB (9327571 bytes)  
+	-	`sha256:d689ad57bedbfff8759c8107ee23b073a8e43a6ccac315586b1b953f51faa09c`  
+		Last Modified: Thu, 03 Aug 2023 03:53:00 GMT  
+		Size: 9.3 MB (9327596 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10c1af67ada7bff420b38a51ec39926325d9074edf33d8fc062f21d53af225fb`  
-		Last Modified: Wed, 26 Jul 2023 01:28:38 GMT  
-		Size: 853.0 B  
+	-	`sha256:059b8fdcbec1027f03cfe4a377fe9e81f8a0c8121b8d03ccdf924ac39f34ee5e`  
+		Last Modified: Thu, 03 Aug 2023 03:52:59 GMT  
+		Size: 854.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7605118fd28144c27339783f65b93af443eedc0d0f1bf89dcaaf2c316f567cd`  
-		Last Modified: Wed, 26 Jul 2023 01:28:38 GMT  
-		Size: 356.0 B  
+	-	`sha256:28ae736b5fe41195aa293c5ea5b34e24cf167a22d31e54a71b384a3cc2236bdd`  
+		Last Modified: Thu, 03 Aug 2023 03:52:59 GMT  
+		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d118a50389e8ab9177dc5fd7af66cd6014d91ec0bcf8147a3407b566010832e7`  
-		Last Modified: Wed, 26 Jul 2023 01:28:38 GMT  
-		Size: 156.0 B  
+	-	`sha256:9b4687878c2c670fdfecc207861855606c8df9e05eb442d7902e59265aebf7ed`  
+		Last Modified: Thu, 03 Aug 2023 03:52:59 GMT  
+		Size: 154.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3.9.3-eclipse-temurin-11-focal` - linux; ppc64le
@@ -21111,7 +21175,7 @@ CMD ["mvn"]
 ## `maven:3.9.3-eclipse-temurin-17-focal`
 
 ```console
-$ docker pull maven@sha256:88064e9ac1d71fb2fcafdbdc9b7bc2db3b9fdaecd060ea283a96a1b1f5f5043a
+$ docker pull maven@sha256:a1d0a55ac115bf814031c3f99240ee4912fab5d731a569ff198c9d5146971df5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -21333,44 +21397,44 @@ CMD ["mvn"]
 ### `maven:3.9.3-eclipse-temurin-17-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:0550e4da1f1114f031c41aa075b11d19a54d88123cbacce27e05ca62d32cc92e
+$ docker pull maven@sha256:b8c8f865c5242ac87d172c83ba047e874c9879fba1d922da39e9b940ce5e52a7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **229.5 MB (229539398 bytes)**  
+-	Total Size: **229.1 MB (229145265 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:094e8854ae8063bd0e2ceba16fee9a15536e1d7f8e5b1ce4453f7abfdf3fdd63`
+-	Image ID: `sha256:a90b7b8241ce7dab5c1046de43bbd37964ae340192f071f5ab701a3c0e35d2a6`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG RELEASE
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:57 GMT
 LABEL org.opencontainers.image.version=20.04
-# Wed, 28 Jun 2023 09:54:48 GMT
-ADD file:a6db9f7789e57b7119f68e4e4ec9ec5aab8c3c8bd53fd932f3c59c54b1c20a26 in / 
-# Wed, 28 Jun 2023 09:54:49 GMT
+# Tue, 01 Aug 2023 06:21:03 GMT
+ADD file:ef6e767091d76c1461d099d5bc7a18c526ec80834cf87280803ab6480192f766 in / 
+# Tue, 01 Aug 2023 06:21:03 GMT
 CMD ["/bin/bash"]
-# Tue, 04 Jul 2023 15:32:11 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:34:24 GMT
+# Thu, 03 Aug 2023 01:07:06 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Tue, 25 Jul 2023 22:26:03 GMT
+# Thu, 03 Aug 2023 01:07:06 GMT
 ENV JAVA_VERSION=jdk-17.0.8+7
-# Tue, 25 Jul 2023 22:26:12 GMT
+# Thu, 03 Aug 2023 01:07:15 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='c43688163cfdcb1a6e6fe202cc06a51891df746b954c55dbd01430e7d7326d00';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8%2B7/OpenJDK17U-jdk_aarch64_linux_hotspot_17.0.8_7.tar.gz';          ;;        armhf|arm)          ESUM='33d972efd78b70a07aed793a6ebcb52a5129707e8c62268e478d1c2df15898e1';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8%2B7/OpenJDK17U-jdk_arm_linux_hotspot_17.0.8_7.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='88f5d14cc84a4bcfe50aa275092ae97a0edf7205269ed12c1972bf613bc52b1e';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8%2B7/OpenJDK17U-jdk_ppc64le_linux_hotspot_17.0.8_7.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='055d8bd0eebf137cf3506fb84817ce2d858597f21067d9a1268f08916738b435';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8%2B7/OpenJDK17U-jdk_s390x_linux_hotspot_17.0.8_7.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='aa5fc7d388fe544e5d85902e68399d5299e931f9b280d358a3cbee218d6017b0';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.8_7.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Tue, 25 Jul 2023 22:26:15 GMT
+# Thu, 03 Aug 2023 01:07:18 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Tue, 25 Jul 2023 22:26:15 GMT
+# Thu, 03 Aug 2023 01:07:18 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -21397,40 +21461,40 @@ CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1e77eb131c5c9032ce8e6e512f601714ce7ba48e296f5b7a5191703bdcbc904d`  
-		Last Modified: Tue, 04 Jul 2023 04:05:23 GMT  
-		Size: 27.2 MB (27198330 bytes)  
+	-	`sha256:edab87ea811e56041127f5e9eb4115fb62cb96d0e6a14056e0d2dbf51a945a22`  
+		Last Modified: Wed, 02 Aug 2023 04:28:23 GMT  
+		Size: 27.2 MB (27200587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1684b62594f0c379e1487e5985d72ce7fa30b5c0f4697d3813e6cea825d0487`  
-		Last Modified: Tue, 04 Jul 2023 15:38:48 GMT  
-		Size: 20.9 MB (20872213 bytes)  
+	-	`sha256:3eff9c6d8e6772cfd5642229054ff5e86119666a9a2f1c26aca1c00b71b63c6a`  
+		Last Modified: Thu, 03 Aug 2023 01:11:51 GMT  
+		Size: 20.9 MB (20873106 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb65bf10eb4ae5266c5f96553a53ff92faf1eba777905e9f30c9e9d44845763d`  
-		Last Modified: Tue, 25 Jul 2023 22:28:59 GMT  
-		Size: 143.6 MB (143551716 bytes)  
+	-	`sha256:3cbb4fab237fb231ab6330f6ab4f206b59b2ab70d12c6451a69103db151b8bb5`  
+		Last Modified: Thu, 03 Aug 2023 01:11:58 GMT  
+		Size: 143.6 MB (143551699 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29c29d83ef77e4815b2c09f644fd6855dfdc6069d16fc25af32489733a99848b`  
-		Last Modified: Tue, 25 Jul 2023 22:28:50 GMT  
-		Size: 170.0 B  
+	-	`sha256:6ba622c211763f5e507ab0249b792e640889cbb6bbbd3c9ddc08bc8796367bdc`  
+		Last Modified: Thu, 03 Aug 2023 01:11:48 GMT  
+		Size: 173.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cc5cef3b9dc175315853a008b2aa54885ce6b445bfbb1faaa306e505350082e2`  
-		Last Modified: Wed, 26 Jul 2023 00:09:11 GMT  
-		Size: 28.6 MB (28587988 bytes)  
+	-	`sha256:7531867993399e58f6df757140071fc9e1f37209fcfd4dd7702d0b03f9828b30`  
+		Last Modified: Thu, 03 Aug 2023 03:53:17 GMT  
+		Size: 28.2 MB (28190762 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:14ee0898953d1345374fe74cb3b1aba9124c0f56756fa095dab5d5cc9096ec55`  
-		Last Modified: Wed, 26 Jul 2023 00:09:08 GMT  
-		Size: 9.3 MB (9327606 bytes)  
+	-	`sha256:4f2cee394cee127bcd66964ac96597adb94dcdd464aa0aa654030445db0eade6`  
+		Last Modified: Thu, 03 Aug 2023 03:53:15 GMT  
+		Size: 9.3 MB (9327570 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20867af94d2c725656636b1099373e081808ab3a1a5fd0965ce594a4f683acb2`  
-		Last Modified: Wed, 26 Jul 2023 00:09:07 GMT  
-		Size: 857.0 B  
+	-	`sha256:d1729dce71f84c531fbade289c5add377856aee0138bce6e4644493d1230b729`  
+		Last Modified: Thu, 03 Aug 2023 03:53:13 GMT  
+		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a7222e7c8894b6bee6e2afda44e0f213ab2d73a792e74447db45a85b23023d5`  
-		Last Modified: Wed, 26 Jul 2023 00:09:07 GMT  
-		Size: 363.0 B  
+	-	`sha256:ea22fbc4aa5dd48a99e093ccf9ffe2ea6a244ab90a77f2f8c4ab6268ba6a909c`  
+		Last Modified: Thu, 03 Aug 2023 03:53:13 GMT  
+		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d0c10f180ba964d31f6d10736104a0a4f29f5de1e0efc504df6c4ff041065da0`  
-		Last Modified: Wed, 26 Jul 2023 00:09:07 GMT  
+	-	`sha256:18ccf2b22bc0d8017f1201e801c299c639bba98121f7496c6bf890aef71974b6`  
+		Last Modified: Thu, 03 Aug 2023 03:53:13 GMT  
 		Size: 155.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -21645,7 +21709,7 @@ CMD ["mvn"]
 ## `maven:3.9.3-eclipse-temurin-20`
 
 ```console
-$ docker pull maven@sha256:7791921e7473cbc580ed1542e16f4083ce90c960b53c6a6bbdcad8ff5217f265
+$ docker pull maven@sha256:bae5871b5e78c2886a3535c844129b9698ab3e45ecf9e3098eb32c430ec3c319
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -21760,13 +21824,13 @@ CMD ["mvn"]
 ### `maven:3.9.3-eclipse-temurin-20` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:14274982b1c279937ede5fa89f909603081a4035d177d30197c997ae53b6e03f
+$ docker pull maven@sha256:1acec15fd4c7a1dbcffc1488892c969ee697463c83bf2684f480c020303fc024
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.8 MB (227776302 bytes)**  
+-	Total Size: **227.7 MB (227712284 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0269dc4a8e685c7249ef23cb579b1906e1a85a6133406189eaa3a2c75a2ac0b0`
+-	Image ID: `sha256:927a93770c68ff6678e4e123e980b108ed8181406da6d1aa949ca687b8299b8c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -21789,15 +21853,19 @@ ENV JAVA_HOME=/opt/java/openjdk
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Tue, 04 Jul 2023 15:32:45 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:34:51 GMT
-RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Mon, 24 Jul 2023 22:42:39 GMT
+# Thu, 03 Aug 2023 01:08:59 GMT
+RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Thu, 03 Aug 2023 01:08:59 GMT
 ENV JAVA_VERSION=jdk-20.0.2+9
-# Mon, 24 Jul 2023 22:42:48 GMT
+# Thu, 03 Aug 2023 01:09:09 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='b475bcc23db0bd618c815bb8f11d8e084dc58288ea3bcdf4e7f389ed41c89f56';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_aarch64_linux_hotspot_20.0.2_9.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='3d91842e9c172967ac397076523249d05a82ead51b0006838f5f0315ad52222c';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_x64_linux_hotspot_20.0.2_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
+COPY file:0673fe0a4a716089bcd96321c8de60149aea8a94ae7c4ba827ecc4a74a9789a3 in / 
+# Thu, 03 Aug 2023 01:09:13 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Thu, 03 Aug 2023 01:09:13 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -21828,37 +21896,41 @@ CMD ["mvn"]
 		Last Modified: Wed, 28 Jun 2023 23:23:40 GMT  
 		Size: 28.4 MB (28391011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92f85d89e7da0f3af0f527e7300cced784d0ba64249b8c376690599d313cb056`  
-		Last Modified: Tue, 04 Jul 2023 15:39:09 GMT  
-		Size: 18.5 MB (18466568 bytes)  
+	-	`sha256:4df65dff856d09c8b168dd7068823e6f97f3afb0fc6276b56a61cfbc2fc700d4`  
+		Last Modified: Thu, 03 Aug 2023 01:12:32 GMT  
+		Size: 18.9 MB (18858729 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c618fd14ec82d3df12cb6aadc4cca972a5d98ea6890021a44a8f106fffdebb7`  
-		Last Modified: Mon, 24 Jul 2023 22:44:45 GMT  
-		Size: 152.1 MB (152127099 bytes)  
+	-	`sha256:c182dd525d4acf4fd30b43a086932ed78fb4b92224f57ad0f7902fcdd6ce5f5e`  
+		Last Modified: Thu, 03 Aug 2023 01:12:39 GMT  
+		Size: 152.1 MB (152127049 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7141731e557558245eec1f619e96b2788f2a2dac72e3f2074784f092766f9fa`  
-		Last Modified: Mon, 24 Jul 2023 22:44:36 GMT  
+	-	`sha256:abe008c6267f42405de6e0e83dbd6d914ef7c3fb528bec8438e015a02e0e4347`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6deca075b33c631c62ceac429e9bc6429d4b9aefc5a9316800b185953a18dbe0`  
-		Last Modified: Tue, 25 Jul 2023 01:09:28 GMT  
-		Size: 19.5 MB (19462491 bytes)  
+	-	`sha256:c4d4f0d670a3f16cd33b11a95cc6530b3c5125f3b15f7c82e1e18b792bf8655d`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
+		Size: 667.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5868788e60ed4618156df0c82077e5a23a6535a295609f3dbeb2b9a74a55eea3`  
-		Last Modified: Tue, 25 Jul 2023 01:09:26 GMT  
-		Size: 9.3 MB (9327590 bytes)  
+	-	`sha256:6e7c21188c7df85a0f2006bc08c5a496fdc6c9bca6598395bf09379b5983cd6a`  
+		Last Modified: Thu, 03 Aug 2023 03:53:30 GMT  
+		Size: 19.0 MB (19005687 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74b4f59785940c4a060255fa43ae80c4bf098e7f714571c49de3e195f3ec64ee`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 857.0 B  
+	-	`sha256:1c0d86a87be29cba0093e6aed4e270194cf15a359c4d072b8cb63b19749ddc43`  
+		Last Modified: Thu, 03 Aug 2023 03:53:28 GMT  
+		Size: 9.3 MB (9327596 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1a30731f1381b2bf632fec2bfb8a3700a49cb3d3cddad9339c441ca6ff011e5a`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 359.0 B  
+	-	`sha256:1c9e4c26a2cb521fa74ce02a4343b6d4d24b07731bb07128e5858fea8d271d21`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 856.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:604990e15f57d12976c97e454a8c49d86c1b887bdc899573fa122ed43e7cb491`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 155.0 B  
+	-	`sha256:b35860b914781e5f8fbab7249c53b58b76d7eea3f6dee8ae01cfbde49fa64ecd`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 361.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:121ec3ea501be989167e3b95dc124083804c42b1bd43d148cdf5926f6d4a5098`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3.9.3-eclipse-temurin-20-alpine`
@@ -22495,7 +22567,7 @@ CMD ["mvn"]
 ## `maven:3.9.3-eclipse-temurin-8-focal`
 
 ```console
-$ docker pull maven@sha256:7965b00d92cf58ac6023bca5d5cda31486c336023dcd70c5c6fce2d7608568e1
+$ docker pull maven@sha256:a0a384a8bb17786576a1c9b23e10f297e4bb7b7703a7e80a1f49fc93d0de3341
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -22712,42 +22784,42 @@ CMD ["mvn"]
 ### `maven:3.9.3-eclipse-temurin-8-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:0363903aefb18dd27d9dc9f783e98d3d3efd8452384fe79211d46dd74cbde5f1
+$ docker pull maven@sha256:5f6a13f832fe946270c2ec39948c61d86f0624793b902f2fb87c0a07d58ceaec
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **184.1 MB (184069819 bytes)**  
+-	Total Size: **183.7 MB (183676127 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c58f49d7a05329b3baf509bf60a1211fedf1baf812a120b1b3af9a04ddc63bc0`
+-	Image ID: `sha256:da56b750a225e7bacf8afe387896ae7588d9e919827ff432cfe2230ae8ef243c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG RELEASE
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:57 GMT
 LABEL org.opencontainers.image.version=20.04
-# Wed, 28 Jun 2023 09:54:48 GMT
-ADD file:a6db9f7789e57b7119f68e4e4ec9ec5aab8c3c8bd53fd932f3c59c54b1c20a26 in / 
-# Wed, 28 Jun 2023 09:54:49 GMT
+# Tue, 01 Aug 2023 06:21:03 GMT
+ADD file:ef6e767091d76c1461d099d5bc7a18c526ec80834cf87280803ab6480192f766 in / 
+# Tue, 01 Aug 2023 06:21:03 GMT
 CMD ["/bin/bash"]
-# Tue, 04 Jul 2023 15:32:11 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 04 Jul 2023 15:32:12 GMT
+# Thu, 03 Aug 2023 01:05:44 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:32:32 GMT
+# Thu, 03 Aug 2023 01:05:58 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Tue, 01 Aug 2023 21:39:28 GMT
+# Thu, 03 Aug 2023 01:05:58 GMT
 ENV JAVA_VERSION=jdk8u382-b05
-# Tue, 01 Aug 2023 21:39:34 GMT
+# Thu, 03 Aug 2023 01:06:03 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0951398197b7bef39ab987b59c22852812ee2c2da6549953eed7fced4c08e13d';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_aarch64_linux_hotspot_8u382b05.tar.gz';          ;;        armhf|arm)          ESUM='5d805ff157f272acf0f7d192f21af4a3b68c840333ca95568e4e07142efc369d';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_arm_linux_hotspot_8u382b05.tar.gz';          apt-get update          && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libatomic1          && rm -rf /var/lib/apt/lists/*          ;;        ppc64el|powerpc:common64)          ESUM='509c923c308d1f4f28fd0068831a59250a05b8ca173ca92fb2be2e2e1f9ff3f9';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u382b05.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='789ad24dc0d9618294e3ba564c9bfda9d3f3a218604350e0ce0381bbc8f28db3';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_x64_linux_hotspot_8u382b05.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;
-# Tue, 01 Aug 2023 21:39:35 GMT
+# Thu, 03 Aug 2023 01:06:04 GMT
 RUN echo Verifying install ...     && echo javac -version && javac -version     && echo java -version && java -version     && echo Complete.
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -22774,41 +22846,41 @@ CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1e77eb131c5c9032ce8e6e512f601714ce7ba48e296f5b7a5191703bdcbc904d`  
-		Last Modified: Tue, 04 Jul 2023 04:05:23 GMT  
-		Size: 27.2 MB (27198330 bytes)  
+	-	`sha256:edab87ea811e56041127f5e9eb4115fb62cb96d0e6a14056e0d2dbf51a945a22`  
+		Last Modified: Wed, 02 Aug 2023 04:28:23 GMT  
+		Size: 27.2 MB (27200587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f18a6ed3004a374532e52161ba803de458ea0c89faf66c28c12d9858ee1796c1`  
-		Last Modified: Tue, 04 Jul 2023 15:36:40 GMT  
-		Size: 16.3 MB (16268149 bytes)  
+	-	`sha256:f221141d5aed1dcc474efaed0a5cf9edc344638b5ca5ddaadfd26d4442e4773c`  
+		Last Modified: Thu, 03 Aug 2023 01:10:30 GMT  
+		Size: 16.3 MB (16269103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f464a50ffa9d53851d7ba423e766bbfdc0eb7554d0eb4e666371308c0c5e04a`  
-		Last Modified: Tue, 01 Aug 2023 21:41:55 GMT  
-		Size: 102.7 MB (102689811 bytes)  
+	-	`sha256:1bd054603f369c7cfaf92097ef227b8c7f6dcf1e41de2f613201a70171e05aa9`  
+		Last Modified: Thu, 03 Aug 2023 01:10:37 GMT  
+		Size: 102.7 MB (102689748 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e846de271f159db5665333363bfc1d584f82fd1b7db9925166ccb9ea27dc60ce`  
-		Last Modified: Tue, 01 Aug 2023 21:41:47 GMT  
-		Size: 162.0 B  
+	-	`sha256:e5c2f93ca6e94a62102fe3d2bf453457d7d6617506bc040485b8e1c9402ba7ab`  
+		Last Modified: Thu, 03 Aug 2023 01:10:28 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dda856182a1f96ac821f8775183369e23540eebd2e2a2f1986b45a46d118c63a`  
-		Last Modified: Tue, 01 Aug 2023 23:04:57 GMT  
-		Size: 28.6 MB (28584426 bytes)  
+	-	`sha256:d089b0c47db89f7d65edaef559f93eccb709e497794855ba4aeff9f40ed6e282`  
+		Last Modified: Thu, 03 Aug 2023 03:54:02 GMT  
+		Size: 28.2 MB (28187568 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0a6b68f91e4685faa1d65a8d0c040131022af5ee56b6e80d9e515331b4434eb0`  
-		Last Modified: Tue, 01 Aug 2023 23:04:55 GMT  
-		Size: 9.3 MB (9327570 bytes)  
+	-	`sha256:f493f97258ef13006f6b36aae5fa10fe63ec550c530a7482ce077e4fb6a44bfb`  
+		Last Modified: Thu, 03 Aug 2023 03:53:59 GMT  
+		Size: 9.3 MB (9327592 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f23daaa706b46a79db63187a7b72f534703fb75440315c8af7c0deecd3705c98`  
-		Last Modified: Tue, 01 Aug 2023 23:04:53 GMT  
+	-	`sha256:d5491bc87ccf2e14d9e187b897433ebff944bedf6880ce977e7536841a66ca0e`  
+		Last Modified: Thu, 03 Aug 2023 03:53:58 GMT  
 		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:76ef1700e8186f1b2c8969aec24e52a5fc34aedc4845886fe337bf8391a5d6a8`  
-		Last Modified: Tue, 01 Aug 2023 23:04:53 GMT  
+	-	`sha256:dd87f2bb4e8f213518c125f9d83f40752f28cc61b7213abb2bb0f10a4774f06c`  
+		Last Modified: Thu, 03 Aug 2023 03:53:59 GMT  
 		Size: 359.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f42e1377f7b183c05a33642607ab439b53008f3b6d5fd653ff2575a7f17a013b`  
-		Last Modified: Tue, 01 Aug 2023 23:04:54 GMT  
-		Size: 157.0 B  
+	-	`sha256:d86add698d75694cbd5b9b4d3fe634e740da45d4a4a93d94ea3c430c681f74ea`  
+		Last Modified: Thu, 03 Aug 2023 03:53:58 GMT  
+		Size: 155.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3.9.3-eclipse-temurin-8-focal` - linux; ppc64le
@@ -22916,7 +22988,7 @@ CMD ["mvn"]
 ## `maven:3.9.3-ibm-semeru-11-focal`
 
 ```console
-$ docker pull maven@sha256:9829838968660418dd357c6cb4dc7a7edb8c87dec45b13a5700ab116b0edfb35
+$ docker pull maven@sha256:85224af208c4d8e112257ab34f8af904c19445d35c0bc5fad95b9d01adec87f7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -23033,44 +23105,44 @@ CMD ["mvn"]
 ### `maven:3.9.3-ibm-semeru-11-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:3519abad5aa3eebd2c1fede472c31cc4dc4a951653a5c553ab6b07636236747e
+$ docker pull maven@sha256:4ff1cd79dd81e80644e3ebb70b7765bfae21da69f214f7407023de73cb33f914
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **286.9 MB (286917680 bytes)**  
+-	Total Size: **286.9 MB (286944254 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d5de278d501cd66183af5ec385e6234fb09541ed02d3f5ef02d0baec3e2b7a61`
+-	Image ID: `sha256:5629fe2710fb9d366071feaf61ed6638159b64f7e92b422b301c38622772b788`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG RELEASE
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:57 GMT
 LABEL org.opencontainers.image.version=20.04
-# Wed, 28 Jun 2023 09:54:48 GMT
-ADD file:a6db9f7789e57b7119f68e4e4ec9ec5aab8c3c8bd53fd932f3c59c54b1c20a26 in / 
-# Wed, 28 Jun 2023 09:54:49 GMT
+# Tue, 01 Aug 2023 06:21:03 GMT
+ADD file:ef6e767091d76c1461d099d5bc7a18c526ec80834cf87280803ab6480192f766 in / 
+# Tue, 01 Aug 2023 06:21:03 GMT
 CMD ["/bin/bash"]
-# Tue, 04 Jul 2023 15:59:53 GMT
+# Thu, 03 Aug 2023 00:55:09 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 16:00:05 GMT
+# Thu, 03 Aug 2023 00:55:21 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Tue, 04 Jul 2023 16:03:11 GMT
+# Thu, 03 Aug 2023 00:56:52 GMT
 ENV JAVA_VERSION=jdk-11.0.19+7_openj9-0.38.0
-# Tue, 04 Jul 2023 16:03:21 GMT
+# Thu, 03 Aug 2023 00:57:03 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='335200c0ee6a3386798ba6d9dd95a5fae30621f8dab91256427f20f2e4cb1e67';          BINARY_URL='https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.19%2B7_openj9-0.38.0/ibm-semeru-open-jdk_aarch64_linux_11.0.19_7_openj9-0.38.0.tar.gz';          ;;        amd64|x86_64)          ESUM='9d76c901480fba1a2611f783450bb3424ee3294b73b00d3290dbfad6d277f9a4';          BINARY_URL='https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.19%2B7_openj9-0.38.0/ibm-semeru-open-jdk_x64_linux_11.0.19_7_openj9-0.38.0.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='82e3e9e4637df8affed065922d4ac64a84a2b252fe689222fda43312487b154b';          BINARY_URL='https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.19%2B7_openj9-0.38.0/ibm-semeru-open-jdk_ppc64le_linux_11.0.19_7_openj9-0.38.0.tar.gz';          ;;        s390x)          ESUM='a85b2af83f2b026b6aa963d17f6a5cde10237878426fd35bf57db2ebdf56cbcd';          BINARY_URL='https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.19%2B7_openj9-0.38.0/ibm-semeru-open-jdk_s390x_linux_11.0.19_7_openj9-0.38.0.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Tue, 04 Jul 2023 16:03:23 GMT
+# Thu, 03 Aug 2023 00:57:04 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 04 Jul 2023 16:03:23 GMT
+# Thu, 03 Aug 2023 00:57:04 GMT
 ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal
-# Tue, 04 Jul 2023 16:03:58 GMT
+# Thu, 03 Aug 2023 00:57:38 GMT
 RUN set -eux;     unset OPENJ9_JAVA_OPTIONS;     SCC_SIZE="50m";     DOWNLOAD_PATH_TOMCAT=/tmp/tomcat;     INSTALL_PATH_TOMCAT=/opt/tomcat-home;     TOMCAT_CHECKSUM="0db27185d9fc3174f2c670f814df3dda8a008b89d1a38a5d96cbbe119767ebfb1cf0bce956b27954aee9be19c4a7b91f2579d967932207976322033a86075f98";     TOMCAT_DWNLD_URL="https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.35/bin/apache-tomcat-9.0.35.tar.gz";         mkdir -p "${DOWNLOAD_PATH_TOMCAT}" "${INSTALL_PATH_TOMCAT}";     curl -LfsSo "${DOWNLOAD_PATH_TOMCAT}"/tomcat.tar.gz "${TOMCAT_DWNLD_URL}";     echo "${TOMCAT_CHECKSUM} *${DOWNLOAD_PATH_TOMCAT}/tomcat.tar.gz" | sha512sum -c -;     tar -xf "${DOWNLOAD_PATH_TOMCAT}"/tomcat.tar.gz -C "${INSTALL_PATH_TOMCAT}" --strip-components=1;     rm -rf "${DOWNLOAD_PATH_TOMCAT}";         java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal,createLayer -Xscmx$SCC_SIZE -version;     export OPENJ9_JAVA_OPTIONS="-Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal";     "${INSTALL_PATH_TOMCAT}"/bin/startup.sh;     sleep 5;     "${INSTALL_PATH_TOMCAT}"/bin/shutdown.sh -force;     sleep 15;     FULL=$( (java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,printallStats 2>&1 || true) | awk '/^Cache is [0-9.]*% .*full/ {print substr($3, 1, length($3)-1)}');     DST_CACHE=$(java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,destroy 2>&1 || true);     SCC_SIZE=$(echo $SCC_SIZE | sed 's/.$//');     SCC_SIZE=$(awk "BEGIN {print int($SCC_SIZE * $FULL / 100.0)}");     [ "${SCC_SIZE}" -eq 0 ] && SCC_SIZE=1;     SCC_SIZE="${SCC_SIZE}m";     java -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal,createLayer -Xscmx$SCC_SIZE -version;     unset OPENJ9_JAVA_OPTIONS;         export OPENJ9_JAVA_OPTIONS="-Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal";     "${INSTALL_PATH_TOMCAT}"/bin/startup.sh;     sleep 5;     "${INSTALL_PATH_TOMCAT}"/bin/shutdown.sh -force;     sleep 5;     FULL=$( (java -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,printallStats 2>&1 || true) | awk '/^Cache is [0-9.]*% .*full/ {print substr($3, 1, length($3)-1)}');     echo "SCC layer is $FULL% full.";     rm -rf "${INSTALL_PATH_TOMCAT}";     if [ -d "/opt/java/.scc" ]; then           chmod -R 0777 /opt/java/.scc;     fi;         echo "SCC generation phase completed";
-# Tue, 04 Jul 2023 16:03:58 GMT
+# Thu, 03 Aug 2023 00:57:39 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -23097,41 +23169,41 @@ CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1e77eb131c5c9032ce8e6e512f601714ce7ba48e296f5b7a5191703bdcbc904d`  
-		Last Modified: Tue, 04 Jul 2023 04:05:23 GMT  
-		Size: 27.2 MB (27198330 bytes)  
+	-	`sha256:edab87ea811e56041127f5e9eb4115fb62cb96d0e6a14056e0d2dbf51a945a22`  
+		Last Modified: Wed, 02 Aug 2023 04:28:23 GMT  
+		Size: 27.2 MB (27200587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:32b09734daedc0304878798a71791219640fa2ef7b562635c4ca5be781b33a7f`  
-		Last Modified: Tue, 04 Jul 2023 16:13:21 GMT  
-		Size: 15.9 MB (15925683 bytes)  
+	-	`sha256:5eae2ee7745e0fa467ea92017613d1e461c4a3fc5840314a824bb704c09891f2`  
+		Last Modified: Thu, 03 Aug 2023 01:02:39 GMT  
+		Size: 15.9 MB (15926156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5c7be160a318ea59f857af91fd6c4c34c129839ebc19fe42900a239f494f67b5`  
-		Last Modified: Tue, 04 Jul 2023 16:14:31 GMT  
-		Size: 201.3 MB (201338440 bytes)  
+	-	`sha256:f8fbb5d0c66733f5054eb2cb567d33c044d1359a724c1ca89414e7607a92e3ea`  
+		Last Modified: Thu, 03 Aug 2023 01:03:24 GMT  
+		Size: 201.3 MB (201338404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4e4cd7cf6a982e3dfc5b689a624ba39ce051abdc90d775e39c22f09793cc2f4`  
-		Last Modified: Tue, 04 Jul 2023 16:14:20 GMT  
-		Size: 4.9 MB (4940728 bytes)  
+	-	`sha256:93a69fe0848b08812460085873cc776812bd5422a91f7a1efe7b8628307f19b3`  
+		Last Modified: Thu, 03 Aug 2023 01:03:13 GMT  
+		Size: 5.0 MB (4963903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac65a3aaf58b7cc9d62258566ba6f6dda47cd4c18d0d0049302f0ca1a554d322`  
-		Last Modified: Wed, 05 Jul 2023 03:30:35 GMT  
-		Size: 28.2 MB (28185567 bytes)  
+	-	`sha256:f564e761673fd99ed90411a958709500cfa45735420bb1e3f9a80672d703c561`  
+		Last Modified: Thu, 03 Aug 2023 03:54:16 GMT  
+		Size: 28.2 MB (28186240 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:06da61d0d0648e7125e425e8d986e4ecdb16808dc9d5a22a3d7537b60817b46f`  
-		Last Modified: Wed, 05 Jul 2023 03:30:32 GMT  
-		Size: 9.3 MB (9327566 bytes)  
+	-	`sha256:60704bd0b222f1da2094ff72d21cb24e24aa1987bb15bdc015c3e3469ca41fdd`  
+		Last Modified: Thu, 03 Aug 2023 03:54:14 GMT  
+		Size: 9.3 MB (9327595 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1ef2dcafee351df340640c7cfda9514f1b808b2731968874997ad3579b72d2a6`  
-		Last Modified: Wed, 05 Jul 2023 03:30:31 GMT  
-		Size: 852.0 B  
+	-	`sha256:65e730674b939274a8d31d393045d2b8baec45b6b840956b243d6c57813ab788`  
+		Last Modified: Thu, 03 Aug 2023 03:54:12 GMT  
+		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b0488107eca15aa52b9eaf4a3f54d3895136aa436aae8ff2ae3b4b98003e1e65`  
-		Last Modified: Wed, 05 Jul 2023 03:30:31 GMT  
-		Size: 358.0 B  
+	-	`sha256:6eb25f795b1d8f35143e701f6090239b54163f87dbf4f595f6a103deaeeff392`  
+		Last Modified: Thu, 03 Aug 2023 03:54:12 GMT  
+		Size: 359.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ca480e4a9beec11a37e839affc1e4ce190a74fc60a0fc3f70c172ac8c8ee29e4`  
-		Last Modified: Wed, 05 Jul 2023 03:30:32 GMT  
-		Size: 156.0 B  
+	-	`sha256:abddad3e8b78e3959e1489685ed73608978616bcc6fc140a2cb0f8b276bc0274`  
+		Last Modified: Thu, 03 Aug 2023 03:54:12 GMT  
+		Size: 155.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3.9.3-ibm-semeru-11-focal` - linux; ppc64le
@@ -23345,7 +23417,7 @@ CMD ["mvn"]
 ## `maven:3.9.3-ibm-semeru-17-focal`
 
 ```console
-$ docker pull maven@sha256:919c39abcca0c2beda230cb56e34f739a8b59aa59a0db7ed15817861ceb7c1be
+$ docker pull maven@sha256:dbb185b9b241dcef5f8a670b7e95ee65958be8b5364e34bcb53e5a34e6c543dd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -23462,44 +23534,44 @@ CMD ["mvn"]
 ### `maven:3.9.3-ibm-semeru-17-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:abf886466d72ccfb6c2173df700d00032dd4127bf1a683e576dbdfc2c8cc8117
+$ docker pull maven@sha256:062a8efbf8c622ff477a0b6f7def73e1c2726237bdb7221f63c2359edcc09069
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **291.8 MB (291803772 bytes)**  
+-	Total Size: **291.9 MB (291882024 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:68dc35ab433b362faa2af2154e6d738d8c0922c4b767bdfb7c2bd155d7e2d5ed`
+-	Image ID: `sha256:91a8a6e66b91428683b391c8f24379da59631742bf545b368ef13d34c156cb7c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG RELEASE
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:56 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 28 Jun 2023 09:54:46 GMT
+# Tue, 01 Aug 2023 06:20:57 GMT
 LABEL org.opencontainers.image.version=20.04
-# Wed, 28 Jun 2023 09:54:48 GMT
-ADD file:a6db9f7789e57b7119f68e4e4ec9ec5aab8c3c8bd53fd932f3c59c54b1c20a26 in / 
-# Wed, 28 Jun 2023 09:54:49 GMT
+# Tue, 01 Aug 2023 06:21:03 GMT
+ADD file:ef6e767091d76c1461d099d5bc7a18c526ec80834cf87280803ab6480192f766 in / 
+# Tue, 01 Aug 2023 06:21:03 GMT
 CMD ["/bin/bash"]
-# Tue, 04 Jul 2023 15:59:53 GMT
+# Thu, 03 Aug 2023 00:55:09 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 16:00:05 GMT
+# Thu, 03 Aug 2023 00:55:21 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Tue, 04 Jul 2023 16:06:10 GMT
+# Thu, 03 Aug 2023 00:58:27 GMT
 ENV JAVA_VERSION=jdk-17.0.7+7_openj9-0.38.0
-# Tue, 04 Jul 2023 16:06:20 GMT
+# Thu, 03 Aug 2023 00:58:36 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='f1669d85687be17744ba835107504227caf03c00c88dba7461fda11a8c442734';          BINARY_URL='https://github.com/ibmruntimes/semeru17-binaries/releases/download/jdk-17.0.7%2B7_openj9-0.38.0/ibm-semeru-open-jdk_aarch64_linux_17.0.7_7_openj9-0.38.0.tar.gz';          ;;        amd64|x86_64)          ESUM='b46177ab82a2506cb858894fafbbbb922bbeefa4be441796e0ef5a8029599dca';          BINARY_URL='https://github.com/ibmruntimes/semeru17-binaries/releases/download/jdk-17.0.7%2B7_openj9-0.38.0/ibm-semeru-open-jdk_x64_linux_17.0.7_7_openj9-0.38.0.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='5759bea739befea5730d5aedc51ebe4a2bd808914d0a6ceb7a1895d36f1b2066';          BINARY_URL='https://github.com/ibmruntimes/semeru17-binaries/releases/download/jdk-17.0.7%2B7_openj9-0.38.0/ibm-semeru-open-jdk_ppc64le_linux_17.0.7_7_openj9-0.38.0.tar.gz';          ;;        s390x)          ESUM='a21823c8c400ba1535b2aace96b0de3ee36e0811d566ccf6cb06b15e9efe4906';          BINARY_URL='https://github.com/ibmruntimes/semeru17-binaries/releases/download/jdk-17.0.7%2B7_openj9-0.38.0/ibm-semeru-open-jdk_s390x_linux_17.0.7_7_openj9-0.38.0.tar.gz';          ;;       *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Tue, 04 Jul 2023 16:06:22 GMT
+# Thu, 03 Aug 2023 00:58:38 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 04 Jul 2023 16:06:22 GMT
+# Thu, 03 Aug 2023 00:58:38 GMT
 ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal
-# Tue, 04 Jul 2023 16:06:57 GMT
+# Thu, 03 Aug 2023 00:59:13 GMT
 RUN set -eux;     unset OPENJ9_JAVA_OPTIONS;     SCC_SIZE="50m";     DOWNLOAD_PATH_TOMCAT=/tmp/tomcat;     INSTALL_PATH_TOMCAT=/opt/tomcat-home;     TOMCAT_CHECKSUM="0db27185d9fc3174f2c670f814df3dda8a008b89d1a38a5d96cbbe119767ebfb1cf0bce956b27954aee9be19c4a7b91f2579d967932207976322033a86075f98";     TOMCAT_DWNLD_URL="https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.35/bin/apache-tomcat-9.0.35.tar.gz";         mkdir -p "${DOWNLOAD_PATH_TOMCAT}" "${INSTALL_PATH_TOMCAT}";     curl -LfsSo "${DOWNLOAD_PATH_TOMCAT}"/tomcat.tar.gz "${TOMCAT_DWNLD_URL}";     echo "${TOMCAT_CHECKSUM} *${DOWNLOAD_PATH_TOMCAT}/tomcat.tar.gz" | sha512sum -c -;     tar -xf "${DOWNLOAD_PATH_TOMCAT}"/tomcat.tar.gz -C "${INSTALL_PATH_TOMCAT}" --strip-components=1;     rm -rf "${DOWNLOAD_PATH_TOMCAT}";         java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal,createLayer -Xscmx$SCC_SIZE -version;     export OPENJ9_JAVA_OPTIONS="-Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal";     "${INSTALL_PATH_TOMCAT}"/bin/startup.sh;     sleep 5;     "${INSTALL_PATH_TOMCAT}"/bin/shutdown.sh -force;     sleep 15;     FULL=$( (java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,printallStats 2>&1 || true) | awk '/^Cache is [0-9.]*% .*full/ {print substr($3, 1, length($3)-1)}');     DST_CACHE=$(java -Xshareclasses:name=dry_run_scc,cacheDir=/opt/java/.scc,destroy 2>&1 || true);     SCC_SIZE=$(echo $SCC_SIZE | sed 's/.$//');     SCC_SIZE=$(awk "BEGIN {print int($SCC_SIZE * $FULL / 100.0)}");     [ "${SCC_SIZE}" -eq 0 ] && SCC_SIZE=1;     SCC_SIZE="${SCC_SIZE}m";     java -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal,createLayer -Xscmx$SCC_SIZE -version;     unset OPENJ9_JAVA_OPTIONS;         export OPENJ9_JAVA_OPTIONS="-Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,bootClassesOnly,nonFatal";     "${INSTALL_PATH_TOMCAT}"/bin/startup.sh;     sleep 5;     "${INSTALL_PATH_TOMCAT}"/bin/shutdown.sh -force;     sleep 5;     FULL=$( (java -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,printallStats 2>&1 || true) | awk '/^Cache is [0-9.]*% .*full/ {print substr($3, 1, length($3)-1)}');     echo "SCC layer is $FULL% full.";     rm -rf "${INSTALL_PATH_TOMCAT}";     if [ -d "/opt/java/.scc" ]; then           chmod -R 0777 /opt/java/.scc;     fi;         echo "SCC generation phase completed";
-# Tue, 04 Jul 2023 16:06:57 GMT
+# Thu, 03 Aug 2023 00:59:13 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -23526,41 +23598,41 @@ CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1e77eb131c5c9032ce8e6e512f601714ce7ba48e296f5b7a5191703bdcbc904d`  
-		Last Modified: Tue, 04 Jul 2023 04:05:23 GMT  
-		Size: 27.2 MB (27198330 bytes)  
+	-	`sha256:edab87ea811e56041127f5e9eb4115fb62cb96d0e6a14056e0d2dbf51a945a22`  
+		Last Modified: Wed, 02 Aug 2023 04:28:23 GMT  
+		Size: 27.2 MB (27200587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:32b09734daedc0304878798a71791219640fa2ef7b562635c4ca5be781b33a7f`  
-		Last Modified: Tue, 04 Jul 2023 16:13:21 GMT  
-		Size: 15.9 MB (15925683 bytes)  
+	-	`sha256:5eae2ee7745e0fa467ea92017613d1e461c4a3fc5840314a824bb704c09891f2`  
+		Last Modified: Thu, 03 Aug 2023 01:02:39 GMT  
+		Size: 15.9 MB (15926156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94449c5ae11be5fd217769b9ed0f1887c02dcdef72680e222533385277b5d059`  
-		Last Modified: Tue, 04 Jul 2023 16:15:40 GMT  
-		Size: 205.5 MB (205490158 bytes)  
+	-	`sha256:a2be84bfa672bbb00ec344984e068c81eeec17b4c248b053aebd8fb0f73321fb`  
+		Last Modified: Thu, 03 Aug 2023 01:04:08 GMT  
+		Size: 205.5 MB (205490171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fa475f644a6dd9eb8ce11e3555102a166410899069200b04c5abf3141995bea7`  
-		Last Modified: Tue, 04 Jul 2023 16:15:29 GMT  
-		Size: 5.7 MB (5675015 bytes)  
+	-	`sha256:4ef4765109b3920b2d36a7c5bc8b05f396363b4db468822f3af144c3a60e51e4`  
+		Last Modified: Thu, 03 Aug 2023 01:03:55 GMT  
+		Size: 5.7 MB (5749886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3831a1dc56b7859ea2439eb74a24032a2a9adb2c13b287df40bcaf7f33ceabde`  
-		Last Modified: Wed, 05 Jul 2023 03:30:49 GMT  
-		Size: 28.2 MB (28185653 bytes)  
+	-	`sha256:6635c48c03e7821ca8c612b60d89b1719490c9768f9926676ebdfdff0b546a8f`  
+		Last Modified: Thu, 03 Aug 2023 03:54:29 GMT  
+		Size: 28.2 MB (28186263 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:98bcf4df507f240824075c34aad4082d4f4136d100e677bb01396b8c314c6cf8`  
-		Last Modified: Wed, 05 Jul 2023 03:30:46 GMT  
-		Size: 9.3 MB (9327566 bytes)  
+	-	`sha256:062a103d3896426b5aa3db24de9ac84eeb8a2663d1c76add71bf9a524a683345`  
+		Last Modified: Thu, 03 Aug 2023 03:54:27 GMT  
+		Size: 9.3 MB (9327592 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:abde3bb49d3c8bfa6a1bfeeab7f6de440c249b2b0ebb214a40440ac384dbbb0a`  
-		Last Modified: Wed, 05 Jul 2023 03:30:45 GMT  
-		Size: 853.0 B  
+	-	`sha256:c35d58b2bb4cb49b779193cffc4b35b47e90f8a31cab9403b03f104ed981e083`  
+		Last Modified: Thu, 03 Aug 2023 03:54:25 GMT  
+		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5651a6e99acd65550f2a6a3de5a1574a1a0382508092304ebb0b090831e91d6`  
-		Last Modified: Wed, 05 Jul 2023 03:30:45 GMT  
-		Size: 358.0 B  
+	-	`sha256:3ad7e6ef03f116087895f619d13c5a59fc519f63f8d280e8d06961994caac714`  
+		Last Modified: Thu, 03 Aug 2023 03:54:25 GMT  
+		Size: 359.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:76da25bf5623d490ae209ffd5ee0d8f673c1be426345e1aa5f60e6503353fd0e`  
-		Last Modified: Wed, 05 Jul 2023 03:30:45 GMT  
-		Size: 156.0 B  
+	-	`sha256:94eea43522cee68489c2cb971e4e1bfb4932dc7dbe1ce32e23c040126f4e5909`  
+		Last Modified: Thu, 03 Aug 2023 03:54:25 GMT  
+		Size: 155.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3.9.3-ibm-semeru-17-focal` - linux; ppc64le
@@ -25345,7 +25417,7 @@ CMD ["mvn"]
 ## `maven:eclipse-temurin`
 
 ```console
-$ docker pull maven@sha256:7791921e7473cbc580ed1542e16f4083ce90c960b53c6a6bbdcad8ff5217f265
+$ docker pull maven@sha256:bae5871b5e78c2886a3535c844129b9698ab3e45ecf9e3098eb32c430ec3c319
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -25460,13 +25532,13 @@ CMD ["mvn"]
 ### `maven:eclipse-temurin` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:14274982b1c279937ede5fa89f909603081a4035d177d30197c997ae53b6e03f
+$ docker pull maven@sha256:1acec15fd4c7a1dbcffc1488892c969ee697463c83bf2684f480c020303fc024
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.8 MB (227776302 bytes)**  
+-	Total Size: **227.7 MB (227712284 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0269dc4a8e685c7249ef23cb579b1906e1a85a6133406189eaa3a2c75a2ac0b0`
+-	Image ID: `sha256:927a93770c68ff6678e4e123e980b108ed8181406da6d1aa949ca687b8299b8c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -25489,15 +25561,19 @@ ENV JAVA_HOME=/opt/java/openjdk
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Tue, 04 Jul 2023 15:32:45 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:34:51 GMT
-RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Mon, 24 Jul 2023 22:42:39 GMT
+# Thu, 03 Aug 2023 01:08:59 GMT
+RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Thu, 03 Aug 2023 01:08:59 GMT
 ENV JAVA_VERSION=jdk-20.0.2+9
-# Mon, 24 Jul 2023 22:42:48 GMT
+# Thu, 03 Aug 2023 01:09:09 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='b475bcc23db0bd618c815bb8f11d8e084dc58288ea3bcdf4e7f389ed41c89f56';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_aarch64_linux_hotspot_20.0.2_9.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='3d91842e9c172967ac397076523249d05a82ead51b0006838f5f0315ad52222c';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_x64_linux_hotspot_20.0.2_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
+COPY file:0673fe0a4a716089bcd96321c8de60149aea8a94ae7c4ba827ecc4a74a9789a3 in / 
+# Thu, 03 Aug 2023 01:09:13 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Thu, 03 Aug 2023 01:09:13 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -25528,37 +25604,41 @@ CMD ["mvn"]
 		Last Modified: Wed, 28 Jun 2023 23:23:40 GMT  
 		Size: 28.4 MB (28391011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92f85d89e7da0f3af0f527e7300cced784d0ba64249b8c376690599d313cb056`  
-		Last Modified: Tue, 04 Jul 2023 15:39:09 GMT  
-		Size: 18.5 MB (18466568 bytes)  
+	-	`sha256:4df65dff856d09c8b168dd7068823e6f97f3afb0fc6276b56a61cfbc2fc700d4`  
+		Last Modified: Thu, 03 Aug 2023 01:12:32 GMT  
+		Size: 18.9 MB (18858729 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c618fd14ec82d3df12cb6aadc4cca972a5d98ea6890021a44a8f106fffdebb7`  
-		Last Modified: Mon, 24 Jul 2023 22:44:45 GMT  
-		Size: 152.1 MB (152127099 bytes)  
+	-	`sha256:c182dd525d4acf4fd30b43a086932ed78fb4b92224f57ad0f7902fcdd6ce5f5e`  
+		Last Modified: Thu, 03 Aug 2023 01:12:39 GMT  
+		Size: 152.1 MB (152127049 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7141731e557558245eec1f619e96b2788f2a2dac72e3f2074784f092766f9fa`  
-		Last Modified: Mon, 24 Jul 2023 22:44:36 GMT  
+	-	`sha256:abe008c6267f42405de6e0e83dbd6d914ef7c3fb528bec8438e015a02e0e4347`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6deca075b33c631c62ceac429e9bc6429d4b9aefc5a9316800b185953a18dbe0`  
-		Last Modified: Tue, 25 Jul 2023 01:09:28 GMT  
-		Size: 19.5 MB (19462491 bytes)  
+	-	`sha256:c4d4f0d670a3f16cd33b11a95cc6530b3c5125f3b15f7c82e1e18b792bf8655d`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
+		Size: 667.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5868788e60ed4618156df0c82077e5a23a6535a295609f3dbeb2b9a74a55eea3`  
-		Last Modified: Tue, 25 Jul 2023 01:09:26 GMT  
-		Size: 9.3 MB (9327590 bytes)  
+	-	`sha256:6e7c21188c7df85a0f2006bc08c5a496fdc6c9bca6598395bf09379b5983cd6a`  
+		Last Modified: Thu, 03 Aug 2023 03:53:30 GMT  
+		Size: 19.0 MB (19005687 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74b4f59785940c4a060255fa43ae80c4bf098e7f714571c49de3e195f3ec64ee`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 857.0 B  
+	-	`sha256:1c0d86a87be29cba0093e6aed4e270194cf15a359c4d072b8cb63b19749ddc43`  
+		Last Modified: Thu, 03 Aug 2023 03:53:28 GMT  
+		Size: 9.3 MB (9327596 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1a30731f1381b2bf632fec2bfb8a3700a49cb3d3cddad9339c441ca6ff011e5a`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 359.0 B  
+	-	`sha256:1c9e4c26a2cb521fa74ce02a4343b6d4d24b07731bb07128e5858fea8d271d21`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 856.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:604990e15f57d12976c97e454a8c49d86c1b887bdc899573fa122ed43e7cb491`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 155.0 B  
+	-	`sha256:b35860b914781e5f8fbab7249c53b58b76d7eea3f6dee8ae01cfbde49fa64ecd`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 361.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:121ec3ea501be989167e3b95dc124083804c42b1bd43d148cdf5926f6d4a5098`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:ibmjava`
@@ -25858,7 +25938,7 @@ CMD ["mvn"]
 ## `maven:latest`
 
 ```console
-$ docker pull maven@sha256:7791921e7473cbc580ed1542e16f4083ce90c960b53c6a6bbdcad8ff5217f265
+$ docker pull maven@sha256:bae5871b5e78c2886a3535c844129b9698ab3e45ecf9e3098eb32c430ec3c319
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -25973,13 +26053,13 @@ CMD ["mvn"]
 ### `maven:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:14274982b1c279937ede5fa89f909603081a4035d177d30197c997ae53b6e03f
+$ docker pull maven@sha256:1acec15fd4c7a1dbcffc1488892c969ee697463c83bf2684f480c020303fc024
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.8 MB (227776302 bytes)**  
+-	Total Size: **227.7 MB (227712284 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0269dc4a8e685c7249ef23cb579b1906e1a85a6133406189eaa3a2c75a2ac0b0`
+-	Image ID: `sha256:927a93770c68ff6678e4e123e980b108ed8181406da6d1aa949ca687b8299b8c`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -26002,15 +26082,19 @@ ENV JAVA_HOME=/opt/java/openjdk
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Tue, 04 Jul 2023 15:32:45 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 04 Jul 2023 15:34:51 GMT
-RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Mon, 24 Jul 2023 22:42:39 GMT
+# Thu, 03 Aug 2023 01:08:59 GMT
+RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Thu, 03 Aug 2023 01:08:59 GMT
 ENV JAVA_VERSION=jdk-20.0.2+9
-# Mon, 24 Jul 2023 22:42:48 GMT
+# Thu, 03 Aug 2023 01:09:09 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='b475bcc23db0bd618c815bb8f11d8e084dc58288ea3bcdf4e7f389ed41c89f56';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_aarch64_linux_hotspot_20.0.2_9.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='3d91842e9c172967ac397076523249d05a82ead51b0006838f5f0315ad52222c';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_x64_linux_hotspot_20.0.2_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Mon, 24 Jul 2023 22:42:52 GMT
+# Thu, 03 Aug 2023 01:09:13 GMT
+COPY file:0673fe0a4a716089bcd96321c8de60149aea8a94ae7c4ba827ecc4a74a9789a3 in / 
+# Thu, 03 Aug 2023 01:09:13 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Thu, 03 Aug 2023 01:09:13 GMT
 CMD ["jshell"]
 # Mon, 26 Jun 2023 13:48:06 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -26041,37 +26125,41 @@ CMD ["mvn"]
 		Last Modified: Wed, 28 Jun 2023 23:23:40 GMT  
 		Size: 28.4 MB (28391011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92f85d89e7da0f3af0f527e7300cced784d0ba64249b8c376690599d313cb056`  
-		Last Modified: Tue, 04 Jul 2023 15:39:09 GMT  
-		Size: 18.5 MB (18466568 bytes)  
+	-	`sha256:4df65dff856d09c8b168dd7068823e6f97f3afb0fc6276b56a61cfbc2fc700d4`  
+		Last Modified: Thu, 03 Aug 2023 01:12:32 GMT  
+		Size: 18.9 MB (18858729 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c618fd14ec82d3df12cb6aadc4cca972a5d98ea6890021a44a8f106fffdebb7`  
-		Last Modified: Mon, 24 Jul 2023 22:44:45 GMT  
-		Size: 152.1 MB (152127099 bytes)  
+	-	`sha256:c182dd525d4acf4fd30b43a086932ed78fb4b92224f57ad0f7902fcdd6ce5f5e`  
+		Last Modified: Thu, 03 Aug 2023 01:12:39 GMT  
+		Size: 152.1 MB (152127049 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7141731e557558245eec1f619e96b2788f2a2dac72e3f2074784f092766f9fa`  
-		Last Modified: Mon, 24 Jul 2023 22:44:36 GMT  
+	-	`sha256:abe008c6267f42405de6e0e83dbd6d914ef7c3fb528bec8438e015a02e0e4347`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6deca075b33c631c62ceac429e9bc6429d4b9aefc5a9316800b185953a18dbe0`  
-		Last Modified: Tue, 25 Jul 2023 01:09:28 GMT  
-		Size: 19.5 MB (19462491 bytes)  
+	-	`sha256:c4d4f0d670a3f16cd33b11a95cc6530b3c5125f3b15f7c82e1e18b792bf8655d`  
+		Last Modified: Thu, 03 Aug 2023 01:12:29 GMT  
+		Size: 667.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5868788e60ed4618156df0c82077e5a23a6535a295609f3dbeb2b9a74a55eea3`  
-		Last Modified: Tue, 25 Jul 2023 01:09:26 GMT  
-		Size: 9.3 MB (9327590 bytes)  
+	-	`sha256:6e7c21188c7df85a0f2006bc08c5a496fdc6c9bca6598395bf09379b5983cd6a`  
+		Last Modified: Thu, 03 Aug 2023 03:53:30 GMT  
+		Size: 19.0 MB (19005687 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74b4f59785940c4a060255fa43ae80c4bf098e7f714571c49de3e195f3ec64ee`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 857.0 B  
+	-	`sha256:1c0d86a87be29cba0093e6aed4e270194cf15a359c4d072b8cb63b19749ddc43`  
+		Last Modified: Thu, 03 Aug 2023 03:53:28 GMT  
+		Size: 9.3 MB (9327596 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1a30731f1381b2bf632fec2bfb8a3700a49cb3d3cddad9339c441ca6ff011e5a`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 359.0 B  
+	-	`sha256:1c9e4c26a2cb521fa74ce02a4343b6d4d24b07731bb07128e5858fea8d271d21`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 856.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:604990e15f57d12976c97e454a8c49d86c1b887bdc899573fa122ed43e7cb491`  
-		Last Modified: Tue, 25 Jul 2023 01:09:25 GMT  
-		Size: 155.0 B  
+	-	`sha256:b35860b914781e5f8fbab7249c53b58b76d7eea3f6dee8ae01cfbde49fa64ecd`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 361.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:121ec3ea501be989167e3b95dc124083804c42b1bd43d148cdf5926f6d4a5098`  
+		Last Modified: Thu, 03 Aug 2023 03:53:27 GMT  
+		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:sapmachine`
