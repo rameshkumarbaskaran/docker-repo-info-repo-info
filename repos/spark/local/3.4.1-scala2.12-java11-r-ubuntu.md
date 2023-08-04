@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:09cef7c257e46e6bf09e206e522eb2414ee600984faace7d1ab4a8900d10c049`
-- Created: `2023-07-26T02:36:07.823612404Z`
+- Image ID: `sha256:9c5ef5b2ccc38c0bc1842490d64a10658902867e0da6cfe9ccc42db6b7dc7bbf`
+- Created: `2023-08-03T05:36:48.95631792Z`
 - Virtual Size: ~ 1.31 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -454,12 +454,12 @@ $ apt-get source -qq --print-uris coreutils=8.30-3ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.30-3ubuntu2.debian.tar.xz' coreutils_8.30-3ubuntu2.debian.tar.xz 39636 SHA256:98204ef9d94e5c567880cd0245fdb7940eaf7592d6c6830c300ad117628b351f
 ```
 
-### `dpkg` source package: `curl=7.68.0-1ubuntu2.18`
+### `dpkg` source package: `curl=7.68.0-1ubuntu2.19`
 
 Binary Packages:
 
-- `curl=7.68.0-1ubuntu2.18`
-- `libcurl4:amd64=7.68.0-1ubuntu2.18`
+- `curl=7.68.0-1ubuntu2.19`
+- `libcurl4:amd64=7.68.0-1ubuntu2.19`
 
 Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
@@ -470,9 +470,14 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris curl=7.68.0-1ubuntu2.19
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.19.dsc' curl_7.68.0-1ubuntu2.19.dsc 2737 SHA512:86dfd3a26b645e5ce9d2a8d58a7e5f1fd4b7aa5944c85ffba8f9e3e36e93028a18e8d6b4bdf5f95809407df593c63e86a954488d2ab4c744cb2f02c2c4f8b9bf
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0.orig.tar.gz' curl_7.68.0.orig.tar.gz 4096350 SHA512:58b42c08b1cf4cb6e68f8e469d5b5f6298eebe286ba2677ad29e1a7eefd15b8609af54544f4c5a7dadebbd3b23bd77700830f2f60fbea7ae3f2f306e640010b0
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.19.debian.tar.xz' curl_7.68.0-1ubuntu2.19.debian.tar.xz 68292 SHA512:268714df9abeaebc38df547dd7b0dfee02c605b7fa8a8054818d9f5c608135a70e0d0e3492c1cf504d138bbddd457421486bf1b2e00464f206bb7172c4bc74bf
+```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-2ubuntu0.1`
 
@@ -872,22 +877,22 @@ $ apt-get source -qq --print-uris fribidi=1.0.8-2ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/f/fribidi/fribidi_1.0.8-2ubuntu0.1.debian.tar.xz' fribidi_1.0.8-2ubuntu0.1.debian.tar.xz 10612 SHA512:2ad4f0c140d303f5d79ec5bba1b7211fac398768f0a07f47e0ad8d9844d61cc38c31daafaa9378a1dae9bec66917d7d46b15d1aaab34d3b15a738632fdf15feb
 ```
 
-### `dpkg` source package: `gcc-10=10.3.0-1ubuntu1~20.04`
+### `dpkg` source package: `gcc-10=10.5.0-1ubuntu1~20.04`
 
 Binary Packages:
 
-- `gcc-10-base:amd64=10.3.0-1ubuntu1~20.04`
-- `libatomic1:amd64=10.3.0-1ubuntu1~20.04`
-- `libcc1-0:amd64=10.3.0-1ubuntu1~20.04`
-- `libgcc-s1:amd64=10.3.0-1ubuntu1~20.04`
-- `libgfortran5:amd64=10.3.0-1ubuntu1~20.04`
-- `libgomp1:amd64=10.3.0-1ubuntu1~20.04`
-- `libitm1:amd64=10.3.0-1ubuntu1~20.04`
-- `liblsan0:amd64=10.3.0-1ubuntu1~20.04`
-- `libquadmath0:amd64=10.3.0-1ubuntu1~20.04`
-- `libstdc++6:amd64=10.3.0-1ubuntu1~20.04`
-- `libtsan0:amd64=10.3.0-1ubuntu1~20.04`
-- `libubsan1:amd64=10.3.0-1ubuntu1~20.04`
+- `gcc-10-base:amd64=10.5.0-1ubuntu1~20.04`
+- `libatomic1:amd64=10.5.0-1ubuntu1~20.04`
+- `libcc1-0:amd64=10.5.0-1ubuntu1~20.04`
+- `libgcc-s1:amd64=10.5.0-1ubuntu1~20.04`
+- `libgfortran5:amd64=10.5.0-1ubuntu1~20.04`
+- `libgomp1:amd64=10.5.0-1ubuntu1~20.04`
+- `libitm1:amd64=10.5.0-1ubuntu1~20.04`
+- `liblsan0:amd64=10.5.0-1ubuntu1~20.04`
+- `libquadmath0:amd64=10.5.0-1ubuntu1~20.04`
+- `libstdc++6:amd64=10.5.0-1ubuntu1~20.04`
+- `libtsan0:amd64=10.5.0-1ubuntu1~20.04`
+- `libubsan1:amd64=10.5.0-1ubuntu1~20.04`
 
 Licenses: (parsed from: `/usr/share/doc/gcc-10-base/copyright`, `/usr/share/doc/libatomic1/copyright`, `/usr/share/doc/libcc1-0/copyright`, `/usr/share/doc/libgcc-s1/copyright`, `/usr/share/doc/libgfortran5/copyright`, `/usr/share/doc/libgomp1/copyright`, `/usr/share/doc/libitm1/copyright`, `/usr/share/doc/liblsan0/copyright`, `/usr/share/doc/libquadmath0/copyright`, `/usr/share/doc/libstdc++6/copyright`, `/usr/share/doc/libtsan0/copyright`, `/usr/share/doc/libubsan1/copyright`)
 
@@ -898,9 +903,14 @@ Licenses: (parsed from: `/usr/share/doc/gcc-10-base/copyright`, `/usr/share/doc/
 - `GPL-3`
 - `LGPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris gcc-10=10.5.0-1ubuntu1~20.04
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.5.0-1ubuntu1%7e20.04.dsc' gcc-10_10.5.0-1ubuntu1~20.04.dsc 31130 SHA512:0adfb92474d09348ce0ef4a4a3edd143a054d2bcba01dbdf29f925066ecc6e4874a02d7ced1501d39c1e966a1b0f3b9bef6ddcc8181df9b77206cefedcef6f15
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.5.0.orig.tar.gz' gcc-10_10.5.0.orig.tar.gz 84203753 SHA512:0617b7353e3da37e30abecb3527a987bb444a57e2f18a1265f9b727b5f43a40068d7242f8ce92fe47810e883778c13a0c54c5126071a5c6abd786c02919f5c81
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.5.0-1ubuntu1%7e20.04.debian.tar.xz' gcc-10_10.5.0-1ubuntu1~20.04.debian.tar.xz 5953836 SHA512:d68b8b10628bec39c370c9af1baa39bd76f3fb885d765b2d449435981ab772443187cba3bcb629e69a4a7c4b1e890babc4ea9ed8a3a3eb9a8e7e1e76abb8b526
+```
 
 ### `dpkg` source package: `gcc-9=9.4.0-1ubuntu1~20.04.1`
 
