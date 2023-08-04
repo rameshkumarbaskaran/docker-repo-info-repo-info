@@ -87,6 +87,8 @@
 -	[`amazoncorretto:20-al2-generic`](#amazoncorretto20-al2-generic)
 -	[`amazoncorretto:20-al2-generic-jdk`](#amazoncorretto20-al2-generic-jdk)
 -	[`amazoncorretto:20-al2-jdk`](#amazoncorretto20-al2-jdk)
+-	[`amazoncorretto:20-al2023-generic`](#amazoncorretto20-al2023-generic)
+-	[`amazoncorretto:20-al2023-generic-jdk`](#amazoncorretto20-al2023-generic-jdk)
 -	[`amazoncorretto:20-alpine`](#amazoncorretto20-alpine)
 -	[`amazoncorretto:20-alpine-full`](#amazoncorretto20-alpine-full)
 -	[`amazoncorretto:20-alpine-jdk`](#amazoncorretto20-alpine-jdk)
@@ -105,6 +107,7 @@
 -	[`amazoncorretto:20.0.2`](#amazoncorretto2002)
 -	[`amazoncorretto:20.0.2-al2`](#amazoncorretto2002-al2)
 -	[`amazoncorretto:20.0.2-al2-generic`](#amazoncorretto2002-al2-generic)
+-	[`amazoncorretto:20.0.2-al2023-generic`](#amazoncorretto2002-al2023-generic)
 -	[`amazoncorretto:20.0.2-alpine`](#amazoncorretto2002-alpine)
 -	[`amazoncorretto:20.0.2-alpine3.15`](#amazoncorretto2002-alpine315)
 -	[`amazoncorretto:20.0.2-alpine3.16`](#amazoncorretto2002-alpine316)
@@ -7912,6 +7915,14 @@ ENV JAVA_HOME=/usr/lib/jvm/java-20-amazon-corretto
 		Size: 159.0 MB (158968187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `amazoncorretto:20-al2023-generic`
+
+**does not exist** (yet?)
+
+## `amazoncorretto:20-al2023-generic-jdk`
+
+**does not exist** (yet?)
+
 ## `amazoncorretto:20-alpine`
 
 ```console
@@ -9573,6 +9584,10 @@ ENV JAVA_HOME=/usr/lib/jvm/java-20-amazon-corretto
 		Last Modified: Wed, 26 Jul 2023 20:32:23 GMT  
 		Size: 159.0 MB (158968187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `amazoncorretto:20.0.2-al2023-generic`
+
+**does not exist** (yet?)
 
 ## `amazoncorretto:20.0.2-alpine`
 
