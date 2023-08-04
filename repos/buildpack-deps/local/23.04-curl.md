@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:8cb02a4320e2d201d51f16cac15f0e1a4bd615b6d5f6294bf6e3c45f3d864710`
-- Created: `2023-06-16T01:47:11.602080772Z`
-- Virtual Size: ~ 103.61 Mb  
+- Image ID: `sha256:4a157e768e5dfca25628eecd31c1b7da3442b59c388bae96cc37df6bf96bc761`
+- Created: `2023-08-03T03:28:38.347999143Z`
+- Virtual Size: ~ 103.63 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -296,12 +296,12 @@ $ apt-get source -qq --print-uris coreutils=9.1-1ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_9.1-1ubuntu2.debian.tar.xz' coreutils_9.1-1ubuntu2.debian.tar.xz 38492 SHA512:54c46926e87c50345823d4d8dcf977bd172cc81be821991e5bdd698056ca919293074e23d59502727e0e93a08ff780bb9b53ac997e57894926ae08b079afb736
 ```
 
-### `dpkg` source package: `curl=7.88.1-8ubuntu2`
+### `dpkg` source package: `curl=7.88.1-8ubuntu2.1`
 
 Binary Packages:
 
-- `curl=7.88.1-8ubuntu2`
-- `libcurl4:amd64=7.88.1-8ubuntu2`
+- `curl=7.88.1-8ubuntu2.1`
+- `libcurl4:amd64=7.88.1-8ubuntu2.1`
 
 Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
@@ -317,9 +317,14 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `X11`
 - `curl`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris curl=7.88.1-8ubuntu2.1
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.88.1-8ubuntu2.1.dsc' curl_7.88.1-8ubuntu2.1.dsc 3044 SHA512:537cf947b69b8ef426eca86788db597b2f14b1f603baebfbb69ccfdc6858d2189ac5483d946393383129507c8c9af524677ca553e0e6030f5e47c3c6f04c028a
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.88.1.orig.tar.gz' curl_7.88.1.orig.tar.gz 4343562 SHA512:67701d458548712bbfaa55f2ebefbf87cdbba01b7b1200f608b1c3af67e8dd8e243fa89f256446d217d658a5a1242331d8b0168ab600351e74ee0e2511e79dae
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.88.1-8ubuntu2.1.debian.tar.xz' curl_7.88.1-8ubuntu2.1.debian.tar.xz 52732 SHA512:cb2ff2d2505d22166b656e264b2b069d7cb45b7887dbe3571f0fa28b26d448cc257911a9dbf8b9cfbde0178af9f9f3e6638749fb4ccbda337060b28a0595db42
+```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.28+dfsg-10`
 
@@ -564,13 +569,13 @@ $ apt-get source -qq --print-uris findutils=4.9.0-3ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.9.0-3ubuntu1.debian.tar.xz' findutils_4.9.0-3ubuntu1.debian.tar.xz 28484 SHA512:2aeef5a8931606e3aec4f6e4f28c560d564b6bf43f2c459b189514a96fba4837104ba04ed1fdef75d101b5055f5692df47615369317e10f36f2d03e28b09dd24
 ```
 
-### `dpkg` source package: `gcc-13=13-20230320-1ubuntu1`
+### `dpkg` source package: `gcc-13=13.1.0-2ubuntu2~23.04`
 
 Binary Packages:
 
-- `gcc-13-base:amd64=13-20230320-1ubuntu1`
-- `libgcc-s1:amd64=13-20230320-1ubuntu1`
-- `libstdc++6:amd64=13-20230320-1ubuntu1`
+- `gcc-13-base:amd64=13.1.0-2ubuntu2~23.04`
+- `libgcc-s1:amd64=13.1.0-2ubuntu2~23.04`
+- `libstdc++6:amd64=13.1.0-2ubuntu2~23.04`
 
 Licenses: (parsed from: `/usr/share/doc/gcc-13-base/copyright`, `/usr/share/doc/libgcc-s1/copyright`, `/usr/share/doc/libstdc++6/copyright`)
 
@@ -584,10 +589,10 @@ Licenses: (parsed from: `/usr/share/doc/gcc-13-base/copyright`, `/usr/share/doc/
 Source:
 
 ```console
-$ apt-get source -qq --print-uris gcc-13=13-20230320-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/gcc-13_13-20230320-1ubuntu1.dsc' gcc-13_13-20230320-1ubuntu1.dsc 27878 SHA512:00fc7492fa3420b676f7a9779ee43ec063c240c14a5f65fb32b34539bcba9a0999b68dcf053bc5c72afe3e360445c52398570101e69471ff79884aa774d24fc9
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/gcc-13_13-20230320.orig.tar.gz' gcc-13_13-20230320.orig.tar.gz 87343570 SHA512:f0558638c5caad89ee5c55bfb53840f4e04a554f103959759b9e7a50c8fe3bbf25355146a74e2284a51212c5c691512c84bd90dcd3ceff4faee09f84c4079122
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/gcc-13_13-20230320-1ubuntu1.debian.tar.xz' gcc-13_13-20230320-1ubuntu1.debian.tar.xz 530704 SHA512:a1b7b5db7a82b8acca5dc6f60db6628de92d5575786f82d6d860c2d0e71ef9890ee2abcb0a9ca552f4628669d7125c28cf8cc9d3852e9b7019b11ef885d1907d
+$ apt-get source -qq --print-uris gcc-13=13.1.0-2ubuntu2~23.04
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/gcc-13_13.1.0-2ubuntu2%7e23.04.dsc' gcc-13_13.1.0-2ubuntu2~23.04.dsc 27892 SHA512:5c22642701bc3b7a1deca483d345a1ed8109a7990d8da62622836d2bd5f414a37ae5cf36d04dadb0510ed7e9c0cb646729e0e64d140c678137c37c3f1610c865
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/gcc-13_13.1.0.orig.tar.gz' gcc-13_13.1.0.orig.tar.gz 92188593 SHA512:81da5b2e1447652f895cc90ae6b7f106d0bb8e7d4741396ddea0e23fe06a13208469fcbefa6affe7b17271af9efb64464cbd5c76bba283b8f3710843a739b687
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/gcc-13_13.1.0-2ubuntu2%7e23.04.debian.tar.xz' gcc-13_13.1.0-2ubuntu2~23.04.debian.tar.xz 1143460 SHA512:dd4ee2efd038788b103f4700bd650e43daeb60c8c5f22855c8d7ad41fee7a5b0ebbbd91dd8d4964a1248f8cc4b10a3d4a77eff490a2458c1f4eec78ce27d5534
 ```
 
 ### `dpkg` source package: `glibc=2.37-0ubuntu2`

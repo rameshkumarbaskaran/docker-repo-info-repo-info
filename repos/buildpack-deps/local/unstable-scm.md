@@ -133,19 +133,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.7.2
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.7.2.dsc' apt_2.7.2.dsc 2945 SHA256:4c2177f149a61e9f1d7f905aecafb87d4881edabd5ff3d1a70b280fbe823cf1f
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.7.2.tar.xz' apt_2.7.2.tar.xz 2335316 SHA256:095c92c82fceff4cc02ddadc2477859b8263c88d3015d6799aa72e3301359b2f
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/apt/2.7.2/
 
-- https://sources.debian.net/src/apt/2.7.2/ (for browsing the source)
-- https://sources.debian.net/src/apt/2.7.2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/2.7.2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.5.1-4`
 
@@ -2042,20 +2036,13 @@ Licenses: (parsed from: `/usr/share/doc/mawk/copyright`)
 - `GPL-2.0-only`
 - `X11`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mawk=1.3.4.20230525-1
-'http://deb.debian.org/debian/pool/main/m/mawk/mawk_1.3.4.20230525-1.dsc' mawk_1.3.4.20230525-1.dsc 1918 SHA256:e6fd0a6d20e18d5a99b76bb9246794a47878f130efa28b8ee52edc89ea810020
-'http://deb.debian.org/debian/pool/main/m/mawk/mawk_1.3.4.20230525.orig.tar.gz' mawk_1.3.4.20230525.orig.tar.gz 403222 SHA256:5639d14bb9124373b3d7f957d2b925ad8ad9656d46212c3f23dbca810cc9269f
-'http://deb.debian.org/debian/pool/main/m/mawk/mawk_1.3.4.20230525-1.debian.tar.xz' mawk_1.3.4.20230525-1.debian.tar.xz 14288 SHA256:5d0b292f99d20e72fb03f47e37e30ee46283302b0bea1bebef90c30819699837
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mawk/1.3.4.20230525-1/
 
-- https://sources.debian.net/src/mawk/1.3.4.20230525-1/ (for browsing the source)
-- https://sources.debian.net/src/mawk/1.3.4.20230525-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mawk/1.3.4.20230525-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `media-types=10.1.0`
 

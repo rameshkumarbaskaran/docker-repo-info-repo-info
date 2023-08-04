@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c4fdc424c21a7faa2bb99b875d2ce47d52685d1f0692f07b0f4ae504cdab83c3`
-- Created: `2023-07-04T03:39:01.575247639Z`
-- Virtual Size: ~ 727.97 Mb  
+- Image ID: `sha256:4fda0fc31b0a48175e7336ca929f7ae5db6d6b985ec61f1eb2e34e09e47c0fd6`
+- Created: `2023-08-03T03:27:31.049640639Z`
+- Virtual Size: ~ 727.95 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -501,14 +501,14 @@ $ apt-get source -qq --print-uris coreutils=8.30-3ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.30-3ubuntu2.debian.tar.xz' coreutils_8.30-3ubuntu2.debian.tar.xz 39636 SHA256:98204ef9d94e5c567880cd0245fdb7940eaf7592d6c6830c300ad117628b351f
 ```
 
-### `dpkg` source package: `curl=7.68.0-1ubuntu2.18`
+### `dpkg` source package: `curl=7.68.0-1ubuntu2.19`
 
 Binary Packages:
 
-- `curl=7.68.0-1ubuntu2.18`
-- `libcurl3-gnutls:amd64=7.68.0-1ubuntu2.18`
-- `libcurl4:amd64=7.68.0-1ubuntu2.18`
-- `libcurl4-openssl-dev:amd64=7.68.0-1ubuntu2.18`
+- `curl=7.68.0-1ubuntu2.19`
+- `libcurl3-gnutls:amd64=7.68.0-1ubuntu2.19`
+- `libcurl4:amd64=7.68.0-1ubuntu2.19`
+- `libcurl4-openssl-dev:amd64=7.68.0-1ubuntu2.19`
 
 Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/doc/libcurl4/copyright`, `/usr/share/doc/libcurl4-openssl-dev/copyright`)
 
@@ -519,9 +519,14 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris curl=7.68.0-1ubuntu2.19
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.19.dsc' curl_7.68.0-1ubuntu2.19.dsc 2737 SHA512:86dfd3a26b645e5ce9d2a8d58a7e5f1fd4b7aa5944c85ffba8f9e3e36e93028a18e8d6b4bdf5f95809407df593c63e86a954488d2ab4c744cb2f02c2c4f8b9bf
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0.orig.tar.gz' curl_7.68.0.orig.tar.gz 4096350 SHA512:58b42c08b1cf4cb6e68f8e469d5b5f6298eebe286ba2677ad29e1a7eefd15b8609af54544f4c5a7dadebbd3b23bd77700830f2f60fbea7ae3f2f306e640010b0
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.19.debian.tar.xz' curl_7.68.0-1ubuntu2.19.debian.tar.xz 68292 SHA512:268714df9abeaebc38df547dd7b0dfee02c605b7fa8a8054818d9f5c608135a70e0d0e3492c1cf504d138bbddd457421486bf1b2e00464f206bb7172c4bc74bf
+```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-2ubuntu0.1`
 
@@ -963,21 +968,21 @@ $ apt-get source -qq --print-uris fribidi=1.0.8-2ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/f/fribidi/fribidi_1.0.8-2ubuntu0.1.debian.tar.xz' fribidi_1.0.8-2ubuntu0.1.debian.tar.xz 10612 SHA512:2ad4f0c140d303f5d79ec5bba1b7211fac398768f0a07f47e0ad8d9844d61cc38c31daafaa9378a1dae9bec66917d7d46b15d1aaab34d3b15a738632fdf15feb
 ```
 
-### `dpkg` source package: `gcc-10=10.3.0-1ubuntu1~20.04`
+### `dpkg` source package: `gcc-10=10.5.0-1ubuntu1~20.04`
 
 Binary Packages:
 
-- `gcc-10-base:amd64=10.3.0-1ubuntu1~20.04`
-- `libatomic1:amd64=10.3.0-1ubuntu1~20.04`
-- `libcc1-0:amd64=10.3.0-1ubuntu1~20.04`
-- `libgcc-s1:amd64=10.3.0-1ubuntu1~20.04`
-- `libgomp1:amd64=10.3.0-1ubuntu1~20.04`
-- `libitm1:amd64=10.3.0-1ubuntu1~20.04`
-- `liblsan0:amd64=10.3.0-1ubuntu1~20.04`
-- `libquadmath0:amd64=10.3.0-1ubuntu1~20.04`
-- `libstdc++6:amd64=10.3.0-1ubuntu1~20.04`
-- `libtsan0:amd64=10.3.0-1ubuntu1~20.04`
-- `libubsan1:amd64=10.3.0-1ubuntu1~20.04`
+- `gcc-10-base:amd64=10.5.0-1ubuntu1~20.04`
+- `libatomic1:amd64=10.5.0-1ubuntu1~20.04`
+- `libcc1-0:amd64=10.5.0-1ubuntu1~20.04`
+- `libgcc-s1:amd64=10.5.0-1ubuntu1~20.04`
+- `libgomp1:amd64=10.5.0-1ubuntu1~20.04`
+- `libitm1:amd64=10.5.0-1ubuntu1~20.04`
+- `liblsan0:amd64=10.5.0-1ubuntu1~20.04`
+- `libquadmath0:amd64=10.5.0-1ubuntu1~20.04`
+- `libstdc++6:amd64=10.5.0-1ubuntu1~20.04`
+- `libtsan0:amd64=10.5.0-1ubuntu1~20.04`
+- `libubsan1:amd64=10.5.0-1ubuntu1~20.04`
 
 Licenses: (parsed from: `/usr/share/doc/gcc-10-base/copyright`, `/usr/share/doc/libatomic1/copyright`, `/usr/share/doc/libcc1-0/copyright`, `/usr/share/doc/libgcc-s1/copyright`, `/usr/share/doc/libgomp1/copyright`, `/usr/share/doc/libitm1/copyright`, `/usr/share/doc/liblsan0/copyright`, `/usr/share/doc/libquadmath0/copyright`, `/usr/share/doc/libstdc++6/copyright`, `/usr/share/doc/libtsan0/copyright`, `/usr/share/doc/libubsan1/copyright`)
 
@@ -988,9 +993,14 @@ Licenses: (parsed from: `/usr/share/doc/gcc-10-base/copyright`, `/usr/share/doc/
 - `GPL-3`
 - `LGPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris gcc-10=10.5.0-1ubuntu1~20.04
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.5.0-1ubuntu1%7e20.04.dsc' gcc-10_10.5.0-1ubuntu1~20.04.dsc 31130 SHA512:0adfb92474d09348ce0ef4a4a3edd143a054d2bcba01dbdf29f925066ecc6e4874a02d7ced1501d39c1e966a1b0f3b9bef6ddcc8181df9b77206cefedcef6f15
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.5.0.orig.tar.gz' gcc-10_10.5.0.orig.tar.gz 84203753 SHA512:0617b7353e3da37e30abecb3527a987bb444a57e2f18a1265f9b727b5f43a40068d7242f8ce92fe47810e883778c13a0c54c5126071a5c6abd786c02919f5c81
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.5.0-1ubuntu1%7e20.04.debian.tar.xz' gcc-10_10.5.0-1ubuntu1~20.04.debian.tar.xz 5953836 SHA512:d68b8b10628bec39c370c9af1baa39bd76f3fb885d765b2d449435981ab772443187cba3bcb629e69a4a7c4b1e890babc4ea9ed8a3a3eb9a8e7e1e76abb8b526
+```
 
 ### `dpkg` source package: `gcc-9=9.4.0-1ubuntu1~20.04.1`
 
@@ -1504,23 +1514,23 @@ $ apt-get source -qq --print-uris ilmbase=2.3.0-6build1
 'http://archive.ubuntu.com/ubuntu/pool/universe/i/ilmbase/ilmbase_2.3.0-6build1.debian.tar.xz' ilmbase_2.3.0-6build1.debian.tar.xz 14252 SHA256:1039258f50fda2e94e4dac23e1e8aa702d8e3e83d0e1f12f13a652eadf2ebbf3
 ```
 
-### `dpkg` source package: `imagemagick=8:6.9.10.23+dfsg-2.1ubuntu11.7`
+### `dpkg` source package: `imagemagick=8:6.9.10.23+dfsg-2.1ubuntu11.9`
 
 Binary Packages:
 
-- `imagemagick=8:6.9.10.23+dfsg-2.1ubuntu11.7`
-- `imagemagick-6-common=8:6.9.10.23+dfsg-2.1ubuntu11.7`
-- `imagemagick-6.q16=8:6.9.10.23+dfsg-2.1ubuntu11.7`
-- `libmagickcore-6-arch-config:amd64=8:6.9.10.23+dfsg-2.1ubuntu11.7`
-- `libmagickcore-6-headers=8:6.9.10.23+dfsg-2.1ubuntu11.7`
-- `libmagickcore-6.q16-6:amd64=8:6.9.10.23+dfsg-2.1ubuntu11.7`
-- `libmagickcore-6.q16-6-extra:amd64=8:6.9.10.23+dfsg-2.1ubuntu11.7`
-- `libmagickcore-6.q16-dev:amd64=8:6.9.10.23+dfsg-2.1ubuntu11.7`
-- `libmagickcore-dev=8:6.9.10.23+dfsg-2.1ubuntu11.7`
-- `libmagickwand-6-headers=8:6.9.10.23+dfsg-2.1ubuntu11.7`
-- `libmagickwand-6.q16-6:amd64=8:6.9.10.23+dfsg-2.1ubuntu11.7`
-- `libmagickwand-6.q16-dev:amd64=8:6.9.10.23+dfsg-2.1ubuntu11.7`
-- `libmagickwand-dev=8:6.9.10.23+dfsg-2.1ubuntu11.7`
+- `imagemagick=8:6.9.10.23+dfsg-2.1ubuntu11.9`
+- `imagemagick-6-common=8:6.9.10.23+dfsg-2.1ubuntu11.9`
+- `imagemagick-6.q16=8:6.9.10.23+dfsg-2.1ubuntu11.9`
+- `libmagickcore-6-arch-config:amd64=8:6.9.10.23+dfsg-2.1ubuntu11.9`
+- `libmagickcore-6-headers=8:6.9.10.23+dfsg-2.1ubuntu11.9`
+- `libmagickcore-6.q16-6:amd64=8:6.9.10.23+dfsg-2.1ubuntu11.9`
+- `libmagickcore-6.q16-6-extra:amd64=8:6.9.10.23+dfsg-2.1ubuntu11.9`
+- `libmagickcore-6.q16-dev:amd64=8:6.9.10.23+dfsg-2.1ubuntu11.9`
+- `libmagickcore-dev=8:6.9.10.23+dfsg-2.1ubuntu11.9`
+- `libmagickwand-6-headers=8:6.9.10.23+dfsg-2.1ubuntu11.9`
+- `libmagickwand-6.q16-6:amd64=8:6.9.10.23+dfsg-2.1ubuntu11.9`
+- `libmagickwand-6.q16-dev:amd64=8:6.9.10.23+dfsg-2.1ubuntu11.9`
+- `libmagickwand-dev=8:6.9.10.23+dfsg-2.1ubuntu11.9`
 
 Licenses: (parsed from: `/usr/share/doc/imagemagick/copyright`, `/usr/share/doc/imagemagick-6-common/copyright`, `/usr/share/doc/imagemagick-6.q16/copyright`, `/usr/share/doc/libmagickcore-6-arch-config/copyright`, `/usr/share/doc/libmagickcore-6-headers/copyright`, `/usr/share/doc/libmagickcore-6.q16-6/copyright`, `/usr/share/doc/libmagickcore-6.q16-6-extra/copyright`, `/usr/share/doc/libmagickcore-6.q16-dev/copyright`, `/usr/share/doc/libmagickcore-dev/copyright`, `/usr/share/doc/libmagickwand-6-headers/copyright`, `/usr/share/doc/libmagickwand-6.q16-6/copyright`, `/usr/share/doc/libmagickwand-6.q16-dev/copyright`, `/usr/share/doc/libmagickwand-dev/copyright`)
 
@@ -1551,9 +1561,14 @@ Licenses: (parsed from: `/usr/share/doc/imagemagick/copyright`, `/usr/share/doc/
 - `TatcherUlrichPublicDomain`
 - `aclocal`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris imagemagick=8:6.9.10.23+dfsg-2.1ubuntu11.9
+'http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/imagemagick_6.9.10.23%2bdfsg-2.1ubuntu11.9.dsc' imagemagick_6.9.10.23+dfsg-2.1ubuntu11.9.dsc 5088 SHA512:408111bae7bc9342894f0828a890e35a3f75f71c4f71411090d6c2d317dbef0b4c4211dc6dca983e0a1f80c47e20f0af73119c8eec5fd78015beed4fca6476e0
+'http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/imagemagick_6.9.10.23%2bdfsg.orig.tar.xz' imagemagick_6.9.10.23+dfsg.orig.tar.xz 9081188 SHA512:0c5fdfb82d12fef09d79c3a3d03167a57732e566980ca89e977d04502779506eae34e6bc4260c35558db63c572c64fe80d69f6627e180ffc8e8679ebe8574972
+'http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/imagemagick_6.9.10.23%2bdfsg-2.1ubuntu11.9.debian.tar.xz' imagemagick_6.9.10.23+dfsg-2.1ubuntu11.9.debian.tar.xz 263036 SHA512:563144ce304801a83573d4a64151440cce3049d8dbfafb0080d9442b0be1af85762493f16c5d2c661ac3a185b0b4f7446cc9d9d56b5f13bfdfe74c814b3ad491
+```
 
 ### `dpkg` source package: `init-system-helpers=1.57`
 
@@ -2229,14 +2244,14 @@ $ apt-get source -qq --print-uris libpthread-stubs=0.4-1
 'http://archive.ubuntu.com/ubuntu/pool/main/libp/libpthread-stubs/libpthread-stubs_0.4-1.diff.gz' libpthread-stubs_0.4-1.diff.gz 2346 SHA256:ec435ba2852ad4b0522010943a5b7d39fc7e088067367879778cf10e57f5cc3f
 ```
 
-### `dpkg` source package: `librsvg=2.48.9-1ubuntu0.20.04.1`
+### `dpkg` source package: `librsvg=2.48.9-1ubuntu0.20.04.4`
 
 Binary Packages:
 
-- `gir1.2-rsvg-2.0:amd64=2.48.9-1ubuntu0.20.04.1`
-- `librsvg2-2:amd64=2.48.9-1ubuntu0.20.04.1`
-- `librsvg2-common:amd64=2.48.9-1ubuntu0.20.04.1`
-- `librsvg2-dev:amd64=2.48.9-1ubuntu0.20.04.1`
+- `gir1.2-rsvg-2.0:amd64=2.48.9-1ubuntu0.20.04.4`
+- `librsvg2-2:amd64=2.48.9-1ubuntu0.20.04.4`
+- `librsvg2-common:amd64=2.48.9-1ubuntu0.20.04.4`
+- `librsvg2-dev:amd64=2.48.9-1ubuntu0.20.04.4`
 
 Licenses: (parsed from: `/usr/share/doc/gir1.2-rsvg-2.0/copyright`, `/usr/share/doc/librsvg2-2/copyright`, `/usr/share/doc/librsvg2-common/copyright`, `/usr/share/doc/librsvg2-dev/copyright`)
 
@@ -2251,9 +2266,14 @@ Licenses: (parsed from: `/usr/share/doc/gir1.2-rsvg-2.0/copyright`, `/usr/share/
 - `Sun-permissive`
 - `Unlicense`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris librsvg=2.48.9-1ubuntu0.20.04.4
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/librsvg/librsvg_2.48.9-1ubuntu0.20.04.4.dsc' librsvg_2.48.9-1ubuntu0.20.04.4.dsc 3067 SHA512:1210df38cd3a71a6a48a2ff0fd5d87d8bb39ac880ea0c697210734e286d2d7f32d4242ff56bc2e8ef1e1e0469607c88ca8ad8c1017ca887aa82084664695e2c2
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/librsvg/librsvg_2.48.9.orig.tar.xz' librsvg_2.48.9.orig.tar.xz 12661188 SHA512:4edfba4d667536ef921e72da53e4a357e56cae6db5e7e93c23d6792241b31b2397e68633dbb0df465129ce68f0ef1ba55cc51f2321adc6f4874fe7089715bb5c
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/librsvg/librsvg_2.48.9-1ubuntu0.20.04.4.debian.tar.xz' librsvg_2.48.9-1ubuntu0.20.04.4.debian.tar.xz 28056 SHA512:35fff922ea1efe4ae5b9aecad9120fd46c706712d6886de95d14049788c01a383a9f354161b4e23ff9c137968755dafddfe1924de20c3e389d56bdbe7fa69b1b
+```
 
 ### `dpkg` source package: `libseccomp=2.5.1-1ubuntu1~20.04.2`
 
@@ -2797,19 +2817,24 @@ $ apt-get source -qq --print-uris libzstd=1.4.4+dfsg-3ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.4.4%2bdfsg-3ubuntu0.1.debian.tar.xz' libzstd_1.4.4+dfsg-3ubuntu0.1.debian.tar.xz 17300 SHA512:0484891be5603d00bd57b799c708b9395fccbaa8c6c44f535377f6fa2c7ac22c01c8a3c1b45e1c1f3c30f19dc74d510626bf82067fcbfb53c39f1bcc2249affe
 ```
 
-### `dpkg` source package: `linux=5.4.0-153.170`
+### `dpkg` source package: `linux=5.4.0-155.172`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=5.4.0-153.170`
+- `linux-libc-dev:amd64=5.4.0-155.172`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=5.4.0-155.172
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-155.172.dsc' linux_5.4.0-155.172.dsc 7067 SHA512:061e4e1c699f3a4360a272996ff6035193a49bab6d7d39a0cd5b5ca03a99f4d17250edff06f689de541a070549a7575d42b422d1ca73a5bc410e2594e06442a2
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA512:62b09a7231fd793973c5f59b16c4f6ffce621188b02a71915874b05e8e3f956fb6146d4a4fb1a4475bebe463949ca5a18da12842c3ce7c52e996e6bc4012a074
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-155.172.diff.gz' linux_5.4.0-155.172.diff.gz 10759016 SHA512:d3a03a566b03f3a1da4c9459c937e86f149e1622994b25b2c78b9e23cb1de6f98b003cded9bcc243b38788009a1147fbeb3c6f44774b5081cdfbd9c2434d7f4e
+```
 
 ### `dpkg` source package: `lsb=11.1.0ubuntu2`
 
@@ -3034,12 +3059,12 @@ $ apt-get source -qq --print-uris mpfr4=4.0.2-1
 'http://archive.ubuntu.com/ubuntu/pool/main/m/mpfr4/mpfr4_4.0.2-1.debian.tar.xz' mpfr4_4.0.2-1.debian.tar.xz 10544 SHA256:99c4d35654f33340f0efdec67142a34753157b20334cadad9018f5eab29738da
 ```
 
-### `dpkg` source package: `mysql-8.0=8.0.33-0ubuntu0.20.04.2`
+### `dpkg` source package: `mysql-8.0=8.0.33-0ubuntu0.20.04.4`
 
 Binary Packages:
 
-- `libmysqlclient-dev=8.0.33-0ubuntu0.20.04.2`
-- `libmysqlclient21:amd64=8.0.33-0ubuntu0.20.04.2`
+- `libmysqlclient-dev=8.0.33-0ubuntu0.20.04.4`
+- `libmysqlclient21:amd64=8.0.33-0ubuntu0.20.04.4`
 
 Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/share/doc/libmysqlclient21/copyright`)
 
@@ -3059,10 +3084,10 @@ Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/sha
 Source:
 
 ```console
-$ apt-get source -qq --print-uris mysql-8.0=8.0.33-0ubuntu0.20.04.2
-'http://security.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.33-0ubuntu0.20.04.2.dsc' mysql-8.0_8.0.33-0ubuntu0.20.04.2.dsc 3497 SHA512:e66bb82f3fb7a8eb0ce2981bf74511d5f22c1181b110e2d3697a1742ed073c1804901abc4efbb2c5f519970aeec5f94e9e550bcda5c2569983f713b4882b2aa4
-'http://security.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.33.orig.tar.gz' mysql-8.0_8.0.33.orig.tar.gz 438065679 SHA512:47f76819004c7c545d1b0b6b6646d8816899976f92d35c5564b1255b144b597ff7d3e674c721a45bcbb13cc0da3f4474fb29221c0e21d2ff91a1892cd42c636c
-'http://security.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.33-0ubuntu0.20.04.2.debian.tar.xz' mysql-8.0_8.0.33-0ubuntu0.20.04.2.debian.tar.xz 165572 SHA512:93031af62706324d6c8d99e33b0b286ff3f395c269ec915b2673282890c26ceaba22ec3b705a1a303bfbdfbaaed3c122ce96c70a1eeef591cfc47ea9ac5457de
+$ apt-get source -qq --print-uris mysql-8.0=8.0.33-0ubuntu0.20.04.4
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.33-0ubuntu0.20.04.4.dsc' mysql-8.0_8.0.33-0ubuntu0.20.04.4.dsc 3522 SHA512:73f371171bedef0f4dbe40245e8678ab7634f37cfbdc34dac8802572430bb0eb3bbf159ce8c993fe022f8496b581173d51fd26c670c4c53df3be65ae6cfc1878
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.33.orig.tar.gz' mysql-8.0_8.0.33.orig.tar.gz 438065679 SHA512:47f76819004c7c545d1b0b6b6646d8816899976f92d35c5564b1255b144b597ff7d3e674c721a45bcbb13cc0da3f4474fb29221c0e21d2ff91a1892cd42c636c
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.33-0ubuntu0.20.04.4.debian.tar.xz' mysql-8.0_8.0.33-0ubuntu0.20.04.4.debian.tar.xz 166184 SHA512:ca9a2b92b874bedd97d38df13b3b9302a6df13b5cedcb28a569d340800c8664ad86b3de817dae1f84bcbd23dfe600416d69065da8d6f76fdb60b039c45326bc8
 ```
 
 ### `dpkg` source package: `mysql-defaults=1.0.5ubuntu2`
@@ -3249,11 +3274,11 @@ $ apt-get source -qq --print-uris openldap=2.4.49+dfsg-2ubuntu1.9
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.49%2bdfsg-2ubuntu1.9.debian.tar.xz' openldap_2.4.49+dfsg-2ubuntu1.9.debian.tar.xz 189676 SHA512:bf7e4ff9f710404704526a912932d7445fab4c6ce30a099dd890adc78b8afe740ac773596cb4fe409d495406e5bd103d186bd0b2993265cdafd3eb9a71d6a3b5
 ```
 
-### `dpkg` source package: `openssh=1:8.2p1-4ubuntu0.7`
+### `dpkg` source package: `openssh=1:8.2p1-4ubuntu0.8`
 
 Binary Packages:
 
-- `openssh-client=1:8.2p1-4ubuntu0.7`
+- `openssh-client=1:8.2p1-4ubuntu0.8`
 
 Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 
@@ -3266,9 +3291,14 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openssh=1:8.2p1-4ubuntu0.8
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1-4ubuntu0.8.dsc' openssh_8.2p1-4ubuntu0.8.dsc 3098 SHA512:7fefded83d2dfbc8823df2045f99f6f6a57d0ad346031b90b58a51def20480c5ec5edd4f136a620aaae74a54c0ef1ec21fc246f56aba291b71dbf0251da463d4
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1.orig.tar.gz' openssh_8.2p1.orig.tar.gz 1701197 SHA512:c4db64e52a3a4c410de9de49f9cb104dd493b10250af3599b92457dd986277b3fd99a6f51cec94892fd1be5bd0369c5757262ea7805f0de464b245c3d34c120a
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1-4ubuntu0.8.debian.tar.xz' openssh_8.2p1-4ubuntu0.8.debian.tar.xz 179372 SHA512:2399a0916f04ab1e7748726087612d357d09eb9a4abe4750ddb996991fc7ee3e459dcbf0203b776699725256779255ef07a1122dc5390b17d6945f7b4d0bd695
+```
 
 ### `dpkg` source package: `openssl=1.1.1f-1ubuntu2.19`
 
