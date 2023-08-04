@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:641092276c69a918729495e530897ef028d1bdc6f3fb9defc43fcb85a84ef030`
-- Created: `2023-07-27T19:37:32.271691035Z`
-- Virtual Size: ~ 340.90 Mb  
+- Image ID: `sha256:efb625baa8db0def6c15df569d50055c2da907f51dc1c99177acb80c77f02cde`
+- Created: `2023-07-29T04:14:38.813703203Z`
+- Virtual Size: ~ 340.89 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ibm/helpers/runtime/docker-server.sh"]`
@@ -19,19 +19,19 @@
   - `OPENJ9_SCC=true`
   - `RANDFILE=/tmp/.rnd`
 - Labels:
-  - `BuildLabel=cl230620230612-1100`
+  - `BuildLabel=cl230720230710-1201`
   - `ProductID=fbf6a96d49214c0abc6a3bc5da6e48cd`
   - `ProductName=WebSphere Application Server Liberty`
-  - `ProductVersion=23.0.0.6`
+  - `ProductVersion=23.0.0.7`
   - `org.opencontainers.image.authors=Leo Christy Jesuraj, Thomas Watson, Wendy Raschke, Michal Broz`
   - `org.opencontainers.image.description=This image contains the WebSphere Liberty runtime with IBM Semeru Runtime Open Edition OpenJDK with OpenJ9 and Ubuntu as the base OS.  For more information on this image please see https://ibm.biz/wl-app-image-template`
   - `org.opencontainers.image.documentation=https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/cwlp_about.html`
   - `org.opencontainers.image.ref.name=ubuntu`
-  - `org.opencontainers.image.revision=cl230620230612-1100`
+  - `org.opencontainers.image.revision=cl230720230710-1201`
   - `org.opencontainers.image.title=IBM WebSphere Liberty`
   - `org.opencontainers.image.url=https://github.com/WASdev/ci.docker`
   - `org.opencontainers.image.vendor=IBM`
-  - `org.opencontainers.image.version=23.0.0.6`
+  - `org.opencontainers.image.version=23.0.0.7`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -151,13 +151,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=12ubuntu4.3
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_12ubuntu4.3.dsc' base-files_12ubuntu4.3.dsc 1253 SHA512:4094c76e31f1d2522264a2b3694c18792f4f0f9387ae9d6e4c613b4ad992975d36e3cf1decd497b01fe4b062445bf0b2c106e8339d1ea68a7569faeca3fc08fc
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_12ubuntu4.3.tar.xz' base-files_12ubuntu4.3.tar.xz 81796 SHA512:16949054156d18c9a7142d9edf75d34918f4509a1b7f69ffef8641e2dc82d131ef32d55626358ccfb8d770ccad76c9a3f794945a17520628e3747bc2417e4f07
-```
 
 ### `dpkg` source package: `base-passwd=3.5.52build1`
 
@@ -463,14 +459,9 @@ Licenses: (parsed from: `/usr/share/doc/gcc-12-base/copyright`, `/usr/share/doc/
 - `GPL-3`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-12=12.1.0-2ubuntu1~22.04
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-12/gcc-12_12.1.0-2ubuntu1%7e22.04.dsc' gcc-12_12.1.0-2ubuntu1~22.04.dsc 27770 SHA512:9aaf720a29cf2b0d98a445c2d0ee693176972735f97b03de46e1d6c7f50b8380e7ddcc2127658727492e9b5098cd0bddf1dedb5662e1adc6c82de9d5ab22b079
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-12/gcc-12_12.1.0.orig.tar.gz' gcc-12_12.1.0.orig.tar.gz 89394971 SHA512:9132ef095fcc5d683c71b9dc1b77b3af0f4f09b4b00d0e1f6ae1a46d5a4f7faf9e1112967722b6e3fcf72b6692326d036b1d370103b5362a7e19cd430b1ad18d
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-12/gcc-12_12.1.0-2ubuntu1%7e22.04.debian.tar.xz' gcc-12_12.1.0-2ubuntu1~22.04.debian.tar.xz 1660876 SHA512:488d7b5e080c0d6e2d4e16b8a88e0376da76912a68af3f5ce9ef69bbe787650a353a8a25004f861b9424317191a445567e38d838fbcbe5e3c5c0f5339bf454fa
-```
 
 ### `dpkg` source package: `glibc=2.35-0ubuntu3.1`
 
