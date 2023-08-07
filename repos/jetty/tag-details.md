@@ -1130,7 +1130,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:10-jdk11-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:06cad7770b56e6ad5ab9ca76b43feb7862e09d85ece00bed5a63891a45ab72d9
+$ docker pull jetty@sha256:4ef783726c0fb8342808a09e95f9a2b93df0423d6835a00693a851107b6a9250
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1140,78 +1140,78 @@ $ docker pull jetty@sha256:06cad7770b56e6ad5ab9ca76b43feb7862e09d85ece00bed5a638
 ### `jetty:10-jdk11-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:771cc23947c14f34fa59509ee45d330ee4e7e87a172ede64afcde1639a6feebc
+$ docker pull jetty@sha256:12de42a2cc810e17a0a1437fb8952dad979e93a26c5376740f3c3616843a5f21
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **163.6 MB (163633079 bytes)**  
+-	Total Size: **163.6 MB (163638863 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:19793bf2423b272b187067f648c3a53f53f0d8509e191aab92d112b48e6d219e`
+-	Image ID: `sha256:0385ccbad4a1fcab14e453b1032c1bbcb183aec5a013e0622ad8b2a65938a29a`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:26:33 GMT
+# Mon, 07 Aug 2023 19:46:38 GMT
 ARG version=11.0.20.8.1
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 # ARGS: version=11.0.20.8.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-11=$version-r0 &&     rm -rf /usr/lib/jvm/java-11-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV JETTY_VERSION=10.0.15
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/10.0.15/jetty-home-10.0.15.tar.gz
-# Wed, 19 Jul 2023 01:09:05 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:09:14 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:09:14 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:09:14 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:09:14 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:09:15 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:09:15 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:09:15 GMT
+# Mon, 07 Aug 2023 20:38:10 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da38bd102fe984a2b27b2a5c820887bddfddba17e841f40b918b051e954b9eb6`  
-		Last Modified: Wed, 19 Jul 2023 00:41:35 GMT  
-		Size: 141.4 MB (141378239 bytes)  
+	-	`sha256:ba518b3c127e9c1927d1902089509065076c2d331e4dcf90609c8f6b0427225d`  
+		Last Modified: Mon, 07 Aug 2023 19:54:16 GMT  
+		Size: 141.4 MB (141378230 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e6c423794ca1a78c952fea0c6402ec9fb8e2719fbf8d4b79a470692fa6b31736`  
-		Last Modified: Wed, 19 Jul 2023 01:15:32 GMT  
-		Size: 18.9 MB (18855348 bytes)  
+	-	`sha256:c62e3252a3a153ee25c4971d51c013dc5611804156d3a7e4aaa75da74b7b6c37`  
+		Last Modified: Mon, 07 Aug 2023 20:42:39 GMT  
+		Size: 18.9 MB (18857407 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112744ef7a383b6c2e97ffc1e5562a29debedbf8eced88f702fe58d7b10eb6c0`  
-		Last Modified: Wed, 19 Jul 2023 01:15:30 GMT  
+	-	`sha256:8dc45ef96c2641edfebe2b5c37f86d63abe59e4cdad9b5f27fadfa1715c64369`  
+		Last Modified: Mon, 07 Aug 2023 20:42:37 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -2001,7 +2001,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:10-jdk17-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:713d782cb4e65fd1446d696510928d4dcaa25c849bb8b68a12315821567ffc28
+$ docker pull jetty@sha256:ce5628c3010af03e62e19027751d60c8912658b4a28f3d4dab9a670bda30052b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2011,78 +2011,78 @@ $ docker pull jetty@sha256:713d782cb4e65fd1446d696510928d4dcaa25c849bb8b68a12315
 ### `jetty:10-jdk17-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:69b287097abf6e9782e3d1862dc21dd03f1457ec754b9ff3ddcceeecf373a91f
+$ docker pull jetty@sha256:23194a9681357693dcb178859b5c8af7e9e47a3b5ffc4884012adc9a98a95fcf
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **168.0 MB (167992501 bytes)**  
+-	Total Size: **168.0 MB (167998110 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fa07bfa6e4a0b16506ae5cd370b9b78c209487de2284c37f2a375b6c54b27446`
+-	Image ID: `sha256:430a024a6e1ea4d71980b525174318027836b2174a45b706c4ac2c39b943fa15`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:30:39 GMT
+# Mon, 07 Aug 2023 19:47:29 GMT
 ARG version=17.0.8.7.1
-# Wed, 19 Jul 2023 00:30:44 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 # ARGS: version=17.0.8.7.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-17=$version-r0 &&     rm -rf /usr/lib/jvm/java-17-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:08:25 GMT
+# Mon, 07 Aug 2023 20:37:45 GMT
 ENV JETTY_VERSION=10.0.15
-# Wed, 19 Jul 2023 01:08:25 GMT
+# Mon, 07 Aug 2023 20:37:45 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:08:26 GMT
+# Mon, 07 Aug 2023 20:37:45 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:08:26 GMT
+# Mon, 07 Aug 2023 20:37:46 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:08:26 GMT
+# Mon, 07 Aug 2023 20:37:46 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:08:26 GMT
+# Mon, 07 Aug 2023 20:37:46 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/10.0.15/jetty-home-10.0.15.tar.gz
-# Wed, 19 Jul 2023 01:08:26 GMT
+# Mon, 07 Aug 2023 20:37:46 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:08:35 GMT
+# Mon, 07 Aug 2023 20:37:54 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:08:35 GMT
+# Mon, 07 Aug 2023 20:37:54 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:08:36 GMT
+# Mon, 07 Aug 2023 20:37:55 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:08:36 GMT
+# Mon, 07 Aug 2023 20:37:55 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:08:36 GMT
+# Mon, 07 Aug 2023 20:37:55 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:08:36 GMT
+# Mon, 07 Aug 2023 20:37:55 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:08:36 GMT
+# Mon, 07 Aug 2023 20:37:55 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39c903d65f836bac1d2c7226b4beb71e6515b02e680e1428019b18aeed583279`  
-		Last Modified: Wed, 19 Jul 2023 00:46:03 GMT  
-		Size: 145.7 MB (145738113 bytes)  
+	-	`sha256:3c5bee916a6ce60f9110a3ea332cd3e76205e2a17ec944a63b87b4a2b35af897`  
+		Last Modified: Mon, 07 Aug 2023 19:56:18 GMT  
+		Size: 145.7 MB (145738165 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c96388b4d28202e92ed15fe8d55130379accd8b65ceac2ba71145ca001f3176`  
-		Last Modified: Wed, 19 Jul 2023 01:15:03 GMT  
-		Size: 18.9 MB (18854896 bytes)  
+	-	`sha256:4be75d5d261bd363fb9692cd2dc542264727f1bcd93329e1138069c6a8ed10be`  
+		Last Modified: Mon, 07 Aug 2023 20:42:20 GMT  
+		Size: 18.9 MB (18856719 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7cfc29f5905751811d76313803879262ca4a49e41c5507cfc544233bc9f53cfe`  
-		Last Modified: Wed, 19 Jul 2023 01:15:01 GMT  
+	-	`sha256:d661f6a1aac73cf138c46221f011842daaf4a7cecbefd4710ce3fdfd70ad98a9`  
+		Last Modified: Mon, 07 Aug 2023 20:42:18 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -4669,7 +4669,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:10.0-jdk11-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:06cad7770b56e6ad5ab9ca76b43feb7862e09d85ece00bed5a63891a45ab72d9
+$ docker pull jetty@sha256:4ef783726c0fb8342808a09e95f9a2b93df0423d6835a00693a851107b6a9250
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4679,78 +4679,78 @@ $ docker pull jetty@sha256:06cad7770b56e6ad5ab9ca76b43feb7862e09d85ece00bed5a638
 ### `jetty:10.0-jdk11-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:771cc23947c14f34fa59509ee45d330ee4e7e87a172ede64afcde1639a6feebc
+$ docker pull jetty@sha256:12de42a2cc810e17a0a1437fb8952dad979e93a26c5376740f3c3616843a5f21
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **163.6 MB (163633079 bytes)**  
+-	Total Size: **163.6 MB (163638863 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:19793bf2423b272b187067f648c3a53f53f0d8509e191aab92d112b48e6d219e`
+-	Image ID: `sha256:0385ccbad4a1fcab14e453b1032c1bbcb183aec5a013e0622ad8b2a65938a29a`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:26:33 GMT
+# Mon, 07 Aug 2023 19:46:38 GMT
 ARG version=11.0.20.8.1
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 # ARGS: version=11.0.20.8.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-11=$version-r0 &&     rm -rf /usr/lib/jvm/java-11-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV JETTY_VERSION=10.0.15
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/10.0.15/jetty-home-10.0.15.tar.gz
-# Wed, 19 Jul 2023 01:09:05 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:09:14 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:09:14 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:09:14 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:09:14 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:09:15 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:09:15 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:09:15 GMT
+# Mon, 07 Aug 2023 20:38:10 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da38bd102fe984a2b27b2a5c820887bddfddba17e841f40b918b051e954b9eb6`  
-		Last Modified: Wed, 19 Jul 2023 00:41:35 GMT  
-		Size: 141.4 MB (141378239 bytes)  
+	-	`sha256:ba518b3c127e9c1927d1902089509065076c2d331e4dcf90609c8f6b0427225d`  
+		Last Modified: Mon, 07 Aug 2023 19:54:16 GMT  
+		Size: 141.4 MB (141378230 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e6c423794ca1a78c952fea0c6402ec9fb8e2719fbf8d4b79a470692fa6b31736`  
-		Last Modified: Wed, 19 Jul 2023 01:15:32 GMT  
-		Size: 18.9 MB (18855348 bytes)  
+	-	`sha256:c62e3252a3a153ee25c4971d51c013dc5611804156d3a7e4aaa75da74b7b6c37`  
+		Last Modified: Mon, 07 Aug 2023 20:42:39 GMT  
+		Size: 18.9 MB (18857407 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112744ef7a383b6c2e97ffc1e5562a29debedbf8eced88f702fe58d7b10eb6c0`  
-		Last Modified: Wed, 19 Jul 2023 01:15:30 GMT  
+	-	`sha256:8dc45ef96c2641edfebe2b5c37f86d63abe59e4cdad9b5f27fadfa1715c64369`  
+		Last Modified: Mon, 07 Aug 2023 20:42:37 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -5540,7 +5540,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:10.0-jdk17-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:713d782cb4e65fd1446d696510928d4dcaa25c849bb8b68a12315821567ffc28
+$ docker pull jetty@sha256:ce5628c3010af03e62e19027751d60c8912658b4a28f3d4dab9a670bda30052b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5550,78 +5550,78 @@ $ docker pull jetty@sha256:713d782cb4e65fd1446d696510928d4dcaa25c849bb8b68a12315
 ### `jetty:10.0-jdk17-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:69b287097abf6e9782e3d1862dc21dd03f1457ec754b9ff3ddcceeecf373a91f
+$ docker pull jetty@sha256:23194a9681357693dcb178859b5c8af7e9e47a3b5ffc4884012adc9a98a95fcf
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **168.0 MB (167992501 bytes)**  
+-	Total Size: **168.0 MB (167998110 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fa07bfa6e4a0b16506ae5cd370b9b78c209487de2284c37f2a375b6c54b27446`
+-	Image ID: `sha256:430a024a6e1ea4d71980b525174318027836b2174a45b706c4ac2c39b943fa15`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:30:39 GMT
+# Mon, 07 Aug 2023 19:47:29 GMT
 ARG version=17.0.8.7.1
-# Wed, 19 Jul 2023 00:30:44 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 # ARGS: version=17.0.8.7.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-17=$version-r0 &&     rm -rf /usr/lib/jvm/java-17-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:08:25 GMT
+# Mon, 07 Aug 2023 20:37:45 GMT
 ENV JETTY_VERSION=10.0.15
-# Wed, 19 Jul 2023 01:08:25 GMT
+# Mon, 07 Aug 2023 20:37:45 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:08:26 GMT
+# Mon, 07 Aug 2023 20:37:45 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:08:26 GMT
+# Mon, 07 Aug 2023 20:37:46 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:08:26 GMT
+# Mon, 07 Aug 2023 20:37:46 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:08:26 GMT
+# Mon, 07 Aug 2023 20:37:46 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/10.0.15/jetty-home-10.0.15.tar.gz
-# Wed, 19 Jul 2023 01:08:26 GMT
+# Mon, 07 Aug 2023 20:37:46 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:08:35 GMT
+# Mon, 07 Aug 2023 20:37:54 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:08:35 GMT
+# Mon, 07 Aug 2023 20:37:54 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:08:36 GMT
+# Mon, 07 Aug 2023 20:37:55 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:08:36 GMT
+# Mon, 07 Aug 2023 20:37:55 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:08:36 GMT
+# Mon, 07 Aug 2023 20:37:55 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:08:36 GMT
+# Mon, 07 Aug 2023 20:37:55 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:08:36 GMT
+# Mon, 07 Aug 2023 20:37:55 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39c903d65f836bac1d2c7226b4beb71e6515b02e680e1428019b18aeed583279`  
-		Last Modified: Wed, 19 Jul 2023 00:46:03 GMT  
-		Size: 145.7 MB (145738113 bytes)  
+	-	`sha256:3c5bee916a6ce60f9110a3ea332cd3e76205e2a17ec944a63b87b4a2b35af897`  
+		Last Modified: Mon, 07 Aug 2023 19:56:18 GMT  
+		Size: 145.7 MB (145738165 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c96388b4d28202e92ed15fe8d55130379accd8b65ceac2ba71145ca001f3176`  
-		Last Modified: Wed, 19 Jul 2023 01:15:03 GMT  
-		Size: 18.9 MB (18854896 bytes)  
+	-	`sha256:4be75d5d261bd363fb9692cd2dc542264727f1bcd93329e1138069c6a8ed10be`  
+		Last Modified: Mon, 07 Aug 2023 20:42:20 GMT  
+		Size: 18.9 MB (18856719 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7cfc29f5905751811d76313803879262ca4a49e41c5507cfc544233bc9f53cfe`  
-		Last Modified: Wed, 19 Jul 2023 01:15:01 GMT  
+	-	`sha256:d661f6a1aac73cf138c46221f011842daaf4a7cecbefd4710ce3fdfd70ad98a9`  
+		Last Modified: Mon, 07 Aug 2023 20:42:18 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -8208,7 +8208,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:10.0.15-jdk11-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:06cad7770b56e6ad5ab9ca76b43feb7862e09d85ece00bed5a63891a45ab72d9
+$ docker pull jetty@sha256:4ef783726c0fb8342808a09e95f9a2b93df0423d6835a00693a851107b6a9250
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8218,78 +8218,78 @@ $ docker pull jetty@sha256:06cad7770b56e6ad5ab9ca76b43feb7862e09d85ece00bed5a638
 ### `jetty:10.0.15-jdk11-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:771cc23947c14f34fa59509ee45d330ee4e7e87a172ede64afcde1639a6feebc
+$ docker pull jetty@sha256:12de42a2cc810e17a0a1437fb8952dad979e93a26c5376740f3c3616843a5f21
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **163.6 MB (163633079 bytes)**  
+-	Total Size: **163.6 MB (163638863 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:19793bf2423b272b187067f648c3a53f53f0d8509e191aab92d112b48e6d219e`
+-	Image ID: `sha256:0385ccbad4a1fcab14e453b1032c1bbcb183aec5a013e0622ad8b2a65938a29a`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:26:33 GMT
+# Mon, 07 Aug 2023 19:46:38 GMT
 ARG version=11.0.20.8.1
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 # ARGS: version=11.0.20.8.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-11=$version-r0 &&     rm -rf /usr/lib/jvm/java-11-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV JETTY_VERSION=10.0.15
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:09:04 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/10.0.15/jetty-home-10.0.15.tar.gz
-# Wed, 19 Jul 2023 01:09:05 GMT
+# Mon, 07 Aug 2023 20:38:00 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:09:14 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:09:14 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:09:14 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:09:14 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:09:15 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:09:15 GMT
+# Mon, 07 Aug 2023 20:38:09 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:09:15 GMT
+# Mon, 07 Aug 2023 20:38:10 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da38bd102fe984a2b27b2a5c820887bddfddba17e841f40b918b051e954b9eb6`  
-		Last Modified: Wed, 19 Jul 2023 00:41:35 GMT  
-		Size: 141.4 MB (141378239 bytes)  
+	-	`sha256:ba518b3c127e9c1927d1902089509065076c2d331e4dcf90609c8f6b0427225d`  
+		Last Modified: Mon, 07 Aug 2023 19:54:16 GMT  
+		Size: 141.4 MB (141378230 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e6c423794ca1a78c952fea0c6402ec9fb8e2719fbf8d4b79a470692fa6b31736`  
-		Last Modified: Wed, 19 Jul 2023 01:15:32 GMT  
-		Size: 18.9 MB (18855348 bytes)  
+	-	`sha256:c62e3252a3a153ee25c4971d51c013dc5611804156d3a7e4aaa75da74b7b6c37`  
+		Last Modified: Mon, 07 Aug 2023 20:42:39 GMT  
+		Size: 18.9 MB (18857407 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112744ef7a383b6c2e97ffc1e5562a29debedbf8eced88f702fe58d7b10eb6c0`  
-		Last Modified: Wed, 19 Jul 2023 01:15:30 GMT  
+	-	`sha256:8dc45ef96c2641edfebe2b5c37f86d63abe59e4cdad9b5f27fadfa1715c64369`  
+		Last Modified: Mon, 07 Aug 2023 20:42:37 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -9079,7 +9079,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:10.0.15-jdk17-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:713d782cb4e65fd1446d696510928d4dcaa25c849bb8b68a12315821567ffc28
+$ docker pull jetty@sha256:ce5628c3010af03e62e19027751d60c8912658b4a28f3d4dab9a670bda30052b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9089,78 +9089,78 @@ $ docker pull jetty@sha256:713d782cb4e65fd1446d696510928d4dcaa25c849bb8b68a12315
 ### `jetty:10.0.15-jdk17-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:69b287097abf6e9782e3d1862dc21dd03f1457ec754b9ff3ddcceeecf373a91f
+$ docker pull jetty@sha256:23194a9681357693dcb178859b5c8af7e9e47a3b5ffc4884012adc9a98a95fcf
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **168.0 MB (167992501 bytes)**  
+-	Total Size: **168.0 MB (167998110 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fa07bfa6e4a0b16506ae5cd370b9b78c209487de2284c37f2a375b6c54b27446`
+-	Image ID: `sha256:430a024a6e1ea4d71980b525174318027836b2174a45b706c4ac2c39b943fa15`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:30:39 GMT
+# Mon, 07 Aug 2023 19:47:29 GMT
 ARG version=17.0.8.7.1
-# Wed, 19 Jul 2023 00:30:44 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 # ARGS: version=17.0.8.7.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-17=$version-r0 &&     rm -rf /usr/lib/jvm/java-17-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:08:25 GMT
+# Mon, 07 Aug 2023 20:37:45 GMT
 ENV JETTY_VERSION=10.0.15
-# Wed, 19 Jul 2023 01:08:25 GMT
+# Mon, 07 Aug 2023 20:37:45 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:08:26 GMT
+# Mon, 07 Aug 2023 20:37:45 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:08:26 GMT
+# Mon, 07 Aug 2023 20:37:46 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:08:26 GMT
+# Mon, 07 Aug 2023 20:37:46 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:08:26 GMT
+# Mon, 07 Aug 2023 20:37:46 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/10.0.15/jetty-home-10.0.15.tar.gz
-# Wed, 19 Jul 2023 01:08:26 GMT
+# Mon, 07 Aug 2023 20:37:46 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:08:35 GMT
+# Mon, 07 Aug 2023 20:37:54 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:08:35 GMT
+# Mon, 07 Aug 2023 20:37:54 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:08:36 GMT
+# Mon, 07 Aug 2023 20:37:55 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:08:36 GMT
+# Mon, 07 Aug 2023 20:37:55 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:08:36 GMT
+# Mon, 07 Aug 2023 20:37:55 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:08:36 GMT
+# Mon, 07 Aug 2023 20:37:55 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:08:36 GMT
+# Mon, 07 Aug 2023 20:37:55 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39c903d65f836bac1d2c7226b4beb71e6515b02e680e1428019b18aeed583279`  
-		Last Modified: Wed, 19 Jul 2023 00:46:03 GMT  
-		Size: 145.7 MB (145738113 bytes)  
+	-	`sha256:3c5bee916a6ce60f9110a3ea332cd3e76205e2a17ec944a63b87b4a2b35af897`  
+		Last Modified: Mon, 07 Aug 2023 19:56:18 GMT  
+		Size: 145.7 MB (145738165 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c96388b4d28202e92ed15fe8d55130379accd8b65ceac2ba71145ca001f3176`  
-		Last Modified: Wed, 19 Jul 2023 01:15:03 GMT  
-		Size: 18.9 MB (18854896 bytes)  
+	-	`sha256:4be75d5d261bd363fb9692cd2dc542264727f1bcd93329e1138069c6a8ed10be`  
+		Last Modified: Mon, 07 Aug 2023 20:42:20 GMT  
+		Size: 18.9 MB (18856719 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7cfc29f5905751811d76313803879262ca4a49e41c5507cfc544233bc9f53cfe`  
-		Last Modified: Wed, 19 Jul 2023 01:15:01 GMT  
+	-	`sha256:d661f6a1aac73cf138c46221f011842daaf4a7cecbefd4710ce3fdfd70ad98a9`  
+		Last Modified: Mon, 07 Aug 2023 20:42:18 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -11747,7 +11747,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:11-jdk11-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:1ea5245e98d4d2884d0e321878052ce30bdff97e5862677a9a8a619de84c53ca
+$ docker pull jetty@sha256:28c3fed0567c507e52cc155e36ddd8fae2311b2d0e9ea76f4d6346cea0814b6a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11757,78 +11757,78 @@ $ docker pull jetty@sha256:1ea5245e98d4d2884d0e321878052ce30bdff97e5862677a9a8a6
 ### `jetty:11-jdk11-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:c9f5b3a1154c9b7cf2cd3842f9f3e85eddbbeeb2d8150cc96eabfa515585d0db
+$ docker pull jetty@sha256:201636d04a7b966551976c9399390f7a1569e5920217f9151c6d591194636383
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **167.1 MB (167128048 bytes)**  
+-	Total Size: **167.1 MB (167135742 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1940c96a0d7b5396ac7b2b7bd504a6a0f82598a716d7243beb08313c369ec2aa`
+-	Image ID: `sha256:97351754a28c6da37cb76a329834073c4cfb825c8fa58b34f9ec22f9c7867573`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:26:33 GMT
+# Mon, 07 Aug 2023 19:46:38 GMT
 ARG version=11.0.20.8.1
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 # ARGS: version=11.0.20.8.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-11=$version-r0 &&     rm -rf /usr/lib/jvm/java-11-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV JETTY_VERSION=11.0.15
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/11.0.15/jetty-home-11.0.15.tar.gz
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:41 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da38bd102fe984a2b27b2a5c820887bddfddba17e841f40b918b051e954b9eb6`  
-		Last Modified: Wed, 19 Jul 2023 00:41:35 GMT  
-		Size: 141.4 MB (141378239 bytes)  
+	-	`sha256:ba518b3c127e9c1927d1902089509065076c2d331e4dcf90609c8f6b0427225d`  
+		Last Modified: Mon, 07 Aug 2023 19:54:16 GMT  
+		Size: 141.4 MB (141378230 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9cc46da429c1c0a2f10cf142ff87d83973f8618e707b11208b9f3c9d5929c605`  
-		Last Modified: Wed, 19 Jul 2023 01:14:40 GMT  
-		Size: 22.4 MB (22350317 bytes)  
+	-	`sha256:723128f43b7b1d9ea868c830f0a14be635b07598638926dca56e56a5380dec4c`  
+		Last Modified: Mon, 07 Aug 2023 20:42:06 GMT  
+		Size: 22.4 MB (22354286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a70e73e7fdb5bef82d8ab0aa4b92f4611b1c66e65a1784f8752a1915ac3d973f`  
-		Last Modified: Wed, 19 Jul 2023 01:14:37 GMT  
+	-	`sha256:2b173d7c241fd4a7a76cbf88fe1e300f1e01f353c1831eb3ee9873cc697f9761`  
+		Last Modified: Mon, 07 Aug 2023 20:42:04 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -12618,7 +12618,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:11-jdk17-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:9e8c7321bdabaa0ecd747b2ed8e82d2556427760653a53a49b2ad75509ea2657
+$ docker pull jetty@sha256:66396c4c6eb8b14eb9bffbf92cf90accc7cc045e571064362b384dcac0bb9403
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12628,78 +12628,78 @@ $ docker pull jetty@sha256:9e8c7321bdabaa0ecd747b2ed8e82d2556427760653a53a49b2ad
 ### `jetty:11-jdk17-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:d53b729085a6b45bce45548f508a41130faf93fccb460a395d860431ad666424
+$ docker pull jetty@sha256:0f26083537ff787807797bbbb69547416412f2cac8d174cbea11c8c40df1e8ab
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **171.5 MB (171487709 bytes)**  
+-	Total Size: **171.5 MB (171494513 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8104057d201526a2d73d81ca45daee00f1e1c47ee8b6916ee2fa7fdf15f3c392`
+-	Image ID: `sha256:a23e0b7cb0b4d2ff7d1f08d6e9eab1f89894ec374bc25b442b150f64bb0d3097`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:30:39 GMT
+# Mon, 07 Aug 2023 19:47:29 GMT
 ARG version=17.0.8.7.1
-# Wed, 19 Jul 2023 00:30:44 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 # ARGS: version=17.0.8.7.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-17=$version-r0 &&     rm -rf /usr/lib/jvm/java-17-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV JETTY_VERSION=11.0.15
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/11.0.15/jetty-home-11.0.15.tar.gz
-# Wed, 19 Jul 2023 01:07:09 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:07:18 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39c903d65f836bac1d2c7226b4beb71e6515b02e680e1428019b18aeed583279`  
-		Last Modified: Wed, 19 Jul 2023 00:46:03 GMT  
-		Size: 145.7 MB (145738113 bytes)  
+	-	`sha256:3c5bee916a6ce60f9110a3ea332cd3e76205e2a17ec944a63b87b4a2b35af897`  
+		Last Modified: Mon, 07 Aug 2023 19:56:18 GMT  
+		Size: 145.7 MB (145738165 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b682d0b625b0c37f5eeb562ebe1412a7b35fdcf9290a60b5371d7c9c9a307d4e`  
-		Last Modified: Wed, 19 Jul 2023 01:14:11 GMT  
-		Size: 22.4 MB (22350104 bytes)  
+	-	`sha256:8e50e34e5621480a29e7fb8c8c41c039c699bef4950ed422391092ef591e9253`  
+		Last Modified: Mon, 07 Aug 2023 20:41:51 GMT  
+		Size: 22.4 MB (22353122 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:46721affa23a7447a5db1219a90622dec9c577a2f63cbf6ca533f20706789203`  
-		Last Modified: Wed, 19 Jul 2023 01:14:09 GMT  
+	-	`sha256:ae6af8ab1478fae61fcabe6f0c744f15ec9c8de5667b3e627cc67981ab08bc78`  
+		Last Modified: Mon, 07 Aug 2023 20:41:49 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -15286,7 +15286,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:11.0-jdk11-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:1ea5245e98d4d2884d0e321878052ce30bdff97e5862677a9a8a619de84c53ca
+$ docker pull jetty@sha256:28c3fed0567c507e52cc155e36ddd8fae2311b2d0e9ea76f4d6346cea0814b6a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -15296,78 +15296,78 @@ $ docker pull jetty@sha256:1ea5245e98d4d2884d0e321878052ce30bdff97e5862677a9a8a6
 ### `jetty:11.0-jdk11-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:c9f5b3a1154c9b7cf2cd3842f9f3e85eddbbeeb2d8150cc96eabfa515585d0db
+$ docker pull jetty@sha256:201636d04a7b966551976c9399390f7a1569e5920217f9151c6d591194636383
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **167.1 MB (167128048 bytes)**  
+-	Total Size: **167.1 MB (167135742 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1940c96a0d7b5396ac7b2b7bd504a6a0f82598a716d7243beb08313c369ec2aa`
+-	Image ID: `sha256:97351754a28c6da37cb76a329834073c4cfb825c8fa58b34f9ec22f9c7867573`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:26:33 GMT
+# Mon, 07 Aug 2023 19:46:38 GMT
 ARG version=11.0.20.8.1
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 # ARGS: version=11.0.20.8.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-11=$version-r0 &&     rm -rf /usr/lib/jvm/java-11-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV JETTY_VERSION=11.0.15
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/11.0.15/jetty-home-11.0.15.tar.gz
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:41 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da38bd102fe984a2b27b2a5c820887bddfddba17e841f40b918b051e954b9eb6`  
-		Last Modified: Wed, 19 Jul 2023 00:41:35 GMT  
-		Size: 141.4 MB (141378239 bytes)  
+	-	`sha256:ba518b3c127e9c1927d1902089509065076c2d331e4dcf90609c8f6b0427225d`  
+		Last Modified: Mon, 07 Aug 2023 19:54:16 GMT  
+		Size: 141.4 MB (141378230 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9cc46da429c1c0a2f10cf142ff87d83973f8618e707b11208b9f3c9d5929c605`  
-		Last Modified: Wed, 19 Jul 2023 01:14:40 GMT  
-		Size: 22.4 MB (22350317 bytes)  
+	-	`sha256:723128f43b7b1d9ea868c830f0a14be635b07598638926dca56e56a5380dec4c`  
+		Last Modified: Mon, 07 Aug 2023 20:42:06 GMT  
+		Size: 22.4 MB (22354286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a70e73e7fdb5bef82d8ab0aa4b92f4611b1c66e65a1784f8752a1915ac3d973f`  
-		Last Modified: Wed, 19 Jul 2023 01:14:37 GMT  
+	-	`sha256:2b173d7c241fd4a7a76cbf88fe1e300f1e01f353c1831eb3ee9873cc697f9761`  
+		Last Modified: Mon, 07 Aug 2023 20:42:04 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -16157,7 +16157,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:11.0-jdk17-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:9e8c7321bdabaa0ecd747b2ed8e82d2556427760653a53a49b2ad75509ea2657
+$ docker pull jetty@sha256:66396c4c6eb8b14eb9bffbf92cf90accc7cc045e571064362b384dcac0bb9403
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16167,78 +16167,78 @@ $ docker pull jetty@sha256:9e8c7321bdabaa0ecd747b2ed8e82d2556427760653a53a49b2ad
 ### `jetty:11.0-jdk17-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:d53b729085a6b45bce45548f508a41130faf93fccb460a395d860431ad666424
+$ docker pull jetty@sha256:0f26083537ff787807797bbbb69547416412f2cac8d174cbea11c8c40df1e8ab
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **171.5 MB (171487709 bytes)**  
+-	Total Size: **171.5 MB (171494513 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8104057d201526a2d73d81ca45daee00f1e1c47ee8b6916ee2fa7fdf15f3c392`
+-	Image ID: `sha256:a23e0b7cb0b4d2ff7d1f08d6e9eab1f89894ec374bc25b442b150f64bb0d3097`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:30:39 GMT
+# Mon, 07 Aug 2023 19:47:29 GMT
 ARG version=17.0.8.7.1
-# Wed, 19 Jul 2023 00:30:44 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 # ARGS: version=17.0.8.7.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-17=$version-r0 &&     rm -rf /usr/lib/jvm/java-17-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV JETTY_VERSION=11.0.15
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/11.0.15/jetty-home-11.0.15.tar.gz
-# Wed, 19 Jul 2023 01:07:09 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:07:18 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39c903d65f836bac1d2c7226b4beb71e6515b02e680e1428019b18aeed583279`  
-		Last Modified: Wed, 19 Jul 2023 00:46:03 GMT  
-		Size: 145.7 MB (145738113 bytes)  
+	-	`sha256:3c5bee916a6ce60f9110a3ea332cd3e76205e2a17ec944a63b87b4a2b35af897`  
+		Last Modified: Mon, 07 Aug 2023 19:56:18 GMT  
+		Size: 145.7 MB (145738165 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b682d0b625b0c37f5eeb562ebe1412a7b35fdcf9290a60b5371d7c9c9a307d4e`  
-		Last Modified: Wed, 19 Jul 2023 01:14:11 GMT  
-		Size: 22.4 MB (22350104 bytes)  
+	-	`sha256:8e50e34e5621480a29e7fb8c8c41c039c699bef4950ed422391092ef591e9253`  
+		Last Modified: Mon, 07 Aug 2023 20:41:51 GMT  
+		Size: 22.4 MB (22353122 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:46721affa23a7447a5db1219a90622dec9c577a2f63cbf6ca533f20706789203`  
-		Last Modified: Wed, 19 Jul 2023 01:14:09 GMT  
+	-	`sha256:ae6af8ab1478fae61fcabe6f0c744f15ec9c8de5667b3e627cc67981ab08bc78`  
+		Last Modified: Mon, 07 Aug 2023 20:41:49 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -18825,7 +18825,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:11.0.15-jdk11-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:1ea5245e98d4d2884d0e321878052ce30bdff97e5862677a9a8a619de84c53ca
+$ docker pull jetty@sha256:28c3fed0567c507e52cc155e36ddd8fae2311b2d0e9ea76f4d6346cea0814b6a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18835,78 +18835,78 @@ $ docker pull jetty@sha256:1ea5245e98d4d2884d0e321878052ce30bdff97e5862677a9a8a6
 ### `jetty:11.0.15-jdk11-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:c9f5b3a1154c9b7cf2cd3842f9f3e85eddbbeeb2d8150cc96eabfa515585d0db
+$ docker pull jetty@sha256:201636d04a7b966551976c9399390f7a1569e5920217f9151c6d591194636383
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **167.1 MB (167128048 bytes)**  
+-	Total Size: **167.1 MB (167135742 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1940c96a0d7b5396ac7b2b7bd504a6a0f82598a716d7243beb08313c369ec2aa`
+-	Image ID: `sha256:97351754a28c6da37cb76a329834073c4cfb825c8fa58b34f9ec22f9c7867573`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:26:33 GMT
+# Mon, 07 Aug 2023 19:46:38 GMT
 ARG version=11.0.20.8.1
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 # ARGS: version=11.0.20.8.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-11=$version-r0 &&     rm -rf /usr/lib/jvm/java-11-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV JETTY_VERSION=11.0.15
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/11.0.15/jetty-home-11.0.15.tar.gz
-# Wed, 19 Jul 2023 01:07:47 GMT
+# Mon, 07 Aug 2023 20:37:31 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:40 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:07:57 GMT
+# Mon, 07 Aug 2023 20:37:41 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da38bd102fe984a2b27b2a5c820887bddfddba17e841f40b918b051e954b9eb6`  
-		Last Modified: Wed, 19 Jul 2023 00:41:35 GMT  
-		Size: 141.4 MB (141378239 bytes)  
+	-	`sha256:ba518b3c127e9c1927d1902089509065076c2d331e4dcf90609c8f6b0427225d`  
+		Last Modified: Mon, 07 Aug 2023 19:54:16 GMT  
+		Size: 141.4 MB (141378230 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9cc46da429c1c0a2f10cf142ff87d83973f8618e707b11208b9f3c9d5929c605`  
-		Last Modified: Wed, 19 Jul 2023 01:14:40 GMT  
-		Size: 22.4 MB (22350317 bytes)  
+	-	`sha256:723128f43b7b1d9ea868c830f0a14be635b07598638926dca56e56a5380dec4c`  
+		Last Modified: Mon, 07 Aug 2023 20:42:06 GMT  
+		Size: 22.4 MB (22354286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a70e73e7fdb5bef82d8ab0aa4b92f4611b1c66e65a1784f8752a1915ac3d973f`  
-		Last Modified: Wed, 19 Jul 2023 01:14:37 GMT  
+	-	`sha256:2b173d7c241fd4a7a76cbf88fe1e300f1e01f353c1831eb3ee9873cc697f9761`  
+		Last Modified: Mon, 07 Aug 2023 20:42:04 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -19696,7 +19696,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:11.0.15-jdk17-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:9e8c7321bdabaa0ecd747b2ed8e82d2556427760653a53a49b2ad75509ea2657
+$ docker pull jetty@sha256:66396c4c6eb8b14eb9bffbf92cf90accc7cc045e571064362b384dcac0bb9403
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -19706,78 +19706,78 @@ $ docker pull jetty@sha256:9e8c7321bdabaa0ecd747b2ed8e82d2556427760653a53a49b2ad
 ### `jetty:11.0.15-jdk17-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:d53b729085a6b45bce45548f508a41130faf93fccb460a395d860431ad666424
+$ docker pull jetty@sha256:0f26083537ff787807797bbbb69547416412f2cac8d174cbea11c8c40df1e8ab
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **171.5 MB (171487709 bytes)**  
+-	Total Size: **171.5 MB (171494513 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8104057d201526a2d73d81ca45daee00f1e1c47ee8b6916ee2fa7fdf15f3c392`
+-	Image ID: `sha256:a23e0b7cb0b4d2ff7d1f08d6e9eab1f89894ec374bc25b442b150f64bb0d3097`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:30:39 GMT
+# Mon, 07 Aug 2023 19:47:29 GMT
 ARG version=17.0.8.7.1
-# Wed, 19 Jul 2023 00:30:44 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 # ARGS: version=17.0.8.7.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-17=$version-r0 &&     rm -rf /usr/lib/jvm/java-17-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV JETTY_VERSION=11.0.15
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:07:08 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/11.0.15/jetty-home-11.0.15.tar.gz
-# Wed, 19 Jul 2023 01:07:09 GMT
+# Mon, 07 Aug 2023 20:37:16 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:07:18 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:07:19 GMT
+# Mon, 07 Aug 2023 20:37:25 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39c903d65f836bac1d2c7226b4beb71e6515b02e680e1428019b18aeed583279`  
-		Last Modified: Wed, 19 Jul 2023 00:46:03 GMT  
-		Size: 145.7 MB (145738113 bytes)  
+	-	`sha256:3c5bee916a6ce60f9110a3ea332cd3e76205e2a17ec944a63b87b4a2b35af897`  
+		Last Modified: Mon, 07 Aug 2023 19:56:18 GMT  
+		Size: 145.7 MB (145738165 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b682d0b625b0c37f5eeb562ebe1412a7b35fdcf9290a60b5371d7c9c9a307d4e`  
-		Last Modified: Wed, 19 Jul 2023 01:14:11 GMT  
-		Size: 22.4 MB (22350104 bytes)  
+	-	`sha256:8e50e34e5621480a29e7fb8c8c41c039c699bef4950ed422391092ef591e9253`  
+		Last Modified: Mon, 07 Aug 2023 20:41:51 GMT  
+		Size: 22.4 MB (22353122 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:46721affa23a7447a5db1219a90622dec9c577a2f63cbf6ca533f20706789203`  
-		Last Modified: Wed, 19 Jul 2023 01:14:09 GMT  
+	-	`sha256:ae6af8ab1478fae61fcabe6f0c744f15ec9c8de5667b3e627cc67981ab08bc78`  
+		Last Modified: Mon, 07 Aug 2023 20:41:49 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -22364,7 +22364,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:9-jdk11-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:2e3a1801163dc24d8841b35e5ac03d99e716b74f9529677ebb9f23e9282d244a
+$ docker pull jetty@sha256:fedd20f9c6868889ca91331e86d8b8f7ac50c2e3f1a60ae971c3128c5d93db59
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -22374,78 +22374,78 @@ $ docker pull jetty@sha256:2e3a1801163dc24d8841b35e5ac03d99e716b74f9529677ebb9f2
 ### `jetty:9-jdk11-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:e59b1af81af795ba3f9effe91bd366ac9ff0ae0e7ba24c83ef608a4463d181f0
+$ docker pull jetty@sha256:f92b8f578c7eaf650e6a5820e55e0a8afc9ac5432a54bcfa3d6eea694df45315
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **162.6 MB (162591315 bytes)**  
+-	Total Size: **162.6 MB (162597075 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:200a198eb0a744a26191732d19f2fb9ad5a43fb56e0c12a0ed4f42fd6b95322f`
+-	Image ID: `sha256:e67665ca8478d9ddd36e99e91547ad9ceca97fb9cb4c1c17517799396ef9677f`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:26:33 GMT
+# Mon, 07 Aug 2023 19:46:38 GMT
 ARG version=11.0.20.8.1
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 # ARGS: version=11.0.20.8.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-11=$version-r0 &&     rm -rf /usr/lib/jvm/java-11-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:06:29 GMT
+# Mon, 07 Aug 2023 20:37:01 GMT
 ENV JETTY_VERSION=9.4.51.v20230217
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/9.4.51.v20230217/jetty-home-9.4.51.v20230217.tar.gz
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:06:39 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:06:39 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:06:40 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:06:40 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:06:40 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:06:40 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:06:40 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da38bd102fe984a2b27b2a5c820887bddfddba17e841f40b918b051e954b9eb6`  
-		Last Modified: Wed, 19 Jul 2023 00:41:35 GMT  
-		Size: 141.4 MB (141378239 bytes)  
+	-	`sha256:ba518b3c127e9c1927d1902089509065076c2d331e4dcf90609c8f6b0427225d`  
+		Last Modified: Mon, 07 Aug 2023 19:54:16 GMT  
+		Size: 141.4 MB (141378230 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a127a4a3d5c55845e09ed82459b6a473ae84954d55c94fab4443e7e3970433fa`  
-		Last Modified: Wed, 19 Jul 2023 01:13:47 GMT  
-		Size: 17.8 MB (17813584 bytes)  
+	-	`sha256:f56a17a04e46f599af560493e123dcb092a5859713bb0f376c0e8cc5b9e4d216`  
+		Last Modified: Mon, 07 Aug 2023 20:41:37 GMT  
+		Size: 17.8 MB (17815619 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a8d7447e799b49cff7dd9ce4f20ab68d552facab06750d40e3c130c4d70e769`  
-		Last Modified: Wed, 19 Jul 2023 01:13:45 GMT  
+	-	`sha256:14d7c11d7865785323d55e911f9a19e14a267a00027b6dd771b1a9ecf9a32285`  
+		Last Modified: Mon, 07 Aug 2023 20:41:35 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -23235,7 +23235,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:9-jdk17-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:2077bade433617575405d00bf16347fd2c1b9f94591caf2519b65545c65bcaff
+$ docker pull jetty@sha256:5484711451570ff72b0b3550ea53d98039923eabde1a1223c11f849fa7d31ee2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -23245,78 +23245,78 @@ $ docker pull jetty@sha256:2077bade433617575405d00bf16347fd2c1b9f94591caf2519b65
 ### `jetty:9-jdk17-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:ecbf73c24c484c98bb69aebcdc4bdff6cc2acade2042e4991455897b9b77420a
+$ docker pull jetty@sha256:717b1a0c690557278e9c0ca39889ba9cc5a1776b5beca0314e9fe5d0b9da0428
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **167.0 MB (166950770 bytes)**  
+-	Total Size: **167.0 MB (166956585 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:398cda3b5bf5ae67679a585e5699a909fa43ff9ad68acf8a0033de1adbd3bd2f`
+-	Image ID: `sha256:b919e37bdd435467877c716748d457c5e42d276704a4775424b3e1d106d6f6c3`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:30:39 GMT
+# Mon, 07 Aug 2023 19:47:29 GMT
 ARG version=17.0.8.7.1
-# Wed, 19 Jul 2023 00:30:44 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 # ARGS: version=17.0.8.7.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-17=$version-r0 &&     rm -rf /usr/lib/jvm/java-17-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV JETTY_VERSION=9.4.51.v20230217
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/9.4.51.v20230217/jetty-home-9.4.51.v20230217.tar.gz
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:06:00 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39c903d65f836bac1d2c7226b4beb71e6515b02e680e1428019b18aeed583279`  
-		Last Modified: Wed, 19 Jul 2023 00:46:03 GMT  
-		Size: 145.7 MB (145738113 bytes)  
+	-	`sha256:3c5bee916a6ce60f9110a3ea332cd3e76205e2a17ec944a63b87b4a2b35af897`  
+		Last Modified: Mon, 07 Aug 2023 19:56:18 GMT  
+		Size: 145.7 MB (145738165 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:580f909def9614aba45e02e4121722a19c3b01baba72000ac473a1f8258afc40`  
-		Last Modified: Wed, 19 Jul 2023 01:13:18 GMT  
-		Size: 17.8 MB (17813165 bytes)  
+	-	`sha256:67838f20c60e3e02f2976954b15e4f0825f70e3ac60bbcad0cb7d8bf175613b3`  
+		Last Modified: Mon, 07 Aug 2023 20:41:22 GMT  
+		Size: 17.8 MB (17815194 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e7d6f8eb8898206ebff075992b54369b966b3b076bf6dc4f3543346d0130793e`  
-		Last Modified: Wed, 19 Jul 2023 01:13:16 GMT  
+	-	`sha256:78249195ef81bec232d25c8e41984be9192c42b8120ec6b1ba40b58053a6b45c`  
+		Last Modified: Mon, 07 Aug 2023 20:41:20 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -24001,7 +24001,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:9-jdk8-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:43cdfb8290d3ebf20b7db85db54ad658ab9236725e41500f726b2d75cfd814fe
+$ docker pull jetty@sha256:60f75471f61f25cce8eaa280fc8e3511dec615145033e829a106708cfaa0bb28
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -24011,78 +24011,78 @@ $ docker pull jetty@sha256:43cdfb8290d3ebf20b7db85db54ad658ab9236725e41500f726b2
 ### `jetty:9-jdk8-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:16370878864a174a90a939463243d930e38b99d82b5b7d0cdd80bf5efb109f89
+$ docker pull jetty@sha256:322039d79865382eda151cdd50dcde10e8aaf552878de32b70b644c22be50db4
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **121.3 MB (121267363 bytes)**  
+-	Total Size: **121.3 MB (121274126 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:046482a6a6be775ad3db3c925ffbd72192d35e4671bc43f960c75ff63a2f7140`
+-	Image ID: `sha256:d6e2b03216a76bfff1e007a4bef4bcb7bd36ea33db751231545fe5484bdbb6e2`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:22:54 GMT
+# Mon, 07 Aug 2023 19:45:41 GMT
 ARG version=8.382.05.1
-# Wed, 19 Jul 2023 00:22:58 GMT
+# Mon, 07 Aug 2023 19:45:46 GMT
 # ARGS: version=8.382.05.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-8=$version-r0 &&     rm -rf /usr/lib/jvm/java-8-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:22:58 GMT
+# Mon, 07 Aug 2023 19:45:46 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:22:58 GMT
+# Mon, 07 Aug 2023 19:45:46 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:22:58 GMT
+# Mon, 07 Aug 2023 19:45:46 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:32 GMT
 ENV JETTY_VERSION=9.4.51.v20230217
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:32 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:32 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:32 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:32 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:33 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/9.4.51.v20230217/jetty-home-9.4.51.v20230217.tar.gz
-# Wed, 19 Jul 2023 01:05:13 GMT
+# Mon, 07 Aug 2023 20:36:33 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:41 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:41 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:41 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:42 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:42 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:42 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:05:23 GMT
+# Mon, 07 Aug 2023 20:36:42 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce9a5290ca476867a1562e1e77b6515f23464bd97009f0233d7df46f6ac66b19`  
-		Last Modified: Wed, 19 Jul 2023 00:37:18 GMT  
-		Size: 100.1 MB (100057189 bytes)  
+	-	`sha256:471cfef86fecf0a60857969f58b6d51b05d6cb281bdc0c07528a2f1bfe22be2b`  
+		Last Modified: Mon, 07 Aug 2023 19:51:56 GMT  
+		Size: 100.1 MB (100057151 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdf6dfb2d32512f83c712bc4fdbb0134be46b7e7a399afb441d7875cebde9bcd`  
-		Last Modified: Wed, 19 Jul 2023 01:12:54 GMT  
-		Size: 17.8 MB (17810682 bytes)  
+	-	`sha256:a0d82faaab0412853c6867ea83ecc28af75239da7d111309824264f621ef2c76`  
+		Last Modified: Mon, 07 Aug 2023 20:41:08 GMT  
+		Size: 17.8 MB (17813749 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6478dcad3ccf9e70838bc2c854575fd9c32bfaddb85be35cf650c5390a1d4789`  
-		Last Modified: Wed, 19 Jul 2023 01:12:53 GMT  
+	-	`sha256:9ec96653dd70c707fb9d99dae0eb42cac3e869048f727b4d585ce2a601be16ff`  
+		Last Modified: Mon, 07 Aug 2023 20:41:06 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -27172,7 +27172,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:9.4-jdk11-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:2e3a1801163dc24d8841b35e5ac03d99e716b74f9529677ebb9f23e9282d244a
+$ docker pull jetty@sha256:fedd20f9c6868889ca91331e86d8b8f7ac50c2e3f1a60ae971c3128c5d93db59
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -27182,78 +27182,78 @@ $ docker pull jetty@sha256:2e3a1801163dc24d8841b35e5ac03d99e716b74f9529677ebb9f2
 ### `jetty:9.4-jdk11-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:e59b1af81af795ba3f9effe91bd366ac9ff0ae0e7ba24c83ef608a4463d181f0
+$ docker pull jetty@sha256:f92b8f578c7eaf650e6a5820e55e0a8afc9ac5432a54bcfa3d6eea694df45315
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **162.6 MB (162591315 bytes)**  
+-	Total Size: **162.6 MB (162597075 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:200a198eb0a744a26191732d19f2fb9ad5a43fb56e0c12a0ed4f42fd6b95322f`
+-	Image ID: `sha256:e67665ca8478d9ddd36e99e91547ad9ceca97fb9cb4c1c17517799396ef9677f`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:26:33 GMT
+# Mon, 07 Aug 2023 19:46:38 GMT
 ARG version=11.0.20.8.1
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 # ARGS: version=11.0.20.8.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-11=$version-r0 &&     rm -rf /usr/lib/jvm/java-11-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:06:29 GMT
+# Mon, 07 Aug 2023 20:37:01 GMT
 ENV JETTY_VERSION=9.4.51.v20230217
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/9.4.51.v20230217/jetty-home-9.4.51.v20230217.tar.gz
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:06:39 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:06:39 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:06:40 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:06:40 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:06:40 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:06:40 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:06:40 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da38bd102fe984a2b27b2a5c820887bddfddba17e841f40b918b051e954b9eb6`  
-		Last Modified: Wed, 19 Jul 2023 00:41:35 GMT  
-		Size: 141.4 MB (141378239 bytes)  
+	-	`sha256:ba518b3c127e9c1927d1902089509065076c2d331e4dcf90609c8f6b0427225d`  
+		Last Modified: Mon, 07 Aug 2023 19:54:16 GMT  
+		Size: 141.4 MB (141378230 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a127a4a3d5c55845e09ed82459b6a473ae84954d55c94fab4443e7e3970433fa`  
-		Last Modified: Wed, 19 Jul 2023 01:13:47 GMT  
-		Size: 17.8 MB (17813584 bytes)  
+	-	`sha256:f56a17a04e46f599af560493e123dcb092a5859713bb0f376c0e8cc5b9e4d216`  
+		Last Modified: Mon, 07 Aug 2023 20:41:37 GMT  
+		Size: 17.8 MB (17815619 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a8d7447e799b49cff7dd9ce4f20ab68d552facab06750d40e3c130c4d70e769`  
-		Last Modified: Wed, 19 Jul 2023 01:13:45 GMT  
+	-	`sha256:14d7c11d7865785323d55e911f9a19e14a267a00027b6dd771b1a9ecf9a32285`  
+		Last Modified: Mon, 07 Aug 2023 20:41:35 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -28043,7 +28043,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:9.4-jdk17-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:2077bade433617575405d00bf16347fd2c1b9f94591caf2519b65545c65bcaff
+$ docker pull jetty@sha256:5484711451570ff72b0b3550ea53d98039923eabde1a1223c11f849fa7d31ee2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -28053,78 +28053,78 @@ $ docker pull jetty@sha256:2077bade433617575405d00bf16347fd2c1b9f94591caf2519b65
 ### `jetty:9.4-jdk17-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:ecbf73c24c484c98bb69aebcdc4bdff6cc2acade2042e4991455897b9b77420a
+$ docker pull jetty@sha256:717b1a0c690557278e9c0ca39889ba9cc5a1776b5beca0314e9fe5d0b9da0428
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **167.0 MB (166950770 bytes)**  
+-	Total Size: **167.0 MB (166956585 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:398cda3b5bf5ae67679a585e5699a909fa43ff9ad68acf8a0033de1adbd3bd2f`
+-	Image ID: `sha256:b919e37bdd435467877c716748d457c5e42d276704a4775424b3e1d106d6f6c3`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:30:39 GMT
+# Mon, 07 Aug 2023 19:47:29 GMT
 ARG version=17.0.8.7.1
-# Wed, 19 Jul 2023 00:30:44 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 # ARGS: version=17.0.8.7.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-17=$version-r0 &&     rm -rf /usr/lib/jvm/java-17-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV JETTY_VERSION=9.4.51.v20230217
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/9.4.51.v20230217/jetty-home-9.4.51.v20230217.tar.gz
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:06:00 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39c903d65f836bac1d2c7226b4beb71e6515b02e680e1428019b18aeed583279`  
-		Last Modified: Wed, 19 Jul 2023 00:46:03 GMT  
-		Size: 145.7 MB (145738113 bytes)  
+	-	`sha256:3c5bee916a6ce60f9110a3ea332cd3e76205e2a17ec944a63b87b4a2b35af897`  
+		Last Modified: Mon, 07 Aug 2023 19:56:18 GMT  
+		Size: 145.7 MB (145738165 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:580f909def9614aba45e02e4121722a19c3b01baba72000ac473a1f8258afc40`  
-		Last Modified: Wed, 19 Jul 2023 01:13:18 GMT  
-		Size: 17.8 MB (17813165 bytes)  
+	-	`sha256:67838f20c60e3e02f2976954b15e4f0825f70e3ac60bbcad0cb7d8bf175613b3`  
+		Last Modified: Mon, 07 Aug 2023 20:41:22 GMT  
+		Size: 17.8 MB (17815194 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e7d6f8eb8898206ebff075992b54369b966b3b076bf6dc4f3543346d0130793e`  
-		Last Modified: Wed, 19 Jul 2023 01:13:16 GMT  
+	-	`sha256:78249195ef81bec232d25c8e41984be9192c42b8120ec6b1ba40b58053a6b45c`  
+		Last Modified: Mon, 07 Aug 2023 20:41:20 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -28809,7 +28809,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:9.4-jdk8-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:43cdfb8290d3ebf20b7db85db54ad658ab9236725e41500f726b2d75cfd814fe
+$ docker pull jetty@sha256:60f75471f61f25cce8eaa280fc8e3511dec615145033e829a106708cfaa0bb28
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -28819,78 +28819,78 @@ $ docker pull jetty@sha256:43cdfb8290d3ebf20b7db85db54ad658ab9236725e41500f726b2
 ### `jetty:9.4-jdk8-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:16370878864a174a90a939463243d930e38b99d82b5b7d0cdd80bf5efb109f89
+$ docker pull jetty@sha256:322039d79865382eda151cdd50dcde10e8aaf552878de32b70b644c22be50db4
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **121.3 MB (121267363 bytes)**  
+-	Total Size: **121.3 MB (121274126 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:046482a6a6be775ad3db3c925ffbd72192d35e4671bc43f960c75ff63a2f7140`
+-	Image ID: `sha256:d6e2b03216a76bfff1e007a4bef4bcb7bd36ea33db751231545fe5484bdbb6e2`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:22:54 GMT
+# Mon, 07 Aug 2023 19:45:41 GMT
 ARG version=8.382.05.1
-# Wed, 19 Jul 2023 00:22:58 GMT
+# Mon, 07 Aug 2023 19:45:46 GMT
 # ARGS: version=8.382.05.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-8=$version-r0 &&     rm -rf /usr/lib/jvm/java-8-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:22:58 GMT
+# Mon, 07 Aug 2023 19:45:46 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:22:58 GMT
+# Mon, 07 Aug 2023 19:45:46 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:22:58 GMT
+# Mon, 07 Aug 2023 19:45:46 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:32 GMT
 ENV JETTY_VERSION=9.4.51.v20230217
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:32 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:32 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:32 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:32 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:33 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/9.4.51.v20230217/jetty-home-9.4.51.v20230217.tar.gz
-# Wed, 19 Jul 2023 01:05:13 GMT
+# Mon, 07 Aug 2023 20:36:33 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:41 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:41 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:41 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:42 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:42 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:42 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:05:23 GMT
+# Mon, 07 Aug 2023 20:36:42 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce9a5290ca476867a1562e1e77b6515f23464bd97009f0233d7df46f6ac66b19`  
-		Last Modified: Wed, 19 Jul 2023 00:37:18 GMT  
-		Size: 100.1 MB (100057189 bytes)  
+	-	`sha256:471cfef86fecf0a60857969f58b6d51b05d6cb281bdc0c07528a2f1bfe22be2b`  
+		Last Modified: Mon, 07 Aug 2023 19:51:56 GMT  
+		Size: 100.1 MB (100057151 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdf6dfb2d32512f83c712bc4fdbb0134be46b7e7a399afb441d7875cebde9bcd`  
-		Last Modified: Wed, 19 Jul 2023 01:12:54 GMT  
-		Size: 17.8 MB (17810682 bytes)  
+	-	`sha256:a0d82faaab0412853c6867ea83ecc28af75239da7d111309824264f621ef2c76`  
+		Last Modified: Mon, 07 Aug 2023 20:41:08 GMT  
+		Size: 17.8 MB (17813749 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6478dcad3ccf9e70838bc2c854575fd9c32bfaddb85be35cf650c5390a1d4789`  
-		Last Modified: Wed, 19 Jul 2023 01:12:53 GMT  
+	-	`sha256:9ec96653dd70c707fb9d99dae0eb42cac3e869048f727b4d585ce2a601be16ff`  
+		Last Modified: Mon, 07 Aug 2023 20:41:06 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -31980,7 +31980,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:9.4.51-jdk11-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:2e3a1801163dc24d8841b35e5ac03d99e716b74f9529677ebb9f23e9282d244a
+$ docker pull jetty@sha256:fedd20f9c6868889ca91331e86d8b8f7ac50c2e3f1a60ae971c3128c5d93db59
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -31990,78 +31990,78 @@ $ docker pull jetty@sha256:2e3a1801163dc24d8841b35e5ac03d99e716b74f9529677ebb9f2
 ### `jetty:9.4.51-jdk11-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:e59b1af81af795ba3f9effe91bd366ac9ff0ae0e7ba24c83ef608a4463d181f0
+$ docker pull jetty@sha256:f92b8f578c7eaf650e6a5820e55e0a8afc9ac5432a54bcfa3d6eea694df45315
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **162.6 MB (162591315 bytes)**  
+-	Total Size: **162.6 MB (162597075 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:200a198eb0a744a26191732d19f2fb9ad5a43fb56e0c12a0ed4f42fd6b95322f`
+-	Image ID: `sha256:e67665ca8478d9ddd36e99e91547ad9ceca97fb9cb4c1c17517799396ef9677f`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:26:33 GMT
+# Mon, 07 Aug 2023 19:46:38 GMT
 ARG version=11.0.20.8.1
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 # ARGS: version=11.0.20.8.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-11=$version-r0 &&     rm -rf /usr/lib/jvm/java-11-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:26:38 GMT
+# Mon, 07 Aug 2023 19:46:43 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:06:29 GMT
+# Mon, 07 Aug 2023 20:37:01 GMT
 ENV JETTY_VERSION=9.4.51.v20230217
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/9.4.51.v20230217/jetty-home-9.4.51.v20230217.tar.gz
-# Wed, 19 Jul 2023 01:06:30 GMT
+# Mon, 07 Aug 2023 20:37:02 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:06:39 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:06:39 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:06:40 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:06:40 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:06:40 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:06:40 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:06:40 GMT
+# Mon, 07 Aug 2023 20:37:11 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da38bd102fe984a2b27b2a5c820887bddfddba17e841f40b918b051e954b9eb6`  
-		Last Modified: Wed, 19 Jul 2023 00:41:35 GMT  
-		Size: 141.4 MB (141378239 bytes)  
+	-	`sha256:ba518b3c127e9c1927d1902089509065076c2d331e4dcf90609c8f6b0427225d`  
+		Last Modified: Mon, 07 Aug 2023 19:54:16 GMT  
+		Size: 141.4 MB (141378230 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a127a4a3d5c55845e09ed82459b6a473ae84954d55c94fab4443e7e3970433fa`  
-		Last Modified: Wed, 19 Jul 2023 01:13:47 GMT  
-		Size: 17.8 MB (17813584 bytes)  
+	-	`sha256:f56a17a04e46f599af560493e123dcb092a5859713bb0f376c0e8cc5b9e4d216`  
+		Last Modified: Mon, 07 Aug 2023 20:41:37 GMT  
+		Size: 17.8 MB (17815619 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a8d7447e799b49cff7dd9ce4f20ab68d552facab06750d40e3c130c4d70e769`  
-		Last Modified: Wed, 19 Jul 2023 01:13:45 GMT  
+	-	`sha256:14d7c11d7865785323d55e911f9a19e14a267a00027b6dd771b1a9ecf9a32285`  
+		Last Modified: Mon, 07 Aug 2023 20:41:35 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -32851,7 +32851,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:9.4.51-jdk17-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:2077bade433617575405d00bf16347fd2c1b9f94591caf2519b65545c65bcaff
+$ docker pull jetty@sha256:5484711451570ff72b0b3550ea53d98039923eabde1a1223c11f849fa7d31ee2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -32861,78 +32861,78 @@ $ docker pull jetty@sha256:2077bade433617575405d00bf16347fd2c1b9f94591caf2519b65
 ### `jetty:9.4.51-jdk17-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:ecbf73c24c484c98bb69aebcdc4bdff6cc2acade2042e4991455897b9b77420a
+$ docker pull jetty@sha256:717b1a0c690557278e9c0ca39889ba9cc5a1776b5beca0314e9fe5d0b9da0428
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **167.0 MB (166950770 bytes)**  
+-	Total Size: **167.0 MB (166956585 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:398cda3b5bf5ae67679a585e5699a909fa43ff9ad68acf8a0033de1adbd3bd2f`
+-	Image ID: `sha256:b919e37bdd435467877c716748d457c5e42d276704a4775424b3e1d106d6f6c3`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:30:39 GMT
+# Mon, 07 Aug 2023 19:47:29 GMT
 ARG version=17.0.8.7.1
-# Wed, 19 Jul 2023 00:30:44 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 # ARGS: version=17.0.8.7.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-17=$version-r0 &&     rm -rf /usr/lib/jvm/java-17-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:30:45 GMT
+# Mon, 07 Aug 2023 19:47:35 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV JETTY_VERSION=9.4.51.v20230217
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/9.4.51.v20230217/jetty-home-9.4.51.v20230217.tar.gz
-# Wed, 19 Jul 2023 01:05:51 GMT
+# Mon, 07 Aug 2023 20:36:47 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:06:00 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:06:01 GMT
+# Mon, 07 Aug 2023 20:36:56 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39c903d65f836bac1d2c7226b4beb71e6515b02e680e1428019b18aeed583279`  
-		Last Modified: Wed, 19 Jul 2023 00:46:03 GMT  
-		Size: 145.7 MB (145738113 bytes)  
+	-	`sha256:3c5bee916a6ce60f9110a3ea332cd3e76205e2a17ec944a63b87b4a2b35af897`  
+		Last Modified: Mon, 07 Aug 2023 19:56:18 GMT  
+		Size: 145.7 MB (145738165 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:580f909def9614aba45e02e4121722a19c3b01baba72000ac473a1f8258afc40`  
-		Last Modified: Wed, 19 Jul 2023 01:13:18 GMT  
-		Size: 17.8 MB (17813165 bytes)  
+	-	`sha256:67838f20c60e3e02f2976954b15e4f0825f70e3ac60bbcad0cb7d8bf175613b3`  
+		Last Modified: Mon, 07 Aug 2023 20:41:22 GMT  
+		Size: 17.8 MB (17815194 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e7d6f8eb8898206ebff075992b54369b966b3b076bf6dc4f3543346d0130793e`  
-		Last Modified: Wed, 19 Jul 2023 01:13:16 GMT  
+	-	`sha256:78249195ef81bec232d25c8e41984be9192c42b8120ec6b1ba40b58053a6b45c`  
+		Last Modified: Mon, 07 Aug 2023 20:41:20 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -33617,7 +33617,7 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ## `jetty:9.4.51-jdk8-alpine-amazoncorretto`
 
 ```console
-$ docker pull jetty@sha256:43cdfb8290d3ebf20b7db85db54ad658ab9236725e41500f726b2d75cfd814fe
+$ docker pull jetty@sha256:60f75471f61f25cce8eaa280fc8e3511dec615145033e829a106708cfaa0bb28
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -33627,78 +33627,78 @@ $ docker pull jetty@sha256:43cdfb8290d3ebf20b7db85db54ad658ab9236725e41500f726b2
 ### `jetty:9.4.51-jdk8-alpine-amazoncorretto` - linux; amd64
 
 ```console
-$ docker pull jetty@sha256:16370878864a174a90a939463243d930e38b99d82b5b7d0cdd80bf5efb109f89
+$ docker pull jetty@sha256:322039d79865382eda151cdd50dcde10e8aaf552878de32b70b644c22be50db4
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **121.3 MB (121267363 bytes)**  
+-	Total Size: **121.3 MB (121274126 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:046482a6a6be775ad3db3c925ffbd72192d35e4671bc43f960c75ff63a2f7140`
+-	Image ID: `sha256:d6e2b03216a76bfff1e007a4bef4bcb7bd36ea33db751231545fe5484bdbb6e2`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["java","-jar","\/usr\/local\/jetty\/start.jar"]`
 
 ```dockerfile
-# Wed, 14 Jun 2023 20:41:58 GMT
-ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / 
-# Wed, 14 Jun 2023 20:41:59 GMT
+# Mon, 07 Aug 2023 19:20:20 GMT
+ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / 
+# Mon, 07 Aug 2023 19:20:20 GMT
 CMD ["/bin/sh"]
-# Wed, 19 Jul 2023 00:22:54 GMT
+# Mon, 07 Aug 2023 19:45:41 GMT
 ARG version=8.382.05.1
-# Wed, 19 Jul 2023 00:22:58 GMT
+# Mon, 07 Aug 2023 19:45:46 GMT
 # ARGS: version=8.382.05.1
 RUN wget -O /THIRD-PARTY-LICENSES-20200824.tar.gz https://corretto.aws/downloads/resources/licenses/alpine/THIRD-PARTY-LICENSES-20200824.tar.gz &&     echo "82f3e50e71b2aee21321b2b33de372feed5befad6ef2196ddec92311bc09becb  /THIRD-PARTY-LICENSES-20200824.tar.gz" | sha256sum -c - &&     tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz &&     rm -rf THIRD-PARTY-LICENSES-20200824.tar.gz &&     wget -O /etc/apk/keys/amazoncorretto.rsa.pub https://apk.corretto.aws/amazoncorretto.rsa.pub &&     SHA_SUM="6cfdf08be09f32ca298e2d5bd4a359ee2b275765c09b56d514624bf831eafb91" &&     echo "${SHA_SUM}  /etc/apk/keys/amazoncorretto.rsa.pub" | sha256sum -c - &&     echo "https://apk.corretto.aws" >> /etc/apk/repositories &&     apk add --no-cache amazon-corretto-8=$version-r0 &&     rm -rf /usr/lib/jvm/java-8-amazon-corretto/lib/src.zip
-# Wed, 19 Jul 2023 00:22:58 GMT
+# Mon, 07 Aug 2023 19:45:46 GMT
 ENV LANG=C.UTF-8
-# Wed, 19 Jul 2023 00:22:58 GMT
+# Mon, 07 Aug 2023 19:45:46 GMT
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
-# Wed, 19 Jul 2023 00:22:58 GMT
+# Mon, 07 Aug 2023 19:45:46 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:32 GMT
 ENV JETTY_VERSION=9.4.51.v20230217
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:32 GMT
 ENV JETTY_HOME=/usr/local/jetty
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:32 GMT
 ENV JETTY_BASE=/var/lib/jetty
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:32 GMT
 ENV TMPDIR=/tmp/jetty
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:32 GMT
 ENV PATH=/usr/local/jetty/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/default-jvm/bin
-# Wed, 19 Jul 2023 01:05:12 GMT
+# Mon, 07 Aug 2023 20:36:33 GMT
 ENV JETTY_TGZ_URL=https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/9.4.51.v20230217/jetty-home-9.4.51.v20230217.tar.gz
-# Wed, 19 Jul 2023 01:05:13 GMT
+# Mon, 07 Aug 2023 20:36:33 GMT
 ENV JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	F254B35617DC255D9344BCFA873A8E86B4372146 	E22488CC94F63E3FC928536C4241C08270D999C3
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:41 GMT
 RUN set -xe ; 	mkdir -p $TMPDIR ; 	apk add --no-cache gnupg curl ; 	export GNUPGHOME=/jetty-keys ; 	mkdir -p "$GNUPGHOME" ; 	for key in $JETTY_GPG_KEYS; do 		gpg --batch --keyserver "hkps://keyserver.ubuntu.com" --recv-keys "$key"; 	done ; 	mkdir -p "$JETTY_HOME" ; 	cd $JETTY_HOME ; 	curl -SL "$JETTY_TGZ_URL" -o jetty.tar.gz ; 	curl -SL "$JETTY_TGZ_URL.asc" -o jetty.tar.gz.asc ; 	gpg --batch --verify jetty.tar.gz.asc jetty.tar.gz ; 	tar -xvf jetty.tar.gz --strip-components=1 ; 	sed -i '/jetty-logging/d' etc/jetty.conf ; 	mkdir -p "$JETTY_BASE" ; 	cd $JETTY_BASE ; 	java -jar "$JETTY_HOME/start.jar" --create-startd 		--add-to-start="server,http,deploy,jsp,jstl,ext,resources,websocket" ; 	addgroup -S jetty && adduser -h $JETTY_BASE -S jetty -G jetty; 	chown -R jetty:jetty "$JETTY_HOME" "$JETTY_BASE" "$TMPDIR" ; 	rm -rf /tmp/hsperfdata_root ; 	rm -fr $JETTY_HOME/jetty.tar.gz* ; 	rm -fr /jetty-keys $GNUPGHOME ; 	rm -rf /tmp/hsperfdata_root ; 	java -jar "$JETTY_HOME/start.jar" --list-config ;
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:41 GMT
 WORKDIR /var/lib/jetty
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:41 GMT
 COPY multi:88ca540b9901ef22d614e919524f1d550a54166ea9880b0aa9695f8e0470c8f7 in / 
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:42 GMT
 USER jetty
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:42 GMT
 EXPOSE 8080
-# Wed, 19 Jul 2023 01:05:22 GMT
+# Mon, 07 Aug 2023 20:36:42 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 19 Jul 2023 01:05:23 GMT
+# Mon, 07 Aug 2023 20:36:42 GMT
 CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 ```
 
 -	Layers:
-	-	`sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3`  
-		Last Modified: Wed, 14 Jun 2023 20:42:26 GMT  
-		Size: 3.4 MB (3397879 bytes)  
+	-	`sha256:7264a8db6415046d36d16ba98b79778e18accee6ffa71850405994cffa9be7de`  
+		Last Modified: Mon, 07 Aug 2023 19:20:54 GMT  
+		Size: 3.4 MB (3401613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce9a5290ca476867a1562e1e77b6515f23464bd97009f0233d7df46f6ac66b19`  
-		Last Modified: Wed, 19 Jul 2023 00:37:18 GMT  
-		Size: 100.1 MB (100057189 bytes)  
+	-	`sha256:471cfef86fecf0a60857969f58b6d51b05d6cb281bdc0c07528a2f1bfe22be2b`  
+		Last Modified: Mon, 07 Aug 2023 19:51:56 GMT  
+		Size: 100.1 MB (100057151 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdf6dfb2d32512f83c712bc4fdbb0134be46b7e7a399afb441d7875cebde9bcd`  
-		Last Modified: Wed, 19 Jul 2023 01:12:54 GMT  
-		Size: 17.8 MB (17810682 bytes)  
+	-	`sha256:a0d82faaab0412853c6867ea83ecc28af75239da7d111309824264f621ef2c76`  
+		Last Modified: Mon, 07 Aug 2023 20:41:08 GMT  
+		Size: 17.8 MB (17813749 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6478dcad3ccf9e70838bc2c854575fd9c32bfaddb85be35cf650c5390a1d4789`  
-		Last Modified: Wed, 19 Jul 2023 01:12:53 GMT  
+	-	`sha256:9ec96653dd70c707fb9d99dae0eb42cac3e869048f727b4d585ce2a601be16ff`  
+		Last Modified: Mon, 07 Aug 2023 20:41:06 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
