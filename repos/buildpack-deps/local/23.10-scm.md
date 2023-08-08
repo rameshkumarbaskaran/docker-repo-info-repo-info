@@ -394,14 +394,13 @@ Licenses: (parsed from: `/usr/share/doc/libsasl2-2/copyright`, `/usr/share/doc/l
 - `OpenLDAP`
 - `RSA-MD`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris cyrus-sasl2=2.1.28+dfsg1-2
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.28%2bdfsg1-2.dsc' cyrus-sasl2_2.1.28+dfsg1-2.dsc 3330 SHA512:72ab75e9e4842acde9e89e3a8f92ed8908ebc0ea2a442108a195dfb01f47c8d0f98fdaf07d181b6f9373736697bbd51b3105b1e0b2e297e5587e9aaabc5a70c4
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.28%2bdfsg1.orig.tar.xz' cyrus-sasl2_2.1.28+dfsg1.orig.tar.xz 794540 SHA512:e94075d09b38a50138b782323de286deb7b15008064f07df4fa682e94367e829d9bfafef48d5478f730fef8fde536bcc6d54cab0452b76473a3c620b3dc18fa2
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.28%2bdfsg1-2.debian.tar.xz' cyrus-sasl2_2.1.28+dfsg1-2.debian.tar.xz 106524 SHA512:4bcf6d9efb72e05b8b6d95702143a706895217b6f82397fe7af5edea82c757b6a0e80a3d5fc6b304c9d0d44f2512ae36b600270a2c7ca27856544e31d4a69af3
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/cyrus-sasl2/2.1.28+dfsg1-2/
+
 
 ### `dpkg` source package: `dash=0.5.12-6ubuntu1`
 
@@ -577,15 +576,9 @@ Licenses: (parsed from: `/usr/share/doc/e2fsprogs/copyright`, `/usr/share/doc/li
 - `Latex2e`
 - `MIT-US-export`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris e2fsprogs=1.47.0-1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.47.0-1ubuntu2.dsc' e2fsprogs_1.47.0-1ubuntu2.dsc 3182 SHA512:a3d47f742e4d79e1e387abc54421304ef45274053d98aeffcd7025c6ac0cb84a2f1c67d2e5c8873c20d60edd4b2d44b7521bae004107e02569d7aac05b86de9b
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.47.0.orig.tar.gz' e2fsprogs_1.47.0.orig.tar.gz 9637717 SHA512:4f03a469d03cb0f0656bd17c64d944606fb25e68002e3e42c278f3775fee6bf776cc2061ae378b5df4f167a5c33444490111fdcbb140e0320445706f9d048dd0
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.47.0.orig.tar.gz.asc' e2fsprogs_1.47.0.orig.tar.gz.asc 488 SHA512:cd3652ec12f694f1c1f5bd4af4964bb32ad832ba8a06a48864d12a998dc514e9a950ebdb475707a3abb8360852a3469794f2327f097328c99233beef575df144
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.47.0-1ubuntu2.debian.tar.xz' e2fsprogs_1.47.0-1ubuntu2.debian.tar.xz 88740 SHA512:07e21ba21e8bf3af354f8f933b9e61e47889a9fa4e53260d1975b57528b4491bbe29b6f4c57b545d885d076f6de428781d1a3147c2265100fc520197f87f4fe8
-```
 
 ### `dpkg` source package: `expat=2.5.0-2`
 
@@ -1833,14 +1826,9 @@ Licenses: (parsed from: `/usr/share/doc/libldap2/copyright`)
 - `UMich`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openldap=2.6.4+dfsg-1~exp1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.6.4%2bdfsg-1%7eexp1ubuntu1.dsc' openldap_2.6.4+dfsg-1~exp1ubuntu1.dsc 3470 SHA512:1559fd9adaf85e1eab3d7f413beb47165ed6353a52322157256aad4ff0cab4a924ef034c0909c346d38a0f03f7e4edfc9b40239f55fa4301acce651e156b5938
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.6.4%2bdfsg.orig.tar.xz' openldap_2.6.4+dfsg.orig.tar.xz 3744892 SHA512:e0c000b4fabe64ff5cbd07eae11a62e048bf53c1a649356616c19c3a08ec37e2d6639663ede57e388b633168aee704c9d64470d17fa32f64988c68a73a82d2ab
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.6.4%2bdfsg-1%7eexp1ubuntu1.debian.tar.xz' openldap_2.6.4+dfsg-1~exp1ubuntu1.debian.tar.xz 179552 SHA512:5c4b2651c41a8ece042a6704a44cc3fe4f1f6e9752bb7baea8488377c4bb9b8e7e0a32c9fb0be32af98e0924c363e0569d14262984b8c374cd02e2776bf627e5
-```
 
 ### `dpkg` source package: `openssh=1:9.3p1-1ubuntu2`
 
@@ -2380,14 +2368,9 @@ Licenses: (parsed from: `/usr/share/doc/sysvinit-utils/copyright`)
 - `GPL-3`
 - `GPL-3.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sysvinit=3.06-4ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sysvinit/sysvinit_3.06-4ubuntu1.dsc' sysvinit_3.06-4ubuntu1.dsc 2466 SHA512:5d6f20233ff423790a8d64b4290dd5b7804ade6902898166ff006241622a4dc6e94cf396ae8e94c5b7ee9cfea35c565216d7c55a83ed2f73b385374102b4ba08
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sysvinit/sysvinit_3.06.orig.tar.gz' sysvinit_3.06.orig.tar.gz 466092 SHA512:9f1111ea05cbb405e3fe2423ee2d281832f3d15a69e39c5c6896e1ee7c0d56369046d39d7a2203f66db05304836dd33f1664652726cadf8a29cb0eea27ce822f
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sysvinit/sysvinit_3.06-4ubuntu1.debian.tar.xz' sysvinit_3.06-4ubuntu1.debian.tar.xz 135992 SHA512:7c4d7d742ad5febe27bcf946d0afaef2dd8a0d0711f7f463f4161f87a6b9e7e493815cb92056d22118113275641afdcf39cd42fc5408a0c9ee814502f9f00b52
-```
 
 ### `dpkg` source package: `tar=1.34+dfsg-1.2ubuntu1`
 
