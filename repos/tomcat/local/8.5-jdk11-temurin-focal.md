@@ -2,11 +2,12 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:2a2551331a35a6673438161abf02fa89015638f2f11b641f1fc2739e6d950eac`
-- Created: `2023-08-03T05:23:29.39016981Z`
-- Virtual Size: ~ 414.22 Mb  
+- Image ID: `sha256:d151df10e1ebe96d24be1b5ec32e85c85d7d68de6932d2b81a796a59d7323472`
+- Created: `2023-08-08T21:28:00.59546662Z`
+- Virtual Size: ~ 416.03 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
+- Entrypoint: `["/entrypoint.sh"]`
 - Command: `["catalina.sh","run"]`
 - Environment:
   - `PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
@@ -1440,8 +1441,10 @@ $ apt-get source -qq --print-uris openssl=1.1.1f-1ubuntu2.19
 Binary Packages:
 
 - `libp11-kit0:amd64=0.23.20-1ubuntu0.1`
+- `p11-kit=0.23.20-1ubuntu0.1`
+- `p11-kit-modules:amd64=0.23.20-1ubuntu0.1`
 
-Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`, `/usr/share/doc/p11-kit/copyright`, `/usr/share/doc/p11-kit-modules/copyright`)
 
 - `BSD-3-Clause`
 - `ISC`

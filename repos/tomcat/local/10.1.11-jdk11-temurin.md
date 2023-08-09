@@ -2,11 +2,12 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:199b580e24d95c23914b7fa518db5a6b1f2f4896096945583f143e6ea79965b6`
-- Created: `2023-07-26T02:10:14.221227284Z`
-- Virtual Size: ~ 409.88 Mb  
+- Image ID: `sha256:1afa93c7a7667349aecf64db97008ddfde6902ee27f910a639bf23c0c14133a1`
+- Created: `2023-08-08T21:19:33.893695624Z`
+- Virtual Size: ~ 413.42 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
+- Entrypoint: `["/entrypoint.sh"]`
 - Command: `["catalina.sh","run"]`
 - Environment:
   - `PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
@@ -632,13 +633,13 @@ $ apt-get source -qq --print-uris freetype=2.11.1+dfsg-1ubuntu0.2
 'http://archive.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.11.1%2bdfsg-1ubuntu0.2.debian.tar.xz' freetype_2.11.1+dfsg-1ubuntu0.2.debian.tar.xz 41920 SHA512:5ebb72c4c47997c74da26fe13b796a558f7b4e2075743a55ba6a0079cd30c713aac3499ddbb05f6cbf408d383028743b41d9839531c906bf41d5ad725c9d5b04
 ```
 
-### `dpkg` source package: `gcc-12=12.1.0-2ubuntu1~22.04`
+### `dpkg` source package: `gcc-12=12.3.0-1ubuntu1~22.04`
 
 Binary Packages:
 
-- `gcc-12-base:amd64=12.1.0-2ubuntu1~22.04`
-- `libgcc-s1:amd64=12.1.0-2ubuntu1~22.04`
-- `libstdc++6:amd64=12.1.0-2ubuntu1~22.04`
+- `gcc-12-base:amd64=12.3.0-1ubuntu1~22.04`
+- `libgcc-s1:amd64=12.3.0-1ubuntu1~22.04`
+- `libstdc++6:amd64=12.3.0-1ubuntu1~22.04`
 
 Licenses: (parsed from: `/usr/share/doc/gcc-12-base/copyright`, `/usr/share/doc/libgcc-s1/copyright`, `/usr/share/doc/libstdc++6/copyright`)
 
@@ -649,9 +650,14 @@ Licenses: (parsed from: `/usr/share/doc/gcc-12-base/copyright`, `/usr/share/doc/
 - `GPL-3`
 - `LGPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris gcc-12=12.3.0-1ubuntu1~22.04
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-12/gcc-12_12.3.0-1ubuntu1%7e22.04.dsc' gcc-12_12.3.0-1ubuntu1~22.04.dsc 27867 SHA512:68c0860bb1f453ad06334504034c575bed05512ef2a94599e8bbf57a25ed51dc9a429f4646848c8d98e0d4695f1319fac5d5ebbee3a0f8eecdb279b75936a875
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-12/gcc-12_12.3.0.orig.tar.gz' gcc-12_12.3.0.orig.tar.gz 91555468 SHA512:a33ce506594e13cf96f0419e6d62b71f8906c87c69426218bf8679d281865f1b170bc2f7379216ae1d6ad9f6bdbf5819c34c65c7537fdb74179c27b0d4ab7b48
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-12/gcc-12_12.3.0-1ubuntu1%7e22.04.debian.tar.xz' gcc-12_12.3.0-1ubuntu1~22.04.debian.tar.xz 575908 SHA512:d1bf37d9af699430d3b107d0966194b20aef22654337efdb99971b270609785020dd1f04ce6a0f3f3eb0dbad704b46e9d9e5dfa6a497e98c78a867f5bc290038
+```
 
 ### `dpkg` source package: `glibc=2.35-0ubuntu3.1`
 
@@ -1465,19 +1471,24 @@ $ apt-get source -qq --print-uris nghttp2=1.43.0-1build3
 'http://archive.ubuntu.com/ubuntu/pool/main/n/nghttp2/nghttp2_1.43.0-1build3.debian.tar.xz' nghttp2_1.43.0-1build3.debian.tar.xz 16528 SHA512:a3c7be43142e4976a395052ff4eba22e4f610c31659eed2b03987c58d0b0ae83335f0593ceeea0f05f5d7db8f56c3c3b3651bd92fae3a8353b95595179926bd1
 ```
 
-### `dpkg` source package: `openldap=2.5.14+dfsg-0ubuntu0.22.04.2`
+### `dpkg` source package: `openldap=2.5.15+dfsg-0ubuntu0.22.04.1`
 
 Binary Packages:
 
-- `libldap-2.5-0:amd64=2.5.14+dfsg-0ubuntu0.22.04.2`
+- `libldap-2.5-0:amd64=2.5.15+dfsg-0ubuntu0.22.04.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openldap=2.5.15+dfsg-0ubuntu0.22.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.5.15%2bdfsg-0ubuntu0.22.04.1.dsc' openldap_2.5.15+dfsg-0ubuntu0.22.04.1.dsc 3319 SHA512:b872106b4d944d1050a70c5db89a51eeef8826d49ef723a1e24951f962108dd7af083a9f4d9e17e627c10f3f3e94844d6c4b90250af2947d69d839313a0e4b95
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.5.15%2bdfsg.orig.tar.gz' openldap_2.5.15+dfsg.orig.tar.gz 5616689 SHA512:e461b6c7f25bb666a72df84e83d0813d6b64e997b8de842b7ec6eac987287fcf08348be6c0b8bd6b7b663e2a03fc672d2eb5a38c570608404861633070fb613d
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.5.15%2bdfsg-0ubuntu0.22.04.1.debian.tar.xz' openldap_2.5.15+dfsg-0ubuntu0.22.04.1.debian.tar.xz 171804 SHA512:7aaba43df6cb6ed437dbad0881e9165f91de0375f3da89f4e5b7cb135e3d5fae123cf50d3c5c9a409a7be38f7c14bc95b38f7e2782455c6706ee50e70f9a5074
+```
 
 ### `dpkg` source package: `openssl=3.0.2-0ubuntu1.10`
 
@@ -1508,8 +1519,10 @@ $ apt-get source -qq --print-uris openssl=3.0.2-0ubuntu1.10
 Binary Packages:
 
 - `libp11-kit0:amd64=0.24.0-6build1`
+- `p11-kit=0.24.0-6build1`
+- `p11-kit-modules:amd64=0.24.0-6build1`
 
-Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`, `/usr/share/doc/p11-kit/copyright`, `/usr/share/doc/p11-kit-modules/copyright`)
 
 - `Apache-2.0`
 - `BSD-3-Clause`
