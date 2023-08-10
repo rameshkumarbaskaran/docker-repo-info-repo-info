@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:16e634ee713b205fe18dad4875e43088eae7804abf611055260604ae298faf24`
-- Created: `2023-06-15T08:30:11.703246548Z`
-- Virtual Size: ~ 462.97 Mb  
+- Image ID: `sha256:464068787dc7ac48977bf545649168bf0efe547e01f0d8e2f8d8dd7f88b48f8c`
+- Created: `2023-08-09T10:11:53.033856886Z`
+- Virtual Size: ~ 463.96 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -234,16 +234,16 @@ MIT
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.36.1-r0 description:
+busybox-1.36.1-r2 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.36.1-r0 webpage:
+busybox-1.36.1-r2 webpage:
 https://busybox.net/
 
-busybox-1.36.1-r0 installed size:
+busybox-1.36.1-r2 installed size:
 924 KiB
 
-busybox-1.36.1-r0 license:
+busybox-1.36.1-r2 license:
 GPL-2.0-only
 
 ```
@@ -251,16 +251,16 @@ GPL-2.0-only
 ### `apk` package: `busybox-binsh`
 
 ```console
-busybox-binsh-1.36.1-r0 description:
+busybox-binsh-1.36.1-r2 description:
 busybox ash /bin/sh
 
-busybox-binsh-1.36.1-r0 webpage:
+busybox-binsh-1.36.1-r2 webpage:
 https://busybox.net/
 
-busybox-binsh-1.36.1-r0 installed size:
+busybox-binsh-1.36.1-r2 installed size:
 8192 B
 
-busybox-binsh-1.36.1-r0 license:
+busybox-binsh-1.36.1-r2 license:
 GPL-2.0-only
 
 ```
@@ -353,16 +353,16 @@ LGPL-2.1-or-later OR MPL-1.1
 ### `apk` package: `cups-libs`
 
 ```console
-cups-libs-2.4.5-r0 description:
+cups-libs-2.4.6-r0 description:
 CUPS libraries
 
-cups-libs-2.4.5-r0 webpage:
+cups-libs-2.4.6-r0 webpage:
 https://github.com/OpenPrinting/cups/
 
-cups-libs-2.4.5-r0 installed size:
+cups-libs-2.4.6-r0 installed size:
 576 KiB
 
-cups-libs-2.4.5-r0 license:
+cups-libs-2.4.6-r0 license:
 Apache-2.0
 
 ```
@@ -506,16 +506,16 @@ LGPL-2.1-or-later
 ### `apk` package: `ghostscript`
 
 ```console
-ghostscript-10.01.1-r1 description:
+ghostscript-10.01.2-r0 description:
 An interpreter for the PostScript language and for PDF
 
-ghostscript-10.01.1-r1 webpage:
+ghostscript-10.01.2-r0 webpage:
 https://ghostscript.com/
 
-ghostscript-10.01.1-r1 installed size:
+ghostscript-10.01.2-r0 installed size:
 68 MiB
 
-ghostscript-10.01.1-r1 license:
+ghostscript-10.01.2-r0 license:
 AGPL-3.0-or-later
 
 ```
@@ -557,16 +557,16 @@ GPL-2.0-only
 ### `apk` package: `glib`
 
 ```console
-glib-2.76.3-r0 description:
+glib-2.76.4-r0 description:
 Common C routines used by Gtk+ and other libs
 
-glib-2.76.3-r0 webpage:
+glib-2.76.4-r0 webpage:
 https://developer.gnome.org/glib/
 
-glib-2.76.3-r0 installed size:
+glib-2.76.4-r0 installed size:
 3824 KiB
 
-glib-2.76.3-r0 license:
+glib-2.76.4-r0 license:
 LGPL-2.1-or-later
 
 ```
@@ -659,16 +659,16 @@ MIT
 ### `apk` package: `imagemagick`
 
 ```console
-imagemagick-7.1.1.10-r0 description:
+imagemagick-7.1.1.13-r0 description:
 Collection of tools and libraries for many image formats
 
-imagemagick-7.1.1.10-r0 webpage:
+imagemagick-7.1.1.13-r0 webpage:
 https://imagemagick.org/
 
-imagemagick-7.1.1.10-r0 installed size:
+imagemagick-7.1.1.13-r0 installed size:
 4600 KiB
 
-imagemagick-7.1.1.10-r0 license:
+imagemagick-7.1.1.13-r0 license:
 ImageMagick
 
 ```
@@ -676,16 +676,16 @@ ImageMagick
 ### `apk` package: `imagemagick-libs`
 
 ```console
-imagemagick-libs-7.1.1.10-r0 description:
+imagemagick-libs-7.1.1.13-r0 description:
 Collection of tools and libraries for many image formats (libraries)
 
-imagemagick-libs-7.1.1.10-r0 webpage:
+imagemagick-libs-7.1.1.13-r0 webpage:
 https://imagemagick.org/
 
-imagemagick-libs-7.1.1.10-r0 installed size:
+imagemagick-libs-7.1.1.13-r0 installed size:
 3248 KiB
 
-imagemagick-libs-7.1.1.10-r0 license:
+imagemagick-libs-7.1.1.13-r0 license:
 ImageMagick
 
 ```
@@ -795,16 +795,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.1.1-r1 description:
+libcrypto3-3.1.2-r0 description:
 Crypto library from openssl
 
-libcrypto3-3.1.1-r1 webpage:
+libcrypto3-3.1.2-r0 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.1.1-r1 installed size:
-4464 KiB
+libcrypto3-3.1.2-r0 installed size:
+4468 KiB
 
-libcrypto3-3.1.1-r1 license:
+libcrypto3-3.1.2-r0 license:
 Apache-2.0
 
 ```
@@ -812,16 +812,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.1.2-r0 description:
+libcurl-8.2.1-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.1.2-r0 webpage:
+libcurl-8.2.1-r0 webpage:
 https://curl.se/
 
-libcurl-8.1.2-r0 installed size:
-548 KiB
+libcurl-8.2.1-r0 installed size:
+552 KiB
 
-libcurl-8.1.2-r0 license:
+libcurl-8.2.1-r0 license:
 curl
 
 ```
@@ -1203,16 +1203,16 @@ GPL-2.0-or-later AND LGPL-2.1-or-later
 ### `apk` package: `libraw`
 
 ```console
-libraw-0.21.1-r0 description:
+libraw-0.21.1-r1 description:
 Library for reading RAW files obtained from digital photo cameras
 
-libraw-0.21.1-r0 webpage:
+libraw-0.21.1-r1 webpage:
 https://www.libraw.org/
 
-libraw-0.21.1-r0 installed size:
+libraw-0.21.1-r1 installed size:
 2400 KiB
 
-libraw-0.21.1-r0 license:
+libraw-0.21.1-r1 license:
 CDDL-1.0 OR LGPL-2.1-only
 
 ```
@@ -1220,16 +1220,16 @@ CDDL-1.0 OR LGPL-2.1-only
 ### `apk` package: `librsvg`
 
 ```console
-librsvg-2.56.1-r0 description:
+librsvg-2.56.3-r0 description:
 SAX-based renderer for SVG files into a GdkPixbuf
 
-librsvg-2.56.1-r0 webpage:
+librsvg-2.56.3-r0 webpage:
 https://wiki.gnome.org/Projects/LibRsvg
 
-librsvg-2.56.1-r0 installed size:
-3164 KiB
+librsvg-2.56.3-r0 installed size:
+3488 KiB
 
-librsvg-2.56.1-r0 license:
+librsvg-2.56.3-r0 license:
 LGPL-2.1-or-later
 
 ```
@@ -1254,16 +1254,16 @@ custom
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.1.1-r1 description:
+libssl3-3.1.2-r0 description:
 SSL shared libraries
 
-libssl3-3.1.1-r1 webpage:
+libssl3-3.1.2-r0 webpage:
 https://www.openssl.org/
 
-libssl3-3.1.1-r1 installed size:
+libssl3-3.1.2-r0 installed size:
 552 KiB
 
-libssl3-3.1.1-r1 license:
+libssl3-3.1.2-r0 license:
 Apache-2.0
 
 ```
@@ -1339,16 +1339,16 @@ BSD-3-Clause
 ### `apk` package: `libwebp`
 
 ```console
-libwebp-1.3.0-r2 description:
+libwebp-1.3.1-r0 description:
 Libraries for working with WebP images
 
-libwebp-1.3.0-r2 webpage:
+libwebp-1.3.1-r0 webpage:
 https://developers.google.com/speed/webp
 
-libwebp-1.3.0-r2 installed size:
+libwebp-1.3.1-r0 installed size:
 596 KiB
 
-libwebp-1.3.0-r2 license:
+libwebp-1.3.1-r0 license:
 BSD-3-Clause
 
 ```
@@ -1356,16 +1356,16 @@ BSD-3-Clause
 ### `apk` package: `libx11`
 
 ```console
-libx11-1.8.4-r3 description:
+libx11-1.8.4-r4 description:
 X11 client-side library
 
-libx11-1.8.4-r3 webpage:
+libx11-1.8.4-r4 webpage:
 https://xorg.freedesktop.org/
 
-libx11-1.8.4-r3 installed size:
+libx11-1.8.4-r4 installed size:
 3152 KiB
 
-libx11-1.8.4-r3 license:
+libx11-1.8.4-r4 license:
 X11
 
 ```
@@ -1543,16 +1543,16 @@ LGPL-2.1-or-later
 ### `apk` package: `mercurial`
 
 ```console
-mercurial-6.4.3-r0 description:
+mercurial-6.4.5-r0 description:
 Scalable distributed SCM tool
 
-mercurial-6.4.3-r0 webpage:
+mercurial-6.4.5-r0 webpage:
 https://www.mercurial-scm.org/
 
-mercurial-6.4.3-r0 installed size:
+mercurial-6.4.5-r0 installed size:
 12 MiB
 
-mercurial-6.4.3-r0 license:
+mercurial-6.4.5-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -1560,16 +1560,16 @@ GPL-2.0-or-later
 ### `apk` package: `mercurial-pyc`
 
 ```console
-mercurial-pyc-6.4.3-r0 description:
+mercurial-pyc-6.4.5-r0 description:
 Precompiled Python bytecode for mercurial
 
-mercurial-pyc-6.4.3-r0 webpage:
+mercurial-pyc-6.4.5-r0 webpage:
 https://www.mercurial-scm.org/
 
-mercurial-pyc-6.4.3-r0 installed size:
+mercurial-pyc-6.4.5-r0 installed size:
 11 MiB
 
-mercurial-pyc-6.4.3-r0 license:
+mercurial-pyc-6.4.5-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -1594,16 +1594,16 @@ BSD-2-Clause
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.4-r0 description:
+musl-1.2.4-r1 description:
 the musl c library (libc) implementation
 
-musl-1.2.4-r0 webpage:
+musl-1.2.4-r1 webpage:
 https://musl.libc.org/
 
-musl-1.2.4-r0 installed size:
+musl-1.2.4-r1 installed size:
 620 KiB
 
-musl-1.2.4-r0 license:
+musl-1.2.4-r1 license:
 MIT
 
 ```
@@ -1611,16 +1611,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.2.4-r0 description:
+musl-utils-1.2.4-r1 description:
 the musl c library (libc) implementation
 
-musl-utils-1.2.4-r0 webpage:
+musl-utils-1.2.4-r1 webpage:
 https://musl.libc.org/
 
-musl-utils-1.2.4-r0 installed size:
+musl-utils-1.2.4-r1 installed size:
 132 KiB
 
-musl-utils-1.2.4-r0 license:
+musl-utils-1.2.4-r1 license:
 MIT AND BSD-2-Clause AND GPL-2.0-or-later
 
 ```
@@ -1662,16 +1662,16 @@ GPL-2.0-or-later OR LGPL-3.0-or-later
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.53.0-r0 description:
+nghttp2-libs-1.55.1-r0 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.53.0-r0 webpage:
+nghttp2-libs-1.55.1-r0 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.53.0-r0 installed size:
+nghttp2-libs-1.55.1-r0 installed size:
 152 KiB
 
-nghttp2-libs-1.53.0-r0 license:
+nghttp2-libs-1.55.1-r0 license:
 MIT
 
 ```
@@ -1696,16 +1696,16 @@ LGPL-2.1-only
 ### `apk` package: `openssh-client-common`
 
 ```console
-openssh-client-common-9.3_p1-r3 description:
+openssh-client-common-9.3_p2-r0 description:
 OpenBSD's SSH client common files
 
-openssh-client-common-9.3_p1-r3 webpage:
+openssh-client-common-9.3_p2-r0 webpage:
 https://www.openssh.com/portable.html
 
-openssh-client-common-9.3_p1-r3 installed size:
+openssh-client-common-9.3_p2-r0 installed size:
 2804 KiB
 
-openssh-client-common-9.3_p1-r3 license:
+openssh-client-common-9.3_p2-r0 license:
 BSD
 
 ```
@@ -1713,16 +1713,16 @@ BSD
 ### `apk` package: `openssh-client-default`
 
 ```console
-openssh-client-default-9.3_p1-r3 description:
+openssh-client-default-9.3_p2-r0 description:
 OpenBSD's SSH client
 
-openssh-client-default-9.3_p1-r3 webpage:
+openssh-client-default-9.3_p2-r0 webpage:
 https://www.openssh.com/portable.html
 
-openssh-client-default-9.3_p1-r3 installed size:
+openssh-client-default-9.3_p2-r0 installed size:
 900 KiB
 
-openssh-client-default-9.3_p1-r3 license:
+openssh-client-default-9.3_p2-r0 license:
 BSD
 
 ```
@@ -1730,16 +1730,16 @@ BSD
 ### `apk` package: `openssh-keygen`
 
 ```console
-openssh-keygen-9.3_p1-r3 description:
+openssh-keygen-9.3_p2-r0 description:
 ssh helper program for generating keys
 
-openssh-keygen-9.3_p1-r3 webpage:
+openssh-keygen-9.3_p2-r0 webpage:
 https://www.openssh.com/portable.html
 
-openssh-keygen-9.3_p1-r3 installed size:
+openssh-keygen-9.3_p2-r0 installed size:
 556 KiB
 
-openssh-keygen-9.3_p1-r3 license:
+openssh-keygen-9.3_p2-r0 license:
 BSD
 
 ```
@@ -2206,16 +2206,16 @@ blessing
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.36.1-r0 description:
+ssl_client-1.36.1-r2 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.36.1-r0 webpage:
+ssl_client-1.36.1-r2 webpage:
 https://busybox.net/
 
-ssl_client-1.36.1-r0 installed size:
+ssl_client-1.36.1-r2 installed size:
 28 KiB
 
-ssl_client-1.36.1-r0 license:
+ssl_client-1.36.1-r2 license:
 GPL-2.0-only
 
 ```
