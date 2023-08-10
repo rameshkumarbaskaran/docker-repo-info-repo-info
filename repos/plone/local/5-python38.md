@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:68795202240300db2cbb256741502b89e73f5c4388e8a4476a28146f7e498efa`
-- Created: `2023-07-28T23:43:50.482671276Z`
-- Virtual Size: ~ 797.89 Mb  
+- Image ID: `sha256:bcd04316b1226075695a058fe2bd174e2d894d8603c1ef9b2c4645820c39110f`
+- Created: `2023-08-09T13:28:00.419126162Z`
+- Virtual Size: ~ 797.90 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -16,8 +16,8 @@
   - `PYTHON_VERSION=3.8.17`
   - `PYTHON_PIP_VERSION=23.0.1`
   - `PYTHON_SETUPTOOLS_VERSION=57.5.0`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/0d8570dc44796f4369b652222cf176b3db6ac70e/public/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=96461deced5c2a487ddc65207ec5a9cffeca0d34e7af7ea1afc470ff0d746207`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/9af82b715db434abb94a0a6f3569f43e72157346/public/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=45a2bb8bf2bb5eff16fdd00faef6f29731831c7c59bd9fc2bf1f3bed511ff1fe`
   - `PIP=22.2.2`
   - `ZC_BUILDOUT=3.0.1`
   - `SETUPTOOLS=65.7.0`
@@ -2381,11 +2381,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libzstd/1.4.8+dfsg-2.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libzstd/1.4.8+dfsg-2.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=5.10.179-2`
+### `dpkg` source package: `linux=5.10.179-3`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=5.10.179-2`
+- `linux-libc-dev:amd64=5.10.179-3`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -2398,13 +2398,20 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `X11`
 - `Xen-interface`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris linux=5.10.179-3
+'http://deb.debian.org/debian-security/pool/updates/main/l/linux/linux_5.10.179-3.dsc' linux_5.10.179-3.dsc 197238 SHA256:ca7c88433de565d2bc864b9db721607cccf4da91d7d4bcc90a60011319b53a67
+'http://deb.debian.org/debian-security/pool/updates/main/l/linux/linux_5.10.179.orig.tar.xz' linux_5.10.179.orig.tar.xz 121881852 SHA256:254d0375733a423efd8b364b9c33c88034dec85a76e2cba1093c54a667a74dbd
+'http://deb.debian.org/debian-security/pool/updates/main/l/linux/linux_5.10.179-3.debian.tar.xz' linux_5.10.179-3.debian.tar.xz 3815272 SHA256:38805e5b927c35c2f7867adbc0dee07e3e36dbb5a89e755b8fdbc63df99b7e28
+```
 
-- http://snapshot.debian.org/package/linux/5.10.179-2/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/linux/5.10.179-3/ (for browsing the source)
+- https://sources.debian.net/src/linux/5.10.179-3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/5.10.179-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=11.1.0`
 
