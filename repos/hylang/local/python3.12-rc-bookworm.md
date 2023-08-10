@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:005293665029de4a0307b554bb7149ee614d2461e114adbe3d638ad38a4e3359`
-- Created: `2023-07-29T00:16:23.181933408Z`
-- Virtual Size: ~ 161.89 Mb  
+- Image ID: `sha256:276706697837d8220363bb6dc38f242d8f597eb0e102d42443069df160a6bb8c`
+- Created: `2023-08-09T12:52:32.960811827Z`
+- Virtual Size: ~ 162.03 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -12,10 +12,10 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305`
-  - `PYTHON_VERSION=3.12.0b4`
-  - `PYTHON_PIP_VERSION=23.1.2`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/0d8570dc44796f4369b652222cf176b3db6ac70e/public/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=96461deced5c2a487ddc65207ec5a9cffeca0d34e7af7ea1afc470ff0d746207`
+  - `PYTHON_VERSION=3.12.0rc1`
+  - `PYTHON_PIP_VERSION=23.2.1`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/9af82b715db434abb94a0a6f3569f43e72157346/public/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=45a2bb8bf2bb5eff16fdd00faef6f29731831c7c59bd9fc2bf1f3bed511ff1fe`
   - `HY_VERSION=0.27.0`
   - `HYRULE_VERSION=0.4.0`
 
@@ -1555,11 +1555,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libzstd/1.5.4+dfsg2-5/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libzstd/1.5.4+dfsg2-5/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=6.1.38-1`
+### `dpkg` source package: `linux=6.1.38-2`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=6.1.38-1`
+- `linux-libc-dev:amd64=6.1.38-2`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -1574,17 +1574,17 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris linux=6.1.38-1
-'http://deb.debian.org/debian/pool/main/l/linux/linux_6.1.38-1.dsc' linux_6.1.38-1.dsc 290924 SHA256:2a2a0b22812f38161a848e3a23913642378de3e3a1900667d1c0c5a0d92b5011
-'http://deb.debian.org/debian/pool/main/l/linux/linux_6.1.38.orig.tar.xz' linux_6.1.38.orig.tar.xz 137332648 SHA256:89ec2ca3af4376d3ac4adc900920238c76c671f89785746a1b2a498851e47d19
-'http://deb.debian.org/debian/pool/main/l/linux/linux_6.1.38-1.debian.tar.xz' linux_6.1.38-1.debian.tar.xz 4004596 SHA256:10713975b72d8deec39ec98c279e395c8309804c9ee2149252378aa627805c50
+$ apt-get source -qq --print-uris linux=6.1.38-2
+'http://deb.debian.org/debian-security/pool/updates/main/l/linux/linux_6.1.38-2.dsc' linux_6.1.38-2.dsc 290769 SHA256:1d2a21f2db5d9d801b00d6c4facf72dbaa049db133a5c24e6121360838aa66cb
+'http://deb.debian.org/debian-security/pool/updates/main/l/linux/linux_6.1.38.orig.tar.xz' linux_6.1.38.orig.tar.xz 137332648 SHA256:89ec2ca3af4376d3ac4adc900920238c76c671f89785746a1b2a498851e47d19
+'http://deb.debian.org/debian-security/pool/updates/main/l/linux/linux_6.1.38-2.debian.tar.xz' linux_6.1.38-2.debian.tar.xz 4005180 SHA256:d0ca30cc05eaa8bd69344f1703ef1aef71f4a717d359ee72c8d80b1eb7e8f0e4
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/linux/6.1.38-1/ (for browsing the source)
-- https://sources.debian.net/src/linux/6.1.38-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/6.1.38-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/linux/6.1.38-2/ (for browsing the source)
+- https://sources.debian.net/src/linux/6.1.38-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/6.1.38-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lz4=1.9.4-1`
 

@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e17e993fbcfd3db58c39dc47081cfd3fecea98e0cce898ee8ef2f181d579cfb5`
-- Created: `2023-07-13T22:16:47.882580731Z`
-- Virtual Size: ~ 64.38 Mb  
+- Image ID: `sha256:a0c9a2ba3b1a7b9225fbcdcdc322ad10a8a52eff9495f496a116de4cb2601b92`
+- Created: `2023-08-09T12:53:07.430078422Z`
+- Virtual Size: ~ 64.52 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -12,10 +12,10 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305`
-  - `PYTHON_VERSION=3.12.0b4`
-  - `PYTHON_PIP_VERSION=23.1.2`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/0d8570dc44796f4369b652222cf176b3db6ac70e/public/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=96461deced5c2a487ddc65207ec5a9cffeca0d34e7af7ea1afc470ff0d746207`
+  - `PYTHON_VERSION=3.12.0rc1`
+  - `PYTHON_PIP_VERSION=23.2.1`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/9af82b715db434abb94a0a6f3569f43e72157346/public/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=45a2bb8bf2bb5eff16fdd00faef6f29731831c7c59bd9fc2bf1f3bed511ff1fe`
   - `HY_VERSION=0.27.0`
   - `HYRULE_VERSION=0.4.0`
 
@@ -92,16 +92,16 @@ GPL-2.0-only
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.36.1-r0 description:
+busybox-1.36.1-r2 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.36.1-r0 webpage:
+busybox-1.36.1-r2 webpage:
 https://busybox.net/
 
-busybox-1.36.1-r0 installed size:
+busybox-1.36.1-r2 installed size:
 924 KiB
 
-busybox-1.36.1-r0 license:
+busybox-1.36.1-r2 license:
 GPL-2.0-only
 
 ```
@@ -109,16 +109,16 @@ GPL-2.0-only
 ### `apk` package: `busybox-binsh`
 
 ```console
-busybox-binsh-1.36.1-r0 description:
+busybox-binsh-1.36.1-r2 description:
 busybox ash /bin/sh
 
-busybox-binsh-1.36.1-r0 webpage:
+busybox-binsh-1.36.1-r2 webpage:
 https://busybox.net/
 
-busybox-binsh-1.36.1-r0 installed size:
+busybox-binsh-1.36.1-r2 installed size:
 8192 B
 
-busybox-binsh-1.36.1-r0 license:
+busybox-binsh-1.36.1-r2 license:
 GPL-2.0-only
 
 ```
@@ -279,16 +279,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.1.1-r1 description:
+libcrypto3-3.1.2-r0 description:
 Crypto library from openssl
 
-libcrypto3-3.1.1-r1 webpage:
+libcrypto3-3.1.2-r0 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.1.1-r1 installed size:
-4464 KiB
+libcrypto3-3.1.2-r0 installed size:
+4468 KiB
 
-libcrypto3-3.1.1-r1 license:
+libcrypto3-3.1.2-r0 license:
 Apache-2.0
 
 ```
@@ -398,16 +398,16 @@ X11
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.1.1-r1 description:
+libssl3-3.1.2-r0 description:
 SSL shared libraries
 
-libssl3-3.1.1-r1 webpage:
+libssl3-3.1.2-r0 webpage:
 https://www.openssl.org/
 
-libssl3-3.1.1-r1 installed size:
+libssl3-3.1.2-r0 installed size:
 552 KiB
 
-libssl3-3.1.1-r1 license:
+libssl3-3.1.2-r0 license:
 Apache-2.0
 
 ```
@@ -483,16 +483,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.4-r0 description:
+musl-1.2.4-r1 description:
 the musl c library (libc) implementation
 
-musl-1.2.4-r0 webpage:
+musl-1.2.4-r1 webpage:
 https://musl.libc.org/
 
-musl-1.2.4-r0 installed size:
+musl-1.2.4-r1 installed size:
 620 KiB
 
-musl-1.2.4-r0 license:
+musl-1.2.4-r1 license:
 MIT
 
 ```
@@ -500,16 +500,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.2.4-r0 description:
+musl-utils-1.2.4-r1 description:
 the musl c library (libc) implementation
 
-musl-utils-1.2.4-r0 webpage:
+musl-utils-1.2.4-r1 webpage:
 https://musl.libc.org/
 
-musl-utils-1.2.4-r0 installed size:
+musl-utils-1.2.4-r1 installed size:
 132 KiB
 
-musl-utils-1.2.4-r0 license:
+musl-utils-1.2.4-r1 license:
 MIT AND BSD-2-Clause AND GPL-2.0-or-later
 
 ```
@@ -585,16 +585,16 @@ blessing
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.36.1-r0 description:
+ssl_client-1.36.1-r2 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.36.1-r0 webpage:
+ssl_client-1.36.1-r2 webpage:
 https://busybox.net/
 
-ssl_client-1.36.1-r0 installed size:
+ssl_client-1.36.1-r2 installed size:
 28 KiB
 
-ssl_client-1.36.1-r0 license:
+ssl_client-1.36.1-r2 license:
 GPL-2.0-only
 
 ```
