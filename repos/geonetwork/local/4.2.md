@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e3b603f7fcb6bf64a0547a279c893e1029a6ade05c79b747e0809cf87bf836c2`
-- Created: `2023-08-03T07:43:46.946052606Z`
-- Virtual Size: ~ 734.71 Mb  
+- Image ID: `sha256:5100043011046d4e7f3db8121d225b1f0d805d0bc85619651ca7da1d69abb994`
+- Created: `2023-08-08T23:32:33.414997192Z`
+- Virtual Size: ~ 736.52 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/geonetwork-entrypoint.sh"]`
@@ -1425,8 +1425,10 @@ $ apt-get source -qq --print-uris openssl=1.1.1f-1ubuntu2.19
 Binary Packages:
 
 - `libp11-kit0:amd64=0.23.20-1ubuntu0.1`
+- `p11-kit=0.23.20-1ubuntu0.1`
+- `p11-kit-modules:amd64=0.23.20-1ubuntu0.1`
 
-Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`, `/usr/share/doc/p11-kit/copyright`, `/usr/share/doc/p11-kit-modules/copyright`)
 
 - `BSD-3-Clause`
 - `ISC`
