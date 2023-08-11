@@ -1,10 +1,10 @@
-# `wordpress:6.2.2-fpm-alpine`
+# `wordpress:6.3.0-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d3765ceee760ba5d84b232fdf47601775ec509cd18db279b927da3c8a76c6af0`
-- Created: `2023-06-15T08:15:07.907954737Z`
-- Virtual Size: ~ 303.94 Mb  
+- Image ID: `sha256:cbaa80d1e903ef052c87933dfebc8bea144c1fd33553279e221de069fc629257`
+- Created: `2023-08-09T23:27:19.183034729Z`
+- Virtual Size: ~ 305.88 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -16,11 +16,11 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F 2C16C765DBE54A088130F1BC4B9B5F600B55F3B4`
-  - `PHP_VERSION=8.0.29`
-  - `PHP_URL=https://www.php.net/distributions/php-8.0.29.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.29.tar.xz.asc`
-  - `PHP_SHA256=14db2fbf26c07d0eb2c9fab25dbde7e27726a3e88452cca671f0896bbb683ca9`
+  - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F 2C16C765DBE54A088130F1BC4B9B5F600B55F3B4 39B641343D8C104B2B146DC3F9C39DC0B9698544`
+  - `PHP_VERSION=8.0.30`
+  - `PHP_URL=https://www.php.net/distributions/php-8.0.30.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.30.tar.xz.asc`
+  - `PHP_SHA256=216ab305737a5d392107112d618a755dc5df42058226f1670e9db90e77d777d9`
 
 ## `apk` (`.apk`-based packages)
 
@@ -265,16 +265,16 @@ LGPL-2.0-or-later MPL-1.1
 ### `apk` package: `cups-libs`
 
 ```console
-cups-libs-2.4.2-r1 description:
+cups-libs-2.4.2-r2 description:
 CUPS libraries
 
-cups-libs-2.4.2-r1 webpage:
+cups-libs-2.4.2-r2 webpage:
 https://github.com/OpenPrinting/cups/
 
-cups-libs-2.4.2-r1 installed size:
+cups-libs-2.4.2-r2 installed size:
 572 KiB
 
-cups-libs-2.4.2-r1 license:
+cups-libs-2.4.2-r2 license:
 GPL-2.0-only
 
 ```
@@ -282,16 +282,16 @@ GPL-2.0-only
 ### `apk` package: `curl`
 
 ```console
-curl-8.1.2-r0 description:
+curl-8.2.1-r0 description:
 URL retrival utility and library
 
-curl-8.1.2-r0 webpage:
+curl-8.2.1-r0 webpage:
 https://curl.se/
 
-curl-8.1.2-r0 installed size:
+curl-8.2.1-r0 installed size:
 268 KiB
 
-curl-8.1.2-r0 license:
+curl-8.2.1-r0 license:
 curl
 
 ```
@@ -401,16 +401,16 @@ LGPL-2.0-or-later
 ### `apk` package: `ghostscript`
 
 ```console
-ghostscript-9.56.1-r1 description:
+ghostscript-9.56.1-r2 description:
 An interpreter for the PostScript language and for PDF
 
-ghostscript-9.56.1-r1 webpage:
+ghostscript-9.56.1-r2 webpage:
 https://ghostscript.com/
 
-ghostscript-9.56.1-r1 installed size:
+ghostscript-9.56.1-r2 installed size:
 69 MiB
 
-ghostscript-9.56.1-r1 license:
+ghostscript-9.56.1-r2 license:
 AGPL-3.0-or-later
 
 ```
@@ -690,16 +690,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1u-r1 description:
+libcrypto1.1-1.1.1v-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1u-r1 webpage:
+libcrypto1.1-1.1.1v-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1u-r1 installed size:
+libcrypto1.1-1.1.1v-r0 installed size:
 2708 KiB
 
-libcrypto1.1-1.1.1u-r1 license:
+libcrypto1.1-1.1.1v-r0 license:
 OpenSSL
 
 ```
@@ -707,16 +707,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.1.2-r0 description:
+libcurl-8.2.1-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.1.2-r0 webpage:
+libcurl-8.2.1-r0 webpage:
 https://curl.se/
 
-libcurl-8.1.2-r0 installed size:
+libcurl-8.2.1-r0 installed size:
 564 KiB
 
-libcurl-8.1.2-r0 license:
+libcurl-8.2.1-r0 license:
 curl
 
 ```
@@ -945,16 +945,16 @@ ISC
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1u-r1 description:
+libssl1.1-1.1.1v-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1u-r1 webpage:
+libssl1.1-1.1.1v-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1u-r1 installed size:
+libssl1.1-1.1.1v-r0 installed size:
 528 KiB
 
-libssl1.1-1.1.1u-r1 license:
+libssl1.1-1.1.1v-r0 license:
 OpenSSL
 
 ```
@@ -1030,16 +1030,16 @@ BSD-3-Clause
 ### `apk` package: `libx11`
 
 ```console
-libx11-1.8-r0 description:
+libx11-1.8-r1 description:
 X11 client-side library
 
-libx11-1.8-r0 webpage:
+libx11-1.8-r1 webpage:
 http://xorg.freedesktop.org/
 
-libx11-1.8-r0 installed size:
-3192 KiB
+libx11-1.8-r1 installed size:
+3196 KiB
 
-libx11-1.8-r0 license:
+libx11-1.8-r1 license:
 custom:XFREE86
 
 ```
@@ -1268,16 +1268,16 @@ LGPL-2.0-or-later
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.47.0-r0 description:
+nghttp2-libs-1.47.0-r1 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.47.0-r0 webpage:
+nghttp2-libs-1.47.0-r1 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.47.0-r0 installed size:
+nghttp2-libs-1.47.0-r1 installed size:
 156 KiB
 
-nghttp2-libs-1.47.0-r0 license:
+nghttp2-libs-1.47.0-r1 license:
 MIT
 
 ```
@@ -1319,16 +1319,16 @@ BSD-2-Clause
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1u-r1 description:
+openssl-1.1.1v-r0 description:
 toolkit for transport layer security (TLS) - version 1.1
 
-openssl-1.1.1u-r1 webpage:
+openssl-1.1.1v-r0 webpage:
 https://www.openssl.org/
 
-openssl-1.1.1u-r1 installed size:
+openssl-1.1.1v-r0 installed size:
 660 KiB
 
-openssl-1.1.1u-r1 license:
+openssl-1.1.1v-r0 license:
 OpenSSL
 
 ```
@@ -1523,16 +1523,16 @@ GPL-3.0-or-later
 ### `apk` package: `tiff`
 
 ```console
-tiff-4.4.0-r3 description:
+tiff-4.4.0-r4 description:
 Provides support for the Tag Image File Format or TIFF
 
-tiff-4.4.0-r3 webpage:
+tiff-4.4.0-r4 webpage:
 https://gitlab.com/libtiff/libtiff
 
-tiff-4.4.0-r3 installed size:
+tiff-4.4.0-r4 installed size:
 480 KiB
 
-tiff-4.4.0-r3 license:
+tiff-4.4.0-r4 license:
 libtiff
 
 ```
