@@ -2,11 +2,12 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:71c8a80294abf31a0f989a486eb2e63bffbd48f7407b1379f6e55b65dd91a838`
-- Created: `2023-07-26T02:01:34.581838877Z`
-- Virtual Size: ~ 690.91 Mb  
+- Image ID: `sha256:af25a25da27e8a6de7b7cc293da7dd61e5359f61c61fcd833a1bfd5104594660`
+- Created: `2023-08-08T20:59:20.347434909Z`
+- Virtual Size: ~ 692.54 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
+- Entrypoint: `["/entrypoint.sh"]`
 - Command: `["gradle"]`
 - Environment:
   - `PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
@@ -377,33 +378,15 @@ $ apt-get source -qq --print-uris coreutils=8.32-4.1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.32-4.1ubuntu1.debian.tar.xz' coreutils_8.32-4.1ubuntu1.debian.tar.xz 41096 SHA512:74adfa2f2a85af8d7024ad6d13942e915217dcb10e29caa9c314e0a15da6ec019e7aa52ac5351c35ccea1bace7a05c6dc7569b7b0487c8fcd46b3ba42d66d89d
 ```
 
-### `dpkg` source package: `curl=7.81.0-1ubuntu1.10`
-
-Binary Packages:
-
-- `curl=7.81.0-1ubuntu1.10`
-- `libcurl4:amd64=7.81.0-1ubuntu1.10`
-
-Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl4/copyright`)
-
-- `BSD-3-Clause`
-- `BSD-4-Clause`
-- `ISC`
-- `curl`
-- `other`
-- `public-domain`
-
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
-
-
 ### `dpkg` source package: `curl=7.81.0-1ubuntu1.13`
 
 Binary Packages:
 
+- `curl=7.81.0-1ubuntu1.13`
 - `libcurl3-gnutls:amd64=7.81.0-1ubuntu1.13`
+- `libcurl4:amd64=7.81.0-1ubuntu1.13`
 
-Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`)
+Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
 - `BSD-3-Clause`
 - `BSD-4-Clause`
@@ -1869,11 +1852,11 @@ $ apt-get source -qq --print-uris nghttp2=1.43.0-1build3
 'http://archive.ubuntu.com/ubuntu/pool/main/n/nghttp2/nghttp2_1.43.0-1build3.debian.tar.xz' nghttp2_1.43.0-1build3.debian.tar.xz 16528 SHA512:a3c7be43142e4976a395052ff4eba22e4f610c31659eed2b03987c58d0b0ae83335f0593ceeea0f05f5d7db8f56c3c3b3651bd92fae3a8353b95595179926bd1
 ```
 
-### `dpkg` source package: `openldap=2.5.14+dfsg-0ubuntu0.22.04.2`
+### `dpkg` source package: `openldap=2.5.15+dfsg-0ubuntu0.22.04.1`
 
 Binary Packages:
 
-- `libldap-2.5-0:amd64=2.5.14+dfsg-0ubuntu0.22.04.2`
+- `libldap-2.5-0:amd64=2.5.15+dfsg-0ubuntu0.22.04.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1937,8 +1920,10 @@ $ apt-get source -qq --print-uris openssl=3.0.2-0ubuntu1.10
 Binary Packages:
 
 - `libp11-kit0:amd64=0.24.0-6build1`
+- `p11-kit=0.24.0-6build1`
+- `p11-kit-modules:amd64=0.24.0-6build1`
 
-Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`, `/usr/share/doc/p11-kit/copyright`, `/usr/share/doc/p11-kit-modules/copyright`)
 
 - `Apache-2.0`
 - `BSD-3-Clause`
@@ -2193,14 +2178,14 @@ $ apt-get source -qq --print-uris python3-defaults=3.10.6-1~22.04
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.10.6-1%7e22.04.tar.gz' python3-defaults_3.10.6-1~22.04.tar.gz 145325 SHA512:4dce1fcadb47a3fbd72e489e78c6543aa4b35a0480eb4e10617b3afd223cdd244e97f79db55f2abf28367848658ae46a3cda895d3d9dcf21c530149207f080dd
 ```
 
-### `dpkg` source package: `python3.10=3.10.6-1~22.04.2ubuntu1.1`
+### `dpkg` source package: `python3.10=3.10.12-1~22.04.2`
 
 Binary Packages:
 
-- `libpython3.10-minimal:amd64=3.10.6-1~22.04.2ubuntu1.1`
-- `libpython3.10-stdlib:amd64=3.10.6-1~22.04.2ubuntu1.1`
-- `python3.10=3.10.6-1~22.04.2ubuntu1.1`
-- `python3.10-minimal=3.10.6-1~22.04.2ubuntu1.1`
+- `libpython3.10-minimal:amd64=3.10.12-1~22.04.2`
+- `libpython3.10-stdlib:amd64=3.10.12-1~22.04.2`
+- `python3.10=3.10.12-1~22.04.2`
+- `python3.10-minimal=3.10.12-1~22.04.2`
 
 Licenses: (parsed from: `/usr/share/doc/libpython3.10-minimal/copyright`, `/usr/share/doc/libpython3.10-stdlib/copyright`, `/usr/share/doc/python3.10/copyright`, `/usr/share/doc/python3.10-minimal/copyright`)
 
@@ -2222,9 +2207,14 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.10-minimal/copyright`, `/usr/
 - `use in source`
 - `without`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python3.10=3.10.12-1~22.04.2
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.10/python3.10_3.10.12-1%7e22.04.2.dsc' python3.10_3.10.12-1~22.04.2.dsc 3699 SHA512:acb3b74adaa110d5614ba50d6c8001f7eae6778a5800f0d0cedbd4f29d3f574d04b81276d7bcc4d3fa3044609f40cac8080e28eef04cf04898cefa8ec17b5b49
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.10/python3.10_3.10.12.orig.tar.xz' python3.10_3.10.12.orig.tar.xz 19654836 SHA512:5ea018e71bfe7872e02eaf8aef56d5583c0880e4ce5fbbdf8ea76da20c2e94ac6a3ba8badb4b7d1bc21853402a3b63541b04181737417b1626e786b696595cf5
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.10/python3.10_3.10.12-1%7e22.04.2.debian.tar.xz' python3.10_3.10.12-1~22.04.2.debian.tar.xz 218484 SHA512:c8ad86bf51977ed890905b4688396e77f8310f08a48eccc5272b976ffb2b60a815bac6cb37f90967df9c39a73bf15ac0bedbddf007c97a59312779df95e86ea6
+```
 
 ### `dpkg` source package: `readline=8.1.2-1`
 

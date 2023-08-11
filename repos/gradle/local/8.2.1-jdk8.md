@@ -2,11 +2,12 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:18ea16bb669ec5c0854b37ba56185cef415a00ce8771815274babc8d4f2061f6`
-- Created: `2023-08-01T21:56:35.189837559Z`
-- Virtual Size: ~ 617.78 Mb  
+- Image ID: `sha256:7e6d75c5feb5ab396be3e4ea84145569f1aac3f1a4b1c0d2f31d42ca9e29b0cf`
+- Created: `2023-08-08T20:58:04.512859609Z`
+- Virtual Size: ~ 619.31 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
+- Entrypoint: `["/entrypoint.sh"]`
 - Command: `["gradle"]`
 - Environment:
   - `PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
@@ -377,33 +378,15 @@ $ apt-get source -qq --print-uris coreutils=8.32-4.1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.32-4.1ubuntu1.debian.tar.xz' coreutils_8.32-4.1ubuntu1.debian.tar.xz 41096 SHA512:74adfa2f2a85af8d7024ad6d13942e915217dcb10e29caa9c314e0a15da6ec019e7aa52ac5351c35ccea1bace7a05c6dc7569b7b0487c8fcd46b3ba42d66d89d
 ```
 
-### `dpkg` source package: `curl=7.81.0-1ubuntu1.10`
-
-Binary Packages:
-
-- `curl=7.81.0-1ubuntu1.10`
-- `libcurl4:amd64=7.81.0-1ubuntu1.10`
-
-Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl4/copyright`)
-
-- `BSD-3-Clause`
-- `BSD-4-Clause`
-- `ISC`
-- `curl`
-- `other`
-- `public-domain`
-
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
-
-
 ### `dpkg` source package: `curl=7.81.0-1ubuntu1.13`
 
 Binary Packages:
 
+- `curl=7.81.0-1ubuntu1.13`
 - `libcurl3-gnutls:amd64=7.81.0-1ubuntu1.13`
+- `libcurl4:amd64=7.81.0-1ubuntu1.13`
 
-Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`)
+Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
 - `BSD-3-Clause`
 - `BSD-4-Clause`
@@ -1869,11 +1852,11 @@ $ apt-get source -qq --print-uris nghttp2=1.43.0-1build3
 'http://archive.ubuntu.com/ubuntu/pool/main/n/nghttp2/nghttp2_1.43.0-1build3.debian.tar.xz' nghttp2_1.43.0-1build3.debian.tar.xz 16528 SHA512:a3c7be43142e4976a395052ff4eba22e4f610c31659eed2b03987c58d0b0ae83335f0593ceeea0f05f5d7db8f56c3c3b3651bd92fae3a8353b95595179926bd1
 ```
 
-### `dpkg` source package: `openldap=2.5.14+dfsg-0ubuntu0.22.04.2`
+### `dpkg` source package: `openldap=2.5.15+dfsg-0ubuntu0.22.04.1`
 
 Binary Packages:
 
-- `libldap-2.5-0:amd64=2.5.14+dfsg-0ubuntu0.22.04.2`
+- `libldap-2.5-0:amd64=2.5.15+dfsg-0ubuntu0.22.04.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1937,8 +1920,10 @@ $ apt-get source -qq --print-uris openssl=3.0.2-0ubuntu1.10
 Binary Packages:
 
 - `libp11-kit0:amd64=0.24.0-6build1`
+- `p11-kit=0.24.0-6build1`
+- `p11-kit-modules:amd64=0.24.0-6build1`
 
-Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`, `/usr/share/doc/p11-kit/copyright`, `/usr/share/doc/p11-kit-modules/copyright`)
 
 - `Apache-2.0`
 - `BSD-3-Clause`

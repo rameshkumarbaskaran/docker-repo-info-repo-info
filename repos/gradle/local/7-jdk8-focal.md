@@ -2,11 +2,12 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:27462a6118848e7bbbf8071b3620f375d6ccced3e705e600702b55bea1125b78`
-- Created: `2023-08-03T04:27:26.739242146Z`
-- Virtual Size: ~ 649.05 Mb  
+- Image ID: `sha256:ee7d4e2a40c3d42b8a29f500a98e87758dab70bafb48d3e9595ad5d838805642`
+- Created: `2023-08-08T21:01:23.346125929Z`
+- Virtual Size: ~ 650.86 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
+- Entrypoint: `["/entrypoint.sh"]`
 - Command: `["gradle"]`
 - Environment:
   - `PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
@@ -1792,14 +1793,9 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:8.2p1-4ubuntu0.8
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1-4ubuntu0.8.dsc' openssh_8.2p1-4ubuntu0.8.dsc 3098 SHA512:7fefded83d2dfbc8823df2045f99f6f6a57d0ad346031b90b58a51def20480c5ec5edd4f136a620aaae74a54c0ef1ec21fc246f56aba291b71dbf0251da463d4
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1.orig.tar.gz' openssh_8.2p1.orig.tar.gz 1701197 SHA512:c4db64e52a3a4c410de9de49f9cb104dd493b10250af3599b92457dd986277b3fd99a6f51cec94892fd1be5bd0369c5757262ea7805f0de464b245c3d34c120a
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1-4ubuntu0.8.debian.tar.xz' openssh_8.2p1-4ubuntu0.8.debian.tar.xz 179372 SHA512:2399a0916f04ab1e7748726087612d357d09eb9a4abe4750ddb996991fc7ee3e459dcbf0203b776699725256779255ef07a1122dc5390b17d6945f7b4d0bd695
-```
 
 ### `dpkg` source package: `openssl=1.1.1f-1ubuntu2.19`
 
@@ -1826,8 +1822,10 @@ $ apt-get source -qq --print-uris openssl=1.1.1f-1ubuntu2.19
 Binary Packages:
 
 - `libp11-kit0:amd64=0.23.20-1ubuntu0.1`
+- `p11-kit=0.23.20-1ubuntu0.1`
+- `p11-kit-modules:amd64=0.23.20-1ubuntu0.1`
 
-Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`, `/usr/share/doc/p11-kit/copyright`, `/usr/share/doc/p11-kit-modules/copyright`)
 
 - `BSD-3-Clause`
 - `ISC`
