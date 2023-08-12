@@ -2,12 +2,11 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d151df10e1ebe96d24be1b5ec32e85c85d7d68de6932d2b81a796a59d7323472`
-- Created: `2023-08-08T21:28:00.59546662Z`
+- Image ID: `sha256:f22e787cd6b585ae536b44408398a5964dc6b998489caf7867a1fc0ebfa6eec0`
+- Created: `2023-08-12T00:22:08.03986362Z`
 - Virtual Size: ~ 416.03 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Entrypoint: `["/entrypoint.sh"]`
 - Command: `["catalina.sh","run"]`
 - Environment:
   - `PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
