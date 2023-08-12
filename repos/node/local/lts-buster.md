@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b0c8fcf9a32772543c925448c04231050e64950af8de3fac773fae703ebb90db`
-- Created: `2023-07-28T22:05:34.848772323Z`
-- Virtual Size: ~ 965.82 Mb  
+- Image ID: `sha256:875cb63eaeb005218c1c25534756960a2ece69c10c5b38463478ed6b2240a023`
+- Created: `2023-08-10T17:26:56.97108602Z`
+- Virtual Size: ~ 965.83 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=18.17.0`
+  - `NODE_VERSION=18.17.1`
   - `YARN_VERSION=1.22.19`
 
 ## `dpkg` (`.deb`-based packages)
@@ -3478,20 +3478,13 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `X11`
 - `Xen-interface`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.19.289-1
-'http://deb.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.289-1.dsc' linux_4.19.289-1.dsc 191175 SHA256:815e3d4d78fa0f24f3ddea073d43a0dc09d12b8fe63b17d3bf2293a3076648c6
-'http://deb.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.289.orig.tar.xz' linux_4.19.289.orig.tar.xz 107654512 SHA256:8ce9eda34863c308c12b0b1025d87efb2ea7267f6fd920eaea2a41e0beed4db5
-'http://deb.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.289-1.debian.tar.xz' linux_4.19.289-1.debian.tar.xz 1589484 SHA256:9bc62a0ced6133de33d5fcda3a8e02e028edf9e4a08dbc31a9aa8a2fa7a9991f
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/linux/4.19.289-1/
 
-- https://sources.debian.net/src/linux/4.19.289-1/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.19.289-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.19.289-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=10.2019051400`
 
