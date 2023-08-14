@@ -1,7 +1,7 @@
 ## `clojure:temurin-20-tools-deps-jammy`
 
 ```console
-$ docker pull clojure@sha256:e32138cd7a2754e1cc10d097305bd7acc1f073bfb295f8c07274158956e9f6b9
+$ docker pull clojure@sha256:111b5154070faaee3c519b79e0322b90083ff2781b0bf970e8a7e08074a62295
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull clojure@sha256:e32138cd7a2754e1cc10d097305bd7acc1f073bfb295f8c0727
 ### `clojure:temurin-20-tools-deps-jammy` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:ce55bba6d48d8f13a86eb7f07de39e6bf61c1151aa787278887f0a102d279202
+$ docker pull clojure@sha256:dc0ffcf78c13d63eaf2e6551fffc136a264281e7b6e15d291851b730805d4618
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **256.2 MB (256238215 bytes)**  
+-	Total Size: **256.2 MB (256238194 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fd4543f9b886787d8e0b1d106edd3b7f18e0b813a3c26208151b02e07bfaa9a1`
+-	Image ID: `sha256:fea96fda3fb51e6211ad4ea44e6490777577e636c15685d27895f6b731fc7e1f`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["-M","--repl"]`
 
@@ -50,25 +50,25 @@ ENV JAVA_VERSION=jdk-20.0.2+9
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='b475bcc23db0bd618c815bb8f11d8e084dc58288ea3bcdf4e7f389ed41c89f56';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_aarch64_linux_hotspot_20.0.2_9.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='3d91842e9c172967ac397076523249d05a82ead51b0006838f5f0315ad52222c';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_x64_linux_hotspot_20.0.2_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
 # Thu, 03 Aug 2023 02:38:55 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Thu, 03 Aug 2023 02:38:55 GMT
-COPY file:0673fe0a4a716089bcd96321c8de60149aea8a94ae7c4ba827ecc4a74a9789a3 in / 
-# Thu, 03 Aug 2023 02:38:55 GMT
-ENTRYPOINT ["/entrypoint.sh"]
-# Thu, 03 Aug 2023 02:38:56 GMT
+# Mon, 14 Aug 2023 18:11:38 GMT
+COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
+# Mon, 14 Aug 2023 18:11:38 GMT
+ENTRYPOINT ["/__cacert_entrypoint.sh"]
+# Mon, 14 Aug 2023 18:11:38 GMT
 CMD ["jshell"]
-# Thu, 03 Aug 2023 05:06:07 GMT
+# Mon, 14 Aug 2023 20:12:49 GMT
 ENV CLOJURE_VERSION=1.11.1.1347
-# Thu, 03 Aug 2023 05:06:07 GMT
+# Mon, 14 Aug 2023 20:12:49 GMT
 WORKDIR /tmp
-# Thu, 03 Aug 2023 05:06:29 GMT
+# Mon, 14 Aug 2023 20:13:03 GMT
 RUN apt-get update && apt-get install -y make git rlwrap wget && rm -rf /var/lib/apt/lists/* && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "d9158bf3a1d92fbf8551656e47a86f42e93d10f1db9defa2124bfee206ce8c8f *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apt-get purge -y --auto-remove wget
-# Thu, 03 Aug 2023 05:06:30 GMT
+# Mon, 14 Aug 2023 20:13:04 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Thu, 03 Aug 2023 05:06:30 GMT
+# Mon, 14 Aug 2023 20:13:04 GMT
 COPY file:137b40904568e30898cd031ef34f77e7f132846ba4eec91d04ae4b93dddfbb8d in /usr/local/bin/entrypoint 
-# Thu, 03 Aug 2023 05:06:30 GMT
+# Mon, 14 Aug 2023 20:13:04 GMT
 ENTRYPOINT ["entrypoint"]
-# Thu, 03 Aug 2023 05:06:30 GMT
+# Mon, 14 Aug 2023 20:13:04 GMT
 CMD ["-M" "--repl"]
 ```
 
@@ -89,20 +89,20 @@ CMD ["-M" "--repl"]
 		Last Modified: Thu, 03 Aug 2023 02:42:42 GMT  
 		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5d3db30676717e4724ed6eda1aff628e0e383d949a86884d2a8cf907b433ce6e`  
-		Last Modified: Thu, 03 Aug 2023 02:42:42 GMT  
-		Size: 667.0 B  
+	-	`sha256:2796e791ee63e94483b16400c805bdcfda1eec9dd5642e25bf67656fb592f681`  
+		Last Modified: Mon, 14 Aug 2023 18:18:43 GMT  
+		Size: 734.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed5bc2d7d775efdc88e0a73de66443024662948557fb0e5be967da3abb866658`  
-		Last Modified: Thu, 03 Aug 2023 05:11:32 GMT  
-		Size: 54.6 MB (54550174 bytes)  
+	-	`sha256:fb68206bc6dd177e58af1991c6658a2ea6ab488fa065555100a8a7ba95ed4049`  
+		Last Modified: Mon, 14 Aug 2023 20:22:41 GMT  
+		Size: 54.6 MB (54550089 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b17cdee1cdf0285aa06fadaeb324b18496db97c1193450044332b54de84f975`  
-		Last Modified: Thu, 03 Aug 2023 05:11:26 GMT  
-		Size: 621.0 B  
+	-	`sha256:0de697e80a8bc7ba5e013eeb3f0b08004ea9f1cdb0d8bb41be478f36e4866007`  
+		Last Modified: Mon, 14 Aug 2023 20:22:35 GMT  
+		Size: 618.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9834d359a6045ba7c0b93a9503b5d692742230c4d5b169a4c57d5962d38fc05b`  
-		Last Modified: Thu, 03 Aug 2023 05:11:26 GMT  
+	-	`sha256:2caee7e9a7bff632b7b7b2b700a6f142e456de4564e0c4a802594208a6aae57d`  
+		Last Modified: Mon, 14 Aug 2023 20:22:35 GMT  
 		Size: 402.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
