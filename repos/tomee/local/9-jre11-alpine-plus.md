@@ -1,12 +1,13 @@
-# `tomee:9.0.0-jre11-Temurin-alpine-plus`
+# `tomee:9.1.0-jre11-Temurin-alpine-plus`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ea82cb187516f7b79f9e37766f6dfcb59369c389f5b32187ff61ccbdf213b61d`
-- Created: `2023-06-08T20:38:47.325206735Z`
-- Virtual Size: ~ 258.91 Mb  
+- Image ID: `sha256:366054a2a1e044a0b37dd5f1a98ebb17bc68b2e5d14ea6dadb725ffae009c966`
+- Created: `2023-08-14T21:00:23.914865288Z`
+- Virtual Size: ~ 255.21 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
+- Entrypoint: `["/__cacert_entrypoint.sh"]`
 - Command: `["catalina.sh","run"]`
 - Environment:
   - `PATH=/usr/local/tomee/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
@@ -14,8 +15,8 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.19+7`
-  - `TOMEE_VER=9.0.0`
+  - `JAVA_VERSION=jdk-11.0.20+8`
+  - `TOMEE_VER=9.1.0`
   - `TOMEE_BUILD=plus`
 
 ## `apk` (`.apk`-based packages)
@@ -74,17 +75,34 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.14.0-r0 description:
+apk-tools-2.14.0-r2 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.14.0-r0 webpage:
+apk-tools-2.14.0-r2 webpage:
 https://gitlab.alpinelinux.org/alpine/apk-tools
 
-apk-tools-2.14.0-r0 installed size:
+apk-tools-2.14.0-r2 installed size:
 304 KiB
 
-apk-tools-2.14.0-r0 license:
+apk-tools-2.14.0-r2 license:
 GPL-2.0-only
+
+```
+
+### `apk` package: `bash`
+
+```console
+bash-5.2.15-r5 description:
+The GNU Bourne Again shell
+
+bash-5.2.15-r5 webpage:
+https://www.gnu.org/software/bash/bash.html
+
+bash-5.2.15-r5 installed size:
+1360 KiB
+
+bash-5.2.15-r5 license:
+GPL-3.0-or-later
 
 ```
 
@@ -108,16 +126,16 @@ MIT
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.36.0-r9 description:
+busybox-1.36.1-r2 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.36.0-r9 webpage:
+busybox-1.36.1-r2 webpage:
 https://busybox.net/
 
-busybox-1.36.0-r9 installed size:
+busybox-1.36.1-r2 installed size:
 924 KiB
 
-busybox-1.36.0-r9 license:
+busybox-1.36.1-r2 license:
 GPL-2.0-only
 
 ```
@@ -125,16 +143,16 @@ GPL-2.0-only
 ### `apk` package: `busybox-binsh`
 
 ```console
-busybox-binsh-1.36.0-r9 description:
+busybox-binsh-1.36.1-r2 description:
 busybox ash /bin/sh
 
-busybox-binsh-1.36.0-r9 webpage:
+busybox-binsh-1.36.1-r2 webpage:
 https://busybox.net/
 
-busybox-binsh-1.36.0-r9 installed size:
+busybox-binsh-1.36.1-r2 installed size:
 8192 B
 
-busybox-binsh-1.36.0-r9 license:
+busybox-binsh-1.36.1-r2 license:
 GPL-2.0-only
 
 ```
@@ -176,16 +194,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `curl`
 
 ```console
-curl-8.1.2-r0 description:
+curl-8.2.1-r0 description:
 URL retrival utility and library
 
-curl-8.1.2-r0 webpage:
+curl-8.2.1-r0 webpage:
 https://curl.se/
 
-curl-8.1.2-r0 installed size:
+curl-8.2.1-r0 installed size:
 236 KiB
 
-curl-8.1.2-r0 license:
+curl-8.2.1-r0 license:
 curl
 
 ```
@@ -295,16 +313,16 @@ LGPL-3.0-or-later OR GPL-2.0-or-later
 ### `apk` package: `gnupg-dirmngr`
 
 ```console
-gnupg-dirmngr-2.4.1-r1 description:
+gnupg-dirmngr-2.4.3-r0 description:
 GNU Privacy Guard 2 - network certificate management service
 
-gnupg-dirmngr-2.4.1-r1 webpage:
+gnupg-dirmngr-2.4.3-r0 webpage:
 https://www.gnupg.org/
 
-gnupg-dirmngr-2.4.1-r1 installed size:
-656 KiB
+gnupg-dirmngr-2.4.3-r0 installed size:
+660 KiB
 
-gnupg-dirmngr-2.4.1-r1 license:
+gnupg-dirmngr-2.4.3-r0 license:
 GPL-3.0-or-later
 
 ```
@@ -312,16 +330,16 @@ GPL-3.0-or-later
 ### `apk` package: `gnupg-gpgconf`
 
 ```console
-gnupg-gpgconf-2.4.1-r1 description:
+gnupg-gpgconf-2.4.3-r0 description:
 GNU Privacy Guard 2 - core configuration utilities
 
-gnupg-gpgconf-2.4.1-r1 webpage:
+gnupg-gpgconf-2.4.3-r0 webpage:
 https://www.gnupg.org/
 
-gnupg-gpgconf-2.4.1-r1 installed size:
+gnupg-gpgconf-2.4.3-r0 installed size:
 252 KiB
 
-gnupg-gpgconf-2.4.1-r1 license:
+gnupg-gpgconf-2.4.3-r0 license:
 GPL-3.0-or-later
 
 ```
@@ -329,16 +347,16 @@ GPL-3.0-or-later
 ### `apk` package: `gnupg-keyboxd`
 
 ```console
-gnupg-keyboxd-2.4.1-r1 description:
+gnupg-keyboxd-2.4.3-r0 description:
 GNU Privacy Guard 2 - keyboxd manager
 
-gnupg-keyboxd-2.4.1-r1 webpage:
+gnupg-keyboxd-2.4.3-r0 webpage:
 https://www.gnupg.org/
 
-gnupg-keyboxd-2.4.1-r1 installed size:
+gnupg-keyboxd-2.4.3-r0 installed size:
 236 KiB
 
-gnupg-keyboxd-2.4.1-r1 license:
+gnupg-keyboxd-2.4.3-r0 license:
 GPL-3.0-or-later
 
 ```
@@ -363,16 +381,16 @@ LGPL-2.1-or-later
 ### `apk` package: `gpg`
 
 ```console
-gpg-2.4.1-r1 description:
+gpg-2.4.3-r0 description:
 GNU Privacy Guard 2 - public key operations only
 
-gpg-2.4.1-r1 webpage:
+gpg-2.4.3-r0 webpage:
 https://www.gnupg.org/
 
-gpg-2.4.1-r1 installed size:
+gpg-2.4.3-r0 installed size:
 932 KiB
 
-gpg-2.4.1-r1 license:
+gpg-2.4.3-r0 license:
 GPL-3.0-or-later
 
 ```
@@ -380,33 +398,50 @@ GPL-3.0-or-later
 ### `apk` package: `gpg-agent`
 
 ```console
-gpg-agent-2.4.1-r1 description:
+gpg-agent-2.4.3-r0 description:
 GNU Privacy Guard 2 - cryptographic agent
 
-gpg-agent-2.4.1-r1 webpage:
+gpg-agent-2.4.3-r0 webpage:
 https://www.gnupg.org/
 
-gpg-agent-2.4.1-r1 installed size:
+gpg-agent-2.4.3-r0 installed size:
 676 KiB
 
-gpg-agent-2.4.1-r1 license:
+gpg-agent-2.4.3-r0 license:
 GPL-3.0-or-later
+
+```
+
+### `apk` package: `java-cacerts`
+
+```console
+java-cacerts-1.0-r1 description:
+Script to update java cacerts store
+
+java-cacerts-1.0-r1 webpage:
+https://git.alpinelinux.org/aports/tree/community/java-cacerts
+
+java-cacerts-1.0-r1 installed size:
+32 KiB
+
+java-cacerts-1.0-r1 license:
+MIT
 
 ```
 
 ### `apk` package: `libassuan`
 
 ```console
-libassuan-2.5.5-r2 description:
+libassuan-2.5.6-r0 description:
 IPC library used by some GnuPG related software
 
-libassuan-2.5.5-r2 webpage:
+libassuan-2.5.6-r0 webpage:
 https://www.gnupg.org/software/libassuan/index.html
 
-libassuan-2.5.5-r2 installed size:
+libassuan-2.5.6-r0 installed size:
 84 KiB
 
-libassuan-2.5.5-r2 license:
+libassuan-2.5.6-r0 license:
 LGPL-2.1-or-later
 
 ```
@@ -448,16 +483,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.1.0-r4 description:
+libcrypto3-3.1.2-r0 description:
 Crypto library from openssl
 
-libcrypto3-3.1.0-r4 webpage:
+libcrypto3-3.1.2-r0 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.1.0-r4 installed size:
-4460 KiB
+libcrypto3-3.1.2-r0 installed size:
+4468 KiB
 
-libcrypto3-3.1.0-r4 license:
+libcrypto3-3.1.2-r0 license:
 Apache-2.0
 
 ```
@@ -465,16 +500,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.1.2-r0 description:
+libcurl-8.2.1-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.1.2-r0 webpage:
+libcurl-8.2.1-r0 webpage:
 https://curl.se/
 
-libcurl-8.1.2-r0 installed size:
-548 KiB
+libcurl-8.2.1-r0 installed size:
+552 KiB
 
-libcurl-8.1.2-r0 license:
+libcurl-8.2.1-r0 license:
 curl
 
 ```
@@ -601,16 +636,16 @@ LGPL-2.1-or-later
 ### `apk` package: `libksba`
 
 ```console
-libksba-1.6.3-r2 description:
+libksba-1.6.4-r0 description:
 Libksba is a CMS and X.509 access library
 
-libksba-1.6.3-r2 webpage:
+libksba-1.6.4-r0 webpage:
 https://www.gnupg.org/software/libksba/index.html
 
-libksba-1.6.3-r2 installed size:
+libksba-1.6.4-r0 installed size:
 216 KiB
 
-libksba-1.6.3-r2 license:
+libksba-1.6.4-r0 license:
 LGPL-3.0-only AND GPL-2.0-only AND GPL-3.0-only
 
 ```
@@ -618,16 +653,16 @@ LGPL-3.0-only AND GPL-2.0-only AND GPL-3.0-only
 ### `apk` package: `libldap`
 
 ```console
-libldap-2.6.4-r3 description:
+libldap-2.6.5-r0 description:
 OpenLDAP libraries
 
-libldap-2.6.4-r3 webpage:
+libldap-2.6.5-r0 webpage:
 https://www.openldap.org/
 
-libldap-2.6.4-r3 installed size:
+libldap-2.6.5-r0 installed size:
 400 KiB
 
-libldap-2.6.4-r3 license:
+libldap-2.6.5-r0 license:
 OLDAP-2.8
 
 ```
@@ -703,16 +738,16 @@ custom
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.1.0-r4 description:
+libssl3-3.1.2-r0 description:
 SSL shared libraries
 
-libssl3-3.1.0-r4 webpage:
+libssl3-3.1.2-r0 webpage:
 https://www.openssl.org/
 
-libssl3-3.1.0-r4 installed size:
+libssl3-3.1.2-r0 installed size:
 552 KiB
 
-libssl3-3.1.0-r4 license:
+libssl3-3.1.2-r0 license:
 Apache-2.0
 
 ```
@@ -771,16 +806,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.4-r0 description:
+musl-1.2.4-r1 description:
 the musl c library (libc) implementation
 
-musl-1.2.4-r0 webpage:
+musl-1.2.4-r1 webpage:
 https://musl.libc.org/
 
-musl-1.2.4-r0 installed size:
+musl-1.2.4-r1 installed size:
 620 KiB
 
-musl-1.2.4-r0 license:
+musl-1.2.4-r1 license:
 MIT
 
 ```
@@ -822,16 +857,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.2.4-r0 description:
+musl-utils-1.2.4-r1 description:
 the musl c library (libc) implementation
 
-musl-utils-1.2.4-r0 webpage:
+musl-utils-1.2.4-r1 webpage:
 https://musl.libc.org/
 
-musl-utils-1.2.4-r0 installed size:
+musl-utils-1.2.4-r1 installed size:
 132 KiB
 
-musl-utils-1.2.4-r0 license:
+musl-utils-1.2.4-r1 license:
 MIT AND BSD-2-Clause AND GPL-2.0-or-later
 
 ```
@@ -873,16 +908,16 @@ GPL-2.0-or-later OR LGPL-3.0-or-later
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.53.0-r0 description:
+nghttp2-libs-1.55.1-r0 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.53.0-r0 webpage:
+nghttp2-libs-1.55.1-r0 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.53.0-r0 installed size:
+nghttp2-libs-1.55.1-r0 installed size:
 152 KiB
 
-nghttp2-libs-1.53.0-r0 license:
+nghttp2-libs-1.55.1-r0 license:
 MIT
 
 ```
@@ -921,6 +956,23 @@ BSD-3-Clause
 
 ```
 
+### `apk` package: `p11-kit-trust`
+
+```console
+p11-kit-trust-0.24.1-r2 description:
+System trust module from p11-kit
+
+p11-kit-trust-0.24.1-r2 webpage:
+https://p11-glue.freedesktop.org/
+
+p11-kit-trust-0.24.1-r2 installed size:
+356 KiB
+
+p11-kit-trust-0.24.1-r2 license:
+BSD-3-Clause
+
+```
+
 ### `apk` package: `pinentry`
 
 ```console
@@ -934,6 +986,23 @@ pinentry-1.2.1-r1 installed size:
 76 KiB
 
 pinentry-1.2.1-r1 license:
+GPL-2.0-or-later
+
+```
+
+### `apk` package: `readline`
+
+```console
+readline-8.2.1-r1 description:
+GNU readline library
+
+readline-8.2.1-r1 webpage:
+https://tiswww.cwru.edu/php/chet/readline/rltop.html
+
+readline-8.2.1-r1 installed size:
+300 KiB
+
+readline-8.2.1-r1 license:
 GPL-2.0-or-later
 
 ```
@@ -975,16 +1044,16 @@ blessing
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.36.0-r9 description:
+ssl_client-1.36.1-r2 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.36.0-r9 webpage:
+ssl_client-1.36.1-r2 webpage:
 https://busybox.net/
 
-ssl_client-1.36.0-r9 installed size:
+ssl_client-1.36.1-r2 installed size:
 28 KiB
 
-ssl_client-1.36.0-r9 license:
+ssl_client-1.36.1-r2 license:
 GPL-2.0-only
 
 ```

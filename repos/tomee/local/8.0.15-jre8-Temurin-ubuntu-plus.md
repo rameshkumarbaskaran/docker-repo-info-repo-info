@@ -2,12 +2,12 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:bfc0ee2c97d772a4ba774bbac7d6937b914ebe5eb67552f12db4ec8dff3dbf63`
-- Created: `2023-08-08T21:52:05.058711993Z`
+- Image ID: `sha256:57561285a1fec8bb402be87e9755be50795002dc19f4a36b0d04aaa1dd8dd731`
+- Created: `2023-08-14T20:55:24.646723193Z`
 - Virtual Size: ~ 313.95 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Entrypoint: `["/entrypoint.sh"]`
+- Entrypoint: `["/__cacert_entrypoint.sh"]`
 - Command: `["catalina.sh","run"]`
 - Environment:
   - `PATH=/usr/local/tomee/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
