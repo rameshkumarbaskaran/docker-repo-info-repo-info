@@ -1,7 +1,7 @@
 ## `clojure:temurin-20-bullseye-slim`
 
 ```console
-$ docker pull clojure@sha256:cb9cf81ad6a203fc7e625b2037e83e8010c204fb4239f5377d52b6430ed611e7
+$ docker pull clojure@sha256:72b0b7eee78db955afcdeb4969f66446ef7cde57c95f6bcb2835a5d71d038c4a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -75,14 +75,14 @@ CMD ["-M" "--repl"]
 ### `clojure:temurin-20-bullseye-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull clojure@sha256:c40b755d6ed694f3511546f7391d13df1191d36cc9a37719868d10d0e4eb7880
+$ docker pull clojure@sha256:3be9cffb9baf0e89cf7c81c44a9966fb9cd708daacfb78f27df3432261b18f6c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **243.8 MB (243798943 bytes)**  
+-	Total Size: **243.8 MB (243800406 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:dcfdd09c4b59e86fecca760f5d6c59ed7a3599cee52541bd97727551bb20d3e2`
+-	Image ID: `sha256:0cc481b572c96f6ae2452b80133bebcbee67d2ab439a0a1f56f0e6c24cccc120`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["-M","--repl"]`
 
@@ -97,19 +97,19 @@ ENV JAVA_HOME=/opt/java/openjdk
 COPY dir:d35c6357dd030960bb6081f48b2bc10afb3da11efc1525ff916214b03be70ddf in /opt/java/openjdk 
 # Fri, 28 Jul 2023 14:37:57 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 28 Jul 2023 14:38:37 GMT
-ENV CLOJURE_VERSION=1.11.1.1347
-# Fri, 28 Jul 2023 14:38:37 GMT
+# Tue, 15 Aug 2023 00:34:53 GMT
+ENV CLOJURE_VERSION=1.11.1.1386
+# Tue, 15 Aug 2023 00:34:54 GMT
 WORKDIR /tmp
-# Fri, 28 Jul 2023 14:38:50 GMT
-RUN apt-get update && apt-get install -y curl make git rlwrap wget && rm -rf /var/lib/apt/lists/* && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "d9158bf3a1d92fbf8551656e47a86f42e93d10f1db9defa2124bfee206ce8c8f *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apt-get purge -y --auto-remove curl wget
-# Fri, 28 Jul 2023 14:38:50 GMT
+# Tue, 15 Aug 2023 00:35:07 GMT
+RUN apt-get update && apt-get install -y curl make git rlwrap wget && rm -rf /var/lib/apt/lists/* && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "3a09e2df4d3abd89b5b1286af0133a36a525ff3acfe1432f98b5c24b170940e8 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apt-get purge -y --auto-remove curl wget
+# Tue, 15 Aug 2023 00:35:08 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Fri, 28 Jul 2023 14:38:50 GMT
+# Tue, 15 Aug 2023 00:35:08 GMT
 COPY file:137b40904568e30898cd031ef34f77e7f132846ba4eec91d04ae4b93dddfbb8d in /usr/local/bin/entrypoint 
-# Fri, 28 Jul 2023 14:38:51 GMT
+# Tue, 15 Aug 2023 00:35:08 GMT
 ENTRYPOINT ["entrypoint"]
-# Fri, 28 Jul 2023 14:38:51 GMT
+# Tue, 15 Aug 2023 00:35:08 GMT
 CMD ["-M" "--repl"]
 ```
 
@@ -122,15 +122,15 @@ CMD ["-M" "--repl"]
 		Last Modified: Fri, 28 Jul 2023 14:45:06 GMT  
 		Size: 152.1 MB (152120007 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c92a16efd87274424319913dfe4fad924a4609bd1ae5e6fc645108497b12c1ef`  
-		Last Modified: Fri, 28 Jul 2023 14:45:40 GMT  
-		Size: 61.6 MB (61615090 bytes)  
+	-	`sha256:cd6b5ea7d87854f16f983ac3ab99d6ccd9d93c596a5a3d527224fd73ff7a0061`  
+		Last Modified: Tue, 15 Aug 2023 00:41:27 GMT  
+		Size: 61.6 MB (61616552 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a506b71dddfb691955f4e81fd59f06a0799dfaff819fee4df1838d4746cf4a7c`  
-		Last Modified: Fri, 28 Jul 2023 14:45:33 GMT  
-		Size: 616.0 B  
+	-	`sha256:9287a715406393a37938ac73af1adbf5d428e2db096b4552507acad2e279e5e9`  
+		Last Modified: Tue, 15 Aug 2023 00:41:21 GMT  
+		Size: 617.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39006f1927ae40c45b000f32c9a6d40485e8cc9fb1e49fd170cd55d55f8fbc05`  
-		Last Modified: Fri, 28 Jul 2023 14:45:33 GMT  
+	-	`sha256:d38076570defc6456f0d281fd580d3f22cd50f1945c2c092da9a259498cff89f`  
+		Last Modified: Tue, 15 Aug 2023 00:41:21 GMT  
 		Size: 399.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
