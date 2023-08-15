@@ -140,6 +140,32 @@
 -	[`jetty:11.0.15-jre17-alpine`](#jetty11015-jre17-alpine)
 -	[`jetty:11.0.15-jre17-alpine-eclipse-temurin`](#jetty11015-jre17-alpine-eclipse-temurin)
 -	[`jetty:11.0.15-jre17-eclipse-temurin`](#jetty11015-jre17-eclipse-temurin)
+-	[`jetty:12.0`](#jetty120)
+-	[`jetty:12.0-amazoncorretto`](#jetty120-amazoncorretto)
+-	[`jetty:12.0-eclipse-temurin`](#jetty120-eclipse-temurin)
+-	[`jetty:12.0-jdk17`](#jetty120-jdk17)
+-	[`jetty:12.0-jdk17-alpine`](#jetty120-jdk17-alpine)
+-	[`jetty:12.0-jdk17-alpine-amazoncorretto`](#jetty120-jdk17-alpine-amazoncorretto)
+-	[`jetty:12.0-jdk17-alpine-eclipse-temurin`](#jetty120-jdk17-alpine-eclipse-temurin)
+-	[`jetty:12.0-jdk17-amazoncorretto`](#jetty120-jdk17-amazoncorretto)
+-	[`jetty:12.0-jdk17-eclipse-temurin`](#jetty120-jdk17-eclipse-temurin)
+-	[`jetty:12.0-jre17`](#jetty120-jre17)
+-	[`jetty:12.0-jre17-alpine`](#jetty120-jre17-alpine)
+-	[`jetty:12.0-jre17-alpine-eclipse-temurin`](#jetty120-jre17-alpine-eclipse-temurin)
+-	[`jetty:12.0-jre17-eclipse-temurin`](#jetty120-jre17-eclipse-temurin)
+-	[`jetty:12.0.0`](#jetty1200)
+-	[`jetty:12.0.0-amazoncorretto`](#jetty1200-amazoncorretto)
+-	[`jetty:12.0.0-eclipse-temurin`](#jetty1200-eclipse-temurin)
+-	[`jetty:12.0.0-jdk17`](#jetty1200-jdk17)
+-	[`jetty:12.0.0-jdk17-alpine`](#jetty1200-jdk17-alpine)
+-	[`jetty:12.0.0-jdk17-alpine-amazoncorretto`](#jetty1200-jdk17-alpine-amazoncorretto)
+-	[`jetty:12.0.0-jdk17-alpine-eclipse-temurin`](#jetty1200-jdk17-alpine-eclipse-temurin)
+-	[`jetty:12.0.0-jdk17-amazoncorretto`](#jetty1200-jdk17-amazoncorretto)
+-	[`jetty:12.0.0-jdk17-eclipse-temurin`](#jetty1200-jdk17-eclipse-temurin)
+-	[`jetty:12.0.0-jre17`](#jetty1200-jre17)
+-	[`jetty:12.0.0-jre17-alpine`](#jetty1200-jre17-alpine)
+-	[`jetty:12.0.0-jre17-alpine-eclipse-temurin`](#jetty1200-jre17-alpine-eclipse-temurin)
+-	[`jetty:12.0.0-jre17-eclipse-temurin`](#jetty1200-jre17-eclipse-temurin)
 -	[`jetty:9`](#jetty9)
 -	[`jetty:9-amazoncorretto`](#jetty9-amazoncorretto)
 -	[`jetty:9-eclipse-temurin`](#jetty9-eclipse-temurin)
@@ -22813,6 +22839,110 @@ CMD ["java" "-jar" "/usr/local/jetty/start.jar"]
 		Last Modified: Mon, 14 Aug 2023 18:38:46 GMT  
 		Size: 1.6 KB (1613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `jetty:12.0`
+
+**does not exist** (yet?)
+
+## `jetty:12.0-amazoncorretto`
+
+**does not exist** (yet?)
+
+## `jetty:12.0-eclipse-temurin`
+
+**does not exist** (yet?)
+
+## `jetty:12.0-jdk17`
+
+**does not exist** (yet?)
+
+## `jetty:12.0-jdk17-alpine`
+
+**does not exist** (yet?)
+
+## `jetty:12.0-jdk17-alpine-amazoncorretto`
+
+**does not exist** (yet?)
+
+## `jetty:12.0-jdk17-alpine-eclipse-temurin`
+
+**does not exist** (yet?)
+
+## `jetty:12.0-jdk17-amazoncorretto`
+
+**does not exist** (yet?)
+
+## `jetty:12.0-jdk17-eclipse-temurin`
+
+**does not exist** (yet?)
+
+## `jetty:12.0-jre17`
+
+**does not exist** (yet?)
+
+## `jetty:12.0-jre17-alpine`
+
+**does not exist** (yet?)
+
+## `jetty:12.0-jre17-alpine-eclipse-temurin`
+
+**does not exist** (yet?)
+
+## `jetty:12.0-jre17-eclipse-temurin`
+
+**does not exist** (yet?)
+
+## `jetty:12.0.0`
+
+**does not exist** (yet?)
+
+## `jetty:12.0.0-amazoncorretto`
+
+**does not exist** (yet?)
+
+## `jetty:12.0.0-eclipse-temurin`
+
+**does not exist** (yet?)
+
+## `jetty:12.0.0-jdk17`
+
+**does not exist** (yet?)
+
+## `jetty:12.0.0-jdk17-alpine`
+
+**does not exist** (yet?)
+
+## `jetty:12.0.0-jdk17-alpine-amazoncorretto`
+
+**does not exist** (yet?)
+
+## `jetty:12.0.0-jdk17-alpine-eclipse-temurin`
+
+**does not exist** (yet?)
+
+## `jetty:12.0.0-jdk17-amazoncorretto`
+
+**does not exist** (yet?)
+
+## `jetty:12.0.0-jdk17-eclipse-temurin`
+
+**does not exist** (yet?)
+
+## `jetty:12.0.0-jre17`
+
+**does not exist** (yet?)
+
+## `jetty:12.0.0-jre17-alpine`
+
+**does not exist** (yet?)
+
+## `jetty:12.0.0-jre17-alpine-eclipse-temurin`
+
+**does not exist** (yet?)
+
+## `jetty:12.0.0-jre17-eclipse-temurin`
+
+**does not exist** (yet?)
 
 ## `jetty:9`
 
