@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ec60c6f6856eb217e2010cbcea3fa0b337b83c4c5feebe7a32cd68eb06c6f162`
-- Created: `2023-08-08T23:04:25.206921715Z`
+- Image ID: `sha256:0d935e03c9bb3bfcc092d4c8db7e6dd4d901ab6265ef06f394aeace25d2441bd`
+- Created: `2023-08-14T18:53:59.511029293Z`
 - Virtual Size: ~ 750.08 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -81,13 +81,9 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.4.9
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.4.9.dsc' apt_2.4.9.dsc 2805 SHA512:f94b979fce0293f0db741bba3fa9736c594f4369969a5b2568a1ed14b7288184064b61234bf3afc2f545ba32d91e2dac0fc7fa3346d80413c23d16ad92f31038
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.4.9.tar.xz' apt_2.4.9.tar.xz 2317652 SHA512:68972b488ee992cc7bf7eb0350cd3d4cb2d054e6f4ff1062bc2c3e68cc032c0d901cf874911db3d9d7c18d356f6c9a078668f44525007fb85af58568e5487b92
-```
 
 ### `dpkg` source package: `attr=1:2.5.1-1build1`
 
