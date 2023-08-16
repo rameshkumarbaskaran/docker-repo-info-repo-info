@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:be4cd71d75d38c4fc4c51878eb7f921c78d7ce4c029135e22d2ba34dfb5dcc45`
-- Created: `2023-08-08T19:56:26.247304585Z`
-- Virtual Size: ~ 178.06 Mb  
+- Image ID: `sha256:900932818ed4a6429037f61c999b6c1e45b25a0a4dd89d85a9d698d68abed1bc`
+- Created: `2023-08-15T19:22:15.181433053Z`
+- Virtual Size: ~ 179.65 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -90,6 +90,23 @@ apk-tools-2.14.0-r2 installed size:
 
 apk-tools-2.14.0-r2 license:
 GPL-2.0-only
+
+```
+
+### `apk` package: `bash`
+
+```console
+bash-5.2.15-r5 description:
+The GNU Bourne Again shell
+
+bash-5.2.15-r5 webpage:
+https://www.gnu.org/software/bash/bash.html
+
+bash-5.2.15-r5 installed size:
+1360 KiB
+
+bash-5.2.15-r5 license:
+GPL-3.0-or-later
 
 ```
 
@@ -1075,6 +1092,23 @@ pinentry-1.2.1-r1 installed size:
 76 KiB
 
 pinentry-1.2.1-r1 license:
+GPL-2.0-or-later
+
+```
+
+### `apk` package: `readline`
+
+```console
+readline-8.2.1-r1 description:
+GNU readline library
+
+readline-8.2.1-r1 webpage:
+https://tiswww.cwru.edu/php/chet/readline/rltop.html
+
+readline-8.2.1-r1 installed size:
+300 KiB
+
+readline-8.2.1-r1 license:
 GPL-2.0-or-later
 
 ```
