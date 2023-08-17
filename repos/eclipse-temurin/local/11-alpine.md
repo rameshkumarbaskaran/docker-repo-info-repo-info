@@ -2,12 +2,12 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d3f3f50c87e0570aac238c1bed6e3e77dd68865ce84493dc4eb4e51958852a5a`
-- Created: `2023-08-08T19:21:55.853226893Z`
-- Virtual Size: ~ 287.86 Mb  
+- Image ID: `sha256:6503d7bb7d198903719f0925e9dbf06774fa5813ec4ee76746876447e62ed294`
+- Created: `2023-08-14T18:10:01.0073132Z`
+- Virtual Size: ~ 289.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Entrypoint: `["/entrypoint.sh"]`
+- Entrypoint: `["/__cacert_entrypoint.sh"]`
 - Command: `["jshell"]`
 - Environment:
   - `PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
@@ -84,6 +84,23 @@ apk-tools-2.14.0-r2 installed size:
 
 apk-tools-2.14.0-r2 license:
 GPL-2.0-only
+
+```
+
+### `apk` package: `bash`
+
+```console
+bash-5.2.15-r5 description:
+The GNU Bourne Again shell
+
+bash-5.2.15-r5 webpage:
+https://www.gnu.org/software/bash/bash.html
+
+bash-5.2.15-r5 installed size:
+1360 KiB
+
+bash-5.2.15-r5 license:
+GPL-3.0-or-later
 
 ```
 
@@ -376,6 +393,23 @@ LGPL-2.1-or-later
 
 ```
 
+### `apk` package: `libncursesw`
+
+```console
+libncursesw-6.4_p20230506-r0 description:
+Console display library (libncursesw)
+
+libncursesw-6.4_p20230506-r0 webpage:
+https://invisible-island.net/ncurses/
+
+libncursesw-6.4_p20230506-r0 installed size:
+344 KiB
+
+libncursesw-6.4_p20230506-r0 license:
+X11
+
+```
+
 ### `apk` package: `libpng`
 
 ```console
@@ -529,6 +563,23 @@ MIT AND BSD-2-Clause AND GPL-2.0-or-later
 
 ```
 
+### `apk` package: `ncurses-terminfo-base`
+
+```console
+ncurses-terminfo-base-6.4_p20230506-r0 description:
+Descriptions of common terminals
+
+ncurses-terminfo-base-6.4_p20230506-r0 webpage:
+https://invisible-island.net/ncurses/
+
+ncurses-terminfo-base-6.4_p20230506-r0 installed size:
+216 KiB
+
+ncurses-terminfo-base-6.4_p20230506-r0 license:
+X11
+
+```
+
 ### `apk` package: `p11-kit`
 
 ```console
@@ -560,6 +611,23 @@ p11-kit-trust-0.24.1-r2 installed size:
 
 p11-kit-trust-0.24.1-r2 license:
 BSD-3-Clause
+
+```
+
+### `apk` package: `readline`
+
+```console
+readline-8.2.1-r1 description:
+GNU readline library
+
+readline-8.2.1-r1 webpage:
+https://tiswww.cwru.edu/php/chet/readline/rltop.html
+
+readline-8.2.1-r1 installed size:
+300 KiB
+
+readline-8.2.1-r1 license:
+GPL-2.0-or-later
 
 ```
 
