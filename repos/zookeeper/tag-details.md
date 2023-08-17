@@ -8,6 +8,7 @@
 -	[`zookeeper:3.8-temurin`](#zookeeper38-temurin)
 -	[`zookeeper:3.8.2`](#zookeeper382)
 -	[`zookeeper:3.8.2-temurin`](#zookeeper382-temurin)
+-	[`zookeeper:3.9`](#zookeeper39)
 -	[`zookeeper:3.9.0`](#zookeeper390)
 -	[`zookeeper:latest`](#zookeeperlatest)
 
@@ -2824,6 +2825,10 @@ CMD ["zkServer.sh" "start-foreground"]
 		Last Modified: Wed, 16 Aug 2023 17:19:02 GMT  
 		Size: 774.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `zookeeper:3.9`
+
+**does not exist** (yet?)
 
 ## `zookeeper:3.9.0`
 
