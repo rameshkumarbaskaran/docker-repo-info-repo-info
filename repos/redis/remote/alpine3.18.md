@@ -1,7 +1,7 @@
 ## `redis:alpine3.18`
 
 ```console
-$ docker pull redis@sha256:543053deb493895fc995759de72a9847abde02e6448d726b6ed9a9725e8597f1
+$ docker pull redis@sha256:fd5de2340bc46cbc2241975ab027797c350dec6fd86349e3ac384e3a41be6fee
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -382,14 +382,14 @@ CMD ["redis-server"]
 ### `redis:alpine3.18` - linux; ppc64le
 
 ```console
-$ docker pull redis@sha256:12cc5a368845ef98e4c72a7b19f96e67dbaf79f4a7518683bc85aa4d4b50b1be
+$ docker pull redis@sha256:c8f4ed1f3218c4253b6236f51e3f81825ece8eea98f62320a8c8619317f3da7b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **13.0 MB (12967458 bytes)**  
+-	Total Size: **16.4 MB (16439972 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:dab348bfe00f99eb14f2ccc38d93054b95ca0b4d9fab8f93d8ee273e1a28d857`
+-	Image ID: `sha256:3882fdae46ef931af89372fa8960a1faf8ab63997745a75cd1c4a35c28ded29a`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["redis-server"]`
 
@@ -402,27 +402,27 @@ CMD ["/bin/sh"]
 RUN addgroup -S -g 1000 redis && adduser -S -G redis -u 999 redis
 # Tue, 08 Aug 2023 23:04:36 GMT
 RUN apk add --no-cache 		'su-exec>=0.2' 		tzdata
-# Tue, 08 Aug 2023 23:05:56 GMT
-ENV REDIS_VERSION=7.0.12
-# Tue, 08 Aug 2023 23:05:56 GMT
-ENV REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-7.0.12.tar.gz
-# Tue, 08 Aug 2023 23:05:57 GMT
-ENV REDIS_DOWNLOAD_SHA=9dd83d5b278bb2bf0e39bfeb75c3e8170024edbaf11ba13b7037b2945cf48ab7
-# Tue, 08 Aug 2023 23:06:51 GMT
+# Thu, 17 Aug 2023 11:18:50 GMT
+ENV REDIS_VERSION=7.2.0
+# Thu, 17 Aug 2023 11:18:50 GMT
+ENV REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-7.2.0.tar.gz
+# Thu, 17 Aug 2023 11:18:50 GMT
+ENV REDIS_DOWNLOAD_SHA=8b12e242647635b419a0e1833eda02b65bf64e39eb9e509d9db4888fb3124943
+# Thu, 17 Aug 2023 11:19:52 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		dpkg-dev dpkg 		gcc 		linux-headers 		make 		musl-dev 		openssl-dev 		wget 	; 		wget -O redis.tar.gz "$REDIS_DOWNLOAD_URL"; 	echo "$REDIS_DOWNLOAD_SHA *redis.tar.gz" | sha256sum -c -; 	mkdir -p /usr/src/redis; 	tar -xzf redis.tar.gz -C /usr/src/redis --strip-components=1; 	rm redis.tar.gz; 		grep -E '^ *createBoolConfig[(]"protected-mode",.*, *1 *,.*[)],$' /usr/src/redis/src/config.c; 	sed -ri 's!^( *createBoolConfig[(]"protected-mode",.*, *)1( *,.*[)],)$!\10\2!' /usr/src/redis/src/config.c; 	grep -E '^ *createBoolConfig[(]"protected-mode",.*, *0 *,.*[)],$' /usr/src/redis/src/config.c; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	extraJemallocConfigureFlags="--build=$gnuArch"; 	dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64 | i386 | x32) extraJemallocConfigureFlags="$extraJemallocConfigureFlags --with-lg-page=12" ;; 		*) extraJemallocConfigureFlags="$extraJemallocConfigureFlags --with-lg-page=16" ;; 	esac; 	extraJemallocConfigureFlags="$extraJemallocConfigureFlags --with-lg-hugepage=21"; 	grep -F 'cd jemalloc && ./configure ' /usr/src/redis/deps/Makefile; 	sed -ri 's!cd jemalloc && ./configure !&'"$extraJemallocConfigureFlags"' !' /usr/src/redis/deps/Makefile; 	grep -F "cd jemalloc && ./configure $extraJemallocConfigureFlags " /usr/src/redis/deps/Makefile; 		export BUILD_TLS=yes; 	make -C /usr/src/redis -j "$(nproc)" all; 	make -C /usr/src/redis install; 		serverMd5="$(md5sum /usr/local/bin/redis-server | cut -d' ' -f1)"; export serverMd5; 	find /usr/local/bin/redis* -maxdepth 0 		-type f -not -name redis-server 		-exec sh -eux -c ' 			md5="$(md5sum "$1" | cut -d" " -f1)"; 			test "$md5" = "$serverMd5"; 		' -- '{}' ';' 		-exec ln -svfT 'redis-server' '{}' ';' 	; 		rm -r /usr/src/redis; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .redis-rundeps $runDeps; 	apk del --no-network .build-deps; 		redis-cli --version; 	redis-server --version
-# Tue, 08 Aug 2023 23:06:53 GMT
+# Thu, 17 Aug 2023 11:19:54 GMT
 RUN mkdir /data && chown redis:redis /data
-# Tue, 08 Aug 2023 23:06:54 GMT
+# Thu, 17 Aug 2023 11:19:54 GMT
 VOLUME [/data]
-# Tue, 08 Aug 2023 23:06:54 GMT
+# Thu, 17 Aug 2023 11:19:54 GMT
 WORKDIR /data
-# Tue, 08 Aug 2023 23:06:55 GMT
+# Thu, 17 Aug 2023 11:19:54 GMT
 COPY file:a9e7249f657e2eec627bb4be492ad18aae3e5e1f0e47d22644eaf1ef2138c0ce in /usr/local/bin/ 
-# Tue, 08 Aug 2023 23:06:55 GMT
+# Thu, 17 Aug 2023 11:19:55 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 08 Aug 2023 23:06:56 GMT
+# Thu, 17 Aug 2023 11:19:55 GMT
 EXPOSE 6379
-# Tue, 08 Aug 2023 23:06:57 GMT
+# Thu, 17 Aug 2023 11:19:55 GMT
 CMD ["redis-server"]
 ```
 
@@ -439,17 +439,17 @@ CMD ["redis-server"]
 		Last Modified: Tue, 08 Aug 2023 23:09:49 GMT  
 		Size: 347.4 KB (347441 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e6ef31779d51bfba4b7c9ba5ef866bdb213cf0bc14c4b2ba6d304f1d029c5a6`  
-		Last Modified: Tue, 08 Aug 2023 23:10:18 GMT  
-		Size: 9.3 MB (9271783 bytes)  
+	-	`sha256:6ec2f464d44c7c5cd0acad2eb5c658a63b020140cff93f3ec43a4ed0f95009a5`  
+		Last Modified: Thu, 17 Aug 2023 11:21:44 GMT  
+		Size: 12.7 MB (12744295 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebfe3bfbeeb6c06304e53c019b459c7ba1ff84d0f586aec564b8aa015e9130e9`  
-		Last Modified: Tue, 08 Aug 2023 23:10:15 GMT  
+	-	`sha256:0102c8f3326c73f41acaa62e7c38fc040397b6ae1f383b1007bda09364231acc`  
+		Last Modified: Thu, 17 Aug 2023 11:21:41 GMT  
 		Size: 136.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1bb07d1c42585da4d0ae2cc62a5e04e69f4d9ea338ae9941afd1213e1b0031d`  
-		Last Modified: Tue, 08 Aug 2023 23:10:15 GMT  
-		Size: 578.0 B  
+	-	`sha256:eaa40440610e286688f23d3e7d1f2084ee1aab18376c0851609537dc0671a71b`  
+		Last Modified: Thu, 17 Aug 2023 11:21:41 GMT  
+		Size: 580.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redis:alpine3.18` - linux; s390x
