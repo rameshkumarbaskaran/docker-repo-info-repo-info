@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a71aa35030720b476f92dfa05f081e65927b34d961ca67109850eb36ed0c4776`
-- Created: `2023-07-29T03:39:16.103246241Z`
+- Image ID: `sha256:aa453531596844f41234bb6f202c747b2e7da02597db712bf5a44080c796b46b`
+- Created: `2023-08-16T19:00:00.671818053Z`
 - Virtual Size: ~ 1.47 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -5928,11 +5928,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libzstd/1.4.8+dfsg-2.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libzstd/1.4.8+dfsg-2.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=5.10.179-2`
+### `dpkg` source package: `linux=5.10.179-5`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=5.10.179-2`
+- `linux-libc-dev:amd64=5.10.179-5`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -5945,13 +5945,20 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `X11`
 - `Xen-interface`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris linux=5.10.179-5
+'http://deb.debian.org/debian-security/pool/updates/main/l/linux/linux_5.10.179-5.dsc' linux_5.10.179-5.dsc 197238 SHA256:00928ac3b5249c5612d7853cccda46aa0445938bc09ebb6127a402acc6dd08ee
+'http://deb.debian.org/debian-security/pool/updates/main/l/linux/linux_5.10.179.orig.tar.xz' linux_5.10.179.orig.tar.xz 121881852 SHA256:254d0375733a423efd8b364b9c33c88034dec85a76e2cba1093c54a667a74dbd
+'http://deb.debian.org/debian-security/pool/updates/main/l/linux/linux_5.10.179-5.debian.tar.xz' linux_5.10.179-5.debian.tar.xz 1637144 SHA256:24d847d6505e92ab8f7b07637522fce033e71730f8eafc2dcf42f4a0dff5b3f7
+```
 
-- http://snapshot.debian.org/package/linux/5.10.179-2/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/linux/5.10.179-5/ (for browsing the source)
+- https://sources.debian.net/src/linux/5.10.179-5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/5.10.179-5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lksctp-tools=1.0.18+dfsg-1`
 
@@ -7702,15 +7709,15 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/subversion/1.14.1-3+deb11u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/subversion/1.14.1-3+deb11u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `systemd=247.3-7+deb11u2`
+### `dpkg` source package: `systemd=247.3-7+deb11u4`
 
 Binary Packages:
 
-- `libpam-systemd:amd64=247.3-7+deb11u2`
-- `libsystemd0:amd64=247.3-7+deb11u2`
-- `libudev1:amd64=247.3-7+deb11u2`
-- `systemd=247.3-7+deb11u2`
-- `systemd-sysv=247.3-7+deb11u2`
+- `libpam-systemd:amd64=247.3-7+deb11u4`
+- `libsystemd0:amd64=247.3-7+deb11u4`
+- `libudev1:amd64=247.3-7+deb11u4`
+- `systemd=247.3-7+deb11u4`
+- `systemd-sysv=247.3-7+deb11u4`
 
 Licenses: (parsed from: `/usr/share/doc/libpam-systemd/copyright`, `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`, `/usr/share/doc/systemd/copyright`, `/usr/share/doc/systemd-sysv/copyright`)
 
@@ -7726,17 +7733,17 @@ Licenses: (parsed from: `/usr/share/doc/libpam-systemd/copyright`, `/usr/share/d
 Source:
 
 ```console
-$ apt-get source -qq --print-uris systemd=247.3-7+deb11u2
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_247.3-7%2bdeb11u2.dsc' systemd_247.3-7+deb11u2.dsc 5224 SHA256:d71f8653855b919efdf86269100384a47dd532d2cb39ffcbe5458805303beeec
+$ apt-get source -qq --print-uris systemd=247.3-7+deb11u4
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_247.3-7%2bdeb11u4.dsc' systemd_247.3-7+deb11u4.dsc 5224 SHA256:7d1b87217b355b62b454728be911c7a9ecf9f9c8e33155e8c0a499b57a86f649
 'http://deb.debian.org/debian/pool/main/s/systemd/systemd_247.3.orig.tar.gz' systemd_247.3.orig.tar.gz 9895385 SHA256:2869986e219a8dfc96cc0dffac66e0c13bb70a89e16b85a3948876c146cfa3e0
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_247.3-7%2bdeb11u2.debian.tar.xz' systemd_247.3-7+deb11u2.debian.tar.xz 192860 SHA256:27842e6f36805b6147b6c91bf31e51e2353cdeb3f7c5076fa8ba4b43e7ce582f
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_247.3-7%2bdeb11u4.debian.tar.xz' systemd_247.3-7+deb11u4.debian.tar.xz 196116 SHA256:d1641185f547643cc2788606f209c57a9d66bd9f646564959a2680a7da1e2234
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/systemd/247.3-7+deb11u2/ (for browsing the source)
-- https://sources.debian.net/src/systemd/247.3-7+deb11u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/systemd/247.3-7+deb11u2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/systemd/247.3-7+deb11u4/ (for browsing the source)
+- https://sources.debian.net/src/systemd/247.3-7+deb11u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/systemd/247.3-7+deb11u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=2.96-7+deb11u1`
 
@@ -8189,12 +8196,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/wayland/1.18.0-2~exp1.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/wayland/1.18.0-2~exp1.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `webkit2gtk=2.40.3-2~deb11u2`
+### `dpkg` source package: `webkit2gtk=2.40.5-1~deb11u1`
 
 Binary Packages:
 
-- `libjavascriptcoregtk-4.0-18:amd64=2.40.3-2~deb11u2`
-- `libwebkit2gtk-4.0-37:amd64=2.40.3-2~deb11u2`
+- `libjavascriptcoregtk-4.0-18:amd64=2.40.5-1~deb11u1`
+- `libwebkit2gtk-4.0-37:amd64=2.40.5-1~deb11u1`
 
 Licenses: (parsed from: `/usr/share/doc/libjavascriptcoregtk-4.0-18/copyright`, `/usr/share/doc/libwebkit2gtk-4.0-37/copyright`)
 
@@ -8229,13 +8236,21 @@ Licenses: (parsed from: `/usr/share/doc/libjavascriptcoregtk-4.0-18/copyright`, 
 - `MPL-1.1`
 - `MPL-2.0`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris webkit2gtk=2.40.5-1~deb11u1
+'http://deb.debian.org/debian-security/pool/updates/main/w/webkit2gtk/webkit2gtk_2.40.5-1%7edeb11u1.dsc' webkit2gtk_2.40.5-1~deb11u1.dsc 4166 SHA256:b44b9fc7f7c8e334b2ce30394d813f210c7e10d4a3f70ff9529992e44c166761
+'http://deb.debian.org/debian-security/pool/updates/main/w/webkit2gtk/webkit2gtk_2.40.5.orig.tar.xz' webkit2gtk_2.40.5.orig.tar.xz 40066432 SHA256:7de051a263668621d91a61a5eb1c3771d1a7cec900043d4afef06c326c16037f
+'http://deb.debian.org/debian-security/pool/updates/main/w/webkit2gtk/webkit2gtk_2.40.5.orig.tar.xz.asc' webkit2gtk_2.40.5.orig.tar.xz.asc 195 SHA256:73166ddd831fc3a9ba9035c1ef35f7335a7ea8e1ba002d8a96b0ddd866ee9756
+'http://deb.debian.org/debian-security/pool/updates/main/w/webkit2gtk/webkit2gtk_2.40.5-1%7edeb11u1.debian.tar.xz' webkit2gtk_2.40.5-1~deb11u1.debian.tar.xz 80476 SHA256:4c0b39f01451cd560e7f258975ad4e2a5e87ff0a2861af48001319277f56d3dc
+```
 
-- http://snapshot.debian.org/package/webkit2gtk/2.40.3-2~deb11u2/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/webkit2gtk/2.40.5-1~deb11u1/ (for browsing the source)
+- https://sources.debian.net/src/webkit2gtk/2.40.5-1~deb11u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/webkit2gtk/2.40.5-1~deb11u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `wget=1.21-1+deb11u1`
 
