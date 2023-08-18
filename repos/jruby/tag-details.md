@@ -12,6 +12,7 @@
 -	[`jruby:9.3-jdk8`](#jruby93-jdk8)
 -	[`jruby:9.3-jre`](#jruby93-jre)
 -	[`jruby:9.3-jre11`](#jruby93-jre11)
+-	[`jruby:9.3-jre17`](#jruby93-jre17)
 -	[`jruby:9.3-jre8`](#jruby93-jre8)
 -	[`jruby:9.3.10`](#jruby9310)
 -	[`jruby:9.3.10-jdk`](#jruby9310-jdk)
@@ -20,6 +21,7 @@
 -	[`jruby:9.3.10-jdk8`](#jruby9310-jdk8)
 -	[`jruby:9.3.10-jre`](#jruby9310-jre)
 -	[`jruby:9.3.10-jre11`](#jruby9310-jre11)
+-	[`jruby:9.3.10-jre17`](#jruby9310-jre17)
 -	[`jruby:9.3.10-jre8`](#jruby9310-jre8)
 -	[`jruby:9.3.10.0`](#jruby93100)
 -	[`jruby:9.3.10.0-jdk`](#jruby93100-jdk)
@@ -28,6 +30,7 @@
 -	[`jruby:9.3.10.0-jdk8`](#jruby93100-jdk8)
 -	[`jruby:9.3.10.0-jre`](#jruby93100-jre)
 -	[`jruby:9.3.10.0-jre11`](#jruby93100-jre11)
+-	[`jruby:9.3.10.0-jre17`](#jruby93100-jre17)
 -	[`jruby:9.3.10.0-jre8`](#jruby93100-jre8)
 -	[`jruby:9.4`](#jruby94)
 -	[`jruby:9.4-jdk`](#jruby94-jdk)
@@ -36,7 +39,10 @@
 -	[`jruby:9.4-jdk8`](#jruby94-jdk8)
 -	[`jruby:9.4-jre`](#jruby94-jre)
 -	[`jruby:9.4-jre11`](#jruby94-jre11)
+-	[`jruby:9.4-jre17`](#jruby94-jre17)
 -	[`jruby:9.4-jre8`](#jruby94-jre8)
+-	[`jruby:9.4.2-jre17`](#jruby942-jre17)
+-	[`jruby:9.4.2.0-jre17`](#jruby9420-jre17)
 -	[`jruby:9.4.3`](#jruby943)
 -	[`jruby:9.4.3-jdk`](#jruby943-jdk)
 -	[`jruby:9.4.3-jdk11`](#jruby943-jdk11)
@@ -2433,6 +2439,10 @@ CMD ["irb"]
 		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `jruby:9.3-jre17`
+
+**does not exist** (yet?)
+
 ## `jruby:9.3-jre8`
 
 ```console
@@ -4336,6 +4346,10 @@ CMD ["irb"]
 		Last Modified: Mon, 14 Aug 2023 19:26:11 GMT  
 		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `jruby:9.3.10-jre17`
+
+**does not exist** (yet?)
 
 ## `jruby:9.3.10-jre8`
 
@@ -6241,6 +6255,10 @@ CMD ["irb"]
 		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `jruby:9.3.10.0-jre17`
+
+**does not exist** (yet?)
+
 ## `jruby:9.3.10.0-jre8`
 
 ```console
@@ -8145,6 +8163,10 @@ CMD ["irb"]
 		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `jruby:9.4-jre17`
+
+**does not exist** (yet?)
+
 ## `jruby:9.4-jre8`
 
 ```console
@@ -8381,6 +8403,14 @@ CMD ["irb"]
 		Last Modified: Mon, 14 Aug 2023 19:23:48 GMT  
 		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `jruby:9.4.2-jre17`
+
+**does not exist** (yet?)
+
+## `jruby:9.4.2.0-jre17`
+
+**does not exist** (yet?)
 
 ## `jruby:9.4.3`
 
