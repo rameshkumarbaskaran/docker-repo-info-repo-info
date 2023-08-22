@@ -1,15 +1,15 @@
-# `dart:3.0.7-sdk`
+# `dart:3.1.0-sdk`
 
 ## Docker Metadata
 
-- Image ID: `sha256:bfaf9da0df6643ba0158f02c2c685056228b9c8de671ff808cf452aafa0c3a29`
-- Created: `2023-08-16T07:21:46.753092326Z`
-- Virtual Size: ~ 785.89 Mb  
+- Image ID: `sha256:8c2ccb38bd4255ded8d76a37e72a7c1fda5e13c378beecd543d20b72981c27c4`
+- Created: `2023-08-18T23:19:39.199484406Z`
+- Virtual Size: ~ 777.68 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
 - Environment:
-  - `PATH=/usr/lib/dart/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `PATH=/usr/lib/dart/bin:/root/.pub-cache/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DART_SDK=/usr/lib/dart`
 
 ## `dpkg` (`.deb`-based packages)
