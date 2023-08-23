@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:56b5667270483e243333bc8b4d4af9b7cf8fe654400c587ab7d9d9f85c856e2f`
-- Created: `2023-08-16T09:20:35.273366578Z`
-- Virtual Size: ~ 85.31 Mb  
+- Image ID: `sha256:6a9d4f04ad59d4fd88421fd3c4838323bf5bf6785bf313fa6fa3befbf47e0fad`
+- Created: `2023-08-22T20:28:52.023335471Z`
+- Virtual Size: ~ 84.94 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-hitch-entrypoint"]`
@@ -816,12 +816,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gzip/1.10-4+deb11u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gzip/1.10-4+deb11u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `hitch=1.7.3-1~bullseye`
+### `dpkg` source package: `hitch=1.8.0-1~bullseye`
 
 Binary Packages:
 
-- `hitch=1.7.3-1~bullseye`
-- `hitch-dbgsym=1.7.3-1~bullseye`
+- `hitch=1.8.0-1~bullseye`
+- `hitch-dbgsym=1.8.0-1~bullseye`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1451,40 +1451,6 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/lz4/1.9.3-2/ (for browsing the source)
 - https://sources.debian.net/src/lz4/1.9.3-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/lz4/1.9.3-2/ (for access to the source package after it no longer exists in the archive)
-
-### `dpkg` source package: `manpages=5.10-1`
-
-Binary Packages:
-
-- `manpages=5.10-1`
-
-Licenses: (parsed from: `/usr/share/doc/manpages/copyright`)
-
-- `BSD-3-clause`
-- `BSD-4-clause`
-- `Expat`
-- `GPL-2`
-- `GPL-2+`
-- `LDPv1`
-- `freely-redistributable`
-- `henry-spencer-regex`
-- `public-domain`
-- `verbatim`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris manpages=5.10-1
-'http://deb.debian.org/debian/pool/main/m/manpages/manpages_5.10-1.dsc' manpages_5.10-1.dsc 1882 SHA256:1e7cea95561a46c734e24344b977962ae94325a98a9c2229d0c7a570b2df6569
-'http://deb.debian.org/debian/pool/main/m/manpages/manpages_5.10.orig.tar.xz' manpages_5.10.orig.tar.xz 1747688 SHA256:75102535ba119f2f223f674d84e1dcdaebf0a5ffd639b3c2e6cb0a0e34768762
-'http://deb.debian.org/debian/pool/main/m/manpages/manpages_5.10-1.debian.tar.xz' manpages_5.10-1.debian.tar.xz 77212 SHA256:3be47b149f3eb154243e49e32a98c507bcd91017ce9c2e5e0a6304a8d927e2fa
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/manpages/5.10-1/ (for browsing the source)
-- https://sources.debian.net/src/manpages/5.10-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/manpages/5.10-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mawk=1.3.4.20200120-2`
 
