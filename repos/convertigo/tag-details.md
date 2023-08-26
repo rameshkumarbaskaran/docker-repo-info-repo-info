@@ -9,7 +9,7 @@
 ## `convertigo:8.2`
 
 ```console
-$ docker pull convertigo@sha256:0c83f4cdae2bf322320abbfd4e0b535c0ae2075e8a765dde4f39b19d474b4274
+$ docker pull convertigo@sha256:b6e2fcfaf5a75233dcd8b2904db1c119f6e5a4fc478bedc26897ecc1ce4f949a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -371,14 +371,14 @@ CMD ["convertigo"]
 ### `convertigo:8.2` - linux; arm64 variant v8
 
 ```console
-$ docker pull convertigo@sha256:2850c30fb0dcacf617894aa50354db3d150e41bcc4f964bf0fdbcb4b9e3f39f3
+$ docker pull convertigo@sha256:800cc21e9f15af63c9afe9d8384845a44369adb94ab11f9f77630f8463da9ba3
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **304.3 MB (304325880 bytes)**  
+-	Total Size: **304.3 MB (304326642 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:05103aed0669f931e564aaebac8dc3d7170cc79d0b5db862d6bb6275429aba01`
+-	Image ID: `sha256:7236e798d7585d1eb475c0c9de22bc68932950e90a87663982b21e55b8cc2f39`
 -	Entrypoint: `["tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["convertigo"]`
 
@@ -431,57 +431,57 @@ ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
 ENV GPG_KEYS=48F8E69F6390C9F25CFEDCD268248959359E722B A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243
 # Mon, 14 Aug 2023 20:05:26 GMT
 ENV TOMCAT_MAJOR=9
-# Wed, 16 Aug 2023 00:33:15 GMT
-ENV TOMCAT_VERSION=9.0.79
-# Wed, 16 Aug 2023 00:33:15 GMT
-ENV TOMCAT_SHA512=7a0d99b5fc37c9e9ac26b554fab9147ce0a2ba59fad41e2565b15e9f6e137bf0105f5c9cd6b7b508837ff24feb7b95b2aba49e0abc7b1480a30a11606e79802a
-# Wed, 16 Aug 2023 00:34:08 GMT
+# Sat, 26 Aug 2023 03:23:33 GMT
+ENV TOMCAT_VERSION=9.0.80
+# Sat, 26 Aug 2023 03:23:33 GMT
+ENV TOMCAT_SHA512=24014441b0ccdd2dda238efa56e1a039476488943e6cf04f8a372a340a49dd21ce174ed68e2f5fcc43401e85fae6d00c5eac3d357653e91601737b6fa94476de
+# Sat, 26 Aug 2023 03:24:33 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		gnupg 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://downloads.apache.org/$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if curl -fL -o "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl 		; 		nproc="$(nproc)"; 		make -j "$nproc"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| xargs -rt readlink -e 		| sort -u 		| xargs -rt dpkg-query --search 		| cut -d: -f1 		| sort -u 		| tee "$TOMCAT_NATIVE_LIBDIR/.dependencies.txt" 		| xargs -r apt-mark manual 	; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 1777 logs temp work; 		catalina.sh version
-# Wed, 16 Aug 2023 00:34:09 GMT
+# Sat, 26 Aug 2023 03:24:34 GMT
 RUN set -eux; 	nativeLines="$(catalina.sh configtest 2>&1)"; 	nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')"; 	nativeLines="$(echo "$nativeLines" | sort -u)"; 	if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 16 Aug 2023 00:34:10 GMT
+# Sat, 26 Aug 2023 03:24:34 GMT
 EXPOSE 8080
-# Wed, 16 Aug 2023 00:34:10 GMT
+# Sat, 26 Aug 2023 03:24:34 GMT
 ENTRYPOINT []
-# Wed, 16 Aug 2023 00:34:10 GMT
+# Sat, 26 Aug 2023 03:24:34 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 16 Aug 2023 14:15:24 GMT
+# Sat, 26 Aug 2023 07:25:21 GMT
 MAINTAINER Nicolas Albert nicolasa@convertigo.com
-# Wed, 16 Aug 2023 14:15:24 GMT
+# Sat, 26 Aug 2023 07:25:21 GMT
 ENV SWT_GTK3=0
-# Wed, 16 Aug 2023 14:15:24 GMT
+# Sat, 26 Aug 2023 07:25:21 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 16 Aug 2023 14:15:25 GMT
+# Sat, 26 Aug 2023 07:25:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 16 Aug 2023 14:15:25 GMT
+# Sat, 26 Aug 2023 07:25:22 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 16 Aug 2023 14:16:01 GMT
+# Sat, 26 Aug 2023 07:25:42 GMT
 RUN apt-get update -y   && apt-get install -y --no-install-recommends     ca-certificates     curl     dirmngr     gnupg     gosu     sudo     tini     unzip   && apt-get remove -y --purge wget libfreetype6   && apt-get autoremove -y   && rm -rf /var/lib/apt/lists/*
-# Wed, 16 Aug 2023 14:16:02 GMT
+# Sat, 26 Aug 2023 07:25:43 GMT
 RUN useradd -s /bin/false -m convertigo     && mkdir -p /workspace     && chown -R convertigo:convertigo /workspace     && chmod -R 777 /workspace     && echo "convertigo ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/convertigo     && chmod 0440 /etc/sudoers.d/convertigo
-# Wed, 16 Aug 2023 14:16:02 GMT
+# Sat, 26 Aug 2023 07:25:43 GMT
 RUN sed -i.bak         -e '/protocol="AJP/d'         -e '/JasperListener/d'         -e 's/port="8080"/port="28080" maxThreads="64000" relaxedQueryChars="{}[]|"/'         -e 's,</Host>,  <Valve className="org.apache.catalina.valves.RemoteIpValve" />\n        <Valve className="org.apache.catalina.valves.ErrorReportValve"  errorCode.404="webapps/convertigo/404.html" errorCode.0="webapps/convertigo/error.html" showReport="false" showServerInfo="false" />\n      </Host>,'         -e 's,</Service>,<!--SSL<Connector port="28443" protocol="org.apache.coyote.http11.Http11AprProtocol" SSLEnabled="true" maxThreads="64000" relaxedQueryChars="{}[]|">\n      <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />\n      <SSLHostConfig>\n        <Certificate certificateKeyFile="/certs/key.pem"\n                     certificateFile="/certs/cert.pem"\n                     certificateChainFile="/certs/chain.pem"\n                     type="RSA" />\n      </SSLHostConfig>\n    </Connector>SSL-->\n  </Service>,'         conf/server.xml     && sed -i.bak         -e 's,<Context>,<Context sessionCookiePath="/">,'         -e 's,</Context>,<Manager pathname="" /><CookieProcessor sameSiteCookies="unset" /></Context>,'         conf/context.xml     && rm -rf webapps/* bin/*.bat conf/server.xml.bak /tmp/*     && mkdir webapps/ROOT     && chown -R convertigo:convertigo conf temp work logs     && chmod -w conf/*     && chmod 777 conf/context.xml conf/server.xml
-# Wed, 16 Aug 2023 14:16:02 GMT
+# Sat, 26 Aug 2023 07:25:43 GMT
 ENV CONVERTIGO_VERSION=8.2.2
-# Wed, 16 Aug 2023 14:16:02 GMT
+# Sat, 26 Aug 2023 07:25:43 GMT
 ENV CONVERTIGO_WAR_URL=https://github.com/convertigo/convertigo/releases/download/8.2.2/convertigo-8.2.2.war
-# Wed, 16 Aug 2023 14:16:02 GMT
+# Sat, 26 Aug 2023 07:25:43 GMT
 ENV CONVERTIGO_GPG_KEYS=6A7779BB78FE368DF74B708FD4DA8FBEB64BF75F
-# Wed, 16 Aug 2023 14:16:08 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 RUN export GNUPGHOME="$(mktemp -d)"     && ( gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$CONVERTIGO_GPG_KEYS"     || gpg --batch --keyserver keyserver.pgp.com --recv-keys "$CONVERTIGO_GPG_KEYS" )     && curl -fSL -o /tmp/convertigo.war $CONVERTIGO_WAR_URL     && curl -fSL -o /tmp/convertigo.war.asc $CONVERTIGO_WAR_URL.asc     && gpg --batch --verify /tmp/convertigo.war.asc /tmp/convertigo.war     && mkdir -p webapps/ROOT webapps/convertigo     && mkdir /certs && chmod 777 /certs     && (cd webapps/convertigo         && unzip -q /tmp/convertigo.war         && (chmod -f a+x WEB-INF/xvnc/* || true)         && (test "$(dpkg --print-architecture)" != "i386" && rm -rf WEB-INF/xulrunner WEB-INF/xvnc WEB-INF/lib/swt_* || true)         && chmod 777 WEB-INF/web.xml WEB-INF/lib WEB-INF/classes         && rm -rf /tmp/*)
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 COPY file:a8c73db31af1c6589d48a2342d8673de69087696e5f19812fc67f887368ccae8 in webapps/ROOT/index.html 
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 COPY file:efb1554bc41c54ba23859400ee8f932412d0980b3c4056d04da7b1c42febe494 in / 
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 WORKDIR /workspace
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 VOLUME [/workspace]
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 EXPOSE 28080
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 CMD ["convertigo"]
 ```
 
@@ -510,43 +510,43 @@ CMD ["convertigo"]
 		Last Modified: Mon, 14 Aug 2023 20:19:03 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e6d9b4a014d4afbb766452542ce120a4c47e9f928a76205c72bf372bd9388ce7`  
-		Last Modified: Wed, 16 Aug 2023 00:54:26 GMT  
-		Size: 12.8 MB (12830998 bytes)  
+	-	`sha256:12aee5cf8f37cca7abbb3ddb8defb5e20bb50e9bc07424403077a01b680f295c`  
+		Last Modified: Sat, 26 Aug 2023 03:44:50 GMT  
+		Size: 12.8 MB (12831820 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b08534d14b4514f89e6f19e7ff49a6571bdebfdecdc655c7919816f37153cfb`  
-		Last Modified: Wed, 16 Aug 2023 00:54:25 GMT  
+	-	`sha256:f38eeadd1baa1b7b369e86075098080d79cc5503b755e7b180768c8e0381c35f`  
+		Last Modified: Sat, 26 Aug 2023 03:44:49 GMT  
 		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:90a10c34aa72db65f6ea5d675c1c3628becb6cac6a0c3ef79220376a1abd8124`  
-		Last Modified: Wed, 16 Aug 2023 14:16:20 GMT  
-		Size: 5.3 MB (5261024 bytes)  
+	-	`sha256:5ddb5f49e0e7793d5ea5a4613388be6c6c77bb0142af4ad9271df4da317882ee`  
+		Last Modified: Sat, 26 Aug 2023 07:26:03 GMT  
+		Size: 5.3 MB (5261008 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0c5511852e5d809f0058b70ea42d2cf034aab8b2a06ce613bb3c5fba69fabbb`  
-		Last Modified: Wed, 16 Aug 2023 14:16:17 GMT  
-		Size: 4.6 KB (4556 bytes)  
+	-	`sha256:175c0c42a21db93cf9894cbf679aa8f17084ba508d1eaed62a3ade036c09553c`  
+		Last Modified: Sat, 26 Aug 2023 07:26:01 GMT  
+		Size: 4.6 KB (4560 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a07f71adc429e2bbd2c7313200eeaf14694588e0dd8c1e926c451839e50977c`  
-		Last Modified: Wed, 16 Aug 2023 14:16:17 GMT  
+	-	`sha256:aba0b89ea7a2285f45405c02b9de72c5ae6429bff393beacedca1f6a8baef8ae`  
+		Last Modified: Sat, 26 Aug 2023 07:26:01 GMT  
 		Size: 27.9 KB (27944 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ecc0a73be2ffa6ddbc9575cf95f3333592c95eaa442658246d75c9c1c93d7a02`  
-		Last Modified: Wed, 16 Aug 2023 14:16:24 GMT  
-		Size: 94.1 MB (94066219 bytes)  
+	-	`sha256:3a2ebffbe05107c3d012ae4e66cde0e1da9060c1b9380e8b7b03169891c918b7`  
+		Last Modified: Sat, 26 Aug 2023 07:26:06 GMT  
+		Size: 94.1 MB (94066171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:26ae222ed7208d6502c96c82c66902ead874a611cb3e220848c039e0767a2a21`  
-		Last Modified: Wed, 16 Aug 2023 14:16:17 GMT  
+	-	`sha256:128fe07b74b322b38f9f2db2f79bf17840590a5933f930a86d21e97c23ab5123`  
+		Last Modified: Sat, 26 Aug 2023 07:26:00 GMT  
 		Size: 454.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:351a3e8d48822148e75061e4ccb70dc7e71a4769e598b5bae59456478f0d4adc`  
-		Last Modified: Wed, 16 Aug 2023 14:16:17 GMT  
+	-	`sha256:738bb83136295cc4ed0513f5c7b30f7cedb76ac234b9a982bb1ab259f671b542`  
+		Last Modified: Sat, 26 Aug 2023 07:26:00 GMT  
 		Size: 2.2 KB (2241 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `convertigo:8.2.2`
 
 ```console
-$ docker pull convertigo@sha256:0c83f4cdae2bf322320abbfd4e0b535c0ae2075e8a765dde4f39b19d474b4274
+$ docker pull convertigo@sha256:b6e2fcfaf5a75233dcd8b2904db1c119f6e5a4fc478bedc26897ecc1ce4f949a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -908,14 +908,14 @@ CMD ["convertigo"]
 ### `convertigo:8.2.2` - linux; arm64 variant v8
 
 ```console
-$ docker pull convertigo@sha256:2850c30fb0dcacf617894aa50354db3d150e41bcc4f964bf0fdbcb4b9e3f39f3
+$ docker pull convertigo@sha256:800cc21e9f15af63c9afe9d8384845a44369adb94ab11f9f77630f8463da9ba3
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **304.3 MB (304325880 bytes)**  
+-	Total Size: **304.3 MB (304326642 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:05103aed0669f931e564aaebac8dc3d7170cc79d0b5db862d6bb6275429aba01`
+-	Image ID: `sha256:7236e798d7585d1eb475c0c9de22bc68932950e90a87663982b21e55b8cc2f39`
 -	Entrypoint: `["tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["convertigo"]`
 
@@ -968,57 +968,57 @@ ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
 ENV GPG_KEYS=48F8E69F6390C9F25CFEDCD268248959359E722B A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243
 # Mon, 14 Aug 2023 20:05:26 GMT
 ENV TOMCAT_MAJOR=9
-# Wed, 16 Aug 2023 00:33:15 GMT
-ENV TOMCAT_VERSION=9.0.79
-# Wed, 16 Aug 2023 00:33:15 GMT
-ENV TOMCAT_SHA512=7a0d99b5fc37c9e9ac26b554fab9147ce0a2ba59fad41e2565b15e9f6e137bf0105f5c9cd6b7b508837ff24feb7b95b2aba49e0abc7b1480a30a11606e79802a
-# Wed, 16 Aug 2023 00:34:08 GMT
+# Sat, 26 Aug 2023 03:23:33 GMT
+ENV TOMCAT_VERSION=9.0.80
+# Sat, 26 Aug 2023 03:23:33 GMT
+ENV TOMCAT_SHA512=24014441b0ccdd2dda238efa56e1a039476488943e6cf04f8a372a340a49dd21ce174ed68e2f5fcc43401e85fae6d00c5eac3d357653e91601737b6fa94476de
+# Sat, 26 Aug 2023 03:24:33 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		gnupg 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://downloads.apache.org/$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if curl -fL -o "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl 		; 		nproc="$(nproc)"; 		make -j "$nproc"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| xargs -rt readlink -e 		| sort -u 		| xargs -rt dpkg-query --search 		| cut -d: -f1 		| sort -u 		| tee "$TOMCAT_NATIVE_LIBDIR/.dependencies.txt" 		| xargs -r apt-mark manual 	; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 1777 logs temp work; 		catalina.sh version
-# Wed, 16 Aug 2023 00:34:09 GMT
+# Sat, 26 Aug 2023 03:24:34 GMT
 RUN set -eux; 	nativeLines="$(catalina.sh configtest 2>&1)"; 	nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')"; 	nativeLines="$(echo "$nativeLines" | sort -u)"; 	if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 16 Aug 2023 00:34:10 GMT
+# Sat, 26 Aug 2023 03:24:34 GMT
 EXPOSE 8080
-# Wed, 16 Aug 2023 00:34:10 GMT
+# Sat, 26 Aug 2023 03:24:34 GMT
 ENTRYPOINT []
-# Wed, 16 Aug 2023 00:34:10 GMT
+# Sat, 26 Aug 2023 03:24:34 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 16 Aug 2023 14:15:24 GMT
+# Sat, 26 Aug 2023 07:25:21 GMT
 MAINTAINER Nicolas Albert nicolasa@convertigo.com
-# Wed, 16 Aug 2023 14:15:24 GMT
+# Sat, 26 Aug 2023 07:25:21 GMT
 ENV SWT_GTK3=0
-# Wed, 16 Aug 2023 14:15:24 GMT
+# Sat, 26 Aug 2023 07:25:21 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 16 Aug 2023 14:15:25 GMT
+# Sat, 26 Aug 2023 07:25:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 16 Aug 2023 14:15:25 GMT
+# Sat, 26 Aug 2023 07:25:22 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 16 Aug 2023 14:16:01 GMT
+# Sat, 26 Aug 2023 07:25:42 GMT
 RUN apt-get update -y   && apt-get install -y --no-install-recommends     ca-certificates     curl     dirmngr     gnupg     gosu     sudo     tini     unzip   && apt-get remove -y --purge wget libfreetype6   && apt-get autoremove -y   && rm -rf /var/lib/apt/lists/*
-# Wed, 16 Aug 2023 14:16:02 GMT
+# Sat, 26 Aug 2023 07:25:43 GMT
 RUN useradd -s /bin/false -m convertigo     && mkdir -p /workspace     && chown -R convertigo:convertigo /workspace     && chmod -R 777 /workspace     && echo "convertigo ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/convertigo     && chmod 0440 /etc/sudoers.d/convertigo
-# Wed, 16 Aug 2023 14:16:02 GMT
+# Sat, 26 Aug 2023 07:25:43 GMT
 RUN sed -i.bak         -e '/protocol="AJP/d'         -e '/JasperListener/d'         -e 's/port="8080"/port="28080" maxThreads="64000" relaxedQueryChars="{}[]|"/'         -e 's,</Host>,  <Valve className="org.apache.catalina.valves.RemoteIpValve" />\n        <Valve className="org.apache.catalina.valves.ErrorReportValve"  errorCode.404="webapps/convertigo/404.html" errorCode.0="webapps/convertigo/error.html" showReport="false" showServerInfo="false" />\n      </Host>,'         -e 's,</Service>,<!--SSL<Connector port="28443" protocol="org.apache.coyote.http11.Http11AprProtocol" SSLEnabled="true" maxThreads="64000" relaxedQueryChars="{}[]|">\n      <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />\n      <SSLHostConfig>\n        <Certificate certificateKeyFile="/certs/key.pem"\n                     certificateFile="/certs/cert.pem"\n                     certificateChainFile="/certs/chain.pem"\n                     type="RSA" />\n      </SSLHostConfig>\n    </Connector>SSL-->\n  </Service>,'         conf/server.xml     && sed -i.bak         -e 's,<Context>,<Context sessionCookiePath="/">,'         -e 's,</Context>,<Manager pathname="" /><CookieProcessor sameSiteCookies="unset" /></Context>,'         conf/context.xml     && rm -rf webapps/* bin/*.bat conf/server.xml.bak /tmp/*     && mkdir webapps/ROOT     && chown -R convertigo:convertigo conf temp work logs     && chmod -w conf/*     && chmod 777 conf/context.xml conf/server.xml
-# Wed, 16 Aug 2023 14:16:02 GMT
+# Sat, 26 Aug 2023 07:25:43 GMT
 ENV CONVERTIGO_VERSION=8.2.2
-# Wed, 16 Aug 2023 14:16:02 GMT
+# Sat, 26 Aug 2023 07:25:43 GMT
 ENV CONVERTIGO_WAR_URL=https://github.com/convertigo/convertigo/releases/download/8.2.2/convertigo-8.2.2.war
-# Wed, 16 Aug 2023 14:16:02 GMT
+# Sat, 26 Aug 2023 07:25:43 GMT
 ENV CONVERTIGO_GPG_KEYS=6A7779BB78FE368DF74B708FD4DA8FBEB64BF75F
-# Wed, 16 Aug 2023 14:16:08 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 RUN export GNUPGHOME="$(mktemp -d)"     && ( gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$CONVERTIGO_GPG_KEYS"     || gpg --batch --keyserver keyserver.pgp.com --recv-keys "$CONVERTIGO_GPG_KEYS" )     && curl -fSL -o /tmp/convertigo.war $CONVERTIGO_WAR_URL     && curl -fSL -o /tmp/convertigo.war.asc $CONVERTIGO_WAR_URL.asc     && gpg --batch --verify /tmp/convertigo.war.asc /tmp/convertigo.war     && mkdir -p webapps/ROOT webapps/convertigo     && mkdir /certs && chmod 777 /certs     && (cd webapps/convertigo         && unzip -q /tmp/convertigo.war         && (chmod -f a+x WEB-INF/xvnc/* || true)         && (test "$(dpkg --print-architecture)" != "i386" && rm -rf WEB-INF/xulrunner WEB-INF/xvnc WEB-INF/lib/swt_* || true)         && chmod 777 WEB-INF/web.xml WEB-INF/lib WEB-INF/classes         && rm -rf /tmp/*)
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 COPY file:a8c73db31af1c6589d48a2342d8673de69087696e5f19812fc67f887368ccae8 in webapps/ROOT/index.html 
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 COPY file:efb1554bc41c54ba23859400ee8f932412d0980b3c4056d04da7b1c42febe494 in / 
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 WORKDIR /workspace
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 VOLUME [/workspace]
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 EXPOSE 28080
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 CMD ["convertigo"]
 ```
 
@@ -1047,43 +1047,43 @@ CMD ["convertigo"]
 		Last Modified: Mon, 14 Aug 2023 20:19:03 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e6d9b4a014d4afbb766452542ce120a4c47e9f928a76205c72bf372bd9388ce7`  
-		Last Modified: Wed, 16 Aug 2023 00:54:26 GMT  
-		Size: 12.8 MB (12830998 bytes)  
+	-	`sha256:12aee5cf8f37cca7abbb3ddb8defb5e20bb50e9bc07424403077a01b680f295c`  
+		Last Modified: Sat, 26 Aug 2023 03:44:50 GMT  
+		Size: 12.8 MB (12831820 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b08534d14b4514f89e6f19e7ff49a6571bdebfdecdc655c7919816f37153cfb`  
-		Last Modified: Wed, 16 Aug 2023 00:54:25 GMT  
+	-	`sha256:f38eeadd1baa1b7b369e86075098080d79cc5503b755e7b180768c8e0381c35f`  
+		Last Modified: Sat, 26 Aug 2023 03:44:49 GMT  
 		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:90a10c34aa72db65f6ea5d675c1c3628becb6cac6a0c3ef79220376a1abd8124`  
-		Last Modified: Wed, 16 Aug 2023 14:16:20 GMT  
-		Size: 5.3 MB (5261024 bytes)  
+	-	`sha256:5ddb5f49e0e7793d5ea5a4613388be6c6c77bb0142af4ad9271df4da317882ee`  
+		Last Modified: Sat, 26 Aug 2023 07:26:03 GMT  
+		Size: 5.3 MB (5261008 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0c5511852e5d809f0058b70ea42d2cf034aab8b2a06ce613bb3c5fba69fabbb`  
-		Last Modified: Wed, 16 Aug 2023 14:16:17 GMT  
-		Size: 4.6 KB (4556 bytes)  
+	-	`sha256:175c0c42a21db93cf9894cbf679aa8f17084ba508d1eaed62a3ade036c09553c`  
+		Last Modified: Sat, 26 Aug 2023 07:26:01 GMT  
+		Size: 4.6 KB (4560 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a07f71adc429e2bbd2c7313200eeaf14694588e0dd8c1e926c451839e50977c`  
-		Last Modified: Wed, 16 Aug 2023 14:16:17 GMT  
+	-	`sha256:aba0b89ea7a2285f45405c02b9de72c5ae6429bff393beacedca1f6a8baef8ae`  
+		Last Modified: Sat, 26 Aug 2023 07:26:01 GMT  
 		Size: 27.9 KB (27944 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ecc0a73be2ffa6ddbc9575cf95f3333592c95eaa442658246d75c9c1c93d7a02`  
-		Last Modified: Wed, 16 Aug 2023 14:16:24 GMT  
-		Size: 94.1 MB (94066219 bytes)  
+	-	`sha256:3a2ebffbe05107c3d012ae4e66cde0e1da9060c1b9380e8b7b03169891c918b7`  
+		Last Modified: Sat, 26 Aug 2023 07:26:06 GMT  
+		Size: 94.1 MB (94066171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:26ae222ed7208d6502c96c82c66902ead874a611cb3e220848c039e0767a2a21`  
-		Last Modified: Wed, 16 Aug 2023 14:16:17 GMT  
+	-	`sha256:128fe07b74b322b38f9f2db2f79bf17840590a5933f930a86d21e97c23ab5123`  
+		Last Modified: Sat, 26 Aug 2023 07:26:00 GMT  
 		Size: 454.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:351a3e8d48822148e75061e4ccb70dc7e71a4769e598b5bae59456478f0d4adc`  
-		Last Modified: Wed, 16 Aug 2023 14:16:17 GMT  
+	-	`sha256:738bb83136295cc4ed0513f5c7b30f7cedb76ac234b9a982bb1ab259f671b542`  
+		Last Modified: Sat, 26 Aug 2023 07:26:00 GMT  
 		Size: 2.2 KB (2241 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `convertigo:latest`
 
 ```console
-$ docker pull convertigo@sha256:0c83f4cdae2bf322320abbfd4e0b535c0ae2075e8a765dde4f39b19d474b4274
+$ docker pull convertigo@sha256:b6e2fcfaf5a75233dcd8b2904db1c119f6e5a4fc478bedc26897ecc1ce4f949a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1445,14 +1445,14 @@ CMD ["convertigo"]
 ### `convertigo:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull convertigo@sha256:2850c30fb0dcacf617894aa50354db3d150e41bcc4f964bf0fdbcb4b9e3f39f3
+$ docker pull convertigo@sha256:800cc21e9f15af63c9afe9d8384845a44369adb94ab11f9f77630f8463da9ba3
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **304.3 MB (304325880 bytes)**  
+-	Total Size: **304.3 MB (304326642 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:05103aed0669f931e564aaebac8dc3d7170cc79d0b5db862d6bb6275429aba01`
+-	Image ID: `sha256:7236e798d7585d1eb475c0c9de22bc68932950e90a87663982b21e55b8cc2f39`
 -	Entrypoint: `["tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["convertigo"]`
 
@@ -1505,57 +1505,57 @@ ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
 ENV GPG_KEYS=48F8E69F6390C9F25CFEDCD268248959359E722B A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243
 # Mon, 14 Aug 2023 20:05:26 GMT
 ENV TOMCAT_MAJOR=9
-# Wed, 16 Aug 2023 00:33:15 GMT
-ENV TOMCAT_VERSION=9.0.79
-# Wed, 16 Aug 2023 00:33:15 GMT
-ENV TOMCAT_SHA512=7a0d99b5fc37c9e9ac26b554fab9147ce0a2ba59fad41e2565b15e9f6e137bf0105f5c9cd6b7b508837ff24feb7b95b2aba49e0abc7b1480a30a11606e79802a
-# Wed, 16 Aug 2023 00:34:08 GMT
+# Sat, 26 Aug 2023 03:23:33 GMT
+ENV TOMCAT_VERSION=9.0.80
+# Sat, 26 Aug 2023 03:23:33 GMT
+ENV TOMCAT_SHA512=24014441b0ccdd2dda238efa56e1a039476488943e6cf04f8a372a340a49dd21ce174ed68e2f5fcc43401e85fae6d00c5eac3d357653e91601737b6fa94476de
+# Sat, 26 Aug 2023 03:24:33 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		gnupg 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://downloads.apache.org/$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if curl -fL -o "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl 		; 		nproc="$(nproc)"; 		make -j "$nproc"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| xargs -rt readlink -e 		| sort -u 		| xargs -rt dpkg-query --search 		| cut -d: -f1 		| sort -u 		| tee "$TOMCAT_NATIVE_LIBDIR/.dependencies.txt" 		| xargs -r apt-mark manual 	; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 1777 logs temp work; 		catalina.sh version
-# Wed, 16 Aug 2023 00:34:09 GMT
+# Sat, 26 Aug 2023 03:24:34 GMT
 RUN set -eux; 	nativeLines="$(catalina.sh configtest 2>&1)"; 	nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')"; 	nativeLines="$(echo "$nativeLines" | sort -u)"; 	if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 16 Aug 2023 00:34:10 GMT
+# Sat, 26 Aug 2023 03:24:34 GMT
 EXPOSE 8080
-# Wed, 16 Aug 2023 00:34:10 GMT
+# Sat, 26 Aug 2023 03:24:34 GMT
 ENTRYPOINT []
-# Wed, 16 Aug 2023 00:34:10 GMT
+# Sat, 26 Aug 2023 03:24:34 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 16 Aug 2023 14:15:24 GMT
+# Sat, 26 Aug 2023 07:25:21 GMT
 MAINTAINER Nicolas Albert nicolasa@convertigo.com
-# Wed, 16 Aug 2023 14:15:24 GMT
+# Sat, 26 Aug 2023 07:25:21 GMT
 ENV SWT_GTK3=0
-# Wed, 16 Aug 2023 14:15:24 GMT
+# Sat, 26 Aug 2023 07:25:21 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 16 Aug 2023 14:15:25 GMT
+# Sat, 26 Aug 2023 07:25:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 16 Aug 2023 14:15:25 GMT
+# Sat, 26 Aug 2023 07:25:22 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 16 Aug 2023 14:16:01 GMT
+# Sat, 26 Aug 2023 07:25:42 GMT
 RUN apt-get update -y   && apt-get install -y --no-install-recommends     ca-certificates     curl     dirmngr     gnupg     gosu     sudo     tini     unzip   && apt-get remove -y --purge wget libfreetype6   && apt-get autoremove -y   && rm -rf /var/lib/apt/lists/*
-# Wed, 16 Aug 2023 14:16:02 GMT
+# Sat, 26 Aug 2023 07:25:43 GMT
 RUN useradd -s /bin/false -m convertigo     && mkdir -p /workspace     && chown -R convertigo:convertigo /workspace     && chmod -R 777 /workspace     && echo "convertigo ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/convertigo     && chmod 0440 /etc/sudoers.d/convertigo
-# Wed, 16 Aug 2023 14:16:02 GMT
+# Sat, 26 Aug 2023 07:25:43 GMT
 RUN sed -i.bak         -e '/protocol="AJP/d'         -e '/JasperListener/d'         -e 's/port="8080"/port="28080" maxThreads="64000" relaxedQueryChars="{}[]|"/'         -e 's,</Host>,  <Valve className="org.apache.catalina.valves.RemoteIpValve" />\n        <Valve className="org.apache.catalina.valves.ErrorReportValve"  errorCode.404="webapps/convertigo/404.html" errorCode.0="webapps/convertigo/error.html" showReport="false" showServerInfo="false" />\n      </Host>,'         -e 's,</Service>,<!--SSL<Connector port="28443" protocol="org.apache.coyote.http11.Http11AprProtocol" SSLEnabled="true" maxThreads="64000" relaxedQueryChars="{}[]|">\n      <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />\n      <SSLHostConfig>\n        <Certificate certificateKeyFile="/certs/key.pem"\n                     certificateFile="/certs/cert.pem"\n                     certificateChainFile="/certs/chain.pem"\n                     type="RSA" />\n      </SSLHostConfig>\n    </Connector>SSL-->\n  </Service>,'         conf/server.xml     && sed -i.bak         -e 's,<Context>,<Context sessionCookiePath="/">,'         -e 's,</Context>,<Manager pathname="" /><CookieProcessor sameSiteCookies="unset" /></Context>,'         conf/context.xml     && rm -rf webapps/* bin/*.bat conf/server.xml.bak /tmp/*     && mkdir webapps/ROOT     && chown -R convertigo:convertigo conf temp work logs     && chmod -w conf/*     && chmod 777 conf/context.xml conf/server.xml
-# Wed, 16 Aug 2023 14:16:02 GMT
+# Sat, 26 Aug 2023 07:25:43 GMT
 ENV CONVERTIGO_VERSION=8.2.2
-# Wed, 16 Aug 2023 14:16:02 GMT
+# Sat, 26 Aug 2023 07:25:43 GMT
 ENV CONVERTIGO_WAR_URL=https://github.com/convertigo/convertigo/releases/download/8.2.2/convertigo-8.2.2.war
-# Wed, 16 Aug 2023 14:16:02 GMT
+# Sat, 26 Aug 2023 07:25:43 GMT
 ENV CONVERTIGO_GPG_KEYS=6A7779BB78FE368DF74B708FD4DA8FBEB64BF75F
-# Wed, 16 Aug 2023 14:16:08 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 RUN export GNUPGHOME="$(mktemp -d)"     && ( gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$CONVERTIGO_GPG_KEYS"     || gpg --batch --keyserver keyserver.pgp.com --recv-keys "$CONVERTIGO_GPG_KEYS" )     && curl -fSL -o /tmp/convertigo.war $CONVERTIGO_WAR_URL     && curl -fSL -o /tmp/convertigo.war.asc $CONVERTIGO_WAR_URL.asc     && gpg --batch --verify /tmp/convertigo.war.asc /tmp/convertigo.war     && mkdir -p webapps/ROOT webapps/convertigo     && mkdir /certs && chmod 777 /certs     && (cd webapps/convertigo         && unzip -q /tmp/convertigo.war         && (chmod -f a+x WEB-INF/xvnc/* || true)         && (test "$(dpkg --print-architecture)" != "i386" && rm -rf WEB-INF/xulrunner WEB-INF/xvnc WEB-INF/lib/swt_* || true)         && chmod 777 WEB-INF/web.xml WEB-INF/lib WEB-INF/classes         && rm -rf /tmp/*)
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 COPY file:a8c73db31af1c6589d48a2342d8673de69087696e5f19812fc67f887368ccae8 in webapps/ROOT/index.html 
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 COPY file:efb1554bc41c54ba23859400ee8f932412d0980b3c4056d04da7b1c42febe494 in / 
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 WORKDIR /workspace
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 VOLUME [/workspace]
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 EXPOSE 28080
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-# Wed, 16 Aug 2023 14:16:09 GMT
+# Sat, 26 Aug 2023 07:25:49 GMT
 CMD ["convertigo"]
 ```
 
@@ -1584,35 +1584,35 @@ CMD ["convertigo"]
 		Last Modified: Mon, 14 Aug 2023 20:19:03 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e6d9b4a014d4afbb766452542ce120a4c47e9f928a76205c72bf372bd9388ce7`  
-		Last Modified: Wed, 16 Aug 2023 00:54:26 GMT  
-		Size: 12.8 MB (12830998 bytes)  
+	-	`sha256:12aee5cf8f37cca7abbb3ddb8defb5e20bb50e9bc07424403077a01b680f295c`  
+		Last Modified: Sat, 26 Aug 2023 03:44:50 GMT  
+		Size: 12.8 MB (12831820 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b08534d14b4514f89e6f19e7ff49a6571bdebfdecdc655c7919816f37153cfb`  
-		Last Modified: Wed, 16 Aug 2023 00:54:25 GMT  
+	-	`sha256:f38eeadd1baa1b7b369e86075098080d79cc5503b755e7b180768c8e0381c35f`  
+		Last Modified: Sat, 26 Aug 2023 03:44:49 GMT  
 		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:90a10c34aa72db65f6ea5d675c1c3628becb6cac6a0c3ef79220376a1abd8124`  
-		Last Modified: Wed, 16 Aug 2023 14:16:20 GMT  
-		Size: 5.3 MB (5261024 bytes)  
+	-	`sha256:5ddb5f49e0e7793d5ea5a4613388be6c6c77bb0142af4ad9271df4da317882ee`  
+		Last Modified: Sat, 26 Aug 2023 07:26:03 GMT  
+		Size: 5.3 MB (5261008 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0c5511852e5d809f0058b70ea42d2cf034aab8b2a06ce613bb3c5fba69fabbb`  
-		Last Modified: Wed, 16 Aug 2023 14:16:17 GMT  
-		Size: 4.6 KB (4556 bytes)  
+	-	`sha256:175c0c42a21db93cf9894cbf679aa8f17084ba508d1eaed62a3ade036c09553c`  
+		Last Modified: Sat, 26 Aug 2023 07:26:01 GMT  
+		Size: 4.6 KB (4560 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a07f71adc429e2bbd2c7313200eeaf14694588e0dd8c1e926c451839e50977c`  
-		Last Modified: Wed, 16 Aug 2023 14:16:17 GMT  
+	-	`sha256:aba0b89ea7a2285f45405c02b9de72c5ae6429bff393beacedca1f6a8baef8ae`  
+		Last Modified: Sat, 26 Aug 2023 07:26:01 GMT  
 		Size: 27.9 KB (27944 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ecc0a73be2ffa6ddbc9575cf95f3333592c95eaa442658246d75c9c1c93d7a02`  
-		Last Modified: Wed, 16 Aug 2023 14:16:24 GMT  
-		Size: 94.1 MB (94066219 bytes)  
+	-	`sha256:3a2ebffbe05107c3d012ae4e66cde0e1da9060c1b9380e8b7b03169891c918b7`  
+		Last Modified: Sat, 26 Aug 2023 07:26:06 GMT  
+		Size: 94.1 MB (94066171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:26ae222ed7208d6502c96c82c66902ead874a611cb3e220848c039e0767a2a21`  
-		Last Modified: Wed, 16 Aug 2023 14:16:17 GMT  
+	-	`sha256:128fe07b74b322b38f9f2db2f79bf17840590a5933f930a86d21e97c23ab5123`  
+		Last Modified: Sat, 26 Aug 2023 07:26:00 GMT  
 		Size: 454.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:351a3e8d48822148e75061e4ccb70dc7e71a4769e598b5bae59456478f0d4adc`  
-		Last Modified: Wed, 16 Aug 2023 14:16:17 GMT  
+	-	`sha256:738bb83136295cc4ed0513f5c7b30f7cedb76ac234b9a982bb1ab259f671b542`  
+		Last Modified: Sat, 26 Aug 2023 07:26:00 GMT  
 		Size: 2.2 KB (2241 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
