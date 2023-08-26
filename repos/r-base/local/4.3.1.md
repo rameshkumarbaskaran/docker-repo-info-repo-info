@@ -779,20 +779,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris fontconfig=2.14.2-3
-'http://deb.debian.org/debian/pool/main/f/fontconfig/fontconfig_2.14.2-3.dsc' fontconfig_2.14.2-3.dsc 2323 SHA256:8aea2b810e1f4e879c2ed1f3c3afdd27b03fff1ccc28280b2a64af44863719e8
-'http://deb.debian.org/debian/pool/main/f/fontconfig/fontconfig_2.14.2.orig.tar.xz' fontconfig_2.14.2.orig.tar.xz 1440844 SHA256:dba695b57bce15023d2ceedef82062c2b925e51f5d4cc4aef736cf13f60a468b
-'http://deb.debian.org/debian/pool/main/f/fontconfig/fontconfig_2.14.2-3.debian.tar.xz' fontconfig_2.14.2-3.debian.tar.xz 56144 SHA256:b52eab97a07fe5d8731e7b95b5db6f0a65812894076297ceb24776b0ed42c088
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/fontconfig/2.14.2-3/
 
-- https://sources.debian.net/src/fontconfig/2.14.2-3/ (for browsing the source)
-- https://sources.debian.net/src/fontconfig/2.14.2-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/fontconfig/2.14.2-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `foreign=0.8.84-1`
 
@@ -998,11 +991,17 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris glib2.0=2.77.1-2
-'http://http.debian.net/debian/pool/main/g/glib2.0/glib2.0_2.77.1-2.dsc' glib2.0_2.77.1-2.dsc 3600 SHA256:41dd402fa81b0044d87bd7e75e13ce42fe0eee97b1f072f4a28e61b1a29bbe15
-'http://http.debian.net/debian/pool/main/g/glib2.0/glib2.0_2.77.1.orig-unicode-data.tar.xz' glib2.0_2.77.1.orig-unicode-data.tar.xz 268012 SHA256:e8a592b792225e270a0e6b86b4b735a592ad49eefe4bdd7214f9f9eb6a0065c6
-'http://http.debian.net/debian/pool/main/g/glib2.0/glib2.0_2.77.1.orig.tar.xz' glib2.0_2.77.1.orig.tar.xz 5305568 SHA256:dce8d0c9e916d8c81a64436bd4ee4d6515a52dd3d157c994e1cdb9b3d6300a03
-'http://http.debian.net/debian/pool/main/g/glib2.0/glib2.0_2.77.1-2.debian.tar.xz' glib2.0_2.77.1-2.debian.tar.xz 118024 SHA256:731e491dee6c6558fd5cd01e8a17abded6ad6efcc16d1e205dfb06ad4ed5b5bd
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.77.1-2.dsc' glib2.0_2.77.1-2.dsc 3600 SHA256:41dd402fa81b0044d87bd7e75e13ce42fe0eee97b1f072f4a28e61b1a29bbe15
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.77.1.orig-unicode-data.tar.xz' glib2.0_2.77.1.orig-unicode-data.tar.xz 268012 SHA256:e8a592b792225e270a0e6b86b4b735a592ad49eefe4bdd7214f9f9eb6a0065c6
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.77.1.orig.tar.xz' glib2.0_2.77.1.orig.tar.xz 5305568 SHA256:dce8d0c9e916d8c81a64436bd4ee4d6515a52dd3d157c994e1cdb9b3d6300a03
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.77.1-2.debian.tar.xz' glib2.0_2.77.1-2.debian.tar.xz 118024 SHA256:731e491dee6c6558fd5cd01e8a17abded6ad6efcc16d1e205dfb06ad4ed5b5bd
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/glib2.0/2.77.1-2/ (for browsing the source)
+- https://sources.debian.net/src/glib2.0/2.77.1-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/glib2.0/2.77.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.37-7`
 
@@ -1154,15 +1153,13 @@ Licenses: (parsed from: `/usr/share/doc/grep/copyright`)
 - `GPL-3`
 - `GPL-3+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris grep=3.11-2
-'http://http.debian.net/debian/pool/main/g/grep/grep_3.11-2.dsc' grep_3.11-2.dsc 1618 SHA256:1242a5ba53e6c508aa472ad8de1a20de029b109b345af64c56f949ec40cd5bdb
-'http://http.debian.net/debian/pool/main/g/grep/grep_3.11.orig.tar.xz' grep_3.11.orig.tar.xz 1703776 SHA256:1db2aedde89d0dea42b16d9528f894c8d15dae4e190b59aecc78f5a951276eab
-'http://http.debian.net/debian/pool/main/g/grep/grep_3.11.orig.tar.xz.asc' grep_3.11.orig.tar.xz.asc 833 SHA256:89ec23ffd59b68822732dc8204fc89883c3af30a90ae390feb94346d9d09a589
-'http://http.debian.net/debian/pool/main/g/grep/grep_3.11-2.debian.tar.xz' grep_3.11-2.debian.tar.xz 20388 SHA256:39b98a7fea70c900a0ece8c317a1fc9ceed21326bddda715a2bb9fea60746a82
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/grep/3.11-2/
+
 
 ### `dpkg` source package: `gzip=1.12-1`
 
@@ -2374,14 +2371,13 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=6.4.4-3
-'http://http.debian.net/debian/pool/main/l/linux/linux_6.4.4-3.dsc' linux_6.4.4-3.dsc 288845 SHA256:d126d5a8bff09024d9f3e98cf135a98de4f00f52c5d3f91ea7735363f0259456
-'http://http.debian.net/debian/pool/main/l/linux/linux_6.4.4.orig.tar.xz' linux_6.4.4.orig.tar.xz 140401048 SHA256:bb9d8f1574646f53599d669f3b9610dc9cd0a77f57a49972c03964f5a21d67b1
-'http://http.debian.net/debian/pool/main/l/linux/linux_6.4.4-3.debian.tar.xz' linux_6.4.4-3.debian.tar.xz 1500912 SHA256:85093c80bdfbda628965a7e5602079259c0f8fc405136d12f5a9e5c900110d0c
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/linux/6.4.4-3/
+
 
 ### `dpkg` source package: `littler=0.3.18-2`
 
@@ -2457,15 +2453,13 @@ Licenses: (parsed from: `/usr/share/doc/mawk/copyright`)
 - `GPL-2.0-only`
 - `X11`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mawk=1.3.4.20230730-1
-'http://http.debian.net/debian/pool/main/m/mawk/mawk_1.3.4.20230730-1.dsc' mawk_1.3.4.20230730-1.dsc 2180 SHA256:b9afdadfc9ad2fed4e1cdf8edd87c0aacbb9b56bda74590e025ea846d1390b1c
-'http://http.debian.net/debian/pool/main/m/mawk/mawk_1.3.4.20230730.orig.tar.gz' mawk_1.3.4.20230730.orig.tar.gz 410248 SHA256:810b7cc0aa2bff5ff215f237e275b327b21ba49a0d7b36930e3ddc80f4ce5618
-'http://http.debian.net/debian/pool/main/m/mawk/mawk_1.3.4.20230730.orig.tar.gz.asc' mawk_1.3.4.20230730.orig.tar.gz.asc 729 SHA256:2beb152af3893b4870448642a932cde20194c0aaf7eaa002e27ffa06975c1af0
-'http://http.debian.net/debian/pool/main/m/mawk/mawk_1.3.4.20230730-1.debian.tar.xz' mawk_1.3.4.20230730-1.debian.tar.xz 15492 SHA256:e35b496d22c685f0a05c278fcbc90d6f0bc31783f263d2de412d268964bf35f1
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/mawk/1.3.4.20230730-1/
+
 
 ### `dpkg` source package: `mgcv=1.9-0-1`
 
@@ -2800,20 +2794,13 @@ Licenses: (parsed from: `/usr/share/doc/libpango-1.0-0/copyright`, `/usr/share/d
 - `TCL`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pango1.0=1.50.14+ds-1
-'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.50.14%2bds-1.dsc' pango1.0_1.50.14+ds-1.dsc 3547 SHA256:32d61c4cee4b5a0ae83a7eb4a538b411e8f266123429f62a7b42369b6542b2e7
-'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.50.14%2bds.orig.tar.xz' pango1.0_1.50.14+ds.orig.tar.xz 1730428 SHA256:8ba2ece3fc630dd14b20d133beec8542dc23cfc84caeebffd75e9bf288b45ffe
-'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.50.14%2bds-1.debian.tar.xz' pango1.0_1.50.14+ds-1.debian.tar.xz 41128 SHA256:b59d882378f74745c1ed4ff8f0b1c106b238d4ca9d6ed36387e530b64abf92ce
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/pango1.0/1.50.14+ds-1/
 
-- https://sources.debian.net/src/pango1.0/1.50.14+ds-1/ (for browsing the source)
-- https://sources.debian.net/src/pango1.0/1.50.14+ds-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/pango1.0/1.50.14+ds-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `patch=2.7.6-7`
 
@@ -2856,10 +2843,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris pcre2=10.42-2
-'http://http.debian.net/debian/pool/main/p/pcre2/pcre2_10.42-2.dsc' pcre2_10.42-2.dsc 2302 SHA256:fbdb6cf6c96c8d7d49e7668690af9c30ece36710cc0be38d66bbb5af75206f78
-'http://http.debian.net/debian/pool/main/p/pcre2/pcre2_10.42.orig.tar.gz' pcre2_10.42.orig.tar.gz 2397194 SHA256:c33b418e3b936ee3153de2c61cc638e7e4fe3156022a5c77d0711bcbb9d64f1f
-'http://http.debian.net/debian/pool/main/p/pcre2/pcre2_10.42-2.diff.gz' pcre2_10.42-2.diff.gz 7994 SHA256:4136268be35215872d4ef387e4c9cf17914051a02839fcc24fb2af0c51fd2ba8
+'http://deb.debian.org/debian/pool/main/p/pcre2/pcre2_10.42-2.dsc' pcre2_10.42-2.dsc 2302 SHA256:fbdb6cf6c96c8d7d49e7668690af9c30ece36710cc0be38d66bbb5af75206f78
+'http://deb.debian.org/debian/pool/main/p/pcre2/pcre2_10.42.orig.tar.gz' pcre2_10.42.orig.tar.gz 2397194 SHA256:c33b418e3b936ee3153de2c61cc638e7e4fe3156022a5c77d0711bcbb9d64f1f
+'http://deb.debian.org/debian/pool/main/p/pcre2/pcre2_10.42-2.diff.gz' pcre2_10.42-2.diff.gz 7994 SHA256:4136268be35215872d4ef387e4c9cf17914051a02839fcc24fb2af0c51fd2ba8
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/pcre2/10.42-2/ (for browsing the source)
+- https://sources.debian.net/src/pcre2/10.42-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/pcre2/10.42-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `perl=5.36.0-7`
 
@@ -2904,11 +2897,17 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris perl=5.36.0-7
-'http://http.debian.net/debian/pool/main/p/perl/perl_5.36.0-7.dsc' perl_5.36.0-7.dsc 2886 SHA256:d9992947bb5c254e1bf96c56f12ac0bc962a2ff1e700834f871fb412526b4a8b
-'http://http.debian.net/debian/pool/main/p/perl/perl_5.36.0.orig-regen-configure.tar.xz' perl_5.36.0.orig-regen-configure.tar.xz 417784 SHA256:10ac353bc5a933403afe60ed1817e7a456f99bdbcaf80c1cdb0eb3a08ea56d4e
-'http://http.debian.net/debian/pool/main/p/perl/perl_5.36.0.orig.tar.xz' perl_5.36.0.orig.tar.xz 13051500 SHA256:0f386dccbee8e26286404b2cca144e1005be65477979beb9b1ba272d4819bcf0
-'http://http.debian.net/debian/pool/main/p/perl/perl_5.36.0-7.debian.tar.xz' perl_5.36.0-7.debian.tar.xz 169288 SHA256:c8a46245b7102d60539cc4c550977f35cbb8409643abc0d00c7a8b78d0271bea
+'http://deb.debian.org/debian/pool/main/p/perl/perl_5.36.0-7.dsc' perl_5.36.0-7.dsc 2886 SHA256:d9992947bb5c254e1bf96c56f12ac0bc962a2ff1e700834f871fb412526b4a8b
+'http://deb.debian.org/debian/pool/main/p/perl/perl_5.36.0.orig-regen-configure.tar.xz' perl_5.36.0.orig-regen-configure.tar.xz 417784 SHA256:10ac353bc5a933403afe60ed1817e7a456f99bdbcaf80c1cdb0eb3a08ea56d4e
+'http://deb.debian.org/debian/pool/main/p/perl/perl_5.36.0.orig.tar.xz' perl_5.36.0.orig.tar.xz 13051500 SHA256:0f386dccbee8e26286404b2cca144e1005be65477979beb9b1ba272d4819bcf0
+'http://deb.debian.org/debian/pool/main/p/perl/perl_5.36.0-7.debian.tar.xz' perl_5.36.0-7.debian.tar.xz 169288 SHA256:c8a46245b7102d60539cc4c550977f35cbb8409643abc0d00c7a8b78d0271bea
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/perl/5.36.0-7/ (for browsing the source)
+- https://sources.debian.net/src/perl/5.36.0-7/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/perl/5.36.0-7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pixman=0.42.2-1`
 
