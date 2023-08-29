@@ -5,15 +5,19 @@
 -	[`maven:3`](#maven3)
 -	[`maven:3-amazoncorretto`](#maven3-amazoncorretto)
 -	[`maven:3-amazoncorretto-11`](#maven3-amazoncorretto-11)
+-	[`maven:3-amazoncorretto-11-al2023`](#maven3-amazoncorretto-11-al2023)
 -	[`maven:3-amazoncorretto-11-debian`](#maven3-amazoncorretto-11-debian)
 -	[`maven:3-amazoncorretto-11-debian-bookworm`](#maven3-amazoncorretto-11-debian-bookworm)
 -	[`maven:3-amazoncorretto-17`](#maven3-amazoncorretto-17)
+-	[`maven:3-amazoncorretto-17-al2023`](#maven3-amazoncorretto-17-al2023)
 -	[`maven:3-amazoncorretto-17-debian`](#maven3-amazoncorretto-17-debian)
 -	[`maven:3-amazoncorretto-17-debian-bookworm`](#maven3-amazoncorretto-17-debian-bookworm)
 -	[`maven:3-amazoncorretto-20`](#maven3-amazoncorretto-20)
+-	[`maven:3-amazoncorretto-20-al2023`](#maven3-amazoncorretto-20-al2023)
 -	[`maven:3-amazoncorretto-20-debian`](#maven3-amazoncorretto-20-debian)
 -	[`maven:3-amazoncorretto-20-debian-bookworm`](#maven3-amazoncorretto-20-debian-bookworm)
 -	[`maven:3-amazoncorretto-8`](#maven3-amazoncorretto-8)
+-	[`maven:3-amazoncorretto-8-al2023`](#maven3-amazoncorretto-8-al2023)
 -	[`maven:3-amazoncorretto-8-debian`](#maven3-amazoncorretto-8-debian)
 -	[`maven:3-amazoncorretto-8-debian-bookworm`](#maven3-amazoncorretto-8-debian-bookworm)
 -	[`maven:3-eclipse-temurin`](#maven3-eclipse-temurin)
@@ -38,15 +42,19 @@
 -	[`maven:3.9`](#maven39)
 -	[`maven:3.9-amazoncorretto`](#maven39-amazoncorretto)
 -	[`maven:3.9-amazoncorretto-11`](#maven39-amazoncorretto-11)
+-	[`maven:3.9-amazoncorretto-11-al2023`](#maven39-amazoncorretto-11-al2023)
 -	[`maven:3.9-amazoncorretto-11-debian`](#maven39-amazoncorretto-11-debian)
 -	[`maven:3.9-amazoncorretto-11-debian-bookworm`](#maven39-amazoncorretto-11-debian-bookworm)
 -	[`maven:3.9-amazoncorretto-17`](#maven39-amazoncorretto-17)
+-	[`maven:3.9-amazoncorretto-17-al2023`](#maven39-amazoncorretto-17-al2023)
 -	[`maven:3.9-amazoncorretto-17-debian`](#maven39-amazoncorretto-17-debian)
 -	[`maven:3.9-amazoncorretto-17-debian-bookworm`](#maven39-amazoncorretto-17-debian-bookworm)
 -	[`maven:3.9-amazoncorretto-20`](#maven39-amazoncorretto-20)
+-	[`maven:3.9-amazoncorretto-20-al2023`](#maven39-amazoncorretto-20-al2023)
 -	[`maven:3.9-amazoncorretto-20-debian`](#maven39-amazoncorretto-20-debian)
 -	[`maven:3.9-amazoncorretto-20-debian-bookworm`](#maven39-amazoncorretto-20-debian-bookworm)
 -	[`maven:3.9-amazoncorretto-8`](#maven39-amazoncorretto-8)
+-	[`maven:3.9-amazoncorretto-8-al2023`](#maven39-amazoncorretto-8-al2023)
 -	[`maven:3.9-amazoncorretto-8-debian`](#maven39-amazoncorretto-8-debian)
 -	[`maven:3.9-amazoncorretto-8-debian-bookworm`](#maven39-amazoncorretto-8-debian-bookworm)
 -	[`maven:3.9-eclipse-temurin`](#maven39-eclipse-temurin)
@@ -71,15 +79,19 @@
 -	[`maven:3.9.4`](#maven394)
 -	[`maven:3.9.4-amazoncorretto`](#maven394-amazoncorretto)
 -	[`maven:3.9.4-amazoncorretto-11`](#maven394-amazoncorretto-11)
+-	[`maven:3.9.4-amazoncorretto-11-al2023`](#maven394-amazoncorretto-11-al2023)
 -	[`maven:3.9.4-amazoncorretto-11-debian`](#maven394-amazoncorretto-11-debian)
 -	[`maven:3.9.4-amazoncorretto-11-debian-bookworm`](#maven394-amazoncorretto-11-debian-bookworm)
 -	[`maven:3.9.4-amazoncorretto-17`](#maven394-amazoncorretto-17)
+-	[`maven:3.9.4-amazoncorretto-17-al2023`](#maven394-amazoncorretto-17-al2023)
 -	[`maven:3.9.4-amazoncorretto-17-debian`](#maven394-amazoncorretto-17-debian)
 -	[`maven:3.9.4-amazoncorretto-17-debian-bookworm`](#maven394-amazoncorretto-17-debian-bookworm)
 -	[`maven:3.9.4-amazoncorretto-20`](#maven394-amazoncorretto-20)
+-	[`maven:3.9.4-amazoncorretto-20-al2023`](#maven394-amazoncorretto-20-al2023)
 -	[`maven:3.9.4-amazoncorretto-20-debian`](#maven394-amazoncorretto-20-debian)
 -	[`maven:3.9.4-amazoncorretto-20-debian-bookworm`](#maven394-amazoncorretto-20-debian-bookworm)
 -	[`maven:3.9.4-amazoncorretto-8`](#maven394-amazoncorretto-8)
+-	[`maven:3.9.4-amazoncorretto-8-al2023`](#maven394-amazoncorretto-8-al2023)
 -	[`maven:3.9.4-amazoncorretto-8-debian`](#maven394-amazoncorretto-8-debian)
 -	[`maven:3.9.4-amazoncorretto-8-debian-bookworm`](#maven394-amazoncorretto-8-debian-bookworm)
 -	[`maven:3.9.4-eclipse-temurin`](#maven394-eclipse-temurin)
@@ -688,6 +700,15 @@ CMD ["mvn"]
 		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3-amazoncorretto-11-al2023`
+
+```console
+$ docker pull maven@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
 ## `maven:3-amazoncorretto-11-debian`
 
 ```console
@@ -1154,6 +1175,15 @@ CMD ["mvn"]
 		Last Modified: Mon, 28 Aug 2023 20:00:45 GMT  
 		Size: 168.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3-amazoncorretto-17-al2023`
+
+```console
+$ docker pull maven@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `maven:3-amazoncorretto-17-debian`
 
@@ -1622,6 +1652,15 @@ CMD ["mvn"]
 		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3-amazoncorretto-20-al2023`
+
+```console
+$ docker pull maven@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
 ## `maven:3-amazoncorretto-20-debian`
 
 ```console
@@ -2088,6 +2127,15 @@ CMD ["mvn"]
 		Last Modified: Mon, 28 Aug 2023 20:02:28 GMT  
 		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3-amazoncorretto-8-al2023`
+
+```console
+$ docker pull maven@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `maven:3-amazoncorretto-8-debian`
 
@@ -9346,6 +9394,15 @@ CMD ["mvn"]
 		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.9-amazoncorretto-11-al2023`
+
+```console
+$ docker pull maven@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
 ## `maven:3.9-amazoncorretto-11-debian`
 
 ```console
@@ -9812,6 +9869,15 @@ CMD ["mvn"]
 		Last Modified: Mon, 28 Aug 2023 20:00:45 GMT  
 		Size: 168.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3.9-amazoncorretto-17-al2023`
+
+```console
+$ docker pull maven@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `maven:3.9-amazoncorretto-17-debian`
 
@@ -10280,6 +10346,15 @@ CMD ["mvn"]
 		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.9-amazoncorretto-20-al2023`
+
+```console
+$ docker pull maven@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
 ## `maven:3.9-amazoncorretto-20-debian`
 
 ```console
@@ -10746,6 +10821,15 @@ CMD ["mvn"]
 		Last Modified: Mon, 28 Aug 2023 20:02:28 GMT  
 		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3.9-amazoncorretto-8-al2023`
+
+```console
+$ docker pull maven@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `maven:3.9-amazoncorretto-8-debian`
 
@@ -18004,6 +18088,15 @@ CMD ["mvn"]
 		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.9.4-amazoncorretto-11-al2023`
+
+```console
+$ docker pull maven@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
 ## `maven:3.9.4-amazoncorretto-11-debian`
 
 ```console
@@ -18470,6 +18563,15 @@ CMD ["mvn"]
 		Last Modified: Mon, 28 Aug 2023 20:00:45 GMT  
 		Size: 168.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3.9.4-amazoncorretto-17-al2023`
+
+```console
+$ docker pull maven@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `maven:3.9.4-amazoncorretto-17-debian`
 
@@ -18938,6 +19040,15 @@ CMD ["mvn"]
 		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.9.4-amazoncorretto-20-al2023`
+
+```console
+$ docker pull maven@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
 ## `maven:3.9.4-amazoncorretto-20-debian`
 
 ```console
@@ -19404,6 +19515,15 @@ CMD ["mvn"]
 		Last Modified: Mon, 28 Aug 2023 20:02:28 GMT  
 		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3.9.4-amazoncorretto-8-al2023`
+
+```console
+$ docker pull maven@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `maven:3.9.4-amazoncorretto-8-debian`
 
