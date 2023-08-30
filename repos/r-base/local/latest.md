@@ -987,21 +987,13 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`)
 - `Unicode-DFS-2016`
 - `bzip2-1.0.6`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.77.1-2
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.77.1-2.dsc' glib2.0_2.77.1-2.dsc 3600 SHA256:41dd402fa81b0044d87bd7e75e13ce42fe0eee97b1f072f4a28e61b1a29bbe15
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.77.1.orig-unicode-data.tar.xz' glib2.0_2.77.1.orig-unicode-data.tar.xz 268012 SHA256:e8a592b792225e270a0e6b86b4b735a592ad49eefe4bdd7214f9f9eb6a0065c6
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.77.1.orig.tar.xz' glib2.0_2.77.1.orig.tar.xz 5305568 SHA256:dce8d0c9e916d8c81a64436bd4ee4d6515a52dd3d157c994e1cdb9b3d6300a03
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.77.1-2.debian.tar.xz' glib2.0_2.77.1-2.debian.tar.xz 118024 SHA256:731e491dee6c6558fd5cd01e8a17abded6ad6efcc16d1e205dfb06ad4ed5b5bd
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/glib2.0/2.77.1-2/
 
-- https://sources.debian.net/src/glib2.0/2.77.1-2/ (for browsing the source)
-- https://sources.debian.net/src/glib2.0/2.77.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/glib2.0/2.77.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.37-7`
 
@@ -2839,20 +2831,13 @@ Licenses: (parsed from: `/usr/share/doc/libpcre2-16-0/copyright`, `/usr/share/do
 - `X11`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pcre2=10.42-2
-'http://deb.debian.org/debian/pool/main/p/pcre2/pcre2_10.42-2.dsc' pcre2_10.42-2.dsc 2302 SHA256:fbdb6cf6c96c8d7d49e7668690af9c30ece36710cc0be38d66bbb5af75206f78
-'http://deb.debian.org/debian/pool/main/p/pcre2/pcre2_10.42.orig.tar.gz' pcre2_10.42.orig.tar.gz 2397194 SHA256:c33b418e3b936ee3153de2c61cc638e7e4fe3156022a5c77d0711bcbb9d64f1f
-'http://deb.debian.org/debian/pool/main/p/pcre2/pcre2_10.42-2.diff.gz' pcre2_10.42-2.diff.gz 7994 SHA256:4136268be35215872d4ef387e4c9cf17914051a02839fcc24fb2af0c51fd2ba8
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/pcre2/10.42-2/
 
-- https://sources.debian.net/src/pcre2/10.42-2/ (for browsing the source)
-- https://sources.debian.net/src/pcre2/10.42-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/pcre2/10.42-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `perl=5.36.0-7`
 
@@ -3520,9 +3505,15 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris usrmerge=35
-'http://http.debian.net/debian/pool/main/u/usrmerge/usrmerge_35.dsc' usrmerge_35.dsc 981 SHA256:f8f7fa03aa912a65f54584b1cbaed193575521ab7ffa16c93c9920c41726c9fd
-'http://http.debian.net/debian/pool/main/u/usrmerge/usrmerge_35.tar.xz' usrmerge_35.tar.xz 14416 SHA256:ec52fa22f174204f24ebb45caf579275f5a2b2404be5d4b3fe29ad60ad566829
+'http://deb.debian.org/debian/pool/main/u/usrmerge/usrmerge_35.dsc' usrmerge_35.dsc 981 SHA256:f8f7fa03aa912a65f54584b1cbaed193575521ab7ffa16c93c9920c41726c9fd
+'http://deb.debian.org/debian/pool/main/u/usrmerge/usrmerge_35.tar.xz' usrmerge_35.tar.xz 14416 SHA256:ec52fa22f174204f24ebb45caf579275f5a2b2404be5d4b3fe29ad60ad566829
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/usrmerge/35/ (for browsing the source)
+- https://sources.debian.net/src/usrmerge/35/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/usrmerge/35/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `util-linux=2.39.1-3`
 
