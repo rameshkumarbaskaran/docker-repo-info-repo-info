@@ -1,10 +1,10 @@
-# `maven:3.9.3-amazoncorretto-11`
+# `maven:3.9.4-amazoncorretto-11`
 
 ## Docker Metadata
 
-- Image ID: `sha256:9ff09d39c15dc6e5976a7009cc6ff60089d2a6c19304b04e5edac8b4e984decb`
-- Created: `2023-06-26T13:48:06Z`
-- Virtual Size: ~ 813.81 Mb  
+- Image ID: `sha256:8052e138f85e9662af1ae2839572115f38aa89bb158740cf3d8192fc8902fa30`
+- Created: `2023-08-18T15:26:34Z`
+- Virtual Size: ~ 819.35 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/mvn-entrypoint.sh"]`
@@ -161,15 +161,15 @@ $ dnf --quiet download --source --url diffutils-3.3-5.amzn2
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/3dd2cc02a0909d35ada8de88675e34b826187bbb822cdf42454cabe6bfc2d6a7/../../../../../blobstore/3b94189bd4a0bbb334c887b5a7306f5cbe927e45ca9a9c1e68e6466570b7a4e1/diffutils-3.3-5.amzn2.src.rpm
 ```
 
-### `rpm` package: `elfutils-libelf-0.176-2.amzn2.x86_64`
+### `rpm` package: `elfutils-libelf-0.176-2.amzn2.0.1.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url elfutils-libelf-0.176-2.amzn2
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/3dd2cc02a0909d35ada8de88675e34b826187bbb822cdf42454cabe6bfc2d6a7/../../../../../blobstore/7f6cc4b60d3a0fb8499726d64a830d91c97b301955f44418c3f1de3fb6304228/elfutils-0.176-2.amzn2.src.rpm
+$ dnf --quiet download --source --url elfutils-libelf-0.176-2.amzn2.0.1
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/3dd2cc02a0909d35ada8de88675e34b826187bbb822cdf42454cabe6bfc2d6a7/../../../../../blobstore/a49409874188bde60493bd9ed201b4cd0aad51c1c9e864c67d61f0d7ac1691a8/elfutils-0.176-2.amzn2.0.1.src.rpm
 ```
 
 ### `rpm` package: `expat-2.1.0-15.amzn2.0.2.x86_64`
@@ -619,15 +619,15 @@ $ dnf --quiet download --source --url libmount-2.30.2-2.amzn2.0.11
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/3dd2cc02a0909d35ada8de88675e34b826187bbb822cdf42454cabe6bfc2d6a7/../../../../../blobstore/c3d8b01e2190e686623eb8551a13a4a33cc08e086036e951fe5ed1b99c7b2b8e/util-linux-2.30.2-2.amzn2.0.11.src.rpm
 ```
 
-### `rpm` package: `libnghttp2-1.41.0-1.amzn2.x86_64`
+### `rpm` package: `libnghttp2-1.41.0-1.amzn2.0.1.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url libnghttp2-1.41.0-1.amzn2
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/3dd2cc02a0909d35ada8de88675e34b826187bbb822cdf42454cabe6bfc2d6a7/../../../../../blobstore/0aeaff758cdbf0d80533935b2e5b3f9a6f8fe5bdb9464008ceee2073e12084bd/nghttp2-1.41.0-1.amzn2.src.rpm
+$ dnf --quiet download --source --url libnghttp2-1.41.0-1.amzn2.0.1
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/3dd2cc02a0909d35ada8de88675e34b826187bbb822cdf42454cabe6bfc2d6a7/../../../../../blobstore/adc7d65a5276647e32680c280d821b9068ca023f4d423bb23c17a491a650fe1b/nghttp2-1.41.0-1.amzn2.0.1.src.rpm
 ```
 
 ### `rpm` package: `libpng-1.5.13-8.amzn2.0.1.x86_64`
@@ -872,15 +872,15 @@ $ dnf --quiet download --source --url nss-util-3.79.0-1.amzn2
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/3dd2cc02a0909d35ada8de88675e34b826187bbb822cdf42454cabe6bfc2d6a7/../../../../../blobstore/993c341e2f134b55e52fa3fb761b5ee3193aaf6e60b55993cd1b6ab67f1f890b/nss-util-3.79.0-1.amzn2.src.rpm
 ```
 
-### `rpm` package: `openldap-2.4.44-25.amzn2.0.6.x86_64`
+### `rpm` package: `openldap-2.4.44-25.amzn2.0.7.x86_64`
 
 Licenses (from `rpm --query`): OpenLDAP
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url openldap-2.4.44-25.amzn2.0.6
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/3dd2cc02a0909d35ada8de88675e34b826187bbb822cdf42454cabe6bfc2d6a7/../../../../../blobstore/ae8e254ddbbc47f99792fe6ecadd8a936248a5069c1d74f9e94a1c70abd98828/openldap-2.4.44-25.amzn2.0.6.src.rpm
+$ dnf --quiet download --source --url openldap-2.4.44-25.amzn2.0.7
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/3dd2cc02a0909d35ada8de88675e34b826187bbb822cdf42454cabe6bfc2d6a7/../../../../../blobstore/db7da8ae89a175ef6835a375dec2b69b3eaecc676cb58b8dd9c1f8e769fb0fc2/openldap-2.4.44-25.amzn2.0.7.src.rpm
 ```
 
 ### `rpm` package: `openssl-libs-1.0.2k-24.amzn2.0.7.x86_64`
