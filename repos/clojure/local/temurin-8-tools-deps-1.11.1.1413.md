@@ -1,10 +1,10 @@
-# `clojure:temurin-11-jammy`
+# `clojure:temurin-8-jammy`
 
 ## Docker Metadata
 
-- Image ID: `sha256:1666ff7db5e86cb1c8e61cbe7225de006eff74a3a079de5b47c58103a2c6b4bb`
-- Created: `2023-08-23T20:26:03.262323524Z`
-- Virtual Size: ~ 516.52 Mb  
+- Image ID: `sha256:1b760b68abdadfbec8daa6310c7fa302b08a3efeea0b18191ce3db2209abbab5`
+- Created: `2023-08-28T21:22:42.396513908Z`
+- Virtual Size: ~ 443.29 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/__cacert_entrypoint.sh"]`
@@ -15,8 +15,8 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.20+8`
-  - `CLOJURE_VERSION=1.11.1.1405`
+  - `JAVA_VERSION=jdk8u382-b05`
+  - `CLOJURE_VERSION=1.11.1.1413`
 - Labels:
   - `org.opencontainers.image.ref.name=ubuntu`
   - `org.opencontainers.image.version=22.04`

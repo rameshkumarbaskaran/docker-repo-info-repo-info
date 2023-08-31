@@ -1,18 +1,17 @@
-# `clojure:temurin-17-bullseye-slim`
+# `clojure:temurin-11-bullseye`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6931dd8240b8e95ea700cbc483deebe2f0b9b3e0cd0c0be4cc8570243316dd4e`
-- Created: `2023-08-23T20:27:17.126769881Z`
-- Virtual Size: ~ 498.33 Mb  
+- Image ID: `sha256:26dbde56d19b77b34f00b919dc78e40959f48da278ea19a2007f050b0f4cb292`
+- Created: `2023-08-28T21:23:36.202347694Z`
+- Virtual Size: ~ 558.85 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Entrypoint: `["entrypoint"]`
-- Command: `["-M","--repl"]`
+- Command: `["clj"]`
 - Environment:
   - `PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/opt/java/openjdk`
-  - `CLOJURE_VERSION=1.11.1.1405`
+  - `CLOJURE_VERSION=1.11.1.1413`
 
 ## `dpkg` (`.deb`-based packages)
 
