@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:448bb4351a80551fc6b61fee3fae97681c5796cb74f62add2b9bb856ecb21ba7`
-- Created: `2023-08-14T20:23:44.708250972Z`
+- Image ID: `sha256:b72696986b91bd80a2d395adfb98d13e51de88a03d9eb48182ca1a45dbd8e59d`
+- Created: `2023-08-31T22:48:12.954560599Z`
 - Virtual Size: ~ 356.06 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -15,7 +15,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.20+8`
+  - `JAVA_VERSION=jdk-11.0.20.1+1`
   - `GOSU_VERSION=1.16`
   - `CASSANDRA_HOME=/opt/cassandra`
   - `CASSANDRA_CONF=/etc/cassandra`
@@ -475,11 +475,11 @@ $ apt-get source -qq --print-uris e2fsprogs=1.45.5-2ubuntu1.1
 'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.45.5-2ubuntu1.1.debian.tar.xz' e2fsprogs_1.45.5-2ubuntu1.1.debian.tar.xz 82324 SHA512:239e485a95be88f9021d02504ef61972df631febf3e66d4ec2f8b759fe14592fc0c661d815b8b7dc3f0c69f5f15823e97aecbb928459683139063ee9d10ea61d
 ```
 
-### `dpkg` source package: `elfutils=0.176-1.1build1`
+### `dpkg` source package: `elfutils=0.176-1.1ubuntu0.1`
 
 Binary Packages:
 
-- `libelf1:amd64=0.176-1.1build1`
+- `libelf1:amd64=0.176-1.1ubuntu0.1`
 
 Licenses: (parsed from: `/usr/share/doc/libelf1/copyright`)
 
@@ -490,11 +490,11 @@ Licenses: (parsed from: `/usr/share/doc/libelf1/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris elfutils=0.176-1.1build1
-'http://archive.ubuntu.com/ubuntu/pool/main/e/elfutils/elfutils_0.176-1.1build1.dsc' elfutils_0.176-1.1build1.dsc 2633 SHA256:2d0513bda9230c3fc655473b0df0069cf39aaf954bb99b93d147e1d56205148b
-'http://archive.ubuntu.com/ubuntu/pool/main/e/elfutils/elfutils_0.176.orig.tar.bz2' elfutils_0.176.orig.tar.bz2 8646075 SHA256:eb5747c371b0af0f71e86215a5ebb88728533c3a104a43d4231963f308cd1023
-'http://archive.ubuntu.com/ubuntu/pool/main/e/elfutils/elfutils_0.176.orig.tar.bz2.asc' elfutils_0.176.orig.tar.bz2.asc 455 SHA256:51474b579b25fc799de0777e241c83605427d2903f8d28524ef6af42f75931fd
-'http://archive.ubuntu.com/ubuntu/pool/main/e/elfutils/elfutils_0.176-1.1build1.debian.tar.xz' elfutils_0.176-1.1build1.debian.tar.xz 31696 SHA256:b2af440e20560eb14b8c91493ada2cfeb4f659c52bea22d7f6b3ef741532fd04
+$ apt-get source -qq --print-uris elfutils=0.176-1.1ubuntu0.1
+'http://archive.ubuntu.com/ubuntu/pool/main/e/elfutils/elfutils_0.176-1.1ubuntu0.1.dsc' elfutils_0.176-1.1ubuntu0.1.dsc 2403 SHA512:45772c75e933aa73e323c9ccdc3423e9fe5b4da79715255edc26831ca74bf2e1e7f29c36786afd64c98f328157ddf12f0e38fb8c6f0a0f042156d028ef4f0330
+'http://archive.ubuntu.com/ubuntu/pool/main/e/elfutils/elfutils_0.176.orig.tar.bz2' elfutils_0.176.orig.tar.bz2 8646075 SHA512:7f032913be363a43229ded85d495dcf7542b3c85974aaaba0d984228dc9ac1721da3dc388d3fa02325a80940161db7e9ad2c9e4521a424ad8a7d050c0902915b
+'http://archive.ubuntu.com/ubuntu/pool/main/e/elfutils/elfutils_0.176.orig.tar.bz2.asc' elfutils_0.176.orig.tar.bz2.asc 455 SHA512:e123135d18dc9aa96b295200bd1c184d13bc94252417eb2d5e9e3f318892642d78ff19e17fa71947df955b1d3f56fdbd5ec4150c12de54d811c07b5ba3ff5a38
+'http://archive.ubuntu.com/ubuntu/pool/main/e/elfutils/elfutils_0.176-1.1ubuntu0.1.debian.tar.xz' elfutils_0.176-1.1ubuntu0.1.debian.tar.xz 33216 SHA512:4c1bb3baf2b1b32cb7be3f5369d310d76b8e331118fac6c9b367e18994fd6ee3aae684691dd1287019a7e35c35b6e9e5f45f8176762266ccd5e98de0e618531a
 ```
 
 ### `dpkg` source package: `expat=2.2.9-1ubuntu0.6`
