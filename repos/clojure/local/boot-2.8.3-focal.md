@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e2abf577324f876a7c01c9c6bcdf500fd6371454464dd800f912d4612b24dfbc`
-- Created: `2023-08-14T20:09:53.680481487Z`
+- Image ID: `sha256:a333a805ba89167676addadf83913997ea9798868bc259599a59d8cd69a66691`
+- Created: `2023-08-31T23:32:51.500711878Z`
 - Virtual Size: ~ 475.24 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -15,7 +15,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-17.0.8+7`
+  - `JAVA_VERSION=jdk-17.0.8.1+1`
   - `BOOT_VERSION=2.8.3`
   - `BOOT_INSTALL=/usr/local/bin/`
   - `BOOT_AS_ROOT=yes`
