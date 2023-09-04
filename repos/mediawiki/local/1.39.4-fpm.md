@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:af0d0a5be163d5ba896a14e5f8dc7ddf58a4133a8f4787083993c49ab9f300ed`
-- Created: `2023-08-17T04:25:05.415037952Z`
-- Virtual Size: ~ 882.98 Mb  
+- Image ID: `sha256:ae89e39b3a602c60a55b232593d2baf18231832830861cdb3827e17a4c2c6b6a`
+- Created: `2023-09-02T10:31:26.465408598Z`
+- Virtual Size: ~ 882.99 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
-  - `PHP_VERSION=8.1.22`
-  - `PHP_URL=https://www.php.net/distributions/php-8.1.22.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.22.tar.xz.asc`
-  - `PHP_SHA256=9ea4f4cfe775cb5866c057323d6b320f3a6e0adb1be41a068ff7bfec6f83e71d`
+  - `PHP_VERSION=8.1.23`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.23.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.23.tar.xz.asc`
+  - `PHP_SHA256=fc48422fa7e75bb45916fc192a9f9728cb38bb2b5858572c51ea15825326360c`
   - `MEDIAWIKI_MAJOR_VERSION=1.39`
   - `MEDIAWIKI_VERSION=1.39.4`
 
@@ -2579,12 +2579,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libpsl/0.21.2-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libpsl/0.21.2-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `librsvg=2.54.5+dfsg-1`
+### `dpkg` source package: `librsvg=2.54.7+dfsg-1~deb12u1`
 
 Binary Packages:
 
-- `librsvg2-2:amd64=2.54.5+dfsg-1`
-- `librsvg2-bin=2.54.5+dfsg-1`
+- `librsvg2-2:amd64=2.54.7+dfsg-1~deb12u1`
+- `librsvg2-bin=2.54.7+dfsg-1~deb12u1`
 
 Licenses: (parsed from: `/usr/share/doc/librsvg2-2/copyright`, `/usr/share/doc/librsvg2-bin/copyright`)
 
@@ -2617,17 +2617,17 @@ Licenses: (parsed from: `/usr/share/doc/librsvg2-2/copyright`, `/usr/share/doc/l
 Source:
 
 ```console
-$ apt-get source -qq --print-uris librsvg=2.54.5+dfsg-1
-'http://deb.debian.org/debian/pool/main/libr/librsvg/librsvg_2.54.5%2bdfsg-1.dsc' librsvg_2.54.5+dfsg-1.dsc 2879 SHA256:c6df68819c4af8b1a0418b7fcb156915b3210bdc774ac9fbb5b80722a33857f0
-'http://deb.debian.org/debian/pool/main/libr/librsvg/librsvg_2.54.5%2bdfsg.orig.tar.xz' librsvg_2.54.5+dfsg.orig.tar.xz 14613132 SHA256:a65888ab1cfddfbab04433a28fba140a7e66411d8735d9c240e7c2427b26ac4b
-'http://deb.debian.org/debian/pool/main/libr/librsvg/librsvg_2.54.5%2bdfsg-1.debian.tar.xz' librsvg_2.54.5+dfsg-1.debian.tar.xz 34372 SHA256:1a15c41db98789dcff2e0d0153fa69e21965d35ce4525775658e69cbc2f5d962
+$ apt-get source -qq --print-uris librsvg=2.54.7+dfsg-1~deb12u1
+'http://deb.debian.org/debian-security/pool/updates/main/libr/librsvg/librsvg_2.54.7%2bdfsg-1%7edeb12u1.dsc' librsvg_2.54.7+dfsg-1~deb12u1.dsc 2997 SHA256:87925d4b6f5f1a8b5fc8e069d69322d4ac70694408490091c05737b97ba938ca
+'http://deb.debian.org/debian-security/pool/updates/main/libr/librsvg/librsvg_2.54.7%2bdfsg.orig.tar.xz' librsvg_2.54.7+dfsg.orig.tar.xz 14342756 SHA256:799f93b73ed24c03efda1c707d8c40630fdee18c7e7532dda4ad1ce9671e98c2
+'http://deb.debian.org/debian-security/pool/updates/main/libr/librsvg/librsvg_2.54.7%2bdfsg-1%7edeb12u1.debian.tar.xz' librsvg_2.54.7+dfsg-1~deb12u1.debian.tar.xz 35052 SHA256:ce0db15bd6a2633fbfcfacce894a81ad5c0056628ad176f00ddaa648d462e5fb
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/librsvg/2.54.5+dfsg-1/ (for browsing the source)
-- https://sources.debian.net/src/librsvg/2.54.5+dfsg-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/librsvg/2.54.5+dfsg-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/librsvg/2.54.7+dfsg-1~deb12u1/ (for browsing the source)
+- https://sources.debian.net/src/librsvg/2.54.7+dfsg-1~deb12u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/librsvg/2.54.7+dfsg-1~deb12u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libseccomp=2.5.4-1`
 
