@@ -574,14 +574,13 @@ Licenses: (parsed from: `/usr/share/doc/debianutils/copyright`)
 - `SMAIL-GPL`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris debianutils=5.8-1
-'http://http.debian.net/debian/pool/main/d/debianutils/debianutils_5.8-1.dsc' debianutils_5.8-1.dsc 1647 SHA256:6492272a6f7db256102b32182f279c1e5e4844b59e001c32111cec0e33f2efa1
-'http://http.debian.net/debian/pool/main/d/debianutils/debianutils_5.8.orig.tar.gz' debianutils_5.8.orig.tar.gz 260865 SHA256:5b086d27eb9063de4d746760d0faeb40d9464fb855fc8a8e7fb93b03efcec622
-'http://http.debian.net/debian/pool/main/d/debianutils/debianutils_5.8-1.debian.tar.xz' debianutils_5.8-1.debian.tar.xz 22044 SHA256:7278b28beb14ebe3c5ae4f52b8c748ceebea655e392b3ef701c9473f5f4763cd
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/debianutils/5.8-1/
+
 
 ### `dpkg` source package: `diffutils=1:3.8-4`
 
@@ -2506,10 +2505,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris mpfr4=4.2.0-1
-'http://http.debian.net/debian/pool/main/m/mpfr4/mpfr4_4.2.0-1.dsc' mpfr4_4.2.0-1.dsc 1959 SHA256:bfd38815d4d79f9ea3f14d94f61a075a0914ecbe4ef9666b7f6597340a60c250
-'http://http.debian.net/debian/pool/main/m/mpfr4/mpfr4_4.2.0.orig.tar.xz' mpfr4_4.2.0.orig.tar.xz 1477532 SHA256:06a378df13501248c1b2db5aa977a2c8126ae849a9d9b7be2546fb4a9c26d993
-'http://http.debian.net/debian/pool/main/m/mpfr4/mpfr4_4.2.0-1.debian.tar.xz' mpfr4_4.2.0-1.debian.tar.xz 12488 SHA256:05faf305be60659d8db47e1925fa4062be8fb89e5fcd70fb0e5444554b1625a8
+'http://deb.debian.org/debian/pool/main/m/mpfr4/mpfr4_4.2.0-1.dsc' mpfr4_4.2.0-1.dsc 1959 SHA256:bfd38815d4d79f9ea3f14d94f61a075a0914ecbe4ef9666b7f6597340a60c250
+'http://deb.debian.org/debian/pool/main/m/mpfr4/mpfr4_4.2.0.orig.tar.xz' mpfr4_4.2.0.orig.tar.xz 1477532 SHA256:06a378df13501248c1b2db5aa977a2c8126ae849a9d9b7be2546fb4a9c26d993
+'http://deb.debian.org/debian/pool/main/m/mpfr4/mpfr4_4.2.0-1.debian.tar.xz' mpfr4_4.2.0-1.debian.tar.xz 12488 SHA256:05faf305be60659d8db47e1925fa4062be8fb89e5fcd70fb0e5444554b1625a8
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/mpfr4/4.2.0-1/ (for browsing the source)
+- https://sources.debian.net/src/mpfr4/4.2.0-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/mpfr4/4.2.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ncurses=6.4+20230625-2`
 
@@ -2588,10 +2593,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris nghttp2=1.55.1-1
-'http://http.debian.net/debian/pool/main/n/nghttp2/nghttp2_1.55.1-1.dsc' nghttp2_1.55.1-1.dsc 2534 SHA256:ed3711c30985bce4cefc11f215396ab9ce2bcccbc3fe41c1a8dec1c6a4ab6d14
-'http://http.debian.net/debian/pool/main/n/nghttp2/nghttp2_1.55.1.orig.tar.gz' nghttp2_1.55.1.orig.tar.gz 1071258 SHA256:b89dece5bc3382b82c22db8dc8d1e062258cb7af8e4ad55278fa7149645a588d
-'http://http.debian.net/debian/pool/main/n/nghttp2/nghttp2_1.55.1-1.debian.tar.xz' nghttp2_1.55.1-1.debian.tar.xz 11704 SHA256:722264b8a449d39ce2e043a6f3834b47778b0389edd0a0e53c1f6cfe2051b7ce
+'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.55.1-1.dsc' nghttp2_1.55.1-1.dsc 2534 SHA256:ed3711c30985bce4cefc11f215396ab9ce2bcccbc3fe41c1a8dec1c6a4ab6d14
+'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.55.1.orig.tar.gz' nghttp2_1.55.1.orig.tar.gz 1071258 SHA256:b89dece5bc3382b82c22db8dc8d1e062258cb7af8e4ad55278fa7149645a588d
+'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.55.1-1.debian.tar.xz' nghttp2_1.55.1-1.debian.tar.xz 11704 SHA256:722264b8a449d39ce2e043a6f3834b47778b0389edd0a0e53c1f6cfe2051b7ce
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/nghttp2/1.55.1-1/ (for browsing the source)
+- https://sources.debian.net/src/nghttp2/1.55.1-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/nghttp2/1.55.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `nlme=3.1.162-1`
 
@@ -3501,19 +3512,13 @@ Licenses: (parsed from: `/usr/share/doc/usr-is-merged/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris usrmerge=35
-'http://deb.debian.org/debian/pool/main/u/usrmerge/usrmerge_35.dsc' usrmerge_35.dsc 981 SHA256:f8f7fa03aa912a65f54584b1cbaed193575521ab7ffa16c93c9920c41726c9fd
-'http://deb.debian.org/debian/pool/main/u/usrmerge/usrmerge_35.tar.xz' usrmerge_35.tar.xz 14416 SHA256:ec52fa22f174204f24ebb45caf579275f5a2b2404be5d4b3fe29ad60ad566829
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/usrmerge/35/
 
-- https://sources.debian.net/src/usrmerge/35/ (for browsing the source)
-- https://sources.debian.net/src/usrmerge/35/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/usrmerge/35/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `util-linux=2.39.1-3`
 
