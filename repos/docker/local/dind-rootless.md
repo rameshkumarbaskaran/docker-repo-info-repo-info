@@ -1,16 +1,16 @@
-# `docker:24.0.5-dind-rootless`
+# `docker:24.0.6-dind-rootless`
 
 ## Docker Metadata
 
-- Image ID: `sha256:9fed477a4899a587575cfce5cbe1811f6de019caec34609033a2f3d941bed817`
-- Created: `2023-07-24T16:17:39Z`
-- Virtual Size: ~ 391.24 Mb  
+- Image ID: `sha256:34a4b0463444eaf72dd356547d9416218bd51415bb487406468c93ce295fbf23`
+- Created: `2023-09-05T23:04:32Z`
+- Virtual Size: ~ 387.64 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_VERSION=24.0.5`
+  - `DOCKER_VERSION=24.0.6`
   - `DOCKER_BUILDX_VERSION=0.11.2`
   - `DOCKER_COMPOSE_VERSION=2.21.0`
   - `DOCKER_TLS_CERTDIR=/certs`
