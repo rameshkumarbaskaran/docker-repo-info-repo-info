@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:31a8eadb505e031fc9c95ac7ce211683f3f2568e81aa20be7df2c95fb8155f23`
-- Created: `2023-09-01T19:25:39.522714295Z`
+- Image ID: `sha256:6800c65be4d3733b1aeb75089fcc8ff8502727aa13f7be93490446f3f0d0502a`
+- Created: `2023-09-07T02:23:47.321895736Z`
 - Virtual Size: ~ 1.69 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -910,12 +910,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/expat/2.2.10-2+deb11u5/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/expat/2.2.10-2+deb11u5/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `file=1:5.39-3`
+### `dpkg` source package: `file=1:5.39-3+deb11u1`
 
 Binary Packages:
 
-- `libmagic-mgc=1:5.39-3`
-- `libmagic1:amd64=1:5.39-3`
+- `libmagic-mgc=1:5.39-3+deb11u1`
+- `libmagic1:amd64=1:5.39-3+deb11u1`
 
 Licenses: (parsed from: `/usr/share/doc/libmagic-mgc/copyright`, `/usr/share/doc/libmagic1/copyright`)
 
@@ -928,18 +928,18 @@ Licenses: (parsed from: `/usr/share/doc/libmagic-mgc/copyright`, `/usr/share/doc
 Source:
 
 ```console
-$ apt-get source -qq --print-uris file=1:5.39-3
-'http://deb.debian.org/debian/pool/main/f/file/file_5.39-3.dsc' file_5.39-3.dsc 2237 SHA256:19952c131cffa14cf4b64f3fa2d35c975388985e5b5ee154e2e0cef5ccde697e
-'http://deb.debian.org/debian/pool/main/f/file/file_5.39.orig.tar.gz' file_5.39.orig.tar.gz 954266 SHA256:f05d286a76d9556243d0cb05814929c2ecf3a5ba07963f8f70bfaaa70517fad1
-'http://deb.debian.org/debian/pool/main/f/file/file_5.39.orig.tar.gz.asc' file_5.39.orig.tar.gz.asc 169 SHA256:409232b54cabe3082f38f1e7ec4c69e7d937f26d039da691f7349d142b48df83
-'http://deb.debian.org/debian/pool/main/f/file/file_5.39-3.debian.tar.xz' file_5.39-3.debian.tar.xz 34420 SHA256:92657787e04b444d7ec3b6cac0519d1655cb6fc2ae08de76bc3f4f90acf0c545
+$ apt-get source -qq --print-uris file=1:5.39-3+deb11u1
+'http://deb.debian.org/debian-security/pool/updates/main/f/file/file_5.39-3%2bdeb11u1.dsc' file_5.39-3+deb11u1.dsc 2424 SHA256:b08cfd706099600aa634d3cdcc2a7461908902414ae8cbfd1caddf557983e4e8
+'http://deb.debian.org/debian-security/pool/updates/main/f/file/file_5.39.orig.tar.gz' file_5.39.orig.tar.gz 954266 SHA256:f05d286a76d9556243d0cb05814929c2ecf3a5ba07963f8f70bfaaa70517fad1
+'http://deb.debian.org/debian-security/pool/updates/main/f/file/file_5.39.orig.tar.gz.asc' file_5.39.orig.tar.gz.asc 169 SHA256:409232b54cabe3082f38f1e7ec4c69e7d937f26d039da691f7349d142b48df83
+'http://deb.debian.org/debian-security/pool/updates/main/f/file/file_5.39-3%2bdeb11u1.debian.tar.xz' file_5.39-3+deb11u1.debian.tar.xz 34816 SHA256:c4ef624328d06f6128d808fd0edc14b1d856d6fefe0f29dfcae0ce30b42de0a3
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/file/1:5.39-3/ (for browsing the source)
-- https://sources.debian.net/src/file/1:5.39-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/file/1:5.39-3/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/file/1:5.39-3+deb11u1/ (for browsing the source)
+- https://sources.debian.net/src/file/1:5.39-3+deb11u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/file/1:5.39-3+deb11u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.8.0-1`
 
