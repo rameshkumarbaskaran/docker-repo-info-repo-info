@@ -1,7 +1,7 @@
 ## `unit:minimal`
 
 ```console
-$ docker pull unit@sha256:fa802e9da968615aeae21c0431c1a6d72e9ecca4af97cbe61cce029f7a8582e0
+$ docker pull unit@sha256:6ac302fb507deecf27e9c03700a3cc3ccf1d5933100c03791a2aab3bd365c834
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -79,66 +79,66 @@ CMD ["unitd" "--no-daemon" "--control" "unix:/var/run/control.unit.sock"]
 ### `unit:minimal` - linux; arm64 variant v8
 
 ```console
-$ docker pull unit@sha256:f2ebf34948c15677442a70a623aaaa99dba5ffa67e28471980ec8c77b2e7e6d0
+$ docker pull unit@sha256:1b12c0be9bb1f54864d7be475e66b14f173b3aff3c209100e9607807e269275f
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **38.8 MB (38763004 bytes)**  
+-	Total Size: **38.8 MB (38763059 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3c8060ea7e197c5f20ff1d05ebf810c2dc8afdbcacccb8b1f47cfbc59c1fa370`
+-	Image ID: `sha256:70b6755cf2c016c1444bf3adb453ce3fc0fcbdb3c61b50d50a5737e2293c1aef`
 -	Entrypoint: `["\/usr\/local\/bin\/docker-entrypoint.sh"]`
 -	Default Command: `["unitd","--no-daemon","--control","unix:\/var\/run\/control.unit.sock"]`
 
 ```dockerfile
-# Tue, 15 Aug 2023 23:40:11 GMT
-ADD file:ea912fd82699af55c10b8136b5dc4b5ce9d08b8a01f9c06f6783d94dc430335a in / 
-# Tue, 15 Aug 2023 23:40:11 GMT
+# Thu, 07 Sep 2023 00:39:53 GMT
+ADD file:abd1ad48ae3ebec7a6ecc8ce3016c25be2afcbaedfcb904bc89b1ce59400aef0 in / 
+# Thu, 07 Sep 2023 00:39:54 GMT
 CMD ["bash"]
-# Fri, 01 Sep 2023 01:17:54 GMT
+# Thu, 07 Sep 2023 01:17:04 GMT
 LABEL org.opencontainers.image.title=Unit (minimal)
-# Fri, 01 Sep 2023 01:17:55 GMT
+# Thu, 07 Sep 2023 01:17:04 GMT
 LABEL org.opencontainers.image.description=Official build of Unit for Docker.
-# Fri, 01 Sep 2023 01:17:55 GMT
+# Thu, 07 Sep 2023 01:17:04 GMT
 LABEL org.opencontainers.image.url=https://unit.nginx.org
-# Fri, 01 Sep 2023 01:17:55 GMT
+# Thu, 07 Sep 2023 01:17:04 GMT
 LABEL org.opencontainers.image.source=https://github.com/nginx/unit
-# Fri, 01 Sep 2023 01:17:55 GMT
+# Thu, 07 Sep 2023 01:17:05 GMT
 LABEL org.opencontainers.image.documentation=https://unit.nginx.org/installation/#docker-images
-# Fri, 01 Sep 2023 01:17:55 GMT
+# Thu, 07 Sep 2023 01:17:05 GMT
 LABEL org.opencontainers.image.vendor=NGINX Docker Maintainers <docker-maint@nginx.com>
-# Fri, 01 Sep 2023 01:17:55 GMT
+# Thu, 07 Sep 2023 01:17:05 GMT
 LABEL org.opencontainers.image.version=1.31.0
-# Fri, 01 Sep 2023 01:18:51 GMT
+# Thu, 07 Sep 2023 01:18:02 GMT
 RUN set -ex     && savedAptMark="$(apt-mark showmanual)"     && apt-get update     && apt-get install --no-install-recommends --no-install-suggests -y ca-certificates mercurial build-essential libssl-dev libpcre2-dev curl pkg-config     && mkdir -p /usr/lib/unit/modules /usr/lib/unit/debug-modules     && mkdir -p /usr/src/unit     && cd /usr/src/unit     && hg clone -u 1.31.0-1 https://hg.nginx.org/unit     && cd unit     && NCPU="$(getconf _NPROCESSORS_ONLN)"     && DEB_HOST_MULTIARCH="$(dpkg-architecture -q DEB_HOST_MULTIARCH)"     && CC_OPT="$(DEB_BUILD_MAINT_OPTIONS="hardening=+all,-pie" DEB_CFLAGS_MAINT_APPEND="-Wp,-D_FORTIFY_SOURCE=2 -fPIC" dpkg-buildflags --get CFLAGS)"     && LD_OPT="$(DEB_BUILD_MAINT_OPTIONS="hardening=+all,-pie" DEB_LDFLAGS_MAINT_APPEND="-Wl,--as-needed -pie" dpkg-buildflags --get LDFLAGS)"     && CONFIGURE_ARGS_MODULES="--prefix=/usr                 --statedir=/var/lib/unit                 --control=unix:/var/run/control.unit.sock                 --runstatedir=/var/run                 --pid=/var/run/unit.pid                 --logdir=/var/log                 --log=/var/log/unit.log                 --tmpdir=/var/tmp                 --user=unit                 --group=unit                 --openssl                 --libdir=/usr/lib/$DEB_HOST_MULTIARCH"     && CONFIGURE_ARGS="$CONFIGURE_ARGS_MODULES                 --njs"     && make -j $NCPU -C pkg/contrib .njs     && export PKG_CONFIG_PATH=$(pwd)/pkg/contrib/njs/build     && ./configure $CONFIGURE_ARGS --cc-opt="$CC_OPT" --ld-opt="$LD_OPT" --modulesdir=/usr/lib/unit/debug-modules --debug     && make -j $NCPU unitd     && install -pm755 build/sbin/unitd /usr/sbin/unitd-debug     && make clean     && ./configure $CONFIGURE_ARGS --cc-opt="$CC_OPT" --ld-opt="$LD_OPT" --modulesdir=/usr/lib/unit/modules     && make -j $NCPU unitd     && install -pm755 build/sbin/unitd /usr/sbin/unitd     && make clean     && /bin/true     && ./configure $CONFIGURE_ARGS_MODULES --cc-opt="$CC_OPT" --modulesdir=/usr/lib/unit/debug-modules --debug     && ./configure      && make -j $NCPU version     && make clean     && ./configure $CONFIGURE_ARGS_MODULES --cc-opt="$CC_OPT" --modulesdir=/usr/lib/unit/modules     && ./configure      && make -j $NCPU version     && cd     && rm -rf /usr/src/unit     && for f in /usr/sbin/unitd /usr/lib/unit/modules/*.unit.so; do         ldd $f | awk '/=>/{print $(NF-1)}' | while read n; do dpkg-query -S $n; done | sed 's/^\([^:]\+\):.*$/\1/' | sort | uniq >> /requirements.apt;        done     && apt-mark showmanual | xargs apt-mark auto > /dev/null     && { [ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; }     && /bin/true     && mkdir -p /var/lib/unit/     && mkdir -p /docker-entrypoint.d/     && groupadd --gid 999 unit     && useradd          --uid 999          --gid unit          --no-create-home          --home /nonexistent          --comment "unit user"          --shell /bin/false          unit     && apt-get update     && apt-get --no-install-recommends --no-install-suggests -y install curl $(cat /requirements.apt)     && apt-get purge -y --auto-remove build-essential     && rm -rf /var/lib/apt/lists/*     && rm -f /requirements.apt     && ln -sf /dev/stdout /var/log/unit.log
-# Fri, 01 Sep 2023 01:18:51 GMT
+# Thu, 07 Sep 2023 01:18:02 GMT
 COPY file:8b65557c2137d1a3946148e09ddd45af0b855e40210dabb5a9bd6c36fac22006 in /usr/local/bin/ 
-# Fri, 01 Sep 2023 01:18:52 GMT
+# Thu, 07 Sep 2023 01:18:03 GMT
 COPY multi:0ef77957b92a7e8997661453cf7256a81db39d0e9f975a137d7e664007d8fcf4 in /usr/share/unit/welcome/ 
-# Fri, 01 Sep 2023 01:18:52 GMT
+# Thu, 07 Sep 2023 01:18:03 GMT
 STOPSIGNAL SIGTERM
-# Fri, 01 Sep 2023 01:18:52 GMT
+# Thu, 07 Sep 2023 01:18:03 GMT
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-# Fri, 01 Sep 2023 01:18:52 GMT
+# Thu, 07 Sep 2023 01:18:03 GMT
 EXPOSE 80
-# Fri, 01 Sep 2023 01:18:52 GMT
+# Thu, 07 Sep 2023 01:18:03 GMT
 CMD ["unitd" "--no-daemon" "--control" "unix:/var/run/control.unit.sock"]
 ```
 
 -	Layers:
-	-	`sha256:41f92d5a73b9bee296c7b4a3817b28098b22fb60112608b42bb03570ca296115`  
-		Last Modified: Tue, 15 Aug 2023 23:43:58 GMT  
-		Size: 30.1 MB (30062816 bytes)  
+	-	`sha256:f96ab15157043879c2ff23e0556e798eba6a6ff3d7fd5d1384de223bb9f66f1d`  
+		Last Modified: Thu, 07 Sep 2023 00:43:41 GMT  
+		Size: 30.1 MB (30062903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b3858753532ae43aaac3ce89d019ddc2c99a9d6a545de994b216f0609ec64012`  
-		Last Modified: Fri, 01 Sep 2023 01:21:50 GMT  
-		Size: 8.7 MB (8697447 bytes)  
+	-	`sha256:e2eb7e1bdcaf34d5282b9a675341c670c636eefde4476a6309191d2c1aa362d1`  
+		Last Modified: Thu, 07 Sep 2023 01:18:56 GMT  
+		Size: 8.7 MB (8697423 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e1ac1118ce5becc82b737191ff65defc6d596862a2ede5d0ffc8b00b4561dd0`  
-		Last Modified: Fri, 01 Sep 2023 01:21:49 GMT  
-		Size: 1.3 KB (1267 bytes)  
+	-	`sha256:ca89089d88d0ec38d3310b9aeb2381fa20c61acefe7d770bf1bc580e108108ca`  
+		Last Modified: Thu, 07 Sep 2023 01:18:55 GMT  
+		Size: 1.3 KB (1263 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b3acecaa46abb0e776b60945bee029ad67b8c7c236f7007fe915e69699e5d121`  
-		Last Modified: Fri, 01 Sep 2023 01:21:49 GMT  
-		Size: 1.5 KB (1474 bytes)  
+	-	`sha256:d4ab3dda56db9515850ca5acdb78a8dfc4ae6810f714591fa6d95e9626ed0a0d`  
+		Last Modified: Thu, 07 Sep 2023 01:18:55 GMT  
+		Size: 1.5 KB (1470 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
