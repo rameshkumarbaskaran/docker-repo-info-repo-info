@@ -1,7 +1,7 @@
 ## `telegraf:latest`
 
 ```console
-$ docker pull telegraf@sha256:61225d31c234d083cc53695d24ad892037dc4937152aa62ddb6d0101827e6948
+$ docker pull telegraf@sha256:8aff5a74822413552542a43adbcfb519cba234b16def8a1903f0ae4521a71071
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -78,14 +78,14 @@ CMD ["telegraf"]
 ### `telegraf:latest` - linux; arm variant v7
 
 ```console
-$ docker pull telegraf@sha256:85ccb0d09b7d7648a1c730ce35a6f607916347d65936f4ceae5c6b1d14e006e6
+$ docker pull telegraf@sha256:126c14a88c826e0b22636cbc76ca4bb47eef129509b31686e0ee4b625ee82499
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **136.7 MB (136667192 bytes)**  
+-	Total Size: **136.6 MB (136570373 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:32e9b9dddf311c9a365cffe6c22e08cd33fae7db4f67120bd9a408b3cb2f17e7`
+-	Image ID: `sha256:bf9aed279a1ce0f91d37c4b40b84c778e1c551dfa8c182db2c32453d56ca596f`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
@@ -100,17 +100,17 @@ RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors libcap2-bin &&     rm -rf /var/lib/apt/lists/*
 # Thu, 07 Sep 2023 19:33:36 GMT
 RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     for key in         9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done
-# Thu, 07 Sep 2023 19:33:36 GMT
-ENV TELEGRAF_VERSION=1.27.4
-# Thu, 07 Sep 2023 19:33:44 GMT
+# Mon, 11 Sep 2023 20:50:47 GMT
+ENV TELEGRAF_VERSION=1.28.0
+# Mon, 11 Sep 2023 20:51:00 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
-# Thu, 07 Sep 2023 19:33:44 GMT
+# Mon, 11 Sep 2023 20:51:01 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Thu, 07 Sep 2023 19:33:44 GMT
+# Mon, 11 Sep 2023 20:51:01 GMT
 COPY file:689e73cc90c23fa6e27f7d087886e186b6baf02bb95756b42136644d4f83a893 in /entrypoint.sh 
-# Thu, 07 Sep 2023 19:33:44 GMT
+# Mon, 11 Sep 2023 20:51:01 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Thu, 07 Sep 2023 19:33:45 GMT
+# Mon, 11 Sep 2023 20:51:01 GMT
 CMD ["telegraf"]
 ```
 
@@ -131,13 +131,13 @@ CMD ["telegraf"]
 		Last Modified: Thu, 07 Sep 2023 19:34:39 GMT  
 		Size: 1.8 KB (1803 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3f5a8d73f44292228850dd7f7d90554affa09c6ebcd831fdeb38a01bf63c2c7`  
-		Last Modified: Thu, 07 Sep 2023 19:34:51 GMT  
-		Size: 51.5 MB (51505731 bytes)  
+	-	`sha256:4df3208e341bba7662d466867865ef87330e81798e175afecaad3eba6d340ac3`  
+		Last Modified: Mon, 11 Sep 2023 20:51:22 GMT  
+		Size: 51.4 MB (51408916 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a4307f61b87ea98d7e7603a9ff8940c00ad08f6ec3991cc654ba23da82865ed`  
-		Last Modified: Thu, 07 Sep 2023 19:34:39 GMT  
-		Size: 345.0 B  
+	-	`sha256:ea98c5c143e3cb33bf2a0412385c0dbadb858bbee9a5bcf6ad8d03499e3a6596`  
+		Last Modified: Mon, 11 Sep 2023 20:51:12 GMT  
+		Size: 341.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `telegraf:latest` - linux; arm64 variant v8
