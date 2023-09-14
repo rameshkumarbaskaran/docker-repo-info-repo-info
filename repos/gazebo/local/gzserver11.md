@@ -1012,14 +1012,9 @@ Licenses: (parsed from: `/usr/share/doc/libflac8/copyright`)
 - `LGPL-2.1+`
 - `Public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris flac=1.3.3-1ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/f/flac/flac_1.3.3-1ubuntu0.1.dsc' flac_1.3.3-1ubuntu0.1.dsc 2059 SHA512:5b1bf439858a0877e473b13c18dd4d21d3914355cb989ee8aa8d0f8b971d3e08ef30493b526997d44cd097857f0cdd99d0fba3a1e3a1c2730934624805ce9f38
-'http://archive.ubuntu.com/ubuntu/pool/main/f/flac/flac_1.3.3.orig.tar.xz' flac_1.3.3.orig.tar.xz 1044472 SHA512:d6417e14fab0c41b2df369e5e39ce62a5f588e491af4d465b0162f74e171e5549b2f061867f344bfbf8aaccd246bf5f2acd697e532a2c7901c920c69429b1a28
-'http://archive.ubuntu.com/ubuntu/pool/main/f/flac/flac_1.3.3-1ubuntu0.1.debian.tar.xz' flac_1.3.3-1ubuntu0.1.debian.tar.xz 18140 SHA512:c5095711cfde39b88b9acfd80cbf215e8b582c7db8f3654b09594b3fc723d16d4c8fd29e4773d8267b30ebdd9fc4af73c993c0cc0e3f64b27c8db1321e695a42
-```
 
 ### `dpkg` source package: `flite=2.1-release-3`
 
