@@ -1,10 +1,10 @@
-# `mongo:6.0.9-jammy`
+# `mongo:6.0.10-jammy`
 
 ## Docker Metadata
 
-- Image ID: `sha256:00a1e899030242f7e15177e7d25a1bcf2cee51891dd88c15dca6036e3c22ad54`
-- Created: `2023-09-02T01:09:07.78668764Z`
-- Virtual Size: ~ 668.96 Mb  
+- Image ID: `sha256:ce1587a68f0ca2a888a74ac2c25dafd11c823e66f2b570127439bffbac5888ea`
+- Created: `2023-09-14T00:20:38.63644992Z`
+- Virtual Size: ~ 681.17 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -16,7 +16,7 @@
   - `MONGO_PACKAGE=mongodb-org`
   - `MONGO_REPO=repo.mongodb.org`
   - `MONGO_MAJOR=6.0`
-  - `MONGO_VERSION=6.0.9`
+  - `MONGO_VERSION=6.0.10`
   - `HOME=/data/db`
 - Labels:
   - `org.opencontainers.image.ref.name=ubuntu`
@@ -555,15 +555,9 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glibc=2.35-0ubuntu3.1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.35-0ubuntu3.1.dsc' glibc_2.35-0ubuntu3.1.dsc 8884 SHA512:1940e4cc6176c7b54dcd0c350cfc8867e48915d4f6de4464991e3330d58aa194b32f4dd7fa1b6294b56a7017b09a1270c1a4febf9a359bb97f535d965511a017
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.35.orig.tar.xz' glibc_2.35.orig.tar.xz 18165952 SHA512:e7336ce27561be5d7c217832a1136fb327e057bd8d3f92925b35c97e3e9f9e486948b5a1e03e5e4090772ef06437a074d10b82e68f17f1ad8f22077ee39e1b66
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.35.orig.tar.xz.asc' glibc_2.35.orig.tar.xz.asc 833 SHA512:2a1c152511dac05f9b4e48f7e7a6b59dbf2d8b71fea54f128173113357be26e86216e13c9865f617049e6858396a221a5abc704f65a786b22453945fd80265e9
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.35-0ubuntu3.1.debian.tar.xz' glibc_2.35-0ubuntu3.1.debian.tar.xz 897680 SHA512:184df29a265e01165316a45c564baf2a0bc0e1cbd2897837a3eaf372f11aca815961cb26c9f6b1e37c1d0a6da5de88cb064d620c17aad40cca650ca5600e74d4
-```
 
 ### `dpkg` source package: `gmp=2:6.2.1+dfsg-3ubuntu1`
 
@@ -1366,11 +1360,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `mongodb-mongosh=1.10.6`
+### `dpkg` source package: `mongodb-mongosh=2.0.0`
 
 Binary Packages:
 
-- `mongodb-mongosh=1.10.6`
+- `mongodb-mongosh=2.0.0`
 
 Licenses: (parsed from: `/usr/share/doc/mongodb-mongosh/copyright`)
 
@@ -1381,17 +1375,17 @@ Licenses: (parsed from: `/usr/share/doc/mongodb-mongosh/copyright`)
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `mongodb-org=6.0.9`
+### `dpkg` source package: `mongodb-org=6.0.10`
 
 Binary Packages:
 
-- `mongodb-org=6.0.9`
-- `mongodb-org-database=6.0.9`
-- `mongodb-org-database-tools-extra=6.0.9`
-- `mongodb-org-mongos=6.0.9`
-- `mongodb-org-server=6.0.9`
-- `mongodb-org-shell=6.0.9`
-- `mongodb-org-tools=6.0.9`
+- `mongodb-org=6.0.10`
+- `mongodb-org-database=6.0.10`
+- `mongodb-org-database-tools-extra=6.0.10`
+- `mongodb-org-mongos=6.0.10`
+- `mongodb-org-server=6.0.10`
+- `mongodb-org-shell=6.0.10`
+- `mongodb-org-tools=6.0.10`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
