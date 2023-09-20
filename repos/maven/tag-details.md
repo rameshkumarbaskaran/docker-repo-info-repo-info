@@ -16,6 +16,8 @@
 -	[`maven:3-amazoncorretto-20-al2023`](#maven3-amazoncorretto-20-al2023)
 -	[`maven:3-amazoncorretto-20-debian`](#maven3-amazoncorretto-20-debian)
 -	[`maven:3-amazoncorretto-20-debian-bookworm`](#maven3-amazoncorretto-20-debian-bookworm)
+-	[`maven:3-amazoncorretto-21-debian`](#maven3-amazoncorretto-21-debian)
+-	[`maven:3-amazoncorretto-21-debian-bookworm`](#maven3-amazoncorretto-21-debian-bookworm)
 -	[`maven:3-amazoncorretto-8`](#maven3-amazoncorretto-8)
 -	[`maven:3-amazoncorretto-8-al2023`](#maven3-amazoncorretto-8-al2023)
 -	[`maven:3-amazoncorretto-8-debian`](#maven3-amazoncorretto-8-debian)
@@ -53,6 +55,8 @@
 -	[`maven:3.9-amazoncorretto-20-al2023`](#maven39-amazoncorretto-20-al2023)
 -	[`maven:3.9-amazoncorretto-20-debian`](#maven39-amazoncorretto-20-debian)
 -	[`maven:3.9-amazoncorretto-20-debian-bookworm`](#maven39-amazoncorretto-20-debian-bookworm)
+-	[`maven:3.9-amazoncorretto-21-debian`](#maven39-amazoncorretto-21-debian)
+-	[`maven:3.9-amazoncorretto-21-debian-bookworm`](#maven39-amazoncorretto-21-debian-bookworm)
 -	[`maven:3.9-amazoncorretto-8`](#maven39-amazoncorretto-8)
 -	[`maven:3.9-amazoncorretto-8-al2023`](#maven39-amazoncorretto-8-al2023)
 -	[`maven:3.9-amazoncorretto-8-debian`](#maven39-amazoncorretto-8-debian)
@@ -90,6 +94,8 @@
 -	[`maven:3.9.4-amazoncorretto-20-al2023`](#maven394-amazoncorretto-20-al2023)
 -	[`maven:3.9.4-amazoncorretto-20-debian`](#maven394-amazoncorretto-20-debian)
 -	[`maven:3.9.4-amazoncorretto-20-debian-bookworm`](#maven394-amazoncorretto-20-debian-bookworm)
+-	[`maven:3.9.4-amazoncorretto-21-debian`](#maven394-amazoncorretto-21-debian)
+-	[`maven:3.9.4-amazoncorretto-21-debian-bookworm`](#maven394-amazoncorretto-21-debian-bookworm)
 -	[`maven:3.9.4-amazoncorretto-8`](#maven394-amazoncorretto-8)
 -	[`maven:3.9.4-amazoncorretto-8-al2023`](#maven394-amazoncorretto-8-al2023)
 -	[`maven:3.9.4-amazoncorretto-8-debian`](#maven394-amazoncorretto-8-debian)
@@ -2450,6 +2456,14 @@ CMD ["mvn"]
 		Last Modified: Wed, 20 Sep 2023 12:29:36 GMT  
 		Size: 165.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3-amazoncorretto-21-debian`
+
+**does not exist** (yet?)
+
+## `maven:3-amazoncorretto-21-debian-bookworm`
+
+**does not exist** (yet?)
 
 ## `maven:3-amazoncorretto-8`
 
@@ -11805,6 +11819,14 @@ CMD ["mvn"]
 		Size: 165.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.9-amazoncorretto-21-debian`
+
+**does not exist** (yet?)
+
+## `maven:3.9-amazoncorretto-21-debian-bookworm`
+
+**does not exist** (yet?)
+
 ## `maven:3.9-amazoncorretto-8`
 
 ```console
@@ -21158,6 +21180,14 @@ CMD ["mvn"]
 		Last Modified: Wed, 20 Sep 2023 12:29:36 GMT  
 		Size: 165.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3.9.4-amazoncorretto-21-debian`
+
+**does not exist** (yet?)
+
+## `maven:3.9.4-amazoncorretto-21-debian-bookworm`
+
+**does not exist** (yet?)
 
 ## `maven:3.9.4-amazoncorretto-8`
 
