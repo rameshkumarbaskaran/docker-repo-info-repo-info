@@ -1789,14 +1789,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.4.0-162.179
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-162.179.dsc' linux_5.4.0-162.179.dsc 7425 SHA512:8d3c129dff3dfcf62e74f7a098a074f1613ad30bdd7c5232aa76095d347b524b90a747fdbe2192ccc40ca1d5225c7cc08f41dbf1c00e80c177cc20d262f29540
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA512:62b09a7231fd793973c5f59b16c4f6ffce621188b02a71915874b05e8e3f956fb6146d4a4fb1a4475bebe463949ca5a18da12842c3ce7c52e996e6bc4012a074
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-162.179.diff.gz' linux_5.4.0-162.179.diff.gz 11059400 SHA512:5010114e115a9d216d2b4bc6546c0e4108f7d9f3d6fe057d929f14809b8707a46a9924b6b6bd5de85a495d61725b2c6f467f30e7dbb5f0ff5e022043aca4f34e
-```
 
 ### `dpkg` source package: `lmdb=0.9.24-1`
 
