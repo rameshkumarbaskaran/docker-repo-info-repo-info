@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:75d3fd9d03cbd0a02fb4b1a5950fcadb0e3fa6bf63c6f258be5ac01a6a473667`
-- Created: `2023-09-07T02:59:10.618440118Z`
+- Image ID: `sha256:24c8395c2be2d787152723375ba6c6657e3dbadb0b9135c72a0a55409012a16a`
+- Created: `2023-09-20T09:23:44.916257871Z`
 - Virtual Size: ~ 147.21 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1435,11 +1435,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libsepol/2.8-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libsepol/2.8-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libssh2=1.8.0-2.1`
+### `dpkg` source package: `libssh2=1.8.0-2.1+deb10u1`
 
 Binary Packages:
 
-- `libssh2-1:amd64=1.8.0-2.1`
+- `libssh2-1:amd64=1.8.0-2.1+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libssh2-1/copyright`)
 
@@ -1448,17 +1448,17 @@ Licenses: (parsed from: `/usr/share/doc/libssh2-1/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libssh2=1.8.0-2.1
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.8.0-2.1.dsc' libssh2_1.8.0-2.1.dsc 1958 SHA256:33f070a4a32db5d3952457986d8f80c9cf874dd144d81f5bce062171564b35d9
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.8.0.orig.tar.gz' libssh2_1.8.0.orig.tar.gz 846989 SHA256:4382d33de790b28f862e53ed59ffbd65f3def7a06e8b6e9ca1b6f70453b4d5e0
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.8.0-2.1.debian.tar.xz' libssh2_1.8.0-2.1.debian.tar.xz 13988 SHA256:e3c34166cddaba7f2162132ef4f4bdc1490c499ee6610bde81f773adef43489e
+$ apt-get source -qq --print-uris libssh2=1.8.0-2.1+deb10u1
+'http://deb.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.8.0-2.1%2bdeb10u1.dsc' libssh2_1.8.0-2.1+deb10u1.dsc 1835 SHA256:fc932f9c37345e11191b546c7a97e5c2fe27803d11c53718764e2f7047eeb29a
+'http://deb.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.8.0.orig.tar.gz' libssh2_1.8.0.orig.tar.gz 846989 SHA256:4382d33de790b28f862e53ed59ffbd65f3def7a06e8b6e9ca1b6f70453b4d5e0
+'http://deb.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.8.0-2.1%2bdeb10u1.debian.tar.xz' libssh2_1.8.0-2.1+deb10u1.debian.tar.xz 17116 SHA256:b8cec51fc65b728e844ea8b12b0c4a0088ae10f4cdf103b6f5d29b18a6c905f1
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libssh2/1.8.0-2.1/ (for browsing the source)
-- https://sources.debian.net/src/libssh2/1.8.0-2.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libssh2/1.8.0-2.1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libssh2/1.8.0-2.1+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/libssh2/1.8.0-2.1+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libssh2/1.8.0-2.1+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libtasn1-6=4.13-3+deb10u1`
 

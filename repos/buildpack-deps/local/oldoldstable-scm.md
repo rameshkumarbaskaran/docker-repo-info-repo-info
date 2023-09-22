@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:98bdc817de05e735c6594b0d4a747f7e0e262e1b776fb5cd517281c2bd120756`
-- Created: `2023-09-07T02:59:28.116002465Z`
+- Image ID: `sha256:96ba0f4ae24f85f392a56498e222fc3f5a37a5d5ccbb17634da639dc7e013a3e`
+- Created: `2023-09-20T09:24:07.987458182Z`
 - Virtual Size: ~ 292.83 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1682,11 +1682,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libsepol/2.8-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libsepol/2.8-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libssh2=1.8.0-2.1`
+### `dpkg` source package: `libssh2=1.8.0-2.1+deb10u1`
 
 Binary Packages:
 
-- `libssh2-1:amd64=1.8.0-2.1`
+- `libssh2-1:amd64=1.8.0-2.1+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libssh2-1/copyright`)
 
@@ -1695,17 +1695,17 @@ Licenses: (parsed from: `/usr/share/doc/libssh2-1/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libssh2=1.8.0-2.1
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.8.0-2.1.dsc' libssh2_1.8.0-2.1.dsc 1958 SHA256:33f070a4a32db5d3952457986d8f80c9cf874dd144d81f5bce062171564b35d9
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.8.0.orig.tar.gz' libssh2_1.8.0.orig.tar.gz 846989 SHA256:4382d33de790b28f862e53ed59ffbd65f3def7a06e8b6e9ca1b6f70453b4d5e0
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.8.0-2.1.debian.tar.xz' libssh2_1.8.0-2.1.debian.tar.xz 13988 SHA256:e3c34166cddaba7f2162132ef4f4bdc1490c499ee6610bde81f773adef43489e
+$ apt-get source -qq --print-uris libssh2=1.8.0-2.1+deb10u1
+'http://deb.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.8.0-2.1%2bdeb10u1.dsc' libssh2_1.8.0-2.1+deb10u1.dsc 1835 SHA256:fc932f9c37345e11191b546c7a97e5c2fe27803d11c53718764e2f7047eeb29a
+'http://deb.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.8.0.orig.tar.gz' libssh2_1.8.0.orig.tar.gz 846989 SHA256:4382d33de790b28f862e53ed59ffbd65f3def7a06e8b6e9ca1b6f70453b4d5e0
+'http://deb.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.8.0-2.1%2bdeb10u1.debian.tar.xz' libssh2_1.8.0-2.1+deb10u1.debian.tar.xz 17116 SHA256:b8cec51fc65b728e844ea8b12b0c4a0088ae10f4cdf103b6f5d29b18a6c905f1
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libssh2/1.8.0-2.1/ (for browsing the source)
-- https://sources.debian.net/src/libssh2/1.8.0-2.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libssh2/1.8.0-2.1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libssh2/1.8.0-2.1+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/libssh2/1.8.0-2.1+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libssh2/1.8.0-2.1+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libtasn1-6=4.13-3+deb10u1`
 
@@ -2447,20 +2447,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.16-2+deb10u2
-'http://deb.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.16-2%2bdeb10u2.dsc' python2.7_2.7.16-2+deb10u2.dsc 3362 SHA256:ed151f77cef4975e2bfdc160bb74bcc77f22166df6a2203bc65c3e9b3b6f337c
-'http://deb.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.16.orig.tar.gz' python2.7_2.7.16.orig.tar.gz 17431748 SHA256:01da813a3600876f03f46db11cc5c408175e99f03af2ba942ef324389a83bad5
-'http://deb.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.16-2%2bdeb10u2.diff.gz' python2.7_2.7.16-2+deb10u2.diff.gz 312327 SHA256:731d6555fae2ab902cca90dfb555a4807ffde06314c1071c5921722dc8c1d0bc
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python2.7/2.7.16-2+deb10u2/
 
-- https://sources.debian.net/src/python2.7/2.7.16-2+deb10u2/ (for browsing the source)
-- https://sources.debian.net/src/python2.7/2.7.16-2+deb10u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python2.7/2.7.16-2+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=7.0-5`
 
