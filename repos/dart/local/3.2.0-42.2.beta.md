@@ -242,21 +242,13 @@ Licenses: (parsed from: `/usr/share/doc/bind9-dnsutils/copyright`, `/usr/share/d
 - `MPL-2.0`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bind9=1:9.16.42-1~deb11u1
-'http://deb.debian.org/debian-security/pool/updates/main/b/bind9/bind9_9.16.42-1%7edeb11u1.dsc' bind9_9.16.42-1~deb11u1.dsc 3266 SHA256:8f4e90d931483f4ae1a5dd63773b8dd43437f4b2066a0127a6af945beefcee42
-'http://deb.debian.org/debian-security/pool/updates/main/b/bind9/bind9_9.16.42.orig.tar.xz' bind9_9.16.42.orig.tar.xz 5123476 SHA256:a8b51c6bfdf3ab6885102f764c2418e037897b7ea46a09f8f07876fa11a6c0b3
-'http://deb.debian.org/debian-security/pool/updates/main/b/bind9/bind9_9.16.42.orig.tar.xz.asc' bind9_9.16.42.orig.tar.xz.asc 833 SHA256:f9fc25a2abdb0383d8f8d788bda2520587c55924a76c201c0769495352274ac9
-'http://deb.debian.org/debian-security/pool/updates/main/b/bind9/bind9_9.16.42-1%7edeb11u1.debian.tar.xz' bind9_9.16.42-1~deb11u1.debian.tar.xz 57800 SHA256:1fefa5878dbeb1c6bbe50dbc742749f24d5284f4f4348722bde6f1600bc042a5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/bind9/1:9.16.42-1~deb11u1/
 
-- https://sources.debian.net/src/bind9/1:9.16.42-1~deb11u1/ (for browsing the source)
-- https://sources.debian.net/src/bind9/1:9.16.42-1~deb11u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/bind9/1:9.16.42-1~deb11u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `brotli=1.0.9-2`
 
