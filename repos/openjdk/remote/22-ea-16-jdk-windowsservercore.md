@@ -1,4 +1,4 @@
-## `openjdk:22-ea-jdk-windowsservercore`
+## `openjdk:22-ea-16-jdk-windowsservercore`
 
 ```console
 $ docker pull openjdk@sha256:9e243aca6359d0d119b223058fa64499572f3131a2f5288ba083a630675d71f7
@@ -9,7 +9,7 @@ $ docker pull openjdk@sha256:9e243aca6359d0d119b223058fa64499572f3131a2f5288ba08
 	-	windows version 10.0.20348.1970; amd64
 	-	windows version 10.0.17763.4851; amd64
 
-### `openjdk:22-ea-jdk-windowsservercore` - windows version 10.0.20348.1970; amd64
+### `openjdk:22-ea-16-jdk-windowsservercore` - windows version 10.0.20348.1970; amd64
 
 ```console
 $ docker pull openjdk@sha256:ecf5e1f66faef97b353b34855511a2e03408e19817e17ae1ac49d2669c0c830f
@@ -94,7 +94,7 @@ CMD ["jshell"]
 		Size: 1.3 KB (1321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `openjdk:22-ea-jdk-windowsservercore` - windows version 10.0.17763.4851; amd64
+### `openjdk:22-ea-16-jdk-windowsservercore` - windows version 10.0.17763.4851; amd64
 
 ```console
 $ docker pull openjdk@sha256:4b9bd29f2a702fc0e48b4c9baad82fd9acd49273b8ed9da40f4592f1e2628a54

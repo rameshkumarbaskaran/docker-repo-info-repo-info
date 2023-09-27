@@ -1,4 +1,4 @@
-## `openjdk:22-ea-jdk-nanoserver`
+## `openjdk:22-ea-16-nanoserver-1809`
 
 ```console
 $ docker pull openjdk@sha256:97a32d57dd6de7ae0870b0f9cb3eaaf3fe13e676e393a1762bd475ce3ec30a37
@@ -8,7 +8,7 @@ $ docker pull openjdk@sha256:97a32d57dd6de7ae0870b0f9cb3eaaf3fe13e676e393a1762bd
 -	Platforms: 1
 	-	windows version 10.0.17763.4851; amd64
 
-### `openjdk:22-ea-jdk-nanoserver` - windows version 10.0.17763.4851; amd64
+### `openjdk:22-ea-16-nanoserver-1809` - windows version 10.0.17763.4851; amd64
 
 ```console
 $ docker pull openjdk@sha256:b56809ce46def75b3a5189af3597afe032c44b0996f59df6ad3d6ae685e66228
