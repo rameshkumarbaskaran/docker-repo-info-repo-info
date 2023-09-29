@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e96ed15276dc09c7449062b4c20c3c46727c89bf16612c6dfde698a24dbfec24`
-- Created: `2023-09-04T15:32:55.923694128Z`
-- Virtual Size: ~ 204.31 Mb  
+- Image ID: `sha256:0919883554fa3f737945d208d8c9a54b0a024c1731fa4ec254d5a86c974f8453`
+- Created: `2023-09-29T06:40:16.012898251Z`
+- Virtual Size: ~ 204.36 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -217,16 +217,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `curl`
 
 ```console
-curl-8.2.1-r0 description:
+curl-8.3.0-r0 description:
 URL retrival utility and library
 
-curl-8.2.1-r0 webpage:
+curl-8.3.0-r0 webpage:
 https://curl.se/
 
-curl-8.2.1-r0 installed size:
-236 KiB
+curl-8.3.0-r0 installed size:
+248 KiB
 
-curl-8.2.1-r0 license:
+curl-8.3.0-r0 license:
 curl
 
 ```
@@ -438,16 +438,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.1.2-r0 description:
+libcrypto3-3.1.3-r0 description:
 Crypto library from openssl
 
-libcrypto3-3.1.2-r0 webpage:
+libcrypto3-3.1.3-r0 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.1.2-r0 installed size:
+libcrypto3-3.1.3-r0 installed size:
 4468 KiB
 
-libcrypto3-3.1.2-r0 license:
+libcrypto3-3.1.3-r0 license:
 Apache-2.0
 
 ```
@@ -455,16 +455,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.2.1-r0 description:
+libcurl-8.3.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.2.1-r0 webpage:
+libcurl-8.3.0-r0 webpage:
 https://curl.se/
 
-libcurl-8.2.1-r0 installed size:
-552 KiB
+libcurl-8.3.0-r0 installed size:
+584 KiB
 
-libcurl-8.2.1-r0 license:
+libcurl-8.3.0-r0 license:
 curl
 
 ```
@@ -642,16 +642,16 @@ ISC
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.1.2-r0 description:
+libssl3-3.1.3-r0 description:
 SSL shared libraries
 
-libssl3-3.1.2-r0 webpage:
+libssl3-3.1.3-r0 webpage:
 https://www.openssl.org/
 
-libssl3-3.1.2-r0 installed size:
+libssl3-3.1.3-r0 installed size:
 552 KiB
 
-libssl3-3.1.2-r0 license:
+libssl3-3.1.3-r0 license:
 Apache-2.0
 
 ```
@@ -693,16 +693,16 @@ GPL-2.0-or-later OR LGPL-3.0-or-later
 ### `apk` package: `libwebp`
 
 ```console
-libwebp-1.3.1-r0 description:
+libwebp-1.3.2-r0 description:
 Libraries for working with WebP images
 
-libwebp-1.3.1-r0 webpage:
+libwebp-1.3.2-r0 webpage:
 https://developers.google.com/speed/webp
 
-libwebp-1.3.1-r0 installed size:
+libwebp-1.3.2-r0 installed size:
 596 KiB
 
-libwebp-1.3.1-r0 license:
+libwebp-1.3.2-r0 license:
 BSD-3-Clause
 
 ```
@@ -829,16 +829,16 @@ BSD-3-Clause
 ### `apk` package: `mariadb-client`
 
 ```console
-mariadb-client-10.11.4-r0 description:
+mariadb-client-10.11.5-r0 description:
 Client for the MariaDB database
 
-mariadb-client-10.11.4-r0 webpage:
+mariadb-client-10.11.5-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-client-10.11.4-r0 installed size:
+mariadb-client-10.11.5-r0 installed size:
 35 MiB
 
-mariadb-client-10.11.4-r0 license:
+mariadb-client-10.11.5-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -846,16 +846,16 @@ GPL-2.0-or-later
 ### `apk` package: `mariadb-common`
 
 ```console
-mariadb-common-10.11.4-r0 description:
+mariadb-common-10.11.5-r0 description:
 MariaDB common files for both server and client
 
-mariadb-common-10.11.4-r0 webpage:
+mariadb-common-10.11.5-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-common-10.11.4-r0 installed size:
+mariadb-common-10.11.5-r0 installed size:
 2260 KiB
 
-mariadb-common-10.11.4-r0 license:
+mariadb-common-10.11.5-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -897,16 +897,16 @@ MIT AND BSD-2-Clause AND GPL-2.0-or-later
 ### `apk` package: `mysql-client`
 
 ```console
-mysql-client-10.11.4-r0 description:
+mysql-client-10.11.5-r0 description:
 Dummy package for mysql-client migration
 
-mysql-client-10.11.4-r0 webpage:
+mysql-client-10.11.5-r0 webpage:
 https://www.mariadb.org/
 
-mysql-client-10.11.4-r0 installed size:
+mysql-client-10.11.5-r0 installed size:
 4096 B
 
-mysql-client-10.11.4-r0 license:
+mysql-client-10.11.5-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -965,16 +965,16 @@ BSD-2-Clause
 ### `apk` package: `openssl`
 
 ```console
-openssl-3.1.2-r0 description:
+openssl-3.1.3-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-3.1.2-r0 webpage:
+openssl-3.1.3-r0 webpage:
 https://www.openssl.org/
 
-openssl-3.1.2-r0 installed size:
+openssl-3.1.3-r0 installed size:
 752 KiB
 
-openssl-3.1.2-r0 license:
+openssl-3.1.3-r0 license:
 Apache-2.0
 
 ```

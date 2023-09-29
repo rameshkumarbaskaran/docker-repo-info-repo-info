@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:5f404fd73c70756d2e83c5d58b022d15dc052b7001a479d096f9018f0973a4c9`
-- Created: `2023-09-04T15:31:40.273103781Z`
-- Virtual Size: ~ 305.34 Mb  
+- Image ID: `sha256:34d4a2179ba1cc07d92a9bf1d0a6f082db7dacef766cac308b9b6bd9df026ee8`
+- Created: `2023-09-29T06:39:09.961878999Z`
+- Virtual Size: ~ 305.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -282,16 +282,16 @@ LGPL-2.1-or-later OR MPL-1.1
 ### `apk` package: `cups-libs`
 
 ```console
-cups-libs-2.4.6-r0 description:
+cups-libs-2.4.7-r0 description:
 CUPS libraries
 
-cups-libs-2.4.6-r0 webpage:
+cups-libs-2.4.7-r0 webpage:
 https://github.com/OpenPrinting/cups/
 
-cups-libs-2.4.6-r0 installed size:
+cups-libs-2.4.7-r0 installed size:
 576 KiB
 
-cups-libs-2.4.6-r0 license:
+cups-libs-2.4.7-r0 license:
 Apache-2.0
 
 ```
@@ -299,16 +299,16 @@ Apache-2.0
 ### `apk` package: `curl`
 
 ```console
-curl-8.2.1-r0 description:
+curl-8.3.0-r0 description:
 URL retrival utility and library
 
-curl-8.2.1-r0 webpage:
+curl-8.3.0-r0 webpage:
 https://curl.se/
 
-curl-8.2.1-r0 installed size:
-236 KiB
+curl-8.3.0-r0 installed size:
+248 KiB
 
-curl-8.2.1-r0 license:
+curl-8.3.0-r0 license:
 curl
 
 ```
@@ -707,16 +707,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.1.2-r0 description:
+libcrypto3-3.1.3-r0 description:
 Crypto library from openssl
 
-libcrypto3-3.1.2-r0 webpage:
+libcrypto3-3.1.3-r0 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.1.2-r0 installed size:
+libcrypto3-3.1.3-r0 installed size:
 4468 KiB
 
-libcrypto3-3.1.2-r0 license:
+libcrypto3-3.1.3-r0 license:
 Apache-2.0
 
 ```
@@ -724,16 +724,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.2.1-r0 description:
+libcurl-8.3.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.2.1-r0 webpage:
+libcurl-8.3.0-r0 webpage:
 https://curl.se/
 
-libcurl-8.2.1-r0 installed size:
-552 KiB
+libcurl-8.3.0-r0 installed size:
+584 KiB
 
-libcurl-8.2.1-r0 license:
+libcurl-8.3.0-r0 license:
 curl
 
 ```
@@ -1064,16 +1064,16 @@ ISC
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.1.2-r0 description:
+libssl3-3.1.3-r0 description:
 SSL shared libraries
 
-libssl3-3.1.2-r0 webpage:
+libssl3-3.1.3-r0 webpage:
 https://www.openssl.org/
 
-libssl3-3.1.2-r0 installed size:
+libssl3-3.1.3-r0 installed size:
 552 KiB
 
-libssl3-3.1.2-r0 license:
+libssl3-3.1.3-r0 license:
 Apache-2.0
 
 ```
@@ -1132,16 +1132,16 @@ GPL-2.0-or-later OR LGPL-3.0-or-later
 ### `apk` package: `libwebp`
 
 ```console
-libwebp-1.3.1-r0 description:
+libwebp-1.3.2-r0 description:
 Libraries for working with WebP images
 
-libwebp-1.3.1-r0 webpage:
+libwebp-1.3.2-r0 webpage:
 https://developers.google.com/speed/webp
 
-libwebp-1.3.1-r0 installed size:
+libwebp-1.3.2-r0 installed size:
 596 KiB
 
-libwebp-1.3.1-r0 license:
+libwebp-1.3.2-r0 license:
 BSD-3-Clause
 
 ```
@@ -1421,16 +1421,16 @@ BSD-2-Clause
 ### `apk` package: `openssl`
 
 ```console
-openssl-3.1.2-r0 description:
+openssl-3.1.3-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-3.1.2-r0 webpage:
+openssl-3.1.3-r0 webpage:
 https://www.openssl.org/
 
-openssl-3.1.2-r0 installed size:
+openssl-3.1.3-r0 installed size:
 752 KiB
 
-openssl-3.1.2-r0 license:
+openssl-3.1.3-r0 license:
 Apache-2.0
 
 ```
