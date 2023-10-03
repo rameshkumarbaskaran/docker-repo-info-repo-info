@@ -16,7 +16,7 @@
 ## `kapacitor:1.6`
 
 ```console
-$ docker pull kapacitor@sha256:520348dc8b299d3a7737bc5b51f590a5dcce476d8591f379f398b18932e6fe62
+$ docker pull kapacitor@sha256:e892cd338cc58af465a1182f4e0ae6cfe0a7937ad517ffbc02b1c38d00c43719
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -27,75 +27,75 @@ $ docker pull kapacitor@sha256:520348dc8b299d3a7737bc5b51f590a5dcce476d8591f379f
 ### `kapacitor:1.6` - linux; amd64
 
 ```console
-$ docker pull kapacitor@sha256:e5532a22c586db295b5ba8f8fc1d0ab04488ffb9ae59c89d5f07535970873bdd
+$ docker pull kapacitor@sha256:b37606c4ac1a3eab4291c54449c4d926a1c81501099f26eec0539b492478b0c6
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **134.3 MB (134346761 bytes)**  
+-	Total Size: **134.9 MB (134922396 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cf6bb79581c557c7fc7bc79b27ba10a553afc5f5baa1b5f9d593e0b9ff82aaeb`
+-	Image ID: `sha256:bb3df09de09d924f50213b85420f250449db847acf4a93d4ee80c55ec2bf22ff`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["kapacitord"]`
 
 ```dockerfile
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 ARG RELEASE
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 LABEL org.opencontainers.image.version=22.04
-# Wed, 16 Aug 2023 06:01:54 GMT
-ADD file:aa9b51e9f0067860cebbc9930374452d1384ec3c59badb5e4733130eedc90329 in / 
-# Wed, 16 Aug 2023 06:01:54 GMT
+# Mon, 25 Sep 2023 10:17:07 GMT
+ADD file:194c886b88876c1804cc5f80719669653c16a388b664147b7f22402105f533c4 in / 
+# Mon, 25 Sep 2023 10:17:08 GMT
 CMD ["/bin/bash"]
-# Fri, 01 Sep 2023 23:59:33 GMT
+# Tue, 03 Oct 2023 04:55:43 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		gnupg 		netbase 		wget 		tzdata 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 02 Sep 2023 01:59:10 GMT
+# Tue, 03 Oct 2023 07:21:32 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y bash-completion &&     awk 'f{if(sub(/^#/,"",$0)==0){f=0}};/^# enable bash completion/{f=1};{print;}' /etc/bash.bashrc > /etc/bash.bashrc.new &&     mv /etc/bash.bashrc.new /etc/bash.bashrc
-# Sat, 02 Sep 2023 01:59:22 GMT
+# Tue, 03 Oct 2023 07:21:33 GMT
 ENV KAPACITOR_VERSION=1.6.6
-# Sat, 02 Sep 2023 01:59:28 GMT
+# Tue, 03 Oct 2023 07:21:40 GMT
 RUN set -eux &&     ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in         amd64) ARCH='amd64';;         arm64) ARCH='arm64';;         *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb &&     export GNUPGHOME="$(mktemp -d)" &&     echo "disable-ipv6" >> $GNUPGHOME/dirmngr.conf &&     gpg --batch --keyserver hkp://keyserver.ubuntu.com --recv-keys 9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E &&     gpg --batch --verify kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb.asc kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb &&     rm -rf "$GNUPGHOME" &&     dpkg -i kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb &&     gpgconf --kill all &&     rm -f kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb*
-# Sat, 02 Sep 2023 01:59:29 GMT
+# Tue, 03 Oct 2023 07:21:40 GMT
 COPY file:9450c5dcbc0a583243f987f682dc6c44d9e4a3f1c31d1bb9957f313457e444ec in /etc/kapacitor/kapacitor.conf 
-# Sat, 02 Sep 2023 01:59:29 GMT
+# Tue, 03 Oct 2023 07:21:40 GMT
 EXPOSE 9092
-# Sat, 02 Sep 2023 01:59:29 GMT
+# Tue, 03 Oct 2023 07:21:40 GMT
 VOLUME [/var/lib/kapacitor]
-# Sat, 02 Sep 2023 01:59:29 GMT
+# Tue, 03 Oct 2023 07:21:40 GMT
 COPY file:a229567085df49450fcc70ed6d49efcbdfc41ca92b6c5bdb3b541cb803165dbc in /entrypoint.sh 
-# Sat, 02 Sep 2023 01:59:29 GMT
+# Tue, 03 Oct 2023 07:21:40 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Sat, 02 Sep 2023 01:59:29 GMT
+# Tue, 03 Oct 2023 07:21:40 GMT
 CMD ["kapacitord"]
 ```
 
 -	Layers:
-	-	`sha256:44ba2882f8eb14264e5f2f9f6ec55bcf5306527b637279f2cd9d4858762388af`  
-		Last Modified: Wed, 16 Aug 2023 10:32:51 GMT  
-		Size: 30.4 MB (30438977 bytes)  
+	-	`sha256:707e32e9fc569fee476af9e92ae3d1df8b8e6dca47f9cb31db9d2c922a6de952`  
+		Last Modified: Mon, 25 Sep 2023 12:54:05 GMT  
+		Size: 30.4 MB (30440869 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3f2863485daf42354483046b5e0003e2a3a615b04fb72dbbd0c9d005e0b8e4d`  
-		Last Modified: Sat, 02 Sep 2023 00:11:43 GMT  
-		Size: 7.1 MB (7119992 bytes)  
+	-	`sha256:a8ad5fa151345a37245301e58d80e66dff497fa6881342a464fbe2ecb12dc61c`  
+		Last Modified: Tue, 03 Oct 2023 05:08:42 GMT  
+		Size: 7.1 MB (7120048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:778c3e4da66453cd995d5771f62ca97741654b75dd62c84af18eb9bd336fb89a`  
-		Last Modified: Sat, 02 Sep 2023 01:59:43 GMT  
-		Size: 31.1 MB (31114808 bytes)  
+	-	`sha256:4604a57cbdf0fe7dfb2197dc2b92c76aee687782482fe13163157eb9dd2db9eb`  
+		Last Modified: Tue, 03 Oct 2023 07:22:12 GMT  
+		Size: 31.7 MB (31688360 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60bba31dfe4b1cc1bd27728f57874b9170f75cfc108a96d4a7bc30254b0cffb1`  
-		Last Modified: Sat, 02 Sep 2023 02:00:01 GMT  
-		Size: 65.7 MB (65672526 bytes)  
+	-	`sha256:fee5f66460531bd9486d87cf1c06aa0bb9eb215c6265fc0f97155419be5f8636`  
+		Last Modified: Tue, 03 Oct 2023 07:22:16 GMT  
+		Size: 65.7 MB (65672662 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:99132f18f2a9b21fcbe4bfd1744e870afdb545a99f70275a88adc39fddb690e9`  
-		Last Modified: Sat, 02 Sep 2023 01:59:54 GMT  
-		Size: 227.0 B  
+	-	`sha256:5384444177c7816489ef3e25891924ac1bc8880023e087e64fe3b1afd2fccea3`  
+		Last Modified: Tue, 03 Oct 2023 07:22:08 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7732f2a523c538988feb70cc63f1c5995fd527f9840de4d7d3a8aa57e56f2f81`  
-		Last Modified: Sat, 02 Sep 2023 01:59:54 GMT  
+	-	`sha256:313a94b3034b1fbd225726cbfe341b82f93be900ace5e620d6a3e53e49e1e257`  
+		Last Modified: Tue, 03 Oct 2023 07:22:08 GMT  
 		Size: 231.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -254,7 +254,7 @@ CMD ["kapacitord"]
 ## `kapacitor:1.6.6`
 
 ```console
-$ docker pull kapacitor@sha256:520348dc8b299d3a7737bc5b51f590a5dcce476d8591f379f398b18932e6fe62
+$ docker pull kapacitor@sha256:e892cd338cc58af465a1182f4e0ae6cfe0a7937ad517ffbc02b1c38d00c43719
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -265,75 +265,75 @@ $ docker pull kapacitor@sha256:520348dc8b299d3a7737bc5b51f590a5dcce476d8591f379f
 ### `kapacitor:1.6.6` - linux; amd64
 
 ```console
-$ docker pull kapacitor@sha256:e5532a22c586db295b5ba8f8fc1d0ab04488ffb9ae59c89d5f07535970873bdd
+$ docker pull kapacitor@sha256:b37606c4ac1a3eab4291c54449c4d926a1c81501099f26eec0539b492478b0c6
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **134.3 MB (134346761 bytes)**  
+-	Total Size: **134.9 MB (134922396 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cf6bb79581c557c7fc7bc79b27ba10a553afc5f5baa1b5f9d593e0b9ff82aaeb`
+-	Image ID: `sha256:bb3df09de09d924f50213b85420f250449db847acf4a93d4ee80c55ec2bf22ff`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["kapacitord"]`
 
 ```dockerfile
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 ARG RELEASE
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 LABEL org.opencontainers.image.version=22.04
-# Wed, 16 Aug 2023 06:01:54 GMT
-ADD file:aa9b51e9f0067860cebbc9930374452d1384ec3c59badb5e4733130eedc90329 in / 
-# Wed, 16 Aug 2023 06:01:54 GMT
+# Mon, 25 Sep 2023 10:17:07 GMT
+ADD file:194c886b88876c1804cc5f80719669653c16a388b664147b7f22402105f533c4 in / 
+# Mon, 25 Sep 2023 10:17:08 GMT
 CMD ["/bin/bash"]
-# Fri, 01 Sep 2023 23:59:33 GMT
+# Tue, 03 Oct 2023 04:55:43 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		gnupg 		netbase 		wget 		tzdata 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 02 Sep 2023 01:59:10 GMT
+# Tue, 03 Oct 2023 07:21:32 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y bash-completion &&     awk 'f{if(sub(/^#/,"",$0)==0){f=0}};/^# enable bash completion/{f=1};{print;}' /etc/bash.bashrc > /etc/bash.bashrc.new &&     mv /etc/bash.bashrc.new /etc/bash.bashrc
-# Sat, 02 Sep 2023 01:59:22 GMT
+# Tue, 03 Oct 2023 07:21:33 GMT
 ENV KAPACITOR_VERSION=1.6.6
-# Sat, 02 Sep 2023 01:59:28 GMT
+# Tue, 03 Oct 2023 07:21:40 GMT
 RUN set -eux &&     ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in         amd64) ARCH='amd64';;         arm64) ARCH='arm64';;         *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb &&     export GNUPGHOME="$(mktemp -d)" &&     echo "disable-ipv6" >> $GNUPGHOME/dirmngr.conf &&     gpg --batch --keyserver hkp://keyserver.ubuntu.com --recv-keys 9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E &&     gpg --batch --verify kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb.asc kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb &&     rm -rf "$GNUPGHOME" &&     dpkg -i kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb &&     gpgconf --kill all &&     rm -f kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb*
-# Sat, 02 Sep 2023 01:59:29 GMT
+# Tue, 03 Oct 2023 07:21:40 GMT
 COPY file:9450c5dcbc0a583243f987f682dc6c44d9e4a3f1c31d1bb9957f313457e444ec in /etc/kapacitor/kapacitor.conf 
-# Sat, 02 Sep 2023 01:59:29 GMT
+# Tue, 03 Oct 2023 07:21:40 GMT
 EXPOSE 9092
-# Sat, 02 Sep 2023 01:59:29 GMT
+# Tue, 03 Oct 2023 07:21:40 GMT
 VOLUME [/var/lib/kapacitor]
-# Sat, 02 Sep 2023 01:59:29 GMT
+# Tue, 03 Oct 2023 07:21:40 GMT
 COPY file:a229567085df49450fcc70ed6d49efcbdfc41ca92b6c5bdb3b541cb803165dbc in /entrypoint.sh 
-# Sat, 02 Sep 2023 01:59:29 GMT
+# Tue, 03 Oct 2023 07:21:40 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Sat, 02 Sep 2023 01:59:29 GMT
+# Tue, 03 Oct 2023 07:21:40 GMT
 CMD ["kapacitord"]
 ```
 
 -	Layers:
-	-	`sha256:44ba2882f8eb14264e5f2f9f6ec55bcf5306527b637279f2cd9d4858762388af`  
-		Last Modified: Wed, 16 Aug 2023 10:32:51 GMT  
-		Size: 30.4 MB (30438977 bytes)  
+	-	`sha256:707e32e9fc569fee476af9e92ae3d1df8b8e6dca47f9cb31db9d2c922a6de952`  
+		Last Modified: Mon, 25 Sep 2023 12:54:05 GMT  
+		Size: 30.4 MB (30440869 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3f2863485daf42354483046b5e0003e2a3a615b04fb72dbbd0c9d005e0b8e4d`  
-		Last Modified: Sat, 02 Sep 2023 00:11:43 GMT  
-		Size: 7.1 MB (7119992 bytes)  
+	-	`sha256:a8ad5fa151345a37245301e58d80e66dff497fa6881342a464fbe2ecb12dc61c`  
+		Last Modified: Tue, 03 Oct 2023 05:08:42 GMT  
+		Size: 7.1 MB (7120048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:778c3e4da66453cd995d5771f62ca97741654b75dd62c84af18eb9bd336fb89a`  
-		Last Modified: Sat, 02 Sep 2023 01:59:43 GMT  
-		Size: 31.1 MB (31114808 bytes)  
+	-	`sha256:4604a57cbdf0fe7dfb2197dc2b92c76aee687782482fe13163157eb9dd2db9eb`  
+		Last Modified: Tue, 03 Oct 2023 07:22:12 GMT  
+		Size: 31.7 MB (31688360 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60bba31dfe4b1cc1bd27728f57874b9170f75cfc108a96d4a7bc30254b0cffb1`  
-		Last Modified: Sat, 02 Sep 2023 02:00:01 GMT  
-		Size: 65.7 MB (65672526 bytes)  
+	-	`sha256:fee5f66460531bd9486d87cf1c06aa0bb9eb215c6265fc0f97155419be5f8636`  
+		Last Modified: Tue, 03 Oct 2023 07:22:16 GMT  
+		Size: 65.7 MB (65672662 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:99132f18f2a9b21fcbe4bfd1744e870afdb545a99f70275a88adc39fddb690e9`  
-		Last Modified: Sat, 02 Sep 2023 01:59:54 GMT  
-		Size: 227.0 B  
+	-	`sha256:5384444177c7816489ef3e25891924ac1bc8880023e087e64fe3b1afd2fccea3`  
+		Last Modified: Tue, 03 Oct 2023 07:22:08 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7732f2a523c538988feb70cc63f1c5995fd527f9840de4d7d3a8aa57e56f2f81`  
-		Last Modified: Sat, 02 Sep 2023 01:59:54 GMT  
+	-	`sha256:313a94b3034b1fbd225726cbfe341b82f93be900ace5e620d6a3e53e49e1e257`  
+		Last Modified: Tue, 03 Oct 2023 07:22:08 GMT  
 		Size: 231.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -492,7 +492,7 @@ CMD ["kapacitord"]
 ## `kapacitor:1.7`
 
 ```console
-$ docker pull kapacitor@sha256:ffbd1600732966fd0ad1ae17dc3fb6c93ae2456fbcb32bc7d27c200d88472e5b
+$ docker pull kapacitor@sha256:263b935d454466fdbfe4b9fddf149a4ffba8d63e46cdc8ccc25b521cc6e05eb3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -503,75 +503,75 @@ $ docker pull kapacitor@sha256:ffbd1600732966fd0ad1ae17dc3fb6c93ae2456fbcb32bc7d
 ### `kapacitor:1.7` - linux; amd64
 
 ```console
-$ docker pull kapacitor@sha256:694c9e50e4054ece77587a5d7792c547fc1e8b838d4cc84baf82e103f27b8711
+$ docker pull kapacitor@sha256:3a2b45d5e51b17e229f8d9c46bbcf24cfc5f60aa76603f841bcec370dce21422
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **135.4 MB (135394051 bytes)**  
+-	Total Size: **136.0 MB (135969639 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:15c8ddda101be7f4d2967fd1b43feb0fe3e40f8e236cc213e327a99d5729b97e`
+-	Image ID: `sha256:0e234da8e3bbdd32a4bfda6b6477d98feb8cef36779dbe5f4f5c8ea3a44f036a`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["kapacitord"]`
 
 ```dockerfile
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 ARG RELEASE
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 LABEL org.opencontainers.image.version=22.04
-# Wed, 16 Aug 2023 06:01:54 GMT
-ADD file:aa9b51e9f0067860cebbc9930374452d1384ec3c59badb5e4733130eedc90329 in / 
-# Wed, 16 Aug 2023 06:01:54 GMT
+# Mon, 25 Sep 2023 10:17:07 GMT
+ADD file:194c886b88876c1804cc5f80719669653c16a388b664147b7f22402105f533c4 in / 
+# Mon, 25 Sep 2023 10:17:08 GMT
 CMD ["/bin/bash"]
-# Fri, 01 Sep 2023 23:59:33 GMT
+# Tue, 03 Oct 2023 04:55:43 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		gnupg 		netbase 		wget 		tzdata 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 02 Sep 2023 01:59:10 GMT
+# Tue, 03 Oct 2023 07:21:32 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y bash-completion &&     awk 'f{if(sub(/^#/,"",$0)==0){f=0}};/^# enable bash completion/{f=1};{print;}' /etc/bash.bashrc > /etc/bash.bashrc.new &&     mv /etc/bash.bashrc.new /etc/bash.bashrc
-# Fri, 22 Sep 2023 01:11:37 GMT
+# Tue, 03 Oct 2023 07:21:46 GMT
 ENV KAPACITOR_VERSION=1.7.0
-# Fri, 22 Sep 2023 01:11:41 GMT
+# Tue, 03 Oct 2023 07:21:54 GMT
 RUN set -eux &&     ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in         amd64) ARCH='amd64';;         arm64) ARCH='arm64';;         *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb &&     export GNUPGHOME="$(mktemp -d)" &&     echo "disable-ipv6" >> $GNUPGHOME/dirmngr.conf &&     gpg --batch --keyserver hkp://keyserver.ubuntu.com --recv-keys 9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E &&     gpg --batch --verify kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb.asc kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb &&     rm -rf "$GNUPGHOME" &&     dpkg -i kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb &&     gpgconf --kill all &&     rm -f kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb*
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:54 GMT
 COPY file:9450c5dcbc0a583243f987f682dc6c44d9e4a3f1c31d1bb9957f313457e444ec in /etc/kapacitor/kapacitor.conf 
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:54 GMT
 EXPOSE 9092
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:54 GMT
 VOLUME [/var/lib/kapacitor]
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:54 GMT
 COPY file:a229567085df49450fcc70ed6d49efcbdfc41ca92b6c5bdb3b541cb803165dbc in /entrypoint.sh 
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:55 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:55 GMT
 CMD ["kapacitord"]
 ```
 
 -	Layers:
-	-	`sha256:44ba2882f8eb14264e5f2f9f6ec55bcf5306527b637279f2cd9d4858762388af`  
-		Last Modified: Wed, 16 Aug 2023 10:32:51 GMT  
-		Size: 30.4 MB (30438977 bytes)  
+	-	`sha256:707e32e9fc569fee476af9e92ae3d1df8b8e6dca47f9cb31db9d2c922a6de952`  
+		Last Modified: Mon, 25 Sep 2023 12:54:05 GMT  
+		Size: 30.4 MB (30440869 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3f2863485daf42354483046b5e0003e2a3a615b04fb72dbbd0c9d005e0b8e4d`  
-		Last Modified: Sat, 02 Sep 2023 00:11:43 GMT  
-		Size: 7.1 MB (7119992 bytes)  
+	-	`sha256:a8ad5fa151345a37245301e58d80e66dff497fa6881342a464fbe2ecb12dc61c`  
+		Last Modified: Tue, 03 Oct 2023 05:08:42 GMT  
+		Size: 7.1 MB (7120048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:778c3e4da66453cd995d5771f62ca97741654b75dd62c84af18eb9bd336fb89a`  
-		Last Modified: Sat, 02 Sep 2023 01:59:43 GMT  
-		Size: 31.1 MB (31114808 bytes)  
+	-	`sha256:4604a57cbdf0fe7dfb2197dc2b92c76aee687782482fe13163157eb9dd2db9eb`  
+		Last Modified: Tue, 03 Oct 2023 07:22:12 GMT  
+		Size: 31.7 MB (31688360 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:67febc3af6e1e7caa21deea1fc0c8cda05237011f55486c8648f2c5807c479d6`  
-		Last Modified: Fri, 22 Sep 2023 01:12:21 GMT  
-		Size: 66.7 MB (66719819 bytes)  
+	-	`sha256:922096918bfc8a20ce7617ccb7309bd2c403882094ebe94683ea84da9ffcba22`  
+		Last Modified: Tue, 03 Oct 2023 07:22:34 GMT  
+		Size: 66.7 MB (66719906 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:221524882eded842eb611bb6b58b24aa38d4aebcac5898f7210e4acbdb645a14`  
-		Last Modified: Fri, 22 Sep 2023 01:12:13 GMT  
-		Size: 224.0 B  
+	-	`sha256:f2977095f16835b3c54b9e5e99d87273dbf5e945185e5184376b9477cf7ff320`  
+		Last Modified: Tue, 03 Oct 2023 07:22:26 GMT  
+		Size: 225.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35b9cbf19fe5c78e71e85f705f86a0fd7e827b3e11547315f7c5832486efb5bb`  
-		Last Modified: Fri, 22 Sep 2023 01:12:13 GMT  
+	-	`sha256:5f81174504b0f70455c059d561935c512b29411c5240b63b75ab034cdc5756a4`  
+		Last Modified: Tue, 03 Oct 2023 07:22:26 GMT  
 		Size: 231.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -730,7 +730,7 @@ CMD ["kapacitord"]
 ## `kapacitor:1.7.0`
 
 ```console
-$ docker pull kapacitor@sha256:ffbd1600732966fd0ad1ae17dc3fb6c93ae2456fbcb32bc7d27c200d88472e5b
+$ docker pull kapacitor@sha256:263b935d454466fdbfe4b9fddf149a4ffba8d63e46cdc8ccc25b521cc6e05eb3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -741,75 +741,75 @@ $ docker pull kapacitor@sha256:ffbd1600732966fd0ad1ae17dc3fb6c93ae2456fbcb32bc7d
 ### `kapacitor:1.7.0` - linux; amd64
 
 ```console
-$ docker pull kapacitor@sha256:694c9e50e4054ece77587a5d7792c547fc1e8b838d4cc84baf82e103f27b8711
+$ docker pull kapacitor@sha256:3a2b45d5e51b17e229f8d9c46bbcf24cfc5f60aa76603f841bcec370dce21422
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **135.4 MB (135394051 bytes)**  
+-	Total Size: **136.0 MB (135969639 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:15c8ddda101be7f4d2967fd1b43feb0fe3e40f8e236cc213e327a99d5729b97e`
+-	Image ID: `sha256:0e234da8e3bbdd32a4bfda6b6477d98feb8cef36779dbe5f4f5c8ea3a44f036a`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["kapacitord"]`
 
 ```dockerfile
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 ARG RELEASE
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 LABEL org.opencontainers.image.version=22.04
-# Wed, 16 Aug 2023 06:01:54 GMT
-ADD file:aa9b51e9f0067860cebbc9930374452d1384ec3c59badb5e4733130eedc90329 in / 
-# Wed, 16 Aug 2023 06:01:54 GMT
+# Mon, 25 Sep 2023 10:17:07 GMT
+ADD file:194c886b88876c1804cc5f80719669653c16a388b664147b7f22402105f533c4 in / 
+# Mon, 25 Sep 2023 10:17:08 GMT
 CMD ["/bin/bash"]
-# Fri, 01 Sep 2023 23:59:33 GMT
+# Tue, 03 Oct 2023 04:55:43 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		gnupg 		netbase 		wget 		tzdata 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 02 Sep 2023 01:59:10 GMT
+# Tue, 03 Oct 2023 07:21:32 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y bash-completion &&     awk 'f{if(sub(/^#/,"",$0)==0){f=0}};/^# enable bash completion/{f=1};{print;}' /etc/bash.bashrc > /etc/bash.bashrc.new &&     mv /etc/bash.bashrc.new /etc/bash.bashrc
-# Fri, 22 Sep 2023 01:11:37 GMT
+# Tue, 03 Oct 2023 07:21:46 GMT
 ENV KAPACITOR_VERSION=1.7.0
-# Fri, 22 Sep 2023 01:11:41 GMT
+# Tue, 03 Oct 2023 07:21:54 GMT
 RUN set -eux &&     ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in         amd64) ARCH='amd64';;         arm64) ARCH='arm64';;         *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb &&     export GNUPGHOME="$(mktemp -d)" &&     echo "disable-ipv6" >> $GNUPGHOME/dirmngr.conf &&     gpg --batch --keyserver hkp://keyserver.ubuntu.com --recv-keys 9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E &&     gpg --batch --verify kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb.asc kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb &&     rm -rf "$GNUPGHOME" &&     dpkg -i kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb &&     gpgconf --kill all &&     rm -f kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb*
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:54 GMT
 COPY file:9450c5dcbc0a583243f987f682dc6c44d9e4a3f1c31d1bb9957f313457e444ec in /etc/kapacitor/kapacitor.conf 
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:54 GMT
 EXPOSE 9092
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:54 GMT
 VOLUME [/var/lib/kapacitor]
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:54 GMT
 COPY file:a229567085df49450fcc70ed6d49efcbdfc41ca92b6c5bdb3b541cb803165dbc in /entrypoint.sh 
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:55 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:55 GMT
 CMD ["kapacitord"]
 ```
 
 -	Layers:
-	-	`sha256:44ba2882f8eb14264e5f2f9f6ec55bcf5306527b637279f2cd9d4858762388af`  
-		Last Modified: Wed, 16 Aug 2023 10:32:51 GMT  
-		Size: 30.4 MB (30438977 bytes)  
+	-	`sha256:707e32e9fc569fee476af9e92ae3d1df8b8e6dca47f9cb31db9d2c922a6de952`  
+		Last Modified: Mon, 25 Sep 2023 12:54:05 GMT  
+		Size: 30.4 MB (30440869 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3f2863485daf42354483046b5e0003e2a3a615b04fb72dbbd0c9d005e0b8e4d`  
-		Last Modified: Sat, 02 Sep 2023 00:11:43 GMT  
-		Size: 7.1 MB (7119992 bytes)  
+	-	`sha256:a8ad5fa151345a37245301e58d80e66dff497fa6881342a464fbe2ecb12dc61c`  
+		Last Modified: Tue, 03 Oct 2023 05:08:42 GMT  
+		Size: 7.1 MB (7120048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:778c3e4da66453cd995d5771f62ca97741654b75dd62c84af18eb9bd336fb89a`  
-		Last Modified: Sat, 02 Sep 2023 01:59:43 GMT  
-		Size: 31.1 MB (31114808 bytes)  
+	-	`sha256:4604a57cbdf0fe7dfb2197dc2b92c76aee687782482fe13163157eb9dd2db9eb`  
+		Last Modified: Tue, 03 Oct 2023 07:22:12 GMT  
+		Size: 31.7 MB (31688360 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:67febc3af6e1e7caa21deea1fc0c8cda05237011f55486c8648f2c5807c479d6`  
-		Last Modified: Fri, 22 Sep 2023 01:12:21 GMT  
-		Size: 66.7 MB (66719819 bytes)  
+	-	`sha256:922096918bfc8a20ce7617ccb7309bd2c403882094ebe94683ea84da9ffcba22`  
+		Last Modified: Tue, 03 Oct 2023 07:22:34 GMT  
+		Size: 66.7 MB (66719906 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:221524882eded842eb611bb6b58b24aa38d4aebcac5898f7210e4acbdb645a14`  
-		Last Modified: Fri, 22 Sep 2023 01:12:13 GMT  
-		Size: 224.0 B  
+	-	`sha256:f2977095f16835b3c54b9e5e99d87273dbf5e945185e5184376b9477cf7ff320`  
+		Last Modified: Tue, 03 Oct 2023 07:22:26 GMT  
+		Size: 225.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35b9cbf19fe5c78e71e85f705f86a0fd7e827b3e11547315f7c5832486efb5bb`  
-		Last Modified: Fri, 22 Sep 2023 01:12:13 GMT  
+	-	`sha256:5f81174504b0f70455c059d561935c512b29411c5240b63b75ab034cdc5756a4`  
+		Last Modified: Tue, 03 Oct 2023 07:22:26 GMT  
 		Size: 231.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -1045,7 +1045,7 @@ CMD ["kapacitord"]
 ## `kapacitor:latest`
 
 ```console
-$ docker pull kapacitor@sha256:ffbd1600732966fd0ad1ae17dc3fb6c93ae2456fbcb32bc7d27c200d88472e5b
+$ docker pull kapacitor@sha256:263b935d454466fdbfe4b9fddf149a4ffba8d63e46cdc8ccc25b521cc6e05eb3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1056,75 +1056,75 @@ $ docker pull kapacitor@sha256:ffbd1600732966fd0ad1ae17dc3fb6c93ae2456fbcb32bc7d
 ### `kapacitor:latest` - linux; amd64
 
 ```console
-$ docker pull kapacitor@sha256:694c9e50e4054ece77587a5d7792c547fc1e8b838d4cc84baf82e103f27b8711
+$ docker pull kapacitor@sha256:3a2b45d5e51b17e229f8d9c46bbcf24cfc5f60aa76603f841bcec370dce21422
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **135.4 MB (135394051 bytes)**  
+-	Total Size: **136.0 MB (135969639 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:15c8ddda101be7f4d2967fd1b43feb0fe3e40f8e236cc213e327a99d5729b97e`
+-	Image ID: `sha256:0e234da8e3bbdd32a4bfda6b6477d98feb8cef36779dbe5f4f5c8ea3a44f036a`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["kapacitord"]`
 
 ```dockerfile
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 ARG RELEASE
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Wed, 16 Aug 2023 06:01:52 GMT
+# Mon, 25 Sep 2023 10:17:05 GMT
 LABEL org.opencontainers.image.version=22.04
-# Wed, 16 Aug 2023 06:01:54 GMT
-ADD file:aa9b51e9f0067860cebbc9930374452d1384ec3c59badb5e4733130eedc90329 in / 
-# Wed, 16 Aug 2023 06:01:54 GMT
+# Mon, 25 Sep 2023 10:17:07 GMT
+ADD file:194c886b88876c1804cc5f80719669653c16a388b664147b7f22402105f533c4 in / 
+# Mon, 25 Sep 2023 10:17:08 GMT
 CMD ["/bin/bash"]
-# Fri, 01 Sep 2023 23:59:33 GMT
+# Tue, 03 Oct 2023 04:55:43 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		gnupg 		netbase 		wget 		tzdata 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 02 Sep 2023 01:59:10 GMT
+# Tue, 03 Oct 2023 07:21:32 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y bash-completion &&     awk 'f{if(sub(/^#/,"",$0)==0){f=0}};/^# enable bash completion/{f=1};{print;}' /etc/bash.bashrc > /etc/bash.bashrc.new &&     mv /etc/bash.bashrc.new /etc/bash.bashrc
-# Fri, 22 Sep 2023 01:11:37 GMT
+# Tue, 03 Oct 2023 07:21:46 GMT
 ENV KAPACITOR_VERSION=1.7.0
-# Fri, 22 Sep 2023 01:11:41 GMT
+# Tue, 03 Oct 2023 07:21:54 GMT
 RUN set -eux &&     ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in         amd64) ARCH='amd64';;         arm64) ARCH='arm64';;         *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb &&     export GNUPGHOME="$(mktemp -d)" &&     echo "disable-ipv6" >> $GNUPGHOME/dirmngr.conf &&     gpg --batch --keyserver hkp://keyserver.ubuntu.com --recv-keys 9D539D90D3328DC7D6C8D3B9D8FF8E1F7DF8B07E &&     gpg --batch --verify kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb.asc kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb &&     rm -rf "$GNUPGHOME" &&     dpkg -i kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb &&     gpgconf --kill all &&     rm -f kapacitor_${KAPACITOR_VERSION}-1_${ARCH}.deb*
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:54 GMT
 COPY file:9450c5dcbc0a583243f987f682dc6c44d9e4a3f1c31d1bb9957f313457e444ec in /etc/kapacitor/kapacitor.conf 
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:54 GMT
 EXPOSE 9092
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:54 GMT
 VOLUME [/var/lib/kapacitor]
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:54 GMT
 COPY file:a229567085df49450fcc70ed6d49efcbdfc41ca92b6c5bdb3b541cb803165dbc in /entrypoint.sh 
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:55 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 22 Sep 2023 01:11:42 GMT
+# Tue, 03 Oct 2023 07:21:55 GMT
 CMD ["kapacitord"]
 ```
 
 -	Layers:
-	-	`sha256:44ba2882f8eb14264e5f2f9f6ec55bcf5306527b637279f2cd9d4858762388af`  
-		Last Modified: Wed, 16 Aug 2023 10:32:51 GMT  
-		Size: 30.4 MB (30438977 bytes)  
+	-	`sha256:707e32e9fc569fee476af9e92ae3d1df8b8e6dca47f9cb31db9d2c922a6de952`  
+		Last Modified: Mon, 25 Sep 2023 12:54:05 GMT  
+		Size: 30.4 MB (30440869 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3f2863485daf42354483046b5e0003e2a3a615b04fb72dbbd0c9d005e0b8e4d`  
-		Last Modified: Sat, 02 Sep 2023 00:11:43 GMT  
-		Size: 7.1 MB (7119992 bytes)  
+	-	`sha256:a8ad5fa151345a37245301e58d80e66dff497fa6881342a464fbe2ecb12dc61c`  
+		Last Modified: Tue, 03 Oct 2023 05:08:42 GMT  
+		Size: 7.1 MB (7120048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:778c3e4da66453cd995d5771f62ca97741654b75dd62c84af18eb9bd336fb89a`  
-		Last Modified: Sat, 02 Sep 2023 01:59:43 GMT  
-		Size: 31.1 MB (31114808 bytes)  
+	-	`sha256:4604a57cbdf0fe7dfb2197dc2b92c76aee687782482fe13163157eb9dd2db9eb`  
+		Last Modified: Tue, 03 Oct 2023 07:22:12 GMT  
+		Size: 31.7 MB (31688360 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:67febc3af6e1e7caa21deea1fc0c8cda05237011f55486c8648f2c5807c479d6`  
-		Last Modified: Fri, 22 Sep 2023 01:12:21 GMT  
-		Size: 66.7 MB (66719819 bytes)  
+	-	`sha256:922096918bfc8a20ce7617ccb7309bd2c403882094ebe94683ea84da9ffcba22`  
+		Last Modified: Tue, 03 Oct 2023 07:22:34 GMT  
+		Size: 66.7 MB (66719906 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:221524882eded842eb611bb6b58b24aa38d4aebcac5898f7210e4acbdb645a14`  
-		Last Modified: Fri, 22 Sep 2023 01:12:13 GMT  
-		Size: 224.0 B  
+	-	`sha256:f2977095f16835b3c54b9e5e99d87273dbf5e945185e5184376b9477cf7ff320`  
+		Last Modified: Tue, 03 Oct 2023 07:22:26 GMT  
+		Size: 225.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35b9cbf19fe5c78e71e85f705f86a0fd7e827b3e11547315f7c5832486efb5bb`  
-		Last Modified: Fri, 22 Sep 2023 01:12:13 GMT  
+	-	`sha256:5f81174504b0f70455c059d561935c512b29411c5240b63b75ab034cdc5756a4`  
+		Last Modified: Tue, 03 Oct 2023 07:22:26 GMT  
 		Size: 231.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
