@@ -10,7 +10,7 @@
 ## `registry:2`
 
 ```console
-$ docker pull registry@sha256:951eec0294b55ba615944166cefbcf555997d6ede6f0cdb08843e9b8b87506a9
+$ docker pull registry@sha256:ccf7cc57cab02c1a1404594afe7e1cee286cd9b18ac01d2ca881e21104050577
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -143,14 +143,14 @@ CMD ["/etc/docker/registry/config.yml"]
 ### `registry:2` - linux; arm variant v7
 
 ```console
-$ docker pull registry@sha256:58dda874f000e4d5aa51a46f0f61fd752f933247b08864829f1224e03261fc6c
+$ docker pull registry@sha256:97a85080e084fdd96781217657c87d220ad8c3faa91e6dc79863bf87f5578719
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **8.8 MB (8753672 bytes)**  
+-	Total Size: **9.2 MB (9201804 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e7c22d21ed7089af6bc8d3496c50398aeacee9cc8f25c063fb80fed17c73c3d2`
+-	Image ID: `sha256:4bc6b937e2e0fb51913db2bedbcfb966691e84bc5ab42c447922bf8e5464746c`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["\/etc\/docker\/registry\/config.yml"]`
 
@@ -161,19 +161,19 @@ ADD file:61f54a318ad79861c6177783bb4c604412b5d952f45a9aa12ff97f4dccba7f73 in /
 CMD ["/bin/sh"]
 # Thu, 28 Sep 2023 22:15:15 GMT
 RUN apk add --no-cache ca-certificates
-# Fri, 29 Sep 2023 00:44:06 GMT
-RUN set -eux; 	version='2.8.2'; 	apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		x86_64)  arch='amd64';   sha256='b68ffb849bcdb49639dc91ba97baba6618346f95fedc0fcc94871b31d515d205' ;; 		aarch64) arch='arm64';   sha256='3d500cf4f7f21ade4bdfef28012aef8e1ec2b221d2d8d36d201d94dda84fa727' ;; 		armhf)   arch='armv6';   sha256='e65aeccf69e779681f75b488c4e955f9d9b6aa1d7cf961a9307e8b6d40229373' ;; 		armv7)   arch='armv7';   sha256='045154b2be7a6a3b5d35e14e9afcd29d01813f46ce7ea2ea40958048b621dfd0' ;; 		ppc64le) arch='ppc64le'; sha256='21f5523bb0815af9b7e41b52824d422679309773a14a841e8e685e1f521c1ee0' ;; 		s390x)   arch='s390x';   sha256='2ec05870ffa8c47e764e8de08d00dd0748698cf36394e4b3a503a1339b93e251' ;; 		*) echo >&2 "error: unsupported architecture: $apkArch"; exit 1 ;; 	esac; 	wget -O registry.tar.gz "https://github.com/distribution/distribution/releases/download/v${version}/registry_${version}_linux_${arch}.tar.gz"; 	echo "$sha256 *registry.tar.gz" | sha256sum -c -; 	tar --extract --verbose --file registry.tar.gz --directory /bin/ registry; 	rm registry.tar.gz; 	registry --version
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:01 GMT
+RUN set -eux; 	version='2.8.3'; 	apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		x86_64)  arch='amd64';   sha256='b1f750ecbe09f38e2143e22c61a25e3da2afe1510d9522859230b480e642ceff' ;; 		aarch64) arch='arm64';   sha256='7d2252eeeac97dd60fb9b36bebd15b95d7f947c4c82b8e0824cb55233ece9cd0' ;; 		armhf)   arch='armv6';   sha256='b00606466f976b6757268f1e7691918cbeca4af6fd4093a114b9186744ee8ef0' ;; 		armv7)   arch='armv7';   sha256='d3d7d958a7cc04159d43871261b1ed470ba72531d345fada311068962b967517' ;; 		ppc64le) arch='ppc64le'; sha256='9003659e5571bee89ee6d686057d02e9c0896d327276f268189922036e1ca84b' ;; 		s390x)   arch='s390x';   sha256='2c1347c73f881c320ff707055aecf649a888df39252e8bdc4fdfac7f59a383f1' ;; 		*) echo >&2 "error: unsupported architecture: $apkArch"; exit 1 ;; 	esac; 	wget -O registry.tar.gz "https://github.com/distribution/distribution/releases/download/v${version}/registry_${version}_linux_${arch}.tar.gz"; 	echo "$sha256 *registry.tar.gz" | sha256sum -c -; 	tar --extract --verbose --file registry.tar.gz --directory /bin/ registry; 	rm registry.tar.gz; 	registry --version
+# Tue, 03 Oct 2023 05:03:02 GMT
 COPY file:4544cc1555469403b322faecc1cf1ca584667c43a6a60b17300f97840c04196e in /etc/docker/registry/config.yml 
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:02 GMT
 VOLUME [/var/lib/registry]
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:02 GMT
 EXPOSE 5000
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:02 GMT
 COPY file:507caa54f88c1f3862e5876e09a108b2083630ba24c57ad124e356a2de861d62 in /entrypoint.sh 
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:02 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:02 GMT
 CMD ["/etc/docker/registry/config.yml"]
 ```
 
@@ -186,16 +186,16 @@ CMD ["/etc/docker/registry/config.yml"]
 		Last Modified: Thu, 28 Sep 2023 22:19:29 GMT  
 		Size: 284.1 KB (284076 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3743256803b36d7465c3a9a775ae4b88b72d362d4bc849c6137d569fe1e6046f`  
-		Last Modified: Fri, 29 Sep 2023 00:44:15 GMT  
-		Size: 5.6 MB (5569079 bytes)  
+	-	`sha256:6a119a66395d73b5b9d3c45cee6c8f72d8555b626ccc3e97dae078357016754e`  
+		Last Modified: Tue, 03 Oct 2023 05:03:13 GMT  
+		Size: 6.0 MB (6017212 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dadba6d23ec8f4251e90d466e4df27f1b20a3f64cd4bfd5fbc837d0cc0028128`  
-		Last Modified: Fri, 29 Sep 2023 00:44:14 GMT  
-		Size: 398.0 B  
+	-	`sha256:1fe40cf2dc05172116738099a9ddd20d696c893ab8d26fe83a4c2d9aaa3af2d1`  
+		Last Modified: Tue, 03 Oct 2023 05:03:12 GMT  
+		Size: 397.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f384774e96a66a6e618db913428a1d49e141bd6711a0a1c4ea7ee329a0db4ed7`  
-		Last Modified: Fri, 29 Sep 2023 00:44:14 GMT  
+	-	`sha256:ff6ceb3c62f89457db1abbe53978c3d0eda9726dcbe5cd7b4f77d1687c59a928`  
+		Last Modified: Tue, 03 Oct 2023 05:03:11 GMT  
 		Size: 214.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -379,7 +379,7 @@ CMD ["/etc/docker/registry/config.yml"]
 ## `registry:2.8`
 
 ```console
-$ docker pull registry@sha256:951eec0294b55ba615944166cefbcf555997d6ede6f0cdb08843e9b8b87506a9
+$ docker pull registry@sha256:ccf7cc57cab02c1a1404594afe7e1cee286cd9b18ac01d2ca881e21104050577
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -512,14 +512,14 @@ CMD ["/etc/docker/registry/config.yml"]
 ### `registry:2.8` - linux; arm variant v7
 
 ```console
-$ docker pull registry@sha256:58dda874f000e4d5aa51a46f0f61fd752f933247b08864829f1224e03261fc6c
+$ docker pull registry@sha256:97a85080e084fdd96781217657c87d220ad8c3faa91e6dc79863bf87f5578719
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **8.8 MB (8753672 bytes)**  
+-	Total Size: **9.2 MB (9201804 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e7c22d21ed7089af6bc8d3496c50398aeacee9cc8f25c063fb80fed17c73c3d2`
+-	Image ID: `sha256:4bc6b937e2e0fb51913db2bedbcfb966691e84bc5ab42c447922bf8e5464746c`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["\/etc\/docker\/registry\/config.yml"]`
 
@@ -530,19 +530,19 @@ ADD file:61f54a318ad79861c6177783bb4c604412b5d952f45a9aa12ff97f4dccba7f73 in /
 CMD ["/bin/sh"]
 # Thu, 28 Sep 2023 22:15:15 GMT
 RUN apk add --no-cache ca-certificates
-# Fri, 29 Sep 2023 00:44:06 GMT
-RUN set -eux; 	version='2.8.2'; 	apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		x86_64)  arch='amd64';   sha256='b68ffb849bcdb49639dc91ba97baba6618346f95fedc0fcc94871b31d515d205' ;; 		aarch64) arch='arm64';   sha256='3d500cf4f7f21ade4bdfef28012aef8e1ec2b221d2d8d36d201d94dda84fa727' ;; 		armhf)   arch='armv6';   sha256='e65aeccf69e779681f75b488c4e955f9d9b6aa1d7cf961a9307e8b6d40229373' ;; 		armv7)   arch='armv7';   sha256='045154b2be7a6a3b5d35e14e9afcd29d01813f46ce7ea2ea40958048b621dfd0' ;; 		ppc64le) arch='ppc64le'; sha256='21f5523bb0815af9b7e41b52824d422679309773a14a841e8e685e1f521c1ee0' ;; 		s390x)   arch='s390x';   sha256='2ec05870ffa8c47e764e8de08d00dd0748698cf36394e4b3a503a1339b93e251' ;; 		*) echo >&2 "error: unsupported architecture: $apkArch"; exit 1 ;; 	esac; 	wget -O registry.tar.gz "https://github.com/distribution/distribution/releases/download/v${version}/registry_${version}_linux_${arch}.tar.gz"; 	echo "$sha256 *registry.tar.gz" | sha256sum -c -; 	tar --extract --verbose --file registry.tar.gz --directory /bin/ registry; 	rm registry.tar.gz; 	registry --version
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:01 GMT
+RUN set -eux; 	version='2.8.3'; 	apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		x86_64)  arch='amd64';   sha256='b1f750ecbe09f38e2143e22c61a25e3da2afe1510d9522859230b480e642ceff' ;; 		aarch64) arch='arm64';   sha256='7d2252eeeac97dd60fb9b36bebd15b95d7f947c4c82b8e0824cb55233ece9cd0' ;; 		armhf)   arch='armv6';   sha256='b00606466f976b6757268f1e7691918cbeca4af6fd4093a114b9186744ee8ef0' ;; 		armv7)   arch='armv7';   sha256='d3d7d958a7cc04159d43871261b1ed470ba72531d345fada311068962b967517' ;; 		ppc64le) arch='ppc64le'; sha256='9003659e5571bee89ee6d686057d02e9c0896d327276f268189922036e1ca84b' ;; 		s390x)   arch='s390x';   sha256='2c1347c73f881c320ff707055aecf649a888df39252e8bdc4fdfac7f59a383f1' ;; 		*) echo >&2 "error: unsupported architecture: $apkArch"; exit 1 ;; 	esac; 	wget -O registry.tar.gz "https://github.com/distribution/distribution/releases/download/v${version}/registry_${version}_linux_${arch}.tar.gz"; 	echo "$sha256 *registry.tar.gz" | sha256sum -c -; 	tar --extract --verbose --file registry.tar.gz --directory /bin/ registry; 	rm registry.tar.gz; 	registry --version
+# Tue, 03 Oct 2023 05:03:02 GMT
 COPY file:4544cc1555469403b322faecc1cf1ca584667c43a6a60b17300f97840c04196e in /etc/docker/registry/config.yml 
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:02 GMT
 VOLUME [/var/lib/registry]
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:02 GMT
 EXPOSE 5000
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:02 GMT
 COPY file:507caa54f88c1f3862e5876e09a108b2083630ba24c57ad124e356a2de861d62 in /entrypoint.sh 
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:02 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:02 GMT
 CMD ["/etc/docker/registry/config.yml"]
 ```
 
@@ -555,16 +555,16 @@ CMD ["/etc/docker/registry/config.yml"]
 		Last Modified: Thu, 28 Sep 2023 22:19:29 GMT  
 		Size: 284.1 KB (284076 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3743256803b36d7465c3a9a775ae4b88b72d362d4bc849c6137d569fe1e6046f`  
-		Last Modified: Fri, 29 Sep 2023 00:44:15 GMT  
-		Size: 5.6 MB (5569079 bytes)  
+	-	`sha256:6a119a66395d73b5b9d3c45cee6c8f72d8555b626ccc3e97dae078357016754e`  
+		Last Modified: Tue, 03 Oct 2023 05:03:13 GMT  
+		Size: 6.0 MB (6017212 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dadba6d23ec8f4251e90d466e4df27f1b20a3f64cd4bfd5fbc837d0cc0028128`  
-		Last Modified: Fri, 29 Sep 2023 00:44:14 GMT  
-		Size: 398.0 B  
+	-	`sha256:1fe40cf2dc05172116738099a9ddd20d696c893ab8d26fe83a4c2d9aaa3af2d1`  
+		Last Modified: Tue, 03 Oct 2023 05:03:12 GMT  
+		Size: 397.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f384774e96a66a6e618db913428a1d49e141bd6711a0a1c4ea7ee329a0db4ed7`  
-		Last Modified: Fri, 29 Sep 2023 00:44:14 GMT  
+	-	`sha256:ff6ceb3c62f89457db1abbe53978c3d0eda9726dcbe5cd7b4f77d1687c59a928`  
+		Last Modified: Tue, 03 Oct 2023 05:03:11 GMT  
 		Size: 214.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -748,13 +748,14 @@ CMD ["/etc/docker/registry/config.yml"]
 ## `registry:2.8.3`
 
 ```console
-$ docker pull registry@sha256:647f879303130a9bb541cf7763a52752f8bac7482ba0a656423ecb86f717ff4d
+$ docker pull registry@sha256:a048b2ae8cd35f9bf6a9e4aa04551a9507876c4620de6c0de4bb0195fa67f31a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 3
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v6
+	-	linux; arm variant v7
 	-	linux; arm64 variant v8
 
 ### `registry:2.8.3` - linux; amd64
@@ -875,6 +876,65 @@ CMD ["/etc/docker/registry/config.yml"]
 		Size: 212.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `registry:2.8.3` - linux; arm variant v7
+
+```console
+$ docker pull registry@sha256:97a85080e084fdd96781217657c87d220ad8c3faa91e6dc79863bf87f5578719
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **9.2 MB (9201804 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:4bc6b937e2e0fb51913db2bedbcfb966691e84bc5ab42c447922bf8e5464746c`
+-	Entrypoint: `["\/entrypoint.sh"]`
+-	Default Command: `["\/etc\/docker\/registry\/config.yml"]`
+
+```dockerfile
+# Thu, 28 Sep 2023 20:59:24 GMT
+ADD file:61f54a318ad79861c6177783bb4c604412b5d952f45a9aa12ff97f4dccba7f73 in / 
+# Thu, 28 Sep 2023 20:59:24 GMT
+CMD ["/bin/sh"]
+# Thu, 28 Sep 2023 22:15:15 GMT
+RUN apk add --no-cache ca-certificates
+# Tue, 03 Oct 2023 05:03:01 GMT
+RUN set -eux; 	version='2.8.3'; 	apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		x86_64)  arch='amd64';   sha256='b1f750ecbe09f38e2143e22c61a25e3da2afe1510d9522859230b480e642ceff' ;; 		aarch64) arch='arm64';   sha256='7d2252eeeac97dd60fb9b36bebd15b95d7f947c4c82b8e0824cb55233ece9cd0' ;; 		armhf)   arch='armv6';   sha256='b00606466f976b6757268f1e7691918cbeca4af6fd4093a114b9186744ee8ef0' ;; 		armv7)   arch='armv7';   sha256='d3d7d958a7cc04159d43871261b1ed470ba72531d345fada311068962b967517' ;; 		ppc64le) arch='ppc64le'; sha256='9003659e5571bee89ee6d686057d02e9c0896d327276f268189922036e1ca84b' ;; 		s390x)   arch='s390x';   sha256='2c1347c73f881c320ff707055aecf649a888df39252e8bdc4fdfac7f59a383f1' ;; 		*) echo >&2 "error: unsupported architecture: $apkArch"; exit 1 ;; 	esac; 	wget -O registry.tar.gz "https://github.com/distribution/distribution/releases/download/v${version}/registry_${version}_linux_${arch}.tar.gz"; 	echo "$sha256 *registry.tar.gz" | sha256sum -c -; 	tar --extract --verbose --file registry.tar.gz --directory /bin/ registry; 	rm registry.tar.gz; 	registry --version
+# Tue, 03 Oct 2023 05:03:02 GMT
+COPY file:4544cc1555469403b322faecc1cf1ca584667c43a6a60b17300f97840c04196e in /etc/docker/registry/config.yml 
+# Tue, 03 Oct 2023 05:03:02 GMT
+VOLUME [/var/lib/registry]
+# Tue, 03 Oct 2023 05:03:02 GMT
+EXPOSE 5000
+# Tue, 03 Oct 2023 05:03:02 GMT
+COPY file:507caa54f88c1f3862e5876e09a108b2083630ba24c57ad124e356a2de861d62 in /entrypoint.sh 
+# Tue, 03 Oct 2023 05:03:02 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Tue, 03 Oct 2023 05:03:02 GMT
+CMD ["/etc/docker/registry/config.yml"]
+```
+
+-	Layers:
+	-	`sha256:622a0779436eb93ceea635e910268f867c2eba47d4f62f0bd45f0bd165af3572`  
+		Last Modified: Thu, 28 Sep 2023 21:00:50 GMT  
+		Size: 2.9 MB (2899905 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:43e0aec75477c9a2cf6993e068fa40a45f0684d622ece61f54e6e02f9adebeb8`  
+		Last Modified: Thu, 28 Sep 2023 22:19:29 GMT  
+		Size: 284.1 KB (284076 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6a119a66395d73b5b9d3c45cee6c8f72d8555b626ccc3e97dae078357016754e`  
+		Last Modified: Tue, 03 Oct 2023 05:03:13 GMT  
+		Size: 6.0 MB (6017212 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1fe40cf2dc05172116738099a9ddd20d696c893ab8d26fe83a4c2d9aaa3af2d1`  
+		Last Modified: Tue, 03 Oct 2023 05:03:12 GMT  
+		Size: 397.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ff6ceb3c62f89457db1abbe53978c3d0eda9726dcbe5cd7b4f77d1687c59a928`  
+		Last Modified: Tue, 03 Oct 2023 05:03:11 GMT  
+		Size: 214.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ### `registry:2.8.3` - linux; arm64 variant v8
 
 ```console
@@ -937,7 +997,7 @@ CMD ["/etc/docker/registry/config.yml"]
 ## `registry:latest`
 
 ```console
-$ docker pull registry@sha256:951eec0294b55ba615944166cefbcf555997d6ede6f0cdb08843e9b8b87506a9
+$ docker pull registry@sha256:ccf7cc57cab02c1a1404594afe7e1cee286cd9b18ac01d2ca881e21104050577
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1070,14 +1130,14 @@ CMD ["/etc/docker/registry/config.yml"]
 ### `registry:latest` - linux; arm variant v7
 
 ```console
-$ docker pull registry@sha256:58dda874f000e4d5aa51a46f0f61fd752f933247b08864829f1224e03261fc6c
+$ docker pull registry@sha256:97a85080e084fdd96781217657c87d220ad8c3faa91e6dc79863bf87f5578719
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **8.8 MB (8753672 bytes)**  
+-	Total Size: **9.2 MB (9201804 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e7c22d21ed7089af6bc8d3496c50398aeacee9cc8f25c063fb80fed17c73c3d2`
+-	Image ID: `sha256:4bc6b937e2e0fb51913db2bedbcfb966691e84bc5ab42c447922bf8e5464746c`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["\/etc\/docker\/registry\/config.yml"]`
 
@@ -1088,19 +1148,19 @@ ADD file:61f54a318ad79861c6177783bb4c604412b5d952f45a9aa12ff97f4dccba7f73 in /
 CMD ["/bin/sh"]
 # Thu, 28 Sep 2023 22:15:15 GMT
 RUN apk add --no-cache ca-certificates
-# Fri, 29 Sep 2023 00:44:06 GMT
-RUN set -eux; 	version='2.8.2'; 	apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		x86_64)  arch='amd64';   sha256='b68ffb849bcdb49639dc91ba97baba6618346f95fedc0fcc94871b31d515d205' ;; 		aarch64) arch='arm64';   sha256='3d500cf4f7f21ade4bdfef28012aef8e1ec2b221d2d8d36d201d94dda84fa727' ;; 		armhf)   arch='armv6';   sha256='e65aeccf69e779681f75b488c4e955f9d9b6aa1d7cf961a9307e8b6d40229373' ;; 		armv7)   arch='armv7';   sha256='045154b2be7a6a3b5d35e14e9afcd29d01813f46ce7ea2ea40958048b621dfd0' ;; 		ppc64le) arch='ppc64le'; sha256='21f5523bb0815af9b7e41b52824d422679309773a14a841e8e685e1f521c1ee0' ;; 		s390x)   arch='s390x';   sha256='2ec05870ffa8c47e764e8de08d00dd0748698cf36394e4b3a503a1339b93e251' ;; 		*) echo >&2 "error: unsupported architecture: $apkArch"; exit 1 ;; 	esac; 	wget -O registry.tar.gz "https://github.com/distribution/distribution/releases/download/v${version}/registry_${version}_linux_${arch}.tar.gz"; 	echo "$sha256 *registry.tar.gz" | sha256sum -c -; 	tar --extract --verbose --file registry.tar.gz --directory /bin/ registry; 	rm registry.tar.gz; 	registry --version
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:01 GMT
+RUN set -eux; 	version='2.8.3'; 	apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		x86_64)  arch='amd64';   sha256='b1f750ecbe09f38e2143e22c61a25e3da2afe1510d9522859230b480e642ceff' ;; 		aarch64) arch='arm64';   sha256='7d2252eeeac97dd60fb9b36bebd15b95d7f947c4c82b8e0824cb55233ece9cd0' ;; 		armhf)   arch='armv6';   sha256='b00606466f976b6757268f1e7691918cbeca4af6fd4093a114b9186744ee8ef0' ;; 		armv7)   arch='armv7';   sha256='d3d7d958a7cc04159d43871261b1ed470ba72531d345fada311068962b967517' ;; 		ppc64le) arch='ppc64le'; sha256='9003659e5571bee89ee6d686057d02e9c0896d327276f268189922036e1ca84b' ;; 		s390x)   arch='s390x';   sha256='2c1347c73f881c320ff707055aecf649a888df39252e8bdc4fdfac7f59a383f1' ;; 		*) echo >&2 "error: unsupported architecture: $apkArch"; exit 1 ;; 	esac; 	wget -O registry.tar.gz "https://github.com/distribution/distribution/releases/download/v${version}/registry_${version}_linux_${arch}.tar.gz"; 	echo "$sha256 *registry.tar.gz" | sha256sum -c -; 	tar --extract --verbose --file registry.tar.gz --directory /bin/ registry; 	rm registry.tar.gz; 	registry --version
+# Tue, 03 Oct 2023 05:03:02 GMT
 COPY file:4544cc1555469403b322faecc1cf1ca584667c43a6a60b17300f97840c04196e in /etc/docker/registry/config.yml 
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:02 GMT
 VOLUME [/var/lib/registry]
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:02 GMT
 EXPOSE 5000
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:02 GMT
 COPY file:507caa54f88c1f3862e5876e09a108b2083630ba24c57ad124e356a2de861d62 in /entrypoint.sh 
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:02 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 29 Sep 2023 00:44:06 GMT
+# Tue, 03 Oct 2023 05:03:02 GMT
 CMD ["/etc/docker/registry/config.yml"]
 ```
 
@@ -1113,16 +1173,16 @@ CMD ["/etc/docker/registry/config.yml"]
 		Last Modified: Thu, 28 Sep 2023 22:19:29 GMT  
 		Size: 284.1 KB (284076 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3743256803b36d7465c3a9a775ae4b88b72d362d4bc849c6137d569fe1e6046f`  
-		Last Modified: Fri, 29 Sep 2023 00:44:15 GMT  
-		Size: 5.6 MB (5569079 bytes)  
+	-	`sha256:6a119a66395d73b5b9d3c45cee6c8f72d8555b626ccc3e97dae078357016754e`  
+		Last Modified: Tue, 03 Oct 2023 05:03:13 GMT  
+		Size: 6.0 MB (6017212 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dadba6d23ec8f4251e90d466e4df27f1b20a3f64cd4bfd5fbc837d0cc0028128`  
-		Last Modified: Fri, 29 Sep 2023 00:44:14 GMT  
-		Size: 398.0 B  
+	-	`sha256:1fe40cf2dc05172116738099a9ddd20d696c893ab8d26fe83a4c2d9aaa3af2d1`  
+		Last Modified: Tue, 03 Oct 2023 05:03:12 GMT  
+		Size: 397.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f384774e96a66a6e618db913428a1d49e141bd6711a0a1c4ea7ee329a0db4ed7`  
-		Last Modified: Fri, 29 Sep 2023 00:44:14 GMT  
+	-	`sha256:ff6ceb3c62f89457db1abbe53978c3d0eda9726dcbe5cd7b4f77d1687c59a928`  
+		Last Modified: Tue, 03 Oct 2023 05:03:11 GMT  
 		Size: 214.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
