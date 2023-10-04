@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c8ee1ece57b57736a9d75300dee5d1721730ecebe48065209c8588190298ade3`
-- Created: `2023-09-22T01:17:50.010942759Z`
+- Image ID: `sha256:4b1a7fce96c44ce7d7410882d4adff7ea7c2edc039f2b52b58cb79df15cec35f`
+- Created: `2023-09-30T06:52:17.000971815Z`
 - Virtual Size: ~ 1.05 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
-  - `PHP_VERSION=8.1.23`
-  - `PHP_URL=https://www.php.net/distributions/php-8.1.23.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.23.tar.xz.asc`
-  - `PHP_SHA256=fc48422fa7e75bb45916fc192a9f9728cb38bb2b5858572c51ea15825326360c`
+  - `PHP_VERSION=8.1.24`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.24.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.24.tar.xz.asc`
+  - `PHP_SHA256=ee61f6232bb29bd2e785daf325d2177f2272bf80d086c295a724594e710bce3d`
   - `PHP_MEMORY_LIMIT=512M`
   - `PHP_UPLOAD_LIMIT=512M`
   - `NEXTCLOUD_VERSION=25.0.12`
