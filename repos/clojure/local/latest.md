@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:1d3220c351d7293ed002adb4e57eb4bcf81801fa88b07d1fef1e6223d585b173`
-- Created: `2023-09-02T04:02:53.871038921Z`
+- Image ID: `sha256:162d091ddcc0c5992c10847150e6c6ccced5d2712f829d715ce244409900e61e`
+- Created: `2023-10-03T08:35:22.919617431Z`
 - Virtual Size: ~ 546.07 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -728,13 +728,13 @@ $ apt-get source -qq --print-uris git=1:2.34.1-1ubuntu1.10
 'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.34.1-1ubuntu1.10.debian.tar.xz' git_2.34.1-1ubuntu1.10.debian.tar.xz 758892 SHA512:029b3f7756adab7d11abd53a935a06198f1947fefba2a768f9cbdf98b1a2b39e3dd5a17617afe2dbf1c4c7f3512b41825ebe0838ed8bbecb18b3bbe3962be338
 ```
 
-### `dpkg` source package: `glibc=2.35-0ubuntu3.1`
+### `dpkg` source package: `glibc=2.35-0ubuntu3.3`
 
 Binary Packages:
 
-- `libc-bin=2.35-0ubuntu3.1`
-- `libc6:amd64=2.35-0ubuntu3.1`
-- `locales=2.35-0ubuntu3.1`
+- `libc-bin=2.35-0ubuntu3.3`
+- `libc6:amd64=2.35-0ubuntu3.3`
+- `locales=2.35-0ubuntu3.3`
 
 Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/libc6/copyright`, `/usr/share/doc/locales/copyright`)
 
@@ -1528,15 +1528,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libx11=2:1.7.5-1ubuntu0.2
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.7.5-1ubuntu0.2.dsc' libx11_1.7.5-1ubuntu0.2.dsc 2654 SHA512:8e39fbaeb78d1aea852053255b8b1bdb1261fcd37461c8738b7de5a263aeb5c45d3294e3a23929374f6b12b16fbe1d682b1f19a41757e6896b8d81dbc5484006
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.7.5.orig.tar.gz' libx11_1.7.5.orig.tar.gz 3170022 SHA512:90474f5f95c3498a02100aeeb6b5ad7ae9076bc40a70cdd828bd881adac0bf278002186142f2760e5504cf82120f4869798831e0e2332ecbc6903e8f7c9114ab
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.7.5.orig.tar.gz.asc' libx11_1.7.5.orig.tar.gz.asc 358 SHA512:75139b9f7b2f19aed3d3a66ea8b883480db2fa56d713bb0160ea8a0faba208da4c241768f9f2703f723f13906438eda3117f489d7d5d17fbe1cbb75b13c9935d
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.7.5-1ubuntu0.2.diff.gz' libx11_1.7.5-1ubuntu0.2.diff.gz 95625 SHA512:7531825daa8fe9779499603ec4fdfe989e9377de068af274dbcb1aeeadc8f6adf32d5167fe986a866283437783ef0e4f92e39a38dffc2408e4ad670454d14356
-```
 
 ### `dpkg` source package: `libxau=1:1.0.9-1build5`
 
@@ -1912,11 +1906,11 @@ $ apt-get source -qq --print-uris openldap=2.5.16+dfsg-0ubuntu0.22.04.1
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.5.16%2bdfsg-0ubuntu0.22.04.1.debian.tar.xz' openldap_2.5.16+dfsg-0ubuntu0.22.04.1.debian.tar.xz 171800 SHA512:18b60cf943512a8e2d726c9cd1114a3637d46efc928f4a1f241da11eeaf6c859d5f7402c0888a81da425386543d9a2eaac8a9e8c768cfa24b2c605aa88fb01db
 ```
 
-### `dpkg` source package: `openssh=1:8.9p1-3ubuntu0.3`
+### `dpkg` source package: `openssh=1:8.9p1-3ubuntu0.4`
 
 Binary Packages:
 
-- `openssh-client=1:8.9p1-3ubuntu0.3`
+- `openssh-client=1:8.9p1-3ubuntu0.4`
 
 Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 
@@ -1931,10 +1925,11 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openssh=1:8.9p1-3ubuntu0.3
-'http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.9p1-3ubuntu0.3.dsc' openssh_8.9p1-3ubuntu0.3.dsc 3103 SHA512:61e522dcdc722b8ac44fd77239afbf0a24b2116dd6144952b0a6c9488cd76b8f104343e4e36349825ce4d4e5e5c3c5e1d4dee169dc60008dc5e55eceb07986c5
-'http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.9p1.orig.tar.gz' openssh_8.9p1.orig.tar.gz 1820282 SHA512:04bd38ea6fe4be31acc8c4e83de7d3dda66fb7207be2e4ba25d3b8118d13d098a283769da9e8ce1fc4fba7edf739c14efcc6c9137132919261a7f882314b0f6b
-'http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.9p1-3ubuntu0.3.debian.tar.xz' openssh_8.9p1-3ubuntu0.3.debian.tar.xz 191928 SHA512:8638bbcf3a746a6fdbb9114353754a7c72e6e1effc17cf8973909921a259baaac37a6f6b476744a40ade68a6ceec1be443251fab8a2d435732fa14c01a2168be
+$ apt-get source -qq --print-uris openssh=1:8.9p1-3ubuntu0.4
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.9p1-3ubuntu0.4.dsc' openssh_8.9p1-3ubuntu0.4.dsc 3347 SHA512:b2bcd40393cfb11f89b2e7f042cd7d7ac0871c5129363ae03c46ac30e0455ffe5a750f0c3673eb29437894800aa38db857519632c40598855f1dc46e8d27bf3e
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.9p1.orig.tar.gz' openssh_8.9p1.orig.tar.gz 1820282 SHA512:04bd38ea6fe4be31acc8c4e83de7d3dda66fb7207be2e4ba25d3b8118d13d098a283769da9e8ce1fc4fba7edf739c14efcc6c9137132919261a7f882314b0f6b
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.9p1.orig.tar.gz.asc' openssh_8.9p1.orig.tar.gz.asc 833 SHA512:fd0bbd285ff2f8791f5a512f087f32bce026b716d5ac213cd4ef28f08722601fb943514bee71b2ac4b9f9363e2f120ce6c60fed952d1d8e53dbcf2a6fe2e706b
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.9p1-3ubuntu0.4.debian.tar.xz' openssh_8.9p1-3ubuntu0.4.debian.tar.xz 192396 SHA512:d42c3fcf40d5811a68054ed7ce99fdabe955645137cf7b7528c8f45b6c3d6c0278c82b2b0855428393b74ef7be2fa93e65a221e18d3dba9a5bf3bcd349a48959
 ```
 
 ### `dpkg` source package: `openssl=3.0.2-0ubuntu1.10`
@@ -2348,12 +2343,12 @@ $ apt-get source -qq --print-uris sqlite3=3.37.2-2ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.37.2-2ubuntu0.1.debian.tar.xz' sqlite3_3.37.2-2ubuntu0.1.debian.tar.xz 29208 SHA512:db22aee842a2bbeae82d43909e357fb8e0985b1410decf82240d1f86939fd5ac10b116512566d87f2250e7a99e36c3736675d23111e851a7c1cb0d0192157955
 ```
 
-### `dpkg` source package: `systemd=249.11-0ubuntu3.9`
+### `dpkg` source package: `systemd=249.11-0ubuntu3.10`
 
 Binary Packages:
 
-- `libsystemd0:amd64=249.11-0ubuntu3.9`
-- `libudev1:amd64=249.11-0ubuntu3.9`
+- `libsystemd0:amd64=249.11-0ubuntu3.10`
+- `libudev1:amd64=249.11-0ubuntu3.10`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -2366,9 +2361,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=249.11-0ubuntu3.10
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_249.11-0ubuntu3.10.dsc' systemd_249.11-0ubuntu3.10.dsc 5932 SHA512:227ae1cdbfb9c3ec2f243eae96025d4452ac818e3a7774003141ab922821c55308c34aef5eddabc475f5276de9fd5f3db24c2cab18952eb53df8232157fe9a51
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_249.11.orig.tar.gz' systemd_249.11.orig.tar.gz 10622702 SHA512:fed7f81933648945a4bfac9fb12150ecd84d32181f79be0e14e0b3a789343a87569f868670e0b8dfc2801fab39f7490f95ee8c29ba831d7611f78c14ace5ddd8
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_249.11-0ubuntu3.10.debian.tar.xz' systemd_249.11-0ubuntu3.10.debian.tar.xz 251360 SHA512:951aaf5b6187bc29a46e2bedb1395249b74fc6601c1cbb3a6e839f48d564a7ab5e45ff72bede2384075e6a1c4847202bb2acdf246829cd46118be9a9f686e6e3
+```
 
 ### `dpkg` source package: `sysvinit=3.01-1ubuntu1`
 
