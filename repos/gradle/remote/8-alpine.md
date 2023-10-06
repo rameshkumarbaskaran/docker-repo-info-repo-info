@@ -1,7 +1,7 @@
 ## `gradle:8-alpine`
 
 ```console
-$ docker pull gradle@sha256:f04a2fe8bac2ccfd3b5f5300aabcd38cadc48b2c45b3fec8369e05a0c1e9aad1
+$ docker pull gradle@sha256:23e83a5b3c58bfb066c4c40f7d95e83c150e806871da22aac0ef646130e77f84
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull gradle@sha256:f04a2fe8bac2ccfd3b5f5300aabcd38cadc48b2c45b3fec8369e
 ### `gradle:8-alpine` - linux; amd64
 
 ```console
-$ docker pull gradle@sha256:2c45bb3c3076531fa7dccc97db01c605c5332de411079d9cd38d1d1552b24e09
+$ docker pull gradle@sha256:c1a79a5fdf551b1efe18c338d910dea1d8db633b8f5c19e096be942cd739c2b5
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **322.5 MB (322481243 bytes)**  
+-	Total Size: **322.8 MB (322823968 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4b6200db9be86e5115bd11b55597a2f1d69d2e97f6cdb428ff72a626c38b213f`
+-	Image ID: `sha256:e113c8dc193181158aa4a41ae696a69edb2b5adcdf9b163f9df84a2763381c86`
 -	Entrypoint: `["\/__cacert_entrypoint.sh"]`
 -	Default Command: `["gradle"]`
 
@@ -59,19 +59,19 @@ VOLUME [/home/gradle/.gradle]
 WORKDIR /home/gradle
 # Fri, 29 Sep 2023 03:51:33 GMT
 RUN set -o errexit -o nounset     && echo "Installing VCSes"     && apk add --no-cache       git       git-lfs       mercurial       subversion         && echo "Testing VCSes"     && which git     && which git-lfs     && which hg     && which svn
-# Fri, 29 Sep 2023 03:51:33 GMT
-ENV GRADLE_VERSION=8.3
-# Fri, 29 Sep 2023 03:51:33 GMT
-ARG GRADLE_DOWNLOAD_SHA256=591855b517fc635b9e04de1d05d5e76ada3f89f5fc76f87978d1b245b4f69225
-# Fri, 29 Sep 2023 03:51:38 GMT
-# ARGS: GRADLE_DOWNLOAD_SHA256=591855b517fc635b9e04de1d05d5e76ada3f89f5fc76f87978d1b245b4f69225
+# Fri, 06 Oct 2023 01:11:37 GMT
+ENV GRADLE_VERSION=8.4
+# Fri, 06 Oct 2023 01:11:37 GMT
+ARG GRADLE_DOWNLOAD_SHA256=3e1af3ae886920c3ac87f7a91f816c0c7c436f276a6eefdb3da152100fef72ae
+# Fri, 06 Oct 2023 01:11:42 GMT
+# ARGS: GRADLE_DOWNLOAD_SHA256=3e1af3ae886920c3ac87f7a91f816c0c7c436f276a6eefdb3da152100fef72ae
 RUN set -o errexit -o nounset     && echo "Downloading Gradle"     && wget --no-verbose --output-document=gradle.zip "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip"         && echo "Checking Gradle download hash"     && echo "${GRADLE_DOWNLOAD_SHA256} *gradle.zip" | sha256sum -c -         && echo "Installing Gradle"     && unzip gradle.zip     && rm gradle.zip     && mv "gradle-${GRADLE_VERSION}" "${GRADLE_HOME}/"     && ln -s "${GRADLE_HOME}/bin/gradle" /usr/bin/gradle
-# Fri, 29 Sep 2023 03:51:38 GMT
+# Fri, 06 Oct 2023 01:11:42 GMT
 USER gradle
-# Fri, 29 Sep 2023 03:51:39 GMT
-# ARGS: GRADLE_DOWNLOAD_SHA256=591855b517fc635b9e04de1d05d5e76ada3f89f5fc76f87978d1b245b4f69225
+# Fri, 06 Oct 2023 01:11:43 GMT
+# ARGS: GRADLE_DOWNLOAD_SHA256=3e1af3ae886920c3ac87f7a91f816c0c7c436f276a6eefdb3da152100fef72ae
 RUN set -o errexit -o nounset     && echo "Testing Gradle installation"     && gradle --version
-# Fri, 29 Sep 2023 03:51:39 GMT
+# Fri, 06 Oct 2023 01:11:44 GMT
 USER root
 ```
 
@@ -104,11 +104,11 @@ USER root
 		Last Modified: Fri, 29 Sep 2023 03:55:38 GMT  
 		Size: 35.0 MB (35031090 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4293075968d8937382ead9872eef390977e440902e1e08803eca77d18a51f035`  
-		Last Modified: Fri, 29 Sep 2023 03:55:41 GMT  
-		Size: 130.7 MB (130666849 bytes)  
+	-	`sha256:be77a210c24218cf6d153e842ac94238cec60c529e5cbff2be9eeec9ddbeb9bf`  
+		Last Modified: Fri, 06 Oct 2023 01:21:15 GMT  
+		Size: 131.0 MB (131009573 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:45ace9f18e9542641636572535f818665f2d4bb54f175ca954173a7d84510678`  
-		Last Modified: Fri, 29 Sep 2023 03:55:33 GMT  
-		Size: 167.0 B  
+	-	`sha256:5f6883024c5c55d20c1407d7d30f07922a0933d0b1e3ab8e52516bb688350b39`  
+		Last Modified: Fri, 06 Oct 2023 01:21:08 GMT  
+		Size: 168.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip

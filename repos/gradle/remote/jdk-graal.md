@@ -1,7 +1,7 @@
 ## `gradle:jdk-graal`
 
 ```console
-$ docker pull gradle@sha256:c3bfc465ecd418efe6af69284db02da4f9a83b947d772421dbb0a278d3ea3186
+$ docker pull gradle@sha256:82ade1c50351a1be824751fa7ff95b8525827d4285e3bbf9a2e04a0ae48211f9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull gradle@sha256:c3bfc465ecd418efe6af69284db02da4f9a83b947d772421dbb0
 ### `gradle:jdk-graal` - linux; amd64
 
 ```console
-$ docker pull gradle@sha256:f8236ec449dac41d8216dbf37824d84843dc5ebfade94acdca3e6deb37ad7521
+$ docker pull gradle@sha256:1e1d81d86e30647d8e4f69fb288ad2c2d112437b7aa3a054dd3af0c59a92da71
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **578.4 MB (578416941 bytes)**  
+-	Total Size: **578.8 MB (578759391 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3597282a3dc457e1291e1ef4a1026164db01ae8fb6377671a5f44c2c1ddfda0d`
+-	Image ID: `sha256:6817fe00db242601a20184edbf261b40edce4bab762ce7d52ea79883272c2282`
 -	Default Command: `["gradle"]`
 
 ```dockerfile
@@ -48,21 +48,23 @@ WORKDIR /home/gradle
 RUN set -o errexit -o nounset     && export DEBIAN_FRONTEND=noninteractive     && apt-get update     && apt-get install --yes --no-install-recommends         binutils         ca-certificates         curl         fontconfig         locales         p11-kit         tzdata         unzip         wget                 gcc         libc-dev         libz-dev         zlib1g-dev                 bzr         git         git-lfs         mercurial         openssh-client         subversion     && rm --recursive --force /var/lib/apt/lists/*         && echo "Testing VCSes"     && which bzr     && which git     && which git-lfs     && which hg     && which svn
 # Tue, 03 Oct 2023 07:01:17 GMT
 ENV JAVA_HOME=/opt/java/graalvm
-# Tue, 03 Oct 2023 07:01:32 GMT
-RUN set -o errexit -o nounset     && mkdir /opt/java         && echo "Downloading GraalVM"     && JDK_VERSION=17.0.8     && GRAALVM_DOWNLOAD_SHA256=1dffdf5c7cc5bf38558e9f093eef6a14072a6dff0be3a9906208b37b53ecc009     && ARCHITECTURE=$(dpkg --print-architecture)     && if [ "${ARCHITECTURE}" = "amd64" ]; then GRAALVM_ARCHITECTURE=linux-x64; fi     && if [ "${ARCHITECTURE}" = "arm64" ]; then GRAALVM_ARCHITECTURE=linux-aarch64; fi     && GRAALVM_PKG=https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-${JDK_VERSION}/graalvm-community-jdk-${JDK_VERSION}_${GRAALVM_ARCHITECTURE}_bin.tar.gz     && wget --no-verbose --output-document=graalvm.tar.gz "${GRAALVM_PKG}"         && echo "Checking GraalVM download hash"     && echo "${GRAALVM_DOWNLOAD_SHA256} *graalvm.tar.gz" | sha256sum --check -         && echo "Installing GraalVM"     && tar --extract --gunzip --file graalvm.tar.gz     && rm graalvm.tar.gz     && mv graalvm-* "${JAVA_HOME}"     && for bin in "$JAVA_HOME/bin/"*; do         base="$(basename "$bin")";         [ ! -e "/usr/bin/$base" ];         update-alternatives --install "/usr/bin/${base}" "${base}" "${bin}" 1;     done         && echo "Testing GraalVM installation"     && java --version     && javac --version     && gu --version     && native-image --version
-# Tue, 03 Oct 2023 07:01:33 GMT
-ENV GRADLE_VERSION=8.3
-# Tue, 03 Oct 2023 07:01:33 GMT
-ARG GRADLE_DOWNLOAD_SHA256=591855b517fc635b9e04de1d05d5e76ada3f89f5fc76f87978d1b245b4f69225
-# Tue, 03 Oct 2023 07:01:38 GMT
-# ARGS: GRADLE_DOWNLOAD_SHA256=591855b517fc635b9e04de1d05d5e76ada3f89f5fc76f87978d1b245b4f69225
+# Fri, 06 Oct 2023 01:11:47 GMT
+ENV JAVA_VERSION=17.0.8
+# Fri, 06 Oct 2023 01:12:03 GMT
+RUN set -o errexit -o nounset     && mkdir /opt/java         && echo "Downloading GraalVM"     && GRAALVM_DOWNLOAD_SHA256=1dffdf5c7cc5bf38558e9f093eef6a14072a6dff0be3a9906208b37b53ecc009     && ARCHITECTURE=$(dpkg --print-architecture)     && if [ "${ARCHITECTURE}" = "amd64" ]; then GRAALVM_ARCHITECTURE=linux-x64; fi     && if [ "${ARCHITECTURE}" = "arm64" ]; then GRAALVM_ARCHITECTURE=linux-aarch64; fi     && GRAALVM_PKG=https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-${JAVA_VERSION}/graalvm-community-jdk-${JAVA_VERSION}_${GRAALVM_ARCHITECTURE}_bin.tar.gz     && wget --no-verbose --output-document=graalvm.tar.gz "${GRAALVM_PKG}"         && echo "Checking GraalVM download hash"     && echo "${GRAALVM_DOWNLOAD_SHA256} *graalvm.tar.gz" | sha256sum --check -         && echo "Installing GraalVM"     && tar --extract --gunzip --file graalvm.tar.gz     && rm graalvm.tar.gz     && mv graalvm-* "${JAVA_HOME}"     && for bin in "$JAVA_HOME/bin/"*; do         base="$(basename "$bin")";         [ ! -e "/usr/bin/$base" ];         update-alternatives --install "/usr/bin/${base}" "${base}" "${bin}" 1;     done         && echo "Testing GraalVM installation"     && java --version     && javac --version     && gu --version     && native-image --version
+# Fri, 06 Oct 2023 01:12:04 GMT
+ENV GRADLE_VERSION=8.4
+# Fri, 06 Oct 2023 01:12:04 GMT
+ARG GRADLE_DOWNLOAD_SHA256=3e1af3ae886920c3ac87f7a91f816c0c7c436f276a6eefdb3da152100fef72ae
+# Fri, 06 Oct 2023 01:12:09 GMT
+# ARGS: GRADLE_DOWNLOAD_SHA256=3e1af3ae886920c3ac87f7a91f816c0c7c436f276a6eefdb3da152100fef72ae
 RUN set -o errexit -o nounset     && echo "Downloading Gradle"     && wget --no-verbose --output-document=gradle.zip "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip"         && echo "Checking Gradle download hash"     && echo "${GRADLE_DOWNLOAD_SHA256} *gradle.zip" | sha256sum --check -         && echo "Installing Gradle"     && unzip gradle.zip     && rm gradle.zip     && mv "gradle-${GRADLE_VERSION}" "${GRADLE_HOME}/"     && ln --symbolic "${GRADLE_HOME}/bin/gradle" /usr/bin/gradle
-# Tue, 03 Oct 2023 07:01:38 GMT
+# Fri, 06 Oct 2023 01:12:09 GMT
 USER gradle
-# Tue, 03 Oct 2023 07:01:39 GMT
-# ARGS: GRADLE_DOWNLOAD_SHA256=591855b517fc635b9e04de1d05d5e76ada3f89f5fc76f87978d1b245b4f69225
+# Fri, 06 Oct 2023 01:12:10 GMT
+# ARGS: GRADLE_DOWNLOAD_SHA256=3e1af3ae886920c3ac87f7a91f816c0c7c436f276a6eefdb3da152100fef72ae
 RUN set -o errexit -o nounset     && echo "Testing Gradle installation"     && gradle --version
-# Tue, 03 Oct 2023 07:01:39 GMT
+# Fri, 06 Oct 2023 01:12:10 GMT
 USER root
 ```
 
@@ -79,15 +81,15 @@ USER root
 		Last Modified: Tue, 03 Oct 2023 07:08:18 GMT  
 		Size: 126.4 MB (126403742 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7b117551bc167a034f0b5dec5f3a269987ee5dd07a95489a755f1e5b5b908b1`  
-		Last Modified: Tue, 03 Oct 2023 07:08:23 GMT  
-		Size: 290.9 MB (290900497 bytes)  
+	-	`sha256:698b207d206dd42ac5109238a867c48ac7215ebed0df19c8a681fac1d4038825`  
+		Last Modified: Fri, 06 Oct 2023 01:22:14 GMT  
+		Size: 290.9 MB (290900548 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b53255cddec9c0414a69e41af6bee14e5a2d61fd211c0c09f568db82ccc853d2`  
-		Last Modified: Tue, 03 Oct 2023 07:08:07 GMT  
-		Size: 130.7 MB (130667300 bytes)  
+	-	`sha256:84ea3b083e1fc4b72f18d54d771b15f30c964ac0a76191a0193fd6eda3bafa65`  
+		Last Modified: Fri, 06 Oct 2023 01:21:58 GMT  
+		Size: 131.0 MB (131009702 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a756a7e66b406236c32f6343dcf7e4705149675497f1d61d3705052aca75e7a0`  
-		Last Modified: Tue, 03 Oct 2023 07:07:59 GMT  
-		Size: 172.0 B  
+	-	`sha256:b0e97240ff4d627fe9e8b4810cdbe5abdb908595c0ea6b14de50cf51d48c1869`  
+		Last Modified: Fri, 06 Oct 2023 01:21:51 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
