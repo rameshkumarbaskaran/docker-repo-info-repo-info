@@ -1,10 +1,10 @@
-# `irssi:1.4.4-alpine`
+# `irssi:1.4.5-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6b04dcbd7574b0e94227374b00a54f9597668a8ddd3b9bc990705bbacefbe72e`
-- Created: `2023-09-28T23:07:42.604182913Z`
-- Virtual Size: ~ 57.74 Mb  
+- Image ID: `sha256:2a7066a07c9e35db2f3641c82d1b1599ebb7ecfbba2d78659f3093927b81c6f9`
+- Created: `2023-10-06T20:06:02.196580835Z`
+- Virtual Size: ~ 58.36 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["irssi"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `HOME=/home/user`
   - `LANG=C.UTF-8`
-  - `IRSSI_VERSION=1.4.4`
+  - `IRSSI_VERSION=1.4.5`
 
 ## `apk` (`.apk`-based packages)
 
@@ -325,16 +325,16 @@ Apache-2.0
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.4-r1 description:
+musl-1.2.4-r2 description:
 the musl c library (libc) implementation
 
-musl-1.2.4-r1 webpage:
+musl-1.2.4-r2 webpage:
 https://musl.libc.org/
 
-musl-1.2.4-r1 installed size:
+musl-1.2.4-r2 installed size:
 620 KiB
 
-musl-1.2.4-r1 license:
+musl-1.2.4-r2 license:
 MIT
 
 ```
