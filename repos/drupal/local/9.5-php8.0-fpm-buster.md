@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:07ab0cd27730d43a04551a5b72b522077d5ccdd1a352f87b75640571e0847661`
-- Created: `2023-09-29T19:47:52.062424394Z`
+- Image ID: `sha256:0d2a468a268373fc259341a2b06b6462e6d0a97f03f5ba1233c25af04b8a7b4a`
+- Created: `2023-10-06T18:48:02.879690802Z`
 - Virtual Size: ~ 491.58 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -918,20 +918,13 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`)
 - `GPL-2+`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.58.3-2+deb10u4
-'http://deb.debian.org/debian-security/pool/updates/main/g/glib2.0/glib2.0_2.58.3-2%2bdeb10u4.dsc' glib2.0_2.58.3-2+deb10u4.dsc 3334 SHA256:8a2b7d98dd7f3e5ed4908d06d13b919989f1712e3a5e348be45e266fb72a2cb9
-'http://deb.debian.org/debian-security/pool/updates/main/g/glib2.0/glib2.0_2.58.3.orig.tar.xz' glib2.0_2.58.3.orig.tar.xz 4863648 SHA256:8f43c31767e88a25da72b52a40f3301fefc49a665b56dc10ee7cc9565cbe7481
-'http://deb.debian.org/debian-security/pool/updates/main/g/glib2.0/glib2.0_2.58.3-2%2bdeb10u4.debian.tar.xz' glib2.0_2.58.3-2+deb10u4.debian.tar.xz 107716 SHA256:2a62cdccabd2bdcac1015913599cf04966895fadd76424790a687652f7e53277
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/glib2.0/2.58.3-2+deb10u4/
 
-- https://sources.debian.net/src/glib2.0/2.58.3-2+deb10u4/ (for browsing the source)
-- https://sources.debian.net/src/glib2.0/2.58.3-2+deb10u4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/glib2.0/2.58.3-2+deb10u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.28-10+deb10u2`
 
