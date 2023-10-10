@@ -441,20 +441,13 @@ Licenses: (parsed from: `/usr/share/doc/libboost-python1.74.0/copyright`)
 - `Spencer`
 - `Zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris boost1.74=1.74.0+ds1-22
-'http://deb.debian.org/debian/pool/main/b/boost1.74/boost1.74_1.74.0%2bds1-22.dsc' boost1.74_1.74.0+ds1-22.dsc 8452 SHA256:0a2aed611d65a6021c9f9c81824a3b70e2b936d651eb6273f7d6a91340bce1d9
-'http://deb.debian.org/debian/pool/main/b/boost1.74/boost1.74_1.74.0%2bds1.orig.tar.xz' boost1.74_1.74.0+ds1.orig.tar.xz 60678948 SHA256:192f5df504d282cb81288f88232d8af45b64a9ab531e1c7cf8ae955f16f6bb28
-'http://deb.debian.org/debian/pool/main/b/boost1.74/boost1.74_1.74.0%2bds1-22.debian.tar.xz' boost1.74_1.74.0+ds1-22.debian.tar.xz 375552 SHA256:1ce29e6c7e1a42b68c73be40a0974e132b55b643a1eada06d8243092c52a5ad1
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/boost1.74/1.74.0+ds1-22/
 
-- https://sources.debian.net/src/boost1.74/1.74.0+ds1-22/ (for browsing the source)
-- https://sources.debian.net/src/boost1.74/1.74.0+ds1-22/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/boost1.74/1.74.0+ds1-22/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `brotli=1.0.9-2`
 
@@ -1560,20 +1553,13 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glibc=2.37-10
-'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.37-10.dsc' glibc_2.37-10.dsc 8963 SHA256:2afcd949468ab5324a327f91e244a61713b1a1c5f7be64396129158993b36342
-'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.37.orig.tar.xz' glibc_2.37.orig.tar.xz 19503016 SHA256:d05f010158c16cef110fa1ab560c31477249ee2105360101858a5146aa6fe7d0
-'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.37-10.debian.tar.xz' glibc_2.37-10.debian.tar.xz 409524 SHA256:be5905e8120f0e1bad2a5111ed42240d4c990f69cb1a15d60870922dfa2b40b9
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/glibc/2.37-10/
 
-- https://sources.debian.net/src/glibc/2.37-10/ (for browsing the source)
-- https://sources.debian.net/src/glibc/2.37-10/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/glibc/2.37-10/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gmp=2:6.3.0+dfsg-2`
 
@@ -2443,20 +2429,13 @@ Licenses: (parsed from: `/usr/share/doc/libcbor0.10/copyright`)
 
 - `Expat`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libcbor=0.10.2-1
-'http://deb.debian.org/debian/pool/main/libc/libcbor/libcbor_0.10.2-1.dsc' libcbor_0.10.2-1.dsc 2123 SHA256:50dc57ce6fb7f198b6897364dc32382bff8069ec44055a46b1805cc5a8d6f419
-'http://deb.debian.org/debian/pool/main/libc/libcbor/libcbor_0.10.2.orig.tar.gz' libcbor_0.10.2.orig.tar.gz 289450 SHA256:e75f712215d7b7e5c89ef322a09b701f7159f028b8b48978865725f00f79875b
-'http://deb.debian.org/debian/pool/main/libc/libcbor/libcbor_0.10.2-1.debian.tar.xz' libcbor_0.10.2-1.debian.tar.xz 4236 SHA256:82e8b1960769aa4113cf143ea48594a75b1f48ab9af19f2d314d50d3a5c23446
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libcbor/0.10.2-1/
 
-- https://sources.debian.net/src/libcbor/0.10.2-1/ (for browsing the source)
-- https://sources.debian.net/src/libcbor/0.10.2-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libcbor/0.10.2-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libdatrie=0.2.13-2`
 
@@ -2744,21 +2723,13 @@ Licenses: (parsed from: `/usr/share/doc/libgcrypt20/copyright`)
 - `GPL-2`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libgcrypt20=1.10.2-2
-'http://deb.debian.org/debian/pool/main/libg/libgcrypt20/libgcrypt20_1.10.2-2.dsc' libgcrypt20_1.10.2-2.dsc 2806 SHA256:98f0e92e279815de7d194ad4613e09ce273a9f885b0623fb96a7c2dd054fb55c
-'http://deb.debian.org/debian/pool/main/libg/libgcrypt20/libgcrypt20_1.10.2.orig.tar.bz2' libgcrypt20_1.10.2.orig.tar.bz2 3795164 SHA256:3b9c02a004b68c256add99701de00b383accccf37177e0d6c58289664cce0c03
-'http://deb.debian.org/debian/pool/main/libg/libgcrypt20/libgcrypt20_1.10.2.orig.tar.bz2.asc' libgcrypt20_1.10.2.orig.tar.bz2.asc 228 SHA256:3b5b729d3969b3e828acc483709a686678cecaf20e8559eb525da905c7aa2bcb
-'http://deb.debian.org/debian/pool/main/libg/libgcrypt20/libgcrypt20_1.10.2-2.debian.tar.xz' libgcrypt20_1.10.2-2.debian.tar.xz 35928 SHA256:af27c09663eec29c4c517db892a8b74096fadde77ac4986496bac8e390dd8f6c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libgcrypt20/1.10.2-2/
 
-- https://sources.debian.net/src/libgcrypt20/1.10.2-2/ (for browsing the source)
-- https://sources.debian.net/src/libgcrypt20/1.10.2-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libgcrypt20/1.10.2-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libgpg-error=1.47-2`
 
@@ -4946,20 +4917,13 @@ Licenses: (parsed from: `/usr/share/doc/libproc2-0/copyright`, `/usr/share/doc/p
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris procps=2:4.0.3-1
-'http://deb.debian.org/debian/pool/main/p/procps/procps_4.0.3-1.dsc' procps_4.0.3-1.dsc 2108 SHA256:e11ee01ff5514b6c20c5e32dd2922a2db2331ed40867084b2d0bcd696c83bfcb
-'http://deb.debian.org/debian/pool/main/p/procps/procps_4.0.3.orig.tar.xz' procps_4.0.3.orig.tar.xz 1294992 SHA256:303c8ec4f96ae18d8eaef86c2bd0986938764a45dc505fe0a0af868c674dba92
-'http://deb.debian.org/debian/pool/main/p/procps/procps_4.0.3-1.debian.tar.xz' procps_4.0.3-1.debian.tar.xz 27640 SHA256:df8de87ce4c76062f9ff9724599ca57abeb1bb26604a44e9e1de8ae641b10675
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/procps/2:4.0.3-1/
 
-- https://sources.debian.net/src/procps/2:4.0.3-1/ (for browsing the source)
-- https://sources.debian.net/src/procps/2:4.0.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/procps/2:4.0.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3-defaults=3.11.4-5`
 
@@ -5430,20 +5394,13 @@ Licenses: (parsed from: `/usr/share/doc/sysvinit-utils/copyright`)
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sysvinit=3.08-1
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_3.08-1.dsc' sysvinit_3.08-1.dsc 2359 SHA256:916ab717e343396685a9643f19680c8b2f17e82aec4732141a67dec935c5ecc4
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_3.08.orig.tar.gz' sysvinit_3.08.orig.tar.gz 513674 SHA256:325e42ae4ae5ae3e4d989e0604aeb5e4eae5f3ee21e401db3c79000718f8c836
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_3.08-1.debian.tar.xz' sysvinit_3.08-1.debian.tar.xz 136848 SHA256:1ba64a28529b733500a96f1781c9fc8d177f47c5194c6aae18a242234a1c13de
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/sysvinit/3.08-1/
 
-- https://sources.debian.net/src/sysvinit/3.08-1/ (for browsing the source)
-- https://sources.debian.net/src/sysvinit/3.08-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/sysvinit/3.08-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tar=1.34+dfsg-1.2`
 
