@@ -17,6 +17,9 @@
 -	[`groovy:4.0-jdk17`](#groovy40-jdk17)
 -	[`groovy:4.0-jdk17-alpine`](#groovy40-jdk17-alpine)
 -	[`groovy:4.0-jdk17-jammy`](#groovy40-jdk17-jammy)
+-	[`groovy:4.0-jdk21`](#groovy40-jdk21)
+-	[`groovy:4.0-jdk21-alpine`](#groovy40-jdk21-alpine)
+-	[`groovy:4.0-jdk21-jammy`](#groovy40-jdk21-jammy)
 -	[`groovy:4.0-jdk8`](#groovy40-jdk8)
 -	[`groovy:4.0-jdk8-jammy`](#groovy40-jdk8-jammy)
 -	[`groovy:4.0.15`](#groovy4015)
@@ -31,6 +34,9 @@
 -	[`groovy:4.0.15-jdk17`](#groovy4015-jdk17)
 -	[`groovy:4.0.15-jdk17-alpine`](#groovy4015-jdk17-alpine)
 -	[`groovy:4.0.15-jdk17-jammy`](#groovy4015-jdk17-jammy)
+-	[`groovy:4.0.15-jdk21`](#groovy4015-jdk21)
+-	[`groovy:4.0.15-jdk21-alpine`](#groovy4015-jdk21-alpine)
+-	[`groovy:4.0.15-jdk21-jammy`](#groovy4015-jdk21-jammy)
 -	[`groovy:4.0.15-jdk8`](#groovy4015-jdk8)
 -	[`groovy:4.0.15-jdk8-jammy`](#groovy4015-jdk8-jammy)
 -	[`groovy:alpine`](#groovyalpine)
@@ -44,6 +50,9 @@
 -	[`groovy:jdk17`](#groovyjdk17)
 -	[`groovy:jdk17-alpine`](#groovyjdk17-alpine)
 -	[`groovy:jdk17-jammy`](#groovyjdk17-jammy)
+-	[`groovy:jdk21`](#groovyjdk21)
+-	[`groovy:jdk21-alpine`](#groovyjdk21-alpine)
+-	[`groovy:jdk21-jammy`](#groovyjdk21-jammy)
 -	[`groovy:jdk8`](#groovyjdk8)
 -	[`groovy:jdk8-jammy`](#groovyjdk8-jammy)
 -	[`groovy:latest`](#groovylatest)
@@ -6053,6 +6062,33 @@ RUN set -o errexit -o nounset     && echo "Testing Groovy installation"     && g
 		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `groovy:4.0-jdk21`
+
+```console
+$ docker pull groovy@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
+## `groovy:4.0-jdk21-alpine`
+
+```console
+$ docker pull groovy@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
+## `groovy:4.0-jdk21-jammy`
+
+```console
+$ docker pull groovy@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
 ## `groovy:4.0-jdk8`
 
 ```console
@@ -11723,6 +11759,33 @@ RUN set -o errexit -o nounset     && echo "Testing Groovy installation"     && g
 		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `groovy:4.0.15-jdk21`
+
+```console
+$ docker pull groovy@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
+## `groovy:4.0.15-jdk21-alpine`
+
+```console
+$ docker pull groovy@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
+## `groovy:4.0.15-jdk21-jammy`
+
+```console
+$ docker pull groovy@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
 ## `groovy:4.0.15-jdk8`
 
 ```console
@@ -16843,6 +16906,33 @@ RUN set -o errexit -o nounset     && echo "Testing Groovy installation"     && g
 		Last Modified: Tue, 03 Oct 2023 11:43:51 GMT  
 		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `groovy:jdk21`
+
+```console
+$ docker pull groovy@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
+## `groovy:jdk21-alpine`
+
+```console
+$ docker pull groovy@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
+
+## `groovy:jdk21-jammy`
+
+```console
+$ docker pull groovy@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `groovy:jdk8`
 
