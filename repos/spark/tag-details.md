@@ -26,7 +26,7 @@
 ## `spark:3.4.1`
 
 ```console
-$ docker pull spark@sha256:aecc45f0794503a2346a2f7716e37d9a2340759532b1b4f67e7a1e8c260df38f
+$ docker pull spark@sha256:ac7b999d99cdf38883f62f69144407c303da9bd91d87d658d55e57ef2b0daa9e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -37,118 +37,118 @@ $ docker pull spark@sha256:aecc45f0794503a2346a2f7716e37d9a2340759532b1b4f67e7a1
 ### `spark:3.4.1` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:bea2ff072f073b8a78e08ce44ec1b9b0474821508959886f3da7313560891be2
+$ docker pull spark@sha256:057351415a6320c792bc449f2ee99dd0475e21c1888b6779027a5390458d12ca
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **528.6 MB (528560729 bytes)**  
+-	Total Size: **528.6 MB (528576894 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea25f803d638591abcc6f87fea837293fcf58dfb0fd166e024114226c8d7c19a`
+-	Image ID: `sha256:59a21f481591bf7ccc81183455a5ccbed67264a562712ce419bb8ebd6b134701`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:55:51 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz.asc GPG_KEY=F28C9C925C188C35E345614DEDA00CE834F0FC5C
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 COPY file:01f69f91109a74812cb83cbe729877b82d879c4c4634d429eef0305a59878741 in /opt/ 
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 USER spark
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
-# Thu, 31 Aug 2023 21:04:51 GMT
+# Fri, 13 Oct 2023 14:00:15 GMT
 USER root
-# Thu, 31 Aug 2023 21:08:04 GMT
+# Fri, 13 Oct 2023 14:02:47 GMT
 RUN set -ex;     apt-get update;     apt-get install -y python3 python3-pip;     rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 21:08:05 GMT
+# Fri, 13 Oct 2023 14:02:48 GMT
 USER spark
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0678fe53bb7df877853b282be734800f44012a1cb7ad285adaf8fd4e021caf81`  
-		Last Modified: Thu, 31 Aug 2023 21:09:20 GMT  
-		Size: 317.9 MB (317886733 bytes)  
+	-	`sha256:d9f4c87a610db6b67e2cfafb1431be30f3336e77b3bef9febb4d0fef766bbd18`  
+		Last Modified: Fri, 13 Oct 2023 14:05:21 GMT  
+		Size: 317.9 MB (317886697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9a267eac7589096faaa943f01a985d95ea98e1d76f4893c6d84393bbd80e799`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
-		Size: 2.1 KB (2083 bytes)  
+	-	`sha256:ed77283166cbe067e8e69da2c5e11c651dae02a47ef1b06c91e3292e08661eee`  
+		Last Modified: Fri, 13 Oct 2023 14:05:05 GMT  
+		Size: 2.1 KB (2085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cfc4e3722f0adc38f3f67870ecc6d082d697de6480808fbd1742d315b57ad4dc`  
-		Last Modified: Thu, 31 Aug 2023 21:10:22 GMT  
-		Size: 94.6 MB (94591124 bytes)  
+	-	`sha256:87d90ae85aa2ae22b4445f72de40475840c782b77f7d58ceaec1e7189e0a450d`  
+		Last Modified: Fri, 13 Oct 2023 14:07:35 GMT  
+		Size: 94.6 MB (94605832 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:3.4.1` - linux; arm64 variant v8
@@ -271,7 +271,7 @@ USER spark
 ## `spark:3.4.1-python3`
 
 ```console
-$ docker pull spark@sha256:aecc45f0794503a2346a2f7716e37d9a2340759532b1b4f67e7a1e8c260df38f
+$ docker pull spark@sha256:ac7b999d99cdf38883f62f69144407c303da9bd91d87d658d55e57ef2b0daa9e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -282,118 +282,118 @@ $ docker pull spark@sha256:aecc45f0794503a2346a2f7716e37d9a2340759532b1b4f67e7a1
 ### `spark:3.4.1-python3` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:bea2ff072f073b8a78e08ce44ec1b9b0474821508959886f3da7313560891be2
+$ docker pull spark@sha256:057351415a6320c792bc449f2ee99dd0475e21c1888b6779027a5390458d12ca
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **528.6 MB (528560729 bytes)**  
+-	Total Size: **528.6 MB (528576894 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea25f803d638591abcc6f87fea837293fcf58dfb0fd166e024114226c8d7c19a`
+-	Image ID: `sha256:59a21f481591bf7ccc81183455a5ccbed67264a562712ce419bb8ebd6b134701`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:55:51 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz.asc GPG_KEY=F28C9C925C188C35E345614DEDA00CE834F0FC5C
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 COPY file:01f69f91109a74812cb83cbe729877b82d879c4c4634d429eef0305a59878741 in /opt/ 
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 USER spark
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
-# Thu, 31 Aug 2023 21:04:51 GMT
+# Fri, 13 Oct 2023 14:00:15 GMT
 USER root
-# Thu, 31 Aug 2023 21:08:04 GMT
+# Fri, 13 Oct 2023 14:02:47 GMT
 RUN set -ex;     apt-get update;     apt-get install -y python3 python3-pip;     rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 21:08:05 GMT
+# Fri, 13 Oct 2023 14:02:48 GMT
 USER spark
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0678fe53bb7df877853b282be734800f44012a1cb7ad285adaf8fd4e021caf81`  
-		Last Modified: Thu, 31 Aug 2023 21:09:20 GMT  
-		Size: 317.9 MB (317886733 bytes)  
+	-	`sha256:d9f4c87a610db6b67e2cfafb1431be30f3336e77b3bef9febb4d0fef766bbd18`  
+		Last Modified: Fri, 13 Oct 2023 14:05:21 GMT  
+		Size: 317.9 MB (317886697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9a267eac7589096faaa943f01a985d95ea98e1d76f4893c6d84393bbd80e799`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
-		Size: 2.1 KB (2083 bytes)  
+	-	`sha256:ed77283166cbe067e8e69da2c5e11c651dae02a47ef1b06c91e3292e08661eee`  
+		Last Modified: Fri, 13 Oct 2023 14:05:05 GMT  
+		Size: 2.1 KB (2085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cfc4e3722f0adc38f3f67870ecc6d082d697de6480808fbd1742d315b57ad4dc`  
-		Last Modified: Thu, 31 Aug 2023 21:10:22 GMT  
-		Size: 94.6 MB (94591124 bytes)  
+	-	`sha256:87d90ae85aa2ae22b4445f72de40475840c782b77f7d58ceaec1e7189e0a450d`  
+		Last Modified: Fri, 13 Oct 2023 14:07:35 GMT  
+		Size: 94.6 MB (94605832 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:3.4.1-python3` - linux; arm64 variant v8
@@ -516,7 +516,7 @@ USER spark
 ## `spark:3.4.1-r`
 
 ```console
-$ docker pull spark@sha256:e7733053dd1fdcd028087a1d0df3969259e168cdbc9e1a79af070ab78ea93454
+$ docker pull spark@sha256:26d3b5027b200056caac6bb986b900285acdb14afd878524fea25810154e4d35
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -527,120 +527,120 @@ $ docker pull spark@sha256:e7733053dd1fdcd028087a1d0df3969259e168cdbc9e1a79af070
 ### `spark:3.4.1-r` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:af382b01ed3def1466dc69bba8dbe5f13b1d48de24b47801b0ff11f0501ca06e
+$ docker pull spark@sha256:cde79ff1e388527fa148fe9814d11bc0ad446660a44891924669fd21bd884925
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **666.2 MB (666234467 bytes)**  
+-	Total Size: **666.3 MB (666253986 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:76797852b7f86f6092596899dc45f0587ba8e4b96f6f5a52f9511f63ee40e89e`
+-	Image ID: `sha256:39c2a7a207fda47655f9301d66133261d6ee18c3e1d0be160e1bd574a7be238d`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:55:51 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz.asc GPG_KEY=F28C9C925C188C35E345614DEDA00CE834F0FC5C
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 COPY file:01f69f91109a74812cb83cbe729877b82d879c4c4634d429eef0305a59878741 in /opt/ 
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 USER spark
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
-# Thu, 31 Aug 2023 21:04:51 GMT
+# Fri, 13 Oct 2023 14:00:15 GMT
 USER root
-# Thu, 31 Aug 2023 21:08:48 GMT
+# Fri, 13 Oct 2023 14:03:32 GMT
 RUN set -ex;     apt-get update;     apt-get install -y r-base r-base-dev;     rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 21:08:50 GMT
+# Fri, 13 Oct 2023 14:03:34 GMT
 ENV R_HOME=/usr/lib/R
-# Thu, 31 Aug 2023 21:08:50 GMT
+# Fri, 13 Oct 2023 14:03:34 GMT
 USER spark
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0678fe53bb7df877853b282be734800f44012a1cb7ad285adaf8fd4e021caf81`  
-		Last Modified: Thu, 31 Aug 2023 21:09:20 GMT  
-		Size: 317.9 MB (317886733 bytes)  
+	-	`sha256:d9f4c87a610db6b67e2cfafb1431be30f3336e77b3bef9febb4d0fef766bbd18`  
+		Last Modified: Fri, 13 Oct 2023 14:05:21 GMT  
+		Size: 317.9 MB (317886697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9a267eac7589096faaa943f01a985d95ea98e1d76f4893c6d84393bbd80e799`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
-		Size: 2.1 KB (2083 bytes)  
+	-	`sha256:ed77283166cbe067e8e69da2c5e11c651dae02a47ef1b06c91e3292e08661eee`  
+		Last Modified: Fri, 13 Oct 2023 14:05:05 GMT  
+		Size: 2.1 KB (2085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79ceaf4cd690efa1b5ac3f4231d03b06472cbf1b38cbc450e9387359f5421aca`  
-		Last Modified: Thu, 31 Aug 2023 21:11:06 GMT  
-		Size: 232.3 MB (232264862 bytes)  
+	-	`sha256:d8a212ce220944f9c047a157abc32bd0b722e9b1f7930983c6f16aedb40229ee`  
+		Last Modified: Fri, 13 Oct 2023 14:08:15 GMT  
+		Size: 232.3 MB (232282924 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:3.4.1-r` - linux; arm64 variant v8
@@ -765,7 +765,7 @@ USER spark
 ## `spark:3.4.1-scala`
 
 ```console
-$ docker pull spark@sha256:afcac51770918228dc12b67b3b142b671446951f680fc15679a0c1ffdad5e783
+$ docker pull spark@sha256:199c3e28f97307babee4eb0309c10012e9e5ef41baab0849f343e3fb690dd810
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -776,108 +776,108 @@ $ docker pull spark@sha256:afcac51770918228dc12b67b3b142b671446951f680fc15679a0c
 ### `spark:3.4.1-scala` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:c0b29efd117a40847cfb83bc975b0c4de77432dccfb43967ba5e9fc4e19bcbef
+$ docker pull spark@sha256:233b1771f8ce647c3ba30636e653f97575c345f16d8940b3e9738ec68af4eefa
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **434.0 MB (433969605 bytes)**  
+-	Total Size: **434.0 MB (433971062 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a959b5d4573e88a33f47f0789d723229de6a78a49b4e8cf2077e205c34def9c0`
+-	Image ID: `sha256:4a08c7cbf0484a49ddece0d0382afb80247e8cf4326e2e32b9bc46e04ebf33db`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:55:51 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz.asc GPG_KEY=F28C9C925C188C35E345614DEDA00CE834F0FC5C
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 COPY file:01f69f91109a74812cb83cbe729877b82d879c4c4634d429eef0305a59878741 in /opt/ 
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 USER spark
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0678fe53bb7df877853b282be734800f44012a1cb7ad285adaf8fd4e021caf81`  
-		Last Modified: Thu, 31 Aug 2023 21:09:20 GMT  
-		Size: 317.9 MB (317886733 bytes)  
+	-	`sha256:d9f4c87a610db6b67e2cfafb1431be30f3336e77b3bef9febb4d0fef766bbd18`  
+		Last Modified: Fri, 13 Oct 2023 14:05:21 GMT  
+		Size: 317.9 MB (317886697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9a267eac7589096faaa943f01a985d95ea98e1d76f4893c6d84393bbd80e799`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
-		Size: 2.1 KB (2083 bytes)  
+	-	`sha256:ed77283166cbe067e8e69da2c5e11c651dae02a47ef1b06c91e3292e08661eee`  
+		Last Modified: Fri, 13 Oct 2023 14:05:05 GMT  
+		Size: 2.1 KB (2085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:3.4.1-scala` - linux; arm64 variant v8
@@ -990,7 +990,7 @@ ENTRYPOINT ["/opt/entrypoint.sh"]
 ## `spark:3.4.1-scala2.12-java11-python3-r-ubuntu`
 
 ```console
-$ docker pull spark@sha256:c846bb98d2d0550c396c03d0c01c3b71d1cd8665cc84cb731c3a6efb70265c8c
+$ docker pull spark@sha256:421d86e439376e92ddd71a60df7c8f695d3a077c5622949f077a79851140d8da
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1001,120 +1001,120 @@ $ docker pull spark@sha256:c846bb98d2d0550c396c03d0c01c3b71d1cd8665cc84cb731c3a6
 ### `spark:3.4.1-scala2.12-java11-python3-r-ubuntu` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:5deaed24719b03dacf961fcc66ee406a79cbe5094b2b36c382fcc6ac9af26d4a
+$ docker pull spark@sha256:cc3b4bf8f1bec890a8d9c58cb1740d36d195fcd394ff4bc1969b726f6c5f9efd
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **687.9 MB (687864302 bytes)**  
+-	Total Size: **687.9 MB (687883376 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:da1320bfc794f77347ca8e9bb40f616b380d11f1eff06a4d825677e2f5e1bdf4`
+-	Image ID: `sha256:cf462fc59dde2604b7cdea6a21086cc9605c1efeaa0d087a344291ec644c29cb`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:55:51 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz.asc GPG_KEY=F28C9C925C188C35E345614DEDA00CE834F0FC5C
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 COPY file:01f69f91109a74812cb83cbe729877b82d879c4c4634d429eef0305a59878741 in /opt/ 
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 USER spark
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
-# Thu, 31 Aug 2023 21:04:51 GMT
+# Fri, 13 Oct 2023 14:00:15 GMT
 USER root
-# Thu, 31 Aug 2023 21:07:28 GMT
+# Fri, 13 Oct 2023 14:01:04 GMT
 RUN set -ex;     apt-get update;     apt-get install -y python3 python3-pip;     apt-get install -y r-base r-base-dev;     rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 21:07:31 GMT
+# Fri, 13 Oct 2023 14:01:06 GMT
 ENV R_HOME=/usr/lib/R
-# Thu, 31 Aug 2023 21:07:31 GMT
+# Fri, 13 Oct 2023 14:01:06 GMT
 USER spark
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0678fe53bb7df877853b282be734800f44012a1cb7ad285adaf8fd4e021caf81`  
-		Last Modified: Thu, 31 Aug 2023 21:09:20 GMT  
-		Size: 317.9 MB (317886733 bytes)  
+	-	`sha256:d9f4c87a610db6b67e2cfafb1431be30f3336e77b3bef9febb4d0fef766bbd18`  
+		Last Modified: Fri, 13 Oct 2023 14:05:21 GMT  
+		Size: 317.9 MB (317886697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9a267eac7589096faaa943f01a985d95ea98e1d76f4893c6d84393bbd80e799`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
-		Size: 2.1 KB (2083 bytes)  
+	-	`sha256:ed77283166cbe067e8e69da2c5e11c651dae02a47ef1b06c91e3292e08661eee`  
+		Last Modified: Fri, 13 Oct 2023 14:05:05 GMT  
+		Size: 2.1 KB (2085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c2d2c8bb96591351af66df645644fc61ba464dbec87b827abb3f5c6768566883`  
-		Last Modified: Thu, 31 Aug 2023 21:10:01 GMT  
-		Size: 253.9 MB (253894697 bytes)  
+	-	`sha256:e572d2e21f75c724bbf5fb2aee62a666d5977c3f074270c82f07f60b3da23e94`  
+		Last Modified: Fri, 13 Oct 2023 14:06:04 GMT  
+		Size: 253.9 MB (253912314 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:3.4.1-scala2.12-java11-python3-r-ubuntu` - linux; arm64 variant v8
@@ -1239,7 +1239,7 @@ USER spark
 ## `spark:3.4.1-scala2.12-java11-python3-ubuntu`
 
 ```console
-$ docker pull spark@sha256:aecc45f0794503a2346a2f7716e37d9a2340759532b1b4f67e7a1e8c260df38f
+$ docker pull spark@sha256:ac7b999d99cdf38883f62f69144407c303da9bd91d87d658d55e57ef2b0daa9e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1250,118 +1250,118 @@ $ docker pull spark@sha256:aecc45f0794503a2346a2f7716e37d9a2340759532b1b4f67e7a1
 ### `spark:3.4.1-scala2.12-java11-python3-ubuntu` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:bea2ff072f073b8a78e08ce44ec1b9b0474821508959886f3da7313560891be2
+$ docker pull spark@sha256:057351415a6320c792bc449f2ee99dd0475e21c1888b6779027a5390458d12ca
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **528.6 MB (528560729 bytes)**  
+-	Total Size: **528.6 MB (528576894 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea25f803d638591abcc6f87fea837293fcf58dfb0fd166e024114226c8d7c19a`
+-	Image ID: `sha256:59a21f481591bf7ccc81183455a5ccbed67264a562712ce419bb8ebd6b134701`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:55:51 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz.asc GPG_KEY=F28C9C925C188C35E345614DEDA00CE834F0FC5C
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 COPY file:01f69f91109a74812cb83cbe729877b82d879c4c4634d429eef0305a59878741 in /opt/ 
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 USER spark
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
-# Thu, 31 Aug 2023 21:04:51 GMT
+# Fri, 13 Oct 2023 14:00:15 GMT
 USER root
-# Thu, 31 Aug 2023 21:08:04 GMT
+# Fri, 13 Oct 2023 14:02:47 GMT
 RUN set -ex;     apt-get update;     apt-get install -y python3 python3-pip;     rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 21:08:05 GMT
+# Fri, 13 Oct 2023 14:02:48 GMT
 USER spark
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0678fe53bb7df877853b282be734800f44012a1cb7ad285adaf8fd4e021caf81`  
-		Last Modified: Thu, 31 Aug 2023 21:09:20 GMT  
-		Size: 317.9 MB (317886733 bytes)  
+	-	`sha256:d9f4c87a610db6b67e2cfafb1431be30f3336e77b3bef9febb4d0fef766bbd18`  
+		Last Modified: Fri, 13 Oct 2023 14:05:21 GMT  
+		Size: 317.9 MB (317886697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9a267eac7589096faaa943f01a985d95ea98e1d76f4893c6d84393bbd80e799`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
-		Size: 2.1 KB (2083 bytes)  
+	-	`sha256:ed77283166cbe067e8e69da2c5e11c651dae02a47ef1b06c91e3292e08661eee`  
+		Last Modified: Fri, 13 Oct 2023 14:05:05 GMT  
+		Size: 2.1 KB (2085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cfc4e3722f0adc38f3f67870ecc6d082d697de6480808fbd1742d315b57ad4dc`  
-		Last Modified: Thu, 31 Aug 2023 21:10:22 GMT  
-		Size: 94.6 MB (94591124 bytes)  
+	-	`sha256:87d90ae85aa2ae22b4445f72de40475840c782b77f7d58ceaec1e7189e0a450d`  
+		Last Modified: Fri, 13 Oct 2023 14:07:35 GMT  
+		Size: 94.6 MB (94605832 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:3.4.1-scala2.12-java11-python3-ubuntu` - linux; arm64 variant v8
@@ -1484,7 +1484,7 @@ USER spark
 ## `spark:3.4.1-scala2.12-java11-r-ubuntu`
 
 ```console
-$ docker pull spark@sha256:e7733053dd1fdcd028087a1d0df3969259e168cdbc9e1a79af070ab78ea93454
+$ docker pull spark@sha256:26d3b5027b200056caac6bb986b900285acdb14afd878524fea25810154e4d35
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1495,120 +1495,120 @@ $ docker pull spark@sha256:e7733053dd1fdcd028087a1d0df3969259e168cdbc9e1a79af070
 ### `spark:3.4.1-scala2.12-java11-r-ubuntu` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:af382b01ed3def1466dc69bba8dbe5f13b1d48de24b47801b0ff11f0501ca06e
+$ docker pull spark@sha256:cde79ff1e388527fa148fe9814d11bc0ad446660a44891924669fd21bd884925
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **666.2 MB (666234467 bytes)**  
+-	Total Size: **666.3 MB (666253986 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:76797852b7f86f6092596899dc45f0587ba8e4b96f6f5a52f9511f63ee40e89e`
+-	Image ID: `sha256:39c2a7a207fda47655f9301d66133261d6ee18c3e1d0be160e1bd574a7be238d`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:55:51 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz.asc GPG_KEY=F28C9C925C188C35E345614DEDA00CE834F0FC5C
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 COPY file:01f69f91109a74812cb83cbe729877b82d879c4c4634d429eef0305a59878741 in /opt/ 
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 USER spark
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
-# Thu, 31 Aug 2023 21:04:51 GMT
+# Fri, 13 Oct 2023 14:00:15 GMT
 USER root
-# Thu, 31 Aug 2023 21:08:48 GMT
+# Fri, 13 Oct 2023 14:03:32 GMT
 RUN set -ex;     apt-get update;     apt-get install -y r-base r-base-dev;     rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 21:08:50 GMT
+# Fri, 13 Oct 2023 14:03:34 GMT
 ENV R_HOME=/usr/lib/R
-# Thu, 31 Aug 2023 21:08:50 GMT
+# Fri, 13 Oct 2023 14:03:34 GMT
 USER spark
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0678fe53bb7df877853b282be734800f44012a1cb7ad285adaf8fd4e021caf81`  
-		Last Modified: Thu, 31 Aug 2023 21:09:20 GMT  
-		Size: 317.9 MB (317886733 bytes)  
+	-	`sha256:d9f4c87a610db6b67e2cfafb1431be30f3336e77b3bef9febb4d0fef766bbd18`  
+		Last Modified: Fri, 13 Oct 2023 14:05:21 GMT  
+		Size: 317.9 MB (317886697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9a267eac7589096faaa943f01a985d95ea98e1d76f4893c6d84393bbd80e799`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
-		Size: 2.1 KB (2083 bytes)  
+	-	`sha256:ed77283166cbe067e8e69da2c5e11c651dae02a47ef1b06c91e3292e08661eee`  
+		Last Modified: Fri, 13 Oct 2023 14:05:05 GMT  
+		Size: 2.1 KB (2085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79ceaf4cd690efa1b5ac3f4231d03b06472cbf1b38cbc450e9387359f5421aca`  
-		Last Modified: Thu, 31 Aug 2023 21:11:06 GMT  
-		Size: 232.3 MB (232264862 bytes)  
+	-	`sha256:d8a212ce220944f9c047a157abc32bd0b722e9b1f7930983c6f16aedb40229ee`  
+		Last Modified: Fri, 13 Oct 2023 14:08:15 GMT  
+		Size: 232.3 MB (232282924 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:3.4.1-scala2.12-java11-r-ubuntu` - linux; arm64 variant v8
@@ -1733,7 +1733,7 @@ USER spark
 ## `spark:3.4.1-scala2.12-java11-ubuntu`
 
 ```console
-$ docker pull spark@sha256:afcac51770918228dc12b67b3b142b671446951f680fc15679a0c1ffdad5e783
+$ docker pull spark@sha256:199c3e28f97307babee4eb0309c10012e9e5ef41baab0849f343e3fb690dd810
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1744,108 +1744,108 @@ $ docker pull spark@sha256:afcac51770918228dc12b67b3b142b671446951f680fc15679a0c
 ### `spark:3.4.1-scala2.12-java11-ubuntu` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:c0b29efd117a40847cfb83bc975b0c4de77432dccfb43967ba5e9fc4e19bcbef
+$ docker pull spark@sha256:233b1771f8ce647c3ba30636e653f97575c345f16d8940b3e9738ec68af4eefa
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **434.0 MB (433969605 bytes)**  
+-	Total Size: **434.0 MB (433971062 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a959b5d4573e88a33f47f0789d723229de6a78a49b4e8cf2077e205c34def9c0`
+-	Image ID: `sha256:4a08c7cbf0484a49ddece0d0382afb80247e8cf4326e2e32b9bc46e04ebf33db`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:55:51 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz.asc GPG_KEY=F28C9C925C188C35E345614DEDA00CE834F0FC5C
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 COPY file:01f69f91109a74812cb83cbe729877b82d879c4c4634d429eef0305a59878741 in /opt/ 
-# Thu, 31 Aug 2023 21:04:46 GMT
+# Fri, 13 Oct 2023 14:00:11 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 USER spark
-# Thu, 31 Aug 2023 21:04:47 GMT
+# Fri, 13 Oct 2023 14:00:12 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0678fe53bb7df877853b282be734800f44012a1cb7ad285adaf8fd4e021caf81`  
-		Last Modified: Thu, 31 Aug 2023 21:09:20 GMT  
-		Size: 317.9 MB (317886733 bytes)  
+	-	`sha256:d9f4c87a610db6b67e2cfafb1431be30f3336e77b3bef9febb4d0fef766bbd18`  
+		Last Modified: Fri, 13 Oct 2023 14:05:21 GMT  
+		Size: 317.9 MB (317886697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9a267eac7589096faaa943f01a985d95ea98e1d76f4893c6d84393bbd80e799`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
-		Size: 2.1 KB (2083 bytes)  
+	-	`sha256:ed77283166cbe067e8e69da2c5e11c651dae02a47ef1b06c91e3292e08661eee`  
+		Last Modified: Fri, 13 Oct 2023 14:05:05 GMT  
+		Size: 2.1 KB (2085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:3.4.1-scala2.12-java11-ubuntu` - linux; arm64 variant v8
@@ -1958,7 +1958,7 @@ ENTRYPOINT ["/opt/entrypoint.sh"]
 ## `spark:3.5.0`
 
 ```console
-$ docker pull spark@sha256:e3d87c1a9adc70604c33f17eb7cb07f08a34d190cfeca6c53cbcfcb4fa77db30
+$ docker pull spark@sha256:d58237651b0563acf6acdb5184fadea23d6c80361b4a715b97fbea34c8b8a3f5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1969,118 +1969,118 @@ $ docker pull spark@sha256:e3d87c1a9adc70604c33f17eb7cb07f08a34d190cfeca6c53cbcf
 ### `spark:3.5.0` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:e174afae9d77fb8fc7d9519b846b0f984d29ed2ffb7c0c96477a3763180bc74b
+$ docker pull spark@sha256:502662d51382c3d3b311197d6d2366977565435c4fe1ddddf342576eed06107f
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **535.1 MB (535118279 bytes)**  
+-	Total Size: **535.1 MB (535118522 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:828da84ed02a1a5dfb272b057b37ebc2477d0deba4a4ebbc778097f17e9828d6`
+-	Image ID: `sha256:41a033621387a222e1ff80f5e9c14cf84e82db62b054f24bee804549c625a510`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:24:57 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz.asc GPG_KEY=FC3AE3A7EAA1BAC98770840E7E1ABCC53AAA2216
-# Thu, 14 Sep 2023 21:25:53 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 COPY file:b1ecb91165fbd66c0d3cfad8d169bf4914b1cf964de586096e80f8b5ca8b3b12 in /opt/ 
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 USER spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
-# Thu, 14 Sep 2023 21:26:07 GMT
+# Fri, 13 Oct 2023 13:52:57 GMT
 USER root
-# Thu, 14 Sep 2023 21:29:40 GMT
+# Fri, 13 Oct 2023 14:01:34 GMT
 RUN set -ex;     apt-get update;     apt-get install -y python3 python3-pip;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:29:41 GMT
+# Fri, 13 Oct 2023 14:01:35 GMT
 USER spark
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e69c8fe72288ad711c29996795a099bd994a79bddf3bc82d3659138c7612b92`  
-		Last Modified: Thu, 14 Sep 2023 21:31:10 GMT  
-		Size: 324.4 MB (324428291 bytes)  
+	-	`sha256:7b8ba5c6716e91998f766d8516b031d663464639e387dc86ad88e8aa88e20be8`  
+		Last Modified: Fri, 13 Oct 2023 14:04:13 GMT  
+		Size: 324.4 MB (324428328 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e9858e9952cb00193ce9577ed73c0b0382b8cd48625fd874de3a5751baf9aa1`  
-		Last Modified: Thu, 14 Sep 2023 21:30:56 GMT  
-		Size: 2.1 KB (2138 bytes)  
+	-	`sha256:0e9120e0f0dd60147d7267b77b2c2cca4926299ab274b27768da017b0cf9b4df`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
+		Size: 2.1 KB (2139 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d56bdb06f0da6331a56387e6555446e1006726718aac9be26866e89977fd1f5f`  
-		Last Modified: Thu, 14 Sep 2023 21:32:15 GMT  
-		Size: 94.6 MB (94607061 bytes)  
+	-	`sha256:43fda95388bdb39b2a4783e593c0d0d17b1e09a2ee4c5d297ee42c76883226a5`  
+		Last Modified: Fri, 13 Oct 2023 14:06:25 GMT  
+		Size: 94.6 MB (94605775 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:3.5.0` - linux; arm64 variant v8
@@ -2203,7 +2203,7 @@ USER spark
 ## `spark:3.5.0-python3`
 
 ```console
-$ docker pull spark@sha256:e3d87c1a9adc70604c33f17eb7cb07f08a34d190cfeca6c53cbcfcb4fa77db30
+$ docker pull spark@sha256:d58237651b0563acf6acdb5184fadea23d6c80361b4a715b97fbea34c8b8a3f5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2214,118 +2214,118 @@ $ docker pull spark@sha256:e3d87c1a9adc70604c33f17eb7cb07f08a34d190cfeca6c53cbcf
 ### `spark:3.5.0-python3` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:e174afae9d77fb8fc7d9519b846b0f984d29ed2ffb7c0c96477a3763180bc74b
+$ docker pull spark@sha256:502662d51382c3d3b311197d6d2366977565435c4fe1ddddf342576eed06107f
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **535.1 MB (535118279 bytes)**  
+-	Total Size: **535.1 MB (535118522 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:828da84ed02a1a5dfb272b057b37ebc2477d0deba4a4ebbc778097f17e9828d6`
+-	Image ID: `sha256:41a033621387a222e1ff80f5e9c14cf84e82db62b054f24bee804549c625a510`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:24:57 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz.asc GPG_KEY=FC3AE3A7EAA1BAC98770840E7E1ABCC53AAA2216
-# Thu, 14 Sep 2023 21:25:53 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 COPY file:b1ecb91165fbd66c0d3cfad8d169bf4914b1cf964de586096e80f8b5ca8b3b12 in /opt/ 
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 USER spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
-# Thu, 14 Sep 2023 21:26:07 GMT
+# Fri, 13 Oct 2023 13:52:57 GMT
 USER root
-# Thu, 14 Sep 2023 21:29:40 GMT
+# Fri, 13 Oct 2023 14:01:34 GMT
 RUN set -ex;     apt-get update;     apt-get install -y python3 python3-pip;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:29:41 GMT
+# Fri, 13 Oct 2023 14:01:35 GMT
 USER spark
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e69c8fe72288ad711c29996795a099bd994a79bddf3bc82d3659138c7612b92`  
-		Last Modified: Thu, 14 Sep 2023 21:31:10 GMT  
-		Size: 324.4 MB (324428291 bytes)  
+	-	`sha256:7b8ba5c6716e91998f766d8516b031d663464639e387dc86ad88e8aa88e20be8`  
+		Last Modified: Fri, 13 Oct 2023 14:04:13 GMT  
+		Size: 324.4 MB (324428328 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e9858e9952cb00193ce9577ed73c0b0382b8cd48625fd874de3a5751baf9aa1`  
-		Last Modified: Thu, 14 Sep 2023 21:30:56 GMT  
-		Size: 2.1 KB (2138 bytes)  
+	-	`sha256:0e9120e0f0dd60147d7267b77b2c2cca4926299ab274b27768da017b0cf9b4df`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
+		Size: 2.1 KB (2139 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d56bdb06f0da6331a56387e6555446e1006726718aac9be26866e89977fd1f5f`  
-		Last Modified: Thu, 14 Sep 2023 21:32:15 GMT  
-		Size: 94.6 MB (94607061 bytes)  
+	-	`sha256:43fda95388bdb39b2a4783e593c0d0d17b1e09a2ee4c5d297ee42c76883226a5`  
+		Last Modified: Fri, 13 Oct 2023 14:06:25 GMT  
+		Size: 94.6 MB (94605775 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:3.5.0-python3` - linux; arm64 variant v8
@@ -2448,7 +2448,7 @@ USER spark
 ## `spark:3.5.0-r`
 
 ```console
-$ docker pull spark@sha256:4524cec90f05911d962d43c280566ff8785f01fcf94860ac2db01c4f48670bd2
+$ docker pull spark@sha256:c9c4713e434b5b3127ac028dbcb5d1dc01013a13df790aed73fa48af5d31af01
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2459,120 +2459,120 @@ $ docker pull spark@sha256:4524cec90f05911d962d43c280566ff8785f01fcf94860ac2db01
 ### `spark:3.5.0-r` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:c1c9c38db0b828406068a7581fa6b1ce660c6f7a723081ca696586c0e0afc568
+$ docker pull spark@sha256:3afd598a12768929fde8e90481af72889f965d96ff8122e7f9005b3e9a10051c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **672.8 MB (672792508 bytes)**  
+-	Total Size: **672.8 MB (672795920 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:88381b9388edb6b00ebf9fc47045aa5688a25913fecac1687c7e683ac8c91aa6`
+-	Image ID: `sha256:d0ad7ac67b3d9f10379c266b5dc78efd6081646805d1b8417f30dc9d08f3daa3`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:24:57 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz.asc GPG_KEY=FC3AE3A7EAA1BAC98770840E7E1ABCC53AAA2216
-# Thu, 14 Sep 2023 21:25:53 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 COPY file:b1ecb91165fbd66c0d3cfad8d169bf4914b1cf964de586096e80f8b5ca8b3b12 in /opt/ 
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 USER spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
-# Thu, 14 Sep 2023 21:26:07 GMT
+# Fri, 13 Oct 2023 13:52:57 GMT
 USER root
-# Thu, 14 Sep 2023 21:30:25 GMT
+# Fri, 13 Oct 2023 14:02:19 GMT
 RUN set -ex;     apt-get update;     apt-get install -y r-base r-base-dev;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:30:27 GMT
+# Fri, 13 Oct 2023 14:02:21 GMT
 ENV R_HOME=/usr/lib/R
-# Thu, 14 Sep 2023 21:30:27 GMT
+# Fri, 13 Oct 2023 14:02:21 GMT
 USER spark
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e69c8fe72288ad711c29996795a099bd994a79bddf3bc82d3659138c7612b92`  
-		Last Modified: Thu, 14 Sep 2023 21:31:10 GMT  
-		Size: 324.4 MB (324428291 bytes)  
+	-	`sha256:7b8ba5c6716e91998f766d8516b031d663464639e387dc86ad88e8aa88e20be8`  
+		Last Modified: Fri, 13 Oct 2023 14:04:13 GMT  
+		Size: 324.4 MB (324428328 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e9858e9952cb00193ce9577ed73c0b0382b8cd48625fd874de3a5751baf9aa1`  
-		Last Modified: Thu, 14 Sep 2023 21:30:56 GMT  
-		Size: 2.1 KB (2138 bytes)  
+	-	`sha256:0e9120e0f0dd60147d7267b77b2c2cca4926299ab274b27768da017b0cf9b4df`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
+		Size: 2.1 KB (2139 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f43a4627576130b0e2a42e135d89ccf24e65ea0a63c811dd499ab2eadc59945a`  
-		Last Modified: Thu, 14 Sep 2023 21:32:59 GMT  
-		Size: 232.3 MB (232281290 bytes)  
+	-	`sha256:58e46fb1efe1f82e768f679d010d395540a0c89d59793153d4f947b915ba8bd5`  
+		Last Modified: Fri, 13 Oct 2023 14:07:10 GMT  
+		Size: 232.3 MB (232283173 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:3.5.0-r` - linux; arm64 variant v8
@@ -2697,7 +2697,7 @@ USER spark
 ## `spark:3.5.0-scala`
 
 ```console
-$ docker pull spark@sha256:6f97cd323c0ad601b85f76b6ae3884be8871f05819b0c684cd27fd555916630b
+$ docker pull spark@sha256:7d423f272dd0c3decda6f77a88d367f93716af15289b76a16a5326af0360678c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2708,108 +2708,108 @@ $ docker pull spark@sha256:6f97cd323c0ad601b85f76b6ae3884be8871f05819b0c684cd27f
 ### `spark:3.5.0-scala` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:9f652132023834d16736ff274e7b42f52e3d6ae1d0b951030b9e958b423b4c7a
+$ docker pull spark@sha256:eb98c35e17519caa7605479d22317c1eb14ee03097202db75ad5f6ef6d0765d6
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **440.5 MB (440511218 bytes)**  
+-	Total Size: **440.5 MB (440512747 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea680aee700367fbf8b7e4640a508b7d8cf339f484459e87e8f1ba8e49c14fe4`
+-	Image ID: `sha256:bb336cf4a411b41bfaa16ebcb44b9fb61aded5abaf58b10dffd22d0a884a13c0`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:24:57 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz.asc GPG_KEY=FC3AE3A7EAA1BAC98770840E7E1ABCC53AAA2216
-# Thu, 14 Sep 2023 21:25:53 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 COPY file:b1ecb91165fbd66c0d3cfad8d169bf4914b1cf964de586096e80f8b5ca8b3b12 in /opt/ 
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 USER spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e69c8fe72288ad711c29996795a099bd994a79bddf3bc82d3659138c7612b92`  
-		Last Modified: Thu, 14 Sep 2023 21:31:10 GMT  
-		Size: 324.4 MB (324428291 bytes)  
+	-	`sha256:7b8ba5c6716e91998f766d8516b031d663464639e387dc86ad88e8aa88e20be8`  
+		Last Modified: Fri, 13 Oct 2023 14:04:13 GMT  
+		Size: 324.4 MB (324428328 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e9858e9952cb00193ce9577ed73c0b0382b8cd48625fd874de3a5751baf9aa1`  
-		Last Modified: Thu, 14 Sep 2023 21:30:56 GMT  
-		Size: 2.1 KB (2138 bytes)  
+	-	`sha256:0e9120e0f0dd60147d7267b77b2c2cca4926299ab274b27768da017b0cf9b4df`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
+		Size: 2.1 KB (2139 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:3.5.0-scala` - linux; arm64 variant v8
@@ -2922,7 +2922,7 @@ ENTRYPOINT ["/opt/entrypoint.sh"]
 ## `spark:3.5.0-scala2.12-java11-python3-r-ubuntu`
 
 ```console
-$ docker pull spark@sha256:ad654dee603aefb16bec96acf38949b6f1ae1e9ab499a52b051a532cad10602b
+$ docker pull spark@sha256:58d6218a4f3591236992dea7b4875d6a8ce06bdf182adbb66daab73d48e01d5a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2933,120 +2933,120 @@ $ docker pull spark@sha256:ad654dee603aefb16bec96acf38949b6f1ae1e9ab499a52b051a5
 ### `spark:3.5.0-scala2.12-java11-python3-r-ubuntu` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:c961be34c53a37fedf8532b3c56da349fe6247da3626ebe1cd5f9d677f486283
+$ docker pull spark@sha256:99472d0f84757048dcd6a4ce2738845ea8cc8601b9cd7a5721f4e4bb51cdac1d
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **694.4 MB (694416516 bytes)**  
+-	Total Size: **694.4 MB (694424797 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:52cadb00666b957e6dc4a0a716b7938e6679572fc42200b856aa3f9cff903f7c`
+-	Image ID: `sha256:b4f916557a207ef19b397065d043df5763a38c9a08f1ab8de38097ad2c119086`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:24:57 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz.asc GPG_KEY=FC3AE3A7EAA1BAC98770840E7E1ABCC53AAA2216
-# Thu, 14 Sep 2023 21:25:53 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 COPY file:b1ecb91165fbd66c0d3cfad8d169bf4914b1cf964de586096e80f8b5ca8b3b12 in /opt/ 
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 USER spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
-# Thu, 14 Sep 2023 21:26:07 GMT
+# Fri, 13 Oct 2023 13:52:57 GMT
 USER root
-# Thu, 14 Sep 2023 21:29:03 GMT
+# Fri, 13 Oct 2023 13:55:44 GMT
 RUN set -ex;     apt-get update;     apt-get install -y python3 python3-pip;     apt-get install -y r-base r-base-dev;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:29:05 GMT
+# Fri, 13 Oct 2023 13:55:46 GMT
 ENV R_HOME=/usr/lib/R
-# Thu, 14 Sep 2023 21:29:05 GMT
+# Fri, 13 Oct 2023 13:55:46 GMT
 USER spark
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e69c8fe72288ad711c29996795a099bd994a79bddf3bc82d3659138c7612b92`  
-		Last Modified: Thu, 14 Sep 2023 21:31:10 GMT  
-		Size: 324.4 MB (324428291 bytes)  
+	-	`sha256:7b8ba5c6716e91998f766d8516b031d663464639e387dc86ad88e8aa88e20be8`  
+		Last Modified: Fri, 13 Oct 2023 14:04:13 GMT  
+		Size: 324.4 MB (324428328 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e9858e9952cb00193ce9577ed73c0b0382b8cd48625fd874de3a5751baf9aa1`  
-		Last Modified: Thu, 14 Sep 2023 21:30:56 GMT  
-		Size: 2.1 KB (2138 bytes)  
+	-	`sha256:0e9120e0f0dd60147d7267b77b2c2cca4926299ab274b27768da017b0cf9b4df`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
+		Size: 2.1 KB (2139 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:47841a8299e2ebfd9108a21827cae8fd8fd0512a8d31c4af8a15976a5e2258ef`  
-		Last Modified: Thu, 14 Sep 2023 21:31:53 GMT  
-		Size: 253.9 MB (253905298 bytes)  
+	-	`sha256:105a88f8428477c08fb1209dfefe55baa378ccb532d1e2c3785dd4a0603b900f`  
+		Last Modified: Fri, 13 Oct 2023 14:04:57 GMT  
+		Size: 253.9 MB (253912050 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:3.5.0-scala2.12-java11-python3-r-ubuntu` - linux; arm64 variant v8
@@ -3171,7 +3171,7 @@ USER spark
 ## `spark:3.5.0-scala2.12-java11-python3-ubuntu`
 
 ```console
-$ docker pull spark@sha256:e3d87c1a9adc70604c33f17eb7cb07f08a34d190cfeca6c53cbcfcb4fa77db30
+$ docker pull spark@sha256:d58237651b0563acf6acdb5184fadea23d6c80361b4a715b97fbea34c8b8a3f5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3182,118 +3182,118 @@ $ docker pull spark@sha256:e3d87c1a9adc70604c33f17eb7cb07f08a34d190cfeca6c53cbcf
 ### `spark:3.5.0-scala2.12-java11-python3-ubuntu` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:e174afae9d77fb8fc7d9519b846b0f984d29ed2ffb7c0c96477a3763180bc74b
+$ docker pull spark@sha256:502662d51382c3d3b311197d6d2366977565435c4fe1ddddf342576eed06107f
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **535.1 MB (535118279 bytes)**  
+-	Total Size: **535.1 MB (535118522 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:828da84ed02a1a5dfb272b057b37ebc2477d0deba4a4ebbc778097f17e9828d6`
+-	Image ID: `sha256:41a033621387a222e1ff80f5e9c14cf84e82db62b054f24bee804549c625a510`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:24:57 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz.asc GPG_KEY=FC3AE3A7EAA1BAC98770840E7E1ABCC53AAA2216
-# Thu, 14 Sep 2023 21:25:53 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 COPY file:b1ecb91165fbd66c0d3cfad8d169bf4914b1cf964de586096e80f8b5ca8b3b12 in /opt/ 
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 USER spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
-# Thu, 14 Sep 2023 21:26:07 GMT
+# Fri, 13 Oct 2023 13:52:57 GMT
 USER root
-# Thu, 14 Sep 2023 21:29:40 GMT
+# Fri, 13 Oct 2023 14:01:34 GMT
 RUN set -ex;     apt-get update;     apt-get install -y python3 python3-pip;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:29:41 GMT
+# Fri, 13 Oct 2023 14:01:35 GMT
 USER spark
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e69c8fe72288ad711c29996795a099bd994a79bddf3bc82d3659138c7612b92`  
-		Last Modified: Thu, 14 Sep 2023 21:31:10 GMT  
-		Size: 324.4 MB (324428291 bytes)  
+	-	`sha256:7b8ba5c6716e91998f766d8516b031d663464639e387dc86ad88e8aa88e20be8`  
+		Last Modified: Fri, 13 Oct 2023 14:04:13 GMT  
+		Size: 324.4 MB (324428328 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e9858e9952cb00193ce9577ed73c0b0382b8cd48625fd874de3a5751baf9aa1`  
-		Last Modified: Thu, 14 Sep 2023 21:30:56 GMT  
-		Size: 2.1 KB (2138 bytes)  
+	-	`sha256:0e9120e0f0dd60147d7267b77b2c2cca4926299ab274b27768da017b0cf9b4df`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
+		Size: 2.1 KB (2139 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d56bdb06f0da6331a56387e6555446e1006726718aac9be26866e89977fd1f5f`  
-		Last Modified: Thu, 14 Sep 2023 21:32:15 GMT  
-		Size: 94.6 MB (94607061 bytes)  
+	-	`sha256:43fda95388bdb39b2a4783e593c0d0d17b1e09a2ee4c5d297ee42c76883226a5`  
+		Last Modified: Fri, 13 Oct 2023 14:06:25 GMT  
+		Size: 94.6 MB (94605775 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:3.5.0-scala2.12-java11-python3-ubuntu` - linux; arm64 variant v8
@@ -3416,7 +3416,7 @@ USER spark
 ## `spark:3.5.0-scala2.12-java11-r-ubuntu`
 
 ```console
-$ docker pull spark@sha256:4524cec90f05911d962d43c280566ff8785f01fcf94860ac2db01c4f48670bd2
+$ docker pull spark@sha256:c9c4713e434b5b3127ac028dbcb5d1dc01013a13df790aed73fa48af5d31af01
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3427,120 +3427,120 @@ $ docker pull spark@sha256:4524cec90f05911d962d43c280566ff8785f01fcf94860ac2db01
 ### `spark:3.5.0-scala2.12-java11-r-ubuntu` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:c1c9c38db0b828406068a7581fa6b1ce660c6f7a723081ca696586c0e0afc568
+$ docker pull spark@sha256:3afd598a12768929fde8e90481af72889f965d96ff8122e7f9005b3e9a10051c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **672.8 MB (672792508 bytes)**  
+-	Total Size: **672.8 MB (672795920 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:88381b9388edb6b00ebf9fc47045aa5688a25913fecac1687c7e683ac8c91aa6`
+-	Image ID: `sha256:d0ad7ac67b3d9f10379c266b5dc78efd6081646805d1b8417f30dc9d08f3daa3`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:24:57 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz.asc GPG_KEY=FC3AE3A7EAA1BAC98770840E7E1ABCC53AAA2216
-# Thu, 14 Sep 2023 21:25:53 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 COPY file:b1ecb91165fbd66c0d3cfad8d169bf4914b1cf964de586096e80f8b5ca8b3b12 in /opt/ 
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 USER spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
-# Thu, 14 Sep 2023 21:26:07 GMT
+# Fri, 13 Oct 2023 13:52:57 GMT
 USER root
-# Thu, 14 Sep 2023 21:30:25 GMT
+# Fri, 13 Oct 2023 14:02:19 GMT
 RUN set -ex;     apt-get update;     apt-get install -y r-base r-base-dev;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:30:27 GMT
+# Fri, 13 Oct 2023 14:02:21 GMT
 ENV R_HOME=/usr/lib/R
-# Thu, 14 Sep 2023 21:30:27 GMT
+# Fri, 13 Oct 2023 14:02:21 GMT
 USER spark
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e69c8fe72288ad711c29996795a099bd994a79bddf3bc82d3659138c7612b92`  
-		Last Modified: Thu, 14 Sep 2023 21:31:10 GMT  
-		Size: 324.4 MB (324428291 bytes)  
+	-	`sha256:7b8ba5c6716e91998f766d8516b031d663464639e387dc86ad88e8aa88e20be8`  
+		Last Modified: Fri, 13 Oct 2023 14:04:13 GMT  
+		Size: 324.4 MB (324428328 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e9858e9952cb00193ce9577ed73c0b0382b8cd48625fd874de3a5751baf9aa1`  
-		Last Modified: Thu, 14 Sep 2023 21:30:56 GMT  
-		Size: 2.1 KB (2138 bytes)  
+	-	`sha256:0e9120e0f0dd60147d7267b77b2c2cca4926299ab274b27768da017b0cf9b4df`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
+		Size: 2.1 KB (2139 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f43a4627576130b0e2a42e135d89ccf24e65ea0a63c811dd499ab2eadc59945a`  
-		Last Modified: Thu, 14 Sep 2023 21:32:59 GMT  
-		Size: 232.3 MB (232281290 bytes)  
+	-	`sha256:58e46fb1efe1f82e768f679d010d395540a0c89d59793153d4f947b915ba8bd5`  
+		Last Modified: Fri, 13 Oct 2023 14:07:10 GMT  
+		Size: 232.3 MB (232283173 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:3.5.0-scala2.12-java11-r-ubuntu` - linux; arm64 variant v8
@@ -3665,7 +3665,7 @@ USER spark
 ## `spark:3.5.0-scala2.12-java11-ubuntu`
 
 ```console
-$ docker pull spark@sha256:6f97cd323c0ad601b85f76b6ae3884be8871f05819b0c684cd27fd555916630b
+$ docker pull spark@sha256:7d423f272dd0c3decda6f77a88d367f93716af15289b76a16a5326af0360678c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3676,108 +3676,108 @@ $ docker pull spark@sha256:6f97cd323c0ad601b85f76b6ae3884be8871f05819b0c684cd27f
 ### `spark:3.5.0-scala2.12-java11-ubuntu` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:9f652132023834d16736ff274e7b42f52e3d6ae1d0b951030b9e958b423b4c7a
+$ docker pull spark@sha256:eb98c35e17519caa7605479d22317c1eb14ee03097202db75ad5f6ef6d0765d6
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **440.5 MB (440511218 bytes)**  
+-	Total Size: **440.5 MB (440512747 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea680aee700367fbf8b7e4640a508b7d8cf339f484459e87e8f1ba8e49c14fe4`
+-	Image ID: `sha256:bb336cf4a411b41bfaa16ebcb44b9fb61aded5abaf58b10dffd22d0a884a13c0`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:24:57 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz.asc GPG_KEY=FC3AE3A7EAA1BAC98770840E7E1ABCC53AAA2216
-# Thu, 14 Sep 2023 21:25:53 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 COPY file:b1ecb91165fbd66c0d3cfad8d169bf4914b1cf964de586096e80f8b5ca8b3b12 in /opt/ 
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 USER spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e69c8fe72288ad711c29996795a099bd994a79bddf3bc82d3659138c7612b92`  
-		Last Modified: Thu, 14 Sep 2023 21:31:10 GMT  
-		Size: 324.4 MB (324428291 bytes)  
+	-	`sha256:7b8ba5c6716e91998f766d8516b031d663464639e387dc86ad88e8aa88e20be8`  
+		Last Modified: Fri, 13 Oct 2023 14:04:13 GMT  
+		Size: 324.4 MB (324428328 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e9858e9952cb00193ce9577ed73c0b0382b8cd48625fd874de3a5751baf9aa1`  
-		Last Modified: Thu, 14 Sep 2023 21:30:56 GMT  
-		Size: 2.1 KB (2138 bytes)  
+	-	`sha256:0e9120e0f0dd60147d7267b77b2c2cca4926299ab274b27768da017b0cf9b4df`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
+		Size: 2.1 KB (2139 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:3.5.0-scala2.12-java11-ubuntu` - linux; arm64 variant v8
@@ -3890,7 +3890,7 @@ ENTRYPOINT ["/opt/entrypoint.sh"]
 ## `spark:latest`
 
 ```console
-$ docker pull spark@sha256:e3d87c1a9adc70604c33f17eb7cb07f08a34d190cfeca6c53cbcfcb4fa77db30
+$ docker pull spark@sha256:d58237651b0563acf6acdb5184fadea23d6c80361b4a715b97fbea34c8b8a3f5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3901,118 +3901,118 @@ $ docker pull spark@sha256:e3d87c1a9adc70604c33f17eb7cb07f08a34d190cfeca6c53cbcf
 ### `spark:latest` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:e174afae9d77fb8fc7d9519b846b0f984d29ed2ffb7c0c96477a3763180bc74b
+$ docker pull spark@sha256:502662d51382c3d3b311197d6d2366977565435c4fe1ddddf342576eed06107f
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **535.1 MB (535118279 bytes)**  
+-	Total Size: **535.1 MB (535118522 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:828da84ed02a1a5dfb272b057b37ebc2477d0deba4a4ebbc778097f17e9828d6`
+-	Image ID: `sha256:41a033621387a222e1ff80f5e9c14cf84e82db62b054f24bee804549c625a510`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:24:57 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz.asc GPG_KEY=FC3AE3A7EAA1BAC98770840E7E1ABCC53AAA2216
-# Thu, 14 Sep 2023 21:25:53 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 COPY file:b1ecb91165fbd66c0d3cfad8d169bf4914b1cf964de586096e80f8b5ca8b3b12 in /opt/ 
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 USER spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
-# Thu, 14 Sep 2023 21:26:07 GMT
+# Fri, 13 Oct 2023 13:52:57 GMT
 USER root
-# Thu, 14 Sep 2023 21:29:40 GMT
+# Fri, 13 Oct 2023 14:01:34 GMT
 RUN set -ex;     apt-get update;     apt-get install -y python3 python3-pip;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:29:41 GMT
+# Fri, 13 Oct 2023 14:01:35 GMT
 USER spark
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e69c8fe72288ad711c29996795a099bd994a79bddf3bc82d3659138c7612b92`  
-		Last Modified: Thu, 14 Sep 2023 21:31:10 GMT  
-		Size: 324.4 MB (324428291 bytes)  
+	-	`sha256:7b8ba5c6716e91998f766d8516b031d663464639e387dc86ad88e8aa88e20be8`  
+		Last Modified: Fri, 13 Oct 2023 14:04:13 GMT  
+		Size: 324.4 MB (324428328 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e9858e9952cb00193ce9577ed73c0b0382b8cd48625fd874de3a5751baf9aa1`  
-		Last Modified: Thu, 14 Sep 2023 21:30:56 GMT  
-		Size: 2.1 KB (2138 bytes)  
+	-	`sha256:0e9120e0f0dd60147d7267b77b2c2cca4926299ab274b27768da017b0cf9b4df`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
+		Size: 2.1 KB (2139 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d56bdb06f0da6331a56387e6555446e1006726718aac9be26866e89977fd1f5f`  
-		Last Modified: Thu, 14 Sep 2023 21:32:15 GMT  
-		Size: 94.6 MB (94607061 bytes)  
+	-	`sha256:43fda95388bdb39b2a4783e593c0d0d17b1e09a2ee4c5d297ee42c76883226a5`  
+		Last Modified: Fri, 13 Oct 2023 14:06:25 GMT  
+		Size: 94.6 MB (94605775 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:latest` - linux; arm64 variant v8
@@ -4135,7 +4135,7 @@ USER spark
 ## `spark:python3`
 
 ```console
-$ docker pull spark@sha256:e3d87c1a9adc70604c33f17eb7cb07f08a34d190cfeca6c53cbcfcb4fa77db30
+$ docker pull spark@sha256:d58237651b0563acf6acdb5184fadea23d6c80361b4a715b97fbea34c8b8a3f5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4146,118 +4146,118 @@ $ docker pull spark@sha256:e3d87c1a9adc70604c33f17eb7cb07f08a34d190cfeca6c53cbcf
 ### `spark:python3` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:e174afae9d77fb8fc7d9519b846b0f984d29ed2ffb7c0c96477a3763180bc74b
+$ docker pull spark@sha256:502662d51382c3d3b311197d6d2366977565435c4fe1ddddf342576eed06107f
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **535.1 MB (535118279 bytes)**  
+-	Total Size: **535.1 MB (535118522 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:828da84ed02a1a5dfb272b057b37ebc2477d0deba4a4ebbc778097f17e9828d6`
+-	Image ID: `sha256:41a033621387a222e1ff80f5e9c14cf84e82db62b054f24bee804549c625a510`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:24:57 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz.asc GPG_KEY=FC3AE3A7EAA1BAC98770840E7E1ABCC53AAA2216
-# Thu, 14 Sep 2023 21:25:53 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 COPY file:b1ecb91165fbd66c0d3cfad8d169bf4914b1cf964de586096e80f8b5ca8b3b12 in /opt/ 
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 USER spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
-# Thu, 14 Sep 2023 21:26:07 GMT
+# Fri, 13 Oct 2023 13:52:57 GMT
 USER root
-# Thu, 14 Sep 2023 21:29:40 GMT
+# Fri, 13 Oct 2023 14:01:34 GMT
 RUN set -ex;     apt-get update;     apt-get install -y python3 python3-pip;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:29:41 GMT
+# Fri, 13 Oct 2023 14:01:35 GMT
 USER spark
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e69c8fe72288ad711c29996795a099bd994a79bddf3bc82d3659138c7612b92`  
-		Last Modified: Thu, 14 Sep 2023 21:31:10 GMT  
-		Size: 324.4 MB (324428291 bytes)  
+	-	`sha256:7b8ba5c6716e91998f766d8516b031d663464639e387dc86ad88e8aa88e20be8`  
+		Last Modified: Fri, 13 Oct 2023 14:04:13 GMT  
+		Size: 324.4 MB (324428328 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e9858e9952cb00193ce9577ed73c0b0382b8cd48625fd874de3a5751baf9aa1`  
-		Last Modified: Thu, 14 Sep 2023 21:30:56 GMT  
-		Size: 2.1 KB (2138 bytes)  
+	-	`sha256:0e9120e0f0dd60147d7267b77b2c2cca4926299ab274b27768da017b0cf9b4df`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
+		Size: 2.1 KB (2139 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d56bdb06f0da6331a56387e6555446e1006726718aac9be26866e89977fd1f5f`  
-		Last Modified: Thu, 14 Sep 2023 21:32:15 GMT  
-		Size: 94.6 MB (94607061 bytes)  
+	-	`sha256:43fda95388bdb39b2a4783e593c0d0d17b1e09a2ee4c5d297ee42c76883226a5`  
+		Last Modified: Fri, 13 Oct 2023 14:06:25 GMT  
+		Size: 94.6 MB (94605775 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:python3` - linux; arm64 variant v8
@@ -4380,7 +4380,7 @@ USER spark
 ## `spark:r`
 
 ```console
-$ docker pull spark@sha256:4524cec90f05911d962d43c280566ff8785f01fcf94860ac2db01c4f48670bd2
+$ docker pull spark@sha256:c9c4713e434b5b3127ac028dbcb5d1dc01013a13df790aed73fa48af5d31af01
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4391,120 +4391,120 @@ $ docker pull spark@sha256:4524cec90f05911d962d43c280566ff8785f01fcf94860ac2db01
 ### `spark:r` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:c1c9c38db0b828406068a7581fa6b1ce660c6f7a723081ca696586c0e0afc568
+$ docker pull spark@sha256:3afd598a12768929fde8e90481af72889f965d96ff8122e7f9005b3e9a10051c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **672.8 MB (672792508 bytes)**  
+-	Total Size: **672.8 MB (672795920 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:88381b9388edb6b00ebf9fc47045aa5688a25913fecac1687c7e683ac8c91aa6`
+-	Image ID: `sha256:d0ad7ac67b3d9f10379c266b5dc78efd6081646805d1b8417f30dc9d08f3daa3`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:24:57 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz.asc GPG_KEY=FC3AE3A7EAA1BAC98770840E7E1ABCC53AAA2216
-# Thu, 14 Sep 2023 21:25:53 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 COPY file:b1ecb91165fbd66c0d3cfad8d169bf4914b1cf964de586096e80f8b5ca8b3b12 in /opt/ 
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 USER spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
-# Thu, 14 Sep 2023 21:26:07 GMT
+# Fri, 13 Oct 2023 13:52:57 GMT
 USER root
-# Thu, 14 Sep 2023 21:30:25 GMT
+# Fri, 13 Oct 2023 14:02:19 GMT
 RUN set -ex;     apt-get update;     apt-get install -y r-base r-base-dev;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:30:27 GMT
+# Fri, 13 Oct 2023 14:02:21 GMT
 ENV R_HOME=/usr/lib/R
-# Thu, 14 Sep 2023 21:30:27 GMT
+# Fri, 13 Oct 2023 14:02:21 GMT
 USER spark
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e69c8fe72288ad711c29996795a099bd994a79bddf3bc82d3659138c7612b92`  
-		Last Modified: Thu, 14 Sep 2023 21:31:10 GMT  
-		Size: 324.4 MB (324428291 bytes)  
+	-	`sha256:7b8ba5c6716e91998f766d8516b031d663464639e387dc86ad88e8aa88e20be8`  
+		Last Modified: Fri, 13 Oct 2023 14:04:13 GMT  
+		Size: 324.4 MB (324428328 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e9858e9952cb00193ce9577ed73c0b0382b8cd48625fd874de3a5751baf9aa1`  
-		Last Modified: Thu, 14 Sep 2023 21:30:56 GMT  
-		Size: 2.1 KB (2138 bytes)  
+	-	`sha256:0e9120e0f0dd60147d7267b77b2c2cca4926299ab274b27768da017b0cf9b4df`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
+		Size: 2.1 KB (2139 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f43a4627576130b0e2a42e135d89ccf24e65ea0a63c811dd499ab2eadc59945a`  
-		Last Modified: Thu, 14 Sep 2023 21:32:59 GMT  
-		Size: 232.3 MB (232281290 bytes)  
+	-	`sha256:58e46fb1efe1f82e768f679d010d395540a0c89d59793153d4f947b915ba8bd5`  
+		Last Modified: Fri, 13 Oct 2023 14:07:10 GMT  
+		Size: 232.3 MB (232283173 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:r` - linux; arm64 variant v8
@@ -4629,7 +4629,7 @@ USER spark
 ## `spark:scala`
 
 ```console
-$ docker pull spark@sha256:6f97cd323c0ad601b85f76b6ae3884be8871f05819b0c684cd27fd555916630b
+$ docker pull spark@sha256:7d423f272dd0c3decda6f77a88d367f93716af15289b76a16a5326af0360678c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4640,108 +4640,108 @@ $ docker pull spark@sha256:6f97cd323c0ad601b85f76b6ae3884be8871f05819b0c684cd27f
 ### `spark:scala` - linux; amd64
 
 ```console
-$ docker pull spark@sha256:9f652132023834d16736ff274e7b42f52e3d6ae1d0b951030b9e958b423b4c7a
+$ docker pull spark@sha256:eb98c35e17519caa7605479d22317c1eb14ee03097202db75ad5f6ef6d0765d6
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **440.5 MB (440511218 bytes)**  
+-	Total Size: **440.5 MB (440512747 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea680aee700367fbf8b7e4640a508b7d8cf339f484459e87e8f1ba8e49c14fe4`
+-	Image ID: `sha256:bb336cf4a411b41bfaa16ebcb44b9fb61aded5abaf58b10dffd22d0a884a13c0`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 01 Aug 2023 06:16:43 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG RELEASE
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Tue, 01 Aug 2023 06:16:44 GMT
+# Tue, 03 Oct 2023 10:45:50 GMT
 LABEL org.opencontainers.image.version=20.04
-# Tue, 01 Aug 2023 06:16:45 GMT
-ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / 
-# Tue, 01 Aug 2023 06:16:46 GMT
+# Tue, 03 Oct 2023 10:45:51 GMT
+ADD file:4809da414c2d478b4d991cbdaa2df457f2b3d07d0ff6cf673f09a66f90833e81 in / 
+# Tue, 03 Oct 2023 10:45:52 GMT
 CMD ["/bin/bash"]
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 03 Aug 2023 02:34:40 GMT
+# Fri, 13 Oct 2023 05:50:16 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 08 Aug 2023 19:20:25 GMT
+# Fri, 13 Oct 2023 05:50:53 GMT
 RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Aug 2023 20:21:53 GMT
+# Fri, 13 Oct 2023 05:52:07 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 31 Aug 2023 20:23:03 GMT
+# Fri, 13 Oct 2023 05:52:47 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0f69f5c05cb7fb2804be3735ed31ce92acff1a51ef29be544b89f83c90d2ea2a';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        armhf|arm)          ESUM='2fc1cc935897312c0bc2515b2e7ea1fa3b267e77305a1b51a8c3917d92af380f';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_arm_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='7963580e5c3abe55e6b9d2297f2e2cde7b227d28204497bec5f17bb37762c7b7';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        s390x|s390:64-bit)          ESUM='cf7fa0f0291687ebcb5f87f5db3a8d94525fd65832adc636c4c6e1f3174d9997';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_s390x_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='bc6ed047e50b09611b419c878e4ea3ea36594bd79f64001a5b53decf72669d33';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jre_x64_linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo java --version && java --version     && echo Complete.
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 31 Aug 2023 20:23:04 GMT
+# Fri, 13 Oct 2023 05:52:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:48 GMT
 ARG spark_uid=185
-# Thu, 31 Aug 2023 21:03:27 GMT
+# Fri, 13 Oct 2023 13:47:49 GMT
 # ARGS: spark_uid=185
 RUN groupadd --system --gid=${spark_uid} spark &&     useradd --system --uid=${spark_uid} --gid=spark spark
-# Thu, 31 Aug 2023 21:03:49 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     apt-get update;     apt-get install -y gnupg2 wget bash tini libc6 libpam-modules krb5-user libnss3 procps net-tools gosu libnss-wrapper;     mkdir -p /opt/spark;     mkdir /opt/spark/python;     mkdir -p /opt/spark/examples;     mkdir -p /opt/spark/work-dir;     chmod g+w /opt/spark/work-dir;     touch /opt/spark/RELEASE;     chown -R spark:spark /opt/spark;     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su;     rm -rf /var/lib/apt/lists/*
-# Thu, 14 Sep 2023 21:24:57 GMT
+# Fri, 13 Oct 2023 13:48:15 GMT
 ENV SPARK_TGZ_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz SPARK_TGZ_ASC_URL=https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz.asc GPG_KEY=FC3AE3A7EAA1BAC98770840E7E1ABCC53AAA2216
-# Thu, 14 Sep 2023 21:25:53 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 # ARGS: spark_uid=185
 RUN set -ex;     export SPARK_TMP="$(mktemp -d)";     cd $SPARK_TMP;     wget -nv -O spark.tgz "$SPARK_TGZ_URL";     wget -nv -O spark.tgz.asc "$SPARK_TGZ_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-key "$GPG_KEY" ||     gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$GPG_KEY";     gpg --batch --verify spark.tgz.asc spark.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" spark.tgz.asc;         tar -xf spark.tgz --strip-components=1;     chown -R spark:spark .;     mv jars /opt/spark/;     mv bin /opt/spark/;     mv sbin /opt/spark/;     mv kubernetes/dockerfiles/spark/decom.sh /opt/;     mv examples /opt/spark/;     mv kubernetes/tests /opt/spark/;     mv data /opt/spark/;     mv python/pyspark /opt/spark/python/pyspark/;     mv python/lib /opt/spark/python/lib/;     mv R /opt/spark/;     chmod a+x /opt/decom.sh;     cd ..;     rm -rf "$SPARK_TMP";
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 COPY file:b1ecb91165fbd66c0d3cfad8d169bf4914b1cf964de586096e80f8b5ca8b3b12 in /opt/ 
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 ENV SPARK_HOME=/opt/spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:43 GMT
 WORKDIR /opt/spark/work-dir
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 USER spark
-# Thu, 14 Sep 2023 21:25:54 GMT
+# Fri, 13 Oct 2023 13:52:44 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
+	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
+		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
+		Size: 28.6 MB (28580681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f32e041863d53bbb7f9f65ba31f023a9f344dd4105bf5345c6e748e3cc3e71a`  
-		Last Modified: Tue, 08 Aug 2023 19:26:48 GMT  
-		Size: 16.9 MB (16919807 bytes)  
+	-	`sha256:d58ba2f5735c673e4fce5f702cdf0e513d89a91adfffc4e42977eae7cd354a0a`  
+		Last Modified: Fri, 13 Oct 2023 05:56:23 GMT  
+		Size: 16.9 MB (16919575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c387219ad28fcaaa0c3f8710f193db936ab43a235d039af3db34c2a14040036`  
-		Last Modified: Thu, 31 Aug 2023 20:29:01 GMT  
-		Size: 46.9 MB (46862612 bytes)  
+	-	`sha256:0acde100539e35c8717db47878075a6b49bafd936b61ea6b12a5736bddddd874`  
+		Last Modified: Fri, 13 Oct 2023 05:58:29 GMT  
+		Size: 46.9 MB (46864261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5b06dad35039dc686d67206c6b2aa63a5b44238cce2a245d21b2a08e1f81344`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 159.0 B  
+	-	`sha256:ecb27f0c46fd4885f54a719fc15e826d43e693426779d7c74457a888af28c53e`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1818ec198c0ec424a918ba07db49f776ace1c7ee14e13cfc6e4c437f6fa8819`  
-		Last Modified: Thu, 31 Aug 2023 20:28:54 GMT  
-		Size: 734.0 B  
+	-	`sha256:666c2d9a5d9e917327aaf517f1785122903b91b995b424ddc963d862e461aa96`  
+		Last Modified: Fri, 13 Oct 2023 05:58:22 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:511f848ef06d505af076144fa9f27d3abd644b3571191380558f86f39d7abda0`  
-		Last Modified: Thu, 31 Aug 2023 21:09:06 GMT  
+	-	`sha256:85f1d50d195e2336e1bfb6c39425d511eb2d17ebcd6b2de62232baafbefd2cba`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
 		Size: 1.4 KB (1450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4600bfecae2e6d8e2b1caaa1cb68ecc2fe40d4e0643a75394fa440945be9fb3f`  
-		Last Modified: Thu, 31 Aug 2023 21:09:09 GMT  
-		Size: 23.7 MB (23715356 bytes)  
+	-	`sha256:831e084d31cf68d9c551cb61314abab447b0ce1b282f0e6de559b66ad7c8a443`  
+		Last Modified: Fri, 13 Oct 2023 14:03:57 GMT  
+		Size: 23.7 MB (23715420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e69c8fe72288ad711c29996795a099bd994a79bddf3bc82d3659138c7612b92`  
-		Last Modified: Thu, 14 Sep 2023 21:31:10 GMT  
-		Size: 324.4 MB (324428291 bytes)  
+	-	`sha256:7b8ba5c6716e91998f766d8516b031d663464639e387dc86ad88e8aa88e20be8`  
+		Last Modified: Fri, 13 Oct 2023 14:04:13 GMT  
+		Size: 324.4 MB (324428328 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e9858e9952cb00193ce9577ed73c0b0382b8cd48625fd874de3a5751baf9aa1`  
-		Last Modified: Thu, 14 Sep 2023 21:30:56 GMT  
-		Size: 2.1 KB (2138 bytes)  
+	-	`sha256:0e9120e0f0dd60147d7267b77b2c2cca4926299ab274b27768da017b0cf9b4df`  
+		Last Modified: Fri, 13 Oct 2023 14:03:54 GMT  
+		Size: 2.1 KB (2139 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `spark:scala` - linux; arm64 variant v8
