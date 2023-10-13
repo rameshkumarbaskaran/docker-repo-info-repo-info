@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:80b27b40f5855dce8be97fef98326f0cd1884ffac35e97538cb904700bb82f52`
-- Created: `2023-10-10T00:22:28.747742647Z`
+- Image ID: `sha256:bb952345513432062441af72c2172496ad51b85bf7aa7ea098f427d13e0bc684`
+- Created: `2023-10-13T04:27:10.336956464Z`
 - Virtual Size: ~ 1.17 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -21,8 +21,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=48F8E69F6390C9F25CFEDCD268248959359E722B A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243`
   - `TOMCAT_MAJOR=9`
-  - `TOMCAT_VERSION=9.0.80`
-  - `TOMCAT_SHA512=24014441b0ccdd2dda238efa56e1a039476488943e6cf04f8a372a340a49dd21ce174ed68e2f5fcc43401e85fae6d00c5eac3d357653e91601737b6fa94476de`
+  - `TOMCAT_VERSION=9.0.81`
+  - `TOMCAT_SHA512=919957776addb26570f4c4cc2a65159409baf6b5851b3524cc07ffb7ede289ce00f454e547d309eb772e543eea0956201067e0a7b4627d182eff7e2ce042e298`
   - `XWIKI_VERSION=14.10.18`
   - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/14.10.18`
   - `XWIKI_DOWNLOAD_SHA256=66209b2e457b1b14b177f1f4918be37c2ae65c6655d16b314db6c52cc37003ff`
@@ -469,13 +469,13 @@ $ apt-get source -qq --print-uris cups=2.4.1op1-1ubuntu4.7
 'http://archive.ubuntu.com/ubuntu/pool/main/c/cups/cups_2.4.1op1-1ubuntu4.7.debian.tar.xz' cups_2.4.1op1-1ubuntu4.7.debian.tar.xz 357988 SHA512:be0569e54882c139044c4679e4ecaeabafa91e379a274f0ab39305cdd1223b5db97b9d96f8744dcb161f2a3ea59644f21d860d92d8c92c79b4d25b1f8d6c79ac
 ```
 
-### `dpkg` source package: `curl=7.81.0-1ubuntu1.13`
+### `dpkg` source package: `curl=7.81.0-1ubuntu1.14`
 
 Binary Packages:
 
-- `curl=7.81.0-1ubuntu1.13`
-- `libcurl3-gnutls:amd64=7.81.0-1ubuntu1.13`
-- `libcurl4:amd64=7.81.0-1ubuntu1.13`
+- `curl=7.81.0-1ubuntu1.14`
+- `libcurl3-gnutls:amd64=7.81.0-1ubuntu1.14`
+- `libcurl4:amd64=7.81.0-1ubuntu1.14`
 
 Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
@@ -489,11 +489,11 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 Source:
 
 ```console
-$ apt-get source -qq --print-uris curl=7.81.0-1ubuntu1.13
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.81.0-1ubuntu1.13.dsc' curl_7.81.0-1ubuntu1.13.dsc 3143 SHA512:e2bde02f21c21c31a5d4d9d724b33e99da0578869ce8bf49f84fa33b57a4f2909d2f5bebf97e43f0d39cb7fba230d486e79f448864f445f7dddef4f454802d90
+$ apt-get source -qq --print-uris curl=7.81.0-1ubuntu1.14
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.81.0-1ubuntu1.14.dsc' curl_7.81.0-1ubuntu1.14.dsc 3143 SHA512:1c937dd675502657bd4ed5b4f76e8a79eaddecf9e7150d79ee2987b6b649cb1bf51810e7e54b28cf82c8b6793cf9cfc5ed7a0a4569474e85452cca8dd234bc5a
 'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.81.0.orig.tar.gz' curl_7.81.0.orig.tar.gz 4188040 SHA512:e3084f0fa083f7f93eac923edbfdddb5fd0a372b94673ba9d4427a2b95508898c15ecdf63b99a1c1f6cf3215e27b06cbaa2b7073df038d43b362e586f92495d3
 'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.81.0.orig.tar.gz.asc' curl_7.81.0.orig.tar.gz.asc 488 SHA512:92bc5ede831551285d67b03abe8400c609ad31c9d33e324ee5c41b92dd5c2a0245a09a396bd76807b3e44bcfef944b1e16ac266264f7b85d27cc1c072a6e82bd
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.81.0-1ubuntu1.13.debian.tar.xz' curl_7.81.0-1ubuntu1.13.debian.tar.xz 70616 SHA512:28538b2792ccbf575b95775e9544d045960f99098f61bc43f6cd8744a84179d7205f362bd13839c122c1791f9901b07790923f602ceb9a5d90710bbed89d63ae
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.81.0-1ubuntu1.14.debian.tar.xz' curl_7.81.0-1ubuntu1.14.debian.tar.xz 72928 SHA512:868772eef638747a080425e2a50138819f618bc59809fb78f46a5d52fe0c75090b1ba245b6057261f7764889d31a0889cb8594b46de1697659d88addba81718f
 ```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg2-3ubuntu1.2`
@@ -2545,21 +2545,27 @@ $ apt-get source -qq --print-uris libwps=0.4.12-2build1
 'http://archive.ubuntu.com/ubuntu/pool/main/libw/libwps/libwps_0.4.12-2build1.debian.tar.xz' libwps_0.4.12-2build1.debian.tar.xz 9392 SHA512:c796cbeae746f527e70b1612dc4de93e3fdf8b20f8942ae65624f314bd55b8a17ecdc4c9552facc33d2fbc323a5e59c698873e1f724251879931d3ce035f9a7c
 ```
 
-### `dpkg` source package: `libx11=2:1.7.5-1ubuntu0.2`
+### `dpkg` source package: `libx11=2:1.7.5-1ubuntu0.3`
 
 Binary Packages:
 
-- `libx11-6:amd64=2:1.7.5-1ubuntu0.2`
-- `libx11-data=2:1.7.5-1ubuntu0.2`
-- `libx11-xcb1:amd64=2:1.7.5-1ubuntu0.2`
+- `libx11-6:amd64=2:1.7.5-1ubuntu0.3`
+- `libx11-data=2:1.7.5-1ubuntu0.3`
+- `libx11-xcb1:amd64=2:1.7.5-1ubuntu0.3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris libx11=2:1.7.5-1ubuntu0.3
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.7.5-1ubuntu0.3.dsc' libx11_1.7.5-1ubuntu0.3.dsc 2654 SHA512:97c9c7e8096cdb264d45a08f0333025ded9b74296689809d687de62b60b5d5ef7d2dc8b592b8155dbe12aa18129f97a12b978234b52ba2ed553568d207c62fce
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.7.5.orig.tar.gz' libx11_1.7.5.orig.tar.gz 3170022 SHA512:90474f5f95c3498a02100aeeb6b5ad7ae9076bc40a70cdd828bd881adac0bf278002186142f2760e5504cf82120f4869798831e0e2332ecbc6903e8f7c9114ab
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.7.5.orig.tar.gz.asc' libx11_1.7.5.orig.tar.gz.asc 358 SHA512:75139b9f7b2f19aed3d3a66ea8b883480db2fa56d713bb0160ea8a0faba208da4c241768f9f2703f723f13906438eda3117f489d7d5d17fbe1cbb75b13c9935d
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.7.5-1ubuntu0.3.diff.gz' libx11_1.7.5-1ubuntu0.3.diff.gz 98716 SHA512:54531c960c2252c99e2f32f0d051eb1e764f181aaa68fc20a053384f70b14f32872e9ca05ed45affd2e97ea2821cdd8c3e3ebacf8c81c3088386a7d95214f64b
+```
 
 ### `dpkg` source package: `libxau=1:1.0.9-1build5`
 
@@ -3742,11 +3748,11 @@ $ apt-get source -qq --print-uris tar=1.34+dfsg-1ubuntu0.1.22.04.1
 'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.34%2bdfsg-1ubuntu0.1.22.04.1.debian.tar.xz' tar_1.34+dfsg-1ubuntu0.1.22.04.1.debian.tar.xz 19908 SHA512:26348cafd78134c0a993b1b99ffbb051d3190444608ab7953c7dbb6a4e8520df53502994f0ae933b18ecbdcb50dac9feb20ecea224de7f7e5d536ac5dd32d420
 ```
 
-### `dpkg` source package: `tiff=4.3.0-6ubuntu0.5`
+### `dpkg` source package: `tiff=4.3.0-6ubuntu0.6`
 
 Binary Packages:
 
-- `libtiff5:amd64=4.3.0-6ubuntu0.5`
+- `libtiff5:amd64=4.3.0-6ubuntu0.6`
 
 Licenses: (parsed from: `/usr/share/doc/libtiff5/copyright`)
 
@@ -3755,11 +3761,11 @@ Licenses: (parsed from: `/usr/share/doc/libtiff5/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris tiff=4.3.0-6ubuntu0.5
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.3.0-6ubuntu0.5.dsc' tiff_4.3.0-6ubuntu0.5.dsc 2573 SHA512:ea173e54ca4bd3f3c1ac0b4d2ff733d041f35382431be242ffa2892173a460ac03b4a0fb367da020134918a20196060568ba2a59110d07d6fb686cbc2db429fe
+$ apt-get source -qq --print-uris tiff=4.3.0-6ubuntu0.6
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.3.0-6ubuntu0.6.dsc' tiff_4.3.0-6ubuntu0.6.dsc 2402 SHA512:2579c7b9a6b074d27a2c81406dc4951c4ec3c02fe406e67ae70a40d9334f9ee9464fdfc187c81ada01aa4759552c8871bb814b6d7f22d6188c17f177b1e9912d
 'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.3.0.orig.tar.gz' tiff_4.3.0.orig.tar.gz 2808254 SHA512:e04a4a6c542e58a174c1e9516af3908acf1d3d3e1096648c5514f4963f73e7af27387a76b0fbabe43cf867a18874088f963796a7cd6e45deb998692e3e235493
 'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.3.0.orig.tar.gz.asc' tiff_4.3.0.orig.tar.gz.asc 488 SHA512:115a4c5714b52d0fbea800c494d83c8a96b70b2c9ce84a8df03205d9afc517faa17963f5f9508c013d7d3e2be6675b84b594a771a829406473234c4bd85e469e
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.3.0-6ubuntu0.5.debian.tar.xz' tiff_4.3.0-6ubuntu0.5.debian.tar.xz 41828 SHA512:8be935fa88e572e4c01184a825728f4a193885a2876bb01fea877c1d182fee83136257f76fd382a8620ec345df8637b1a31c4f6283d6bebc88cb17ee54aea573
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.3.0-6ubuntu0.6.debian.tar.xz' tiff_4.3.0-6ubuntu0.6.debian.tar.xz 42276 SHA512:86b1b1f2d550e75838c94603f703c9daa0542e991a37beaa8041ef74c3f7f7459df78f13d702095ce28a5631402d76cb38d9ce82e1e060e45f181ff0eb2d6aef
 ```
 
 ### `dpkg` source package: `tzdata=2023c-0ubuntu0.22.04.2`
