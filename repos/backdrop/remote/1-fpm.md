@@ -1,7 +1,7 @@
 ## `backdrop:1-fpm`
 
 ```console
-$ docker pull backdrop@sha256:c6b156b5aa75c72cb198bd646de301929ea9468b5c65877f861163e49305140f
+$ docker pull backdrop@sha256:72c98ee38bf4a5c8bb1703d5d2f8d8e14931793c4157b513473508460a617385
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull backdrop@sha256:c6b156b5aa75c72cb198bd646de301929ea9468b5c65877f86
 ### `backdrop:1-fpm` - linux; amd64
 
 ```console
-$ docker pull backdrop@sha256:e33c88ec29cbf22051bba4c8c6ec052dce32b78ebff07602ed1dce2fc5258dac
+$ docker pull backdrop@sha256:2e66f88955f5d5dbf17b0ef3789e514cfb024ff7c622e4807923ecb5fcebb121
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **187.6 MB (187625794 bytes)**  
+-	Total Size: **187.7 MB (187665420 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:434ccb18a20b84c96e4b46c0350ec8ee023ccf562b6efaf9307b3122001a1429`
+-	Image ID: `sha256:15ba3eb4d7a25c32893c89c72fb87d3948d06a19ee6fc258d955be80ea017122`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -78,17 +78,17 @@ CMD ["php-fpm"]
 RUN apt-get update && apt-get install -y libzip-dev libonig-dev libpng-dev libjpeg-dev libpq-dev 	&& rm -rf /var/lib/apt/lists/* 	&& docker-php-ext-configure gd --with-jpeg=/usr 	&& docker-php-ext-install gd mbstring pdo pdo_mysql pdo_pgsql zip
 # Thu, 12 Oct 2023 20:58:39 GMT
 WORKDIR /var/www/html
-# Thu, 12 Oct 2023 20:58:39 GMT
-ENV BACKDROP_VERSION=1.25.1
-# Thu, 12 Oct 2023 20:58:39 GMT
-ENV BACKDROP_MD5=9c2bbcb4ddd52cbd85e1e31ee4fc8a17
-# Thu, 12 Oct 2023 20:58:42 GMT
+# Tue, 17 Oct 2023 00:19:34 GMT
+ENV BACKDROP_VERSION=1.26.1
+# Tue, 17 Oct 2023 00:19:34 GMT
+ENV BACKDROP_MD5=0a6fad09190b1f8da266f586955454a2
+# Tue, 17 Oct 2023 00:19:37 GMT
 RUN curl -fSL "https://github.com/backdrop/backdrop/archive/${BACKDROP_VERSION}.tar.gz" -o backdrop.tar.gz 	&& echo "${BACKDROP_MD5} *backdrop.tar.gz" | md5sum -c - 	&& tar -xz --strip-components=1 -f backdrop.tar.gz 	&& rm backdrop.tar.gz 	&& chown -R www-data:www-data sites
-# Thu, 12 Oct 2023 20:58:42 GMT
+# Tue, 17 Oct 2023 00:19:37 GMT
 COPY file:dc282a331b642ab4cd043a874f505e04001cc1bdcf4f846fb117f413030d2835 in /entrypoint.sh 
-# Thu, 12 Oct 2023 20:58:42 GMT
+# Tue, 17 Oct 2023 00:19:37 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Thu, 12 Oct 2023 20:58:43 GMT
+# Tue, 17 Oct 2023 00:19:37 GMT
 CMD ["php-fpm"]
 ```
 
@@ -137,13 +137,13 @@ CMD ["php-fpm"]
 		Last Modified: Thu, 12 Oct 2023 20:59:33 GMT  
 		Size: 5.7 MB (5707127 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10070537332ac6260dad14ff6bdf0a2fda42528ff1b74f07584a37a95442ffed`  
-		Last Modified: Thu, 12 Oct 2023 20:59:34 GMT  
-		Size: 8.8 MB (8765704 bytes)  
+	-	`sha256:f1636906a54116c7493c50290507f8e4704dbaf79a2234e7bb02a6c8ea11251e`  
+		Last Modified: Tue, 17 Oct 2023 00:20:25 GMT  
+		Size: 8.8 MB (8805329 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0193f057d6c8ce32b0f567fcb7b74fb0bdfa4df0cf424b64888aa6baa3b73f7d`  
-		Last Modified: Thu, 12 Oct 2023 20:59:32 GMT  
-		Size: 948.0 B  
+	-	`sha256:e79e87cc6ee28b9f416e42fb2d882fb3efd5eb2506de165a613ff268afa7f997`  
+		Last Modified: Tue, 17 Oct 2023 00:20:24 GMT  
+		Size: 949.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `backdrop:1-fpm` - linux; arm64 variant v8
