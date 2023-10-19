@@ -1891,7 +1891,7 @@ CMD ["repl"]
 ## `clojure:temurin-11-alpine`
 
 ```console
-$ docker pull clojure@sha256:0d2b09d8ce0658da7fb1ac5f77880153a5663965ac6595280e99ecb02c84bf6f
+$ docker pull clojure@sha256:925187a2b4508f3c03c44654b65d71aa299d131a17b1878d9262c94a9da86515
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1901,14 +1901,14 @@ $ docker pull clojure@sha256:0d2b09d8ce0658da7fb1ac5f77880153a5663965ac6595280e9
 ### `clojure:temurin-11-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:deb00c7a93bb9471cff1cf1f8dfc0d44a1ac559afbb451b8d0e1325549376398
+$ docker pull clojure@sha256:39caf5cdd5c2a24793a155496fa8e51b5e113b98fb8dfd3b89d02afd3f3cce5b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **179.8 MB (179834865 bytes)**  
+-	Total Size: **179.8 MB (179835203 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bdfe9598f44cb1f7d0c2d456c8414090c4b4bdb71515f0ec37d516dc40b42054`
+-	Image ID: `sha256:85f07001a69a846bafc2afd319e3fcefe3a5fcf3d6047612540d0f6ce4bb31bb`
 -	Entrypoint: `["\/__cacert_entrypoint.sh"]`
 -	Default Command: `["clj"]`
 
@@ -1917,35 +1917,35 @@ $ docker pull clojure@sha256:deb00c7a93bb9471cff1cf1f8dfc0d44a1ac559afbb451b8d0e
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 28 Sep 2023 23:25:02 GMT
+# Thu, 19 Oct 2023 02:51:15 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 28 Sep 2023 23:25:10 GMT
+# Thu, 19 Oct 2023 02:51:24 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='1a94e642bf6cc4124d4f01f43184f9127ef994cbd324e2ee42cc50f715cbaedf';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jdk_x64_alpine-linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 CMD ["jshell"]
-# Fri, 29 Sep 2023 03:44:03 GMT
+# Thu, 19 Oct 2023 07:07:55 GMT
 ENV CLOJURE_VERSION=1.11.1.1413
-# Fri, 29 Sep 2023 03:44:04 GMT
+# Thu, 19 Oct 2023 07:07:55 GMT
 WORKDIR /tmp
-# Fri, 29 Sep 2023 03:44:08 GMT
+# Thu, 19 Oct 2023 07:08:00 GMT
 RUN apk add --no-cache curl bash make git && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "ad9aa1e99c59a4f7eb66450914fbec543337d9fada60dd9d34eec7fe18ae4965 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl
-# Fri, 29 Sep 2023 03:44:09 GMT
+# Thu, 19 Oct 2023 07:08:00 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Fri, 29 Sep 2023 03:44:09 GMT
+# Thu, 19 Oct 2023 07:08:00 GMT
 CMD ["clj"]
 ```
 
@@ -1954,29 +1954,29 @@ CMD ["clj"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a363adaeeae522cf68572d9f985bdee8d6dd35547169bb62cb4a5e65c6b359e4`  
-		Last Modified: Thu, 28 Sep 2023 23:29:11 GMT  
-		Size: 140.2 MB (140159189 bytes)  
+	-	`sha256:e8889f3a7977f3ade412f5d009bce4bc23ac85d7bb766ef3506a073478fcbde6`  
+		Last Modified: Thu, 19 Oct 2023 02:56:50 GMT  
+		Size: 140.2 MB (140159180 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:801ecece587301dd00ac27da98df931840bd4da3eede6ae68ba5f5de6ecc993b`  
-		Last Modified: Thu, 28 Sep 2023 23:29:00 GMT  
-		Size: 180.0 B  
+	-	`sha256:4859c4719abf234979ec0e43481f4faa8891570bc31978e1e6aeabfb446c87db`  
+		Last Modified: Thu, 19 Oct 2023 02:56:40 GMT  
+		Size: 178.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b16c1d9a36e7ab385c1d5fca98d54d5e80bb305341468cf266d952b8a5f4b0a8`  
-		Last Modified: Thu, 28 Sep 2023 23:29:00 GMT  
+	-	`sha256:98b582a93389d665ad51329afbf83f528596081b078c26a5062d5826c3982e31`  
+		Last Modified: Thu, 19 Oct 2023 02:56:40 GMT  
 		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:104e5a82795d399bc257727c14214d3545dad1be95e7dde5b1a817e197a82c6d`  
-		Last Modified: Fri, 29 Sep 2023 03:48:22 GMT  
-		Size: 27.0 MB (26995661 bytes)  
+	-	`sha256:33739a3131a2722a79d5f19b9aeeb2297b35d9001255b8207a1cf615c02418df`  
+		Last Modified: Thu, 19 Oct 2023 07:13:15 GMT  
+		Size: 27.0 MB (26996032 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d95f9426be949cb556f204a00dba624d84d13f4ac910b196c44e703d45519d86`  
-		Last Modified: Fri, 29 Sep 2023 03:48:17 GMT  
-		Size: 621.0 B  
+	-	`sha256:529c886de0510549a8b6d633003078ed099b3cb6ac485ee1b92110c348934782`  
+		Last Modified: Thu, 19 Oct 2023 07:13:11 GMT  
+		Size: 623.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:temurin-11-bookworm`
@@ -5492,7 +5492,7 @@ CMD ["lein" "repl"]
 ## `clojure:temurin-11-lein-2.10.0-alpine`
 
 ```console
-$ docker pull clojure@sha256:8f4a46f85661da7bf9338d6e3e6b748c6471e4337a57d54a79d2ce185bc3d113
+$ docker pull clojure@sha256:01c0c132e28afac1930f57af3bb7d9ccc92249acc2b44ceb67b7d019556de163
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5502,14 +5502,14 @@ $ docker pull clojure@sha256:8f4a46f85661da7bf9338d6e3e6b748c6471e4337a57d54a79d
 ### `clojure:temurin-11-lein-2.10.0-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:2d6dfd83fcd8eae0df11db24e7ad93cfb0d9d3fe67f562c82540618ceddc1d72
+$ docker pull clojure@sha256:67ad76695a2e047e34cd711f91eabd08ba28ff0600721fdf09af25588d131930
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **168.8 MB (168788478 bytes)**  
+-	Total Size: **168.8 MB (168788455 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bceb0ded020ab11d6f288b8e621b6d1e56977c3b89cd343a38905b6830c18fef`
+-	Image ID: `sha256:1ff06dd25bd120811539b7cc451431bf67d84c0027e314da0b62268b4da75859`
 -	Entrypoint: `["\/__cacert_entrypoint.sh"]`
 -	Default Command: `["lein","repl"]`
 
@@ -5518,41 +5518,41 @@ $ docker pull clojure@sha256:2d6dfd83fcd8eae0df11db24e7ad93cfb0d9d3fe67f562c8254
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 28 Sep 2023 23:25:02 GMT
+# Thu, 19 Oct 2023 02:51:15 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 28 Sep 2023 23:25:10 GMT
+# Thu, 19 Oct 2023 02:51:24 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='1a94e642bf6cc4124d4f01f43184f9127ef994cbd324e2ee42cc50f715cbaedf';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jdk_x64_alpine-linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 CMD ["jshell"]
-# Fri, 29 Sep 2023 03:43:40 GMT
+# Thu, 19 Oct 2023 07:07:26 GMT
 ENV LEIN_VERSION=2.10.0
-# Fri, 29 Sep 2023 03:43:40 GMT
+# Thu, 19 Oct 2023 07:07:26 GMT
 ENV LEIN_INSTALL=/usr/local/bin/
-# Fri, 29 Sep 2023 03:43:40 GMT
+# Thu, 19 Oct 2023 07:07:26 GMT
 WORKDIR /tmp
-# Fri, 29 Sep 2023 03:43:46 GMT
+# Thu, 19 Oct 2023 07:07:33 GMT
 RUN set -eux; apk add --no-cache ca-certificates bash tar openssl gnupg && mkdir -p $LEIN_INSTALL && wget -q https://codeberg.org/leiningen/leiningen/raw/tag/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha256sum lein-pkg && echo "b1757ce941e4cbf15cbf649b7b4f413365e612da892d22841ec1728391bb66af *lein-pkg" | sha256sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && export GNUPGHOME="$(mktemp -d)" && export FILENAME_EXT=jar && gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys 6A2D483DB59437EBB97D09B1040193357D0606ED && wget -q https://codeberg.org/leiningen/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && wget -q https://codeberg.org/leiningen/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && echo "Verifying file PGP signature..." && gpg --batch --verify leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && gpgconf --kill all && rm -rf "$GNUPGHOME" leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apk del ca-certificates tar openssl gnupg
-# Fri, 29 Sep 2023 03:43:46 GMT
+# Thu, 19 Oct 2023 07:07:33 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Fri, 29 Sep 2023 03:43:47 GMT
+# Thu, 19 Oct 2023 07:07:33 GMT
 ENV LEIN_ROOT=1
-# Fri, 29 Sep 2023 03:43:49 GMT
+# Thu, 19 Oct 2023 07:07:36 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.11.1"]])' > project.clj   && lein deps && rm project.clj
-# Fri, 29 Sep 2023 03:43:50 GMT
+# Thu, 19 Oct 2023 07:07:36 GMT
 CMD ["lein" "repl"]
 ```
 
@@ -5561,29 +5561,29 @@ CMD ["lein" "repl"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a363adaeeae522cf68572d9f985bdee8d6dd35547169bb62cb4a5e65c6b359e4`  
-		Last Modified: Thu, 28 Sep 2023 23:29:11 GMT  
-		Size: 140.2 MB (140159189 bytes)  
+	-	`sha256:e8889f3a7977f3ade412f5d009bce4bc23ac85d7bb766ef3506a073478fcbde6`  
+		Last Modified: Thu, 19 Oct 2023 02:56:50 GMT  
+		Size: 140.2 MB (140159180 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:801ecece587301dd00ac27da98df931840bd4da3eede6ae68ba5f5de6ecc993b`  
-		Last Modified: Thu, 28 Sep 2023 23:29:00 GMT  
-		Size: 180.0 B  
+	-	`sha256:4859c4719abf234979ec0e43481f4faa8891570bc31978e1e6aeabfb446c87db`  
+		Last Modified: Thu, 19 Oct 2023 02:56:40 GMT  
+		Size: 178.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b16c1d9a36e7ab385c1d5fca98d54d5e80bb305341468cf266d952b8a5f4b0a8`  
-		Last Modified: Thu, 28 Sep 2023 23:29:00 GMT  
+	-	`sha256:98b582a93389d665ad51329afbf83f528596081b078c26a5062d5826c3982e31`  
+		Last Modified: Thu, 19 Oct 2023 02:56:40 GMT  
 		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:32d5054fd31955cbf7122c7d407fe41bd3685eac9de69ea955ed60f2425501e7`  
-		Last Modified: Fri, 29 Sep 2023 03:48:05 GMT  
-		Size: 11.6 MB (11550640 bytes)  
+	-	`sha256:ec938fc134323d2fcf1253773efd86f950dfe3dd013956361b41e66df9a45acb`  
+		Last Modified: Thu, 19 Oct 2023 07:12:55 GMT  
+		Size: 11.6 MB (11550642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27ff87d78bc0de1ee5d10e9cea6a965c1c52667489d7fc88dfa27c8e87a6fd11`  
-		Last Modified: Fri, 29 Sep 2023 03:48:04 GMT  
-		Size: 4.4 MB (4399255 bytes)  
+	-	`sha256:7a57f971fc52301c4f6026e68de9678b7a51c9840c46fa212c399c45fb7d158f`  
+		Last Modified: Thu, 19 Oct 2023 07:12:54 GMT  
+		Size: 4.4 MB (4399265 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:temurin-11-lein-2.10.0-bookworm`
@@ -6515,7 +6515,7 @@ CMD ["lein" "repl"]
 ## `clojure:temurin-11-lein-alpine`
 
 ```console
-$ docker pull clojure@sha256:8f4a46f85661da7bf9338d6e3e6b748c6471e4337a57d54a79d2ce185bc3d113
+$ docker pull clojure@sha256:01c0c132e28afac1930f57af3bb7d9ccc92249acc2b44ceb67b7d019556de163
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6525,14 +6525,14 @@ $ docker pull clojure@sha256:8f4a46f85661da7bf9338d6e3e6b748c6471e4337a57d54a79d
 ### `clojure:temurin-11-lein-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:2d6dfd83fcd8eae0df11db24e7ad93cfb0d9d3fe67f562c82540618ceddc1d72
+$ docker pull clojure@sha256:67ad76695a2e047e34cd711f91eabd08ba28ff0600721fdf09af25588d131930
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **168.8 MB (168788478 bytes)**  
+-	Total Size: **168.8 MB (168788455 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bceb0ded020ab11d6f288b8e621b6d1e56977c3b89cd343a38905b6830c18fef`
+-	Image ID: `sha256:1ff06dd25bd120811539b7cc451431bf67d84c0027e314da0b62268b4da75859`
 -	Entrypoint: `["\/__cacert_entrypoint.sh"]`
 -	Default Command: `["lein","repl"]`
 
@@ -6541,41 +6541,41 @@ $ docker pull clojure@sha256:2d6dfd83fcd8eae0df11db24e7ad93cfb0d9d3fe67f562c8254
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 28 Sep 2023 23:25:02 GMT
+# Thu, 19 Oct 2023 02:51:15 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 28 Sep 2023 23:25:10 GMT
+# Thu, 19 Oct 2023 02:51:24 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='1a94e642bf6cc4124d4f01f43184f9127ef994cbd324e2ee42cc50f715cbaedf';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jdk_x64_alpine-linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 CMD ["jshell"]
-# Fri, 29 Sep 2023 03:43:40 GMT
+# Thu, 19 Oct 2023 07:07:26 GMT
 ENV LEIN_VERSION=2.10.0
-# Fri, 29 Sep 2023 03:43:40 GMT
+# Thu, 19 Oct 2023 07:07:26 GMT
 ENV LEIN_INSTALL=/usr/local/bin/
-# Fri, 29 Sep 2023 03:43:40 GMT
+# Thu, 19 Oct 2023 07:07:26 GMT
 WORKDIR /tmp
-# Fri, 29 Sep 2023 03:43:46 GMT
+# Thu, 19 Oct 2023 07:07:33 GMT
 RUN set -eux; apk add --no-cache ca-certificates bash tar openssl gnupg && mkdir -p $LEIN_INSTALL && wget -q https://codeberg.org/leiningen/leiningen/raw/tag/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha256sum lein-pkg && echo "b1757ce941e4cbf15cbf649b7b4f413365e612da892d22841ec1728391bb66af *lein-pkg" | sha256sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && export GNUPGHOME="$(mktemp -d)" && export FILENAME_EXT=jar && gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys 6A2D483DB59437EBB97D09B1040193357D0606ED && wget -q https://codeberg.org/leiningen/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && wget -q https://codeberg.org/leiningen/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && echo "Verifying file PGP signature..." && gpg --batch --verify leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && gpgconf --kill all && rm -rf "$GNUPGHOME" leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apk del ca-certificates tar openssl gnupg
-# Fri, 29 Sep 2023 03:43:46 GMT
+# Thu, 19 Oct 2023 07:07:33 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Fri, 29 Sep 2023 03:43:47 GMT
+# Thu, 19 Oct 2023 07:07:33 GMT
 ENV LEIN_ROOT=1
-# Fri, 29 Sep 2023 03:43:49 GMT
+# Thu, 19 Oct 2023 07:07:36 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.11.1"]])' > project.clj   && lein deps && rm project.clj
-# Fri, 29 Sep 2023 03:43:50 GMT
+# Thu, 19 Oct 2023 07:07:36 GMT
 CMD ["lein" "repl"]
 ```
 
@@ -6584,29 +6584,29 @@ CMD ["lein" "repl"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a363adaeeae522cf68572d9f985bdee8d6dd35547169bb62cb4a5e65c6b359e4`  
-		Last Modified: Thu, 28 Sep 2023 23:29:11 GMT  
-		Size: 140.2 MB (140159189 bytes)  
+	-	`sha256:e8889f3a7977f3ade412f5d009bce4bc23ac85d7bb766ef3506a073478fcbde6`  
+		Last Modified: Thu, 19 Oct 2023 02:56:50 GMT  
+		Size: 140.2 MB (140159180 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:801ecece587301dd00ac27da98df931840bd4da3eede6ae68ba5f5de6ecc993b`  
-		Last Modified: Thu, 28 Sep 2023 23:29:00 GMT  
-		Size: 180.0 B  
+	-	`sha256:4859c4719abf234979ec0e43481f4faa8891570bc31978e1e6aeabfb446c87db`  
+		Last Modified: Thu, 19 Oct 2023 02:56:40 GMT  
+		Size: 178.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b16c1d9a36e7ab385c1d5fca98d54d5e80bb305341468cf266d952b8a5f4b0a8`  
-		Last Modified: Thu, 28 Sep 2023 23:29:00 GMT  
+	-	`sha256:98b582a93389d665ad51329afbf83f528596081b078c26a5062d5826c3982e31`  
+		Last Modified: Thu, 19 Oct 2023 02:56:40 GMT  
 		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:32d5054fd31955cbf7122c7d407fe41bd3685eac9de69ea955ed60f2425501e7`  
-		Last Modified: Fri, 29 Sep 2023 03:48:05 GMT  
-		Size: 11.6 MB (11550640 bytes)  
+	-	`sha256:ec938fc134323d2fcf1253773efd86f950dfe3dd013956361b41e66df9a45acb`  
+		Last Modified: Thu, 19 Oct 2023 07:12:55 GMT  
+		Size: 11.6 MB (11550642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27ff87d78bc0de1ee5d10e9cea6a965c1c52667489d7fc88dfa27c8e87a6fd11`  
-		Last Modified: Fri, 29 Sep 2023 03:48:04 GMT  
-		Size: 4.4 MB (4399255 bytes)  
+	-	`sha256:7a57f971fc52301c4f6026e68de9678b7a51c9840c46fa212c399c45fb7d158f`  
+		Last Modified: Thu, 19 Oct 2023 07:12:54 GMT  
+		Size: 4.4 MB (4399265 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:temurin-11-lein-bookworm`
@@ -7916,7 +7916,7 @@ CMD ["clj"]
 ## `clojure:temurin-11-tools-deps-1.11.1.1413-alpine`
 
 ```console
-$ docker pull clojure@sha256:0d2b09d8ce0658da7fb1ac5f77880153a5663965ac6595280e99ecb02c84bf6f
+$ docker pull clojure@sha256:925187a2b4508f3c03c44654b65d71aa299d131a17b1878d9262c94a9da86515
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7926,14 +7926,14 @@ $ docker pull clojure@sha256:0d2b09d8ce0658da7fb1ac5f77880153a5663965ac6595280e9
 ### `clojure:temurin-11-tools-deps-1.11.1.1413-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:deb00c7a93bb9471cff1cf1f8dfc0d44a1ac559afbb451b8d0e1325549376398
+$ docker pull clojure@sha256:39caf5cdd5c2a24793a155496fa8e51b5e113b98fb8dfd3b89d02afd3f3cce5b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **179.8 MB (179834865 bytes)**  
+-	Total Size: **179.8 MB (179835203 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bdfe9598f44cb1f7d0c2d456c8414090c4b4bdb71515f0ec37d516dc40b42054`
+-	Image ID: `sha256:85f07001a69a846bafc2afd319e3fcefe3a5fcf3d6047612540d0f6ce4bb31bb`
 -	Entrypoint: `["\/__cacert_entrypoint.sh"]`
 -	Default Command: `["clj"]`
 
@@ -7942,35 +7942,35 @@ $ docker pull clojure@sha256:deb00c7a93bb9471cff1cf1f8dfc0d44a1ac559afbb451b8d0e
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 28 Sep 2023 23:25:02 GMT
+# Thu, 19 Oct 2023 02:51:15 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 28 Sep 2023 23:25:10 GMT
+# Thu, 19 Oct 2023 02:51:24 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='1a94e642bf6cc4124d4f01f43184f9127ef994cbd324e2ee42cc50f715cbaedf';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jdk_x64_alpine-linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 CMD ["jshell"]
-# Fri, 29 Sep 2023 03:44:03 GMT
+# Thu, 19 Oct 2023 07:07:55 GMT
 ENV CLOJURE_VERSION=1.11.1.1413
-# Fri, 29 Sep 2023 03:44:04 GMT
+# Thu, 19 Oct 2023 07:07:55 GMT
 WORKDIR /tmp
-# Fri, 29 Sep 2023 03:44:08 GMT
+# Thu, 19 Oct 2023 07:08:00 GMT
 RUN apk add --no-cache curl bash make git && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "ad9aa1e99c59a4f7eb66450914fbec543337d9fada60dd9d34eec7fe18ae4965 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl
-# Fri, 29 Sep 2023 03:44:09 GMT
+# Thu, 19 Oct 2023 07:08:00 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Fri, 29 Sep 2023 03:44:09 GMT
+# Thu, 19 Oct 2023 07:08:00 GMT
 CMD ["clj"]
 ```
 
@@ -7979,29 +7979,29 @@ CMD ["clj"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a363adaeeae522cf68572d9f985bdee8d6dd35547169bb62cb4a5e65c6b359e4`  
-		Last Modified: Thu, 28 Sep 2023 23:29:11 GMT  
-		Size: 140.2 MB (140159189 bytes)  
+	-	`sha256:e8889f3a7977f3ade412f5d009bce4bc23ac85d7bb766ef3506a073478fcbde6`  
+		Last Modified: Thu, 19 Oct 2023 02:56:50 GMT  
+		Size: 140.2 MB (140159180 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:801ecece587301dd00ac27da98df931840bd4da3eede6ae68ba5f5de6ecc993b`  
-		Last Modified: Thu, 28 Sep 2023 23:29:00 GMT  
-		Size: 180.0 B  
+	-	`sha256:4859c4719abf234979ec0e43481f4faa8891570bc31978e1e6aeabfb446c87db`  
+		Last Modified: Thu, 19 Oct 2023 02:56:40 GMT  
+		Size: 178.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b16c1d9a36e7ab385c1d5fca98d54d5e80bb305341468cf266d952b8a5f4b0a8`  
-		Last Modified: Thu, 28 Sep 2023 23:29:00 GMT  
+	-	`sha256:98b582a93389d665ad51329afbf83f528596081b078c26a5062d5826c3982e31`  
+		Last Modified: Thu, 19 Oct 2023 02:56:40 GMT  
 		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:104e5a82795d399bc257727c14214d3545dad1be95e7dde5b1a817e197a82c6d`  
-		Last Modified: Fri, 29 Sep 2023 03:48:22 GMT  
-		Size: 27.0 MB (26995661 bytes)  
+	-	`sha256:33739a3131a2722a79d5f19b9aeeb2297b35d9001255b8207a1cf615c02418df`  
+		Last Modified: Thu, 19 Oct 2023 07:13:15 GMT  
+		Size: 27.0 MB (26996032 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d95f9426be949cb556f204a00dba624d84d13f4ac910b196c44e703d45519d86`  
-		Last Modified: Fri, 29 Sep 2023 03:48:17 GMT  
-		Size: 621.0 B  
+	-	`sha256:529c886de0510549a8b6d633003078ed099b3cb6ac485ee1b92110c348934782`  
+		Last Modified: Thu, 19 Oct 2023 07:13:11 GMT  
+		Size: 623.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:temurin-11-tools-deps-1.11.1.1413-bookworm`
@@ -8861,7 +8861,7 @@ CMD ["clj"]
 ## `clojure:temurin-11-tools-deps-alpine`
 
 ```console
-$ docker pull clojure@sha256:0d2b09d8ce0658da7fb1ac5f77880153a5663965ac6595280e99ecb02c84bf6f
+$ docker pull clojure@sha256:925187a2b4508f3c03c44654b65d71aa299d131a17b1878d9262c94a9da86515
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8871,14 +8871,14 @@ $ docker pull clojure@sha256:0d2b09d8ce0658da7fb1ac5f77880153a5663965ac6595280e9
 ### `clojure:temurin-11-tools-deps-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:deb00c7a93bb9471cff1cf1f8dfc0d44a1ac559afbb451b8d0e1325549376398
+$ docker pull clojure@sha256:39caf5cdd5c2a24793a155496fa8e51b5e113b98fb8dfd3b89d02afd3f3cce5b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **179.8 MB (179834865 bytes)**  
+-	Total Size: **179.8 MB (179835203 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bdfe9598f44cb1f7d0c2d456c8414090c4b4bdb71515f0ec37d516dc40b42054`
+-	Image ID: `sha256:85f07001a69a846bafc2afd319e3fcefe3a5fcf3d6047612540d0f6ce4bb31bb`
 -	Entrypoint: `["\/__cacert_entrypoint.sh"]`
 -	Default Command: `["clj"]`
 
@@ -8887,35 +8887,35 @@ $ docker pull clojure@sha256:deb00c7a93bb9471cff1cf1f8dfc0d44a1ac559afbb451b8d0e
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 28 Sep 2023 23:25:02 GMT
+# Thu, 19 Oct 2023 02:51:15 GMT
 ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 28 Sep 2023 23:25:10 GMT
+# Thu, 19 Oct 2023 02:51:24 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='1a94e642bf6cc4124d4f01f43184f9127ef994cbd324e2ee42cc50f715cbaedf';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jdk_x64_alpine-linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 28 Sep 2023 23:25:13 GMT
+# Thu, 19 Oct 2023 02:51:26 GMT
 CMD ["jshell"]
-# Fri, 29 Sep 2023 03:44:03 GMT
+# Thu, 19 Oct 2023 07:07:55 GMT
 ENV CLOJURE_VERSION=1.11.1.1413
-# Fri, 29 Sep 2023 03:44:04 GMT
+# Thu, 19 Oct 2023 07:07:55 GMT
 WORKDIR /tmp
-# Fri, 29 Sep 2023 03:44:08 GMT
+# Thu, 19 Oct 2023 07:08:00 GMT
 RUN apk add --no-cache curl bash make git && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "ad9aa1e99c59a4f7eb66450914fbec543337d9fada60dd9d34eec7fe18ae4965 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl
-# Fri, 29 Sep 2023 03:44:09 GMT
+# Thu, 19 Oct 2023 07:08:00 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Fri, 29 Sep 2023 03:44:09 GMT
+# Thu, 19 Oct 2023 07:08:00 GMT
 CMD ["clj"]
 ```
 
@@ -8924,29 +8924,29 @@ CMD ["clj"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a363adaeeae522cf68572d9f985bdee8d6dd35547169bb62cb4a5e65c6b359e4`  
-		Last Modified: Thu, 28 Sep 2023 23:29:11 GMT  
-		Size: 140.2 MB (140159189 bytes)  
+	-	`sha256:e8889f3a7977f3ade412f5d009bce4bc23ac85d7bb766ef3506a073478fcbde6`  
+		Last Modified: Thu, 19 Oct 2023 02:56:50 GMT  
+		Size: 140.2 MB (140159180 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:801ecece587301dd00ac27da98df931840bd4da3eede6ae68ba5f5de6ecc993b`  
-		Last Modified: Thu, 28 Sep 2023 23:29:00 GMT  
-		Size: 180.0 B  
+	-	`sha256:4859c4719abf234979ec0e43481f4faa8891570bc31978e1e6aeabfb446c87db`  
+		Last Modified: Thu, 19 Oct 2023 02:56:40 GMT  
+		Size: 178.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b16c1d9a36e7ab385c1d5fca98d54d5e80bb305341468cf266d952b8a5f4b0a8`  
-		Last Modified: Thu, 28 Sep 2023 23:29:00 GMT  
+	-	`sha256:98b582a93389d665ad51329afbf83f528596081b078c26a5062d5826c3982e31`  
+		Last Modified: Thu, 19 Oct 2023 02:56:40 GMT  
 		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:104e5a82795d399bc257727c14214d3545dad1be95e7dde5b1a817e197a82c6d`  
-		Last Modified: Fri, 29 Sep 2023 03:48:22 GMT  
-		Size: 27.0 MB (26995661 bytes)  
+	-	`sha256:33739a3131a2722a79d5f19b9aeeb2297b35d9001255b8207a1cf615c02418df`  
+		Last Modified: Thu, 19 Oct 2023 07:13:15 GMT  
+		Size: 27.0 MB (26996032 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d95f9426be949cb556f204a00dba624d84d13f4ac910b196c44e703d45519d86`  
-		Last Modified: Fri, 29 Sep 2023 03:48:17 GMT  
-		Size: 621.0 B  
+	-	`sha256:529c886de0510549a8b6d633003078ed099b3cb6ac485ee1b92110c348934782`  
+		Last Modified: Thu, 19 Oct 2023 07:13:11 GMT  
+		Size: 623.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:temurin-11-tools-deps-bookworm`
@@ -9806,7 +9806,7 @@ CMD ["clj"]
 ## `clojure:temurin-17-alpine`
 
 ```console
-$ docker pull clojure@sha256:305cf2ccfceef50c9f9f3f859e540b4ca32fef1342d7b6cf2ddb724211c3bdf7
+$ docker pull clojure@sha256:c5128762b0000eff89e56baa9d13b7b145cbfd1e751a138b103d36724c43e643
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9816,14 +9816,14 @@ $ docker pull clojure@sha256:305cf2ccfceef50c9f9f3f859e540b4ca32fef1342d7b6cf2dd
 ### `clojure:temurin-17-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:6561b113019aea69ec4355b2c667ac50fff38be3baf0f15eeb98e099da3968e3
+$ docker pull clojure@sha256:23f28781bb336cf05c993b13747ea220a7dfe9ef64a91a61c7b358958210b9cc
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **183.8 MB (183778655 bytes)**  
+-	Total Size: **183.8 MB (183778950 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:035fac8b0c76727c5ed27390f39ebe60389a052e1aabc2e56f9f2650b2dec0ba`
+-	Image ID: `sha256:2d45c19ceecb974f99726591d36f9255c17161655d3596aa8abe63b931a44f50`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["-M","--repl"]`
 
@@ -9832,39 +9832,39 @@ $ docker pull clojure@sha256:6561b113019aea69ec4355b2c667ac50fff38be3baf0f15eeb9
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 28 Sep 2023 23:25:43 GMT
+# Thu, 19 Oct 2023 02:52:13 GMT
 ENV JAVA_VERSION=jdk-17.0.8.1+1
-# Thu, 28 Sep 2023 23:25:54 GMT
+# Thu, 19 Oct 2023 02:52:22 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='85d298268db61c4a538df905ec510eba7dc09300e7f7132bb2e25e5e8aef1933';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8.1%2B1/OpenJDK17U-jdk_x64_alpine-linux_hotspot_17.0.8.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 CMD ["jshell"]
-# Fri, 29 Sep 2023 03:44:53 GMT
+# Thu, 19 Oct 2023 07:08:59 GMT
 ENV CLOJURE_VERSION=1.11.1.1413
-# Fri, 29 Sep 2023 03:44:53 GMT
+# Thu, 19 Oct 2023 07:08:59 GMT
 WORKDIR /tmp
-# Fri, 29 Sep 2023 03:44:58 GMT
+# Thu, 19 Oct 2023 07:09:03 GMT
 RUN apk add --no-cache curl bash make git && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "ad9aa1e99c59a4f7eb66450914fbec543337d9fada60dd9d34eec7fe18ae4965 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl
-# Fri, 29 Sep 2023 03:44:58 GMT
+# Thu, 19 Oct 2023 07:09:04 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Fri, 29 Sep 2023 03:44:58 GMT
+# Thu, 19 Oct 2023 07:09:04 GMT
 COPY file:137b40904568e30898cd031ef34f77e7f132846ba4eec91d04ae4b93dddfbb8d in /usr/local/bin/entrypoint 
-# Fri, 29 Sep 2023 03:44:58 GMT
+# Thu, 19 Oct 2023 07:09:04 GMT
 ENTRYPOINT ["entrypoint"]
-# Fri, 29 Sep 2023 03:44:58 GMT
+# Thu, 19 Oct 2023 07:09:04 GMT
 CMD ["-M" "--repl"]
 ```
 
@@ -9873,33 +9873,33 @@ CMD ["-M" "--repl"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:915fe362f7834d55d0629bc87900106e436777183710296be59a773b2b923c43`  
-		Last Modified: Thu, 28 Sep 2023 23:29:54 GMT  
-		Size: 144.1 MB (144102417 bytes)  
+	-	`sha256:d88dc667c7bf166587f40f34c016b04f07e49afdc87779d97a184d7ff5d0aa83`  
+		Last Modified: Thu, 19 Oct 2023 02:58:17 GMT  
+		Size: 144.1 MB (144102484 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10b027806bac1630d9efcca8bfb815e52ac2229cf46533b8a8635f26c9953328`  
-		Last Modified: Thu, 28 Sep 2023 23:29:43 GMT  
-		Size: 175.0 B  
+	-	`sha256:a4d3a9953c39ae108715fb332e9470afbfc3b8860bc540a54fbc147527e1f19a`  
+		Last Modified: Thu, 19 Oct 2023 02:58:05 GMT  
+		Size: 179.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ece0488f1c6ac8f5bb7dcdc54b476499c3cc3d295b17785db90dc555692fe24e`  
-		Last Modified: Thu, 28 Sep 2023 23:29:43 GMT  
+	-	`sha256:39241601e2ef6860df9c2ba6ba7c34e854312d1ebe22a7a90b93991d57fe2d78`  
+		Last Modified: Thu, 19 Oct 2023 02:58:05 GMT  
 		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6e2ab9a6598cd69687e9ac8726eedcb4353d2c243aa20491260fc5c99178c71c`  
-		Last Modified: Fri, 29 Sep 2023 03:49:08 GMT  
-		Size: 27.0 MB (26995825 bytes)  
+	-	`sha256:7e400db5f9c071d2f0db97b857de3559013b665440b041ef6559b4c14b423841`  
+		Last Modified: Thu, 19 Oct 2023 07:14:02 GMT  
+		Size: 27.0 MB (26996066 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc91f2550f99b6cd0d76d7dac0b818c71a07983bd18302ecd2a17c588b09f6f4`  
-		Last Modified: Fri, 29 Sep 2023 03:49:06 GMT  
-		Size: 620.0 B  
+	-	`sha256:cea8f03b90e7e59dede5182c714894e761149d87ec763940efb328fadd583c8d`  
+		Last Modified: Thu, 19 Oct 2023 07:14:00 GMT  
+		Size: 625.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee523a00d02e9051b7d4bd3dc4ba5617710dcdfa63f013477a64ed4f3d5f44ae`  
-		Last Modified: Fri, 29 Sep 2023 03:49:06 GMT  
-		Size: 404.0 B  
+	-	`sha256:be8ce042958a7f5684a606e6141ba7f368b30b8f8c0a44c0b97a947a06c472f5`  
+		Last Modified: Thu, 19 Oct 2023 07:14:00 GMT  
+		Size: 406.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:temurin-17-bookworm`
@@ -13791,7 +13791,7 @@ CMD ["repl"]
 ## `clojure:temurin-17-lein-2.10.0-alpine`
 
 ```console
-$ docker pull clojure@sha256:8f5923089e95db0ceffbe1c2adcdc7945b95454ce8dbc9daad3a60576ae38339
+$ docker pull clojure@sha256:c6bd798cb7776f64242b57ac5fd919b216a917f3b7b6733d58e4c58909481114
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13801,14 +13801,14 @@ $ docker pull clojure@sha256:8f5923089e95db0ceffbe1c2adcdc7945b95454ce8dbc9daad3
 ### `clojure:temurin-17-lein-2.10.0-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:9516e5bb68837385ea4e0df50a191da116e317c8a5a142dedb64e43d4a672246
+$ docker pull clojure@sha256:d1d2a47fe5ce9adcbf70114bc18d4c9b715acb9e92c33882cae3c4c8aa46d4ca
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **172.7 MB (172732050 bytes)**  
+-	Total Size: **172.7 MB (172732171 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d886d76a299422c5fab9160b23e787b0ba884a3ff46effdcb35045e3ee8be58d`
+-	Image ID: `sha256:df654f927e15d32b5bd32a20064575d5d3f283e8af022f2092b7e84d10b66049`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["repl"]`
 
@@ -13817,45 +13817,45 @@ $ docker pull clojure@sha256:9516e5bb68837385ea4e0df50a191da116e317c8a5a142dedb6
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 28 Sep 2023 23:25:43 GMT
+# Thu, 19 Oct 2023 02:52:13 GMT
 ENV JAVA_VERSION=jdk-17.0.8.1+1
-# Thu, 28 Sep 2023 23:25:54 GMT
+# Thu, 19 Oct 2023 02:52:22 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='85d298268db61c4a538df905ec510eba7dc09300e7f7132bb2e25e5e8aef1933';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8.1%2B1/OpenJDK17U-jdk_x64_alpine-linux_hotspot_17.0.8.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 CMD ["jshell"]
-# Fri, 29 Sep 2023 03:44:31 GMT
+# Thu, 19 Oct 2023 07:08:31 GMT
 ENV LEIN_VERSION=2.10.0
-# Fri, 29 Sep 2023 03:44:31 GMT
+# Thu, 19 Oct 2023 07:08:31 GMT
 ENV LEIN_INSTALL=/usr/local/bin/
-# Fri, 29 Sep 2023 03:44:32 GMT
+# Thu, 19 Oct 2023 07:08:31 GMT
 WORKDIR /tmp
-# Fri, 29 Sep 2023 03:44:38 GMT
+# Thu, 19 Oct 2023 07:08:39 GMT
 RUN set -eux; apk add --no-cache ca-certificates bash tar openssl gnupg && mkdir -p $LEIN_INSTALL && wget -q https://codeberg.org/leiningen/leiningen/raw/tag/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha256sum lein-pkg && echo "b1757ce941e4cbf15cbf649b7b4f413365e612da892d22841ec1728391bb66af *lein-pkg" | sha256sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && export GNUPGHOME="$(mktemp -d)" && export FILENAME_EXT=jar && gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys 6A2D483DB59437EBB97D09B1040193357D0606ED && wget -q https://codeberg.org/leiningen/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && wget -q https://codeberg.org/leiningen/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && echo "Verifying file PGP signature..." && gpg --batch --verify leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && gpgconf --kill all && rm -rf "$GNUPGHOME" leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apk del ca-certificates tar openssl gnupg
-# Fri, 29 Sep 2023 03:44:38 GMT
+# Thu, 19 Oct 2023 07:08:39 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Fri, 29 Sep 2023 03:44:38 GMT
+# Thu, 19 Oct 2023 07:08:39 GMT
 ENV LEIN_ROOT=1
-# Fri, 29 Sep 2023 03:44:41 GMT
+# Thu, 19 Oct 2023 07:08:42 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.11.1"]])' > project.clj   && lein deps && rm project.clj
-# Fri, 29 Sep 2023 03:44:41 GMT
+# Thu, 19 Oct 2023 07:08:42 GMT
 COPY file:cf90f595e38d932dff3bdcd4221efe7c65fb3432787490053b55b6917f06e4cd in /usr/local/bin/entrypoint 
-# Fri, 29 Sep 2023 03:44:41 GMT
+# Thu, 19 Oct 2023 07:08:42 GMT
 ENTRYPOINT ["entrypoint"]
-# Fri, 29 Sep 2023 03:44:41 GMT
+# Thu, 19 Oct 2023 07:08:42 GMT
 CMD ["repl"]
 ```
 
@@ -13864,33 +13864,33 @@ CMD ["repl"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:915fe362f7834d55d0629bc87900106e436777183710296be59a773b2b923c43`  
-		Last Modified: Thu, 28 Sep 2023 23:29:54 GMT  
-		Size: 144.1 MB (144102417 bytes)  
+	-	`sha256:d88dc667c7bf166587f40f34c016b04f07e49afdc87779d97a184d7ff5d0aa83`  
+		Last Modified: Thu, 19 Oct 2023 02:58:17 GMT  
+		Size: 144.1 MB (144102484 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10b027806bac1630d9efcca8bfb815e52ac2229cf46533b8a8635f26c9953328`  
-		Last Modified: Thu, 28 Sep 2023 23:29:43 GMT  
-		Size: 175.0 B  
+	-	`sha256:a4d3a9953c39ae108715fb332e9470afbfc3b8860bc540a54fbc147527e1f19a`  
+		Last Modified: Thu, 19 Oct 2023 02:58:05 GMT  
+		Size: 179.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ece0488f1c6ac8f5bb7dcdc54b476499c3cc3d295b17785db90dc555692fe24e`  
-		Last Modified: Thu, 28 Sep 2023 23:29:43 GMT  
+	-	`sha256:39241601e2ef6860df9c2ba6ba7c34e854312d1ebe22a7a90b93991d57fe2d78`  
+		Last Modified: Thu, 19 Oct 2023 02:58:05 GMT  
 		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:99ce2b1ef62c68461d41ffdb7a120a8dc910c2e51dc788118feee13bc5eaf620`  
-		Last Modified: Fri, 29 Sep 2023 03:48:46 GMT  
-		Size: 11.6 MB (11550650 bytes)  
+	-	`sha256:b7f195d447b24f6ecfc89bcd1bc4fe4878cb5a4d10867db7bda499baad79af54`  
+		Last Modified: Thu, 19 Oct 2023 07:13:43 GMT  
+		Size: 11.6 MB (11550646 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a31a489239b4c783ac3d05e6af7cf8506dc771a50cb0471e8ba5badaf671337`  
-		Last Modified: Fri, 29 Sep 2023 03:48:45 GMT  
-		Size: 4.4 MB (4399188 bytes)  
+	-	`sha256:3e9c2f8a469df5214341d67dc52623f3f48e00cbd5db52a39e7e7091313ea4fb`  
+		Last Modified: Thu, 19 Oct 2023 07:13:42 GMT  
+		Size: 4.4 MB (4399265 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ecaf239fef53e9f3cbc75a8df1f4e1e975658b8103affe18e8d69d95e6c9f52e`  
-		Last Modified: Fri, 29 Sep 2023 03:48:45 GMT  
-		Size: 406.0 B  
+	-	`sha256:61fafd82ae3abe30b3286b6fe545cf9e9a4cb31aa481e3d10a30b9c65e026cd1`  
+		Last Modified: Thu, 19 Oct 2023 07:13:42 GMT  
+		Size: 407.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:temurin-17-lein-2.10.0-bookworm`
@@ -14926,7 +14926,7 @@ CMD ["repl"]
 ## `clojure:temurin-17-lein-alpine`
 
 ```console
-$ docker pull clojure@sha256:8f5923089e95db0ceffbe1c2adcdc7945b95454ce8dbc9daad3a60576ae38339
+$ docker pull clojure@sha256:c6bd798cb7776f64242b57ac5fd919b216a917f3b7b6733d58e4c58909481114
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14936,14 +14936,14 @@ $ docker pull clojure@sha256:8f5923089e95db0ceffbe1c2adcdc7945b95454ce8dbc9daad3
 ### `clojure:temurin-17-lein-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:9516e5bb68837385ea4e0df50a191da116e317c8a5a142dedb64e43d4a672246
+$ docker pull clojure@sha256:d1d2a47fe5ce9adcbf70114bc18d4c9b715acb9e92c33882cae3c4c8aa46d4ca
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **172.7 MB (172732050 bytes)**  
+-	Total Size: **172.7 MB (172732171 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d886d76a299422c5fab9160b23e787b0ba884a3ff46effdcb35045e3ee8be58d`
+-	Image ID: `sha256:df654f927e15d32b5bd32a20064575d5d3f283e8af022f2092b7e84d10b66049`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["repl"]`
 
@@ -14952,45 +14952,45 @@ $ docker pull clojure@sha256:9516e5bb68837385ea4e0df50a191da116e317c8a5a142dedb6
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 28 Sep 2023 23:25:43 GMT
+# Thu, 19 Oct 2023 02:52:13 GMT
 ENV JAVA_VERSION=jdk-17.0.8.1+1
-# Thu, 28 Sep 2023 23:25:54 GMT
+# Thu, 19 Oct 2023 02:52:22 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='85d298268db61c4a538df905ec510eba7dc09300e7f7132bb2e25e5e8aef1933';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8.1%2B1/OpenJDK17U-jdk_x64_alpine-linux_hotspot_17.0.8.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 CMD ["jshell"]
-# Fri, 29 Sep 2023 03:44:31 GMT
+# Thu, 19 Oct 2023 07:08:31 GMT
 ENV LEIN_VERSION=2.10.0
-# Fri, 29 Sep 2023 03:44:31 GMT
+# Thu, 19 Oct 2023 07:08:31 GMT
 ENV LEIN_INSTALL=/usr/local/bin/
-# Fri, 29 Sep 2023 03:44:32 GMT
+# Thu, 19 Oct 2023 07:08:31 GMT
 WORKDIR /tmp
-# Fri, 29 Sep 2023 03:44:38 GMT
+# Thu, 19 Oct 2023 07:08:39 GMT
 RUN set -eux; apk add --no-cache ca-certificates bash tar openssl gnupg && mkdir -p $LEIN_INSTALL && wget -q https://codeberg.org/leiningen/leiningen/raw/tag/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha256sum lein-pkg && echo "b1757ce941e4cbf15cbf649b7b4f413365e612da892d22841ec1728391bb66af *lein-pkg" | sha256sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && export GNUPGHOME="$(mktemp -d)" && export FILENAME_EXT=jar && gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys 6A2D483DB59437EBB97D09B1040193357D0606ED && wget -q https://codeberg.org/leiningen/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && wget -q https://codeberg.org/leiningen/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && echo "Verifying file PGP signature..." && gpg --batch --verify leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && gpgconf --kill all && rm -rf "$GNUPGHOME" leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apk del ca-certificates tar openssl gnupg
-# Fri, 29 Sep 2023 03:44:38 GMT
+# Thu, 19 Oct 2023 07:08:39 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Fri, 29 Sep 2023 03:44:38 GMT
+# Thu, 19 Oct 2023 07:08:39 GMT
 ENV LEIN_ROOT=1
-# Fri, 29 Sep 2023 03:44:41 GMT
+# Thu, 19 Oct 2023 07:08:42 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.11.1"]])' > project.clj   && lein deps && rm project.clj
-# Fri, 29 Sep 2023 03:44:41 GMT
+# Thu, 19 Oct 2023 07:08:42 GMT
 COPY file:cf90f595e38d932dff3bdcd4221efe7c65fb3432787490053b55b6917f06e4cd in /usr/local/bin/entrypoint 
-# Fri, 29 Sep 2023 03:44:41 GMT
+# Thu, 19 Oct 2023 07:08:42 GMT
 ENTRYPOINT ["entrypoint"]
-# Fri, 29 Sep 2023 03:44:41 GMT
+# Thu, 19 Oct 2023 07:08:42 GMT
 CMD ["repl"]
 ```
 
@@ -14999,33 +14999,33 @@ CMD ["repl"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:915fe362f7834d55d0629bc87900106e436777183710296be59a773b2b923c43`  
-		Last Modified: Thu, 28 Sep 2023 23:29:54 GMT  
-		Size: 144.1 MB (144102417 bytes)  
+	-	`sha256:d88dc667c7bf166587f40f34c016b04f07e49afdc87779d97a184d7ff5d0aa83`  
+		Last Modified: Thu, 19 Oct 2023 02:58:17 GMT  
+		Size: 144.1 MB (144102484 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10b027806bac1630d9efcca8bfb815e52ac2229cf46533b8a8635f26c9953328`  
-		Last Modified: Thu, 28 Sep 2023 23:29:43 GMT  
-		Size: 175.0 B  
+	-	`sha256:a4d3a9953c39ae108715fb332e9470afbfc3b8860bc540a54fbc147527e1f19a`  
+		Last Modified: Thu, 19 Oct 2023 02:58:05 GMT  
+		Size: 179.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ece0488f1c6ac8f5bb7dcdc54b476499c3cc3d295b17785db90dc555692fe24e`  
-		Last Modified: Thu, 28 Sep 2023 23:29:43 GMT  
+	-	`sha256:39241601e2ef6860df9c2ba6ba7c34e854312d1ebe22a7a90b93991d57fe2d78`  
+		Last Modified: Thu, 19 Oct 2023 02:58:05 GMT  
 		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:99ce2b1ef62c68461d41ffdb7a120a8dc910c2e51dc788118feee13bc5eaf620`  
-		Last Modified: Fri, 29 Sep 2023 03:48:46 GMT  
-		Size: 11.6 MB (11550650 bytes)  
+	-	`sha256:b7f195d447b24f6ecfc89bcd1bc4fe4878cb5a4d10867db7bda499baad79af54`  
+		Last Modified: Thu, 19 Oct 2023 07:13:43 GMT  
+		Size: 11.6 MB (11550646 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a31a489239b4c783ac3d05e6af7cf8506dc771a50cb0471e8ba5badaf671337`  
-		Last Modified: Fri, 29 Sep 2023 03:48:45 GMT  
-		Size: 4.4 MB (4399188 bytes)  
+	-	`sha256:3e9c2f8a469df5214341d67dc52623f3f48e00cbd5db52a39e7e7091313ea4fb`  
+		Last Modified: Thu, 19 Oct 2023 07:13:42 GMT  
+		Size: 4.4 MB (4399265 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ecaf239fef53e9f3cbc75a8df1f4e1e975658b8103affe18e8d69d95e6c9f52e`  
-		Last Modified: Fri, 29 Sep 2023 03:48:45 GMT  
-		Size: 406.0 B  
+	-	`sha256:61fafd82ae3abe30b3286b6fe545cf9e9a4cb31aa481e3d10a30b9c65e026cd1`  
+		Last Modified: Thu, 19 Oct 2023 07:13:42 GMT  
+		Size: 407.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:temurin-17-lein-bookworm`
@@ -16471,7 +16471,7 @@ CMD ["-M" "--repl"]
 ## `clojure:temurin-17-tools-deps-1.11.1.1413-alpine`
 
 ```console
-$ docker pull clojure@sha256:305cf2ccfceef50c9f9f3f859e540b4ca32fef1342d7b6cf2ddb724211c3bdf7
+$ docker pull clojure@sha256:c5128762b0000eff89e56baa9d13b7b145cbfd1e751a138b103d36724c43e643
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16481,14 +16481,14 @@ $ docker pull clojure@sha256:305cf2ccfceef50c9f9f3f859e540b4ca32fef1342d7b6cf2dd
 ### `clojure:temurin-17-tools-deps-1.11.1.1413-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:6561b113019aea69ec4355b2c667ac50fff38be3baf0f15eeb98e099da3968e3
+$ docker pull clojure@sha256:23f28781bb336cf05c993b13747ea220a7dfe9ef64a91a61c7b358958210b9cc
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **183.8 MB (183778655 bytes)**  
+-	Total Size: **183.8 MB (183778950 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:035fac8b0c76727c5ed27390f39ebe60389a052e1aabc2e56f9f2650b2dec0ba`
+-	Image ID: `sha256:2d45c19ceecb974f99726591d36f9255c17161655d3596aa8abe63b931a44f50`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["-M","--repl"]`
 
@@ -16497,39 +16497,39 @@ $ docker pull clojure@sha256:6561b113019aea69ec4355b2c667ac50fff38be3baf0f15eeb9
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 28 Sep 2023 23:25:43 GMT
+# Thu, 19 Oct 2023 02:52:13 GMT
 ENV JAVA_VERSION=jdk-17.0.8.1+1
-# Thu, 28 Sep 2023 23:25:54 GMT
+# Thu, 19 Oct 2023 02:52:22 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='85d298268db61c4a538df905ec510eba7dc09300e7f7132bb2e25e5e8aef1933';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8.1%2B1/OpenJDK17U-jdk_x64_alpine-linux_hotspot_17.0.8.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 CMD ["jshell"]
-# Fri, 29 Sep 2023 03:44:53 GMT
+# Thu, 19 Oct 2023 07:08:59 GMT
 ENV CLOJURE_VERSION=1.11.1.1413
-# Fri, 29 Sep 2023 03:44:53 GMT
+# Thu, 19 Oct 2023 07:08:59 GMT
 WORKDIR /tmp
-# Fri, 29 Sep 2023 03:44:58 GMT
+# Thu, 19 Oct 2023 07:09:03 GMT
 RUN apk add --no-cache curl bash make git && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "ad9aa1e99c59a4f7eb66450914fbec543337d9fada60dd9d34eec7fe18ae4965 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl
-# Fri, 29 Sep 2023 03:44:58 GMT
+# Thu, 19 Oct 2023 07:09:04 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Fri, 29 Sep 2023 03:44:58 GMT
+# Thu, 19 Oct 2023 07:09:04 GMT
 COPY file:137b40904568e30898cd031ef34f77e7f132846ba4eec91d04ae4b93dddfbb8d in /usr/local/bin/entrypoint 
-# Fri, 29 Sep 2023 03:44:58 GMT
+# Thu, 19 Oct 2023 07:09:04 GMT
 ENTRYPOINT ["entrypoint"]
-# Fri, 29 Sep 2023 03:44:58 GMT
+# Thu, 19 Oct 2023 07:09:04 GMT
 CMD ["-M" "--repl"]
 ```
 
@@ -16538,33 +16538,33 @@ CMD ["-M" "--repl"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:915fe362f7834d55d0629bc87900106e436777183710296be59a773b2b923c43`  
-		Last Modified: Thu, 28 Sep 2023 23:29:54 GMT  
-		Size: 144.1 MB (144102417 bytes)  
+	-	`sha256:d88dc667c7bf166587f40f34c016b04f07e49afdc87779d97a184d7ff5d0aa83`  
+		Last Modified: Thu, 19 Oct 2023 02:58:17 GMT  
+		Size: 144.1 MB (144102484 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10b027806bac1630d9efcca8bfb815e52ac2229cf46533b8a8635f26c9953328`  
-		Last Modified: Thu, 28 Sep 2023 23:29:43 GMT  
-		Size: 175.0 B  
+	-	`sha256:a4d3a9953c39ae108715fb332e9470afbfc3b8860bc540a54fbc147527e1f19a`  
+		Last Modified: Thu, 19 Oct 2023 02:58:05 GMT  
+		Size: 179.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ece0488f1c6ac8f5bb7dcdc54b476499c3cc3d295b17785db90dc555692fe24e`  
-		Last Modified: Thu, 28 Sep 2023 23:29:43 GMT  
+	-	`sha256:39241601e2ef6860df9c2ba6ba7c34e854312d1ebe22a7a90b93991d57fe2d78`  
+		Last Modified: Thu, 19 Oct 2023 02:58:05 GMT  
 		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6e2ab9a6598cd69687e9ac8726eedcb4353d2c243aa20491260fc5c99178c71c`  
-		Last Modified: Fri, 29 Sep 2023 03:49:08 GMT  
-		Size: 27.0 MB (26995825 bytes)  
+	-	`sha256:7e400db5f9c071d2f0db97b857de3559013b665440b041ef6559b4c14b423841`  
+		Last Modified: Thu, 19 Oct 2023 07:14:02 GMT  
+		Size: 27.0 MB (26996066 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc91f2550f99b6cd0d76d7dac0b818c71a07983bd18302ecd2a17c588b09f6f4`  
-		Last Modified: Fri, 29 Sep 2023 03:49:06 GMT  
-		Size: 620.0 B  
+	-	`sha256:cea8f03b90e7e59dede5182c714894e761149d87ec763940efb328fadd583c8d`  
+		Last Modified: Thu, 19 Oct 2023 07:14:00 GMT  
+		Size: 625.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee523a00d02e9051b7d4bd3dc4ba5617710dcdfa63f013477a64ed4f3d5f44ae`  
-		Last Modified: Fri, 29 Sep 2023 03:49:06 GMT  
-		Size: 404.0 B  
+	-	`sha256:be8ce042958a7f5684a606e6141ba7f368b30b8f8c0a44c0b97a947a06c472f5`  
+		Last Modified: Thu, 19 Oct 2023 07:14:00 GMT  
+		Size: 406.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:temurin-17-tools-deps-1.11.1.1413-bookworm`
@@ -17528,7 +17528,7 @@ CMD ["-M" "--repl"]
 ## `clojure:temurin-17-tools-deps-alpine`
 
 ```console
-$ docker pull clojure@sha256:305cf2ccfceef50c9f9f3f859e540b4ca32fef1342d7b6cf2ddb724211c3bdf7
+$ docker pull clojure@sha256:c5128762b0000eff89e56baa9d13b7b145cbfd1e751a138b103d36724c43e643
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -17538,14 +17538,14 @@ $ docker pull clojure@sha256:305cf2ccfceef50c9f9f3f859e540b4ca32fef1342d7b6cf2dd
 ### `clojure:temurin-17-tools-deps-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:6561b113019aea69ec4355b2c667ac50fff38be3baf0f15eeb98e099da3968e3
+$ docker pull clojure@sha256:23f28781bb336cf05c993b13747ea220a7dfe9ef64a91a61c7b358958210b9cc
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **183.8 MB (183778655 bytes)**  
+-	Total Size: **183.8 MB (183778950 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:035fac8b0c76727c5ed27390f39ebe60389a052e1aabc2e56f9f2650b2dec0ba`
+-	Image ID: `sha256:2d45c19ceecb974f99726591d36f9255c17161655d3596aa8abe63b931a44f50`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["-M","--repl"]`
 
@@ -17554,39 +17554,39 @@ $ docker pull clojure@sha256:6561b113019aea69ec4355b2c667ac50fff38be3baf0f15eeb9
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 28 Sep 2023 23:25:43 GMT
+# Thu, 19 Oct 2023 02:52:13 GMT
 ENV JAVA_VERSION=jdk-17.0.8.1+1
-# Thu, 28 Sep 2023 23:25:54 GMT
+# Thu, 19 Oct 2023 02:52:22 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='85d298268db61c4a538df905ec510eba7dc09300e7f7132bb2e25e5e8aef1933';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8.1%2B1/OpenJDK17U-jdk_x64_alpine-linux_hotspot_17.0.8.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 28 Sep 2023 23:25:56 GMT
+# Thu, 19 Oct 2023 02:52:24 GMT
 CMD ["jshell"]
-# Fri, 29 Sep 2023 03:44:53 GMT
+# Thu, 19 Oct 2023 07:08:59 GMT
 ENV CLOJURE_VERSION=1.11.1.1413
-# Fri, 29 Sep 2023 03:44:53 GMT
+# Thu, 19 Oct 2023 07:08:59 GMT
 WORKDIR /tmp
-# Fri, 29 Sep 2023 03:44:58 GMT
+# Thu, 19 Oct 2023 07:09:03 GMT
 RUN apk add --no-cache curl bash make git && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "ad9aa1e99c59a4f7eb66450914fbec543337d9fada60dd9d34eec7fe18ae4965 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl
-# Fri, 29 Sep 2023 03:44:58 GMT
+# Thu, 19 Oct 2023 07:09:04 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Fri, 29 Sep 2023 03:44:58 GMT
+# Thu, 19 Oct 2023 07:09:04 GMT
 COPY file:137b40904568e30898cd031ef34f77e7f132846ba4eec91d04ae4b93dddfbb8d in /usr/local/bin/entrypoint 
-# Fri, 29 Sep 2023 03:44:58 GMT
+# Thu, 19 Oct 2023 07:09:04 GMT
 ENTRYPOINT ["entrypoint"]
-# Fri, 29 Sep 2023 03:44:58 GMT
+# Thu, 19 Oct 2023 07:09:04 GMT
 CMD ["-M" "--repl"]
 ```
 
@@ -17595,33 +17595,33 @@ CMD ["-M" "--repl"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:915fe362f7834d55d0629bc87900106e436777183710296be59a773b2b923c43`  
-		Last Modified: Thu, 28 Sep 2023 23:29:54 GMT  
-		Size: 144.1 MB (144102417 bytes)  
+	-	`sha256:d88dc667c7bf166587f40f34c016b04f07e49afdc87779d97a184d7ff5d0aa83`  
+		Last Modified: Thu, 19 Oct 2023 02:58:17 GMT  
+		Size: 144.1 MB (144102484 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10b027806bac1630d9efcca8bfb815e52ac2229cf46533b8a8635f26c9953328`  
-		Last Modified: Thu, 28 Sep 2023 23:29:43 GMT  
-		Size: 175.0 B  
+	-	`sha256:a4d3a9953c39ae108715fb332e9470afbfc3b8860bc540a54fbc147527e1f19a`  
+		Last Modified: Thu, 19 Oct 2023 02:58:05 GMT  
+		Size: 179.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ece0488f1c6ac8f5bb7dcdc54b476499c3cc3d295b17785db90dc555692fe24e`  
-		Last Modified: Thu, 28 Sep 2023 23:29:43 GMT  
+	-	`sha256:39241601e2ef6860df9c2ba6ba7c34e854312d1ebe22a7a90b93991d57fe2d78`  
+		Last Modified: Thu, 19 Oct 2023 02:58:05 GMT  
 		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6e2ab9a6598cd69687e9ac8726eedcb4353d2c243aa20491260fc5c99178c71c`  
-		Last Modified: Fri, 29 Sep 2023 03:49:08 GMT  
-		Size: 27.0 MB (26995825 bytes)  
+	-	`sha256:7e400db5f9c071d2f0db97b857de3559013b665440b041ef6559b4c14b423841`  
+		Last Modified: Thu, 19 Oct 2023 07:14:02 GMT  
+		Size: 27.0 MB (26996066 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc91f2550f99b6cd0d76d7dac0b818c71a07983bd18302ecd2a17c588b09f6f4`  
-		Last Modified: Fri, 29 Sep 2023 03:49:06 GMT  
-		Size: 620.0 B  
+	-	`sha256:cea8f03b90e7e59dede5182c714894e761149d87ec763940efb328fadd583c8d`  
+		Last Modified: Thu, 19 Oct 2023 07:14:00 GMT  
+		Size: 625.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee523a00d02e9051b7d4bd3dc4ba5617710dcdfa63f013477a64ed4f3d5f44ae`  
-		Last Modified: Fri, 29 Sep 2023 03:49:06 GMT  
-		Size: 404.0 B  
+	-	`sha256:be8ce042958a7f5684a606e6141ba7f368b30b8f8c0a44c0b97a947a06c472f5`  
+		Last Modified: Thu, 19 Oct 2023 07:14:00 GMT  
+		Size: 406.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:temurin-17-tools-deps-bookworm`
@@ -18585,7 +18585,7 @@ CMD ["-M" "--repl"]
 ## `clojure:temurin-21-alpine`
 
 ```console
-$ docker pull clojure@sha256:6ca15dae3937dcc3be55d87df8d1b21941ba9d7538e84adce4577c9f886fa766
+$ docker pull clojure@sha256:b8309de1785ec59e30ca3a17072be56cc5fd483adf43c0e8176bf842319aa14a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18595,14 +18595,14 @@ $ docker pull clojure@sha256:6ca15dae3937dcc3be55d87df8d1b21941ba9d7538e84adce45
 ### `clojure:temurin-21-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:f25d45be2a8bf4d65a591accc9096a8a3eb96e7e69a6badf845b46a8462f0688
+$ docker pull clojure@sha256:df9061b056300f3513407221ba4f5a60d330660563a6ecadcac62570a787bacd
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **197.3 MB (197306563 bytes)**  
+-	Total Size: **197.3 MB (197306519 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:59c024dff9a5092263b21da95bd5d36575b00762af4b0c6f03b114c49631442f`
+-	Image ID: `sha256:31c1905dbc60f55b17aa53abf750bf6334b1751defb078b7b50298b9b16831b6`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["-M","--repl"]`
 
@@ -18611,39 +18611,39 @@ $ docker pull clojure@sha256:f25d45be2a8bf4d65a591accc9096a8a3eb96e7e69a6badf845
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Wed, 11 Oct 2023 18:09:20 GMT
+# Thu, 19 Oct 2023 02:53:10 GMT
 ENV JAVA_VERSION=jdk-21+35
-# Wed, 11 Oct 2023 18:09:31 GMT
+# Thu, 19 Oct 2023 02:53:22 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='3f8e5b0447d2dd711f12edda611ed1cf9aab4ca53c8fe32fca8fb1e6fee41c12';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B35/OpenJDK21U-jdk_aarch64_alpine-linux_hotspot_21_35.tar.gz';          ;;        amd64|x86_64)          ESUM='4fd74f93f0b1a94d8471e0ed801fe9d938f7471f6efe8791880c85e7716c943f';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B35/OpenJDK21U-jdk_x64_alpine-linux_hotspot_21_35.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 CMD ["jshell"]
-# Fri, 13 Oct 2023 01:39:15 GMT
+# Thu, 19 Oct 2023 07:09:47 GMT
 ENV CLOJURE_VERSION=1.11.1.1413
-# Fri, 13 Oct 2023 01:39:15 GMT
+# Thu, 19 Oct 2023 07:09:47 GMT
 WORKDIR /tmp
-# Fri, 13 Oct 2023 01:39:20 GMT
+# Thu, 19 Oct 2023 07:09:52 GMT
 RUN apk add --no-cache curl bash make git && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "ad9aa1e99c59a4f7eb66450914fbec543337d9fada60dd9d34eec7fe18ae4965 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl
-# Fri, 13 Oct 2023 01:39:20 GMT
+# Thu, 19 Oct 2023 07:09:52 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Fri, 13 Oct 2023 01:39:20 GMT
+# Thu, 19 Oct 2023 07:09:52 GMT
 COPY file:137b40904568e30898cd031ef34f77e7f132846ba4eec91d04ae4b93dddfbb8d in /usr/local/bin/entrypoint 
-# Fri, 13 Oct 2023 01:39:21 GMT
+# Thu, 19 Oct 2023 07:09:52 GMT
 ENTRYPOINT ["entrypoint"]
-# Fri, 13 Oct 2023 01:39:21 GMT
+# Thu, 19 Oct 2023 07:09:52 GMT
 CMD ["-M" "--repl"]
 ```
 
@@ -18652,33 +18652,33 @@ CMD ["-M" "--repl"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa15de4e91b4ea2bb2143d98dec470476fe69008037a626991da945af66ff8b9`  
-		Last Modified: Wed, 11 Oct 2023 18:12:45 GMT  
-		Size: 157.6 MB (157630049 bytes)  
+	-	`sha256:cf76d6f40cd7ca863a644a0ca98e4600f322786a73de7a9bf1c175d6d95785b2`  
+		Last Modified: Thu, 19 Oct 2023 02:59:40 GMT  
+		Size: 157.6 MB (157630052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57006341305b6b066a0078ba7cc1b938820d7008118025c4873bfd0efac05c23`  
-		Last Modified: Wed, 11 Oct 2023 18:12:32 GMT  
-		Size: 177.0 B  
+	-	`sha256:c035f235584ff3c6cb322faae306b071925722bfb8f2748f8ce3aaa2919be110`  
+		Last Modified: Thu, 19 Oct 2023 02:59:26 GMT  
+		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f1a0f8d9e2d3f3ae2db5bd1c8a0c85b7b197dc7ab45c6a2797eebc228fe69a3f`  
-		Last Modified: Wed, 11 Oct 2023 18:12:32 GMT  
-		Size: 734.0 B  
+	-	`sha256:fd0f3b1ff9d2c30fd49b405bac85864ddd3cac27c25cd99c361aa77fb8a13466`  
+		Last Modified: Thu, 19 Oct 2023 02:59:26 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdb4247ba4e0d2d947a4801bff8f6533e1ad8d7d1c2d8353947e8e9921654f72`  
-		Last Modified: Fri, 13 Oct 2023 01:52:10 GMT  
-		Size: 27.0 MB (26996093 bytes)  
+	-	`sha256:16a2e704ffb38630c1036946c5e67efb21aa4165a8aa2775ab279441e7ada932`  
+		Last Modified: Thu, 19 Oct 2023 07:14:46 GMT  
+		Size: 27.0 MB (26996071 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b20cf45c8b17fc48c85142b40d9249b0914f8ca71036766d44a0e7a6f6cc70b`  
-		Last Modified: Fri, 13 Oct 2023 01:52:08 GMT  
-		Size: 623.0 B  
+	-	`sha256:80337f81cbf1de1757a82446220f28b57eddfac5233da044035237ad6ce318ed`  
+		Last Modified: Thu, 19 Oct 2023 07:14:43 GMT  
+		Size: 624.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:54c5b8922cc40224742db6fccee4674d6509c7b79c27b40d3c7fb40199d7528d`  
-		Last Modified: Fri, 13 Oct 2023 01:52:07 GMT  
-		Size: 406.0 B  
+	-	`sha256:b8d74df72a8eb341f793f19b67079e2401aecb026bf2c52b35e810fb9445443a`  
+		Last Modified: Thu, 19 Oct 2023 07:14:43 GMT  
+		Size: 407.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:temurin-21-bookworm`
@@ -19735,7 +19735,7 @@ CMD ["repl"]
 ## `clojure:temurin-21-lein-2.10.0-alpine`
 
 ```console
-$ docker pull clojure@sha256:4ddd047b02fbbefa7269436154dbded24b533be5c678701fa5de367437b67df6
+$ docker pull clojure@sha256:dea96e620804afad0ad00b3abf8bc029fb45d43ba56757048e74ce11e6849ed5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -19745,14 +19745,14 @@ $ docker pull clojure@sha256:4ddd047b02fbbefa7269436154dbded24b533be5c678701fa5d
 ### `clojure:temurin-21-lein-2.10.0-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:070acda921a5394f408bbf2835f2f49efe1bd8228d90ac9c26328d44c365ddd1
+$ docker pull clojure@sha256:012be47a0d98b819c6728c3598e90666baa748cf441bf9d85564451f899be2c8
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **186.3 MB (186259706 bytes)**  
+-	Total Size: **186.3 MB (186259673 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9aa70d5f448ecc9008fa548b20315822ead668ff00a4e8b0000ca36a45837169`
+-	Image ID: `sha256:cd705c8142a040fc1ec6c97ba6de563e9dc2a77051f70692969f58bf31c9d675`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["repl"]`
 
@@ -19761,45 +19761,45 @@ $ docker pull clojure@sha256:070acda921a5394f408bbf2835f2f49efe1bd8228d90ac9c263
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Wed, 11 Oct 2023 18:09:20 GMT
+# Thu, 19 Oct 2023 02:53:10 GMT
 ENV JAVA_VERSION=jdk-21+35
-# Wed, 11 Oct 2023 18:09:31 GMT
+# Thu, 19 Oct 2023 02:53:22 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='3f8e5b0447d2dd711f12edda611ed1cf9aab4ca53c8fe32fca8fb1e6fee41c12';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B35/OpenJDK21U-jdk_aarch64_alpine-linux_hotspot_21_35.tar.gz';          ;;        amd64|x86_64)          ESUM='4fd74f93f0b1a94d8471e0ed801fe9d938f7471f6efe8791880c85e7716c943f';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B35/OpenJDK21U-jdk_x64_alpine-linux_hotspot_21_35.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 CMD ["jshell"]
-# Fri, 13 Oct 2023 01:37:11 GMT
+# Thu, 19 Oct 2023 07:09:21 GMT
 ENV LEIN_VERSION=2.10.0
-# Fri, 13 Oct 2023 01:37:11 GMT
+# Thu, 19 Oct 2023 07:09:21 GMT
 ENV LEIN_INSTALL=/usr/local/bin/
-# Fri, 13 Oct 2023 01:37:11 GMT
+# Thu, 19 Oct 2023 07:09:21 GMT
 WORKDIR /tmp
-# Fri, 13 Oct 2023 01:37:18 GMT
+# Thu, 19 Oct 2023 07:09:28 GMT
 RUN set -eux; apk add --no-cache ca-certificates bash tar openssl gnupg && mkdir -p $LEIN_INSTALL && wget -q https://codeberg.org/leiningen/leiningen/raw/tag/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha256sum lein-pkg && echo "b1757ce941e4cbf15cbf649b7b4f413365e612da892d22841ec1728391bb66af *lein-pkg" | sha256sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && export GNUPGHOME="$(mktemp -d)" && export FILENAME_EXT=jar && gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys 6A2D483DB59437EBB97D09B1040193357D0606ED && wget -q https://codeberg.org/leiningen/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && wget -q https://codeberg.org/leiningen/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && echo "Verifying file PGP signature..." && gpg --batch --verify leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && gpgconf --kill all && rm -rf "$GNUPGHOME" leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apk del ca-certificates tar openssl gnupg
-# Fri, 13 Oct 2023 01:37:18 GMT
+# Thu, 19 Oct 2023 07:09:29 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Fri, 13 Oct 2023 01:37:18 GMT
+# Thu, 19 Oct 2023 07:09:29 GMT
 ENV LEIN_ROOT=1
-# Fri, 13 Oct 2023 01:37:21 GMT
+# Thu, 19 Oct 2023 07:09:32 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.11.1"]])' > project.clj   && lein deps && rm project.clj
-# Fri, 13 Oct 2023 01:37:22 GMT
+# Thu, 19 Oct 2023 07:09:32 GMT
 COPY file:cf90f595e38d932dff3bdcd4221efe7c65fb3432787490053b55b6917f06e4cd in /usr/local/bin/entrypoint 
-# Fri, 13 Oct 2023 01:37:22 GMT
+# Thu, 19 Oct 2023 07:09:32 GMT
 ENTRYPOINT ["entrypoint"]
-# Fri, 13 Oct 2023 01:37:22 GMT
+# Thu, 19 Oct 2023 07:09:32 GMT
 CMD ["repl"]
 ```
 
@@ -19808,32 +19808,32 @@ CMD ["repl"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa15de4e91b4ea2bb2143d98dec470476fe69008037a626991da945af66ff8b9`  
-		Last Modified: Wed, 11 Oct 2023 18:12:45 GMT  
-		Size: 157.6 MB (157630049 bytes)  
+	-	`sha256:cf76d6f40cd7ca863a644a0ca98e4600f322786a73de7a9bf1c175d6d95785b2`  
+		Last Modified: Thu, 19 Oct 2023 02:59:40 GMT  
+		Size: 157.6 MB (157630052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57006341305b6b066a0078ba7cc1b938820d7008118025c4873bfd0efac05c23`  
-		Last Modified: Wed, 11 Oct 2023 18:12:32 GMT  
-		Size: 177.0 B  
+	-	`sha256:c035f235584ff3c6cb322faae306b071925722bfb8f2748f8ce3aaa2919be110`  
+		Last Modified: Thu, 19 Oct 2023 02:59:26 GMT  
+		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f1a0f8d9e2d3f3ae2db5bd1c8a0c85b7b197dc7ab45c6a2797eebc228fe69a3f`  
-		Last Modified: Wed, 11 Oct 2023 18:12:32 GMT  
-		Size: 734.0 B  
+	-	`sha256:fd0f3b1ff9d2c30fd49b405bac85864ddd3cac27c25cd99c361aa77fb8a13466`  
+		Last Modified: Thu, 19 Oct 2023 02:59:26 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c656a4cc3cb2cdf02578551e00a70e1cc76be0b15358b9bd293b271df28e70ae`  
-		Last Modified: Fri, 13 Oct 2023 01:50:07 GMT  
-		Size: 11.6 MB (11550649 bytes)  
+	-	`sha256:9b33e65b4929d2c6658b27c6226c1e54229a4381e6c12c96c81b510a7f2b670f`  
+		Last Modified: Thu, 19 Oct 2023 07:14:24 GMT  
+		Size: 11.6 MB (11550644 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:80a27ecccb100c783d1dcde80c9b0197849fd9c3517ea17d1252ed3daaadbb34`  
-		Last Modified: Fri, 13 Oct 2023 01:50:06 GMT  
-		Size: 4.4 MB (4399209 bytes)  
+	-	`sha256:8f2dbfdb353256d2938fff7df965b5a216cffebde6ad689dcd8db7e79ebfd689`  
+		Last Modified: Thu, 19 Oct 2023 07:14:22 GMT  
+		Size: 4.4 MB (4399205 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6bb5395604e2b9f66f989015d2ec4823c1505d2a268bf9f38fd1d8a92230a35`  
-		Last Modified: Fri, 13 Oct 2023 01:50:06 GMT  
+	-	`sha256:4e91a956894a5ae385edaa136805f68871567d71676946273b8636c5a7e137c4`  
+		Last Modified: Thu, 19 Oct 2023 07:14:22 GMT  
 		Size: 407.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -20653,7 +20653,7 @@ CMD ["repl"]
 ## `clojure:temurin-21-lein-alpine`
 
 ```console
-$ docker pull clojure@sha256:4ddd047b02fbbefa7269436154dbded24b533be5c678701fa5de367437b67df6
+$ docker pull clojure@sha256:dea96e620804afad0ad00b3abf8bc029fb45d43ba56757048e74ce11e6849ed5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -20663,14 +20663,14 @@ $ docker pull clojure@sha256:4ddd047b02fbbefa7269436154dbded24b533be5c678701fa5d
 ### `clojure:temurin-21-lein-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:070acda921a5394f408bbf2835f2f49efe1bd8228d90ac9c26328d44c365ddd1
+$ docker pull clojure@sha256:012be47a0d98b819c6728c3598e90666baa748cf441bf9d85564451f899be2c8
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **186.3 MB (186259706 bytes)**  
+-	Total Size: **186.3 MB (186259673 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9aa70d5f448ecc9008fa548b20315822ead668ff00a4e8b0000ca36a45837169`
+-	Image ID: `sha256:cd705c8142a040fc1ec6c97ba6de563e9dc2a77051f70692969f58bf31c9d675`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["repl"]`
 
@@ -20679,45 +20679,45 @@ $ docker pull clojure@sha256:070acda921a5394f408bbf2835f2f49efe1bd8228d90ac9c263
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Wed, 11 Oct 2023 18:09:20 GMT
+# Thu, 19 Oct 2023 02:53:10 GMT
 ENV JAVA_VERSION=jdk-21+35
-# Wed, 11 Oct 2023 18:09:31 GMT
+# Thu, 19 Oct 2023 02:53:22 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='3f8e5b0447d2dd711f12edda611ed1cf9aab4ca53c8fe32fca8fb1e6fee41c12';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B35/OpenJDK21U-jdk_aarch64_alpine-linux_hotspot_21_35.tar.gz';          ;;        amd64|x86_64)          ESUM='4fd74f93f0b1a94d8471e0ed801fe9d938f7471f6efe8791880c85e7716c943f';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B35/OpenJDK21U-jdk_x64_alpine-linux_hotspot_21_35.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 CMD ["jshell"]
-# Fri, 13 Oct 2023 01:37:11 GMT
+# Thu, 19 Oct 2023 07:09:21 GMT
 ENV LEIN_VERSION=2.10.0
-# Fri, 13 Oct 2023 01:37:11 GMT
+# Thu, 19 Oct 2023 07:09:21 GMT
 ENV LEIN_INSTALL=/usr/local/bin/
-# Fri, 13 Oct 2023 01:37:11 GMT
+# Thu, 19 Oct 2023 07:09:21 GMT
 WORKDIR /tmp
-# Fri, 13 Oct 2023 01:37:18 GMT
+# Thu, 19 Oct 2023 07:09:28 GMT
 RUN set -eux; apk add --no-cache ca-certificates bash tar openssl gnupg && mkdir -p $LEIN_INSTALL && wget -q https://codeberg.org/leiningen/leiningen/raw/tag/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha256sum lein-pkg && echo "b1757ce941e4cbf15cbf649b7b4f413365e612da892d22841ec1728391bb66af *lein-pkg" | sha256sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && export GNUPGHOME="$(mktemp -d)" && export FILENAME_EXT=jar && gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys 6A2D483DB59437EBB97D09B1040193357D0606ED && wget -q https://codeberg.org/leiningen/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && wget -q https://codeberg.org/leiningen/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && echo "Verifying file PGP signature..." && gpg --batch --verify leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && gpgconf --kill all && rm -rf "$GNUPGHOME" leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apk del ca-certificates tar openssl gnupg
-# Fri, 13 Oct 2023 01:37:18 GMT
+# Thu, 19 Oct 2023 07:09:29 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Fri, 13 Oct 2023 01:37:18 GMT
+# Thu, 19 Oct 2023 07:09:29 GMT
 ENV LEIN_ROOT=1
-# Fri, 13 Oct 2023 01:37:21 GMT
+# Thu, 19 Oct 2023 07:09:32 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.11.1"]])' > project.clj   && lein deps && rm project.clj
-# Fri, 13 Oct 2023 01:37:22 GMT
+# Thu, 19 Oct 2023 07:09:32 GMT
 COPY file:cf90f595e38d932dff3bdcd4221efe7c65fb3432787490053b55b6917f06e4cd in /usr/local/bin/entrypoint 
-# Fri, 13 Oct 2023 01:37:22 GMT
+# Thu, 19 Oct 2023 07:09:32 GMT
 ENTRYPOINT ["entrypoint"]
-# Fri, 13 Oct 2023 01:37:22 GMT
+# Thu, 19 Oct 2023 07:09:32 GMT
 CMD ["repl"]
 ```
 
@@ -20726,32 +20726,32 @@ CMD ["repl"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa15de4e91b4ea2bb2143d98dec470476fe69008037a626991da945af66ff8b9`  
-		Last Modified: Wed, 11 Oct 2023 18:12:45 GMT  
-		Size: 157.6 MB (157630049 bytes)  
+	-	`sha256:cf76d6f40cd7ca863a644a0ca98e4600f322786a73de7a9bf1c175d6d95785b2`  
+		Last Modified: Thu, 19 Oct 2023 02:59:40 GMT  
+		Size: 157.6 MB (157630052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57006341305b6b066a0078ba7cc1b938820d7008118025c4873bfd0efac05c23`  
-		Last Modified: Wed, 11 Oct 2023 18:12:32 GMT  
-		Size: 177.0 B  
+	-	`sha256:c035f235584ff3c6cb322faae306b071925722bfb8f2748f8ce3aaa2919be110`  
+		Last Modified: Thu, 19 Oct 2023 02:59:26 GMT  
+		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f1a0f8d9e2d3f3ae2db5bd1c8a0c85b7b197dc7ab45c6a2797eebc228fe69a3f`  
-		Last Modified: Wed, 11 Oct 2023 18:12:32 GMT  
-		Size: 734.0 B  
+	-	`sha256:fd0f3b1ff9d2c30fd49b405bac85864ddd3cac27c25cd99c361aa77fb8a13466`  
+		Last Modified: Thu, 19 Oct 2023 02:59:26 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c656a4cc3cb2cdf02578551e00a70e1cc76be0b15358b9bd293b271df28e70ae`  
-		Last Modified: Fri, 13 Oct 2023 01:50:07 GMT  
-		Size: 11.6 MB (11550649 bytes)  
+	-	`sha256:9b33e65b4929d2c6658b27c6226c1e54229a4381e6c12c96c81b510a7f2b670f`  
+		Last Modified: Thu, 19 Oct 2023 07:14:24 GMT  
+		Size: 11.6 MB (11550644 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:80a27ecccb100c783d1dcde80c9b0197849fd9c3517ea17d1252ed3daaadbb34`  
-		Last Modified: Fri, 13 Oct 2023 01:50:06 GMT  
-		Size: 4.4 MB (4399209 bytes)  
+	-	`sha256:8f2dbfdb353256d2938fff7df965b5a216cffebde6ad689dcd8db7e79ebfd689`  
+		Last Modified: Thu, 19 Oct 2023 07:14:22 GMT  
+		Size: 4.4 MB (4399205 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6bb5395604e2b9f66f989015d2ec4823c1505d2a268bf9f38fd1d8a92230a35`  
-		Last Modified: Fri, 13 Oct 2023 01:50:06 GMT  
+	-	`sha256:4e91a956894a5ae385edaa136805f68871567d71676946273b8636c5a7e137c4`  
+		Last Modified: Thu, 19 Oct 2023 07:14:22 GMT  
 		Size: 407.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -21845,7 +21845,7 @@ CMD ["-M" "--repl"]
 ## `clojure:temurin-21-tools-deps-1.11.1.1413-alpine`
 
 ```console
-$ docker pull clojure@sha256:6ca15dae3937dcc3be55d87df8d1b21941ba9d7538e84adce4577c9f886fa766
+$ docker pull clojure@sha256:b8309de1785ec59e30ca3a17072be56cc5fd483adf43c0e8176bf842319aa14a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -21855,14 +21855,14 @@ $ docker pull clojure@sha256:6ca15dae3937dcc3be55d87df8d1b21941ba9d7538e84adce45
 ### `clojure:temurin-21-tools-deps-1.11.1.1413-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:f25d45be2a8bf4d65a591accc9096a8a3eb96e7e69a6badf845b46a8462f0688
+$ docker pull clojure@sha256:df9061b056300f3513407221ba4f5a60d330660563a6ecadcac62570a787bacd
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **197.3 MB (197306563 bytes)**  
+-	Total Size: **197.3 MB (197306519 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:59c024dff9a5092263b21da95bd5d36575b00762af4b0c6f03b114c49631442f`
+-	Image ID: `sha256:31c1905dbc60f55b17aa53abf750bf6334b1751defb078b7b50298b9b16831b6`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["-M","--repl"]`
 
@@ -21871,39 +21871,39 @@ $ docker pull clojure@sha256:f25d45be2a8bf4d65a591accc9096a8a3eb96e7e69a6badf845
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Wed, 11 Oct 2023 18:09:20 GMT
+# Thu, 19 Oct 2023 02:53:10 GMT
 ENV JAVA_VERSION=jdk-21+35
-# Wed, 11 Oct 2023 18:09:31 GMT
+# Thu, 19 Oct 2023 02:53:22 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='3f8e5b0447d2dd711f12edda611ed1cf9aab4ca53c8fe32fca8fb1e6fee41c12';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B35/OpenJDK21U-jdk_aarch64_alpine-linux_hotspot_21_35.tar.gz';          ;;        amd64|x86_64)          ESUM='4fd74f93f0b1a94d8471e0ed801fe9d938f7471f6efe8791880c85e7716c943f';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B35/OpenJDK21U-jdk_x64_alpine-linux_hotspot_21_35.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 CMD ["jshell"]
-# Fri, 13 Oct 2023 01:39:15 GMT
+# Thu, 19 Oct 2023 07:09:47 GMT
 ENV CLOJURE_VERSION=1.11.1.1413
-# Fri, 13 Oct 2023 01:39:15 GMT
+# Thu, 19 Oct 2023 07:09:47 GMT
 WORKDIR /tmp
-# Fri, 13 Oct 2023 01:39:20 GMT
+# Thu, 19 Oct 2023 07:09:52 GMT
 RUN apk add --no-cache curl bash make git && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "ad9aa1e99c59a4f7eb66450914fbec543337d9fada60dd9d34eec7fe18ae4965 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl
-# Fri, 13 Oct 2023 01:39:20 GMT
+# Thu, 19 Oct 2023 07:09:52 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Fri, 13 Oct 2023 01:39:20 GMT
+# Thu, 19 Oct 2023 07:09:52 GMT
 COPY file:137b40904568e30898cd031ef34f77e7f132846ba4eec91d04ae4b93dddfbb8d in /usr/local/bin/entrypoint 
-# Fri, 13 Oct 2023 01:39:21 GMT
+# Thu, 19 Oct 2023 07:09:52 GMT
 ENTRYPOINT ["entrypoint"]
-# Fri, 13 Oct 2023 01:39:21 GMT
+# Thu, 19 Oct 2023 07:09:52 GMT
 CMD ["-M" "--repl"]
 ```
 
@@ -21912,33 +21912,33 @@ CMD ["-M" "--repl"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa15de4e91b4ea2bb2143d98dec470476fe69008037a626991da945af66ff8b9`  
-		Last Modified: Wed, 11 Oct 2023 18:12:45 GMT  
-		Size: 157.6 MB (157630049 bytes)  
+	-	`sha256:cf76d6f40cd7ca863a644a0ca98e4600f322786a73de7a9bf1c175d6d95785b2`  
+		Last Modified: Thu, 19 Oct 2023 02:59:40 GMT  
+		Size: 157.6 MB (157630052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57006341305b6b066a0078ba7cc1b938820d7008118025c4873bfd0efac05c23`  
-		Last Modified: Wed, 11 Oct 2023 18:12:32 GMT  
-		Size: 177.0 B  
+	-	`sha256:c035f235584ff3c6cb322faae306b071925722bfb8f2748f8ce3aaa2919be110`  
+		Last Modified: Thu, 19 Oct 2023 02:59:26 GMT  
+		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f1a0f8d9e2d3f3ae2db5bd1c8a0c85b7b197dc7ab45c6a2797eebc228fe69a3f`  
-		Last Modified: Wed, 11 Oct 2023 18:12:32 GMT  
-		Size: 734.0 B  
+	-	`sha256:fd0f3b1ff9d2c30fd49b405bac85864ddd3cac27c25cd99c361aa77fb8a13466`  
+		Last Modified: Thu, 19 Oct 2023 02:59:26 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdb4247ba4e0d2d947a4801bff8f6533e1ad8d7d1c2d8353947e8e9921654f72`  
-		Last Modified: Fri, 13 Oct 2023 01:52:10 GMT  
-		Size: 27.0 MB (26996093 bytes)  
+	-	`sha256:16a2e704ffb38630c1036946c5e67efb21aa4165a8aa2775ab279441e7ada932`  
+		Last Modified: Thu, 19 Oct 2023 07:14:46 GMT  
+		Size: 27.0 MB (26996071 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b20cf45c8b17fc48c85142b40d9249b0914f8ca71036766d44a0e7a6f6cc70b`  
-		Last Modified: Fri, 13 Oct 2023 01:52:08 GMT  
-		Size: 623.0 B  
+	-	`sha256:80337f81cbf1de1757a82446220f28b57eddfac5233da044035237ad6ce318ed`  
+		Last Modified: Thu, 19 Oct 2023 07:14:43 GMT  
+		Size: 624.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:54c5b8922cc40224742db6fccee4674d6509c7b79c27b40d3c7fb40199d7528d`  
-		Last Modified: Fri, 13 Oct 2023 01:52:07 GMT  
-		Size: 406.0 B  
+	-	`sha256:b8d74df72a8eb341f793f19b67079e2401aecb026bf2c52b35e810fb9445443a`  
+		Last Modified: Thu, 19 Oct 2023 07:14:43 GMT  
+		Size: 407.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:temurin-21-tools-deps-1.11.1.1413-bookworm`
@@ -22697,7 +22697,7 @@ CMD ["-M" "--repl"]
 ## `clojure:temurin-21-tools-deps-alpine`
 
 ```console
-$ docker pull clojure@sha256:6ca15dae3937dcc3be55d87df8d1b21941ba9d7538e84adce4577c9f886fa766
+$ docker pull clojure@sha256:b8309de1785ec59e30ca3a17072be56cc5fd483adf43c0e8176bf842319aa14a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -22707,14 +22707,14 @@ $ docker pull clojure@sha256:6ca15dae3937dcc3be55d87df8d1b21941ba9d7538e84adce45
 ### `clojure:temurin-21-tools-deps-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:f25d45be2a8bf4d65a591accc9096a8a3eb96e7e69a6badf845b46a8462f0688
+$ docker pull clojure@sha256:df9061b056300f3513407221ba4f5a60d330660563a6ecadcac62570a787bacd
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **197.3 MB (197306563 bytes)**  
+-	Total Size: **197.3 MB (197306519 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:59c024dff9a5092263b21da95bd5d36575b00762af4b0c6f03b114c49631442f`
+-	Image ID: `sha256:31c1905dbc60f55b17aa53abf750bf6334b1751defb078b7b50298b9b16831b6`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["-M","--repl"]`
 
@@ -22723,39 +22723,39 @@ $ docker pull clojure@sha256:f25d45be2a8bf4d65a591accc9096a8a3eb96e7e69a6badf845
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Wed, 11 Oct 2023 18:09:20 GMT
+# Thu, 19 Oct 2023 02:53:10 GMT
 ENV JAVA_VERSION=jdk-21+35
-# Wed, 11 Oct 2023 18:09:31 GMT
+# Thu, 19 Oct 2023 02:53:22 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='3f8e5b0447d2dd711f12edda611ed1cf9aab4ca53c8fe32fca8fb1e6fee41c12';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B35/OpenJDK21U-jdk_aarch64_alpine-linux_hotspot_21_35.tar.gz';          ;;        amd64|x86_64)          ESUM='4fd74f93f0b1a94d8471e0ed801fe9d938f7471f6efe8791880c85e7716c943f';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B35/OpenJDK21U-jdk_x64_alpine-linux_hotspot_21_35.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Wed, 11 Oct 2023 18:09:33 GMT
+# Thu, 19 Oct 2023 02:53:24 GMT
 CMD ["jshell"]
-# Fri, 13 Oct 2023 01:39:15 GMT
+# Thu, 19 Oct 2023 07:09:47 GMT
 ENV CLOJURE_VERSION=1.11.1.1413
-# Fri, 13 Oct 2023 01:39:15 GMT
+# Thu, 19 Oct 2023 07:09:47 GMT
 WORKDIR /tmp
-# Fri, 13 Oct 2023 01:39:20 GMT
+# Thu, 19 Oct 2023 07:09:52 GMT
 RUN apk add --no-cache curl bash make git && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "ad9aa1e99c59a4f7eb66450914fbec543337d9fada60dd9d34eec7fe18ae4965 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl
-# Fri, 13 Oct 2023 01:39:20 GMT
+# Thu, 19 Oct 2023 07:09:52 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Fri, 13 Oct 2023 01:39:20 GMT
+# Thu, 19 Oct 2023 07:09:52 GMT
 COPY file:137b40904568e30898cd031ef34f77e7f132846ba4eec91d04ae4b93dddfbb8d in /usr/local/bin/entrypoint 
-# Fri, 13 Oct 2023 01:39:21 GMT
+# Thu, 19 Oct 2023 07:09:52 GMT
 ENTRYPOINT ["entrypoint"]
-# Fri, 13 Oct 2023 01:39:21 GMT
+# Thu, 19 Oct 2023 07:09:52 GMT
 CMD ["-M" "--repl"]
 ```
 
@@ -22764,33 +22764,33 @@ CMD ["-M" "--repl"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa15de4e91b4ea2bb2143d98dec470476fe69008037a626991da945af66ff8b9`  
-		Last Modified: Wed, 11 Oct 2023 18:12:45 GMT  
-		Size: 157.6 MB (157630049 bytes)  
+	-	`sha256:cf76d6f40cd7ca863a644a0ca98e4600f322786a73de7a9bf1c175d6d95785b2`  
+		Last Modified: Thu, 19 Oct 2023 02:59:40 GMT  
+		Size: 157.6 MB (157630052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57006341305b6b066a0078ba7cc1b938820d7008118025c4873bfd0efac05c23`  
-		Last Modified: Wed, 11 Oct 2023 18:12:32 GMT  
-		Size: 177.0 B  
+	-	`sha256:c035f235584ff3c6cb322faae306b071925722bfb8f2748f8ce3aaa2919be110`  
+		Last Modified: Thu, 19 Oct 2023 02:59:26 GMT  
+		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f1a0f8d9e2d3f3ae2db5bd1c8a0c85b7b197dc7ab45c6a2797eebc228fe69a3f`  
-		Last Modified: Wed, 11 Oct 2023 18:12:32 GMT  
-		Size: 734.0 B  
+	-	`sha256:fd0f3b1ff9d2c30fd49b405bac85864ddd3cac27c25cd99c361aa77fb8a13466`  
+		Last Modified: Thu, 19 Oct 2023 02:59:26 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdb4247ba4e0d2d947a4801bff8f6533e1ad8d7d1c2d8353947e8e9921654f72`  
-		Last Modified: Fri, 13 Oct 2023 01:52:10 GMT  
-		Size: 27.0 MB (26996093 bytes)  
+	-	`sha256:16a2e704ffb38630c1036946c5e67efb21aa4165a8aa2775ab279441e7ada932`  
+		Last Modified: Thu, 19 Oct 2023 07:14:46 GMT  
+		Size: 27.0 MB (26996071 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b20cf45c8b17fc48c85142b40d9249b0914f8ca71036766d44a0e7a6f6cc70b`  
-		Last Modified: Fri, 13 Oct 2023 01:52:08 GMT  
-		Size: 623.0 B  
+	-	`sha256:80337f81cbf1de1757a82446220f28b57eddfac5233da044035237ad6ce318ed`  
+		Last Modified: Thu, 19 Oct 2023 07:14:43 GMT  
+		Size: 624.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:54c5b8922cc40224742db6fccee4674d6509c7b79c27b40d3c7fb40199d7528d`  
-		Last Modified: Fri, 13 Oct 2023 01:52:07 GMT  
-		Size: 406.0 B  
+	-	`sha256:b8d74df72a8eb341f793f19b67079e2401aecb026bf2c52b35e810fb9445443a`  
+		Last Modified: Thu, 19 Oct 2023 07:14:43 GMT  
+		Size: 407.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:temurin-21-tools-deps-bookworm`
@@ -23549,7 +23549,7 @@ CMD ["-M" "--repl"]
 ## `clojure:temurin-8-alpine`
 
 ```console
-$ docker pull clojure@sha256:b8e13e882d89d2f33e3277b05aa760d34e2cc358e396973047263a4f0f838d04
+$ docker pull clojure@sha256:55c23ce5276d673cbc12dc07070446a2165a576c60c8dae199a8dd67b348c049
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -23559,14 +23559,14 @@ $ docker pull clojure@sha256:b8e13e882d89d2f33e3277b05aa760d34e2cc358e3969730472
 ### `clojure:temurin-8-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:ebfa227c6ee7c3c820e04d9890dee242afa30c3cd7301955466f6cbfa0919560
+$ docker pull clojure@sha256:4284d0882a4e60c724cbc97a633d313097355b44af31c598dc217187ec907c59
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **141.2 MB (141164157 bytes)**  
+-	Total Size: **141.2 MB (141164512 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:24cf64861945af296e9c1132562fa0fcc3adbd528ca97fb7c63750d257967318`
+-	Image ID: `sha256:9b030e5735db195a1baf53defd7cef858e13440bea099484b32b628e0c7acfed`
 -	Entrypoint: `["\/__cacert_entrypoint.sh"]`
 -	Default Command: `["clj"]`
 
@@ -23575,33 +23575,33 @@ $ docker pull clojure@sha256:ebfa227c6ee7c3c820e04d9890dee242afa30c3cd7301955466
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 28 Sep 2023 23:24:26 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 ENV JAVA_VERSION=jdk8u382-b05
-# Thu, 28 Sep 2023 23:24:31 GMT
+# Thu, 19 Oct 2023 02:50:23 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='6cf2d4925c387c4cdc0bf2e71de3690527141b5244695d0b3109ce83a8512235';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_x64_alpine-linux_hotspot_8u382b05.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Thu, 28 Sep 2023 23:24:32 GMT
+# Thu, 19 Oct 2023 02:50:24 GMT
 RUN echo Verifying install ...     && echo javac -version && javac -version     && echo java -version && java -version     && echo Complete.
-# Thu, 28 Sep 2023 23:24:33 GMT
+# Thu, 19 Oct 2023 02:50:24 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 28 Sep 2023 23:24:33 GMT
+# Thu, 19 Oct 2023 02:50:24 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Fri, 29 Sep 2023 03:43:12 GMT
+# Thu, 19 Oct 2023 07:06:49 GMT
 ENV CLOJURE_VERSION=1.11.1.1413
-# Fri, 29 Sep 2023 03:43:12 GMT
+# Thu, 19 Oct 2023 07:06:49 GMT
 WORKDIR /tmp
-# Fri, 29 Sep 2023 03:43:17 GMT
+# Thu, 19 Oct 2023 07:06:54 GMT
 RUN apk add --no-cache curl bash make git && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "ad9aa1e99c59a4f7eb66450914fbec543337d9fada60dd9d34eec7fe18ae4965 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl
-# Fri, 29 Sep 2023 03:43:17 GMT
+# Thu, 19 Oct 2023 07:06:54 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Fri, 29 Sep 2023 03:43:18 GMT
+# Thu, 19 Oct 2023 07:06:54 GMT
 CMD ["clj"]
 ```
 
@@ -23610,28 +23610,28 @@ CMD ["clj"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1076f6323c43e5087d2bb95d374dc7a408505995c17d3f38e5ddf3aa8774487`  
-		Last Modified: Thu, 28 Sep 2023 23:28:28 GMT  
-		Size: 101.5 MB (101488457 bytes)  
+	-	`sha256:1639d255df0e5821fcbbfd32c568e72c27068f2d91ade824eb11bda4dcfd6c79`  
+		Last Modified: Thu, 19 Oct 2023 02:55:31 GMT  
+		Size: 101.5 MB (101488481 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7530e3dbc8ddd8a31ebcf9a552cfee323caa314e496b064c11f5396d5bd9f80b`  
-		Last Modified: Thu, 28 Sep 2023 23:28:19 GMT  
-		Size: 159.0 B  
+	-	`sha256:966b5a885beb0fd15d5fc454f8e67696bfbf56360e0e4200056d8da742e680f7`  
+		Last Modified: Thu, 19 Oct 2023 02:55:21 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:05429726b5869b70315ac86c634ec1babe60b99b3bad24c2e55a622663f586ac`  
-		Last Modified: Thu, 28 Sep 2023 23:28:19 GMT  
+	-	`sha256:0992f23ecb962937e641584c80cd471f5e0b5d2f21605701d70521b3cc8cd4bf`  
+		Last Modified: Thu, 19 Oct 2023 02:55:22 GMT  
 		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8fb374d60962ca14d930324e4d54b654893ffdf28689ae2387e48fabcbdb7c3b`  
-		Last Modified: Fri, 29 Sep 2023 03:47:42 GMT  
-		Size: 27.0 MB (26995707 bytes)  
+	-	`sha256:5c55fb63851fca34239903d39ce5823fba00b0e012d26b1e6940ac5131dcf069`  
+		Last Modified: Thu, 19 Oct 2023 07:12:26 GMT  
+		Size: 27.0 MB (26996061 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0778e4ed61202b514a2d3f170dced7aed9ad461129043297dcfdb8497d1a30d4`  
-		Last Modified: Fri, 29 Sep 2023 03:47:39 GMT  
+	-	`sha256:61a58e6d6a5f98871a956499602214e441e99279ac6f0dbae0a60e8670d3c852`  
+		Last Modified: Thu, 19 Oct 2023 07:12:23 GMT  
 		Size: 620.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -27108,7 +27108,7 @@ CMD ["lein" "repl"]
 ## `clojure:temurin-8-lein-2.10.0-alpine`
 
 ```console
-$ docker pull clojure@sha256:f2cfdf5a14fdc229db35e7bcadc0493b3a1b2300daddfa827e0072d1f4627eb4
+$ docker pull clojure@sha256:e79c61bd52d61f52720c42278602b68bca507839f0a3af985e188a4b804299dc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -27118,14 +27118,14 @@ $ docker pull clojure@sha256:f2cfdf5a14fdc229db35e7bcadc0493b3a1b2300daddfa827e0
 ### `clojure:temurin-8-lein-2.10.0-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:239614c160c1eca7456278eed9cd6a5fe97556b54715535924079b0b98b029a4
+$ docker pull clojure@sha256:e50241942c960102db59830f1ec86507437055d341ae6efe15bd36024fa500b7
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **130.1 MB (130117744 bytes)**  
+-	Total Size: **130.1 MB (130117688 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e607bf7b0306b26eb3caeb52d92ca7351149249c374f656e2c8c91de5aba950b`
+-	Image ID: `sha256:da06c6abaf572283e9a76b3bbe8d4f8534a885907c853ec05b972212ce6a03d9`
 -	Entrypoint: `["\/__cacert_entrypoint.sh"]`
 -	Default Command: `["lein","repl"]`
 
@@ -27134,39 +27134,39 @@ $ docker pull clojure@sha256:239614c160c1eca7456278eed9cd6a5fe97556b547155359240
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 28 Sep 2023 23:24:26 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 ENV JAVA_VERSION=jdk8u382-b05
-# Thu, 28 Sep 2023 23:24:31 GMT
+# Thu, 19 Oct 2023 02:50:23 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='6cf2d4925c387c4cdc0bf2e71de3690527141b5244695d0b3109ce83a8512235';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_x64_alpine-linux_hotspot_8u382b05.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Thu, 28 Sep 2023 23:24:32 GMT
+# Thu, 19 Oct 2023 02:50:24 GMT
 RUN echo Verifying install ...     && echo javac -version && javac -version     && echo java -version && java -version     && echo Complete.
-# Thu, 28 Sep 2023 23:24:33 GMT
+# Thu, 19 Oct 2023 02:50:24 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 28 Sep 2023 23:24:33 GMT
+# Thu, 19 Oct 2023 02:50:24 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Fri, 29 Sep 2023 03:42:48 GMT
+# Thu, 19 Oct 2023 07:06:20 GMT
 ENV LEIN_VERSION=2.10.0
-# Fri, 29 Sep 2023 03:42:48 GMT
+# Thu, 19 Oct 2023 07:06:20 GMT
 ENV LEIN_INSTALL=/usr/local/bin/
-# Fri, 29 Sep 2023 03:42:48 GMT
+# Thu, 19 Oct 2023 07:06:20 GMT
 WORKDIR /tmp
-# Fri, 29 Sep 2023 03:42:55 GMT
+# Thu, 19 Oct 2023 07:06:27 GMT
 RUN set -eux; apk add --no-cache ca-certificates bash tar openssl gnupg && mkdir -p $LEIN_INSTALL && wget -q https://codeberg.org/leiningen/leiningen/raw/tag/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha256sum lein-pkg && echo "b1757ce941e4cbf15cbf649b7b4f413365e612da892d22841ec1728391bb66af *lein-pkg" | sha256sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && export GNUPGHOME="$(mktemp -d)" && export FILENAME_EXT=jar && gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys 6A2D483DB59437EBB97D09B1040193357D0606ED && wget -q https://codeberg.org/leiningen/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && wget -q https://codeberg.org/leiningen/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && echo "Verifying file PGP signature..." && gpg --batch --verify leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && gpgconf --kill all && rm -rf "$GNUPGHOME" leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apk del ca-certificates tar openssl gnupg
-# Fri, 29 Sep 2023 03:42:55 GMT
+# Thu, 19 Oct 2023 07:06:28 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Fri, 29 Sep 2023 03:42:55 GMT
+# Thu, 19 Oct 2023 07:06:28 GMT
 ENV LEIN_ROOT=1
-# Fri, 29 Sep 2023 03:42:58 GMT
+# Thu, 19 Oct 2023 07:06:31 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.11.1"]])' > project.clj   && lein deps && rm project.clj
-# Fri, 29 Sep 2023 03:42:58 GMT
+# Thu, 19 Oct 2023 07:06:31 GMT
 CMD ["lein" "repl"]
 ```
 
@@ -27175,29 +27175,29 @@ CMD ["lein" "repl"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1076f6323c43e5087d2bb95d374dc7a408505995c17d3f38e5ddf3aa8774487`  
-		Last Modified: Thu, 28 Sep 2023 23:28:28 GMT  
-		Size: 101.5 MB (101488457 bytes)  
+	-	`sha256:1639d255df0e5821fcbbfd32c568e72c27068f2d91ade824eb11bda4dcfd6c79`  
+		Last Modified: Thu, 19 Oct 2023 02:55:31 GMT  
+		Size: 101.5 MB (101488481 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7530e3dbc8ddd8a31ebcf9a552cfee323caa314e496b064c11f5396d5bd9f80b`  
-		Last Modified: Thu, 28 Sep 2023 23:28:19 GMT  
-		Size: 159.0 B  
+	-	`sha256:966b5a885beb0fd15d5fc454f8e67696bfbf56360e0e4200056d8da742e680f7`  
+		Last Modified: Thu, 19 Oct 2023 02:55:21 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:05429726b5869b70315ac86c634ec1babe60b99b3bad24c2e55a622663f586ac`  
-		Last Modified: Thu, 28 Sep 2023 23:28:19 GMT  
+	-	`sha256:0992f23ecb962937e641584c80cd471f5e0b5d2f21605701d70521b3cc8cd4bf`  
+		Last Modified: Thu, 19 Oct 2023 02:55:22 GMT  
 		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da297e7ad0aef183d1f7791c278b02799c34d7e09f7961428c693ca346b01ebd`  
-		Last Modified: Fri, 29 Sep 2023 03:47:28 GMT  
-		Size: 11.6 MB (11550649 bytes)  
+	-	`sha256:4913c6c6677d9a386f988c9eb29277e126c32c5dc303174ccd8d3dc15bf3d009`  
+		Last Modified: Thu, 19 Oct 2023 07:12:08 GMT  
+		Size: 11.6 MB (11550642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5661c3f541c28b0d160190daa2c10126d336ea85b2e50c276e7df4bc8898d6a8`  
-		Last Modified: Fri, 29 Sep 2023 03:47:27 GMT  
-		Size: 4.4 MB (4399265 bytes)  
+	-	`sha256:7f1778c83d4a64d866e36ec21d2e8defd6e007404df35fdd7232360fc51f411d`  
+		Last Modified: Thu, 19 Oct 2023 07:12:07 GMT  
+		Size: 4.4 MB (4399215 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:temurin-8-lein-2.10.0-bookworm`
@@ -28121,7 +28121,7 @@ CMD ["lein" "repl"]
 ## `clojure:temurin-8-lein-alpine`
 
 ```console
-$ docker pull clojure@sha256:f2cfdf5a14fdc229db35e7bcadc0493b3a1b2300daddfa827e0072d1f4627eb4
+$ docker pull clojure@sha256:e79c61bd52d61f52720c42278602b68bca507839f0a3af985e188a4b804299dc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -28131,14 +28131,14 @@ $ docker pull clojure@sha256:f2cfdf5a14fdc229db35e7bcadc0493b3a1b2300daddfa827e0
 ### `clojure:temurin-8-lein-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:239614c160c1eca7456278eed9cd6a5fe97556b54715535924079b0b98b029a4
+$ docker pull clojure@sha256:e50241942c960102db59830f1ec86507437055d341ae6efe15bd36024fa500b7
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **130.1 MB (130117744 bytes)**  
+-	Total Size: **130.1 MB (130117688 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e607bf7b0306b26eb3caeb52d92ca7351149249c374f656e2c8c91de5aba950b`
+-	Image ID: `sha256:da06c6abaf572283e9a76b3bbe8d4f8534a885907c853ec05b972212ce6a03d9`
 -	Entrypoint: `["\/__cacert_entrypoint.sh"]`
 -	Default Command: `["lein","repl"]`
 
@@ -28147,39 +28147,39 @@ $ docker pull clojure@sha256:239614c160c1eca7456278eed9cd6a5fe97556b547155359240
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 28 Sep 2023 23:24:26 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 ENV JAVA_VERSION=jdk8u382-b05
-# Thu, 28 Sep 2023 23:24:31 GMT
+# Thu, 19 Oct 2023 02:50:23 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='6cf2d4925c387c4cdc0bf2e71de3690527141b5244695d0b3109ce83a8512235';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_x64_alpine-linux_hotspot_8u382b05.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Thu, 28 Sep 2023 23:24:32 GMT
+# Thu, 19 Oct 2023 02:50:24 GMT
 RUN echo Verifying install ...     && echo javac -version && javac -version     && echo java -version && java -version     && echo Complete.
-# Thu, 28 Sep 2023 23:24:33 GMT
+# Thu, 19 Oct 2023 02:50:24 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 28 Sep 2023 23:24:33 GMT
+# Thu, 19 Oct 2023 02:50:24 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Fri, 29 Sep 2023 03:42:48 GMT
+# Thu, 19 Oct 2023 07:06:20 GMT
 ENV LEIN_VERSION=2.10.0
-# Fri, 29 Sep 2023 03:42:48 GMT
+# Thu, 19 Oct 2023 07:06:20 GMT
 ENV LEIN_INSTALL=/usr/local/bin/
-# Fri, 29 Sep 2023 03:42:48 GMT
+# Thu, 19 Oct 2023 07:06:20 GMT
 WORKDIR /tmp
-# Fri, 29 Sep 2023 03:42:55 GMT
+# Thu, 19 Oct 2023 07:06:27 GMT
 RUN set -eux; apk add --no-cache ca-certificates bash tar openssl gnupg && mkdir -p $LEIN_INSTALL && wget -q https://codeberg.org/leiningen/leiningen/raw/tag/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha256sum lein-pkg && echo "b1757ce941e4cbf15cbf649b7b4f413365e612da892d22841ec1728391bb66af *lein-pkg" | sha256sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && export GNUPGHOME="$(mktemp -d)" && export FILENAME_EXT=jar && gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys 6A2D483DB59437EBB97D09B1040193357D0606ED && wget -q https://codeberg.org/leiningen/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && wget -q https://codeberg.org/leiningen/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && echo "Verifying file PGP signature..." && gpg --batch --verify leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && gpgconf --kill all && rm -rf "$GNUPGHOME" leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apk del ca-certificates tar openssl gnupg
-# Fri, 29 Sep 2023 03:42:55 GMT
+# Thu, 19 Oct 2023 07:06:28 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Fri, 29 Sep 2023 03:42:55 GMT
+# Thu, 19 Oct 2023 07:06:28 GMT
 ENV LEIN_ROOT=1
-# Fri, 29 Sep 2023 03:42:58 GMT
+# Thu, 19 Oct 2023 07:06:31 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.11.1"]])' > project.clj   && lein deps && rm project.clj
-# Fri, 29 Sep 2023 03:42:58 GMT
+# Thu, 19 Oct 2023 07:06:31 GMT
 CMD ["lein" "repl"]
 ```
 
@@ -28188,29 +28188,29 @@ CMD ["lein" "repl"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1076f6323c43e5087d2bb95d374dc7a408505995c17d3f38e5ddf3aa8774487`  
-		Last Modified: Thu, 28 Sep 2023 23:28:28 GMT  
-		Size: 101.5 MB (101488457 bytes)  
+	-	`sha256:1639d255df0e5821fcbbfd32c568e72c27068f2d91ade824eb11bda4dcfd6c79`  
+		Last Modified: Thu, 19 Oct 2023 02:55:31 GMT  
+		Size: 101.5 MB (101488481 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7530e3dbc8ddd8a31ebcf9a552cfee323caa314e496b064c11f5396d5bd9f80b`  
-		Last Modified: Thu, 28 Sep 2023 23:28:19 GMT  
-		Size: 159.0 B  
+	-	`sha256:966b5a885beb0fd15d5fc454f8e67696bfbf56360e0e4200056d8da742e680f7`  
+		Last Modified: Thu, 19 Oct 2023 02:55:21 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:05429726b5869b70315ac86c634ec1babe60b99b3bad24c2e55a622663f586ac`  
-		Last Modified: Thu, 28 Sep 2023 23:28:19 GMT  
+	-	`sha256:0992f23ecb962937e641584c80cd471f5e0b5d2f21605701d70521b3cc8cd4bf`  
+		Last Modified: Thu, 19 Oct 2023 02:55:22 GMT  
 		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da297e7ad0aef183d1f7791c278b02799c34d7e09f7961428c693ca346b01ebd`  
-		Last Modified: Fri, 29 Sep 2023 03:47:28 GMT  
-		Size: 11.6 MB (11550649 bytes)  
+	-	`sha256:4913c6c6677d9a386f988c9eb29277e126c32c5dc303174ccd8d3dc15bf3d009`  
+		Last Modified: Thu, 19 Oct 2023 07:12:08 GMT  
+		Size: 11.6 MB (11550642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5661c3f541c28b0d160190daa2c10126d336ea85b2e50c276e7df4bc8898d6a8`  
-		Last Modified: Fri, 29 Sep 2023 03:47:27 GMT  
-		Size: 4.4 MB (4399265 bytes)  
+	-	`sha256:7f1778c83d4a64d866e36ec21d2e8defd6e007404df35fdd7232360fc51f411d`  
+		Last Modified: Thu, 19 Oct 2023 07:12:07 GMT  
+		Size: 4.4 MB (4399215 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:temurin-8-lein-bookworm`
@@ -29504,7 +29504,7 @@ CMD ["clj"]
 ## `clojure:temurin-8-tools-deps-1.11.1.1413-alpine`
 
 ```console
-$ docker pull clojure@sha256:b8e13e882d89d2f33e3277b05aa760d34e2cc358e396973047263a4f0f838d04
+$ docker pull clojure@sha256:55c23ce5276d673cbc12dc07070446a2165a576c60c8dae199a8dd67b348c049
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -29514,14 +29514,14 @@ $ docker pull clojure@sha256:b8e13e882d89d2f33e3277b05aa760d34e2cc358e3969730472
 ### `clojure:temurin-8-tools-deps-1.11.1.1413-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:ebfa227c6ee7c3c820e04d9890dee242afa30c3cd7301955466f6cbfa0919560
+$ docker pull clojure@sha256:4284d0882a4e60c724cbc97a633d313097355b44af31c598dc217187ec907c59
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **141.2 MB (141164157 bytes)**  
+-	Total Size: **141.2 MB (141164512 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:24cf64861945af296e9c1132562fa0fcc3adbd528ca97fb7c63750d257967318`
+-	Image ID: `sha256:9b030e5735db195a1baf53defd7cef858e13440bea099484b32b628e0c7acfed`
 -	Entrypoint: `["\/__cacert_entrypoint.sh"]`
 -	Default Command: `["clj"]`
 
@@ -29530,33 +29530,33 @@ $ docker pull clojure@sha256:ebfa227c6ee7c3c820e04d9890dee242afa30c3cd7301955466
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 28 Sep 2023 23:24:26 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 ENV JAVA_VERSION=jdk8u382-b05
-# Thu, 28 Sep 2023 23:24:31 GMT
+# Thu, 19 Oct 2023 02:50:23 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='6cf2d4925c387c4cdc0bf2e71de3690527141b5244695d0b3109ce83a8512235';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_x64_alpine-linux_hotspot_8u382b05.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Thu, 28 Sep 2023 23:24:32 GMT
+# Thu, 19 Oct 2023 02:50:24 GMT
 RUN echo Verifying install ...     && echo javac -version && javac -version     && echo java -version && java -version     && echo Complete.
-# Thu, 28 Sep 2023 23:24:33 GMT
+# Thu, 19 Oct 2023 02:50:24 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 28 Sep 2023 23:24:33 GMT
+# Thu, 19 Oct 2023 02:50:24 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Fri, 29 Sep 2023 03:43:12 GMT
+# Thu, 19 Oct 2023 07:06:49 GMT
 ENV CLOJURE_VERSION=1.11.1.1413
-# Fri, 29 Sep 2023 03:43:12 GMT
+# Thu, 19 Oct 2023 07:06:49 GMT
 WORKDIR /tmp
-# Fri, 29 Sep 2023 03:43:17 GMT
+# Thu, 19 Oct 2023 07:06:54 GMT
 RUN apk add --no-cache curl bash make git && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "ad9aa1e99c59a4f7eb66450914fbec543337d9fada60dd9d34eec7fe18ae4965 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl
-# Fri, 29 Sep 2023 03:43:17 GMT
+# Thu, 19 Oct 2023 07:06:54 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Fri, 29 Sep 2023 03:43:18 GMT
+# Thu, 19 Oct 2023 07:06:54 GMT
 CMD ["clj"]
 ```
 
@@ -29565,28 +29565,28 @@ CMD ["clj"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1076f6323c43e5087d2bb95d374dc7a408505995c17d3f38e5ddf3aa8774487`  
-		Last Modified: Thu, 28 Sep 2023 23:28:28 GMT  
-		Size: 101.5 MB (101488457 bytes)  
+	-	`sha256:1639d255df0e5821fcbbfd32c568e72c27068f2d91ade824eb11bda4dcfd6c79`  
+		Last Modified: Thu, 19 Oct 2023 02:55:31 GMT  
+		Size: 101.5 MB (101488481 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7530e3dbc8ddd8a31ebcf9a552cfee323caa314e496b064c11f5396d5bd9f80b`  
-		Last Modified: Thu, 28 Sep 2023 23:28:19 GMT  
-		Size: 159.0 B  
+	-	`sha256:966b5a885beb0fd15d5fc454f8e67696bfbf56360e0e4200056d8da742e680f7`  
+		Last Modified: Thu, 19 Oct 2023 02:55:21 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:05429726b5869b70315ac86c634ec1babe60b99b3bad24c2e55a622663f586ac`  
-		Last Modified: Thu, 28 Sep 2023 23:28:19 GMT  
+	-	`sha256:0992f23ecb962937e641584c80cd471f5e0b5d2f21605701d70521b3cc8cd4bf`  
+		Last Modified: Thu, 19 Oct 2023 02:55:22 GMT  
 		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8fb374d60962ca14d930324e4d54b654893ffdf28689ae2387e48fabcbdb7c3b`  
-		Last Modified: Fri, 29 Sep 2023 03:47:42 GMT  
-		Size: 27.0 MB (26995707 bytes)  
+	-	`sha256:5c55fb63851fca34239903d39ce5823fba00b0e012d26b1e6940ac5131dcf069`  
+		Last Modified: Thu, 19 Oct 2023 07:12:26 GMT  
+		Size: 27.0 MB (26996061 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0778e4ed61202b514a2d3f170dced7aed9ad461129043297dcfdb8497d1a30d4`  
-		Last Modified: Fri, 29 Sep 2023 03:47:39 GMT  
+	-	`sha256:61a58e6d6a5f98871a956499602214e441e99279ac6f0dbae0a60e8670d3c852`  
+		Last Modified: Thu, 19 Oct 2023 07:12:23 GMT  
 		Size: 620.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -30439,7 +30439,7 @@ CMD ["clj"]
 ## `clojure:temurin-8-tools-deps-alpine`
 
 ```console
-$ docker pull clojure@sha256:b8e13e882d89d2f33e3277b05aa760d34e2cc358e396973047263a4f0f838d04
+$ docker pull clojure@sha256:55c23ce5276d673cbc12dc07070446a2165a576c60c8dae199a8dd67b348c049
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -30449,14 +30449,14 @@ $ docker pull clojure@sha256:b8e13e882d89d2f33e3277b05aa760d34e2cc358e3969730472
 ### `clojure:temurin-8-tools-deps-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:ebfa227c6ee7c3c820e04d9890dee242afa30c3cd7301955466f6cbfa0919560
+$ docker pull clojure@sha256:4284d0882a4e60c724cbc97a633d313097355b44af31c598dc217187ec907c59
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **141.2 MB (141164157 bytes)**  
+-	Total Size: **141.2 MB (141164512 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:24cf64861945af296e9c1132562fa0fcc3adbd528ca97fb7c63750d257967318`
+-	Image ID: `sha256:9b030e5735db195a1baf53defd7cef858e13440bea099484b32b628e0c7acfed`
 -	Entrypoint: `["\/__cacert_entrypoint.sh"]`
 -	Default Command: `["clj"]`
 
@@ -30465,33 +30465,33 @@ $ docker pull clojure@sha256:ebfa227c6ee7c3c820e04d9890dee242afa30c3cd7301955466
 ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / 
 # Thu, 28 Sep 2023 21:19:27 GMT
 CMD ["/bin/sh"]
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Thu, 28 Sep 2023 23:24:23 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 28 Sep 2023 23:24:24 GMT
+# Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 28 Sep 2023 23:24:25 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 28 Sep 2023 23:24:26 GMT
+# Thu, 19 Oct 2023 02:50:17 GMT
 ENV JAVA_VERSION=jdk8u382-b05
-# Thu, 28 Sep 2023 23:24:31 GMT
+# Thu, 19 Oct 2023 02:50:23 GMT
 RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='6cf2d4925c387c4cdc0bf2e71de3690527141b5244695d0b3109ce83a8512235';          BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jdk_x64_alpine-linux_hotspot_8u382b05.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Thu, 28 Sep 2023 23:24:32 GMT
+# Thu, 19 Oct 2023 02:50:24 GMT
 RUN echo Verifying install ...     && echo javac -version && javac -version     && echo java -version && java -version     && echo Complete.
-# Thu, 28 Sep 2023 23:24:33 GMT
+# Thu, 19 Oct 2023 02:50:24 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 28 Sep 2023 23:24:33 GMT
+# Thu, 19 Oct 2023 02:50:24 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Fri, 29 Sep 2023 03:43:12 GMT
+# Thu, 19 Oct 2023 07:06:49 GMT
 ENV CLOJURE_VERSION=1.11.1.1413
-# Fri, 29 Sep 2023 03:43:12 GMT
+# Thu, 19 Oct 2023 07:06:49 GMT
 WORKDIR /tmp
-# Fri, 29 Sep 2023 03:43:17 GMT
+# Thu, 19 Oct 2023 07:06:54 GMT
 RUN apk add --no-cache curl bash make git && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "ad9aa1e99c59a4f7eb66450914fbec543337d9fada60dd9d34eec7fe18ae4965 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl
-# Fri, 29 Sep 2023 03:43:17 GMT
+# Thu, 19 Oct 2023 07:06:54 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Fri, 29 Sep 2023 03:43:18 GMT
+# Thu, 19 Oct 2023 07:06:54 GMT
 CMD ["clj"]
 ```
 
@@ -30500,28 +30500,28 @@ CMD ["clj"]
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34e4092d737c5d0c601ddadd8d075b756e55cc717065ae83683571965c2117a9`  
-		Last Modified: Thu, 28 Sep 2023 23:28:20 GMT  
-		Size: 9.3 MB (9276514 bytes)  
+	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
+		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
+		Size: 9.3 MB (9276490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1076f6323c43e5087d2bb95d374dc7a408505995c17d3f38e5ddf3aa8774487`  
-		Last Modified: Thu, 28 Sep 2023 23:28:28 GMT  
-		Size: 101.5 MB (101488457 bytes)  
+	-	`sha256:1639d255df0e5821fcbbfd32c568e72c27068f2d91ade824eb11bda4dcfd6c79`  
+		Last Modified: Thu, 19 Oct 2023 02:55:31 GMT  
+		Size: 101.5 MB (101488481 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7530e3dbc8ddd8a31ebcf9a552cfee323caa314e496b064c11f5396d5bd9f80b`  
-		Last Modified: Thu, 28 Sep 2023 23:28:19 GMT  
-		Size: 159.0 B  
+	-	`sha256:966b5a885beb0fd15d5fc454f8e67696bfbf56360e0e4200056d8da742e680f7`  
+		Last Modified: Thu, 19 Oct 2023 02:55:21 GMT  
+		Size: 160.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:05429726b5869b70315ac86c634ec1babe60b99b3bad24c2e55a622663f586ac`  
-		Last Modified: Thu, 28 Sep 2023 23:28:19 GMT  
+	-	`sha256:0992f23ecb962937e641584c80cd471f5e0b5d2f21605701d70521b3cc8cd4bf`  
+		Last Modified: Thu, 19 Oct 2023 02:55:22 GMT  
 		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8fb374d60962ca14d930324e4d54b654893ffdf28689ae2387e48fabcbdb7c3b`  
-		Last Modified: Fri, 29 Sep 2023 03:47:42 GMT  
-		Size: 27.0 MB (26995707 bytes)  
+	-	`sha256:5c55fb63851fca34239903d39ce5823fba00b0e012d26b1e6940ac5131dcf069`  
+		Last Modified: Thu, 19 Oct 2023 07:12:26 GMT  
+		Size: 27.0 MB (26996061 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0778e4ed61202b514a2d3f170dced7aed9ad461129043297dcfdb8497d1a30d4`  
-		Last Modified: Fri, 29 Sep 2023 03:47:39 GMT  
+	-	`sha256:61a58e6d6a5f98871a956499602214e441e99279ac6f0dbae0a60e8670d3c852`  
+		Last Modified: Thu, 19 Oct 2023 07:12:23 GMT  
 		Size: 620.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
