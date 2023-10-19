@@ -1,7 +1,7 @@
 ## `maven:3-amazoncorretto-20`
 
 ```console
-$ docker pull maven@sha256:bbf769add52a0e6c8787fcb19c61a76bbf8b7407a8bd63847ecda5c7e242119e
+$ docker pull maven@sha256:c70d92db4d60404a8122486605c26d225b86fc76308823156847f801827e7ef0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -93,13 +93,13 @@ CMD ["mvn"]
 ### `maven:3-amazoncorretto-20` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:dc11c08965c16db7babf76a58ae3acdda7e9b4909e33ca891adae26d518cbdf1
+$ docker pull maven@sha256:422585ecaf334f1332f53d71f06503228d6d6e9b08c8a2baa4a3c21eecb2980e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **343.8 MB (343756717 bytes)**  
+-	Total Size: **345.1 MB (345108349 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e357100af1bb7720bd5165cde682d1687e320f9e82daceff728fb2e6d8ae16f7`
+-	Image ID: `sha256:0d9edd52f844b9a7ba3e77d20540bf7705fc9f5cc5601983d6930ecaa2201665`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -150,23 +150,23 @@ CMD ["mvn"]
 		Last Modified: Thu, 12 Oct 2023 23:31:07 GMT  
 		Size: 159.0 MB (158967578 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aee07ff9a8fd80018bf4c6be8ba5fd1409ed7171876df74da2121a84b7d27907`  
-		Last Modified: Fri, 13 Oct 2023 00:09:58 GMT  
-		Size: 111.2 MB (111217624 bytes)  
+	-	`sha256:dd563bbce6a4daf182c410450d0d477260eb673f224abd85e41546ce9607ac15`  
+		Last Modified: Thu, 19 Oct 2023 03:44:14 GMT  
+		Size: 112.6 MB (112569250 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:14d487aefa3649f07d45de316e3fa5ae5ba136a786344fade879a9cbfbbef372`  
-		Last Modified: Fri, 13 Oct 2023 00:09:47 GMT  
-		Size: 9.4 MB (9406420 bytes)  
+	-	`sha256:397678c1ca298efc447de584c378f2b458656fb11e9a19e42817fb682a51141f`  
+		Last Modified: Thu, 19 Oct 2023 03:44:05 GMT  
+		Size: 9.4 MB (9406426 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:28bedce1d8dac1d3a830e130648143d97e3b3d83a7371dd3bc2d7485faeb54b9`  
-		Last Modified: Fri, 13 Oct 2023 00:09:46 GMT  
-		Size: 855.0 B  
+	-	`sha256:c549734c350b377fc5405a3b2bb9b57a1affa36830e21407768447fb0bb478cb`  
+		Last Modified: Thu, 19 Oct 2023 03:44:04 GMT  
+		Size: 856.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef74eb99f5b85b0e88a23a2f5b803088f54a307dba1328db23ed28a8e5b08777`  
-		Last Modified: Fri, 13 Oct 2023 00:09:46 GMT  
+	-	`sha256:195de666a4a3a1077702dd146644aee8345161266cc2fd6e8a5a65fb2c0a757b`  
+		Last Modified: Thu, 19 Oct 2023 03:44:04 GMT  
 		Size: 360.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:13f1aaaa1f42b41acc1d6216ce7a78d8577224a8d071ca7c1a54dfd6ff3383a0`  
-		Last Modified: Fri, 13 Oct 2023 00:09:46 GMT  
-		Size: 169.0 B  
+	-	`sha256:c8801a3d65314a4abd59ac5819e7b03f0b81d36b652422fe18318981b0785c51`  
+		Last Modified: Thu, 19 Oct 2023 03:44:04 GMT  
+		Size: 168.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
