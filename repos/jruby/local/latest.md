@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ce533d5fd47a4816f4f5c69338bd0655935e2a48c065dd2e8fad458aeea61ae2`
-- Created: `2023-10-13T10:59:57.021347999Z`
-- Virtual Size: ~ 301.49 Mb  
+- Image ID: `sha256:9c006897cd75e9fe6ae9e1473856d30044f3f4e6d93922490950e04194c0c585`
+- Created: `2023-10-19T01:24:33.577938831Z`
+- Virtual Size: ~ 304.10 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/__cacert_entrypoint.sh"]`
@@ -16,8 +16,8 @@
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
   - `JAVA_VERSION=jdk8u382-b05`
-  - `JRUBY_VERSION=9.4.3.0`
-  - `JRUBY_SHA256=b097e08c5669e8a188288e113911d12b4ad2bd67a2c209d6dfa8445d63a4d8c9`
+  - `JRUBY_VERSION=9.4.4.0`
+  - `JRUBY_SHA256=6ab12670afd8e5c8ac9305fabe42055795c5ddf9f8e8f1a1e60e260f2d724cc0`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
@@ -1249,14 +1249,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.4.0-164.181
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-164.181.dsc' linux_5.4.0-164.181.dsc 7425 SHA512:8be2ea8a8fff850383e71cc3488edc87b684ffe5f82e6c5f5d84a04101a1d96f147306a36621068dc30a4d9deb37fc7cf6d2f2550fd272d01df0904674056795
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA512:62b09a7231fd793973c5f59b16c4f6ffce621188b02a71915874b05e8e3f956fb6146d4a4fb1a4475bebe463949ca5a18da12842c3ce7c52e996e6bc4012a074
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-164.181.diff.gz' linux_5.4.0-164.181.diff.gz 11092104 SHA512:039206382d8e617289d53dea99f42c863037851fd676fac702cd0c6b65685e4c16a1642259ff30269b41801506d87faa3464341292e1571a3a8b80610a5d5389
-```
 
 ### `dpkg` source package: `lsb=11.1.0ubuntu2`
 
