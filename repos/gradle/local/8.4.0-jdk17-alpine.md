@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e113c8dc193181158aa4a41ae696a69edb2b5adcdf9b163f9df84a2763381c86`
-- Created: `2023-10-06T01:11:44.073214468Z`
-- Virtual Size: ~ 538.83 Mb  
+- Image ID: `sha256:a09086cffe0d4dfe4dba034da3448e77effbfbd0172d343f79dbea21897d4173`
+- Created: `2023-10-19T07:19:30.959911129Z`
+- Virtual Size: ~ 538.84 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/__cacert_entrypoint.sh"]`
@@ -330,16 +330,16 @@ GPL-2.0-only
 ### `apk` package: `git-lfs`
 
 ```console
-git-lfs-3.3.0-r4 description:
+git-lfs-3.3.0-r5 description:
 Git extension for versioning large files
 
-git-lfs-3.3.0-r4 webpage:
+git-lfs-3.3.0-r5 webpage:
 https://git-lfs.github.io/
 
-git-lfs-3.3.0-r4 installed size:
+git-lfs-3.3.0-r5 installed size:
 11 MiB
 
-git-lfs-3.3.0-r4 license:
+git-lfs-3.3.0-r5 license:
 MIT
 
 ```
@@ -415,16 +415,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.3.0-r0 description:
+libcurl-8.4.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.3.0-r0 webpage:
+libcurl-8.4.0-r0 webpage:
 https://curl.se/
 
-libcurl-8.3.0-r0 installed size:
+libcurl-8.4.0-r0 installed size:
 584 KiB
 
-libcurl-8.3.0-r0 license:
+libcurl-8.4.0-r0 license:
 curl
 
 ```
@@ -874,16 +874,16 @@ X11
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.55.1-r0 description:
+nghttp2-libs-1.57.0-r0 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.55.1-r0 webpage:
+nghttp2-libs-1.57.0-r0 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.55.1-r0 installed size:
+nghttp2-libs-1.57.0-r0 installed size:
 152 KiB
 
-nghttp2-libs-1.55.1-r0 license:
+nghttp2-libs-1.57.0-r0 license:
 MIT
 
 ```
@@ -959,16 +959,16 @@ MIT
 ### `apk` package: `python3`
 
 ```console
-python3-3.11.5-r0 description:
+python3-3.11.6-r0 description:
 High-level scripting language
 
-python3-3.11.5-r0 webpage:
+python3-3.11.6-r0 webpage:
 https://www.python.org/
 
-python3-3.11.5-r0 installed size:
+python3-3.11.6-r0 installed size:
 24 MiB
 
-python3-3.11.5-r0 license:
+python3-3.11.6-r0 license:
 PSF-2.0
 
 ```
@@ -976,16 +976,16 @@ PSF-2.0
 ### `apk` package: `python3-pyc`
 
 ```console
-python3-pyc-3.11.5-r0 description:
+python3-pyc-3.11.6-r0 description:
 High-level scripting language (install .pyc cache files)
 
-python3-pyc-3.11.5-r0 webpage:
+python3-pyc-3.11.6-r0 webpage:
 https://www.python.org/
 
-python3-pyc-3.11.5-r0 installed size:
+python3-pyc-3.11.6-r0 installed size:
 4096 B
 
-python3-pyc-3.11.5-r0 license:
+python3-pyc-3.11.6-r0 license:
 PSF-2.0
 
 ```
@@ -993,16 +993,16 @@ PSF-2.0
 ### `apk` package: `python3-pycache-pyc0`
 
 ```console
-python3-pycache-pyc0-3.11.5-r0 description:
+python3-pycache-pyc0-3.11.6-r0 description:
 High-level scripting language (.pyc pycache files)
 
-python3-pycache-pyc0-3.11.5-r0 webpage:
+python3-pycache-pyc0-3.11.6-r0 webpage:
 https://www.python.org/
 
-python3-pycache-pyc0-3.11.5-r0 installed size:
+python3-pycache-pyc0-3.11.6-r0 installed size:
 13 MiB
 
-python3-pycache-pyc0-3.11.5-r0 license:
+python3-pycache-pyc0-3.11.6-r0 license:
 PSF-2.0
 
 ```
