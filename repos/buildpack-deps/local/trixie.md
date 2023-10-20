@@ -404,20 +404,13 @@ Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/bin
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris binutils=2.41-5
-'http://deb.debian.org/debian/pool/main/b/binutils/binutils_2.41-5.dsc' binutils_2.41-5.dsc 12164 SHA256:78602bda95612e2157875c214c1c859fe609bf8d7dfa647a6bbe2e711484d262
-'http://deb.debian.org/debian/pool/main/b/binutils/binutils_2.41.orig.tar.xz' binutils_2.41.orig.tar.xz 26902888 SHA256:f87777e6b11c92081692fa6a5239271961eab8354c91ca52f916b9e875cf79dc
-'http://deb.debian.org/debian/pool/main/b/binutils/binutils_2.41-5.debian.tar.xz' binutils_2.41-5.debian.tar.xz 187124 SHA256:26d51d4c14e3f1dc35afacd2fbf91798967c8eb94e6a929158e3de4504c1a05e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/binutils/2.41-5/
 
-- https://sources.debian.net/src/binutils/2.41-5/ (for browsing the source)
-- https://sources.debian.net/src/binutils/2.41-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/binutils/2.41-5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `boost1.74=1.74.0+ds1-23`
 
@@ -3957,20 +3950,13 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=6.5.3-1
-'http://deb.debian.org/debian/pool/main/l/linux/linux_6.5.3-1.dsc' linux_6.5.3-1.dsc 288931 SHA256:e41e0a33c5eb34d3c53d50ad358ef5485107c148281ef9bf58f4c2a8a2080c66
-'http://deb.debian.org/debian/pool/main/l/linux/linux_6.5.3.orig.tar.xz' linux_6.5.3.orig.tar.xz 141462376 SHA256:55bc546f0b3e5b1fd984f0e22155fa9e0e7eca20fcb5f327a86f9ecfa3789983
-'http://deb.debian.org/debian/pool/main/l/linux/linux_6.5.3-1.debian.tar.xz' linux_6.5.3-1.debian.tar.xz 1493144 SHA256:f71a0ee85d794ce35b9cc181ef2d110739fdf0c3be3b347d57914a54e3eab4f3
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/linux/6.5.3-1/
 
-- https://sources.debian.net/src/linux/6.5.3-1/ (for browsing the source)
-- https://sources.debian.net/src/linux/6.5.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/6.5.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lz4=1.9.4-1`
 
@@ -4644,21 +4630,13 @@ Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`)
 - `permissive-like-automake-output`
 - `same-as-rest-of-p11kit`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris p11-kit=0.25.0-4
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.25.0-4.dsc' p11-kit_0.25.0-4.dsc 2501 SHA256:9dad05f58a3044ae8bc34833e1ade1be3977cb724a30980a66eb67405801cc1c
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.25.0.orig.tar.xz' p11-kit_0.25.0.orig.tar.xz 958940 SHA256:d55583bcdde83d86579cabe3a8f7f2638675fef01d23cace733ff748fc354706
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.25.0.orig.tar.xz.asc' p11-kit_0.25.0.orig.tar.xz.asc 228 SHA256:ee893a62a368fb807abc678a29279b1c04808ab626b68d5d7085b8b4ab4174c9
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.25.0-4.debian.tar.xz' p11-kit_0.25.0-4.debian.tar.xz 25880 SHA256:9cd4e6d187a4852ec0d5e167be2b9240192c4f91da5b8a5991013d8de7f27286
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/p11-kit/0.25.0-4/
 
-- https://sources.debian.net/src/p11-kit/0.25.0-4/ (for browsing the source)
-- https://sources.debian.net/src/p11-kit/0.25.0-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/p11-kit/0.25.0-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pam=1.5.2-7`
 
