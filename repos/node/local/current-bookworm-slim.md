@@ -1,17 +1,17 @@
-# `node:20-bookworm-slim`
+# `node:21-bookworm-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:aacb0ba0b35ca9ce74b3e2b40f179b39809ebc8d63ac79850ab189e3483bb5f7`
-- Created: `2023-10-16T16:21:46.613550236Z`
-- Virtual Size: ~ 246.83 Mb  
+- Image ID: `sha256:f25f2d758a02e6545fb1444c7dd3d4a2c4b93b3338e2b1cbbb87c087d14749e8`
+- Created: `2023-10-19T23:22:14.987845908Z`
+- Virtual Size: ~ 252.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=20.8.1`
+  - `NODE_VERSION=21.0.0`
   - `YARN_VERSION=1.22.19`
 
 ## `dpkg` (`.deb`-based packages)
