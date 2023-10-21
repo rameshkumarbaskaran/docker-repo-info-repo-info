@@ -144,9 +144,15 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris base-passwd=3.6.1
-'http://http.debian.net/debian/pool/main/b/base-passwd/base-passwd_3.6.1.dsc' base-passwd_3.6.1.dsc 1740 SHA256:b4e5fcdba73369657b241743033e8e7a65c26da43285503c652fa1436ce75d1f
-'http://http.debian.net/debian/pool/main/b/base-passwd/base-passwd_3.6.1.tar.xz' base-passwd_3.6.1.tar.xz 56072 SHA256:6ff369be59d586ba63c0c5fcb00f75f9953fe49db88bc6c6428f2c92866f79af
+'http://deb.debian.org/debian/pool/main/b/base-passwd/base-passwd_3.6.1.dsc' base-passwd_3.6.1.dsc 1740 SHA256:b4e5fcdba73369657b241743033e8e7a65c26da43285503c652fa1436ce75d1f
+'http://deb.debian.org/debian/pool/main/b/base-passwd/base-passwd_3.6.1.tar.xz' base-passwd_3.6.1.tar.xz 56072 SHA256:6ff369be59d586ba63c0c5fcb00f75f9953fe49db88bc6c6428f2c92866f79af
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/base-passwd/3.6.1/ (for browsing the source)
+- https://sources.debian.net/src/base-passwd/3.6.1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/base-passwd/3.6.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `bash=5.2.15-2`
 
@@ -2728,21 +2734,13 @@ Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`)
 - `permissive-like-automake-output`
 - `same-as-rest-of-p11kit`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris p11-kit=0.25.0-4
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.25.0-4.dsc' p11-kit_0.25.0-4.dsc 2501 SHA256:9dad05f58a3044ae8bc34833e1ade1be3977cb724a30980a66eb67405801cc1c
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.25.0.orig.tar.xz' p11-kit_0.25.0.orig.tar.xz 958940 SHA256:d55583bcdde83d86579cabe3a8f7f2638675fef01d23cace733ff748fc354706
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.25.0.orig.tar.xz.asc' p11-kit_0.25.0.orig.tar.xz.asc 228 SHA256:ee893a62a368fb807abc678a29279b1c04808ab626b68d5d7085b8b4ab4174c9
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.25.0-4.debian.tar.xz' p11-kit_0.25.0-4.debian.tar.xz 25880 SHA256:9cd4e6d187a4852ec0d5e167be2b9240192c4f91da5b8a5991013d8de7f27286
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/p11-kit/0.25.0-4/
 
-- https://sources.debian.net/src/p11-kit/0.25.0-4/ (for browsing the source)
-- https://sources.debian.net/src/p11-kit/0.25.0-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/p11-kit/0.25.0-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pam=1.5.2-7`
 
@@ -3148,10 +3146,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris rpart=4.1.19-1
-'http://http.debian.net/debian/pool/main/r/rpart/rpart_4.1.19-1.dsc' rpart_4.1.19-1.dsc 1843 SHA256:03c01b26658418329eb1c894902da1fb2a601c1e1d22f7ba110e995bb3cd5216
-'http://http.debian.net/debian/pool/main/r/rpart/rpart_4.1.19.orig.tar.gz' rpart_4.1.19.orig.tar.gz 859025 SHA256:fe723ed0b5583fae8b40e6fecc29b357229cb11f2339b02a4e4f812926249565
-'http://http.debian.net/debian/pool/main/r/rpart/rpart_4.1.19-1.debian.tar.xz' rpart_4.1.19-1.debian.tar.xz 4388 SHA256:3bea7d8cd1f2652d3d3966f23c61369c391dac8b2ab229700937c028b505c74a
+'http://deb.debian.org/debian/pool/main/r/rpart/rpart_4.1.19-1.dsc' rpart_4.1.19-1.dsc 1843 SHA256:03c01b26658418329eb1c894902da1fb2a601c1e1d22f7ba110e995bb3cd5216
+'http://deb.debian.org/debian/pool/main/r/rpart/rpart_4.1.19.orig.tar.gz' rpart_4.1.19.orig.tar.gz 859025 SHA256:fe723ed0b5583fae8b40e6fecc29b357229cb11f2339b02a4e4f812926249565
+'http://deb.debian.org/debian/pool/main/r/rpart/rpart_4.1.19-1.debian.tar.xz' rpart_4.1.19-1.debian.tar.xz 4388 SHA256:3bea7d8cd1f2652d3d3966f23c61369c391dac8b2ab229700937c028b505c74a
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/rpart/4.1.19-1/ (for browsing the source)
+- https://sources.debian.net/src/rpart/4.1.19-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/rpart/4.1.19-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `rpcsvc-proto=1.4.3-1`
 
@@ -3267,20 +3271,13 @@ Licenses: (parsed from: `/usr/share/doc/login/copyright`, `/usr/share/doc/passwd
 - `GPL-2+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris shadow=1:4.13+dfsg1-2
-'http://deb.debian.org/debian/pool/main/s/shadow/shadow_4.13%2bdfsg1-2.dsc' shadow_4.13+dfsg1-2.dsc 2447 SHA256:cac949c2071dc8955c3fff22e4a113a700b9f68a01b7583b64cfae55c2b2e678
-'http://deb.debian.org/debian/pool/main/s/shadow/shadow_4.13%2bdfsg1.orig.tar.xz' shadow_4.13+dfsg1.orig.tar.xz 1811752 SHA256:a8bb3a2aceff1cbe39d0f50687dcc1d7e7be0516a9d954d8e2eedb93f5906207
-'http://deb.debian.org/debian/pool/main/s/shadow/shadow_4.13%2bdfsg1-2.debian.tar.xz' shadow_4.13+dfsg1-2.debian.tar.xz 82300 SHA256:0f59c95526a4dc89c70b2fee357f05617d4572c6e94537d21019eed7a22471c6
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/shadow/1:4.13+dfsg1-2/
 
-- https://sources.debian.net/src/shadow/1:4.13+dfsg1-2/ (for browsing the source)
-- https://sources.debian.net/src/shadow/1:4.13+dfsg1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/shadow/1:4.13+dfsg1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `survival=3.5-7-1`
 
