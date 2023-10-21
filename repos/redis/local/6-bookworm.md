@@ -1,9 +1,9 @@
-# `redis:6.2.13`
+# `redis:6.2.14`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3fbae452b7d4aec3161b379198920f4ba66fbbbfa829801dc2a39cdc13ccc1ed`
-- Created: `2023-07-10T15:03:13Z`
+- Image ID: `sha256:81f00da770d8608a685d3d4c5aa199b12e2172ac6fbe672cabe1ad2d32367744`
+- Created: `2023-10-18T09:03:13Z`
 - Virtual Size: ~ 127.18 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -12,9 +12,9 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `GOSU_VERSION=1.16`
-  - `REDIS_VERSION=6.2.13`
-  - `REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-6.2.13.tar.gz`
-  - `REDIS_DOWNLOAD_SHA=89ff27c80d420456a721ccfb3beb7cc628d883c53059803513749e13214a23d1`
+  - `REDIS_VERSION=6.2.14`
+  - `REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-6.2.14.tar.gz`
+  - `REDIS_DOWNLOAD_SHA=34e74856cbd66fdb3a684fb349d93961d8c7aa668b06f81fd93ff267d09bc277`
 
 ## `dpkg` (`.deb`-based packages)
 
