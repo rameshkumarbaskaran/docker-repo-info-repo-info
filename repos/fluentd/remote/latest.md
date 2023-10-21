@@ -1,7 +1,7 @@
 ## `fluentd:latest`
 
 ```console
-$ docker pull fluentd@sha256:0e1090ed3901b0f4a5a4faabb10f91c4fa680da2e2a6503c23832ade8212bfc5
+$ docker pull fluentd@sha256:346358e90c07ef9a6b9fad03489f867cb5dc75a00b3106ff410f6c513379fb75
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16,14 +16,14 @@ $ docker pull fluentd@sha256:0e1090ed3901b0f4a5a4faabb10f91c4fa680da2e2a6503c238
 ### `fluentd:latest` - linux; amd64
 
 ```console
-$ docker pull fluentd@sha256:13ee83b11a86c4e6593b5acb8e647c22cf1b9feef123612b9dd586465ed05254
+$ docker pull fluentd@sha256:75bfe9553d8eaf41b853feea165a34a0ebcbe16913678f59da28bf1e67f0b914
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **25.2 MB (25155206 bytes)**  
+-	Total Size: **25.2 MB (25156753 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c6e2964bb824f2aacb86d0ca3170997802f000be1eff97299b1188ec8611aa4`
+-	Image ID: `sha256:b5753cb15f75469b9c70d6caf78efb15ac5262723e1384512538b8ed8602cc58`
 -	Entrypoint: `["tini","--","\/bin\/entrypoint.sh"]`
 -	Default Command: `["fluentd"]`
 
@@ -32,29 +32,29 @@ $ docker pull fluentd@sha256:13ee83b11a86c4e6593b5acb8e647c22cf1b9feef123612b9dd
 ADD file:6dd87346b8be240b21b4f4d9296253bf0d28b6579aa52d2118872e3936963b6b in / 
 # Mon, 07 Aug 2023 19:20:26 GMT
 CMD ["/bin/sh"]
-# Wed, 09 Aug 2023 10:08:31 GMT
+# Sat, 21 Oct 2023 00:55:55 GMT
 LABEL maintainer=Fluentd developers <fluentd@googlegroups.com>
-# Wed, 04 Oct 2023 21:19:32 GMT
+# Sat, 21 Oct 2023 00:55:55 GMT
 LABEL Description=Fluentd docker image Vendor=Fluent Organization Version=1.16.2
-# Wed, 04 Oct 2023 21:20:26 GMT
+# Sat, 21 Oct 2023 00:56:48 GMT
 RUN apk update  && apk add --no-cache         ca-certificates         ruby ruby-irb ruby-etc ruby-webrick         tini  && apk add --no-cache --virtual .build-deps         build-base linux-headers         ruby-dev gnupg  && echo 'gem: --no-document' >> /etc/gemrc  && gem install oj -v 3.16.1  && gem install json -v 2.6.3  && gem install rexml -v 3.2.6  && gem install async -v 1.31.0  && gem install async-http -v 0.60.2 && gem install uri -v 0.12.2  && gem install fluentd -v 1.16.2  && gem install bigdecimal -v 1.4.4  && apk del .build-deps  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem /usr/lib/ruby/gems/3.*/gems/fluentd-*/test
-# Wed, 04 Oct 2023 21:20:27 GMT
+# Sat, 21 Oct 2023 00:56:49 GMT
 RUN addgroup -S fluent && adduser -S -G fluent fluent     && mkdir -p /fluentd/log     && mkdir -p /fluentd/etc /fluentd/plugins     && chown -R fluent /fluentd && chgrp -R fluent /fluentd
-# Wed, 04 Oct 2023 21:20:27 GMT
+# Sat, 21 Oct 2023 00:56:49 GMT
 COPY file:06d9a84b9b428b4e0ef5a9e3699798758dc9716908d82091239fb9f85dd30d70 in /fluentd/etc/ 
-# Wed, 04 Oct 2023 21:20:27 GMT
+# Sat, 21 Oct 2023 00:56:49 GMT
 COPY file:977670d9d298d60208db6e5110a5919bfde19ee7da9c19df693163ecd07caea6 in /bin/ 
-# Wed, 04 Oct 2023 21:20:27 GMT
+# Sat, 21 Oct 2023 00:56:49 GMT
 ENV FLUENTD_CONF=fluent.conf
-# Wed, 04 Oct 2023 21:20:27 GMT
+# Sat, 21 Oct 2023 00:56:49 GMT
 ENV LD_PRELOAD=
-# Wed, 04 Oct 2023 21:20:27 GMT
+# Sat, 21 Oct 2023 00:56:49 GMT
 EXPOSE 24224 5140
-# Wed, 04 Oct 2023 21:20:28 GMT
+# Sat, 21 Oct 2023 00:56:49 GMT
 USER fluent
-# Wed, 04 Oct 2023 21:20:28 GMT
+# Sat, 21 Oct 2023 00:56:49 GMT
 ENTRYPOINT ["tini" "--" "/bin/entrypoint.sh"]
-# Wed, 04 Oct 2023 21:20:28 GMT
+# Sat, 21 Oct 2023 00:56:50 GMT
 CMD ["fluentd"]
 ```
 
@@ -63,34 +63,34 @@ CMD ["fluentd"]
 		Last Modified: Mon, 07 Aug 2023 19:21:08 GMT  
 		Size: 3.4 MB (3378609 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d8827fca176be13b72bd568162360ca80ecd8eef45b5ef68c80b3a000f503183`  
-		Last Modified: Wed, 04 Oct 2023 21:24:01 GMT  
-		Size: 21.8 MB (21774385 bytes)  
+	-	`sha256:8376758d7f65ec25ea223ef7bbafc5f26e793c3bdcafc8dc00773e671afd2e79`  
+		Last Modified: Sat, 21 Oct 2023 00:57:05 GMT  
+		Size: 21.8 MB (21775931 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f6515ca36e5cdb6a7919ba7b37f2dd0f2d248776d1f9485d6447a039b1ed9452`  
-		Last Modified: Wed, 04 Oct 2023 21:23:58 GMT  
-		Size: 1.3 KB (1349 bytes)  
+	-	`sha256:8bc4563dcb0c96767d1176a0f296533198190b7de7ce870b687cc2b26eb9307b`  
+		Last Modified: Sat, 21 Oct 2023 00:57:02 GMT  
+		Size: 1.3 KB (1348 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3543c7841d7564df2c94d78f0afdedb172e4b82c8677f5b5ad85136ac57a1dd3`  
-		Last Modified: Wed, 04 Oct 2023 21:23:58 GMT  
-		Size: 405.0 B  
+	-	`sha256:84aaef6731a67021e310e6ee61efdd50d535063cd745b58537b5d6be1b403fd5`  
+		Last Modified: Sat, 21 Oct 2023 00:57:02 GMT  
+		Size: 406.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d57e8a5d5c2f2b9f7e226a62461f9a68d3c8ffaa5b73c8a92b05fa8bcc8d1d96`  
-		Last Modified: Wed, 04 Oct 2023 21:23:58 GMT  
-		Size: 458.0 B  
+	-	`sha256:91bb379e120ea943cd6686bd302e2852c6de2e6ad4df759a3fa01267f493b103`  
+		Last Modified: Sat, 21 Oct 2023 00:57:02 GMT  
+		Size: 459.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `fluentd:latest` - linux; arm variant v6
 
 ```console
-$ docker pull fluentd@sha256:059df7f5071014b62e8cd4b3d56609cecbf887753011d04bb0a3b0e017a60f72
+$ docker pull fluentd@sha256:3f2213b3ceb36bd178b3b9c9da6605c0256bea34aa720753ce22fb98a9d175ef
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **23.8 MB (23848199 bytes)**  
+-	Total Size: **23.8 MB (23848320 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6f827678b99b7f0450b51a46ea4bbded99d2af7bc05d42292069f7ac5157f0b4`
+-	Image ID: `sha256:fa175d111a15eaebd49daa0be452360294ac5c6951a5f289f9d98e2db825c9a3`
 -	Entrypoint: `["tini","--","\/bin\/entrypoint.sh"]`
 -	Default Command: `["fluentd"]`
 
@@ -99,29 +99,29 @@ $ docker pull fluentd@sha256:059df7f5071014b62e8cd4b3d56609cecbf887753011d04bb0a
 ADD file:cb3f59b0f701cb6ef552e7f8ada1707cf82747c95b69759924061ff9ac6dbe72 in / 
 # Mon, 07 Aug 2023 19:49:18 GMT
 CMD ["/bin/sh"]
-# Mon, 07 Aug 2023 22:13:50 GMT
+# Sat, 21 Oct 2023 00:20:10 GMT
 LABEL maintainer=Fluentd developers <fluentd@googlegroups.com>
-# Wed, 04 Oct 2023 20:49:14 GMT
+# Sat, 21 Oct 2023 00:20:10 GMT
 LABEL Description=Fluentd docker image Vendor=Fluent Organization Version=1.16.2
-# Wed, 04 Oct 2023 20:50:18 GMT
+# Sat, 21 Oct 2023 00:21:16 GMT
 RUN apk update  && apk add --no-cache         ca-certificates         ruby ruby-irb ruby-etc ruby-webrick         tini  && apk add --no-cache --virtual .build-deps         build-base linux-headers         ruby-dev gnupg  && echo 'gem: --no-document' >> /etc/gemrc  && gem install oj -v 3.16.1  && gem install json -v 2.6.3  && gem install rexml -v 3.2.6  && gem install async -v 1.31.0  && gem install async-http -v 0.60.2 && gem install uri -v 0.12.2  && gem install fluentd -v 1.16.2  && gem install bigdecimal -v 1.4.4  && apk del .build-deps  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem /usr/lib/ruby/gems/3.*/gems/fluentd-*/test
-# Wed, 04 Oct 2023 20:50:18 GMT
+# Sat, 21 Oct 2023 00:21:17 GMT
 RUN addgroup -S fluent && adduser -S -G fluent fluent     && mkdir -p /fluentd/log     && mkdir -p /fluentd/etc /fluentd/plugins     && chown -R fluent /fluentd && chgrp -R fluent /fluentd
-# Wed, 04 Oct 2023 20:50:18 GMT
+# Sat, 21 Oct 2023 00:21:17 GMT
 COPY file:06d9a84b9b428b4e0ef5a9e3699798758dc9716908d82091239fb9f85dd30d70 in /fluentd/etc/ 
-# Wed, 04 Oct 2023 20:50:19 GMT
+# Sat, 21 Oct 2023 00:21:17 GMT
 COPY file:977670d9d298d60208db6e5110a5919bfde19ee7da9c19df693163ecd07caea6 in /bin/ 
-# Wed, 04 Oct 2023 20:50:19 GMT
+# Sat, 21 Oct 2023 00:21:17 GMT
 ENV FLUENTD_CONF=fluent.conf
-# Wed, 04 Oct 2023 20:50:19 GMT
+# Sat, 21 Oct 2023 00:21:17 GMT
 ENV LD_PRELOAD=
-# Wed, 04 Oct 2023 20:50:19 GMT
+# Sat, 21 Oct 2023 00:21:17 GMT
 EXPOSE 24224 5140
-# Wed, 04 Oct 2023 20:50:19 GMT
+# Sat, 21 Oct 2023 00:21:17 GMT
 USER fluent
-# Wed, 04 Oct 2023 20:50:19 GMT
+# Sat, 21 Oct 2023 00:21:17 GMT
 ENTRYPOINT ["tini" "--" "/bin/entrypoint.sh"]
-# Wed, 04 Oct 2023 20:50:19 GMT
+# Sat, 21 Oct 2023 00:21:18 GMT
 CMD ["fluentd"]
 ```
 
@@ -130,34 +130,34 @@ CMD ["fluentd"]
 		Last Modified: Mon, 07 Aug 2023 19:49:53 GMT  
 		Size: 3.1 MB (3112450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:553532437e6782bb598563089e5c9712ae1d947bcc0e062ecde36c20a8de5397`  
-		Last Modified: Wed, 04 Oct 2023 20:50:32 GMT  
-		Size: 20.7 MB (20733532 bytes)  
+	-	`sha256:6272f5aba2d83ca3cb0da9b8b8ea413c4405314184d890c9f45ec6ce7bea5b2c`  
+		Last Modified: Sat, 21 Oct 2023 00:21:40 GMT  
+		Size: 20.7 MB (20733652 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7d15a3c0a2634f3d4b2d360f2e9ef8cf7e467483d959c924d4ce1b9de09ff85`  
-		Last Modified: Wed, 04 Oct 2023 20:50:29 GMT  
+	-	`sha256:acffb79d5a5cdc39102cfbb99f6964b1acbcb76a9161b9ba2b5d51d36a630cee`  
+		Last Modified: Sat, 21 Oct 2023 00:21:37 GMT  
 		Size: 1.4 KB (1351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9b8122aae986d2ea394888a2a35bdfe989c9aff09557fab2b7a3a40c97ca077`  
-		Last Modified: Wed, 04 Oct 2023 20:50:29 GMT  
-		Size: 405.0 B  
+	-	`sha256:5a7fbc6130e444eb89d15b84ab466005aa2df1d603163787a827420db07a5d2e`  
+		Last Modified: Sat, 21 Oct 2023 00:21:37 GMT  
+		Size: 408.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ff8c6799857457a342c810fea84380b9f681c2db904dff6caef780d7e0671d3`  
-		Last Modified: Wed, 04 Oct 2023 20:50:29 GMT  
-		Size: 461.0 B  
+	-	`sha256:381df3c8eabfef21742251b70c22a41ac7ea8a9de052debdbbad3795b6ecaf35`  
+		Last Modified: Sat, 21 Oct 2023 00:21:37 GMT  
+		Size: 459.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `fluentd:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull fluentd@sha256:8197de0448a2f17bf11f791952b47dada2db36420039a914517dd8fdb9576cd2
+$ docker pull fluentd@sha256:06b726c6f3eefae9ce8fa10746eee66af26fb9852c1881ad286af276cbd102d0
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **24.6 MB (24629281 bytes)**  
+-	Total Size: **24.6 MB (24630185 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9b9bbe3c7c4f2dc30c2ce5307d8fe088a8d1b645f876b2f86ab83f0c04d8ec45`
+-	Image ID: `sha256:44dfb8e93fecfed45462613ac7f31978908f5ba8ece4ae3d75f327eb79e87ec6`
 -	Entrypoint: `["tini","--","\/bin\/entrypoint.sh"]`
 -	Default Command: `["fluentd"]`
 
@@ -166,29 +166,29 @@ $ docker pull fluentd@sha256:8197de0448a2f17bf11f791952b47dada2db36420039a914517
 ADD file:9e054a25c83111adc857a7f988336ee40eea5e1794ed30a80d465e8d472342e2 in / 
 # Mon, 07 Aug 2023 19:39:22 GMT
 CMD ["/bin/sh"]
-# Wed, 09 Aug 2023 10:36:07 GMT
+# Sat, 21 Oct 2023 00:54:45 GMT
 LABEL maintainer=Fluentd developers <fluentd@googlegroups.com>
-# Wed, 04 Oct 2023 21:39:29 GMT
+# Sat, 21 Oct 2023 00:54:45 GMT
 LABEL Description=Fluentd docker image Vendor=Fluent Organization Version=1.16.2
-# Wed, 04 Oct 2023 21:40:19 GMT
+# Sat, 21 Oct 2023 00:55:33 GMT
 RUN apk update  && apk add --no-cache         ca-certificates         ruby ruby-irb ruby-etc ruby-webrick         tini  && apk add --no-cache --virtual .build-deps         build-base linux-headers         ruby-dev gnupg  && echo 'gem: --no-document' >> /etc/gemrc  && gem install oj -v 3.16.1  && gem install json -v 2.6.3  && gem install rexml -v 3.2.6  && gem install async -v 1.31.0  && gem install async-http -v 0.60.2 && gem install uri -v 0.12.2  && gem install fluentd -v 1.16.2  && gem install bigdecimal -v 1.4.4  && apk del .build-deps  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem /usr/lib/ruby/gems/3.*/gems/fluentd-*/test
-# Wed, 04 Oct 2023 21:40:19 GMT
+# Sat, 21 Oct 2023 00:55:33 GMT
 RUN addgroup -S fluent && adduser -S -G fluent fluent     && mkdir -p /fluentd/log     && mkdir -p /fluentd/etc /fluentd/plugins     && chown -R fluent /fluentd && chgrp -R fluent /fluentd
-# Wed, 04 Oct 2023 21:40:20 GMT
+# Sat, 21 Oct 2023 00:55:34 GMT
 COPY file:06d9a84b9b428b4e0ef5a9e3699798758dc9716908d82091239fb9f85dd30d70 in /fluentd/etc/ 
-# Wed, 04 Oct 2023 21:40:20 GMT
+# Sat, 21 Oct 2023 00:55:34 GMT
 COPY file:977670d9d298d60208db6e5110a5919bfde19ee7da9c19df693163ecd07caea6 in /bin/ 
-# Wed, 04 Oct 2023 21:40:20 GMT
+# Sat, 21 Oct 2023 00:55:34 GMT
 ENV FLUENTD_CONF=fluent.conf
-# Wed, 04 Oct 2023 21:40:20 GMT
+# Sat, 21 Oct 2023 00:55:34 GMT
 ENV LD_PRELOAD=
-# Wed, 04 Oct 2023 21:40:20 GMT
+# Sat, 21 Oct 2023 00:55:34 GMT
 EXPOSE 24224 5140
-# Wed, 04 Oct 2023 21:40:20 GMT
+# Sat, 21 Oct 2023 00:55:34 GMT
 USER fluent
-# Wed, 04 Oct 2023 21:40:20 GMT
+# Sat, 21 Oct 2023 00:55:34 GMT
 ENTRYPOINT ["tini" "--" "/bin/entrypoint.sh"]
-# Wed, 04 Oct 2023 21:40:20 GMT
+# Sat, 21 Oct 2023 00:55:34 GMT
 CMD ["fluentd"]
 ```
 
@@ -197,34 +197,34 @@ CMD ["fluentd"]
 		Last Modified: Mon, 07 Aug 2023 19:39:59 GMT  
 		Size: 3.3 MB (3258290 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b3e3f59536119d5781bb641b631d26d36f17086051a8b4afd4683c39e225bb4`  
-		Last Modified: Wed, 04 Oct 2023 21:43:15 GMT  
-		Size: 21.4 MB (21368773 bytes)  
+	-	`sha256:ea1ec00e7593c94a73645d5a23538f5a0ef272148c631fb2180c364c09dc4378`  
+		Last Modified: Sat, 21 Oct 2023 00:55:54 GMT  
+		Size: 21.4 MB (21369678 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ddf0687a8f3c9c7bc2628fceef6bc75e8642ea202b985274313ddd137d5bde2f`  
-		Last Modified: Wed, 04 Oct 2023 21:43:12 GMT  
+	-	`sha256:2b25585882671ccef4c985197c364aa727f0e1d8b6fc53413ed04a6c0826196d`  
+		Last Modified: Sat, 21 Oct 2023 00:55:52 GMT  
 		Size: 1.4 KB (1350 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1f3742a3460d54456ef66da27bcb397c738c7a99e48ee599835c2d5d935c0ca`  
-		Last Modified: Wed, 04 Oct 2023 21:43:12 GMT  
+	-	`sha256:ea7b079d03420368b92ebded355718f1a1118f9d739dbfcec2ea73fbf2d91f7d`  
+		Last Modified: Sat, 21 Oct 2023 00:55:52 GMT  
 		Size: 409.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba3629019f4be74a2ec436a05f010c0abc28d5060bf37a9e2874366f5210daf2`  
-		Last Modified: Wed, 04 Oct 2023 21:43:12 GMT  
-		Size: 459.0 B  
+	-	`sha256:e38769e98bf3af23f79f56d9a58e37a428bb84a00114581b22f85626b9d1e7f2`  
+		Last Modified: Sat, 21 Oct 2023 00:55:52 GMT  
+		Size: 458.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `fluentd:latest` - linux; 386
 
 ```console
-$ docker pull fluentd@sha256:b83b7e92a71b743f967b5288f16a4df4305653819cdb9aaf2d900d46f42909fa
+$ docker pull fluentd@sha256:18747edca75cbd0a32946c24e0f96ff179fbc13d20ca08482c6d438ad67fb370
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **24.4 MB (24437573 bytes)**  
+-	Total Size: **24.4 MB (24437983 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a376d83aefcf980ab1d54ab6eaa54cfe7efd64178c391d35d5dd01828a219566`
+-	Image ID: `sha256:dc0ad11bd392e421c8a344cb4ab2eac725292e368cfd3a5c9b586c85bea6a2fb`
 -	Entrypoint: `["tini","--","\/bin\/entrypoint.sh"]`
 -	Default Command: `["fluentd"]`
 
@@ -233,29 +233,29 @@ $ docker pull fluentd@sha256:b83b7e92a71b743f967b5288f16a4df4305653819cdb9aaf2d9
 ADD file:437e2411fa3e4795a759f54507f41caa000169f0c32600ec49b4397313cd0884 in / 
 # Mon, 07 Aug 2023 19:38:30 GMT
 CMD ["/bin/sh"]
-# Mon, 07 Aug 2023 21:24:48 GMT
+# Sat, 21 Oct 2023 01:00:43 GMT
 LABEL maintainer=Fluentd developers <fluentd@googlegroups.com>
-# Wed, 04 Oct 2023 21:38:20 GMT
+# Sat, 21 Oct 2023 01:00:43 GMT
 LABEL Description=Fluentd docker image Vendor=Fluent Organization Version=1.16.2
-# Wed, 04 Oct 2023 21:39:32 GMT
+# Sat, 21 Oct 2023 01:01:57 GMT
 RUN apk update  && apk add --no-cache         ca-certificates         ruby ruby-irb ruby-etc ruby-webrick         tini  && apk add --no-cache --virtual .build-deps         build-base linux-headers         ruby-dev gnupg  && echo 'gem: --no-document' >> /etc/gemrc  && gem install oj -v 3.16.1  && gem install json -v 2.6.3  && gem install rexml -v 3.2.6  && gem install async -v 1.31.0  && gem install async-http -v 0.60.2 && gem install uri -v 0.12.2  && gem install fluentd -v 1.16.2  && gem install bigdecimal -v 1.4.4  && apk del .build-deps  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem /usr/lib/ruby/gems/3.*/gems/fluentd-*/test
-# Wed, 04 Oct 2023 21:39:33 GMT
+# Sat, 21 Oct 2023 01:01:58 GMT
 RUN addgroup -S fluent && adduser -S -G fluent fluent     && mkdir -p /fluentd/log     && mkdir -p /fluentd/etc /fluentd/plugins     && chown -R fluent /fluentd && chgrp -R fluent /fluentd
-# Wed, 04 Oct 2023 21:39:33 GMT
+# Sat, 21 Oct 2023 01:01:58 GMT
 COPY file:06d9a84b9b428b4e0ef5a9e3699798758dc9716908d82091239fb9f85dd30d70 in /fluentd/etc/ 
-# Wed, 04 Oct 2023 21:39:33 GMT
+# Sat, 21 Oct 2023 01:01:58 GMT
 COPY file:977670d9d298d60208db6e5110a5919bfde19ee7da9c19df693163ecd07caea6 in /bin/ 
-# Wed, 04 Oct 2023 21:39:33 GMT
+# Sat, 21 Oct 2023 01:01:58 GMT
 ENV FLUENTD_CONF=fluent.conf
-# Wed, 04 Oct 2023 21:39:33 GMT
+# Sat, 21 Oct 2023 01:01:58 GMT
 ENV LD_PRELOAD=
-# Wed, 04 Oct 2023 21:39:33 GMT
+# Sat, 21 Oct 2023 01:01:58 GMT
 EXPOSE 24224 5140
-# Wed, 04 Oct 2023 21:39:33 GMT
+# Sat, 21 Oct 2023 01:01:58 GMT
 USER fluent
-# Wed, 04 Oct 2023 21:39:33 GMT
+# Sat, 21 Oct 2023 01:01:58 GMT
 ENTRYPOINT ["tini" "--" "/bin/entrypoint.sh"]
-# Wed, 04 Oct 2023 21:39:34 GMT
+# Sat, 21 Oct 2023 01:01:58 GMT
 CMD ["fluentd"]
 ```
 
@@ -264,34 +264,34 @@ CMD ["fluentd"]
 		Last Modified: Mon, 07 Aug 2023 19:39:10 GMT  
 		Size: 3.4 MB (3413779 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:82eeb7c7b7c8cf58216ccf047891a51db52037f8d73338c44bda2aade1939af3`  
-		Last Modified: Wed, 04 Oct 2023 21:43:33 GMT  
-		Size: 21.0 MB (21021575 bytes)  
+	-	`sha256:7c98d2d26330aab1341d9ddf5b6d79700d19d8b73621e9bf914723d50eb849a4`  
+		Last Modified: Sat, 21 Oct 2023 01:02:19 GMT  
+		Size: 21.0 MB (21021988 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2cfff789f4260eb9a35837ba5b55a3132024fc07f657c0a7a36b4c537c93e532`  
-		Last Modified: Wed, 04 Oct 2023 21:43:28 GMT  
-		Size: 1.4 KB (1351 bytes)  
+	-	`sha256:d0f39745c5bc83005ffcd79ea3b41adf1712966c62cb9b70a1047342f7627512`  
+		Last Modified: Sat, 21 Oct 2023 01:02:15 GMT  
+		Size: 1.3 KB (1348 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3634708fd9e50993123edc881d3b612bd7abd118c86c10ae821d153c32627d6c`  
-		Last Modified: Wed, 04 Oct 2023 21:43:28 GMT  
+	-	`sha256:b61cf065a210c6cdcd8ed51190aa394ed32e605032d5b2d6f9d2d2c921c33bdc`  
+		Last Modified: Sat, 21 Oct 2023 01:02:14 GMT  
 		Size: 409.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cecb450aa2b0fc245622f769a3b887b13b78e60ea9541bfea6ff5c6ec88b683f`  
-		Last Modified: Wed, 04 Oct 2023 21:43:28 GMT  
+	-	`sha256:4865efaef1fc67ff9272e0e15d5e27e1730fc0840dae0f145d36c712c19e75dd`  
+		Last Modified: Sat, 21 Oct 2023 01:02:15 GMT  
 		Size: 459.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `fluentd:latest` - linux; ppc64le
 
 ```console
-$ docker pull fluentd@sha256:00ec95a9165ad95d580fdd03e9ac2168cbb48c84e783c0d256d2ff2e2c012649
+$ docker pull fluentd@sha256:fcb88239c453c4794e186f1701278990a9a737a91b111d7016ef412e91504c3e
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **25.0 MB (25008964 bytes)**  
+-	Total Size: **25.0 MB (25011791 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cc2fe004ba2fc07cbd3ae7d50e767842934d907a6ed122619d1e28e110d0efec`
+-	Image ID: `sha256:b032d1755278e0e612139b445d1ce18ac2150233a9611c9c22ddd4c491cbfacf`
 -	Entrypoint: `["tini","--","\/bin\/entrypoint.sh"]`
 -	Default Command: `["fluentd"]`
 
@@ -300,29 +300,29 @@ $ docker pull fluentd@sha256:00ec95a9165ad95d580fdd03e9ac2168cbb48c84e783c0d256d
 ADD file:52f28bcdd6e1c6f85b2b5d66ace37ed6cef0da8ce5c58e246549427361b64c1d in / 
 # Mon, 07 Aug 2023 20:16:36 GMT
 CMD ["/bin/sh"]
-# Mon, 07 Aug 2023 21:06:25 GMT
+# Sat, 21 Oct 2023 00:30:06 GMT
 LABEL maintainer=Fluentd developers <fluentd@googlegroups.com>
-# Wed, 04 Oct 2023 21:16:46 GMT
+# Sat, 21 Oct 2023 00:30:07 GMT
 LABEL Description=Fluentd docker image Vendor=Fluent Organization Version=1.16.2
-# Wed, 04 Oct 2023 21:18:54 GMT
+# Sat, 21 Oct 2023 00:31:12 GMT
 RUN apk update  && apk add --no-cache         ca-certificates         ruby ruby-irb ruby-etc ruby-webrick         tini  && apk add --no-cache --virtual .build-deps         build-base linux-headers         ruby-dev gnupg  && echo 'gem: --no-document' >> /etc/gemrc  && gem install oj -v 3.16.1  && gem install json -v 2.6.3  && gem install rexml -v 3.2.6  && gem install async -v 1.31.0  && gem install async-http -v 0.60.2 && gem install uri -v 0.12.2  && gem install fluentd -v 1.16.2  && gem install bigdecimal -v 1.4.4  && apk del .build-deps  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem /usr/lib/ruby/gems/3.*/gems/fluentd-*/test
-# Wed, 04 Oct 2023 21:18:58 GMT
+# Sat, 21 Oct 2023 00:31:15 GMT
 RUN addgroup -S fluent && adduser -S -G fluent fluent     && mkdir -p /fluentd/log     && mkdir -p /fluentd/etc /fluentd/plugins     && chown -R fluent /fluentd && chgrp -R fluent /fluentd
-# Wed, 04 Oct 2023 21:19:00 GMT
+# Sat, 21 Oct 2023 00:31:15 GMT
 COPY file:06d9a84b9b428b4e0ef5a9e3699798758dc9716908d82091239fb9f85dd30d70 in /fluentd/etc/ 
-# Wed, 04 Oct 2023 21:19:01 GMT
+# Sat, 21 Oct 2023 00:31:15 GMT
 COPY file:977670d9d298d60208db6e5110a5919bfde19ee7da9c19df693163ecd07caea6 in /bin/ 
-# Wed, 04 Oct 2023 21:19:02 GMT
+# Sat, 21 Oct 2023 00:31:15 GMT
 ENV FLUENTD_CONF=fluent.conf
-# Wed, 04 Oct 2023 21:19:02 GMT
+# Sat, 21 Oct 2023 00:31:15 GMT
 ENV LD_PRELOAD=
-# Wed, 04 Oct 2023 21:19:03 GMT
+# Sat, 21 Oct 2023 00:31:15 GMT
 EXPOSE 24224 5140
-# Wed, 04 Oct 2023 21:19:04 GMT
+# Sat, 21 Oct 2023 00:31:16 GMT
 USER fluent
-# Wed, 04 Oct 2023 21:19:05 GMT
+# Sat, 21 Oct 2023 00:31:16 GMT
 ENTRYPOINT ["tini" "--" "/bin/entrypoint.sh"]
-# Wed, 04 Oct 2023 21:19:06 GMT
+# Sat, 21 Oct 2023 00:31:16 GMT
 CMD ["fluentd"]
 ```
 
@@ -331,34 +331,34 @@ CMD ["fluentd"]
 		Last Modified: Mon, 07 Aug 2023 20:17:39 GMT  
 		Size: 3.4 MB (3391349 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:686c1faa62490a3123a764ff1f9eb8f56b2d2370ca4c57a0df250c27b5f8c567`  
-		Last Modified: Wed, 04 Oct 2023 21:27:05 GMT  
-		Size: 21.6 MB (21615400 bytes)  
+	-	`sha256:cbaa2e7f2ea58633b56edda9091ecefa81b8723b7600ce62e5a39da5ffde0f5d`  
+		Last Modified: Sat, 21 Oct 2023 00:31:42 GMT  
+		Size: 21.6 MB (21618224 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60f05d8caa8bd28ac8b74de327805f02bd7541b08a3ff76a90a8edd0ec3be3a8`  
-		Last Modified: Wed, 04 Oct 2023 21:26:59 GMT  
-		Size: 1.3 KB (1349 bytes)  
+	-	`sha256:5daa6ac791df9bca62f53fc841f9b484ebccf3fbbcf52d5cd060477810d7d5b3`  
+		Last Modified: Sat, 21 Oct 2023 00:31:39 GMT  
+		Size: 1.4 KB (1350 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74498b595a258f3d58d08ebcd2d0594e2b0954606ac5dce53681b96fa90a9fb6`  
-		Last Modified: Wed, 04 Oct 2023 21:26:59 GMT  
-		Size: 407.0 B  
+	-	`sha256:4a4b29672e745496aefa33c93cf65970f072a929fcf9dedc79fda14be98d1342`  
+		Last Modified: Sat, 21 Oct 2023 00:31:39 GMT  
+		Size: 409.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba3e2fa1f46398cb0c1fce47f3a1dbbe71e2ec584d77c560feebc765d18af209`  
-		Last Modified: Wed, 04 Oct 2023 21:26:59 GMT  
+	-	`sha256:b27f22f12605d3ad806c396c1504a5250ece58cb31d941069ba7425e10d2aae3`  
+		Last Modified: Sat, 21 Oct 2023 00:31:39 GMT  
 		Size: 459.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `fluentd:latest` - linux; s390x
 
 ```console
-$ docker pull fluentd@sha256:4bf9c8b8442eecc11953268bb67197327b4dcd7dfd3c362260c96a431e13fe04
+$ docker pull fluentd@sha256:608392169a76d3014e4a408b267bcbb42299b4387a1a92931e79ea65925ac5a2
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **30.0 MB (29998860 bytes)**  
+-	Total Size: **24.4 MB (24380635 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6f7f6f610b30aa0140b9f9276b6b90fa1f395f17501f7fcdb7a94c3614ef43a3`
+-	Image ID: `sha256:1b094b31e746efa26b3a4b87c04f0c9e51a35d907c1e6f7aa50b1210344df02f`
 -	Entrypoint: `["tini","--","\/bin\/entrypoint.sh"]`
 -	Default Command: `["fluentd"]`
 
@@ -367,29 +367,29 @@ $ docker pull fluentd@sha256:4bf9c8b8442eecc11953268bb67197327b4dcd7dfd3c362260c
 ADD file:2e221805acb91c51e7afa6b926252ab2260cdf2e166f3d917a98384f3a157622 in / 
 # Mon, 07 Aug 2023 19:42:02 GMT
 CMD ["/bin/sh"]
-# Mon, 07 Aug 2023 20:17:28 GMT
+# Sat, 21 Oct 2023 00:24:28 GMT
 LABEL maintainer=Fluentd developers <fluentd@googlegroups.com>
-# Wed, 04 Oct 2023 21:41:57 GMT
+# Sat, 21 Oct 2023 00:24:28 GMT
 LABEL Description=Fluentd docker image Vendor=Fluent Organization Version=1.16.2
-# Wed, 04 Oct 2023 21:47:54 GMT
+# Sat, 21 Oct 2023 00:25:15 GMT
 RUN apk update  && apk add --no-cache         ca-certificates         ruby ruby-irb ruby-etc ruby-webrick         tini  && apk add --no-cache --virtual .build-deps         build-base linux-headers         ruby-dev gnupg  && echo 'gem: --no-document' >> /etc/gemrc  && gem install oj -v 3.16.1  && gem install json -v 2.6.3  && gem install rexml -v 3.2.6  && gem install async -v 1.31.0  && gem install async-http -v 0.60.2 && gem install uri -v 0.12.2  && gem install fluentd -v 1.16.2  && gem install bigdecimal -v 1.4.4  && apk del .build-deps  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem /usr/lib/ruby/gems/3.*/gems/fluentd-*/test
-# Wed, 04 Oct 2023 21:48:02 GMT
+# Sat, 21 Oct 2023 00:25:17 GMT
 RUN addgroup -S fluent && adduser -S -G fluent fluent     && mkdir -p /fluentd/log     && mkdir -p /fluentd/etc /fluentd/plugins     && chown -R fluent /fluentd && chgrp -R fluent /fluentd
-# Wed, 04 Oct 2023 21:48:02 GMT
+# Sat, 21 Oct 2023 00:25:17 GMT
 COPY file:06d9a84b9b428b4e0ef5a9e3699798758dc9716908d82091239fb9f85dd30d70 in /fluentd/etc/ 
-# Wed, 04 Oct 2023 21:48:03 GMT
+# Sat, 21 Oct 2023 00:25:17 GMT
 COPY file:977670d9d298d60208db6e5110a5919bfde19ee7da9c19df693163ecd07caea6 in /bin/ 
-# Wed, 04 Oct 2023 21:48:03 GMT
+# Sat, 21 Oct 2023 00:25:17 GMT
 ENV FLUENTD_CONF=fluent.conf
-# Wed, 04 Oct 2023 21:48:04 GMT
+# Sat, 21 Oct 2023 00:25:17 GMT
 ENV LD_PRELOAD=
-# Wed, 04 Oct 2023 21:48:05 GMT
+# Sat, 21 Oct 2023 00:25:18 GMT
 EXPOSE 24224 5140
-# Wed, 04 Oct 2023 21:48:05 GMT
+# Sat, 21 Oct 2023 00:25:18 GMT
 USER fluent
-# Wed, 04 Oct 2023 21:48:05 GMT
+# Sat, 21 Oct 2023 00:25:18 GMT
 ENTRYPOINT ["tini" "--" "/bin/entrypoint.sh"]
-# Wed, 04 Oct 2023 21:48:06 GMT
+# Sat, 21 Oct 2023 00:25:18 GMT
 CMD ["fluentd"]
 ```
 
@@ -398,19 +398,19 @@ CMD ["fluentd"]
 		Last Modified: Mon, 07 Aug 2023 19:42:48 GMT  
 		Size: 3.2 MB (3175974 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:78a7cda602ceb77b991077268ddf9794e50138b46af24af519f72acbdec17298`  
-		Last Modified: Wed, 04 Oct 2023 21:54:17 GMT  
-		Size: 26.8 MB (26820669 bytes)  
+	-	`sha256:b313f13302b63aa1e26193c6c3029779f7cf6f9ccfec22267447622329ce2a32`  
+		Last Modified: Sat, 21 Oct 2023 00:25:45 GMT  
+		Size: 21.2 MB (21202449 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:977fa9f658a1932ce284e4498f48f661f20e5b5bf01569236217ff0fcc0ea6cc`  
-		Last Modified: Wed, 04 Oct 2023 21:54:12 GMT  
-		Size: 1.4 KB (1350 bytes)  
+	-	`sha256:44d2ca75c30b0833bdbde8dc16d21aefa64e3e7325eff69992cb0ed9ae0135b7`  
+		Last Modified: Sat, 21 Oct 2023 00:25:42 GMT  
+		Size: 1.3 KB (1349 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3a7282d352e8cc5052eaaf24c4c0a054b8e7ed3b58082b373ae53b18b4c2eab`  
-		Last Modified: Wed, 04 Oct 2023 21:54:12 GMT  
-		Size: 408.0 B  
+	-	`sha256:f093efb15da3945df260d185c12c8ad81e19e4cc074ec941fa1b8c66ca8ff34d`  
+		Last Modified: Sat, 21 Oct 2023 00:25:42 GMT  
+		Size: 405.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1b8e091f38fa0c967d062af79901add256471c87f62cbe5b767a12554086282`  
-		Last Modified: Wed, 04 Oct 2023 21:54:12 GMT  
-		Size: 459.0 B  
+	-	`sha256:7c5b744f7972624e9dc72a074aff76bae61e6e0ce6280fffcad2fdda27b1d757`  
+		Last Modified: Sat, 21 Oct 2023 00:25:42 GMT  
+		Size: 458.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
