@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:18c4ad47a6bbd69cc80a20c1fa612f8c6ac9bb2f336b403f534050478286709e`
-- Created: `2023-10-04T21:25:56.684750697Z`
-- Virtual Size: ~ 573.35 Mb  
+- Image ID: `sha256:2daf9e6fea5f6368a7528ea82aa765e6c97edf5f23c81adb05ed551331e20db4`
+- Created: `2023-10-21T08:57:53.267953744Z`
+- Virtual Size: ~ 573.97 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -284,16 +284,16 @@ Apache-2.0
 ### `apk` package: `curl`
 
 ```console
-curl-8.3.0-r0 description:
+curl-8.4.0-r0 description:
 URL retrival utility and library
 
-curl-8.3.0-r0 webpage:
+curl-8.4.0-r0 webpage:
 https://curl.se/
 
-curl-8.3.0-r0 installed size:
+curl-8.4.0-r0 installed size:
 248 KiB
 
-curl-8.3.0-r0 license:
+curl-8.4.0-r0 license:
 curl
 
 ```
@@ -743,16 +743,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.3.0-r0 description:
+libcurl-8.4.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.3.0-r0 webpage:
+libcurl-8.4.0-r0 webpage:
 https://curl.se/
 
-libcurl-8.3.0-r0 installed size:
+libcurl-8.4.0-r0 installed size:
 584 KiB
 
-libcurl-8.3.0-r0 license:
+libcurl-8.4.0-r0 license:
 curl
 
 ```
@@ -1338,16 +1338,16 @@ BSD-2-Clause
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.4-r1 description:
+musl-1.2.4-r2 description:
 the musl c library (libc) implementation
 
-musl-1.2.4-r1 webpage:
+musl-1.2.4-r2 webpage:
 https://musl.libc.org/
 
-musl-1.2.4-r1 installed size:
+musl-1.2.4-r2 installed size:
 620 KiB
 
-musl-1.2.4-r1 license:
+musl-1.2.4-r2 license:
 MIT
 
 ```
@@ -1406,16 +1406,16 @@ GPL-2.0-or-later OR LGPL-3.0-or-later
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.55.1-r0 description:
+nghttp2-libs-1.57.0-r0 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.55.1-r0 webpage:
+nghttp2-libs-1.57.0-r0 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.55.1-r0 installed size:
+nghttp2-libs-1.57.0-r0 installed size:
 152 KiB
 
-nghttp2-libs-1.55.1-r0 license:
+nghttp2-libs-1.57.0-r0 license:
 MIT
 
 ```
@@ -1576,16 +1576,16 @@ MIT
 ### `apk` package: `python3`
 
 ```console
-python3-3.11.5-r0 description:
+python3-3.11.6-r0 description:
 High-level scripting language
 
-python3-3.11.5-r0 webpage:
+python3-3.11.6-r0 webpage:
 https://www.python.org/
 
-python3-3.11.5-r0 installed size:
+python3-3.11.6-r0 installed size:
 24 MiB
 
-python3-3.11.5-r0 license:
+python3-3.11.6-r0 license:
 PSF-2.0
 
 ```
@@ -1593,16 +1593,16 @@ PSF-2.0
 ### `apk` package: `python3-pyc`
 
 ```console
-python3-pyc-3.11.5-r0 description:
+python3-pyc-3.11.6-r0 description:
 High-level scripting language (install .pyc cache files)
 
-python3-pyc-3.11.5-r0 webpage:
+python3-pyc-3.11.6-r0 webpage:
 https://www.python.org/
 
-python3-pyc-3.11.5-r0 installed size:
+python3-pyc-3.11.6-r0 installed size:
 4096 B
 
-python3-pyc-3.11.5-r0 license:
+python3-pyc-3.11.6-r0 license:
 PSF-2.0
 
 ```
@@ -1610,16 +1610,16 @@ PSF-2.0
 ### `apk` package: `python3-pycache-pyc0`
 
 ```console
-python3-pycache-pyc0-3.11.5-r0 description:
+python3-pycache-pyc0-3.11.6-r0 description:
 High-level scripting language (.pyc pycache files)
 
-python3-pycache-pyc0-3.11.5-r0 webpage:
+python3-pycache-pyc0-3.11.6-r0 webpage:
 https://www.python.org/
 
-python3-pycache-pyc0-3.11.5-r0 installed size:
+python3-pycache-pyc0-3.11.6-r0 installed size:
 13 MiB
 
-python3-pycache-pyc0-3.11.5-r0 license:
+python3-pycache-pyc0-3.11.6-r0 license:
 PSF-2.0
 
 ```
