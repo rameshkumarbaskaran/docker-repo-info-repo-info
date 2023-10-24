@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:716d9c60a52301fa63992088de297d121e91e89e3971ba8e11ad1d1f0f7a9820`
-- Created: `2023-10-12T18:19:23.62469855Z`
+- Image ID: `sha256:8e113a57232410dd987d12708b35062e6a269825fa7b4d03aef42c00acc93dce`
+- Created: `2023-10-21T00:11:22.227233642Z`
 - Virtual Size: ~ 235.00 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -278,16 +278,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.3.0-r0 description:
+libcurl-8.4.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.3.0-r0 webpage:
+libcurl-8.4.0-r0 webpage:
 https://curl.se/
 
-libcurl-8.3.0-r0 installed size:
+libcurl-8.4.0-r0 installed size:
 584 KiB
 
-libcurl-8.3.0-r0 license:
+libcurl-8.4.0-r0 license:
 curl
 
 ```
@@ -397,16 +397,16 @@ MIT AND BSD-2-Clause AND GPL-2.0-or-later
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.55.1-r0 description:
+nghttp2-libs-1.57.0-r0 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.55.1-r0 webpage:
+nghttp2-libs-1.57.0-r0 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.55.1-r0 installed size:
+nghttp2-libs-1.57.0-r0 installed size:
 152 KiB
 
-nghttp2-libs-1.55.1-r0 license:
+nghttp2-libs-1.57.0-r0 license:
 MIT
 
 ```
