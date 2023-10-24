@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:31d043b768f47e31311fec07a49cc9d13fbd71a65a9a37ca7d5985cd4bd29a11`
-- Created: `2023-10-12T21:28:31.415463862Z`
+- Image ID: `sha256:d1dddcd72090bda9b8a400de50993a2337d42525439d9d8c9a4758bfc555bb9e`
+- Created: `2023-10-20T18:27:20.471996597Z`
 - Virtual Size: ~ 106.84 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -321,8 +321,8 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url json-c-0.13.1-3.el8
-https://yum.oracle.com/repo/OracleLinux/OL8/appstream/x86_64/getPackageSource/json-c-0.13.1-3.el8.src.rpm
 https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackageSource/json-c-0.13.1-3.el8.src.rpm
+https://yum.oracle.com/repo/OracleLinux/OL8/appstream/x86_64/getPackageSource/json-c-0.13.1-3.el8.src.rpm
 ```
 
 ### `rpm` package: `keyutils-libs-1.5.10-9.el8.x86_64`
@@ -535,8 +535,8 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url libidn2-2.2.0-1.el8
-https://yum.oracle.com/repo/OracleLinux/OL8/appstream/x86_64/getPackageSource/libidn2-2.2.0-1.el8.src.rpm
 https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackageSource/libidn2-2.2.0-1.el8.src.rpm
+https://yum.oracle.com/repo/OracleLinux/OL8/appstream/x86_64/getPackageSource/libidn2-2.2.0-1.el8.src.rpm
 ```
 
 ### `rpm` package: `libksba-1.3.5-9.el8_7.x86_64`
@@ -574,15 +574,15 @@ https://yum.oracle.com/repo/OracleLinux/OL8/appstream/x86_64/getPackageSource/ut
 https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackageSource/util-linux-2.32.1-42.el8_8.src.rpm
 ```
 
-### `rpm` package: `libnghttp2-1.33.0-3.el8_2.1.x86_64`
+### `rpm` package: `libnghttp2-1.33.0-5.el8_8.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url libnghttp2-1.33.0-3.el8_2.1
-https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackageSource/nghttp2-1.33.0-3.el8_2.1.src.rpm
+$ dnf --quiet download --source --url libnghttp2-1.33.0-5.el8_8
+https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackageSource/nghttp2-1.33.0-5.el8_8.src.rpm
 ```
 
 ### `rpm` package: `libpeas-1.22.0-6.el8.x86_64`
