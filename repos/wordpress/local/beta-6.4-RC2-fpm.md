@@ -1,10 +1,10 @@
-# `wordpress:beta-6.4-RC1-fpm`
+# `wordpress:beta-6.4-RC2-fpm`
 
 ## Docker Metadata
 
-- Image ID: `sha256:7d4cc64b1997af805f738dd2f271e005b87eb0e6bed9985cfed9a6e2f24fdc7f`
-- Created: `2023-10-19T06:47:48.036033086Z`
-- Virtual Size: ~ 661.47 Mb  
+- Image ID: `sha256:47ee014b63663139b9e0c58da72e66b551c6fb6f150c351fbedc0eeea01f0d62`
+- Created: `2023-10-26T01:38:56.41368152Z`
+- Virtual Size: ~ 661.40 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`

@@ -1,10 +1,10 @@
-# `wordpress:cli-2.8.1-php8.2`
+# `wordpress:cli-2.9.0-php8.1`
 
 ## Docker Metadata
 
-- Image ID: `sha256:977dc79383f26f88c3777725c1c6f49f16be21b466d48ea9f581fba91196ecf9`
-- Created: `2023-10-21T08:17:42.862940918Z`
-- Virtual Size: ~ 205.46 Mb  
+- Image ID: `sha256:bedd173c7c26295ef3fc496efae72a43fe28cc68a1d3460ff6f0697a7aca0086`
+- Created: `2023-10-26T01:38:35.293677372Z`
+- Virtual Size: ~ 204.94 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -16,14 +16,14 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC`
-  - `PHP_VERSION=8.2.11`
-  - `PHP_URL=https://www.php.net/distributions/php-8.2.11.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.11.tar.xz.asc`
-  - `PHP_SHA256=29af82e4f7509831490552918aad502697453f0869a579ee1b80b08f9112c5b8`
+  - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
+  - `PHP_VERSION=8.1.24`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.24.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.24.tar.xz.asc`
+  - `PHP_SHA256=ee61f6232bb29bd2e785daf325d2177f2272bf80d086c295a724594e710bce3d`
   - `WORDPRESS_CLI_GPG_KEY=63AF7AA15067C05616FDDD88A3A2E8F226F0BC06`
-  - `WORDPRESS_CLI_VERSION=2.8.1`
-  - `WORDPRESS_CLI_SHA512=c1d40ee90b330ca1f8ddbed14b938b41ec5d9ff723c7c1cf3f41a2d9a1b271079a51a37ea3d1c9aa9c628fdd43449dba3995a8de150a68abbd505b06b91d9d2b`
+  - `WORDPRESS_CLI_VERSION=2.9.0`
+  - `WORDPRESS_CLI_SHA512=39fa365300ab45840e30cc344595bbd175c3558a4499679edd9f9e3a00a846e94179c29c80de3242f1c405f3623605605748d188d9bb98450d9377388f60f113`
 
 ## `apk` (`.apk`-based packages)
 
