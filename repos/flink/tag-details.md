@@ -38,11 +38,29 @@
 -	[`flink:1.17.1-scala_2.12`](#flink1171-scala_212)
 -	[`flink:1.17.1-scala_2.12-java11`](#flink1171-scala_212-java11)
 -	[`flink:1.17.1-scala_2.12-java8`](#flink1171-scala_212-java8)
+-	[`flink:1.18`](#flink118)
+-	[`flink:1.18-java11`](#flink118-java11)
+-	[`flink:1.18-java17`](#flink118-java17)
+-	[`flink:1.18-java8`](#flink118-java8)
+-	[`flink:1.18-scala_2.12`](#flink118-scala_212)
+-	[`flink:1.18-scala_2.12-java11`](#flink118-scala_212-java11)
+-	[`flink:1.18-scala_2.12-java17`](#flink118-scala_212-java17)
+-	[`flink:1.18-scala_2.12-java8`](#flink118-scala_212-java8)
+-	[`flink:1.18.0`](#flink1180)
+-	[`flink:1.18.0-java11`](#flink1180-java11)
+-	[`flink:1.18.0-java17`](#flink1180-java17)
+-	[`flink:1.18.0-java8`](#flink1180-java8)
+-	[`flink:1.18.0-scala_2.12`](#flink1180-scala_212)
+-	[`flink:1.18.0-scala_2.12-java11`](#flink1180-scala_212-java11)
+-	[`flink:1.18.0-scala_2.12-java17`](#flink1180-scala_212-java17)
+-	[`flink:1.18.0-scala_2.12-java8`](#flink1180-scala_212-java8)
 -	[`flink:java11`](#flinkjava11)
+-	[`flink:java17`](#flinkjava17)
 -	[`flink:java8`](#flinkjava8)
 -	[`flink:latest`](#flinklatest)
 -	[`flink:scala_2.12`](#flinkscala_212)
 -	[`flink:scala_2.12-java11`](#flinkscala_212-java11)
+-	[`flink:scala_2.12-java17`](#flinkscala_212-java17)
 -	[`flink:scala_2.12-java8`](#flinkscala_212-java8)
 
 ## `flink:1.15`
@@ -9009,6 +9027,70 @@ CMD ["help"]
 		Size: 2.1 KB (2110 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `flink:1.18`
+
+**does not exist** (yet?)
+
+## `flink:1.18-java11`
+
+**does not exist** (yet?)
+
+## `flink:1.18-java17`
+
+**does not exist** (yet?)
+
+## `flink:1.18-java8`
+
+**does not exist** (yet?)
+
+## `flink:1.18-scala_2.12`
+
+**does not exist** (yet?)
+
+## `flink:1.18-scala_2.12-java11`
+
+**does not exist** (yet?)
+
+## `flink:1.18-scala_2.12-java17`
+
+**does not exist** (yet?)
+
+## `flink:1.18-scala_2.12-java8`
+
+**does not exist** (yet?)
+
+## `flink:1.18.0`
+
+**does not exist** (yet?)
+
+## `flink:1.18.0-java11`
+
+**does not exist** (yet?)
+
+## `flink:1.18.0-java17`
+
+**does not exist** (yet?)
+
+## `flink:1.18.0-java8`
+
+**does not exist** (yet?)
+
+## `flink:1.18.0-scala_2.12`
+
+**does not exist** (yet?)
+
+## `flink:1.18.0-scala_2.12-java11`
+
+**does not exist** (yet?)
+
+## `flink:1.18.0-scala_2.12-java17`
+
+**does not exist** (yet?)
+
+## `flink:1.18.0-scala_2.12-java8`
+
+**does not exist** (yet?)
+
 ## `flink:java11`
 
 ```console
@@ -9257,6 +9339,10 @@ CMD ["help"]
 		Last Modified: Fri, 13 Oct 2023 11:59:51 GMT  
 		Size: 2.1 KB (2108 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `flink:java17`
+
+**does not exist** (yet?)
 
 ## `flink:java8`
 
@@ -10253,6 +10339,10 @@ CMD ["help"]
 		Last Modified: Fri, 13 Oct 2023 11:59:51 GMT  
 		Size: 2.1 KB (2108 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `flink:scala_2.12-java17`
+
+**does not exist** (yet?)
 
 ## `flink:scala_2.12-java8`
 
