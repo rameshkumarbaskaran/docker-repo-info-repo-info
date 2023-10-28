@@ -1,10 +1,10 @@
-# `nextcloud:27.1.2-fpm-alpine`
+# `nextcloud:27.1.3-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:381bded0a249e101821e9b8d0646976482573860f93e66a8325c3abdb8e4c936`
-- Created: `2023-10-21T09:10:45.326944261Z`
-- Virtual Size: ~ 804.88 Mb  
+- Image ID: `sha256:8b692833bc9d527d9e68cbc182c1245db44a623d3b6ad12d4df9364da4e98410`
+- Created: `2023-10-27T16:45:50.439644961Z`
+- Virtual Size: ~ 810.98 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -23,7 +23,7 @@
   - `PHP_SHA256=29af82e4f7509831490552918aad502697453f0869a579ee1b80b08f9112c5b8`
   - `PHP_MEMORY_LIMIT=512M`
   - `PHP_UPLOAD_LIMIT=512M`
-  - `NEXTCLOUD_VERSION=27.1.2`
+  - `NEXTCLOUD_VERSION=27.1.3`
 
 ## `apk` (`.apk`-based packages)
 
@@ -710,16 +710,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.1.3-r0 description:
+libcrypto3-3.1.4-r0 description:
 Crypto library from openssl
 
-libcrypto3-3.1.3-r0 webpage:
+libcrypto3-3.1.4-r0 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.1.3-r0 installed size:
-4468 KiB
+libcrypto3-3.1.4-r0 installed size:
+4472 KiB
 
-libcrypto3-3.1.3-r0 license:
+libcrypto3-3.1.4-r0 license:
 Apache-2.0
 
 ```
@@ -1135,16 +1135,16 @@ ISC
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.1.3-r0 description:
+libssl3-3.1.4-r0 description:
 SSL shared libraries
 
-libssl3-3.1.3-r0 webpage:
+libssl3-3.1.4-r0 webpage:
 https://www.openssl.org/
 
-libssl3-3.1.3-r0 installed size:
+libssl3-3.1.4-r0 installed size:
 552 KiB
 
-libssl3-3.1.3-r0 license:
+libssl3-3.1.4-r0 license:
 Apache-2.0
 
 ```
@@ -1526,16 +1526,16 @@ BSD-2-Clause
 ### `apk` package: `openssl`
 
 ```console
-openssl-3.1.3-r0 description:
+openssl-3.1.4-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-3.1.3-r0 webpage:
+openssl-3.1.4-r0 webpage:
 https://www.openssl.org/
 
-openssl-3.1.3-r0 installed size:
+openssl-3.1.4-r0 installed size:
 752 KiB
 
-openssl-3.1.3-r0 license:
+openssl-3.1.4-r0 license:
 Apache-2.0
 
 ```
