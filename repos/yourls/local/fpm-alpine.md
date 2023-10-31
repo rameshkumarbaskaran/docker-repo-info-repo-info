@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:703052da89ae97c3a48275742222381ab628c1c66b80d8eca0293220aabfc2da`
-- Created: `2023-10-21T09:14:27.127781841Z`
-- Virtual Size: ~ 89.69 Mb  
+- Image ID: `sha256:d4fcf05eafde785053f77f276073b5445819798f37922205f8d1681460a78f67`
+- Created: `2023-10-28T06:40:30.813200139Z`
+- Virtual Size: ~ 95.71 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC`
-  - `PHP_VERSION=8.2.11`
-  - `PHP_URL=https://www.php.net/distributions/php-8.2.11.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.11.tar.xz.asc`
-  - `PHP_SHA256=29af82e4f7509831490552918aad502697453f0869a579ee1b80b08f9112c5b8`
+  - `PHP_VERSION=8.2.12`
+  - `PHP_URL=https://www.php.net/distributions/php-8.2.12.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.12.tar.xz.asc`
+  - `PHP_SHA256=e1526e400bce9f9f9f774603cfac6b72b5e8f89fa66971ebc3cc4e5964083132`
   - `YOURLS_VERSION=1.9.2`
   - `YOURLS_SHA256=62a95ba766d62f3305d75944cbfe12d5a90c08c88fbf2f6e67150d36412b916f`
 - Labels:
@@ -294,16 +294,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.1.3-r0 description:
+libcrypto3-3.1.4-r0 description:
 Crypto library from openssl
 
-libcrypto3-3.1.3-r0 webpage:
+libcrypto3-3.1.4-r0 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.1.3-r0 installed size:
-4468 KiB
+libcrypto3-3.1.4-r0 installed size:
+4472 KiB
 
-libcrypto3-3.1.3-r0 license:
+libcrypto3-3.1.4-r0 license:
 Apache-2.0
 
 ```
@@ -396,16 +396,16 @@ ISC
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.1.3-r0 description:
+libssl3-3.1.4-r0 description:
 SSL shared libraries
 
-libssl3-3.1.3-r0 webpage:
+libssl3-3.1.4-r0 webpage:
 https://www.openssl.org/
 
-libssl3-3.1.3-r0 installed size:
+libssl3-3.1.4-r0 installed size:
 552 KiB
 
-libssl3-3.1.3-r0 license:
+libssl3-3.1.4-r0 license:
 Apache-2.0
 
 ```
@@ -532,16 +532,16 @@ BSD-2-Clause
 ### `apk` package: `openssl`
 
 ```console
-openssl-3.1.3-r0 description:
+openssl-3.1.4-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-3.1.3-r0 webpage:
+openssl-3.1.4-r0 webpage:
 https://www.openssl.org/
 
-openssl-3.1.3-r0 installed size:
+openssl-3.1.4-r0 installed size:
 752 KiB
 
-openssl-3.1.3-r0 license:
+openssl-3.1.4-r0 license:
 Apache-2.0
 
 ```
