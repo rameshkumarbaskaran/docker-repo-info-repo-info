@@ -1,7 +1,7 @@
 ## `gradle:jdk21-jammy`
 
 ```console
-$ docker pull gradle@sha256:c2f98194fe746f6d1cfea1035286da9e17eb99b8fd7243ff2b4a18a3b244df90
+$ docker pull gradle@sha256:97f1ca124aa6853e9b17d543d7ef75c8aecf64719606ade5862344a630fb927b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull gradle@sha256:c2f98194fe746f6d1cfea1035286da9e17eb99b8fd7243ff2b4a
 ### `gradle:jdk21-jammy` - linux; amd64
 
 ```console
-$ docker pull gradle@sha256:8d2060442a0fdcd7fe4dc7af3bc21e864de3aab3f7492e785fc378f9b373832d
+$ docker pull gradle@sha256:197e361e63d33dbf6afcb4cfb4e937135f1f143d21a3845fab16f1d4ffe241e4
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **389.1 MB (389063563 bytes)**  
+-	Total Size: **389.1 MB (389104867 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0548ddde5cad7de5eafbdbd0921ec9f5cf1371fc8eb8dc4940d43d108c5292`
+-	Image ID: `sha256:d972c543e5cb5e016be2c3d6dc91cf1f957431fb45f5622bbc9f600d127a8641`
 -	Entrypoint: `["\/__cacert_entrypoint.sh"]`
 -	Default Command: `["gradle"]`
 
@@ -42,45 +42,45 @@ ENV JAVA_HOME=/opt/java/openjdk
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 13 Oct 2023 05:51:05 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 13 Oct 2023 05:53:53 GMT
-RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit binutils     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Fri, 13 Oct 2023 05:54:38 GMT
-ENV JAVA_VERSION=jdk-21+35
-# Fri, 13 Oct 2023 05:54:48 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='33e440c237438aa2e3866d84ead8d4e00dc0992d98d9fd0ee2fe48192f2dbc4b';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B35/OpenJDK21U-jdk_aarch64_linux_hotspot_21_35.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='82f64c53acaa045370d6762ebd7441b74e6fda14b464d54d1ff8ca941ec069e6';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B35/OpenJDK21U-jdk_x64_linux_hotspot_21_35.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
-# Fri, 13 Oct 2023 05:54:50 GMT
-RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Fri, 13 Oct 2023 05:54:50 GMT
+# Mon, 30 Oct 2023 23:27:44 GMT
+RUN set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl         wget         fontconfig         ca-certificates p11-kit         binutils         tzdata         locales     ;     echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen;     locale-gen en_US.UTF-8;     rm -rf /var/lib/apt/lists/*
+# Mon, 30 Oct 2023 23:29:52 GMT
+ENV JAVA_VERSION=jdk-21.0.1+12
+# Mon, 30 Oct 2023 23:30:01 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='e184dc29a6712c1f78754ab36fb48866583665fa345324f1a79e569c064f95e9';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.1%2B12/OpenJDK21U-jdk_aarch64_linux_hotspot_21.0.1_12.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='1a6fa8abda4c5caed915cfbeeb176e7fbd12eb6b222f26e290ee45808b529aa1';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.1%2B12/OpenJDK21U-jdk_x64_linux_hotspot_21.0.1_12.tar.gz';          ;;        ppc64el|powerpc:common64)          ESUM='9574828ef3d735a25404ced82e09bf20e1614f7d6403956002de9cfbfcb8638f';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.1%2B12/OpenJDK21U-jdk_ppc64le_linux_hotspot_21.0.1_12.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     wget --progress=dot:giga -O /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p "$JAVA_HOME";     tar --extract         --file /tmp/openjdk.tar.gz         --directory "$JAVA_HOME"         --strip-components 1         --no-same-owner     ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;
+# Mon, 30 Oct 2023 23:30:04 GMT
+RUN set -eux;     echo "Verifying install ...";     fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java;     echo "javac --version"; javac --version;     echo "java --version"; java --version;     echo "Complete."
+# Mon, 30 Oct 2023 23:30:04 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Fri, 13 Oct 2023 05:54:50 GMT
+# Mon, 30 Oct 2023 23:30:04 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Fri, 13 Oct 2023 05:54:50 GMT
+# Mon, 30 Oct 2023 23:30:04 GMT
 CMD ["jshell"]
-# Sat, 14 Oct 2023 00:20:21 GMT
+# Tue, 31 Oct 2023 05:23:24 GMT
 CMD ["gradle"]
-# Sat, 14 Oct 2023 00:20:21 GMT
+# Tue, 31 Oct 2023 05:23:24 GMT
 ENV GRADLE_HOME=/opt/gradle
-# Sat, 14 Oct 2023 00:20:22 GMT
+# Tue, 31 Oct 2023 05:23:25 GMT
 RUN set -o errexit -o nounset     && echo "Adding gradle user and group"     && groupadd --system --gid 1000 gradle     && useradd --system --gid gradle --uid 1000 --shell /bin/bash --create-home gradle     && mkdir /home/gradle/.gradle     && chown --recursive gradle:gradle /home/gradle         && echo "Symlinking root Gradle cache to gradle Gradle cache"     && ln --symbolic /home/gradle/.gradle /root/.gradle
-# Sat, 14 Oct 2023 00:20:22 GMT
+# Tue, 31 Oct 2023 05:23:25 GMT
 VOLUME [/home/gradle/.gradle]
-# Sat, 14 Oct 2023 00:20:22 GMT
+# Tue, 31 Oct 2023 05:23:25 GMT
 WORKDIR /home/gradle
-# Sat, 14 Oct 2023 00:20:54 GMT
+# Tue, 31 Oct 2023 05:23:40 GMT
 RUN set -o errexit -o nounset     && apt-get update     && apt-get install --yes --no-install-recommends         unzip         wget                 bzr         git         git-lfs         mercurial         openssh-client         subversion     && rm --recursive --force /var/lib/apt/lists/*         && echo "Testing VCSes"     && which bzr     && which git     && which git-lfs     && which hg     && which svn
-# Sat, 14 Oct 2023 00:20:54 GMT
+# Tue, 31 Oct 2023 05:23:41 GMT
 ENV GRADLE_VERSION=8.4
-# Sat, 14 Oct 2023 00:20:54 GMT
+# Tue, 31 Oct 2023 05:23:41 GMT
 ARG GRADLE_DOWNLOAD_SHA256=3e1af3ae886920c3ac87f7a91f816c0c7c436f276a6eefdb3da152100fef72ae
-# Sat, 14 Oct 2023 00:20:59 GMT
+# Tue, 31 Oct 2023 05:23:45 GMT
 # ARGS: GRADLE_DOWNLOAD_SHA256=3e1af3ae886920c3ac87f7a91f816c0c7c436f276a6eefdb3da152100fef72ae
 RUN set -o errexit -o nounset     && echo "Downloading Gradle"     && wget --no-verbose --output-document=gradle.zip "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip"         && echo "Checking Gradle download hash"     && echo "${GRADLE_DOWNLOAD_SHA256} *gradle.zip" | sha256sum --check -         && echo "Installing Gradle"     && unzip gradle.zip     && rm gradle.zip     && mv "gradle-${GRADLE_VERSION}" "${GRADLE_HOME}/"     && ln --symbolic "${GRADLE_HOME}/bin/gradle" /usr/bin/gradle
-# Sat, 14 Oct 2023 00:21:00 GMT
+# Tue, 31 Oct 2023 05:23:46 GMT
 USER gradle
-# Sat, 14 Oct 2023 00:21:01 GMT
+# Tue, 31 Oct 2023 05:23:47 GMT
 # ARGS: GRADLE_DOWNLOAD_SHA256=3e1af3ae886920c3ac87f7a91f816c0c7c436f276a6eefdb3da152100fef72ae
 RUN set -o errexit -o nounset     && echo "Testing Gradle installation"     && gradle --version
-# Sat, 14 Oct 2023 00:21:01 GMT
+# Tue, 31 Oct 2023 05:23:47 GMT
 USER root
 ```
 
@@ -89,37 +89,37 @@ USER root
 		Last Modified: Thu, 05 Oct 2023 08:42:10 GMT  
 		Size: 30.4 MB (30439111 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50431c77a77b7f46c78e4929a36d42dcb3551c22e0404d2bee6e8a15cc650640`  
-		Last Modified: Fri, 13 Oct 2023 05:59:21 GMT  
-		Size: 17.5 MB (17454843 bytes)  
+	-	`sha256:a4452d37e1e46888f8dbbf8283d09e03f1bec00021532334441fe00c95aa8b15`  
+		Last Modified: Mon, 30 Oct 2023 23:36:06 GMT  
+		Size: 17.5 MB (17454768 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5e07be1056944b456e6ae4c431838842cdff25e6667df2885e729aff6c8b5107`  
-		Last Modified: Fri, 13 Oct 2023 06:00:42 GMT  
-		Size: 158.6 MB (158598847 bytes)  
+	-	`sha256:66bf1e8cc4970f8898cc63d37507eb91b81bb5a5ee56eed44adbcde15369a720`  
+		Last Modified: Mon, 30 Oct 2023 23:39:05 GMT  
+		Size: 158.6 MB (158640053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59a4e81ff64592dc35a6b44699633daf9e06dee439e1b2203c9b2d5a843e6680`  
-		Last Modified: Fri, 13 Oct 2023 06:00:27 GMT  
-		Size: 172.0 B  
+	-	`sha256:39b9b405c53f706ab111cd8f05ee01aa1ef610118f2d7e48659934cb56ccad22`  
+		Last Modified: Mon, 30 Oct 2023 23:38:53 GMT  
+		Size: 174.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:756161029e803bc7a96348ebd32dc72ec6b7bc3f378de0a3b88a3b8f5ea05bcd`  
-		Last Modified: Fri, 13 Oct 2023 06:00:27 GMT  
-		Size: 734.0 B  
+	-	`sha256:74594af5feb550ff3db0d745349df92604b3d5a4f0c89da7ca80711c2fc32e1c`  
+		Last Modified: Mon, 30 Oct 2023 23:38:53 GMT  
+		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:86e6f07972085c0ddd012f4ee4bbf1ed701c9d9a8098136d4379f00a2f3b2723`  
-		Last Modified: Sat, 14 Oct 2023 00:25:00 GMT  
-		Size: 4.4 KB (4363 bytes)  
+	-	`sha256:39c9f5f606a28390134deeac3c97480d5bfd7f7cc170522d9cb2aa3022dcf0fd`  
+		Last Modified: Tue, 31 Oct 2023 05:31:42 GMT  
+		Size: 4.4 KB (4361 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e638d4dc510f413f43ca96a5401135593a6a2eba8f8be95252599d4b8e7c7f3e`  
-		Last Modified: Sat, 14 Oct 2023 00:25:09 GMT  
-		Size: 51.6 MB (51555604 bytes)  
+	-	`sha256:08a1fac05ff1c4a07bd6c2d0cb3f6038b5291b2723acca8493d18c801074347b`  
+		Last Modified: Tue, 31 Oct 2023 05:31:50 GMT  
+		Size: 51.6 MB (51555777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f836da6ae937f0cb3c8962d5ce6101172cdc218debeca33574cf4aad7736c6f3`  
-		Last Modified: Sat, 14 Oct 2023 00:25:09 GMT  
-		Size: 131.0 MB (131009719 bytes)  
+	-	`sha256:09af578d7dfb55882ec9eff68bebe2f157b4222d377399afca46c36db419f699`  
+		Last Modified: Tue, 31 Oct 2023 05:31:48 GMT  
+		Size: 131.0 MB (131009721 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27b53bbde4e64e777dafcdc5bdc38d3fbe12e9b0fc166337319d5c196150a1a0`  
-		Last Modified: Sat, 14 Oct 2023 00:25:00 GMT  
-		Size: 170.0 B  
+	-	`sha256:89e1ba564cc2b94d058ff9d53dcc7c6ae209ddf40c16c2c2e0e10707a2f8d02d`  
+		Last Modified: Tue, 31 Oct 2023 05:31:42 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gradle:jdk21-jammy` - linux; arm64 variant v8

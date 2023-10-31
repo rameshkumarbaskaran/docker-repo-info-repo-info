@@ -1,7 +1,7 @@
 ## `gradle:jdk11-alpine`
 
 ```console
-$ docker pull gradle@sha256:35f396f7654bf9d11fedcf89f78b99fbdfcb6c8f87c4680cafe8562e2a37f449
+$ docker pull gradle@sha256:ddd53cf9df76992d575acde1e8a3fc46abd8d3f8c9aa79e4d12d9be6e984c270
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull gradle@sha256:35f396f7654bf9d11fedcf89f78b99fbdfcb6c8f87c4680cafe8
 ### `gradle:jdk11-alpine` - linux; amd64
 
 ```console
-$ docker pull gradle@sha256:460f975a7f285f13077f7736d6343fb8f438b77c10d5e61c992c5bd975aedfe5
+$ docker pull gradle@sha256:b5348c01bd7646bda4cf423d369be619e7665f7ed2552035c2189dfcfaf262de
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **318.9 MB (318885927 bytes)**  
+-	Total Size: **319.2 MB (319211424 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c280620bf67ed104fb820b6ce82be789b0cdc458863f0a8770e3e1d725dcd99c`
+-	Image ID: `sha256:ae4f08d35539244f7db74fc333a37e183aef03cf13d03082fe90b0fbe0206573`
 -	Entrypoint: `["\/__cacert_entrypoint.sh"]`
 -	Default Command: `["gradle"]`
 
@@ -33,45 +33,45 @@ ENV JAVA_HOME=/opt/java/openjdk
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 19 Oct 2023 02:50:15 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 19 Oct 2023 02:50:17 GMT
-RUN apk add --no-cache fontconfig java-cacerts bash libretls musl-locales musl-locales-lang ttf-dejavu tzdata zlib     && rm -rf /var/cache/apk/*
-# Thu, 19 Oct 2023 02:51:15 GMT
-ENV JAVA_VERSION=jdk-11.0.20.1+1
-# Thu, 19 Oct 2023 02:51:24 GMT
-RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='1a94e642bf6cc4124d4f01f43184f9127ef994cbd324e2ee42cc50f715cbaedf';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jdk_x64_alpine-linux_hotspot_11.0.20.1_1.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac; 	  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; 	  mkdir -p "$JAVA_HOME"; 	  tar --extract 	      --file /tmp/openjdk.tar.gz 	      --directory "$JAVA_HOME" 	      --strip-components 1 	      --no-same-owner 	  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
-# Thu, 19 Oct 2023 02:51:26 GMT
-RUN echo Verifying install ...     && fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
-# Thu, 19 Oct 2023 02:51:26 GMT
+# Mon, 30 Oct 2023 23:22:37 GMT
+RUN set -eux;     apk add --no-cache         bash         fontconfig ttf-dejavu         java-cacerts         libretls zlib         musl-locales musl-locales-lang         tzdata     ;     rm -rf /var/cache/apk/*
+# Mon, 30 Oct 2023 23:22:38 GMT
+ENV JAVA_VERSION=jdk-11.0.21+9
+# Mon, 30 Oct 2023 23:22:46 GMT
+RUN set -eux;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='d5e2235d3707526f7c9ba3f0dc194e60d5dec33eceff2a2dcf9d874464cc0e9e';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.21%2B9/OpenJDK11U-jdk_x64_alpine-linux_hotspot_11.0.21_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     wget -O /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p "$JAVA_HOME";     tar --extract         --file /tmp/openjdk.tar.gz         --directory "$JAVA_HOME"         --strip-components 1         --no-same-owner     ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;
+# Mon, 30 Oct 2023 23:22:48 GMT
+RUN set -eux;     echo "Verifying install ...";     fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java;     echo "javac --version"; javac --version;     echo "java --version"; java --version;     echo "Complete."
+# Mon, 30 Oct 2023 23:22:48 GMT
 COPY file:8b8864b3e02a33a579dc216fd51b28a6047bc8eeaa03045b258980fe0cf7fcb3 in /__cacert_entrypoint.sh 
-# Thu, 19 Oct 2023 02:51:26 GMT
+# Mon, 30 Oct 2023 23:22:48 GMT
 ENTRYPOINT ["/__cacert_entrypoint.sh"]
-# Thu, 19 Oct 2023 02:51:26 GMT
+# Mon, 30 Oct 2023 23:22:49 GMT
 CMD ["jshell"]
-# Thu, 19 Oct 2023 07:19:01 GMT
+# Tue, 31 Oct 2023 05:21:25 GMT
 CMD ["gradle"]
-# Thu, 19 Oct 2023 07:19:01 GMT
+# Tue, 31 Oct 2023 05:21:25 GMT
 ENV GRADLE_HOME=/opt/gradle
-# Thu, 19 Oct 2023 07:19:01 GMT
+# Tue, 31 Oct 2023 05:21:26 GMT
 RUN set -o errexit -o nounset     && echo "Adding gradle user and group"     && addgroup --system --gid 1000 gradle     && adduser --system --ingroup gradle --uid 1000 --shell /bin/ash gradle     && mkdir /home/gradle/.gradle     && chown -R gradle:gradle /home/gradle         && echo "Symlinking root Gradle cache to gradle Gradle cache"     && ln -s /home/gradle/.gradle /root/.gradle
-# Thu, 19 Oct 2023 07:19:01 GMT
+# Tue, 31 Oct 2023 05:21:26 GMT
 VOLUME [/home/gradle/.gradle]
-# Thu, 19 Oct 2023 07:19:02 GMT
+# Tue, 31 Oct 2023 05:21:26 GMT
 WORKDIR /home/gradle
-# Thu, 19 Oct 2023 07:19:05 GMT
+# Tue, 31 Oct 2023 05:21:29 GMT
 RUN set -o errexit -o nounset     && echo "Installing VCSes"     && apk add --no-cache       git       git-lfs       mercurial       subversion         && echo "Testing VCSes"     && which git     && which git-lfs     && which hg     && which svn
-# Thu, 19 Oct 2023 07:19:05 GMT
+# Tue, 31 Oct 2023 05:21:30 GMT
 ENV GRADLE_VERSION=8.4
-# Thu, 19 Oct 2023 07:19:05 GMT
+# Tue, 31 Oct 2023 05:21:30 GMT
 ARG GRADLE_DOWNLOAD_SHA256=3e1af3ae886920c3ac87f7a91f816c0c7c436f276a6eefdb3da152100fef72ae
-# Thu, 19 Oct 2023 07:19:10 GMT
+# Tue, 31 Oct 2023 05:21:35 GMT
 # ARGS: GRADLE_DOWNLOAD_SHA256=3e1af3ae886920c3ac87f7a91f816c0c7c436f276a6eefdb3da152100fef72ae
 RUN set -o errexit -o nounset     && echo "Downloading Gradle"     && wget --no-verbose --output-document=gradle.zip "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip"         && echo "Checking Gradle download hash"     && echo "${GRADLE_DOWNLOAD_SHA256} *gradle.zip" | sha256sum -c -         && echo "Installing Gradle"     && unzip gradle.zip     && rm gradle.zip     && mv "gradle-${GRADLE_VERSION}" "${GRADLE_HOME}/"     && ln -s "${GRADLE_HOME}/bin/gradle" /usr/bin/gradle
-# Thu, 19 Oct 2023 07:19:10 GMT
+# Tue, 31 Oct 2023 05:21:35 GMT
 USER gradle
-# Thu, 19 Oct 2023 07:19:12 GMT
+# Tue, 31 Oct 2023 05:21:37 GMT
 # ARGS: GRADLE_DOWNLOAD_SHA256=3e1af3ae886920c3ac87f7a91f816c0c7c436f276a6eefdb3da152100fef72ae
 RUN set -o errexit -o nounset     && echo "Testing Gradle installation"     && gradle --version
-# Thu, 19 Oct 2023 07:19:12 GMT
+# Tue, 31 Oct 2023 05:21:37 GMT
 USER root
 ```
 
@@ -80,35 +80,35 @@ USER root
 		Last Modified: Thu, 28 Sep 2023 21:22:06 GMT  
 		Size: 3.4 MB (3401967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f42efc8ffaa989c4197765e315c7d229fc40528c139b6be6a50e459fab1b640e`  
-		Last Modified: Thu, 19 Oct 2023 02:55:23 GMT  
-		Size: 9.3 MB (9276490 bytes)  
+	-	`sha256:b02a3a37ba0a441c23edb967d901e4af5b508796b983fbb71e14ad89db9a9999`  
+		Last Modified: Mon, 30 Oct 2023 23:32:06 GMT  
+		Size: 9.3 MB (9276545 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e8889f3a7977f3ade412f5d009bce4bc23ac85d7bb766ef3506a073478fcbde6`  
-		Last Modified: Thu, 19 Oct 2023 02:56:50 GMT  
-		Size: 140.2 MB (140159180 bytes)  
+	-	`sha256:a12e67e82faf020e769d46cccfc7f1620ccb86e04b4576b070512194641eb854`  
+		Last Modified: Mon, 30 Oct 2023 23:32:15 GMT  
+		Size: 140.5 MB (140484655 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4859c4719abf234979ec0e43481f4faa8891570bc31978e1e6aeabfb446c87db`  
-		Last Modified: Thu, 19 Oct 2023 02:56:40 GMT  
-		Size: 178.0 B  
+	-	`sha256:43caa4ccd4f85f364bbf72014cc960dc6fb6703350eceaee77976cf6313c8a55`  
+		Last Modified: Mon, 30 Oct 2023 23:32:04 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:98b582a93389d665ad51329afbf83f528596081b078c26a5062d5826c3982e31`  
-		Last Modified: Thu, 19 Oct 2023 02:56:40 GMT  
+	-	`sha256:8800858de447fac23faff681df1122b67d784efb0ee850d3d9551bcb5e9b19f8`  
+		Last Modified: Mon, 30 Oct 2023 23:32:04 GMT  
 		Size: 733.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccceb4fd3e1ddbcf729b71bd99ab698c9e2b3d879860a745e2ba13c4f9f0b383`  
-		Last Modified: Thu, 19 Oct 2023 07:22:48 GMT  
-		Size: 1.3 KB (1333 bytes)  
+	-	`sha256:93174729fb9154c647b46c3b3a0514a6b72eaec36aac27e02010f1ef1ea0b356`  
+		Last Modified: Tue, 31 Oct 2023 05:28:53 GMT  
+		Size: 1.3 KB (1332 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0162162387d3e5c2c6c78a29d685d4937a18cd9631ef2dcc0f84107e5d32d83b`  
-		Last Modified: Thu, 19 Oct 2023 07:22:52 GMT  
-		Size: 35.0 MB (35036395 bytes)  
+	-	`sha256:416e8b9ff71dca36af172e5f3dc2a72409c86e5f2473dfcb3bc86d9ac0d20fda`  
+		Last Modified: Tue, 31 Oct 2023 05:28:59 GMT  
+		Size: 35.0 MB (35036388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9bc300d77474d61dd437333b800fd9ee39ae66447d514e92676f1ea9528e470d`  
-		Last Modified: Thu, 19 Oct 2023 07:22:54 GMT  
-		Size: 131.0 MB (131009483 bytes)  
+	-	`sha256:bab50708b6929724e11a7a4189a76a1ed739bfe892ff8ae0c1ad422fd80d68e0`  
+		Last Modified: Tue, 31 Oct 2023 05:29:01 GMT  
+		Size: 131.0 MB (131009461 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57d17174e345acdf470af7769dcf94c7fffd9f470dc04a48000c7069f0feb0f3`  
-		Last Modified: Thu, 19 Oct 2023 07:22:46 GMT  
-		Size: 168.0 B  
+	-	`sha256:5eda27c372fb3a207770538554bd0064235511432bf07606750e7eef3201c6b9`  
+		Last Modified: Tue, 31 Oct 2023 05:28:53 GMT  
+		Size: 167.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
