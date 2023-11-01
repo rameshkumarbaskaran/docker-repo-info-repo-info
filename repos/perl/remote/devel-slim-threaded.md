@@ -1,7 +1,7 @@
 ## `perl:devel-slim-threaded`
 
 ```console
-$ docker pull perl@sha256:abe262f67423a2d20f465b3831c0d930ca018c730c6731ad1b2b9b541e0b5d79
+$ docker pull perl@sha256:8675d374a2a456ed36dd2102fbd56587798fc2fcf396e2c9cb79377957d16966
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -210,49 +210,49 @@ CMD ["perl5.39.4" "-de0"]
 ### `perl:devel-slim-threaded` - linux; 386
 
 ```console
-$ docker pull perl@sha256:b10135d14043ade52d9ffc9e805db087f8f32660c98ab8f33087020d6efa3015
+$ docker pull perl@sha256:d51454cc8336a0878f153fc32f2278e3b1812640767f69a97667b253a66d6e5f
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **57.9 MB (57924745 bytes)**  
+-	Total Size: **57.9 MB (57924400 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:09752f67d1842e35c8883a7da9f408b2c0fba67840aa8fd9faa7401d26b97554`
+-	Image ID: `sha256:ea311e7b08ac8c2366320d1b322b3d4bc0b285f88f5081bf22ff1dfd560e3ed5`
 -	Default Command: `["perl5.39.4","-de0"]`
 
 ```dockerfile
-# Wed, 11 Oct 2023 17:40:42 GMT
-ADD file:31318c1b1f05d559cce42f5b12eef97d916932217e0b987fb07c0fc11bf0a14a in / 
-# Wed, 11 Oct 2023 17:40:42 GMT
+# Wed, 01 Nov 2023 00:38:56 GMT
+ADD file:0c94521fdd9c0a4fdeeb9aad23e68cd053fba0dcd7c3af550aefa79377816e31 in / 
+# Wed, 01 Nov 2023 00:38:56 GMT
 CMD ["bash"]
-# Wed, 11 Oct 2023 22:33:56 GMT
+# Wed, 01 Nov 2023 09:56:55 GMT
 LABEL maintainer=Peter Martini <PeterCMartini@GMail.com>, Zak B. Elep <zakame@cpan.org>
-# Wed, 11 Oct 2023 22:33:56 GMT
+# Wed, 01 Nov 2023 09:56:56 GMT
 WORKDIR /usr/src/perl
-# Tue, 31 Oct 2023 00:51:39 GMT
+# Wed, 01 Nov 2023 13:13:12 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends        bzip2        ca-certificates        curl        dpkg-dev        gcc        libc6-dev        make        netbase        patch        zlib1g-dev        xz-utils        libssl-dev     && curl -fL https://www.cpan.org/src/5.0/perl-5.39.4.tar.xz -o perl-5.39.4.tar.xz     && echo '73c5e1eb3f125206e82c23e2d03df2c62184d1acc330f99ab7624a3ade19b587 *perl-5.39.4.tar.xz' | sha256sum --strict --check -     && tar --strip-components=1 -xaf perl-5.39.4.tar.xz -C /usr/src/perl     && rm perl-5.39.4.tar.xz     && cat *.patch | patch -p1     && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"     && archBits="$(dpkg-architecture --query DEB_BUILD_ARCH_BITS)"     && archFlag="$([ "$archBits" = '64' ] && echo '-Duse64bitall' || echo '-Duse64bitint')"     && ./Configure -Darchname="$gnuArch" "$archFlag" -Dusethreads -Duseshrplib -Dvendorprefix=/usr/local -Dusedevel -Dversiononly=undef -des     && make -j$(nproc)     && TEST_JOBS=$(nproc) make test_harness     && make install     && cd /usr/src     && curl -fLO https://www.cpan.org/authors/id/M/MI/MIYAGAWA/App-cpanminus-1.7047.tar.gz     && echo '963e63c6e1a8725ff2f624e9086396ae150db51dd0a337c3781d09a994af05a5 *App-cpanminus-1.7047.tar.gz' | sha256sum --strict --check -     && tar -xzf App-cpanminus-1.7047.tar.gz && cd App-cpanminus-1.7047 && perl bin/cpanm . && cd /root     && cpanm IO::Socket::SSL     && curl -fL https://raw.githubusercontent.com/skaji/cpm/0.997011/cpm -o /usr/local/bin/cpm     && echo '7dee2176a450a8be3a6b9b91dac603a0c3a7e807042626d3fe6c93d843f75610 */usr/local/bin/cpm' | sha256sum --strict --check -     && chmod +x /usr/local/bin/cpm     && savedPackages="ca-certificates make netbase zlib1g-dev libssl-dev"     && apt-mark auto '.*' > /dev/null     && apt-mark manual $savedPackages     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false     && rm -fr /var/cache/apt/* /var/lib/apt/lists/*     && rm -fr /root/.cpanm /usr/src/perl /usr/src/App-cpanminus-1.7047* /tmp/*     && cpanm --version && cpm --version
-# Tue, 31 Oct 2023 00:51:40 GMT
+# Wed, 01 Nov 2023 13:13:12 GMT
 WORKDIR /usr/src/app
-# Tue, 31 Oct 2023 00:51:40 GMT
+# Wed, 01 Nov 2023 13:13:12 GMT
 CMD ["perl5.39.4" "-de0"]
 ```
 
 -	Layers:
-	-	`sha256:b27d0f1369837277a82877763487cdd2535037988fc27e16f11cf74e103ae4cd`  
-		Last Modified: Wed, 11 Oct 2023 17:45:31 GMT  
-		Size: 30.2 MB (30164118 bytes)  
+	-	`sha256:98bdfce9af831c2a0d0bfcca812d0039cd1666986550f552b4b4c625bd5aa31c`  
+		Last Modified: Wed, 01 Nov 2023 00:43:26 GMT  
+		Size: 30.2 MB (30164042 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4485771d5f695f38d9604d6a6646edf79162d09d78affb7155277d86ad8d315e`  
-		Last Modified: Thu, 12 Oct 2023 05:09:03 GMT  
-		Size: 168.0 B  
+	-	`sha256:26a7713af8544452b996e3deca6addb0486ac0b61644df924d2e477d52049b13`  
+		Last Modified: Wed, 01 Nov 2023 13:25:40 GMT  
+		Size: 167.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:151ed2744c152a352bd1a148cf70683c415536a39a4427ddba8724300173b5c5`  
-		Last Modified: Tue, 31 Oct 2023 01:07:02 GMT  
-		Size: 27.8 MB (27760293 bytes)  
+	-	`sha256:fef6bcc7d6597e072e84184e9aecfea55d3f5b80f7b601a5b70b175462d9e32d`  
+		Last Modified: Wed, 01 Nov 2023 13:32:39 GMT  
+		Size: 27.8 MB (27760027 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa1ae72ca54ed315e68a6a34d0f22f755c8efdc4e9222b245e80591e18ee553e`  
-		Last Modified: Tue, 31 Oct 2023 01:06:54 GMT  
-		Size: 166.0 B  
+	-	`sha256:ab33a844c643d9b4ebd5e9b98a0a5b7ee3d8bb10895b6810cf1e93a9221bb7e6`  
+		Last Modified: Wed, 01 Nov 2023 13:32:32 GMT  
+		Size: 164.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `perl:devel-slim-threaded` - linux; mips64le
