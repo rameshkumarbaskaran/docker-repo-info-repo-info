@@ -18861,7 +18861,7 @@ CMD ["bash"]
 ## `bash:devel`
 
 ```console
-$ docker pull bash@sha256:146ffe46472a6072993dc856839ec458349ca4e740f9915a0ed365e2c7b25653
+$ docker pull bash@sha256:d81b6b2ab0813053b2d9e9afe07efc8e99d516971b6c30ee4eb68e2dcbda321f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -19065,14 +19065,14 @@ CMD ["bash"]
 ### `bash:devel` - linux; 386
 
 ```console
-$ docker pull bash@sha256:c6ec1927f3240287a36a1dc00f0e81be1dc59c7419589b6e27b6b731881e73b2
+$ docker pull bash@sha256:b29ea2e33657cc447b3976c5f565b904e5733842e37bfa3cd22829cadfefc0fb
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.4 MB (6418979 bytes)**  
+-	Total Size: **6.4 MB (6419191 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9cc7455f20c50f53a3998aac60bbab20887687276ed41edd41c39808e7a093ea`
+-	Image ID: `sha256:012b93d8d4c7e9280d1feafd278777c069f4789c3d1b7e330baf271b9aaea69a`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -19081,17 +19081,17 @@ $ docker pull bash@sha256:c6ec1927f3240287a36a1dc00f0e81be1dc59c7419589b6e27b6b7
 ADD file:8402753f294e403e92353bd65c86a6428c960be5116c0a15484b663a84f66fcd in / 
 # Thu, 28 Sep 2023 20:38:20 GMT
 CMD ["/bin/sh"]
-# Thu, 26 Oct 2023 00:38:14 GMT
-ENV _BASH_COMMIT=b348b871b45ca354f58c8c965e53866903b666ea
-# Thu, 26 Oct 2023 00:38:14 GMT
-ENV _BASH_VERSION=devel-20231023
-# Thu, 26 Oct 2023 00:39:13 GMT
+# Thu, 02 Nov 2023 04:35:13 GMT
+ENV _BASH_COMMIT=fe24a6a55e8850298b496c5b9d82f1866eba190e
+# Thu, 02 Nov 2023 04:35:13 GMT
+ENV _BASH_VERSION=devel-20231030
+# Thu, 02 Nov 2023 04:36:09 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		bison 		coreutils 		dpkg-dev dpkg 		gcc 		libc-dev 		make 		ncurses-dev 		patch 		tar 	; 		wget -O bash.tar.gz "https://git.savannah.gnu.org/cgit/bash.git/snapshot/bash-$_BASH_COMMIT.tar.gz"; 		mkdir -p /usr/src/bash; 	tar 		--extract 		--file=bash.tar.gz 		--strip-components=1 		--directory=/usr/src/bash 	; 	rm bash.tar.gz; 		if [ -d bash-patches ]; then 		apk add --no-cache --virtual .patch-deps patch; 		for p in bash-patches/*; do 			patch 				--directory=/usr/src/bash 				--input="$(readlink -f "$p")" 				--strip=0 			; 			rm "$p"; 		done; 		rmdir bash-patches; 		apk del --no-network .patch-deps; 	fi; 		{ echo '#include <unistd.h>'; echo; cat /usr/src/bash/lib/sh/strscpy.c; } > /usr/src/bash/lib/sh/strscpy.c.new; 	mv /usr/src/bash/lib/sh/strscpy.c.new /usr/src/bash/lib/sh/strscpy.c; 		cd /usr/src/bash; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--enable-readline 		--with-curses 		--without-bash-malloc 	|| { 		cat >&2 config.log; 		false; 	}; 	make -j "$(nproc)"; 	make install; 	cd /; 	rm -r /usr/src/bash; 		rm -rf 		/usr/local/share/doc/bash/*.html 		/usr/local/share/info 		/usr/local/share/locale 		/usr/local/share/man 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .bash-rundeps $runDeps; 	apk del --no-network .build-deps; 		[ "$(which bash)" = '/usr/local/bin/bash' ]; 	bash --version; 	bash -c 'help' > /dev/null
-# Thu, 26 Oct 2023 00:39:14 GMT
+# Thu, 02 Nov 2023 04:36:10 GMT
 COPY file:651b3bebeba8be9162c56b3eb561199905235f3e1c7811232b6c9f48ac333651 in /usr/local/bin/ 
-# Thu, 26 Oct 2023 00:39:14 GMT
+# Thu, 02 Nov 2023 04:36:10 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 26 Oct 2023 00:39:14 GMT
+# Thu, 02 Nov 2023 04:36:10 GMT
 CMD ["bash"]
 ```
 
@@ -19100,13 +19100,13 @@ CMD ["bash"]
 		Last Modified: Thu, 28 Sep 2023 20:39:32 GMT  
 		Size: 3.2 MB (3235757 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f9017fb6a017554a542b99a7712bec66c2d404ac60945c7f784bd45549be4fbf`  
-		Last Modified: Thu, 26 Oct 2023 00:40:14 GMT  
-		Size: 3.2 MB (3182884 bytes)  
+	-	`sha256:a089651285c5d238ee2476c5f35451fc7abd6f06134b478b15c1e751d1dd115a`  
+		Last Modified: Thu, 02 Nov 2023 04:37:12 GMT  
+		Size: 3.2 MB (3183095 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:96d35b7d91d7b34430c8b1696db2173d27a13f880b35dbd10f4e993332c6c46e`  
-		Last Modified: Thu, 26 Oct 2023 00:40:13 GMT  
-		Size: 338.0 B  
+	-	`sha256:6b3a418b23b54cd644f045fb792565f86d6b434be1e9fd45ec74836f1eb77c75`  
+		Last Modified: Thu, 02 Nov 2023 04:37:11 GMT  
+		Size: 339.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `bash:devel` - linux; ppc64le
@@ -19206,15 +19206,16 @@ CMD ["bash"]
 ## `bash:devel-20231030`
 
 ```console
-$ docker pull bash@sha256:b79cdb461c4fa3ec01c51eb2aded1161bf18fdbd009df27d35ee24ce4808cb04
+$ docker pull bash@sha256:d81b6b2ab0813053b2d9e9afe07efc8e99d516971b6c30ee4eb68e2dcbda321f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 6
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
+	-	linux; 386
 	-	linux; ppc64le
 	-	linux; s390x
 
@@ -19406,6 +19407,53 @@ CMD ["bash"]
 		Size: 336.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `bash:devel-20231030` - linux; 386
+
+```console
+$ docker pull bash@sha256:b29ea2e33657cc447b3976c5f565b904e5733842e37bfa3cd22829cadfefc0fb
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **6.4 MB (6419191 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:012b93d8d4c7e9280d1feafd278777c069f4789c3d1b7e330baf271b9aaea69a`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["bash"]`
+
+```dockerfile
+# Thu, 28 Sep 2023 20:38:19 GMT
+ADD file:8402753f294e403e92353bd65c86a6428c960be5116c0a15484b663a84f66fcd in / 
+# Thu, 28 Sep 2023 20:38:20 GMT
+CMD ["/bin/sh"]
+# Thu, 02 Nov 2023 04:35:13 GMT
+ENV _BASH_COMMIT=fe24a6a55e8850298b496c5b9d82f1866eba190e
+# Thu, 02 Nov 2023 04:35:13 GMT
+ENV _BASH_VERSION=devel-20231030
+# Thu, 02 Nov 2023 04:36:09 GMT
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		bison 		coreutils 		dpkg-dev dpkg 		gcc 		libc-dev 		make 		ncurses-dev 		patch 		tar 	; 		wget -O bash.tar.gz "https://git.savannah.gnu.org/cgit/bash.git/snapshot/bash-$_BASH_COMMIT.tar.gz"; 		mkdir -p /usr/src/bash; 	tar 		--extract 		--file=bash.tar.gz 		--strip-components=1 		--directory=/usr/src/bash 	; 	rm bash.tar.gz; 		if [ -d bash-patches ]; then 		apk add --no-cache --virtual .patch-deps patch; 		for p in bash-patches/*; do 			patch 				--directory=/usr/src/bash 				--input="$(readlink -f "$p")" 				--strip=0 			; 			rm "$p"; 		done; 		rmdir bash-patches; 		apk del --no-network .patch-deps; 	fi; 		{ echo '#include <unistd.h>'; echo; cat /usr/src/bash/lib/sh/strscpy.c; } > /usr/src/bash/lib/sh/strscpy.c.new; 	mv /usr/src/bash/lib/sh/strscpy.c.new /usr/src/bash/lib/sh/strscpy.c; 		cd /usr/src/bash; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--enable-readline 		--with-curses 		--without-bash-malloc 	|| { 		cat >&2 config.log; 		false; 	}; 	make -j "$(nproc)"; 	make install; 	cd /; 	rm -r /usr/src/bash; 		rm -rf 		/usr/local/share/doc/bash/*.html 		/usr/local/share/info 		/usr/local/share/locale 		/usr/local/share/man 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .bash-rundeps $runDeps; 	apk del --no-network .build-deps; 		[ "$(which bash)" = '/usr/local/bin/bash' ]; 	bash --version; 	bash -c 'help' > /dev/null
+# Thu, 02 Nov 2023 04:36:10 GMT
+COPY file:651b3bebeba8be9162c56b3eb561199905235f3e1c7811232b6c9f48ac333651 in /usr/local/bin/ 
+# Thu, 02 Nov 2023 04:36:10 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Thu, 02 Nov 2023 04:36:10 GMT
+CMD ["bash"]
+```
+
+-	Layers:
+	-	`sha256:dc95107ad2a031a015320bb397f73ec151d738127175b31ad643120697dc7e90`  
+		Last Modified: Thu, 28 Sep 2023 20:39:32 GMT  
+		Size: 3.2 MB (3235757 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a089651285c5d238ee2476c5f35451fc7abd6f06134b478b15c1e751d1dd115a`  
+		Last Modified: Thu, 02 Nov 2023 04:37:12 GMT  
+		Size: 3.2 MB (3183095 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6b3a418b23b54cd644f045fb792565f86d6b434be1e9fd45ec74836f1eb77c75`  
+		Last Modified: Thu, 02 Nov 2023 04:37:11 GMT  
+		Size: 339.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ### `bash:devel-20231030` - linux; ppc64le
 
 ```console
@@ -19503,15 +19551,16 @@ CMD ["bash"]
 ## `bash:devel-20231030-alpine3.18`
 
 ```console
-$ docker pull bash@sha256:b79cdb461c4fa3ec01c51eb2aded1161bf18fdbd009df27d35ee24ce4808cb04
+$ docker pull bash@sha256:d81b6b2ab0813053b2d9e9afe07efc8e99d516971b6c30ee4eb68e2dcbda321f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 6
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
+	-	linux; 386
 	-	linux; ppc64le
 	-	linux; s390x
 
@@ -19703,6 +19752,53 @@ CMD ["bash"]
 		Size: 336.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `bash:devel-20231030-alpine3.18` - linux; 386
+
+```console
+$ docker pull bash@sha256:b29ea2e33657cc447b3976c5f565b904e5733842e37bfa3cd22829cadfefc0fb
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **6.4 MB (6419191 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:012b93d8d4c7e9280d1feafd278777c069f4789c3d1b7e330baf271b9aaea69a`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["bash"]`
+
+```dockerfile
+# Thu, 28 Sep 2023 20:38:19 GMT
+ADD file:8402753f294e403e92353bd65c86a6428c960be5116c0a15484b663a84f66fcd in / 
+# Thu, 28 Sep 2023 20:38:20 GMT
+CMD ["/bin/sh"]
+# Thu, 02 Nov 2023 04:35:13 GMT
+ENV _BASH_COMMIT=fe24a6a55e8850298b496c5b9d82f1866eba190e
+# Thu, 02 Nov 2023 04:35:13 GMT
+ENV _BASH_VERSION=devel-20231030
+# Thu, 02 Nov 2023 04:36:09 GMT
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		bison 		coreutils 		dpkg-dev dpkg 		gcc 		libc-dev 		make 		ncurses-dev 		patch 		tar 	; 		wget -O bash.tar.gz "https://git.savannah.gnu.org/cgit/bash.git/snapshot/bash-$_BASH_COMMIT.tar.gz"; 		mkdir -p /usr/src/bash; 	tar 		--extract 		--file=bash.tar.gz 		--strip-components=1 		--directory=/usr/src/bash 	; 	rm bash.tar.gz; 		if [ -d bash-patches ]; then 		apk add --no-cache --virtual .patch-deps patch; 		for p in bash-patches/*; do 			patch 				--directory=/usr/src/bash 				--input="$(readlink -f "$p")" 				--strip=0 			; 			rm "$p"; 		done; 		rmdir bash-patches; 		apk del --no-network .patch-deps; 	fi; 		{ echo '#include <unistd.h>'; echo; cat /usr/src/bash/lib/sh/strscpy.c; } > /usr/src/bash/lib/sh/strscpy.c.new; 	mv /usr/src/bash/lib/sh/strscpy.c.new /usr/src/bash/lib/sh/strscpy.c; 		cd /usr/src/bash; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--enable-readline 		--with-curses 		--without-bash-malloc 	|| { 		cat >&2 config.log; 		false; 	}; 	make -j "$(nproc)"; 	make install; 	cd /; 	rm -r /usr/src/bash; 		rm -rf 		/usr/local/share/doc/bash/*.html 		/usr/local/share/info 		/usr/local/share/locale 		/usr/local/share/man 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .bash-rundeps $runDeps; 	apk del --no-network .build-deps; 		[ "$(which bash)" = '/usr/local/bin/bash' ]; 	bash --version; 	bash -c 'help' > /dev/null
+# Thu, 02 Nov 2023 04:36:10 GMT
+COPY file:651b3bebeba8be9162c56b3eb561199905235f3e1c7811232b6c9f48ac333651 in /usr/local/bin/ 
+# Thu, 02 Nov 2023 04:36:10 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Thu, 02 Nov 2023 04:36:10 GMT
+CMD ["bash"]
+```
+
+-	Layers:
+	-	`sha256:dc95107ad2a031a015320bb397f73ec151d738127175b31ad643120697dc7e90`  
+		Last Modified: Thu, 28 Sep 2023 20:39:32 GMT  
+		Size: 3.2 MB (3235757 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a089651285c5d238ee2476c5f35451fc7abd6f06134b478b15c1e751d1dd115a`  
+		Last Modified: Thu, 02 Nov 2023 04:37:12 GMT  
+		Size: 3.2 MB (3183095 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6b3a418b23b54cd644f045fb792565f86d6b434be1e9fd45ec74836f1eb77c75`  
+		Last Modified: Thu, 02 Nov 2023 04:37:11 GMT  
+		Size: 339.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ### `bash:devel-20231030-alpine3.18` - linux; ppc64le
 
 ```console
@@ -19800,7 +19896,7 @@ CMD ["bash"]
 ## `bash:devel-alpine3.18`
 
 ```console
-$ docker pull bash@sha256:146ffe46472a6072993dc856839ec458349ca4e740f9915a0ed365e2c7b25653
+$ docker pull bash@sha256:d81b6b2ab0813053b2d9e9afe07efc8e99d516971b6c30ee4eb68e2dcbda321f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -20004,14 +20100,14 @@ CMD ["bash"]
 ### `bash:devel-alpine3.18` - linux; 386
 
 ```console
-$ docker pull bash@sha256:c6ec1927f3240287a36a1dc00f0e81be1dc59c7419589b6e27b6b731881e73b2
+$ docker pull bash@sha256:b29ea2e33657cc447b3976c5f565b904e5733842e37bfa3cd22829cadfefc0fb
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.4 MB (6418979 bytes)**  
+-	Total Size: **6.4 MB (6419191 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9cc7455f20c50f53a3998aac60bbab20887687276ed41edd41c39808e7a093ea`
+-	Image ID: `sha256:012b93d8d4c7e9280d1feafd278777c069f4789c3d1b7e330baf271b9aaea69a`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -20020,17 +20116,17 @@ $ docker pull bash@sha256:c6ec1927f3240287a36a1dc00f0e81be1dc59c7419589b6e27b6b7
 ADD file:8402753f294e403e92353bd65c86a6428c960be5116c0a15484b663a84f66fcd in / 
 # Thu, 28 Sep 2023 20:38:20 GMT
 CMD ["/bin/sh"]
-# Thu, 26 Oct 2023 00:38:14 GMT
-ENV _BASH_COMMIT=b348b871b45ca354f58c8c965e53866903b666ea
-# Thu, 26 Oct 2023 00:38:14 GMT
-ENV _BASH_VERSION=devel-20231023
-# Thu, 26 Oct 2023 00:39:13 GMT
+# Thu, 02 Nov 2023 04:35:13 GMT
+ENV _BASH_COMMIT=fe24a6a55e8850298b496c5b9d82f1866eba190e
+# Thu, 02 Nov 2023 04:35:13 GMT
+ENV _BASH_VERSION=devel-20231030
+# Thu, 02 Nov 2023 04:36:09 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		bison 		coreutils 		dpkg-dev dpkg 		gcc 		libc-dev 		make 		ncurses-dev 		patch 		tar 	; 		wget -O bash.tar.gz "https://git.savannah.gnu.org/cgit/bash.git/snapshot/bash-$_BASH_COMMIT.tar.gz"; 		mkdir -p /usr/src/bash; 	tar 		--extract 		--file=bash.tar.gz 		--strip-components=1 		--directory=/usr/src/bash 	; 	rm bash.tar.gz; 		if [ -d bash-patches ]; then 		apk add --no-cache --virtual .patch-deps patch; 		for p in bash-patches/*; do 			patch 				--directory=/usr/src/bash 				--input="$(readlink -f "$p")" 				--strip=0 			; 			rm "$p"; 		done; 		rmdir bash-patches; 		apk del --no-network .patch-deps; 	fi; 		{ echo '#include <unistd.h>'; echo; cat /usr/src/bash/lib/sh/strscpy.c; } > /usr/src/bash/lib/sh/strscpy.c.new; 	mv /usr/src/bash/lib/sh/strscpy.c.new /usr/src/bash/lib/sh/strscpy.c; 		cd /usr/src/bash; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--enable-readline 		--with-curses 		--without-bash-malloc 	|| { 		cat >&2 config.log; 		false; 	}; 	make -j "$(nproc)"; 	make install; 	cd /; 	rm -r /usr/src/bash; 		rm -rf 		/usr/local/share/doc/bash/*.html 		/usr/local/share/info 		/usr/local/share/locale 		/usr/local/share/man 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .bash-rundeps $runDeps; 	apk del --no-network .build-deps; 		[ "$(which bash)" = '/usr/local/bin/bash' ]; 	bash --version; 	bash -c 'help' > /dev/null
-# Thu, 26 Oct 2023 00:39:14 GMT
+# Thu, 02 Nov 2023 04:36:10 GMT
 COPY file:651b3bebeba8be9162c56b3eb561199905235f3e1c7811232b6c9f48ac333651 in /usr/local/bin/ 
-# Thu, 26 Oct 2023 00:39:14 GMT
+# Thu, 02 Nov 2023 04:36:10 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 26 Oct 2023 00:39:14 GMT
+# Thu, 02 Nov 2023 04:36:10 GMT
 CMD ["bash"]
 ```
 
@@ -20039,13 +20135,13 @@ CMD ["bash"]
 		Last Modified: Thu, 28 Sep 2023 20:39:32 GMT  
 		Size: 3.2 MB (3235757 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f9017fb6a017554a542b99a7712bec66c2d404ac60945c7f784bd45549be4fbf`  
-		Last Modified: Thu, 26 Oct 2023 00:40:14 GMT  
-		Size: 3.2 MB (3182884 bytes)  
+	-	`sha256:a089651285c5d238ee2476c5f35451fc7abd6f06134b478b15c1e751d1dd115a`  
+		Last Modified: Thu, 02 Nov 2023 04:37:12 GMT  
+		Size: 3.2 MB (3183095 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:96d35b7d91d7b34430c8b1696db2173d27a13f880b35dbd10f4e993332c6c46e`  
-		Last Modified: Thu, 26 Oct 2023 00:40:13 GMT  
-		Size: 338.0 B  
+	-	`sha256:6b3a418b23b54cd644f045fb792565f86d6b434be1e9fd45ec74836f1eb77c75`  
+		Last Modified: Thu, 02 Nov 2023 04:37:11 GMT  
+		Size: 339.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `bash:devel-alpine3.18` - linux; ppc64le
