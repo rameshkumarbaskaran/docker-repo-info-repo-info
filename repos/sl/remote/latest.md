@@ -1,7 +1,7 @@
 ## `sl:latest`
 
 ```console
-$ docker pull sl@sha256:e53124f915798d54be1949a32a88b3f49135ec29eff073cf32217ca83cd30765
+$ docker pull sl@sha256:f3cb102793a08c80d441a6f7da8e24cc54e8f19006a24c3a33d2c90f9965f65a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,27 +11,27 @@ $ docker pull sl@sha256:e53124f915798d54be1949a32a88b3f49135ec29eff073cf32217ca8
 ### `sl:latest` - linux; amd64
 
 ```console
-$ docker pull sl@sha256:d63050e29de7cf9fe5a29996d9d1af345d7ad444b00c2a8a8a52b8ab528e074a
+$ docker pull sl@sha256:8c3193a197b8d3981a8e549aaf0735fccc5dfb424de22d2a4a8004613914b0d5
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **71.5 MB (71487075 bytes)**  
+-	Total Size: **71.5 MB (71498140 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:22ac72372bf4ca9f55cecf1b02b45c42252000af0088b5123968ddb558ad609e`
+-	Image ID: `sha256:ad87ab19469a2a2a114a5457837fd316b3722545b49c441b320ccf3b2c9d94e2`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Fri, 06 Oct 2023 01:42:45 GMT
-ADD file:71aaa953562bd3466dd4f76f1e5a5abe3f9c1c78b6a258e3d54f9290c8b65093 in / 
-# Fri, 06 Oct 2023 01:42:46 GMT
-LABEL name=SL7 Base Image vendor=Scientific Linux build-date=20231005
-# Fri, 06 Oct 2023 01:42:46 GMT
+# Thu, 02 Nov 2023 00:29:55 GMT
+ADD file:de500d7bded1a28de854bbb041c19ef5000c139cecc5535f61b2ede9e894e282 in / 
+# Thu, 02 Nov 2023 00:29:55 GMT
+LABEL name=SL7 Base Image vendor=Scientific Linux build-date=20231101
+# Thu, 02 Nov 2023 00:29:55 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:4cd027234441a84bffb7a73ffe5a272f9b31830b6adc6b05111139900738e2b1`  
-		Last Modified: Fri, 06 Oct 2023 01:43:03 GMT  
-		Size: 71.5 MB (71487075 bytes)  
+	-	`sha256:726ef4ce7140bd36897f043b285e15c5e86e5e32b69a98a7cbab53f80dfa65f9`  
+		Last Modified: Thu, 02 Nov 2023 00:30:20 GMT  
+		Size: 71.5 MB (71498140 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
