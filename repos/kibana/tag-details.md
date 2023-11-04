@@ -3,6 +3,7 @@
 # Tags of `kibana`
 
 -	[`kibana:7.17.14`](#kibana71714)
+-	[`kibana:8.10.3`](#kibana8103)
 -	[`kibana:8.10.4`](#kibana8104)
 
 ## `kibana:7.17.14`
@@ -279,6 +280,10 @@ USER kibana
 		Last Modified: Thu, 02 Nov 2023 23:42:22 GMT  
 		Size: 1.8 KB (1830 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `kibana:8.10.3`
+
+**does not exist** (yet?)
 
 ## `kibana:8.10.4`
 
