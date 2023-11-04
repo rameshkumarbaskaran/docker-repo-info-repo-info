@@ -3,6 +3,7 @@
 # Tags of `elasticsearch`
 
 -	[`elasticsearch:7.17.14`](#elasticsearch71714)
+-	[`elasticsearch:8.10.3`](#elasticsearch8103)
 -	[`elasticsearch:8.10.4`](#elasticsearch8104)
 
 ## `elasticsearch:7.17.14`
@@ -215,6 +216,10 @@ CMD ["eswrapper"]
 		Last Modified: Thu, 02 Nov 2023 23:40:31 GMT  
 		Size: 109.2 KB (109248 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `elasticsearch:8.10.3`
+
+**does not exist** (yet?)
 
 ## `elasticsearch:8.10.4`
 
