@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:8bbd448f2f79f4bde8fbb4696e357248da923ced98e287ac1f545d9142e4a4f5`
-- Created: `2023-10-13T11:31:10.233791052Z`
-- Virtual Size: ~ 276.65 Mb  
+- Image ID: `sha256:819912098471813a1335b548d989a0ef014e1b862dd53a947e6d9dc892877dc2`
+- Created: `2023-11-02T03:25:49.572989107Z`
+- Virtual Size: ~ 276.66 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/__cacert_entrypoint.sh"]`
@@ -15,7 +15,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk8u382-b05`
+  - `JAVA_VERSION=jdk8u392-b08`
   - `TOMEE_VER=7.0.9`
   - `TOMEE_BUILD=webprofile`
 - Labels:
@@ -873,14 +873,9 @@ Licenses: (parsed from: `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris krb5=1.17-6ubuntu4.3
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17-6ubuntu4.3.dsc' krb5_1.17-6ubuntu4.3.dsc 3507 SHA512:c9c103545c03c78fb37a468af6fc2ecef18829f3e042e60a9aade190113cd6ba18c8f37b454d13ececcb91b7bf4ff0d9a1f121ff6eb2153a05418f9b45b42f5f
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17.orig.tar.gz' krb5_1.17.orig.tar.gz 8761763 SHA512:7462a578b936bd17f155a362dbb5d388e157a80a096549028be6c55400b11361c7f8a28e424fd5674801873651df4e694d536cae66728b7ae5e840e532358c52
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17-6ubuntu4.3.debian.tar.xz' krb5_1.17-6ubuntu4.3.debian.tar.xz 148388 SHA512:a354f473adf021e26dc47d4ca7994d4ba110ee8510aa610ec6a43ed80410803882a33aef2c2484b60e233a7392d76ba6b46f9557afe17e44036c2c197eef48a3
-```
 
 ### `dpkg` source package: `libassuan=2.5.3-7ubuntu2`
 
@@ -1465,20 +1460,25 @@ $ apt-get source -qq --print-uris openldap=2.4.49+dfsg-2ubuntu1.9
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.49%2bdfsg-2ubuntu1.9.debian.tar.xz' openldap_2.4.49+dfsg-2ubuntu1.9.debian.tar.xz 189676 SHA512:bf7e4ff9f710404704526a912932d7445fab4c6ce30a099dd890adc78b8afe740ac773596cb4fe409d495406e5bd103d186bd0b2993265cdafd3eb9a71d6a3b5
 ```
 
-### `dpkg` source package: `openssl=1.1.1f-1ubuntu2.19`
+### `dpkg` source package: `openssl=1.1.1f-1ubuntu2.20`
 
 Binary Packages:
 
-- `libssl1.1:amd64=1.1.1f-1ubuntu2.19`
-- `openssl=1.1.1f-1ubuntu2.19`
+- `libssl1.1:amd64=1.1.1f-1ubuntu2.20`
+- `openssl=1.1.1f-1ubuntu2.20`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openssl=1.1.1f-1ubuntu2.20
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.20.dsc' openssl_1.1.1f-1ubuntu2.20.dsc 2336 SHA512:4d6d4ef8ba486935854e3849dbafec4997ca2b6ab668fcea67ac9ccceb5fff2cb667aae4db22893063a922a1298fe145a6957897d6c5db3c3e6b968edf262bbe
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz' openssl_1.1.1f.orig.tar.gz 9792828 SHA512:b00bd9b5ad5298fbceeec6bb19c1ab0c106ca5cfb31178497c58bf7e0e0cf30fcc19c20f84e23af31cc126bf2447d3e4f8461db97bafa7bd78f69561932f000c
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.20.debian.tar.xz' openssl_1.1.1f-1ubuntu2.20.debian.tar.xz 233100 SHA512:5cc654ad0cf95661b9f9a15a2dc53d92fcbf989d636d3491682d791f1e83a092c8f8827ac188ed92287943ff7065f53d6d8b8c365700188f38eb4bb626a7e879
+```
 
 ### `dpkg` source package: `p11-kit=0.23.20-1ubuntu0.1`
 
