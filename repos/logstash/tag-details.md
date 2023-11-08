@@ -256,4 +256,135 @@ ENTRYPOINT ["/usr/local/bin/docker-entrypoint"]
 
 ## `logstash:8.11.0`
 
-**does not exist** (yet?)
+```console
+$ docker pull logstash@sha256:8922eeed765e8c7b057c5a909ba9846d5dc43ba0def76c2a17fcc9a5942cb7ca
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 1
+	-	linux; arm64 variant v8
+
+### `logstash:8.11.0` - linux; arm64 variant v8
+
+```console
+$ docker pull logstash@sha256:5e45ebf81ff2a2ecc3443b7d04927bf80c063c0e60e992c8fb681afe5ec25534
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **415.0 MB (414990646 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:48615bafa582943667b5fd94db20a45d2ac1d8c940da19e83737eb80f7e3e7a2`
+-	Entrypoint: `["\/usr\/local\/bin\/docker-entrypoint"]`
+
+```dockerfile
+# Tue, 03 Oct 2023 11:04:09 GMT
+ARG RELEASE
+# Tue, 03 Oct 2023 11:04:09 GMT
+ARG LAUNCHPAD_BUILD_ARCH
+# Tue, 03 Oct 2023 11:04:09 GMT
+LABEL org.opencontainers.image.ref.name=ubuntu
+# Tue, 03 Oct 2023 11:04:10 GMT
+LABEL org.opencontainers.image.version=20.04
+# Tue, 03 Oct 2023 11:04:16 GMT
+ADD file:f70cc2610ea8fcd25e6e9ae727eb9345d5b7198102f6a6d8e458ab8f99efefc3 in / 
+# Tue, 03 Oct 2023 11:04:17 GMT
+CMD ["/bin/bash"]
+# Tue, 31 Oct 2023 13:16:57 GMT
+RUN for iter in {1..10}; do export DEBIAN_FRONTEND=noninteractive && apt-get update -y && apt-get upgrade -y && apt-get install -y procps findutils tar gzip curl && apt-get install -y locales && apt-get clean all && locale-gen 'en_US.UTF-8' &&     apt-get clean metadata && exit_code=0 && break || exit_code=$? &&     echo "packaging error: retry $iter in 10s" &&     apt-get clean all && apt-get clean metadata && sleep 10; done;     (exit $exit_code) # buildkit
+# Tue, 31 Oct 2023 13:16:57 GMT
+RUN groupadd --gid 1000 logstash &&     adduser --uid 1000 --gid 1000        --home /usr/share/logstash --no-create-home       logstash # buildkit
+# Tue, 31 Oct 2023 13:17:10 GMT
+RUN curl -Lo - http://localhost:8000/logstash-8.11.0-linux-$(arch).tar.gz |     tar zxf - -C /usr/share &&     mv /usr/share/logstash-8.11.0 /usr/share/logstash && chown --recursive logstash:logstash /usr/share/logstash/ &&     chown -R logstash:root /usr/share/logstash &&     chmod -R g=u /usr/share/logstash &&     mkdir /licenses/ &&     mv /usr/share/logstash/NOTICE.TXT /licenses/NOTICE.TXT &&     mv /usr/share/logstash/LICENSE.txt /licenses/LICENSE.txt && find /usr/share/logstash -type d -exec chmod g+s {} \; && ln -s /usr/share/logstash /opt/logstash # buildkit
+# Tue, 31 Oct 2023 13:17:10 GMT
+WORKDIR /usr/share/logstash
+# Tue, 31 Oct 2023 13:17:10 GMT
+ENV ELASTIC_CONTAINER=true
+# Tue, 31 Oct 2023 13:17:10 GMT
+ENV PATH=/usr/share/logstash/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 31 Oct 2023 13:17:10 GMT
+COPY config/pipelines.yml config/pipelines.yml # buildkit
+# Tue, 31 Oct 2023 13:17:10 GMT
+COPY config/logstash-full.yml config/logstash.yml # buildkit
+# Tue, 31 Oct 2023 13:17:10 GMT
+COPY config/log4j2.properties config/ # buildkit
+# Tue, 31 Oct 2023 13:17:10 GMT
+COPY config/log4j2.file.properties config/ # buildkit
+# Tue, 31 Oct 2023 13:17:10 GMT
+COPY pipeline/default.conf pipeline/logstash.conf # buildkit
+# Tue, 31 Oct 2023 13:17:10 GMT
+RUN chown --recursive logstash:root config/ pipeline/ # buildkit
+# Tue, 31 Oct 2023 13:17:10 GMT
+ENV LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+# Tue, 31 Oct 2023 13:17:10 GMT
+COPY env2yaml/env2yaml /usr/local/bin/ # buildkit
+# Tue, 31 Oct 2023 13:17:10 GMT
+COPY bin/docker-entrypoint /usr/local/bin/ # buildkit
+# Tue, 31 Oct 2023 13:17:11 GMT
+RUN chmod 0755 /usr/local/bin/docker-entrypoint # buildkit
+# Tue, 31 Oct 2023 13:17:11 GMT
+USER 1000
+# Tue, 31 Oct 2023 13:17:11 GMT
+EXPOSE map[5044/tcp:{} 9600/tcp:{}]
+# Tue, 31 Oct 2023 13:17:11 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.vendor=Elastic org.opencontainers.image.vendor=Elastic org.label-schema.name=logstash org.opencontainers.image.title=logstash org.label-schema.version=8.11.0 org.opencontainers.image.version=8.11.0 org.label-schema.url=https://www.elastic.co/products/logstash org.label-schema.vcs-url=https://github.com/elastic/logstash org.label-schema.license=Elastic License org.opencontainers.image.licenses=Elastic License org.opencontainers.image.description=Logstash is a free and open server-side data processing pipeline that ingests data from a multitude of sources, transforms it, and then sends it to your favorite 'stash.' org.label-schema.build-date=2023-10-31T13:01:31+00:00 org.opencontainers.image.created=2023-10-31T13:01:31+00:00
+# Tue, 31 Oct 2023 13:17:11 GMT
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint"]
+```
+
+-	Layers:
+	-	`sha256:6cba4020c0a193cd551ed8edf368670967e3546345b52c4ec66cb0931436e9b9`  
+		Last Modified: Thu, 05 Oct 2023 12:12:17 GMT  
+		Size: 27.2 MB (27199503 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b19397d8b86f4f79467b24765398bfd29243be689fb63c24639f082326abffb3`  
+		Last Modified: Tue, 07 Nov 2023 23:46:43 GMT  
+		Size: 36.5 MB (36523118 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:4907c53a2a95774b4dabb4ba94d4db5845b743ab62d675b337a4cf01219aa123`  
+		Last Modified: Tue, 07 Nov 2023 23:46:39 GMT  
+		Size: 1.8 KB (1836 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:becfdd5d1d2692015d7e0b17fb3c68df7e03d6139d4aa20bc07f029d54e3f62d`  
+		Last Modified: Tue, 07 Nov 2023 23:46:58 GMT  
+		Size: 349.5 MB (349526712 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1`  
+		Last Modified: Tue, 07 Mar 2017 15:01:14 GMT  
+		Size: 32.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6ab0fb2b7fb1bee88c5bfbf616a62e69a6c5f344f476c2669ddb1e9f2d22f716`  
+		Last Modified: Tue, 07 Nov 2023 23:46:39 GMT  
+		Size: 378.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:8affec6045259b98bdab39e796e580d1a1051c480fa43cff2023a96045e8d3eb`  
+		Last Modified: Tue, 07 Nov 2023 23:46:37 GMT  
+		Size: 277.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:80dd691087de1e52ab450bd17c46470dec82bd5dbad5e4bd6d13e89adbd99644`  
+		Last Modified: Tue, 07 Nov 2023 23:46:37 GMT  
+		Size: 472.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1f2e5bf3526f1faae7e8fd5ea7a769bec2ecb475463b6f325e48225f78c3f613`  
+		Last Modified: Tue, 07 Nov 2023 23:46:36 GMT  
+		Size: 1.4 KB (1361 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:4b02d0197dcd6596874010bfe8a348bcb869369f825e1c027e11281b2ef98ac5`  
+		Last Modified: Tue, 07 Nov 2023 23:46:35 GMT  
+		Size: 277.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6059852ae6585d855f5e74b4baff4438a5f6cd5dec8f654e826863e8bc2e297a`  
+		Last Modified: Tue, 07 Nov 2023 23:46:35 GMT  
+		Size: 3.7 KB (3657 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0bab966623401f91962bbf5fa072e4a2a3554d28f5b3ec0a096eea19aa919493`  
+		Last Modified: Tue, 07 Nov 2023 23:46:36 GMT  
+		Size: 1.7 MB (1731597 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c7d4d6c5957f0c8c82f80830787acff043033eea3c4578a0a38d1270ff4b730d`  
+		Last Modified: Tue, 07 Nov 2023 23:46:35 GMT  
+		Size: 713.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c7d4d6c5957f0c8c82f80830787acff043033eea3c4578a0a38d1270ff4b730d`  
+		Last Modified: Tue, 07 Nov 2023 23:46:35 GMT  
+		Size: 713.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
