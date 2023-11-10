@@ -1,10 +1,10 @@
-# `tomee:8.0.15-jre11-Semeru-ubuntu-plume`
+# `tomee:8.0.16-jre11-Semeru-ubuntu-plume`
 
 ## Docker Metadata
 
-- Image ID: `sha256:75bd85dc2de7a9a736627ec3b9ce576996cd07f23ab0591f9fcc8fbc270546b8`
-- Created: `2023-10-13T11:37:02.583640549Z`
-- Virtual Size: ~ 373.09 Mb  
+- Image ID: `sha256:e7535205392b211e67d442cf77d5715dbc549bcce99a255115f08ba264a31dbe`
+- Created: `2023-11-08T19:32:49.772345043Z`
+- Virtual Size: ~ 374.55 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -16,7 +16,7 @@
   - `JAVA_VERSION=jdk-11.0.20.1+1_openj9-0.40.0`
   - `JAVA_HOME=/opt/java/openjdk`
   - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal`
-  - `TOMEE_VER=8.0.15`
+  - `TOMEE_VER=8.0.16`
   - `TOMEE_BUILD=plume`
 - Labels:
   - `org.opencontainers.image.ref.name=ubuntu`
