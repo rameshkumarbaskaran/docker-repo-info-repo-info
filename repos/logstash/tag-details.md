@@ -8,22 +8,24 @@
 ## `logstash:7.17.14`
 
 ```console
-$ docker pull logstash@sha256:4c6a4510c70519fc2407978e2cd94ada9f36e75ceae06015462c0dafbcc3597f
+$ docker pull logstash@sha256:d2367a6a6c85437d32639d685f7e679b29193fc69db69f2aa90d18e4205c026f
 ```
 
--	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 2
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 4
 	-	linux; amd64
+	-	unknown; unknown
 	-	linux; arm64 variant v8
+	-	unknown; unknown
 
 ### `logstash:7.17.14` - linux; amd64
 
 ```console
-$ docker pull logstash@sha256:c48538d579270d7c6310ff97b092d4c6bb4d21c4775dcd6892ec55084563a562
+$ docker pull logstash@sha256:0ba85183b62e05bdbabe4bf3725f600e7bb0ff68b54322d49b0b0b7a3e684395
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **449.2 MB (449159622 bytes)**  
+-	Total Size: **484.0 MB (484042137 bytes)**  
 	(compressed transfer size, not on-disk size)
 -	Image ID: `sha256:52cc476a69e28cc52f1693e993d2d80e029dfb0ff4f6bbd1b7601083e66abbb9`
 -	Entrypoint: `["\/usr\/local\/bin\/docker-entrypoint"]`
@@ -82,69 +84,93 @@ ENTRYPOINT ["/usr/local/bin/docker-entrypoint"]
 ```
 
 -	Layers:
-	-	`sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7`  
-		Last Modified: Tue, 01 Aug 2023 08:35:40 GMT  
-		Size: 28.6 MB (28580671 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9b107fdeb890390bbf4f65ae06f02e6e795ffa91229587c4b591c92d1ffc417`  
-		Last Modified: Mon, 16 Oct 2023 20:40:10 GMT  
-		Size: 51.9 MB (51877041 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8bb675bf90dfbc25f88d969ed5d80cafda779a6d5c532d3a8893494681890472`  
-		Last Modified: Mon, 16 Oct 2023 20:40:05 GMT  
-		Size: 1.8 KB (1826 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:32891a2ae2b653645f4eada15556b945a9b9c09a7d3d666c12ebd544770495fa`  
-		Last Modified: Fri, 03 Nov 2023 00:29:15 GMT  
-		Size: 366.8 MB (366849372 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1`  
-		Last Modified: Tue, 07 Mar 2017 15:01:14 GMT  
-		Size: 32.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ae9168fc7838a496a51b803e4c4831d51a5274b1c56e82f077814a51d31e3a25`  
-		Last Modified: Fri, 03 Nov 2023 00:28:50 GMT  
-		Size: 381.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cc57d4b552c6b37be445b955acdb109d96cedd72a83c771f418a53ff4807ad93`  
-		Last Modified: Fri, 03 Nov 2023 00:28:50 GMT  
-		Size: 281.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:298517f290b1b02321e542d608375e7c32714984d6dd73b1f24d03f91f850a2b`  
-		Last Modified: Fri, 03 Nov 2023 00:28:47 GMT  
-		Size: 476.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:382424169d35f0b7fd88ace97f6e8dec0077154616b527c512ddcd3f18a994ac`  
-		Last Modified: Fri, 03 Nov 2023 00:28:48 GMT  
-		Size: 281.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20745bfc622e947bab450b4d85ee8922aede6dca50a87a040cbc6c9bedf2ac54`  
-		Last Modified: Fri, 03 Nov 2023 00:28:48 GMT  
-		Size: 2.9 KB (2857 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f3f104298fd5baca4a4316fe46ceaf4c0b25d78512a30562bb16fe06f16c0a13`  
-		Last Modified: Fri, 03 Nov 2023 00:28:48 GMT  
-		Size: 1.8 MB (1845412 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7718ac05fbcbde0f045da76bdfcf6ed4c3aa26849b4b61be20b05d0d8afd1635`  
-		Last Modified: Fri, 03 Nov 2023 00:28:48 GMT  
-		Size: 496.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7718ac05fbcbde0f045da76bdfcf6ed4c3aa26849b4b61be20b05d0d8afd1635`  
-		Last Modified: Fri, 03 Nov 2023 00:28:48 GMT  
-		Size: 496.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f9175e7b73a4b948b4c5db289cbeeb1d8511aee675255978036e76ffeda560be`  
+		Last Modified: Mon, 07 Aug 2023 21:55:17 GMT  
+		Size: 31.8 MB (31795971 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:10ec421020aa3caacaf2f6c765aff7a09fe5f0f46925887dfbf9b0f8be02a701`  
+		Last Modified: Tue, 10 Oct 2023 09:01:48 GMT  
+		Size: 55.1 MB (55099341 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:6f9377db22fae0c73fa1ad49f54f119d0af9635377230d74debad16f601db5c3`  
+		Last Modified: Tue, 10 Oct 2023 09:01:42 GMT  
+		Size: 2.0 KB (2033 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ac893d2dc651c92524e1d9a7be17e90480effbdafbe59bef2043891add31afab`  
+		Last Modified: Tue, 10 Oct 2023 09:02:00 GMT  
+		Size: 395.2 MB (395191608 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:89732bc7504122601f40269fc9ddfb70982e633ea9caf641ae45736f2846b004`  
+		Last Modified: Sat, 26 Jan 2019 16:40:00 GMT  
+		Size: 39.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:b9cbe589daa5cdf42911ab29b8acd8d29ff286ba87f74f0a6b77408efcfbb851`  
+		Last Modified: Tue, 10 Oct 2023 09:01:42 GMT  
+		Size: 403.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:18fe6748f2a57270e864de842cacaad9faa1a083ecb1583ba6b1de4c8fb345b9`  
+		Last Modified: Tue, 10 Oct 2023 09:01:44 GMT  
+		Size: 298.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c491fd6f3d4f48075331cff1fff8595fd5d03902d543d6122b7a4e91c167f04d`  
+		Last Modified: Tue, 10 Oct 2023 09:01:44 GMT  
+		Size: 501.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:18b7b37e11b17023df829e2a1469e4686f53694f5d4962cf45da6e3fa19972b6`  
+		Last Modified: Tue, 10 Oct 2023 09:01:45 GMT  
+		Size: 299.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:d1d4edea7c9d40b0ef944bd23b87140c3f48090476af2e8c22f9cd48cc2ab760`  
+		Last Modified: Tue, 10 Oct 2023 09:01:45 GMT  
+		Size: 3.0 KB (3012 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:d31fd30867e6504170171427b4e00e391bf87f47500ea7e8024352fb3141e219`  
+		Last Modified: Tue, 10 Oct 2023 09:01:47 GMT  
+		Size: 1.9 MB (1947608 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:897800aac07a2f34941b94dcb21eb88ceaf802a7c691845f773a3022c95e7f79`  
+		Last Modified: Tue, 10 Oct 2023 09:01:47 GMT  
+		Size: 512.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:897800aac07a2f34941b94dcb21eb88ceaf802a7c691845f773a3022c95e7f79`  
+		Last Modified: Tue, 10 Oct 2023 09:01:47 GMT  
+		Size: 512.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+
+### `logstash:7.17.14` - unknown; unknown
+
+```console
+$ docker pull logstash@sha256:5276ae9c8b10b8334ffcd09743631d6c897eddfcb7e118d42b02931ab29e6fa2
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **2.7 MB (2683591 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:919141c893321e487d3d0102e08bbf435f3883856b5f11f13d0770e4af19f339`
+
+```dockerfile
+```
+
+-	Layers:
+	-	`sha256:5f4ce92e1e2961865201e6e2e4797459a07034f85efe6ef78c90dee85b134339`  
+		Last Modified: Thu, 09 Nov 2023 22:20:03 GMT  
+		Size: 2.7 MB (2675654 bytes)  
+		MIME: application/vnd.in-toto+json
+	-	`sha256:e41a1f91168c90209d04bc212898b99068eb59bbcffbcee33e905fa34361f289`  
+		Last Modified: Thu, 09 Nov 2023 22:20:03 GMT  
+		Size: 7.9 KB (7937 bytes)  
+		MIME: application/vnd.in-toto+json
 
 ### `logstash:7.17.14` - linux; arm64 variant v8
 
 ```console
-$ docker pull logstash@sha256:6ea5bdac812616d570900dad33c326713c7a893b9ad3b91f9198ffaaffd47a2c
+$ docker pull logstash@sha256:1cdc4fc57b300e828aa7bb18e6242008232ef0378bf4c9962fbf322d0ac96c54
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **434.4 MB (434391590 bytes)**  
+-	Total Size: **467.6 MB (467648976 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:946d678c8e0f94906289d983b96e33b766da7999c3432161134a3daa5a7075c4`
+-	Image ID: `sha256:990771c6a2acef0968703c8d385f5137604b5df68897b27512cc4bee6101daac`
 -	Entrypoint: `["\/usr\/local\/bin\/docker-entrypoint"]`
 
 ```dockerfile
@@ -201,78 +227,103 @@ ENTRYPOINT ["/usr/local/bin/docker-entrypoint"]
 ```
 
 -	Layers:
-	-	`sha256:edab87ea811e56041127f5e9eb4115fb62cb96d0e6a14056e0d2dbf51a945a22`  
-		Last Modified: Wed, 02 Aug 2023 04:28:23 GMT  
-		Size: 27.2 MB (27200587 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8570723baef81aa71f25cc4d6367edcfee15d403fdc10efc46c66ef25ffb5714`  
-		Last Modified: Thu, 02 Nov 2023 23:44:26 GMT  
-		Size: 41.9 MB (41871429 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed0831b7063265cb07b8ccdde4e1175aad813fd318b9d946bf8147f7fa265d46`  
-		Last Modified: Thu, 02 Nov 2023 23:44:22 GMT  
-		Size: 1.8 KB (1831 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3bbfd58f0e726287d3b2b777700b1c70e5a2579548b2801ed48e862c966d0661`  
-		Last Modified: Thu, 02 Nov 2023 23:44:43 GMT  
-		Size: 363.6 MB (363581002 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1`  
-		Last Modified: Tue, 07 Mar 2017 15:01:14 GMT  
-		Size: 32.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5d4f80b55754a4f469081ab2870b370f2390526a1467ee401ab5803476be06f4`  
-		Last Modified: Thu, 02 Nov 2023 23:44:22 GMT  
-		Size: 381.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:85bb4874287977598ef6ef816828bbe9aeb111b07ac14ed75453ae09a82dac8e`  
-		Last Modified: Thu, 02 Nov 2023 23:44:22 GMT  
-		Size: 278.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0ec214a887992f334d709d5bcd4cef28511151b0cd79c1389c78484ef9cff6c`  
-		Last Modified: Thu, 02 Nov 2023 23:44:20 GMT  
-		Size: 474.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d5fb258ad04aaccd6f52ceb4faa7af07348205b31ce41ed1c2d8ca2fd1df611c`  
-		Last Modified: Thu, 02 Nov 2023 23:44:20 GMT  
-		Size: 280.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1496addb12ddc8e0c27636eaaf5be0889b4c23bf17e413d689ca4d61b3cbcc15`  
-		Last Modified: Thu, 02 Nov 2023 23:44:20 GMT  
-		Size: 2.9 KB (2855 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1385ea9453048b50ae21f31203fc9421a32c88414ab7e87cd3c7a4fd61a2b9ad`  
-		Last Modified: Thu, 02 Nov 2023 23:44:20 GMT  
-		Size: 1.7 MB (1731455 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:df7b57460578d71d5c3fd21ab5e9c3c558e92b99471e3d95795ee5b739c35ae7`  
-		Last Modified: Thu, 02 Nov 2023 23:44:20 GMT  
-		Size: 493.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:df7b57460578d71d5c3fd21ab5e9c3c558e92b99471e3d95795ee5b739c35ae7`  
-		Last Modified: Thu, 02 Nov 2023 23:44:20 GMT  
-		Size: 493.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e61e4aa6ecf06d84f177710ed7a16ba36429af08286de7aa5a485fdcedaac1f7`  
+		Last Modified: Thu, 17 Aug 2023 10:22:08 GMT  
+		Size: 29.9 MB (29915840 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:7740039ed6f7a724d659eb8e8ec4b18e62f9fb18d53528e8f64d2bebbcca8cc8`  
+		Last Modified: Tue, 10 Oct 2023 09:01:46 GMT  
+		Size: 44.6 MB (44567335 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:1cb28d6a3567dcb4a7196bfba87e5f0d2262718974630a8f0db7b2bcccf94f44`  
+		Last Modified: Tue, 10 Oct 2023 09:01:42 GMT  
+		Size: 2.0 KB (2038 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ef71cfa7a8b5e78ee842cf9571fba6bc01f75a813af5a94f841a27d41ba02101`  
+		Last Modified: Tue, 10 Oct 2023 09:02:01 GMT  
+		Size: 391.3 MB (391323667 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:89732bc7504122601f40269fc9ddfb70982e633ea9caf641ae45736f2846b004`  
+		Last Modified: Sat, 26 Jan 2019 16:40:00 GMT  
+		Size: 39.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:d4e49c8143abedb8332b1975afc12f1ec092112ae4a1721d6830b9bc40d7c50e`  
+		Last Modified: Tue, 10 Oct 2023 09:01:43 GMT  
+		Size: 399.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:76a4723641dcdb69e3903b2232c2a47827ad61b6bf7fa76130396d168c2b46fc`  
+		Last Modified: Tue, 10 Oct 2023 09:01:44 GMT  
+		Size: 295.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:4211064df7a2885095219397bdd15bc04bb080783731263ea2372090064155f7`  
+		Last Modified: Tue, 10 Oct 2023 09:01:44 GMT  
+		Size: 499.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ebadaeb0483416c43a2ffb0f52d0870182affdc07d3d6fdd2a468471b7bed5a1`  
+		Last Modified: Tue, 10 Oct 2023 09:01:45 GMT  
+		Size: 298.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:7a9afea1d03ba7c849bffb3611e45c79fdc7bf8ad3c4fb231a52366f6d779685`  
+		Last Modified: Tue, 10 Oct 2023 09:01:46 GMT  
+		Size: 3.0 KB (3006 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:2c347060ceac511d239e1859713dcf01afcdc88479d336a3a2afab27c34e7c0d`  
+		Last Modified: Tue, 10 Oct 2023 09:01:47 GMT  
+		Size: 1.8 MB (1834536 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:4639d6dbf38d40472328815e2849af724430abf4d7d1fde67c67ea8ba879dec3`  
+		Last Modified: Tue, 10 Oct 2023 09:01:47 GMT  
+		Size: 512.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:4639d6dbf38d40472328815e2849af724430abf4d7d1fde67c67ea8ba879dec3`  
+		Last Modified: Tue, 10 Oct 2023 09:01:47 GMT  
+		Size: 512.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+
+### `logstash:7.17.14` - unknown; unknown
+
+```console
+$ docker pull logstash@sha256:71dc9051f87f1df0f71bd9804fff5df4c7cc702795b6907c663cc5d4db1cb87a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **2.7 MB (2683916 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:a92672b435073652eb9ecd28e5bb2d3f06b54d61c37291d1c1114831f3a577cc`
+
+```dockerfile
+```
+
+-	Layers:
+	-	`sha256:3274502a52af9c841bbf85ebc64e18b7333be84a46f3e6c153bc05de6ee7ffb6`  
+		Last Modified: Thu, 09 Nov 2023 22:34:08 GMT  
+		Size: 2.7 MB (2675974 bytes)  
+		MIME: application/vnd.in-toto+json
+	-	`sha256:722f2e67f66e9b7b27b9f431a614db0124eb0bef39716dc7ce380308824693af`  
+		Last Modified: Thu, 09 Nov 2023 22:34:06 GMT  
+		Size: 7.9 KB (7942 bytes)  
+		MIME: application/vnd.in-toto+json
 
 ## `logstash:8.11.0`
 
 ```console
-$ docker pull logstash@sha256:ff4ec173e2d1a3c1fcdb9b0d63816b732073d95bb6bff8b20f024b76161f6fba
+$ docker pull logstash@sha256:72baab8f903a2371a4afbe150df59bc251ab8e42074617e6d3ed81dd91eb5dab
 ```
 
--	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 2
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 3
 	-	linux; amd64
+	-	unknown; unknown
 	-	linux; arm64 variant v8
 
 ### `logstash:8.11.0` - linux; amd64
 
 ```console
-$ docker pull logstash@sha256:7df79743ad8f36544697b4474bcce6fc951dcc381fb10b3bb83e5fd526b6a673
+$ docker pull logstash@sha256:447397b1a0bd0df1123029ce734f958288007da15f630c83b278d27743c7b07e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **426.9 MB (426907216 bytes)**  
+-	Total Size: **460.2 MB (460218938 bytes)**  
 	(compressed transfer size, not on-disk size)
 -	Image ID: `sha256:a15eae9bea4118e3e76039e6bd62d973e1f7f56f530f991ec8bd3b8f69689966`
 -	Entrypoint: `["\/usr\/local\/bin\/docker-entrypoint"]`
@@ -333,62 +384,86 @@ ENTRYPOINT ["/usr/local/bin/docker-entrypoint"]
 ```
 
 -	Layers:
-	-	`sha256:7a2c559011895d255fce249c00396abff5ae7e0c0a92931d0ed493e71de78e3a`  
-		Last Modified: Tue, 03 Oct 2023 17:02:08 GMT  
-		Size: 28.6 MB (28580681 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3a36d757376bdb31c8e55cfbc7a14929274200c927bd2b7698f6557ca015bda7`  
-		Last Modified: Wed, 08 Nov 2023 00:36:45 GMT  
-		Size: 45.8 MB (45762550 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:921e753636d12b9697a86f9df104498bed5b67fa16bc4ba48b928729db0a8b5f`  
-		Last Modified: Wed, 08 Nov 2023 00:36:39 GMT  
-		Size: 1.8 KB (1829 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5effca0bca8f712a00edcb2034564744492b4e972bc81c5a8b763e2b10583f37`  
-		Last Modified: Wed, 08 Nov 2023 00:37:04 GMT  
-		Size: 350.7 MB (350708220 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1`  
-		Last Modified: Tue, 07 Mar 2017 15:01:14 GMT  
-		Size: 32.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1d2f2b20a1913b0b9e54efcfec80c789e04fc75fda060271ee1c3b79dab56263`  
-		Last Modified: Wed, 08 Nov 2023 00:36:38 GMT  
-		Size: 383.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2fe3232de9e3a6f7c67219429646ba6c8b7aa86c593db70b9b33bbb210f89fac`  
-		Last Modified: Wed, 08 Nov 2023 00:36:38 GMT  
-		Size: 279.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cc7850786529fdd782f780e8e7cb791b7e5a4611c926080f90076864c11ea5b2`  
-		Last Modified: Wed, 08 Nov 2023 00:36:38 GMT  
-		Size: 477.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:99484f4aa9fb1bf60cfdcaf2ae20e22f589b8e9d29c9572e26842537f7aa2b10`  
-		Last Modified: Wed, 08 Nov 2023 00:36:36 GMT  
-		Size: 1.4 KB (1363 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1603603713419efbeeedd11bd41110d76d4cf0dee2e097eabaab606cadde42d`  
-		Last Modified: Wed, 08 Nov 2023 00:36:36 GMT  
-		Size: 279.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5a7abfd7b517eb1f16682d3bfc9548f451e49a7e2cf23e001940703c5ecbf5e8`  
-		Last Modified: Wed, 08 Nov 2023 00:36:36 GMT  
-		Size: 3.7 KB (3661 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3c8ea812fb969af5c00f7b80f518bdc903d254bd6ec989f7e98906ba598d0297`  
-		Last Modified: Wed, 08 Nov 2023 00:36:36 GMT  
-		Size: 1.8 MB (1846038 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:076f868f23db5bab0e95510b2fa6bb6c25fb75cbc426c673338b5ba2a7c55e9a`  
-		Last Modified: Wed, 08 Nov 2023 00:36:36 GMT  
-		Size: 712.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:076f868f23db5bab0e95510b2fa6bb6c25fb75cbc426c673338b5ba2a7c55e9a`  
-		Last Modified: Wed, 08 Nov 2023 00:36:36 GMT  
-		Size: 712.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:70db4e7a2af7f73b7cef95301fc20fbedcfe68e5fb874e2cfba0b5ae41a066ca`  
+		Last Modified: Wed, 25 Oct 2023 11:40:40 GMT  
+		Size: 31.8 MB (31790746 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:7936218db4b70dd23796ce4fe898a2e041ec2d9022f4bd6b59b58522e1985377`  
+		Last Modified: Tue, 07 Nov 2023 14:58:36 GMT  
+		Size: 48.3 MB (48286490 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:263e567d19dbd3779f54850ca80f3e6423c1b3bf2bdb0429b4eb82bba9fe0e97`  
+		Last Modified: Tue, 07 Nov 2023 14:58:33 GMT  
+		Size: 2.0 KB (2042 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bdfe6910cf9efe0108c488957253d0a762a37f8db75319b460ec2344a12a368e`  
+		Last Modified: Tue, 07 Nov 2023 14:58:52 GMT  
+		Size: 378.2 MB (378182143 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:89732bc7504122601f40269fc9ddfb70982e633ea9caf641ae45736f2846b004`  
+		Last Modified: Sat, 26 Jan 2019 16:40:00 GMT  
+		Size: 39.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:61a36fb6d96eb35be859a71c47abd3a56394e1ec5eaccf98bcf81be4f15e9daf`  
+		Last Modified: Tue, 07 Nov 2023 14:58:35 GMT  
+		Size: 401.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:66618343ece5ffd3283b5b329cb09e0481073bda580ad536bf5afd8818be47f7`  
+		Last Modified: Tue, 07 Nov 2023 14:58:36 GMT  
+		Size: 297.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:93b94dc2376aa522e60b2b55828978b9120eec421717a3daa71bcd1ebdb2aef8`  
+		Last Modified: Tue, 07 Nov 2023 14:58:38 GMT  
+		Size: 500.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:5459c40c1d14c87b892dca2582996809b25bd4177ac9bc828dcb9d26c0d7b1de`  
+		Last Modified: Tue, 07 Nov 2023 14:58:38 GMT  
+		Size: 1.7 KB (1688 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:7ad679ecf5633519e41b37dd522545f986abc95ac5fb14fda95a4dd42d4f3e74`  
+		Last Modified: Tue, 07 Nov 2023 14:58:39 GMT  
+		Size: 297.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:e99aa053891847f6c0e7e9dd8c7e2d828e2599bfeba14d85b29c3bea86a969c0`  
+		Last Modified: Tue, 07 Nov 2023 14:58:40 GMT  
+		Size: 4.1 KB (4125 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:2aeb165680f2ce9c483845ac7ff9e67b29e86e0faec150808b3f0fcd7c4d4dc9`  
+		Last Modified: Tue, 07 Nov 2023 14:58:40 GMT  
+		Size: 1.9 MB (1948684 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ab0c3b53426634c4ccab4f24974a192599f17d0b9056e8699fb4958feb8ae9b7`  
+		Last Modified: Tue, 07 Nov 2023 14:58:40 GMT  
+		Size: 743.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ab0c3b53426634c4ccab4f24974a192599f17d0b9056e8699fb4958feb8ae9b7`  
+		Last Modified: Tue, 07 Nov 2023 14:58:40 GMT  
+		Size: 743.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+
+### `logstash:8.11.0` - unknown; unknown
+
+```console
+$ docker pull logstash@sha256:b0da99594e408c75a661d24ec7eebeb64ddcfb40aa2c68d7846947998c8e68ea
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **2.8 MB (2814206 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:90e68d4231e6650afa59c83a8b1b379ffd5b1330cdde7a9057a8a55f167d7c07`
+
+```dockerfile
+```
+
+-	Layers:
+	-	`sha256:290aed7fcd77feebc832ecfa862580f3fc22e227c8621f0d82281d1fad8c53fb`  
+		Last Modified: Thu, 09 Nov 2023 22:19:45 GMT  
+		Size: 2.8 MB (2805952 bytes)  
+		MIME: application/vnd.in-toto+json
+	-	`sha256:83310186eef58979d480ba7a8f71106de61adb36ab5840cf83d22d14da4baaf0`  
+		Last Modified: Thu, 09 Nov 2023 22:19:45 GMT  
+		Size: 8.3 KB (8254 bytes)  
+		MIME: application/vnd.in-toto+json
 
 ### `logstash:8.11.0` - linux; arm64 variant v8
 
