@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:973e3588bd5f34537efec65c5bf765b40488c90dbb22c34811ba741f10531a71`
-- Created: `2023-10-31T04:06:30.47464442Z`
+- Image ID: `sha256:c2ac53ead27e1ee3e6f5d3464154d68d16e35f4ed49291531dce04a230b68c20`
+- Created: `2023-11-13T20:35:35.147659833Z`
 - Virtual Size: ~ 813.19 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -318,9 +318,10 @@ $ apt-get source -qq --print-uris coreutils=8.32-4.1ubuntu1
 
 Binary Packages:
 
+- `curl=7.81.0-1ubuntu1.14`
 - `libcurl4:amd64=7.81.0-1ubuntu1.14`
 
-Licenses: (parsed from: `/usr/share/doc/libcurl4/copyright`)
+Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
 - `BSD-3-Clause`
 - `BSD-4-Clause`
