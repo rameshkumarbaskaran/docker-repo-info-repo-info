@@ -1,10 +1,10 @@
-# `tomcat:8.5.95-jdk21-temurin-jammy`
+# `tomcat:8.5.96-jdk21-temurin-jammy`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3ae2bbab2686209de4958d4a4c2551e72ea889f2dcf6edd9f3cbcc9e81e756c9`
-- Created: `2023-10-31T03:44:19.469174341Z`
-- Virtual Size: ~ 460.60 Mb  
+- Image ID: `sha256:fbc411f00416ec9a9da5590f0e894832e010615f927acf183163429c794afc18`
+- Created: `2023-11-15T05:57:42.416212407Z`
+- Virtual Size: ~ 460.62 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -20,8 +20,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 5C3C5F3E314C866292F359A8F3AD5C94A67F707E 765908099ACF92702C7D949BFA0C35EA8AA299F1 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
   - `TOMCAT_MAJOR=8`
-  - `TOMCAT_VERSION=8.5.95`
-  - `TOMCAT_SHA512=1c36d0de6ef0c1bab090bfb30908f8cf848510ab83d6140890e2e1db001e8a4d0d5982a53c92e4cc7a736de304b22f461706689c48160e24c299dae7a148a673`
+  - `TOMCAT_VERSION=8.5.96`
+  - `TOMCAT_SHA512=dc80b2649f2ad7f8baa6c925ef1d0bad71e27f5557dc46e313f45b8044dba05791a60062117d5257c28955f8405eded70e451ee2e0d9671c8aecd21977e0bec9`
 - Labels:
   - `org.opencontainers.image.ref.name=ubuntu`
   - `org.opencontainers.image.version=22.04`
@@ -101,13 +101,9 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.4.10
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.4.10.dsc' apt_2.4.10.dsc 2801 SHA512:5c28184020dbb9b8ff959120768c0c2616acd5923fa6be8a87c1025345e3e2beb982a6256849061e043c9a74522c40937e3c7477115ce8dbc79f715bf6f3ea17
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.4.10.tar.xz' apt_2.4.10.tar.xz 2318732 SHA512:1b9c12a44c205013c2d56af163c219a5c945f7a4c15373a2a07ec5d2d4130ef3bbd964f6986e22b55016b5481897356b968da9fdf84e538f8d81d7bcd70bd11d
-```
 
 ### `dpkg` source package: `attr=1:2.5.1-1build1`
 
