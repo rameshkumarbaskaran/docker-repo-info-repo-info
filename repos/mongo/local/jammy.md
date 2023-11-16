@@ -1,10 +1,10 @@
-# `mongo:7.0.2-jammy`
+# `mongo:7.0.3-jammy`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ee3b4d1239f12b094c4936dd08a2fbc227300beaf784c46c509e2f1ac5e6d879`
-- Created: `2023-10-13T04:46:49.409186279Z`
-- Virtual Size: ~ 747.97 Mb  
+- Image ID: `sha256:021b676f1558d3c0000ae5bc21b1193f2de7fe3b16919b97cff760d9373ade82`
+- Created: `2023-11-15T05:21:15.780154009Z`
+- Virtual Size: ~ 757.12 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -16,7 +16,7 @@
   - `MONGO_PACKAGE=mongodb-org`
   - `MONGO_REPO=repo.mongodb.org`
   - `MONGO_MAJOR=7.0`
-  - `MONGO_VERSION=7.0.2`
+  - `MONGO_VERSION=7.0.3`
   - `HOME=/data/db`
 - Labels:
   - `org.opencontainers.image.ref.name=ubuntu`
@@ -77,13 +77,9 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.4.10
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.4.10.dsc' apt_2.4.10.dsc 2801 SHA512:5c28184020dbb9b8ff959120768c0c2616acd5923fa6be8a87c1025345e3e2beb982a6256849061e043c9a74522c40937e3c7477115ce8dbc79f715bf6f3ea17
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.4.10.tar.xz' apt_2.4.10.tar.xz 2318732 SHA512:1b9c12a44c205013c2d56af163c219a5c945f7a4c15373a2a07ec5d2d4130ef3bbd964f6986e22b55016b5481897356b968da9fdf84e538f8d81d7bcd70bd11d
-```
 
 ### `dpkg` source package: `attr=1:2.5.1-1build1`
 
@@ -1347,11 +1343,11 @@ $ apt-get source -qq --print-uris mawk=1.3.4.20200120-3
 'http://archive.ubuntu.com/ubuntu/pool/main/m/mawk/mawk_1.3.4.20200120-3.debian.tar.xz' mawk_1.3.4.20200120-3.debian.tar.xz 7520 SHA512:bc4f5401de313108595ba91b17f44b5c67d7650b5557eef8a6c63c75e2ccee5dfd8900576d7e81f0ab1ac2e570f64fa75f38f56f6d4535437c803029216501af
 ```
 
-### `dpkg` source package: `mongodb-database-tools=100.8.0`
+### `dpkg` source package: `mongodb-database-tools=100.9.1`
 
 Binary Packages:
 
-- `mongodb-database-tools=100.8.0`
+- `mongodb-database-tools=100.9.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1361,11 +1357,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `mongodb-mongosh=2.0.1`
+### `dpkg` source package: `mongodb-mongosh=2.0.2`
 
 Binary Packages:
 
-- `mongodb-mongosh=2.0.1`
+- `mongodb-mongosh=2.0.2`
 
 Licenses: (parsed from: `/usr/share/doc/mongodb-mongosh/copyright`)
 
@@ -1376,17 +1372,17 @@ Licenses: (parsed from: `/usr/share/doc/mongodb-mongosh/copyright`)
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `mongodb-org=7.0.2`
+### `dpkg` source package: `mongodb-org=7.0.3`
 
 Binary Packages:
 
-- `mongodb-org=7.0.2`
-- `mongodb-org-database=7.0.2`
-- `mongodb-org-database-tools-extra=7.0.2`
-- `mongodb-org-mongos=7.0.2`
-- `mongodb-org-server=7.0.2`
-- `mongodb-org-shell=7.0.2`
-- `mongodb-org-tools=7.0.2`
+- `mongodb-org=7.0.3`
+- `mongodb-org-database=7.0.3`
+- `mongodb-org-database-tools-extra=7.0.3`
+- `mongodb-org-mongos=7.0.3`
+- `mongodb-org-server=7.0.3`
+- `mongodb-org-shell=7.0.3`
+- `mongodb-org-tools=7.0.3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
