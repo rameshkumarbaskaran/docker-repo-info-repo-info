@@ -2,23 +2,25 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f4df521af73130bbe77b03bd8ecc6b8a34b79233f59eb491c1eadc2f4a50df0a`
-- Created: `2023-10-21T00:20:48.759806524Z`
-- Virtual Size: ~ 47.21 Mb  
+- Image ID: `sha256:5caa6fba2a1a8ccce0c352d1a697408f686d3db0c20ed6b36cca6502a2170610`
+- Created: `2023-11-17T01:28:45.831009392Z`
+- Virtual Size: ~ 47.26 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/home/eggdrop/eggdrop/entrypoint.sh"]`
 - Command: `["eggdrop.conf"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `EGGDROP_SHA256=cc7936ee427959081651319119ac0b8f3581a18d7be7b20f71023954f1f69a91`
-  - `EGGDROP_COMMIT=26ecf0921ee84c5bf61cb31014a75f02670b1af4`
+  - `EGGDROP_SHA256=a155625d2ac3a0673e69c9d0149293910583c1623cd1f90f38ad2bcba7b2b766`
+  - `EGGDROP_COMMIT=322bddbd102d58cdb00864a3a335b086beaf042c`
   - `NICK=`
   - `SERVER=`
   - `LISTEN=3333`
-  - `OWNER=`
   - `USERFILE=eggdrop.user`
   - `CHANFILE=eggdrop.chan`
+- Labels:
+  - `org.opencontainers.image.authors=Geo Van O <geo@eggheads.org>`
+  - `org.opencontainers.image.url=https://www.eggheads.org`
 
 ## `apk` (`.apk`-based packages)
 
@@ -178,16 +180,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.11-r0 description:
+libcrypto3-3.0.12-r0 description:
 Crypto library from openssl
 
-libcrypto3-3.0.11-r0 webpage:
+libcrypto3-3.0.12-r0 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.11-r0 installed size:
+libcrypto3-3.0.12-r0 installed size:
 4120 KiB
 
-libcrypto3-3.0.11-r0 license:
+libcrypto3-3.0.12-r0 license:
 Apache-2.0
 
 ```
@@ -195,16 +197,16 @@ Apache-2.0
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.11-r0 description:
+libssl3-3.0.12-r0 description:
 SSL shared libraries
 
-libssl3-3.0.11-r0 webpage:
+libssl3-3.0.12-r0 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.11-r0 installed size:
+libssl3-3.0.12-r0 installed size:
 608 KiB
 
-libssl3-3.0.11-r0 license:
+libssl3-3.0.12-r0 license:
 Apache-2.0
 
 ```
@@ -280,16 +282,16 @@ MIT
 ### `apk` package: `openssl`
 
 ```console
-openssl-3.0.11-r0 description:
+openssl-3.0.12-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-3.0.11-r0 webpage:
+openssl-3.0.12-r0 webpage:
 https://www.openssl.org/
 
-openssl-3.0.11-r0 installed size:
+openssl-3.0.12-r0 installed size:
 872 KiB
 
-openssl-3.0.11-r0 license:
+openssl-3.0.12-r0 license:
 Apache-2.0
 
 ```
