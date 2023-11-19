@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:205eff3b74144a6d7c22a48d04b9905903ef001070f15e04da25afc53c5f58ae`
-- Created: `2023-11-08T01:10:52.980981724Z`
-- Virtual Size: ~ 375.36 Mb  
+- Image ID: `sha256:bf13317e61d2c4b16753215d5706f3cfe32439359ccb4d593e8a83c875e882c2`
+- Created: `2023-11-17T04:10:23.564351643Z`
+- Virtual Size: ~ 375.35 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/__cacert_entrypoint.sh"]`
@@ -18,7 +18,7 @@
   - `JAVA_VERSION=jdk8u392-b08`
 - Labels:
   - `architecture=x86_64`
-  - `build-date=2023-11-01T01:38:36`
+  - `build-date=2023-11-09T16:40:47`
   - `com.redhat.component=ubi9-minimal-container`
   - `com.redhat.license_terms=https://www.redhat.com/en/about/red-hat-end-user-license-agreements#UBI`
   - `description=The Universal Base Image Minimal is a stripped down image that uses microdnf as a package manager. This base image is freely redistributable, but Red Hat only supports Red Hat technologies through subscriptions for Red Hat products. This image is maintained by Red Hat and updated regularly.`
@@ -30,9 +30,9 @@
   - `io.openshift.tags=minimal rhel9`
   - `maintainer=Red Hat, Inc.`
   - `name=ubi9-minimal`
-  - `release=1361`
+  - `release=1361.1699548032`
   - `summary=Provides the latest release of the minimal Red Hat Universal Base Image 9.`
-  - `url=https://access.redhat.com/containers/#/registry.access.redhat.com/ubi9-minimal/images/9.3-1361`
+  - `url=https://access.redhat.com/containers/#/registry.access.redhat.com/ubi9-minimal/images/9.3-1361.1699548032`
   - `vcs-ref=e8510c65a9be4b0635372fd09bee126ce7e08bc7`
   - `vcs-type=git`
   - `vendor=Red Hat, Inc.`
@@ -118,7 +118,7 @@ Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `curl-minimal-7.76.1-26.el9.x86_64`
+### `rpm` package: `curl-minimal-7.76.1-26.el9_3.2.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -430,7 +430,7 @@ Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libcurl-minimal-7.76.1-26.el9.x86_64`
+### `rpm` package: `libcurl-minimal-7.76.1-26.el9_3.2.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
