@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:02b83a0556306346472790346e0faa4640da81d94677a63e5686b68e38f3fb3f`
-- Created: `2023-11-08T01:20:42.932767116Z`
-- Virtual Size: ~ 339.69 Mb  
+- Image ID: `sha256:a89380e864314da35932cd802f79f368f26c8917ad65e0895641d0a82489e95f`
+- Created: `2023-11-17T04:19:30.291926348Z`
+- Virtual Size: ~ 339.67 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -18,7 +18,7 @@
   - `SWIFT_WEBROOT=https://download.swift.org`
 - Labels:
   - `architecture=x86_64`
-  - `build-date=2023-11-01T01:38:36`
+  - `build-date=2023-11-09T16:40:44`
   - `com.redhat.component=ubi9-container`
   - `com.redhat.license_terms=https://www.redhat.com/en/about/red-hat-end-user-license-agreements#UBI`
   - `description=Docker Container for the Swift programming language`
@@ -30,9 +30,9 @@
   - `io.openshift.tags=base rhel9`
   - `maintainer=Swift Infrastructure <swift-infrastructure@forums.swift.org>`
   - `name=ubi9`
-  - `release=1361`
+  - `release=1361.1699548029`
   - `summary=Provides the latest release of Red Hat Universal Base Image 9.`
-  - `url=https://access.redhat.com/containers/#/registry.access.redhat.com/ubi9/images/9.3-1361`
+  - `url=https://access.redhat.com/containers/#/registry.access.redhat.com/ubi9/images/9.3-1361.1699548029`
   - `vcs-ref=eb726081eeafc660c182aae53074ec6631cb473e`
   - `vcs-type=git`
   - `vendor=Red Hat, Inc.`
@@ -112,7 +112,7 @@ Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `curl-minimal-7.76.1-26.el9.x86_64`
+### `rpm` package: `curl-minimal-7.76.1-26.el9_3.2.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -436,7 +436,7 @@ Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libcurl-minimal-7.76.1-26.el9.x86_64`
+### `rpm` package: `libcurl-minimal-7.76.1-26.el9_3.2.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
