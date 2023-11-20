@@ -2,17 +2,17 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:5b912308540a3c49177b012c400f71cbb53ff56c4ee79f36323fdff7527f9f44`
+- Image ID: `sha256:daefcf9ccf3b4e852a7d5342d50510b80bfd2851eed822e43163aa3b9130d588`
 - Created: `2023-10-26T17:04:13Z`
-- Virtual Size: ~ 336.76 Mb  
+- Virtual Size: ~ 335.56 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_VERSION=24.0.7`
-  - `DOCKER_BUILDX_VERSION=0.11.2`
-  - `DOCKER_COMPOSE_VERSION=2.23.0`
+  - `DOCKER_BUILDX_VERSION=0.12.0`
+  - `DOCKER_COMPOSE_VERSION=2.23.1`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=d58df1fc6c866447ce2cd129af10e5b507705624`
 
@@ -395,16 +395,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.1.4-r0 description:
+libcrypto3-3.1.4-r1 description:
 Crypto library from openssl
 
-libcrypto3-3.1.4-r0 webpage:
+libcrypto3-3.1.4-r1 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.1.4-r0 installed size:
+libcrypto3-3.1.4-r1 installed size:
 4472 KiB
 
-libcrypto3-3.1.4-r0 license:
+libcrypto3-3.1.4-r1 license:
 Apache-2.0
 
 ```
@@ -497,16 +497,16 @@ GPL-2.0-or-later
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.1.4-r0 description:
+libssl3-3.1.4-r1 description:
 SSL shared libraries
 
-libssl3-3.1.4-r0 webpage:
+libssl3-3.1.4-r1 webpage:
 https://www.openssl.org/
 
-libssl3-3.1.4-r0 installed size:
+libssl3-3.1.4-r1 installed size:
 552 KiB
 
-libssl3-3.1.4-r0 license:
+libssl3-3.1.4-r1 license:
 Apache-2.0
 
 ```
@@ -718,16 +718,16 @@ BSD
 ### `apk` package: `openssl`
 
 ```console
-openssl-3.1.4-r0 description:
+openssl-3.1.4-r1 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-3.1.4-r0 webpage:
+openssl-3.1.4-r1 webpage:
 https://www.openssl.org/
 
-openssl-3.1.4-r0 installed size:
+openssl-3.1.4-r1 installed size:
 752 KiB
 
-openssl-3.1.4-r0 license:
+openssl-3.1.4-r1 license:
 Apache-2.0
 
 ```
