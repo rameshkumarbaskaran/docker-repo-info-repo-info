@@ -1,7 +1,7 @@
 ## `clojure:temurin-17-boot-bookworm`
 
 ```console
-$ docker pull clojure@sha256:bddadb46791a75a435218685e25ad11f8e7f96e50049186b146d8054cecf02fb
+$ docker pull clojure@sha256:cba041bad0d741132fea25ad7d9967bf9766aefed59bdca59a455499a5a5b277
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,69 +12,69 @@ $ docker pull clojure@sha256:bddadb46791a75a435218685e25ad11f8e7f96e50049186b146
 ### `clojure:temurin-17-boot-bookworm` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:15b28108fc7553df05034db089864684e98c09a0ac0558f67825bcde2d7110ef
+$ docker pull clojure@sha256:62a97297528cc69e198a08ecd22cb8c656c53399df2046a818f6e61f2f5024f2
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **258.8 MB (258807003 bytes)**  
+-	Total Size: **258.8 MB (258807232 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5d010c7003c98f43f4fcefb4279b7ee759aafc70451c133e847f05612ff71446`
+-	Image ID: `sha256:7ed7a1470bdc86503b767f321bb8f416acd1a1649939474159e4b140053f38e7`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["repl"]`
 
 ```dockerfile
-# Wed, 01 Nov 2023 00:20:37 GMT
-ADD file:3e9b6405f11dd24ce62105c033f1d8b931d9409298553f63b03af1b6dd1dda35 in / 
-# Wed, 01 Nov 2023 00:20:38 GMT
+# Tue, 21 Nov 2023 05:21:24 GMT
+ADD file:39d17d28c5de0bd629e5b7c8190228e5a445d61d668e189b7523e90e68f78244 in / 
+# Tue, 21 Nov 2023 05:21:25 GMT
 CMD ["bash"]
-# Wed, 01 Nov 2023 01:10:45 GMT
+# Tue, 21 Nov 2023 10:07:35 GMT
 ENV JAVA_HOME=/opt/java/openjdk
-# Wed, 01 Nov 2023 01:22:31 GMT
+# Tue, 21 Nov 2023 10:18:47 GMT
 COPY dir:33a61da93c3e1252ff87d5fd5f9955ca53f9f7f200758827548096d130b4307b in /opt/java/openjdk 
-# Wed, 01 Nov 2023 01:22:32 GMT
+# Tue, 21 Nov 2023 10:18:48 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 01 Nov 2023 01:22:32 GMT
+# Tue, 21 Nov 2023 10:18:48 GMT
 ENV BOOT_VERSION=2.8.3
-# Wed, 01 Nov 2023 01:22:32 GMT
+# Tue, 21 Nov 2023 10:18:48 GMT
 ENV BOOT_INSTALL=/usr/local/bin/
-# Wed, 01 Nov 2023 01:22:32 GMT
+# Tue, 21 Nov 2023 10:18:48 GMT
 WORKDIR /tmp
-# Wed, 01 Nov 2023 01:22:38 GMT
+# Tue, 21 Nov 2023 10:18:54 GMT
 RUN apt-get update && apt-get install -y make wget && rm -rf /var/lib/apt/lists/* && mkdir -p $BOOT_INSTALL && wget -q https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && echo "Comparing installer checksum..." && sha256sum boot.sh && echo "0ccd697f2027e7e1cd3be3d62721057cbc841585740d0aaa9fbb485d7b1f17c3 *boot.sh" | sha256sum -c - && mv boot.sh $BOOT_INSTALL/boot && chmod 0755 $BOOT_INSTALL/boot && apt-get purge -y --auto-remove wget
-# Wed, 01 Nov 2023 01:22:38 GMT
+# Tue, 21 Nov 2023 10:18:54 GMT
 ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Wed, 01 Nov 2023 01:22:38 GMT
+# Tue, 21 Nov 2023 10:18:54 GMT
 ENV BOOT_AS_ROOT=yes
-# Wed, 01 Nov 2023 01:22:56 GMT
+# Tue, 21 Nov 2023 10:19:11 GMT
 RUN boot
-# Wed, 01 Nov 2023 01:22:56 GMT
+# Tue, 21 Nov 2023 10:19:12 GMT
 COPY file:0282db266eb050a3ad3609149efe2188243cb9f95c0b3e48a312ddef6c6bea02 in /usr/local/bin/entrypoint 
-# Wed, 01 Nov 2023 01:22:56 GMT
+# Tue, 21 Nov 2023 10:19:12 GMT
 ENTRYPOINT ["entrypoint"]
-# Wed, 01 Nov 2023 01:22:56 GMT
+# Tue, 21 Nov 2023 10:19:12 GMT
 CMD ["repl"]
 ```
 
 -	Layers:
-	-	`sha256:8457fd5474e70835e4482983a5662355d892d5f6f0f90a27a8e9f009997e8196`  
-		Last Modified: Wed, 01 Nov 2023 00:25:05 GMT  
-		Size: 49.6 MB (49582024 bytes)  
+	-	`sha256:90e5e7d8b87a34877f61c2b86d053db1c4f440b9054cf49573e3be5d6a674a47`  
+		Last Modified: Tue, 21 Nov 2023 05:25:34 GMT  
+		Size: 49.6 MB (49582225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e6a05faf0cd98c5e3023b81d5851ba37c4093d2fdd6da9fc527471ac1aa01955`  
-		Last Modified: Wed, 01 Nov 2023 01:39:48 GMT  
-		Size: 144.9 MB (144873950 bytes)  
+	-	`sha256:584a59c8aee6beabb9a28978d412b9cda10c78ebfad3f1537ffb2d4299e1e9b0`  
+		Last Modified: Tue, 21 Nov 2023 10:35:15 GMT  
+		Size: 144.9 MB (144873904 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1c53db9e21b13e68dec22cee208e27378484ff831cbdc595c91e8e0cfc22d25`  
-		Last Modified: Wed, 01 Nov 2023 01:39:37 GMT  
-		Size: 5.5 MB (5530281 bytes)  
+	-	`sha256:b98ba6a4a2e52463c699ee5e38db12141a44f1770408e20c956915901bf4d037`  
+		Last Modified: Tue, 21 Nov 2023 10:35:05 GMT  
+		Size: 5.5 MB (5530348 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f5dac4f107905750230ea0edec1209031fa3b39994743b66f6ef1c0dce16bbe5`  
-		Last Modified: Wed, 01 Nov 2023 01:39:41 GMT  
-		Size: 58.8 MB (58820349 bytes)  
+	-	`sha256:0bf26582829883de429ca0ab047f02484540d33c34ed06f0adb4312555e64085`  
+		Last Modified: Tue, 21 Nov 2023 10:35:07 GMT  
+		Size: 58.8 MB (58820356 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e572b390f11a09a4eec9fc7142af3caafc491f78faa0cc4a39e8912a0ebbc7ee`  
-		Last Modified: Wed, 01 Nov 2023 01:39:36 GMT  
+	-	`sha256:c228d95ad7e7d8068d234fdae54c083e0d376c467a330672405e5473583df40c`  
+		Last Modified: Tue, 21 Nov 2023 10:35:03 GMT  
 		Size: 399.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
