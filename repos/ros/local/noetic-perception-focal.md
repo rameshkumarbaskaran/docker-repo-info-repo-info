@@ -499,14 +499,9 @@ Licenses: (parsed from: `/usr/share/doc/libavahi-client3/copyright`, `/usr/share
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris avahi=0.7-4ubuntu7.2
-'http://archive.ubuntu.com/ubuntu/pool/main/a/avahi/avahi_0.7-4ubuntu7.2.dsc' avahi_0.7-4ubuntu7.2.dsc 4171 SHA512:80c93486345b4ef2db8a2957834c6744f87a31496483f91247a32c452fce49156c11f00a84e483447a80653aae8b6863ed23ded4c9ae1dfac940d0463740120f
-'http://archive.ubuntu.com/ubuntu/pool/main/a/avahi/avahi_0.7.orig.tar.gz' avahi_0.7.orig.tar.gz 1333400 SHA512:bae5a1e9204aca90b90e7fd223d19e809e3514d03ba5fa2da1e55bf1d72d3d3b98567f357900c36393613dc17dc98e15ff3ebf0f226f2f6b9766e592452a6ce7
-'http://archive.ubuntu.com/ubuntu/pool/main/a/avahi/avahi_0.7-4ubuntu7.2.debian.tar.xz' avahi_0.7-4ubuntu7.2.debian.tar.xz 37504 SHA512:fdbf13d4e64e5297ad5ead85554e17da5b329c66f8524023898917df2b2dac3b8f9bffb70369894e25f7f66222e46e558099de84f1684a38faa679c18f9335c8
-```
 
 ### `dpkg` source package: `base-files=11ubuntu5.7`
 
