@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e7170d39c241047d94ec39e68cea318800116523bcfa6077f5524a0c8a3180eb`
-- Created: `2023-11-14T01:45:05.701483138Z`
-- Virtual Size: ~ 1.76 Gb  
+- Image ID: `sha256:7edf44b22dd1a9318c88613d2a81cefd271379a74b9c3aa0fbb1e34763240c97`
+- Created: `2023-11-21T06:05:52.235067982Z`
+- Virtual Size: ~ 1.77 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -1153,15 +1153,9 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `LGPLv3+_or_GPLv2+`
 - `The main library is licensed under GNU Lesser`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnutls28=3.7.3-4ubuntu1.2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.7.3-4ubuntu1.2.dsc' gnutls28_3.7.3-4ubuntu1.2.dsc 3572 SHA512:5971615b09bdbe7a3c696da676d6c2df4d9511f4614050ec441dae3a70e7bbe9794def101d6515cd76b00d7b6aba064d759b786fe2633dbdc38237005935c14f
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.7.3.orig.tar.xz' gnutls28_3.7.3.orig.tar.xz 6119292 SHA512:3ace744affe23e284342658d6d2d2de49dd50065489cbc8be18fc7d38187253e5268ca54027ce5cd517056c249ac039a7481e4548cec04325de37ae85617d077
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.7.3.orig.tar.xz.asc' gnutls28_3.7.3.orig.tar.xz.asc 833 SHA512:cd0d30298377deddf20a835863b71e3f119588061f659906ad2684004758943179531508b1c77c730e930e2131148095e60ad9be365353cce772472d5f5345df
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.7.3-4ubuntu1.2.debian.tar.xz' gnutls28_3.7.3-4ubuntu1.2.debian.tar.xz 75936 SHA512:b4c58bb306be5bfef362f1c37e0ecdacf02ea4bfb69c77b684fc3cf09f32c0dfae3535ccda273401ac0cdcb8312fe328f2ace1789ffb95f710de512fa27cee3c
-```
 
 ### `dpkg` source package: `graphite2=1.3.14-1build2`
 
@@ -5644,15 +5638,9 @@ Licenses: (parsed from: `/usr/share/doc/libnode-dev/copyright`, `/usr/share/doc/
 - `curl`
 - `zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nodejs=12.22.9~dfsg-1ubuntu3.1
-'http://archive.ubuntu.com/ubuntu/pool/universe/n/nodejs/nodejs_12.22.9%7edfsg-1ubuntu3.1.dsc' nodejs_12.22.9~dfsg-1ubuntu3.1.dsc 3545 SHA512:2b87cf96fc420a5774e564aa91d30e1c1ebeb35bb7be4c9f14b732a6a62f0de182167194030da90827ebc1f0c308ab205d7a6851dba1338c4e1aef0bec4891ac
-'http://archive.ubuntu.com/ubuntu/pool/universe/n/nodejs/nodejs_12.22.9%7edfsg.orig-types-node.tar.xz' nodejs_12.22.9~dfsg.orig-types-node.tar.xz 86416 SHA512:ff967a05831a1a43c3bcf96744007713b51c279ee1b2b77075f8476b5791e28cc212511dc64c34e6c7d516865fd7f3cd7150c1664e664ada4e7c64f8b40fbcfc
-'http://archive.ubuntu.com/ubuntu/pool/universe/n/nodejs/nodejs_12.22.9%7edfsg.orig.tar.xz' nodejs_12.22.9~dfsg.orig.tar.xz 19022540 SHA512:83002dbabb3228fd9b1b9777246b2b8aebb6ba7ead005c1c65124a5809fdde7d9d9aa47d907e9a6fdf452e0febfa4c6e521c5d62ae8d6100454ba57f16110eb7
-'http://archive.ubuntu.com/ubuntu/pool/universe/n/nodejs/nodejs_12.22.9%7edfsg-1ubuntu3.1.debian.tar.xz' nodejs_12.22.9~dfsg-1ubuntu3.1.debian.tar.xz 144332 SHA512:ac3b0de47751acb88a97c8797f31be2f35312951032957a353fe8aa9f3dad2d04af7e211bd4923548dc02efb6f9b8694db83c14c2c48dd23a8e7246bf19d8914
-```
 
 ### `dpkg` source package: `npm=8.5.1~ds-1`
 
@@ -5697,11 +5685,11 @@ $ apt-get source -qq --print-uris npth=1.6-3build2
 'http://archive.ubuntu.com/ubuntu/pool/main/n/npth/npth_1.6-3build2.debian.tar.xz' npth_1.6-3build2.debian.tar.xz 10904 SHA512:426ab3ab9e27b3701d67cde0a4c4040aa9ccac22a0266321824487fe80a118ccd6860b6fa0fb5ca3c46dfa3c20053889fbb51a2e74618065b3aff059a0216c4c
 ```
 
-### `dpkg` source package: `odoo=17.0.20231113`
+### `dpkg` source package: `odoo=17.0.20231120`
 
 Binary Packages:
 
-- `odoo=17.0.20231113`
+- `odoo=17.0.20231120`
 
 Licenses: (parsed from: `/usr/share/doc/odoo/copyright`)
 
