@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:48760dd81044cb5fd3b17e7ffcc93ad572edd4c5fe2b7b8a361cfab9a901f2f0`
-- Created: `2023-11-16T03:16:23.736303476Z`
-- Virtual Size: ~ 403.61 Mb  
+- Image ID: `sha256:d1190c515b30b2973262bc7020ec05834484ba97b542efeb179ad44ddef251ca`
+- Created: `2023-11-23T10:32:13.489089459Z`
+- Virtual Size: ~ 403.67 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["mariadbd"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `GOSU_VERSION=1.14`
+  - `GOSU_VERSION=1.17`
   - `LANG=C.UTF-8`
   - `MARIADB_VERSION=1:10.11.6+maria~ubu2204`
 - Labels:
