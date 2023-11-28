@@ -1219,15 +1219,9 @@ Licenses: (parsed from: `/usr/share/doc/perl-base/copyright`)
 - `Unicode`
 - `ZLIB`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris perl=5.36.0-7ubuntu0.23.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.36.0-7ubuntu0.23.04.1.dsc' perl_5.36.0-7ubuntu0.23.04.1.dsc 2704 SHA512:eeda93670193735f6470388cd1fb697dbca03404bc8aefc56c99af1288e35d900a4e1281420fd060afcf0f089ce8ccb1004a3a30dd194b7e018ab6de92df7cec
-'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.36.0.orig-regen-configure.tar.xz' perl_5.36.0.orig-regen-configure.tar.xz 417784 SHA512:4d16685f569a5b1dea79d607b6d62718111c32efaf5547bb9e1528bd755acf0c8fc74a1cc1f4d68fcb10aef9da7d8fea17a5cc10dabce6efa4721ab45ab03a65
-'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.36.0.orig.tar.xz' perl_5.36.0.orig.tar.xz 13051500 SHA512:6dd6ac2a77566c173c5ab9c238cf555f2c3e592e89abb5600bc23ce1cbd0c349e0233f6417cbbf1f6d0aefc6a734ba491285af0d3dc68a605b658b65c89f1dab
-'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.36.0-7ubuntu0.23.04.1.debian.tar.xz' perl_5.36.0-7ubuntu0.23.04.1.debian.tar.xz 169800 SHA512:8b1e8cbca582d263372e6e03cc50d6ef9b34c22f5ceb02663550c48ec9b541b3ed325b36a416be3ebc793ab02b0faecab0f9383a05b76b9bfb674f035b272ed0
-```
 
 ### `dpkg` source package: `procps=2:4.0.3-1ubuntu1`
 
