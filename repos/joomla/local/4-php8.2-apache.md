@@ -1,10 +1,10 @@
-# `joomla:4.4.0-php8.2-apache`
+# `joomla:4.4.1-php8.2-apache`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ef091c9e3baa0a334726d0103d9794f75e4b4863373d075d7293d597ac933a9f`
-- Created: `2023-11-22T02:08:56.439524772Z`
-- Virtual Size: ~ 664.36 Mb  
+- Image ID: `sha256:9316897bf990a742a307ea5ac7430c5d8807d2daf5b0f3aab73e560d7bc7b57b`
+- Created: `2023-11-29T01:31:26.986423306Z`
+- Virtual Size: ~ 663.88 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -19,13 +19,13 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC`
-  - `PHP_VERSION=8.2.12`
-  - `PHP_URL=https://www.php.net/distributions/php-8.2.12.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.12.tar.xz.asc`
-  - `PHP_SHA256=e1526e400bce9f9f9f774603cfac6b72b5e8f89fa66971ebc3cc4e5964083132`
+  - `PHP_VERSION=8.2.13`
+  - `PHP_URL=https://www.php.net/distributions/php-8.2.13.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.13.tar.xz.asc`
+  - `PHP_SHA256=2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b`
   - `JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1`
-  - `JOOMLA_VERSION=4.4.0`
-  - `JOOMLA_SHA512=800e985b1aa99e0df329349779f3c0f2f29a5c4de5115a7804b118029cba6f8d726cbd09979e3ac5a13e6a518ff87f847e713be9fa38ee59b04a5e9102479838`
+  - `JOOMLA_VERSION=4.4.1`
+  - `JOOMLA_SHA512=87f709f8d1f23c49c68dc3db7afb329930896871cdef7921ac5659f3c15caed1a32b6f68d283c7f0455e1765826af336fd31a0440b3540a317225a98e442c076`
 - Labels:
   - `maintainer=Llewellyn van der Merwe <llewellyn.van-der-merwe@community.joomla.org> (@Llewellynvdm), Harald Leithner <harald.leithner@community.joomla.org> (@HLeithner)`
 
@@ -4067,11 +4067,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/tar/1.34+dfsg-1.2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/tar/1.34+dfsg-1.2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `tiff=4.5.0-6`
+### `dpkg` source package: `tiff=4.5.0-6+deb12u1`
 
 Binary Packages:
 
-- `libtiff6:amd64=4.5.0-6`
+- `libtiff6:amd64=4.5.0-6+deb12u1`
 
 Licenses: (parsed from: `/usr/share/doc/libtiff6/copyright`)
 
@@ -4080,17 +4080,17 @@ Licenses: (parsed from: `/usr/share/doc/libtiff6/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris tiff=4.5.0-6
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.5.0-6.dsc' tiff_4.5.0-6.dsc 2255 SHA256:6e9ac40cabd8574d2e394d15a65143b9e7185f929863df2c1db50c27a5c3266b
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.5.0.orig.tar.bz2' tiff_4.5.0.orig.tar.bz2 2050377 SHA256:638f43d7dea33948d5dee7f39572fc0194d9cc3c74195de9dd26a4388a1f880a
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.5.0-6.debian.tar.xz' tiff_4.5.0-6.debian.tar.xz 26880 SHA256:f26d2adaa6eb6b6636a4b7e59ccb3e8be563ae649e7be0f9f81cf5fd9aadae7a
+$ apt-get source -qq --print-uris tiff=4.5.0-6+deb12u1
+'http://deb.debian.org/debian-security/pool/updates/main/t/tiff/tiff_4.5.0-6%2bdeb12u1.dsc' tiff_4.5.0-6+deb12u1.dsc 1942 SHA256:3c184ea95bdd959f2a8d9da7a0cc7e73b5afb3f906ff086b05c9e4f953a4ded1
+'http://deb.debian.org/debian-security/pool/updates/main/t/tiff/tiff_4.5.0.orig.tar.bz2' tiff_4.5.0.orig.tar.bz2 2050377 SHA256:638f43d7dea33948d5dee7f39572fc0194d9cc3c74195de9dd26a4388a1f880a
+'http://deb.debian.org/debian-security/pool/updates/main/t/tiff/tiff_4.5.0-6%2bdeb12u1.debian.tar.xz' tiff_4.5.0-6+deb12u1.debian.tar.xz 28012 SHA256:d70ba897e15f135b7ed8cbc823490ca522c91ceff5e6a4c4274fc348219dcde0
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/tiff/4.5.0-6/ (for browsing the source)
-- https://sources.debian.net/src/tiff/4.5.0-6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tiff/4.5.0-6/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/tiff/4.5.0-6+deb12u1/ (for browsing the source)
+- https://sources.debian.net/src/tiff/4.5.0-6+deb12u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tiff/4.5.0-6+deb12u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tzdata=2023c-5`
 

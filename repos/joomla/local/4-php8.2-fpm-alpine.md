@@ -1,10 +1,10 @@
-# `joomla:4.4.0-php8.2-fpm-alpine`
+# `joomla:4.4.1-php8.2-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:46241e1234a44c63c61f0b1c812bea56196e326abd2513f0173981c9c4ca8066`
-- Created: `2023-11-16T02:11:29.752744287Z`
-- Virtual Size: ~ 345.37 Mb  
+- Image ID: `sha256:7c7b4aee5c3b32fce8247a52ccf97d77b7f8615b30c3d8fabab17ee436d57b2c`
+- Created: `2023-11-29T01:31:38.611515289Z`
+- Virtual Size: ~ 331.05 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -17,13 +17,13 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC`
-  - `PHP_VERSION=8.2.12`
-  - `PHP_URL=https://www.php.net/distributions/php-8.2.12.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.12.tar.xz.asc`
-  - `PHP_SHA256=e1526e400bce9f9f9f774603cfac6b72b5e8f89fa66971ebc3cc4e5964083132`
+  - `PHP_VERSION=8.2.13`
+  - `PHP_URL=https://www.php.net/distributions/php-8.2.13.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.13.tar.xz.asc`
+  - `PHP_SHA256=2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b`
   - `JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1`
-  - `JOOMLA_VERSION=4.4.0`
-  - `JOOMLA_SHA512=800e985b1aa99e0df329349779f3c0f2f29a5c4de5115a7804b118029cba6f8d726cbd09979e3ac5a13e6a518ff87f847e713be9fa38ee59b04a5e9102479838`
+  - `JOOMLA_VERSION=4.4.1`
+  - `JOOMLA_SHA512=87f709f8d1f23c49c68dc3db7afb329930896871cdef7921ac5659f3c15caed1a32b6f68d283c7f0455e1765826af336fd31a0440b3540a317225a98e442c076`
 - Labels:
   - `maintainer=Llewellyn van der Merwe <llewellyn.van-der-merwe@community.joomla.org> (@Llewellynvdm), Harald Leithner <harald.leithner@community.joomla.org> (@HLeithner)`
 
@@ -423,16 +423,16 @@ LGPL-2.1-or-later
 ### `apk` package: `ghostscript`
 
 ```console
-ghostscript-10.01.2-r0 description:
+ghostscript-10.02.0-r0 description:
 An interpreter for the PostScript language and for PDF
 
-ghostscript-10.01.2-r0 webpage:
+ghostscript-10.02.0-r0 webpage:
 https://ghostscript.com/
 
-ghostscript-10.01.2-r0 installed size:
-68 MiB
+ghostscript-10.02.0-r0 installed size:
+67 MiB
 
-ghostscript-10.01.2-r0 license:
+ghostscript-10.02.0-r0 license:
 AGPL-3.0-or-later
 
 ```
@@ -1239,16 +1239,16 @@ BSD-3-Clause
 ### `apk` package: `libx11`
 
 ```console
-libx11-1.8.4-r4 description:
+libx11-1.8.7-r0 description:
 X11 client-side library
 
-libx11-1.8.4-r4 webpage:
+libx11-1.8.7-r0 webpage:
 https://xorg.freedesktop.org/
 
-libx11-1.8.4-r4 installed size:
-3152 KiB
+libx11-1.8.7-r0 installed size:
+3092 KiB
 
-libx11-1.8.4-r4 license:
+libx11-1.8.7-r0 license:
 X11
 
 ```
@@ -1341,16 +1341,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.11.4-r0 description:
+libxml2-2.11.6-r0 description:
 XML parsing library, version 2
 
-libxml2-2.11.4-r0 webpage:
+libxml2-2.11.6-r0 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.11.4-r0 installed size:
+libxml2-2.11.6-r0 installed size:
 1108 KiB
 
-libxml2-2.11.4-r0 license:
+libxml2-2.11.6-r0 license:
 MIT
 
 ```
