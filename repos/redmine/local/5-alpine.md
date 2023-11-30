@@ -1,10 +1,10 @@
-# `redmine:5.1.0-alpine3.18`
+# `redmine:5.1.1-alpine3.18`
 
 ## Docker Metadata
 
-- Image ID: `sha256:084897e845cf79efa1801f9b135f84f62162ef100524a46454b3713cf6e4f344`
-- Created: `2023-11-18T01:31:21Z`
-- Virtual Size: ~ 509.65 Mb  
+- Image ID: `sha256:a9e9b4257bccc173eda678ec2883484630db02caae151ad0f0999e7398360960`
+- Created: `2023-11-27T21:32:27Z`
+- Virtual Size: ~ 509.78 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -20,9 +20,9 @@
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
   - `RAILS_ENV=production`
   - `HOME=/home/redmine`
-  - `REDMINE_VERSION=5.1.0`
-  - `REDMINE_DOWNLOAD_URL=https://www.redmine.org/releases/redmine-5.1.0.tar.gz`
-  - `REDMINE_DOWNLOAD_SHA256=a94d6ecde5a100a6271503fef154818212dac01cf5e45e37e2beb4059365ba93`
+  - `REDMINE_VERSION=5.1.1`
+  - `REDMINE_DOWNLOAD_URL=https://www.redmine.org/releases/redmine-5.1.1.tar.gz`
+  - `REDMINE_DOWNLOAD_SHA256=edf3095746effd04ad5140681d618f5fa8d06be09c47b6f8b615dcad0b753e6e`
   - `BUNDLE_FORCE_RUBY_PLATFORM=1`
 
 ## `apk` (`.apk`-based packages)
@@ -1458,16 +1458,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.11.4-r0 description:
+libxml2-2.11.6-r0 description:
 XML parsing library, version 2
 
-libxml2-2.11.4-r0 webpage:
+libxml2-2.11.6-r0 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.11.4-r0 installed size:
+libxml2-2.11.6-r0 installed size:
 1108 KiB
 
-libxml2-2.11.4-r0 license:
+libxml2-2.11.6-r0 license:
 MIT
 
 ```
