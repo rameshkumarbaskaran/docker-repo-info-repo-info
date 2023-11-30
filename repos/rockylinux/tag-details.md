@@ -143,30 +143,51 @@ CMD ["/bin/bash"]
 
 ## `rockylinux:8.9`
 
-**does not exist** (yet?)
+```console
+$ docker pull rockylinux@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `rockylinux:8.9-minimal`
 
-**does not exist** (yet?)
+```console
+$ docker pull rockylinux@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `rockylinux:8.9.20231119`
 
-**does not exist** (yet?)
+```console
+$ docker pull rockylinux@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `rockylinux:8.9.20231119-minimal`
 
-**does not exist** (yet?)
+```console
+$ docker pull rockylinux@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `rockylinux:9`
 
 ```console
-$ docker pull rockylinux@sha256:b07e21a7bbcecbae55b9153317d333d4d50808bf5dc0859db0180b6fbd7afb3d
+$ docker pull rockylinux@sha256:fd66f687565237db34363b6b08408de1210f0047e708f2aeeddb7ad2e16056cd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 3
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm64 variant v8
+	-	linux; ppc64le
 	-	linux; s390x
 
 ### `rockylinux:9` - linux; amd64
@@ -221,6 +242,32 @@ CMD ["/bin/bash"]
 		Size: 63.5 MB (63511919 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `rockylinux:9` - linux; ppc64le
+
+```console
+$ docker pull rockylinux@sha256:1754c07d14efda182631453cd9eb914fb69b9b4f9ecbd1fd1447feff7713e929
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **69.8 MB (69776502 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:06e0f3409627edb4ca637df0dcee47cf5a2b93c9b6b60a67df21699075b1cf26`
+-	Default Command: `["\/bin\/bash"]`
+
+```dockerfile
+# Tue, 21 Feb 2023 23:44:52 GMT
+ADD file:8dfa66eb4207fbdd03d5f551f98a634322c1078128d9911252f1b58d5c851857 in / 
+# Tue, 21 Feb 2023 23:44:56 GMT
+CMD ["/bin/bash"]
+```
+
+-	Layers:
+	-	`sha256:514fe2ea31c3ab6e09059d037bdda0dc54c2f433cd2e570e84819c6f74ca5a1c`  
+		Last Modified: Tue, 21 Feb 2023 23:45:53 GMT  
+		Size: 69.8 MB (69776502 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ### `rockylinux:9` - linux; s390x
 
 ```console
@@ -250,13 +297,14 @@ CMD ["/bin/bash"]
 ## `rockylinux:9-minimal`
 
 ```console
-$ docker pull rockylinux@sha256:594c839a772e23ee354d2f05acbb5779665d48aed742375aae174971786c2e7d
+$ docker pull rockylinux@sha256:727ba83605d95335ad77a1f14d5c9029e36e87b07e0ba8797e91f1ee051be99d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 3
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm64 variant v8
+	-	linux; ppc64le
 	-	linux; s390x
 
 ### `rockylinux:9-minimal` - linux; amd64
@@ -311,6 +359,32 @@ CMD ["/bin/bash"]
 		Size: 45.4 MB (45352838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `rockylinux:9-minimal` - linux; ppc64le
+
+```console
+$ docker pull rockylinux@sha256:ed6cffe4a0599ef6404c1cc407f114e477a1b9863b174f19599a98846ddea3f9
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **50.4 MB (50388885 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:7327b046c499a7ddf594a27943b3cc3135bd946c5b92e34671dc815a43b503eb`
+-	Default Command: `["\/bin\/bash"]`
+
+```dockerfile
+# Tue, 21 Feb 2023 23:45:13 GMT
+ADD file:c8d431b4eee1438af0599399cfb6dcc7f4d5004d8f04b240e673a6e1fe18a404 in / 
+# Tue, 21 Feb 2023 23:45:16 GMT
+CMD ["/bin/bash"]
+```
+
+-	Layers:
+	-	`sha256:a7d160814aff2e9595f37e0d4df01230fb1d35e7c9bc1e1ae6f91adbd51b0f21`  
+		Last Modified: Tue, 21 Feb 2023 23:46:20 GMT  
+		Size: 50.4 MB (50388885 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ### `rockylinux:9-minimal` - linux; s390x
 
 ```console
@@ -339,16 +413,36 @@ CMD ["/bin/bash"]
 
 ## `rockylinux:9.3`
 
-**does not exist** (yet?)
+```console
+$ docker pull rockylinux@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `rockylinux:9.3-minimal`
 
-**does not exist** (yet?)
+```console
+$ docker pull rockylinux@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `rockylinux:9.3.20231119`
 
-**does not exist** (yet?)
+```console
+$ docker pull rockylinux@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
 
 ## `rockylinux:9.3.20231119-minimal`
 
-**does not exist** (yet?)
+```console
+$ docker pull rockylinux@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+```
+
+-	Manifest MIME: `application/vnd.oci.image.index.v1+json`
+-	Platforms: 0
