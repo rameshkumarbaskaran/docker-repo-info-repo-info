@@ -1,10 +1,10 @@
-# `neo4j:5.13.0-community-bullseye`
+# `neo4j:5.14.0-community-bullseye`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d90fdf60dd2cdaa8631b8f2fe6906033728268064e21b9973ac341c2dce9bdd2`
-- Created: `2023-11-21T19:52:37.595429355Z`
-- Virtual Size: ~ 494.93 Mb  
+- Image ID: `sha256:8cbacfd0af22c808f74feafb64d518e09b780121d407f1c46f8f5b68f2787d36`
+- Created: `2023-11-29T00:29:09.826934977Z`
+- Virtual Size: ~ 492.14 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["tini","-g","--","/startup/docker-entrypoint.sh"]`
@@ -12,8 +12,8 @@
 - Environment:
   - `PATH=/var/lib/neo4j/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/opt/java/openjdk`
-  - `NEO4J_SHA256=c5b1834ae4493af9c623c7d4d68783de1f87d73adea34cd973d9daa3c2ea056c`
-  - `NEO4J_TARBALL=neo4j-community-5.13.0-unix.tar.gz`
+  - `NEO4J_SHA256=54cdf068887eb9371105999992ae874473b8378f6df06cf16b32a4aa36bc586f`
+  - `NEO4J_TARBALL=neo4j-community-5.14.0-unix.tar.gz`
   - `NEO4J_EDITION=community`
   - `NEO4J_HOME=/var/lib/neo4j`
 
@@ -765,32 +765,6 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gnutls28/3.7.1-5+deb11u3/ (for browsing the source)
 - https://sources.debian.net/src/gnutls28/3.7.1-5+deb11u3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gnutls28/3.7.1-5+deb11u3/ (for access to the source package after it no longer exists in the archive)
-
-### `dpkg` source package: `gosu=1.12-1`
-
-Binary Packages:
-
-- `gosu=1.12-1+b6`
-
-Licenses: (parsed from: `/usr/share/doc/gosu/copyright`)
-
-- `GPL-3`
-- `GPL-3+`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris gosu=1.12-1
-'http://deb.debian.org/debian/pool/main/g/gosu/gosu_1.12-1.dsc' gosu_1.12-1.dsc 2008 SHA256:2d73de09a13b10d0955ac067078af3c0f3d66309dab58ee2c22914bd58050d13
-'http://deb.debian.org/debian/pool/main/g/gosu/gosu_1.12.orig.tar.gz' gosu_1.12.orig.tar.gz 19366 SHA256:91de59882ae888c3e32dbc89c54d3d3c995f0dbbe3e90fd8f79c54757f110a3d
-'http://deb.debian.org/debian/pool/main/g/gosu/gosu_1.12-1.debian.tar.xz' gosu_1.12-1.debian.tar.xz 3440 SHA256:f05c0d0019513118ddce3f28cf6d4c727536605ba30095901e28818407927bee
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/gosu/1.12-1/ (for browsing the source)
-- https://sources.debian.net/src/gosu/1.12-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gosu/1.12-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gpm=1.20.7-8`
 
@@ -1552,6 +1526,40 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/lz4/1.9.3-2/ (for browsing the source)
 - https://sources.debian.net/src/lz4/1.9.3-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/lz4/1.9.3-2/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `manpages=5.10-1`
+
+Binary Packages:
+
+- `manpages=5.10-1`
+
+Licenses: (parsed from: `/usr/share/doc/manpages/copyright`)
+
+- `BSD-3-clause`
+- `BSD-4-clause`
+- `Expat`
+- `GPL-2`
+- `GPL-2+`
+- `LDPv1`
+- `freely-redistributable`
+- `henry-spencer-regex`
+- `public-domain`
+- `verbatim`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris manpages=5.10-1
+'http://deb.debian.org/debian/pool/main/m/manpages/manpages_5.10-1.dsc' manpages_5.10-1.dsc 1882 SHA256:1e7cea95561a46c734e24344b977962ae94325a98a9c2229d0c7a570b2df6569
+'http://deb.debian.org/debian/pool/main/m/manpages/manpages_5.10.orig.tar.xz' manpages_5.10.orig.tar.xz 1747688 SHA256:75102535ba119f2f223f674d84e1dcdaebf0a5ffd639b3c2e6cb0a0e34768762
+'http://deb.debian.org/debian/pool/main/m/manpages/manpages_5.10-1.debian.tar.xz' manpages_5.10-1.debian.tar.xz 77212 SHA256:3be47b149f3eb154243e49e32a98c507bcd91017ce9c2e5e0a6304a8d927e2fa
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/manpages/5.10-1/ (for browsing the source)
+- https://sources.debian.net/src/manpages/5.10-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/manpages/5.10-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mawk=1.3.4.20200120-2`
 
