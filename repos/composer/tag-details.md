@@ -22,30 +22,23 @@
 ## `composer:1`
 
 ```console
-$ docker pull composer@sha256:1f54be92c23b0a705046e1654d55f4f2448237d4e948665d3060ed3e51a84dcb
+$ docker pull composer@sha256:6fd225662815eabd6e50555602c1f17944af1169411701a78888e8c574c84788
 ```
 
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 14
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
 	-	linux; amd64
-	-	unknown; unknown
 	-	linux; arm variant v6
-	-	unknown; unknown
 	-	linux; arm variant v7
-	-	unknown; unknown
 	-	linux; arm64 variant v8
-	-	unknown; unknown
 	-	linux; 386
-	-	unknown; unknown
 	-	linux; ppc64le
-	-	unknown; unknown
 	-	linux; s390x
-	-	unknown; unknown
 
 ### `composer:1` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:76ce1f0841d96cbff7e14c8aa00b10ced921e471e807ed872d1403423ab11837
+$ docker pull composer@sha256:6667ad5d14fe1d85a21df515752547430e64c95250cb2988f32c24dd84604de9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -124,88 +117,64 @@ CMD ["composer"]
 	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
 		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
 		Size: 3.4 MB (3402422 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8e26b626c27026d1938a0b6bd77e36b4113da4b7a1134df8d1aa9f49658b25f`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 2.7 MB (2679359 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:23427f6f19cc27aa3496173559d7fc30c2501d1d179a15b52ac1758cc1667d37`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:938ee652f0dd66c081c31e773163d4c3d8ec979f9ced384ed270cdc5fbcbe657`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8abe2aaf4047e9984223c8d63be88c09b7d447f8c9f77851aa06771c52bba05b`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 12.5 MB (12452105 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e06ec6f102433dfe7410990547f8d059d4c3e56455e35d7b4dfbfb96784486e1`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 492.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9ea984f05cf27a91a07a0b1f63adb1e6f9c4cb631325b5a07343b8faf75f7028`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 17.1 MB (17069834 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e6c3ecb64ca025834e2eba225bd5d603742000e1d67407ba50cf0f60ea41a98`  
 		Last Modified: Fri, 01 Dec 2023 00:42:05 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d3b07fe920dd6973a44ea83074fd9125fe7d4774492d00c0ffefb9a04a847a29`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 19.0 KB (18951 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:db476e3c025b598a275cc72e45c12e45db55e1df982d1e90e45f76b630e44f26`  
 		Last Modified: Fri, 01 Dec 2023 08:02:43 GMT  
 		Size: 32.5 MB (32533618 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:00b605206545e71c8d6637e233d08e5cae279512b88f4eedbb3dd9444948f3c1`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8cb78356d05788dd385b28564670a6452ded64dbd37d368ebc79fa601ec077`  
 		Last Modified: Fri, 01 Dec 2023 08:03:06 GMT  
 		Size: 1.1 MB (1126802 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b0151ca260eac5327915f6e027f1c385eae34fe8be88175f59780c27d0420d3f`  
 		Last Modified: Fri, 01 Dec 2023 08:03:06 GMT  
 		Size: 408.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d8601594f90928196dda97294e272921fc43ea558f3a7f2ef9448b4a4b734277`  
 		Last Modified: Fri, 01 Dec 2023 08:03:06 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:f64e7f17fa4523ca67007090a88ae2ff6cfe1ddcfb3f36776eab0952c50c8585
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903584 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:965c3abd1f6bf07802adfa7ed4a152b27c7ec929d6ab3e856e64284054b17ce2`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:dd6cdbce75ec020a1d719cc48c74f69125552e330b08128d6fe51e43afb67118`  
-		Last Modified: Fri, 01 Dec 2023 08:03:06 GMT  
-		Size: 1.9 MB (1873140 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:0d41badbd79881200ad07ca2b4776c1970ecaf0f99ca7a3aa6c03bcf2c114aa6`  
-		Last Modified: Fri, 01 Dec 2023 08:03:06 GMT  
-		Size: 30.4 KB (30444 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:0daf4944755a59691af4354b1e49bb74c2524a26469c98555fa3a2f5a22627ca
+$ docker pull composer@sha256:d52ffa70683cfcd4d2c924d6eb317e9f4f6ff2c33c9bebf5fa6a61522d1bfb81
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -284,88 +253,64 @@ CMD ["composer"]
 	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
 		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
 		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ad3f4bb45cafc3a0c4349f9564390ff0fe5c2a3dc4287f0ddf3de8a86dcbb66`  
 		Last Modified: Fri, 01 Dec 2023 00:15:00 GMT  
 		Size: 2.7 MB (2685809 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a06cb8c5272936441cf9c53173eed2af740b588b3a9d8bbbb0b6565f38005e36`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c6156dbc484960b6656a156d5d82d973371555039e45046b37e9af1cbfec8569`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:66811c19a32e40a429b8ba817b3ceb6493496ebd20655f68d5a7ca3844b6c96c`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 12.5 MB (12452097 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4954b5c64e0b15f09646882302df3b0ee246ee32b00519bd4e89f052587d473a`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:889affb1cad3094dce99e0b6c7f8c737a0319cf2a1a9201f97fb1967478162fd`  
 		Last Modified: Fri, 01 Dec 2023 00:15:01 GMT  
 		Size: 15.7 MB (15657131 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b1b4a6a047cfe6a394007eb70b0c03f70ee3d7e9447288d47f549224f614aa2f`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e71e5e0f24e7b0508ad3d6798d964951c64d5fd451467d129a769807abbb8067`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 18.8 KB (18767 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ae4356a5b2c65b1e0f267a80bfe2a0ef3872dd9dd2b6d8f45703247b88fc2e13`  
 		Last Modified: Fri, 01 Dec 2023 11:50:53 GMT  
 		Size: 31.3 MB (31290430 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3019528382efe80e087e7475c0cbe6d2be762ace22b13332601422066b7f8f9c`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 256.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0837c16ab19144425cc278ea0f7e018728530c643ce5596ce3d25ee81e8ad710`  
 		Last Modified: Fri, 01 Dec 2023 11:51:15 GMT  
 		Size: 1.1 MB (1083543 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:44c132fb92971633a3736d63d1e17231452aa6137b99daef0af685beaac48271`  
 		Last Modified: Fri, 01 Dec 2023 11:51:14 GMT  
 		Size: 409.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e1aab39ac016043dbe8d04c6daab51aeb37443f0826fed2b9fb96eaf82c316c5`  
 		Last Modified: Fri, 01 Dec 2023 11:51:14 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:ad818c82d6430c0d7df7ff18af1da6b8863b06dc668ec8531744dfd54a094549
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902605 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:29cf8afc8180b4bdce0feb4ee86debcd3c0a2e2a2f33a19b64d4fbce58c798ad`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:8ad4d43c666dc615fc609bc718135e41db24ec9542ed59414b0287b78b92c6e4`  
-		Last Modified: Fri, 01 Dec 2023 11:51:15 GMT  
-		Size: 1.9 MB (1872090 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:fadc1f9ac3fc646af92e038c282d0a6bcf4cdc5cde955731ca0795e6f4f8ce7d`  
-		Last Modified: Fri, 01 Dec 2023 11:51:15 GMT  
-		Size: 30.5 KB (30515 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:8c85ce74c05d2b430501e6a5e9de6645fac9af310c426b673bd29eae6983ee60
+$ docker pull composer@sha256:12f547a06b9f56edf6cedd4dc425e30bfcc0c08fee5dcfd16ba87590d15549f6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -444,88 +389,64 @@ CMD ["composer"]
 	-	`sha256:2387a44129d2147bd4e806bf369f3db92eb3ad3b6b8825c739db364b8baa4e26`  
 		Last Modified: Thu, 30 Nov 2023 22:49:56 GMT  
 		Size: 2.9 MB (2901006 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:463dfc43b4287670c76354cf1d002e077c0a4b8f41207fdbd96316d0f649fdd5`  
 		Last Modified: Thu, 30 Nov 2023 23:58:02 GMT  
 		Size: 2.5 MB (2524902 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8445d08981ee2b82e7069c3bf290f41039993039dd9740da05b6c962c368ea`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 1.3 KB (1261 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8472c3889e6c64cf9e26fe36cc30bf9e211560aea77f82e97443348cb5956b88`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4e1a31c7a08192627a7e02da4b1d5ea494d5c25269ca986f8d2e7a8ae2d9365d`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 12.5 MB (12452107 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:12b3a23b2108bae03e59ed5e203dc9570b4d69cb6e8636a1f35e442846def57e`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6e7f8f1640d5c681ec203b1bd556d520c628ec0d02e41a591d1198b185d0d667`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 14.6 MB (14638942 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2f208f61c3ca97f2ff11ccb123a8707e61ce0891b966e160aedc3ae93a69d284`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 2.4 KB (2446 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f1879be0a19ef9277d4703ff4b4dbb0d4024de7c53e76caa733c7b133fad64d`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 18.8 KB (18780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bb2315ee202f00dfc90d25f0019e13ab267d5d9c84a9ada4fc13590035d09813`  
 		Last Modified: Fri, 01 Dec 2023 09:39:57 GMT  
 		Size: 30.8 MB (30790072 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7e069e65f06574b9652900f22252f24ef797370c770991d922cf88c4b5b0cbce`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:34041033472da76bd36b1425655033bc161398d6046c52dd6487916e6a99bc0c`  
 		Last Modified: Fri, 01 Dec 2023 09:40:19 GMT  
 		Size: 1.0 MB (1047115 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ee1ff82fde3ac8a82fa08cb3d4fd9e3ea1f1e327076f7b173600e17498d2cdf`  
 		Last Modified: Fri, 01 Dec 2023 09:40:19 GMT  
 		Size: 409.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:304cf82070311dc8f30a16c6937e1e1e4019a8dcdb465a6e4431478a41a89560`  
 		Last Modified: Fri, 01 Dec 2023 09:40:19 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:e9ff6411ea25b23983bc81b1c105708b5222334f1f7867826c58b610845570ac
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903951 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1582f08e0660aaaa13b17a5e74769df2dfe93e66e1d557524d71832104048ccc`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:1bde858fbe2292fb18a65838c4be018ae399ac957c3403ca388d2857a0813efb`  
-		Last Modified: Fri, 01 Dec 2023 09:40:19 GMT  
-		Size: 1.9 MB (1873436 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:ca9e6aa289cefbe05a9ba34dc72b6251b324fb63cd9d5edc1c7a45dbc19fcb53`  
-		Last Modified: Fri, 01 Dec 2023 09:40:19 GMT  
-		Size: 30.5 KB (30515 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:5b9620b5d7edd986922155f4aca36b0b7185bd71526074ffe12454ce6a397a5a
+$ docker pull composer@sha256:d99107344611b01ec6ba86b0e9b4bbd9780b0e6d8e1d1d6fd03cced89f7bbe8c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -604,88 +525,64 @@ CMD ["composer"]
 	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
 		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
 		Size: 3.3 MB (3333033 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ec91cb5b5977bc2c77c932761c9cd04eda4b0df9636a46228a4c0af65ad1b4f3`  
 		Last Modified: Fri, 01 Dec 2023 00:40:05 GMT  
 		Size: 2.7 MB (2717190 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1563f945b2330cf35b9fc87a3f6456664dde2d6c4b6739047a9dd457f4a3d681`  
 		Last Modified: Fri, 01 Dec 2023 00:40:04 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f2549a9ef4a38d3afd713cc21e4de8fdf9a61d4d4f5b2897c0de403ec047f69a`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:285b1cbb8a2c86c2e2959b55b31fa9ac7abd053db302a937ce14d713aeaf8f44`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 12.5 MB (12452091 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42ac31d6bb70b19a698a7b74ae40261071bc6f22d09403fea931a7923ca8af18`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e6895913c4c7d243589b136d34c69cf54dc6e3aae7d5e785d8c35c570bb0e012`  
 		Last Modified: Fri, 01 Dec 2023 00:40:06 GMT  
 		Size: 17.1 MB (17056609 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1c9aea783aa0077ad1860c83cdbc65d3ad9547ba0c7694359f04efe829bec772`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 2.4 KB (2445 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f59963826a7f5193afec349b01fd624dd57a56e93881623c88faf7564007df02`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 18.7 KB (18729 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:083ab35f4c099a5c6f2fd6796eedcfbd32dd9419cee0c64ab606825964d4ed87`  
 		Last Modified: Fri, 01 Dec 2023 10:13:21 GMT  
 		Size: 32.9 MB (32888759 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:33f9642924941eef55ba6176cbfc4340e3e32ad0611f6b8dbbab9d16233c8efe`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a578825e193af3731e610aa8fba562f8a2b753f4b403d8c55f24a3993592f6be`  
 		Last Modified: Fri, 01 Dec 2023 10:13:43 GMT  
 		Size: 1.1 MB (1111708 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d715f3c0f5e5d9c3b6109863757d6a38c7c77c2c36d9ff81c0159fdf316f0c04`  
 		Last Modified: Fri, 01 Dec 2023 10:13:43 GMT  
 		Size: 410.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:258f76c4c4a5975dce3a69e5413a6378d4bd4900393fc2894995e177db29ab99`  
 		Last Modified: Fri, 01 Dec 2023 10:13:43 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:cfc9a0cbe7c61f7e99615bdf3c56ff88eed9f20d1b0a00e324774d2d2ef033f1
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903680 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3437402ae982da40f2e4108279da704679bdba6103dd47b6ad5525d3937bb39c`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:cdd56a91e5710c0329259abe31425364bd109180b98467c033911a6fca815110`  
-		Last Modified: Fri, 01 Dec 2023 10:13:43 GMT  
-		Size: 1.9 MB (1873236 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:196969edb3de08d80a7040686dd4309da3b74191b977a2b5bb37fa942146415d`  
-		Last Modified: Fri, 01 Dec 2023 10:13:43 GMT  
-		Size: 30.4 KB (30444 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1` - linux; 386
 
 ```console
-$ docker pull composer@sha256:d8a10437fe35b31b998f9262620237bc82e19e6f321baa0ea65443bf295a3254
+$ docker pull composer@sha256:998d717d7e78b301a034ca96a5ebfb6e27614f694cbafcdf9d18b9c7620ff5c6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -764,88 +661,64 @@ CMD ["composer"]
 	-	`sha256:4966a8bd129b0a6adf93dc295a8fbe8f665d3194a684a5ce199c1c3596dbf3d9`  
 		Last Modified: Fri, 01 Dec 2023 02:04:18 GMT  
 		Size: 3.2 MB (3238831 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:786b6949c7da1fc85a439f51aa05ace6592ed6759802ad370ed74bc4f479828b`  
 		Last Modified: Fri, 01 Dec 2023 04:07:07 GMT  
 		Size: 2.7 MB (2723376 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:27aec508afba473c67b8d2ad4216ba2489f0e9f08768454183b11877384d8139`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 1.3 KB (1259 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a55ae0822cb02fa8febaedc0ea40b1c5b2823b47b9e9f3dc9436f506df98f121`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:81d34e95bca488cede02955576432a46cb1462e07cc769b9eb29f6fb2bf7dcbf`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 12.5 MB (12452099 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:03e703b9b578d877bbb5bb3e7217c5b01c4bd415d52c238a814d769297fe5970`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1b35603c3070a506bb74ab53e6ef71985df5ebcef52f3a030c3b1280fe221eb7`  
 		Last Modified: Fri, 01 Dec 2023 04:07:08 GMT  
 		Size: 17.3 MB (17338715 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:70c1d3cc41a87b1f20ce9166de4fa148c58e529e7a60946164e1ba7d5739156d`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ce144e8060ec62642abf24c41af8e07481873030aa04e8c8c13cc6067a54ee94`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 18.9 KB (18926 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d5e7634c298564bc162ac9ee1138503d2f03fad621a4071d55b33989f624dc5`  
 		Last Modified: Fri, 01 Dec 2023 10:00:41 GMT  
 		Size: 10.7 MB (10733320 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e128cbaba61d68a820c95bb7e672da3c4be595ddf782002fd3a23f91855d2a4a`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:acff5fc39ff232042b710829ce686548617c21fecdcb82c57541f73857aaf8c4`  
 		Last Modified: Fri, 01 Dec 2023 10:01:01 GMT  
 		Size: 1.1 MB (1056944 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:5bdba4c37a968175d942a0b5d7a3f3532199678bca54260f9cef8252254db1e4`  
 		Last Modified: Fri, 01 Dec 2023 10:01:01 GMT  
 		Size: 410.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:faee44122f47541a925666b7b542a6ca41955fce4adda215abb71cb6ee30f089`  
 		Last Modified: Fri, 01 Dec 2023 10:01:01 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:9aecd9d2130365b37a70fdd45b5a6686f54bd65dc06b8562ae89185975b27349
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **374.1 KB (374082 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0e55ad32b9c9f4c3b6682a15d868a88abbe9e72c695600c3517d34a257b404ff`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:ce26f92bd6bc1c9d6e5deacac27862b6d5a4c7ab3bb21ffdff2ff973a4a774a1`  
-		Last Modified: Fri, 01 Dec 2023 10:01:01 GMT  
-		Size: 343.7 KB (343660 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:9f69450a6ae1c985850b5153556a9123e45ba7500b4f706ac7e1fb41575352de`  
-		Last Modified: Fri, 01 Dec 2023 10:01:01 GMT  
-		Size: 30.4 KB (30422 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1` - linux; ppc64le
 
 ```console
-$ docker pull composer@sha256:0e9303c19639505560a959894f9a35ac0bf47d5bb7b28d6853f5764b6224fe09
+$ docker pull composer@sha256:99cd030e83b7301efa5fa66c559f0f005bb35bdd9cac3a88a4b07cb1d4632447
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -924,88 +797,64 @@ CMD ["composer"]
 	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
 		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
 		Size: 3.3 MB (3348322 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f8cb9b4da64e0956e297ed583f04085128cdc4a68dcffa3a41c639319245c27`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 2.8 MB (2766423 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:89e2afe36ae984e44fa290115e1355ddb9ba0833dc70a7e3e1f1ed384492c3ec`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 1.3 KB (1267 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:233860698dd8a6e8c7a48373c7cb0a908fc5e1ad61c7ba6c0606e54226ed4c5d`  
 		Last Modified: Fri, 01 Dec 2023 00:53:03 GMT  
 		Size: 267.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f8fb69ca1d3e6a6c70e5d15e8c0a1588f2b439de9683f4874bd1b2f921e4232a`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 12.5 MB (12452085 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab6815e64bb3220dda4d71f42ca13e00d8da619677251611904fb38d6e6eb671`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 494.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1d29c3f41b3d1633a6f3b802d29f6d55acc40d2b97d36e015a15870ceb1bbaa8`  
 		Last Modified: Fri, 01 Dec 2023 00:53:05 GMT  
 		Size: 17.9 MB (17871055 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:eab7245ddd19f65a03b28a395a911f228d137eff133f0ce3855ac49d3bd3623e`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:60fa13b877a4b587f4bfbdfde83831719bc57b09c6a6b8b65c4430b883643393`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 18.7 KB (18731 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4d6f197c8706ed2d9ad1c3776ad0a38b89146398b9a1b9bbf515bb0d2d368959`  
 		Last Modified: Fri, 01 Dec 2023 09:59:33 GMT  
 		Size: 33.5 MB (33538629 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:deca4be23e5d94daeed68f294c98841e816fc5b4e0089108bb8ed8468563bbae`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:217e58e563c683ab7a4200902c6e720bebe9d57b60fe09fd6be7ea2c1dfa6bad`  
 		Last Modified: Fri, 01 Dec 2023 09:59:56 GMT  
 		Size: 1.2 MB (1168119 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b44c88d437d6560be5b594d2fbaa8eedc344007bee7099bd4ee39770b13116ed`  
 		Last Modified: Fri, 01 Dec 2023 09:59:56 GMT  
 		Size: 409.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:017b23d26a7c8b2acde8d573ca9cda643fc976eb43ec7d6ec57a0945185747a5`  
 		Last Modified: Fri, 01 Dec 2023 09:59:16 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:ca8b12355d094eed5ffd05f20b87c15a01c0ce4de1d7317b0b8e9fd8a7fca23f
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902459 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:85bb01dd2a7370b8d9151e047a3cc92cbef6df18ea0b56b59588d8ae4f54fbc0`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:1af48fa9dd6f64d6aa9ac8c40d15f38665c5dc3ec1eb01c8a6cb6592f269cfbe`  
-		Last Modified: Fri, 01 Dec 2023 09:59:56 GMT  
-		Size: 1.9 MB (1871993 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:7c57ccfd19ea477c4395077baf71909574801d295871e456e44d210864dc3332`  
-		Last Modified: Fri, 01 Dec 2023 09:59:56 GMT  
-		Size: 30.5 KB (30466 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:c4a78497b9f8e162e6d2ea5057e545851f40a7a1c4b8da80f649e314f0c069e3
+$ docker pull composer@sha256:af205da4b23dd860272b25624e1294f0f6d66fd4b7d78ec5ac4f7641068a8250
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -1084,111 +933,80 @@ CMD ["composer"]
 	-	`sha256:2ea477e1c0c3db3337ee1d7c659f8c465021a65c036998ed3fa3b667d4b30153`  
 		Last Modified: Thu, 30 Nov 2023 22:42:52 GMT  
 		Size: 3.2 MB (3217454 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3aa5313d02d4fcc59703ea6bd09df7b0df122fc73121b0954b541c214229202e`  
 		Last Modified: Thu, 30 Nov 2023 23:47:29 GMT  
 		Size: 2.8 MB (2789878 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f082f983656d312447043a024c0fa5528e4055dbd73f4101ac38d1d2d3158ea`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 1.3 KB (1262 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:35feaf89a3d400114f4864637453e2e21cd9e7cb6a859699bd6272483f3a56ee`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b59844514cd33789360a3e46dbaff2cdae06b8cd8d18ee9449808c168be15f9`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 12.5 MB (12452093 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:090f8111976872dd0d1fdf290acf04666250d582cbba875706f055725bc42aff`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:398c5ca7cbe876f0f1cf80bef52d39ccd6949d12e9836af8af296afb1084c144`  
 		Last Modified: Thu, 30 Nov 2023 23:47:30 GMT  
 		Size: 16.0 MB (15956254 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa90b5b8b99ecde21a6c31cb4effceb2e48d33b4feeb73b3a12ec4545c63d32a`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3a82796f38dbb8536e9be3b686e7716a2916e08c53622bf88c55aa3ed67802d0`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 18.8 KB (18764 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c209132482d51247ed069f0572cfab5180a1053e1b2856ebe7bb2dbbbf308e38`  
 		Last Modified: Fri, 01 Dec 2023 09:39:28 GMT  
 		Size: 32.3 MB (32333843 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2be49705f63fb76f942d7d9c7808dd4d2b4dc2e25b081f1c7b9d534ca7a70477`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 259.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:92c1a8f757dc4e44087e1b32d495a6c5837861976b18ed8e856ac95a219e67ee`  
 		Last Modified: Fri, 01 Dec 2023 09:39:46 GMT  
 		Size: 1.1 MB (1089288 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3600ad542a89f4287b54445efe0eb8eeaad23d974496f69e0432a43737d8f656`  
 		Last Modified: Fri, 01 Dec 2023 09:39:46 GMT  
 		Size: 410.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7255baea9c77f80454f0e16886e75bb6d6f160fcd73870b8018434fca5322066`  
 		Last Modified: Fri, 01 Dec 2023 09:39:11 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:bf60b5553e3a6fade5ed91de4e0cf592f903a7c797ea01e63876530734eca101
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1901290 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5bd2168edb1686b59aa53e8cecca4865b1fb542a07504e2fbd14aefefd3af108`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:22639436c7d3f3b0a81b775f083a49aaede94c66c232fcb6c993b16c51d1f200`  
-		Last Modified: Fri, 01 Dec 2023 09:39:46 GMT  
-		Size: 1.9 MB (1870846 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:5270e0c05911dadce23db23187382c8a4bca3fdb915ff39f1c33db591258dae0`  
-		Last Modified: Fri, 01 Dec 2023 09:39:46 GMT  
-		Size: 30.4 KB (30444 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:1.10`
 
 ```console
-$ docker pull composer@sha256:1f54be92c23b0a705046e1654d55f4f2448237d4e948665d3060ed3e51a84dcb
+$ docker pull composer@sha256:6fd225662815eabd6e50555602c1f17944af1169411701a78888e8c574c84788
 ```
 
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 14
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
 	-	linux; amd64
-	-	unknown; unknown
 	-	linux; arm variant v6
-	-	unknown; unknown
 	-	linux; arm variant v7
-	-	unknown; unknown
 	-	linux; arm64 variant v8
-	-	unknown; unknown
 	-	linux; 386
-	-	unknown; unknown
 	-	linux; ppc64le
-	-	unknown; unknown
 	-	linux; s390x
-	-	unknown; unknown
 
 ### `composer:1.10` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:76ce1f0841d96cbff7e14c8aa00b10ced921e471e807ed872d1403423ab11837
+$ docker pull composer@sha256:6667ad5d14fe1d85a21df515752547430e64c95250cb2988f32c24dd84604de9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -1267,88 +1085,64 @@ CMD ["composer"]
 	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
 		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
 		Size: 3.4 MB (3402422 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8e26b626c27026d1938a0b6bd77e36b4113da4b7a1134df8d1aa9f49658b25f`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 2.7 MB (2679359 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:23427f6f19cc27aa3496173559d7fc30c2501d1d179a15b52ac1758cc1667d37`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:938ee652f0dd66c081c31e773163d4c3d8ec979f9ced384ed270cdc5fbcbe657`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8abe2aaf4047e9984223c8d63be88c09b7d447f8c9f77851aa06771c52bba05b`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 12.5 MB (12452105 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e06ec6f102433dfe7410990547f8d059d4c3e56455e35d7b4dfbfb96784486e1`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 492.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9ea984f05cf27a91a07a0b1f63adb1e6f9c4cb631325b5a07343b8faf75f7028`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 17.1 MB (17069834 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e6c3ecb64ca025834e2eba225bd5d603742000e1d67407ba50cf0f60ea41a98`  
 		Last Modified: Fri, 01 Dec 2023 00:42:05 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d3b07fe920dd6973a44ea83074fd9125fe7d4774492d00c0ffefb9a04a847a29`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 19.0 KB (18951 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:db476e3c025b598a275cc72e45c12e45db55e1df982d1e90e45f76b630e44f26`  
 		Last Modified: Fri, 01 Dec 2023 08:02:43 GMT  
 		Size: 32.5 MB (32533618 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:00b605206545e71c8d6637e233d08e5cae279512b88f4eedbb3dd9444948f3c1`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8cb78356d05788dd385b28564670a6452ded64dbd37d368ebc79fa601ec077`  
 		Last Modified: Fri, 01 Dec 2023 08:03:06 GMT  
 		Size: 1.1 MB (1126802 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b0151ca260eac5327915f6e027f1c385eae34fe8be88175f59780c27d0420d3f`  
 		Last Modified: Fri, 01 Dec 2023 08:03:06 GMT  
 		Size: 408.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d8601594f90928196dda97294e272921fc43ea558f3a7f2ef9448b4a4b734277`  
 		Last Modified: Fri, 01 Dec 2023 08:03:06 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1.10` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:f64e7f17fa4523ca67007090a88ae2ff6cfe1ddcfb3f36776eab0952c50c8585
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903584 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:965c3abd1f6bf07802adfa7ed4a152b27c7ec929d6ab3e856e64284054b17ce2`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:dd6cdbce75ec020a1d719cc48c74f69125552e330b08128d6fe51e43afb67118`  
-		Last Modified: Fri, 01 Dec 2023 08:03:06 GMT  
-		Size: 1.9 MB (1873140 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:0d41badbd79881200ad07ca2b4776c1970ecaf0f99ca7a3aa6c03bcf2c114aa6`  
-		Last Modified: Fri, 01 Dec 2023 08:03:06 GMT  
-		Size: 30.4 KB (30444 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1.10` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:0daf4944755a59691af4354b1e49bb74c2524a26469c98555fa3a2f5a22627ca
+$ docker pull composer@sha256:d52ffa70683cfcd4d2c924d6eb317e9f4f6ff2c33c9bebf5fa6a61522d1bfb81
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -1427,88 +1221,64 @@ CMD ["composer"]
 	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
 		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
 		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ad3f4bb45cafc3a0c4349f9564390ff0fe5c2a3dc4287f0ddf3de8a86dcbb66`  
 		Last Modified: Fri, 01 Dec 2023 00:15:00 GMT  
 		Size: 2.7 MB (2685809 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a06cb8c5272936441cf9c53173eed2af740b588b3a9d8bbbb0b6565f38005e36`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c6156dbc484960b6656a156d5d82d973371555039e45046b37e9af1cbfec8569`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:66811c19a32e40a429b8ba817b3ceb6493496ebd20655f68d5a7ca3844b6c96c`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 12.5 MB (12452097 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4954b5c64e0b15f09646882302df3b0ee246ee32b00519bd4e89f052587d473a`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:889affb1cad3094dce99e0b6c7f8c737a0319cf2a1a9201f97fb1967478162fd`  
 		Last Modified: Fri, 01 Dec 2023 00:15:01 GMT  
 		Size: 15.7 MB (15657131 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b1b4a6a047cfe6a394007eb70b0c03f70ee3d7e9447288d47f549224f614aa2f`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e71e5e0f24e7b0508ad3d6798d964951c64d5fd451467d129a769807abbb8067`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 18.8 KB (18767 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ae4356a5b2c65b1e0f267a80bfe2a0ef3872dd9dd2b6d8f45703247b88fc2e13`  
 		Last Modified: Fri, 01 Dec 2023 11:50:53 GMT  
 		Size: 31.3 MB (31290430 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3019528382efe80e087e7475c0cbe6d2be762ace22b13332601422066b7f8f9c`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 256.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0837c16ab19144425cc278ea0f7e018728530c643ce5596ce3d25ee81e8ad710`  
 		Last Modified: Fri, 01 Dec 2023 11:51:15 GMT  
 		Size: 1.1 MB (1083543 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:44c132fb92971633a3736d63d1e17231452aa6137b99daef0af685beaac48271`  
 		Last Modified: Fri, 01 Dec 2023 11:51:14 GMT  
 		Size: 409.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e1aab39ac016043dbe8d04c6daab51aeb37443f0826fed2b9fb96eaf82c316c5`  
 		Last Modified: Fri, 01 Dec 2023 11:51:14 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1.10` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:ad818c82d6430c0d7df7ff18af1da6b8863b06dc668ec8531744dfd54a094549
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902605 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:29cf8afc8180b4bdce0feb4ee86debcd3c0a2e2a2f33a19b64d4fbce58c798ad`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:8ad4d43c666dc615fc609bc718135e41db24ec9542ed59414b0287b78b92c6e4`  
-		Last Modified: Fri, 01 Dec 2023 11:51:15 GMT  
-		Size: 1.9 MB (1872090 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:fadc1f9ac3fc646af92e038c282d0a6bcf4cdc5cde955731ca0795e6f4f8ce7d`  
-		Last Modified: Fri, 01 Dec 2023 11:51:15 GMT  
-		Size: 30.5 KB (30515 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1.10` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:8c85ce74c05d2b430501e6a5e9de6645fac9af310c426b673bd29eae6983ee60
+$ docker pull composer@sha256:12f547a06b9f56edf6cedd4dc425e30bfcc0c08fee5dcfd16ba87590d15549f6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -1587,88 +1357,64 @@ CMD ["composer"]
 	-	`sha256:2387a44129d2147bd4e806bf369f3db92eb3ad3b6b8825c739db364b8baa4e26`  
 		Last Modified: Thu, 30 Nov 2023 22:49:56 GMT  
 		Size: 2.9 MB (2901006 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:463dfc43b4287670c76354cf1d002e077c0a4b8f41207fdbd96316d0f649fdd5`  
 		Last Modified: Thu, 30 Nov 2023 23:58:02 GMT  
 		Size: 2.5 MB (2524902 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8445d08981ee2b82e7069c3bf290f41039993039dd9740da05b6c962c368ea`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 1.3 KB (1261 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8472c3889e6c64cf9e26fe36cc30bf9e211560aea77f82e97443348cb5956b88`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4e1a31c7a08192627a7e02da4b1d5ea494d5c25269ca986f8d2e7a8ae2d9365d`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 12.5 MB (12452107 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:12b3a23b2108bae03e59ed5e203dc9570b4d69cb6e8636a1f35e442846def57e`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6e7f8f1640d5c681ec203b1bd556d520c628ec0d02e41a591d1198b185d0d667`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 14.6 MB (14638942 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2f208f61c3ca97f2ff11ccb123a8707e61ce0891b966e160aedc3ae93a69d284`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 2.4 KB (2446 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f1879be0a19ef9277d4703ff4b4dbb0d4024de7c53e76caa733c7b133fad64d`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 18.8 KB (18780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bb2315ee202f00dfc90d25f0019e13ab267d5d9c84a9ada4fc13590035d09813`  
 		Last Modified: Fri, 01 Dec 2023 09:39:57 GMT  
 		Size: 30.8 MB (30790072 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7e069e65f06574b9652900f22252f24ef797370c770991d922cf88c4b5b0cbce`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:34041033472da76bd36b1425655033bc161398d6046c52dd6487916e6a99bc0c`  
 		Last Modified: Fri, 01 Dec 2023 09:40:19 GMT  
 		Size: 1.0 MB (1047115 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ee1ff82fde3ac8a82fa08cb3d4fd9e3ea1f1e327076f7b173600e17498d2cdf`  
 		Last Modified: Fri, 01 Dec 2023 09:40:19 GMT  
 		Size: 409.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:304cf82070311dc8f30a16c6937e1e1e4019a8dcdb465a6e4431478a41a89560`  
 		Last Modified: Fri, 01 Dec 2023 09:40:19 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1.10` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:e9ff6411ea25b23983bc81b1c105708b5222334f1f7867826c58b610845570ac
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903951 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1582f08e0660aaaa13b17a5e74769df2dfe93e66e1d557524d71832104048ccc`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:1bde858fbe2292fb18a65838c4be018ae399ac957c3403ca388d2857a0813efb`  
-		Last Modified: Fri, 01 Dec 2023 09:40:19 GMT  
-		Size: 1.9 MB (1873436 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:ca9e6aa289cefbe05a9ba34dc72b6251b324fb63cd9d5edc1c7a45dbc19fcb53`  
-		Last Modified: Fri, 01 Dec 2023 09:40:19 GMT  
-		Size: 30.5 KB (30515 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1.10` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:5b9620b5d7edd986922155f4aca36b0b7185bd71526074ffe12454ce6a397a5a
+$ docker pull composer@sha256:d99107344611b01ec6ba86b0e9b4bbd9780b0e6d8e1d1d6fd03cced89f7bbe8c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -1747,88 +1493,64 @@ CMD ["composer"]
 	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
 		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
 		Size: 3.3 MB (3333033 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ec91cb5b5977bc2c77c932761c9cd04eda4b0df9636a46228a4c0af65ad1b4f3`  
 		Last Modified: Fri, 01 Dec 2023 00:40:05 GMT  
 		Size: 2.7 MB (2717190 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1563f945b2330cf35b9fc87a3f6456664dde2d6c4b6739047a9dd457f4a3d681`  
 		Last Modified: Fri, 01 Dec 2023 00:40:04 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f2549a9ef4a38d3afd713cc21e4de8fdf9a61d4d4f5b2897c0de403ec047f69a`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:285b1cbb8a2c86c2e2959b55b31fa9ac7abd053db302a937ce14d713aeaf8f44`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 12.5 MB (12452091 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42ac31d6bb70b19a698a7b74ae40261071bc6f22d09403fea931a7923ca8af18`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e6895913c4c7d243589b136d34c69cf54dc6e3aae7d5e785d8c35c570bb0e012`  
 		Last Modified: Fri, 01 Dec 2023 00:40:06 GMT  
 		Size: 17.1 MB (17056609 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1c9aea783aa0077ad1860c83cdbc65d3ad9547ba0c7694359f04efe829bec772`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 2.4 KB (2445 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f59963826a7f5193afec349b01fd624dd57a56e93881623c88faf7564007df02`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 18.7 KB (18729 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:083ab35f4c099a5c6f2fd6796eedcfbd32dd9419cee0c64ab606825964d4ed87`  
 		Last Modified: Fri, 01 Dec 2023 10:13:21 GMT  
 		Size: 32.9 MB (32888759 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:33f9642924941eef55ba6176cbfc4340e3e32ad0611f6b8dbbab9d16233c8efe`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a578825e193af3731e610aa8fba562f8a2b753f4b403d8c55f24a3993592f6be`  
 		Last Modified: Fri, 01 Dec 2023 10:13:43 GMT  
 		Size: 1.1 MB (1111708 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d715f3c0f5e5d9c3b6109863757d6a38c7c77c2c36d9ff81c0159fdf316f0c04`  
 		Last Modified: Fri, 01 Dec 2023 10:13:43 GMT  
 		Size: 410.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:258f76c4c4a5975dce3a69e5413a6378d4bd4900393fc2894995e177db29ab99`  
 		Last Modified: Fri, 01 Dec 2023 10:13:43 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1.10` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:cfc9a0cbe7c61f7e99615bdf3c56ff88eed9f20d1b0a00e324774d2d2ef033f1
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903680 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3437402ae982da40f2e4108279da704679bdba6103dd47b6ad5525d3937bb39c`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:cdd56a91e5710c0329259abe31425364bd109180b98467c033911a6fca815110`  
-		Last Modified: Fri, 01 Dec 2023 10:13:43 GMT  
-		Size: 1.9 MB (1873236 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:196969edb3de08d80a7040686dd4309da3b74191b977a2b5bb37fa942146415d`  
-		Last Modified: Fri, 01 Dec 2023 10:13:43 GMT  
-		Size: 30.4 KB (30444 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1.10` - linux; 386
 
 ```console
-$ docker pull composer@sha256:d8a10437fe35b31b998f9262620237bc82e19e6f321baa0ea65443bf295a3254
+$ docker pull composer@sha256:998d717d7e78b301a034ca96a5ebfb6e27614f694cbafcdf9d18b9c7620ff5c6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -1907,88 +1629,64 @@ CMD ["composer"]
 	-	`sha256:4966a8bd129b0a6adf93dc295a8fbe8f665d3194a684a5ce199c1c3596dbf3d9`  
 		Last Modified: Fri, 01 Dec 2023 02:04:18 GMT  
 		Size: 3.2 MB (3238831 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:786b6949c7da1fc85a439f51aa05ace6592ed6759802ad370ed74bc4f479828b`  
 		Last Modified: Fri, 01 Dec 2023 04:07:07 GMT  
 		Size: 2.7 MB (2723376 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:27aec508afba473c67b8d2ad4216ba2489f0e9f08768454183b11877384d8139`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 1.3 KB (1259 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a55ae0822cb02fa8febaedc0ea40b1c5b2823b47b9e9f3dc9436f506df98f121`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:81d34e95bca488cede02955576432a46cb1462e07cc769b9eb29f6fb2bf7dcbf`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 12.5 MB (12452099 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:03e703b9b578d877bbb5bb3e7217c5b01c4bd415d52c238a814d769297fe5970`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1b35603c3070a506bb74ab53e6ef71985df5ebcef52f3a030c3b1280fe221eb7`  
 		Last Modified: Fri, 01 Dec 2023 04:07:08 GMT  
 		Size: 17.3 MB (17338715 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:70c1d3cc41a87b1f20ce9166de4fa148c58e529e7a60946164e1ba7d5739156d`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ce144e8060ec62642abf24c41af8e07481873030aa04e8c8c13cc6067a54ee94`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 18.9 KB (18926 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d5e7634c298564bc162ac9ee1138503d2f03fad621a4071d55b33989f624dc5`  
 		Last Modified: Fri, 01 Dec 2023 10:00:41 GMT  
 		Size: 10.7 MB (10733320 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e128cbaba61d68a820c95bb7e672da3c4be595ddf782002fd3a23f91855d2a4a`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:acff5fc39ff232042b710829ce686548617c21fecdcb82c57541f73857aaf8c4`  
 		Last Modified: Fri, 01 Dec 2023 10:01:01 GMT  
 		Size: 1.1 MB (1056944 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:5bdba4c37a968175d942a0b5d7a3f3532199678bca54260f9cef8252254db1e4`  
 		Last Modified: Fri, 01 Dec 2023 10:01:01 GMT  
 		Size: 410.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:faee44122f47541a925666b7b542a6ca41955fce4adda215abb71cb6ee30f089`  
 		Last Modified: Fri, 01 Dec 2023 10:01:01 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1.10` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:9aecd9d2130365b37a70fdd45b5a6686f54bd65dc06b8562ae89185975b27349
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **374.1 KB (374082 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0e55ad32b9c9f4c3b6682a15d868a88abbe9e72c695600c3517d34a257b404ff`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:ce26f92bd6bc1c9d6e5deacac27862b6d5a4c7ab3bb21ffdff2ff973a4a774a1`  
-		Last Modified: Fri, 01 Dec 2023 10:01:01 GMT  
-		Size: 343.7 KB (343660 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:9f69450a6ae1c985850b5153556a9123e45ba7500b4f706ac7e1fb41575352de`  
-		Last Modified: Fri, 01 Dec 2023 10:01:01 GMT  
-		Size: 30.4 KB (30422 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1.10` - linux; ppc64le
 
 ```console
-$ docker pull composer@sha256:0e9303c19639505560a959894f9a35ac0bf47d5bb7b28d6853f5764b6224fe09
+$ docker pull composer@sha256:99cd030e83b7301efa5fa66c559f0f005bb35bdd9cac3a88a4b07cb1d4632447
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -2067,88 +1765,64 @@ CMD ["composer"]
 	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
 		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
 		Size: 3.3 MB (3348322 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f8cb9b4da64e0956e297ed583f04085128cdc4a68dcffa3a41c639319245c27`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 2.8 MB (2766423 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:89e2afe36ae984e44fa290115e1355ddb9ba0833dc70a7e3e1f1ed384492c3ec`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 1.3 KB (1267 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:233860698dd8a6e8c7a48373c7cb0a908fc5e1ad61c7ba6c0606e54226ed4c5d`  
 		Last Modified: Fri, 01 Dec 2023 00:53:03 GMT  
 		Size: 267.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f8fb69ca1d3e6a6c70e5d15e8c0a1588f2b439de9683f4874bd1b2f921e4232a`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 12.5 MB (12452085 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab6815e64bb3220dda4d71f42ca13e00d8da619677251611904fb38d6e6eb671`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 494.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1d29c3f41b3d1633a6f3b802d29f6d55acc40d2b97d36e015a15870ceb1bbaa8`  
 		Last Modified: Fri, 01 Dec 2023 00:53:05 GMT  
 		Size: 17.9 MB (17871055 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:eab7245ddd19f65a03b28a395a911f228d137eff133f0ce3855ac49d3bd3623e`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:60fa13b877a4b587f4bfbdfde83831719bc57b09c6a6b8b65c4430b883643393`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 18.7 KB (18731 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4d6f197c8706ed2d9ad1c3776ad0a38b89146398b9a1b9bbf515bb0d2d368959`  
 		Last Modified: Fri, 01 Dec 2023 09:59:33 GMT  
 		Size: 33.5 MB (33538629 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:deca4be23e5d94daeed68f294c98841e816fc5b4e0089108bb8ed8468563bbae`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:217e58e563c683ab7a4200902c6e720bebe9d57b60fe09fd6be7ea2c1dfa6bad`  
 		Last Modified: Fri, 01 Dec 2023 09:59:56 GMT  
 		Size: 1.2 MB (1168119 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b44c88d437d6560be5b594d2fbaa8eedc344007bee7099bd4ee39770b13116ed`  
 		Last Modified: Fri, 01 Dec 2023 09:59:56 GMT  
 		Size: 409.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:017b23d26a7c8b2acde8d573ca9cda643fc976eb43ec7d6ec57a0945185747a5`  
 		Last Modified: Fri, 01 Dec 2023 09:59:16 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1.10` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:ca8b12355d094eed5ffd05f20b87c15a01c0ce4de1d7317b0b8e9fd8a7fca23f
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902459 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:85bb01dd2a7370b8d9151e047a3cc92cbef6df18ea0b56b59588d8ae4f54fbc0`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:1af48fa9dd6f64d6aa9ac8c40d15f38665c5dc3ec1eb01c8a6cb6592f269cfbe`  
-		Last Modified: Fri, 01 Dec 2023 09:59:56 GMT  
-		Size: 1.9 MB (1871993 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:7c57ccfd19ea477c4395077baf71909574801d295871e456e44d210864dc3332`  
-		Last Modified: Fri, 01 Dec 2023 09:59:56 GMT  
-		Size: 30.5 KB (30466 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1.10` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:c4a78497b9f8e162e6d2ea5057e545851f40a7a1c4b8da80f649e314f0c069e3
+$ docker pull composer@sha256:af205da4b23dd860272b25624e1294f0f6d66fd4b7d78ec5ac4f7641068a8250
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -2227,111 +1901,80 @@ CMD ["composer"]
 	-	`sha256:2ea477e1c0c3db3337ee1d7c659f8c465021a65c036998ed3fa3b667d4b30153`  
 		Last Modified: Thu, 30 Nov 2023 22:42:52 GMT  
 		Size: 3.2 MB (3217454 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3aa5313d02d4fcc59703ea6bd09df7b0df122fc73121b0954b541c214229202e`  
 		Last Modified: Thu, 30 Nov 2023 23:47:29 GMT  
 		Size: 2.8 MB (2789878 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f082f983656d312447043a024c0fa5528e4055dbd73f4101ac38d1d2d3158ea`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 1.3 KB (1262 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:35feaf89a3d400114f4864637453e2e21cd9e7cb6a859699bd6272483f3a56ee`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b59844514cd33789360a3e46dbaff2cdae06b8cd8d18ee9449808c168be15f9`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 12.5 MB (12452093 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:090f8111976872dd0d1fdf290acf04666250d582cbba875706f055725bc42aff`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:398c5ca7cbe876f0f1cf80bef52d39ccd6949d12e9836af8af296afb1084c144`  
 		Last Modified: Thu, 30 Nov 2023 23:47:30 GMT  
 		Size: 16.0 MB (15956254 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa90b5b8b99ecde21a6c31cb4effceb2e48d33b4feeb73b3a12ec4545c63d32a`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3a82796f38dbb8536e9be3b686e7716a2916e08c53622bf88c55aa3ed67802d0`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 18.8 KB (18764 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c209132482d51247ed069f0572cfab5180a1053e1b2856ebe7bb2dbbbf308e38`  
 		Last Modified: Fri, 01 Dec 2023 09:39:28 GMT  
 		Size: 32.3 MB (32333843 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2be49705f63fb76f942d7d9c7808dd4d2b4dc2e25b081f1c7b9d534ca7a70477`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 259.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:92c1a8f757dc4e44087e1b32d495a6c5837861976b18ed8e856ac95a219e67ee`  
 		Last Modified: Fri, 01 Dec 2023 09:39:46 GMT  
 		Size: 1.1 MB (1089288 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3600ad542a89f4287b54445efe0eb8eeaad23d974496f69e0432a43737d8f656`  
 		Last Modified: Fri, 01 Dec 2023 09:39:46 GMT  
 		Size: 410.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7255baea9c77f80454f0e16886e75bb6d6f160fcd73870b8018434fca5322066`  
 		Last Modified: Fri, 01 Dec 2023 09:39:11 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1.10` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:bf60b5553e3a6fade5ed91de4e0cf592f903a7c797ea01e63876530734eca101
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1901290 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5bd2168edb1686b59aa53e8cecca4865b1fb542a07504e2fbd14aefefd3af108`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:22639436c7d3f3b0a81b775f083a49aaede94c66c232fcb6c993b16c51d1f200`  
-		Last Modified: Fri, 01 Dec 2023 09:39:46 GMT  
-		Size: 1.9 MB (1870846 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:5270e0c05911dadce23db23187382c8a4bca3fdb915ff39f1c33db591258dae0`  
-		Last Modified: Fri, 01 Dec 2023 09:39:46 GMT  
-		Size: 30.4 KB (30444 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:1.10.27`
 
 ```console
-$ docker pull composer@sha256:1f54be92c23b0a705046e1654d55f4f2448237d4e948665d3060ed3e51a84dcb
+$ docker pull composer@sha256:6fd225662815eabd6e50555602c1f17944af1169411701a78888e8c574c84788
 ```
 
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 14
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
 	-	linux; amd64
-	-	unknown; unknown
 	-	linux; arm variant v6
-	-	unknown; unknown
 	-	linux; arm variant v7
-	-	unknown; unknown
 	-	linux; arm64 variant v8
-	-	unknown; unknown
 	-	linux; 386
-	-	unknown; unknown
 	-	linux; ppc64le
-	-	unknown; unknown
 	-	linux; s390x
-	-	unknown; unknown
 
 ### `composer:1.10.27` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:76ce1f0841d96cbff7e14c8aa00b10ced921e471e807ed872d1403423ab11837
+$ docker pull composer@sha256:6667ad5d14fe1d85a21df515752547430e64c95250cb2988f32c24dd84604de9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -2410,88 +2053,64 @@ CMD ["composer"]
 	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
 		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
 		Size: 3.4 MB (3402422 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8e26b626c27026d1938a0b6bd77e36b4113da4b7a1134df8d1aa9f49658b25f`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 2.7 MB (2679359 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:23427f6f19cc27aa3496173559d7fc30c2501d1d179a15b52ac1758cc1667d37`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:938ee652f0dd66c081c31e773163d4c3d8ec979f9ced384ed270cdc5fbcbe657`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8abe2aaf4047e9984223c8d63be88c09b7d447f8c9f77851aa06771c52bba05b`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 12.5 MB (12452105 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e06ec6f102433dfe7410990547f8d059d4c3e56455e35d7b4dfbfb96784486e1`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 492.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9ea984f05cf27a91a07a0b1f63adb1e6f9c4cb631325b5a07343b8faf75f7028`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 17.1 MB (17069834 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e6c3ecb64ca025834e2eba225bd5d603742000e1d67407ba50cf0f60ea41a98`  
 		Last Modified: Fri, 01 Dec 2023 00:42:05 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d3b07fe920dd6973a44ea83074fd9125fe7d4774492d00c0ffefb9a04a847a29`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 19.0 KB (18951 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:db476e3c025b598a275cc72e45c12e45db55e1df982d1e90e45f76b630e44f26`  
 		Last Modified: Fri, 01 Dec 2023 08:02:43 GMT  
 		Size: 32.5 MB (32533618 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:00b605206545e71c8d6637e233d08e5cae279512b88f4eedbb3dd9444948f3c1`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8cb78356d05788dd385b28564670a6452ded64dbd37d368ebc79fa601ec077`  
 		Last Modified: Fri, 01 Dec 2023 08:03:06 GMT  
 		Size: 1.1 MB (1126802 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b0151ca260eac5327915f6e027f1c385eae34fe8be88175f59780c27d0420d3f`  
 		Last Modified: Fri, 01 Dec 2023 08:03:06 GMT  
 		Size: 408.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d8601594f90928196dda97294e272921fc43ea558f3a7f2ef9448b4a4b734277`  
 		Last Modified: Fri, 01 Dec 2023 08:03:06 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1.10.27` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:f64e7f17fa4523ca67007090a88ae2ff6cfe1ddcfb3f36776eab0952c50c8585
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903584 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:965c3abd1f6bf07802adfa7ed4a152b27c7ec929d6ab3e856e64284054b17ce2`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:dd6cdbce75ec020a1d719cc48c74f69125552e330b08128d6fe51e43afb67118`  
-		Last Modified: Fri, 01 Dec 2023 08:03:06 GMT  
-		Size: 1.9 MB (1873140 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:0d41badbd79881200ad07ca2b4776c1970ecaf0f99ca7a3aa6c03bcf2c114aa6`  
-		Last Modified: Fri, 01 Dec 2023 08:03:06 GMT  
-		Size: 30.4 KB (30444 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1.10.27` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:0daf4944755a59691af4354b1e49bb74c2524a26469c98555fa3a2f5a22627ca
+$ docker pull composer@sha256:d52ffa70683cfcd4d2c924d6eb317e9f4f6ff2c33c9bebf5fa6a61522d1bfb81
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -2570,88 +2189,64 @@ CMD ["composer"]
 	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
 		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
 		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ad3f4bb45cafc3a0c4349f9564390ff0fe5c2a3dc4287f0ddf3de8a86dcbb66`  
 		Last Modified: Fri, 01 Dec 2023 00:15:00 GMT  
 		Size: 2.7 MB (2685809 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a06cb8c5272936441cf9c53173eed2af740b588b3a9d8bbbb0b6565f38005e36`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c6156dbc484960b6656a156d5d82d973371555039e45046b37e9af1cbfec8569`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:66811c19a32e40a429b8ba817b3ceb6493496ebd20655f68d5a7ca3844b6c96c`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 12.5 MB (12452097 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4954b5c64e0b15f09646882302df3b0ee246ee32b00519bd4e89f052587d473a`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:889affb1cad3094dce99e0b6c7f8c737a0319cf2a1a9201f97fb1967478162fd`  
 		Last Modified: Fri, 01 Dec 2023 00:15:01 GMT  
 		Size: 15.7 MB (15657131 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b1b4a6a047cfe6a394007eb70b0c03f70ee3d7e9447288d47f549224f614aa2f`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e71e5e0f24e7b0508ad3d6798d964951c64d5fd451467d129a769807abbb8067`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 18.8 KB (18767 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ae4356a5b2c65b1e0f267a80bfe2a0ef3872dd9dd2b6d8f45703247b88fc2e13`  
 		Last Modified: Fri, 01 Dec 2023 11:50:53 GMT  
 		Size: 31.3 MB (31290430 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3019528382efe80e087e7475c0cbe6d2be762ace22b13332601422066b7f8f9c`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 256.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0837c16ab19144425cc278ea0f7e018728530c643ce5596ce3d25ee81e8ad710`  
 		Last Modified: Fri, 01 Dec 2023 11:51:15 GMT  
 		Size: 1.1 MB (1083543 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:44c132fb92971633a3736d63d1e17231452aa6137b99daef0af685beaac48271`  
 		Last Modified: Fri, 01 Dec 2023 11:51:14 GMT  
 		Size: 409.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e1aab39ac016043dbe8d04c6daab51aeb37443f0826fed2b9fb96eaf82c316c5`  
 		Last Modified: Fri, 01 Dec 2023 11:51:14 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1.10.27` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:ad818c82d6430c0d7df7ff18af1da6b8863b06dc668ec8531744dfd54a094549
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902605 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:29cf8afc8180b4bdce0feb4ee86debcd3c0a2e2a2f33a19b64d4fbce58c798ad`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:8ad4d43c666dc615fc609bc718135e41db24ec9542ed59414b0287b78b92c6e4`  
-		Last Modified: Fri, 01 Dec 2023 11:51:15 GMT  
-		Size: 1.9 MB (1872090 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:fadc1f9ac3fc646af92e038c282d0a6bcf4cdc5cde955731ca0795e6f4f8ce7d`  
-		Last Modified: Fri, 01 Dec 2023 11:51:15 GMT  
-		Size: 30.5 KB (30515 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1.10.27` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:8c85ce74c05d2b430501e6a5e9de6645fac9af310c426b673bd29eae6983ee60
+$ docker pull composer@sha256:12f547a06b9f56edf6cedd4dc425e30bfcc0c08fee5dcfd16ba87590d15549f6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -2730,88 +2325,64 @@ CMD ["composer"]
 	-	`sha256:2387a44129d2147bd4e806bf369f3db92eb3ad3b6b8825c739db364b8baa4e26`  
 		Last Modified: Thu, 30 Nov 2023 22:49:56 GMT  
 		Size: 2.9 MB (2901006 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:463dfc43b4287670c76354cf1d002e077c0a4b8f41207fdbd96316d0f649fdd5`  
 		Last Modified: Thu, 30 Nov 2023 23:58:02 GMT  
 		Size: 2.5 MB (2524902 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8445d08981ee2b82e7069c3bf290f41039993039dd9740da05b6c962c368ea`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 1.3 KB (1261 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8472c3889e6c64cf9e26fe36cc30bf9e211560aea77f82e97443348cb5956b88`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4e1a31c7a08192627a7e02da4b1d5ea494d5c25269ca986f8d2e7a8ae2d9365d`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 12.5 MB (12452107 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:12b3a23b2108bae03e59ed5e203dc9570b4d69cb6e8636a1f35e442846def57e`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6e7f8f1640d5c681ec203b1bd556d520c628ec0d02e41a591d1198b185d0d667`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 14.6 MB (14638942 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2f208f61c3ca97f2ff11ccb123a8707e61ce0891b966e160aedc3ae93a69d284`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 2.4 KB (2446 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f1879be0a19ef9277d4703ff4b4dbb0d4024de7c53e76caa733c7b133fad64d`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 18.8 KB (18780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bb2315ee202f00dfc90d25f0019e13ab267d5d9c84a9ada4fc13590035d09813`  
 		Last Modified: Fri, 01 Dec 2023 09:39:57 GMT  
 		Size: 30.8 MB (30790072 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7e069e65f06574b9652900f22252f24ef797370c770991d922cf88c4b5b0cbce`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:34041033472da76bd36b1425655033bc161398d6046c52dd6487916e6a99bc0c`  
 		Last Modified: Fri, 01 Dec 2023 09:40:19 GMT  
 		Size: 1.0 MB (1047115 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ee1ff82fde3ac8a82fa08cb3d4fd9e3ea1f1e327076f7b173600e17498d2cdf`  
 		Last Modified: Fri, 01 Dec 2023 09:40:19 GMT  
 		Size: 409.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:304cf82070311dc8f30a16c6937e1e1e4019a8dcdb465a6e4431478a41a89560`  
 		Last Modified: Fri, 01 Dec 2023 09:40:19 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1.10.27` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:e9ff6411ea25b23983bc81b1c105708b5222334f1f7867826c58b610845570ac
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903951 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1582f08e0660aaaa13b17a5e74769df2dfe93e66e1d557524d71832104048ccc`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:1bde858fbe2292fb18a65838c4be018ae399ac957c3403ca388d2857a0813efb`  
-		Last Modified: Fri, 01 Dec 2023 09:40:19 GMT  
-		Size: 1.9 MB (1873436 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:ca9e6aa289cefbe05a9ba34dc72b6251b324fb63cd9d5edc1c7a45dbc19fcb53`  
-		Last Modified: Fri, 01 Dec 2023 09:40:19 GMT  
-		Size: 30.5 KB (30515 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1.10.27` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:5b9620b5d7edd986922155f4aca36b0b7185bd71526074ffe12454ce6a397a5a
+$ docker pull composer@sha256:d99107344611b01ec6ba86b0e9b4bbd9780b0e6d8e1d1d6fd03cced89f7bbe8c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -2890,88 +2461,64 @@ CMD ["composer"]
 	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
 		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
 		Size: 3.3 MB (3333033 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ec91cb5b5977bc2c77c932761c9cd04eda4b0df9636a46228a4c0af65ad1b4f3`  
 		Last Modified: Fri, 01 Dec 2023 00:40:05 GMT  
 		Size: 2.7 MB (2717190 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1563f945b2330cf35b9fc87a3f6456664dde2d6c4b6739047a9dd457f4a3d681`  
 		Last Modified: Fri, 01 Dec 2023 00:40:04 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f2549a9ef4a38d3afd713cc21e4de8fdf9a61d4d4f5b2897c0de403ec047f69a`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:285b1cbb8a2c86c2e2959b55b31fa9ac7abd053db302a937ce14d713aeaf8f44`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 12.5 MB (12452091 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42ac31d6bb70b19a698a7b74ae40261071bc6f22d09403fea931a7923ca8af18`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e6895913c4c7d243589b136d34c69cf54dc6e3aae7d5e785d8c35c570bb0e012`  
 		Last Modified: Fri, 01 Dec 2023 00:40:06 GMT  
 		Size: 17.1 MB (17056609 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1c9aea783aa0077ad1860c83cdbc65d3ad9547ba0c7694359f04efe829bec772`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 2.4 KB (2445 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f59963826a7f5193afec349b01fd624dd57a56e93881623c88faf7564007df02`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 18.7 KB (18729 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:083ab35f4c099a5c6f2fd6796eedcfbd32dd9419cee0c64ab606825964d4ed87`  
 		Last Modified: Fri, 01 Dec 2023 10:13:21 GMT  
 		Size: 32.9 MB (32888759 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:33f9642924941eef55ba6176cbfc4340e3e32ad0611f6b8dbbab9d16233c8efe`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a578825e193af3731e610aa8fba562f8a2b753f4b403d8c55f24a3993592f6be`  
 		Last Modified: Fri, 01 Dec 2023 10:13:43 GMT  
 		Size: 1.1 MB (1111708 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d715f3c0f5e5d9c3b6109863757d6a38c7c77c2c36d9ff81c0159fdf316f0c04`  
 		Last Modified: Fri, 01 Dec 2023 10:13:43 GMT  
 		Size: 410.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:258f76c4c4a5975dce3a69e5413a6378d4bd4900393fc2894995e177db29ab99`  
 		Last Modified: Fri, 01 Dec 2023 10:13:43 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1.10.27` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:cfc9a0cbe7c61f7e99615bdf3c56ff88eed9f20d1b0a00e324774d2d2ef033f1
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903680 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3437402ae982da40f2e4108279da704679bdba6103dd47b6ad5525d3937bb39c`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:cdd56a91e5710c0329259abe31425364bd109180b98467c033911a6fca815110`  
-		Last Modified: Fri, 01 Dec 2023 10:13:43 GMT  
-		Size: 1.9 MB (1873236 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:196969edb3de08d80a7040686dd4309da3b74191b977a2b5bb37fa942146415d`  
-		Last Modified: Fri, 01 Dec 2023 10:13:43 GMT  
-		Size: 30.4 KB (30444 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1.10.27` - linux; 386
 
 ```console
-$ docker pull composer@sha256:d8a10437fe35b31b998f9262620237bc82e19e6f321baa0ea65443bf295a3254
+$ docker pull composer@sha256:998d717d7e78b301a034ca96a5ebfb6e27614f694cbafcdf9d18b9c7620ff5c6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -3050,88 +2597,64 @@ CMD ["composer"]
 	-	`sha256:4966a8bd129b0a6adf93dc295a8fbe8f665d3194a684a5ce199c1c3596dbf3d9`  
 		Last Modified: Fri, 01 Dec 2023 02:04:18 GMT  
 		Size: 3.2 MB (3238831 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:786b6949c7da1fc85a439f51aa05ace6592ed6759802ad370ed74bc4f479828b`  
 		Last Modified: Fri, 01 Dec 2023 04:07:07 GMT  
 		Size: 2.7 MB (2723376 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:27aec508afba473c67b8d2ad4216ba2489f0e9f08768454183b11877384d8139`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 1.3 KB (1259 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a55ae0822cb02fa8febaedc0ea40b1c5b2823b47b9e9f3dc9436f506df98f121`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:81d34e95bca488cede02955576432a46cb1462e07cc769b9eb29f6fb2bf7dcbf`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 12.5 MB (12452099 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:03e703b9b578d877bbb5bb3e7217c5b01c4bd415d52c238a814d769297fe5970`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1b35603c3070a506bb74ab53e6ef71985df5ebcef52f3a030c3b1280fe221eb7`  
 		Last Modified: Fri, 01 Dec 2023 04:07:08 GMT  
 		Size: 17.3 MB (17338715 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:70c1d3cc41a87b1f20ce9166de4fa148c58e529e7a60946164e1ba7d5739156d`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ce144e8060ec62642abf24c41af8e07481873030aa04e8c8c13cc6067a54ee94`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 18.9 KB (18926 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d5e7634c298564bc162ac9ee1138503d2f03fad621a4071d55b33989f624dc5`  
 		Last Modified: Fri, 01 Dec 2023 10:00:41 GMT  
 		Size: 10.7 MB (10733320 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e128cbaba61d68a820c95bb7e672da3c4be595ddf782002fd3a23f91855d2a4a`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:acff5fc39ff232042b710829ce686548617c21fecdcb82c57541f73857aaf8c4`  
 		Last Modified: Fri, 01 Dec 2023 10:01:01 GMT  
 		Size: 1.1 MB (1056944 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:5bdba4c37a968175d942a0b5d7a3f3532199678bca54260f9cef8252254db1e4`  
 		Last Modified: Fri, 01 Dec 2023 10:01:01 GMT  
 		Size: 410.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:faee44122f47541a925666b7b542a6ca41955fce4adda215abb71cb6ee30f089`  
 		Last Modified: Fri, 01 Dec 2023 10:01:01 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1.10.27` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:9aecd9d2130365b37a70fdd45b5a6686f54bd65dc06b8562ae89185975b27349
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **374.1 KB (374082 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0e55ad32b9c9f4c3b6682a15d868a88abbe9e72c695600c3517d34a257b404ff`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:ce26f92bd6bc1c9d6e5deacac27862b6d5a4c7ab3bb21ffdff2ff973a4a774a1`  
-		Last Modified: Fri, 01 Dec 2023 10:01:01 GMT  
-		Size: 343.7 KB (343660 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:9f69450a6ae1c985850b5153556a9123e45ba7500b4f706ac7e1fb41575352de`  
-		Last Modified: Fri, 01 Dec 2023 10:01:01 GMT  
-		Size: 30.4 KB (30422 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1.10.27` - linux; ppc64le
 
 ```console
-$ docker pull composer@sha256:0e9303c19639505560a959894f9a35ac0bf47d5bb7b28d6853f5764b6224fe09
+$ docker pull composer@sha256:99cd030e83b7301efa5fa66c559f0f005bb35bdd9cac3a88a4b07cb1d4632447
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -3210,88 +2733,64 @@ CMD ["composer"]
 	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
 		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
 		Size: 3.3 MB (3348322 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f8cb9b4da64e0956e297ed583f04085128cdc4a68dcffa3a41c639319245c27`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 2.8 MB (2766423 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:89e2afe36ae984e44fa290115e1355ddb9ba0833dc70a7e3e1f1ed384492c3ec`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 1.3 KB (1267 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:233860698dd8a6e8c7a48373c7cb0a908fc5e1ad61c7ba6c0606e54226ed4c5d`  
 		Last Modified: Fri, 01 Dec 2023 00:53:03 GMT  
 		Size: 267.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f8fb69ca1d3e6a6c70e5d15e8c0a1588f2b439de9683f4874bd1b2f921e4232a`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 12.5 MB (12452085 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab6815e64bb3220dda4d71f42ca13e00d8da619677251611904fb38d6e6eb671`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 494.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1d29c3f41b3d1633a6f3b802d29f6d55acc40d2b97d36e015a15870ceb1bbaa8`  
 		Last Modified: Fri, 01 Dec 2023 00:53:05 GMT  
 		Size: 17.9 MB (17871055 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:eab7245ddd19f65a03b28a395a911f228d137eff133f0ce3855ac49d3bd3623e`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:60fa13b877a4b587f4bfbdfde83831719bc57b09c6a6b8b65c4430b883643393`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 18.7 KB (18731 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4d6f197c8706ed2d9ad1c3776ad0a38b89146398b9a1b9bbf515bb0d2d368959`  
 		Last Modified: Fri, 01 Dec 2023 09:59:33 GMT  
 		Size: 33.5 MB (33538629 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:deca4be23e5d94daeed68f294c98841e816fc5b4e0089108bb8ed8468563bbae`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:217e58e563c683ab7a4200902c6e720bebe9d57b60fe09fd6be7ea2c1dfa6bad`  
 		Last Modified: Fri, 01 Dec 2023 09:59:56 GMT  
 		Size: 1.2 MB (1168119 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b44c88d437d6560be5b594d2fbaa8eedc344007bee7099bd4ee39770b13116ed`  
 		Last Modified: Fri, 01 Dec 2023 09:59:56 GMT  
 		Size: 409.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:017b23d26a7c8b2acde8d573ca9cda643fc976eb43ec7d6ec57a0945185747a5`  
 		Last Modified: Fri, 01 Dec 2023 09:59:16 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1.10.27` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:ca8b12355d094eed5ffd05f20b87c15a01c0ce4de1d7317b0b8e9fd8a7fca23f
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902459 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:85bb01dd2a7370b8d9151e047a3cc92cbef6df18ea0b56b59588d8ae4f54fbc0`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:1af48fa9dd6f64d6aa9ac8c40d15f38665c5dc3ec1eb01c8a6cb6592f269cfbe`  
-		Last Modified: Fri, 01 Dec 2023 09:59:56 GMT  
-		Size: 1.9 MB (1871993 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:7c57ccfd19ea477c4395077baf71909574801d295871e456e44d210864dc3332`  
-		Last Modified: Fri, 01 Dec 2023 09:59:56 GMT  
-		Size: 30.5 KB (30466 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:1.10.27` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:c4a78497b9f8e162e6d2ea5057e545851f40a7a1c4b8da80f649e314f0c069e3
+$ docker pull composer@sha256:af205da4b23dd860272b25624e1294f0f6d66fd4b7d78ec5ac4f7641068a8250
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -3370,111 +2869,80 @@ CMD ["composer"]
 	-	`sha256:2ea477e1c0c3db3337ee1d7c659f8c465021a65c036998ed3fa3b667d4b30153`  
 		Last Modified: Thu, 30 Nov 2023 22:42:52 GMT  
 		Size: 3.2 MB (3217454 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3aa5313d02d4fcc59703ea6bd09df7b0df122fc73121b0954b541c214229202e`  
 		Last Modified: Thu, 30 Nov 2023 23:47:29 GMT  
 		Size: 2.8 MB (2789878 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f082f983656d312447043a024c0fa5528e4055dbd73f4101ac38d1d2d3158ea`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 1.3 KB (1262 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:35feaf89a3d400114f4864637453e2e21cd9e7cb6a859699bd6272483f3a56ee`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b59844514cd33789360a3e46dbaff2cdae06b8cd8d18ee9449808c168be15f9`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 12.5 MB (12452093 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:090f8111976872dd0d1fdf290acf04666250d582cbba875706f055725bc42aff`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:398c5ca7cbe876f0f1cf80bef52d39ccd6949d12e9836af8af296afb1084c144`  
 		Last Modified: Thu, 30 Nov 2023 23:47:30 GMT  
 		Size: 16.0 MB (15956254 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa90b5b8b99ecde21a6c31cb4effceb2e48d33b4feeb73b3a12ec4545c63d32a`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3a82796f38dbb8536e9be3b686e7716a2916e08c53622bf88c55aa3ed67802d0`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 18.8 KB (18764 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c209132482d51247ed069f0572cfab5180a1053e1b2856ebe7bb2dbbbf308e38`  
 		Last Modified: Fri, 01 Dec 2023 09:39:28 GMT  
 		Size: 32.3 MB (32333843 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2be49705f63fb76f942d7d9c7808dd4d2b4dc2e25b081f1c7b9d534ca7a70477`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 259.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:92c1a8f757dc4e44087e1b32d495a6c5837861976b18ed8e856ac95a219e67ee`  
 		Last Modified: Fri, 01 Dec 2023 09:39:46 GMT  
 		Size: 1.1 MB (1089288 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3600ad542a89f4287b54445efe0eb8eeaad23d974496f69e0432a43737d8f656`  
 		Last Modified: Fri, 01 Dec 2023 09:39:46 GMT  
 		Size: 410.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7255baea9c77f80454f0e16886e75bb6d6f160fcd73870b8018434fca5322066`  
 		Last Modified: Fri, 01 Dec 2023 09:39:11 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:1.10.27` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:bf60b5553e3a6fade5ed91de4e0cf592f903a7c797ea01e63876530734eca101
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1901290 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5bd2168edb1686b59aa53e8cecca4865b1fb542a07504e2fbd14aefefd3af108`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:22639436c7d3f3b0a81b775f083a49aaede94c66c232fcb6c993b16c51d1f200`  
-		Last Modified: Fri, 01 Dec 2023 09:39:46 GMT  
-		Size: 1.9 MB (1870846 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:5270e0c05911dadce23db23187382c8a4bca3fdb915ff39f1c33db591258dae0`  
-		Last Modified: Fri, 01 Dec 2023 09:39:46 GMT  
-		Size: 30.4 KB (30444 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:2`
 
 ```console
-$ docker pull composer@sha256:f4c4dff6df0c7f514357924f982a19316f2ce10cabb90816eafd07ef04c605d3
+$ docker pull composer@sha256:67f1bec07666f688791bff2c13b34b9c35042cc4c1e42fbb5bd4dbe4ae70f0fb
 ```
 
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 14
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
 	-	linux; amd64
-	-	unknown; unknown
 	-	linux; arm variant v6
-	-	unknown; unknown
 	-	linux; arm variant v7
-	-	unknown; unknown
 	-	linux; arm64 variant v8
-	-	unknown; unknown
 	-	linux; 386
-	-	unknown; unknown
 	-	linux; ppc64le
-	-	unknown; unknown
 	-	linux; s390x
-	-	unknown; unknown
 
 ### `composer:2` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:512be8ba40613e70b4712a870a0768248eb9ef37ef826713b4800cf66d1f293a
+$ docker pull composer@sha256:20f5108974c63c7f1053b3a1e45215aeee2a83ee2c3e6fa0d011a93d169a28a7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -3553,88 +3021,64 @@ CMD ["composer"]
 	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
 		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
 		Size: 3.4 MB (3402422 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8e26b626c27026d1938a0b6bd77e36b4113da4b7a1134df8d1aa9f49658b25f`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 2.7 MB (2679359 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:23427f6f19cc27aa3496173559d7fc30c2501d1d179a15b52ac1758cc1667d37`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:938ee652f0dd66c081c31e773163d4c3d8ec979f9ced384ed270cdc5fbcbe657`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8abe2aaf4047e9984223c8d63be88c09b7d447f8c9f77851aa06771c52bba05b`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 12.5 MB (12452105 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e06ec6f102433dfe7410990547f8d059d4c3e56455e35d7b4dfbfb96784486e1`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 492.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9ea984f05cf27a91a07a0b1f63adb1e6f9c4cb631325b5a07343b8faf75f7028`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 17.1 MB (17069834 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e6c3ecb64ca025834e2eba225bd5d603742000e1d67407ba50cf0f60ea41a98`  
 		Last Modified: Fri, 01 Dec 2023 00:42:05 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d3b07fe920dd6973a44ea83074fd9125fe7d4774492d00c0ffefb9a04a847a29`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 19.0 KB (18951 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:db476e3c025b598a275cc72e45c12e45db55e1df982d1e90e45f76b630e44f26`  
 		Last Modified: Fri, 01 Dec 2023 08:02:43 GMT  
 		Size: 32.5 MB (32533618 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:00b605206545e71c8d6637e233d08e5cae279512b88f4eedbb3dd9444948f3c1`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a3f172b6c24514834b464f5a515ea799ff120009dbb5e8be3574b779c4fa23e9`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 1.3 MB (1319443 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f4200807651477364bc9a9c65461e6606f9fd636a2bc8f3bb3b22b6c84704403`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3ae5dfbba469e3be92262cca5c2241876dc072ecaaff4285c202d0c0c3e3f2bb`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:5bf98fdc026ae7c6dde48049cc5c23172c57ac379805e4121307960f57cc34ef
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1905336 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ebeadd305c015ab12a61637c92ba78750da757f95ecb12a9ac54407d1bc54d17`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:b52fc6b9ae35e1b201581784ac832026b85a8b75e3bf4fa51ea2b036e33e0edc`  
-		Last Modified: Fri, 01 Dec 2023 08:02:42 GMT  
-		Size: 1.9 MB (1873285 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:67677ddf6995591f46790ff5578db257da0d3dcea760e646ad9338dcca9ed8f0`  
-		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
-		Size: 32.1 KB (32051 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:7bcaa247afb07ce26f72f351b10c4593c38e47cec80f55ce5be94b446c09d087
+$ docker pull composer@sha256:285ebda962dd32f0447c13f30c1854c080120aec90d84a2550bba5533f608d27
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -3713,88 +3157,64 @@ CMD ["composer"]
 	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
 		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
 		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ad3f4bb45cafc3a0c4349f9564390ff0fe5c2a3dc4287f0ddf3de8a86dcbb66`  
 		Last Modified: Fri, 01 Dec 2023 00:15:00 GMT  
 		Size: 2.7 MB (2685809 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a06cb8c5272936441cf9c53173eed2af740b588b3a9d8bbbb0b6565f38005e36`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c6156dbc484960b6656a156d5d82d973371555039e45046b37e9af1cbfec8569`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:66811c19a32e40a429b8ba817b3ceb6493496ebd20655f68d5a7ca3844b6c96c`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 12.5 MB (12452097 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4954b5c64e0b15f09646882302df3b0ee246ee32b00519bd4e89f052587d473a`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:889affb1cad3094dce99e0b6c7f8c737a0319cf2a1a9201f97fb1967478162fd`  
 		Last Modified: Fri, 01 Dec 2023 00:15:01 GMT  
 		Size: 15.7 MB (15657131 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b1b4a6a047cfe6a394007eb70b0c03f70ee3d7e9447288d47f549224f614aa2f`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e71e5e0f24e7b0508ad3d6798d964951c64d5fd451467d129a769807abbb8067`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 18.8 KB (18767 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ae4356a5b2c65b1e0f267a80bfe2a0ef3872dd9dd2b6d8f45703247b88fc2e13`  
 		Last Modified: Fri, 01 Dec 2023 11:50:53 GMT  
 		Size: 31.3 MB (31290430 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3019528382efe80e087e7475c0cbe6d2be762ace22b13332601422066b7f8f9c`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 256.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0def962332ea326c31326578924d22ae2a816919021ce0467ce09a236f0a05f4`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 1.3 MB (1276167 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42de80ed23a80a2f3bf8d66f557c213cf33e6f829640114cf6b828fb3630f5a7`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:11b9b612de86698958d1edecf59c6b6d14a64426277cf83eb3503fc80ffc5cf8`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:c40dcbc0ddd87cf540582d4a28fe81b720d9c96e0eb8727962b5950512e0cd64
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1904363 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e9cb6998533d4eb990afe09360d508433b669e4827ffcc5d498c1c71c9d053a6`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:ee2ef045a5584e0d07a030f4a942e1452a58b2c7323d80d519d64bcb753d9e8b`  
-		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
-		Size: 1.9 MB (1872238 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:e0a5fe2cbb92e4515d7020cbb26e77b300db3b64eb2134acf2f6a2e58d8bd1f5`  
-		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
-		Size: 32.1 KB (32125 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:d99efe02535ef0bb992e9b450f680fa5d817f30721f291fc29bbd174b7a2b326
+$ docker pull composer@sha256:7aed8e2aa8f25cf0d3d74382c3b5cb89b275139c0b1b9e97b5111ed933ccd1dc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -3873,88 +3293,64 @@ CMD ["composer"]
 	-	`sha256:2387a44129d2147bd4e806bf369f3db92eb3ad3b6b8825c739db364b8baa4e26`  
 		Last Modified: Thu, 30 Nov 2023 22:49:56 GMT  
 		Size: 2.9 MB (2901006 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:463dfc43b4287670c76354cf1d002e077c0a4b8f41207fdbd96316d0f649fdd5`  
 		Last Modified: Thu, 30 Nov 2023 23:58:02 GMT  
 		Size: 2.5 MB (2524902 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8445d08981ee2b82e7069c3bf290f41039993039dd9740da05b6c962c368ea`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 1.3 KB (1261 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8472c3889e6c64cf9e26fe36cc30bf9e211560aea77f82e97443348cb5956b88`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4e1a31c7a08192627a7e02da4b1d5ea494d5c25269ca986f8d2e7a8ae2d9365d`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 12.5 MB (12452107 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:12b3a23b2108bae03e59ed5e203dc9570b4d69cb6e8636a1f35e442846def57e`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6e7f8f1640d5c681ec203b1bd556d520c628ec0d02e41a591d1198b185d0d667`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 14.6 MB (14638942 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2f208f61c3ca97f2ff11ccb123a8707e61ce0891b966e160aedc3ae93a69d284`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 2.4 KB (2446 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f1879be0a19ef9277d4703ff4b4dbb0d4024de7c53e76caa733c7b133fad64d`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 18.8 KB (18780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bb2315ee202f00dfc90d25f0019e13ab267d5d9c84a9ada4fc13590035d09813`  
 		Last Modified: Fri, 01 Dec 2023 09:39:57 GMT  
 		Size: 30.8 MB (30790072 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7e069e65f06574b9652900f22252f24ef797370c770991d922cf88c4b5b0cbce`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ca383e8df06b2554ccd85af350455d6be1073a19f9965a8c88af8957972f2c9`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 1.2 MB (1239427 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e0afcd24e350b50c6378d97ba33f8d8b0c9086e5d262cb35a90c60bf623a17f`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 420.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42313890877398637d9755a757b6621548a1673d4656533fe286eed6c65ccf58`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:fb62872d7dfda6eb4445e7bc5030a29068fb20355bb50dd60fe6d9c179aa96ac
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1905709 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:58e3fce2a6a172981339752ba50a327610f0c04e862a976903659a3cf6b2eb0a`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:0aee3c51f1e5ced4bd16927cd5d2eb4d563929006a64e13e94f38f614567c26c`  
-		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
-		Size: 1.9 MB (1873584 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:358a023740b286ba13ba4d838bc585054ce794abe92a6d9773882d71a16b7db1`  
-		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
-		Size: 32.1 KB (32125 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:3cd112fa99e91935ffafe4588433782af5b1c43fb68e7566ef28392d21fd294e
+$ docker pull composer@sha256:e3325a9f20f6263fad888cc1ae71026ca65b2589b40be87349d8ace3127de3d3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -4033,88 +3429,64 @@ CMD ["composer"]
 	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
 		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
 		Size: 3.3 MB (3333033 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ec91cb5b5977bc2c77c932761c9cd04eda4b0df9636a46228a4c0af65ad1b4f3`  
 		Last Modified: Fri, 01 Dec 2023 00:40:05 GMT  
 		Size: 2.7 MB (2717190 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1563f945b2330cf35b9fc87a3f6456664dde2d6c4b6739047a9dd457f4a3d681`  
 		Last Modified: Fri, 01 Dec 2023 00:40:04 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f2549a9ef4a38d3afd713cc21e4de8fdf9a61d4d4f5b2897c0de403ec047f69a`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:285b1cbb8a2c86c2e2959b55b31fa9ac7abd053db302a937ce14d713aeaf8f44`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 12.5 MB (12452091 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42ac31d6bb70b19a698a7b74ae40261071bc6f22d09403fea931a7923ca8af18`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e6895913c4c7d243589b136d34c69cf54dc6e3aae7d5e785d8c35c570bb0e012`  
 		Last Modified: Fri, 01 Dec 2023 00:40:06 GMT  
 		Size: 17.1 MB (17056609 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1c9aea783aa0077ad1860c83cdbc65d3ad9547ba0c7694359f04efe829bec772`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 2.4 KB (2445 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f59963826a7f5193afec349b01fd624dd57a56e93881623c88faf7564007df02`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 18.7 KB (18729 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:083ab35f4c099a5c6f2fd6796eedcfbd32dd9419cee0c64ab606825964d4ed87`  
 		Last Modified: Fri, 01 Dec 2023 10:13:21 GMT  
 		Size: 32.9 MB (32888759 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:33f9642924941eef55ba6176cbfc4340e3e32ad0611f6b8dbbab9d16233c8efe`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1a3085b4166e63d4eda87eeaac166d798a8ffc64db83276111ae507deb737b79`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 1.3 MB (1303777 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7d2bc56ac4cd1ace1c0226d084090862e29926884dcbcbb21b50d69295c0d7f5`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f09172de9ba894fd728fc0f93fd130f6be7bc4d1f17e94e46d28dfe4fe0a15d`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:5d269e5105d6c855e068a612439497ecb3a7e37ed3870f6e7040f9339bdc2fd6
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1905432 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3afb918b2f49abf898a7babac5fc8edc2f04cd7d5239953011a250ff44c6ec85`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:8b3dc90c0882d0351fbc860046e1abd4ff99c18530acf2fa201ad91ff069acde`  
-		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
-		Size: 1.9 MB (1873381 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:bc95859a64dc6476b57ed30d3fc411eb3a1e7df828c99219ff6d76201b7c687d`  
-		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
-		Size: 32.1 KB (32051 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2` - linux; 386
 
 ```console
-$ docker pull composer@sha256:cfae6cff7bbccc87fcc425439296b8df88a62bcec884b96c42e9557a82a2e48f
+$ docker pull composer@sha256:1e309b0dc14a896eff5392701cf98d1f0d6b00991cfb62c1e4d431e407097cea
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -4193,88 +3565,64 @@ CMD ["composer"]
 	-	`sha256:4966a8bd129b0a6adf93dc295a8fbe8f665d3194a684a5ce199c1c3596dbf3d9`  
 		Last Modified: Fri, 01 Dec 2023 02:04:18 GMT  
 		Size: 3.2 MB (3238831 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:786b6949c7da1fc85a439f51aa05ace6592ed6759802ad370ed74bc4f479828b`  
 		Last Modified: Fri, 01 Dec 2023 04:07:07 GMT  
 		Size: 2.7 MB (2723376 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:27aec508afba473c67b8d2ad4216ba2489f0e9f08768454183b11877384d8139`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 1.3 KB (1259 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a55ae0822cb02fa8febaedc0ea40b1c5b2823b47b9e9f3dc9436f506df98f121`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:81d34e95bca488cede02955576432a46cb1462e07cc769b9eb29f6fb2bf7dcbf`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 12.5 MB (12452099 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:03e703b9b578d877bbb5bb3e7217c5b01c4bd415d52c238a814d769297fe5970`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1b35603c3070a506bb74ab53e6ef71985df5ebcef52f3a030c3b1280fe221eb7`  
 		Last Modified: Fri, 01 Dec 2023 04:07:08 GMT  
 		Size: 17.3 MB (17338715 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:70c1d3cc41a87b1f20ce9166de4fa148c58e529e7a60946164e1ba7d5739156d`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ce144e8060ec62642abf24c41af8e07481873030aa04e8c8c13cc6067a54ee94`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 18.9 KB (18926 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d5e7634c298564bc162ac9ee1138503d2f03fad621a4071d55b33989f624dc5`  
 		Last Modified: Fri, 01 Dec 2023 10:00:41 GMT  
 		Size: 10.7 MB (10733320 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e128cbaba61d68a820c95bb7e672da3c4be595ddf782002fd3a23f91855d2a4a`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:5b86a0013a58aaca31f91ad120a7082412b42c097f23cb7d87149e9cefc44391`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 1.3 MB (1250023 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e458b4872a7720fe291d738e12678592cdc6eaee93d3f9868a486b297fd5514f`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0dd79f2de3d8ad5044fa0e3781d9955284b71c8e7dfa1909bcbada86f645d163`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:23ea5d4d78de633a34f907808a044b2cd73b3320fdd0d40c80f924081fccf28f
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **375.8 KB (375830 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3ee0e166828f6a9bf5b9c1377c634c367f1c5e71e075c3b1a1004a4ef8ab07ae`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:6c0acae2cd5647a674634d4712ed4a3a90c72fb397e54b247ffb4c9136304970`  
-		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
-		Size: 343.8 KB (343803 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:7d066c6553fafabf5878a575ab5f0a69e517b6f6c0bb8e0573d92243bc32c9e6`  
-		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
-		Size: 32.0 KB (32027 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2` - linux; ppc64le
 
 ```console
-$ docker pull composer@sha256:7859b7480fb4a55d64200c482ac2feed57fb85a80069933d708c3ac7ada667b2
+$ docker pull composer@sha256:3b98b5c7588fe646696f93ca4dccec74f84a6ca823226bdd258749c54dc553d4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -4353,88 +3701,64 @@ CMD ["composer"]
 	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
 		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
 		Size: 3.3 MB (3348322 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f8cb9b4da64e0956e297ed583f04085128cdc4a68dcffa3a41c639319245c27`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 2.8 MB (2766423 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:89e2afe36ae984e44fa290115e1355ddb9ba0833dc70a7e3e1f1ed384492c3ec`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 1.3 KB (1267 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:233860698dd8a6e8c7a48373c7cb0a908fc5e1ad61c7ba6c0606e54226ed4c5d`  
 		Last Modified: Fri, 01 Dec 2023 00:53:03 GMT  
 		Size: 267.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f8fb69ca1d3e6a6c70e5d15e8c0a1588f2b439de9683f4874bd1b2f921e4232a`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 12.5 MB (12452085 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab6815e64bb3220dda4d71f42ca13e00d8da619677251611904fb38d6e6eb671`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 494.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1d29c3f41b3d1633a6f3b802d29f6d55acc40d2b97d36e015a15870ceb1bbaa8`  
 		Last Modified: Fri, 01 Dec 2023 00:53:05 GMT  
 		Size: 17.9 MB (17871055 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:eab7245ddd19f65a03b28a395a911f228d137eff133f0ce3855ac49d3bd3623e`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:60fa13b877a4b587f4bfbdfde83831719bc57b09c6a6b8b65c4430b883643393`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 18.7 KB (18731 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4d6f197c8706ed2d9ad1c3776ad0a38b89146398b9a1b9bbf515bb0d2d368959`  
 		Last Modified: Fri, 01 Dec 2023 09:59:33 GMT  
 		Size: 33.5 MB (33538629 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:deca4be23e5d94daeed68f294c98841e816fc5b4e0089108bb8ed8468563bbae`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:07cfd4de86f05595f1b2089da91990af1ee4c0d8431b0a1ccbcc32bdc99c468d`  
 		Last Modified: Fri, 01 Dec 2023 09:59:32 GMT  
 		Size: 1.4 MB (1360541 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c4f897522b54e0a8a4b24883b0acc49fb20b71463f0baabbefabdb16d8179ae4`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa680579b949a9ad87959e573a97329a2c0b3b8b2c8c2ce26cf147fc67fedf3d`  
 		Last Modified: Fri, 01 Dec 2023 09:53:18 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:b3b10172d4f86c9e51fdbc651af88198633d3052ca0d5f11660b1df38f59be59
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1904215 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:71ec860158c782103802116e58a4a6a4cc0bdd154c969853a94b8b80a8e550ed`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:2a4df28672749b717053b0524671cf7cd2acb41123eda886fd10f327d1fef629`  
-		Last Modified: Fri, 01 Dec 2023 09:59:32 GMT  
-		Size: 1.9 MB (1872140 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:b1237f607c5ee8737767df41a9e064fb2f3e7c27040f6c3776990f3f42765703`  
-		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
-		Size: 32.1 KB (32075 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:c8723ade172ccacd21e70f640463aea3c15489a0e6c716628da4aedb3e64960e
+$ docker pull composer@sha256:940b56b4b05dc2fbcb3489532038b0175e13a8973e599b05cd7c9f7f3c0cc7da
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -4513,111 +3837,80 @@ CMD ["composer"]
 	-	`sha256:2ea477e1c0c3db3337ee1d7c659f8c465021a65c036998ed3fa3b667d4b30153`  
 		Last Modified: Thu, 30 Nov 2023 22:42:52 GMT  
 		Size: 3.2 MB (3217454 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3aa5313d02d4fcc59703ea6bd09df7b0df122fc73121b0954b541c214229202e`  
 		Last Modified: Thu, 30 Nov 2023 23:47:29 GMT  
 		Size: 2.8 MB (2789878 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f082f983656d312447043a024c0fa5528e4055dbd73f4101ac38d1d2d3158ea`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 1.3 KB (1262 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:35feaf89a3d400114f4864637453e2e21cd9e7cb6a859699bd6272483f3a56ee`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b59844514cd33789360a3e46dbaff2cdae06b8cd8d18ee9449808c168be15f9`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 12.5 MB (12452093 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:090f8111976872dd0d1fdf290acf04666250d582cbba875706f055725bc42aff`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:398c5ca7cbe876f0f1cf80bef52d39ccd6949d12e9836af8af296afb1084c144`  
 		Last Modified: Thu, 30 Nov 2023 23:47:30 GMT  
 		Size: 16.0 MB (15956254 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa90b5b8b99ecde21a6c31cb4effceb2e48d33b4feeb73b3a12ec4545c63d32a`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3a82796f38dbb8536e9be3b686e7716a2916e08c53622bf88c55aa3ed67802d0`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 18.8 KB (18764 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c209132482d51247ed069f0572cfab5180a1053e1b2856ebe7bb2dbbbf308e38`  
 		Last Modified: Fri, 01 Dec 2023 09:39:28 GMT  
 		Size: 32.3 MB (32333843 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2be49705f63fb76f942d7d9c7808dd4d2b4dc2e25b081f1c7b9d534ca7a70477`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 259.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b47d6d2a354545d677ea5f936b51e59f70b29acdfdc50ec62b64e0a3cdc3ba12`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 1.3 MB (1281438 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a2fb49f94a90d11edb66671c1f2738062d06b75aabbcdb0363ff62ddfcba3582`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:487e5f325da8f544f6f85cc3d26b7b0462082dde8baf9df20043ee3d69225096`  
 		Last Modified: Fri, 01 Dec 2023 09:36:51 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:6d5ab9c5f1f2114fe23ed529f5e6f6760daa7ab8707616d3a9a011cef46c5563
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903041 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e2e1de91b1308885121e1d600523fb24d8d0f7fa1b3e2448ffbc2a217d095353`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:f0c7db2b3e4f235d832a0302a344da6bd3822b385c4ab8dc26e0540c02e76d65`  
-		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
-		Size: 1.9 MB (1870991 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:59c025a59ef970bdd1384c67a97920153f4659d57cd2922bd2ef44854995650b`  
-		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
-		Size: 32.0 KB (32050 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:2.2`
 
 ```console
-$ docker pull composer@sha256:b2da40e35455ac648a8fe7b0554b0719c2257ec8a3f01032df309f5845268b26
+$ docker pull composer@sha256:0e7405d851433b5bb61c1783833b65e6b71fdab006c1029f42f2da1d670d53a5
 ```
 
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 14
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
 	-	linux; amd64
-	-	unknown; unknown
 	-	linux; arm variant v6
-	-	unknown; unknown
 	-	linux; arm variant v7
-	-	unknown; unknown
 	-	linux; arm64 variant v8
-	-	unknown; unknown
 	-	linux; 386
-	-	unknown; unknown
 	-	linux; ppc64le
-	-	unknown; unknown
 	-	linux; s390x
-	-	unknown; unknown
 
 ### `composer:2.2` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:50b73d913f447342fc7f29ae750e725aae6ad7d6846c52c05543ab3bae6323b9
+$ docker pull composer@sha256:4f01f7837be61daa4af42ad707a07cf5329c1e66c4a6f957fb846c10e349a92d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -4696,88 +3989,64 @@ CMD ["composer"]
 	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
 		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
 		Size: 3.4 MB (3402422 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8e26b626c27026d1938a0b6bd77e36b4113da4b7a1134df8d1aa9f49658b25f`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 2.7 MB (2679359 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:23427f6f19cc27aa3496173559d7fc30c2501d1d179a15b52ac1758cc1667d37`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:938ee652f0dd66c081c31e773163d4c3d8ec979f9ced384ed270cdc5fbcbe657`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8abe2aaf4047e9984223c8d63be88c09b7d447f8c9f77851aa06771c52bba05b`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 12.5 MB (12452105 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e06ec6f102433dfe7410990547f8d059d4c3e56455e35d7b4dfbfb96784486e1`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 492.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9ea984f05cf27a91a07a0b1f63adb1e6f9c4cb631325b5a07343b8faf75f7028`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 17.1 MB (17069834 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e6c3ecb64ca025834e2eba225bd5d603742000e1d67407ba50cf0f60ea41a98`  
 		Last Modified: Fri, 01 Dec 2023 00:42:05 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d3b07fe920dd6973a44ea83074fd9125fe7d4774492d00c0ffefb9a04a847a29`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 19.0 KB (18951 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:db476e3c025b598a275cc72e45c12e45db55e1df982d1e90e45f76b630e44f26`  
 		Last Modified: Fri, 01 Dec 2023 08:02:43 GMT  
 		Size: 32.5 MB (32533618 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:00b605206545e71c8d6637e233d08e5cae279512b88f4eedbb3dd9444948f3c1`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:202d4f1f6f3f44f5910a338fcd2f3dbd16c84a4e2a84a06dfba2a2040283f793`  
 		Last Modified: Fri, 01 Dec 2023 08:03:02 GMT  
 		Size: 1.2 MB (1201591 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e0234544925f6100045d097a30cd7e83c6326d489255d7667a563350ca1482e2`  
 		Last Modified: Fri, 01 Dec 2023 08:03:01 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:da794fb8adde70c735ff1b239c50a146264885bbc42438a27445bec6c74c7897`  
 		Last Modified: Fri, 01 Dec 2023 08:03:01 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.2` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:77445f9ef7ca1b899154890f451bc1e35c34825ae869432d598cc42bdf6c1ae8
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903583 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9c4dbf02213813b8c81cc656960639b70139291c68b49e3c524d9adf9dcd63b3`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:e465358f3201e0929ab924d7fb7a279843002934867d334ca4219a44ff41e2f5`  
-		Last Modified: Fri, 01 Dec 2023 08:03:02 GMT  
-		Size: 1.9 MB (1873140 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:8385596ced1d3689b76faecc0fd58650099ab943f1e159cc7b8634138d42bafb`  
-		Last Modified: Fri, 01 Dec 2023 08:03:01 GMT  
-		Size: 30.4 KB (30443 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.2` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:b804d92294f96cc394d670e95de04867d9f2b5a772003af0451e4f79cf01e09c
+$ docker pull composer@sha256:a05193a8a7a387c0cc526f3dad7e39abbb773b5164427291b8f62a52d99e1e21
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -4856,88 +4125,64 @@ CMD ["composer"]
 	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
 		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
 		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ad3f4bb45cafc3a0c4349f9564390ff0fe5c2a3dc4287f0ddf3de8a86dcbb66`  
 		Last Modified: Fri, 01 Dec 2023 00:15:00 GMT  
 		Size: 2.7 MB (2685809 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a06cb8c5272936441cf9c53173eed2af740b588b3a9d8bbbb0b6565f38005e36`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c6156dbc484960b6656a156d5d82d973371555039e45046b37e9af1cbfec8569`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:66811c19a32e40a429b8ba817b3ceb6493496ebd20655f68d5a7ca3844b6c96c`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 12.5 MB (12452097 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4954b5c64e0b15f09646882302df3b0ee246ee32b00519bd4e89f052587d473a`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:889affb1cad3094dce99e0b6c7f8c737a0319cf2a1a9201f97fb1967478162fd`  
 		Last Modified: Fri, 01 Dec 2023 00:15:01 GMT  
 		Size: 15.7 MB (15657131 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b1b4a6a047cfe6a394007eb70b0c03f70ee3d7e9447288d47f549224f614aa2f`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e71e5e0f24e7b0508ad3d6798d964951c64d5fd451467d129a769807abbb8067`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 18.8 KB (18767 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ae4356a5b2c65b1e0f267a80bfe2a0ef3872dd9dd2b6d8f45703247b88fc2e13`  
 		Last Modified: Fri, 01 Dec 2023 11:50:53 GMT  
 		Size: 31.3 MB (31290430 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3019528382efe80e087e7475c0cbe6d2be762ace22b13332601422066b7f8f9c`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 256.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8bc5efb12bc235b4dac72cdd02d5f8f5fb0c6ba6ab9b7deee6e4213cf8bed4df`  
 		Last Modified: Fri, 01 Dec 2023 11:51:11 GMT  
 		Size: 1.2 MB (1157780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3d763cca60504490b4d7da24daf58ae929bdbfe1d516844c585cea5fe453d1f4`  
 		Last Modified: Fri, 01 Dec 2023 11:51:10 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:13e8ee4918c4b9d2541c79bd5acf1264981a782c7b2662d52e5ce17e815189c5`  
 		Last Modified: Fri, 01 Dec 2023 11:51:10 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.2` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:5af04fb00d1e4bf014ea432ef2690dd39baee492abc9b1963b4658b1f8389d05
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902603 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9b60a8841bfa6e1dec0ebb42f0b1556c7245c49eb7ccbbd5e1966e5657f4d666`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:4b043e2f92fa9f9e7e5e63af5d9e8722cdf74554325a8181a18dd3c93c28097f`  
-		Last Modified: Fri, 01 Dec 2023 11:51:10 GMT  
-		Size: 1.9 MB (1872090 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:1cad777c6e81503f51591e48af96ee3cbe7fe129c00a91336aaeba7020e59002`  
-		Last Modified: Fri, 01 Dec 2023 11:51:10 GMT  
-		Size: 30.5 KB (30513 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.2` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:572085a5ac4dfaffe25b4b2cdb886239ed89d3847b1fcac4a32fa6b4cda6bc47
+$ docker pull composer@sha256:d01711f19526391dd097ca99b0c8cf13bf2d7f8f6e348a20d011434b368afcc9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -5016,88 +4261,64 @@ CMD ["composer"]
 	-	`sha256:2387a44129d2147bd4e806bf369f3db92eb3ad3b6b8825c739db364b8baa4e26`  
 		Last Modified: Thu, 30 Nov 2023 22:49:56 GMT  
 		Size: 2.9 MB (2901006 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:463dfc43b4287670c76354cf1d002e077c0a4b8f41207fdbd96316d0f649fdd5`  
 		Last Modified: Thu, 30 Nov 2023 23:58:02 GMT  
 		Size: 2.5 MB (2524902 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8445d08981ee2b82e7069c3bf290f41039993039dd9740da05b6c962c368ea`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 1.3 KB (1261 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8472c3889e6c64cf9e26fe36cc30bf9e211560aea77f82e97443348cb5956b88`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4e1a31c7a08192627a7e02da4b1d5ea494d5c25269ca986f8d2e7a8ae2d9365d`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 12.5 MB (12452107 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:12b3a23b2108bae03e59ed5e203dc9570b4d69cb6e8636a1f35e442846def57e`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6e7f8f1640d5c681ec203b1bd556d520c628ec0d02e41a591d1198b185d0d667`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 14.6 MB (14638942 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2f208f61c3ca97f2ff11ccb123a8707e61ce0891b966e160aedc3ae93a69d284`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 2.4 KB (2446 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f1879be0a19ef9277d4703ff4b4dbb0d4024de7c53e76caa733c7b133fad64d`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 18.8 KB (18780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bb2315ee202f00dfc90d25f0019e13ab267d5d9c84a9ada4fc13590035d09813`  
 		Last Modified: Fri, 01 Dec 2023 09:39:57 GMT  
 		Size: 30.8 MB (30790072 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7e069e65f06574b9652900f22252f24ef797370c770991d922cf88c4b5b0cbce`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:cc4b7e6555d5e973ad62e092fb6729682a42e41c3a904a825d6f0527f8c362be`  
 		Last Modified: Fri, 01 Dec 2023 09:40:15 GMT  
 		Size: 1.1 MB (1122012 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:137d66165f6c12375c14ae1da4dc1816c62ee02b8ba08ab24c199cb87e58729c`  
 		Last Modified: Fri, 01 Dec 2023 09:40:14 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:31a7147f9718e7026c31f01a616e9fd48275ff5b46fafaddb047fb62e41feeed`  
 		Last Modified: Fri, 01 Dec 2023 09:40:14 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.2` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:abc54b9a27010d5b6f814baf45d28c928334d394f0d9b2b71b4e6789155fb374
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903950 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6c78e6c0ad7188a043df295972982f1395e91c41d76499c2d21d03205b12e55a`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:9778defe8fd9532be5c9c4f9d6c53002eb7fede62b1be06a9bfbb049a604c398`  
-		Last Modified: Fri, 01 Dec 2023 09:40:15 GMT  
-		Size: 1.9 MB (1873436 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:9963d1f8a5cf76a44ba24e5d04292f70ca5b387045de043d5ab8fee22f04f4e9`  
-		Last Modified: Fri, 01 Dec 2023 09:40:14 GMT  
-		Size: 30.5 KB (30514 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.2` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:f5f9f4d1570cbda6c3b62dfaff5634481340674a583b271ed97b566951bd3440
+$ docker pull composer@sha256:b79b22deae618dd9846ddc96621a2c06d158037a15cd725c72438963382aa46e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -5176,88 +4397,64 @@ CMD ["composer"]
 	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
 		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
 		Size: 3.3 MB (3333033 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ec91cb5b5977bc2c77c932761c9cd04eda4b0df9636a46228a4c0af65ad1b4f3`  
 		Last Modified: Fri, 01 Dec 2023 00:40:05 GMT  
 		Size: 2.7 MB (2717190 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1563f945b2330cf35b9fc87a3f6456664dde2d6c4b6739047a9dd457f4a3d681`  
 		Last Modified: Fri, 01 Dec 2023 00:40:04 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f2549a9ef4a38d3afd713cc21e4de8fdf9a61d4d4f5b2897c0de403ec047f69a`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:285b1cbb8a2c86c2e2959b55b31fa9ac7abd053db302a937ce14d713aeaf8f44`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 12.5 MB (12452091 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42ac31d6bb70b19a698a7b74ae40261071bc6f22d09403fea931a7923ca8af18`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e6895913c4c7d243589b136d34c69cf54dc6e3aae7d5e785d8c35c570bb0e012`  
 		Last Modified: Fri, 01 Dec 2023 00:40:06 GMT  
 		Size: 17.1 MB (17056609 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1c9aea783aa0077ad1860c83cdbc65d3ad9547ba0c7694359f04efe829bec772`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 2.4 KB (2445 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f59963826a7f5193afec349b01fd624dd57a56e93881623c88faf7564007df02`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 18.7 KB (18729 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:083ab35f4c099a5c6f2fd6796eedcfbd32dd9419cee0c64ab606825964d4ed87`  
 		Last Modified: Fri, 01 Dec 2023 10:13:21 GMT  
 		Size: 32.9 MB (32888759 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:33f9642924941eef55ba6176cbfc4340e3e32ad0611f6b8dbbab9d16233c8efe`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:680bf1fa4aab6aac10d319f7e8cbc2336dfcff9d06567641168e3844c6c87e08`  
 		Last Modified: Fri, 01 Dec 2023 10:13:39 GMT  
 		Size: 1.2 MB (1186166 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8369e20ab18170688748ad88763ad1a5a67872ae76f9061f328d121c830cee4a`  
 		Last Modified: Fri, 01 Dec 2023 10:13:38 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e9fdeef8bcc6f564e0af636ccdba2e2afff8ce1eea4bfad494660e1542ac4065`  
 		Last Modified: Fri, 01 Dec 2023 10:13:38 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.2` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:e5eb9b4d4a1be7db61cd9227f5efc9eb69176e9034fb139ebd661b381c5244f7
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903679 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:faa5d9e207a63be0244e51185bc1dcd426c38027c9ff3b369a389eee2c282d1f`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:848fea65b9020c00e3dfe1ad983dc0b3c0896ba4795c0521e4b81e9bd356d9f5`  
-		Last Modified: Fri, 01 Dec 2023 10:13:39 GMT  
-		Size: 1.9 MB (1873236 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:a2361fcad7766adad4bb49ce19a55bfc099665894725c850bf2f91ba1a01e0b2`  
-		Last Modified: Fri, 01 Dec 2023 10:13:38 GMT  
-		Size: 30.4 KB (30443 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.2` - linux; 386
 
 ```console
-$ docker pull composer@sha256:6d49f5fe5806d9dd6dba20cf893f41a341a32cfefe416cafa2e8611358a640c0
+$ docker pull composer@sha256:49fd2795fd329b0b483f8fe15762d2b15d108e27ec26a726f665a13fea89a1f6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -5336,88 +4533,64 @@ CMD ["composer"]
 	-	`sha256:4966a8bd129b0a6adf93dc295a8fbe8f665d3194a684a5ce199c1c3596dbf3d9`  
 		Last Modified: Fri, 01 Dec 2023 02:04:18 GMT  
 		Size: 3.2 MB (3238831 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:786b6949c7da1fc85a439f51aa05ace6592ed6759802ad370ed74bc4f479828b`  
 		Last Modified: Fri, 01 Dec 2023 04:07:07 GMT  
 		Size: 2.7 MB (2723376 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:27aec508afba473c67b8d2ad4216ba2489f0e9f08768454183b11877384d8139`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 1.3 KB (1259 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a55ae0822cb02fa8febaedc0ea40b1c5b2823b47b9e9f3dc9436f506df98f121`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:81d34e95bca488cede02955576432a46cb1462e07cc769b9eb29f6fb2bf7dcbf`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 12.5 MB (12452099 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:03e703b9b578d877bbb5bb3e7217c5b01c4bd415d52c238a814d769297fe5970`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1b35603c3070a506bb74ab53e6ef71985df5ebcef52f3a030c3b1280fe221eb7`  
 		Last Modified: Fri, 01 Dec 2023 04:07:08 GMT  
 		Size: 17.3 MB (17338715 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:70c1d3cc41a87b1f20ce9166de4fa148c58e529e7a60946164e1ba7d5739156d`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ce144e8060ec62642abf24c41af8e07481873030aa04e8c8c13cc6067a54ee94`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 18.9 KB (18926 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d5e7634c298564bc162ac9ee1138503d2f03fad621a4071d55b33989f624dc5`  
 		Last Modified: Fri, 01 Dec 2023 10:00:41 GMT  
 		Size: 10.7 MB (10733320 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e128cbaba61d68a820c95bb7e672da3c4be595ddf782002fd3a23f91855d2a4a`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:49875ac1e5e4f6e85a64c35830debef6274c5b38a12e85972ae6f8dbafb0565e`  
 		Last Modified: Fri, 01 Dec 2023 10:00:57 GMT  
 		Size: 1.1 MB (1134049 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:078ddcb75238446f2b8ba1939e0bdedad90c4f6c25f912b0be2a67820251dff4`  
 		Last Modified: Fri, 01 Dec 2023 10:00:57 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8ecf7226f0fc20cdb7e19c7929c6e706b3aa7ed81e92ae284e45363f4ac57e7`  
 		Last Modified: Fri, 01 Dec 2023 10:00:57 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.2` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:9c93b93a86bc0bd1613acfa4072e16bdca60643109a37ed97211645cdb310bba
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **374.1 KB (374081 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5487e2e35bed7bbf5f28b5ab13ffaf8b1de8f8bf1172bba7fc1531b481e917dc`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:0a44e8f188e154a85248b7ee0fee55b206c3eff3e00f7ef7f2253c3704da9936`  
-		Last Modified: Fri, 01 Dec 2023 10:00:57 GMT  
-		Size: 343.7 KB (343660 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:c476d34c53a279d065f30b882815f8143e42664fa650084b2a08c4b5c8dd7bae`  
-		Last Modified: Fri, 01 Dec 2023 10:00:57 GMT  
-		Size: 30.4 KB (30421 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.2` - linux; ppc64le
 
 ```console
-$ docker pull composer@sha256:1ec2caeefec466a1ad5897f600b4d7aa2df699e37321fb16a5287ded3c35dba8
+$ docker pull composer@sha256:c57d9f342223df0e5049a36416f12631daf57e7c1376af0945c99b77f23b8cab
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -5496,88 +4669,64 @@ CMD ["composer"]
 	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
 		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
 		Size: 3.3 MB (3348322 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f8cb9b4da64e0956e297ed583f04085128cdc4a68dcffa3a41c639319245c27`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 2.8 MB (2766423 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:89e2afe36ae984e44fa290115e1355ddb9ba0833dc70a7e3e1f1ed384492c3ec`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 1.3 KB (1267 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:233860698dd8a6e8c7a48373c7cb0a908fc5e1ad61c7ba6c0606e54226ed4c5d`  
 		Last Modified: Fri, 01 Dec 2023 00:53:03 GMT  
 		Size: 267.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f8fb69ca1d3e6a6c70e5d15e8c0a1588f2b439de9683f4874bd1b2f921e4232a`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 12.5 MB (12452085 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab6815e64bb3220dda4d71f42ca13e00d8da619677251611904fb38d6e6eb671`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 494.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1d29c3f41b3d1633a6f3b802d29f6d55acc40d2b97d36e015a15870ceb1bbaa8`  
 		Last Modified: Fri, 01 Dec 2023 00:53:05 GMT  
 		Size: 17.9 MB (17871055 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:eab7245ddd19f65a03b28a395a911f228d137eff133f0ce3855ac49d3bd3623e`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:60fa13b877a4b587f4bfbdfde83831719bc57b09c6a6b8b65c4430b883643393`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 18.7 KB (18731 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4d6f197c8706ed2d9ad1c3776ad0a38b89146398b9a1b9bbf515bb0d2d368959`  
 		Last Modified: Fri, 01 Dec 2023 09:59:33 GMT  
 		Size: 33.5 MB (33538629 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:deca4be23e5d94daeed68f294c98841e816fc5b4e0089108bb8ed8468563bbae`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:430fad61a369bbdc2d62b85aa1a0ada3955962bc04ad5b0c2dd4a4d6939cac8e`  
 		Last Modified: Fri, 01 Dec 2023 09:59:52 GMT  
 		Size: 1.2 MB (1242967 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d6c5fc56ff9427dd36419df17fd28b2cb3688e4acc0b64f6a2b188e15f8f102e`  
 		Last Modified: Fri, 01 Dec 2023 09:59:51 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:da8315c02acab573f88aeb098ed2d1fdbf294e4b2937a3ad5995bee8c02d69f8`  
 		Last Modified: Fri, 01 Dec 2023 09:59:51 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.2` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:9269c9bc3bde739d7872d6a0b191756a4ebba9cb2d13faae3b518eaaf6dd4852
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902458 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0b975d9f55a1d8e85ef4cb9bda252a0bdee29cc649e1b2988c22431ccf256ae0`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:9713398f9e43ae79981aa12f48214f61bd132c2f4d08ab98da34430e79aeb8fb`  
-		Last Modified: Fri, 01 Dec 2023 09:59:52 GMT  
-		Size: 1.9 MB (1871993 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:624f6e8078c7fad027ef4c75a316e92a99dc7e8d70a7dcef4dfb678636c3fe27`  
-		Last Modified: Fri, 01 Dec 2023 09:59:51 GMT  
-		Size: 30.5 KB (30465 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.2` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:53621dd87573783ca3fb4dc146eb0c11d0f6060f60daf8d5331eba3031bc16f6
+$ docker pull composer@sha256:e7287def461abb0319c6785adaa84514697a168041fe4675a1c16da0a57094b2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -5656,111 +4805,80 @@ CMD ["composer"]
 	-	`sha256:2ea477e1c0c3db3337ee1d7c659f8c465021a65c036998ed3fa3b667d4b30153`  
 		Last Modified: Thu, 30 Nov 2023 22:42:52 GMT  
 		Size: 3.2 MB (3217454 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3aa5313d02d4fcc59703ea6bd09df7b0df122fc73121b0954b541c214229202e`  
 		Last Modified: Thu, 30 Nov 2023 23:47:29 GMT  
 		Size: 2.8 MB (2789878 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f082f983656d312447043a024c0fa5528e4055dbd73f4101ac38d1d2d3158ea`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 1.3 KB (1262 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:35feaf89a3d400114f4864637453e2e21cd9e7cb6a859699bd6272483f3a56ee`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b59844514cd33789360a3e46dbaff2cdae06b8cd8d18ee9449808c168be15f9`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 12.5 MB (12452093 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:090f8111976872dd0d1fdf290acf04666250d582cbba875706f055725bc42aff`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:398c5ca7cbe876f0f1cf80bef52d39ccd6949d12e9836af8af296afb1084c144`  
 		Last Modified: Thu, 30 Nov 2023 23:47:30 GMT  
 		Size: 16.0 MB (15956254 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa90b5b8b99ecde21a6c31cb4effceb2e48d33b4feeb73b3a12ec4545c63d32a`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3a82796f38dbb8536e9be3b686e7716a2916e08c53622bf88c55aa3ed67802d0`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 18.8 KB (18764 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c209132482d51247ed069f0572cfab5180a1053e1b2856ebe7bb2dbbbf308e38`  
 		Last Modified: Fri, 01 Dec 2023 09:39:28 GMT  
 		Size: 32.3 MB (32333843 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2be49705f63fb76f942d7d9c7808dd4d2b4dc2e25b081f1c7b9d534ca7a70477`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 259.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3cbb92d234a1eb1c896b19138d6191dff915c62df74203f14b3ce3628c3acbc5`  
 		Last Modified: Fri, 01 Dec 2023 09:39:42 GMT  
 		Size: 1.2 MB (1163861 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3b2ec300be7b660e2dc97ac8b0ddcf406607c84b42af30c78eb1f1c693a5bbd8`  
 		Last Modified: Fri, 01 Dec 2023 09:39:42 GMT  
 		Size: 420.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:702b22505212dff30db39a0111b0be13d5c38c63448b3556277ff96c0687e064`  
 		Last Modified: Fri, 01 Dec 2023 09:39:42 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.2` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:b862e3ef54086b5b07cb7ea8cb9baa793233749d63d4016513ae6888a46b73b8
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1901289 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:aa100f12394ba2f8d36b5a3fdf25fc3ef1558508ebeea2fbe1412d49781fe72a`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:773af0e10de90d0db9fb0a69af5f0c2dfd508fe40656b8cf64de793ad94bd6d2`  
-		Last Modified: Fri, 01 Dec 2023 09:39:42 GMT  
-		Size: 1.9 MB (1870846 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:f70c5841863548042c4c6be3ab892505e90b9f9dcfaa99b18b1733b797cecfab`  
-		Last Modified: Fri, 01 Dec 2023 09:39:42 GMT  
-		Size: 30.4 KB (30443 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:2.2.22`
 
 ```console
-$ docker pull composer@sha256:b2da40e35455ac648a8fe7b0554b0719c2257ec8a3f01032df309f5845268b26
+$ docker pull composer@sha256:0e7405d851433b5bb61c1783833b65e6b71fdab006c1029f42f2da1d670d53a5
 ```
 
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 14
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
 	-	linux; amd64
-	-	unknown; unknown
 	-	linux; arm variant v6
-	-	unknown; unknown
 	-	linux; arm variant v7
-	-	unknown; unknown
 	-	linux; arm64 variant v8
-	-	unknown; unknown
 	-	linux; 386
-	-	unknown; unknown
 	-	linux; ppc64le
-	-	unknown; unknown
 	-	linux; s390x
-	-	unknown; unknown
 
 ### `composer:2.2.22` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:50b73d913f447342fc7f29ae750e725aae6ad7d6846c52c05543ab3bae6323b9
+$ docker pull composer@sha256:4f01f7837be61daa4af42ad707a07cf5329c1e66c4a6f957fb846c10e349a92d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -5839,88 +4957,64 @@ CMD ["composer"]
 	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
 		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
 		Size: 3.4 MB (3402422 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8e26b626c27026d1938a0b6bd77e36b4113da4b7a1134df8d1aa9f49658b25f`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 2.7 MB (2679359 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:23427f6f19cc27aa3496173559d7fc30c2501d1d179a15b52ac1758cc1667d37`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:938ee652f0dd66c081c31e773163d4c3d8ec979f9ced384ed270cdc5fbcbe657`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8abe2aaf4047e9984223c8d63be88c09b7d447f8c9f77851aa06771c52bba05b`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 12.5 MB (12452105 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e06ec6f102433dfe7410990547f8d059d4c3e56455e35d7b4dfbfb96784486e1`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 492.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9ea984f05cf27a91a07a0b1f63adb1e6f9c4cb631325b5a07343b8faf75f7028`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 17.1 MB (17069834 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e6c3ecb64ca025834e2eba225bd5d603742000e1d67407ba50cf0f60ea41a98`  
 		Last Modified: Fri, 01 Dec 2023 00:42:05 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d3b07fe920dd6973a44ea83074fd9125fe7d4774492d00c0ffefb9a04a847a29`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 19.0 KB (18951 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:db476e3c025b598a275cc72e45c12e45db55e1df982d1e90e45f76b630e44f26`  
 		Last Modified: Fri, 01 Dec 2023 08:02:43 GMT  
 		Size: 32.5 MB (32533618 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:00b605206545e71c8d6637e233d08e5cae279512b88f4eedbb3dd9444948f3c1`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:202d4f1f6f3f44f5910a338fcd2f3dbd16c84a4e2a84a06dfba2a2040283f793`  
 		Last Modified: Fri, 01 Dec 2023 08:03:02 GMT  
 		Size: 1.2 MB (1201591 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e0234544925f6100045d097a30cd7e83c6326d489255d7667a563350ca1482e2`  
 		Last Modified: Fri, 01 Dec 2023 08:03:01 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:da794fb8adde70c735ff1b239c50a146264885bbc42438a27445bec6c74c7897`  
 		Last Modified: Fri, 01 Dec 2023 08:03:01 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.2.22` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:77445f9ef7ca1b899154890f451bc1e35c34825ae869432d598cc42bdf6c1ae8
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903583 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9c4dbf02213813b8c81cc656960639b70139291c68b49e3c524d9adf9dcd63b3`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:e465358f3201e0929ab924d7fb7a279843002934867d334ca4219a44ff41e2f5`  
-		Last Modified: Fri, 01 Dec 2023 08:03:02 GMT  
-		Size: 1.9 MB (1873140 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:8385596ced1d3689b76faecc0fd58650099ab943f1e159cc7b8634138d42bafb`  
-		Last Modified: Fri, 01 Dec 2023 08:03:01 GMT  
-		Size: 30.4 KB (30443 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.2.22` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:b804d92294f96cc394d670e95de04867d9f2b5a772003af0451e4f79cf01e09c
+$ docker pull composer@sha256:a05193a8a7a387c0cc526f3dad7e39abbb773b5164427291b8f62a52d99e1e21
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -5999,88 +5093,64 @@ CMD ["composer"]
 	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
 		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
 		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ad3f4bb45cafc3a0c4349f9564390ff0fe5c2a3dc4287f0ddf3de8a86dcbb66`  
 		Last Modified: Fri, 01 Dec 2023 00:15:00 GMT  
 		Size: 2.7 MB (2685809 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a06cb8c5272936441cf9c53173eed2af740b588b3a9d8bbbb0b6565f38005e36`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c6156dbc484960b6656a156d5d82d973371555039e45046b37e9af1cbfec8569`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:66811c19a32e40a429b8ba817b3ceb6493496ebd20655f68d5a7ca3844b6c96c`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 12.5 MB (12452097 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4954b5c64e0b15f09646882302df3b0ee246ee32b00519bd4e89f052587d473a`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:889affb1cad3094dce99e0b6c7f8c737a0319cf2a1a9201f97fb1967478162fd`  
 		Last Modified: Fri, 01 Dec 2023 00:15:01 GMT  
 		Size: 15.7 MB (15657131 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b1b4a6a047cfe6a394007eb70b0c03f70ee3d7e9447288d47f549224f614aa2f`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e71e5e0f24e7b0508ad3d6798d964951c64d5fd451467d129a769807abbb8067`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 18.8 KB (18767 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ae4356a5b2c65b1e0f267a80bfe2a0ef3872dd9dd2b6d8f45703247b88fc2e13`  
 		Last Modified: Fri, 01 Dec 2023 11:50:53 GMT  
 		Size: 31.3 MB (31290430 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3019528382efe80e087e7475c0cbe6d2be762ace22b13332601422066b7f8f9c`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 256.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8bc5efb12bc235b4dac72cdd02d5f8f5fb0c6ba6ab9b7deee6e4213cf8bed4df`  
 		Last Modified: Fri, 01 Dec 2023 11:51:11 GMT  
 		Size: 1.2 MB (1157780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3d763cca60504490b4d7da24daf58ae929bdbfe1d516844c585cea5fe453d1f4`  
 		Last Modified: Fri, 01 Dec 2023 11:51:10 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:13e8ee4918c4b9d2541c79bd5acf1264981a782c7b2662d52e5ce17e815189c5`  
 		Last Modified: Fri, 01 Dec 2023 11:51:10 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.2.22` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:5af04fb00d1e4bf014ea432ef2690dd39baee492abc9b1963b4658b1f8389d05
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902603 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9b60a8841bfa6e1dec0ebb42f0b1556c7245c49eb7ccbbd5e1966e5657f4d666`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:4b043e2f92fa9f9e7e5e63af5d9e8722cdf74554325a8181a18dd3c93c28097f`  
-		Last Modified: Fri, 01 Dec 2023 11:51:10 GMT  
-		Size: 1.9 MB (1872090 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:1cad777c6e81503f51591e48af96ee3cbe7fe129c00a91336aaeba7020e59002`  
-		Last Modified: Fri, 01 Dec 2023 11:51:10 GMT  
-		Size: 30.5 KB (30513 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.2.22` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:572085a5ac4dfaffe25b4b2cdb886239ed89d3847b1fcac4a32fa6b4cda6bc47
+$ docker pull composer@sha256:d01711f19526391dd097ca99b0c8cf13bf2d7f8f6e348a20d011434b368afcc9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -6159,88 +5229,64 @@ CMD ["composer"]
 	-	`sha256:2387a44129d2147bd4e806bf369f3db92eb3ad3b6b8825c739db364b8baa4e26`  
 		Last Modified: Thu, 30 Nov 2023 22:49:56 GMT  
 		Size: 2.9 MB (2901006 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:463dfc43b4287670c76354cf1d002e077c0a4b8f41207fdbd96316d0f649fdd5`  
 		Last Modified: Thu, 30 Nov 2023 23:58:02 GMT  
 		Size: 2.5 MB (2524902 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8445d08981ee2b82e7069c3bf290f41039993039dd9740da05b6c962c368ea`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 1.3 KB (1261 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8472c3889e6c64cf9e26fe36cc30bf9e211560aea77f82e97443348cb5956b88`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4e1a31c7a08192627a7e02da4b1d5ea494d5c25269ca986f8d2e7a8ae2d9365d`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 12.5 MB (12452107 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:12b3a23b2108bae03e59ed5e203dc9570b4d69cb6e8636a1f35e442846def57e`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6e7f8f1640d5c681ec203b1bd556d520c628ec0d02e41a591d1198b185d0d667`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 14.6 MB (14638942 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2f208f61c3ca97f2ff11ccb123a8707e61ce0891b966e160aedc3ae93a69d284`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 2.4 KB (2446 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f1879be0a19ef9277d4703ff4b4dbb0d4024de7c53e76caa733c7b133fad64d`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 18.8 KB (18780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bb2315ee202f00dfc90d25f0019e13ab267d5d9c84a9ada4fc13590035d09813`  
 		Last Modified: Fri, 01 Dec 2023 09:39:57 GMT  
 		Size: 30.8 MB (30790072 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7e069e65f06574b9652900f22252f24ef797370c770991d922cf88c4b5b0cbce`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:cc4b7e6555d5e973ad62e092fb6729682a42e41c3a904a825d6f0527f8c362be`  
 		Last Modified: Fri, 01 Dec 2023 09:40:15 GMT  
 		Size: 1.1 MB (1122012 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:137d66165f6c12375c14ae1da4dc1816c62ee02b8ba08ab24c199cb87e58729c`  
 		Last Modified: Fri, 01 Dec 2023 09:40:14 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:31a7147f9718e7026c31f01a616e9fd48275ff5b46fafaddb047fb62e41feeed`  
 		Last Modified: Fri, 01 Dec 2023 09:40:14 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.2.22` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:abc54b9a27010d5b6f814baf45d28c928334d394f0d9b2b71b4e6789155fb374
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903950 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6c78e6c0ad7188a043df295972982f1395e91c41d76499c2d21d03205b12e55a`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:9778defe8fd9532be5c9c4f9d6c53002eb7fede62b1be06a9bfbb049a604c398`  
-		Last Modified: Fri, 01 Dec 2023 09:40:15 GMT  
-		Size: 1.9 MB (1873436 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:9963d1f8a5cf76a44ba24e5d04292f70ca5b387045de043d5ab8fee22f04f4e9`  
-		Last Modified: Fri, 01 Dec 2023 09:40:14 GMT  
-		Size: 30.5 KB (30514 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.2.22` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:f5f9f4d1570cbda6c3b62dfaff5634481340674a583b271ed97b566951bd3440
+$ docker pull composer@sha256:b79b22deae618dd9846ddc96621a2c06d158037a15cd725c72438963382aa46e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -6319,88 +5365,64 @@ CMD ["composer"]
 	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
 		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
 		Size: 3.3 MB (3333033 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ec91cb5b5977bc2c77c932761c9cd04eda4b0df9636a46228a4c0af65ad1b4f3`  
 		Last Modified: Fri, 01 Dec 2023 00:40:05 GMT  
 		Size: 2.7 MB (2717190 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1563f945b2330cf35b9fc87a3f6456664dde2d6c4b6739047a9dd457f4a3d681`  
 		Last Modified: Fri, 01 Dec 2023 00:40:04 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f2549a9ef4a38d3afd713cc21e4de8fdf9a61d4d4f5b2897c0de403ec047f69a`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:285b1cbb8a2c86c2e2959b55b31fa9ac7abd053db302a937ce14d713aeaf8f44`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 12.5 MB (12452091 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42ac31d6bb70b19a698a7b74ae40261071bc6f22d09403fea931a7923ca8af18`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e6895913c4c7d243589b136d34c69cf54dc6e3aae7d5e785d8c35c570bb0e012`  
 		Last Modified: Fri, 01 Dec 2023 00:40:06 GMT  
 		Size: 17.1 MB (17056609 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1c9aea783aa0077ad1860c83cdbc65d3ad9547ba0c7694359f04efe829bec772`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 2.4 KB (2445 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f59963826a7f5193afec349b01fd624dd57a56e93881623c88faf7564007df02`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 18.7 KB (18729 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:083ab35f4c099a5c6f2fd6796eedcfbd32dd9419cee0c64ab606825964d4ed87`  
 		Last Modified: Fri, 01 Dec 2023 10:13:21 GMT  
 		Size: 32.9 MB (32888759 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:33f9642924941eef55ba6176cbfc4340e3e32ad0611f6b8dbbab9d16233c8efe`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:680bf1fa4aab6aac10d319f7e8cbc2336dfcff9d06567641168e3844c6c87e08`  
 		Last Modified: Fri, 01 Dec 2023 10:13:39 GMT  
 		Size: 1.2 MB (1186166 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8369e20ab18170688748ad88763ad1a5a67872ae76f9061f328d121c830cee4a`  
 		Last Modified: Fri, 01 Dec 2023 10:13:38 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e9fdeef8bcc6f564e0af636ccdba2e2afff8ce1eea4bfad494660e1542ac4065`  
 		Last Modified: Fri, 01 Dec 2023 10:13:38 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.2.22` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:e5eb9b4d4a1be7db61cd9227f5efc9eb69176e9034fb139ebd661b381c5244f7
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903679 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:faa5d9e207a63be0244e51185bc1dcd426c38027c9ff3b369a389eee2c282d1f`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:848fea65b9020c00e3dfe1ad983dc0b3c0896ba4795c0521e4b81e9bd356d9f5`  
-		Last Modified: Fri, 01 Dec 2023 10:13:39 GMT  
-		Size: 1.9 MB (1873236 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:a2361fcad7766adad4bb49ce19a55bfc099665894725c850bf2f91ba1a01e0b2`  
-		Last Modified: Fri, 01 Dec 2023 10:13:38 GMT  
-		Size: 30.4 KB (30443 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.2.22` - linux; 386
 
 ```console
-$ docker pull composer@sha256:6d49f5fe5806d9dd6dba20cf893f41a341a32cfefe416cafa2e8611358a640c0
+$ docker pull composer@sha256:49fd2795fd329b0b483f8fe15762d2b15d108e27ec26a726f665a13fea89a1f6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -6479,88 +5501,64 @@ CMD ["composer"]
 	-	`sha256:4966a8bd129b0a6adf93dc295a8fbe8f665d3194a684a5ce199c1c3596dbf3d9`  
 		Last Modified: Fri, 01 Dec 2023 02:04:18 GMT  
 		Size: 3.2 MB (3238831 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:786b6949c7da1fc85a439f51aa05ace6592ed6759802ad370ed74bc4f479828b`  
 		Last Modified: Fri, 01 Dec 2023 04:07:07 GMT  
 		Size: 2.7 MB (2723376 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:27aec508afba473c67b8d2ad4216ba2489f0e9f08768454183b11877384d8139`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 1.3 KB (1259 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a55ae0822cb02fa8febaedc0ea40b1c5b2823b47b9e9f3dc9436f506df98f121`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:81d34e95bca488cede02955576432a46cb1462e07cc769b9eb29f6fb2bf7dcbf`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 12.5 MB (12452099 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:03e703b9b578d877bbb5bb3e7217c5b01c4bd415d52c238a814d769297fe5970`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1b35603c3070a506bb74ab53e6ef71985df5ebcef52f3a030c3b1280fe221eb7`  
 		Last Modified: Fri, 01 Dec 2023 04:07:08 GMT  
 		Size: 17.3 MB (17338715 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:70c1d3cc41a87b1f20ce9166de4fa148c58e529e7a60946164e1ba7d5739156d`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ce144e8060ec62642abf24c41af8e07481873030aa04e8c8c13cc6067a54ee94`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 18.9 KB (18926 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d5e7634c298564bc162ac9ee1138503d2f03fad621a4071d55b33989f624dc5`  
 		Last Modified: Fri, 01 Dec 2023 10:00:41 GMT  
 		Size: 10.7 MB (10733320 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e128cbaba61d68a820c95bb7e672da3c4be595ddf782002fd3a23f91855d2a4a`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:49875ac1e5e4f6e85a64c35830debef6274c5b38a12e85972ae6f8dbafb0565e`  
 		Last Modified: Fri, 01 Dec 2023 10:00:57 GMT  
 		Size: 1.1 MB (1134049 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:078ddcb75238446f2b8ba1939e0bdedad90c4f6c25f912b0be2a67820251dff4`  
 		Last Modified: Fri, 01 Dec 2023 10:00:57 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8ecf7226f0fc20cdb7e19c7929c6e706b3aa7ed81e92ae284e45363f4ac57e7`  
 		Last Modified: Fri, 01 Dec 2023 10:00:57 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.2.22` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:9c93b93a86bc0bd1613acfa4072e16bdca60643109a37ed97211645cdb310bba
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **374.1 KB (374081 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5487e2e35bed7bbf5f28b5ab13ffaf8b1de8f8bf1172bba7fc1531b481e917dc`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:0a44e8f188e154a85248b7ee0fee55b206c3eff3e00f7ef7f2253c3704da9936`  
-		Last Modified: Fri, 01 Dec 2023 10:00:57 GMT  
-		Size: 343.7 KB (343660 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:c476d34c53a279d065f30b882815f8143e42664fa650084b2a08c4b5c8dd7bae`  
-		Last Modified: Fri, 01 Dec 2023 10:00:57 GMT  
-		Size: 30.4 KB (30421 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.2.22` - linux; ppc64le
 
 ```console
-$ docker pull composer@sha256:1ec2caeefec466a1ad5897f600b4d7aa2df699e37321fb16a5287ded3c35dba8
+$ docker pull composer@sha256:c57d9f342223df0e5049a36416f12631daf57e7c1376af0945c99b77f23b8cab
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -6639,88 +5637,64 @@ CMD ["composer"]
 	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
 		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
 		Size: 3.3 MB (3348322 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f8cb9b4da64e0956e297ed583f04085128cdc4a68dcffa3a41c639319245c27`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 2.8 MB (2766423 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:89e2afe36ae984e44fa290115e1355ddb9ba0833dc70a7e3e1f1ed384492c3ec`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 1.3 KB (1267 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:233860698dd8a6e8c7a48373c7cb0a908fc5e1ad61c7ba6c0606e54226ed4c5d`  
 		Last Modified: Fri, 01 Dec 2023 00:53:03 GMT  
 		Size: 267.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f8fb69ca1d3e6a6c70e5d15e8c0a1588f2b439de9683f4874bd1b2f921e4232a`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 12.5 MB (12452085 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab6815e64bb3220dda4d71f42ca13e00d8da619677251611904fb38d6e6eb671`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 494.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1d29c3f41b3d1633a6f3b802d29f6d55acc40d2b97d36e015a15870ceb1bbaa8`  
 		Last Modified: Fri, 01 Dec 2023 00:53:05 GMT  
 		Size: 17.9 MB (17871055 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:eab7245ddd19f65a03b28a395a911f228d137eff133f0ce3855ac49d3bd3623e`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:60fa13b877a4b587f4bfbdfde83831719bc57b09c6a6b8b65c4430b883643393`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 18.7 KB (18731 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4d6f197c8706ed2d9ad1c3776ad0a38b89146398b9a1b9bbf515bb0d2d368959`  
 		Last Modified: Fri, 01 Dec 2023 09:59:33 GMT  
 		Size: 33.5 MB (33538629 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:deca4be23e5d94daeed68f294c98841e816fc5b4e0089108bb8ed8468563bbae`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:430fad61a369bbdc2d62b85aa1a0ada3955962bc04ad5b0c2dd4a4d6939cac8e`  
 		Last Modified: Fri, 01 Dec 2023 09:59:52 GMT  
 		Size: 1.2 MB (1242967 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d6c5fc56ff9427dd36419df17fd28b2cb3688e4acc0b64f6a2b188e15f8f102e`  
 		Last Modified: Fri, 01 Dec 2023 09:59:51 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:da8315c02acab573f88aeb098ed2d1fdbf294e4b2937a3ad5995bee8c02d69f8`  
 		Last Modified: Fri, 01 Dec 2023 09:59:51 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.2.22` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:9269c9bc3bde739d7872d6a0b191756a4ebba9cb2d13faae3b518eaaf6dd4852
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902458 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0b975d9f55a1d8e85ef4cb9bda252a0bdee29cc649e1b2988c22431ccf256ae0`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:9713398f9e43ae79981aa12f48214f61bd132c2f4d08ab98da34430e79aeb8fb`  
-		Last Modified: Fri, 01 Dec 2023 09:59:52 GMT  
-		Size: 1.9 MB (1871993 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:624f6e8078c7fad027ef4c75a316e92a99dc7e8d70a7dcef4dfb678636c3fe27`  
-		Last Modified: Fri, 01 Dec 2023 09:59:51 GMT  
-		Size: 30.5 KB (30465 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.2.22` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:53621dd87573783ca3fb4dc146eb0c11d0f6060f60daf8d5331eba3031bc16f6
+$ docker pull composer@sha256:e7287def461abb0319c6785adaa84514697a168041fe4675a1c16da0a57094b2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -6799,111 +5773,80 @@ CMD ["composer"]
 	-	`sha256:2ea477e1c0c3db3337ee1d7c659f8c465021a65c036998ed3fa3b667d4b30153`  
 		Last Modified: Thu, 30 Nov 2023 22:42:52 GMT  
 		Size: 3.2 MB (3217454 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3aa5313d02d4fcc59703ea6bd09df7b0df122fc73121b0954b541c214229202e`  
 		Last Modified: Thu, 30 Nov 2023 23:47:29 GMT  
 		Size: 2.8 MB (2789878 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f082f983656d312447043a024c0fa5528e4055dbd73f4101ac38d1d2d3158ea`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 1.3 KB (1262 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:35feaf89a3d400114f4864637453e2e21cd9e7cb6a859699bd6272483f3a56ee`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b59844514cd33789360a3e46dbaff2cdae06b8cd8d18ee9449808c168be15f9`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 12.5 MB (12452093 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:090f8111976872dd0d1fdf290acf04666250d582cbba875706f055725bc42aff`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:398c5ca7cbe876f0f1cf80bef52d39ccd6949d12e9836af8af296afb1084c144`  
 		Last Modified: Thu, 30 Nov 2023 23:47:30 GMT  
 		Size: 16.0 MB (15956254 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa90b5b8b99ecde21a6c31cb4effceb2e48d33b4feeb73b3a12ec4545c63d32a`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3a82796f38dbb8536e9be3b686e7716a2916e08c53622bf88c55aa3ed67802d0`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 18.8 KB (18764 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c209132482d51247ed069f0572cfab5180a1053e1b2856ebe7bb2dbbbf308e38`  
 		Last Modified: Fri, 01 Dec 2023 09:39:28 GMT  
 		Size: 32.3 MB (32333843 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2be49705f63fb76f942d7d9c7808dd4d2b4dc2e25b081f1c7b9d534ca7a70477`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 259.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3cbb92d234a1eb1c896b19138d6191dff915c62df74203f14b3ce3628c3acbc5`  
 		Last Modified: Fri, 01 Dec 2023 09:39:42 GMT  
 		Size: 1.2 MB (1163861 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3b2ec300be7b660e2dc97ac8b0ddcf406607c84b42af30c78eb1f1c693a5bbd8`  
 		Last Modified: Fri, 01 Dec 2023 09:39:42 GMT  
 		Size: 420.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:702b22505212dff30db39a0111b0be13d5c38c63448b3556277ff96c0687e064`  
 		Last Modified: Fri, 01 Dec 2023 09:39:42 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.2.22` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:b862e3ef54086b5b07cb7ea8cb9baa793233749d63d4016513ae6888a46b73b8
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1901289 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:aa100f12394ba2f8d36b5a3fdf25fc3ef1558508ebeea2fbe1412d49781fe72a`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:773af0e10de90d0db9fb0a69af5f0c2dfd508fe40656b8cf64de793ad94bd6d2`  
-		Last Modified: Fri, 01 Dec 2023 09:39:42 GMT  
-		Size: 1.9 MB (1870846 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:f70c5841863548042c4c6be3ab892505e90b9f9dcfaa99b18b1733b797cecfab`  
-		Last Modified: Fri, 01 Dec 2023 09:39:42 GMT  
-		Size: 30.4 KB (30443 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:2.3`
 
 ```console
-$ docker pull composer@sha256:c1b390a706b51541ce693e5a1db5b49d0e67d12d7d7626b8d48a406bf56e7486
+$ docker pull composer@sha256:c67e00fa821cf7dfca0027bbfeaec4e41f6f316e44539105f043485a2e53fb72
 ```
 
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 14
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
 	-	linux; amd64
-	-	unknown; unknown
 	-	linux; arm variant v6
-	-	unknown; unknown
 	-	linux; arm variant v7
-	-	unknown; unknown
 	-	linux; arm64 variant v8
-	-	unknown; unknown
 	-	linux; 386
-	-	unknown; unknown
 	-	linux; ppc64le
-	-	unknown; unknown
 	-	linux; s390x
-	-	unknown; unknown
 
 ### `composer:2.3` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:844a60a18f7c06a88e71b2d18965dd7a35def8be86887ecfa8ef9e87c7c669b7
+$ docker pull composer@sha256:149f5310b749536e9300c70f38f26db1692c7e69ce78c430b8c9685b5dfde1a2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -6982,88 +5925,64 @@ CMD ["composer"]
 	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
 		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
 		Size: 3.4 MB (3402422 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8e26b626c27026d1938a0b6bd77e36b4113da4b7a1134df8d1aa9f49658b25f`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 2.7 MB (2679359 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:23427f6f19cc27aa3496173559d7fc30c2501d1d179a15b52ac1758cc1667d37`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:938ee652f0dd66c081c31e773163d4c3d8ec979f9ced384ed270cdc5fbcbe657`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8abe2aaf4047e9984223c8d63be88c09b7d447f8c9f77851aa06771c52bba05b`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 12.5 MB (12452105 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e06ec6f102433dfe7410990547f8d059d4c3e56455e35d7b4dfbfb96784486e1`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 492.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9ea984f05cf27a91a07a0b1f63adb1e6f9c4cb631325b5a07343b8faf75f7028`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 17.1 MB (17069834 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e6c3ecb64ca025834e2eba225bd5d603742000e1d67407ba50cf0f60ea41a98`  
 		Last Modified: Fri, 01 Dec 2023 00:42:05 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d3b07fe920dd6973a44ea83074fd9125fe7d4774492d00c0ffefb9a04a847a29`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 19.0 KB (18951 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:db476e3c025b598a275cc72e45c12e45db55e1df982d1e90e45f76b630e44f26`  
 		Last Modified: Fri, 01 Dec 2023 08:02:43 GMT  
 		Size: 32.5 MB (32533618 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:00b605206545e71c8d6637e233d08e5cae279512b88f4eedbb3dd9444948f3c1`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:429fc8c78ab1041e0e2cee1081ee8579eaa09216c71e94a0439ef07b581e4b2a`  
 		Last Modified: Fri, 01 Dec 2023 08:02:58 GMT  
 		Size: 1.3 MB (1283911 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:dec1811fa224fcd7522ae57aad39e4aec55112a468588681864e907931c812fe`  
 		Last Modified: Fri, 01 Dec 2023 08:02:57 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2bd8175926c6868c72e691148bdde9933f41fa236cc2527328512c9b007a0dae`  
 		Last Modified: Fri, 01 Dec 2023 08:02:57 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.3` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:199707db8607a8681c7f75e6efd01417630e5f32673784a4867c90752c9e1e30
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903293 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:670281a291fa91b511f5170a1cefc9157d4fb10f61cfcda304064fa999343b10`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:f6eef5c642f1e4c55dceacb8399a9872db14774d36685d1c03b7c0d0d13881fe`  
-		Last Modified: Fri, 01 Dec 2023 08:02:58 GMT  
-		Size: 1.9 MB (1872995 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:0ddd5e734ca3eba6cc97fbf87af1eac8282a3babc244371e6aae3385ae337c5c`  
-		Last Modified: Fri, 01 Dec 2023 08:02:57 GMT  
-		Size: 30.3 KB (30298 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.3` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:41ce489e576d756da76fe7bb235495b0bd6cdf427ae4baa02b735d5524164537
+$ docker pull composer@sha256:81697d8e6c38433329ba2b291a65ac362ea8cecc7d1545caf2cdbe13f0d6be46
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -7142,88 +6061,64 @@ CMD ["composer"]
 	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
 		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
 		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ad3f4bb45cafc3a0c4349f9564390ff0fe5c2a3dc4287f0ddf3de8a86dcbb66`  
 		Last Modified: Fri, 01 Dec 2023 00:15:00 GMT  
 		Size: 2.7 MB (2685809 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a06cb8c5272936441cf9c53173eed2af740b588b3a9d8bbbb0b6565f38005e36`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c6156dbc484960b6656a156d5d82d973371555039e45046b37e9af1cbfec8569`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:66811c19a32e40a429b8ba817b3ceb6493496ebd20655f68d5a7ca3844b6c96c`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 12.5 MB (12452097 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4954b5c64e0b15f09646882302df3b0ee246ee32b00519bd4e89f052587d473a`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:889affb1cad3094dce99e0b6c7f8c737a0319cf2a1a9201f97fb1967478162fd`  
 		Last Modified: Fri, 01 Dec 2023 00:15:01 GMT  
 		Size: 15.7 MB (15657131 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b1b4a6a047cfe6a394007eb70b0c03f70ee3d7e9447288d47f549224f614aa2f`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e71e5e0f24e7b0508ad3d6798d964951c64d5fd451467d129a769807abbb8067`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 18.8 KB (18767 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ae4356a5b2c65b1e0f267a80bfe2a0ef3872dd9dd2b6d8f45703247b88fc2e13`  
 		Last Modified: Fri, 01 Dec 2023 11:50:53 GMT  
 		Size: 31.3 MB (31290430 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3019528382efe80e087e7475c0cbe6d2be762ace22b13332601422066b7f8f9c`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 256.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:39e6aded981e3fae8ee81878501d4a3b5216d8a508a735f9254333f181884f1c`  
 		Last Modified: Fri, 01 Dec 2023 11:51:06 GMT  
 		Size: 1.2 MB (1240937 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:24bd5c879cc81ef80ed584a278217e110b38e9f263cbb0dcb07998242999135f`  
 		Last Modified: Fri, 01 Dec 2023 11:51:06 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3be46ca31614dfbd112b8419302c48920d2d11ab04c6d8ed90f44c23ccbf69d9`  
 		Last Modified: Fri, 01 Dec 2023 11:51:06 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.3` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:f06bef8643257d38ec5ec298d737474b5f3b4e2643e7d400c4344a036573ae74
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902308 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:640f48fa17ac3e07969fcabfba71fb38f408f3aaa902cf383ac7cc21b00cb9de`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:440daf11b0d031b42dd3f12bdb7458ebf1603eae77e6b3143b19bed93d6b6217`  
-		Last Modified: Fri, 01 Dec 2023 11:51:06 GMT  
-		Size: 1.9 MB (1871942 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:ad7e8051c6a69ddf2f9b85150bf7c9be5c054edc5beb2d1fa29b7c1a427d72f0`  
-		Last Modified: Fri, 01 Dec 2023 11:51:06 GMT  
-		Size: 30.4 KB (30366 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.3` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:3dcc2b685e0d434a2e39c31506f6c347cabdd1afe8eddd7f82fd69989f2dad58
+$ docker pull composer@sha256:dd11654f857f21b4318e68ec2de007ea97be32a2dac2e3886ddbec9f67a304e3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -7302,88 +6197,64 @@ CMD ["composer"]
 	-	`sha256:2387a44129d2147bd4e806bf369f3db92eb3ad3b6b8825c739db364b8baa4e26`  
 		Last Modified: Thu, 30 Nov 2023 22:49:56 GMT  
 		Size: 2.9 MB (2901006 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:463dfc43b4287670c76354cf1d002e077c0a4b8f41207fdbd96316d0f649fdd5`  
 		Last Modified: Thu, 30 Nov 2023 23:58:02 GMT  
 		Size: 2.5 MB (2524902 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8445d08981ee2b82e7069c3bf290f41039993039dd9740da05b6c962c368ea`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 1.3 KB (1261 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8472c3889e6c64cf9e26fe36cc30bf9e211560aea77f82e97443348cb5956b88`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4e1a31c7a08192627a7e02da4b1d5ea494d5c25269ca986f8d2e7a8ae2d9365d`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 12.5 MB (12452107 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:12b3a23b2108bae03e59ed5e203dc9570b4d69cb6e8636a1f35e442846def57e`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6e7f8f1640d5c681ec203b1bd556d520c628ec0d02e41a591d1198b185d0d667`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 14.6 MB (14638942 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2f208f61c3ca97f2ff11ccb123a8707e61ce0891b966e160aedc3ae93a69d284`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 2.4 KB (2446 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f1879be0a19ef9277d4703ff4b4dbb0d4024de7c53e76caa733c7b133fad64d`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 18.8 KB (18780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bb2315ee202f00dfc90d25f0019e13ab267d5d9c84a9ada4fc13590035d09813`  
 		Last Modified: Fri, 01 Dec 2023 09:39:57 GMT  
 		Size: 30.8 MB (30790072 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7e069e65f06574b9652900f22252f24ef797370c770991d922cf88c4b5b0cbce`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3e417bdf6ae7d5b6d9aa9d80634a89356cb22e787117568fddc2662ef73bee4c`  
 		Last Modified: Fri, 01 Dec 2023 09:40:11 GMT  
 		Size: 1.2 MB (1205247 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7f986011cec821c389cc6233669360f36f3227cd27601e10b82f3f74b8f6e5a2`  
 		Last Modified: Fri, 01 Dec 2023 09:40:10 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6b85f8ae1488c8673a538b03220d7a79ade95a09410a509f41d37200955f80c8`  
 		Last Modified: Fri, 01 Dec 2023 09:40:10 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.3` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:4f22b2a8658bbcbf6b278113b71911b89447a58b5c3f54f4b174e477421bfc4b
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903653 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cb48eb6e576e4fd439e0168ba98ecb2ee40dd7017c92a1fadd0e8084819b22a5`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:ccff8b4b55a4739f5a3af42c5fff1cd47dce7cf32d39a57020c1e397f9e11595`  
-		Last Modified: Fri, 01 Dec 2023 09:40:11 GMT  
-		Size: 1.9 MB (1873288 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:a887bede483e8092eafa937c431d3a8ff75bf25a6e71b4ddf96025a8e5eec895`  
-		Last Modified: Fri, 01 Dec 2023 09:40:10 GMT  
-		Size: 30.4 KB (30365 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.3` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:0b4fd64f5c3c8405961d21f68aa4c6b896d3b9a88f93ce38f520e5bc4f13be62
+$ docker pull composer@sha256:bcf4533a38247f1bf46d2dc8e8e025674b1c3b17d483b5ee55980a919ebb7429
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -7462,88 +6333,64 @@ CMD ["composer"]
 	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
 		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
 		Size: 3.3 MB (3333033 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ec91cb5b5977bc2c77c932761c9cd04eda4b0df9636a46228a4c0af65ad1b4f3`  
 		Last Modified: Fri, 01 Dec 2023 00:40:05 GMT  
 		Size: 2.7 MB (2717190 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1563f945b2330cf35b9fc87a3f6456664dde2d6c4b6739047a9dd457f4a3d681`  
 		Last Modified: Fri, 01 Dec 2023 00:40:04 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f2549a9ef4a38d3afd713cc21e4de8fdf9a61d4d4f5b2897c0de403ec047f69a`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:285b1cbb8a2c86c2e2959b55b31fa9ac7abd053db302a937ce14d713aeaf8f44`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 12.5 MB (12452091 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42ac31d6bb70b19a698a7b74ae40261071bc6f22d09403fea931a7923ca8af18`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e6895913c4c7d243589b136d34c69cf54dc6e3aae7d5e785d8c35c570bb0e012`  
 		Last Modified: Fri, 01 Dec 2023 00:40:06 GMT  
 		Size: 17.1 MB (17056609 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1c9aea783aa0077ad1860c83cdbc65d3ad9547ba0c7694359f04efe829bec772`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 2.4 KB (2445 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f59963826a7f5193afec349b01fd624dd57a56e93881623c88faf7564007df02`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 18.7 KB (18729 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:083ab35f4c099a5c6f2fd6796eedcfbd32dd9419cee0c64ab606825964d4ed87`  
 		Last Modified: Fri, 01 Dec 2023 10:13:21 GMT  
 		Size: 32.9 MB (32888759 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:33f9642924941eef55ba6176cbfc4340e3e32ad0611f6b8dbbab9d16233c8efe`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b0a668e34bdb68ef80d8b462d9a5fb9e776b8407fa30c809ebe0b5c1de761a8`  
 		Last Modified: Fri, 01 Dec 2023 10:13:34 GMT  
 		Size: 1.3 MB (1269023 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa00a72717ddceded61d79971e811462892f8c58093da1171fc943dde36f61ad`  
 		Last Modified: Fri, 01 Dec 2023 10:13:33 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4af6b09bf608bb82bd9ba92fa45bfce52e3d50bcc50b9972aceab7b40e38f98e`  
 		Last Modified: Fri, 01 Dec 2023 10:13:33 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.3` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:96decc882881d0028174273654089941bc22f1766d0310e5aa8774143cc34051
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903389 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bd185a4bee6204f04d58e3a17ec3f6ec9262241e16ef44800406e37a8d7964f2`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:9c2617eaac00e09f7949f70456fa55b5a15c91266a97dd4aee939835b60dfc40`  
-		Last Modified: Fri, 01 Dec 2023 10:13:34 GMT  
-		Size: 1.9 MB (1873091 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:305eb9c0233922f6f206fb1027dd9e3d08aef2b09e6e0c6d28d7613ac821c97e`  
-		Last Modified: Fri, 01 Dec 2023 10:13:33 GMT  
-		Size: 30.3 KB (30298 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.3` - linux; 386
 
 ```console
-$ docker pull composer@sha256:d415592a3411d68c94332a64ea237d4fae507e47673fe4d7216c2e6d6ce879c6
+$ docker pull composer@sha256:f39e685895a2f77d58bab1668dc15bb1ba2afbd883107afbd49facdf547a12b8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -7622,88 +6469,64 @@ CMD ["composer"]
 	-	`sha256:4966a8bd129b0a6adf93dc295a8fbe8f665d3194a684a5ce199c1c3596dbf3d9`  
 		Last Modified: Fri, 01 Dec 2023 02:04:18 GMT  
 		Size: 3.2 MB (3238831 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:786b6949c7da1fc85a439f51aa05ace6592ed6759802ad370ed74bc4f479828b`  
 		Last Modified: Fri, 01 Dec 2023 04:07:07 GMT  
 		Size: 2.7 MB (2723376 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:27aec508afba473c67b8d2ad4216ba2489f0e9f08768454183b11877384d8139`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 1.3 KB (1259 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a55ae0822cb02fa8febaedc0ea40b1c5b2823b47b9e9f3dc9436f506df98f121`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:81d34e95bca488cede02955576432a46cb1462e07cc769b9eb29f6fb2bf7dcbf`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 12.5 MB (12452099 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:03e703b9b578d877bbb5bb3e7217c5b01c4bd415d52c238a814d769297fe5970`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1b35603c3070a506bb74ab53e6ef71985df5ebcef52f3a030c3b1280fe221eb7`  
 		Last Modified: Fri, 01 Dec 2023 04:07:08 GMT  
 		Size: 17.3 MB (17338715 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:70c1d3cc41a87b1f20ce9166de4fa148c58e529e7a60946164e1ba7d5739156d`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ce144e8060ec62642abf24c41af8e07481873030aa04e8c8c13cc6067a54ee94`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 18.9 KB (18926 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d5e7634c298564bc162ac9ee1138503d2f03fad621a4071d55b33989f624dc5`  
 		Last Modified: Fri, 01 Dec 2023 10:00:41 GMT  
 		Size: 10.7 MB (10733320 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e128cbaba61d68a820c95bb7e672da3c4be595ddf782002fd3a23f91855d2a4a`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6fc4ee23cce550d17374dc59971749f776037bb3d448e32198316b47ed797d7c`  
 		Last Modified: Fri, 01 Dec 2023 10:00:53 GMT  
 		Size: 1.2 MB (1216183 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:646c5852a248d42a6e71986a0b14e04581458fe82b5b9598fea0eb481760d513`  
 		Last Modified: Fri, 01 Dec 2023 10:00:53 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f0a3a7219f55dee23989a1eecefd4c8ce26b39af322decb4ca64e5464dec24c8`  
 		Last Modified: Fri, 01 Dec 2023 10:00:53 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.3` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:ea809daee439ce53f25835b0a780c5182c26cb51c604d2a850b6987ec16e556e
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **373.8 KB (373795 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:96b5a37e44df0a7877fba44a61f4282bcec26d7d7685a7112d25c9c1bccdfbe2`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:2f7e26622db050832041de4527f88fd555d4479c829a01828a3e90347249a2a0`  
-		Last Modified: Fri, 01 Dec 2023 10:00:53 GMT  
-		Size: 343.5 KB (343517 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:8dbb41aa9aec52c8e92de3cd933405f51d325f8ccbd7848ea6a6c6713eebce9e`  
-		Last Modified: Fri, 01 Dec 2023 10:00:53 GMT  
-		Size: 30.3 KB (30278 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.3` - linux; ppc64le
 
 ```console
-$ docker pull composer@sha256:90d2f613175c6161e6e88c90e746c750e125e97f4f324e4f1889db1134731f7b
+$ docker pull composer@sha256:6b722072e9e3889b60ec987fe25f09337f25b82e34c24e5d264b6e5b725e3b26
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -7782,88 +6605,64 @@ CMD ["composer"]
 	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
 		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
 		Size: 3.3 MB (3348322 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f8cb9b4da64e0956e297ed583f04085128cdc4a68dcffa3a41c639319245c27`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 2.8 MB (2766423 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:89e2afe36ae984e44fa290115e1355ddb9ba0833dc70a7e3e1f1ed384492c3ec`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 1.3 KB (1267 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:233860698dd8a6e8c7a48373c7cb0a908fc5e1ad61c7ba6c0606e54226ed4c5d`  
 		Last Modified: Fri, 01 Dec 2023 00:53:03 GMT  
 		Size: 267.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f8fb69ca1d3e6a6c70e5d15e8c0a1588f2b439de9683f4874bd1b2f921e4232a`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 12.5 MB (12452085 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab6815e64bb3220dda4d71f42ca13e00d8da619677251611904fb38d6e6eb671`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 494.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1d29c3f41b3d1633a6f3b802d29f6d55acc40d2b97d36e015a15870ceb1bbaa8`  
 		Last Modified: Fri, 01 Dec 2023 00:53:05 GMT  
 		Size: 17.9 MB (17871055 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:eab7245ddd19f65a03b28a395a911f228d137eff133f0ce3855ac49d3bd3623e`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:60fa13b877a4b587f4bfbdfde83831719bc57b09c6a6b8b65c4430b883643393`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 18.7 KB (18731 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4d6f197c8706ed2d9ad1c3776ad0a38b89146398b9a1b9bbf515bb0d2d368959`  
 		Last Modified: Fri, 01 Dec 2023 09:59:33 GMT  
 		Size: 33.5 MB (33538629 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:deca4be23e5d94daeed68f294c98841e816fc5b4e0089108bb8ed8468563bbae`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:44882f6a008368054f03f638fc50b2d6c3a7b8c4ce66b889ca33d75ee4d4964a`  
 		Last Modified: Fri, 01 Dec 2023 09:59:47 GMT  
 		Size: 1.3 MB (1324986 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:61a57f47b6a84562587d274f9c9a3ff360690eed5150bb9c30a656e0e3b037b1`  
 		Last Modified: Fri, 01 Dec 2023 09:59:47 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:09ee790e413e92fb7314a8e92fa04472442366c15fead1bb173e864cd29d7fd6`  
 		Last Modified: Fri, 01 Dec 2023 09:59:47 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.3` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:e1a4b057c2d9c48550332a1b0d65337f13ed077c586f2fe35710e742d56776a7
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902164 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e005009a75f58973f0748aad6992ec357dfea101017159dec4acdad5e8df19b3`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:96758ccdf1a02adfad4fe40da9f95f6363cd785167327947eec5223ab3e2e5bf`  
-		Last Modified: Fri, 01 Dec 2023 09:59:48 GMT  
-		Size: 1.9 MB (1871846 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:740f81f33c89bfcff7310a871e784e458117f584486510f7d760a41fb9800647`  
-		Last Modified: Fri, 01 Dec 2023 09:59:47 GMT  
-		Size: 30.3 KB (30318 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.3` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:095397b9bbe8b876005151e000c3145ab93a08c098c850fd5ef8ea8992f8045d
+$ docker pull composer@sha256:d5ad7edeac0c3059359bf91eb6b6a5334efef900063211f1a36b5fde144bdbeb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -7942,111 +6741,80 @@ CMD ["composer"]
 	-	`sha256:2ea477e1c0c3db3337ee1d7c659f8c465021a65c036998ed3fa3b667d4b30153`  
 		Last Modified: Thu, 30 Nov 2023 22:42:52 GMT  
 		Size: 3.2 MB (3217454 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3aa5313d02d4fcc59703ea6bd09df7b0df122fc73121b0954b541c214229202e`  
 		Last Modified: Thu, 30 Nov 2023 23:47:29 GMT  
 		Size: 2.8 MB (2789878 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f082f983656d312447043a024c0fa5528e4055dbd73f4101ac38d1d2d3158ea`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 1.3 KB (1262 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:35feaf89a3d400114f4864637453e2e21cd9e7cb6a859699bd6272483f3a56ee`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b59844514cd33789360a3e46dbaff2cdae06b8cd8d18ee9449808c168be15f9`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 12.5 MB (12452093 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:090f8111976872dd0d1fdf290acf04666250d582cbba875706f055725bc42aff`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:398c5ca7cbe876f0f1cf80bef52d39ccd6949d12e9836af8af296afb1084c144`  
 		Last Modified: Thu, 30 Nov 2023 23:47:30 GMT  
 		Size: 16.0 MB (15956254 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa90b5b8b99ecde21a6c31cb4effceb2e48d33b4feeb73b3a12ec4545c63d32a`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3a82796f38dbb8536e9be3b686e7716a2916e08c53622bf88c55aa3ed67802d0`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 18.8 KB (18764 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c209132482d51247ed069f0572cfab5180a1053e1b2856ebe7bb2dbbbf308e38`  
 		Last Modified: Fri, 01 Dec 2023 09:39:28 GMT  
 		Size: 32.3 MB (32333843 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2be49705f63fb76f942d7d9c7808dd4d2b4dc2e25b081f1c7b9d534ca7a70477`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 259.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d62fe80513a91beb90de723ba4ec688e62e49c69d40391391b15545e8b205d7c`  
 		Last Modified: Fri, 01 Dec 2023 09:39:39 GMT  
 		Size: 1.2 MB (1246833 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fabb67fb93b993774c0cece58158a7f107ecd4a372807bfcb77fc933d9e00a94`  
 		Last Modified: Fri, 01 Dec 2023 09:39:39 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c09b146b772d36b7507e5db2ea798b4a6315ba513eccd28d2c881e25524642ed`  
 		Last Modified: Fri, 01 Dec 2023 09:39:39 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.3` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:78bbeea7265e324970a877647758e938cfa11be1f67de6d8e9f1f7989f3db50a
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1900999 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:918fe3af9105b378d27157505b1066ff7adb3c3b43e1efa96c331f036145e2fe`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:dfb95addf03350d9d10d92fd7ad6cde0bac7ed9291ebb8d49ebb301032618cfb`  
-		Last Modified: Fri, 01 Dec 2023 09:39:39 GMT  
-		Size: 1.9 MB (1870701 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:bfc481ad1259ea162af9834f0a6054b090171bc310bac6760a0c3cc84f776a3a`  
-		Last Modified: Fri, 01 Dec 2023 09:39:39 GMT  
-		Size: 30.3 KB (30298 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:2.3.10`
 
 ```console
-$ docker pull composer@sha256:c1b390a706b51541ce693e5a1db5b49d0e67d12d7d7626b8d48a406bf56e7486
+$ docker pull composer@sha256:c67e00fa821cf7dfca0027bbfeaec4e41f6f316e44539105f043485a2e53fb72
 ```
 
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 14
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
 	-	linux; amd64
-	-	unknown; unknown
 	-	linux; arm variant v6
-	-	unknown; unknown
 	-	linux; arm variant v7
-	-	unknown; unknown
 	-	linux; arm64 variant v8
-	-	unknown; unknown
 	-	linux; 386
-	-	unknown; unknown
 	-	linux; ppc64le
-	-	unknown; unknown
 	-	linux; s390x
-	-	unknown; unknown
 
 ### `composer:2.3.10` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:844a60a18f7c06a88e71b2d18965dd7a35def8be86887ecfa8ef9e87c7c669b7
+$ docker pull composer@sha256:149f5310b749536e9300c70f38f26db1692c7e69ce78c430b8c9685b5dfde1a2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -8125,88 +6893,64 @@ CMD ["composer"]
 	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
 		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
 		Size: 3.4 MB (3402422 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8e26b626c27026d1938a0b6bd77e36b4113da4b7a1134df8d1aa9f49658b25f`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 2.7 MB (2679359 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:23427f6f19cc27aa3496173559d7fc30c2501d1d179a15b52ac1758cc1667d37`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:938ee652f0dd66c081c31e773163d4c3d8ec979f9ced384ed270cdc5fbcbe657`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8abe2aaf4047e9984223c8d63be88c09b7d447f8c9f77851aa06771c52bba05b`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 12.5 MB (12452105 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e06ec6f102433dfe7410990547f8d059d4c3e56455e35d7b4dfbfb96784486e1`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 492.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9ea984f05cf27a91a07a0b1f63adb1e6f9c4cb631325b5a07343b8faf75f7028`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 17.1 MB (17069834 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e6c3ecb64ca025834e2eba225bd5d603742000e1d67407ba50cf0f60ea41a98`  
 		Last Modified: Fri, 01 Dec 2023 00:42:05 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d3b07fe920dd6973a44ea83074fd9125fe7d4774492d00c0ffefb9a04a847a29`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 19.0 KB (18951 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:db476e3c025b598a275cc72e45c12e45db55e1df982d1e90e45f76b630e44f26`  
 		Last Modified: Fri, 01 Dec 2023 08:02:43 GMT  
 		Size: 32.5 MB (32533618 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:00b605206545e71c8d6637e233d08e5cae279512b88f4eedbb3dd9444948f3c1`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:429fc8c78ab1041e0e2cee1081ee8579eaa09216c71e94a0439ef07b581e4b2a`  
 		Last Modified: Fri, 01 Dec 2023 08:02:58 GMT  
 		Size: 1.3 MB (1283911 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:dec1811fa224fcd7522ae57aad39e4aec55112a468588681864e907931c812fe`  
 		Last Modified: Fri, 01 Dec 2023 08:02:57 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2bd8175926c6868c72e691148bdde9933f41fa236cc2527328512c9b007a0dae`  
 		Last Modified: Fri, 01 Dec 2023 08:02:57 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.3.10` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:199707db8607a8681c7f75e6efd01417630e5f32673784a4867c90752c9e1e30
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903293 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:670281a291fa91b511f5170a1cefc9157d4fb10f61cfcda304064fa999343b10`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:f6eef5c642f1e4c55dceacb8399a9872db14774d36685d1c03b7c0d0d13881fe`  
-		Last Modified: Fri, 01 Dec 2023 08:02:58 GMT  
-		Size: 1.9 MB (1872995 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:0ddd5e734ca3eba6cc97fbf87af1eac8282a3babc244371e6aae3385ae337c5c`  
-		Last Modified: Fri, 01 Dec 2023 08:02:57 GMT  
-		Size: 30.3 KB (30298 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.3.10` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:41ce489e576d756da76fe7bb235495b0bd6cdf427ae4baa02b735d5524164537
+$ docker pull composer@sha256:81697d8e6c38433329ba2b291a65ac362ea8cecc7d1545caf2cdbe13f0d6be46
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -8285,88 +7029,64 @@ CMD ["composer"]
 	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
 		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
 		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ad3f4bb45cafc3a0c4349f9564390ff0fe5c2a3dc4287f0ddf3de8a86dcbb66`  
 		Last Modified: Fri, 01 Dec 2023 00:15:00 GMT  
 		Size: 2.7 MB (2685809 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a06cb8c5272936441cf9c53173eed2af740b588b3a9d8bbbb0b6565f38005e36`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c6156dbc484960b6656a156d5d82d973371555039e45046b37e9af1cbfec8569`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:66811c19a32e40a429b8ba817b3ceb6493496ebd20655f68d5a7ca3844b6c96c`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 12.5 MB (12452097 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4954b5c64e0b15f09646882302df3b0ee246ee32b00519bd4e89f052587d473a`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:889affb1cad3094dce99e0b6c7f8c737a0319cf2a1a9201f97fb1967478162fd`  
 		Last Modified: Fri, 01 Dec 2023 00:15:01 GMT  
 		Size: 15.7 MB (15657131 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b1b4a6a047cfe6a394007eb70b0c03f70ee3d7e9447288d47f549224f614aa2f`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e71e5e0f24e7b0508ad3d6798d964951c64d5fd451467d129a769807abbb8067`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 18.8 KB (18767 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ae4356a5b2c65b1e0f267a80bfe2a0ef3872dd9dd2b6d8f45703247b88fc2e13`  
 		Last Modified: Fri, 01 Dec 2023 11:50:53 GMT  
 		Size: 31.3 MB (31290430 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3019528382efe80e087e7475c0cbe6d2be762ace22b13332601422066b7f8f9c`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 256.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:39e6aded981e3fae8ee81878501d4a3b5216d8a508a735f9254333f181884f1c`  
 		Last Modified: Fri, 01 Dec 2023 11:51:06 GMT  
 		Size: 1.2 MB (1240937 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:24bd5c879cc81ef80ed584a278217e110b38e9f263cbb0dcb07998242999135f`  
 		Last Modified: Fri, 01 Dec 2023 11:51:06 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3be46ca31614dfbd112b8419302c48920d2d11ab04c6d8ed90f44c23ccbf69d9`  
 		Last Modified: Fri, 01 Dec 2023 11:51:06 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.3.10` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:f06bef8643257d38ec5ec298d737474b5f3b4e2643e7d400c4344a036573ae74
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902308 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:640f48fa17ac3e07969fcabfba71fb38f408f3aaa902cf383ac7cc21b00cb9de`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:440daf11b0d031b42dd3f12bdb7458ebf1603eae77e6b3143b19bed93d6b6217`  
-		Last Modified: Fri, 01 Dec 2023 11:51:06 GMT  
-		Size: 1.9 MB (1871942 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:ad7e8051c6a69ddf2f9b85150bf7c9be5c054edc5beb2d1fa29b7c1a427d72f0`  
-		Last Modified: Fri, 01 Dec 2023 11:51:06 GMT  
-		Size: 30.4 KB (30366 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.3.10` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:3dcc2b685e0d434a2e39c31506f6c347cabdd1afe8eddd7f82fd69989f2dad58
+$ docker pull composer@sha256:dd11654f857f21b4318e68ec2de007ea97be32a2dac2e3886ddbec9f67a304e3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -8445,88 +7165,64 @@ CMD ["composer"]
 	-	`sha256:2387a44129d2147bd4e806bf369f3db92eb3ad3b6b8825c739db364b8baa4e26`  
 		Last Modified: Thu, 30 Nov 2023 22:49:56 GMT  
 		Size: 2.9 MB (2901006 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:463dfc43b4287670c76354cf1d002e077c0a4b8f41207fdbd96316d0f649fdd5`  
 		Last Modified: Thu, 30 Nov 2023 23:58:02 GMT  
 		Size: 2.5 MB (2524902 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8445d08981ee2b82e7069c3bf290f41039993039dd9740da05b6c962c368ea`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 1.3 KB (1261 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8472c3889e6c64cf9e26fe36cc30bf9e211560aea77f82e97443348cb5956b88`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4e1a31c7a08192627a7e02da4b1d5ea494d5c25269ca986f8d2e7a8ae2d9365d`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 12.5 MB (12452107 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:12b3a23b2108bae03e59ed5e203dc9570b4d69cb6e8636a1f35e442846def57e`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6e7f8f1640d5c681ec203b1bd556d520c628ec0d02e41a591d1198b185d0d667`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 14.6 MB (14638942 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2f208f61c3ca97f2ff11ccb123a8707e61ce0891b966e160aedc3ae93a69d284`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 2.4 KB (2446 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f1879be0a19ef9277d4703ff4b4dbb0d4024de7c53e76caa733c7b133fad64d`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 18.8 KB (18780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bb2315ee202f00dfc90d25f0019e13ab267d5d9c84a9ada4fc13590035d09813`  
 		Last Modified: Fri, 01 Dec 2023 09:39:57 GMT  
 		Size: 30.8 MB (30790072 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7e069e65f06574b9652900f22252f24ef797370c770991d922cf88c4b5b0cbce`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3e417bdf6ae7d5b6d9aa9d80634a89356cb22e787117568fddc2662ef73bee4c`  
 		Last Modified: Fri, 01 Dec 2023 09:40:11 GMT  
 		Size: 1.2 MB (1205247 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7f986011cec821c389cc6233669360f36f3227cd27601e10b82f3f74b8f6e5a2`  
 		Last Modified: Fri, 01 Dec 2023 09:40:10 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6b85f8ae1488c8673a538b03220d7a79ade95a09410a509f41d37200955f80c8`  
 		Last Modified: Fri, 01 Dec 2023 09:40:10 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.3.10` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:4f22b2a8658bbcbf6b278113b71911b89447a58b5c3f54f4b174e477421bfc4b
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903653 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cb48eb6e576e4fd439e0168ba98ecb2ee40dd7017c92a1fadd0e8084819b22a5`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:ccff8b4b55a4739f5a3af42c5fff1cd47dce7cf32d39a57020c1e397f9e11595`  
-		Last Modified: Fri, 01 Dec 2023 09:40:11 GMT  
-		Size: 1.9 MB (1873288 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:a887bede483e8092eafa937c431d3a8ff75bf25a6e71b4ddf96025a8e5eec895`  
-		Last Modified: Fri, 01 Dec 2023 09:40:10 GMT  
-		Size: 30.4 KB (30365 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.3.10` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:0b4fd64f5c3c8405961d21f68aa4c6b896d3b9a88f93ce38f520e5bc4f13be62
+$ docker pull composer@sha256:bcf4533a38247f1bf46d2dc8e8e025674b1c3b17d483b5ee55980a919ebb7429
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -8605,88 +7301,64 @@ CMD ["composer"]
 	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
 		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
 		Size: 3.3 MB (3333033 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ec91cb5b5977bc2c77c932761c9cd04eda4b0df9636a46228a4c0af65ad1b4f3`  
 		Last Modified: Fri, 01 Dec 2023 00:40:05 GMT  
 		Size: 2.7 MB (2717190 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1563f945b2330cf35b9fc87a3f6456664dde2d6c4b6739047a9dd457f4a3d681`  
 		Last Modified: Fri, 01 Dec 2023 00:40:04 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f2549a9ef4a38d3afd713cc21e4de8fdf9a61d4d4f5b2897c0de403ec047f69a`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:285b1cbb8a2c86c2e2959b55b31fa9ac7abd053db302a937ce14d713aeaf8f44`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 12.5 MB (12452091 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42ac31d6bb70b19a698a7b74ae40261071bc6f22d09403fea931a7923ca8af18`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e6895913c4c7d243589b136d34c69cf54dc6e3aae7d5e785d8c35c570bb0e012`  
 		Last Modified: Fri, 01 Dec 2023 00:40:06 GMT  
 		Size: 17.1 MB (17056609 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1c9aea783aa0077ad1860c83cdbc65d3ad9547ba0c7694359f04efe829bec772`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 2.4 KB (2445 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f59963826a7f5193afec349b01fd624dd57a56e93881623c88faf7564007df02`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 18.7 KB (18729 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:083ab35f4c099a5c6f2fd6796eedcfbd32dd9419cee0c64ab606825964d4ed87`  
 		Last Modified: Fri, 01 Dec 2023 10:13:21 GMT  
 		Size: 32.9 MB (32888759 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:33f9642924941eef55ba6176cbfc4340e3e32ad0611f6b8dbbab9d16233c8efe`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b0a668e34bdb68ef80d8b462d9a5fb9e776b8407fa30c809ebe0b5c1de761a8`  
 		Last Modified: Fri, 01 Dec 2023 10:13:34 GMT  
 		Size: 1.3 MB (1269023 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa00a72717ddceded61d79971e811462892f8c58093da1171fc943dde36f61ad`  
 		Last Modified: Fri, 01 Dec 2023 10:13:33 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4af6b09bf608bb82bd9ba92fa45bfce52e3d50bcc50b9972aceab7b40e38f98e`  
 		Last Modified: Fri, 01 Dec 2023 10:13:33 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.3.10` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:96decc882881d0028174273654089941bc22f1766d0310e5aa8774143cc34051
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903389 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bd185a4bee6204f04d58e3a17ec3f6ec9262241e16ef44800406e37a8d7964f2`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:9c2617eaac00e09f7949f70456fa55b5a15c91266a97dd4aee939835b60dfc40`  
-		Last Modified: Fri, 01 Dec 2023 10:13:34 GMT  
-		Size: 1.9 MB (1873091 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:305eb9c0233922f6f206fb1027dd9e3d08aef2b09e6e0c6d28d7613ac821c97e`  
-		Last Modified: Fri, 01 Dec 2023 10:13:33 GMT  
-		Size: 30.3 KB (30298 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.3.10` - linux; 386
 
 ```console
-$ docker pull composer@sha256:d415592a3411d68c94332a64ea237d4fae507e47673fe4d7216c2e6d6ce879c6
+$ docker pull composer@sha256:f39e685895a2f77d58bab1668dc15bb1ba2afbd883107afbd49facdf547a12b8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -8765,88 +7437,64 @@ CMD ["composer"]
 	-	`sha256:4966a8bd129b0a6adf93dc295a8fbe8f665d3194a684a5ce199c1c3596dbf3d9`  
 		Last Modified: Fri, 01 Dec 2023 02:04:18 GMT  
 		Size: 3.2 MB (3238831 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:786b6949c7da1fc85a439f51aa05ace6592ed6759802ad370ed74bc4f479828b`  
 		Last Modified: Fri, 01 Dec 2023 04:07:07 GMT  
 		Size: 2.7 MB (2723376 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:27aec508afba473c67b8d2ad4216ba2489f0e9f08768454183b11877384d8139`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 1.3 KB (1259 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a55ae0822cb02fa8febaedc0ea40b1c5b2823b47b9e9f3dc9436f506df98f121`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:81d34e95bca488cede02955576432a46cb1462e07cc769b9eb29f6fb2bf7dcbf`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 12.5 MB (12452099 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:03e703b9b578d877bbb5bb3e7217c5b01c4bd415d52c238a814d769297fe5970`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1b35603c3070a506bb74ab53e6ef71985df5ebcef52f3a030c3b1280fe221eb7`  
 		Last Modified: Fri, 01 Dec 2023 04:07:08 GMT  
 		Size: 17.3 MB (17338715 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:70c1d3cc41a87b1f20ce9166de4fa148c58e529e7a60946164e1ba7d5739156d`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ce144e8060ec62642abf24c41af8e07481873030aa04e8c8c13cc6067a54ee94`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 18.9 KB (18926 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d5e7634c298564bc162ac9ee1138503d2f03fad621a4071d55b33989f624dc5`  
 		Last Modified: Fri, 01 Dec 2023 10:00:41 GMT  
 		Size: 10.7 MB (10733320 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e128cbaba61d68a820c95bb7e672da3c4be595ddf782002fd3a23f91855d2a4a`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6fc4ee23cce550d17374dc59971749f776037bb3d448e32198316b47ed797d7c`  
 		Last Modified: Fri, 01 Dec 2023 10:00:53 GMT  
 		Size: 1.2 MB (1216183 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:646c5852a248d42a6e71986a0b14e04581458fe82b5b9598fea0eb481760d513`  
 		Last Modified: Fri, 01 Dec 2023 10:00:53 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f0a3a7219f55dee23989a1eecefd4c8ce26b39af322decb4ca64e5464dec24c8`  
 		Last Modified: Fri, 01 Dec 2023 10:00:53 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.3.10` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:ea809daee439ce53f25835b0a780c5182c26cb51c604d2a850b6987ec16e556e
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **373.8 KB (373795 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:96b5a37e44df0a7877fba44a61f4282bcec26d7d7685a7112d25c9c1bccdfbe2`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:2f7e26622db050832041de4527f88fd555d4479c829a01828a3e90347249a2a0`  
-		Last Modified: Fri, 01 Dec 2023 10:00:53 GMT  
-		Size: 343.5 KB (343517 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:8dbb41aa9aec52c8e92de3cd933405f51d325f8ccbd7848ea6a6c6713eebce9e`  
-		Last Modified: Fri, 01 Dec 2023 10:00:53 GMT  
-		Size: 30.3 KB (30278 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.3.10` - linux; ppc64le
 
 ```console
-$ docker pull composer@sha256:90d2f613175c6161e6e88c90e746c750e125e97f4f324e4f1889db1134731f7b
+$ docker pull composer@sha256:6b722072e9e3889b60ec987fe25f09337f25b82e34c24e5d264b6e5b725e3b26
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -8925,88 +7573,64 @@ CMD ["composer"]
 	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
 		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
 		Size: 3.3 MB (3348322 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f8cb9b4da64e0956e297ed583f04085128cdc4a68dcffa3a41c639319245c27`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 2.8 MB (2766423 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:89e2afe36ae984e44fa290115e1355ddb9ba0833dc70a7e3e1f1ed384492c3ec`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 1.3 KB (1267 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:233860698dd8a6e8c7a48373c7cb0a908fc5e1ad61c7ba6c0606e54226ed4c5d`  
 		Last Modified: Fri, 01 Dec 2023 00:53:03 GMT  
 		Size: 267.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f8fb69ca1d3e6a6c70e5d15e8c0a1588f2b439de9683f4874bd1b2f921e4232a`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 12.5 MB (12452085 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab6815e64bb3220dda4d71f42ca13e00d8da619677251611904fb38d6e6eb671`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 494.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1d29c3f41b3d1633a6f3b802d29f6d55acc40d2b97d36e015a15870ceb1bbaa8`  
 		Last Modified: Fri, 01 Dec 2023 00:53:05 GMT  
 		Size: 17.9 MB (17871055 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:eab7245ddd19f65a03b28a395a911f228d137eff133f0ce3855ac49d3bd3623e`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:60fa13b877a4b587f4bfbdfde83831719bc57b09c6a6b8b65c4430b883643393`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 18.7 KB (18731 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4d6f197c8706ed2d9ad1c3776ad0a38b89146398b9a1b9bbf515bb0d2d368959`  
 		Last Modified: Fri, 01 Dec 2023 09:59:33 GMT  
 		Size: 33.5 MB (33538629 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:deca4be23e5d94daeed68f294c98841e816fc5b4e0089108bb8ed8468563bbae`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:44882f6a008368054f03f638fc50b2d6c3a7b8c4ce66b889ca33d75ee4d4964a`  
 		Last Modified: Fri, 01 Dec 2023 09:59:47 GMT  
 		Size: 1.3 MB (1324986 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:61a57f47b6a84562587d274f9c9a3ff360690eed5150bb9c30a656e0e3b037b1`  
 		Last Modified: Fri, 01 Dec 2023 09:59:47 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:09ee790e413e92fb7314a8e92fa04472442366c15fead1bb173e864cd29d7fd6`  
 		Last Modified: Fri, 01 Dec 2023 09:59:47 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.3.10` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:e1a4b057c2d9c48550332a1b0d65337f13ed077c586f2fe35710e742d56776a7
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902164 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e005009a75f58973f0748aad6992ec357dfea101017159dec4acdad5e8df19b3`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:96758ccdf1a02adfad4fe40da9f95f6363cd785167327947eec5223ab3e2e5bf`  
-		Last Modified: Fri, 01 Dec 2023 09:59:48 GMT  
-		Size: 1.9 MB (1871846 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:740f81f33c89bfcff7310a871e784e458117f584486510f7d760a41fb9800647`  
-		Last Modified: Fri, 01 Dec 2023 09:59:47 GMT  
-		Size: 30.3 KB (30318 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.3.10` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:095397b9bbe8b876005151e000c3145ab93a08c098c850fd5ef8ea8992f8045d
+$ docker pull composer@sha256:d5ad7edeac0c3059359bf91eb6b6a5334efef900063211f1a36b5fde144bdbeb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -9085,111 +7709,80 @@ CMD ["composer"]
 	-	`sha256:2ea477e1c0c3db3337ee1d7c659f8c465021a65c036998ed3fa3b667d4b30153`  
 		Last Modified: Thu, 30 Nov 2023 22:42:52 GMT  
 		Size: 3.2 MB (3217454 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3aa5313d02d4fcc59703ea6bd09df7b0df122fc73121b0954b541c214229202e`  
 		Last Modified: Thu, 30 Nov 2023 23:47:29 GMT  
 		Size: 2.8 MB (2789878 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f082f983656d312447043a024c0fa5528e4055dbd73f4101ac38d1d2d3158ea`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 1.3 KB (1262 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:35feaf89a3d400114f4864637453e2e21cd9e7cb6a859699bd6272483f3a56ee`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b59844514cd33789360a3e46dbaff2cdae06b8cd8d18ee9449808c168be15f9`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 12.5 MB (12452093 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:090f8111976872dd0d1fdf290acf04666250d582cbba875706f055725bc42aff`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:398c5ca7cbe876f0f1cf80bef52d39ccd6949d12e9836af8af296afb1084c144`  
 		Last Modified: Thu, 30 Nov 2023 23:47:30 GMT  
 		Size: 16.0 MB (15956254 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa90b5b8b99ecde21a6c31cb4effceb2e48d33b4feeb73b3a12ec4545c63d32a`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3a82796f38dbb8536e9be3b686e7716a2916e08c53622bf88c55aa3ed67802d0`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 18.8 KB (18764 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c209132482d51247ed069f0572cfab5180a1053e1b2856ebe7bb2dbbbf308e38`  
 		Last Modified: Fri, 01 Dec 2023 09:39:28 GMT  
 		Size: 32.3 MB (32333843 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2be49705f63fb76f942d7d9c7808dd4d2b4dc2e25b081f1c7b9d534ca7a70477`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 259.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d62fe80513a91beb90de723ba4ec688e62e49c69d40391391b15545e8b205d7c`  
 		Last Modified: Fri, 01 Dec 2023 09:39:39 GMT  
 		Size: 1.2 MB (1246833 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fabb67fb93b993774c0cece58158a7f107ecd4a372807bfcb77fc933d9e00a94`  
 		Last Modified: Fri, 01 Dec 2023 09:39:39 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c09b146b772d36b7507e5db2ea798b4a6315ba513eccd28d2c881e25524642ed`  
 		Last Modified: Fri, 01 Dec 2023 09:39:39 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.3.10` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:78bbeea7265e324970a877647758e938cfa11be1f67de6d8e9f1f7989f3db50a
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1900999 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:918fe3af9105b378d27157505b1066ff7adb3c3b43e1efa96c331f036145e2fe`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:dfb95addf03350d9d10d92fd7ad6cde0bac7ed9291ebb8d49ebb301032618cfb`  
-		Last Modified: Fri, 01 Dec 2023 09:39:39 GMT  
-		Size: 1.9 MB (1870701 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:bfc481ad1259ea162af9834f0a6054b090171bc310bac6760a0c3cc84f776a3a`  
-		Last Modified: Fri, 01 Dec 2023 09:39:39 GMT  
-		Size: 30.3 KB (30298 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:2.4`
 
 ```console
-$ docker pull composer@sha256:22dac2c772db92ac273ddb410860cdaa874e4bc75c9b05590cd84287759418c1
+$ docker pull composer@sha256:e9aeadc5928f30d8e45a73feb591b0df3a98fb1b97d670858b84b98d4c0c8eff
 ```
 
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 14
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
 	-	linux; amd64
-	-	unknown; unknown
 	-	linux; arm variant v6
-	-	unknown; unknown
 	-	linux; arm variant v7
-	-	unknown; unknown
 	-	linux; arm64 variant v8
-	-	unknown; unknown
 	-	linux; 386
-	-	unknown; unknown
 	-	linux; ppc64le
-	-	unknown; unknown
 	-	linux; s390x
-	-	unknown; unknown
 
 ### `composer:2.4` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:1c23724b05c7bac5130a35d0c006126a4f6d8f4e56cc680b84f0ba2ac7e97c5d
+$ docker pull composer@sha256:3a62c7b6637198de1f901239ae05a0c4d4a1f753c581c008308c537f2d6ffe7e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -9268,88 +7861,64 @@ CMD ["composer"]
 	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
 		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
 		Size: 3.4 MB (3402422 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8e26b626c27026d1938a0b6bd77e36b4113da4b7a1134df8d1aa9f49658b25f`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 2.7 MB (2679359 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:23427f6f19cc27aa3496173559d7fc30c2501d1d179a15b52ac1758cc1667d37`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:938ee652f0dd66c081c31e773163d4c3d8ec979f9ced384ed270cdc5fbcbe657`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8abe2aaf4047e9984223c8d63be88c09b7d447f8c9f77851aa06771c52bba05b`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 12.5 MB (12452105 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e06ec6f102433dfe7410990547f8d059d4c3e56455e35d7b4dfbfb96784486e1`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 492.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9ea984f05cf27a91a07a0b1f63adb1e6f9c4cb631325b5a07343b8faf75f7028`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 17.1 MB (17069834 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e6c3ecb64ca025834e2eba225bd5d603742000e1d67407ba50cf0f60ea41a98`  
 		Last Modified: Fri, 01 Dec 2023 00:42:05 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d3b07fe920dd6973a44ea83074fd9125fe7d4774492d00c0ffefb9a04a847a29`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 19.0 KB (18951 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:db476e3c025b598a275cc72e45c12e45db55e1df982d1e90e45f76b630e44f26`  
 		Last Modified: Fri, 01 Dec 2023 08:02:43 GMT  
 		Size: 32.5 MB (32533618 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:00b605206545e71c8d6637e233d08e5cae279512b88f4eedbb3dd9444948f3c1`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c881211b56f30a8b5cba6b151c954ed35c930377906ea462834640b4a4f14618`  
 		Last Modified: Fri, 01 Dec 2023 08:02:53 GMT  
 		Size: 1.3 MB (1308931 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:94307dbb91a2858dd43c7b3e5d0eb859a31c9c7c5220e8d2a09485bcd1a7b23e`  
 		Last Modified: Fri, 01 Dec 2023 08:02:53 GMT  
 		Size: 420.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:561d24c5df1442f1c68ce299833049d928bb4bdc4403756de27c05b8921052d8`  
 		Last Modified: Fri, 01 Dec 2023 08:02:53 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.4` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:dc5e6b60988c8fbc08c06a4c4f606827d9390ff4ec06ce9ca07a9d19e215d40a
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903289 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f398b1d4807e93d9737938211282f590efc038b8613e319b67433697b68f1577`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:11d33f34dfb995a7c8af2c0562ce89f3b3fd29330d1c19d3beda32cf8abe9eb7`  
-		Last Modified: Fri, 01 Dec 2023 08:02:54 GMT  
-		Size: 1.9 MB (1872994 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:15d1e5fd7e7b6b93f2fada91119acc09379b77704a9478ccc08197e5df7071bc`  
-		Last Modified: Fri, 01 Dec 2023 08:02:53 GMT  
-		Size: 30.3 KB (30295 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.4` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:8ccdd979572055bc2fd59230adeabb1618c889c12bd81a13e97c367712695e37
+$ docker pull composer@sha256:10a9a4e227625a61f9e4d737e031cc01864ef12b8a701c031e668d9546aff42f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -9428,88 +7997,64 @@ CMD ["composer"]
 	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
 		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
 		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ad3f4bb45cafc3a0c4349f9564390ff0fe5c2a3dc4287f0ddf3de8a86dcbb66`  
 		Last Modified: Fri, 01 Dec 2023 00:15:00 GMT  
 		Size: 2.7 MB (2685809 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a06cb8c5272936441cf9c53173eed2af740b588b3a9d8bbbb0b6565f38005e36`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c6156dbc484960b6656a156d5d82d973371555039e45046b37e9af1cbfec8569`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:66811c19a32e40a429b8ba817b3ceb6493496ebd20655f68d5a7ca3844b6c96c`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 12.5 MB (12452097 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4954b5c64e0b15f09646882302df3b0ee246ee32b00519bd4e89f052587d473a`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:889affb1cad3094dce99e0b6c7f8c737a0319cf2a1a9201f97fb1967478162fd`  
 		Last Modified: Fri, 01 Dec 2023 00:15:01 GMT  
 		Size: 15.7 MB (15657131 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b1b4a6a047cfe6a394007eb70b0c03f70ee3d7e9447288d47f549224f614aa2f`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e71e5e0f24e7b0508ad3d6798d964951c64d5fd451467d129a769807abbb8067`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 18.8 KB (18767 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ae4356a5b2c65b1e0f267a80bfe2a0ef3872dd9dd2b6d8f45703247b88fc2e13`  
 		Last Modified: Fri, 01 Dec 2023 11:50:53 GMT  
 		Size: 31.3 MB (31290430 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3019528382efe80e087e7475c0cbe6d2be762ace22b13332601422066b7f8f9c`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 256.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6289c371102376f4cacab1fa91d7a90ce6a023321ef95c1329bcc67371508138`  
 		Last Modified: Fri, 01 Dec 2023 11:51:02 GMT  
 		Size: 1.3 MB (1267050 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:75db6e2561b78c38dd95c492cdc5a9b3a87942d2a6f1fbce03b2625b3648ee92`  
 		Last Modified: Fri, 01 Dec 2023 11:51:02 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bcf2cc57e398e37c05b968e7d0ea0e35205d227b3f66c38e2fff4b11b7794862`  
 		Last Modified: Fri, 01 Dec 2023 11:49:41 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.4` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:85f92390c6a21f6498c20c7d61be6d6871ea783ea566206d8796e2f0b6436ca1
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902305 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e540a37e7cca6ac364bfd6e237eabac8ce2ffb0e622af0bbd98ffd425786d7e4`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:7a25ac386b2f49f5fb546a7372ec67d2311bded54cfe29f739ac99fc2c1eacb9`  
-		Last Modified: Fri, 01 Dec 2023 11:51:02 GMT  
-		Size: 1.9 MB (1871941 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:fa6bacae83731de6c1df0c7d9999b41ee421601a3e17122729535a30d974735b`  
-		Last Modified: Fri, 01 Dec 2023 11:51:02 GMT  
-		Size: 30.4 KB (30364 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.4` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:248b4e0cbc5ac8521354a60370854953edb43f9a1456435b8e130c6bb8491fa3
+$ docker pull composer@sha256:ffc906b1d6adb7a61452e0a0235cc512091347b93b98b65fb78db39337b3bd85
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -9588,88 +8133,64 @@ CMD ["composer"]
 	-	`sha256:2387a44129d2147bd4e806bf369f3db92eb3ad3b6b8825c739db364b8baa4e26`  
 		Last Modified: Thu, 30 Nov 2023 22:49:56 GMT  
 		Size: 2.9 MB (2901006 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:463dfc43b4287670c76354cf1d002e077c0a4b8f41207fdbd96316d0f649fdd5`  
 		Last Modified: Thu, 30 Nov 2023 23:58:02 GMT  
 		Size: 2.5 MB (2524902 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8445d08981ee2b82e7069c3bf290f41039993039dd9740da05b6c962c368ea`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 1.3 KB (1261 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8472c3889e6c64cf9e26fe36cc30bf9e211560aea77f82e97443348cb5956b88`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4e1a31c7a08192627a7e02da4b1d5ea494d5c25269ca986f8d2e7a8ae2d9365d`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 12.5 MB (12452107 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:12b3a23b2108bae03e59ed5e203dc9570b4d69cb6e8636a1f35e442846def57e`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6e7f8f1640d5c681ec203b1bd556d520c628ec0d02e41a591d1198b185d0d667`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 14.6 MB (14638942 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2f208f61c3ca97f2ff11ccb123a8707e61ce0891b966e160aedc3ae93a69d284`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 2.4 KB (2446 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f1879be0a19ef9277d4703ff4b4dbb0d4024de7c53e76caa733c7b133fad64d`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 18.8 KB (18780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bb2315ee202f00dfc90d25f0019e13ab267d5d9c84a9ada4fc13590035d09813`  
 		Last Modified: Fri, 01 Dec 2023 09:39:57 GMT  
 		Size: 30.8 MB (30790072 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7e069e65f06574b9652900f22252f24ef797370c770991d922cf88c4b5b0cbce`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b135ebe4e9508670d9cdd95c1400cc86d107bc75b3ec15628e83ba57a45c9232`  
 		Last Modified: Fri, 01 Dec 2023 09:40:07 GMT  
 		Size: 1.2 MB (1230613 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:80923ae93513e387d0afd8ea31c58ebbbb29968514a33cf4ed796672eefa9b09`  
 		Last Modified: Fri, 01 Dec 2023 09:40:06 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:40087cdf02684f7e3b3d88f05018b51ac3eff0fd5cc159e0dfcfa285eb97fc9e`  
 		Last Modified: Fri, 01 Dec 2023 09:40:06 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.4` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:1c35b8914bccf1c3c6faa983a03fd9675d4ebd005f70bcbc863f358e885c3be7
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903651 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e9db8c6934774c099717f17e8006c3ea3656d3040b297c63a55b0acc1b20ffa4`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:04f6053457ed704b89e74efdf48f66bc31dc50c2584b49e2bf93652efb328975`  
-		Last Modified: Fri, 01 Dec 2023 09:40:06 GMT  
-		Size: 1.9 MB (1873287 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:fce491e2ce3afc81cf54f168590078c2d89c561f29cab542e968170e08ee7cbc`  
-		Last Modified: Fri, 01 Dec 2023 09:40:06 GMT  
-		Size: 30.4 KB (30364 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.4` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:455f62d57122e92480e254afc3764d91fb24399876f555e31a857927351e5e4b
+$ docker pull composer@sha256:b32f4e36eb796c3a86a6d67338afb123f328db359c445e7ae18803a0bef5dce5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -9748,88 +8269,64 @@ CMD ["composer"]
 	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
 		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
 		Size: 3.3 MB (3333033 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ec91cb5b5977bc2c77c932761c9cd04eda4b0df9636a46228a4c0af65ad1b4f3`  
 		Last Modified: Fri, 01 Dec 2023 00:40:05 GMT  
 		Size: 2.7 MB (2717190 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1563f945b2330cf35b9fc87a3f6456664dde2d6c4b6739047a9dd457f4a3d681`  
 		Last Modified: Fri, 01 Dec 2023 00:40:04 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f2549a9ef4a38d3afd713cc21e4de8fdf9a61d4d4f5b2897c0de403ec047f69a`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:285b1cbb8a2c86c2e2959b55b31fa9ac7abd053db302a937ce14d713aeaf8f44`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 12.5 MB (12452091 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42ac31d6bb70b19a698a7b74ae40261071bc6f22d09403fea931a7923ca8af18`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e6895913c4c7d243589b136d34c69cf54dc6e3aae7d5e785d8c35c570bb0e012`  
 		Last Modified: Fri, 01 Dec 2023 00:40:06 GMT  
 		Size: 17.1 MB (17056609 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1c9aea783aa0077ad1860c83cdbc65d3ad9547ba0c7694359f04efe829bec772`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 2.4 KB (2445 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f59963826a7f5193afec349b01fd624dd57a56e93881623c88faf7564007df02`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 18.7 KB (18729 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:083ab35f4c099a5c6f2fd6796eedcfbd32dd9419cee0c64ab606825964d4ed87`  
 		Last Modified: Fri, 01 Dec 2023 10:13:21 GMT  
 		Size: 32.9 MB (32888759 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:33f9642924941eef55ba6176cbfc4340e3e32ad0611f6b8dbbab9d16233c8efe`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:84b467529a2855f896b8313e8353f3bbccfd76e0973fbecd2e47f86c51853085`  
 		Last Modified: Fri, 01 Dec 2023 10:13:30 GMT  
 		Size: 1.3 MB (1293560 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6b07fe01dadd6c2d9ed7a054482f6648931a4d07ffad301c89eceba939076973`  
 		Last Modified: Fri, 01 Dec 2023 10:13:30 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:da537b4a8333943a0ff1518ef60fbfd19578cce9d107299bf4b6ca78d6e94d35`  
 		Last Modified: Fri, 01 Dec 2023 10:13:30 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.4` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:5849ab01a9fa1421b9d6cd746ba15f74fc31fb1f88b9ca3c918c32d48127099b
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903386 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2d06cb06db590e468235ac774138e9d20a3b36938a4551f82beba9fb46c87792`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:e2526dfe2777296d365ee453bf6ad3b398f8a445eadcc763fc235875858f77da`  
-		Last Modified: Fri, 01 Dec 2023 10:13:30 GMT  
-		Size: 1.9 MB (1873090 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:71a20e2cfc8eca343af7c1c74c47bebfd92b350fb2f2e9f8493d44e2b183ffca`  
-		Last Modified: Fri, 01 Dec 2023 10:13:30 GMT  
-		Size: 30.3 KB (30296 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.4` - linux; 386
 
 ```console
-$ docker pull composer@sha256:328c89832da8b063d48f8d85a20b4a6f9276a6480b09714b4a82b1e798bb4587
+$ docker pull composer@sha256:9c0fcee6e8941f112f4d52e2d5004a23d7b0ff39fa54bc3b09dd78110179969a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -9908,88 +8405,64 @@ CMD ["composer"]
 	-	`sha256:4966a8bd129b0a6adf93dc295a8fbe8f665d3194a684a5ce199c1c3596dbf3d9`  
 		Last Modified: Fri, 01 Dec 2023 02:04:18 GMT  
 		Size: 3.2 MB (3238831 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:786b6949c7da1fc85a439f51aa05ace6592ed6759802ad370ed74bc4f479828b`  
 		Last Modified: Fri, 01 Dec 2023 04:07:07 GMT  
 		Size: 2.7 MB (2723376 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:27aec508afba473c67b8d2ad4216ba2489f0e9f08768454183b11877384d8139`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 1.3 KB (1259 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a55ae0822cb02fa8febaedc0ea40b1c5b2823b47b9e9f3dc9436f506df98f121`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:81d34e95bca488cede02955576432a46cb1462e07cc769b9eb29f6fb2bf7dcbf`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 12.5 MB (12452099 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:03e703b9b578d877bbb5bb3e7217c5b01c4bd415d52c238a814d769297fe5970`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1b35603c3070a506bb74ab53e6ef71985df5ebcef52f3a030c3b1280fe221eb7`  
 		Last Modified: Fri, 01 Dec 2023 04:07:08 GMT  
 		Size: 17.3 MB (17338715 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:70c1d3cc41a87b1f20ce9166de4fa148c58e529e7a60946164e1ba7d5739156d`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ce144e8060ec62642abf24c41af8e07481873030aa04e8c8c13cc6067a54ee94`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 18.9 KB (18926 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d5e7634c298564bc162ac9ee1138503d2f03fad621a4071d55b33989f624dc5`  
 		Last Modified: Fri, 01 Dec 2023 10:00:41 GMT  
 		Size: 10.7 MB (10733320 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e128cbaba61d68a820c95bb7e672da3c4be595ddf782002fd3a23f91855d2a4a`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d09084a71f2f20b417447adaeac4948d7f490a02a022a263f9187c20e70ad43`  
 		Last Modified: Fri, 01 Dec 2023 10:00:49 GMT  
 		Size: 1.2 MB (1239867 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f88319ac12a1e0aea8772244e3bc33feee840a24ec989ff0ebfb6b3e805e2460`  
 		Last Modified: Fri, 01 Dec 2023 10:00:49 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:83f47ae63b6234a6af73265cd8dfd98ac075497c4fc2e452f32df142049b255d`  
 		Last Modified: Fri, 01 Dec 2023 09:59:08 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.4` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:a371ca7bb5ddb120d30e22cafe787d2e18c35acb20962a86aeefe4ce1663f9de
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **373.8 KB (373792 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fbd2ca5332cb20a5e796c2ad8736465fad471ff253fcf0cae1f843857d9ad7ff`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:012562b424efc587152a8777c7278c074b6cd7a904f1b7e848af7635b4ca5744`  
-		Last Modified: Fri, 01 Dec 2023 10:00:49 GMT  
-		Size: 343.5 KB (343516 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:3aca89cc02c232ca3a8dca239aa7dd524bfedb48d0cb845871d492fbaaa5e0a6`  
-		Last Modified: Fri, 01 Dec 2023 10:00:49 GMT  
-		Size: 30.3 KB (30276 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.4` - linux; ppc64le
 
 ```console
-$ docker pull composer@sha256:e10cbbe5f21b50db64209b1625ce6a9449e673c2e100a1dff4a0e7574a62c766
+$ docker pull composer@sha256:c83d4962ed8124192b0bb6481c028327829e9ea985176370f1f7a34e84ea3b4f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -10068,88 +8541,64 @@ CMD ["composer"]
 	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
 		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
 		Size: 3.3 MB (3348322 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f8cb9b4da64e0956e297ed583f04085128cdc4a68dcffa3a41c639319245c27`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 2.8 MB (2766423 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:89e2afe36ae984e44fa290115e1355ddb9ba0833dc70a7e3e1f1ed384492c3ec`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 1.3 KB (1267 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:233860698dd8a6e8c7a48373c7cb0a908fc5e1ad61c7ba6c0606e54226ed4c5d`  
 		Last Modified: Fri, 01 Dec 2023 00:53:03 GMT  
 		Size: 267.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f8fb69ca1d3e6a6c70e5d15e8c0a1588f2b439de9683f4874bd1b2f921e4232a`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 12.5 MB (12452085 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab6815e64bb3220dda4d71f42ca13e00d8da619677251611904fb38d6e6eb671`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 494.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1d29c3f41b3d1633a6f3b802d29f6d55acc40d2b97d36e015a15870ceb1bbaa8`  
 		Last Modified: Fri, 01 Dec 2023 00:53:05 GMT  
 		Size: 17.9 MB (17871055 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:eab7245ddd19f65a03b28a395a911f228d137eff133f0ce3855ac49d3bd3623e`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:60fa13b877a4b587f4bfbdfde83831719bc57b09c6a6b8b65c4430b883643393`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 18.7 KB (18731 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4d6f197c8706ed2d9ad1c3776ad0a38b89146398b9a1b9bbf515bb0d2d368959`  
 		Last Modified: Fri, 01 Dec 2023 09:59:33 GMT  
 		Size: 33.5 MB (33538629 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:deca4be23e5d94daeed68f294c98841e816fc5b4e0089108bb8ed8468563bbae`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e506b7cd07a319adac4f46bacf9b0e8fd7354000bf1562e4bbca72a5c96e56c`  
 		Last Modified: Fri, 01 Dec 2023 09:59:43 GMT  
 		Size: 1.3 MB (1349821 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3cb52644fa765480ba0b79782650ab00960fa22a7115c7bb041cf5e79d63323c`  
 		Last Modified: Fri, 01 Dec 2023 09:59:43 GMT  
 		Size: 420.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:cb83a01cddb58a2e2e7dd2e23e0cfe4a710571adb8af69bd1c2692296217e99f`  
 		Last Modified: Fri, 01 Dec 2023 09:59:43 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.4` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:eb0bcc8e4a0f4aed16eda080e5f64465d1e5ab9bdf5f11b64dade782b4a2876f
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902161 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0cc97c424154de6818411e999fb0c8da925cfc9da0ce739618e3046c6165842c`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:f84ec855848beebb1390227803afb9e0ed104e5999a78bf381bd894a0f46d244`  
-		Last Modified: Fri, 01 Dec 2023 09:59:43 GMT  
-		Size: 1.9 MB (1871845 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:1633c0bc9564ff1254b32694f29014c4c83f212bf9fab67a12a8d50de2ed81a4`  
-		Last Modified: Fri, 01 Dec 2023 09:59:43 GMT  
-		Size: 30.3 KB (30316 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.4` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:2004b3d335ef7d862165432bbf74dbb9eba11a3ecb1bdedc760b286cbfc9a3da
+$ docker pull composer@sha256:9ca8779ffa74ecc83016f10eaadf1fef13a26a745972d229a0f34a264301967e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -10228,111 +8677,80 @@ CMD ["composer"]
 	-	`sha256:2ea477e1c0c3db3337ee1d7c659f8c465021a65c036998ed3fa3b667d4b30153`  
 		Last Modified: Thu, 30 Nov 2023 22:42:52 GMT  
 		Size: 3.2 MB (3217454 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3aa5313d02d4fcc59703ea6bd09df7b0df122fc73121b0954b541c214229202e`  
 		Last Modified: Thu, 30 Nov 2023 23:47:29 GMT  
 		Size: 2.8 MB (2789878 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f082f983656d312447043a024c0fa5528e4055dbd73f4101ac38d1d2d3158ea`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 1.3 KB (1262 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:35feaf89a3d400114f4864637453e2e21cd9e7cb6a859699bd6272483f3a56ee`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b59844514cd33789360a3e46dbaff2cdae06b8cd8d18ee9449808c168be15f9`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 12.5 MB (12452093 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:090f8111976872dd0d1fdf290acf04666250d582cbba875706f055725bc42aff`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:398c5ca7cbe876f0f1cf80bef52d39ccd6949d12e9836af8af296afb1084c144`  
 		Last Modified: Thu, 30 Nov 2023 23:47:30 GMT  
 		Size: 16.0 MB (15956254 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa90b5b8b99ecde21a6c31cb4effceb2e48d33b4feeb73b3a12ec4545c63d32a`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3a82796f38dbb8536e9be3b686e7716a2916e08c53622bf88c55aa3ed67802d0`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 18.8 KB (18764 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c209132482d51247ed069f0572cfab5180a1053e1b2856ebe7bb2dbbbf308e38`  
 		Last Modified: Fri, 01 Dec 2023 09:39:28 GMT  
 		Size: 32.3 MB (32333843 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2be49705f63fb76f942d7d9c7808dd4d2b4dc2e25b081f1c7b9d534ca7a70477`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 259.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d81338dca6e518e505b69f4ca667414eb3112d90e38e5f5401b9a6ca2df4b917`  
 		Last Modified: Fri, 01 Dec 2023 09:39:35 GMT  
 		Size: 1.3 MB (1271825 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:107cf1417dbe82563de00cda7234ed4be196cc8e11e7c60515836ac03a2c3496`  
 		Last Modified: Fri, 01 Dec 2023 09:39:35 GMT  
 		Size: 420.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bec8444bef03ddd4101f2c06fb3fe7e0f7686638a8d798b35380d5ff578620e7`  
 		Last Modified: Fri, 01 Dec 2023 09:39:35 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.4` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:9f5f4af71ffff49b916f956543c248c0be1a85a88efc3fe8fb62ee9433ba6e91
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1900996 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a09541c7a3160e5eba994ab0719002039067f560636ca7a99da4b5df872bd0c4`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:3dfa66311187bfa76a6f175053e4b6070682738e66be77f980c4ad3d7f02ec4a`  
-		Last Modified: Fri, 01 Dec 2023 09:39:35 GMT  
-		Size: 1.9 MB (1870700 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:3392eeca663a0c3ba66ae5470f8a6cc5d7502d1f96093d524935d24ffb87f4d7`  
-		Last Modified: Fri, 01 Dec 2023 09:39:35 GMT  
-		Size: 30.3 KB (30296 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:2.4.4`
 
 ```console
-$ docker pull composer@sha256:22dac2c772db92ac273ddb410860cdaa874e4bc75c9b05590cd84287759418c1
+$ docker pull composer@sha256:e9aeadc5928f30d8e45a73feb591b0df3a98fb1b97d670858b84b98d4c0c8eff
 ```
 
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 14
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
 	-	linux; amd64
-	-	unknown; unknown
 	-	linux; arm variant v6
-	-	unknown; unknown
 	-	linux; arm variant v7
-	-	unknown; unknown
 	-	linux; arm64 variant v8
-	-	unknown; unknown
 	-	linux; 386
-	-	unknown; unknown
 	-	linux; ppc64le
-	-	unknown; unknown
 	-	linux; s390x
-	-	unknown; unknown
 
 ### `composer:2.4.4` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:1c23724b05c7bac5130a35d0c006126a4f6d8f4e56cc680b84f0ba2ac7e97c5d
+$ docker pull composer@sha256:3a62c7b6637198de1f901239ae05a0c4d4a1f753c581c008308c537f2d6ffe7e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -10411,88 +8829,64 @@ CMD ["composer"]
 	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
 		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
 		Size: 3.4 MB (3402422 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8e26b626c27026d1938a0b6bd77e36b4113da4b7a1134df8d1aa9f49658b25f`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 2.7 MB (2679359 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:23427f6f19cc27aa3496173559d7fc30c2501d1d179a15b52ac1758cc1667d37`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:938ee652f0dd66c081c31e773163d4c3d8ec979f9ced384ed270cdc5fbcbe657`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8abe2aaf4047e9984223c8d63be88c09b7d447f8c9f77851aa06771c52bba05b`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 12.5 MB (12452105 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e06ec6f102433dfe7410990547f8d059d4c3e56455e35d7b4dfbfb96784486e1`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 492.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9ea984f05cf27a91a07a0b1f63adb1e6f9c4cb631325b5a07343b8faf75f7028`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 17.1 MB (17069834 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e6c3ecb64ca025834e2eba225bd5d603742000e1d67407ba50cf0f60ea41a98`  
 		Last Modified: Fri, 01 Dec 2023 00:42:05 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d3b07fe920dd6973a44ea83074fd9125fe7d4774492d00c0ffefb9a04a847a29`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 19.0 KB (18951 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:db476e3c025b598a275cc72e45c12e45db55e1df982d1e90e45f76b630e44f26`  
 		Last Modified: Fri, 01 Dec 2023 08:02:43 GMT  
 		Size: 32.5 MB (32533618 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:00b605206545e71c8d6637e233d08e5cae279512b88f4eedbb3dd9444948f3c1`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c881211b56f30a8b5cba6b151c954ed35c930377906ea462834640b4a4f14618`  
 		Last Modified: Fri, 01 Dec 2023 08:02:53 GMT  
 		Size: 1.3 MB (1308931 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:94307dbb91a2858dd43c7b3e5d0eb859a31c9c7c5220e8d2a09485bcd1a7b23e`  
 		Last Modified: Fri, 01 Dec 2023 08:02:53 GMT  
 		Size: 420.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:561d24c5df1442f1c68ce299833049d928bb4bdc4403756de27c05b8921052d8`  
 		Last Modified: Fri, 01 Dec 2023 08:02:53 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.4.4` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:dc5e6b60988c8fbc08c06a4c4f606827d9390ff4ec06ce9ca07a9d19e215d40a
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903289 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f398b1d4807e93d9737938211282f590efc038b8613e319b67433697b68f1577`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:11d33f34dfb995a7c8af2c0562ce89f3b3fd29330d1c19d3beda32cf8abe9eb7`  
-		Last Modified: Fri, 01 Dec 2023 08:02:54 GMT  
-		Size: 1.9 MB (1872994 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:15d1e5fd7e7b6b93f2fada91119acc09379b77704a9478ccc08197e5df7071bc`  
-		Last Modified: Fri, 01 Dec 2023 08:02:53 GMT  
-		Size: 30.3 KB (30295 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.4.4` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:8ccdd979572055bc2fd59230adeabb1618c889c12bd81a13e97c367712695e37
+$ docker pull composer@sha256:10a9a4e227625a61f9e4d737e031cc01864ef12b8a701c031e668d9546aff42f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -10571,88 +8965,64 @@ CMD ["composer"]
 	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
 		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
 		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ad3f4bb45cafc3a0c4349f9564390ff0fe5c2a3dc4287f0ddf3de8a86dcbb66`  
 		Last Modified: Fri, 01 Dec 2023 00:15:00 GMT  
 		Size: 2.7 MB (2685809 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a06cb8c5272936441cf9c53173eed2af740b588b3a9d8bbbb0b6565f38005e36`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c6156dbc484960b6656a156d5d82d973371555039e45046b37e9af1cbfec8569`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:66811c19a32e40a429b8ba817b3ceb6493496ebd20655f68d5a7ca3844b6c96c`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 12.5 MB (12452097 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4954b5c64e0b15f09646882302df3b0ee246ee32b00519bd4e89f052587d473a`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:889affb1cad3094dce99e0b6c7f8c737a0319cf2a1a9201f97fb1967478162fd`  
 		Last Modified: Fri, 01 Dec 2023 00:15:01 GMT  
 		Size: 15.7 MB (15657131 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b1b4a6a047cfe6a394007eb70b0c03f70ee3d7e9447288d47f549224f614aa2f`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e71e5e0f24e7b0508ad3d6798d964951c64d5fd451467d129a769807abbb8067`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 18.8 KB (18767 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ae4356a5b2c65b1e0f267a80bfe2a0ef3872dd9dd2b6d8f45703247b88fc2e13`  
 		Last Modified: Fri, 01 Dec 2023 11:50:53 GMT  
 		Size: 31.3 MB (31290430 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3019528382efe80e087e7475c0cbe6d2be762ace22b13332601422066b7f8f9c`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 256.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6289c371102376f4cacab1fa91d7a90ce6a023321ef95c1329bcc67371508138`  
 		Last Modified: Fri, 01 Dec 2023 11:51:02 GMT  
 		Size: 1.3 MB (1267050 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:75db6e2561b78c38dd95c492cdc5a9b3a87942d2a6f1fbce03b2625b3648ee92`  
 		Last Modified: Fri, 01 Dec 2023 11:51:02 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bcf2cc57e398e37c05b968e7d0ea0e35205d227b3f66c38e2fff4b11b7794862`  
 		Last Modified: Fri, 01 Dec 2023 11:49:41 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.4.4` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:85f92390c6a21f6498c20c7d61be6d6871ea783ea566206d8796e2f0b6436ca1
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902305 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e540a37e7cca6ac364bfd6e237eabac8ce2ffb0e622af0bbd98ffd425786d7e4`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:7a25ac386b2f49f5fb546a7372ec67d2311bded54cfe29f739ac99fc2c1eacb9`  
-		Last Modified: Fri, 01 Dec 2023 11:51:02 GMT  
-		Size: 1.9 MB (1871941 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:fa6bacae83731de6c1df0c7d9999b41ee421601a3e17122729535a30d974735b`  
-		Last Modified: Fri, 01 Dec 2023 11:51:02 GMT  
-		Size: 30.4 KB (30364 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.4.4` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:248b4e0cbc5ac8521354a60370854953edb43f9a1456435b8e130c6bb8491fa3
+$ docker pull composer@sha256:ffc906b1d6adb7a61452e0a0235cc512091347b93b98b65fb78db39337b3bd85
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -10731,88 +9101,64 @@ CMD ["composer"]
 	-	`sha256:2387a44129d2147bd4e806bf369f3db92eb3ad3b6b8825c739db364b8baa4e26`  
 		Last Modified: Thu, 30 Nov 2023 22:49:56 GMT  
 		Size: 2.9 MB (2901006 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:463dfc43b4287670c76354cf1d002e077c0a4b8f41207fdbd96316d0f649fdd5`  
 		Last Modified: Thu, 30 Nov 2023 23:58:02 GMT  
 		Size: 2.5 MB (2524902 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8445d08981ee2b82e7069c3bf290f41039993039dd9740da05b6c962c368ea`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 1.3 KB (1261 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8472c3889e6c64cf9e26fe36cc30bf9e211560aea77f82e97443348cb5956b88`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4e1a31c7a08192627a7e02da4b1d5ea494d5c25269ca986f8d2e7a8ae2d9365d`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 12.5 MB (12452107 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:12b3a23b2108bae03e59ed5e203dc9570b4d69cb6e8636a1f35e442846def57e`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6e7f8f1640d5c681ec203b1bd556d520c628ec0d02e41a591d1198b185d0d667`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 14.6 MB (14638942 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2f208f61c3ca97f2ff11ccb123a8707e61ce0891b966e160aedc3ae93a69d284`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 2.4 KB (2446 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f1879be0a19ef9277d4703ff4b4dbb0d4024de7c53e76caa733c7b133fad64d`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 18.8 KB (18780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bb2315ee202f00dfc90d25f0019e13ab267d5d9c84a9ada4fc13590035d09813`  
 		Last Modified: Fri, 01 Dec 2023 09:39:57 GMT  
 		Size: 30.8 MB (30790072 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7e069e65f06574b9652900f22252f24ef797370c770991d922cf88c4b5b0cbce`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b135ebe4e9508670d9cdd95c1400cc86d107bc75b3ec15628e83ba57a45c9232`  
 		Last Modified: Fri, 01 Dec 2023 09:40:07 GMT  
 		Size: 1.2 MB (1230613 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:80923ae93513e387d0afd8ea31c58ebbbb29968514a33cf4ed796672eefa9b09`  
 		Last Modified: Fri, 01 Dec 2023 09:40:06 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:40087cdf02684f7e3b3d88f05018b51ac3eff0fd5cc159e0dfcfa285eb97fc9e`  
 		Last Modified: Fri, 01 Dec 2023 09:40:06 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.4.4` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:1c35b8914bccf1c3c6faa983a03fd9675d4ebd005f70bcbc863f358e885c3be7
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903651 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e9db8c6934774c099717f17e8006c3ea3656d3040b297c63a55b0acc1b20ffa4`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:04f6053457ed704b89e74efdf48f66bc31dc50c2584b49e2bf93652efb328975`  
-		Last Modified: Fri, 01 Dec 2023 09:40:06 GMT  
-		Size: 1.9 MB (1873287 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:fce491e2ce3afc81cf54f168590078c2d89c561f29cab542e968170e08ee7cbc`  
-		Last Modified: Fri, 01 Dec 2023 09:40:06 GMT  
-		Size: 30.4 KB (30364 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.4.4` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:455f62d57122e92480e254afc3764d91fb24399876f555e31a857927351e5e4b
+$ docker pull composer@sha256:b32f4e36eb796c3a86a6d67338afb123f328db359c445e7ae18803a0bef5dce5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -10891,88 +9237,64 @@ CMD ["composer"]
 	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
 		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
 		Size: 3.3 MB (3333033 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ec91cb5b5977bc2c77c932761c9cd04eda4b0df9636a46228a4c0af65ad1b4f3`  
 		Last Modified: Fri, 01 Dec 2023 00:40:05 GMT  
 		Size: 2.7 MB (2717190 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1563f945b2330cf35b9fc87a3f6456664dde2d6c4b6739047a9dd457f4a3d681`  
 		Last Modified: Fri, 01 Dec 2023 00:40:04 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f2549a9ef4a38d3afd713cc21e4de8fdf9a61d4d4f5b2897c0de403ec047f69a`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:285b1cbb8a2c86c2e2959b55b31fa9ac7abd053db302a937ce14d713aeaf8f44`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 12.5 MB (12452091 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42ac31d6bb70b19a698a7b74ae40261071bc6f22d09403fea931a7923ca8af18`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e6895913c4c7d243589b136d34c69cf54dc6e3aae7d5e785d8c35c570bb0e012`  
 		Last Modified: Fri, 01 Dec 2023 00:40:06 GMT  
 		Size: 17.1 MB (17056609 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1c9aea783aa0077ad1860c83cdbc65d3ad9547ba0c7694359f04efe829bec772`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 2.4 KB (2445 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f59963826a7f5193afec349b01fd624dd57a56e93881623c88faf7564007df02`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 18.7 KB (18729 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:083ab35f4c099a5c6f2fd6796eedcfbd32dd9419cee0c64ab606825964d4ed87`  
 		Last Modified: Fri, 01 Dec 2023 10:13:21 GMT  
 		Size: 32.9 MB (32888759 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:33f9642924941eef55ba6176cbfc4340e3e32ad0611f6b8dbbab9d16233c8efe`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:84b467529a2855f896b8313e8353f3bbccfd76e0973fbecd2e47f86c51853085`  
 		Last Modified: Fri, 01 Dec 2023 10:13:30 GMT  
 		Size: 1.3 MB (1293560 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6b07fe01dadd6c2d9ed7a054482f6648931a4d07ffad301c89eceba939076973`  
 		Last Modified: Fri, 01 Dec 2023 10:13:30 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:da537b4a8333943a0ff1518ef60fbfd19578cce9d107299bf4b6ca78d6e94d35`  
 		Last Modified: Fri, 01 Dec 2023 10:13:30 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.4.4` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:5849ab01a9fa1421b9d6cd746ba15f74fc31fb1f88b9ca3c918c32d48127099b
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903386 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2d06cb06db590e468235ac774138e9d20a3b36938a4551f82beba9fb46c87792`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:e2526dfe2777296d365ee453bf6ad3b398f8a445eadcc763fc235875858f77da`  
-		Last Modified: Fri, 01 Dec 2023 10:13:30 GMT  
-		Size: 1.9 MB (1873090 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:71a20e2cfc8eca343af7c1c74c47bebfd92b350fb2f2e9f8493d44e2b183ffca`  
-		Last Modified: Fri, 01 Dec 2023 10:13:30 GMT  
-		Size: 30.3 KB (30296 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.4.4` - linux; 386
 
 ```console
-$ docker pull composer@sha256:328c89832da8b063d48f8d85a20b4a6f9276a6480b09714b4a82b1e798bb4587
+$ docker pull composer@sha256:9c0fcee6e8941f112f4d52e2d5004a23d7b0ff39fa54bc3b09dd78110179969a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -11051,88 +9373,64 @@ CMD ["composer"]
 	-	`sha256:4966a8bd129b0a6adf93dc295a8fbe8f665d3194a684a5ce199c1c3596dbf3d9`  
 		Last Modified: Fri, 01 Dec 2023 02:04:18 GMT  
 		Size: 3.2 MB (3238831 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:786b6949c7da1fc85a439f51aa05ace6592ed6759802ad370ed74bc4f479828b`  
 		Last Modified: Fri, 01 Dec 2023 04:07:07 GMT  
 		Size: 2.7 MB (2723376 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:27aec508afba473c67b8d2ad4216ba2489f0e9f08768454183b11877384d8139`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 1.3 KB (1259 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a55ae0822cb02fa8febaedc0ea40b1c5b2823b47b9e9f3dc9436f506df98f121`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:81d34e95bca488cede02955576432a46cb1462e07cc769b9eb29f6fb2bf7dcbf`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 12.5 MB (12452099 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:03e703b9b578d877bbb5bb3e7217c5b01c4bd415d52c238a814d769297fe5970`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1b35603c3070a506bb74ab53e6ef71985df5ebcef52f3a030c3b1280fe221eb7`  
 		Last Modified: Fri, 01 Dec 2023 04:07:08 GMT  
 		Size: 17.3 MB (17338715 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:70c1d3cc41a87b1f20ce9166de4fa148c58e529e7a60946164e1ba7d5739156d`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ce144e8060ec62642abf24c41af8e07481873030aa04e8c8c13cc6067a54ee94`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 18.9 KB (18926 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d5e7634c298564bc162ac9ee1138503d2f03fad621a4071d55b33989f624dc5`  
 		Last Modified: Fri, 01 Dec 2023 10:00:41 GMT  
 		Size: 10.7 MB (10733320 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e128cbaba61d68a820c95bb7e672da3c4be595ddf782002fd3a23f91855d2a4a`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d09084a71f2f20b417447adaeac4948d7f490a02a022a263f9187c20e70ad43`  
 		Last Modified: Fri, 01 Dec 2023 10:00:49 GMT  
 		Size: 1.2 MB (1239867 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f88319ac12a1e0aea8772244e3bc33feee840a24ec989ff0ebfb6b3e805e2460`  
 		Last Modified: Fri, 01 Dec 2023 10:00:49 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:83f47ae63b6234a6af73265cd8dfd98ac075497c4fc2e452f32df142049b255d`  
 		Last Modified: Fri, 01 Dec 2023 09:59:08 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.4.4` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:a371ca7bb5ddb120d30e22cafe787d2e18c35acb20962a86aeefe4ce1663f9de
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **373.8 KB (373792 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fbd2ca5332cb20a5e796c2ad8736465fad471ff253fcf0cae1f843857d9ad7ff`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:012562b424efc587152a8777c7278c074b6cd7a904f1b7e848af7635b4ca5744`  
-		Last Modified: Fri, 01 Dec 2023 10:00:49 GMT  
-		Size: 343.5 KB (343516 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:3aca89cc02c232ca3a8dca239aa7dd524bfedb48d0cb845871d492fbaaa5e0a6`  
-		Last Modified: Fri, 01 Dec 2023 10:00:49 GMT  
-		Size: 30.3 KB (30276 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.4.4` - linux; ppc64le
 
 ```console
-$ docker pull composer@sha256:e10cbbe5f21b50db64209b1625ce6a9449e673c2e100a1dff4a0e7574a62c766
+$ docker pull composer@sha256:c83d4962ed8124192b0bb6481c028327829e9ea985176370f1f7a34e84ea3b4f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -11211,88 +9509,64 @@ CMD ["composer"]
 	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
 		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
 		Size: 3.3 MB (3348322 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f8cb9b4da64e0956e297ed583f04085128cdc4a68dcffa3a41c639319245c27`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 2.8 MB (2766423 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:89e2afe36ae984e44fa290115e1355ddb9ba0833dc70a7e3e1f1ed384492c3ec`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 1.3 KB (1267 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:233860698dd8a6e8c7a48373c7cb0a908fc5e1ad61c7ba6c0606e54226ed4c5d`  
 		Last Modified: Fri, 01 Dec 2023 00:53:03 GMT  
 		Size: 267.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f8fb69ca1d3e6a6c70e5d15e8c0a1588f2b439de9683f4874bd1b2f921e4232a`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 12.5 MB (12452085 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab6815e64bb3220dda4d71f42ca13e00d8da619677251611904fb38d6e6eb671`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 494.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1d29c3f41b3d1633a6f3b802d29f6d55acc40d2b97d36e015a15870ceb1bbaa8`  
 		Last Modified: Fri, 01 Dec 2023 00:53:05 GMT  
 		Size: 17.9 MB (17871055 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:eab7245ddd19f65a03b28a395a911f228d137eff133f0ce3855ac49d3bd3623e`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:60fa13b877a4b587f4bfbdfde83831719bc57b09c6a6b8b65c4430b883643393`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 18.7 KB (18731 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4d6f197c8706ed2d9ad1c3776ad0a38b89146398b9a1b9bbf515bb0d2d368959`  
 		Last Modified: Fri, 01 Dec 2023 09:59:33 GMT  
 		Size: 33.5 MB (33538629 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:deca4be23e5d94daeed68f294c98841e816fc5b4e0089108bb8ed8468563bbae`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e506b7cd07a319adac4f46bacf9b0e8fd7354000bf1562e4bbca72a5c96e56c`  
 		Last Modified: Fri, 01 Dec 2023 09:59:43 GMT  
 		Size: 1.3 MB (1349821 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3cb52644fa765480ba0b79782650ab00960fa22a7115c7bb041cf5e79d63323c`  
 		Last Modified: Fri, 01 Dec 2023 09:59:43 GMT  
 		Size: 420.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:cb83a01cddb58a2e2e7dd2e23e0cfe4a710571adb8af69bd1c2692296217e99f`  
 		Last Modified: Fri, 01 Dec 2023 09:59:43 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.4.4` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:eb0bcc8e4a0f4aed16eda080e5f64465d1e5ab9bdf5f11b64dade782b4a2876f
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902161 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0cc97c424154de6818411e999fb0c8da925cfc9da0ce739618e3046c6165842c`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:f84ec855848beebb1390227803afb9e0ed104e5999a78bf381bd894a0f46d244`  
-		Last Modified: Fri, 01 Dec 2023 09:59:43 GMT  
-		Size: 1.9 MB (1871845 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:1633c0bc9564ff1254b32694f29014c4c83f212bf9fab67a12a8d50de2ed81a4`  
-		Last Modified: Fri, 01 Dec 2023 09:59:43 GMT  
-		Size: 30.3 KB (30316 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.4.4` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:2004b3d335ef7d862165432bbf74dbb9eba11a3ecb1bdedc760b286cbfc9a3da
+$ docker pull composer@sha256:9ca8779ffa74ecc83016f10eaadf1fef13a26a745972d229a0f34a264301967e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -11371,111 +9645,80 @@ CMD ["composer"]
 	-	`sha256:2ea477e1c0c3db3337ee1d7c659f8c465021a65c036998ed3fa3b667d4b30153`  
 		Last Modified: Thu, 30 Nov 2023 22:42:52 GMT  
 		Size: 3.2 MB (3217454 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3aa5313d02d4fcc59703ea6bd09df7b0df122fc73121b0954b541c214229202e`  
 		Last Modified: Thu, 30 Nov 2023 23:47:29 GMT  
 		Size: 2.8 MB (2789878 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f082f983656d312447043a024c0fa5528e4055dbd73f4101ac38d1d2d3158ea`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 1.3 KB (1262 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:35feaf89a3d400114f4864637453e2e21cd9e7cb6a859699bd6272483f3a56ee`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b59844514cd33789360a3e46dbaff2cdae06b8cd8d18ee9449808c168be15f9`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 12.5 MB (12452093 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:090f8111976872dd0d1fdf290acf04666250d582cbba875706f055725bc42aff`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:398c5ca7cbe876f0f1cf80bef52d39ccd6949d12e9836af8af296afb1084c144`  
 		Last Modified: Thu, 30 Nov 2023 23:47:30 GMT  
 		Size: 16.0 MB (15956254 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa90b5b8b99ecde21a6c31cb4effceb2e48d33b4feeb73b3a12ec4545c63d32a`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3a82796f38dbb8536e9be3b686e7716a2916e08c53622bf88c55aa3ed67802d0`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 18.8 KB (18764 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c209132482d51247ed069f0572cfab5180a1053e1b2856ebe7bb2dbbbf308e38`  
 		Last Modified: Fri, 01 Dec 2023 09:39:28 GMT  
 		Size: 32.3 MB (32333843 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2be49705f63fb76f942d7d9c7808dd4d2b4dc2e25b081f1c7b9d534ca7a70477`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 259.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d81338dca6e518e505b69f4ca667414eb3112d90e38e5f5401b9a6ca2df4b917`  
 		Last Modified: Fri, 01 Dec 2023 09:39:35 GMT  
 		Size: 1.3 MB (1271825 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:107cf1417dbe82563de00cda7234ed4be196cc8e11e7c60515836ac03a2c3496`  
 		Last Modified: Fri, 01 Dec 2023 09:39:35 GMT  
 		Size: 420.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bec8444bef03ddd4101f2c06fb3fe7e0f7686638a8d798b35380d5ff578620e7`  
 		Last Modified: Fri, 01 Dec 2023 09:39:35 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.4.4` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:9f5f4af71ffff49b916f956543c248c0be1a85a88efc3fe8fb62ee9433ba6e91
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1900996 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a09541c7a3160e5eba994ab0719002039067f560636ca7a99da4b5df872bd0c4`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:3dfa66311187bfa76a6f175053e4b6070682738e66be77f980c4ad3d7f02ec4a`  
-		Last Modified: Fri, 01 Dec 2023 09:39:35 GMT  
-		Size: 1.9 MB (1870700 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:3392eeca663a0c3ba66ae5470f8a6cc5d7502d1f96093d524935d24ffb87f4d7`  
-		Last Modified: Fri, 01 Dec 2023 09:39:35 GMT  
-		Size: 30.3 KB (30296 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:2.5`
 
 ```console
-$ docker pull composer@sha256:098ed148b74b7d2161751697c976e2f40d0e88ae43f7d8fd1c8e360b540528cc
+$ docker pull composer@sha256:9cc2ad1702ed97c76aeaae0292cee1f2a91d32179ba95804047ac0ddcde1f9f1
 ```
 
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 14
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
 	-	linux; amd64
-	-	unknown; unknown
 	-	linux; arm variant v6
-	-	unknown; unknown
 	-	linux; arm variant v7
-	-	unknown; unknown
 	-	linux; arm64 variant v8
-	-	unknown; unknown
 	-	linux; 386
-	-	unknown; unknown
 	-	linux; ppc64le
-	-	unknown; unknown
 	-	linux; s390x
-	-	unknown; unknown
 
 ### `composer:2.5` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:87b36447c7ebd28ccbeb0a07f75ff486197ae9a40cd1003e766ebb7c3062ce2e
+$ docker pull composer@sha256:0111f194a0db4cdb889635f05194b1e78e5be58d3cbd831abbfe76e609b20302
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -11554,88 +9797,64 @@ CMD ["composer"]
 	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
 		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
 		Size: 3.4 MB (3402422 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8e26b626c27026d1938a0b6bd77e36b4113da4b7a1134df8d1aa9f49658b25f`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 2.7 MB (2679359 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:23427f6f19cc27aa3496173559d7fc30c2501d1d179a15b52ac1758cc1667d37`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:938ee652f0dd66c081c31e773163d4c3d8ec979f9ced384ed270cdc5fbcbe657`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8abe2aaf4047e9984223c8d63be88c09b7d447f8c9f77851aa06771c52bba05b`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 12.5 MB (12452105 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e06ec6f102433dfe7410990547f8d059d4c3e56455e35d7b4dfbfb96784486e1`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 492.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9ea984f05cf27a91a07a0b1f63adb1e6f9c4cb631325b5a07343b8faf75f7028`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 17.1 MB (17069834 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e6c3ecb64ca025834e2eba225bd5d603742000e1d67407ba50cf0f60ea41a98`  
 		Last Modified: Fri, 01 Dec 2023 00:42:05 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d3b07fe920dd6973a44ea83074fd9125fe7d4774492d00c0ffefb9a04a847a29`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 19.0 KB (18951 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:db476e3c025b598a275cc72e45c12e45db55e1df982d1e90e45f76b630e44f26`  
 		Last Modified: Fri, 01 Dec 2023 08:02:43 GMT  
 		Size: 32.5 MB (32533618 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:00b605206545e71c8d6637e233d08e5cae279512b88f4eedbb3dd9444948f3c1`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9feef0450b54e37686dbb28a62e493ba0843d02ad6c17e0f9feecbb81a59522f`  
 		Last Modified: Fri, 01 Dec 2023 08:02:50 GMT  
 		Size: 1.3 MB (1309866 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:dd5aa15aafcf8b32f8759df791f2c4c2f4515826b84bad60ed8bb57947855295`  
 		Last Modified: Fri, 01 Dec 2023 08:02:49 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d83e7de64af01ffe5212c869608341aefc734593e1e3132bf56b86616a006b1e`  
 		Last Modified: Fri, 01 Dec 2023 08:02:49 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.5` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:90ffbb5c42342fa2d86fe0bdf2f60043c1534fb7d766b56fe18345fdb239401a
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903290 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9751b2906251cacc5f23295888d1cc882690a27c95cbfc4d938312a564c33e10`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:bb0d2b0c3ead9c12210fe23e4725a8d5e72690d33e86fcdff09e1db77bcf730d`  
-		Last Modified: Fri, 01 Dec 2023 08:02:50 GMT  
-		Size: 1.9 MB (1872994 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:4b5f597877bcb6c2c720589fc87b7374f337b3abd90a6aade029c7ca11199784`  
-		Last Modified: Fri, 01 Dec 2023 08:02:49 GMT  
-		Size: 30.3 KB (30296 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.5` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:486ed2d2e78224d71f14f0459956eb49074e125aa2e9d53339cc6d2a87e025a1
+$ docker pull composer@sha256:0812aa48795703339c4d1e2b83f760459e10661092a73eb01f7a5225443392f9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -11714,88 +9933,64 @@ CMD ["composer"]
 	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
 		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
 		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ad3f4bb45cafc3a0c4349f9564390ff0fe5c2a3dc4287f0ddf3de8a86dcbb66`  
 		Last Modified: Fri, 01 Dec 2023 00:15:00 GMT  
 		Size: 2.7 MB (2685809 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a06cb8c5272936441cf9c53173eed2af740b588b3a9d8bbbb0b6565f38005e36`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c6156dbc484960b6656a156d5d82d973371555039e45046b37e9af1cbfec8569`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:66811c19a32e40a429b8ba817b3ceb6493496ebd20655f68d5a7ca3844b6c96c`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 12.5 MB (12452097 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4954b5c64e0b15f09646882302df3b0ee246ee32b00519bd4e89f052587d473a`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:889affb1cad3094dce99e0b6c7f8c737a0319cf2a1a9201f97fb1967478162fd`  
 		Last Modified: Fri, 01 Dec 2023 00:15:01 GMT  
 		Size: 15.7 MB (15657131 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b1b4a6a047cfe6a394007eb70b0c03f70ee3d7e9447288d47f549224f614aa2f`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e71e5e0f24e7b0508ad3d6798d964951c64d5fd451467d129a769807abbb8067`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 18.8 KB (18767 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ae4356a5b2c65b1e0f267a80bfe2a0ef3872dd9dd2b6d8f45703247b88fc2e13`  
 		Last Modified: Fri, 01 Dec 2023 11:50:53 GMT  
 		Size: 31.3 MB (31290430 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3019528382efe80e087e7475c0cbe6d2be762ace22b13332601422066b7f8f9c`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 256.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0915bd60e2e399e3b033e0f83f5d7bc0d539d3b4dcf3514d3a9b57b385ca7a91`  
 		Last Modified: Fri, 01 Dec 2023 11:50:58 GMT  
 		Size: 1.3 MB (1268381 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3195de350d223536b91ed74803d3eacb688a5d44a68a96018e0b9b20f956d4e5`  
 		Last Modified: Fri, 01 Dec 2023 11:50:58 GMT  
 		Size: 420.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c0d7b0f8540baace7f868026ccce9cabf12c57eec7488ad8426be66ff0701699`  
 		Last Modified: Fri, 01 Dec 2023 11:50:58 GMT  
 		Size: 92.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.5` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:693c861c9e0b19a879fe91df1930f2f5853497e3b569a58d00da6242d326002e
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902305 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:02833ae1f5629c69af969fa0df2d5446f063e1c8cef732483f98ab69c21e6ce4`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:b2fbe80793511b1bbbb3959ed22b0984abb1a9e0c88bb609f1424cacc5564ba0`  
-		Last Modified: Fri, 01 Dec 2023 11:50:58 GMT  
-		Size: 1.9 MB (1871941 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:533ab63ceccd424de5add9ce031494ba56959f96198d6643bc218d9154022b2b`  
-		Last Modified: Fri, 01 Dec 2023 11:50:58 GMT  
-		Size: 30.4 KB (30364 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.5` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:e6d93679d83a56d29a517d5075c017c5d8bf082d8a3a82bd6e94feb7841aa99f
+$ docker pull composer@sha256:2bfb3164232c3f4589ad66bfaee1a3989f833005c372932bb1d6d7f8cb5e6115
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -11874,88 +10069,64 @@ CMD ["composer"]
 	-	`sha256:2387a44129d2147bd4e806bf369f3db92eb3ad3b6b8825c739db364b8baa4e26`  
 		Last Modified: Thu, 30 Nov 2023 22:49:56 GMT  
 		Size: 2.9 MB (2901006 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:463dfc43b4287670c76354cf1d002e077c0a4b8f41207fdbd96316d0f649fdd5`  
 		Last Modified: Thu, 30 Nov 2023 23:58:02 GMT  
 		Size: 2.5 MB (2524902 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8445d08981ee2b82e7069c3bf290f41039993039dd9740da05b6c962c368ea`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 1.3 KB (1261 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8472c3889e6c64cf9e26fe36cc30bf9e211560aea77f82e97443348cb5956b88`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4e1a31c7a08192627a7e02da4b1d5ea494d5c25269ca986f8d2e7a8ae2d9365d`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 12.5 MB (12452107 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:12b3a23b2108bae03e59ed5e203dc9570b4d69cb6e8636a1f35e442846def57e`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6e7f8f1640d5c681ec203b1bd556d520c628ec0d02e41a591d1198b185d0d667`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 14.6 MB (14638942 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2f208f61c3ca97f2ff11ccb123a8707e61ce0891b966e160aedc3ae93a69d284`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 2.4 KB (2446 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f1879be0a19ef9277d4703ff4b4dbb0d4024de7c53e76caa733c7b133fad64d`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 18.8 KB (18780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bb2315ee202f00dfc90d25f0019e13ab267d5d9c84a9ada4fc13590035d09813`  
 		Last Modified: Fri, 01 Dec 2023 09:39:57 GMT  
 		Size: 30.8 MB (30790072 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7e069e65f06574b9652900f22252f24ef797370c770991d922cf88c4b5b0cbce`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:24ff715aa41f208cec369829b14b23b19d6ef5b637a50119b81eb93800234384`  
 		Last Modified: Fri, 01 Dec 2023 09:40:02 GMT  
 		Size: 1.2 MB (1232197 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8413564bfdcdfe571439f70645bb15a7418aa7511129d7991da5e1e935326d3e`  
 		Last Modified: Fri, 01 Dec 2023 09:40:02 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1369fd650ca1a8d0822758b06024ba3f66dfe2623db5609168a2100566a2324a`  
 		Last Modified: Fri, 01 Dec 2023 09:40:02 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.5` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:71d4847111f99ba755ec24ab3db4350d5dfe6b3c634f0be5961836bb28cd1caf
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903651 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7df4dd831c4cc0de7fba8f72f3e8529ee9960450774b1f48fbf1afcd81ebd72b`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:c58ec92a8c99a433203a2b1bca13c6889869c1fe0212b0b5db94d4076025e8bb`  
-		Last Modified: Fri, 01 Dec 2023 09:40:02 GMT  
-		Size: 1.9 MB (1873287 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:218704bc0170bba9113854d8a9a0428b3eb0810dab58441f1f2dba52a6a76860`  
-		Last Modified: Fri, 01 Dec 2023 09:40:02 GMT  
-		Size: 30.4 KB (30364 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.5` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:f8591e858db7dfdd61813c8b72458f9a5a843a8876c61f39d0e96e5abfaac5df
+$ docker pull composer@sha256:3abfd48a7a7b570055250c2f851c4432f23465e7bf1301540e88aa514c05db4b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -12034,88 +10205,64 @@ CMD ["composer"]
 	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
 		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
 		Size: 3.3 MB (3333033 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ec91cb5b5977bc2c77c932761c9cd04eda4b0df9636a46228a4c0af65ad1b4f3`  
 		Last Modified: Fri, 01 Dec 2023 00:40:05 GMT  
 		Size: 2.7 MB (2717190 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1563f945b2330cf35b9fc87a3f6456664dde2d6c4b6739047a9dd457f4a3d681`  
 		Last Modified: Fri, 01 Dec 2023 00:40:04 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f2549a9ef4a38d3afd713cc21e4de8fdf9a61d4d4f5b2897c0de403ec047f69a`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:285b1cbb8a2c86c2e2959b55b31fa9ac7abd053db302a937ce14d713aeaf8f44`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 12.5 MB (12452091 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42ac31d6bb70b19a698a7b74ae40261071bc6f22d09403fea931a7923ca8af18`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e6895913c4c7d243589b136d34c69cf54dc6e3aae7d5e785d8c35c570bb0e012`  
 		Last Modified: Fri, 01 Dec 2023 00:40:06 GMT  
 		Size: 17.1 MB (17056609 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1c9aea783aa0077ad1860c83cdbc65d3ad9547ba0c7694359f04efe829bec772`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 2.4 KB (2445 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f59963826a7f5193afec349b01fd624dd57a56e93881623c88faf7564007df02`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 18.7 KB (18729 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:083ab35f4c099a5c6f2fd6796eedcfbd32dd9419cee0c64ab606825964d4ed87`  
 		Last Modified: Fri, 01 Dec 2023 10:13:21 GMT  
 		Size: 32.9 MB (32888759 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:33f9642924941eef55ba6176cbfc4340e3e32ad0611f6b8dbbab9d16233c8efe`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ea2d7f0b22c9d9f736f78b847701ae1d8a8688ba0eb3b695cbc1db1ddcf191d8`  
 		Last Modified: Fri, 01 Dec 2023 10:13:26 GMT  
 		Size: 1.3 MB (1295497 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7df0049821cb7bd73f2549c72a11b5962560d27ab5e9bece1a4476f93c188a67`  
 		Last Modified: Fri, 01 Dec 2023 10:13:26 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a4d834320d4513f187166d95945eb4e554aa9f86c7ae8af372ccc49974c9486a`  
 		Last Modified: Fri, 01 Dec 2023 10:13:26 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.5` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:ad7e013c47db29a0e3caa570051fe9d0244b4f1deb96a103575b76039e3d7c92
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903386 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2395be71e84637a3debdc873684cfee33da254eba9adf6bf1ee86b43b3c11a1c`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:1c7abeb9db9265533b4117382ede0f2bfc137a1a42d7f444ce449b59754fc4bf`  
-		Last Modified: Fri, 01 Dec 2023 10:13:26 GMT  
-		Size: 1.9 MB (1873090 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:c35cbaa134e6138f402ff5a984bae0456a3feb7dc5ddaff163a2aefcd1bd97cb`  
-		Last Modified: Fri, 01 Dec 2023 10:13:26 GMT  
-		Size: 30.3 KB (30296 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.5` - linux; 386
 
 ```console
-$ docker pull composer@sha256:0f0747951e09b2c3f0d7af6588d8714af48d954f4b610e8275c9b3f5bcbd4f26
+$ docker pull composer@sha256:7e4362ee409aead6a53a3d4b00aec9bedee27fdb617e522e1771641530b02550
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -12194,88 +10341,64 @@ CMD ["composer"]
 	-	`sha256:4966a8bd129b0a6adf93dc295a8fbe8f665d3194a684a5ce199c1c3596dbf3d9`  
 		Last Modified: Fri, 01 Dec 2023 02:04:18 GMT  
 		Size: 3.2 MB (3238831 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:786b6949c7da1fc85a439f51aa05ace6592ed6759802ad370ed74bc4f479828b`  
 		Last Modified: Fri, 01 Dec 2023 04:07:07 GMT  
 		Size: 2.7 MB (2723376 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:27aec508afba473c67b8d2ad4216ba2489f0e9f08768454183b11877384d8139`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 1.3 KB (1259 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a55ae0822cb02fa8febaedc0ea40b1c5b2823b47b9e9f3dc9436f506df98f121`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:81d34e95bca488cede02955576432a46cb1462e07cc769b9eb29f6fb2bf7dcbf`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 12.5 MB (12452099 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:03e703b9b578d877bbb5bb3e7217c5b01c4bd415d52c238a814d769297fe5970`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1b35603c3070a506bb74ab53e6ef71985df5ebcef52f3a030c3b1280fe221eb7`  
 		Last Modified: Fri, 01 Dec 2023 04:07:08 GMT  
 		Size: 17.3 MB (17338715 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:70c1d3cc41a87b1f20ce9166de4fa148c58e529e7a60946164e1ba7d5739156d`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ce144e8060ec62642abf24c41af8e07481873030aa04e8c8c13cc6067a54ee94`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 18.9 KB (18926 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d5e7634c298564bc162ac9ee1138503d2f03fad621a4071d55b33989f624dc5`  
 		Last Modified: Fri, 01 Dec 2023 10:00:41 GMT  
 		Size: 10.7 MB (10733320 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e128cbaba61d68a820c95bb7e672da3c4be595ddf782002fd3a23f91855d2a4a`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:59f2ba22ab2757a689b525bbade6bf302ae97de37f84b893dd78600dc0806ad6`  
 		Last Modified: Fri, 01 Dec 2023 10:00:46 GMT  
 		Size: 1.2 MB (1243707 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:456ab9fe95ca793562005748dd3a5e363311b202c838d90ff118363898439fd4`  
 		Last Modified: Fri, 01 Dec 2023 10:00:45 GMT  
 		Size: 417.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b8658560773e38dffb8284ecef76e6832f5f77485f3189519b032114c0fbfc78`  
 		Last Modified: Fri, 01 Dec 2023 10:00:45 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.5` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:5a3c8d2a640b6d901b4e78d65db6370675f93573193549d74946fa95d623775c
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **373.8 KB (373792 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c0b127cb5c9e8731a60e139e2b8463c04055199938025f4fea93b6da275f015e`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:a0abe3b8301cd288db52975179b666ae786aa16cf4881e8dff54f7f5567a20b5`  
-		Last Modified: Fri, 01 Dec 2023 10:00:45 GMT  
-		Size: 343.5 KB (343516 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:a7b513e1683c54e3685306d18f21ee66a1e384e4961da247caa0bdf63561a36d`  
-		Last Modified: Fri, 01 Dec 2023 10:00:45 GMT  
-		Size: 30.3 KB (30276 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.5` - linux; ppc64le
 
 ```console
-$ docker pull composer@sha256:21bc1f624c6cf83e855d5518aa4e848cc71f17553920f09f1c9d001cf004814a
+$ docker pull composer@sha256:7071ea2ce8591b83734078ea2e1ce220c5e9be042db5264f89a100697b7c2730
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -12354,88 +10477,64 @@ CMD ["composer"]
 	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
 		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
 		Size: 3.3 MB (3348322 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f8cb9b4da64e0956e297ed583f04085128cdc4a68dcffa3a41c639319245c27`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 2.8 MB (2766423 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:89e2afe36ae984e44fa290115e1355ddb9ba0833dc70a7e3e1f1ed384492c3ec`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 1.3 KB (1267 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:233860698dd8a6e8c7a48373c7cb0a908fc5e1ad61c7ba6c0606e54226ed4c5d`  
 		Last Modified: Fri, 01 Dec 2023 00:53:03 GMT  
 		Size: 267.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f8fb69ca1d3e6a6c70e5d15e8c0a1588f2b439de9683f4874bd1b2f921e4232a`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 12.5 MB (12452085 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab6815e64bb3220dda4d71f42ca13e00d8da619677251611904fb38d6e6eb671`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 494.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1d29c3f41b3d1633a6f3b802d29f6d55acc40d2b97d36e015a15870ceb1bbaa8`  
 		Last Modified: Fri, 01 Dec 2023 00:53:05 GMT  
 		Size: 17.9 MB (17871055 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:eab7245ddd19f65a03b28a395a911f228d137eff133f0ce3855ac49d3bd3623e`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:60fa13b877a4b587f4bfbdfde83831719bc57b09c6a6b8b65c4430b883643393`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 18.7 KB (18731 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4d6f197c8706ed2d9ad1c3776ad0a38b89146398b9a1b9bbf515bb0d2d368959`  
 		Last Modified: Fri, 01 Dec 2023 09:59:33 GMT  
 		Size: 33.5 MB (33538629 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:deca4be23e5d94daeed68f294c98841e816fc5b4e0089108bb8ed8468563bbae`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b42853da6e5f91f647c4407fa87522fe7d77fd1ac8be3f83b7a04ea45287c258`  
 		Last Modified: Fri, 01 Dec 2023 09:59:38 GMT  
 		Size: 1.4 MB (1350960 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0aa147b5cd24476c368cc87f7f056269b22a09577d1a353362a7caa8caf7a258`  
 		Last Modified: Fri, 01 Dec 2023 09:59:38 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:39cfa326e97364af0646560ab302da399aec7c6ede8370430a4d9ab4486397c0`  
 		Last Modified: Fri, 01 Dec 2023 09:56:34 GMT  
 		Size: 91.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.5` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:ace92d2b7f24524874fe78bb1fe3a67bda3a4f4b86c571fd27ba6e7d1b5ff830
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902161 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0b65c6e611e1aebad2e1c8c7da4c15b1edd3ef607a63881b719db6e1a1fb1080`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:9a3a0c5b5dfebc9156cefa2df0c0ac1069189da810a44e5120a8caf9a2574bab`  
-		Last Modified: Fri, 01 Dec 2023 09:59:38 GMT  
-		Size: 1.9 MB (1871845 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:91b7b05a9394eb06bf33468447d59213b15c922fcb901724548e6fe4376a8f9c`  
-		Last Modified: Fri, 01 Dec 2023 09:59:38 GMT  
-		Size: 30.3 KB (30316 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.5` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:3e62b23b96149d0ff4734fbce0562ec55f68277ccbe58c68241e7847c623d1b8
+$ docker pull composer@sha256:ef53dfab60850eba14916703b80783cddab3f902330b542e7ce39e285ea5baa3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -12514,111 +10613,80 @@ CMD ["composer"]
 	-	`sha256:2ea477e1c0c3db3337ee1d7c659f8c465021a65c036998ed3fa3b667d4b30153`  
 		Last Modified: Thu, 30 Nov 2023 22:42:52 GMT  
 		Size: 3.2 MB (3217454 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3aa5313d02d4fcc59703ea6bd09df7b0df122fc73121b0954b541c214229202e`  
 		Last Modified: Thu, 30 Nov 2023 23:47:29 GMT  
 		Size: 2.8 MB (2789878 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f082f983656d312447043a024c0fa5528e4055dbd73f4101ac38d1d2d3158ea`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 1.3 KB (1262 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:35feaf89a3d400114f4864637453e2e21cd9e7cb6a859699bd6272483f3a56ee`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b59844514cd33789360a3e46dbaff2cdae06b8cd8d18ee9449808c168be15f9`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 12.5 MB (12452093 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:090f8111976872dd0d1fdf290acf04666250d582cbba875706f055725bc42aff`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:398c5ca7cbe876f0f1cf80bef52d39ccd6949d12e9836af8af296afb1084c144`  
 		Last Modified: Thu, 30 Nov 2023 23:47:30 GMT  
 		Size: 16.0 MB (15956254 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa90b5b8b99ecde21a6c31cb4effceb2e48d33b4feeb73b3a12ec4545c63d32a`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3a82796f38dbb8536e9be3b686e7716a2916e08c53622bf88c55aa3ed67802d0`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 18.8 KB (18764 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c209132482d51247ed069f0572cfab5180a1053e1b2856ebe7bb2dbbbf308e38`  
 		Last Modified: Fri, 01 Dec 2023 09:39:28 GMT  
 		Size: 32.3 MB (32333843 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2be49705f63fb76f942d7d9c7808dd4d2b4dc2e25b081f1c7b9d534ca7a70477`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 259.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:290accd9858bb58abc9229203e851c573acc921f0dad3698afdcc4add6645555`  
 		Last Modified: Fri, 01 Dec 2023 09:39:32 GMT  
 		Size: 1.3 MB (1273337 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:605d81f569d74484be9d7880e3773b72f2f7007975b2f8fd5ce32259540d6c6a`  
 		Last Modified: Fri, 01 Dec 2023 09:39:32 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6bd25b054e0447a30a5c69b253f68d8ee909c7eeaddd2e62820f7edc59d746de`  
 		Last Modified: Fri, 01 Dec 2023 09:39:32 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.5` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:27fb136fb02200650c0cc042c5558c33810878d8f57abf5905956465a9196b85
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1900996 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4b395c46eb68ead79ac7ffb68bc4a4ce6a7399196c13949262458788af46c601`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:dc1a9afde0aa82b5279d2bf99191b5a241c0901c0afc01051e65c5d906b2e747`  
-		Last Modified: Fri, 01 Dec 2023 09:39:32 GMT  
-		Size: 1.9 MB (1870700 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:9436cf77ef60a51069c08c1c233ac7e21ea96ff9cf5cdb3e88540a8c01643c42`  
-		Last Modified: Fri, 01 Dec 2023 09:39:32 GMT  
-		Size: 30.3 KB (30296 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:2.5.8`
 
 ```console
-$ docker pull composer@sha256:098ed148b74b7d2161751697c976e2f40d0e88ae43f7d8fd1c8e360b540528cc
+$ docker pull composer@sha256:9cc2ad1702ed97c76aeaae0292cee1f2a91d32179ba95804047ac0ddcde1f9f1
 ```
 
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 14
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
 	-	linux; amd64
-	-	unknown; unknown
 	-	linux; arm variant v6
-	-	unknown; unknown
 	-	linux; arm variant v7
-	-	unknown; unknown
 	-	linux; arm64 variant v8
-	-	unknown; unknown
 	-	linux; 386
-	-	unknown; unknown
 	-	linux; ppc64le
-	-	unknown; unknown
 	-	linux; s390x
-	-	unknown; unknown
 
 ### `composer:2.5.8` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:87b36447c7ebd28ccbeb0a07f75ff486197ae9a40cd1003e766ebb7c3062ce2e
+$ docker pull composer@sha256:0111f194a0db4cdb889635f05194b1e78e5be58d3cbd831abbfe76e609b20302
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -12697,88 +10765,64 @@ CMD ["composer"]
 	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
 		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
 		Size: 3.4 MB (3402422 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8e26b626c27026d1938a0b6bd77e36b4113da4b7a1134df8d1aa9f49658b25f`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 2.7 MB (2679359 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:23427f6f19cc27aa3496173559d7fc30c2501d1d179a15b52ac1758cc1667d37`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:938ee652f0dd66c081c31e773163d4c3d8ec979f9ced384ed270cdc5fbcbe657`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8abe2aaf4047e9984223c8d63be88c09b7d447f8c9f77851aa06771c52bba05b`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 12.5 MB (12452105 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e06ec6f102433dfe7410990547f8d059d4c3e56455e35d7b4dfbfb96784486e1`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 492.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9ea984f05cf27a91a07a0b1f63adb1e6f9c4cb631325b5a07343b8faf75f7028`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 17.1 MB (17069834 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e6c3ecb64ca025834e2eba225bd5d603742000e1d67407ba50cf0f60ea41a98`  
 		Last Modified: Fri, 01 Dec 2023 00:42:05 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d3b07fe920dd6973a44ea83074fd9125fe7d4774492d00c0ffefb9a04a847a29`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 19.0 KB (18951 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:db476e3c025b598a275cc72e45c12e45db55e1df982d1e90e45f76b630e44f26`  
 		Last Modified: Fri, 01 Dec 2023 08:02:43 GMT  
 		Size: 32.5 MB (32533618 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:00b605206545e71c8d6637e233d08e5cae279512b88f4eedbb3dd9444948f3c1`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9feef0450b54e37686dbb28a62e493ba0843d02ad6c17e0f9feecbb81a59522f`  
 		Last Modified: Fri, 01 Dec 2023 08:02:50 GMT  
 		Size: 1.3 MB (1309866 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:dd5aa15aafcf8b32f8759df791f2c4c2f4515826b84bad60ed8bb57947855295`  
 		Last Modified: Fri, 01 Dec 2023 08:02:49 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d83e7de64af01ffe5212c869608341aefc734593e1e3132bf56b86616a006b1e`  
 		Last Modified: Fri, 01 Dec 2023 08:02:49 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.5.8` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:90ffbb5c42342fa2d86fe0bdf2f60043c1534fb7d766b56fe18345fdb239401a
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903290 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9751b2906251cacc5f23295888d1cc882690a27c95cbfc4d938312a564c33e10`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:bb0d2b0c3ead9c12210fe23e4725a8d5e72690d33e86fcdff09e1db77bcf730d`  
-		Last Modified: Fri, 01 Dec 2023 08:02:50 GMT  
-		Size: 1.9 MB (1872994 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:4b5f597877bcb6c2c720589fc87b7374f337b3abd90a6aade029c7ca11199784`  
-		Last Modified: Fri, 01 Dec 2023 08:02:49 GMT  
-		Size: 30.3 KB (30296 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.5.8` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:486ed2d2e78224d71f14f0459956eb49074e125aa2e9d53339cc6d2a87e025a1
+$ docker pull composer@sha256:0812aa48795703339c4d1e2b83f760459e10661092a73eb01f7a5225443392f9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -12857,88 +10901,64 @@ CMD ["composer"]
 	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
 		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
 		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ad3f4bb45cafc3a0c4349f9564390ff0fe5c2a3dc4287f0ddf3de8a86dcbb66`  
 		Last Modified: Fri, 01 Dec 2023 00:15:00 GMT  
 		Size: 2.7 MB (2685809 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a06cb8c5272936441cf9c53173eed2af740b588b3a9d8bbbb0b6565f38005e36`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c6156dbc484960b6656a156d5d82d973371555039e45046b37e9af1cbfec8569`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:66811c19a32e40a429b8ba817b3ceb6493496ebd20655f68d5a7ca3844b6c96c`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 12.5 MB (12452097 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4954b5c64e0b15f09646882302df3b0ee246ee32b00519bd4e89f052587d473a`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:889affb1cad3094dce99e0b6c7f8c737a0319cf2a1a9201f97fb1967478162fd`  
 		Last Modified: Fri, 01 Dec 2023 00:15:01 GMT  
 		Size: 15.7 MB (15657131 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b1b4a6a047cfe6a394007eb70b0c03f70ee3d7e9447288d47f549224f614aa2f`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e71e5e0f24e7b0508ad3d6798d964951c64d5fd451467d129a769807abbb8067`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 18.8 KB (18767 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ae4356a5b2c65b1e0f267a80bfe2a0ef3872dd9dd2b6d8f45703247b88fc2e13`  
 		Last Modified: Fri, 01 Dec 2023 11:50:53 GMT  
 		Size: 31.3 MB (31290430 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3019528382efe80e087e7475c0cbe6d2be762ace22b13332601422066b7f8f9c`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 256.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0915bd60e2e399e3b033e0f83f5d7bc0d539d3b4dcf3514d3a9b57b385ca7a91`  
 		Last Modified: Fri, 01 Dec 2023 11:50:58 GMT  
 		Size: 1.3 MB (1268381 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3195de350d223536b91ed74803d3eacb688a5d44a68a96018e0b9b20f956d4e5`  
 		Last Modified: Fri, 01 Dec 2023 11:50:58 GMT  
 		Size: 420.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c0d7b0f8540baace7f868026ccce9cabf12c57eec7488ad8426be66ff0701699`  
 		Last Modified: Fri, 01 Dec 2023 11:50:58 GMT  
 		Size: 92.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.5.8` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:693c861c9e0b19a879fe91df1930f2f5853497e3b569a58d00da6242d326002e
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902305 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:02833ae1f5629c69af969fa0df2d5446f063e1c8cef732483f98ab69c21e6ce4`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:b2fbe80793511b1bbbb3959ed22b0984abb1a9e0c88bb609f1424cacc5564ba0`  
-		Last Modified: Fri, 01 Dec 2023 11:50:58 GMT  
-		Size: 1.9 MB (1871941 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:533ab63ceccd424de5add9ce031494ba56959f96198d6643bc218d9154022b2b`  
-		Last Modified: Fri, 01 Dec 2023 11:50:58 GMT  
-		Size: 30.4 KB (30364 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.5.8` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:e6d93679d83a56d29a517d5075c017c5d8bf082d8a3a82bd6e94feb7841aa99f
+$ docker pull composer@sha256:2bfb3164232c3f4589ad66bfaee1a3989f833005c372932bb1d6d7f8cb5e6115
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -13017,88 +11037,64 @@ CMD ["composer"]
 	-	`sha256:2387a44129d2147bd4e806bf369f3db92eb3ad3b6b8825c739db364b8baa4e26`  
 		Last Modified: Thu, 30 Nov 2023 22:49:56 GMT  
 		Size: 2.9 MB (2901006 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:463dfc43b4287670c76354cf1d002e077c0a4b8f41207fdbd96316d0f649fdd5`  
 		Last Modified: Thu, 30 Nov 2023 23:58:02 GMT  
 		Size: 2.5 MB (2524902 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8445d08981ee2b82e7069c3bf290f41039993039dd9740da05b6c962c368ea`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 1.3 KB (1261 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8472c3889e6c64cf9e26fe36cc30bf9e211560aea77f82e97443348cb5956b88`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4e1a31c7a08192627a7e02da4b1d5ea494d5c25269ca986f8d2e7a8ae2d9365d`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 12.5 MB (12452107 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:12b3a23b2108bae03e59ed5e203dc9570b4d69cb6e8636a1f35e442846def57e`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6e7f8f1640d5c681ec203b1bd556d520c628ec0d02e41a591d1198b185d0d667`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 14.6 MB (14638942 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2f208f61c3ca97f2ff11ccb123a8707e61ce0891b966e160aedc3ae93a69d284`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 2.4 KB (2446 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f1879be0a19ef9277d4703ff4b4dbb0d4024de7c53e76caa733c7b133fad64d`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 18.8 KB (18780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bb2315ee202f00dfc90d25f0019e13ab267d5d9c84a9ada4fc13590035d09813`  
 		Last Modified: Fri, 01 Dec 2023 09:39:57 GMT  
 		Size: 30.8 MB (30790072 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7e069e65f06574b9652900f22252f24ef797370c770991d922cf88c4b5b0cbce`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:24ff715aa41f208cec369829b14b23b19d6ef5b637a50119b81eb93800234384`  
 		Last Modified: Fri, 01 Dec 2023 09:40:02 GMT  
 		Size: 1.2 MB (1232197 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8413564bfdcdfe571439f70645bb15a7418aa7511129d7991da5e1e935326d3e`  
 		Last Modified: Fri, 01 Dec 2023 09:40:02 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1369fd650ca1a8d0822758b06024ba3f66dfe2623db5609168a2100566a2324a`  
 		Last Modified: Fri, 01 Dec 2023 09:40:02 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.5.8` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:71d4847111f99ba755ec24ab3db4350d5dfe6b3c634f0be5961836bb28cd1caf
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903651 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7df4dd831c4cc0de7fba8f72f3e8529ee9960450774b1f48fbf1afcd81ebd72b`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:c58ec92a8c99a433203a2b1bca13c6889869c1fe0212b0b5db94d4076025e8bb`  
-		Last Modified: Fri, 01 Dec 2023 09:40:02 GMT  
-		Size: 1.9 MB (1873287 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:218704bc0170bba9113854d8a9a0428b3eb0810dab58441f1f2dba52a6a76860`  
-		Last Modified: Fri, 01 Dec 2023 09:40:02 GMT  
-		Size: 30.4 KB (30364 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.5.8` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:f8591e858db7dfdd61813c8b72458f9a5a843a8876c61f39d0e96e5abfaac5df
+$ docker pull composer@sha256:3abfd48a7a7b570055250c2f851c4432f23465e7bf1301540e88aa514c05db4b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -13177,88 +11173,64 @@ CMD ["composer"]
 	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
 		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
 		Size: 3.3 MB (3333033 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ec91cb5b5977bc2c77c932761c9cd04eda4b0df9636a46228a4c0af65ad1b4f3`  
 		Last Modified: Fri, 01 Dec 2023 00:40:05 GMT  
 		Size: 2.7 MB (2717190 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1563f945b2330cf35b9fc87a3f6456664dde2d6c4b6739047a9dd457f4a3d681`  
 		Last Modified: Fri, 01 Dec 2023 00:40:04 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f2549a9ef4a38d3afd713cc21e4de8fdf9a61d4d4f5b2897c0de403ec047f69a`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:285b1cbb8a2c86c2e2959b55b31fa9ac7abd053db302a937ce14d713aeaf8f44`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 12.5 MB (12452091 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42ac31d6bb70b19a698a7b74ae40261071bc6f22d09403fea931a7923ca8af18`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e6895913c4c7d243589b136d34c69cf54dc6e3aae7d5e785d8c35c570bb0e012`  
 		Last Modified: Fri, 01 Dec 2023 00:40:06 GMT  
 		Size: 17.1 MB (17056609 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1c9aea783aa0077ad1860c83cdbc65d3ad9547ba0c7694359f04efe829bec772`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 2.4 KB (2445 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f59963826a7f5193afec349b01fd624dd57a56e93881623c88faf7564007df02`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 18.7 KB (18729 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:083ab35f4c099a5c6f2fd6796eedcfbd32dd9419cee0c64ab606825964d4ed87`  
 		Last Modified: Fri, 01 Dec 2023 10:13:21 GMT  
 		Size: 32.9 MB (32888759 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:33f9642924941eef55ba6176cbfc4340e3e32ad0611f6b8dbbab9d16233c8efe`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ea2d7f0b22c9d9f736f78b847701ae1d8a8688ba0eb3b695cbc1db1ddcf191d8`  
 		Last Modified: Fri, 01 Dec 2023 10:13:26 GMT  
 		Size: 1.3 MB (1295497 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7df0049821cb7bd73f2549c72a11b5962560d27ab5e9bece1a4476f93c188a67`  
 		Last Modified: Fri, 01 Dec 2023 10:13:26 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a4d834320d4513f187166d95945eb4e554aa9f86c7ae8af372ccc49974c9486a`  
 		Last Modified: Fri, 01 Dec 2023 10:13:26 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.5.8` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:ad7e013c47db29a0e3caa570051fe9d0244b4f1deb96a103575b76039e3d7c92
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903386 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2395be71e84637a3debdc873684cfee33da254eba9adf6bf1ee86b43b3c11a1c`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:1c7abeb9db9265533b4117382ede0f2bfc137a1a42d7f444ce449b59754fc4bf`  
-		Last Modified: Fri, 01 Dec 2023 10:13:26 GMT  
-		Size: 1.9 MB (1873090 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:c35cbaa134e6138f402ff5a984bae0456a3feb7dc5ddaff163a2aefcd1bd97cb`  
-		Last Modified: Fri, 01 Dec 2023 10:13:26 GMT  
-		Size: 30.3 KB (30296 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.5.8` - linux; 386
 
 ```console
-$ docker pull composer@sha256:0f0747951e09b2c3f0d7af6588d8714af48d954f4b610e8275c9b3f5bcbd4f26
+$ docker pull composer@sha256:7e4362ee409aead6a53a3d4b00aec9bedee27fdb617e522e1771641530b02550
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -13337,88 +11309,64 @@ CMD ["composer"]
 	-	`sha256:4966a8bd129b0a6adf93dc295a8fbe8f665d3194a684a5ce199c1c3596dbf3d9`  
 		Last Modified: Fri, 01 Dec 2023 02:04:18 GMT  
 		Size: 3.2 MB (3238831 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:786b6949c7da1fc85a439f51aa05ace6592ed6759802ad370ed74bc4f479828b`  
 		Last Modified: Fri, 01 Dec 2023 04:07:07 GMT  
 		Size: 2.7 MB (2723376 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:27aec508afba473c67b8d2ad4216ba2489f0e9f08768454183b11877384d8139`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 1.3 KB (1259 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a55ae0822cb02fa8febaedc0ea40b1c5b2823b47b9e9f3dc9436f506df98f121`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:81d34e95bca488cede02955576432a46cb1462e07cc769b9eb29f6fb2bf7dcbf`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 12.5 MB (12452099 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:03e703b9b578d877bbb5bb3e7217c5b01c4bd415d52c238a814d769297fe5970`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1b35603c3070a506bb74ab53e6ef71985df5ebcef52f3a030c3b1280fe221eb7`  
 		Last Modified: Fri, 01 Dec 2023 04:07:08 GMT  
 		Size: 17.3 MB (17338715 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:70c1d3cc41a87b1f20ce9166de4fa148c58e529e7a60946164e1ba7d5739156d`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ce144e8060ec62642abf24c41af8e07481873030aa04e8c8c13cc6067a54ee94`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 18.9 KB (18926 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d5e7634c298564bc162ac9ee1138503d2f03fad621a4071d55b33989f624dc5`  
 		Last Modified: Fri, 01 Dec 2023 10:00:41 GMT  
 		Size: 10.7 MB (10733320 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e128cbaba61d68a820c95bb7e672da3c4be595ddf782002fd3a23f91855d2a4a`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:59f2ba22ab2757a689b525bbade6bf302ae97de37f84b893dd78600dc0806ad6`  
 		Last Modified: Fri, 01 Dec 2023 10:00:46 GMT  
 		Size: 1.2 MB (1243707 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:456ab9fe95ca793562005748dd3a5e363311b202c838d90ff118363898439fd4`  
 		Last Modified: Fri, 01 Dec 2023 10:00:45 GMT  
 		Size: 417.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b8658560773e38dffb8284ecef76e6832f5f77485f3189519b032114c0fbfc78`  
 		Last Modified: Fri, 01 Dec 2023 10:00:45 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.5.8` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:5a3c8d2a640b6d901b4e78d65db6370675f93573193549d74946fa95d623775c
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **373.8 KB (373792 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c0b127cb5c9e8731a60e139e2b8463c04055199938025f4fea93b6da275f015e`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:a0abe3b8301cd288db52975179b666ae786aa16cf4881e8dff54f7f5567a20b5`  
-		Last Modified: Fri, 01 Dec 2023 10:00:45 GMT  
-		Size: 343.5 KB (343516 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:a7b513e1683c54e3685306d18f21ee66a1e384e4961da247caa0bdf63561a36d`  
-		Last Modified: Fri, 01 Dec 2023 10:00:45 GMT  
-		Size: 30.3 KB (30276 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.5.8` - linux; ppc64le
 
 ```console
-$ docker pull composer@sha256:21bc1f624c6cf83e855d5518aa4e848cc71f17553920f09f1c9d001cf004814a
+$ docker pull composer@sha256:7071ea2ce8591b83734078ea2e1ce220c5e9be042db5264f89a100697b7c2730
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -13497,88 +11445,64 @@ CMD ["composer"]
 	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
 		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
 		Size: 3.3 MB (3348322 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f8cb9b4da64e0956e297ed583f04085128cdc4a68dcffa3a41c639319245c27`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 2.8 MB (2766423 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:89e2afe36ae984e44fa290115e1355ddb9ba0833dc70a7e3e1f1ed384492c3ec`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 1.3 KB (1267 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:233860698dd8a6e8c7a48373c7cb0a908fc5e1ad61c7ba6c0606e54226ed4c5d`  
 		Last Modified: Fri, 01 Dec 2023 00:53:03 GMT  
 		Size: 267.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f8fb69ca1d3e6a6c70e5d15e8c0a1588f2b439de9683f4874bd1b2f921e4232a`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 12.5 MB (12452085 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab6815e64bb3220dda4d71f42ca13e00d8da619677251611904fb38d6e6eb671`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 494.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1d29c3f41b3d1633a6f3b802d29f6d55acc40d2b97d36e015a15870ceb1bbaa8`  
 		Last Modified: Fri, 01 Dec 2023 00:53:05 GMT  
 		Size: 17.9 MB (17871055 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:eab7245ddd19f65a03b28a395a911f228d137eff133f0ce3855ac49d3bd3623e`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:60fa13b877a4b587f4bfbdfde83831719bc57b09c6a6b8b65c4430b883643393`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 18.7 KB (18731 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4d6f197c8706ed2d9ad1c3776ad0a38b89146398b9a1b9bbf515bb0d2d368959`  
 		Last Modified: Fri, 01 Dec 2023 09:59:33 GMT  
 		Size: 33.5 MB (33538629 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:deca4be23e5d94daeed68f294c98841e816fc5b4e0089108bb8ed8468563bbae`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b42853da6e5f91f647c4407fa87522fe7d77fd1ac8be3f83b7a04ea45287c258`  
 		Last Modified: Fri, 01 Dec 2023 09:59:38 GMT  
 		Size: 1.4 MB (1350960 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0aa147b5cd24476c368cc87f7f056269b22a09577d1a353362a7caa8caf7a258`  
 		Last Modified: Fri, 01 Dec 2023 09:59:38 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:39cfa326e97364af0646560ab302da399aec7c6ede8370430a4d9ab4486397c0`  
 		Last Modified: Fri, 01 Dec 2023 09:56:34 GMT  
 		Size: 91.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.5.8` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:ace92d2b7f24524874fe78bb1fe3a67bda3a4f4b86c571fd27ba6e7d1b5ff830
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902161 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0b65c6e611e1aebad2e1c8c7da4c15b1edd3ef607a63881b719db6e1a1fb1080`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:9a3a0c5b5dfebc9156cefa2df0c0ac1069189da810a44e5120a8caf9a2574bab`  
-		Last Modified: Fri, 01 Dec 2023 09:59:38 GMT  
-		Size: 1.9 MB (1871845 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:91b7b05a9394eb06bf33468447d59213b15c922fcb901724548e6fe4376a8f9c`  
-		Last Modified: Fri, 01 Dec 2023 09:59:38 GMT  
-		Size: 30.3 KB (30316 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.5.8` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:3e62b23b96149d0ff4734fbce0562ec55f68277ccbe58c68241e7847c623d1b8
+$ docker pull composer@sha256:ef53dfab60850eba14916703b80783cddab3f902330b542e7ce39e285ea5baa3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -13657,111 +11581,80 @@ CMD ["composer"]
 	-	`sha256:2ea477e1c0c3db3337ee1d7c659f8c465021a65c036998ed3fa3b667d4b30153`  
 		Last Modified: Thu, 30 Nov 2023 22:42:52 GMT  
 		Size: 3.2 MB (3217454 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3aa5313d02d4fcc59703ea6bd09df7b0df122fc73121b0954b541c214229202e`  
 		Last Modified: Thu, 30 Nov 2023 23:47:29 GMT  
 		Size: 2.8 MB (2789878 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f082f983656d312447043a024c0fa5528e4055dbd73f4101ac38d1d2d3158ea`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 1.3 KB (1262 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:35feaf89a3d400114f4864637453e2e21cd9e7cb6a859699bd6272483f3a56ee`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b59844514cd33789360a3e46dbaff2cdae06b8cd8d18ee9449808c168be15f9`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 12.5 MB (12452093 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:090f8111976872dd0d1fdf290acf04666250d582cbba875706f055725bc42aff`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:398c5ca7cbe876f0f1cf80bef52d39ccd6949d12e9836af8af296afb1084c144`  
 		Last Modified: Thu, 30 Nov 2023 23:47:30 GMT  
 		Size: 16.0 MB (15956254 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa90b5b8b99ecde21a6c31cb4effceb2e48d33b4feeb73b3a12ec4545c63d32a`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3a82796f38dbb8536e9be3b686e7716a2916e08c53622bf88c55aa3ed67802d0`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 18.8 KB (18764 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c209132482d51247ed069f0572cfab5180a1053e1b2856ebe7bb2dbbbf308e38`  
 		Last Modified: Fri, 01 Dec 2023 09:39:28 GMT  
 		Size: 32.3 MB (32333843 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2be49705f63fb76f942d7d9c7808dd4d2b4dc2e25b081f1c7b9d534ca7a70477`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 259.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:290accd9858bb58abc9229203e851c573acc921f0dad3698afdcc4add6645555`  
 		Last Modified: Fri, 01 Dec 2023 09:39:32 GMT  
 		Size: 1.3 MB (1273337 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:605d81f569d74484be9d7880e3773b72f2f7007975b2f8fd5ce32259540d6c6a`  
 		Last Modified: Fri, 01 Dec 2023 09:39:32 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6bd25b054e0447a30a5c69b253f68d8ee909c7eeaddd2e62820f7edc59d746de`  
 		Last Modified: Fri, 01 Dec 2023 09:39:32 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.5.8` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:27fb136fb02200650c0cc042c5558c33810878d8f57abf5905956465a9196b85
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1900996 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4b395c46eb68ead79ac7ffb68bc4a4ce6a7399196c13949262458788af46c601`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:dc1a9afde0aa82b5279d2bf99191b5a241c0901c0afc01051e65c5d906b2e747`  
-		Last Modified: Fri, 01 Dec 2023 09:39:32 GMT  
-		Size: 1.9 MB (1870700 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:9436cf77ef60a51069c08c1c233ac7e21ea96ff9cf5cdb3e88540a8c01643c42`  
-		Last Modified: Fri, 01 Dec 2023 09:39:32 GMT  
-		Size: 30.3 KB (30296 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:2.6`
 
 ```console
-$ docker pull composer@sha256:f4c4dff6df0c7f514357924f982a19316f2ce10cabb90816eafd07ef04c605d3
+$ docker pull composer@sha256:67f1bec07666f688791bff2c13b34b9c35042cc4c1e42fbb5bd4dbe4ae70f0fb
 ```
 
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 14
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
 	-	linux; amd64
-	-	unknown; unknown
 	-	linux; arm variant v6
-	-	unknown; unknown
 	-	linux; arm variant v7
-	-	unknown; unknown
 	-	linux; arm64 variant v8
-	-	unknown; unknown
 	-	linux; 386
-	-	unknown; unknown
 	-	linux; ppc64le
-	-	unknown; unknown
 	-	linux; s390x
-	-	unknown; unknown
 
 ### `composer:2.6` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:512be8ba40613e70b4712a870a0768248eb9ef37ef826713b4800cf66d1f293a
+$ docker pull composer@sha256:20f5108974c63c7f1053b3a1e45215aeee2a83ee2c3e6fa0d011a93d169a28a7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -13840,88 +11733,64 @@ CMD ["composer"]
 	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
 		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
 		Size: 3.4 MB (3402422 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8e26b626c27026d1938a0b6bd77e36b4113da4b7a1134df8d1aa9f49658b25f`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 2.7 MB (2679359 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:23427f6f19cc27aa3496173559d7fc30c2501d1d179a15b52ac1758cc1667d37`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:938ee652f0dd66c081c31e773163d4c3d8ec979f9ced384ed270cdc5fbcbe657`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8abe2aaf4047e9984223c8d63be88c09b7d447f8c9f77851aa06771c52bba05b`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 12.5 MB (12452105 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e06ec6f102433dfe7410990547f8d059d4c3e56455e35d7b4dfbfb96784486e1`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 492.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9ea984f05cf27a91a07a0b1f63adb1e6f9c4cb631325b5a07343b8faf75f7028`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 17.1 MB (17069834 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e6c3ecb64ca025834e2eba225bd5d603742000e1d67407ba50cf0f60ea41a98`  
 		Last Modified: Fri, 01 Dec 2023 00:42:05 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d3b07fe920dd6973a44ea83074fd9125fe7d4774492d00c0ffefb9a04a847a29`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 19.0 KB (18951 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:db476e3c025b598a275cc72e45c12e45db55e1df982d1e90e45f76b630e44f26`  
 		Last Modified: Fri, 01 Dec 2023 08:02:43 GMT  
 		Size: 32.5 MB (32533618 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:00b605206545e71c8d6637e233d08e5cae279512b88f4eedbb3dd9444948f3c1`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a3f172b6c24514834b464f5a515ea799ff120009dbb5e8be3574b779c4fa23e9`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 1.3 MB (1319443 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f4200807651477364bc9a9c65461e6606f9fd636a2bc8f3bb3b22b6c84704403`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3ae5dfbba469e3be92262cca5c2241876dc072ecaaff4285c202d0c0c3e3f2bb`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.6` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:5bf98fdc026ae7c6dde48049cc5c23172c57ac379805e4121307960f57cc34ef
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1905336 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ebeadd305c015ab12a61637c92ba78750da757f95ecb12a9ac54407d1bc54d17`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:b52fc6b9ae35e1b201581784ac832026b85a8b75e3bf4fa51ea2b036e33e0edc`  
-		Last Modified: Fri, 01 Dec 2023 08:02:42 GMT  
-		Size: 1.9 MB (1873285 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:67677ddf6995591f46790ff5578db257da0d3dcea760e646ad9338dcca9ed8f0`  
-		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
-		Size: 32.1 KB (32051 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.6` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:7bcaa247afb07ce26f72f351b10c4593c38e47cec80f55ce5be94b446c09d087
+$ docker pull composer@sha256:285ebda962dd32f0447c13f30c1854c080120aec90d84a2550bba5533f608d27
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -14000,88 +11869,64 @@ CMD ["composer"]
 	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
 		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
 		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ad3f4bb45cafc3a0c4349f9564390ff0fe5c2a3dc4287f0ddf3de8a86dcbb66`  
 		Last Modified: Fri, 01 Dec 2023 00:15:00 GMT  
 		Size: 2.7 MB (2685809 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a06cb8c5272936441cf9c53173eed2af740b588b3a9d8bbbb0b6565f38005e36`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c6156dbc484960b6656a156d5d82d973371555039e45046b37e9af1cbfec8569`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:66811c19a32e40a429b8ba817b3ceb6493496ebd20655f68d5a7ca3844b6c96c`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 12.5 MB (12452097 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4954b5c64e0b15f09646882302df3b0ee246ee32b00519bd4e89f052587d473a`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:889affb1cad3094dce99e0b6c7f8c737a0319cf2a1a9201f97fb1967478162fd`  
 		Last Modified: Fri, 01 Dec 2023 00:15:01 GMT  
 		Size: 15.7 MB (15657131 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b1b4a6a047cfe6a394007eb70b0c03f70ee3d7e9447288d47f549224f614aa2f`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e71e5e0f24e7b0508ad3d6798d964951c64d5fd451467d129a769807abbb8067`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 18.8 KB (18767 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ae4356a5b2c65b1e0f267a80bfe2a0ef3872dd9dd2b6d8f45703247b88fc2e13`  
 		Last Modified: Fri, 01 Dec 2023 11:50:53 GMT  
 		Size: 31.3 MB (31290430 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3019528382efe80e087e7475c0cbe6d2be762ace22b13332601422066b7f8f9c`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 256.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0def962332ea326c31326578924d22ae2a816919021ce0467ce09a236f0a05f4`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 1.3 MB (1276167 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42de80ed23a80a2f3bf8d66f557c213cf33e6f829640114cf6b828fb3630f5a7`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:11b9b612de86698958d1edecf59c6b6d14a64426277cf83eb3503fc80ffc5cf8`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.6` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:c40dcbc0ddd87cf540582d4a28fe81b720d9c96e0eb8727962b5950512e0cd64
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1904363 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e9cb6998533d4eb990afe09360d508433b669e4827ffcc5d498c1c71c9d053a6`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:ee2ef045a5584e0d07a030f4a942e1452a58b2c7323d80d519d64bcb753d9e8b`  
-		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
-		Size: 1.9 MB (1872238 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:e0a5fe2cbb92e4515d7020cbb26e77b300db3b64eb2134acf2f6a2e58d8bd1f5`  
-		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
-		Size: 32.1 KB (32125 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.6` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:d99efe02535ef0bb992e9b450f680fa5d817f30721f291fc29bbd174b7a2b326
+$ docker pull composer@sha256:7aed8e2aa8f25cf0d3d74382c3b5cb89b275139c0b1b9e97b5111ed933ccd1dc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -14160,88 +12005,64 @@ CMD ["composer"]
 	-	`sha256:2387a44129d2147bd4e806bf369f3db92eb3ad3b6b8825c739db364b8baa4e26`  
 		Last Modified: Thu, 30 Nov 2023 22:49:56 GMT  
 		Size: 2.9 MB (2901006 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:463dfc43b4287670c76354cf1d002e077c0a4b8f41207fdbd96316d0f649fdd5`  
 		Last Modified: Thu, 30 Nov 2023 23:58:02 GMT  
 		Size: 2.5 MB (2524902 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8445d08981ee2b82e7069c3bf290f41039993039dd9740da05b6c962c368ea`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 1.3 KB (1261 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8472c3889e6c64cf9e26fe36cc30bf9e211560aea77f82e97443348cb5956b88`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4e1a31c7a08192627a7e02da4b1d5ea494d5c25269ca986f8d2e7a8ae2d9365d`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 12.5 MB (12452107 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:12b3a23b2108bae03e59ed5e203dc9570b4d69cb6e8636a1f35e442846def57e`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6e7f8f1640d5c681ec203b1bd556d520c628ec0d02e41a591d1198b185d0d667`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 14.6 MB (14638942 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2f208f61c3ca97f2ff11ccb123a8707e61ce0891b966e160aedc3ae93a69d284`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 2.4 KB (2446 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f1879be0a19ef9277d4703ff4b4dbb0d4024de7c53e76caa733c7b133fad64d`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 18.8 KB (18780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bb2315ee202f00dfc90d25f0019e13ab267d5d9c84a9ada4fc13590035d09813`  
 		Last Modified: Fri, 01 Dec 2023 09:39:57 GMT  
 		Size: 30.8 MB (30790072 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7e069e65f06574b9652900f22252f24ef797370c770991d922cf88c4b5b0cbce`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ca383e8df06b2554ccd85af350455d6be1073a19f9965a8c88af8957972f2c9`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 1.2 MB (1239427 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e0afcd24e350b50c6378d97ba33f8d8b0c9086e5d262cb35a90c60bf623a17f`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 420.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42313890877398637d9755a757b6621548a1673d4656533fe286eed6c65ccf58`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.6` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:fb62872d7dfda6eb4445e7bc5030a29068fb20355bb50dd60fe6d9c179aa96ac
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1905709 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:58e3fce2a6a172981339752ba50a327610f0c04e862a976903659a3cf6b2eb0a`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:0aee3c51f1e5ced4bd16927cd5d2eb4d563929006a64e13e94f38f614567c26c`  
-		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
-		Size: 1.9 MB (1873584 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:358a023740b286ba13ba4d838bc585054ce794abe92a6d9773882d71a16b7db1`  
-		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
-		Size: 32.1 KB (32125 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.6` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:3cd112fa99e91935ffafe4588433782af5b1c43fb68e7566ef28392d21fd294e
+$ docker pull composer@sha256:e3325a9f20f6263fad888cc1ae71026ca65b2589b40be87349d8ace3127de3d3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -14320,88 +12141,64 @@ CMD ["composer"]
 	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
 		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
 		Size: 3.3 MB (3333033 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ec91cb5b5977bc2c77c932761c9cd04eda4b0df9636a46228a4c0af65ad1b4f3`  
 		Last Modified: Fri, 01 Dec 2023 00:40:05 GMT  
 		Size: 2.7 MB (2717190 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1563f945b2330cf35b9fc87a3f6456664dde2d6c4b6739047a9dd457f4a3d681`  
 		Last Modified: Fri, 01 Dec 2023 00:40:04 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f2549a9ef4a38d3afd713cc21e4de8fdf9a61d4d4f5b2897c0de403ec047f69a`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:285b1cbb8a2c86c2e2959b55b31fa9ac7abd053db302a937ce14d713aeaf8f44`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 12.5 MB (12452091 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42ac31d6bb70b19a698a7b74ae40261071bc6f22d09403fea931a7923ca8af18`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e6895913c4c7d243589b136d34c69cf54dc6e3aae7d5e785d8c35c570bb0e012`  
 		Last Modified: Fri, 01 Dec 2023 00:40:06 GMT  
 		Size: 17.1 MB (17056609 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1c9aea783aa0077ad1860c83cdbc65d3ad9547ba0c7694359f04efe829bec772`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 2.4 KB (2445 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f59963826a7f5193afec349b01fd624dd57a56e93881623c88faf7564007df02`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 18.7 KB (18729 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:083ab35f4c099a5c6f2fd6796eedcfbd32dd9419cee0c64ab606825964d4ed87`  
 		Last Modified: Fri, 01 Dec 2023 10:13:21 GMT  
 		Size: 32.9 MB (32888759 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:33f9642924941eef55ba6176cbfc4340e3e32ad0611f6b8dbbab9d16233c8efe`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1a3085b4166e63d4eda87eeaac166d798a8ffc64db83276111ae507deb737b79`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 1.3 MB (1303777 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7d2bc56ac4cd1ace1c0226d084090862e29926884dcbcbb21b50d69295c0d7f5`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f09172de9ba894fd728fc0f93fd130f6be7bc4d1f17e94e46d28dfe4fe0a15d`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.6` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:5d269e5105d6c855e068a612439497ecb3a7e37ed3870f6e7040f9339bdc2fd6
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1905432 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3afb918b2f49abf898a7babac5fc8edc2f04cd7d5239953011a250ff44c6ec85`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:8b3dc90c0882d0351fbc860046e1abd4ff99c18530acf2fa201ad91ff069acde`  
-		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
-		Size: 1.9 MB (1873381 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:bc95859a64dc6476b57ed30d3fc411eb3a1e7df828c99219ff6d76201b7c687d`  
-		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
-		Size: 32.1 KB (32051 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.6` - linux; 386
 
 ```console
-$ docker pull composer@sha256:cfae6cff7bbccc87fcc425439296b8df88a62bcec884b96c42e9557a82a2e48f
+$ docker pull composer@sha256:1e309b0dc14a896eff5392701cf98d1f0d6b00991cfb62c1e4d431e407097cea
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -14480,88 +12277,64 @@ CMD ["composer"]
 	-	`sha256:4966a8bd129b0a6adf93dc295a8fbe8f665d3194a684a5ce199c1c3596dbf3d9`  
 		Last Modified: Fri, 01 Dec 2023 02:04:18 GMT  
 		Size: 3.2 MB (3238831 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:786b6949c7da1fc85a439f51aa05ace6592ed6759802ad370ed74bc4f479828b`  
 		Last Modified: Fri, 01 Dec 2023 04:07:07 GMT  
 		Size: 2.7 MB (2723376 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:27aec508afba473c67b8d2ad4216ba2489f0e9f08768454183b11877384d8139`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 1.3 KB (1259 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a55ae0822cb02fa8febaedc0ea40b1c5b2823b47b9e9f3dc9436f506df98f121`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:81d34e95bca488cede02955576432a46cb1462e07cc769b9eb29f6fb2bf7dcbf`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 12.5 MB (12452099 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:03e703b9b578d877bbb5bb3e7217c5b01c4bd415d52c238a814d769297fe5970`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1b35603c3070a506bb74ab53e6ef71985df5ebcef52f3a030c3b1280fe221eb7`  
 		Last Modified: Fri, 01 Dec 2023 04:07:08 GMT  
 		Size: 17.3 MB (17338715 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:70c1d3cc41a87b1f20ce9166de4fa148c58e529e7a60946164e1ba7d5739156d`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ce144e8060ec62642abf24c41af8e07481873030aa04e8c8c13cc6067a54ee94`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 18.9 KB (18926 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d5e7634c298564bc162ac9ee1138503d2f03fad621a4071d55b33989f624dc5`  
 		Last Modified: Fri, 01 Dec 2023 10:00:41 GMT  
 		Size: 10.7 MB (10733320 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e128cbaba61d68a820c95bb7e672da3c4be595ddf782002fd3a23f91855d2a4a`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:5b86a0013a58aaca31f91ad120a7082412b42c097f23cb7d87149e9cefc44391`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 1.3 MB (1250023 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e458b4872a7720fe291d738e12678592cdc6eaee93d3f9868a486b297fd5514f`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0dd79f2de3d8ad5044fa0e3781d9955284b71c8e7dfa1909bcbada86f645d163`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.6` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:23ea5d4d78de633a34f907808a044b2cd73b3320fdd0d40c80f924081fccf28f
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **375.8 KB (375830 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3ee0e166828f6a9bf5b9c1377c634c367f1c5e71e075c3b1a1004a4ef8ab07ae`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:6c0acae2cd5647a674634d4712ed4a3a90c72fb397e54b247ffb4c9136304970`  
-		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
-		Size: 343.8 KB (343803 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:7d066c6553fafabf5878a575ab5f0a69e517b6f6c0bb8e0573d92243bc32c9e6`  
-		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
-		Size: 32.0 KB (32027 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.6` - linux; ppc64le
 
 ```console
-$ docker pull composer@sha256:7859b7480fb4a55d64200c482ac2feed57fb85a80069933d708c3ac7ada667b2
+$ docker pull composer@sha256:3b98b5c7588fe646696f93ca4dccec74f84a6ca823226bdd258749c54dc553d4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -14640,88 +12413,64 @@ CMD ["composer"]
 	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
 		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
 		Size: 3.3 MB (3348322 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f8cb9b4da64e0956e297ed583f04085128cdc4a68dcffa3a41c639319245c27`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 2.8 MB (2766423 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:89e2afe36ae984e44fa290115e1355ddb9ba0833dc70a7e3e1f1ed384492c3ec`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 1.3 KB (1267 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:233860698dd8a6e8c7a48373c7cb0a908fc5e1ad61c7ba6c0606e54226ed4c5d`  
 		Last Modified: Fri, 01 Dec 2023 00:53:03 GMT  
 		Size: 267.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f8fb69ca1d3e6a6c70e5d15e8c0a1588f2b439de9683f4874bd1b2f921e4232a`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 12.5 MB (12452085 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab6815e64bb3220dda4d71f42ca13e00d8da619677251611904fb38d6e6eb671`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 494.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1d29c3f41b3d1633a6f3b802d29f6d55acc40d2b97d36e015a15870ceb1bbaa8`  
 		Last Modified: Fri, 01 Dec 2023 00:53:05 GMT  
 		Size: 17.9 MB (17871055 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:eab7245ddd19f65a03b28a395a911f228d137eff133f0ce3855ac49d3bd3623e`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:60fa13b877a4b587f4bfbdfde83831719bc57b09c6a6b8b65c4430b883643393`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 18.7 KB (18731 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4d6f197c8706ed2d9ad1c3776ad0a38b89146398b9a1b9bbf515bb0d2d368959`  
 		Last Modified: Fri, 01 Dec 2023 09:59:33 GMT  
 		Size: 33.5 MB (33538629 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:deca4be23e5d94daeed68f294c98841e816fc5b4e0089108bb8ed8468563bbae`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:07cfd4de86f05595f1b2089da91990af1ee4c0d8431b0a1ccbcc32bdc99c468d`  
 		Last Modified: Fri, 01 Dec 2023 09:59:32 GMT  
 		Size: 1.4 MB (1360541 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c4f897522b54e0a8a4b24883b0acc49fb20b71463f0baabbefabdb16d8179ae4`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa680579b949a9ad87959e573a97329a2c0b3b8b2c8c2ce26cf147fc67fedf3d`  
 		Last Modified: Fri, 01 Dec 2023 09:53:18 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.6` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:b3b10172d4f86c9e51fdbc651af88198633d3052ca0d5f11660b1df38f59be59
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1904215 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:71ec860158c782103802116e58a4a6a4cc0bdd154c969853a94b8b80a8e550ed`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:2a4df28672749b717053b0524671cf7cd2acb41123eda886fd10f327d1fef629`  
-		Last Modified: Fri, 01 Dec 2023 09:59:32 GMT  
-		Size: 1.9 MB (1872140 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:b1237f607c5ee8737767df41a9e064fb2f3e7c27040f6c3776990f3f42765703`  
-		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
-		Size: 32.1 KB (32075 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.6` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:c8723ade172ccacd21e70f640463aea3c15489a0e6c716628da4aedb3e64960e
+$ docker pull composer@sha256:940b56b4b05dc2fbcb3489532038b0175e13a8973e599b05cd7c9f7f3c0cc7da
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -14800,111 +12549,80 @@ CMD ["composer"]
 	-	`sha256:2ea477e1c0c3db3337ee1d7c659f8c465021a65c036998ed3fa3b667d4b30153`  
 		Last Modified: Thu, 30 Nov 2023 22:42:52 GMT  
 		Size: 3.2 MB (3217454 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3aa5313d02d4fcc59703ea6bd09df7b0df122fc73121b0954b541c214229202e`  
 		Last Modified: Thu, 30 Nov 2023 23:47:29 GMT  
 		Size: 2.8 MB (2789878 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f082f983656d312447043a024c0fa5528e4055dbd73f4101ac38d1d2d3158ea`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 1.3 KB (1262 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:35feaf89a3d400114f4864637453e2e21cd9e7cb6a859699bd6272483f3a56ee`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b59844514cd33789360a3e46dbaff2cdae06b8cd8d18ee9449808c168be15f9`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 12.5 MB (12452093 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:090f8111976872dd0d1fdf290acf04666250d582cbba875706f055725bc42aff`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:398c5ca7cbe876f0f1cf80bef52d39ccd6949d12e9836af8af296afb1084c144`  
 		Last Modified: Thu, 30 Nov 2023 23:47:30 GMT  
 		Size: 16.0 MB (15956254 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa90b5b8b99ecde21a6c31cb4effceb2e48d33b4feeb73b3a12ec4545c63d32a`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3a82796f38dbb8536e9be3b686e7716a2916e08c53622bf88c55aa3ed67802d0`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 18.8 KB (18764 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c209132482d51247ed069f0572cfab5180a1053e1b2856ebe7bb2dbbbf308e38`  
 		Last Modified: Fri, 01 Dec 2023 09:39:28 GMT  
 		Size: 32.3 MB (32333843 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2be49705f63fb76f942d7d9c7808dd4d2b4dc2e25b081f1c7b9d534ca7a70477`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 259.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b47d6d2a354545d677ea5f936b51e59f70b29acdfdc50ec62b64e0a3cdc3ba12`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 1.3 MB (1281438 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a2fb49f94a90d11edb66671c1f2738062d06b75aabbcdb0363ff62ddfcba3582`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:487e5f325da8f544f6f85cc3d26b7b0462082dde8baf9df20043ee3d69225096`  
 		Last Modified: Fri, 01 Dec 2023 09:36:51 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.6` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:6d5ab9c5f1f2114fe23ed529f5e6f6760daa7ab8707616d3a9a011cef46c5563
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903041 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e2e1de91b1308885121e1d600523fb24d8d0f7fa1b3e2448ffbc2a217d095353`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:f0c7db2b3e4f235d832a0302a344da6bd3822b385c4ab8dc26e0540c02e76d65`  
-		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
-		Size: 1.9 MB (1870991 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:59c025a59ef970bdd1384c67a97920153f4659d57cd2922bd2ef44854995650b`  
-		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
-		Size: 32.0 KB (32050 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:2.6.5`
 
 ```console
-$ docker pull composer@sha256:f4c4dff6df0c7f514357924f982a19316f2ce10cabb90816eafd07ef04c605d3
+$ docker pull composer@sha256:67f1bec07666f688791bff2c13b34b9c35042cc4c1e42fbb5bd4dbe4ae70f0fb
 ```
 
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 14
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
 	-	linux; amd64
-	-	unknown; unknown
 	-	linux; arm variant v6
-	-	unknown; unknown
 	-	linux; arm variant v7
-	-	unknown; unknown
 	-	linux; arm64 variant v8
-	-	unknown; unknown
 	-	linux; 386
-	-	unknown; unknown
 	-	linux; ppc64le
-	-	unknown; unknown
 	-	linux; s390x
-	-	unknown; unknown
 
 ### `composer:2.6.5` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:512be8ba40613e70b4712a870a0768248eb9ef37ef826713b4800cf66d1f293a
+$ docker pull composer@sha256:20f5108974c63c7f1053b3a1e45215aeee2a83ee2c3e6fa0d011a93d169a28a7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -14983,88 +12701,64 @@ CMD ["composer"]
 	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
 		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
 		Size: 3.4 MB (3402422 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8e26b626c27026d1938a0b6bd77e36b4113da4b7a1134df8d1aa9f49658b25f`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 2.7 MB (2679359 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:23427f6f19cc27aa3496173559d7fc30c2501d1d179a15b52ac1758cc1667d37`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:938ee652f0dd66c081c31e773163d4c3d8ec979f9ced384ed270cdc5fbcbe657`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8abe2aaf4047e9984223c8d63be88c09b7d447f8c9f77851aa06771c52bba05b`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 12.5 MB (12452105 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e06ec6f102433dfe7410990547f8d059d4c3e56455e35d7b4dfbfb96784486e1`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 492.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9ea984f05cf27a91a07a0b1f63adb1e6f9c4cb631325b5a07343b8faf75f7028`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 17.1 MB (17069834 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e6c3ecb64ca025834e2eba225bd5d603742000e1d67407ba50cf0f60ea41a98`  
 		Last Modified: Fri, 01 Dec 2023 00:42:05 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d3b07fe920dd6973a44ea83074fd9125fe7d4774492d00c0ffefb9a04a847a29`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 19.0 KB (18951 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:db476e3c025b598a275cc72e45c12e45db55e1df982d1e90e45f76b630e44f26`  
 		Last Modified: Fri, 01 Dec 2023 08:02:43 GMT  
 		Size: 32.5 MB (32533618 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:00b605206545e71c8d6637e233d08e5cae279512b88f4eedbb3dd9444948f3c1`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a3f172b6c24514834b464f5a515ea799ff120009dbb5e8be3574b779c4fa23e9`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 1.3 MB (1319443 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f4200807651477364bc9a9c65461e6606f9fd636a2bc8f3bb3b22b6c84704403`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3ae5dfbba469e3be92262cca5c2241876dc072ecaaff4285c202d0c0c3e3f2bb`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.6.5` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:5bf98fdc026ae7c6dde48049cc5c23172c57ac379805e4121307960f57cc34ef
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1905336 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ebeadd305c015ab12a61637c92ba78750da757f95ecb12a9ac54407d1bc54d17`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:b52fc6b9ae35e1b201581784ac832026b85a8b75e3bf4fa51ea2b036e33e0edc`  
-		Last Modified: Fri, 01 Dec 2023 08:02:42 GMT  
-		Size: 1.9 MB (1873285 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:67677ddf6995591f46790ff5578db257da0d3dcea760e646ad9338dcca9ed8f0`  
-		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
-		Size: 32.1 KB (32051 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.6.5` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:7bcaa247afb07ce26f72f351b10c4593c38e47cec80f55ce5be94b446c09d087
+$ docker pull composer@sha256:285ebda962dd32f0447c13f30c1854c080120aec90d84a2550bba5533f608d27
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -15143,88 +12837,64 @@ CMD ["composer"]
 	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
 		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
 		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ad3f4bb45cafc3a0c4349f9564390ff0fe5c2a3dc4287f0ddf3de8a86dcbb66`  
 		Last Modified: Fri, 01 Dec 2023 00:15:00 GMT  
 		Size: 2.7 MB (2685809 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a06cb8c5272936441cf9c53173eed2af740b588b3a9d8bbbb0b6565f38005e36`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c6156dbc484960b6656a156d5d82d973371555039e45046b37e9af1cbfec8569`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:66811c19a32e40a429b8ba817b3ceb6493496ebd20655f68d5a7ca3844b6c96c`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 12.5 MB (12452097 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4954b5c64e0b15f09646882302df3b0ee246ee32b00519bd4e89f052587d473a`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:889affb1cad3094dce99e0b6c7f8c737a0319cf2a1a9201f97fb1967478162fd`  
 		Last Modified: Fri, 01 Dec 2023 00:15:01 GMT  
 		Size: 15.7 MB (15657131 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b1b4a6a047cfe6a394007eb70b0c03f70ee3d7e9447288d47f549224f614aa2f`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e71e5e0f24e7b0508ad3d6798d964951c64d5fd451467d129a769807abbb8067`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 18.8 KB (18767 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ae4356a5b2c65b1e0f267a80bfe2a0ef3872dd9dd2b6d8f45703247b88fc2e13`  
 		Last Modified: Fri, 01 Dec 2023 11:50:53 GMT  
 		Size: 31.3 MB (31290430 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3019528382efe80e087e7475c0cbe6d2be762ace22b13332601422066b7f8f9c`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 256.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0def962332ea326c31326578924d22ae2a816919021ce0467ce09a236f0a05f4`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 1.3 MB (1276167 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42de80ed23a80a2f3bf8d66f557c213cf33e6f829640114cf6b828fb3630f5a7`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:11b9b612de86698958d1edecf59c6b6d14a64426277cf83eb3503fc80ffc5cf8`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.6.5` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:c40dcbc0ddd87cf540582d4a28fe81b720d9c96e0eb8727962b5950512e0cd64
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1904363 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e9cb6998533d4eb990afe09360d508433b669e4827ffcc5d498c1c71c9d053a6`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:ee2ef045a5584e0d07a030f4a942e1452a58b2c7323d80d519d64bcb753d9e8b`  
-		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
-		Size: 1.9 MB (1872238 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:e0a5fe2cbb92e4515d7020cbb26e77b300db3b64eb2134acf2f6a2e58d8bd1f5`  
-		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
-		Size: 32.1 KB (32125 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.6.5` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:d99efe02535ef0bb992e9b450f680fa5d817f30721f291fc29bbd174b7a2b326
+$ docker pull composer@sha256:7aed8e2aa8f25cf0d3d74382c3b5cb89b275139c0b1b9e97b5111ed933ccd1dc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -15303,88 +12973,64 @@ CMD ["composer"]
 	-	`sha256:2387a44129d2147bd4e806bf369f3db92eb3ad3b6b8825c739db364b8baa4e26`  
 		Last Modified: Thu, 30 Nov 2023 22:49:56 GMT  
 		Size: 2.9 MB (2901006 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:463dfc43b4287670c76354cf1d002e077c0a4b8f41207fdbd96316d0f649fdd5`  
 		Last Modified: Thu, 30 Nov 2023 23:58:02 GMT  
 		Size: 2.5 MB (2524902 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8445d08981ee2b82e7069c3bf290f41039993039dd9740da05b6c962c368ea`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 1.3 KB (1261 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8472c3889e6c64cf9e26fe36cc30bf9e211560aea77f82e97443348cb5956b88`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4e1a31c7a08192627a7e02da4b1d5ea494d5c25269ca986f8d2e7a8ae2d9365d`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 12.5 MB (12452107 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:12b3a23b2108bae03e59ed5e203dc9570b4d69cb6e8636a1f35e442846def57e`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6e7f8f1640d5c681ec203b1bd556d520c628ec0d02e41a591d1198b185d0d667`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 14.6 MB (14638942 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2f208f61c3ca97f2ff11ccb123a8707e61ce0891b966e160aedc3ae93a69d284`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 2.4 KB (2446 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f1879be0a19ef9277d4703ff4b4dbb0d4024de7c53e76caa733c7b133fad64d`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 18.8 KB (18780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bb2315ee202f00dfc90d25f0019e13ab267d5d9c84a9ada4fc13590035d09813`  
 		Last Modified: Fri, 01 Dec 2023 09:39:57 GMT  
 		Size: 30.8 MB (30790072 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7e069e65f06574b9652900f22252f24ef797370c770991d922cf88c4b5b0cbce`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ca383e8df06b2554ccd85af350455d6be1073a19f9965a8c88af8957972f2c9`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 1.2 MB (1239427 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e0afcd24e350b50c6378d97ba33f8d8b0c9086e5d262cb35a90c60bf623a17f`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 420.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42313890877398637d9755a757b6621548a1673d4656533fe286eed6c65ccf58`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.6.5` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:fb62872d7dfda6eb4445e7bc5030a29068fb20355bb50dd60fe6d9c179aa96ac
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1905709 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:58e3fce2a6a172981339752ba50a327610f0c04e862a976903659a3cf6b2eb0a`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:0aee3c51f1e5ced4bd16927cd5d2eb4d563929006a64e13e94f38f614567c26c`  
-		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
-		Size: 1.9 MB (1873584 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:358a023740b286ba13ba4d838bc585054ce794abe92a6d9773882d71a16b7db1`  
-		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
-		Size: 32.1 KB (32125 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.6.5` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:3cd112fa99e91935ffafe4588433782af5b1c43fb68e7566ef28392d21fd294e
+$ docker pull composer@sha256:e3325a9f20f6263fad888cc1ae71026ca65b2589b40be87349d8ace3127de3d3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -15463,88 +13109,64 @@ CMD ["composer"]
 	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
 		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
 		Size: 3.3 MB (3333033 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ec91cb5b5977bc2c77c932761c9cd04eda4b0df9636a46228a4c0af65ad1b4f3`  
 		Last Modified: Fri, 01 Dec 2023 00:40:05 GMT  
 		Size: 2.7 MB (2717190 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1563f945b2330cf35b9fc87a3f6456664dde2d6c4b6739047a9dd457f4a3d681`  
 		Last Modified: Fri, 01 Dec 2023 00:40:04 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f2549a9ef4a38d3afd713cc21e4de8fdf9a61d4d4f5b2897c0de403ec047f69a`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:285b1cbb8a2c86c2e2959b55b31fa9ac7abd053db302a937ce14d713aeaf8f44`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 12.5 MB (12452091 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42ac31d6bb70b19a698a7b74ae40261071bc6f22d09403fea931a7923ca8af18`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e6895913c4c7d243589b136d34c69cf54dc6e3aae7d5e785d8c35c570bb0e012`  
 		Last Modified: Fri, 01 Dec 2023 00:40:06 GMT  
 		Size: 17.1 MB (17056609 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1c9aea783aa0077ad1860c83cdbc65d3ad9547ba0c7694359f04efe829bec772`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 2.4 KB (2445 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f59963826a7f5193afec349b01fd624dd57a56e93881623c88faf7564007df02`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 18.7 KB (18729 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:083ab35f4c099a5c6f2fd6796eedcfbd32dd9419cee0c64ab606825964d4ed87`  
 		Last Modified: Fri, 01 Dec 2023 10:13:21 GMT  
 		Size: 32.9 MB (32888759 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:33f9642924941eef55ba6176cbfc4340e3e32ad0611f6b8dbbab9d16233c8efe`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1a3085b4166e63d4eda87eeaac166d798a8ffc64db83276111ae507deb737b79`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 1.3 MB (1303777 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7d2bc56ac4cd1ace1c0226d084090862e29926884dcbcbb21b50d69295c0d7f5`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f09172de9ba894fd728fc0f93fd130f6be7bc4d1f17e94e46d28dfe4fe0a15d`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.6.5` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:5d269e5105d6c855e068a612439497ecb3a7e37ed3870f6e7040f9339bdc2fd6
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1905432 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3afb918b2f49abf898a7babac5fc8edc2f04cd7d5239953011a250ff44c6ec85`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:8b3dc90c0882d0351fbc860046e1abd4ff99c18530acf2fa201ad91ff069acde`  
-		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
-		Size: 1.9 MB (1873381 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:bc95859a64dc6476b57ed30d3fc411eb3a1e7df828c99219ff6d76201b7c687d`  
-		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
-		Size: 32.1 KB (32051 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.6.5` - linux; 386
 
 ```console
-$ docker pull composer@sha256:cfae6cff7bbccc87fcc425439296b8df88a62bcec884b96c42e9557a82a2e48f
+$ docker pull composer@sha256:1e309b0dc14a896eff5392701cf98d1f0d6b00991cfb62c1e4d431e407097cea
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -15623,88 +13245,64 @@ CMD ["composer"]
 	-	`sha256:4966a8bd129b0a6adf93dc295a8fbe8f665d3194a684a5ce199c1c3596dbf3d9`  
 		Last Modified: Fri, 01 Dec 2023 02:04:18 GMT  
 		Size: 3.2 MB (3238831 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:786b6949c7da1fc85a439f51aa05ace6592ed6759802ad370ed74bc4f479828b`  
 		Last Modified: Fri, 01 Dec 2023 04:07:07 GMT  
 		Size: 2.7 MB (2723376 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:27aec508afba473c67b8d2ad4216ba2489f0e9f08768454183b11877384d8139`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 1.3 KB (1259 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a55ae0822cb02fa8febaedc0ea40b1c5b2823b47b9e9f3dc9436f506df98f121`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:81d34e95bca488cede02955576432a46cb1462e07cc769b9eb29f6fb2bf7dcbf`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 12.5 MB (12452099 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:03e703b9b578d877bbb5bb3e7217c5b01c4bd415d52c238a814d769297fe5970`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1b35603c3070a506bb74ab53e6ef71985df5ebcef52f3a030c3b1280fe221eb7`  
 		Last Modified: Fri, 01 Dec 2023 04:07:08 GMT  
 		Size: 17.3 MB (17338715 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:70c1d3cc41a87b1f20ce9166de4fa148c58e529e7a60946164e1ba7d5739156d`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ce144e8060ec62642abf24c41af8e07481873030aa04e8c8c13cc6067a54ee94`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 18.9 KB (18926 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d5e7634c298564bc162ac9ee1138503d2f03fad621a4071d55b33989f624dc5`  
 		Last Modified: Fri, 01 Dec 2023 10:00:41 GMT  
 		Size: 10.7 MB (10733320 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e128cbaba61d68a820c95bb7e672da3c4be595ddf782002fd3a23f91855d2a4a`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:5b86a0013a58aaca31f91ad120a7082412b42c097f23cb7d87149e9cefc44391`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 1.3 MB (1250023 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e458b4872a7720fe291d738e12678592cdc6eaee93d3f9868a486b297fd5514f`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0dd79f2de3d8ad5044fa0e3781d9955284b71c8e7dfa1909bcbada86f645d163`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.6.5` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:23ea5d4d78de633a34f907808a044b2cd73b3320fdd0d40c80f924081fccf28f
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **375.8 KB (375830 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3ee0e166828f6a9bf5b9c1377c634c367f1c5e71e075c3b1a1004a4ef8ab07ae`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:6c0acae2cd5647a674634d4712ed4a3a90c72fb397e54b247ffb4c9136304970`  
-		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
-		Size: 343.8 KB (343803 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:7d066c6553fafabf5878a575ab5f0a69e517b6f6c0bb8e0573d92243bc32c9e6`  
-		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
-		Size: 32.0 KB (32027 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.6.5` - linux; ppc64le
 
 ```console
-$ docker pull composer@sha256:7859b7480fb4a55d64200c482ac2feed57fb85a80069933d708c3ac7ada667b2
+$ docker pull composer@sha256:3b98b5c7588fe646696f93ca4dccec74f84a6ca823226bdd258749c54dc553d4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -15783,88 +13381,64 @@ CMD ["composer"]
 	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
 		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
 		Size: 3.3 MB (3348322 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f8cb9b4da64e0956e297ed583f04085128cdc4a68dcffa3a41c639319245c27`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 2.8 MB (2766423 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:89e2afe36ae984e44fa290115e1355ddb9ba0833dc70a7e3e1f1ed384492c3ec`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 1.3 KB (1267 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:233860698dd8a6e8c7a48373c7cb0a908fc5e1ad61c7ba6c0606e54226ed4c5d`  
 		Last Modified: Fri, 01 Dec 2023 00:53:03 GMT  
 		Size: 267.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f8fb69ca1d3e6a6c70e5d15e8c0a1588f2b439de9683f4874bd1b2f921e4232a`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 12.5 MB (12452085 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab6815e64bb3220dda4d71f42ca13e00d8da619677251611904fb38d6e6eb671`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 494.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1d29c3f41b3d1633a6f3b802d29f6d55acc40d2b97d36e015a15870ceb1bbaa8`  
 		Last Modified: Fri, 01 Dec 2023 00:53:05 GMT  
 		Size: 17.9 MB (17871055 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:eab7245ddd19f65a03b28a395a911f228d137eff133f0ce3855ac49d3bd3623e`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:60fa13b877a4b587f4bfbdfde83831719bc57b09c6a6b8b65c4430b883643393`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 18.7 KB (18731 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4d6f197c8706ed2d9ad1c3776ad0a38b89146398b9a1b9bbf515bb0d2d368959`  
 		Last Modified: Fri, 01 Dec 2023 09:59:33 GMT  
 		Size: 33.5 MB (33538629 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:deca4be23e5d94daeed68f294c98841e816fc5b4e0089108bb8ed8468563bbae`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:07cfd4de86f05595f1b2089da91990af1ee4c0d8431b0a1ccbcc32bdc99c468d`  
 		Last Modified: Fri, 01 Dec 2023 09:59:32 GMT  
 		Size: 1.4 MB (1360541 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c4f897522b54e0a8a4b24883b0acc49fb20b71463f0baabbefabdb16d8179ae4`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa680579b949a9ad87959e573a97329a2c0b3b8b2c8c2ce26cf147fc67fedf3d`  
 		Last Modified: Fri, 01 Dec 2023 09:53:18 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.6.5` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:b3b10172d4f86c9e51fdbc651af88198633d3052ca0d5f11660b1df38f59be59
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1904215 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:71ec860158c782103802116e58a4a6a4cc0bdd154c969853a94b8b80a8e550ed`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:2a4df28672749b717053b0524671cf7cd2acb41123eda886fd10f327d1fef629`  
-		Last Modified: Fri, 01 Dec 2023 09:59:32 GMT  
-		Size: 1.9 MB (1872140 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:b1237f607c5ee8737767df41a9e064fb2f3e7c27040f6c3776990f3f42765703`  
-		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
-		Size: 32.1 KB (32075 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:2.6.5` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:c8723ade172ccacd21e70f640463aea3c15489a0e6c716628da4aedb3e64960e
+$ docker pull composer@sha256:940b56b4b05dc2fbcb3489532038b0175e13a8973e599b05cd7c9f7f3c0cc7da
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -15943,111 +13517,80 @@ CMD ["composer"]
 	-	`sha256:2ea477e1c0c3db3337ee1d7c659f8c465021a65c036998ed3fa3b667d4b30153`  
 		Last Modified: Thu, 30 Nov 2023 22:42:52 GMT  
 		Size: 3.2 MB (3217454 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3aa5313d02d4fcc59703ea6bd09df7b0df122fc73121b0954b541c214229202e`  
 		Last Modified: Thu, 30 Nov 2023 23:47:29 GMT  
 		Size: 2.8 MB (2789878 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f082f983656d312447043a024c0fa5528e4055dbd73f4101ac38d1d2d3158ea`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 1.3 KB (1262 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:35feaf89a3d400114f4864637453e2e21cd9e7cb6a859699bd6272483f3a56ee`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b59844514cd33789360a3e46dbaff2cdae06b8cd8d18ee9449808c168be15f9`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 12.5 MB (12452093 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:090f8111976872dd0d1fdf290acf04666250d582cbba875706f055725bc42aff`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:398c5ca7cbe876f0f1cf80bef52d39ccd6949d12e9836af8af296afb1084c144`  
 		Last Modified: Thu, 30 Nov 2023 23:47:30 GMT  
 		Size: 16.0 MB (15956254 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa90b5b8b99ecde21a6c31cb4effceb2e48d33b4feeb73b3a12ec4545c63d32a`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3a82796f38dbb8536e9be3b686e7716a2916e08c53622bf88c55aa3ed67802d0`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 18.8 KB (18764 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c209132482d51247ed069f0572cfab5180a1053e1b2856ebe7bb2dbbbf308e38`  
 		Last Modified: Fri, 01 Dec 2023 09:39:28 GMT  
 		Size: 32.3 MB (32333843 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2be49705f63fb76f942d7d9c7808dd4d2b4dc2e25b081f1c7b9d534ca7a70477`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 259.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b47d6d2a354545d677ea5f936b51e59f70b29acdfdc50ec62b64e0a3cdc3ba12`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 1.3 MB (1281438 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a2fb49f94a90d11edb66671c1f2738062d06b75aabbcdb0363ff62ddfcba3582`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:487e5f325da8f544f6f85cc3d26b7b0462082dde8baf9df20043ee3d69225096`  
 		Last Modified: Fri, 01 Dec 2023 09:36:51 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:2.6.5` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:6d5ab9c5f1f2114fe23ed529f5e6f6760daa7ab8707616d3a9a011cef46c5563
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903041 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e2e1de91b1308885121e1d600523fb24d8d0f7fa1b3e2448ffbc2a217d095353`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:f0c7db2b3e4f235d832a0302a344da6bd3822b385c4ab8dc26e0540c02e76d65`  
-		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
-		Size: 1.9 MB (1870991 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:59c025a59ef970bdd1384c67a97920153f4659d57cd2922bd2ef44854995650b`  
-		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
-		Size: 32.0 KB (32050 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:latest`
 
 ```console
-$ docker pull composer@sha256:f4c4dff6df0c7f514357924f982a19316f2ce10cabb90816eafd07ef04c605d3
+$ docker pull composer@sha256:67f1bec07666f688791bff2c13b34b9c35042cc4c1e42fbb5bd4dbe4ae70f0fb
 ```
 
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 14
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
 	-	linux; amd64
-	-	unknown; unknown
 	-	linux; arm variant v6
-	-	unknown; unknown
 	-	linux; arm variant v7
-	-	unknown; unknown
 	-	linux; arm64 variant v8
-	-	unknown; unknown
 	-	linux; 386
-	-	unknown; unknown
 	-	linux; ppc64le
-	-	unknown; unknown
 	-	linux; s390x
-	-	unknown; unknown
 
 ### `composer:latest` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:512be8ba40613e70b4712a870a0768248eb9ef37ef826713b4800cf66d1f293a
+$ docker pull composer@sha256:20f5108974c63c7f1053b3a1e45215aeee2a83ee2c3e6fa0d011a93d169a28a7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -16126,88 +13669,64 @@ CMD ["composer"]
 	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
 		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
 		Size: 3.4 MB (3402422 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8e26b626c27026d1938a0b6bd77e36b4113da4b7a1134df8d1aa9f49658b25f`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 2.7 MB (2679359 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:23427f6f19cc27aa3496173559d7fc30c2501d1d179a15b52ac1758cc1667d37`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:938ee652f0dd66c081c31e773163d4c3d8ec979f9ced384ed270cdc5fbcbe657`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8abe2aaf4047e9984223c8d63be88c09b7d447f8c9f77851aa06771c52bba05b`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 12.5 MB (12452105 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e06ec6f102433dfe7410990547f8d059d4c3e56455e35d7b4dfbfb96784486e1`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 492.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9ea984f05cf27a91a07a0b1f63adb1e6f9c4cb631325b5a07343b8faf75f7028`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 17.1 MB (17069834 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e6c3ecb64ca025834e2eba225bd5d603742000e1d67407ba50cf0f60ea41a98`  
 		Last Modified: Fri, 01 Dec 2023 00:42:05 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d3b07fe920dd6973a44ea83074fd9125fe7d4774492d00c0ffefb9a04a847a29`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 19.0 KB (18951 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:db476e3c025b598a275cc72e45c12e45db55e1df982d1e90e45f76b630e44f26`  
 		Last Modified: Fri, 01 Dec 2023 08:02:43 GMT  
 		Size: 32.5 MB (32533618 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:00b605206545e71c8d6637e233d08e5cae279512b88f4eedbb3dd9444948f3c1`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a3f172b6c24514834b464f5a515ea799ff120009dbb5e8be3574b779c4fa23e9`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 1.3 MB (1319443 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f4200807651477364bc9a9c65461e6606f9fd636a2bc8f3bb3b22b6c84704403`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3ae5dfbba469e3be92262cca5c2241876dc072ecaaff4285c202d0c0c3e3f2bb`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:latest` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:5bf98fdc026ae7c6dde48049cc5c23172c57ac379805e4121307960f57cc34ef
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1905336 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ebeadd305c015ab12a61637c92ba78750da757f95ecb12a9ac54407d1bc54d17`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:b52fc6b9ae35e1b201581784ac832026b85a8b75e3bf4fa51ea2b036e33e0edc`  
-		Last Modified: Fri, 01 Dec 2023 08:02:42 GMT  
-		Size: 1.9 MB (1873285 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:67677ddf6995591f46790ff5578db257da0d3dcea760e646ad9338dcca9ed8f0`  
-		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
-		Size: 32.1 KB (32051 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:latest` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:7bcaa247afb07ce26f72f351b10c4593c38e47cec80f55ce5be94b446c09d087
+$ docker pull composer@sha256:285ebda962dd32f0447c13f30c1854c080120aec90d84a2550bba5533f608d27
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -16286,88 +13805,64 @@ CMD ["composer"]
 	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
 		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
 		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ad3f4bb45cafc3a0c4349f9564390ff0fe5c2a3dc4287f0ddf3de8a86dcbb66`  
 		Last Modified: Fri, 01 Dec 2023 00:15:00 GMT  
 		Size: 2.7 MB (2685809 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a06cb8c5272936441cf9c53173eed2af740b588b3a9d8bbbb0b6565f38005e36`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c6156dbc484960b6656a156d5d82d973371555039e45046b37e9af1cbfec8569`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:66811c19a32e40a429b8ba817b3ceb6493496ebd20655f68d5a7ca3844b6c96c`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 12.5 MB (12452097 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4954b5c64e0b15f09646882302df3b0ee246ee32b00519bd4e89f052587d473a`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:889affb1cad3094dce99e0b6c7f8c737a0319cf2a1a9201f97fb1967478162fd`  
 		Last Modified: Fri, 01 Dec 2023 00:15:01 GMT  
 		Size: 15.7 MB (15657131 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b1b4a6a047cfe6a394007eb70b0c03f70ee3d7e9447288d47f549224f614aa2f`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e71e5e0f24e7b0508ad3d6798d964951c64d5fd451467d129a769807abbb8067`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 18.8 KB (18767 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ae4356a5b2c65b1e0f267a80bfe2a0ef3872dd9dd2b6d8f45703247b88fc2e13`  
 		Last Modified: Fri, 01 Dec 2023 11:50:53 GMT  
 		Size: 31.3 MB (31290430 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3019528382efe80e087e7475c0cbe6d2be762ace22b13332601422066b7f8f9c`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 256.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0def962332ea326c31326578924d22ae2a816919021ce0467ce09a236f0a05f4`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 1.3 MB (1276167 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42de80ed23a80a2f3bf8d66f557c213cf33e6f829640114cf6b828fb3630f5a7`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:11b9b612de86698958d1edecf59c6b6d14a64426277cf83eb3503fc80ffc5cf8`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:latest` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:c40dcbc0ddd87cf540582d4a28fe81b720d9c96e0eb8727962b5950512e0cd64
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1904363 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e9cb6998533d4eb990afe09360d508433b669e4827ffcc5d498c1c71c9d053a6`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:ee2ef045a5584e0d07a030f4a942e1452a58b2c7323d80d519d64bcb753d9e8b`  
-		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
-		Size: 1.9 MB (1872238 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:e0a5fe2cbb92e4515d7020cbb26e77b300db3b64eb2134acf2f6a2e58d8bd1f5`  
-		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
-		Size: 32.1 KB (32125 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:latest` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:d99efe02535ef0bb992e9b450f680fa5d817f30721f291fc29bbd174b7a2b326
+$ docker pull composer@sha256:7aed8e2aa8f25cf0d3d74382c3b5cb89b275139c0b1b9e97b5111ed933ccd1dc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -16446,88 +13941,64 @@ CMD ["composer"]
 	-	`sha256:2387a44129d2147bd4e806bf369f3db92eb3ad3b6b8825c739db364b8baa4e26`  
 		Last Modified: Thu, 30 Nov 2023 22:49:56 GMT  
 		Size: 2.9 MB (2901006 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:463dfc43b4287670c76354cf1d002e077c0a4b8f41207fdbd96316d0f649fdd5`  
 		Last Modified: Thu, 30 Nov 2023 23:58:02 GMT  
 		Size: 2.5 MB (2524902 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8445d08981ee2b82e7069c3bf290f41039993039dd9740da05b6c962c368ea`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 1.3 KB (1261 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8472c3889e6c64cf9e26fe36cc30bf9e211560aea77f82e97443348cb5956b88`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4e1a31c7a08192627a7e02da4b1d5ea494d5c25269ca986f8d2e7a8ae2d9365d`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 12.5 MB (12452107 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:12b3a23b2108bae03e59ed5e203dc9570b4d69cb6e8636a1f35e442846def57e`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6e7f8f1640d5c681ec203b1bd556d520c628ec0d02e41a591d1198b185d0d667`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 14.6 MB (14638942 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2f208f61c3ca97f2ff11ccb123a8707e61ce0891b966e160aedc3ae93a69d284`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 2.4 KB (2446 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f1879be0a19ef9277d4703ff4b4dbb0d4024de7c53e76caa733c7b133fad64d`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 18.8 KB (18780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bb2315ee202f00dfc90d25f0019e13ab267d5d9c84a9ada4fc13590035d09813`  
 		Last Modified: Fri, 01 Dec 2023 09:39:57 GMT  
 		Size: 30.8 MB (30790072 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7e069e65f06574b9652900f22252f24ef797370c770991d922cf88c4b5b0cbce`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ca383e8df06b2554ccd85af350455d6be1073a19f9965a8c88af8957972f2c9`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 1.2 MB (1239427 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e0afcd24e350b50c6378d97ba33f8d8b0c9086e5d262cb35a90c60bf623a17f`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 420.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42313890877398637d9755a757b6621548a1673d4656533fe286eed6c65ccf58`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:latest` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:fb62872d7dfda6eb4445e7bc5030a29068fb20355bb50dd60fe6d9c179aa96ac
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1905709 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:58e3fce2a6a172981339752ba50a327610f0c04e862a976903659a3cf6b2eb0a`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:0aee3c51f1e5ced4bd16927cd5d2eb4d563929006a64e13e94f38f614567c26c`  
-		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
-		Size: 1.9 MB (1873584 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:358a023740b286ba13ba4d838bc585054ce794abe92a6d9773882d71a16b7db1`  
-		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
-		Size: 32.1 KB (32125 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:3cd112fa99e91935ffafe4588433782af5b1c43fb68e7566ef28392d21fd294e
+$ docker pull composer@sha256:e3325a9f20f6263fad888cc1ae71026ca65b2589b40be87349d8ace3127de3d3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -16606,88 +14077,64 @@ CMD ["composer"]
 	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
 		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
 		Size: 3.3 MB (3333033 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ec91cb5b5977bc2c77c932761c9cd04eda4b0df9636a46228a4c0af65ad1b4f3`  
 		Last Modified: Fri, 01 Dec 2023 00:40:05 GMT  
 		Size: 2.7 MB (2717190 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1563f945b2330cf35b9fc87a3f6456664dde2d6c4b6739047a9dd457f4a3d681`  
 		Last Modified: Fri, 01 Dec 2023 00:40:04 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f2549a9ef4a38d3afd713cc21e4de8fdf9a61d4d4f5b2897c0de403ec047f69a`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:285b1cbb8a2c86c2e2959b55b31fa9ac7abd053db302a937ce14d713aeaf8f44`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 12.5 MB (12452091 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42ac31d6bb70b19a698a7b74ae40261071bc6f22d09403fea931a7923ca8af18`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e6895913c4c7d243589b136d34c69cf54dc6e3aae7d5e785d8c35c570bb0e012`  
 		Last Modified: Fri, 01 Dec 2023 00:40:06 GMT  
 		Size: 17.1 MB (17056609 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1c9aea783aa0077ad1860c83cdbc65d3ad9547ba0c7694359f04efe829bec772`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 2.4 KB (2445 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f59963826a7f5193afec349b01fd624dd57a56e93881623c88faf7564007df02`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 18.7 KB (18729 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:083ab35f4c099a5c6f2fd6796eedcfbd32dd9419cee0c64ab606825964d4ed87`  
 		Last Modified: Fri, 01 Dec 2023 10:13:21 GMT  
 		Size: 32.9 MB (32888759 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:33f9642924941eef55ba6176cbfc4340e3e32ad0611f6b8dbbab9d16233c8efe`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1a3085b4166e63d4eda87eeaac166d798a8ffc64db83276111ae507deb737b79`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 1.3 MB (1303777 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7d2bc56ac4cd1ace1c0226d084090862e29926884dcbcbb21b50d69295c0d7f5`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f09172de9ba894fd728fc0f93fd130f6be7bc4d1f17e94e46d28dfe4fe0a15d`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:latest` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:5d269e5105d6c855e068a612439497ecb3a7e37ed3870f6e7040f9339bdc2fd6
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1905432 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3afb918b2f49abf898a7babac5fc8edc2f04cd7d5239953011a250ff44c6ec85`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:8b3dc90c0882d0351fbc860046e1abd4ff99c18530acf2fa201ad91ff069acde`  
-		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
-		Size: 1.9 MB (1873381 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:bc95859a64dc6476b57ed30d3fc411eb3a1e7df828c99219ff6d76201b7c687d`  
-		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
-		Size: 32.1 KB (32051 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:latest` - linux; 386
 
 ```console
-$ docker pull composer@sha256:cfae6cff7bbccc87fcc425439296b8df88a62bcec884b96c42e9557a82a2e48f
+$ docker pull composer@sha256:1e309b0dc14a896eff5392701cf98d1f0d6b00991cfb62c1e4d431e407097cea
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -16766,88 +14213,64 @@ CMD ["composer"]
 	-	`sha256:4966a8bd129b0a6adf93dc295a8fbe8f665d3194a684a5ce199c1c3596dbf3d9`  
 		Last Modified: Fri, 01 Dec 2023 02:04:18 GMT  
 		Size: 3.2 MB (3238831 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:786b6949c7da1fc85a439f51aa05ace6592ed6759802ad370ed74bc4f479828b`  
 		Last Modified: Fri, 01 Dec 2023 04:07:07 GMT  
 		Size: 2.7 MB (2723376 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:27aec508afba473c67b8d2ad4216ba2489f0e9f08768454183b11877384d8139`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 1.3 KB (1259 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a55ae0822cb02fa8febaedc0ea40b1c5b2823b47b9e9f3dc9436f506df98f121`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:81d34e95bca488cede02955576432a46cb1462e07cc769b9eb29f6fb2bf7dcbf`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 12.5 MB (12452099 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:03e703b9b578d877bbb5bb3e7217c5b01c4bd415d52c238a814d769297fe5970`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1b35603c3070a506bb74ab53e6ef71985df5ebcef52f3a030c3b1280fe221eb7`  
 		Last Modified: Fri, 01 Dec 2023 04:07:08 GMT  
 		Size: 17.3 MB (17338715 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:70c1d3cc41a87b1f20ce9166de4fa148c58e529e7a60946164e1ba7d5739156d`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ce144e8060ec62642abf24c41af8e07481873030aa04e8c8c13cc6067a54ee94`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 18.9 KB (18926 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d5e7634c298564bc162ac9ee1138503d2f03fad621a4071d55b33989f624dc5`  
 		Last Modified: Fri, 01 Dec 2023 10:00:41 GMT  
 		Size: 10.7 MB (10733320 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e128cbaba61d68a820c95bb7e672da3c4be595ddf782002fd3a23f91855d2a4a`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:5b86a0013a58aaca31f91ad120a7082412b42c097f23cb7d87149e9cefc44391`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 1.3 MB (1250023 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e458b4872a7720fe291d738e12678592cdc6eaee93d3f9868a486b297fd5514f`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0dd79f2de3d8ad5044fa0e3781d9955284b71c8e7dfa1909bcbada86f645d163`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:latest` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:23ea5d4d78de633a34f907808a044b2cd73b3320fdd0d40c80f924081fccf28f
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **375.8 KB (375830 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3ee0e166828f6a9bf5b9c1377c634c367f1c5e71e075c3b1a1004a4ef8ab07ae`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:6c0acae2cd5647a674634d4712ed4a3a90c72fb397e54b247ffb4c9136304970`  
-		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
-		Size: 343.8 KB (343803 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:7d066c6553fafabf5878a575ab5f0a69e517b6f6c0bb8e0573d92243bc32c9e6`  
-		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
-		Size: 32.0 KB (32027 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:latest` - linux; ppc64le
 
 ```console
-$ docker pull composer@sha256:7859b7480fb4a55d64200c482ac2feed57fb85a80069933d708c3ac7ada667b2
+$ docker pull composer@sha256:3b98b5c7588fe646696f93ca4dccec74f84a6ca823226bdd258749c54dc553d4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -16926,88 +14349,64 @@ CMD ["composer"]
 	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
 		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
 		Size: 3.3 MB (3348322 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f8cb9b4da64e0956e297ed583f04085128cdc4a68dcffa3a41c639319245c27`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 2.8 MB (2766423 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:89e2afe36ae984e44fa290115e1355ddb9ba0833dc70a7e3e1f1ed384492c3ec`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 1.3 KB (1267 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:233860698dd8a6e8c7a48373c7cb0a908fc5e1ad61c7ba6c0606e54226ed4c5d`  
 		Last Modified: Fri, 01 Dec 2023 00:53:03 GMT  
 		Size: 267.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f8fb69ca1d3e6a6c70e5d15e8c0a1588f2b439de9683f4874bd1b2f921e4232a`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 12.5 MB (12452085 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab6815e64bb3220dda4d71f42ca13e00d8da619677251611904fb38d6e6eb671`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 494.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1d29c3f41b3d1633a6f3b802d29f6d55acc40d2b97d36e015a15870ceb1bbaa8`  
 		Last Modified: Fri, 01 Dec 2023 00:53:05 GMT  
 		Size: 17.9 MB (17871055 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:eab7245ddd19f65a03b28a395a911f228d137eff133f0ce3855ac49d3bd3623e`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:60fa13b877a4b587f4bfbdfde83831719bc57b09c6a6b8b65c4430b883643393`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 18.7 KB (18731 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4d6f197c8706ed2d9ad1c3776ad0a38b89146398b9a1b9bbf515bb0d2d368959`  
 		Last Modified: Fri, 01 Dec 2023 09:59:33 GMT  
 		Size: 33.5 MB (33538629 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:deca4be23e5d94daeed68f294c98841e816fc5b4e0089108bb8ed8468563bbae`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:07cfd4de86f05595f1b2089da91990af1ee4c0d8431b0a1ccbcc32bdc99c468d`  
 		Last Modified: Fri, 01 Dec 2023 09:59:32 GMT  
 		Size: 1.4 MB (1360541 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c4f897522b54e0a8a4b24883b0acc49fb20b71463f0baabbefabdb16d8179ae4`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa680579b949a9ad87959e573a97329a2c0b3b8b2c8c2ce26cf147fc67fedf3d`  
 		Last Modified: Fri, 01 Dec 2023 09:53:18 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:latest` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:b3b10172d4f86c9e51fdbc651af88198633d3052ca0d5f11660b1df38f59be59
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1904215 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:71ec860158c782103802116e58a4a6a4cc0bdd154c969853a94b8b80a8e550ed`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:2a4df28672749b717053b0524671cf7cd2acb41123eda886fd10f327d1fef629`  
-		Last Modified: Fri, 01 Dec 2023 09:59:32 GMT  
-		Size: 1.9 MB (1872140 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:b1237f607c5ee8737767df41a9e064fb2f3e7c27040f6c3776990f3f42765703`  
-		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
-		Size: 32.1 KB (32075 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:latest` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:c8723ade172ccacd21e70f640463aea3c15489a0e6c716628da4aedb3e64960e
+$ docker pull composer@sha256:940b56b4b05dc2fbcb3489532038b0175e13a8973e599b05cd7c9f7f3c0cc7da
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -17086,111 +14485,80 @@ CMD ["composer"]
 	-	`sha256:2ea477e1c0c3db3337ee1d7c659f8c465021a65c036998ed3fa3b667d4b30153`  
 		Last Modified: Thu, 30 Nov 2023 22:42:52 GMT  
 		Size: 3.2 MB (3217454 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3aa5313d02d4fcc59703ea6bd09df7b0df122fc73121b0954b541c214229202e`  
 		Last Modified: Thu, 30 Nov 2023 23:47:29 GMT  
 		Size: 2.8 MB (2789878 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f082f983656d312447043a024c0fa5528e4055dbd73f4101ac38d1d2d3158ea`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 1.3 KB (1262 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:35feaf89a3d400114f4864637453e2e21cd9e7cb6a859699bd6272483f3a56ee`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b59844514cd33789360a3e46dbaff2cdae06b8cd8d18ee9449808c168be15f9`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 12.5 MB (12452093 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:090f8111976872dd0d1fdf290acf04666250d582cbba875706f055725bc42aff`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:398c5ca7cbe876f0f1cf80bef52d39ccd6949d12e9836af8af296afb1084c144`  
 		Last Modified: Thu, 30 Nov 2023 23:47:30 GMT  
 		Size: 16.0 MB (15956254 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa90b5b8b99ecde21a6c31cb4effceb2e48d33b4feeb73b3a12ec4545c63d32a`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3a82796f38dbb8536e9be3b686e7716a2916e08c53622bf88c55aa3ed67802d0`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 18.8 KB (18764 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c209132482d51247ed069f0572cfab5180a1053e1b2856ebe7bb2dbbbf308e38`  
 		Last Modified: Fri, 01 Dec 2023 09:39:28 GMT  
 		Size: 32.3 MB (32333843 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2be49705f63fb76f942d7d9c7808dd4d2b4dc2e25b081f1c7b9d534ca7a70477`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 259.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b47d6d2a354545d677ea5f936b51e59f70b29acdfdc50ec62b64e0a3cdc3ba12`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 1.3 MB (1281438 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a2fb49f94a90d11edb66671c1f2738062d06b75aabbcdb0363ff62ddfcba3582`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:487e5f325da8f544f6f85cc3d26b7b0462082dde8baf9df20043ee3d69225096`  
 		Last Modified: Fri, 01 Dec 2023 09:36:51 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:latest` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:6d5ab9c5f1f2114fe23ed529f5e6f6760daa7ab8707616d3a9a011cef46c5563
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903041 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e2e1de91b1308885121e1d600523fb24d8d0f7fa1b3e2448ffbc2a217d095353`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:f0c7db2b3e4f235d832a0302a344da6bd3822b385c4ab8dc26e0540c02e76d65`  
-		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
-		Size: 1.9 MB (1870991 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:59c025a59ef970bdd1384c67a97920153f4659d57cd2922bd2ef44854995650b`  
-		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
-		Size: 32.0 KB (32050 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `composer:lts`
 
 ```console
-$ docker pull composer@sha256:b2da40e35455ac648a8fe7b0554b0719c2257ec8a3f01032df309f5845268b26
+$ docker pull composer@sha256:0e7405d851433b5bb61c1783833b65e6b71fdab006c1029f42f2da1d670d53a5
 ```
 
--	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 14
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 7
 	-	linux; amd64
-	-	unknown; unknown
 	-	linux; arm variant v6
-	-	unknown; unknown
 	-	linux; arm variant v7
-	-	unknown; unknown
 	-	linux; arm64 variant v8
-	-	unknown; unknown
 	-	linux; 386
-	-	unknown; unknown
 	-	linux; ppc64le
-	-	unknown; unknown
 	-	linux; s390x
-	-	unknown; unknown
 
 ### `composer:lts` - linux; amd64
 
 ```console
-$ docker pull composer@sha256:50b73d913f447342fc7f29ae750e725aae6ad7d6846c52c05543ab3bae6323b9
+$ docker pull composer@sha256:4f01f7837be61daa4af42ad707a07cf5329c1e66c4a6f957fb846c10e349a92d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -17269,88 +14637,64 @@ CMD ["composer"]
 	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
 		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
 		Size: 3.4 MB (3402422 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8e26b626c27026d1938a0b6bd77e36b4113da4b7a1134df8d1aa9f49658b25f`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 2.7 MB (2679359 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:23427f6f19cc27aa3496173559d7fc30c2501d1d179a15b52ac1758cc1667d37`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:938ee652f0dd66c081c31e773163d4c3d8ec979f9ced384ed270cdc5fbcbe657`  
 		Last Modified: Fri, 01 Dec 2023 00:42:07 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8abe2aaf4047e9984223c8d63be88c09b7d447f8c9f77851aa06771c52bba05b`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 12.5 MB (12452105 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e06ec6f102433dfe7410990547f8d059d4c3e56455e35d7b4dfbfb96784486e1`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 492.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9ea984f05cf27a91a07a0b1f63adb1e6f9c4cb631325b5a07343b8faf75f7028`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 17.1 MB (17069834 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2e6c3ecb64ca025834e2eba225bd5d603742000e1d67407ba50cf0f60ea41a98`  
 		Last Modified: Fri, 01 Dec 2023 00:42:05 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d3b07fe920dd6973a44ea83074fd9125fe7d4774492d00c0ffefb9a04a847a29`  
 		Last Modified: Fri, 01 Dec 2023 00:42:04 GMT  
 		Size: 19.0 KB (18951 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:db476e3c025b598a275cc72e45c12e45db55e1df982d1e90e45f76b630e44f26`  
 		Last Modified: Fri, 01 Dec 2023 08:02:43 GMT  
 		Size: 32.5 MB (32533618 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:00b605206545e71c8d6637e233d08e5cae279512b88f4eedbb3dd9444948f3c1`  
 		Last Modified: Fri, 01 Dec 2023 08:02:41 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:202d4f1f6f3f44f5910a338fcd2f3dbd16c84a4e2a84a06dfba2a2040283f793`  
 		Last Modified: Fri, 01 Dec 2023 08:03:02 GMT  
 		Size: 1.2 MB (1201591 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e0234544925f6100045d097a30cd7e83c6326d489255d7667a563350ca1482e2`  
 		Last Modified: Fri, 01 Dec 2023 08:03:01 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:da794fb8adde70c735ff1b239c50a146264885bbc42438a27445bec6c74c7897`  
 		Last Modified: Fri, 01 Dec 2023 08:03:01 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:lts` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:77445f9ef7ca1b899154890f451bc1e35c34825ae869432d598cc42bdf6c1ae8
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903583 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9c4dbf02213813b8c81cc656960639b70139291c68b49e3c524d9adf9dcd63b3`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:e465358f3201e0929ab924d7fb7a279843002934867d334ca4219a44ff41e2f5`  
-		Last Modified: Fri, 01 Dec 2023 08:03:02 GMT  
-		Size: 1.9 MB (1873140 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:8385596ced1d3689b76faecc0fd58650099ab943f1e159cc7b8634138d42bafb`  
-		Last Modified: Fri, 01 Dec 2023 08:03:01 GMT  
-		Size: 30.4 KB (30443 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:lts` - linux; arm variant v6
 
 ```console
-$ docker pull composer@sha256:b804d92294f96cc394d670e95de04867d9f2b5a772003af0451e4f79cf01e09c
+$ docker pull composer@sha256:a05193a8a7a387c0cc526f3dad7e39abbb773b5164427291b8f62a52d99e1e21
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -17429,88 +14773,64 @@ CMD ["composer"]
 	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
 		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
 		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1ad3f4bb45cafc3a0c4349f9564390ff0fe5c2a3dc4287f0ddf3de8a86dcbb66`  
 		Last Modified: Fri, 01 Dec 2023 00:15:00 GMT  
 		Size: 2.7 MB (2685809 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a06cb8c5272936441cf9c53173eed2af740b588b3a9d8bbbb0b6565f38005e36`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c6156dbc484960b6656a156d5d82d973371555039e45046b37e9af1cbfec8569`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:66811c19a32e40a429b8ba817b3ceb6493496ebd20655f68d5a7ca3844b6c96c`  
 		Last Modified: Fri, 01 Dec 2023 00:14:59 GMT  
 		Size: 12.5 MB (12452097 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4954b5c64e0b15f09646882302df3b0ee246ee32b00519bd4e89f052587d473a`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:889affb1cad3094dce99e0b6c7f8c737a0319cf2a1a9201f97fb1967478162fd`  
 		Last Modified: Fri, 01 Dec 2023 00:15:01 GMT  
 		Size: 15.7 MB (15657131 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:b1b4a6a047cfe6a394007eb70b0c03f70ee3d7e9447288d47f549224f614aa2f`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 2.4 KB (2448 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e71e5e0f24e7b0508ad3d6798d964951c64d5fd451467d129a769807abbb8067`  
 		Last Modified: Fri, 01 Dec 2023 00:14:57 GMT  
 		Size: 18.8 KB (18767 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ae4356a5b2c65b1e0f267a80bfe2a0ef3872dd9dd2b6d8f45703247b88fc2e13`  
 		Last Modified: Fri, 01 Dec 2023 11:50:53 GMT  
 		Size: 31.3 MB (31290430 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3019528382efe80e087e7475c0cbe6d2be762ace22b13332601422066b7f8f9c`  
 		Last Modified: Fri, 01 Dec 2023 11:50:52 GMT  
 		Size: 256.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8bc5efb12bc235b4dac72cdd02d5f8f5fb0c6ba6ab9b7deee6e4213cf8bed4df`  
 		Last Modified: Fri, 01 Dec 2023 11:51:11 GMT  
 		Size: 1.2 MB (1157780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3d763cca60504490b4d7da24daf58ae929bdbfe1d516844c585cea5fe453d1f4`  
 		Last Modified: Fri, 01 Dec 2023 11:51:10 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:13e8ee4918c4b9d2541c79bd5acf1264981a782c7b2662d52e5ce17e815189c5`  
 		Last Modified: Fri, 01 Dec 2023 11:51:10 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:lts` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:5af04fb00d1e4bf014ea432ef2690dd39baee492abc9b1963b4658b1f8389d05
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902603 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9b60a8841bfa6e1dec0ebb42f0b1556c7245c49eb7ccbbd5e1966e5657f4d666`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:4b043e2f92fa9f9e7e5e63af5d9e8722cdf74554325a8181a18dd3c93c28097f`  
-		Last Modified: Fri, 01 Dec 2023 11:51:10 GMT  
-		Size: 1.9 MB (1872090 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:1cad777c6e81503f51591e48af96ee3cbe7fe129c00a91336aaeba7020e59002`  
-		Last Modified: Fri, 01 Dec 2023 11:51:10 GMT  
-		Size: 30.5 KB (30513 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:lts` - linux; arm variant v7
 
 ```console
-$ docker pull composer@sha256:572085a5ac4dfaffe25b4b2cdb886239ed89d3847b1fcac4a32fa6b4cda6bc47
+$ docker pull composer@sha256:d01711f19526391dd097ca99b0c8cf13bf2d7f8f6e348a20d011434b368afcc9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -17589,88 +14909,64 @@ CMD ["composer"]
 	-	`sha256:2387a44129d2147bd4e806bf369f3db92eb3ad3b6b8825c739db364b8baa4e26`  
 		Last Modified: Thu, 30 Nov 2023 22:49:56 GMT  
 		Size: 2.9 MB (2901006 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:463dfc43b4287670c76354cf1d002e077c0a4b8f41207fdbd96316d0f649fdd5`  
 		Last Modified: Thu, 30 Nov 2023 23:58:02 GMT  
 		Size: 2.5 MB (2524902 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab8445d08981ee2b82e7069c3bf290f41039993039dd9740da05b6c962c368ea`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 1.3 KB (1261 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8472c3889e6c64cf9e26fe36cc30bf9e211560aea77f82e97443348cb5956b88`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4e1a31c7a08192627a7e02da4b1d5ea494d5c25269ca986f8d2e7a8ae2d9365d`  
 		Last Modified: Thu, 30 Nov 2023 23:58:00 GMT  
 		Size: 12.5 MB (12452107 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:12b3a23b2108bae03e59ed5e203dc9570b4d69cb6e8636a1f35e442846def57e`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6e7f8f1640d5c681ec203b1bd556d520c628ec0d02e41a591d1198b185d0d667`  
 		Last Modified: Thu, 30 Nov 2023 23:58:01 GMT  
 		Size: 14.6 MB (14638942 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2f208f61c3ca97f2ff11ccb123a8707e61ce0891b966e160aedc3ae93a69d284`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 2.4 KB (2446 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:6f1879be0a19ef9277d4703ff4b4dbb0d4024de7c53e76caa733c7b133fad64d`  
 		Last Modified: Thu, 30 Nov 2023 23:57:59 GMT  
 		Size: 18.8 KB (18780 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:bb2315ee202f00dfc90d25f0019e13ab267d5d9c84a9ada4fc13590035d09813`  
 		Last Modified: Fri, 01 Dec 2023 09:39:57 GMT  
 		Size: 30.8 MB (30790072 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:7e069e65f06574b9652900f22252f24ef797370c770991d922cf88c4b5b0cbce`  
 		Last Modified: Fri, 01 Dec 2023 09:39:56 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:cc4b7e6555d5e973ad62e092fb6729682a42e41c3a904a825d6f0527f8c362be`  
 		Last Modified: Fri, 01 Dec 2023 09:40:15 GMT  
 		Size: 1.1 MB (1122012 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:137d66165f6c12375c14ae1da4dc1816c62ee02b8ba08ab24c199cb87e58729c`  
 		Last Modified: Fri, 01 Dec 2023 09:40:14 GMT  
 		Size: 421.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:31a7147f9718e7026c31f01a616e9fd48275ff5b46fafaddb047fb62e41feeed`  
 		Last Modified: Fri, 01 Dec 2023 09:40:14 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:lts` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:abc54b9a27010d5b6f814baf45d28c928334d394f0d9b2b71b4e6789155fb374
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903950 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6c78e6c0ad7188a043df295972982f1395e91c41d76499c2d21d03205b12e55a`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:9778defe8fd9532be5c9c4f9d6c53002eb7fede62b1be06a9bfbb049a604c398`  
-		Last Modified: Fri, 01 Dec 2023 09:40:15 GMT  
-		Size: 1.9 MB (1873436 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:9963d1f8a5cf76a44ba24e5d04292f70ca5b387045de043d5ab8fee22f04f4e9`  
-		Last Modified: Fri, 01 Dec 2023 09:40:14 GMT  
-		Size: 30.5 KB (30514 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:lts` - linux; arm64 variant v8
 
 ```console
-$ docker pull composer@sha256:f5f9f4d1570cbda6c3b62dfaff5634481340674a583b271ed97b566951bd3440
+$ docker pull composer@sha256:b79b22deae618dd9846ddc96621a2c06d158037a15cd725c72438963382aa46e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -17749,88 +15045,64 @@ CMD ["composer"]
 	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
 		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
 		Size: 3.3 MB (3333033 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ec91cb5b5977bc2c77c932761c9cd04eda4b0df9636a46228a4c0af65ad1b4f3`  
 		Last Modified: Fri, 01 Dec 2023 00:40:05 GMT  
 		Size: 2.7 MB (2717190 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1563f945b2330cf35b9fc87a3f6456664dde2d6c4b6739047a9dd457f4a3d681`  
 		Last Modified: Fri, 01 Dec 2023 00:40:04 GMT  
 		Size: 1.3 KB (1263 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f2549a9ef4a38d3afd713cc21e4de8fdf9a61d4d4f5b2897c0de403ec047f69a`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:285b1cbb8a2c86c2e2959b55b31fa9ac7abd053db302a937ce14d713aeaf8f44`  
 		Last Modified: Fri, 01 Dec 2023 00:40:03 GMT  
 		Size: 12.5 MB (12452091 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:42ac31d6bb70b19a698a7b74ae40261071bc6f22d09403fea931a7923ca8af18`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e6895913c4c7d243589b136d34c69cf54dc6e3aae7d5e785d8c35c570bb0e012`  
 		Last Modified: Fri, 01 Dec 2023 00:40:06 GMT  
 		Size: 17.1 MB (17056609 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1c9aea783aa0077ad1860c83cdbc65d3ad9547ba0c7694359f04efe829bec772`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 2.4 KB (2445 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f59963826a7f5193afec349b01fd624dd57a56e93881623c88faf7564007df02`  
 		Last Modified: Fri, 01 Dec 2023 00:40:02 GMT  
 		Size: 18.7 KB (18729 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:083ab35f4c099a5c6f2fd6796eedcfbd32dd9419cee0c64ab606825964d4ed87`  
 		Last Modified: Fri, 01 Dec 2023 10:13:21 GMT  
 		Size: 32.9 MB (32888759 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:33f9642924941eef55ba6176cbfc4340e3e32ad0611f6b8dbbab9d16233c8efe`  
 		Last Modified: Fri, 01 Dec 2023 10:13:19 GMT  
 		Size: 257.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:680bf1fa4aab6aac10d319f7e8cbc2336dfcff9d06567641168e3844c6c87e08`  
 		Last Modified: Fri, 01 Dec 2023 10:13:39 GMT  
 		Size: 1.2 MB (1186166 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8369e20ab18170688748ad88763ad1a5a67872ae76f9061f328d121c830cee4a`  
 		Last Modified: Fri, 01 Dec 2023 10:13:38 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e9fdeef8bcc6f564e0af636ccdba2e2afff8ce1eea4bfad494660e1542ac4065`  
 		Last Modified: Fri, 01 Dec 2023 10:13:38 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:lts` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:e5eb9b4d4a1be7db61cd9227f5efc9eb69176e9034fb139ebd661b381c5244f7
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1903679 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:faa5d9e207a63be0244e51185bc1dcd426c38027c9ff3b369a389eee2c282d1f`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:848fea65b9020c00e3dfe1ad983dc0b3c0896ba4795c0521e4b81e9bd356d9f5`  
-		Last Modified: Fri, 01 Dec 2023 10:13:39 GMT  
-		Size: 1.9 MB (1873236 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:a2361fcad7766adad4bb49ce19a55bfc099665894725c850bf2f91ba1a01e0b2`  
-		Last Modified: Fri, 01 Dec 2023 10:13:38 GMT  
-		Size: 30.4 KB (30443 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:lts` - linux; 386
 
 ```console
-$ docker pull composer@sha256:6d49f5fe5806d9dd6dba20cf893f41a341a32cfefe416cafa2e8611358a640c0
+$ docker pull composer@sha256:49fd2795fd329b0b483f8fe15762d2b15d108e27ec26a726f665a13fea89a1f6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -17909,88 +15181,64 @@ CMD ["composer"]
 	-	`sha256:4966a8bd129b0a6adf93dc295a8fbe8f665d3194a684a5ce199c1c3596dbf3d9`  
 		Last Modified: Fri, 01 Dec 2023 02:04:18 GMT  
 		Size: 3.2 MB (3238831 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:786b6949c7da1fc85a439f51aa05ace6592ed6759802ad370ed74bc4f479828b`  
 		Last Modified: Fri, 01 Dec 2023 04:07:07 GMT  
 		Size: 2.7 MB (2723376 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:27aec508afba473c67b8d2ad4216ba2489f0e9f08768454183b11877384d8139`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 1.3 KB (1259 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:a55ae0822cb02fa8febaedc0ea40b1c5b2823b47b9e9f3dc9436f506df98f121`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 268.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:81d34e95bca488cede02955576432a46cb1462e07cc769b9eb29f6fb2bf7dcbf`  
 		Last Modified: Fri, 01 Dec 2023 04:07:05 GMT  
 		Size: 12.5 MB (12452099 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:03e703b9b578d877bbb5bb3e7217c5b01c4bd415d52c238a814d769297fe5970`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 491.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1b35603c3070a506bb74ab53e6ef71985df5ebcef52f3a030c3b1280fe221eb7`  
 		Last Modified: Fri, 01 Dec 2023 04:07:08 GMT  
 		Size: 17.3 MB (17338715 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:70c1d3cc41a87b1f20ce9166de4fa148c58e529e7a60946164e1ba7d5739156d`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ce144e8060ec62642abf24c41af8e07481873030aa04e8c8c13cc6067a54ee94`  
 		Last Modified: Fri, 01 Dec 2023 04:07:03 GMT  
 		Size: 18.9 KB (18926 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:9d5e7634c298564bc162ac9ee1138503d2f03fad621a4071d55b33989f624dc5`  
 		Last Modified: Fri, 01 Dec 2023 10:00:41 GMT  
 		Size: 10.7 MB (10733320 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e128cbaba61d68a820c95bb7e672da3c4be595ddf782002fd3a23f91855d2a4a`  
 		Last Modified: Fri, 01 Dec 2023 10:00:40 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:49875ac1e5e4f6e85a64c35830debef6274c5b38a12e85972ae6f8dbafb0565e`  
 		Last Modified: Fri, 01 Dec 2023 10:00:57 GMT  
 		Size: 1.1 MB (1134049 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:078ddcb75238446f2b8ba1939e0bdedad90c4f6c25f912b0be2a67820251dff4`  
 		Last Modified: Fri, 01 Dec 2023 10:00:57 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:e8ecf7226f0fc20cdb7e19c7929c6e706b3aa7ed81e92ae284e45363f4ac57e7`  
 		Last Modified: Fri, 01 Dec 2023 10:00:57 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:lts` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:9c93b93a86bc0bd1613acfa4072e16bdca60643109a37ed97211645cdb310bba
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **374.1 KB (374081 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5487e2e35bed7bbf5f28b5ab13ffaf8b1de8f8bf1172bba7fc1531b481e917dc`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:0a44e8f188e154a85248b7ee0fee55b206c3eff3e00f7ef7f2253c3704da9936`  
-		Last Modified: Fri, 01 Dec 2023 10:00:57 GMT  
-		Size: 343.7 KB (343660 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:c476d34c53a279d065f30b882815f8143e42664fa650084b2a08c4b5c8dd7bae`  
-		Last Modified: Fri, 01 Dec 2023 10:00:57 GMT  
-		Size: 30.4 KB (30421 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:lts` - linux; ppc64le
 
 ```console
-$ docker pull composer@sha256:1ec2caeefec466a1ad5897f600b4d7aa2df699e37321fb16a5287ded3c35dba8
+$ docker pull composer@sha256:c57d9f342223df0e5049a36416f12631daf57e7c1376af0945c99b77f23b8cab
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -18069,88 +15317,64 @@ CMD ["composer"]
 	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
 		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
 		Size: 3.3 MB (3348322 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f8cb9b4da64e0956e297ed583f04085128cdc4a68dcffa3a41c639319245c27`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 2.8 MB (2766423 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:89e2afe36ae984e44fa290115e1355ddb9ba0833dc70a7e3e1f1ed384492c3ec`  
 		Last Modified: Fri, 01 Dec 2023 00:53:04 GMT  
 		Size: 1.3 KB (1267 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:233860698dd8a6e8c7a48373c7cb0a908fc5e1ad61c7ba6c0606e54226ed4c5d`  
 		Last Modified: Fri, 01 Dec 2023 00:53:03 GMT  
 		Size: 267.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:f8fb69ca1d3e6a6c70e5d15e8c0a1588f2b439de9683f4874bd1b2f921e4232a`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 12.5 MB (12452085 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:ab6815e64bb3220dda4d71f42ca13e00d8da619677251611904fb38d6e6eb671`  
 		Last Modified: Fri, 01 Dec 2023 00:53:02 GMT  
 		Size: 494.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:1d29c3f41b3d1633a6f3b802d29f6d55acc40d2b97d36e015a15870ceb1bbaa8`  
 		Last Modified: Fri, 01 Dec 2023 00:53:05 GMT  
 		Size: 17.9 MB (17871055 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:eab7245ddd19f65a03b28a395a911f228d137eff133f0ce3855ac49d3bd3623e`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:60fa13b877a4b587f4bfbdfde83831719bc57b09c6a6b8b65c4430b883643393`  
 		Last Modified: Fri, 01 Dec 2023 00:53:01 GMT  
 		Size: 18.7 KB (18731 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:4d6f197c8706ed2d9ad1c3776ad0a38b89146398b9a1b9bbf515bb0d2d368959`  
 		Last Modified: Fri, 01 Dec 2023 09:59:33 GMT  
 		Size: 33.5 MB (33538629 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:deca4be23e5d94daeed68f294c98841e816fc5b4e0089108bb8ed8468563bbae`  
 		Last Modified: Fri, 01 Dec 2023 09:59:31 GMT  
 		Size: 258.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:430fad61a369bbdc2d62b85aa1a0ada3955962bc04ad5b0c2dd4a4d6939cac8e`  
 		Last Modified: Fri, 01 Dec 2023 09:59:52 GMT  
 		Size: 1.2 MB (1242967 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:d6c5fc56ff9427dd36419df17fd28b2cb3688e4acc0b64f6a2b188e15f8f102e`  
 		Last Modified: Fri, 01 Dec 2023 09:59:51 GMT  
 		Size: 419.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:da8315c02acab573f88aeb098ed2d1fdbf294e4b2937a3ad5995bee8c02d69f8`  
 		Last Modified: Fri, 01 Dec 2023 09:59:51 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:lts` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:9269c9bc3bde739d7872d6a0b191756a4ebba9cb2d13faae3b518eaaf6dd4852
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1902458 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0b975d9f55a1d8e85ef4cb9bda252a0bdee29cc649e1b2988c22431ccf256ae0`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:9713398f9e43ae79981aa12f48214f61bd132c2f4d08ab98da34430e79aeb8fb`  
-		Last Modified: Fri, 01 Dec 2023 09:59:52 GMT  
-		Size: 1.9 MB (1871993 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:624f6e8078c7fad027ef4c75a316e92a99dc7e8d70a7dcef4dfb678636c3fe27`  
-		Last Modified: Fri, 01 Dec 2023 09:59:51 GMT  
-		Size: 30.5 KB (30465 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `composer:lts` - linux; s390x
 
 ```console
-$ docker pull composer@sha256:53621dd87573783ca3fb4dc146eb0c11d0f6060f60daf8d5331eba3031bc16f6
+$ docker pull composer@sha256:e7287def461abb0319c6785adaa84514697a168041fe4675a1c16da0a57094b2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -18229,80 +15453,56 @@ CMD ["composer"]
 	-	`sha256:2ea477e1c0c3db3337ee1d7c659f8c465021a65c036998ed3fa3b667d4b30153`  
 		Last Modified: Thu, 30 Nov 2023 22:42:52 GMT  
 		Size: 3.2 MB (3217454 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3aa5313d02d4fcc59703ea6bd09df7b0df122fc73121b0954b541c214229202e`  
 		Last Modified: Thu, 30 Nov 2023 23:47:29 GMT  
 		Size: 2.8 MB (2789878 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0f082f983656d312447043a024c0fa5528e4055dbd73f4101ac38d1d2d3158ea`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 1.3 KB (1262 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:35feaf89a3d400114f4864637453e2e21cd9e7cb6a859699bd6272483f3a56ee`  
 		Last Modified: Thu, 30 Nov 2023 23:47:28 GMT  
 		Size: 269.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:8b59844514cd33789360a3e46dbaff2cdae06b8cd8d18ee9449808c168be15f9`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 12.5 MB (12452093 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:090f8111976872dd0d1fdf290acf04666250d582cbba875706f055725bc42aff`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 490.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:398c5ca7cbe876f0f1cf80bef52d39ccd6949d12e9836af8af296afb1084c144`  
 		Last Modified: Thu, 30 Nov 2023 23:47:30 GMT  
 		Size: 16.0 MB (15956254 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:fa90b5b8b99ecde21a6c31cb4effceb2e48d33b4feeb73b3a12ec4545c63d32a`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 2.4 KB (2449 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3a82796f38dbb8536e9be3b686e7716a2916e08c53622bf88c55aa3ed67802d0`  
 		Last Modified: Thu, 30 Nov 2023 23:47:27 GMT  
 		Size: 18.8 KB (18764 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:c209132482d51247ed069f0572cfab5180a1053e1b2856ebe7bb2dbbbf308e38`  
 		Last Modified: Fri, 01 Dec 2023 09:39:28 GMT  
 		Size: 32.3 MB (32333843 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:2be49705f63fb76f942d7d9c7808dd4d2b4dc2e25b081f1c7b9d534ca7a70477`  
 		Last Modified: Fri, 01 Dec 2023 09:39:27 GMT  
 		Size: 259.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3cbb92d234a1eb1c896b19138d6191dff915c62df74203f14b3ce3628c3acbc5`  
 		Last Modified: Fri, 01 Dec 2023 09:39:42 GMT  
 		Size: 1.2 MB (1163861 bytes)  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:3b2ec300be7b660e2dc97ac8b0ddcf406607c84b42af30c78eb1f1c693a5bbd8`  
 		Last Modified: Fri, 01 Dec 2023 09:39:42 GMT  
 		Size: 420.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:702b22505212dff30db39a0111b0be13d5c38c63448b3556277ff96c0687e064`  
 		Last Modified: Fri, 01 Dec 2023 09:39:42 GMT  
 		Size: 93.0 B  
-		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-
-### `composer:lts` - unknown; unknown
-
-```console
-$ docker pull composer@sha256:b862e3ef54086b5b07cb7ea8cb9baa793233749d63d4016513ae6888a46b73b8
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.9 MB (1901289 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:aa100f12394ba2f8d36b5a3fdf25fc3ef1558508ebeea2fbe1412d49781fe72a`
-
-```dockerfile
-```
-
--	Layers:
-	-	`sha256:773af0e10de90d0db9fb0a69af5f0c2dfd508fe40656b8cf64de793ad94bd6d2`  
-		Last Modified: Fri, 01 Dec 2023 09:39:42 GMT  
-		Size: 1.9 MB (1870846 bytes)  
-		MIME: application/vnd.in-toto+json
-	-	`sha256:f70c5841863548042c4c6be3ab892505e90b9f9dcfaa99b18b1733b797cecfab`  
-		Last Modified: Fri, 01 Dec 2023 09:39:42 GMT  
-		Size: 30.4 KB (30443 bytes)  
-		MIME: application/vnd.in-toto+json
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
