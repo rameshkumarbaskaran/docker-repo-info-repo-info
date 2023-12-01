@@ -1,7 +1,7 @@
 ## `bonita:latest`
 
 ```console
-$ docker pull bonita@sha256:4f840e2380fb99ef6965a2b6a62e95ba1f714213228150978dabce9604f7ed42
+$ docker pull bonita@sha256:2143218365649faa55591881b3f63ad39461c3b392add94fdef722b90889e7da
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -267,126 +267,126 @@ CMD ["/opt/bonita/server/bin/catalina.sh" "run"]
 ### `bonita:latest` - linux; ppc64le
 
 ```console
-$ docker pull bonita@sha256:5066473d9ec678015ebba3597ca39bca90237660d5f95b27ece3a01151ec5284
+$ docker pull bonita@sha256:a5c237bcece8e9b606a8b0c7294b3ee127239e9f95fa53c1a874fc1e9782144d
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **188.1 MB (188063531 bytes)**  
+-	Total Size: **188.1 MB (188065296 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:14c8314ac452e558630bc1ef00eb120becbef4def6ec7ce78eb17bbd4654884e`
+-	Image ID: `sha256:41d29449c9c83de9b066b19f038a2c6a9743f64575fb284c49120eeb88c2ae50`
 -	Entrypoint: `["\/opt\/files\/startup.sh"]`
 -	Default Command: `["\/opt\/bonita\/server\/bin\/catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 28 Sep 2023 21:22:20 GMT
-ADD file:a720acb99214334c501363d564d8cae9b90d062ccf8a24a5ba1c831545b783dd in / 
-# Thu, 28 Sep 2023 21:22:21 GMT
+# Thu, 30 Nov 2023 23:19:04 GMT
+ADD file:3450a1687b552498a987f87cb844b7f597c7181d7c3d31943d7b3036d5300d5e in / 
+# Thu, 30 Nov 2023 23:19:05 GMT
 CMD ["/bin/sh"]
-# Thu, 16 Nov 2023 20:17:33 GMT
+# Fri, 01 Dec 2023 05:37:11 GMT
 LABEL maintainer=Bonitasoft Runtime team <rd.engine@bonitasoft.com>
-# Thu, 16 Nov 2023 20:17:42 GMT
+# Fri, 01 Dec 2023 05:37:34 GMT
 RUN apk add --no-cache tzdata curl unzip bash su-exec jattach openjdk11-jre gnupg
-# Thu, 16 Nov 2023 20:17:46 GMT
+# Fri, 01 Dec 2023 05:37:46 GMT
 RUN mkdir /opt/custom-init.d/
-# Thu, 16 Nov 2023 20:17:47 GMT
+# Fri, 01 Dec 2023 05:37:59 GMT
 RUN addgroup -S -g 1000 bonita  && adduser -u 1000 -S  -G bonita -h /opt/bonita/ -s /sbin/nologin  bonita
-# Thu, 16 Nov 2023 20:17:48 GMT
+# Fri, 01 Dec 2023 05:38:02 GMT
 ARG BONITA_VERSION
-# Thu, 16 Nov 2023 20:17:48 GMT
+# Fri, 01 Dec 2023 05:38:06 GMT
 ARG BRANDING_VERSION
-# Thu, 16 Nov 2023 20:17:49 GMT
+# Fri, 01 Dec 2023 05:38:17 GMT
 ARG BONITA_SHA256
-# Thu, 16 Nov 2023 20:17:49 GMT
+# Fri, 01 Dec 2023 05:38:19 GMT
 ARG BASE_URL
-# Thu, 16 Nov 2023 20:17:50 GMT
+# Fri, 01 Dec 2023 05:38:20 GMT
 ARG BONITA_URL
-# Thu, 16 Nov 2023 20:17:50 GMT
+# Fri, 01 Dec 2023 05:38:23 GMT
 ENV BONITA_VERSION=9.0.0
-# Thu, 16 Nov 2023 20:17:51 GMT
+# Fri, 01 Dec 2023 05:38:31 GMT
 ENV BRANDING_VERSION=2023.2-u0
-# Thu, 16 Nov 2023 20:17:52 GMT
+# Fri, 01 Dec 2023 05:38:38 GMT
 ENV BONITA_SHA256=c37be3ca64a07810609c97f75c47acb7fea2d29bafff181b447987514b53d140
-# Thu, 16 Nov 2023 20:17:52 GMT
+# Fri, 01 Dec 2023 05:38:39 GMT
 ENV ZIP_FILE=BonitaCommunity-2023.2-u0.zip
-# Thu, 16 Nov 2023 20:17:52 GMT
+# Fri, 01 Dec 2023 05:38:40 GMT
 ENV BASE_URL=https://github.com/bonitasoft/bonita-platform-releases/releases/download
-# Thu, 16 Nov 2023 20:17:53 GMT
+# Fri, 01 Dec 2023 05:38:40 GMT
 ENV BONITA_URL=https://github.com/bonitasoft/bonita-platform-releases/releases/download/2023.2-u0/BonitaCommunity-2023.2-u0.zip
-# Thu, 16 Nov 2023 20:17:54 GMT
+# Fri, 01 Dec 2023 05:38:44 GMT
 RUN mkdir /opt/files
-# Thu, 16 Nov 2023 20:17:54 GMT
+# Fri, 01 Dec 2023 05:38:46 GMT
 COPY dir:6f895475e79bd870a1a9724f932a63f7aedb797824886234839cf6eaa2841312 in /opt/files 
-# Thu, 16 Nov 2023 20:18:03 GMT
+# Fri, 01 Dec 2023 05:39:10 GMT
 RUN if [ -f "/opt/files/BonitaCommunity-${BRANDING_VERSION}.zip" ]; then echo "File already present in /opt/files"; else curl -fsSL ${BONITA_URL} -o /opt/files/BonitaCommunity-${BRANDING_VERSION}.zip   && echo "$BONITA_SHA256 */opt/files/$ZIP_FILE" | sha256sum -c - ; fi   && unzip -q /opt/files/BonitaCommunity-${BRANDING_VERSION}.zip -d /opt/bonita/   && mv /opt/bonita/BonitaCommunity-${BRANDING_VERSION}/* /opt/bonita   && rmdir /opt/bonita/BonitaCommunity-${BRANDING_VERSION}   && rm -f /opt/files/BonitaCommunity-${BRANDING_VERSION}.zip   && mkdir -p /opt/bonita/conf/logs/   && mkdir -p /opt/bonita/logs/   && mv /opt/files/log4j2/log4j2-appenders.xml /opt/bonita/conf/logs/   && mv /opt/bonita/server/conf/log4j2-loggers.xml /opt/bonita/conf/logs/   && chown -R bonita:bonita /opt/bonita   && chmod go+w /opt/   && chmod -R +rX /opt   && chmod go+w /opt/bonita   && chmod 777 /opt/bonita/server/logs   && chmod 777 /opt/bonita/logs/   && chmod 777 /opt/bonita/server/temp   && chmod 777 /opt/bonita/server/work   && chmod -R go+w /opt/bonita/server/conf   && chmod -R go+w /opt/bonita/server/bin   && chmod -R go+w /opt/bonita/server/lib/bonita   && chmod -R go+w /opt/bonita/setup
-# Thu, 16 Nov 2023 20:18:05 GMT
+# Fri, 01 Dec 2023 05:39:24 GMT
 ENV HTTP_API=false
-# Thu, 16 Nov 2023 20:18:05 GMT
+# Fri, 01 Dec 2023 05:39:26 GMT
 ENV HTTP_API_USERNAME=http-api
-# Thu, 16 Nov 2023 20:18:06 GMT
+# Fri, 01 Dec 2023 05:39:27 GMT
 ENV HTTP_API_PASSWORD=
-# Thu, 16 Nov 2023 20:18:06 GMT
+# Fri, 01 Dec 2023 05:39:29 GMT
 ENV MONITORING_USERNAME=monitoring
-# Thu, 16 Nov 2023 20:18:07 GMT
+# Fri, 01 Dec 2023 05:39:30 GMT
 ENV MONITORING_PASSWORD=mon1tor1ng_adm1n
-# Thu, 16 Nov 2023 20:18:07 GMT
+# Fri, 01 Dec 2023 05:39:30 GMT
 ENV JMX_REMOTE_ACCESS=false
-# Thu, 16 Nov 2023 20:18:08 GMT
+# Fri, 01 Dec 2023 05:39:34 GMT
 ENV REMOTE_IP_VALVE_ENABLED=false
-# Thu, 16 Nov 2023 20:18:08 GMT
+# Fri, 01 Dec 2023 05:39:37 GMT
 ENV ACCESSLOGS_STDOUT_ENABLED=false
-# Thu, 16 Nov 2023 20:18:09 GMT
+# Fri, 01 Dec 2023 05:39:39 GMT
 ENV ACCESSLOGS_FILES_ENABLED=false
-# Thu, 16 Nov 2023 20:18:09 GMT
+# Fri, 01 Dec 2023 05:39:40 GMT
 ENV ACCESSLOGS_PATH=/opt/bonita/logs
-# Thu, 16 Nov 2023 20:18:10 GMT
+# Fri, 01 Dec 2023 05:39:41 GMT
 ENV ACCESSLOGS_PATH_APPEND_HOSTNAME=false
-# Thu, 16 Nov 2023 20:18:11 GMT
+# Fri, 01 Dec 2023 05:39:43 GMT
 ENV ACCESSLOGS_MAX_DAYS=30
-# Thu, 16 Nov 2023 20:18:11 GMT
+# Fri, 01 Dec 2023 05:39:44 GMT
 ENV HTTP_MAX_THREADS=20
-# Thu, 16 Nov 2023 20:18:11 GMT
+# Fri, 01 Dec 2023 05:39:45 GMT
 COPY dir:521b895ad8a8708c79537daa0d77e6bec7578da53370df65b17697ee0035eee6 in /opt/templates 
-# Thu, 16 Nov 2023 20:18:12 GMT
+# Fri, 01 Dec 2023 05:39:48 GMT
 VOLUME [/opt/bonita/conf/logs]
-# Thu, 16 Nov 2023 20:18:12 GMT
+# Fri, 01 Dec 2023 05:39:49 GMT
 EXPOSE 8080 9000
-# Thu, 16 Nov 2023 20:18:12 GMT
+# Fri, 01 Dec 2023 05:39:50 GMT
 ENTRYPOINT ["/opt/files/startup.sh"]
-# Thu, 16 Nov 2023 20:18:13 GMT
+# Fri, 01 Dec 2023 05:39:53 GMT
 CMD ["/opt/bonita/server/bin/catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:cd37f9856024d6685ac0233823aded690551c5872d6a27699a96c6a479d20f6f`  
-		Last Modified: Thu, 28 Sep 2023 21:23:43 GMT  
-		Size: 3.3 MB (3346508 bytes)  
+	-	`sha256:4e13780adf2776477b14ef9c0f4f563f820a2fde166d472218037b979e84d31a`  
+		Last Modified: Thu, 30 Nov 2023 23:20:01 GMT  
+		Size: 3.3 MB (3348322 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cc109f0f34b7c2982e8fe42cce20c593ca41330d269120ab9fe629bc8da82844`  
-		Last Modified: Thu, 16 Nov 2023 20:19:35 GMT  
-		Size: 64.5 MB (64529532 bytes)  
+	-	`sha256:1961607fe5674a8c1d805e44043c42bc4d67207e8faa4682b39b0c49b43310e0`  
+		Last Modified: Fri, 01 Dec 2023 05:41:46 GMT  
+		Size: 64.5 MB (64529445 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5e8184a0e561735d093449c5fa715c15fb59139344a9e868a3574ccd7aeb48b`  
-		Last Modified: Thu, 16 Nov 2023 20:19:25 GMT  
+	-	`sha256:d614eed5744f8547076db82ed976402325dba784ec4c2c56cd248e47d53f4ac7`  
+		Last Modified: Fri, 01 Dec 2023 05:41:36 GMT  
 		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:482a2ce75969ba1e520c6dd4442eda010eabe9d232d6e8b5884c7778e8906161`  
-		Last Modified: Thu, 16 Nov 2023 20:19:23 GMT  
-		Size: 1.3 KB (1262 bytes)  
+	-	`sha256:5f07fc2f3ef9e4b1ed2a727a7cee1b9cbbef7de8d3c65005435ef0e60b9cc643`  
+		Last Modified: Fri, 01 Dec 2023 05:41:34 GMT  
+		Size: 1.3 KB (1261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5d79ec16c49791f18dc8a7e44852ce77f345a87b2cfebb2bbbfab50d7de5bc98`  
-		Last Modified: Thu, 16 Nov 2023 20:19:23 GMT  
-		Size: 146.0 B  
+	-	`sha256:285d196f9f4d8fee5af9cc323fe3c0049ad86ad90736d5ee2137c2140a4e2667`  
+		Last Modified: Fri, 01 Dec 2023 05:41:34 GMT  
+		Size: 148.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:68a20270e446759edb30d12eed0a1ced5e7bcc175669611b373c3404689dd828`  
-		Last Modified: Thu, 16 Nov 2023 20:19:23 GMT  
-		Size: 3.7 KB (3658 bytes)  
+	-	`sha256:d9473fbfd57624b832051d7be0d392ff859a5e86d692e7be88011b788829b206`  
+		Last Modified: Fri, 01 Dec 2023 05:41:34 GMT  
+		Size: 3.7 KB (3666 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6857db1ee4f2f2691dced521171eb7a3fa499216d992dfdb23581e02339b5013`  
-		Last Modified: Thu, 16 Nov 2023 20:19:30 GMT  
-		Size: 120.2 MB (120176611 bytes)  
+	-	`sha256:56ed5c1bc2b798e9f662cbf850403e06c4ae710ae6da02ed9a6f18057103c034`  
+		Last Modified: Fri, 01 Dec 2023 05:41:41 GMT  
+		Size: 120.2 MB (120176637 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a5c63a1e01c188221e23b48176dde9a4b880115c970de90911f1d9cf5a484da`  
-		Last Modified: Thu, 16 Nov 2023 20:19:23 GMT  
-		Size: 5.7 KB (5658 bytes)  
+	-	`sha256:e548ee928063c5ebfbb873bb80b33c0c748cf199c09672584f7a2046f5c7b7d1`  
+		Last Modified: Fri, 01 Dec 2023 05:41:34 GMT  
+		Size: 5.7 KB (5661 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
