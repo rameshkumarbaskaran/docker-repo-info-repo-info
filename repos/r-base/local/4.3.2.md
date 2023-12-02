@@ -174,20 +174,13 @@ Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 - `MIT-like`
 - `permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bash=5.2.15-2
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.2.15-2.dsc' bash_5.2.15-2.dsc 2317 SHA256:f51753e946af43eb58549c81e03b35a47af9fe6c6364179ccd4ef862b7c3b2d3
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.2.15.orig.tar.gz' bash_5.2.15.orig.tar.gz 9997221 SHA256:7a315bc0e9d90713159e4390ec1096a41e4f33cd8cc3d1a749a8e5ad56600f51
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.2.15-2.debian.tar.xz' bash_5.2.15-2.debian.tar.xz 97380 SHA256:998f8ea5b754a734ae7d8306e149c43d713ddfcf49623a036004b729237dbcca
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/bash/5.2.15-2/
 
-- https://sources.debian.net/src/bash/5.2.15-2/ (for browsing the source)
-- https://sources.debian.net/src/bash/5.2.15-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/bash/5.2.15-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `binutils=2.41-6`
 
@@ -369,10 +362,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris cluster=2.1.4-1
-'http://http.debian.net/debian/pool/main/c/cluster/cluster_2.1.4-1.dsc' cluster_2.1.4-1.dsc 1831 SHA256:ce277562952708c41387e9d8bb2bfcd401588fb572ff34bde60dbe23a7539b6e
-'http://http.debian.net/debian/pool/main/c/cluster/cluster_2.1.4.orig.tar.gz' cluster_2.1.4.orig.tar.gz 352076 SHA256:c6f10ceca29a176ba833f24ebf71fd451629052c2338398ba286df5689d6f5b6
-'http://http.debian.net/debian/pool/main/c/cluster/cluster_2.1.4-1.debian.tar.xz' cluster_2.1.4-1.debian.tar.xz 4312 SHA256:66b4c3d4bbf804497bd58849ca22b59457f57e121c1922877cb9de57d3e9bc34
+'http://deb.debian.org/debian/pool/main/c/cluster/cluster_2.1.4-1.dsc' cluster_2.1.4-1.dsc 1831 SHA256:ce277562952708c41387e9d8bb2bfcd401588fb572ff34bde60dbe23a7539b6e
+'http://deb.debian.org/debian/pool/main/c/cluster/cluster_2.1.4.orig.tar.gz' cluster_2.1.4.orig.tar.gz 352076 SHA256:c6f10ceca29a176ba833f24ebf71fd451629052c2338398ba286df5689d6f5b6
+'http://deb.debian.org/debian/pool/main/c/cluster/cluster_2.1.4-1.debian.tar.xz' cluster_2.1.4-1.debian.tar.xz 4312 SHA256:66b4c3d4bbf804497bd58849ca22b59457f57e121c1922877cb9de57d3e9bc34
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/cluster/2.1.4-1/ (for browsing the source)
+- https://sources.debian.net/src/cluster/2.1.4-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/cluster/2.1.4-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `codetools=0.2-19-1`
 
@@ -818,10 +817,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris foreign=0.8.85-1
-'http://http.debian.net/debian/pool/main/f/foreign/foreign_0.8.85-1.dsc' foreign_0.8.85-1.dsc 1838 SHA256:018c8dfb3925601468b4a567336766fca574a71be14b482835b67fb185efab79
-'http://http.debian.net/debian/pool/main/f/foreign/foreign_0.8.85.orig.tar.gz' foreign_0.8.85.orig.tar.gz 361720 SHA256:9079d20a1807122f3a6b5a72737d76eb4c011dd35d7099dfbf6171e84e52ecab
-'http://http.debian.net/debian/pool/main/f/foreign/foreign_0.8.85-1.debian.tar.xz' foreign_0.8.85-1.debian.tar.xz 4332 SHA256:eedb39648ee3633b2205596fea98d66c00257d657b37567eb20eba01e9aa639c
+'http://deb.debian.org/debian/pool/main/f/foreign/foreign_0.8.85-1.dsc' foreign_0.8.85-1.dsc 1838 SHA256:018c8dfb3925601468b4a567336766fca574a71be14b482835b67fb185efab79
+'http://deb.debian.org/debian/pool/main/f/foreign/foreign_0.8.85.orig.tar.gz' foreign_0.8.85.orig.tar.gz 361720 SHA256:9079d20a1807122f3a6b5a72737d76eb4c011dd35d7099dfbf6171e84e52ecab
+'http://deb.debian.org/debian/pool/main/f/foreign/foreign_0.8.85-1.debian.tar.xz' foreign_0.8.85-1.debian.tar.xz 4332 SHA256:eedb39648ee3633b2205596fea98d66c00257d657b37567eb20eba01e9aa639c
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/foreign/0.8.85-1/ (for browsing the source)
+- https://sources.debian.net/src/foreign/0.8.85-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/foreign/0.8.85-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `freetype=2.13.2+dfsg-1`
 
@@ -936,13 +941,13 @@ Licenses: (parsed from: `/usr/share/doc/cpp/copyright`, `/usr/share/doc/g++/copy
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-defaults=1.208
-'http://http.debian.net/debian/pool/main/g/gcc-defaults/gcc-defaults_1.208.dsc' gcc-defaults_1.208.dsc 13493 SHA256:338fae62dd7da69ccfcedba06c9b7512fb3814fdf1e3f0aeee4400120bb1ebfb
-'http://http.debian.net/debian/pool/main/g/gcc-defaults/gcc-defaults_1.208.tar.xz' gcc-defaults_1.208.tar.xz 45528 SHA256:90ac3cc4a3975997d7b8bc2e164646f0e30b53d7a2458e81cbcef5dd575769ac
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/gcc-defaults/1.208/
+
 
 ### `dpkg` source package: `gdbm=1.23-3`
 
@@ -959,15 +964,13 @@ Licenses: (parsed from: `/usr/share/doc/libgdbm-compat4/copyright`, `/usr/share/
 - `GPL-3`
 - `GPL-3+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gdbm=1.23-3
-'http://http.debian.net/debian/pool/main/g/gdbm/gdbm_1.23-3.dsc' gdbm_1.23-3.dsc 2583 SHA256:3e4a52655a1b65c51d33e032913edda3423dcae8cc282c16a455a0afd2d2738d
-'http://http.debian.net/debian/pool/main/g/gdbm/gdbm_1.23.orig.tar.gz' gdbm_1.23.orig.tar.gz 1115854 SHA256:74b1081d21fff13ae4bd7c16e5d6e504a4c26f7cde1dca0d963a484174bbcacd
-'http://http.debian.net/debian/pool/main/g/gdbm/gdbm_1.23.orig.tar.gz.asc' gdbm_1.23.orig.tar.gz.asc 181 SHA256:64ebb68cc68e8915d62cb20ea40323c00b56051f844589ee0a52169fff34cecb
-'http://http.debian.net/debian/pool/main/g/gdbm/gdbm_1.23-3.debian.tar.xz' gdbm_1.23-3.debian.tar.xz 18552 SHA256:a0ff17befcbd7c4b361cfe0d821a7a71334102a9c423537bd57f60f18f6802ea
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/gdbm/1.23-3/
+
 
 ### `dpkg` source package: `glib2.0=2.78.1-4`
 
@@ -1291,13 +1294,13 @@ Licenses: (parsed from: `/usr/share/doc/init-system-helpers/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris init-system-helpers=1.65.2
-'http://http.debian.net/debian/pool/main/i/init-system-helpers/init-system-helpers_1.65.2.dsc' init-system-helpers_1.65.2.dsc 2195 SHA256:3889593844b232df78f3f886aed6d8351fe0539cee8d15a721d4b682c6a83538
-'http://http.debian.net/debian/pool/main/i/init-system-helpers/init-system-helpers_1.65.2.tar.xz' init-system-helpers_1.65.2.tar.xz 44400 SHA256:888bd5642f31396fd2b1a6f9c8f56ba5f6651fb599dae2b9eecf239902162cae
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/init-system-helpers/1.65.2/
+
 
 ### `dpkg` source package: `isl=0.26-3`
 
@@ -2015,15 +2018,13 @@ Licenses: (parsed from: `/usr/share/doc/libssh2-1/copyright`)
 
 - `BSD3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libssh2=1.11.0-2
-'http://http.debian.net/debian/pool/main/libs/libssh2/libssh2_1.11.0-2.dsc' libssh2_1.11.0-2.dsc 2289 SHA256:f14acaa679899bdbd6e42076573d57b6dfe957b22bf721be34e4e2b0fe925ff3
-'http://http.debian.net/debian/pool/main/libs/libssh2/libssh2_1.11.0.orig.tar.gz' libssh2_1.11.0.orig.tar.gz 1053562 SHA256:3736161e41e2693324deb38c26cfdc3efe6209d634ba4258db1cecff6a5ad461
-'http://http.debian.net/debian/pool/main/libs/libssh2/libssh2_1.11.0.orig.tar.gz.asc' libssh2_1.11.0.orig.tar.gz.asc 488 SHA256:b6a32c85a3f9b6f30f2b3595ba034b48a8508ee9c94708ef811f58fd7adfcdee
-'http://http.debian.net/debian/pool/main/libs/libssh2/libssh2_1.11.0-2.debian.tar.xz' libssh2_1.11.0-2.debian.tar.xz 10092 SHA256:0cac7b00a142f4728fe70d506e7ef1fd88608864fe25e1ef3560f70e3192bc2d
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libssh2/1.11.0-2/
+
 
 ### `dpkg` source package: `libtasn1-6=4.19.0-3`
 
@@ -2906,15 +2907,13 @@ Licenses: (parsed from: `/usr/share/doc/libperl5.36/copyright`, `/usr/share/doc/
 - `Unicode`
 - `ZLIB`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris perl=5.36.0-9
-'http://http.debian.net/debian/pool/main/p/perl/perl_5.36.0-9.dsc' perl_5.36.0-9.dsc 2919 SHA256:3684525f12b36170cbaa071fcfb08b9f723e50f75df8bd2fe89d7f280cbafaaf
-'http://http.debian.net/debian/pool/main/p/perl/perl_5.36.0.orig-regen-configure.tar.xz' perl_5.36.0.orig-regen-configure.tar.xz 417784 SHA256:10ac353bc5a933403afe60ed1817e7a456f99bdbcaf80c1cdb0eb3a08ea56d4e
-'http://http.debian.net/debian/pool/main/p/perl/perl_5.36.0.orig.tar.xz' perl_5.36.0.orig.tar.xz 13051500 SHA256:0f386dccbee8e26286404b2cca144e1005be65477979beb9b1ba272d4819bcf0
-'http://http.debian.net/debian/pool/main/p/perl/perl_5.36.0-9.debian.tar.xz' perl_5.36.0-9.debian.tar.xz 170360 SHA256:770d503f42748e8d34df8231047be69681bb9ce56bb627297ec8e1b153f8bc9a
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/perl/5.36.0-9/
+
 
 ### `dpkg` source package: `pixman=0.42.2-1`
 
@@ -3469,21 +3468,13 @@ Licenses: (parsed from: `/usr/share/doc/tzdata/copyright`)
 
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2023c-10
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2023c-10.dsc' tzdata_2023c-10.dsc 2259 SHA256:534f36efe6ec80a8dafb2a779a88d8c2f033befb794cbb168747269a0095f388
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2023c.orig.tar.gz' tzdata_2023c.orig.tar.gz 443902 SHA256:3f510b5d1b4ae9bb38e485aa302a776b317fb3637bdb6404c4adf7b6cadd965c
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2023c.orig.tar.gz.asc' tzdata_2023c.orig.tar.gz.asc 833 SHA256:d5ec7b6ceddc46aa137c0ef85fa5c87445509d7997c067ee0fd2e2a23f833557
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2023c-10.debian.tar.xz' tzdata_2023c-10.debian.tar.xz 121516 SHA256:5e82cd0a328f665b95c5456a024164f255b12b460c5b1c6f10702cba155f75f7
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tzdata/2023c-10/
 
-- https://sources.debian.net/src/tzdata/2023c-10/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2023c-10/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2023c-10/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0043+nmu1`
 
