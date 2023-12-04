@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:81bee2a0ce570fcd5ef720c1d329d7806fc2dbb545c2d8ef88189bb8fe9d1032`
-- Created: `2023-11-16T03:11:24.079742214Z`
-- Virtual Size: ~ 202.24 Mb  
+- Image ID: `sha256:bbc568e1f48f4a5306f6d9029de2a716c5eafad9d1fac0c9ca867460fddcaf67`
+- Created: `2023-12-02T01:53:13.355500227Z`
+- Virtual Size: ~ 202.16 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/sbin/tini","--","/docker-entrypoint.sh"]`
 - Command: `["mongo-express"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=18.18.2`
+  - `NODE_VERSION=18.19.0`
   - `YARN_VERSION=1.22.19`
   - `ME_CONFIG_MONGODB_URL=mongodb://mongo:27017`
   - `ME_CONFIG_MONGODB_ENABLE_ADMIN=true`
@@ -176,16 +176,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto3`
 
 ```console
-libcrypto3-3.0.10-r0 description:
+libcrypto3-3.0.12-r1 description:
 Crypto library from openssl
 
-libcrypto3-3.0.10-r0 webpage:
+libcrypto3-3.0.12-r1 webpage:
 https://www.openssl.org/
 
-libcrypto3-3.0.10-r0 installed size:
-4116 KiB
+libcrypto3-3.0.12-r1 installed size:
+4120 KiB
 
-libcrypto3-3.0.10-r0 license:
+libcrypto3-3.0.12-r1 license:
 Apache-2.0
 
 ```
@@ -210,16 +210,16 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `libssl3`
 
 ```console
-libssl3-3.0.10-r0 description:
+libssl3-3.0.12-r1 description:
 SSL shared libraries
 
-libssl3-3.0.10-r0 webpage:
+libssl3-3.0.12-r1 webpage:
 https://www.openssl.org/
 
-libssl3-3.0.10-r0 installed size:
+libssl3-3.0.12-r1 installed size:
 608 KiB
 
-libssl3-3.0.10-r0 license:
+libssl3-3.0.12-r1 license:
 Apache-2.0
 
 ```
