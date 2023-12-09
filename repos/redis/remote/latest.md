@@ -1,7 +1,7 @@
 ## `redis:latest`
 
 ```console
-$ docker pull redis@sha256:42553453d3b7452ac19bffd833c3e86a5f9b653d92740e4e0532b6ede788f717
+$ docker pull redis@sha256:76901a13d47f6fb14abf4274236a0e59fd1cdd163441770e3c51da6ce531cd10
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -238,48 +238,50 @@ $ docker pull redis@sha256:dd76abd7823281e7e38ee04c1d923d62d026ff536f0ea76ae4a96
 ### `redis:latest` - linux; arm variant v7
 
 ```console
-$ docker pull redis@sha256:33c28eb06a05a3dfd756120b9789aad7af67ef174c47a37ebf40a8b5b67db7b4
+$ docker pull redis@sha256:11033abc51786459518d1c3abd83bf3d8b53e6465f8e9fb2d145fede69977340
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **44.8 MB (44754261 bytes)**  
+-	Total Size: **44.8 MB (44755099 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7b1624f04d3f616344dacfa4db1501b6e347665c7c4ca98d4d148a692f3cf683`
+-	Image ID: `sha256:35833907403f7a45f26bc1ab8a329284dabe87f9ec6e5387ee6a3131815402f2`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["redis-server"]`
 
 ```dockerfile
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Tue, 21 Nov 2023 03:57:43 GMT
 ADD file:b693944382a95fa47622fde77eb98f0cdeafa40261e7334bd355e00f650b6632 in / 
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Tue, 21 Nov 2023 03:57:43 GMT
 CMD ["bash"]
-# Fri, 10 Nov 2023 15:23:15 GMT
-RUN groupadd -r -g 999 redis && useradd -r -g redis -u 999 redis # buildkit
-# Fri, 10 Nov 2023 15:23:15 GMT
-ENV GOSU_VERSION=1.16
-# Fri, 10 Nov 2023 15:23:15 GMT
-RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates gnupg wget; 	rm -rf /var/lib/apt/lists/*; 	dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	chmod +x /usr/local/bin/gosu; 	gosu --version; 	gosu nobody true # buildkit
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
+RUN set -eux; 	groupadd -r -g 999 redis; 	useradd -r -g redis -u 999 redis # buildkit
+# Mon, 04 Dec 2023 22:45:52 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		tzdata 	; 	rm -rf /var/lib/apt/lists/* # buildkit
+# Mon, 04 Dec 2023 22:45:52 GMT
+ENV GOSU_VERSION=1.17
+# Mon, 04 Dec 2023 22:45:52 GMT
+RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates gnupg wget; 	rm -rf /var/lib/apt/lists/*; 	arch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 	case "$arch" in 		'amd64') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-amd64'; sha256='bbc4136d03ab138b1ad66fa4fc051bafc6cc7ffae632b069a53657279a450de3' ;; 		'arm64') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-arm64'; sha256='c3805a85d17f4454c23d7059bcb97e1ec1af272b90126e79ed002342de08389b' ;; 		'armel') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-armel'; sha256='f9969910fa141140438c998cfa02f603bf213b11afd466dcde8fa940e700945d' ;; 		'i386') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-i386'; sha256='087dbb8fe479537e64f9c86fa49ff3b41dee1cbd28739a19aaef83dc8186b1ca' ;; 		'mips64el') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-mips64el'; sha256='87140029d792595e660be0015341dfa1c02d1181459ae40df9f093e471d75b70' ;; 		'ppc64el') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-ppc64el'; sha256='1891acdcfa70046818ab6ed3c52b9d42fa10fbb7b340eb429c8c7849691dbd76' ;; 		'riscv64') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-riscv64'; sha256='38a6444b57adce135c42d5a3689f616fc7803ddc7a07ff6f946f2ebc67a26ba6' ;; 		's390x') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-s390x'; sha256='69873bab588192f760547ca1f75b27cfcf106e9f7403fee6fd0600bc914979d0' ;; 		'armhf') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-armhf'; sha256='e5866286277ff2a2159fb9196fea13e0a59d3f1091ea46ddb985160b94b6841b' ;; 		*) echo >&2 "error: unsupported gosu architecture: '$arch'"; exit 1 ;; 	esac; 	wget -O /usr/local/bin/gosu.asc "$url.asc"; 	wget -O /usr/local/bin/gosu "$url"; 	echo "$sha256 */usr/local/bin/gosu" | sha256sum -c -; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	chmod +x /usr/local/bin/gosu; 	gosu --version; 	gosu nobody true # buildkit
+# Mon, 04 Dec 2023 22:45:52 GMT
 ENV REDIS_VERSION=7.2.3
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 ENV REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-7.2.3.tar.gz
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 ENV REDIS_DOWNLOAD_SHA=3e2b196d6eb4ddb9e743088bfc2915ccbb42d40f5a8a3edd8cb69c716ec34be7
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				dpkg-dev 		gcc 		libc6-dev 		libssl-dev 		make 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O redis.tar.gz "$REDIS_DOWNLOAD_URL"; 	echo "$REDIS_DOWNLOAD_SHA *redis.tar.gz" | sha256sum -c -; 	mkdir -p /usr/src/redis; 	tar -xzf redis.tar.gz -C /usr/src/redis --strip-components=1; 	rm redis.tar.gz; 		grep -E '^ *createBoolConfig[(]"protected-mode",.*, *1 *,.*[)],$' /usr/src/redis/src/config.c; 	sed -ri 's!^( *createBoolConfig[(]"protected-mode",.*, *)1( *,.*[)],)$!\10\2!' /usr/src/redis/src/config.c; 	grep -E '^ *createBoolConfig[(]"protected-mode",.*, *0 *,.*[)],$' /usr/src/redis/src/config.c; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	extraJemallocConfigureFlags="--build=$gnuArch"; 	dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64 | i386 | x32) extraJemallocConfigureFlags="$extraJemallocConfigureFlags --with-lg-page=12" ;; 		*) extraJemallocConfigureFlags="$extraJemallocConfigureFlags --with-lg-page=16" ;; 	esac; 	extraJemallocConfigureFlags="$extraJemallocConfigureFlags --with-lg-hugepage=21"; 	grep -F 'cd jemalloc && ./configure ' /usr/src/redis/deps/Makefile; 	sed -ri 's!cd jemalloc && ./configure !&'"$extraJemallocConfigureFlags"' !' /usr/src/redis/deps/Makefile; 	grep -F "cd jemalloc && ./configure $extraJemallocConfigureFlags " /usr/src/redis/deps/Makefile; 		export BUILD_TLS=yes; 	make -C /usr/src/redis -j "$(nproc)" all; 	make -C /usr/src/redis install; 		serverMd5="$(md5sum /usr/local/bin/redis-server | cut -d' ' -f1)"; export serverMd5; 	find /usr/local/bin/redis* -maxdepth 0 		-type f -not -name redis-server 		-exec sh -eux -c ' 			md5="$(md5sum "$1" | cut -d" " -f1)"; 			test "$md5" = "$serverMd5"; 		' -- '{}' ';' 		-exec ln -svfT 'redis-server' '{}' ';' 	; 		rm -r /usr/src/redis; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		redis-cli --version; 	redis-server --version; 		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"redis-server-sbom","packages":[{"name":"redis-server","versionInfo":"7.2.3","SPDXID":"SPDXRef-Package--redis-server","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/redis-server@7.2.3?os_name=debian&os_version=bookworm"}],"licenseDeclared":"BSD-3-Clause"}]}' > /usr/local/redis.spdx.json # buildkit
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 RUN mkdir /data && chown redis:redis /data # buildkit
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 VOLUME [/data]
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 WORKDIR /data
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 EXPOSE map[6379/tcp:{}]
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 CMD ["redis-server"]
 ```
 
@@ -288,53 +290,57 @@ CMD ["redis-server"]
 		Last Modified: Tue, 21 Nov 2023 04:01:50 GMT  
 		Size: 24.7 MB (24748925 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:0d034e1141d5e898277bf95a9116c8ffc7c31838cba349f1c54ead59f7fcc86e`  
-		Last Modified: Wed, 22 Nov 2023 04:28:57 GMT  
-		Size: 1.1 KB (1099 bytes)  
+	-	`sha256:6aa29f8f3cb7c66a289f503a8b60ee15ee20686a488cfed3abbc28fa9bd4aa59`  
+		Last Modified: Fri, 08 Dec 2023 23:46:11 GMT  
+		Size: 1.1 KB (1106 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:6c8f10dcd9c4d579adbb7f18027df5331637223445f8f3cfc1c35e2ba21776ad`  
-		Last Modified: Wed, 22 Nov 2023 04:28:57 GMT  
-		Size: 1.4 MB (1408359 bytes)  
+	-	`sha256:444938fd5ba1599bfb1f7969a52b9ac12843618809620d78f5bcac6c164cc059`  
+		Last Modified: Fri, 08 Dec 2023 23:46:11 GMT  
+		Size: 875.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:82d2350d4a9c1648bd3647bf47b0189b0199c7ef177a2d1e8f81f3ca95580071`  
-		Last Modified: Wed, 22 Nov 2023 04:28:58 GMT  
-		Size: 18.6 MB (18595174 bytes)  
+	-	`sha256:4b0a57a623e2924dffcae0201cd35673add5347324166c1267dd659300c3fde7`  
+		Last Modified: Fri, 08 Dec 2023 23:46:11 GMT  
+		Size: 1.4 MB (1408247 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:cc6002539c7b31045a6299b1eed5c0651171b209eb93af7fb4e4a5a909793d03`  
-		Last Modified: Wed, 22 Nov 2023 04:28:57 GMT  
-		Size: 96.0 B  
+	-	`sha256:ba76b57c25c7ad96e7fe687d90db5aec35157b654ae730ee063e80134d900dec`  
+		Last Modified: Fri, 08 Dec 2023 23:46:12 GMT  
+		Size: 18.6 MB (18595243 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:51fb4c30600d33a21d6d0cae64875babfc9a4c500c3b96e32698632acc965e5b`  
+		Last Modified: Fri, 08 Dec 2023 23:46:12 GMT  
+		Size: 97.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 	-	`sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1`  
 		Last Modified: Tue, 07 Mar 2017 15:01:14 GMT  
 		Size: 32.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:7b199ed48c23f05045f43a43b784b52ea3f3b22bb30c278d7f970410fcd3c6d6`  
-		Last Modified: Wed, 22 Nov 2023 04:28:58 GMT  
-		Size: 576.0 B  
+	-	`sha256:c2ca6202566d4472954b1ae9b01d11448978b1ada49facac68acae51c670869f`  
+		Last Modified: Fri, 08 Dec 2023 23:46:12 GMT  
+		Size: 574.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `redis:latest` - unknown; unknown
 
 ```console
-$ docker pull redis@sha256:875403c332e9e1c0818baf8e24ee0a0a416b3be035a330ed89224f1cf0c6024a
+$ docker pull redis@sha256:3733bf3a6d01f78a21ec50e463c473e11d0554b0d02e2287730a0f69cd0a9d3e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **3.0 MB (3040590 bytes)**  
+-	Total Size: **3.0 MB (3047181 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0524a5e2d26c58fe71e2bf5f78b0653de5de0f55bea88ed67338d7bd8b372c72`
+-	Image ID: `sha256:6cd73a1514789733ca1502f520ac47ebce682aec6bde8136f9f3f33a8fcb9da0`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:5130349b626d8380eaaa7f32401ccd021217d0c2edc08d37b1017911fa8e2b66`  
-		Last Modified: Wed, 22 Nov 2023 04:28:57 GMT  
-		Size: 3.0 MB (3009875 bytes)  
+	-	`sha256:a5a43e83f8fec7b5cbf6712ca148e3857ba535e4972cec0dc0419c9018aba49c`  
+		Last Modified: Fri, 08 Dec 2023 23:46:11 GMT  
+		Size: 3.0 MB (3009848 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:a005dc4387462dedcdfbae4fef278a9f0caadadf0bb90c9e52b5afdcf6b30433`  
-		Last Modified: Wed, 22 Nov 2023 04:28:57 GMT  
-		Size: 30.7 KB (30715 bytes)  
+	-	`sha256:f9ba53b73c5e4a9fe917914d29ab90ba783e5bce63e5c192c8f207b48d2c45ca`  
+		Last Modified: Fri, 08 Dec 2023 23:46:11 GMT  
+		Size: 37.3 KB (37333 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `redis:latest` - linux; arm64 variant v8
@@ -638,48 +644,50 @@ $ docker pull redis@sha256:39394b8969c80924eeef224badc5592de87fa90dab0d5ed8357ce
 ### `redis:latest` - linux; ppc64le
 
 ```console
-$ docker pull redis@sha256:c29d69d48142a75b663c2da95b4907076f16bee4c866d913343ae747b031ca26
+$ docker pull redis@sha256:3b769b7cf6bb052b77efe9feaa81771a05ae4b53c83536ae75e9dff4b3099ef3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **56.4 MB (56394831 bytes)**  
+-	Total Size: **56.4 MB (56396229 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8d4cec7571a7e362ee07b2dd7c52a14fe0a2c073ac88e0ee4eaf833aa5236490`
+-	Image ID: `sha256:3d1a7d377dc5a17d82084b4531978c3895b73d922521c4652cbc58fcb32b28ed`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["redis-server"]`
 
 ```dockerfile
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Tue, 21 Nov 2023 04:24:14 GMT
 ADD file:8b22a531b6611a1e63dfc20e4e2931592e2d821bd4b64c4b2810bb9a36640c02 in / 
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Tue, 21 Nov 2023 04:24:16 GMT
 CMD ["bash"]
-# Fri, 10 Nov 2023 15:23:15 GMT
-RUN groupadd -r -g 999 redis && useradd -r -g redis -u 999 redis # buildkit
-# Fri, 10 Nov 2023 15:23:15 GMT
-ENV GOSU_VERSION=1.16
-# Fri, 10 Nov 2023 15:23:15 GMT
-RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates gnupg wget; 	rm -rf /var/lib/apt/lists/*; 	dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	chmod +x /usr/local/bin/gosu; 	gosu --version; 	gosu nobody true # buildkit
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
+RUN set -eux; 	groupadd -r -g 999 redis; 	useradd -r -g redis -u 999 redis # buildkit
+# Mon, 04 Dec 2023 22:45:52 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		tzdata 	; 	rm -rf /var/lib/apt/lists/* # buildkit
+# Mon, 04 Dec 2023 22:45:52 GMT
+ENV GOSU_VERSION=1.17
+# Mon, 04 Dec 2023 22:45:52 GMT
+RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates gnupg wget; 	rm -rf /var/lib/apt/lists/*; 	arch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 	case "$arch" in 		'amd64') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-amd64'; sha256='bbc4136d03ab138b1ad66fa4fc051bafc6cc7ffae632b069a53657279a450de3' ;; 		'arm64') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-arm64'; sha256='c3805a85d17f4454c23d7059bcb97e1ec1af272b90126e79ed002342de08389b' ;; 		'armel') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-armel'; sha256='f9969910fa141140438c998cfa02f603bf213b11afd466dcde8fa940e700945d' ;; 		'i386') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-i386'; sha256='087dbb8fe479537e64f9c86fa49ff3b41dee1cbd28739a19aaef83dc8186b1ca' ;; 		'mips64el') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-mips64el'; sha256='87140029d792595e660be0015341dfa1c02d1181459ae40df9f093e471d75b70' ;; 		'ppc64el') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-ppc64el'; sha256='1891acdcfa70046818ab6ed3c52b9d42fa10fbb7b340eb429c8c7849691dbd76' ;; 		'riscv64') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-riscv64'; sha256='38a6444b57adce135c42d5a3689f616fc7803ddc7a07ff6f946f2ebc67a26ba6' ;; 		's390x') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-s390x'; sha256='69873bab588192f760547ca1f75b27cfcf106e9f7403fee6fd0600bc914979d0' ;; 		'armhf') url='https://github.com/tianon/gosu/releases/download/1.17/gosu-armhf'; sha256='e5866286277ff2a2159fb9196fea13e0a59d3f1091ea46ddb985160b94b6841b' ;; 		*) echo >&2 "error: unsupported gosu architecture: '$arch'"; exit 1 ;; 	esac; 	wget -O /usr/local/bin/gosu.asc "$url.asc"; 	wget -O /usr/local/bin/gosu "$url"; 	echo "$sha256 */usr/local/bin/gosu" | sha256sum -c -; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	chmod +x /usr/local/bin/gosu; 	gosu --version; 	gosu nobody true # buildkit
+# Mon, 04 Dec 2023 22:45:52 GMT
 ENV REDIS_VERSION=7.2.3
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 ENV REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-7.2.3.tar.gz
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 ENV REDIS_DOWNLOAD_SHA=3e2b196d6eb4ddb9e743088bfc2915ccbb42d40f5a8a3edd8cb69c716ec34be7
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				dpkg-dev 		gcc 		libc6-dev 		libssl-dev 		make 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O redis.tar.gz "$REDIS_DOWNLOAD_URL"; 	echo "$REDIS_DOWNLOAD_SHA *redis.tar.gz" | sha256sum -c -; 	mkdir -p /usr/src/redis; 	tar -xzf redis.tar.gz -C /usr/src/redis --strip-components=1; 	rm redis.tar.gz; 		grep -E '^ *createBoolConfig[(]"protected-mode",.*, *1 *,.*[)],$' /usr/src/redis/src/config.c; 	sed -ri 's!^( *createBoolConfig[(]"protected-mode",.*, *)1( *,.*[)],)$!\10\2!' /usr/src/redis/src/config.c; 	grep -E '^ *createBoolConfig[(]"protected-mode",.*, *0 *,.*[)],$' /usr/src/redis/src/config.c; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	extraJemallocConfigureFlags="--build=$gnuArch"; 	dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64 | i386 | x32) extraJemallocConfigureFlags="$extraJemallocConfigureFlags --with-lg-page=12" ;; 		*) extraJemallocConfigureFlags="$extraJemallocConfigureFlags --with-lg-page=16" ;; 	esac; 	extraJemallocConfigureFlags="$extraJemallocConfigureFlags --with-lg-hugepage=21"; 	grep -F 'cd jemalloc && ./configure ' /usr/src/redis/deps/Makefile; 	sed -ri 's!cd jemalloc && ./configure !&'"$extraJemallocConfigureFlags"' !' /usr/src/redis/deps/Makefile; 	grep -F "cd jemalloc && ./configure $extraJemallocConfigureFlags " /usr/src/redis/deps/Makefile; 		export BUILD_TLS=yes; 	make -C /usr/src/redis -j "$(nproc)" all; 	make -C /usr/src/redis install; 		serverMd5="$(md5sum /usr/local/bin/redis-server | cut -d' ' -f1)"; export serverMd5; 	find /usr/local/bin/redis* -maxdepth 0 		-type f -not -name redis-server 		-exec sh -eux -c ' 			md5="$(md5sum "$1" | cut -d" " -f1)"; 			test "$md5" = "$serverMd5"; 		' -- '{}' ';' 		-exec ln -svfT 'redis-server' '{}' ';' 	; 		rm -r /usr/src/redis; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		redis-cli --version; 	redis-server --version; 		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"redis-server-sbom","packages":[{"name":"redis-server","versionInfo":"7.2.3","SPDXID":"SPDXRef-Package--redis-server","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/redis-server@7.2.3?os_name=debian&os_version=bookworm"}],"licenseDeclared":"BSD-3-Clause"}]}' > /usr/local/redis.spdx.json # buildkit
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 RUN mkdir /data && chown redis:redis /data # buildkit
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 VOLUME [/data]
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 WORKDIR /data
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 EXPOSE map[6379/tcp:{}]
-# Fri, 10 Nov 2023 15:23:15 GMT
+# Mon, 04 Dec 2023 22:45:52 GMT
 CMD ["redis-server"]
 ```
 
@@ -688,53 +696,57 @@ CMD ["redis-server"]
 		Last Modified: Tue, 21 Nov 2023 04:28:58 GMT  
 		Size: 33.1 MB (33141607 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:607f0f0839d1de59cc6f7968ccdcffcedd22698c5a347bae85636346300d3da8`  
-		Last Modified: Wed, 22 Nov 2023 00:12:40 GMT  
-		Size: 1.1 KB (1102 bytes)  
+	-	`sha256:06952331b3de15a8a5933b6a3b9f0275e3212f629936387b752098b591c59a83`  
+		Last Modified: Fri, 08 Dec 2023 20:22:00 GMT  
+		Size: 1.1 KB (1108 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:64f04d6629ce654322acd05c4bafb32d06a671066e138acd09950d9ea9d872cf`  
-		Last Modified: Wed, 22 Nov 2023 00:12:41 GMT  
-		Size: 1.4 MB (1362508 bytes)  
+	-	`sha256:db4111f383e198614bc7d09b8416deaa6ce1e7b5a3a314144296c97846eaaaa7`  
+		Last Modified: Fri, 08 Dec 2023 20:22:00 GMT  
+		Size: 875.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:7baca6859375b5866adfc2bc7c943cdafa481ca88431c18193f5113366ab7101`  
-		Last Modified: Wed, 22 Nov 2023 00:12:42 GMT  
-		Size: 21.9 MB (21888909 bytes)  
+	-	`sha256:d749157fe4ad8af81a8b2c1882d6062356ab18a56a43dd32b1179994a0bfcd35`  
+		Last Modified: Fri, 08 Dec 2023 20:22:01 GMT  
+		Size: 1.4 MB (1362740 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:1bb9bcf87c5542a85ac43bfeb2e93a2cc7c38933e6c129ac7b410b69291eb59d`  
-		Last Modified: Wed, 22 Nov 2023 00:12:41 GMT  
+	-	`sha256:0b39609220db4ea21a50e5e77fe472a010603ec7896872f31105c5a574cc6292`  
+		Last Modified: Fri, 08 Dec 2023 20:22:03 GMT  
+		Size: 21.9 MB (21889193 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bf4367a610f6af936cbd913bba1413deb42c79f63d1a2c1a6b9387b92f2be1b5`  
+		Last Modified: Fri, 08 Dec 2023 20:22:02 GMT  
 		Size: 97.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 	-	`sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1`  
 		Last Modified: Tue, 07 Mar 2017 15:01:14 GMT  
 		Size: 32.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:35f689098db7bac0f43751bf0ab30aec7feeca221278250358df42430c95d649`  
-		Last Modified: Wed, 22 Nov 2023 00:12:42 GMT  
-		Size: 576.0 B  
+	-	`sha256:68e5de310c66e9a81b02827251c5f17f0fbd0f83906146a64516f873748acc12`  
+		Last Modified: Fri, 08 Dec 2023 20:22:02 GMT  
+		Size: 577.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `redis:latest` - unknown; unknown
 
 ```console
-$ docker pull redis@sha256:a90f10af38297b6ab09d41cbe3ffd95b88e5e3c9a9ae96fd07571630c177d0ac
+$ docker pull redis@sha256:7816541b79bb523382b792891b26c40e38793cbaeef0b0dcf04997ca8d3da987
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **3.1 MB (3054477 bytes)**  
+-	Total Size: **3.1 MB (3061057 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:78dab22d7c03f45efb70566951d73dc011d177f782042db4f716676ba2e89ec1`
+-	Image ID: `sha256:45871df04a1cbd2420a59cb00cc00edee2b96a49a185f49caa678b7a4a281b0a`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:36a0acbb6bd0f82ecd8088b5c61a6713f9e1d2bf5a8831b792622c6071a8979f`  
-		Last Modified: Wed, 22 Nov 2023 00:12:41 GMT  
-		Size: 3.0 MB (3023835 bytes)  
+	-	`sha256:0262545ca1b74d77182e9124d4f8f93d056701e1570f9b1a8c7f8bbe136e4852`  
+		Last Modified: Fri, 08 Dec 2023 20:22:01 GMT  
+		Size: 3.0 MB (3023808 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:f3d846bffd748c48a901f0c7e5cb272b3aeeb7e88522bc1cf92a1674cf653a2f`  
-		Last Modified: Wed, 22 Nov 2023 00:12:40 GMT  
-		Size: 30.6 KB (30642 bytes)  
+	-	`sha256:b2bdf9710379168ca600d6c80e8e27d2c84d6620a2af70093843ce59ad22bab1`  
+		Last Modified: Fri, 08 Dec 2023 20:22:01 GMT  
+		Size: 37.2 KB (37249 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `redis:latest` - linux; s390x
