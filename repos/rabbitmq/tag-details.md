@@ -863,14 +863,15 @@ $ docker pull rabbitmq@sha256:1fcf155a9c65e98401b53fde23838671c9a6654b87f89bca6b
 ## `rabbitmq:3-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:1edca469f08da37dbe816e144bc7654daf98f756a8d12c3e89a452ef9cf7a589
+$ docker pull rabbitmq@sha256:8db41fcec066c37c8ce0d21b48d5373f948586362e0a9159f0c36665b45eafb9
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 13
+-	Platforms: 14
 	-	linux; amd64
 	-	unknown; unknown
 	-	linux; arm variant v6
+	-	unknown; unknown
 	-	linux; arm variant v7
 	-	unknown; unknown
 	-	linux; arm64 variant v8
@@ -885,262 +886,282 @@ $ docker pull rabbitmq@sha256:1edca469f08da37dbe816e144bc7654daf98f756a8d12c3e89
 ### `rabbitmq:3-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:8d5ca55e94c6399f33a4aa6117be824c6c44a1f56ca0ab27a09a6ec5b3d18b58
+$ docker pull rabbitmq@sha256:0ef4a5074ae490fbd34e5e2be4365618f784e3db41ea7567bb2e2a975b1d993d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **71.1 MB (71061346 bytes)**  
+-	Total Size: **71.0 MB (71003173 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8b213554f1cd3607feddc8bdb70d7900e12dbee0acda77e96ab5ec75b91af3af`
+-	Image ID: `sha256:cad9acd977771eede62ee26745cb7cab2d5fb1275694f5ab233d66dcefba6068`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Wed, 22 Nov 2023 06:55:25 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Fri, 08 Dec 2023 01:20:49 GMT
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
+# Fri, 08 Dec 2023 01:20:49 GMT
 CMD ["/bin/sh"]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.12.10
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:b3ec5ffef005a39df32918af575859c89c2788393b2f27f8f8c3bac9b14dea47`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 40.1 MB (40076564 bytes)  
+	-	`sha256:d4c6bd9f2f476ac8ca381111358834f1eda42d20a7b66fc92fb6ffcf16741a44`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 39.9 MB (39898182 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:f0934a0d587092da8f59064a56ac56e44be97221620457d0c0d54bf221d35a64`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 392.0 B  
+	-	`sha256:b1d788cbab00d72d13b60a6ba065354c10d164774c1c8f6ac0b497eb0b4a2a7f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:17 GMT  
+		Size: 389.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:b40fdcef0bf8bcb93ff6d770cc77b2b045c07b2a08957318cc54824afd369e06`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 7.6 MB (7550194 bytes)  
+	-	`sha256:b1e3f3c4daae27dca3e24dd1187d1bf866da5669f418010b023acbd45b827f7f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 7.6 MB (7554025 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:79cd97312a23f9ff0fbc125f0d99182b7b7cb6d8f33b879adb15e93ea5715a61`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 388.0 B  
+	-	`sha256:f8fdf6d9b3ad47c899f1a3f52d68a08a9001ba37dadcb5916db647891db96817`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 389.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:e6e66fadb7a8deb5dc0cc0feedd733c538c1af027faf370f5b1c49d6aa1baa9e`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 2.3 MB (2297463 bytes)  
+	-	`sha256:8eb011bdfe98916d78ec812fa2f3471332ca9bf4850dfbde8ee3b56b708e5e4d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 2.4 MB (2407695 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ec4e4a2bb19115482a0d1317f925d86ae86f1ed36367e1df9c858c5785205f85`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 17.7 MB (17732171 bytes)  
+	-	`sha256:1d217240abed832febda1c576f1ccbc55af5c1a5dcd2787af1e8c7bcc6b59930`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 17.7 MB (17732264 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:c2714c1d18242092af3278ede338a05241609e5076436c713cf8bbd8095d881c`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 190.0 B  
+	-	`sha256:fa1d576cf15e654dfb707e3f0134c9675791a87771796f49b60277fcaef9c89e`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 192.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:cc60c1438b1a1d3b265a298531fb14f3e48028fae0adc86ff7f177b86d870770`  
-		Last Modified: Fri, 01 Dec 2023 00:16:52 GMT  
+	-	`sha256:bbf1653df82cd6166cd804aee895e11075e4820606f286b9a1143598a25ed360`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:63367130112c9486aefe72d6dc7e1bc3f159ac0419ea96ed9b5c17991741c868`  
-		Last Modified: Fri, 01 Dec 2023 00:16:52 GMT  
-		Size: 622.0 B  
+	-	`sha256:c23fdb4d0a8eb6da1798d392989ea3bfaafbc85e8f29fed272db727337c1d330`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 618.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:dbc0e1de0b40b1f1d423c26188cba128e93d49df717f27a129115c915c2bff28`  
-		Last Modified: Fri, 01 Dec 2023 00:16:53 GMT  
-		Size: 831.0 B  
+	-	`sha256:9fa26e965cc6fba14785af94f4e90c740664e94800f949a05fd95952e8c73f45`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:d3c1e8c16ad920532df10b349a4b7e2524cb74f7b6c05247f9e37680081973cb
+$ docker pull rabbitmq@sha256:e8f6a879bd11a99e706754fc84a9fb6f77f308103fa3928908545af7fdaca15d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.4 MB (5388715 bytes)**  
+-	Total Size: **5.4 MB (5422186 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6ad8377ae277d113d69851d3d1d06465cd8c645d33a810230afd5c7eee8af6b8`
+-	Image ID: `sha256:b4e88fac3a2f4f35238caea5d83bceda1be96203239ad36f0210724229a2a9c0`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:c9d6d98c7ee4ba09322b837e540d121d429dafa957581bb9a14060f9aaa4011e`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 760.4 KB (760357 bytes)  
+	-	`sha256:45303b55287ff6a7859c3216626a35e0f67ab48a8081f1cdf0217372a653869c`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 760.7 KB (760731 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:e1bfd33b2b92372bce7936892c18f7ca03c2e0957b9d72c5904072fb4fa7f893`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 2.3 MB (2279986 bytes)  
+	-	`sha256:b870e1fd23c76b621241628c167a5140eabad57c00edc9d4b95c2135dc1c19c6`  
+		Last Modified: Tue, 12 Dec 2023 20:56:17 GMT  
+		Size: 2.3 MB (2296534 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:2f8c53e5276b15f985bde97c57ae8bbf584b6e72cc30f93355880f4694a25abd`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 2.3 MB (2279096 bytes)  
+	-	`sha256:8f309b51064305faeb191cb9d3c2f7ff139ca0b2907687497c83c7910dab0a30`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 2.3 MB (2295644 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:fc994f03a2b9f8df00051b9eb51cb3c7f2df4fdf3960ce158c6dc1bd00275032`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 69.3 KB (69276 bytes)  
+	-	`sha256:c63466cbf7d1dc72d06b7d1b2950532d0a72d2d3b5e0958a5c21d6e33e1bf164`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 69.3 KB (69277 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:ed5e69c1ab8068bcb2776359fc518b2ba608200e10e6eb7bd9f78265e0b50a04
+$ docker pull rabbitmq@sha256:925ff96e40bdfc64e878da51d3b5ba9ce0f492069f73517c63230b25928ba9ab
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **61.1 MB (61065923 bytes)**  
+-	Total Size: **61.1 MB (61114109 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5582907ec1bccfbebbf6e3c44669f949b8117df693705bf65941a517325dd6a3`
+-	Image ID: `sha256:97e23c8154330ba253b3bb84fac0fc226a8e2a1d61b43fe4f5eda6cacb6b307c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Wed, 22 Nov 2023 06:55:25 GMT
-ADD file:dbf65487d049081dc2d39b3d99d2c64b6c89754e7e2996a46169d3512e59f32a in / 
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Fri, 08 Dec 2023 01:49:15 GMT
+ADD file:d43ed267a41631ce0e5a4ef5aac821a75300a83f85ecb6259f5616852f89e989 in / 
+# Fri, 08 Dec 2023 01:49:15 GMT
 CMD ["/bin/sh"]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.12.10
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
-		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
-		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cd525983453dd88602389c675cd7e8a17ffe42312c2c6f778ebaf1cafe7a017`  
-		Last Modified: Fri, 01 Dec 2023 13:18:41 GMT  
-		Size: 32.4 MB (32388906 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e04262af6a9bd1b05ecf335e72da233cab7368f70abedf6e286d58b18892812`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 391.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebaaf2d95a0729f63de9159319cf137072b221e868847269ef50e4a8fbd7fb5b`  
-		Last Modified: Fri, 01 Dec 2023 13:18:37 GMT  
-		Size: 6.4 MB (6382872 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25e7d62ec18a5ccee0758e48d9bf08c172f2aed6eb9c89ef3be6f4439daed452`  
-		Last Modified: Fri, 01 Dec 2023 13:18:35 GMT  
-		Size: 393.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:833aca62eef35e2c19a82169474f7afa951c0b79c73c08c40b08f6c049049f89`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 1.4 MB (1412514 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4b719393cc6ab5324df5ddd2531ca519e9efc317e9c78d46930108b25271bdd`  
-		Last Modified: Fri, 01 Dec 2023 13:18:35 GMT  
-		Size: 17.7 MB (17732222 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62e5afe16a6327cd39badc15d78fd478d7492caa955b72d172bb70c2cf181847`  
-		Last Modified: Fri, 01 Dec 2023 13:18:33 GMT  
-		Size: 194.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e02017eebf648c7ad787b8f7b88d7225ba935a16a38221b4ead456124ad71fdd`  
-		Last Modified: Fri, 01 Dec 2023 13:18:33 GMT  
+	-	`sha256:0803c38384d9fd0f9afaec8fd13d267547b660dcd46bb92a3d63c5d76e78b04c`  
+		Last Modified: Fri, 08 Dec 2023 01:49:33 GMT  
+		Size: 3.2 MB (3165143 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c0f150da36f6f625d41b8fd26d929990bd7bfd608b2a60c1f32137e63fa0a85f`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 32.4 MB (32426806 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ee2dec8adf19611e8329250ff0fe76f5b78a753f12e2dbd411c033d3e875b7c1`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 389.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:398c87e745935637777a0bc3844e082e2510dde383d5a7e337b2673e9ae302f4`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 6.4 MB (6384103 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:1f6c5597f69cf12305f4d149b2174d1bff4c9dbbd5d8c2f1bdb6c362a30fcba3`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 394.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bc5cc845affc7b41592001efac993b102d09d127e59b54f2a6d11f748eeadc28`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 1.4 MB (1403285 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:a5cfd8ab1746f4e68f469cff61c9c47169ea6f4476d72a5beb4ed99cc9b30461`  
+		Last Modified: Wed, 13 Dec 2023 00:10:34 GMT  
+		Size: 17.7 MB (17732235 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:51de0695c541b2934c38c06a487e061dcf1b9a2ffa79a3f5ed63d8d174500391`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 195.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:4ffbbe23ea092fecf38d5cfb1691597cc5df798745ca3666626f305743e5b017`  
+		Last Modified: Wed, 13 Dec 2023 00:10:34 GMT  
 		Size: 109.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2643343d34ab3b5cfa46f958528d67fade951b354350961db6665c7c0d543541`  
-		Last Modified: Fri, 01 Dec 2023 13:18:33 GMT  
-		Size: 619.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:319942b2d2da7ce22d7467ab7996f98c905be08b931205791f7851291cb07fcc`  
-		Last Modified: Fri, 01 Dec 2023 13:18:33 GMT  
-		Size: 833.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ccfdc3bae8d76367a954b7dd4a3fd97265351f534db12a74994b4bbec4905f0e`  
+		Last Modified: Wed, 13 Dec 2023 00:10:35 GMT  
+		Size: 618.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bf75266cf5f1ba68b3306754989673a371829458c9bb17f324c0421aab60b12c`  
+		Last Modified: Wed, 13 Dec 2023 00:10:35 GMT  
+		Size: 832.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+
+### `rabbitmq:3-alpine` - unknown; unknown
+
+```console
+$ docker pull rabbitmq@sha256:99dcda433ef2970bf15cf44c1ec872507bdf6db23ba2b93fe18d84fb58bd07e8
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **69.3 KB (69275 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:bc6b6edb6b1eb8883e5b176b88039d3713c2b0fdfa37ef4e4e8589e6ed9af3bc`
+
+```dockerfile
+```
+
+-	Layers:
+	-	`sha256:f05ac1e36425c4d9b57ebf0a2c030cf50cf962cdfa3f4b604f7c8002538e0a8c`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 69.3 KB (69275 bytes)  
+		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3-alpine` - linux; arm variant v7
 
@@ -2652,7 +2673,7 @@ $ docker pull rabbitmq@sha256:d0effbbcca8a78161732959b9ded82fde6e3e07d5e60b498e5
 ## `rabbitmq:3-management-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:5f642bd82bbb93f0677a1f956ffa5a35001f8aa89b00eabf987c7a09c40289f2
+$ docker pull rabbitmq@sha256:9b51fafbec5eec1d62ec2aed4371520ea619c5f9b7ac3b16e60961f2ee8e5223
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -2674,19 +2695,19 @@ $ docker pull rabbitmq@sha256:5f642bd82bbb93f0677a1f956ffa5a35001f8aa89b00eabf98
 ### `rabbitmq:3-management-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:bb0ba003fe45928a0898a99c590ebb8afb1c4cf131bbab1eecc710b1d9e243af
+$ docker pull rabbitmq@sha256:90981cabb092963dfd37cb3b78e724b9bceb84b0706737e29f7563c71ba1187b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **86.2 MB (86163424 bytes)**  
+-	Total Size: **86.3 MB (86257295 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f28f8bbf1d07c1788816803d2064a3eb94ca4679d4adb40636e62d0985a5edc8`
+-	Image ID: `sha256:59d009affc5b523bbbe2f991ab8abc55c61eb262ec9ef93df6d00d6ca409b45b`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
 # Fri, 02 Jun 2023 21:59:28 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
 # Fri, 02 Jun 2023 21:59:28 GMT
 CMD ["/bin/sh"]
 # Fri, 02 Jun 2023 21:59:28 GMT
@@ -2696,11 +2717,11 @@ ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
 # Fri, 02 Jun 2023 21:59:28 GMT
 COPY /opt/erlang /opt/erlang # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
 COPY /opt/openssl /opt/openssl # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 02 Jun 2023 21:59:28 GMT
@@ -2716,7 +2737,7 @@ ENV RABBITMQ_HOME=/opt/rabbitmq
 # Fri, 02 Jun 2023 21:59:28 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 02 Jun 2023 21:59:28 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
@@ -2744,76 +2765,76 @@ EXPOSE map[15671/tcp:{} 15672/tcp:{}]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:b3ec5ffef005a39df32918af575859c89c2788393b2f27f8f8c3bac9b14dea47`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 40.1 MB (40076564 bytes)  
+	-	`sha256:d4c6bd9f2f476ac8ca381111358834f1eda42d20a7b66fc92fb6ffcf16741a44`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 39.9 MB (39898182 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:f0934a0d587092da8f59064a56ac56e44be97221620457d0c0d54bf221d35a64`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 392.0 B  
+	-	`sha256:b1d788cbab00d72d13b60a6ba065354c10d164774c1c8f6ac0b497eb0b4a2a7f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:17 GMT  
+		Size: 389.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:b40fdcef0bf8bcb93ff6d770cc77b2b045c07b2a08957318cc54824afd369e06`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 7.6 MB (7550194 bytes)  
+	-	`sha256:b1e3f3c4daae27dca3e24dd1187d1bf866da5669f418010b023acbd45b827f7f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 7.6 MB (7554025 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:79cd97312a23f9ff0fbc125f0d99182b7b7cb6d8f33b879adb15e93ea5715a61`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 388.0 B  
+	-	`sha256:f8fdf6d9b3ad47c899f1a3f52d68a08a9001ba37dadcb5916db647891db96817`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 389.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:e6e66fadb7a8deb5dc0cc0feedd733c538c1af027faf370f5b1c49d6aa1baa9e`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 2.3 MB (2297463 bytes)  
+	-	`sha256:8eb011bdfe98916d78ec812fa2f3471332ca9bf4850dfbde8ee3b56b708e5e4d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 2.4 MB (2407695 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ec4e4a2bb19115482a0d1317f925d86ae86f1ed36367e1df9c858c5785205f85`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 17.7 MB (17732171 bytes)  
+	-	`sha256:1d217240abed832febda1c576f1ccbc55af5c1a5dcd2787af1e8c7bcc6b59930`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 17.7 MB (17732264 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:c2714c1d18242092af3278ede338a05241609e5076436c713cf8bbd8095d881c`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 190.0 B  
+	-	`sha256:fa1d576cf15e654dfb707e3f0134c9675791a87771796f49b60277fcaef9c89e`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 192.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:cc60c1438b1a1d3b265a298531fb14f3e48028fae0adc86ff7f177b86d870770`  
-		Last Modified: Fri, 01 Dec 2023 00:16:52 GMT  
+	-	`sha256:bbf1653df82cd6166cd804aee895e11075e4820606f286b9a1143598a25ed360`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:63367130112c9486aefe72d6dc7e1bc3f159ac0419ea96ed9b5c17991741c868`  
-		Last Modified: Fri, 01 Dec 2023 00:16:52 GMT  
-		Size: 622.0 B  
+	-	`sha256:c23fdb4d0a8eb6da1798d392989ea3bfaafbc85e8f29fed272db727337c1d330`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 618.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:dbc0e1de0b40b1f1d423c26188cba128e93d49df717f27a129115c915c2bff28`  
-		Last Modified: Fri, 01 Dec 2023 00:16:53 GMT  
-		Size: 831.0 B  
+	-	`sha256:9fa26e965cc6fba14785af94f4e90c740664e94800f949a05fd95952e8c73f45`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:6ddc6ffa62824d41fa635ee53926d1b3abaf406b924c12387f5d08be1eaa7301`  
-		Last Modified: Fri, 01 Dec 2023 01:11:49 GMT  
-		Size: 15.1 MB (15102078 bytes)  
+	-	`sha256:902337e77ee291e2bca8ad08b047465c2e4c8587e4fd94a890bd76c2ac80a007`  
+		Last Modified: Tue, 12 Dec 2023 21:49:37 GMT  
+		Size: 15.3 MB (15254122 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3-management-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:918c85e3ca35b640ff92aea2bd60141d70e7f011d95219f8a5528d506052675c
+$ docker pull rabbitmq@sha256:4cca1a3ddd74549e033608dba0503724f0a115a239d4de8303af13dfe7b9e4fa
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.7 MB (1664657 bytes)**  
+-	Total Size: **1.7 MB (1665575 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3c003b3cdfe7df25cfc22ed6214c6175b2613f64c1ceb2ddf4286939cae735dd`
+-	Image ID: `sha256:811dfcc3cf10fa0a00fe699a9ebf5d4408dedb6b17c242032aafcb772686ba07`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:3b041cac65c213fc24ede4c9a6349c6d5b58e7c8c025487ae2fd07578b53c1b5`  
-		Last Modified: Fri, 01 Dec 2023 01:11:48 GMT  
-		Size: 1.7 MB (1651179 bytes)  
+	-	`sha256:44d966642402bd6e96ca904ee0b45f42a91d8a4bdd665770dcc5aaf5758a67ee`  
+		Last Modified: Tue, 12 Dec 2023 21:49:36 GMT  
+		Size: 1.7 MB (1652097 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:b278550867b814b451667aab611e7c506f6148fa342c5b3b8296ddaa7f39101d`  
-		Last Modified: Fri, 01 Dec 2023 01:11:47 GMT  
+	-	`sha256:977ac95961d456e332bf6cbccd34053c241a4056eb5e61c29d2dfa2cd445a2e8`  
+		Last Modified: Tue, 12 Dec 2023 21:49:36 GMT  
 		Size: 13.5 KB (13478 bytes)  
 		MIME: application/vnd.in-toto+json
 
@@ -4477,14 +4498,15 @@ $ docker pull rabbitmq@sha256:d14c431216e4f707a68d716f8fb2f5026094f6d399386abc5d
 ## `rabbitmq:3.10-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:d6a5169f38142648ea03fffce28fb219866901ac9adedcb4cfd6301453236037
+$ docker pull rabbitmq@sha256:1c9df5c69f633d8ecf8985062b0249fd421702a73e6a7df83eff15e9e7024e57
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 13
+-	Platforms: 14
 	-	linux; amd64
 	-	unknown; unknown
 	-	linux; arm variant v6
+	-	unknown; unknown
 	-	linux; arm variant v7
 	-	unknown; unknown
 	-	linux; arm64 variant v8
@@ -4499,262 +4521,282 @@ $ docker pull rabbitmq@sha256:d6a5169f38142648ea03fffce28fb219866901ac9adedcb4cf
 ### `rabbitmq:3.10-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:f270ffa1488f27ee0121ab6d079c441605f6c65ce11e5bc8178ce0f65f3d03d6
+$ docker pull rabbitmq@sha256:b33e84ed662c6a02a0fc1d74aaa1268d1f22f2084cf86c59dfe5fc2abaf49e42
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **70.4 MB (70367189 bytes)**  
+-	Total Size: **70.3 MB (70309359 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:66a087f5744ea48ec1cda474333cbb94bb98576bf53e0804f3b1b3c30b84f72d`
+-	Image ID: `sha256:ec0538039dbec78854475f62b8f41c19e17f695819504e86d82156d1d0443a9c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Tue, 24 Oct 2023 17:05:11 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Fri, 08 Dec 2023 01:20:49 GMT
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
+# Fri, 08 Dec 2023 01:20:49 GMT
 CMD ["/bin/sh"]
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.10.25
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 24 Oct 2023 17:05:11 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.10.25","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.10.25?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.10.25","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.10.25?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:5225a6709b2d654b1c007f26e3f1a95df554039595184670ec6886bfaae92fd8`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 40.1 MB (40076532 bytes)  
+	-	`sha256:b98fdd8eac19a8160d5292002f8506c412370241fd9c3744e6943c3e4e12f967`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 39.9 MB (39898336 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2c1185ad15312f8f4fffd9cbc1b69c1415fd1feccac7036e5c486a4bbf2d61f8`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 388.0 B  
+	-	`sha256:519e20ff12f22528ebd94dc73f485513a9d0e45e6b214d201dec2d11b7b2a7d6`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 392.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ffcb8e8f329b4f0429f556223635c55828b1a6ccd5ec1c7c9e68dade8fd41304`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 7.6 MB (7550198 bytes)  
+	-	`sha256:2f2b5d0da94759b7bbc2de08dd62bdfc698a6898da992501ff9efeea2e87c0e5`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 7.6 MB (7554070 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:01085423d20e4ea8051de40ea07749190b5fd764f4526b5ab9024d3788869c9f`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 388.0 B  
+	-	`sha256:1756efce0c04d55cf768d8af41729288bfd0e79b78e240e0d92d1a05db98766a`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 387.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:4276519c09516da53fe0e63f4b511626fa67da0515699c5599942bfbcdd921ba`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 2.3 MB (2297458 bytes)  
+	-	`sha256:1419d95baca84d019dade56d0348fb28ba7c172c45348f8244601af0d5474698`  
+		Last Modified: Tue, 12 Dec 2023 20:56:21 GMT  
+		Size: 2.4 MB (2407679 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:d81c5d6518f9627355e1550f67bff45c06eed221899d5eb0e98edb7b3163a10d`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 17.0 MB (17038056 bytes)  
+	-	`sha256:33c3a46eaa2e119a4e795d06501aa78def4333f32807b8e72ac191cdc29bbae6`  
+		Last Modified: Tue, 12 Dec 2023 20:56:21 GMT  
+		Size: 17.0 MB (17038264 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:56c176b25e4ab3d4fb5f11bc6a5fe8feeb7b8d4cba1b804648895d4c3f200ac1`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
+	-	`sha256:d3540708881ca20cfba067dbad9dca6cdbb7ea54205bc08d095af4ce9bd9bcc6`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
 		Size: 193.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:207ce76b9ca6a30d13da9848fa304ee32d1d3769add5e706e098b0ddd9779dac`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
+	-	`sha256:f21043189585eca48dc4dd1638b3e5dd97cda3371b4a42b6aa3c0cfb93fcaafa`  
+		Last Modified: Tue, 12 Dec 2023 20:56:21 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ea414b276eee244ddb565400ef85028ac1d7fe3c9f3cd6382246e2674c3a8b84`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 616.0 B  
+	-	`sha256:e03595a3094e1bff3feb39ce0965aa5f8079a4fc0db79fe9acbd4605ce1a0c63`  
+		Last Modified: Tue, 12 Dec 2023 20:56:22 GMT  
+		Size: 619.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2c5f80ad63cf4f5f1663b8f09ec5e2c6621c75bff43570ae4005d8b2c208362a`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 829.0 B  
+	-	`sha256:e8c775bd8612c0d5aafefed8c24296020d99e7559ff59e35c3a61dd8b21d3adb`  
+		Last Modified: Tue, 12 Dec 2023 20:56:22 GMT  
+		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.10-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:b4ab55b8cdbf37fc9b6af8d13c6bce4e25a0a0289940185ed5185c389b297b75
+$ docker pull rabbitmq@sha256:9b1f4486a86d3e904a2ac39b069c030e4abc9a688208ea061310ae770f294832
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.4 MB (5386284 bytes)**  
+-	Total Size: **5.4 MB (5419754 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cdda1f2488877835fbb8c1bad16946aa1abb30667f345950067013c1432cc966`
+-	Image ID: `sha256:a3ba378b292b14529c9ab5ad58b4924920bc9a029145b1dd0f2aebb3611ecc98`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:21d68abc8fa0f7d8ddd16dbbd6803cdf7f321b840efb20e6bb5a489b31cedbfd`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 759.7 KB (759749 bytes)  
+	-	`sha256:cdd3f4943f4fccc0b5f9ac7aa3d4284667bd0df68426f5d521846e4ec2c139fc`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 760.1 KB (760123 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:2f2f9e43ac10525ae0f193b1bc16f86577ac6f1c5b32becb86d0902ae1342174`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 2.3 MB (2279378 bytes)  
+	-	`sha256:10c2935299df896aa20eb79b121735a28fc302a3b24e4af429184788f73d7fbd`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 2.3 MB (2295926 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:c228921d5daeb46cacc6f5a0d74e154f8a42eb6809cce74cd40c005f025ca6df`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 2.3 MB (2278488 bytes)  
+	-	`sha256:f2414bc96777c0e9e88294eb6a6121eb1272a9b376f0cdc8443a83e71dcb620f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 2.3 MB (2295036 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:c93a1ac04419d319884476c4680729962734d8dbda4d462bba5133e358742d5b`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
+	-	`sha256:45fb4135a912d074a47707929b956d0edcfe1104f5903c32b090c385733781b1`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
 		Size: 68.7 KB (68669 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.10-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:86079680b75e0c2dd3a27bc2e467956431bf81b40a5f75ee106b4ea40ac00e02
+$ docker pull rabbitmq@sha256:e1105e0d909f9300cc5ec95da1c562d439aa24da898f12ca66d578da12cc0489
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **60.4 MB (60371432 bytes)**  
+-	Total Size: **60.4 MB (60419905 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6ec615987a2aed342354cf5cc6199f9db187aaa3fb50f04f05762fabdd609b41`
+-	Image ID: `sha256:d18029e2ca676292bb13081902bad845800e0975f72ed584ddaf717b1d4ae3f6`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Tue, 24 Oct 2023 17:05:11 GMT
-ADD file:dbf65487d049081dc2d39b3d99d2c64b6c89754e7e2996a46169d3512e59f32a in / 
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Fri, 08 Dec 2023 01:49:15 GMT
+ADD file:d43ed267a41631ce0e5a4ef5aac821a75300a83f85ecb6259f5616852f89e989 in / 
+# Fri, 08 Dec 2023 01:49:15 GMT
 CMD ["/bin/sh"]
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.10.25
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 24 Oct 2023 17:05:11 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.10.25","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.10.25?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.10.25","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.10.25?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
-		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
-		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cd525983453dd88602389c675cd7e8a17ffe42312c2c6f778ebaf1cafe7a017`  
-		Last Modified: Fri, 01 Dec 2023 13:18:41 GMT  
-		Size: 32.4 MB (32388906 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e04262af6a9bd1b05ecf335e72da233cab7368f70abedf6e286d58b18892812`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 391.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebaaf2d95a0729f63de9159319cf137072b221e868847269ef50e4a8fbd7fb5b`  
-		Last Modified: Fri, 01 Dec 2023 13:18:37 GMT  
-		Size: 6.4 MB (6382872 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25e7d62ec18a5ccee0758e48d9bf08c172f2aed6eb9c89ef3be6f4439daed452`  
-		Last Modified: Fri, 01 Dec 2023 13:18:35 GMT  
-		Size: 393.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:833aca62eef35e2c19a82169474f7afa951c0b79c73c08c40b08f6c049049f89`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 1.4 MB (1412514 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af89d38fcb1cbdec9f0ff0c268ef239d667effe827fcee6612dad6f542c8d6af`  
-		Last Modified: Fri, 01 Dec 2023 13:19:53 GMT  
-		Size: 17.0 MB (17037744 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1a3ae543d08e16fc3ab2969b5fc4cdd7a88fdf0c5cb3cbc7792b6b832a8c05b`  
-		Last Modified: Fri, 01 Dec 2023 13:19:51 GMT  
+	-	`sha256:0803c38384d9fd0f9afaec8fd13d267547b660dcd46bb92a3d63c5d76e78b04c`  
+		Last Modified: Fri, 08 Dec 2023 01:49:33 GMT  
+		Size: 3.2 MB (3165143 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c0f150da36f6f625d41b8fd26d929990bd7bfd608b2a60c1f32137e63fa0a85f`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 32.4 MB (32426806 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ee2dec8adf19611e8329250ff0fe76f5b78a753f12e2dbd411c033d3e875b7c1`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 389.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:398c87e745935637777a0bc3844e082e2510dde383d5a7e337b2673e9ae302f4`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 6.4 MB (6384103 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:1f6c5597f69cf12305f4d149b2174d1bff4c9dbbd5d8c2f1bdb6c362a30fcba3`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 394.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bc5cc845affc7b41592001efac993b102d09d127e59b54f2a6d11f748eeadc28`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 1.4 MB (1403285 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:677b97df6e47263f02aee951a84c69951e25eaf50109e5c838fed0f9e0ddd2b6`  
+		Last Modified: Wed, 13 Dec 2023 00:11:42 GMT  
+		Size: 17.0 MB (17038039 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c47210b74c5b33c886e19c520f37887e572344170143d2afaddbf0fed88a1058`  
+		Last Modified: Wed, 13 Dec 2023 00:11:42 GMT  
 		Size: 193.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:111784c0f1b260679db0baa5099573d209d28b34fbdacad8256988a01513cff5`  
-		Last Modified: Fri, 01 Dec 2023 13:19:51 GMT  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:7719da3ef83683918ee1577eda88f6ca4f7ca30cecdc0ea5c02a4f550e066380`  
+		Last Modified: Wed, 13 Dec 2023 00:11:42 GMT  
 		Size: 109.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a0eeabd56e32a9ff7ec8faaf0ede345888f3948965dc06c9fdfbaec69e84b7a`  
-		Last Modified: Fri, 01 Dec 2023 13:19:51 GMT  
-		Size: 614.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb4eb68e9183b4258afe8c3078b30ee560c8d15be7e84c6ad5b8e8625e6ab1be`  
-		Last Modified: Fri, 01 Dec 2023 13:19:51 GMT  
-		Size: 826.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:88bb335ce7b67255ebfbfb01bf243edfc87c4d5430b3aa020d7ce2131bfde538`  
+		Last Modified: Wed, 13 Dec 2023 00:11:42 GMT  
+		Size: 615.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c41591667568cb9bc3c9c6e15bea601cfce6acfb307ee9161f271968d47091fa`  
+		Last Modified: Wed, 13 Dec 2023 00:11:43 GMT  
+		Size: 829.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+
+### `rabbitmq:3.10-alpine` - unknown; unknown
+
+```console
+$ docker pull rabbitmq@sha256:2d74c6b2c6b3b2db317389dac163767c0455fe5ed6b9f932492111f4c922753f
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **68.5 KB (68485 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:e9d62c3ece857680278da6d2c59562f4d2744403b1c31fe9a7d7f26c90f0d79a`
+
+```dockerfile
+```
+
+-	Layers:
+	-	`sha256:674ba974b6da2dc66eb77cda4725e161a93d5619654c3ff612835cc231bc93c8`  
+		Last Modified: Wed, 13 Dec 2023 00:11:42 GMT  
+		Size: 68.5 KB (68485 bytes)  
+		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.10-alpine` - linux; arm variant v7
 
@@ -6266,7 +6308,7 @@ $ docker pull rabbitmq@sha256:fd85e3f441b43a9cf503122e05a7ec849494490fcf7ea8fa4f
 ## `rabbitmq:3.10-management-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:859971210964ee9cc99d9b9df9b403ed2af3708373cf4d9f8f4d58d4ba5453de
+$ docker pull rabbitmq@sha256:e57e3155f0866d94aa324bb4618422d59d844f94eb7da652b9ae5861935c56c3
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -6288,19 +6330,19 @@ $ docker pull rabbitmq@sha256:859971210964ee9cc99d9b9df9b403ed2af3708373cf4d9f8f
 ### `rabbitmq:3.10-management-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:b3210223047ceee1a314b6a27a7bc8c59779b92f8e7ae51b55a75e151672a2e8
+$ docker pull rabbitmq@sha256:3fda13dc51f853fee6cf2e69144ae03c412e411ed78311d2ed2466831b427fe2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **85.5 MB (85469117 bytes)**  
+-	Total Size: **85.6 MB (85563376 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e2a9e2978b71792bfff2aa708f4fa89179f009b1114aae6a5f749fd34dc32adf`
+-	Image ID: `sha256:6007a9f255c0896fd794a46ce7309e4c221a244d1419337169b75c2cbed7790b`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
 # Fri, 24 Mar 2023 18:45:07 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
 # Fri, 24 Mar 2023 18:45:07 GMT
 CMD ["/bin/sh"]
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -6310,11 +6352,11 @@ ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
 # Fri, 24 Mar 2023 18:45:07 GMT
 COPY /opt/erlang /opt/erlang # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 COPY /opt/openssl /opt/openssl # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -6330,7 +6372,7 @@ ENV RABBITMQ_HOME=/opt/rabbitmq
 # Fri, 24 Mar 2023 18:45:07 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.10.25","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.10.25?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.10.25","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.10.25?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -6358,77 +6400,77 @@ EXPOSE map[15671/tcp:{} 15672/tcp:{}]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:5225a6709b2d654b1c007f26e3f1a95df554039595184670ec6886bfaae92fd8`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 40.1 MB (40076532 bytes)  
+	-	`sha256:b98fdd8eac19a8160d5292002f8506c412370241fd9c3744e6943c3e4e12f967`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 39.9 MB (39898336 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2c1185ad15312f8f4fffd9cbc1b69c1415fd1feccac7036e5c486a4bbf2d61f8`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 388.0 B  
+	-	`sha256:519e20ff12f22528ebd94dc73f485513a9d0e45e6b214d201dec2d11b7b2a7d6`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 392.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ffcb8e8f329b4f0429f556223635c55828b1a6ccd5ec1c7c9e68dade8fd41304`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 7.6 MB (7550198 bytes)  
+	-	`sha256:2f2b5d0da94759b7bbc2de08dd62bdfc698a6898da992501ff9efeea2e87c0e5`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 7.6 MB (7554070 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:01085423d20e4ea8051de40ea07749190b5fd764f4526b5ab9024d3788869c9f`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 388.0 B  
+	-	`sha256:1756efce0c04d55cf768d8af41729288bfd0e79b78e240e0d92d1a05db98766a`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 387.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:4276519c09516da53fe0e63f4b511626fa67da0515699c5599942bfbcdd921ba`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 2.3 MB (2297458 bytes)  
+	-	`sha256:1419d95baca84d019dade56d0348fb28ba7c172c45348f8244601af0d5474698`  
+		Last Modified: Tue, 12 Dec 2023 20:56:21 GMT  
+		Size: 2.4 MB (2407679 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:d81c5d6518f9627355e1550f67bff45c06eed221899d5eb0e98edb7b3163a10d`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 17.0 MB (17038056 bytes)  
+	-	`sha256:33c3a46eaa2e119a4e795d06501aa78def4333f32807b8e72ac191cdc29bbae6`  
+		Last Modified: Tue, 12 Dec 2023 20:56:21 GMT  
+		Size: 17.0 MB (17038264 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:56c176b25e4ab3d4fb5f11bc6a5fe8feeb7b8d4cba1b804648895d4c3f200ac1`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
+	-	`sha256:d3540708881ca20cfba067dbad9dca6cdbb7ea54205bc08d095af4ce9bd9bcc6`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
 		Size: 193.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:207ce76b9ca6a30d13da9848fa304ee32d1d3769add5e706e098b0ddd9779dac`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
+	-	`sha256:f21043189585eca48dc4dd1638b3e5dd97cda3371b4a42b6aa3c0cfb93fcaafa`  
+		Last Modified: Tue, 12 Dec 2023 20:56:21 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ea414b276eee244ddb565400ef85028ac1d7fe3c9f3cd6382246e2674c3a8b84`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 616.0 B  
+	-	`sha256:e03595a3094e1bff3feb39ce0965aa5f8079a4fc0db79fe9acbd4605ce1a0c63`  
+		Last Modified: Tue, 12 Dec 2023 20:56:22 GMT  
+		Size: 619.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2c5f80ad63cf4f5f1663b8f09ec5e2c6621c75bff43570ae4005d8b2c208362a`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 829.0 B  
+	-	`sha256:e8c775bd8612c0d5aafefed8c24296020d99e7559ff59e35c3a61dd8b21d3adb`  
+		Last Modified: Tue, 12 Dec 2023 20:56:22 GMT  
+		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a24e4329ba3695bd37aff5cf5682eff03bd52fc3a3947466728935ae6cf3e876`  
-		Last Modified: Fri, 01 Dec 2023 01:11:38 GMT  
-		Size: 15.1 MB (15101928 bytes)  
+	-	`sha256:03dbedf69396ecfacd0f758e0facff54c645f352a69d2768cf7b55c302944b2f`  
+		Last Modified: Tue, 12 Dec 2023 21:49:52 GMT  
+		Size: 15.3 MB (15254017 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.10-management-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:f3ad376214cfac5e901d63d896e3fc074c80a0c9869f412281d1fbd3de63ca43
+$ docker pull rabbitmq@sha256:e591a60b35d9f2714b6d11eb8e75bc2e7ae2dbfd6a6e66f370e578cf9e7ebebf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.7 MB (1663354 bytes)**  
+-	Total Size: **1.7 MB (1664273 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:71dca7919eb1a543ce484122794de9afc5ae282f89c2c1e6eab398adf4ba779e`
+-	Image ID: `sha256:877ff5bf2cea9dd1dfbe8d6fb519dee5a26f71babac77d15f53ea62d76490049`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:0e7b4c0f73448cd767afb6f03e4aaa00fd37c6a6087d8b3cb5c2af024e0ca2a0`  
-		Last Modified: Fri, 01 Dec 2023 01:11:37 GMT  
-		Size: 1.7 MB (1650527 bytes)  
+	-	`sha256:bea8b13711e99bc321134debe0a4b5a83a2e03155ec63c01be387975a31b73ba`  
+		Last Modified: Tue, 12 Dec 2023 21:49:51 GMT  
+		Size: 1.7 MB (1651445 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:3f97389bc439cb44b4ab03ce8a298d5862d864c13deb8e73c701229eda93487c`  
-		Last Modified: Fri, 01 Dec 2023 01:11:37 GMT  
-		Size: 12.8 KB (12827 bytes)  
+	-	`sha256:3ee0473c46c8a8b3d05242a14f98466cf33d87f8e3b69e48e2aeb4c74d847942`  
+		Last Modified: Tue, 12 Dec 2023 21:49:51 GMT  
+		Size: 12.8 KB (12828 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.10-management-alpine` - linux; arm variant v6
@@ -8091,14 +8133,15 @@ $ docker pull rabbitmq@sha256:d14c431216e4f707a68d716f8fb2f5026094f6d399386abc5d
 ## `rabbitmq:3.10.25-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:d6a5169f38142648ea03fffce28fb219866901ac9adedcb4cfd6301453236037
+$ docker pull rabbitmq@sha256:1c9df5c69f633d8ecf8985062b0249fd421702a73e6a7df83eff15e9e7024e57
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 13
+-	Platforms: 14
 	-	linux; amd64
 	-	unknown; unknown
 	-	linux; arm variant v6
+	-	unknown; unknown
 	-	linux; arm variant v7
 	-	unknown; unknown
 	-	linux; arm64 variant v8
@@ -8113,262 +8156,282 @@ $ docker pull rabbitmq@sha256:d6a5169f38142648ea03fffce28fb219866901ac9adedcb4cf
 ### `rabbitmq:3.10.25-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:f270ffa1488f27ee0121ab6d079c441605f6c65ce11e5bc8178ce0f65f3d03d6
+$ docker pull rabbitmq@sha256:b33e84ed662c6a02a0fc1d74aaa1268d1f22f2084cf86c59dfe5fc2abaf49e42
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **70.4 MB (70367189 bytes)**  
+-	Total Size: **70.3 MB (70309359 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:66a087f5744ea48ec1cda474333cbb94bb98576bf53e0804f3b1b3c30b84f72d`
+-	Image ID: `sha256:ec0538039dbec78854475f62b8f41c19e17f695819504e86d82156d1d0443a9c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Tue, 24 Oct 2023 17:05:11 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Fri, 08 Dec 2023 01:20:49 GMT
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
+# Fri, 08 Dec 2023 01:20:49 GMT
 CMD ["/bin/sh"]
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.10.25
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 24 Oct 2023 17:05:11 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.10.25","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.10.25?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.10.25","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.10.25?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:5225a6709b2d654b1c007f26e3f1a95df554039595184670ec6886bfaae92fd8`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 40.1 MB (40076532 bytes)  
+	-	`sha256:b98fdd8eac19a8160d5292002f8506c412370241fd9c3744e6943c3e4e12f967`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 39.9 MB (39898336 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2c1185ad15312f8f4fffd9cbc1b69c1415fd1feccac7036e5c486a4bbf2d61f8`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 388.0 B  
+	-	`sha256:519e20ff12f22528ebd94dc73f485513a9d0e45e6b214d201dec2d11b7b2a7d6`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 392.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ffcb8e8f329b4f0429f556223635c55828b1a6ccd5ec1c7c9e68dade8fd41304`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 7.6 MB (7550198 bytes)  
+	-	`sha256:2f2b5d0da94759b7bbc2de08dd62bdfc698a6898da992501ff9efeea2e87c0e5`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 7.6 MB (7554070 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:01085423d20e4ea8051de40ea07749190b5fd764f4526b5ab9024d3788869c9f`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 388.0 B  
+	-	`sha256:1756efce0c04d55cf768d8af41729288bfd0e79b78e240e0d92d1a05db98766a`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 387.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:4276519c09516da53fe0e63f4b511626fa67da0515699c5599942bfbcdd921ba`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 2.3 MB (2297458 bytes)  
+	-	`sha256:1419d95baca84d019dade56d0348fb28ba7c172c45348f8244601af0d5474698`  
+		Last Modified: Tue, 12 Dec 2023 20:56:21 GMT  
+		Size: 2.4 MB (2407679 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:d81c5d6518f9627355e1550f67bff45c06eed221899d5eb0e98edb7b3163a10d`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 17.0 MB (17038056 bytes)  
+	-	`sha256:33c3a46eaa2e119a4e795d06501aa78def4333f32807b8e72ac191cdc29bbae6`  
+		Last Modified: Tue, 12 Dec 2023 20:56:21 GMT  
+		Size: 17.0 MB (17038264 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:56c176b25e4ab3d4fb5f11bc6a5fe8feeb7b8d4cba1b804648895d4c3f200ac1`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
+	-	`sha256:d3540708881ca20cfba067dbad9dca6cdbb7ea54205bc08d095af4ce9bd9bcc6`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
 		Size: 193.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:207ce76b9ca6a30d13da9848fa304ee32d1d3769add5e706e098b0ddd9779dac`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
+	-	`sha256:f21043189585eca48dc4dd1638b3e5dd97cda3371b4a42b6aa3c0cfb93fcaafa`  
+		Last Modified: Tue, 12 Dec 2023 20:56:21 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ea414b276eee244ddb565400ef85028ac1d7fe3c9f3cd6382246e2674c3a8b84`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 616.0 B  
+	-	`sha256:e03595a3094e1bff3feb39ce0965aa5f8079a4fc0db79fe9acbd4605ce1a0c63`  
+		Last Modified: Tue, 12 Dec 2023 20:56:22 GMT  
+		Size: 619.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2c5f80ad63cf4f5f1663b8f09ec5e2c6621c75bff43570ae4005d8b2c208362a`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 829.0 B  
+	-	`sha256:e8c775bd8612c0d5aafefed8c24296020d99e7559ff59e35c3a61dd8b21d3adb`  
+		Last Modified: Tue, 12 Dec 2023 20:56:22 GMT  
+		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.10.25-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:b4ab55b8cdbf37fc9b6af8d13c6bce4e25a0a0289940185ed5185c389b297b75
+$ docker pull rabbitmq@sha256:9b1f4486a86d3e904a2ac39b069c030e4abc9a688208ea061310ae770f294832
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.4 MB (5386284 bytes)**  
+-	Total Size: **5.4 MB (5419754 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cdda1f2488877835fbb8c1bad16946aa1abb30667f345950067013c1432cc966`
+-	Image ID: `sha256:a3ba378b292b14529c9ab5ad58b4924920bc9a029145b1dd0f2aebb3611ecc98`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:21d68abc8fa0f7d8ddd16dbbd6803cdf7f321b840efb20e6bb5a489b31cedbfd`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 759.7 KB (759749 bytes)  
+	-	`sha256:cdd3f4943f4fccc0b5f9ac7aa3d4284667bd0df68426f5d521846e4ec2c139fc`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 760.1 KB (760123 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:2f2f9e43ac10525ae0f193b1bc16f86577ac6f1c5b32becb86d0902ae1342174`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 2.3 MB (2279378 bytes)  
+	-	`sha256:10c2935299df896aa20eb79b121735a28fc302a3b24e4af429184788f73d7fbd`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 2.3 MB (2295926 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:c228921d5daeb46cacc6f5a0d74e154f8a42eb6809cce74cd40c005f025ca6df`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 2.3 MB (2278488 bytes)  
+	-	`sha256:f2414bc96777c0e9e88294eb6a6121eb1272a9b376f0cdc8443a83e71dcb620f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 2.3 MB (2295036 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:c93a1ac04419d319884476c4680729962734d8dbda4d462bba5133e358742d5b`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
+	-	`sha256:45fb4135a912d074a47707929b956d0edcfe1104f5903c32b090c385733781b1`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
 		Size: 68.7 KB (68669 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.10.25-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:86079680b75e0c2dd3a27bc2e467956431bf81b40a5f75ee106b4ea40ac00e02
+$ docker pull rabbitmq@sha256:e1105e0d909f9300cc5ec95da1c562d439aa24da898f12ca66d578da12cc0489
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **60.4 MB (60371432 bytes)**  
+-	Total Size: **60.4 MB (60419905 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6ec615987a2aed342354cf5cc6199f9db187aaa3fb50f04f05762fabdd609b41`
+-	Image ID: `sha256:d18029e2ca676292bb13081902bad845800e0975f72ed584ddaf717b1d4ae3f6`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Tue, 24 Oct 2023 17:05:11 GMT
-ADD file:dbf65487d049081dc2d39b3d99d2c64b6c89754e7e2996a46169d3512e59f32a in / 
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Fri, 08 Dec 2023 01:49:15 GMT
+ADD file:d43ed267a41631ce0e5a4ef5aac821a75300a83f85ecb6259f5616852f89e989 in / 
+# Fri, 08 Dec 2023 01:49:15 GMT
 CMD ["/bin/sh"]
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.10.25
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 24 Oct 2023 17:05:11 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.10.25","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.10.25?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.10.25","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.10.25?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Tue, 24 Oct 2023 17:05:11 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
-		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
-		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cd525983453dd88602389c675cd7e8a17ffe42312c2c6f778ebaf1cafe7a017`  
-		Last Modified: Fri, 01 Dec 2023 13:18:41 GMT  
-		Size: 32.4 MB (32388906 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e04262af6a9bd1b05ecf335e72da233cab7368f70abedf6e286d58b18892812`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 391.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebaaf2d95a0729f63de9159319cf137072b221e868847269ef50e4a8fbd7fb5b`  
-		Last Modified: Fri, 01 Dec 2023 13:18:37 GMT  
-		Size: 6.4 MB (6382872 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25e7d62ec18a5ccee0758e48d9bf08c172f2aed6eb9c89ef3be6f4439daed452`  
-		Last Modified: Fri, 01 Dec 2023 13:18:35 GMT  
-		Size: 393.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:833aca62eef35e2c19a82169474f7afa951c0b79c73c08c40b08f6c049049f89`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 1.4 MB (1412514 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af89d38fcb1cbdec9f0ff0c268ef239d667effe827fcee6612dad6f542c8d6af`  
-		Last Modified: Fri, 01 Dec 2023 13:19:53 GMT  
-		Size: 17.0 MB (17037744 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1a3ae543d08e16fc3ab2969b5fc4cdd7a88fdf0c5cb3cbc7792b6b832a8c05b`  
-		Last Modified: Fri, 01 Dec 2023 13:19:51 GMT  
+	-	`sha256:0803c38384d9fd0f9afaec8fd13d267547b660dcd46bb92a3d63c5d76e78b04c`  
+		Last Modified: Fri, 08 Dec 2023 01:49:33 GMT  
+		Size: 3.2 MB (3165143 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c0f150da36f6f625d41b8fd26d929990bd7bfd608b2a60c1f32137e63fa0a85f`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 32.4 MB (32426806 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ee2dec8adf19611e8329250ff0fe76f5b78a753f12e2dbd411c033d3e875b7c1`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 389.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:398c87e745935637777a0bc3844e082e2510dde383d5a7e337b2673e9ae302f4`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 6.4 MB (6384103 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:1f6c5597f69cf12305f4d149b2174d1bff4c9dbbd5d8c2f1bdb6c362a30fcba3`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 394.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bc5cc845affc7b41592001efac993b102d09d127e59b54f2a6d11f748eeadc28`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 1.4 MB (1403285 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:677b97df6e47263f02aee951a84c69951e25eaf50109e5c838fed0f9e0ddd2b6`  
+		Last Modified: Wed, 13 Dec 2023 00:11:42 GMT  
+		Size: 17.0 MB (17038039 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c47210b74c5b33c886e19c520f37887e572344170143d2afaddbf0fed88a1058`  
+		Last Modified: Wed, 13 Dec 2023 00:11:42 GMT  
 		Size: 193.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:111784c0f1b260679db0baa5099573d209d28b34fbdacad8256988a01513cff5`  
-		Last Modified: Fri, 01 Dec 2023 13:19:51 GMT  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:7719da3ef83683918ee1577eda88f6ca4f7ca30cecdc0ea5c02a4f550e066380`  
+		Last Modified: Wed, 13 Dec 2023 00:11:42 GMT  
 		Size: 109.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a0eeabd56e32a9ff7ec8faaf0ede345888f3948965dc06c9fdfbaec69e84b7a`  
-		Last Modified: Fri, 01 Dec 2023 13:19:51 GMT  
-		Size: 614.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb4eb68e9183b4258afe8c3078b30ee560c8d15be7e84c6ad5b8e8625e6ab1be`  
-		Last Modified: Fri, 01 Dec 2023 13:19:51 GMT  
-		Size: 826.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:88bb335ce7b67255ebfbfb01bf243edfc87c4d5430b3aa020d7ce2131bfde538`  
+		Last Modified: Wed, 13 Dec 2023 00:11:42 GMT  
+		Size: 615.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c41591667568cb9bc3c9c6e15bea601cfce6acfb307ee9161f271968d47091fa`  
+		Last Modified: Wed, 13 Dec 2023 00:11:43 GMT  
+		Size: 829.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+
+### `rabbitmq:3.10.25-alpine` - unknown; unknown
+
+```console
+$ docker pull rabbitmq@sha256:2d74c6b2c6b3b2db317389dac163767c0455fe5ed6b9f932492111f4c922753f
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **68.5 KB (68485 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:e9d62c3ece857680278da6d2c59562f4d2744403b1c31fe9a7d7f26c90f0d79a`
+
+```dockerfile
+```
+
+-	Layers:
+	-	`sha256:674ba974b6da2dc66eb77cda4725e161a93d5619654c3ff612835cc231bc93c8`  
+		Last Modified: Wed, 13 Dec 2023 00:11:42 GMT  
+		Size: 68.5 KB (68485 bytes)  
+		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.10.25-alpine` - linux; arm variant v7
 
@@ -9880,7 +9943,7 @@ $ docker pull rabbitmq@sha256:fd85e3f441b43a9cf503122e05a7ec849494490fcf7ea8fa4f
 ## `rabbitmq:3.10.25-management-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:859971210964ee9cc99d9b9df9b403ed2af3708373cf4d9f8f4d58d4ba5453de
+$ docker pull rabbitmq@sha256:e57e3155f0866d94aa324bb4618422d59d844f94eb7da652b9ae5861935c56c3
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -9902,19 +9965,19 @@ $ docker pull rabbitmq@sha256:859971210964ee9cc99d9b9df9b403ed2af3708373cf4d9f8f
 ### `rabbitmq:3.10.25-management-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:b3210223047ceee1a314b6a27a7bc8c59779b92f8e7ae51b55a75e151672a2e8
+$ docker pull rabbitmq@sha256:3fda13dc51f853fee6cf2e69144ae03c412e411ed78311d2ed2466831b427fe2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **85.5 MB (85469117 bytes)**  
+-	Total Size: **85.6 MB (85563376 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e2a9e2978b71792bfff2aa708f4fa89179f009b1114aae6a5f749fd34dc32adf`
+-	Image ID: `sha256:6007a9f255c0896fd794a46ce7309e4c221a244d1419337169b75c2cbed7790b`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
 # Fri, 24 Mar 2023 18:45:07 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
 # Fri, 24 Mar 2023 18:45:07 GMT
 CMD ["/bin/sh"]
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -9924,11 +9987,11 @@ ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
 # Fri, 24 Mar 2023 18:45:07 GMT
 COPY /opt/erlang /opt/erlang # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 COPY /opt/openssl /opt/openssl # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -9944,7 +10007,7 @@ ENV RABBITMQ_HOME=/opt/rabbitmq
 # Fri, 24 Mar 2023 18:45:07 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.10.25","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.10.25?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.10.25","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.10.25?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -9972,77 +10035,77 @@ EXPOSE map[15671/tcp:{} 15672/tcp:{}]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:5225a6709b2d654b1c007f26e3f1a95df554039595184670ec6886bfaae92fd8`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 40.1 MB (40076532 bytes)  
+	-	`sha256:b98fdd8eac19a8160d5292002f8506c412370241fd9c3744e6943c3e4e12f967`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 39.9 MB (39898336 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2c1185ad15312f8f4fffd9cbc1b69c1415fd1feccac7036e5c486a4bbf2d61f8`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 388.0 B  
+	-	`sha256:519e20ff12f22528ebd94dc73f485513a9d0e45e6b214d201dec2d11b7b2a7d6`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 392.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ffcb8e8f329b4f0429f556223635c55828b1a6ccd5ec1c7c9e68dade8fd41304`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 7.6 MB (7550198 bytes)  
+	-	`sha256:2f2b5d0da94759b7bbc2de08dd62bdfc698a6898da992501ff9efeea2e87c0e5`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 7.6 MB (7554070 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:01085423d20e4ea8051de40ea07749190b5fd764f4526b5ab9024d3788869c9f`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 388.0 B  
+	-	`sha256:1756efce0c04d55cf768d8af41729288bfd0e79b78e240e0d92d1a05db98766a`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 387.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:4276519c09516da53fe0e63f4b511626fa67da0515699c5599942bfbcdd921ba`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 2.3 MB (2297458 bytes)  
+	-	`sha256:1419d95baca84d019dade56d0348fb28ba7c172c45348f8244601af0d5474698`  
+		Last Modified: Tue, 12 Dec 2023 20:56:21 GMT  
+		Size: 2.4 MB (2407679 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:d81c5d6518f9627355e1550f67bff45c06eed221899d5eb0e98edb7b3163a10d`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 17.0 MB (17038056 bytes)  
+	-	`sha256:33c3a46eaa2e119a4e795d06501aa78def4333f32807b8e72ac191cdc29bbae6`  
+		Last Modified: Tue, 12 Dec 2023 20:56:21 GMT  
+		Size: 17.0 MB (17038264 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:56c176b25e4ab3d4fb5f11bc6a5fe8feeb7b8d4cba1b804648895d4c3f200ac1`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
+	-	`sha256:d3540708881ca20cfba067dbad9dca6cdbb7ea54205bc08d095af4ce9bd9bcc6`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
 		Size: 193.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:207ce76b9ca6a30d13da9848fa304ee32d1d3769add5e706e098b0ddd9779dac`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
+	-	`sha256:f21043189585eca48dc4dd1638b3e5dd97cda3371b4a42b6aa3c0cfb93fcaafa`  
+		Last Modified: Tue, 12 Dec 2023 20:56:21 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ea414b276eee244ddb565400ef85028ac1d7fe3c9f3cd6382246e2674c3a8b84`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 616.0 B  
+	-	`sha256:e03595a3094e1bff3feb39ce0965aa5f8079a4fc0db79fe9acbd4605ce1a0c63`  
+		Last Modified: Tue, 12 Dec 2023 20:56:22 GMT  
+		Size: 619.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2c5f80ad63cf4f5f1663b8f09ec5e2c6621c75bff43570ae4005d8b2c208362a`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 829.0 B  
+	-	`sha256:e8c775bd8612c0d5aafefed8c24296020d99e7559ff59e35c3a61dd8b21d3adb`  
+		Last Modified: Tue, 12 Dec 2023 20:56:22 GMT  
+		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a24e4329ba3695bd37aff5cf5682eff03bd52fc3a3947466728935ae6cf3e876`  
-		Last Modified: Fri, 01 Dec 2023 01:11:38 GMT  
-		Size: 15.1 MB (15101928 bytes)  
+	-	`sha256:03dbedf69396ecfacd0f758e0facff54c645f352a69d2768cf7b55c302944b2f`  
+		Last Modified: Tue, 12 Dec 2023 21:49:52 GMT  
+		Size: 15.3 MB (15254017 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.10.25-management-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:f3ad376214cfac5e901d63d896e3fc074c80a0c9869f412281d1fbd3de63ca43
+$ docker pull rabbitmq@sha256:e591a60b35d9f2714b6d11eb8e75bc2e7ae2dbfd6a6e66f370e578cf9e7ebebf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.7 MB (1663354 bytes)**  
+-	Total Size: **1.7 MB (1664273 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:71dca7919eb1a543ce484122794de9afc5ae282f89c2c1e6eab398adf4ba779e`
+-	Image ID: `sha256:877ff5bf2cea9dd1dfbe8d6fb519dee5a26f71babac77d15f53ea62d76490049`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:0e7b4c0f73448cd767afb6f03e4aaa00fd37c6a6087d8b3cb5c2af024e0ca2a0`  
-		Last Modified: Fri, 01 Dec 2023 01:11:37 GMT  
-		Size: 1.7 MB (1650527 bytes)  
+	-	`sha256:bea8b13711e99bc321134debe0a4b5a83a2e03155ec63c01be387975a31b73ba`  
+		Last Modified: Tue, 12 Dec 2023 21:49:51 GMT  
+		Size: 1.7 MB (1651445 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:3f97389bc439cb44b4ab03ce8a298d5862d864c13deb8e73c701229eda93487c`  
-		Last Modified: Fri, 01 Dec 2023 01:11:37 GMT  
-		Size: 12.8 KB (12827 bytes)  
+	-	`sha256:3ee0473c46c8a8b3d05242a14f98466cf33d87f8e3b69e48e2aeb4c74d847942`  
+		Last Modified: Tue, 12 Dec 2023 21:49:51 GMT  
+		Size: 12.8 KB (12828 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.10.25-management-alpine` - linux; arm variant v6
@@ -11705,14 +11768,15 @@ $ docker pull rabbitmq@sha256:990a90ed80bd5a42af74e548e9a2c953e09d8dafa93100f55f
 ## `rabbitmq:3.11-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:564d874c178868198b813065c4763a43245317f7e6f66b4f9308ad9a56ba332c
+$ docker pull rabbitmq@sha256:0775aab54210d9db5e14b519a32dda10cc4fd601b9fcc658e55542b97c4e11d3
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 13
+-	Platforms: 14
 	-	linux; amd64
 	-	unknown; unknown
 	-	linux; arm variant v6
+	-	unknown; unknown
 	-	linux; arm variant v7
 	-	unknown; unknown
 	-	linux; arm64 variant v8
@@ -11727,262 +11791,282 @@ $ docker pull rabbitmq@sha256:564d874c178868198b813065c4763a43245317f7e6f66b4f93
 ### `rabbitmq:3.11-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:23da98c17929f98812d2aa9c7017f9f9d672fab4ef87a154a53b8e2f8d155652
+$ docker pull rabbitmq@sha256:78f69da2b42906bd174b60ee6426638bfd921efb342f1f66991473e7a8aaf3a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **71.0 MB (70977815 bytes)**  
+-	Total Size: **70.9 MB (70919611 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:555a41b030e36c0cbf97951a5705bbdcb2e894f9f99e7eb30890233c195d61f4`
+-	Image ID: `sha256:e2ce731306b37d17337a2de4ca2a4d31aeb4eff7b655dec263fad2077fdc973e`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 14:05:32 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Fri, 08 Dec 2023 01:20:49 GMT
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
+# Fri, 08 Dec 2023 01:20:49 GMT
 CMD ["/bin/sh"]
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.11.26
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 14:05:32 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.11.26","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.11.26?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.11.26","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.11.26?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a75085c5abb4fe97990546041014c6ebf78df5d6ec6dcaffe9f1f63b9e9ee644`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 40.1 MB (40076567 bytes)  
+	-	`sha256:c25db1938189684d53e900085174ab31448b1792d8fd34bd0339b82a97060980`  
+		Last Modified: Tue, 12 Dec 2023 20:56:37 GMT  
+		Size: 39.9 MB (39898199 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:4ae0c058f8aecf0d699ae78775b50beebb271875f80da6585d42cb0d517146db`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
+	-	`sha256:51af780d59eac7a7f854f004e2e7560059aeba2f4b5f4562fc2694993be00561`  
+		Last Modified: Tue, 12 Dec 2023 20:56:35 GMT  
 		Size: 393.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a76893212453a8b2080d49d9518b41d543ec24e752e449a1478c95ffe4206e2c`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 7.6 MB (7550205 bytes)  
+	-	`sha256:9b6212fb298be6621a42814b1fa82e68438a317e6b9181434abed5879340098f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:36 GMT  
+		Size: 7.6 MB (7554082 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:8874a2680a4e7c5ca4d16ad2eefa6eb5a98325feedb62526c5c4fa0365f52363`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 389.0 B  
+	-	`sha256:a55a559f83d03ba7ed2ef9a12871410d6a73611229c498b1aa2a5109e6963a52`  
+		Last Modified: Tue, 12 Dec 2023 20:56:35 GMT  
+		Size: 388.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2ed0e6f0f488df784d9d70258de48d15655c3924cb88abb44cabeeee80f645a2`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 2.3 MB (2297446 bytes)  
+	-	`sha256:9affe4e6855f830682a2eef278f07c93e390134c27bfa3893755480a04925f7a`  
+		Last Modified: Tue, 12 Dec 2023 20:56:37 GMT  
+		Size: 2.4 MB (2407710 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:62f7f9d2689c2ace8b8d1bca41b177c2dded31d602aee1593e526341b61d5515`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 17.6 MB (17648649 bytes)  
+	-	`sha256:001c896285e9cc6176b716b72ce67e1d7af2182098859886ea470e6f469069b5`  
+		Last Modified: Tue, 12 Dec 2023 20:56:37 GMT  
+		Size: 17.6 MB (17648605 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:432ddc03009d073febfb7859217de060a860d45cbf3ddc074043b5d7d67b9ea0`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 191.0 B  
+	-	`sha256:20248dcde17a7f167586d9f6fe6c8430b8ac086ad4a948647ffdbabcd73adc80`  
+		Last Modified: Tue, 12 Dec 2023 20:56:37 GMT  
+		Size: 192.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:228c635e21ef0c94af182127915e90038159f320da10f393ecbb2abbd4e3ccdb`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
+	-	`sha256:2ab2f5d45dcb0250ddd1622c871ae83b6e7284383dc107766ad489bedff97819`  
+		Last Modified: Tue, 12 Dec 2023 20:56:38 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:1ed84a2fd893d405d68162ddc810dc1abbe145438644c6feaefe21b77715c286`  
-		Last Modified: Fri, 01 Dec 2023 00:17:03 GMT  
-		Size: 614.0 B  
+	-	`sha256:a45add85e2f691c5fb8a25e744abd979cd8e66c88d59932853f2e17a9c47188d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:38 GMT  
+		Size: 623.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:20820454ad23d5ee8a1c90c2c6902f3c78fa42b1f57c332a6ea1d2e08e91ebe0`  
-		Last Modified: Fri, 01 Dec 2023 00:17:03 GMT  
+	-	`sha256:ee6cf3df18f47b214f40dbc11c752ae53e72db194e3123b70e725a9d9845651d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:38 GMT  
 		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.11-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:64ae15c10e75c01ec422e2c0704061940e3dbb0235559fc3c8789f40bec09558
+$ docker pull rabbitmq@sha256:a225ed5dda4f4f18885ffdb38b4a8f21df3bf82e8644c301c5bd383610ae1243
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.4 MB (5386284 bytes)**  
+-	Total Size: **5.4 MB (5419753 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:678daf898debc643bd2fae427993d4ab9e5da93428cddecaf277514fb52489ea`
+-	Image ID: `sha256:c8bbb63a5d195a8bd8e9cc53c6e672c8d9982c9c19f1cff969e9040372bff0cf`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:6d937f86dc3a3b19a223453d054ccdf16c6183b264a40e97409e2c38a886ba25`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 759.7 KB (759749 bytes)  
+	-	`sha256:ac2ea5363bee15e65f0af6e67ead446058b8095965bf0c2ec4f7625a16470ed4`  
+		Last Modified: Tue, 12 Dec 2023 20:56:35 GMT  
+		Size: 760.1 KB (760123 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:511c9d8b79224f48417355c8ec189321a1c92fc8a4487743a30d8a9193f1e2ca`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 2.3 MB (2279378 bytes)  
+	-	`sha256:3498f5d40173c7b6582ae8acd553b85fbcf6371e4aa6962424015b80e105efef`  
+		Last Modified: Tue, 12 Dec 2023 20:56:35 GMT  
+		Size: 2.3 MB (2295926 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:ca44a57728711cd6ec404b94b5ef1604f136849940316c6029a64ea6e8de4610`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 2.3 MB (2278488 bytes)  
+	-	`sha256:8f0f9687b2f3466c4d82ab7994cb66168a3dfdef792783e5373bd6d0dcae2821`  
+		Last Modified: Tue, 12 Dec 2023 20:56:35 GMT  
+		Size: 2.3 MB (2295036 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:d5eea81db17cd0a9de889693b87715a0c702c23c527c2627fb50ccb6f484eeab`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 68.7 KB (68669 bytes)  
+	-	`sha256:de1bb01f7ce88d50e32c8cdf068c1a3880093fac9a44bcf41dd614a9082b8f7a`  
+		Last Modified: Tue, 12 Dec 2023 20:56:35 GMT  
+		Size: 68.7 KB (68668 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.11-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:07ecd6cf742168449f7db624a0c57fc461b74aebd9e35371e2cfe371b999b807
+$ docker pull rabbitmq@sha256:20354c3602fc4973f2e16aa83e9d19b7ad612c726578fe20c603fe47d356ceff
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **61.0 MB (60982268 bytes)**  
+-	Total Size: **61.0 MB (61030510 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:91cfd55bf631e234cb50b87e1b6fd871730391a0a4377cc7fa33cc0916040f1d`
+-	Image ID: `sha256:176f440481d8234a0e6247916462c684554d2bc3420277f0afe00b785aae8481`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 14:05:32 GMT
-ADD file:dbf65487d049081dc2d39b3d99d2c64b6c89754e7e2996a46169d3512e59f32a in / 
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Fri, 08 Dec 2023 01:49:15 GMT
+ADD file:d43ed267a41631ce0e5a4ef5aac821a75300a83f85ecb6259f5616852f89e989 in / 
+# Fri, 08 Dec 2023 01:49:15 GMT
 CMD ["/bin/sh"]
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.11.26
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 14:05:32 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.11.26","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.11.26?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.11.26","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.11.26?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
-		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
-		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cd525983453dd88602389c675cd7e8a17ffe42312c2c6f778ebaf1cafe7a017`  
-		Last Modified: Fri, 01 Dec 2023 13:18:41 GMT  
-		Size: 32.4 MB (32388906 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e04262af6a9bd1b05ecf335e72da233cab7368f70abedf6e286d58b18892812`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 391.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebaaf2d95a0729f63de9159319cf137072b221e868847269ef50e4a8fbd7fb5b`  
-		Last Modified: Fri, 01 Dec 2023 13:18:37 GMT  
-		Size: 6.4 MB (6382872 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25e7d62ec18a5ccee0758e48d9bf08c172f2aed6eb9c89ef3be6f4439daed452`  
-		Last Modified: Fri, 01 Dec 2023 13:18:35 GMT  
-		Size: 393.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:833aca62eef35e2c19a82169474f7afa951c0b79c73c08c40b08f6c049049f89`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 1.4 MB (1412514 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb84169e4d7fa19090064f95c71dd7abc06a9b04469bafa5d2014a41571b205e`  
-		Last Modified: Fri, 01 Dec 2023 13:19:18 GMT  
-		Size: 17.6 MB (17648564 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0489fa90eaf98ece986d79a64641326815ee388a8740210d515918961b3e61f4`  
-		Last Modified: Fri, 01 Dec 2023 13:19:16 GMT  
-		Size: 194.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba96c10c1c0109c78ccc8a760956a7cbb29a6f89f17a9d3b04ebe5fbc67c26ac`  
-		Last Modified: Fri, 01 Dec 2023 13:19:16 GMT  
+	-	`sha256:0803c38384d9fd0f9afaec8fd13d267547b660dcd46bb92a3d63c5d76e78b04c`  
+		Last Modified: Fri, 08 Dec 2023 01:49:33 GMT  
+		Size: 3.2 MB (3165143 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c0f150da36f6f625d41b8fd26d929990bd7bfd608b2a60c1f32137e63fa0a85f`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 32.4 MB (32426806 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ee2dec8adf19611e8329250ff0fe76f5b78a753f12e2dbd411c033d3e875b7c1`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 389.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:398c87e745935637777a0bc3844e082e2510dde383d5a7e337b2673e9ae302f4`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 6.4 MB (6384103 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:1f6c5597f69cf12305f4d149b2174d1bff4c9dbbd5d8c2f1bdb6c362a30fcba3`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 394.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bc5cc845affc7b41592001efac993b102d09d127e59b54f2a6d11f748eeadc28`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 1.4 MB (1403285 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:a6363c24a08e565e20c595391cb8f302d6b77adbd8d11e257b7cd41f6d7b5ed2`  
+		Last Modified: Wed, 13 Dec 2023 00:11:07 GMT  
+		Size: 17.6 MB (17648647 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:d74982a34c995c8d8c2a947ab01d81095d2c28c534ab5e3dd05d57c5fb1d5de1`  
+		Last Modified: Wed, 13 Dec 2023 00:11:06 GMT  
+		Size: 193.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:99a4189c55c46fb73694e91c5bf2193ba1c5ce1f76e6bfb84619e005b47c38b7`  
+		Last Modified: Wed, 13 Dec 2023 00:11:07 GMT  
 		Size: 109.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eab5343b5aa7eba1f07c8b9973a365006cd3c9a42ec3d393372bda100907a2db`  
-		Last Modified: Fri, 01 Dec 2023 13:19:16 GMT  
-		Size: 622.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7f16645b83a5f0250b930d48978c30d8b56ce0327b72c4180dad5747a494ac57`  
-		Last Modified: Fri, 01 Dec 2023 13:19:16 GMT  
-		Size: 833.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:8ee2f2be88a93038e7d22673a8b33eaba100eb8fd02b07a2d2b1d03faa9885ef`  
+		Last Modified: Wed, 13 Dec 2023 00:11:07 GMT  
+		Size: 615.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:d5955a9546069e050afc0643a59ac4b07a763836e4c9e6ff3613b207e5bd0f3b`  
+		Last Modified: Wed, 13 Dec 2023 00:11:08 GMT  
+		Size: 826.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+
+### `rabbitmq:3.11-alpine` - unknown; unknown
+
+```console
+$ docker pull rabbitmq@sha256:1fa94af148abec62ac7624d60ad807d431520159b494b5150908c3fe4cef18f1
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **68.5 KB (68485 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:900572959a8c6691ccd31b391ddb3a1ff9af355bed40ea0ecc07a9d5298d2763`
+
+```dockerfile
+```
+
+-	Layers:
+	-	`sha256:9ed5b35dc7cb826696868f282a0171fb51ed13a6f65617188d9adf69e279978f`  
+		Last Modified: Wed, 13 Dec 2023 00:11:06 GMT  
+		Size: 68.5 KB (68485 bytes)  
+		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.11-alpine` - linux; arm variant v7
 
@@ -13494,7 +13578,7 @@ $ docker pull rabbitmq@sha256:820720ecb4fbf42bd120b5a15bc70ff01338846d0f71c111c3
 ## `rabbitmq:3.11-management-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:d3d6fb72d04673027e231aa2ac535f4918b82cb0bf8e015b14e14ecab901761e
+$ docker pull rabbitmq@sha256:a34aed030a603fa0fdf77afa37edc253638cd3484602c68716b756e3db646978
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -13516,19 +13600,19 @@ $ docker pull rabbitmq@sha256:d3d6fb72d04673027e231aa2ac535f4918b82cb0bf8e015b14
 ### `rabbitmq:3.11-management-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:a562f1546ff7b5fbca74837a1aa3a2fcf2860954d01440d4b8859ded1dc7b5b7
+$ docker pull rabbitmq@sha256:39def0ef139105e2444ec84f9692090d2922c751a4c353ec071e1a32f8767ebe
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **86.1 MB (86079910 bytes)**  
+-	Total Size: **86.2 MB (86173732 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c75de019ccb984e62079e14292853a9a88d422a5d9c50dee25ab6aeeaff69690`
+-	Image ID: `sha256:80ab86d429c71ec3211fc35b197c06b15161279f24e429c89893f0b308582d84`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
 # Fri, 24 Mar 2023 18:45:07 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
 # Fri, 24 Mar 2023 18:45:07 GMT
 CMD ["/bin/sh"]
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -13538,11 +13622,11 @@ ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
 # Fri, 24 Mar 2023 18:45:07 GMT
 COPY /opt/erlang /opt/erlang # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 COPY /opt/openssl /opt/openssl # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -13558,7 +13642,7 @@ ENV RABBITMQ_HOME=/opt/rabbitmq
 # Fri, 24 Mar 2023 18:45:07 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.11.26","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.11.26?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.11.26","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.11.26?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -13586,76 +13670,76 @@ EXPOSE map[15671/tcp:{} 15672/tcp:{}]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a75085c5abb4fe97990546041014c6ebf78df5d6ec6dcaffe9f1f63b9e9ee644`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 40.1 MB (40076567 bytes)  
+	-	`sha256:c25db1938189684d53e900085174ab31448b1792d8fd34bd0339b82a97060980`  
+		Last Modified: Tue, 12 Dec 2023 20:56:37 GMT  
+		Size: 39.9 MB (39898199 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:4ae0c058f8aecf0d699ae78775b50beebb271875f80da6585d42cb0d517146db`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
+	-	`sha256:51af780d59eac7a7f854f004e2e7560059aeba2f4b5f4562fc2694993be00561`  
+		Last Modified: Tue, 12 Dec 2023 20:56:35 GMT  
 		Size: 393.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a76893212453a8b2080d49d9518b41d543ec24e752e449a1478c95ffe4206e2c`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 7.6 MB (7550205 bytes)  
+	-	`sha256:9b6212fb298be6621a42814b1fa82e68438a317e6b9181434abed5879340098f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:36 GMT  
+		Size: 7.6 MB (7554082 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:8874a2680a4e7c5ca4d16ad2eefa6eb5a98325feedb62526c5c4fa0365f52363`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 389.0 B  
+	-	`sha256:a55a559f83d03ba7ed2ef9a12871410d6a73611229c498b1aa2a5109e6963a52`  
+		Last Modified: Tue, 12 Dec 2023 20:56:35 GMT  
+		Size: 388.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2ed0e6f0f488df784d9d70258de48d15655c3924cb88abb44cabeeee80f645a2`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 2.3 MB (2297446 bytes)  
+	-	`sha256:9affe4e6855f830682a2eef278f07c93e390134c27bfa3893755480a04925f7a`  
+		Last Modified: Tue, 12 Dec 2023 20:56:37 GMT  
+		Size: 2.4 MB (2407710 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:62f7f9d2689c2ace8b8d1bca41b177c2dded31d602aee1593e526341b61d5515`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 17.6 MB (17648649 bytes)  
+	-	`sha256:001c896285e9cc6176b716b72ce67e1d7af2182098859886ea470e6f469069b5`  
+		Last Modified: Tue, 12 Dec 2023 20:56:37 GMT  
+		Size: 17.6 MB (17648605 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:432ddc03009d073febfb7859217de060a860d45cbf3ddc074043b5d7d67b9ea0`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 191.0 B  
+	-	`sha256:20248dcde17a7f167586d9f6fe6c8430b8ac086ad4a948647ffdbabcd73adc80`  
+		Last Modified: Tue, 12 Dec 2023 20:56:37 GMT  
+		Size: 192.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:228c635e21ef0c94af182127915e90038159f320da10f393ecbb2abbd4e3ccdb`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
+	-	`sha256:2ab2f5d45dcb0250ddd1622c871ae83b6e7284383dc107766ad489bedff97819`  
+		Last Modified: Tue, 12 Dec 2023 20:56:38 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:1ed84a2fd893d405d68162ddc810dc1abbe145438644c6feaefe21b77715c286`  
-		Last Modified: Fri, 01 Dec 2023 00:17:03 GMT  
-		Size: 614.0 B  
+	-	`sha256:a45add85e2f691c5fb8a25e744abd979cd8e66c88d59932853f2e17a9c47188d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:38 GMT  
+		Size: 623.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:20820454ad23d5ee8a1c90c2c6902f3c78fa42b1f57c332a6ea1d2e08e91ebe0`  
-		Last Modified: Fri, 01 Dec 2023 00:17:03 GMT  
+	-	`sha256:ee6cf3df18f47b214f40dbc11c752ae53e72db194e3123b70e725a9d9845651d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:38 GMT  
 		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:c8341ecb7391a34fd07108112346920380eb7e976237f938336110695d7cd8a4`  
-		Last Modified: Fri, 01 Dec 2023 01:11:39 GMT  
-		Size: 15.1 MB (15102095 bytes)  
+	-	`sha256:c959bd1a39a46295ac91eeb9a0157d21949358e4070182a96876a138be8a3b56`  
+		Last Modified: Tue, 12 Dec 2023 21:49:38 GMT  
+		Size: 15.3 MB (15254121 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.11-management-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:00b3e31de614fdd04245211106b70baeaa15bfce92b24945df6131e6bde43312
+$ docker pull rabbitmq@sha256:b6370345cdffe74a200014dcbcd3e1d31397d2a44e4944ee9a71c4dd6bb4661d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.7 MB (1663355 bytes)**  
+-	Total Size: **1.7 MB (1664273 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c69c9bb01d5e5c230fb7f00c9649aa7c9e7e713a66c45e271b8469a4727df6c1`
+-	Image ID: `sha256:44393047b86db4dd6561ff003776331db82ad7763902378ac0558a151c9c4ef3`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:087f9957e90709e548dd49ba268e0167251381620292fd6a0f70cb68a480beb5`  
-		Last Modified: Fri, 01 Dec 2023 01:11:39 GMT  
-		Size: 1.7 MB (1650527 bytes)  
+	-	`sha256:1628e41e9c779939e3850f828940f3b16ccdd843b20754b043bc11fe0ecf5e03`  
+		Last Modified: Tue, 12 Dec 2023 21:49:38 GMT  
+		Size: 1.7 MB (1651445 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:a5e6f79cdbdb99df0ecd77e07e33f38e9ad5a2b9c8af016f6a8f824b898fef63`  
-		Last Modified: Fri, 01 Dec 2023 01:11:39 GMT  
+	-	`sha256:7b7e9696440ffd90fefc7c1ed74df52ab13f98848e7b762cfd30c0bec2371b89`  
+		Last Modified: Tue, 12 Dec 2023 21:49:38 GMT  
 		Size: 12.8 KB (12828 bytes)  
 		MIME: application/vnd.in-toto+json
 
@@ -15319,14 +15403,15 @@ $ docker pull rabbitmq@sha256:990a90ed80bd5a42af74e548e9a2c953e09d8dafa93100f55f
 ## `rabbitmq:3.11.26-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:a75e35dd66ee5942fa8e9c0d5f640518db5931361f7ecb52db6a942f9c075883
+$ docker pull rabbitmq@sha256:30667b3d598d7199eb76229b82a43567fb48b1d064c7bd994544051315d6c5af
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 11
+-	Platforms: 12
 	-	linux; amd64
 	-	unknown; unknown
 	-	linux; arm variant v6
+	-	unknown; unknown
 	-	linux; arm variant v7
 	-	unknown; unknown
 	-	linux; arm64 variant v8
@@ -15339,262 +15424,282 @@ $ docker pull rabbitmq@sha256:a75e35dd66ee5942fa8e9c0d5f640518db5931361f7ecb52db
 ### `rabbitmq:3.11.26-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:23da98c17929f98812d2aa9c7017f9f9d672fab4ef87a154a53b8e2f8d155652
+$ docker pull rabbitmq@sha256:78f69da2b42906bd174b60ee6426638bfd921efb342f1f66991473e7a8aaf3a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **71.0 MB (70977815 bytes)**  
+-	Total Size: **70.9 MB (70919611 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:555a41b030e36c0cbf97951a5705bbdcb2e894f9f99e7eb30890233c195d61f4`
+-	Image ID: `sha256:e2ce731306b37d17337a2de4ca2a4d31aeb4eff7b655dec263fad2077fdc973e`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 14:05:32 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Fri, 08 Dec 2023 01:20:49 GMT
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
+# Fri, 08 Dec 2023 01:20:49 GMT
 CMD ["/bin/sh"]
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.11.26
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 14:05:32 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.11.26","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.11.26?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.11.26","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.11.26?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a75085c5abb4fe97990546041014c6ebf78df5d6ec6dcaffe9f1f63b9e9ee644`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 40.1 MB (40076567 bytes)  
+	-	`sha256:c25db1938189684d53e900085174ab31448b1792d8fd34bd0339b82a97060980`  
+		Last Modified: Tue, 12 Dec 2023 20:56:37 GMT  
+		Size: 39.9 MB (39898199 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:4ae0c058f8aecf0d699ae78775b50beebb271875f80da6585d42cb0d517146db`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
+	-	`sha256:51af780d59eac7a7f854f004e2e7560059aeba2f4b5f4562fc2694993be00561`  
+		Last Modified: Tue, 12 Dec 2023 20:56:35 GMT  
 		Size: 393.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a76893212453a8b2080d49d9518b41d543ec24e752e449a1478c95ffe4206e2c`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 7.6 MB (7550205 bytes)  
+	-	`sha256:9b6212fb298be6621a42814b1fa82e68438a317e6b9181434abed5879340098f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:36 GMT  
+		Size: 7.6 MB (7554082 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:8874a2680a4e7c5ca4d16ad2eefa6eb5a98325feedb62526c5c4fa0365f52363`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 389.0 B  
+	-	`sha256:a55a559f83d03ba7ed2ef9a12871410d6a73611229c498b1aa2a5109e6963a52`  
+		Last Modified: Tue, 12 Dec 2023 20:56:35 GMT  
+		Size: 388.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2ed0e6f0f488df784d9d70258de48d15655c3924cb88abb44cabeeee80f645a2`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 2.3 MB (2297446 bytes)  
+	-	`sha256:9affe4e6855f830682a2eef278f07c93e390134c27bfa3893755480a04925f7a`  
+		Last Modified: Tue, 12 Dec 2023 20:56:37 GMT  
+		Size: 2.4 MB (2407710 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:62f7f9d2689c2ace8b8d1bca41b177c2dded31d602aee1593e526341b61d5515`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 17.6 MB (17648649 bytes)  
+	-	`sha256:001c896285e9cc6176b716b72ce67e1d7af2182098859886ea470e6f469069b5`  
+		Last Modified: Tue, 12 Dec 2023 20:56:37 GMT  
+		Size: 17.6 MB (17648605 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:432ddc03009d073febfb7859217de060a860d45cbf3ddc074043b5d7d67b9ea0`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 191.0 B  
+	-	`sha256:20248dcde17a7f167586d9f6fe6c8430b8ac086ad4a948647ffdbabcd73adc80`  
+		Last Modified: Tue, 12 Dec 2023 20:56:37 GMT  
+		Size: 192.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:228c635e21ef0c94af182127915e90038159f320da10f393ecbb2abbd4e3ccdb`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
+	-	`sha256:2ab2f5d45dcb0250ddd1622c871ae83b6e7284383dc107766ad489bedff97819`  
+		Last Modified: Tue, 12 Dec 2023 20:56:38 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:1ed84a2fd893d405d68162ddc810dc1abbe145438644c6feaefe21b77715c286`  
-		Last Modified: Fri, 01 Dec 2023 00:17:03 GMT  
-		Size: 614.0 B  
+	-	`sha256:a45add85e2f691c5fb8a25e744abd979cd8e66c88d59932853f2e17a9c47188d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:38 GMT  
+		Size: 623.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:20820454ad23d5ee8a1c90c2c6902f3c78fa42b1f57c332a6ea1d2e08e91ebe0`  
-		Last Modified: Fri, 01 Dec 2023 00:17:03 GMT  
+	-	`sha256:ee6cf3df18f47b214f40dbc11c752ae53e72db194e3123b70e725a9d9845651d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:38 GMT  
 		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.11.26-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:64ae15c10e75c01ec422e2c0704061940e3dbb0235559fc3c8789f40bec09558
+$ docker pull rabbitmq@sha256:a225ed5dda4f4f18885ffdb38b4a8f21df3bf82e8644c301c5bd383610ae1243
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.4 MB (5386284 bytes)**  
+-	Total Size: **5.4 MB (5419753 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:678daf898debc643bd2fae427993d4ab9e5da93428cddecaf277514fb52489ea`
+-	Image ID: `sha256:c8bbb63a5d195a8bd8e9cc53c6e672c8d9982c9c19f1cff969e9040372bff0cf`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:6d937f86dc3a3b19a223453d054ccdf16c6183b264a40e97409e2c38a886ba25`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 759.7 KB (759749 bytes)  
+	-	`sha256:ac2ea5363bee15e65f0af6e67ead446058b8095965bf0c2ec4f7625a16470ed4`  
+		Last Modified: Tue, 12 Dec 2023 20:56:35 GMT  
+		Size: 760.1 KB (760123 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:511c9d8b79224f48417355c8ec189321a1c92fc8a4487743a30d8a9193f1e2ca`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 2.3 MB (2279378 bytes)  
+	-	`sha256:3498f5d40173c7b6582ae8acd553b85fbcf6371e4aa6962424015b80e105efef`  
+		Last Modified: Tue, 12 Dec 2023 20:56:35 GMT  
+		Size: 2.3 MB (2295926 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:ca44a57728711cd6ec404b94b5ef1604f136849940316c6029a64ea6e8de4610`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 2.3 MB (2278488 bytes)  
+	-	`sha256:8f0f9687b2f3466c4d82ab7994cb66168a3dfdef792783e5373bd6d0dcae2821`  
+		Last Modified: Tue, 12 Dec 2023 20:56:35 GMT  
+		Size: 2.3 MB (2295036 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:d5eea81db17cd0a9de889693b87715a0c702c23c527c2627fb50ccb6f484eeab`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
-		Size: 68.7 KB (68669 bytes)  
+	-	`sha256:de1bb01f7ce88d50e32c8cdf068c1a3880093fac9a44bcf41dd614a9082b8f7a`  
+		Last Modified: Tue, 12 Dec 2023 20:56:35 GMT  
+		Size: 68.7 KB (68668 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.11.26-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:07ecd6cf742168449f7db624a0c57fc461b74aebd9e35371e2cfe371b999b807
+$ docker pull rabbitmq@sha256:20354c3602fc4973f2e16aa83e9d19b7ad612c726578fe20c603fe47d356ceff
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **61.0 MB (60982268 bytes)**  
+-	Total Size: **61.0 MB (61030510 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:91cfd55bf631e234cb50b87e1b6fd871730391a0a4377cc7fa33cc0916040f1d`
+-	Image ID: `sha256:176f440481d8234a0e6247916462c684554d2bc3420277f0afe00b785aae8481`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 14:05:32 GMT
-ADD file:dbf65487d049081dc2d39b3d99d2c64b6c89754e7e2996a46169d3512e59f32a in / 
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Fri, 08 Dec 2023 01:49:15 GMT
+ADD file:d43ed267a41631ce0e5a4ef5aac821a75300a83f85ecb6259f5616852f89e989 in / 
+# Fri, 08 Dec 2023 01:49:15 GMT
 CMD ["/bin/sh"]
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.11.26
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 14:05:32 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.11.26","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.11.26?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.11.26","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.11.26?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Tue, 21 Nov 2023 14:05:32 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
-		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
-		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cd525983453dd88602389c675cd7e8a17ffe42312c2c6f778ebaf1cafe7a017`  
-		Last Modified: Fri, 01 Dec 2023 13:18:41 GMT  
-		Size: 32.4 MB (32388906 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e04262af6a9bd1b05ecf335e72da233cab7368f70abedf6e286d58b18892812`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 391.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebaaf2d95a0729f63de9159319cf137072b221e868847269ef50e4a8fbd7fb5b`  
-		Last Modified: Fri, 01 Dec 2023 13:18:37 GMT  
-		Size: 6.4 MB (6382872 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25e7d62ec18a5ccee0758e48d9bf08c172f2aed6eb9c89ef3be6f4439daed452`  
-		Last Modified: Fri, 01 Dec 2023 13:18:35 GMT  
-		Size: 393.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:833aca62eef35e2c19a82169474f7afa951c0b79c73c08c40b08f6c049049f89`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 1.4 MB (1412514 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb84169e4d7fa19090064f95c71dd7abc06a9b04469bafa5d2014a41571b205e`  
-		Last Modified: Fri, 01 Dec 2023 13:19:18 GMT  
-		Size: 17.6 MB (17648564 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0489fa90eaf98ece986d79a64641326815ee388a8740210d515918961b3e61f4`  
-		Last Modified: Fri, 01 Dec 2023 13:19:16 GMT  
-		Size: 194.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba96c10c1c0109c78ccc8a760956a7cbb29a6f89f17a9d3b04ebe5fbc67c26ac`  
-		Last Modified: Fri, 01 Dec 2023 13:19:16 GMT  
+	-	`sha256:0803c38384d9fd0f9afaec8fd13d267547b660dcd46bb92a3d63c5d76e78b04c`  
+		Last Modified: Fri, 08 Dec 2023 01:49:33 GMT  
+		Size: 3.2 MB (3165143 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c0f150da36f6f625d41b8fd26d929990bd7bfd608b2a60c1f32137e63fa0a85f`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 32.4 MB (32426806 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ee2dec8adf19611e8329250ff0fe76f5b78a753f12e2dbd411c033d3e875b7c1`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 389.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:398c87e745935637777a0bc3844e082e2510dde383d5a7e337b2673e9ae302f4`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 6.4 MB (6384103 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:1f6c5597f69cf12305f4d149b2174d1bff4c9dbbd5d8c2f1bdb6c362a30fcba3`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 394.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bc5cc845affc7b41592001efac993b102d09d127e59b54f2a6d11f748eeadc28`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 1.4 MB (1403285 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:a6363c24a08e565e20c595391cb8f302d6b77adbd8d11e257b7cd41f6d7b5ed2`  
+		Last Modified: Wed, 13 Dec 2023 00:11:07 GMT  
+		Size: 17.6 MB (17648647 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:d74982a34c995c8d8c2a947ab01d81095d2c28c534ab5e3dd05d57c5fb1d5de1`  
+		Last Modified: Wed, 13 Dec 2023 00:11:06 GMT  
+		Size: 193.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:99a4189c55c46fb73694e91c5bf2193ba1c5ce1f76e6bfb84619e005b47c38b7`  
+		Last Modified: Wed, 13 Dec 2023 00:11:07 GMT  
 		Size: 109.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eab5343b5aa7eba1f07c8b9973a365006cd3c9a42ec3d393372bda100907a2db`  
-		Last Modified: Fri, 01 Dec 2023 13:19:16 GMT  
-		Size: 622.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7f16645b83a5f0250b930d48978c30d8b56ce0327b72c4180dad5747a494ac57`  
-		Last Modified: Fri, 01 Dec 2023 13:19:16 GMT  
-		Size: 833.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:8ee2f2be88a93038e7d22673a8b33eaba100eb8fd02b07a2d2b1d03faa9885ef`  
+		Last Modified: Wed, 13 Dec 2023 00:11:07 GMT  
+		Size: 615.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:d5955a9546069e050afc0643a59ac4b07a763836e4c9e6ff3613b207e5bd0f3b`  
+		Last Modified: Wed, 13 Dec 2023 00:11:08 GMT  
+		Size: 826.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+
+### `rabbitmq:3.11.26-alpine` - unknown; unknown
+
+```console
+$ docker pull rabbitmq@sha256:1fa94af148abec62ac7624d60ad807d431520159b494b5150908c3fe4cef18f1
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **68.5 KB (68485 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:900572959a8c6691ccd31b391ddb3a1ff9af355bed40ea0ecc07a9d5298d2763`
+
+```dockerfile
+```
+
+-	Layers:
+	-	`sha256:9ed5b35dc7cb826696868f282a0171fb51ed13a6f65617188d9adf69e279978f`  
+		Last Modified: Wed, 13 Dec 2023 00:11:06 GMT  
+		Size: 68.5 KB (68485 bytes)  
+		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.11.26-alpine` - linux; arm variant v7
 
@@ -16972,7 +17077,7 @@ $ docker pull rabbitmq@sha256:820720ecb4fbf42bd120b5a15bc70ff01338846d0f71c111c3
 ## `rabbitmq:3.11.26-management-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:fdc801ab93e2f73d7b23b7cb60954346eaa834289bb1eefa9bdc4cf5f31edc5a
+$ docker pull rabbitmq@sha256:415f62fbf120a74bb3533b7348f700b6e29427af925276a5d032e8a6caeb95f5
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -16992,19 +17097,19 @@ $ docker pull rabbitmq@sha256:fdc801ab93e2f73d7b23b7cb60954346eaa834289bb1eefa9b
 ### `rabbitmq:3.11.26-management-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:a562f1546ff7b5fbca74837a1aa3a2fcf2860954d01440d4b8859ded1dc7b5b7
+$ docker pull rabbitmq@sha256:39def0ef139105e2444ec84f9692090d2922c751a4c353ec071e1a32f8767ebe
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **86.1 MB (86079910 bytes)**  
+-	Total Size: **86.2 MB (86173732 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c75de019ccb984e62079e14292853a9a88d422a5d9c50dee25ab6aeeaff69690`
+-	Image ID: `sha256:80ab86d429c71ec3211fc35b197c06b15161279f24e429c89893f0b308582d84`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
 # Fri, 24 Mar 2023 18:45:07 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
 # Fri, 24 Mar 2023 18:45:07 GMT
 CMD ["/bin/sh"]
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -17014,11 +17119,11 @@ ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
 # Fri, 24 Mar 2023 18:45:07 GMT
 COPY /opt/erlang /opt/erlang # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 COPY /opt/openssl /opt/openssl # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -17034,7 +17139,7 @@ ENV RABBITMQ_HOME=/opt/rabbitmq
 # Fri, 24 Mar 2023 18:45:07 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.11.26","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.11.26?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.11.26","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.11.26?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -17062,76 +17167,76 @@ EXPOSE map[15671/tcp:{} 15672/tcp:{}]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a75085c5abb4fe97990546041014c6ebf78df5d6ec6dcaffe9f1f63b9e9ee644`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 40.1 MB (40076567 bytes)  
+	-	`sha256:c25db1938189684d53e900085174ab31448b1792d8fd34bd0339b82a97060980`  
+		Last Modified: Tue, 12 Dec 2023 20:56:37 GMT  
+		Size: 39.9 MB (39898199 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:4ae0c058f8aecf0d699ae78775b50beebb271875f80da6585d42cb0d517146db`  
-		Last Modified: Fri, 01 Dec 2023 00:16:59 GMT  
+	-	`sha256:51af780d59eac7a7f854f004e2e7560059aeba2f4b5f4562fc2694993be00561`  
+		Last Modified: Tue, 12 Dec 2023 20:56:35 GMT  
 		Size: 393.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a76893212453a8b2080d49d9518b41d543ec24e752e449a1478c95ffe4206e2c`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 7.6 MB (7550205 bytes)  
+	-	`sha256:9b6212fb298be6621a42814b1fa82e68438a317e6b9181434abed5879340098f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:36 GMT  
+		Size: 7.6 MB (7554082 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:8874a2680a4e7c5ca4d16ad2eefa6eb5a98325feedb62526c5c4fa0365f52363`  
-		Last Modified: Fri, 01 Dec 2023 00:17:00 GMT  
-		Size: 389.0 B  
+	-	`sha256:a55a559f83d03ba7ed2ef9a12871410d6a73611229c498b1aa2a5109e6963a52`  
+		Last Modified: Tue, 12 Dec 2023 20:56:35 GMT  
+		Size: 388.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2ed0e6f0f488df784d9d70258de48d15655c3924cb88abb44cabeeee80f645a2`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 2.3 MB (2297446 bytes)  
+	-	`sha256:9affe4e6855f830682a2eef278f07c93e390134c27bfa3893755480a04925f7a`  
+		Last Modified: Tue, 12 Dec 2023 20:56:37 GMT  
+		Size: 2.4 MB (2407710 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:62f7f9d2689c2ace8b8d1bca41b177c2dded31d602aee1593e526341b61d5515`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 17.6 MB (17648649 bytes)  
+	-	`sha256:001c896285e9cc6176b716b72ce67e1d7af2182098859886ea470e6f469069b5`  
+		Last Modified: Tue, 12 Dec 2023 20:56:37 GMT  
+		Size: 17.6 MB (17648605 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:432ddc03009d073febfb7859217de060a860d45cbf3ddc074043b5d7d67b9ea0`  
-		Last Modified: Fri, 01 Dec 2023 00:17:01 GMT  
-		Size: 191.0 B  
+	-	`sha256:20248dcde17a7f167586d9f6fe6c8430b8ac086ad4a948647ffdbabcd73adc80`  
+		Last Modified: Tue, 12 Dec 2023 20:56:37 GMT  
+		Size: 192.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:228c635e21ef0c94af182127915e90038159f320da10f393ecbb2abbd4e3ccdb`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
+	-	`sha256:2ab2f5d45dcb0250ddd1622c871ae83b6e7284383dc107766ad489bedff97819`  
+		Last Modified: Tue, 12 Dec 2023 20:56:38 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:1ed84a2fd893d405d68162ddc810dc1abbe145438644c6feaefe21b77715c286`  
-		Last Modified: Fri, 01 Dec 2023 00:17:03 GMT  
-		Size: 614.0 B  
+	-	`sha256:a45add85e2f691c5fb8a25e744abd979cd8e66c88d59932853f2e17a9c47188d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:38 GMT  
+		Size: 623.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:20820454ad23d5ee8a1c90c2c6902f3c78fa42b1f57c332a6ea1d2e08e91ebe0`  
-		Last Modified: Fri, 01 Dec 2023 00:17:03 GMT  
+	-	`sha256:ee6cf3df18f47b214f40dbc11c752ae53e72db194e3123b70e725a9d9845651d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:38 GMT  
 		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:c8341ecb7391a34fd07108112346920380eb7e976237f938336110695d7cd8a4`  
-		Last Modified: Fri, 01 Dec 2023 01:11:39 GMT  
-		Size: 15.1 MB (15102095 bytes)  
+	-	`sha256:c959bd1a39a46295ac91eeb9a0157d21949358e4070182a96876a138be8a3b56`  
+		Last Modified: Tue, 12 Dec 2023 21:49:38 GMT  
+		Size: 15.3 MB (15254121 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.11.26-management-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:00b3e31de614fdd04245211106b70baeaa15bfce92b24945df6131e6bde43312
+$ docker pull rabbitmq@sha256:b6370345cdffe74a200014dcbcd3e1d31397d2a44e4944ee9a71c4dd6bb4661d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.7 MB (1663355 bytes)**  
+-	Total Size: **1.7 MB (1664273 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c69c9bb01d5e5c230fb7f00c9649aa7c9e7e713a66c45e271b8469a4727df6c1`
+-	Image ID: `sha256:44393047b86db4dd6561ff003776331db82ad7763902378ac0558a151c9c4ef3`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:087f9957e90709e548dd49ba268e0167251381620292fd6a0f70cb68a480beb5`  
-		Last Modified: Fri, 01 Dec 2023 01:11:39 GMT  
-		Size: 1.7 MB (1650527 bytes)  
+	-	`sha256:1628e41e9c779939e3850f828940f3b16ccdd843b20754b043bc11fe0ecf5e03`  
+		Last Modified: Tue, 12 Dec 2023 21:49:38 GMT  
+		Size: 1.7 MB (1651445 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:a5e6f79cdbdb99df0ecd77e07e33f38e9ad5a2b9c8af016f6a8f824b898fef63`  
-		Last Modified: Fri, 01 Dec 2023 01:11:39 GMT  
+	-	`sha256:7b7e9696440ffd90fefc7c1ed74df52ab13f98848e7b762cfd30c0bec2371b89`  
+		Last Modified: Tue, 12 Dec 2023 21:49:38 GMT  
 		Size: 12.8 KB (12828 bytes)  
 		MIME: application/vnd.in-toto+json
 
@@ -18653,14 +18758,15 @@ $ docker pull rabbitmq@sha256:1fcf155a9c65e98401b53fde23838671c9a6654b87f89bca6b
 ## `rabbitmq:3.12-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:1edca469f08da37dbe816e144bc7654daf98f756a8d12c3e89a452ef9cf7a589
+$ docker pull rabbitmq@sha256:8db41fcec066c37c8ce0d21b48d5373f948586362e0a9159f0c36665b45eafb9
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 13
+-	Platforms: 14
 	-	linux; amd64
 	-	unknown; unknown
 	-	linux; arm variant v6
+	-	unknown; unknown
 	-	linux; arm variant v7
 	-	unknown; unknown
 	-	linux; arm64 variant v8
@@ -18675,262 +18781,282 @@ $ docker pull rabbitmq@sha256:1edca469f08da37dbe816e144bc7654daf98f756a8d12c3e89
 ### `rabbitmq:3.12-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:8d5ca55e94c6399f33a4aa6117be824c6c44a1f56ca0ab27a09a6ec5b3d18b58
+$ docker pull rabbitmq@sha256:0ef4a5074ae490fbd34e5e2be4365618f784e3db41ea7567bb2e2a975b1d993d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **71.1 MB (71061346 bytes)**  
+-	Total Size: **71.0 MB (71003173 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8b213554f1cd3607feddc8bdb70d7900e12dbee0acda77e96ab5ec75b91af3af`
+-	Image ID: `sha256:cad9acd977771eede62ee26745cb7cab2d5fb1275694f5ab233d66dcefba6068`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Wed, 22 Nov 2023 06:55:25 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Fri, 08 Dec 2023 01:20:49 GMT
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
+# Fri, 08 Dec 2023 01:20:49 GMT
 CMD ["/bin/sh"]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.12.10
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:b3ec5ffef005a39df32918af575859c89c2788393b2f27f8f8c3bac9b14dea47`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 40.1 MB (40076564 bytes)  
+	-	`sha256:d4c6bd9f2f476ac8ca381111358834f1eda42d20a7b66fc92fb6ffcf16741a44`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 39.9 MB (39898182 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:f0934a0d587092da8f59064a56ac56e44be97221620457d0c0d54bf221d35a64`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 392.0 B  
+	-	`sha256:b1d788cbab00d72d13b60a6ba065354c10d164774c1c8f6ac0b497eb0b4a2a7f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:17 GMT  
+		Size: 389.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:b40fdcef0bf8bcb93ff6d770cc77b2b045c07b2a08957318cc54824afd369e06`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 7.6 MB (7550194 bytes)  
+	-	`sha256:b1e3f3c4daae27dca3e24dd1187d1bf866da5669f418010b023acbd45b827f7f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 7.6 MB (7554025 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:79cd97312a23f9ff0fbc125f0d99182b7b7cb6d8f33b879adb15e93ea5715a61`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 388.0 B  
+	-	`sha256:f8fdf6d9b3ad47c899f1a3f52d68a08a9001ba37dadcb5916db647891db96817`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 389.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:e6e66fadb7a8deb5dc0cc0feedd733c538c1af027faf370f5b1c49d6aa1baa9e`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 2.3 MB (2297463 bytes)  
+	-	`sha256:8eb011bdfe98916d78ec812fa2f3471332ca9bf4850dfbde8ee3b56b708e5e4d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 2.4 MB (2407695 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ec4e4a2bb19115482a0d1317f925d86ae86f1ed36367e1df9c858c5785205f85`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 17.7 MB (17732171 bytes)  
+	-	`sha256:1d217240abed832febda1c576f1ccbc55af5c1a5dcd2787af1e8c7bcc6b59930`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 17.7 MB (17732264 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:c2714c1d18242092af3278ede338a05241609e5076436c713cf8bbd8095d881c`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 190.0 B  
+	-	`sha256:fa1d576cf15e654dfb707e3f0134c9675791a87771796f49b60277fcaef9c89e`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 192.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:cc60c1438b1a1d3b265a298531fb14f3e48028fae0adc86ff7f177b86d870770`  
-		Last Modified: Fri, 01 Dec 2023 00:16:52 GMT  
+	-	`sha256:bbf1653df82cd6166cd804aee895e11075e4820606f286b9a1143598a25ed360`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:63367130112c9486aefe72d6dc7e1bc3f159ac0419ea96ed9b5c17991741c868`  
-		Last Modified: Fri, 01 Dec 2023 00:16:52 GMT  
-		Size: 622.0 B  
+	-	`sha256:c23fdb4d0a8eb6da1798d392989ea3bfaafbc85e8f29fed272db727337c1d330`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 618.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:dbc0e1de0b40b1f1d423c26188cba128e93d49df717f27a129115c915c2bff28`  
-		Last Modified: Fri, 01 Dec 2023 00:16:53 GMT  
-		Size: 831.0 B  
+	-	`sha256:9fa26e965cc6fba14785af94f4e90c740664e94800f949a05fd95952e8c73f45`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.12-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:d3c1e8c16ad920532df10b349a4b7e2524cb74f7b6c05247f9e37680081973cb
+$ docker pull rabbitmq@sha256:e8f6a879bd11a99e706754fc84a9fb6f77f308103fa3928908545af7fdaca15d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.4 MB (5388715 bytes)**  
+-	Total Size: **5.4 MB (5422186 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6ad8377ae277d113d69851d3d1d06465cd8c645d33a810230afd5c7eee8af6b8`
+-	Image ID: `sha256:b4e88fac3a2f4f35238caea5d83bceda1be96203239ad36f0210724229a2a9c0`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:c9d6d98c7ee4ba09322b837e540d121d429dafa957581bb9a14060f9aaa4011e`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 760.4 KB (760357 bytes)  
+	-	`sha256:45303b55287ff6a7859c3216626a35e0f67ab48a8081f1cdf0217372a653869c`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 760.7 KB (760731 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:e1bfd33b2b92372bce7936892c18f7ca03c2e0957b9d72c5904072fb4fa7f893`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 2.3 MB (2279986 bytes)  
+	-	`sha256:b870e1fd23c76b621241628c167a5140eabad57c00edc9d4b95c2135dc1c19c6`  
+		Last Modified: Tue, 12 Dec 2023 20:56:17 GMT  
+		Size: 2.3 MB (2296534 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:2f8c53e5276b15f985bde97c57ae8bbf584b6e72cc30f93355880f4694a25abd`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 2.3 MB (2279096 bytes)  
+	-	`sha256:8f309b51064305faeb191cb9d3c2f7ff139ca0b2907687497c83c7910dab0a30`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 2.3 MB (2295644 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:fc994f03a2b9f8df00051b9eb51cb3c7f2df4fdf3960ce158c6dc1bd00275032`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 69.3 KB (69276 bytes)  
+	-	`sha256:c63466cbf7d1dc72d06b7d1b2950532d0a72d2d3b5e0958a5c21d6e33e1bf164`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 69.3 KB (69277 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.12-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:ed5e69c1ab8068bcb2776359fc518b2ba608200e10e6eb7bd9f78265e0b50a04
+$ docker pull rabbitmq@sha256:925ff96e40bdfc64e878da51d3b5ba9ce0f492069f73517c63230b25928ba9ab
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **61.1 MB (61065923 bytes)**  
+-	Total Size: **61.1 MB (61114109 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5582907ec1bccfbebbf6e3c44669f949b8117df693705bf65941a517325dd6a3`
+-	Image ID: `sha256:97e23c8154330ba253b3bb84fac0fc226a8e2a1d61b43fe4f5eda6cacb6b307c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Wed, 22 Nov 2023 06:55:25 GMT
-ADD file:dbf65487d049081dc2d39b3d99d2c64b6c89754e7e2996a46169d3512e59f32a in / 
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Fri, 08 Dec 2023 01:49:15 GMT
+ADD file:d43ed267a41631ce0e5a4ef5aac821a75300a83f85ecb6259f5616852f89e989 in / 
+# Fri, 08 Dec 2023 01:49:15 GMT
 CMD ["/bin/sh"]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.12.10
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
-		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
-		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cd525983453dd88602389c675cd7e8a17ffe42312c2c6f778ebaf1cafe7a017`  
-		Last Modified: Fri, 01 Dec 2023 13:18:41 GMT  
-		Size: 32.4 MB (32388906 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e04262af6a9bd1b05ecf335e72da233cab7368f70abedf6e286d58b18892812`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 391.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebaaf2d95a0729f63de9159319cf137072b221e868847269ef50e4a8fbd7fb5b`  
-		Last Modified: Fri, 01 Dec 2023 13:18:37 GMT  
-		Size: 6.4 MB (6382872 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25e7d62ec18a5ccee0758e48d9bf08c172f2aed6eb9c89ef3be6f4439daed452`  
-		Last Modified: Fri, 01 Dec 2023 13:18:35 GMT  
-		Size: 393.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:833aca62eef35e2c19a82169474f7afa951c0b79c73c08c40b08f6c049049f89`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 1.4 MB (1412514 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4b719393cc6ab5324df5ddd2531ca519e9efc317e9c78d46930108b25271bdd`  
-		Last Modified: Fri, 01 Dec 2023 13:18:35 GMT  
-		Size: 17.7 MB (17732222 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62e5afe16a6327cd39badc15d78fd478d7492caa955b72d172bb70c2cf181847`  
-		Last Modified: Fri, 01 Dec 2023 13:18:33 GMT  
-		Size: 194.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e02017eebf648c7ad787b8f7b88d7225ba935a16a38221b4ead456124ad71fdd`  
-		Last Modified: Fri, 01 Dec 2023 13:18:33 GMT  
+	-	`sha256:0803c38384d9fd0f9afaec8fd13d267547b660dcd46bb92a3d63c5d76e78b04c`  
+		Last Modified: Fri, 08 Dec 2023 01:49:33 GMT  
+		Size: 3.2 MB (3165143 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c0f150da36f6f625d41b8fd26d929990bd7bfd608b2a60c1f32137e63fa0a85f`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 32.4 MB (32426806 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ee2dec8adf19611e8329250ff0fe76f5b78a753f12e2dbd411c033d3e875b7c1`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 389.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:398c87e745935637777a0bc3844e082e2510dde383d5a7e337b2673e9ae302f4`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 6.4 MB (6384103 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:1f6c5597f69cf12305f4d149b2174d1bff4c9dbbd5d8c2f1bdb6c362a30fcba3`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 394.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bc5cc845affc7b41592001efac993b102d09d127e59b54f2a6d11f748eeadc28`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 1.4 MB (1403285 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:a5cfd8ab1746f4e68f469cff61c9c47169ea6f4476d72a5beb4ed99cc9b30461`  
+		Last Modified: Wed, 13 Dec 2023 00:10:34 GMT  
+		Size: 17.7 MB (17732235 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:51de0695c541b2934c38c06a487e061dcf1b9a2ffa79a3f5ed63d8d174500391`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 195.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:4ffbbe23ea092fecf38d5cfb1691597cc5df798745ca3666626f305743e5b017`  
+		Last Modified: Wed, 13 Dec 2023 00:10:34 GMT  
 		Size: 109.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2643343d34ab3b5cfa46f958528d67fade951b354350961db6665c7c0d543541`  
-		Last Modified: Fri, 01 Dec 2023 13:18:33 GMT  
-		Size: 619.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:319942b2d2da7ce22d7467ab7996f98c905be08b931205791f7851291cb07fcc`  
-		Last Modified: Fri, 01 Dec 2023 13:18:33 GMT  
-		Size: 833.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ccfdc3bae8d76367a954b7dd4a3fd97265351f534db12a74994b4bbec4905f0e`  
+		Last Modified: Wed, 13 Dec 2023 00:10:35 GMT  
+		Size: 618.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bf75266cf5f1ba68b3306754989673a371829458c9bb17f324c0421aab60b12c`  
+		Last Modified: Wed, 13 Dec 2023 00:10:35 GMT  
+		Size: 832.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+
+### `rabbitmq:3.12-alpine` - unknown; unknown
+
+```console
+$ docker pull rabbitmq@sha256:99dcda433ef2970bf15cf44c1ec872507bdf6db23ba2b93fe18d84fb58bd07e8
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **69.3 KB (69275 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:bc6b6edb6b1eb8883e5b176b88039d3713c2b0fdfa37ef4e4e8589e6ed9af3bc`
+
+```dockerfile
+```
+
+-	Layers:
+	-	`sha256:f05ac1e36425c4d9b57ebf0a2c030cf50cf962cdfa3f4b604f7c8002538e0a8c`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 69.3 KB (69275 bytes)  
+		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.12-alpine` - linux; arm variant v7
 
@@ -20442,7 +20568,7 @@ $ docker pull rabbitmq@sha256:d0effbbcca8a78161732959b9ded82fde6e3e07d5e60b498e5
 ## `rabbitmq:3.12-management-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:5f642bd82bbb93f0677a1f956ffa5a35001f8aa89b00eabf987c7a09c40289f2
+$ docker pull rabbitmq@sha256:9b51fafbec5eec1d62ec2aed4371520ea619c5f9b7ac3b16e60961f2ee8e5223
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -20464,19 +20590,19 @@ $ docker pull rabbitmq@sha256:5f642bd82bbb93f0677a1f956ffa5a35001f8aa89b00eabf98
 ### `rabbitmq:3.12-management-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:bb0ba003fe45928a0898a99c590ebb8afb1c4cf131bbab1eecc710b1d9e243af
+$ docker pull rabbitmq@sha256:90981cabb092963dfd37cb3b78e724b9bceb84b0706737e29f7563c71ba1187b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **86.2 MB (86163424 bytes)**  
+-	Total Size: **86.3 MB (86257295 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f28f8bbf1d07c1788816803d2064a3eb94ca4679d4adb40636e62d0985a5edc8`
+-	Image ID: `sha256:59d009affc5b523bbbe2f991ab8abc55c61eb262ec9ef93df6d00d6ca409b45b`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
 # Fri, 02 Jun 2023 21:59:28 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
 # Fri, 02 Jun 2023 21:59:28 GMT
 CMD ["/bin/sh"]
 # Fri, 02 Jun 2023 21:59:28 GMT
@@ -20486,11 +20612,11 @@ ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
 # Fri, 02 Jun 2023 21:59:28 GMT
 COPY /opt/erlang /opt/erlang # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
 COPY /opt/openssl /opt/openssl # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 02 Jun 2023 21:59:28 GMT
@@ -20506,7 +20632,7 @@ ENV RABBITMQ_HOME=/opt/rabbitmq
 # Fri, 02 Jun 2023 21:59:28 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 02 Jun 2023 21:59:28 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
@@ -20534,76 +20660,76 @@ EXPOSE map[15671/tcp:{} 15672/tcp:{}]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:b3ec5ffef005a39df32918af575859c89c2788393b2f27f8f8c3bac9b14dea47`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 40.1 MB (40076564 bytes)  
+	-	`sha256:d4c6bd9f2f476ac8ca381111358834f1eda42d20a7b66fc92fb6ffcf16741a44`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 39.9 MB (39898182 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:f0934a0d587092da8f59064a56ac56e44be97221620457d0c0d54bf221d35a64`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 392.0 B  
+	-	`sha256:b1d788cbab00d72d13b60a6ba065354c10d164774c1c8f6ac0b497eb0b4a2a7f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:17 GMT  
+		Size: 389.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:b40fdcef0bf8bcb93ff6d770cc77b2b045c07b2a08957318cc54824afd369e06`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 7.6 MB (7550194 bytes)  
+	-	`sha256:b1e3f3c4daae27dca3e24dd1187d1bf866da5669f418010b023acbd45b827f7f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 7.6 MB (7554025 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:79cd97312a23f9ff0fbc125f0d99182b7b7cb6d8f33b879adb15e93ea5715a61`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 388.0 B  
+	-	`sha256:f8fdf6d9b3ad47c899f1a3f52d68a08a9001ba37dadcb5916db647891db96817`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 389.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:e6e66fadb7a8deb5dc0cc0feedd733c538c1af027faf370f5b1c49d6aa1baa9e`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 2.3 MB (2297463 bytes)  
+	-	`sha256:8eb011bdfe98916d78ec812fa2f3471332ca9bf4850dfbde8ee3b56b708e5e4d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 2.4 MB (2407695 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ec4e4a2bb19115482a0d1317f925d86ae86f1ed36367e1df9c858c5785205f85`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 17.7 MB (17732171 bytes)  
+	-	`sha256:1d217240abed832febda1c576f1ccbc55af5c1a5dcd2787af1e8c7bcc6b59930`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 17.7 MB (17732264 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:c2714c1d18242092af3278ede338a05241609e5076436c713cf8bbd8095d881c`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 190.0 B  
+	-	`sha256:fa1d576cf15e654dfb707e3f0134c9675791a87771796f49b60277fcaef9c89e`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 192.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:cc60c1438b1a1d3b265a298531fb14f3e48028fae0adc86ff7f177b86d870770`  
-		Last Modified: Fri, 01 Dec 2023 00:16:52 GMT  
+	-	`sha256:bbf1653df82cd6166cd804aee895e11075e4820606f286b9a1143598a25ed360`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:63367130112c9486aefe72d6dc7e1bc3f159ac0419ea96ed9b5c17991741c868`  
-		Last Modified: Fri, 01 Dec 2023 00:16:52 GMT  
-		Size: 622.0 B  
+	-	`sha256:c23fdb4d0a8eb6da1798d392989ea3bfaafbc85e8f29fed272db727337c1d330`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 618.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:dbc0e1de0b40b1f1d423c26188cba128e93d49df717f27a129115c915c2bff28`  
-		Last Modified: Fri, 01 Dec 2023 00:16:53 GMT  
-		Size: 831.0 B  
+	-	`sha256:9fa26e965cc6fba14785af94f4e90c740664e94800f949a05fd95952e8c73f45`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:6ddc6ffa62824d41fa635ee53926d1b3abaf406b924c12387f5d08be1eaa7301`  
-		Last Modified: Fri, 01 Dec 2023 01:11:49 GMT  
-		Size: 15.1 MB (15102078 bytes)  
+	-	`sha256:902337e77ee291e2bca8ad08b047465c2e4c8587e4fd94a890bd76c2ac80a007`  
+		Last Modified: Tue, 12 Dec 2023 21:49:37 GMT  
+		Size: 15.3 MB (15254122 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.12-management-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:918c85e3ca35b640ff92aea2bd60141d70e7f011d95219f8a5528d506052675c
+$ docker pull rabbitmq@sha256:4cca1a3ddd74549e033608dba0503724f0a115a239d4de8303af13dfe7b9e4fa
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.7 MB (1664657 bytes)**  
+-	Total Size: **1.7 MB (1665575 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3c003b3cdfe7df25cfc22ed6214c6175b2613f64c1ceb2ddf4286939cae735dd`
+-	Image ID: `sha256:811dfcc3cf10fa0a00fe699a9ebf5d4408dedb6b17c242032aafcb772686ba07`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:3b041cac65c213fc24ede4c9a6349c6d5b58e7c8c025487ae2fd07578b53c1b5`  
-		Last Modified: Fri, 01 Dec 2023 01:11:48 GMT  
-		Size: 1.7 MB (1651179 bytes)  
+	-	`sha256:44d966642402bd6e96ca904ee0b45f42a91d8a4bdd665770dcc5aaf5758a67ee`  
+		Last Modified: Tue, 12 Dec 2023 21:49:36 GMT  
+		Size: 1.7 MB (1652097 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:b278550867b814b451667aab611e7c506f6148fa342c5b3b8296ddaa7f39101d`  
-		Last Modified: Fri, 01 Dec 2023 01:11:47 GMT  
+	-	`sha256:977ac95961d456e332bf6cbccd34053c241a4056eb5e61c29d2dfa2cd445a2e8`  
+		Last Modified: Tue, 12 Dec 2023 21:49:36 GMT  
 		Size: 13.5 KB (13478 bytes)  
 		MIME: application/vnd.in-toto+json
 
@@ -22267,14 +22393,15 @@ $ docker pull rabbitmq@sha256:1fcf155a9c65e98401b53fde23838671c9a6654b87f89bca6b
 ## `rabbitmq:3.12.10-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:d3e61b5e0abb91c088482dc969b8ce2d611f718fcc751a3f8cb8fa2df69da200
+$ docker pull rabbitmq@sha256:3a8433289a77158498add3bdd39ea3315d0c22eaba91e6bfdc08ae6e7f129cbe
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 11
+-	Platforms: 12
 	-	linux; amd64
 	-	unknown; unknown
 	-	linux; arm variant v6
+	-	unknown; unknown
 	-	linux; arm variant v7
 	-	unknown; unknown
 	-	linux; arm64 variant v8
@@ -22287,262 +22414,282 @@ $ docker pull rabbitmq@sha256:d3e61b5e0abb91c088482dc969b8ce2d611f718fcc751a3f8c
 ### `rabbitmq:3.12.10-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:8d5ca55e94c6399f33a4aa6117be824c6c44a1f56ca0ab27a09a6ec5b3d18b58
+$ docker pull rabbitmq@sha256:0ef4a5074ae490fbd34e5e2be4365618f784e3db41ea7567bb2e2a975b1d993d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **71.1 MB (71061346 bytes)**  
+-	Total Size: **71.0 MB (71003173 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8b213554f1cd3607feddc8bdb70d7900e12dbee0acda77e96ab5ec75b91af3af`
+-	Image ID: `sha256:cad9acd977771eede62ee26745cb7cab2d5fb1275694f5ab233d66dcefba6068`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Wed, 22 Nov 2023 06:55:25 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Fri, 08 Dec 2023 01:20:49 GMT
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
+# Fri, 08 Dec 2023 01:20:49 GMT
 CMD ["/bin/sh"]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.12.10
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:b3ec5ffef005a39df32918af575859c89c2788393b2f27f8f8c3bac9b14dea47`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 40.1 MB (40076564 bytes)  
+	-	`sha256:d4c6bd9f2f476ac8ca381111358834f1eda42d20a7b66fc92fb6ffcf16741a44`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 39.9 MB (39898182 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:f0934a0d587092da8f59064a56ac56e44be97221620457d0c0d54bf221d35a64`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 392.0 B  
+	-	`sha256:b1d788cbab00d72d13b60a6ba065354c10d164774c1c8f6ac0b497eb0b4a2a7f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:17 GMT  
+		Size: 389.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:b40fdcef0bf8bcb93ff6d770cc77b2b045c07b2a08957318cc54824afd369e06`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 7.6 MB (7550194 bytes)  
+	-	`sha256:b1e3f3c4daae27dca3e24dd1187d1bf866da5669f418010b023acbd45b827f7f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 7.6 MB (7554025 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:79cd97312a23f9ff0fbc125f0d99182b7b7cb6d8f33b879adb15e93ea5715a61`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 388.0 B  
+	-	`sha256:f8fdf6d9b3ad47c899f1a3f52d68a08a9001ba37dadcb5916db647891db96817`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 389.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:e6e66fadb7a8deb5dc0cc0feedd733c538c1af027faf370f5b1c49d6aa1baa9e`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 2.3 MB (2297463 bytes)  
+	-	`sha256:8eb011bdfe98916d78ec812fa2f3471332ca9bf4850dfbde8ee3b56b708e5e4d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 2.4 MB (2407695 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ec4e4a2bb19115482a0d1317f925d86ae86f1ed36367e1df9c858c5785205f85`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 17.7 MB (17732171 bytes)  
+	-	`sha256:1d217240abed832febda1c576f1ccbc55af5c1a5dcd2787af1e8c7bcc6b59930`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 17.7 MB (17732264 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:c2714c1d18242092af3278ede338a05241609e5076436c713cf8bbd8095d881c`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 190.0 B  
+	-	`sha256:fa1d576cf15e654dfb707e3f0134c9675791a87771796f49b60277fcaef9c89e`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 192.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:cc60c1438b1a1d3b265a298531fb14f3e48028fae0adc86ff7f177b86d870770`  
-		Last Modified: Fri, 01 Dec 2023 00:16:52 GMT  
+	-	`sha256:bbf1653df82cd6166cd804aee895e11075e4820606f286b9a1143598a25ed360`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:63367130112c9486aefe72d6dc7e1bc3f159ac0419ea96ed9b5c17991741c868`  
-		Last Modified: Fri, 01 Dec 2023 00:16:52 GMT  
-		Size: 622.0 B  
+	-	`sha256:c23fdb4d0a8eb6da1798d392989ea3bfaafbc85e8f29fed272db727337c1d330`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 618.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:dbc0e1de0b40b1f1d423c26188cba128e93d49df717f27a129115c915c2bff28`  
-		Last Modified: Fri, 01 Dec 2023 00:16:53 GMT  
-		Size: 831.0 B  
+	-	`sha256:9fa26e965cc6fba14785af94f4e90c740664e94800f949a05fd95952e8c73f45`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.12.10-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:d3c1e8c16ad920532df10b349a4b7e2524cb74f7b6c05247f9e37680081973cb
+$ docker pull rabbitmq@sha256:e8f6a879bd11a99e706754fc84a9fb6f77f308103fa3928908545af7fdaca15d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.4 MB (5388715 bytes)**  
+-	Total Size: **5.4 MB (5422186 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6ad8377ae277d113d69851d3d1d06465cd8c645d33a810230afd5c7eee8af6b8`
+-	Image ID: `sha256:b4e88fac3a2f4f35238caea5d83bceda1be96203239ad36f0210724229a2a9c0`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:c9d6d98c7ee4ba09322b837e540d121d429dafa957581bb9a14060f9aaa4011e`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 760.4 KB (760357 bytes)  
+	-	`sha256:45303b55287ff6a7859c3216626a35e0f67ab48a8081f1cdf0217372a653869c`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 760.7 KB (760731 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:e1bfd33b2b92372bce7936892c18f7ca03c2e0957b9d72c5904072fb4fa7f893`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 2.3 MB (2279986 bytes)  
+	-	`sha256:b870e1fd23c76b621241628c167a5140eabad57c00edc9d4b95c2135dc1c19c6`  
+		Last Modified: Tue, 12 Dec 2023 20:56:17 GMT  
+		Size: 2.3 MB (2296534 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:2f8c53e5276b15f985bde97c57ae8bbf584b6e72cc30f93355880f4694a25abd`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 2.3 MB (2279096 bytes)  
+	-	`sha256:8f309b51064305faeb191cb9d3c2f7ff139ca0b2907687497c83c7910dab0a30`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 2.3 MB (2295644 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:fc994f03a2b9f8df00051b9eb51cb3c7f2df4fdf3960ce158c6dc1bd00275032`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 69.3 KB (69276 bytes)  
+	-	`sha256:c63466cbf7d1dc72d06b7d1b2950532d0a72d2d3b5e0958a5c21d6e33e1bf164`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 69.3 KB (69277 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.12.10-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:ed5e69c1ab8068bcb2776359fc518b2ba608200e10e6eb7bd9f78265e0b50a04
+$ docker pull rabbitmq@sha256:925ff96e40bdfc64e878da51d3b5ba9ce0f492069f73517c63230b25928ba9ab
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **61.1 MB (61065923 bytes)**  
+-	Total Size: **61.1 MB (61114109 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5582907ec1bccfbebbf6e3c44669f949b8117df693705bf65941a517325dd6a3`
+-	Image ID: `sha256:97e23c8154330ba253b3bb84fac0fc226a8e2a1d61b43fe4f5eda6cacb6b307c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Wed, 22 Nov 2023 06:55:25 GMT
-ADD file:dbf65487d049081dc2d39b3d99d2c64b6c89754e7e2996a46169d3512e59f32a in / 
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Fri, 08 Dec 2023 01:49:15 GMT
+ADD file:d43ed267a41631ce0e5a4ef5aac821a75300a83f85ecb6259f5616852f89e989 in / 
+# Fri, 08 Dec 2023 01:49:15 GMT
 CMD ["/bin/sh"]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.12.10
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
-		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
-		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cd525983453dd88602389c675cd7e8a17ffe42312c2c6f778ebaf1cafe7a017`  
-		Last Modified: Fri, 01 Dec 2023 13:18:41 GMT  
-		Size: 32.4 MB (32388906 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e04262af6a9bd1b05ecf335e72da233cab7368f70abedf6e286d58b18892812`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 391.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebaaf2d95a0729f63de9159319cf137072b221e868847269ef50e4a8fbd7fb5b`  
-		Last Modified: Fri, 01 Dec 2023 13:18:37 GMT  
-		Size: 6.4 MB (6382872 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25e7d62ec18a5ccee0758e48d9bf08c172f2aed6eb9c89ef3be6f4439daed452`  
-		Last Modified: Fri, 01 Dec 2023 13:18:35 GMT  
-		Size: 393.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:833aca62eef35e2c19a82169474f7afa951c0b79c73c08c40b08f6c049049f89`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 1.4 MB (1412514 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4b719393cc6ab5324df5ddd2531ca519e9efc317e9c78d46930108b25271bdd`  
-		Last Modified: Fri, 01 Dec 2023 13:18:35 GMT  
-		Size: 17.7 MB (17732222 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62e5afe16a6327cd39badc15d78fd478d7492caa955b72d172bb70c2cf181847`  
-		Last Modified: Fri, 01 Dec 2023 13:18:33 GMT  
-		Size: 194.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e02017eebf648c7ad787b8f7b88d7225ba935a16a38221b4ead456124ad71fdd`  
-		Last Modified: Fri, 01 Dec 2023 13:18:33 GMT  
+	-	`sha256:0803c38384d9fd0f9afaec8fd13d267547b660dcd46bb92a3d63c5d76e78b04c`  
+		Last Modified: Fri, 08 Dec 2023 01:49:33 GMT  
+		Size: 3.2 MB (3165143 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c0f150da36f6f625d41b8fd26d929990bd7bfd608b2a60c1f32137e63fa0a85f`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 32.4 MB (32426806 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ee2dec8adf19611e8329250ff0fe76f5b78a753f12e2dbd411c033d3e875b7c1`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 389.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:398c87e745935637777a0bc3844e082e2510dde383d5a7e337b2673e9ae302f4`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 6.4 MB (6384103 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:1f6c5597f69cf12305f4d149b2174d1bff4c9dbbd5d8c2f1bdb6c362a30fcba3`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 394.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bc5cc845affc7b41592001efac993b102d09d127e59b54f2a6d11f748eeadc28`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 1.4 MB (1403285 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:a5cfd8ab1746f4e68f469cff61c9c47169ea6f4476d72a5beb4ed99cc9b30461`  
+		Last Modified: Wed, 13 Dec 2023 00:10:34 GMT  
+		Size: 17.7 MB (17732235 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:51de0695c541b2934c38c06a487e061dcf1b9a2ffa79a3f5ed63d8d174500391`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 195.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:4ffbbe23ea092fecf38d5cfb1691597cc5df798745ca3666626f305743e5b017`  
+		Last Modified: Wed, 13 Dec 2023 00:10:34 GMT  
 		Size: 109.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2643343d34ab3b5cfa46f958528d67fade951b354350961db6665c7c0d543541`  
-		Last Modified: Fri, 01 Dec 2023 13:18:33 GMT  
-		Size: 619.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:319942b2d2da7ce22d7467ab7996f98c905be08b931205791f7851291cb07fcc`  
-		Last Modified: Fri, 01 Dec 2023 13:18:33 GMT  
-		Size: 833.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ccfdc3bae8d76367a954b7dd4a3fd97265351f534db12a74994b4bbec4905f0e`  
+		Last Modified: Wed, 13 Dec 2023 00:10:35 GMT  
+		Size: 618.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bf75266cf5f1ba68b3306754989673a371829458c9bb17f324c0421aab60b12c`  
+		Last Modified: Wed, 13 Dec 2023 00:10:35 GMT  
+		Size: 832.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+
+### `rabbitmq:3.12.10-alpine` - unknown; unknown
+
+```console
+$ docker pull rabbitmq@sha256:99dcda433ef2970bf15cf44c1ec872507bdf6db23ba2b93fe18d84fb58bd07e8
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **69.3 KB (69275 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:bc6b6edb6b1eb8883e5b176b88039d3713c2b0fdfa37ef4e4e8589e6ed9af3bc`
+
+```dockerfile
+```
+
+-	Layers:
+	-	`sha256:f05ac1e36425c4d9b57ebf0a2c030cf50cf962cdfa3f4b604f7c8002538e0a8c`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 69.3 KB (69275 bytes)  
+		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.12.10-alpine` - linux; arm variant v7
 
@@ -23920,7 +24067,7 @@ $ docker pull rabbitmq@sha256:d0effbbcca8a78161732959b9ded82fde6e3e07d5e60b498e5
 ## `rabbitmq:3.12.10-management-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:014be37eedb6dbea497176b14c05bd92e039d53c752219c0b5795b8725679c4b
+$ docker pull rabbitmq@sha256:23d2096f1063104d0a62309e797b1d0d1f101f15ba4f18084a95961016672e34
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -23940,19 +24087,19 @@ $ docker pull rabbitmq@sha256:014be37eedb6dbea497176b14c05bd92e039d53c752219c0b5
 ### `rabbitmq:3.12.10-management-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:bb0ba003fe45928a0898a99c590ebb8afb1c4cf131bbab1eecc710b1d9e243af
+$ docker pull rabbitmq@sha256:90981cabb092963dfd37cb3b78e724b9bceb84b0706737e29f7563c71ba1187b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **86.2 MB (86163424 bytes)**  
+-	Total Size: **86.3 MB (86257295 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f28f8bbf1d07c1788816803d2064a3eb94ca4679d4adb40636e62d0985a5edc8`
+-	Image ID: `sha256:59d009affc5b523bbbe2f991ab8abc55c61eb262ec9ef93df6d00d6ca409b45b`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
 # Fri, 02 Jun 2023 21:59:28 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
 # Fri, 02 Jun 2023 21:59:28 GMT
 CMD ["/bin/sh"]
 # Fri, 02 Jun 2023 21:59:28 GMT
@@ -23962,11 +24109,11 @@ ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
 # Fri, 02 Jun 2023 21:59:28 GMT
 COPY /opt/erlang /opt/erlang # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
 COPY /opt/openssl /opt/openssl # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 02 Jun 2023 21:59:28 GMT
@@ -23982,7 +24129,7 @@ ENV RABBITMQ_HOME=/opt/rabbitmq
 # Fri, 02 Jun 2023 21:59:28 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 02 Jun 2023 21:59:28 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
@@ -24010,76 +24157,76 @@ EXPOSE map[15671/tcp:{} 15672/tcp:{}]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:b3ec5ffef005a39df32918af575859c89c2788393b2f27f8f8c3bac9b14dea47`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 40.1 MB (40076564 bytes)  
+	-	`sha256:d4c6bd9f2f476ac8ca381111358834f1eda42d20a7b66fc92fb6ffcf16741a44`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 39.9 MB (39898182 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:f0934a0d587092da8f59064a56ac56e44be97221620457d0c0d54bf221d35a64`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 392.0 B  
+	-	`sha256:b1d788cbab00d72d13b60a6ba065354c10d164774c1c8f6ac0b497eb0b4a2a7f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:17 GMT  
+		Size: 389.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:b40fdcef0bf8bcb93ff6d770cc77b2b045c07b2a08957318cc54824afd369e06`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 7.6 MB (7550194 bytes)  
+	-	`sha256:b1e3f3c4daae27dca3e24dd1187d1bf866da5669f418010b023acbd45b827f7f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 7.6 MB (7554025 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:79cd97312a23f9ff0fbc125f0d99182b7b7cb6d8f33b879adb15e93ea5715a61`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 388.0 B  
+	-	`sha256:f8fdf6d9b3ad47c899f1a3f52d68a08a9001ba37dadcb5916db647891db96817`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 389.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:e6e66fadb7a8deb5dc0cc0feedd733c538c1af027faf370f5b1c49d6aa1baa9e`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 2.3 MB (2297463 bytes)  
+	-	`sha256:8eb011bdfe98916d78ec812fa2f3471332ca9bf4850dfbde8ee3b56b708e5e4d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 2.4 MB (2407695 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ec4e4a2bb19115482a0d1317f925d86ae86f1ed36367e1df9c858c5785205f85`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 17.7 MB (17732171 bytes)  
+	-	`sha256:1d217240abed832febda1c576f1ccbc55af5c1a5dcd2787af1e8c7bcc6b59930`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 17.7 MB (17732264 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:c2714c1d18242092af3278ede338a05241609e5076436c713cf8bbd8095d881c`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 190.0 B  
+	-	`sha256:fa1d576cf15e654dfb707e3f0134c9675791a87771796f49b60277fcaef9c89e`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 192.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:cc60c1438b1a1d3b265a298531fb14f3e48028fae0adc86ff7f177b86d870770`  
-		Last Modified: Fri, 01 Dec 2023 00:16:52 GMT  
+	-	`sha256:bbf1653df82cd6166cd804aee895e11075e4820606f286b9a1143598a25ed360`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:63367130112c9486aefe72d6dc7e1bc3f159ac0419ea96ed9b5c17991741c868`  
-		Last Modified: Fri, 01 Dec 2023 00:16:52 GMT  
-		Size: 622.0 B  
+	-	`sha256:c23fdb4d0a8eb6da1798d392989ea3bfaafbc85e8f29fed272db727337c1d330`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 618.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:dbc0e1de0b40b1f1d423c26188cba128e93d49df717f27a129115c915c2bff28`  
-		Last Modified: Fri, 01 Dec 2023 00:16:53 GMT  
-		Size: 831.0 B  
+	-	`sha256:9fa26e965cc6fba14785af94f4e90c740664e94800f949a05fd95952e8c73f45`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:6ddc6ffa62824d41fa635ee53926d1b3abaf406b924c12387f5d08be1eaa7301`  
-		Last Modified: Fri, 01 Dec 2023 01:11:49 GMT  
-		Size: 15.1 MB (15102078 bytes)  
+	-	`sha256:902337e77ee291e2bca8ad08b047465c2e4c8587e4fd94a890bd76c2ac80a007`  
+		Last Modified: Tue, 12 Dec 2023 21:49:37 GMT  
+		Size: 15.3 MB (15254122 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.12.10-management-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:918c85e3ca35b640ff92aea2bd60141d70e7f011d95219f8a5528d506052675c
+$ docker pull rabbitmq@sha256:4cca1a3ddd74549e033608dba0503724f0a115a239d4de8303af13dfe7b9e4fa
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.7 MB (1664657 bytes)**  
+-	Total Size: **1.7 MB (1665575 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3c003b3cdfe7df25cfc22ed6214c6175b2613f64c1ceb2ddf4286939cae735dd`
+-	Image ID: `sha256:811dfcc3cf10fa0a00fe699a9ebf5d4408dedb6b17c242032aafcb772686ba07`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:3b041cac65c213fc24ede4c9a6349c6d5b58e7c8c025487ae2fd07578b53c1b5`  
-		Last Modified: Fri, 01 Dec 2023 01:11:48 GMT  
-		Size: 1.7 MB (1651179 bytes)  
+	-	`sha256:44d966642402bd6e96ca904ee0b45f42a91d8a4bdd665770dcc5aaf5758a67ee`  
+		Last Modified: Tue, 12 Dec 2023 21:49:36 GMT  
+		Size: 1.7 MB (1652097 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:b278550867b814b451667aab611e7c506f6148fa342c5b3b8296ddaa7f39101d`  
-		Last Modified: Fri, 01 Dec 2023 01:11:47 GMT  
+	-	`sha256:977ac95961d456e332bf6cbccd34053c241a4056eb5e61c29d2dfa2cd445a2e8`  
+		Last Modified: Tue, 12 Dec 2023 21:49:36 GMT  
 		Size: 13.5 KB (13478 bytes)  
 		MIME: application/vnd.in-toto+json
 
@@ -25601,14 +25748,15 @@ $ docker pull rabbitmq@sha256:dbc74f95a720c87bf6bcc8b49d8327526a41cbf8e88b68154a
 ## `rabbitmq:3.13-rc-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:6184e830a5bca144b9287f280eb51add22f64f052663c5f57d74153acf5e79b5
+$ docker pull rabbitmq@sha256:b2b8df62e6e7a35e14fef5910115fdb95081ad074cd96c7deceb1160638adb3f
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 13
+-	Platforms: 14
 	-	linux; amd64
 	-	unknown; unknown
 	-	linux; arm variant v6
+	-	unknown; unknown
 	-	linux; arm variant v7
 	-	unknown; unknown
 	-	linux; arm64 variant v8
@@ -25623,262 +25771,282 @@ $ docker pull rabbitmq@sha256:6184e830a5bca144b9287f280eb51add22f64f052663c5f57d
 ### `rabbitmq:3.13-rc-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:f1558feaa3179dbf4157a5f3fccbcf670c608dc7159d73bdefda419a56b11d55
+$ docker pull rabbitmq@sha256:444b01fd1c759f36da50a81abca3cf2df955f6072b3744869975eeac14e8f141
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **73.3 MB (73325497 bytes)**  
+-	Total Size: **73.3 MB (73292507 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f4813281620a96cba135661ecebae4fb2ca8cca8463a9a433cf1f929b7e9f1f6`
+-	Image ID: `sha256:2492ba25f37d19ce9463f2d661fd2dff4daff115672d821d8c0d3a4e1eae2fad`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Wed, 01 Nov 2023 12:19:57 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Fri, 08 Dec 2023 01:20:49 GMT
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
+# Fri, 08 Dec 2023 01:20:49 GMT
 CMD ["/bin/sh"]
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"26.1.2","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@26.1.2?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"26.1.2","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@26.1.2?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.13.0-rc.2
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 01 Nov 2023 12:19:57 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.13.0-rc.2","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.13.0-rc.2?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.13.0-rc.2","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.13.0-rc.2?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:90adf2ca81f0787882ec8a11048a8ce497bc94634e51edfae69642d3fa10e4d8`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 41.6 MB (41598179 bytes)  
+	-	`sha256:f32d516069c34ea97ef6e4009b2b798cbc5386adcad8f67bac6aa94a5c00ee44`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
+		Size: 41.4 MB (41445188 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:04d75e1264bcb68f8fa1c0361dd98faa40d650baee6da1eede324850d871ac5a`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
+	-	`sha256:d6b8e29539ba0b1aae11af2914aed779e1dd7c281d51691cca263c1e2010da6e`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
 		Size: 391.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:6d5433f65899299f60a65fb37121ef4c73917dd64051785fe739e85618ae78a5`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
-		Size: 7.6 MB (7550201 bytes)  
+	-	`sha256:f6e6bc0f226685004402c39c56347302a141702af6d066d19b1ea302b6bc332b`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
+		Size: 7.6 MB (7554063 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:d2e827f3997f098ec53991ce97d1aae8caf1e8090b2657cfc93bf007a1490050`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
-		Size: 388.0 B  
+	-	`sha256:268c3326d38a5c7c1cb9b00f37bc5238cd3f178fa52cab4e231075a999471e80`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
+		Size: 387.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:4179c7c0719b464affe70bf81260093a4dc7f7f7513d073d2adf91d7a63e538a`  
-		Last Modified: Fri, 01 Dec 2023 00:17:13 GMT  
-		Size: 2.3 MB (2297446 bytes)  
+	-	`sha256:059be09c04739fe7d02e88a83df5be3f0c2f01c736123e010c4deae02773b325`  
+		Last Modified: Tue, 12 Dec 2023 20:56:32 GMT  
+		Size: 2.4 MB (2407692 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:9ea56dc86b7d7f8368cf351f24d8c322bedddbdf645b204688cf1bf20ba8a0b9`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 18.5 MB (18474724 bytes)  
+	-	`sha256:270c55c513faa903e147ece8359609c747c223f547338bd65cd74b56493ededb`  
+		Last Modified: Tue, 12 Dec 2023 20:56:33 GMT  
+		Size: 18.5 MB (18474559 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:044c2fb556b4f212cdde1084986173e5f7b72dc1def8fdfc71fd256b166c3131`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 194.0 B  
+	-	`sha256:49865eb3129b368c6f383ea683e38cdd8d294e41a53fe3fd61c4aafc21bd1988`  
+		Last Modified: Tue, 12 Dec 2023 20:56:32 GMT  
+		Size: 193.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:28ae985a9ab00b146713b3b28788bb690455ff0340c13840e778f959cc164fff`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 108.0 B  
+	-	`sha256:f296cd4fe56fe24304e1253cc059b906e7690e3f07842f2a77eaf3e53c8f4d89`  
+		Last Modified: Tue, 12 Dec 2023 20:56:33 GMT  
+		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:9f444521d09a02b017f42eee459886a57016714fa954de4eacca746b09403a9d`  
-		Last Modified: Fri, 01 Dec 2023 00:17:15 GMT  
-		Size: 615.0 B  
+	-	`sha256:82ca173ae0ef0e912430311a22b4f201b2173326cbb3bfa807413435543a82d3`  
+		Last Modified: Tue, 12 Dec 2023 20:56:33 GMT  
+		Size: 619.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:cf53d5de3a8700a2fa7fbc14742d699e39d581cfc2bbe4d0a3ab85920ddacdbc`  
-		Last Modified: Fri, 01 Dec 2023 00:17:15 GMT  
-		Size: 829.0 B  
+	-	`sha256:377f9a78fa32629c6ac57a07f26c097f4958a8eb6fbbcbf734a0de29158d6f8d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:33 GMT  
+		Size: 826.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.13-rc-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:de18790495aaf4306bb1f41f47801ec12151cadfad536d4222ba7622ead0f923
+$ docker pull rabbitmq@sha256:3866c9dcae291110c564bc6fe14b1045aef67351bf55ec97ecde1585f6625842
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.4 MB (5386373 bytes)**  
+-	Total Size: **5.4 MB (5419843 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d3c28fa2c5703e9d0eeacb85f83b81641823f975f2b2b36fdb8abcb5c6e0ca25`
+-	Image ID: `sha256:e9e7e6f3bca32a22b791539326123d596b70a8a678ac4634d1ae2ba6bb218a78`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:dc34065987393a97699d5cfb3258cff2ba3ce00fa7f7b674eb15f15394e18c34`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
-		Size: 759.8 KB (759767 bytes)  
+	-	`sha256:b5a3938aea12198f6cbd93ecb38171b737441ea10a34e9a82d02b3adebb97053`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
+		Size: 760.1 KB (760141 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:d11c013b4bf4348f6668bdc66cefb46e7c3c9267a8af11c497c44a6122676088`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 2.3 MB (2279390 bytes)  
+	-	`sha256:12a472c9c9d24fddca5d4fa5818563d6b7cc93be0ed1490caaa79e87d7fb0cdb`  
+		Last Modified: Tue, 12 Dec 2023 20:56:30 GMT  
+		Size: 2.3 MB (2295938 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:fc4edfc3690fdfb365b57d3597fe10e45647abef6a440b5bad76e85ca246c7f4`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
-		Size: 2.3 MB (2278502 bytes)  
+	-	`sha256:ec3a0e93bf9b331bc7649f57c7480d30c0eaa4ce72dc74ac829d595b11cb332c`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
+		Size: 2.3 MB (2295050 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:5a2923862dc4667f41cb26fc7d7cccde27797f6b362441bac50e16cfbd2c4165`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
+	-	`sha256:37b2f670ff811a6a40df09a9d9f94c67577d67ce54bc9bc076bd87ce8a91c8f9`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
 		Size: 68.7 KB (68714 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.13-rc-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:39a1b4a6a99e9981cf1172c585d5cc848aba0dc9725afd7ef78864769f69d294
+$ docker pull rabbitmq@sha256:8d22a0325d2c8d625c77139063a76de901ab33b80f60ac7a56374b69b7a8c16b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.5 MB (62456055 bytes)**  
+-	Total Size: **62.5 MB (62500898 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f8bf56cb3be50f30840909bcc71ddc5302ab3fbaa0eb74707f823c5156e0d476`
+-	Image ID: `sha256:35e3b4aa30080ec9bf213be27370a7428ccf2c9c9d6cbbdd17982da6f373c6d0`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Wed, 01 Nov 2023 12:19:57 GMT
-ADD file:dbf65487d049081dc2d39b3d99d2c64b6c89754e7e2996a46169d3512e59f32a in / 
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Fri, 08 Dec 2023 01:49:15 GMT
+ADD file:d43ed267a41631ce0e5a4ef5aac821a75300a83f85ecb6259f5616852f89e989 in / 
+# Fri, 08 Dec 2023 01:49:15 GMT
 CMD ["/bin/sh"]
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"26.1.2","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@26.1.2?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"26.1.2","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@26.1.2?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.13.0-rc.2
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 01 Nov 2023 12:19:57 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.13.0-rc.2","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.13.0-rc.2?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.13.0-rc.2","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.13.0-rc.2?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
-		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
-		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6459ce004508a39ff4ac930f2ba7c8d598d60a6f1c536e0ca81cc44257f386f0`  
-		Last Modified: Fri, 01 Dec 2023 13:13:28 GMT  
-		Size: 33.0 MB (33036739 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88a098ecab8b4a40f0e9bb373c9c3e5a0b6d327decdd581fe64508bb786b6f71`  
-		Last Modified: Fri, 01 Dec 2023 13:13:22 GMT  
+	-	`sha256:0803c38384d9fd0f9afaec8fd13d267547b660dcd46bb92a3d63c5d76e78b04c`  
+		Last Modified: Fri, 08 Dec 2023 01:49:33 GMT  
+		Size: 3.2 MB (3165143 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:11cb40eecb45b677a163601d7eaad71332ce80f9e56b315febf73057e5250ce4`  
+		Last Modified: Wed, 13 Dec 2023 00:07:03 GMT  
+		Size: 33.1 MB (33071113 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:854263c18acf363641079f5d2a96f32af143f7250737496eb3b40424a6e1e79d`  
+		Last Modified: Wed, 13 Dec 2023 00:07:01 GMT  
 		Size: 389.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1dd84f77ad94017775920d954448cbecc5c2a932487dbdebeee869ad82db25b6`  
-		Last Modified: Fri, 01 Dec 2023 13:13:24 GMT  
-		Size: 6.4 MB (6382886 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb1f5b46e06dc1cfbbb2b85a8bd4b53fe1a3af00b086ff8ff96af393322ee16e`  
-		Last Modified: Fri, 01 Dec 2023 13:13:22 GMT  
-		Size: 387.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5a19e9c83d74bdcb62d9382e1ceb5b178402e906b87b43ad5b98446720544f66`  
-		Last Modified: Fri, 01 Dec 2023 13:13:24 GMT  
-		Size: 1.4 MB (1412518 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:646c0c170a2aeac15e0498343977e9d649dda80b7f55985cdf5b44b0c144d8f2`  
-		Last Modified: Fri, 01 Dec 2023 13:13:26 GMT  
-		Size: 18.5 MB (18474510 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:981cb070c8afbf820631c0dfa8fc95d6fadcd02d4948ed993c70a306a0fc587f`  
-		Last Modified: Fri, 01 Dec 2023 13:13:20 GMT  
-		Size: 193.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2b73374262e164559926bcd53dca6b9dcfe4ab9ad55c2352c53d34432df37b8d`  
-		Last Modified: Fri, 01 Dec 2023 13:13:21 GMT  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:51c4ea5df3cf9a62c0b8cca78e41e357c92d383bb8caf198bf3ab54b118cfaca`  
+		Last Modified: Wed, 13 Dec 2023 00:07:02 GMT  
+		Size: 6.4 MB (6384123 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:69998e54f5d1e18236b715e6330f320ff04ce61097cb1c09b6019fe519488b38`  
+		Last Modified: Wed, 13 Dec 2023 00:07:02 GMT  
+		Size: 389.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:0e764a0e62792f387b3d651e63b0a8d28bfd245b23f92749d3fd229a90b53f8f`  
+		Last Modified: Wed, 13 Dec 2023 00:07:03 GMT  
+		Size: 1.4 MB (1403286 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:5ec36674f35d9bbce511967279c9f87fe9ae62cb2c7f031f8b115bdfbb260e8d`  
+		Last Modified: Wed, 13 Dec 2023 00:07:04 GMT  
+		Size: 18.5 MB (18474705 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:3e9bc7011d54f11481a177ebbbe3867aecdb6940b4f2dbdb492198294ed109ae`  
+		Last Modified: Wed, 13 Dec 2023 00:07:03 GMT  
+		Size: 194.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:554771fa7283e2a4bbdb684ab936f922bbc9b4ff5b144ce68259b459f4bd9c37`  
+		Last Modified: Wed, 13 Dec 2023 00:07:05 GMT  
 		Size: 109.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1ed9a2bb63716171b1adf9293b8c6cfe5a4dbfc5eb07614991c79d8c1d2c488d`  
-		Last Modified: Fri, 01 Dec 2023 13:13:20 GMT  
-		Size: 621.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08139d832555ace162bd9d25a1a3d86f78fa45a401937907cd7f9bc478de19f0`  
-		Last Modified: Fri, 01 Dec 2023 13:13:20 GMT  
-		Size: 833.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bd6b10e3c7af07a28c9f2a0406b2d548228550064ae55bc055c24c8b46eba6e1`  
+		Last Modified: Wed, 13 Dec 2023 00:07:05 GMT  
+		Size: 617.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:a2bf1af2bdebf01f5e49f8ed53ac35e8131f82206a9c7e52481ba7c133504f70`  
+		Last Modified: Wed, 13 Dec 2023 00:07:05 GMT  
+		Size: 830.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+
+### `rabbitmq:3.13-rc-alpine` - unknown; unknown
+
+```console
+$ docker pull rabbitmq@sha256:9b72f24864ac6cda6dd3754c53e885e4e872fda527576dd97f02fe35b89c3a01
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **68.5 KB (68530 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:da309bf52979a870bc67ba3d063616c2506139a4e45780204c683e6212f1f76a`
+
+```dockerfile
+```
+
+-	Layers:
+	-	`sha256:100c6d6cdb58ad7304a6fc540d732852096aab2acd2069a4d9431c84713e7ee6`  
+		Last Modified: Wed, 13 Dec 2023 00:07:01 GMT  
+		Size: 68.5 KB (68530 bytes)  
+		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.13-rc-alpine` - linux; arm variant v7
 
@@ -27390,7 +27558,7 @@ $ docker pull rabbitmq@sha256:333f6d977adaeb27907cbddd80c0f02184c6497fe996cf3b24
 ## `rabbitmq:3.13-rc-management-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:76a4c1f236707a9cf18b33b59381031ba317e1d81399cd7d8cb3ab42b3edf98b
+$ docker pull rabbitmq@sha256:83b08e9fb4b19e4b3afe72895a5dd10f4954794ce433c72896c7df15b672ba4d
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -27412,19 +27580,19 @@ $ docker pull rabbitmq@sha256:76a4c1f236707a9cf18b33b59381031ba317e1d81399cd7d8c
 ### `rabbitmq:3.13-rc-management-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:94d2267e7f9930bc448a040f7bcfc0852c009e7b2138d2c5f97ef9b5ac7d18a6
+$ docker pull rabbitmq@sha256:f90b414a67e0f021b36fbfae8368f48c53055a24b9d922b4df230ee56ed4dd41
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **88.4 MB (88427449 bytes)**  
+-	Total Size: **88.5 MB (88546626 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:11858d2af06330a6e24bd3d6f461db5110702144a0b45be58830fd20564f7ab5`
+-	Image ID: `sha256:44d61e78bb5b882a1b8ec52e67c1a373b6de421b5be1c537045a8681c8f219bf`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
 # Wed, 19 Jul 2023 19:41:43 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
 # Wed, 19 Jul 2023 19:41:43 GMT
 CMD ["/bin/sh"]
 # Wed, 19 Jul 2023 19:41:43 GMT
@@ -27434,11 +27602,11 @@ ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
 # Wed, 19 Jul 2023 19:41:43 GMT
 COPY /opt/erlang /opt/erlang # buildkit
 # Wed, 19 Jul 2023 19:41:43 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"26.1.2","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@26.1.2?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"26.1.2","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@26.1.2?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
 # Wed, 19 Jul 2023 19:41:43 GMT
 COPY /opt/openssl /opt/openssl # buildkit
 # Wed, 19 Jul 2023 19:41:43 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
 # Wed, 19 Jul 2023 19:41:43 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 19 Jul 2023 19:41:43 GMT
@@ -27454,7 +27622,7 @@ ENV RABBITMQ_HOME=/opt/rabbitmq
 # Wed, 19 Jul 2023 19:41:43 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 19 Jul 2023 19:41:43 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.13.0-rc.2","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.13.0-rc.2?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.13.0-rc.2","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.13.0-rc.2?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
 # Wed, 19 Jul 2023 19:41:43 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
 # Wed, 19 Jul 2023 19:41:43 GMT
@@ -27482,77 +27650,77 @@ EXPOSE map[15671/tcp:{} 15672/tcp:{}]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:90adf2ca81f0787882ec8a11048a8ce497bc94634e51edfae69642d3fa10e4d8`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 41.6 MB (41598179 bytes)  
+	-	`sha256:f32d516069c34ea97ef6e4009b2b798cbc5386adcad8f67bac6aa94a5c00ee44`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
+		Size: 41.4 MB (41445188 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:04d75e1264bcb68f8fa1c0361dd98faa40d650baee6da1eede324850d871ac5a`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
+	-	`sha256:d6b8e29539ba0b1aae11af2914aed779e1dd7c281d51691cca263c1e2010da6e`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
 		Size: 391.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:6d5433f65899299f60a65fb37121ef4c73917dd64051785fe739e85618ae78a5`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
-		Size: 7.6 MB (7550201 bytes)  
+	-	`sha256:f6e6bc0f226685004402c39c56347302a141702af6d066d19b1ea302b6bc332b`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
+		Size: 7.6 MB (7554063 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:d2e827f3997f098ec53991ce97d1aae8caf1e8090b2657cfc93bf007a1490050`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
-		Size: 388.0 B  
+	-	`sha256:268c3326d38a5c7c1cb9b00f37bc5238cd3f178fa52cab4e231075a999471e80`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
+		Size: 387.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:4179c7c0719b464affe70bf81260093a4dc7f7f7513d073d2adf91d7a63e538a`  
-		Last Modified: Fri, 01 Dec 2023 00:17:13 GMT  
-		Size: 2.3 MB (2297446 bytes)  
+	-	`sha256:059be09c04739fe7d02e88a83df5be3f0c2f01c736123e010c4deae02773b325`  
+		Last Modified: Tue, 12 Dec 2023 20:56:32 GMT  
+		Size: 2.4 MB (2407692 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:9ea56dc86b7d7f8368cf351f24d8c322bedddbdf645b204688cf1bf20ba8a0b9`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 18.5 MB (18474724 bytes)  
+	-	`sha256:270c55c513faa903e147ece8359609c747c223f547338bd65cd74b56493ededb`  
+		Last Modified: Tue, 12 Dec 2023 20:56:33 GMT  
+		Size: 18.5 MB (18474559 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:044c2fb556b4f212cdde1084986173e5f7b72dc1def8fdfc71fd256b166c3131`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 194.0 B  
+	-	`sha256:49865eb3129b368c6f383ea683e38cdd8d294e41a53fe3fd61c4aafc21bd1988`  
+		Last Modified: Tue, 12 Dec 2023 20:56:32 GMT  
+		Size: 193.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:28ae985a9ab00b146713b3b28788bb690455ff0340c13840e778f959cc164fff`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 108.0 B  
+	-	`sha256:f296cd4fe56fe24304e1253cc059b906e7690e3f07842f2a77eaf3e53c8f4d89`  
+		Last Modified: Tue, 12 Dec 2023 20:56:33 GMT  
+		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:9f444521d09a02b017f42eee459886a57016714fa954de4eacca746b09403a9d`  
-		Last Modified: Fri, 01 Dec 2023 00:17:15 GMT  
-		Size: 615.0 B  
+	-	`sha256:82ca173ae0ef0e912430311a22b4f201b2173326cbb3bfa807413435543a82d3`  
+		Last Modified: Tue, 12 Dec 2023 20:56:33 GMT  
+		Size: 619.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:cf53d5de3a8700a2fa7fbc14742d699e39d581cfc2bbe4d0a3ab85920ddacdbc`  
-		Last Modified: Fri, 01 Dec 2023 00:17:15 GMT  
-		Size: 829.0 B  
+	-	`sha256:377f9a78fa32629c6ac57a07f26c097f4958a8eb6fbbcbf734a0de29158d6f8d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:33 GMT  
+		Size: 826.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:f74c8b258125770445e30fe81e60661bda436a77d9381514db4377e6d6719a6b`  
-		Last Modified: Fri, 01 Dec 2023 01:11:38 GMT  
-		Size: 15.1 MB (15101952 bytes)  
+	-	`sha256:9b9e7a303e5e09da039f9b41889207759c434c5f9287263a56b26c7089183c95`  
+		Last Modified: Tue, 12 Dec 2023 21:49:47 GMT  
+		Size: 15.3 MB (15254119 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.13-rc-management-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:5dbaf7bfe9ded24f100eac2592a7ebb1d48bd3d7e0e872c97e4250c14d31905b
+$ docker pull rabbitmq@sha256:c348d4cb741ea37b9468c45349b11039da9d406a970ffed651c939d44b838488
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.7 MB (1663403 bytes)**  
+-	Total Size: **1.7 MB (1664322 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a73e06ebaa960a372551305d6e2cefac5bad6242e8a5c3d6309ff7045757d415`
+-	Image ID: `sha256:b9fdd355833ff2eb5c4b50c01c7aafd3ef59808031a4481a32ab7cbf663b16e1`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:7817e4cf09425f12c2574613c6af50739f631076d78b4bbbede71d9411d206a3`  
-		Last Modified: Fri, 01 Dec 2023 01:11:37 GMT  
-		Size: 1.7 MB (1650545 bytes)  
+	-	`sha256:767a1a4b2bdff282ca26b5c482d8667697727d1df964f4903f6a2ef69b7d1a76`  
+		Last Modified: Tue, 12 Dec 2023 21:49:45 GMT  
+		Size: 1.7 MB (1651463 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:904799c2ed312c3ca845e4182a7448edb43df65c1e1556e51c4cff736474914e`  
-		Last Modified: Fri, 01 Dec 2023 01:11:37 GMT  
-		Size: 12.9 KB (12858 bytes)  
+	-	`sha256:d8565bdce6b59bcfe84f5ebb09076b86c4d86608c81771ee41ee47415838e869`  
+		Last Modified: Tue, 12 Dec 2023 21:49:45 GMT  
+		Size: 12.9 KB (12859 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.13-rc-management-alpine` - linux; arm variant v6
@@ -29215,14 +29383,15 @@ $ docker pull rabbitmq@sha256:dbc74f95a720c87bf6bcc8b49d8327526a41cbf8e88b68154a
 ## `rabbitmq:3.13.0-rc.2-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:6184e830a5bca144b9287f280eb51add22f64f052663c5f57d74153acf5e79b5
+$ docker pull rabbitmq@sha256:b2b8df62e6e7a35e14fef5910115fdb95081ad074cd96c7deceb1160638adb3f
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 13
+-	Platforms: 14
 	-	linux; amd64
 	-	unknown; unknown
 	-	linux; arm variant v6
+	-	unknown; unknown
 	-	linux; arm variant v7
 	-	unknown; unknown
 	-	linux; arm64 variant v8
@@ -29237,262 +29406,282 @@ $ docker pull rabbitmq@sha256:6184e830a5bca144b9287f280eb51add22f64f052663c5f57d
 ### `rabbitmq:3.13.0-rc.2-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:f1558feaa3179dbf4157a5f3fccbcf670c608dc7159d73bdefda419a56b11d55
+$ docker pull rabbitmq@sha256:444b01fd1c759f36da50a81abca3cf2df955f6072b3744869975eeac14e8f141
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **73.3 MB (73325497 bytes)**  
+-	Total Size: **73.3 MB (73292507 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f4813281620a96cba135661ecebae4fb2ca8cca8463a9a433cf1f929b7e9f1f6`
+-	Image ID: `sha256:2492ba25f37d19ce9463f2d661fd2dff4daff115672d821d8c0d3a4e1eae2fad`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Wed, 01 Nov 2023 12:19:57 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Fri, 08 Dec 2023 01:20:49 GMT
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
+# Fri, 08 Dec 2023 01:20:49 GMT
 CMD ["/bin/sh"]
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"26.1.2","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@26.1.2?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"26.1.2","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@26.1.2?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.13.0-rc.2
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 01 Nov 2023 12:19:57 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.13.0-rc.2","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.13.0-rc.2?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.13.0-rc.2","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.13.0-rc.2?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:90adf2ca81f0787882ec8a11048a8ce497bc94634e51edfae69642d3fa10e4d8`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 41.6 MB (41598179 bytes)  
+	-	`sha256:f32d516069c34ea97ef6e4009b2b798cbc5386adcad8f67bac6aa94a5c00ee44`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
+		Size: 41.4 MB (41445188 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:04d75e1264bcb68f8fa1c0361dd98faa40d650baee6da1eede324850d871ac5a`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
+	-	`sha256:d6b8e29539ba0b1aae11af2914aed779e1dd7c281d51691cca263c1e2010da6e`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
 		Size: 391.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:6d5433f65899299f60a65fb37121ef4c73917dd64051785fe739e85618ae78a5`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
-		Size: 7.6 MB (7550201 bytes)  
+	-	`sha256:f6e6bc0f226685004402c39c56347302a141702af6d066d19b1ea302b6bc332b`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
+		Size: 7.6 MB (7554063 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:d2e827f3997f098ec53991ce97d1aae8caf1e8090b2657cfc93bf007a1490050`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
-		Size: 388.0 B  
+	-	`sha256:268c3326d38a5c7c1cb9b00f37bc5238cd3f178fa52cab4e231075a999471e80`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
+		Size: 387.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:4179c7c0719b464affe70bf81260093a4dc7f7f7513d073d2adf91d7a63e538a`  
-		Last Modified: Fri, 01 Dec 2023 00:17:13 GMT  
-		Size: 2.3 MB (2297446 bytes)  
+	-	`sha256:059be09c04739fe7d02e88a83df5be3f0c2f01c736123e010c4deae02773b325`  
+		Last Modified: Tue, 12 Dec 2023 20:56:32 GMT  
+		Size: 2.4 MB (2407692 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:9ea56dc86b7d7f8368cf351f24d8c322bedddbdf645b204688cf1bf20ba8a0b9`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 18.5 MB (18474724 bytes)  
+	-	`sha256:270c55c513faa903e147ece8359609c747c223f547338bd65cd74b56493ededb`  
+		Last Modified: Tue, 12 Dec 2023 20:56:33 GMT  
+		Size: 18.5 MB (18474559 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:044c2fb556b4f212cdde1084986173e5f7b72dc1def8fdfc71fd256b166c3131`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 194.0 B  
+	-	`sha256:49865eb3129b368c6f383ea683e38cdd8d294e41a53fe3fd61c4aafc21bd1988`  
+		Last Modified: Tue, 12 Dec 2023 20:56:32 GMT  
+		Size: 193.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:28ae985a9ab00b146713b3b28788bb690455ff0340c13840e778f959cc164fff`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 108.0 B  
+	-	`sha256:f296cd4fe56fe24304e1253cc059b906e7690e3f07842f2a77eaf3e53c8f4d89`  
+		Last Modified: Tue, 12 Dec 2023 20:56:33 GMT  
+		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:9f444521d09a02b017f42eee459886a57016714fa954de4eacca746b09403a9d`  
-		Last Modified: Fri, 01 Dec 2023 00:17:15 GMT  
-		Size: 615.0 B  
+	-	`sha256:82ca173ae0ef0e912430311a22b4f201b2173326cbb3bfa807413435543a82d3`  
+		Last Modified: Tue, 12 Dec 2023 20:56:33 GMT  
+		Size: 619.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:cf53d5de3a8700a2fa7fbc14742d699e39d581cfc2bbe4d0a3ab85920ddacdbc`  
-		Last Modified: Fri, 01 Dec 2023 00:17:15 GMT  
-		Size: 829.0 B  
+	-	`sha256:377f9a78fa32629c6ac57a07f26c097f4958a8eb6fbbcbf734a0de29158d6f8d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:33 GMT  
+		Size: 826.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.13.0-rc.2-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:de18790495aaf4306bb1f41f47801ec12151cadfad536d4222ba7622ead0f923
+$ docker pull rabbitmq@sha256:3866c9dcae291110c564bc6fe14b1045aef67351bf55ec97ecde1585f6625842
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.4 MB (5386373 bytes)**  
+-	Total Size: **5.4 MB (5419843 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d3c28fa2c5703e9d0eeacb85f83b81641823f975f2b2b36fdb8abcb5c6e0ca25`
+-	Image ID: `sha256:e9e7e6f3bca32a22b791539326123d596b70a8a678ac4634d1ae2ba6bb218a78`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:dc34065987393a97699d5cfb3258cff2ba3ce00fa7f7b674eb15f15394e18c34`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
-		Size: 759.8 KB (759767 bytes)  
+	-	`sha256:b5a3938aea12198f6cbd93ecb38171b737441ea10a34e9a82d02b3adebb97053`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
+		Size: 760.1 KB (760141 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:d11c013b4bf4348f6668bdc66cefb46e7c3c9267a8af11c497c44a6122676088`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 2.3 MB (2279390 bytes)  
+	-	`sha256:12a472c9c9d24fddca5d4fa5818563d6b7cc93be0ed1490caaa79e87d7fb0cdb`  
+		Last Modified: Tue, 12 Dec 2023 20:56:30 GMT  
+		Size: 2.3 MB (2295938 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:fc4edfc3690fdfb365b57d3597fe10e45647abef6a440b5bad76e85ca246c7f4`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
-		Size: 2.3 MB (2278502 bytes)  
+	-	`sha256:ec3a0e93bf9b331bc7649f57c7480d30c0eaa4ce72dc74ac829d595b11cb332c`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
+		Size: 2.3 MB (2295050 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:5a2923862dc4667f41cb26fc7d7cccde27797f6b362441bac50e16cfbd2c4165`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
+	-	`sha256:37b2f670ff811a6a40df09a9d9f94c67577d67ce54bc9bc076bd87ce8a91c8f9`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
 		Size: 68.7 KB (68714 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.13.0-rc.2-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:39a1b4a6a99e9981cf1172c585d5cc848aba0dc9725afd7ef78864769f69d294
+$ docker pull rabbitmq@sha256:8d22a0325d2c8d625c77139063a76de901ab33b80f60ac7a56374b69b7a8c16b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.5 MB (62456055 bytes)**  
+-	Total Size: **62.5 MB (62500898 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f8bf56cb3be50f30840909bcc71ddc5302ab3fbaa0eb74707f823c5156e0d476`
+-	Image ID: `sha256:35e3b4aa30080ec9bf213be27370a7428ccf2c9c9d6cbbdd17982da6f373c6d0`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Wed, 01 Nov 2023 12:19:57 GMT
-ADD file:dbf65487d049081dc2d39b3d99d2c64b6c89754e7e2996a46169d3512e59f32a in / 
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Fri, 08 Dec 2023 01:49:15 GMT
+ADD file:d43ed267a41631ce0e5a4ef5aac821a75300a83f85ecb6259f5616852f89e989 in / 
+# Fri, 08 Dec 2023 01:49:15 GMT
 CMD ["/bin/sh"]
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"26.1.2","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@26.1.2?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"26.1.2","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@26.1.2?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.13.0-rc.2
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 01 Nov 2023 12:19:57 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.13.0-rc.2","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.13.0-rc.2?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.13.0-rc.2","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.13.0-rc.2?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Wed, 01 Nov 2023 12:19:57 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
-		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
-		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6459ce004508a39ff4ac930f2ba7c8d598d60a6f1c536e0ca81cc44257f386f0`  
-		Last Modified: Fri, 01 Dec 2023 13:13:28 GMT  
-		Size: 33.0 MB (33036739 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88a098ecab8b4a40f0e9bb373c9c3e5a0b6d327decdd581fe64508bb786b6f71`  
-		Last Modified: Fri, 01 Dec 2023 13:13:22 GMT  
+	-	`sha256:0803c38384d9fd0f9afaec8fd13d267547b660dcd46bb92a3d63c5d76e78b04c`  
+		Last Modified: Fri, 08 Dec 2023 01:49:33 GMT  
+		Size: 3.2 MB (3165143 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:11cb40eecb45b677a163601d7eaad71332ce80f9e56b315febf73057e5250ce4`  
+		Last Modified: Wed, 13 Dec 2023 00:07:03 GMT  
+		Size: 33.1 MB (33071113 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:854263c18acf363641079f5d2a96f32af143f7250737496eb3b40424a6e1e79d`  
+		Last Modified: Wed, 13 Dec 2023 00:07:01 GMT  
 		Size: 389.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1dd84f77ad94017775920d954448cbecc5c2a932487dbdebeee869ad82db25b6`  
-		Last Modified: Fri, 01 Dec 2023 13:13:24 GMT  
-		Size: 6.4 MB (6382886 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb1f5b46e06dc1cfbbb2b85a8bd4b53fe1a3af00b086ff8ff96af393322ee16e`  
-		Last Modified: Fri, 01 Dec 2023 13:13:22 GMT  
-		Size: 387.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5a19e9c83d74bdcb62d9382e1ceb5b178402e906b87b43ad5b98446720544f66`  
-		Last Modified: Fri, 01 Dec 2023 13:13:24 GMT  
-		Size: 1.4 MB (1412518 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:646c0c170a2aeac15e0498343977e9d649dda80b7f55985cdf5b44b0c144d8f2`  
-		Last Modified: Fri, 01 Dec 2023 13:13:26 GMT  
-		Size: 18.5 MB (18474510 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:981cb070c8afbf820631c0dfa8fc95d6fadcd02d4948ed993c70a306a0fc587f`  
-		Last Modified: Fri, 01 Dec 2023 13:13:20 GMT  
-		Size: 193.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2b73374262e164559926bcd53dca6b9dcfe4ab9ad55c2352c53d34432df37b8d`  
-		Last Modified: Fri, 01 Dec 2023 13:13:21 GMT  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:51c4ea5df3cf9a62c0b8cca78e41e357c92d383bb8caf198bf3ab54b118cfaca`  
+		Last Modified: Wed, 13 Dec 2023 00:07:02 GMT  
+		Size: 6.4 MB (6384123 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:69998e54f5d1e18236b715e6330f320ff04ce61097cb1c09b6019fe519488b38`  
+		Last Modified: Wed, 13 Dec 2023 00:07:02 GMT  
+		Size: 389.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:0e764a0e62792f387b3d651e63b0a8d28bfd245b23f92749d3fd229a90b53f8f`  
+		Last Modified: Wed, 13 Dec 2023 00:07:03 GMT  
+		Size: 1.4 MB (1403286 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:5ec36674f35d9bbce511967279c9f87fe9ae62cb2c7f031f8b115bdfbb260e8d`  
+		Last Modified: Wed, 13 Dec 2023 00:07:04 GMT  
+		Size: 18.5 MB (18474705 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:3e9bc7011d54f11481a177ebbbe3867aecdb6940b4f2dbdb492198294ed109ae`  
+		Last Modified: Wed, 13 Dec 2023 00:07:03 GMT  
+		Size: 194.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:554771fa7283e2a4bbdb684ab936f922bbc9b4ff5b144ce68259b459f4bd9c37`  
+		Last Modified: Wed, 13 Dec 2023 00:07:05 GMT  
 		Size: 109.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1ed9a2bb63716171b1adf9293b8c6cfe5a4dbfc5eb07614991c79d8c1d2c488d`  
-		Last Modified: Fri, 01 Dec 2023 13:13:20 GMT  
-		Size: 621.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08139d832555ace162bd9d25a1a3d86f78fa45a401937907cd7f9bc478de19f0`  
-		Last Modified: Fri, 01 Dec 2023 13:13:20 GMT  
-		Size: 833.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bd6b10e3c7af07a28c9f2a0406b2d548228550064ae55bc055c24c8b46eba6e1`  
+		Last Modified: Wed, 13 Dec 2023 00:07:05 GMT  
+		Size: 617.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:a2bf1af2bdebf01f5e49f8ed53ac35e8131f82206a9c7e52481ba7c133504f70`  
+		Last Modified: Wed, 13 Dec 2023 00:07:05 GMT  
+		Size: 830.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+
+### `rabbitmq:3.13.0-rc.2-alpine` - unknown; unknown
+
+```console
+$ docker pull rabbitmq@sha256:9b72f24864ac6cda6dd3754c53e885e4e872fda527576dd97f02fe35b89c3a01
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **68.5 KB (68530 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:da309bf52979a870bc67ba3d063616c2506139a4e45780204c683e6212f1f76a`
+
+```dockerfile
+```
+
+-	Layers:
+	-	`sha256:100c6d6cdb58ad7304a6fc540d732852096aab2acd2069a4d9431c84713e7ee6`  
+		Last Modified: Wed, 13 Dec 2023 00:07:01 GMT  
+		Size: 68.5 KB (68530 bytes)  
+		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.13.0-rc.2-alpine` - linux; arm variant v7
 
@@ -31004,7 +31193,7 @@ $ docker pull rabbitmq@sha256:333f6d977adaeb27907cbddd80c0f02184c6497fe996cf3b24
 ## `rabbitmq:3.13.0-rc.2-management-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:76a4c1f236707a9cf18b33b59381031ba317e1d81399cd7d8cb3ab42b3edf98b
+$ docker pull rabbitmq@sha256:83b08e9fb4b19e4b3afe72895a5dd10f4954794ce433c72896c7df15b672ba4d
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -31026,19 +31215,19 @@ $ docker pull rabbitmq@sha256:76a4c1f236707a9cf18b33b59381031ba317e1d81399cd7d8c
 ### `rabbitmq:3.13.0-rc.2-management-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:94d2267e7f9930bc448a040f7bcfc0852c009e7b2138d2c5f97ef9b5ac7d18a6
+$ docker pull rabbitmq@sha256:f90b414a67e0f021b36fbfae8368f48c53055a24b9d922b4df230ee56ed4dd41
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **88.4 MB (88427449 bytes)**  
+-	Total Size: **88.5 MB (88546626 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:11858d2af06330a6e24bd3d6f461db5110702144a0b45be58830fd20564f7ab5`
+-	Image ID: `sha256:44d61e78bb5b882a1b8ec52e67c1a373b6de421b5be1c537045a8681c8f219bf`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
 # Wed, 19 Jul 2023 19:41:43 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
 # Wed, 19 Jul 2023 19:41:43 GMT
 CMD ["/bin/sh"]
 # Wed, 19 Jul 2023 19:41:43 GMT
@@ -31048,11 +31237,11 @@ ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
 # Wed, 19 Jul 2023 19:41:43 GMT
 COPY /opt/erlang /opt/erlang # buildkit
 # Wed, 19 Jul 2023 19:41:43 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"26.1.2","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@26.1.2?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"26.1.2","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@26.1.2?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
 # Wed, 19 Jul 2023 19:41:43 GMT
 COPY /opt/openssl /opt/openssl # buildkit
 # Wed, 19 Jul 2023 19:41:43 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
 # Wed, 19 Jul 2023 19:41:43 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 19 Jul 2023 19:41:43 GMT
@@ -31068,7 +31257,7 @@ ENV RABBITMQ_HOME=/opt/rabbitmq
 # Wed, 19 Jul 2023 19:41:43 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 19 Jul 2023 19:41:43 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.13.0-rc.2","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.13.0-rc.2?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.13.0-rc.2","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.13.0-rc.2?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
 # Wed, 19 Jul 2023 19:41:43 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
 # Wed, 19 Jul 2023 19:41:43 GMT
@@ -31096,77 +31285,77 @@ EXPOSE map[15671/tcp:{} 15672/tcp:{}]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:90adf2ca81f0787882ec8a11048a8ce497bc94634e51edfae69642d3fa10e4d8`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 41.6 MB (41598179 bytes)  
+	-	`sha256:f32d516069c34ea97ef6e4009b2b798cbc5386adcad8f67bac6aa94a5c00ee44`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
+		Size: 41.4 MB (41445188 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:04d75e1264bcb68f8fa1c0361dd98faa40d650baee6da1eede324850d871ac5a`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
+	-	`sha256:d6b8e29539ba0b1aae11af2914aed779e1dd7c281d51691cca263c1e2010da6e`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
 		Size: 391.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:6d5433f65899299f60a65fb37121ef4c73917dd64051785fe739e85618ae78a5`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
-		Size: 7.6 MB (7550201 bytes)  
+	-	`sha256:f6e6bc0f226685004402c39c56347302a141702af6d066d19b1ea302b6bc332b`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
+		Size: 7.6 MB (7554063 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:d2e827f3997f098ec53991ce97d1aae8caf1e8090b2657cfc93bf007a1490050`  
-		Last Modified: Fri, 01 Dec 2023 00:17:12 GMT  
-		Size: 388.0 B  
+	-	`sha256:268c3326d38a5c7c1cb9b00f37bc5238cd3f178fa52cab4e231075a999471e80`  
+		Last Modified: Tue, 12 Dec 2023 20:56:31 GMT  
+		Size: 387.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:4179c7c0719b464affe70bf81260093a4dc7f7f7513d073d2adf91d7a63e538a`  
-		Last Modified: Fri, 01 Dec 2023 00:17:13 GMT  
-		Size: 2.3 MB (2297446 bytes)  
+	-	`sha256:059be09c04739fe7d02e88a83df5be3f0c2f01c736123e010c4deae02773b325`  
+		Last Modified: Tue, 12 Dec 2023 20:56:32 GMT  
+		Size: 2.4 MB (2407692 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:9ea56dc86b7d7f8368cf351f24d8c322bedddbdf645b204688cf1bf20ba8a0b9`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 18.5 MB (18474724 bytes)  
+	-	`sha256:270c55c513faa903e147ece8359609c747c223f547338bd65cd74b56493ededb`  
+		Last Modified: Tue, 12 Dec 2023 20:56:33 GMT  
+		Size: 18.5 MB (18474559 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:044c2fb556b4f212cdde1084986173e5f7b72dc1def8fdfc71fd256b166c3131`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 194.0 B  
+	-	`sha256:49865eb3129b368c6f383ea683e38cdd8d294e41a53fe3fd61c4aafc21bd1988`  
+		Last Modified: Tue, 12 Dec 2023 20:56:32 GMT  
+		Size: 193.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:28ae985a9ab00b146713b3b28788bb690455ff0340c13840e778f959cc164fff`  
-		Last Modified: Fri, 01 Dec 2023 00:17:14 GMT  
-		Size: 108.0 B  
+	-	`sha256:f296cd4fe56fe24304e1253cc059b906e7690e3f07842f2a77eaf3e53c8f4d89`  
+		Last Modified: Tue, 12 Dec 2023 20:56:33 GMT  
+		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:9f444521d09a02b017f42eee459886a57016714fa954de4eacca746b09403a9d`  
-		Last Modified: Fri, 01 Dec 2023 00:17:15 GMT  
-		Size: 615.0 B  
+	-	`sha256:82ca173ae0ef0e912430311a22b4f201b2173326cbb3bfa807413435543a82d3`  
+		Last Modified: Tue, 12 Dec 2023 20:56:33 GMT  
+		Size: 619.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:cf53d5de3a8700a2fa7fbc14742d699e39d581cfc2bbe4d0a3ab85920ddacdbc`  
-		Last Modified: Fri, 01 Dec 2023 00:17:15 GMT  
-		Size: 829.0 B  
+	-	`sha256:377f9a78fa32629c6ac57a07f26c097f4958a8eb6fbbcbf734a0de29158d6f8d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:33 GMT  
+		Size: 826.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:f74c8b258125770445e30fe81e60661bda436a77d9381514db4377e6d6719a6b`  
-		Last Modified: Fri, 01 Dec 2023 01:11:38 GMT  
-		Size: 15.1 MB (15101952 bytes)  
+	-	`sha256:9b9e7a303e5e09da039f9b41889207759c434c5f9287263a56b26c7089183c95`  
+		Last Modified: Tue, 12 Dec 2023 21:49:47 GMT  
+		Size: 15.3 MB (15254119 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.13.0-rc.2-management-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:5dbaf7bfe9ded24f100eac2592a7ebb1d48bd3d7e0e872c97e4250c14d31905b
+$ docker pull rabbitmq@sha256:c348d4cb741ea37b9468c45349b11039da9d406a970ffed651c939d44b838488
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.7 MB (1663403 bytes)**  
+-	Total Size: **1.7 MB (1664322 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a73e06ebaa960a372551305d6e2cefac5bad6242e8a5c3d6309ff7045757d415`
+-	Image ID: `sha256:b9fdd355833ff2eb5c4b50c01c7aafd3ef59808031a4481a32ab7cbf663b16e1`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:7817e4cf09425f12c2574613c6af50739f631076d78b4bbbede71d9411d206a3`  
-		Last Modified: Fri, 01 Dec 2023 01:11:37 GMT  
-		Size: 1.7 MB (1650545 bytes)  
+	-	`sha256:767a1a4b2bdff282ca26b5c482d8667697727d1df964f4903f6a2ef69b7d1a76`  
+		Last Modified: Tue, 12 Dec 2023 21:49:45 GMT  
+		Size: 1.7 MB (1651463 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:904799c2ed312c3ca845e4182a7448edb43df65c1e1556e51c4cff736474914e`  
-		Last Modified: Fri, 01 Dec 2023 01:11:37 GMT  
-		Size: 12.9 KB (12858 bytes)  
+	-	`sha256:d8565bdce6b59bcfe84f5ebb09076b86c4d86608c81771ee41ee47415838e869`  
+		Last Modified: Tue, 12 Dec 2023 21:49:45 GMT  
+		Size: 12.9 KB (12859 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.13.0-rc.2-management-alpine` - linux; arm variant v6
@@ -32829,14 +33018,15 @@ $ docker pull rabbitmq@sha256:95ef0ed740f9ded42bad442ae9bb4f1f45258b0f7d8e190fc1
 ## `rabbitmq:3.9-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:5cccaf2657342be02316aef9b83fd061b7e219e68f611bb47dc4df4847e9144b
+$ docker pull rabbitmq@sha256:03c0066589d4040855a4dacd1a993fe3df3a25b4bdea5cb331fdb0cee6dd43d9
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 13
+-	Platforms: 14
 	-	linux; amd64
 	-	unknown; unknown
 	-	linux; arm variant v6
+	-	unknown; unknown
 	-	linux; arm variant v7
 	-	unknown; unknown
 	-	linux; arm64 variant v8
@@ -32851,262 +33041,282 @@ $ docker pull rabbitmq@sha256:5cccaf2657342be02316aef9b83fd061b7e219e68f611bb47d
 ### `rabbitmq:3.9-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:4beb919e03bd6e78a91801d1bcaa63b6bd9e318841acc920db18ab45bb03c901
+$ docker pull rabbitmq@sha256:12637337ab01c675b378f3a3ddebfdc9680f36b69a84d5b558a116fcd163f12a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **70.3 MB (70254099 bytes)**  
+-	Total Size: **70.2 MB (70196574 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4b2593bc75749b3452aaa15ad0326a5f5c8c93e8259835c2a9fa56834507c1d9`
+-	Image ID: `sha256:061714b7f5b627ffa595fb54a868b4bf6d103f2620ea3a72439460da5bbaf445`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Tue, 24 Oct 2023 19:33:30 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Fri, 08 Dec 2023 01:20:49 GMT
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
+# Fri, 08 Dec 2023 01:20:49 GMT
 CMD ["/bin/sh"]
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.9.29
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 24 Oct 2023 19:33:30 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.9.29","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.9.29?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.9.29","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.9.29?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:83e632dd1b07fa93cbcc1101a56e23c6df07d543cebc7081d42d0597aa9731ad`  
-		Last Modified: Fri, 01 Dec 2023 00:17:03 GMT  
-		Size: 40.1 MB (40076538 bytes)  
+	-	`sha256:ef132dffa7f9ec5b662fd25e35316c5cc389c1090fa5de0c2775d1bc41ca280f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:24 GMT  
+		Size: 39.9 MB (39898436 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:24aab8a9bce3f92e2911b5e8f471950912f352907c34e7d4baa70d62f74d7984`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 389.0 B  
+	-	`sha256:da780fa81bdd1a71b647a41cfefab9717ba7a26aa880316eafce914e580075f5`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 388.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:496d85f10be020e9e8486f36466060a010ff65a2f8cd75c24d326498592096d0`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 7.6 MB (7550210 bytes)  
+	-	`sha256:8755c8f89a7e9f14cce2f28a9487ca3da8df88c824c7e13aa174104f1375e4a9`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 7.6 MB (7554057 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2778816110b947a9de75ef5c67f402803331277684d95ec50009290e4ddb6f43`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 389.0 B  
+	-	`sha256:f497d26af2b251f9364f13134a4ce5796b5f24bb809a8dfa342f4dc8659d32fc`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 388.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ee193172adc787cf02c8e4a533b0129746c41e0ba24e91fa6567026710fa63c8`  
-		Last Modified: Fri, 01 Dec 2023 00:17:03 GMT  
-		Size: 2.3 MB (2297445 bytes)  
+	-	`sha256:110f099721df4fe32f5524165813fee4cfcf218b4bdaaff4738b1c0b0245e87d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:24 GMT  
+		Size: 2.4 MB (2407676 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:245fea1957379162640af405eb4f04e8779c7db5972f8776f73b7a12e50f0476`  
-		Last Modified: Fri, 01 Dec 2023 00:17:04 GMT  
-		Size: 16.9 MB (16924963 bytes)  
+	-	`sha256:b436ff757f2b1186c54c3bb99a477395fcefdd3f7218a105637d76bb36576712`  
+		Last Modified: Tue, 12 Dec 2023 20:56:25 GMT  
+		Size: 16.9 MB (16925398 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:4ea72ae223605c545f8cb92076c640d0d25fae415a4e169f1bdf082a6ecab3c4`  
-		Last Modified: Fri, 01 Dec 2023 00:17:04 GMT  
-		Size: 192.0 B  
+	-	`sha256:7eb4c2b25fe06963081f4bbb6964ab3fac9661d2549cc0bcb614dafd691b7fc1`  
+		Last Modified: Tue, 12 Dec 2023 20:56:24 GMT  
+		Size: 193.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a8dd431e0ddc9b04534b4667cde1989e068cf5a725048799847b95c348ff7155`  
-		Last Modified: Fri, 01 Dec 2023 00:17:04 GMT  
+	-	`sha256:23e08ff7aaf4680deac7120eb09625a4269523eb193eef5d6bb92156c35dd9f2`  
+		Last Modified: Tue, 12 Dec 2023 20:56:25 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:e9e1a383e26c192fc7f7400ae8f2bfc6e8db78b164ca7b1c7c528ae8733c7034`  
-		Last Modified: Fri, 01 Dec 2023 00:17:04 GMT  
-		Size: 616.0 B  
+	-	`sha256:3d7788ba0824b448d6faf006fd55fd5a905ba38fc2e49d9f20dcb707a8fd2c37`  
+		Last Modified: Tue, 12 Dec 2023 20:56:25 GMT  
+		Size: 619.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a4f7737f0c21d57231c357bec49baf32509cf8423c5d81e8a07d4d4117f0a6ac`  
-		Last Modified: Fri, 01 Dec 2023 00:17:06 GMT  
-		Size: 826.0 B  
+	-	`sha256:34532c8cc58c08b0481c5a50974b474fd70ba5cf2555a1ab9a78114ed5dd22b0`  
+		Last Modified: Tue, 12 Dec 2023 20:56:25 GMT  
+		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.9-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:31b8a7730049e73cfd5761224e6b027b0075159688a10ea379e108b4d6500e8a
+$ docker pull rabbitmq@sha256:2078e848aef280a0ee907635a583dcaee388cac329138181d38ad308190968dc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.4 MB (5386253 bytes)**  
+-	Total Size: **5.4 MB (5419723 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:017f69bd74d9e2a42350dd553636ae5d42182f5989a8e3f5fd1e5ac111897133`
+-	Image ID: `sha256:54514b0c13dd508e8305e56ef457e78fc3a7d5522a5ea6bc2b3e1f0766f8ce94`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:eca73ca53f447f052e0493e68f7a585bfeb1a1516fab94d6b6aec2d1176c8aa7`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 759.7 KB (759743 bytes)  
+	-	`sha256:be0336b70c7de3e5cf71ce3fc2161bc3dbc88b25b18e285832581f3553daca91`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 760.1 KB (760117 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:c3766970d7dafbac2ffdc73dacb4be1500e252f8c03535754b82e4b08437b07a`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 2.3 MB (2279374 bytes)  
+	-	`sha256:ad8cad997c76958307efa1877939080d38fa3ffa57bab4c8b4106f4d4cdf0c92`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 2.3 MB (2295922 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:bfcca2b930a07e0f931523aef6e403de95762b0cc2c5c44d7a1a5c4fe5e92d3f`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 2.3 MB (2278484 bytes)  
+	-	`sha256:d027c16a20f08a731479da0f485321ea065fa748710978088cd93c1cb8c11e58`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 2.3 MB (2295032 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:e0199aaf91c51bd9685a52fb9a5ed0192ed3192ed01a4bb00bfa6a2b1e0bccaf`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
+	-	`sha256:3161217d92a3ebbb28f99638e1bb6b65096506d699113102f0af4d2ad1bb5807`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
 		Size: 68.7 KB (68652 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.9-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:0a77e08d360e36e451d4e849d789fd0a388dba0f8d5550c17783866273d5c788
+$ docker pull rabbitmq@sha256:87a578b3a9937390a12250fe973290a86d9a6df441739a3e23daf1ab2ea62c27
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **60.3 MB (60258721 bytes)**  
+-	Total Size: **60.3 MB (60307356 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bc27432e36d5a68665dd04e8b18bf833b85a60cb5d59855f453df6cfe675a9f8`
+-	Image ID: `sha256:106b16657dbf1d8445ba3dc444f16023552dea15d6de886031855722d275a46c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Tue, 24 Oct 2023 19:33:30 GMT
-ADD file:dbf65487d049081dc2d39b3d99d2c64b6c89754e7e2996a46169d3512e59f32a in / 
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Fri, 08 Dec 2023 01:49:15 GMT
+ADD file:d43ed267a41631ce0e5a4ef5aac821a75300a83f85ecb6259f5616852f89e989 in / 
+# Fri, 08 Dec 2023 01:49:15 GMT
 CMD ["/bin/sh"]
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.9.29
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 24 Oct 2023 19:33:30 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.9.29","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.9.29?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.9.29","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.9.29?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
-		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
-		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cd525983453dd88602389c675cd7e8a17ffe42312c2c6f778ebaf1cafe7a017`  
-		Last Modified: Fri, 01 Dec 2023 13:18:41 GMT  
-		Size: 32.4 MB (32388906 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e04262af6a9bd1b05ecf335e72da233cab7368f70abedf6e286d58b18892812`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 391.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebaaf2d95a0729f63de9159319cf137072b221e868847269ef50e4a8fbd7fb5b`  
-		Last Modified: Fri, 01 Dec 2023 13:18:37 GMT  
-		Size: 6.4 MB (6382872 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25e7d62ec18a5ccee0758e48d9bf08c172f2aed6eb9c89ef3be6f4439daed452`  
-		Last Modified: Fri, 01 Dec 2023 13:18:35 GMT  
-		Size: 393.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:833aca62eef35e2c19a82169474f7afa951c0b79c73c08c40b08f6c049049f89`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 1.4 MB (1412514 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:816bd8e52fdb6471f08a56a31de2db8f9492dbc803b39b53024978e7ad50eb65`  
-		Last Modified: Fri, 01 Dec 2023 13:20:29 GMT  
-		Size: 16.9 MB (16925032 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3c9d0c3c3de1844a5a8411f7bc069fc64ec29d0180bb00f543dbd0ced0b642ca`  
-		Last Modified: Fri, 01 Dec 2023 13:20:27 GMT  
+	-	`sha256:0803c38384d9fd0f9afaec8fd13d267547b660dcd46bb92a3d63c5d76e78b04c`  
+		Last Modified: Fri, 08 Dec 2023 01:49:33 GMT  
+		Size: 3.2 MB (3165143 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c0f150da36f6f625d41b8fd26d929990bd7bfd608b2a60c1f32137e63fa0a85f`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 32.4 MB (32426806 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ee2dec8adf19611e8329250ff0fe76f5b78a753f12e2dbd411c033d3e875b7c1`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 389.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:398c87e745935637777a0bc3844e082e2510dde383d5a7e337b2673e9ae302f4`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 6.4 MB (6384103 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:1f6c5597f69cf12305f4d149b2174d1bff4c9dbbd5d8c2f1bdb6c362a30fcba3`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 394.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bc5cc845affc7b41592001efac993b102d09d127e59b54f2a6d11f748eeadc28`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 1.4 MB (1403285 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c18fac32ef4e2f45fcd89fbc189c43a07768c11abeac10661cc2d7f4f38e55dd`  
+		Last Modified: Wed, 13 Dec 2023 00:12:18 GMT  
+		Size: 16.9 MB (16925490 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c71e3d3c1141c485d7baffad01fb4b3d4b7949138d2645695e7198612d98a2c8`  
+		Last Modified: Wed, 13 Dec 2023 00:12:17 GMT  
 		Size: 193.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:52880bcf5551fe203505d379c93e82669e0095eae1c83091f6f4b8d283de6e86`  
-		Last Modified: Fri, 01 Dec 2023 13:20:27 GMT  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:40f00d3e4406bb449660f67046b5ac68bac98b9271d7326d42d532b1cd5a50ff`  
+		Last Modified: Wed, 13 Dec 2023 00:12:17 GMT  
 		Size: 109.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a0108e240e6b481e6d56eefb59c689947428449abb8008d0665e73294ceeec2d`  
-		Last Modified: Fri, 01 Dec 2023 13:20:27 GMT  
-		Size: 616.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4051f7a4e77c5d144ca2e6ddc2abbdb6bc5a3052bd8a8ec3ddd1ecb5a450da1a`  
-		Last Modified: Fri, 01 Dec 2023 13:20:27 GMT  
-		Size: 825.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ce4aefcc5574ea88cf8d957d729eaf2286031706ea76aae35bbd0190e13c5066`  
+		Last Modified: Wed, 13 Dec 2023 00:12:17 GMT  
+		Size: 615.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:f8d166c698bb281743ea5fba9c2d469c86a95707c1d1acacd98404c55de8d0ff`  
+		Last Modified: Wed, 13 Dec 2023 00:12:18 GMT  
+		Size: 829.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+
+### `rabbitmq:3.9-alpine` - unknown; unknown
+
+```console
+$ docker pull rabbitmq@sha256:1731b5a1da229853c0586aaed97d93d2bf80d6f18a7045215384edbe14aa2535
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **68.5 KB (68467 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:717073b617b9cbda35bf19e2f82d92cf049ff9c92fc57983a6339aa42398d4e6`
+
+```dockerfile
+```
+
+-	Layers:
+	-	`sha256:d9fb37da19ccd4c7d80844c28bf015b615bf85632c133b552dae9985ad204f5c`  
+		Last Modified: Wed, 13 Dec 2023 00:12:17 GMT  
+		Size: 68.5 KB (68467 bytes)  
+		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.9-alpine` - linux; arm variant v7
 
@@ -34618,7 +34828,7 @@ $ docker pull rabbitmq@sha256:7d647a84aeec99c478e6f6bd57dfed6a4dae6d0e679e0f9e91
 ## `rabbitmq:3.9-management-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:ceb83c787f34630358a5a4d0c60ddc627bab3511041ee0d0ae43ec5adecad998
+$ docker pull rabbitmq@sha256:bd5643ca8fe6a2450aef4e0209c62a95723b3b06e902228468a4c878282268a3
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -34640,19 +34850,19 @@ $ docker pull rabbitmq@sha256:ceb83c787f34630358a5a4d0c60ddc627bab3511041ee0d0ae
 ### `rabbitmq:3.9-management-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:9040c5403d643c67c52ac9920508b8b876d8a861a892fe7bab6f927f685e8efd
+$ docker pull rabbitmq@sha256:10654767492ee76cb1f60cd106cc62460ef54234cd94dad1cb8fa5e21fb85160
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **85.4 MB (85356150 bytes)**  
+-	Total Size: **85.5 MB (85450678 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:98dcee9dca65b65f48fb2467f9be32f3976dce76190d382ad87053fa26735c3d`
+-	Image ID: `sha256:051d3e1050b86bc90063fd939952fe436c4d62b5bfc2135797b41610930d37a6`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
 # Fri, 24 Mar 2023 18:45:07 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
 # Fri, 24 Mar 2023 18:45:07 GMT
 CMD ["/bin/sh"]
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -34662,11 +34872,11 @@ ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
 # Fri, 24 Mar 2023 18:45:07 GMT
 COPY /opt/erlang /opt/erlang # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 COPY /opt/openssl /opt/openssl # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -34682,7 +34892,7 @@ ENV RABBITMQ_HOME=/opt/rabbitmq
 # Fri, 24 Mar 2023 18:45:07 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.9.29","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.9.29?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.9.29","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.9.29?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -34710,77 +34920,77 @@ EXPOSE map[15671/tcp:{} 15672/tcp:{}]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:83e632dd1b07fa93cbcc1101a56e23c6df07d543cebc7081d42d0597aa9731ad`  
-		Last Modified: Fri, 01 Dec 2023 00:17:03 GMT  
-		Size: 40.1 MB (40076538 bytes)  
+	-	`sha256:ef132dffa7f9ec5b662fd25e35316c5cc389c1090fa5de0c2775d1bc41ca280f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:24 GMT  
+		Size: 39.9 MB (39898436 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:24aab8a9bce3f92e2911b5e8f471950912f352907c34e7d4baa70d62f74d7984`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 389.0 B  
+	-	`sha256:da780fa81bdd1a71b647a41cfefab9717ba7a26aa880316eafce914e580075f5`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 388.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:496d85f10be020e9e8486f36466060a010ff65a2f8cd75c24d326498592096d0`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 7.6 MB (7550210 bytes)  
+	-	`sha256:8755c8f89a7e9f14cce2f28a9487ca3da8df88c824c7e13aa174104f1375e4a9`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 7.6 MB (7554057 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2778816110b947a9de75ef5c67f402803331277684d95ec50009290e4ddb6f43`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 389.0 B  
+	-	`sha256:f497d26af2b251f9364f13134a4ce5796b5f24bb809a8dfa342f4dc8659d32fc`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 388.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ee193172adc787cf02c8e4a533b0129746c41e0ba24e91fa6567026710fa63c8`  
-		Last Modified: Fri, 01 Dec 2023 00:17:03 GMT  
-		Size: 2.3 MB (2297445 bytes)  
+	-	`sha256:110f099721df4fe32f5524165813fee4cfcf218b4bdaaff4738b1c0b0245e87d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:24 GMT  
+		Size: 2.4 MB (2407676 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:245fea1957379162640af405eb4f04e8779c7db5972f8776f73b7a12e50f0476`  
-		Last Modified: Fri, 01 Dec 2023 00:17:04 GMT  
-		Size: 16.9 MB (16924963 bytes)  
+	-	`sha256:b436ff757f2b1186c54c3bb99a477395fcefdd3f7218a105637d76bb36576712`  
+		Last Modified: Tue, 12 Dec 2023 20:56:25 GMT  
+		Size: 16.9 MB (16925398 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:4ea72ae223605c545f8cb92076c640d0d25fae415a4e169f1bdf082a6ecab3c4`  
-		Last Modified: Fri, 01 Dec 2023 00:17:04 GMT  
-		Size: 192.0 B  
+	-	`sha256:7eb4c2b25fe06963081f4bbb6964ab3fac9661d2549cc0bcb614dafd691b7fc1`  
+		Last Modified: Tue, 12 Dec 2023 20:56:24 GMT  
+		Size: 193.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a8dd431e0ddc9b04534b4667cde1989e068cf5a725048799847b95c348ff7155`  
-		Last Modified: Fri, 01 Dec 2023 00:17:04 GMT  
+	-	`sha256:23e08ff7aaf4680deac7120eb09625a4269523eb193eef5d6bb92156c35dd9f2`  
+		Last Modified: Tue, 12 Dec 2023 20:56:25 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:e9e1a383e26c192fc7f7400ae8f2bfc6e8db78b164ca7b1c7c528ae8733c7034`  
-		Last Modified: Fri, 01 Dec 2023 00:17:04 GMT  
-		Size: 616.0 B  
+	-	`sha256:3d7788ba0824b448d6faf006fd55fd5a905ba38fc2e49d9f20dcb707a8fd2c37`  
+		Last Modified: Tue, 12 Dec 2023 20:56:25 GMT  
+		Size: 619.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a4f7737f0c21d57231c357bec49baf32509cf8423c5d81e8a07d4d4117f0a6ac`  
-		Last Modified: Fri, 01 Dec 2023 00:17:06 GMT  
-		Size: 826.0 B  
+	-	`sha256:34532c8cc58c08b0481c5a50974b474fd70ba5cf2555a1ab9a78114ed5dd22b0`  
+		Last Modified: Tue, 12 Dec 2023 20:56:25 GMT  
+		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2aeb44cce8f39678ea963d4649d387168344208f689bf2cd43e70f1c6baf3737`  
-		Last Modified: Fri, 01 Dec 2023 01:11:36 GMT  
-		Size: 15.1 MB (15102051 bytes)  
+	-	`sha256:10ad313422710e75332fc439a050ea409b671622ecda7937b387f18ee5a1071f`  
+		Last Modified: Tue, 12 Dec 2023 21:49:45 GMT  
+		Size: 15.3 MB (15254104 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.9-management-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:e2170e8bca166c90f73d32653f08728f31a3fb3f9460f7e8c905032eb2a9ea9f
+$ docker pull rabbitmq@sha256:e1aa710e409b7f43adf0a23041d464ef2f8d8e2ce70689e0926a7760e3c00b0d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.7 MB (1663341 bytes)**  
+-	Total Size: **1.7 MB (1664258 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4e4b938ff1e9ba7b87cf7a42c45b149970fcad02ba96d6704130b23bbafb966b`
+-	Image ID: `sha256:921bf8ae636bdacd1cb2e6c125dd7818746a4283db4f2267c617182a24f3175d`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:2e6523b6f244c972174d7e55a71def8be9430328d39870db6e81b00e86942661`  
-		Last Modified: Fri, 01 Dec 2023 01:11:36 GMT  
-		Size: 1.7 MB (1650521 bytes)  
+	-	`sha256:50301b0793fe631982abff5d9e10ac9f5462d10b290fc07b9179025708613471`  
+		Last Modified: Tue, 12 Dec 2023 21:49:43 GMT  
+		Size: 1.7 MB (1651439 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:f25fc551dd0565172f5cdb15fabed6f02af5da673b19f552dd1c2264e017f03f`  
-		Last Modified: Fri, 01 Dec 2023 01:11:36 GMT  
-		Size: 12.8 KB (12820 bytes)  
+	-	`sha256:ebbdd26312a046fe9fb04bf920fde53b28d33280eef7a218297d726f7862f762`  
+		Last Modified: Tue, 12 Dec 2023 21:49:43 GMT  
+		Size: 12.8 KB (12819 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.9-management-alpine` - linux; arm variant v6
@@ -36443,14 +36653,15 @@ $ docker pull rabbitmq@sha256:95ef0ed740f9ded42bad442ae9bb4f1f45258b0f7d8e190fc1
 ## `rabbitmq:3.9.29-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:5cccaf2657342be02316aef9b83fd061b7e219e68f611bb47dc4df4847e9144b
+$ docker pull rabbitmq@sha256:03c0066589d4040855a4dacd1a993fe3df3a25b4bdea5cb331fdb0cee6dd43d9
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 13
+-	Platforms: 14
 	-	linux; amd64
 	-	unknown; unknown
 	-	linux; arm variant v6
+	-	unknown; unknown
 	-	linux; arm variant v7
 	-	unknown; unknown
 	-	linux; arm64 variant v8
@@ -36465,262 +36676,282 @@ $ docker pull rabbitmq@sha256:5cccaf2657342be02316aef9b83fd061b7e219e68f611bb47d
 ### `rabbitmq:3.9.29-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:4beb919e03bd6e78a91801d1bcaa63b6bd9e318841acc920db18ab45bb03c901
+$ docker pull rabbitmq@sha256:12637337ab01c675b378f3a3ddebfdc9680f36b69a84d5b558a116fcd163f12a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **70.3 MB (70254099 bytes)**  
+-	Total Size: **70.2 MB (70196574 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4b2593bc75749b3452aaa15ad0326a5f5c8c93e8259835c2a9fa56834507c1d9`
+-	Image ID: `sha256:061714b7f5b627ffa595fb54a868b4bf6d103f2620ea3a72439460da5bbaf445`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Tue, 24 Oct 2023 19:33:30 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Fri, 08 Dec 2023 01:20:49 GMT
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
+# Fri, 08 Dec 2023 01:20:49 GMT
 CMD ["/bin/sh"]
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.9.29
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 24 Oct 2023 19:33:30 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.9.29","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.9.29?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.9.29","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.9.29?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:83e632dd1b07fa93cbcc1101a56e23c6df07d543cebc7081d42d0597aa9731ad`  
-		Last Modified: Fri, 01 Dec 2023 00:17:03 GMT  
-		Size: 40.1 MB (40076538 bytes)  
+	-	`sha256:ef132dffa7f9ec5b662fd25e35316c5cc389c1090fa5de0c2775d1bc41ca280f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:24 GMT  
+		Size: 39.9 MB (39898436 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:24aab8a9bce3f92e2911b5e8f471950912f352907c34e7d4baa70d62f74d7984`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 389.0 B  
+	-	`sha256:da780fa81bdd1a71b647a41cfefab9717ba7a26aa880316eafce914e580075f5`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 388.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:496d85f10be020e9e8486f36466060a010ff65a2f8cd75c24d326498592096d0`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 7.6 MB (7550210 bytes)  
+	-	`sha256:8755c8f89a7e9f14cce2f28a9487ca3da8df88c824c7e13aa174104f1375e4a9`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 7.6 MB (7554057 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2778816110b947a9de75ef5c67f402803331277684d95ec50009290e4ddb6f43`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 389.0 B  
+	-	`sha256:f497d26af2b251f9364f13134a4ce5796b5f24bb809a8dfa342f4dc8659d32fc`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 388.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ee193172adc787cf02c8e4a533b0129746c41e0ba24e91fa6567026710fa63c8`  
-		Last Modified: Fri, 01 Dec 2023 00:17:03 GMT  
-		Size: 2.3 MB (2297445 bytes)  
+	-	`sha256:110f099721df4fe32f5524165813fee4cfcf218b4bdaaff4738b1c0b0245e87d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:24 GMT  
+		Size: 2.4 MB (2407676 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:245fea1957379162640af405eb4f04e8779c7db5972f8776f73b7a12e50f0476`  
-		Last Modified: Fri, 01 Dec 2023 00:17:04 GMT  
-		Size: 16.9 MB (16924963 bytes)  
+	-	`sha256:b436ff757f2b1186c54c3bb99a477395fcefdd3f7218a105637d76bb36576712`  
+		Last Modified: Tue, 12 Dec 2023 20:56:25 GMT  
+		Size: 16.9 MB (16925398 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:4ea72ae223605c545f8cb92076c640d0d25fae415a4e169f1bdf082a6ecab3c4`  
-		Last Modified: Fri, 01 Dec 2023 00:17:04 GMT  
-		Size: 192.0 B  
+	-	`sha256:7eb4c2b25fe06963081f4bbb6964ab3fac9661d2549cc0bcb614dafd691b7fc1`  
+		Last Modified: Tue, 12 Dec 2023 20:56:24 GMT  
+		Size: 193.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a8dd431e0ddc9b04534b4667cde1989e068cf5a725048799847b95c348ff7155`  
-		Last Modified: Fri, 01 Dec 2023 00:17:04 GMT  
+	-	`sha256:23e08ff7aaf4680deac7120eb09625a4269523eb193eef5d6bb92156c35dd9f2`  
+		Last Modified: Tue, 12 Dec 2023 20:56:25 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:e9e1a383e26c192fc7f7400ae8f2bfc6e8db78b164ca7b1c7c528ae8733c7034`  
-		Last Modified: Fri, 01 Dec 2023 00:17:04 GMT  
-		Size: 616.0 B  
+	-	`sha256:3d7788ba0824b448d6faf006fd55fd5a905ba38fc2e49d9f20dcb707a8fd2c37`  
+		Last Modified: Tue, 12 Dec 2023 20:56:25 GMT  
+		Size: 619.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a4f7737f0c21d57231c357bec49baf32509cf8423c5d81e8a07d4d4117f0a6ac`  
-		Last Modified: Fri, 01 Dec 2023 00:17:06 GMT  
-		Size: 826.0 B  
+	-	`sha256:34532c8cc58c08b0481c5a50974b474fd70ba5cf2555a1ab9a78114ed5dd22b0`  
+		Last Modified: Tue, 12 Dec 2023 20:56:25 GMT  
+		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.9.29-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:31b8a7730049e73cfd5761224e6b027b0075159688a10ea379e108b4d6500e8a
+$ docker pull rabbitmq@sha256:2078e848aef280a0ee907635a583dcaee388cac329138181d38ad308190968dc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.4 MB (5386253 bytes)**  
+-	Total Size: **5.4 MB (5419723 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:017f69bd74d9e2a42350dd553636ae5d42182f5989a8e3f5fd1e5ac111897133`
+-	Image ID: `sha256:54514b0c13dd508e8305e56ef457e78fc3a7d5522a5ea6bc2b3e1f0766f8ce94`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:eca73ca53f447f052e0493e68f7a585bfeb1a1516fab94d6b6aec2d1176c8aa7`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 759.7 KB (759743 bytes)  
+	-	`sha256:be0336b70c7de3e5cf71ce3fc2161bc3dbc88b25b18e285832581f3553daca91`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 760.1 KB (760117 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:c3766970d7dafbac2ffdc73dacb4be1500e252f8c03535754b82e4b08437b07a`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 2.3 MB (2279374 bytes)  
+	-	`sha256:ad8cad997c76958307efa1877939080d38fa3ffa57bab4c8b4106f4d4cdf0c92`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 2.3 MB (2295922 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:bfcca2b930a07e0f931523aef6e403de95762b0cc2c5c44d7a1a5c4fe5e92d3f`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 2.3 MB (2278484 bytes)  
+	-	`sha256:d027c16a20f08a731479da0f485321ea065fa748710978088cd93c1cb8c11e58`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 2.3 MB (2295032 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:e0199aaf91c51bd9685a52fb9a5ed0192ed3192ed01a4bb00bfa6a2b1e0bccaf`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
+	-	`sha256:3161217d92a3ebbb28f99638e1bb6b65096506d699113102f0af4d2ad1bb5807`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
 		Size: 68.7 KB (68652 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.9.29-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:0a77e08d360e36e451d4e849d789fd0a388dba0f8d5550c17783866273d5c788
+$ docker pull rabbitmq@sha256:87a578b3a9937390a12250fe973290a86d9a6df441739a3e23daf1ab2ea62c27
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **60.3 MB (60258721 bytes)**  
+-	Total Size: **60.3 MB (60307356 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bc27432e36d5a68665dd04e8b18bf833b85a60cb5d59855f453df6cfe675a9f8`
+-	Image ID: `sha256:106b16657dbf1d8445ba3dc444f16023552dea15d6de886031855722d275a46c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Tue, 24 Oct 2023 19:33:30 GMT
-ADD file:dbf65487d049081dc2d39b3d99d2c64b6c89754e7e2996a46169d3512e59f32a in / 
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Fri, 08 Dec 2023 01:49:15 GMT
+ADD file:d43ed267a41631ce0e5a4ef5aac821a75300a83f85ecb6259f5616852f89e989 in / 
+# Fri, 08 Dec 2023 01:49:15 GMT
 CMD ["/bin/sh"]
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.9.29
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 24 Oct 2023 19:33:30 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.9.29","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.9.29?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.9.29","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.9.29?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Tue, 24 Oct 2023 19:33:30 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
-		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
-		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cd525983453dd88602389c675cd7e8a17ffe42312c2c6f778ebaf1cafe7a017`  
-		Last Modified: Fri, 01 Dec 2023 13:18:41 GMT  
-		Size: 32.4 MB (32388906 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e04262af6a9bd1b05ecf335e72da233cab7368f70abedf6e286d58b18892812`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 391.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebaaf2d95a0729f63de9159319cf137072b221e868847269ef50e4a8fbd7fb5b`  
-		Last Modified: Fri, 01 Dec 2023 13:18:37 GMT  
-		Size: 6.4 MB (6382872 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25e7d62ec18a5ccee0758e48d9bf08c172f2aed6eb9c89ef3be6f4439daed452`  
-		Last Modified: Fri, 01 Dec 2023 13:18:35 GMT  
-		Size: 393.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:833aca62eef35e2c19a82169474f7afa951c0b79c73c08c40b08f6c049049f89`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 1.4 MB (1412514 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:816bd8e52fdb6471f08a56a31de2db8f9492dbc803b39b53024978e7ad50eb65`  
-		Last Modified: Fri, 01 Dec 2023 13:20:29 GMT  
-		Size: 16.9 MB (16925032 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3c9d0c3c3de1844a5a8411f7bc069fc64ec29d0180bb00f543dbd0ced0b642ca`  
-		Last Modified: Fri, 01 Dec 2023 13:20:27 GMT  
+	-	`sha256:0803c38384d9fd0f9afaec8fd13d267547b660dcd46bb92a3d63c5d76e78b04c`  
+		Last Modified: Fri, 08 Dec 2023 01:49:33 GMT  
+		Size: 3.2 MB (3165143 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c0f150da36f6f625d41b8fd26d929990bd7bfd608b2a60c1f32137e63fa0a85f`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 32.4 MB (32426806 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ee2dec8adf19611e8329250ff0fe76f5b78a753f12e2dbd411c033d3e875b7c1`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 389.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:398c87e745935637777a0bc3844e082e2510dde383d5a7e337b2673e9ae302f4`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 6.4 MB (6384103 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:1f6c5597f69cf12305f4d149b2174d1bff4c9dbbd5d8c2f1bdb6c362a30fcba3`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 394.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bc5cc845affc7b41592001efac993b102d09d127e59b54f2a6d11f748eeadc28`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 1.4 MB (1403285 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c18fac32ef4e2f45fcd89fbc189c43a07768c11abeac10661cc2d7f4f38e55dd`  
+		Last Modified: Wed, 13 Dec 2023 00:12:18 GMT  
+		Size: 16.9 MB (16925490 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c71e3d3c1141c485d7baffad01fb4b3d4b7949138d2645695e7198612d98a2c8`  
+		Last Modified: Wed, 13 Dec 2023 00:12:17 GMT  
 		Size: 193.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:52880bcf5551fe203505d379c93e82669e0095eae1c83091f6f4b8d283de6e86`  
-		Last Modified: Fri, 01 Dec 2023 13:20:27 GMT  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:40f00d3e4406bb449660f67046b5ac68bac98b9271d7326d42d532b1cd5a50ff`  
+		Last Modified: Wed, 13 Dec 2023 00:12:17 GMT  
 		Size: 109.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a0108e240e6b481e6d56eefb59c689947428449abb8008d0665e73294ceeec2d`  
-		Last Modified: Fri, 01 Dec 2023 13:20:27 GMT  
-		Size: 616.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4051f7a4e77c5d144ca2e6ddc2abbdb6bc5a3052bd8a8ec3ddd1ecb5a450da1a`  
-		Last Modified: Fri, 01 Dec 2023 13:20:27 GMT  
-		Size: 825.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ce4aefcc5574ea88cf8d957d729eaf2286031706ea76aae35bbd0190e13c5066`  
+		Last Modified: Wed, 13 Dec 2023 00:12:17 GMT  
+		Size: 615.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:f8d166c698bb281743ea5fba9c2d469c86a95707c1d1acacd98404c55de8d0ff`  
+		Last Modified: Wed, 13 Dec 2023 00:12:18 GMT  
+		Size: 829.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+
+### `rabbitmq:3.9.29-alpine` - unknown; unknown
+
+```console
+$ docker pull rabbitmq@sha256:1731b5a1da229853c0586aaed97d93d2bf80d6f18a7045215384edbe14aa2535
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **68.5 KB (68467 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:717073b617b9cbda35bf19e2f82d92cf049ff9c92fc57983a6339aa42398d4e6`
+
+```dockerfile
+```
+
+-	Layers:
+	-	`sha256:d9fb37da19ccd4c7d80844c28bf015b615bf85632c133b552dae9985ad204f5c`  
+		Last Modified: Wed, 13 Dec 2023 00:12:17 GMT  
+		Size: 68.5 KB (68467 bytes)  
+		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.9.29-alpine` - linux; arm variant v7
 
@@ -38232,7 +38463,7 @@ $ docker pull rabbitmq@sha256:7d647a84aeec99c478e6f6bd57dfed6a4dae6d0e679e0f9e91
 ## `rabbitmq:3.9.29-management-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:ceb83c787f34630358a5a4d0c60ddc627bab3511041ee0d0ae43ec5adecad998
+$ docker pull rabbitmq@sha256:bd5643ca8fe6a2450aef4e0209c62a95723b3b06e902228468a4c878282268a3
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -38254,19 +38485,19 @@ $ docker pull rabbitmq@sha256:ceb83c787f34630358a5a4d0c60ddc627bab3511041ee0d0ae
 ### `rabbitmq:3.9.29-management-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:9040c5403d643c67c52ac9920508b8b876d8a861a892fe7bab6f927f685e8efd
+$ docker pull rabbitmq@sha256:10654767492ee76cb1f60cd106cc62460ef54234cd94dad1cb8fa5e21fb85160
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **85.4 MB (85356150 bytes)**  
+-	Total Size: **85.5 MB (85450678 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:98dcee9dca65b65f48fb2467f9be32f3976dce76190d382ad87053fa26735c3d`
+-	Image ID: `sha256:051d3e1050b86bc90063fd939952fe436c4d62b5bfc2135797b41610930d37a6`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
 # Fri, 24 Mar 2023 18:45:07 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
 # Fri, 24 Mar 2023 18:45:07 GMT
 CMD ["/bin/sh"]
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -38276,11 +38507,11 @@ ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
 # Fri, 24 Mar 2023 18:45:07 GMT
 COPY /opt/erlang /opt/erlang # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 COPY /opt/openssl /opt/openssl # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -38296,7 +38527,7 @@ ENV RABBITMQ_HOME=/opt/rabbitmq
 # Fri, 24 Mar 2023 18:45:07 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 24 Mar 2023 18:45:07 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.9.29","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.9.29?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.9.29","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.9.29?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
 # Fri, 24 Mar 2023 18:45:07 GMT
@@ -38324,77 +38555,77 @@ EXPOSE map[15671/tcp:{} 15672/tcp:{}]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:83e632dd1b07fa93cbcc1101a56e23c6df07d543cebc7081d42d0597aa9731ad`  
-		Last Modified: Fri, 01 Dec 2023 00:17:03 GMT  
-		Size: 40.1 MB (40076538 bytes)  
+	-	`sha256:ef132dffa7f9ec5b662fd25e35316c5cc389c1090fa5de0c2775d1bc41ca280f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:24 GMT  
+		Size: 39.9 MB (39898436 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:24aab8a9bce3f92e2911b5e8f471950912f352907c34e7d4baa70d62f74d7984`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 389.0 B  
+	-	`sha256:da780fa81bdd1a71b647a41cfefab9717ba7a26aa880316eafce914e580075f5`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 388.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:496d85f10be020e9e8486f36466060a010ff65a2f8cd75c24d326498592096d0`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 7.6 MB (7550210 bytes)  
+	-	`sha256:8755c8f89a7e9f14cce2f28a9487ca3da8df88c824c7e13aa174104f1375e4a9`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 7.6 MB (7554057 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2778816110b947a9de75ef5c67f402803331277684d95ec50009290e4ddb6f43`  
-		Last Modified: Fri, 01 Dec 2023 00:17:02 GMT  
-		Size: 389.0 B  
+	-	`sha256:f497d26af2b251f9364f13134a4ce5796b5f24bb809a8dfa342f4dc8659d32fc`  
+		Last Modified: Tue, 12 Dec 2023 20:56:23 GMT  
+		Size: 388.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ee193172adc787cf02c8e4a533b0129746c41e0ba24e91fa6567026710fa63c8`  
-		Last Modified: Fri, 01 Dec 2023 00:17:03 GMT  
-		Size: 2.3 MB (2297445 bytes)  
+	-	`sha256:110f099721df4fe32f5524165813fee4cfcf218b4bdaaff4738b1c0b0245e87d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:24 GMT  
+		Size: 2.4 MB (2407676 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:245fea1957379162640af405eb4f04e8779c7db5972f8776f73b7a12e50f0476`  
-		Last Modified: Fri, 01 Dec 2023 00:17:04 GMT  
-		Size: 16.9 MB (16924963 bytes)  
+	-	`sha256:b436ff757f2b1186c54c3bb99a477395fcefdd3f7218a105637d76bb36576712`  
+		Last Modified: Tue, 12 Dec 2023 20:56:25 GMT  
+		Size: 16.9 MB (16925398 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:4ea72ae223605c545f8cb92076c640d0d25fae415a4e169f1bdf082a6ecab3c4`  
-		Last Modified: Fri, 01 Dec 2023 00:17:04 GMT  
-		Size: 192.0 B  
+	-	`sha256:7eb4c2b25fe06963081f4bbb6964ab3fac9661d2549cc0bcb614dafd691b7fc1`  
+		Last Modified: Tue, 12 Dec 2023 20:56:24 GMT  
+		Size: 193.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a8dd431e0ddc9b04534b4667cde1989e068cf5a725048799847b95c348ff7155`  
-		Last Modified: Fri, 01 Dec 2023 00:17:04 GMT  
+	-	`sha256:23e08ff7aaf4680deac7120eb09625a4269523eb193eef5d6bb92156c35dd9f2`  
+		Last Modified: Tue, 12 Dec 2023 20:56:25 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:e9e1a383e26c192fc7f7400ae8f2bfc6e8db78b164ca7b1c7c528ae8733c7034`  
-		Last Modified: Fri, 01 Dec 2023 00:17:04 GMT  
-		Size: 616.0 B  
+	-	`sha256:3d7788ba0824b448d6faf006fd55fd5a905ba38fc2e49d9f20dcb707a8fd2c37`  
+		Last Modified: Tue, 12 Dec 2023 20:56:25 GMT  
+		Size: 619.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:a4f7737f0c21d57231c357bec49baf32509cf8423c5d81e8a07d4d4117f0a6ac`  
-		Last Modified: Fri, 01 Dec 2023 00:17:06 GMT  
-		Size: 826.0 B  
+	-	`sha256:34532c8cc58c08b0481c5a50974b474fd70ba5cf2555a1ab9a78114ed5dd22b0`  
+		Last Modified: Tue, 12 Dec 2023 20:56:25 GMT  
+		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:2aeb44cce8f39678ea963d4649d387168344208f689bf2cd43e70f1c6baf3737`  
-		Last Modified: Fri, 01 Dec 2023 01:11:36 GMT  
-		Size: 15.1 MB (15102051 bytes)  
+	-	`sha256:10ad313422710e75332fc439a050ea409b671622ecda7937b387f18ee5a1071f`  
+		Last Modified: Tue, 12 Dec 2023 21:49:45 GMT  
+		Size: 15.3 MB (15254104 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:3.9.29-management-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:e2170e8bca166c90f73d32653f08728f31a3fb3f9460f7e8c905032eb2a9ea9f
+$ docker pull rabbitmq@sha256:e1aa710e409b7f43adf0a23041d464ef2f8d8e2ce70689e0926a7760e3c00b0d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.7 MB (1663341 bytes)**  
+-	Total Size: **1.7 MB (1664258 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4e4b938ff1e9ba7b87cf7a42c45b149970fcad02ba96d6704130b23bbafb966b`
+-	Image ID: `sha256:921bf8ae636bdacd1cb2e6c125dd7818746a4283db4f2267c617182a24f3175d`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:2e6523b6f244c972174d7e55a71def8be9430328d39870db6e81b00e86942661`  
-		Last Modified: Fri, 01 Dec 2023 01:11:36 GMT  
-		Size: 1.7 MB (1650521 bytes)  
+	-	`sha256:50301b0793fe631982abff5d9e10ac9f5462d10b290fc07b9179025708613471`  
+		Last Modified: Tue, 12 Dec 2023 21:49:43 GMT  
+		Size: 1.7 MB (1651439 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:f25fc551dd0565172f5cdb15fabed6f02af5da673b19f552dd1c2264e017f03f`  
-		Last Modified: Fri, 01 Dec 2023 01:11:36 GMT  
-		Size: 12.8 KB (12820 bytes)  
+	-	`sha256:ebbdd26312a046fe9fb04bf920fde53b28d33280eef7a218297d726f7862f762`  
+		Last Modified: Tue, 12 Dec 2023 21:49:43 GMT  
+		Size: 12.8 KB (12819 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:3.9.29-management-alpine` - linux; arm variant v6
@@ -39248,14 +39479,15 @@ $ docker pull rabbitmq@sha256:6b487050be8794079a1fb8fd67bdcac8dfedd537ac96f836d9
 ## `rabbitmq:alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:1edca469f08da37dbe816e144bc7654daf98f756a8d12c3e89a452ef9cf7a589
+$ docker pull rabbitmq@sha256:8db41fcec066c37c8ce0d21b48d5373f948586362e0a9159f0c36665b45eafb9
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
--	Platforms: 13
+-	Platforms: 14
 	-	linux; amd64
 	-	unknown; unknown
 	-	linux; arm variant v6
+	-	unknown; unknown
 	-	linux; arm variant v7
 	-	unknown; unknown
 	-	linux; arm64 variant v8
@@ -39270,262 +39502,282 @@ $ docker pull rabbitmq@sha256:1edca469f08da37dbe816e144bc7654daf98f756a8d12c3e89
 ### `rabbitmq:alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:8d5ca55e94c6399f33a4aa6117be824c6c44a1f56ca0ab27a09a6ec5b3d18b58
+$ docker pull rabbitmq@sha256:0ef4a5074ae490fbd34e5e2be4365618f784e3db41ea7567bb2e2a975b1d993d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **71.1 MB (71061346 bytes)**  
+-	Total Size: **71.0 MB (71003173 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8b213554f1cd3607feddc8bdb70d7900e12dbee0acda77e96ab5ec75b91af3af`
+-	Image ID: `sha256:cad9acd977771eede62ee26745cb7cab2d5fb1275694f5ab233d66dcefba6068`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Wed, 22 Nov 2023 06:55:25 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Fri, 08 Dec 2023 01:20:49 GMT
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
+# Fri, 08 Dec 2023 01:20:49 GMT
 CMD ["/bin/sh"]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.12.10
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:b3ec5ffef005a39df32918af575859c89c2788393b2f27f8f8c3bac9b14dea47`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 40.1 MB (40076564 bytes)  
+	-	`sha256:d4c6bd9f2f476ac8ca381111358834f1eda42d20a7b66fc92fb6ffcf16741a44`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 39.9 MB (39898182 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:f0934a0d587092da8f59064a56ac56e44be97221620457d0c0d54bf221d35a64`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 392.0 B  
+	-	`sha256:b1d788cbab00d72d13b60a6ba065354c10d164774c1c8f6ac0b497eb0b4a2a7f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:17 GMT  
+		Size: 389.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:b40fdcef0bf8bcb93ff6d770cc77b2b045c07b2a08957318cc54824afd369e06`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 7.6 MB (7550194 bytes)  
+	-	`sha256:b1e3f3c4daae27dca3e24dd1187d1bf866da5669f418010b023acbd45b827f7f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 7.6 MB (7554025 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:79cd97312a23f9ff0fbc125f0d99182b7b7cb6d8f33b879adb15e93ea5715a61`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 388.0 B  
+	-	`sha256:f8fdf6d9b3ad47c899f1a3f52d68a08a9001ba37dadcb5916db647891db96817`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 389.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:e6e66fadb7a8deb5dc0cc0feedd733c538c1af027faf370f5b1c49d6aa1baa9e`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 2.3 MB (2297463 bytes)  
+	-	`sha256:8eb011bdfe98916d78ec812fa2f3471332ca9bf4850dfbde8ee3b56b708e5e4d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 2.4 MB (2407695 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ec4e4a2bb19115482a0d1317f925d86ae86f1ed36367e1df9c858c5785205f85`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 17.7 MB (17732171 bytes)  
+	-	`sha256:1d217240abed832febda1c576f1ccbc55af5c1a5dcd2787af1e8c7bcc6b59930`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 17.7 MB (17732264 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:c2714c1d18242092af3278ede338a05241609e5076436c713cf8bbd8095d881c`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 190.0 B  
+	-	`sha256:fa1d576cf15e654dfb707e3f0134c9675791a87771796f49b60277fcaef9c89e`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 192.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:cc60c1438b1a1d3b265a298531fb14f3e48028fae0adc86ff7f177b86d870770`  
-		Last Modified: Fri, 01 Dec 2023 00:16:52 GMT  
+	-	`sha256:bbf1653df82cd6166cd804aee895e11075e4820606f286b9a1143598a25ed360`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:63367130112c9486aefe72d6dc7e1bc3f159ac0419ea96ed9b5c17991741c868`  
-		Last Modified: Fri, 01 Dec 2023 00:16:52 GMT  
-		Size: 622.0 B  
+	-	`sha256:c23fdb4d0a8eb6da1798d392989ea3bfaafbc85e8f29fed272db727337c1d330`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 618.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:dbc0e1de0b40b1f1d423c26188cba128e93d49df717f27a129115c915c2bff28`  
-		Last Modified: Fri, 01 Dec 2023 00:16:53 GMT  
-		Size: 831.0 B  
+	-	`sha256:9fa26e965cc6fba14785af94f4e90c740664e94800f949a05fd95952e8c73f45`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:d3c1e8c16ad920532df10b349a4b7e2524cb74f7b6c05247f9e37680081973cb
+$ docker pull rabbitmq@sha256:e8f6a879bd11a99e706754fc84a9fb6f77f308103fa3928908545af7fdaca15d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.4 MB (5388715 bytes)**  
+-	Total Size: **5.4 MB (5422186 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6ad8377ae277d113d69851d3d1d06465cd8c645d33a810230afd5c7eee8af6b8`
+-	Image ID: `sha256:b4e88fac3a2f4f35238caea5d83bceda1be96203239ad36f0210724229a2a9c0`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:c9d6d98c7ee4ba09322b837e540d121d429dafa957581bb9a14060f9aaa4011e`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 760.4 KB (760357 bytes)  
+	-	`sha256:45303b55287ff6a7859c3216626a35e0f67ab48a8081f1cdf0217372a653869c`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 760.7 KB (760731 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:e1bfd33b2b92372bce7936892c18f7ca03c2e0957b9d72c5904072fb4fa7f893`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 2.3 MB (2279986 bytes)  
+	-	`sha256:b870e1fd23c76b621241628c167a5140eabad57c00edc9d4b95c2135dc1c19c6`  
+		Last Modified: Tue, 12 Dec 2023 20:56:17 GMT  
+		Size: 2.3 MB (2296534 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:2f8c53e5276b15f985bde97c57ae8bbf584b6e72cc30f93355880f4694a25abd`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 2.3 MB (2279096 bytes)  
+	-	`sha256:8f309b51064305faeb191cb9d3c2f7ff139ca0b2907687497c83c7910dab0a30`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 2.3 MB (2295644 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:fc994f03a2b9f8df00051b9eb51cb3c7f2df4fdf3960ce158c6dc1bd00275032`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 69.3 KB (69276 bytes)  
+	-	`sha256:c63466cbf7d1dc72d06b7d1b2950532d0a72d2d3b5e0958a5c21d6e33e1bf164`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 69.3 KB (69277 bytes)  
 		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:ed5e69c1ab8068bcb2776359fc518b2ba608200e10e6eb7bd9f78265e0b50a04
+$ docker pull rabbitmq@sha256:925ff96e40bdfc64e878da51d3b5ba9ce0f492069f73517c63230b25928ba9ab
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **61.1 MB (61065923 bytes)**  
+-	Total Size: **61.1 MB (61114109 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5582907ec1bccfbebbf6e3c44669f949b8117df693705bf65941a517325dd6a3`
+-	Image ID: `sha256:97e23c8154330ba253b3bb84fac0fc226a8e2a1d61b43fe4f5eda6cacb6b307c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
-# Wed, 22 Nov 2023 06:55:25 GMT
-ADD file:dbf65487d049081dc2d39b3d99d2c64b6c89754e7e2996a46169d3512e59f32a in / 
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Fri, 08 Dec 2023 01:49:15 GMT
+ADD file:d43ed267a41631ce0e5a4ef5aac821a75300a83f85ecb6259f5616852f89e989 in / 
+# Fri, 08 Dec 2023 01:49:15 GMT
 CMD ["/bin/sh"]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV ERLANG_INSTALL_PATH_PREFIX=/opt/erlang
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/erlang /opt/erlang # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY /opt/openssl /opt/openssl # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN set -eux; 	ln -vsf /etc/ssl/certs /etc/ssl/private "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl"; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive $ERLANG_INSTALL_PATH_PREFIX $OPENSSL_INSTALL_PATH_PREFIX 			| tr ',' '\n' 			| sort -u 			| grep -v '^$\|lib\(crypto\|ssl\)' 			| awk 'system("test -e /usr/local/lib/" $1) == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 		sed -i.ORIG -e "/\.include.*fips/ s!.*!.include $OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf!" 		-e '/# fips =/s/.*/fips = fips_sect/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/openssl.cnf"; 	sed -i.ORIG -e '/^activate/s/^/#/' "$OPENSSL_INSTALL_PATH_PREFIX/etc/ssl/fipsmodule.cnf"; 	[ "$(command -v openssl)" = "$OPENSSL_INSTALL_PATH_PREFIX/bin/openssl" ]; 	openssl version; 	openssl version -d; 		erl -noshell -eval 'ok = crypto:start(), ok = io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'; 		addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 1777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /etc/rabbitmq/conf.d /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie; 		apk add --no-cache 		'su-exec>=0.2' 		bash 		procps 		tzdata # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_VERSION=3.12.10
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 22 Nov 2023 06:55:25 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 RUN ln -sf /opt/rabbitmq/plugins /plugins # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY 10-defaults.conf 20-management_agent.disable_metrics_collector.conf /etc/rabbitmq/conf.d/ # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 COPY docker-entrypoint.sh /usr/local/bin/ # buildkit
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 EXPOSE map[15691/tcp:{} 15692/tcp:{} 25672/tcp:{} 4369/tcp:{} 5671/tcp:{} 5672/tcp:{}]
-# Wed, 22 Nov 2023 06:55:25 GMT
+# Sat, 09 Dec 2023 15:25:14 GMT
 CMD ["rabbitmq-server"]
 ```
 
 -	Layers:
-	-	`sha256:85ae953f9e6740471d4e1440b27721679dc7a511e112eb73df467a4cde26e421`  
-		Last Modified: Thu, 30 Nov 2023 22:49:40 GMT  
-		Size: 3.1 MB (3146870 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cd525983453dd88602389c675cd7e8a17ffe42312c2c6f778ebaf1cafe7a017`  
-		Last Modified: Fri, 01 Dec 2023 13:18:41 GMT  
-		Size: 32.4 MB (32388906 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e04262af6a9bd1b05ecf335e72da233cab7368f70abedf6e286d58b18892812`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 391.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebaaf2d95a0729f63de9159319cf137072b221e868847269ef50e4a8fbd7fb5b`  
-		Last Modified: Fri, 01 Dec 2023 13:18:37 GMT  
-		Size: 6.4 MB (6382872 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25e7d62ec18a5ccee0758e48d9bf08c172f2aed6eb9c89ef3be6f4439daed452`  
-		Last Modified: Fri, 01 Dec 2023 13:18:35 GMT  
-		Size: 393.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:833aca62eef35e2c19a82169474f7afa951c0b79c73c08c40b08f6c049049f89`  
-		Last Modified: Fri, 01 Dec 2023 13:18:36 GMT  
-		Size: 1.4 MB (1412514 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4b719393cc6ab5324df5ddd2531ca519e9efc317e9c78d46930108b25271bdd`  
-		Last Modified: Fri, 01 Dec 2023 13:18:35 GMT  
-		Size: 17.7 MB (17732222 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62e5afe16a6327cd39badc15d78fd478d7492caa955b72d172bb70c2cf181847`  
-		Last Modified: Fri, 01 Dec 2023 13:18:33 GMT  
-		Size: 194.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e02017eebf648c7ad787b8f7b88d7225ba935a16a38221b4ead456124ad71fdd`  
-		Last Modified: Fri, 01 Dec 2023 13:18:33 GMT  
+	-	`sha256:0803c38384d9fd0f9afaec8fd13d267547b660dcd46bb92a3d63c5d76e78b04c`  
+		Last Modified: Fri, 08 Dec 2023 01:49:33 GMT  
+		Size: 3.2 MB (3165143 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:c0f150da36f6f625d41b8fd26d929990bd7bfd608b2a60c1f32137e63fa0a85f`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 32.4 MB (32426806 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ee2dec8adf19611e8329250ff0fe76f5b78a753f12e2dbd411c033d3e875b7c1`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 389.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:398c87e745935637777a0bc3844e082e2510dde383d5a7e337b2673e9ae302f4`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 6.4 MB (6384103 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:1f6c5597f69cf12305f4d149b2174d1bff4c9dbbd5d8c2f1bdb6c362a30fcba3`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 394.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bc5cc845affc7b41592001efac993b102d09d127e59b54f2a6d11f748eeadc28`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 1.4 MB (1403285 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:a5cfd8ab1746f4e68f469cff61c9c47169ea6f4476d72a5beb4ed99cc9b30461`  
+		Last Modified: Wed, 13 Dec 2023 00:10:34 GMT  
+		Size: 17.7 MB (17732235 bytes)  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:51de0695c541b2934c38c06a487e061dcf1b9a2ffa79a3f5ed63d8d174500391`  
+		Last Modified: Wed, 13 Dec 2023 00:10:33 GMT  
+		Size: 195.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:4ffbbe23ea092fecf38d5cfb1691597cc5df798745ca3666626f305743e5b017`  
+		Last Modified: Wed, 13 Dec 2023 00:10:34 GMT  
 		Size: 109.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2643343d34ab3b5cfa46f958528d67fade951b354350961db6665c7c0d543541`  
-		Last Modified: Fri, 01 Dec 2023 13:18:33 GMT  
-		Size: 619.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:319942b2d2da7ce22d7467ab7996f98c905be08b931205791f7851291cb07fcc`  
-		Last Modified: Fri, 01 Dec 2023 13:18:33 GMT  
-		Size: 833.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:ccfdc3bae8d76367a954b7dd4a3fd97265351f534db12a74994b4bbec4905f0e`  
+		Last Modified: Wed, 13 Dec 2023 00:10:35 GMT  
+		Size: 618.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+	-	`sha256:bf75266cf5f1ba68b3306754989673a371829458c9bb17f324c0421aab60b12c`  
+		Last Modified: Wed, 13 Dec 2023 00:10:35 GMT  
+		Size: 832.0 B  
+		MIME: application/vnd.oci.image.layer.v1.tar+gzip
+
+### `rabbitmq:alpine` - unknown; unknown
+
+```console
+$ docker pull rabbitmq@sha256:99dcda433ef2970bf15cf44c1ec872507bdf6db23ba2b93fe18d84fb58bd07e8
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **69.3 KB (69275 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:bc6b6edb6b1eb8883e5b176b88039d3713c2b0fdfa37ef4e4e8589e6ed9af3bc`
+
+```dockerfile
+```
+
+-	Layers:
+	-	`sha256:f05ac1e36425c4d9b57ebf0a2c030cf50cf962cdfa3f4b604f7c8002538e0a8c`  
+		Last Modified: Wed, 13 Dec 2023 00:10:32 GMT  
+		Size: 69.3 KB (69275 bytes)  
+		MIME: application/vnd.in-toto+json
 
 ### `rabbitmq:alpine` - linux; arm variant v7
 
@@ -41846,7 +42098,7 @@ $ docker pull rabbitmq@sha256:d0effbbcca8a78161732959b9ded82fde6e3e07d5e60b498e5
 ## `rabbitmq:management-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:5f642bd82bbb93f0677a1f956ffa5a35001f8aa89b00eabf987c7a09c40289f2
+$ docker pull rabbitmq@sha256:9b51fafbec5eec1d62ec2aed4371520ea619c5f9b7ac3b16e60961f2ee8e5223
 ```
 
 -	Manifest MIME: `application/vnd.oci.image.index.v1+json`
@@ -41868,19 +42120,19 @@ $ docker pull rabbitmq@sha256:5f642bd82bbb93f0677a1f956ffa5a35001f8aa89b00eabf98
 ### `rabbitmq:management-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:bb0ba003fe45928a0898a99c590ebb8afb1c4cf131bbab1eecc710b1d9e243af
+$ docker pull rabbitmq@sha256:90981cabb092963dfd37cb3b78e724b9bceb84b0706737e29f7563c71ba1187b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **86.2 MB (86163424 bytes)**  
+-	Total Size: **86.3 MB (86257295 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f28f8bbf1d07c1788816803d2064a3eb94ca4679d4adb40636e62d0985a5edc8`
+-	Image ID: `sha256:59d009affc5b523bbbe2f991ab8abc55c61eb262ec9ef93df6d00d6ca409b45b`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
 ```dockerfile
 # Fri, 02 Jun 2023 21:59:28 GMT
-ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / 
+ADD file:1f4eb46669b5b6275af19eb7471a6899a61c276aa7d925b8ae99310b14b75b92 in / 
 # Fri, 02 Jun 2023 21:59:28 GMT
 CMD ["/bin/sh"]
 # Fri, 02 Jun 2023 21:59:28 GMT
@@ -41890,11 +42142,11 @@ ENV OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl
 # Fri, 02 Jun 2023 21:59:28 GMT
 COPY /opt/erlang /opt/erlang # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"erlang-sbom","packages":[{"name":"erlang","versionInfo":"25.3.2.7","SPDXID":"SPDXRef-Package--erlang","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/erlang@25.3.2.7?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $ERLANG_INSTALL_PATH_PREFIX/erlang.spdx.json # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
 COPY /opt/openssl /opt/openssl # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
-RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.18"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
+RUN echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"openssl-sbom","packages":[{"name":"openssl","versionInfo":"3.1.4","SPDXID":"SPDXRef-Package--openssl","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/openssl@3.1.4?os_name=alpine&os_version=3.19"}],"licenseDeclared":"Apache-2.0"}]}' > $OPENSSL_INSTALL_PATH_PREFIX/openssl.spdx.json # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
 ENV PATH=/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 02 Jun 2023 21:59:28 GMT
@@ -41910,7 +42162,7 @@ ENV RABBITMQ_HOME=/opt/rabbitmq
 # Fri, 02 Jun 2023 21:59:28 GMT
 ENV PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 02 Jun 2023 21:59:28 GMT
-RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.18"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
+RUN set -eux; 	mkdir -p /usr/local/src; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del --no-network .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie";		echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"rabbitmq-sbom","packages":[{"name":"rabbitmq","versionInfo":"3.12.10","SPDXID":"SPDXRef-Package--rabbitmq","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/rabbitmq@3.12.10?os_name=alpine&os_version=3.19"}],"licenseDeclared":"MPL-2.0 AND Apache-2.0"}]}' > $RABBITMQ_HOME/rabbitmq.spdx.json; # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
 RUN su-exec rabbitmq rabbitmq-plugins enable --offline rabbitmq_prometheus # buildkit
 # Fri, 02 Jun 2023 21:59:28 GMT
@@ -41938,76 +42190,76 @@ EXPOSE map[15671/tcp:{} 15672/tcp:{}]
 ```
 
 -	Layers:
-	-	`sha256:c926b61bad3b94ae7351bafd0c184c159ebf0643b085f7ef1d47ecdc7316833c`  
-		Last Modified: Thu, 30 Nov 2023 23:23:28 GMT  
-		Size: 3.4 MB (3402422 bytes)  
+	-	`sha256:661ff4d9561e3fd050929ee5097067c34bafc523ee60f5294a37fd08056a73ca`  
+		Last Modified: Fri, 08 Dec 2023 01:21:10 GMT  
+		Size: 3.4 MB (3408480 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:b3ec5ffef005a39df32918af575859c89c2788393b2f27f8f8c3bac9b14dea47`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 40.1 MB (40076564 bytes)  
+	-	`sha256:d4c6bd9f2f476ac8ca381111358834f1eda42d20a7b66fc92fb6ffcf16741a44`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 39.9 MB (39898182 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:f0934a0d587092da8f59064a56ac56e44be97221620457d0c0d54bf221d35a64`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 392.0 B  
+	-	`sha256:b1d788cbab00d72d13b60a6ba065354c10d164774c1c8f6ac0b497eb0b4a2a7f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:17 GMT  
+		Size: 389.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:b40fdcef0bf8bcb93ff6d770cc77b2b045c07b2a08957318cc54824afd369e06`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 7.6 MB (7550194 bytes)  
+	-	`sha256:b1e3f3c4daae27dca3e24dd1187d1bf866da5669f418010b023acbd45b827f7f`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 7.6 MB (7554025 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:79cd97312a23f9ff0fbc125f0d99182b7b7cb6d8f33b879adb15e93ea5715a61`  
-		Last Modified: Fri, 01 Dec 2023 00:16:50 GMT  
-		Size: 388.0 B  
+	-	`sha256:f8fdf6d9b3ad47c899f1a3f52d68a08a9001ba37dadcb5916db647891db96817`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 389.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:e6e66fadb7a8deb5dc0cc0feedd733c538c1af027faf370f5b1c49d6aa1baa9e`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 2.3 MB (2297463 bytes)  
+	-	`sha256:8eb011bdfe98916d78ec812fa2f3471332ca9bf4850dfbde8ee3b56b708e5e4d`  
+		Last Modified: Tue, 12 Dec 2023 20:56:18 GMT  
+		Size: 2.4 MB (2407695 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:ec4e4a2bb19115482a0d1317f925d86ae86f1ed36367e1df9c858c5785205f85`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 17.7 MB (17732171 bytes)  
+	-	`sha256:1d217240abed832febda1c576f1ccbc55af5c1a5dcd2787af1e8c7bcc6b59930`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 17.7 MB (17732264 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:c2714c1d18242092af3278ede338a05241609e5076436c713cf8bbd8095d881c`  
-		Last Modified: Fri, 01 Dec 2023 00:16:51 GMT  
-		Size: 190.0 B  
+	-	`sha256:fa1d576cf15e654dfb707e3f0134c9675791a87771796f49b60277fcaef9c89e`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
+		Size: 192.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:cc60c1438b1a1d3b265a298531fb14f3e48028fae0adc86ff7f177b86d870770`  
-		Last Modified: Fri, 01 Dec 2023 00:16:52 GMT  
+	-	`sha256:bbf1653df82cd6166cd804aee895e11075e4820606f286b9a1143598a25ed360`  
+		Last Modified: Tue, 12 Dec 2023 20:56:19 GMT  
 		Size: 109.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:63367130112c9486aefe72d6dc7e1bc3f159ac0419ea96ed9b5c17991741c868`  
-		Last Modified: Fri, 01 Dec 2023 00:16:52 GMT  
-		Size: 622.0 B  
+	-	`sha256:c23fdb4d0a8eb6da1798d392989ea3bfaafbc85e8f29fed272db727337c1d330`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 618.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:dbc0e1de0b40b1f1d423c26188cba128e93d49df717f27a129115c915c2bff28`  
-		Last Modified: Fri, 01 Dec 2023 00:16:53 GMT  
-		Size: 831.0 B  
+	-	`sha256:9fa26e965cc6fba14785af94f4e90c740664e94800f949a05fd95952e8c73f45`  
+		Last Modified: Tue, 12 Dec 2023 20:56:20 GMT  
+		Size: 830.0 B  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
-	-	`sha256:6ddc6ffa62824d41fa635ee53926d1b3abaf406b924c12387f5d08be1eaa7301`  
-		Last Modified: Fri, 01 Dec 2023 01:11:49 GMT  
-		Size: 15.1 MB (15102078 bytes)  
+	-	`sha256:902337e77ee291e2bca8ad08b047465c2e4c8587e4fd94a890bd76c2ac80a007`  
+		Last Modified: Tue, 12 Dec 2023 21:49:37 GMT  
+		Size: 15.3 MB (15254122 bytes)  
 		MIME: application/vnd.oci.image.layer.v1.tar+gzip
 
 ### `rabbitmq:management-alpine` - unknown; unknown
 
 ```console
-$ docker pull rabbitmq@sha256:918c85e3ca35b640ff92aea2bd60141d70e7f011d95219f8a5528d506052675c
+$ docker pull rabbitmq@sha256:4cca1a3ddd74549e033608dba0503724f0a115a239d4de8303af13dfe7b9e4fa
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **1.7 MB (1664657 bytes)**  
+-	Total Size: **1.7 MB (1665575 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3c003b3cdfe7df25cfc22ed6214c6175b2613f64c1ceb2ddf4286939cae735dd`
+-	Image ID: `sha256:811dfcc3cf10fa0a00fe699a9ebf5d4408dedb6b17c242032aafcb772686ba07`
 
 ```dockerfile
 ```
 
 -	Layers:
-	-	`sha256:3b041cac65c213fc24ede4c9a6349c6d5b58e7c8c025487ae2fd07578b53c1b5`  
-		Last Modified: Fri, 01 Dec 2023 01:11:48 GMT  
-		Size: 1.7 MB (1651179 bytes)  
+	-	`sha256:44d966642402bd6e96ca904ee0b45f42a91d8a4bdd665770dcc5aaf5758a67ee`  
+		Last Modified: Tue, 12 Dec 2023 21:49:36 GMT  
+		Size: 1.7 MB (1652097 bytes)  
 		MIME: application/vnd.in-toto+json
-	-	`sha256:b278550867b814b451667aab611e7c506f6148fa342c5b3b8296ddaa7f39101d`  
-		Last Modified: Fri, 01 Dec 2023 01:11:47 GMT  
+	-	`sha256:977ac95961d456e332bf6cbccd34053c241a4056eb5e61c29d2dfa2cd445a2e8`  
+		Last Modified: Tue, 12 Dec 2023 21:49:36 GMT  
 		Size: 13.5 KB (13478 bytes)  
 		MIME: application/vnd.in-toto+json
 
