@@ -1,10 +1,10 @@
-# `composer:2.6.5`
+# `composer:2.6.6`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a367d1cb680d822e1cfff066254fd1db8392a47a1b7c31c38d62c31069b2d91f`
-- Created: `2023-10-06T09:28:33Z`
-- Virtual Size: ~ 190.85 Mb  
+- Image ID: `sha256:037b956a3e2eedb3e75da4b4d4c611cfee2cf7177f91b3fbf15222c85ba0b55f`
+- Created: `2023-12-11T11:48:14Z`
+- Virtual Size: ~ 191.67 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -23,7 +23,7 @@
   - `PHP_SHA256=1db84fec57125aa93638b51bb2b15103e12ac196e2f960f0d124275b2687ea54`
   - `COMPOSER_ALLOW_SUPERUSER=1`
   - `COMPOSER_HOME=/tmp`
-  - `COMPOSER_VERSION=2.6.5`
+  - `COMPOSER_VERSION=2.6.6`
 
 ## `apk` (`.apk`-based packages)
 
@@ -285,16 +285,16 @@ GPL-3.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-8.4.0-r0 description:
+curl-8.5.0-r0 description:
 URL retrival utility and library
 
-curl-8.4.0-r0 webpage:
+curl-8.5.0-r0 webpage:
 https://curl.se/
 
-curl-8.4.0-r0 installed size:
+curl-8.5.0-r0 installed size:
 248 KiB
 
-curl-8.4.0-r0 license:
+curl-8.5.0-r0 license:
 curl
 
 ```
@@ -438,16 +438,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.4.0-r0 description:
+libcurl-8.5.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.4.0-r0 webpage:
+libcurl-8.5.0-r0 webpage:
 https://curl.se/
 
-libcurl-8.4.0-r0 installed size:
+libcurl-8.5.0-r0 installed size:
 584 KiB
 
-libcurl-8.4.0-r0 license:
+libcurl-8.5.0-r0 license:
 curl
 
 ```
