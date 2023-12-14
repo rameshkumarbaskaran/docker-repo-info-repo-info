@@ -1,16 +1,16 @@
-# `docker:25.0.0-beta.1-git`
+# `docker:25.0.0-beta.2-git`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3f9b962ea0ac568c2e6557a5c5a45ae07df7f538f315a74d48f7b6a6047e64f6`
+- Image ID: `sha256:f487bb13478e2b1d48c5a54902bae26e246a61b6a712b99664b7cd3ca3c7b975`
 - Created: `2023-11-13T22:06:12Z`
-- Virtual Size: ~ 345.76 Mb  
+- Virtual Size: ~ 345.71 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_VERSION=25.0.0-beta.1`
+  - `DOCKER_VERSION=25.0.0-beta.2`
   - `DOCKER_BUILDX_VERSION=0.12.0`
   - `DOCKER_COMPOSE_VERSION=2.23.3`
   - `DOCKER_TLS_CERTDIR=/certs`
@@ -446,16 +446,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.4.0-r0 description:
+libcurl-8.5.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.4.0-r0 webpage:
+libcurl-8.5.0-r0 webpage:
 https://curl.se/
 
-libcurl-8.4.0-r0 installed size:
+libcurl-8.5.0-r0 installed size:
 584 KiB
 
-libcurl-8.4.0-r0 license:
+libcurl-8.5.0-r0 license:
 curl
 
 ```
@@ -1024,16 +1024,16 @@ GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 ### `apk` package: `zfs`
 
 ```console
-zfs-2.1.11-r0 description:
+zfs-2.1.14-r0 description:
 Advanced filesystem and volume manager
 
-zfs-2.1.11-r0 webpage:
+zfs-2.1.14-r0 webpage:
 https://openzfs.org
 
-zfs-2.1.11-r0 installed size:
-1336 KiB
+zfs-2.1.14-r0 installed size:
+1340 KiB
 
-zfs-2.1.11-r0 license:
+zfs-2.1.14-r0 license:
 CDDL-1.0
 
 ```
@@ -1041,16 +1041,16 @@ CDDL-1.0
 ### `apk` package: `zfs-libs`
 
 ```console
-zfs-libs-2.1.11-r0 description:
+zfs-libs-2.1.14-r0 description:
 Advanced filesystem and volume manager (libraries)
 
-zfs-libs-2.1.11-r0 webpage:
+zfs-libs-2.1.14-r0 webpage:
 https://openzfs.org
 
-zfs-libs-2.1.11-r0 installed size:
-3976 KiB
+zfs-libs-2.1.14-r0 installed size:
+3980 KiB
 
-zfs-libs-2.1.11-r0 license:
+zfs-libs-2.1.14-r0 license:
 CDDL-1.0
 
 ```
