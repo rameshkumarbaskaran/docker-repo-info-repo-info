@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6bbb1ce9c68fec7c04e59ad2686c74775814c799aec500a370c4dfad9d6c1354`
-- Created: `2023-11-28T01:38:24.186297834Z`
+- Image ID: `sha256:6dfdf0df246c1ae27e1186ee99bb98adb677018aa053df0a1a56493e4a94f60f`
+- Created: `2023-12-13T00:48:03.470136972Z`
 - Virtual Size: ~ 895.98 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -2220,11 +2220,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libdatrie/0.2.13-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libdatrie/0.2.13-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libde265=1.0.11-1`
+### `dpkg` source package: `libde265=1.0.11-1+deb12u1`
 
 Binary Packages:
 
-- `libde265-0:amd64=1.0.11-1`
+- `libde265-0:amd64=1.0.11-1+deb12u1`
 
 Licenses: (parsed from: `/usr/share/doc/libde265-0/copyright`)
 
@@ -2236,13 +2236,20 @@ Licenses: (parsed from: `/usr/share/doc/libde265-0/copyright`)
 - `other-1`
 - `public-domain-1`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libde265=1.0.11-1+deb12u1
+'http://deb.debian.org/debian/pool/main/libd/libde265/libde265_1.0.11-1%2bdeb12u1.dsc' libde265_1.0.11-1+deb12u1.dsc 2381 SHA256:6c8d2332e81b73be23fba2ce6cae7c71dbbd8974f006f26f4ab16ce8dd349cb1
+'http://deb.debian.org/debian/pool/main/libd/libde265/libde265_1.0.11.orig.tar.gz' libde265_1.0.11.orig.tar.gz 845996 SHA256:2f8f12cabbdb15e53532b7c1eb964d4e15d444db1be802505e6ac97a25035bab
+'http://deb.debian.org/debian/pool/main/libd/libde265/libde265_1.0.11-1%2bdeb12u1.debian.tar.xz' libde265_1.0.11-1+deb12u1.debian.tar.xz 15512 SHA256:0c33577ab6a790c221dea6c6397365db46c214394127e718baaae6b3c0fdece0
+```
 
-- http://snapshot.debian.org/package/libde265/1.0.11-1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libde265/1.0.11-1+deb12u1/ (for browsing the source)
+- https://sources.debian.net/src/libde265/1.0.11-1+deb12u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libde265/1.0.11-1+deb12u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libdeflate=1.14-1`
 
