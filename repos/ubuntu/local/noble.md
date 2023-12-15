@@ -678,14 +678,9 @@ Licenses: (parsed from: `/usr/share/doc/libcap-ng0/copyright`)
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libcap-ng=0.8.3-1build3
-'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcap-ng/libcap-ng_0.8.3-1build3.dsc' libcap-ng_0.8.3-1build3.dsc 2231 SHA512:608f026849eac5fca3abfa0e565edd32fc42a859e3cb026ec111b16136a9a67ad7dfc3da77f100a02b50f73cb341672e870c7706a5802d7c31891e82e30d3deb
-'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcap-ng/libcap-ng_0.8.3.orig.tar.gz' libcap-ng_0.8.3.orig.tar.gz 455383 SHA512:0ef9bc7bc6b7b59991f43b79aa6cde3e8d2c22c4b9ced2af8deae501e01d51e893033d109cb8aa0fdcba190140110993089245346334d7b114d18f1bb1b55b97
-'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcap-ng/libcap-ng_0.8.3-1build3.debian.tar.xz' libcap-ng_0.8.3-1build3.debian.tar.xz 10620 SHA512:82abc8ce15c95f720c3f81cf297d9ba91e4a829ade6d99029d93636e5a0f36af9487a7ade7a9dbd474433b6d282ecfbc3c6cf313d2e56f44dbd0a5d10f4c5893
-```
 
 ### `dpkg` source package: `libcap2=1:2.66-4ubuntu1`
 
@@ -1073,15 +1068,9 @@ Licenses: (parsed from: `/usr/share/doc/libncursesw6/copyright`, `/usr/share/doc
 - `MIT/X11`
 - `X11`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ncurses=6.4+20231121-1build1
-'http://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/ncurses_6.4%2b20231121-1build1.dsc' ncurses_6.4+20231121-1build1.dsc 3831 SHA512:ae293e66bc081cfccca18433d58ebfa8b98cc51420a10e5b7cca366aa9963df12c7c7845d381ad8ff7e590f1852234e6c7225f6669a1989dfc94edbfadd4be13
-'http://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/ncurses_6.4%2b20231121.orig.tar.gz' ncurses_6.4+20231121.orig.tar.gz 3671700 SHA512:3c9a4e5b481b542536420306777da7faf8c5151b60236d30dbe23c5716d9ba6a7e271d7720d4fab894add039a760aa9586b98560e8a57cbf36faaf428768c481
-'http://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/ncurses_6.4%2b20231121.orig.tar.gz.asc' ncurses_6.4+20231121.orig.tar.gz.asc 729 SHA512:e7f0ae75b2d5e845ef813307a5a6f45c73c540dc1c165054417c3b7aceefdc2802bb863aa196e0f3a709836fa0f20b2598fb74640cef622c1398a779342fe6f3
-'http://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/ncurses_6.4%2b20231121-1build1.debian.tar.xz' ncurses_6.4+20231121-1build1.debian.tar.xz 48808 SHA512:e5bf12c8ae748930eed60a625b5f99c548e959b499cbe09dae5164ebd90701f3c1c1501fbd562559e9838ee7b9a96691c384ea7546a6023e1be8d6b933e64b62
-```
 
 ### `dpkg` source package: `nettle=3.9.1-2`
 
@@ -1131,15 +1120,9 @@ Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`)
 - `permissive-like-automake-output`
 - `same-as-rest-of-p11kit`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris p11-kit=0.25.0-4ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/p11-kit/p11-kit_0.25.0-4ubuntu1.dsc' p11-kit_0.25.0-4ubuntu1.dsc 2608 SHA512:8476349970c06d63d1901f18addd135e2f82fb80297ae72ca574db4ce45f3c09ada4edc7e748b8d7969cd753f032c5e840da8716c63ec54e351e649e22429338
-'http://archive.ubuntu.com/ubuntu/pool/main/p/p11-kit/p11-kit_0.25.0.orig.tar.xz' p11-kit_0.25.0.orig.tar.xz 958940 SHA512:e6df3cb224f6ff5671bd3c0557503b5f20bbfded1b6ec340b1dafcbd1b1725ea2d41d0e920756716e0fe9cb28270d115fe77b23ec876a15007b22e3f30d015fe
-'http://archive.ubuntu.com/ubuntu/pool/main/p/p11-kit/p11-kit_0.25.0.orig.tar.xz.asc' p11-kit_0.25.0.orig.tar.xz.asc 228 SHA512:4ff7f240e9f166f1e28081f0e23d5b0dd699952fc1b7184dc881ec565eff3f4d5622664af3fc3add4cb828570b6ef77ff2036c467589a1e49605fefda3e73748
-'http://archive.ubuntu.com/ubuntu/pool/main/p/p11-kit/p11-kit_0.25.0-4ubuntu1.debian.tar.xz' p11-kit_0.25.0-4ubuntu1.debian.tar.xz 25920 SHA512:6325ede913b64e317ddb851ed9f4ae673d8b3ceec300f95f5ad148ac51c49aaba6c506e31320d7ea4744da67ee1bdd817fdaa44a0478c407111a23094b0059d2
-```
 
 ### `dpkg` source package: `pam=1.5.2-9.1ubuntu1`
 
@@ -1187,14 +1170,13 @@ Licenses: (parsed from: `/usr/share/doc/libpcre2-8-0/copyright`)
 - `X11`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pcre2=10.42-4
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre2/pcre2_10.42-4.dsc' pcre2_10.42-4.dsc 2302 SHA512:097275466e22a43e8d62b1ff1e10f87093ced5c9ed3bb5badc3a6d5c675c0757b24dee800a14a2bfd104fda5eebf8b0065d1977651739f8956d85923944ddddc
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre2/pcre2_10.42.orig.tar.gz' pcre2_10.42.orig.tar.gz 2397194 SHA512:a3db6c5c620775838819be616652e73ce00f5ef5c1f49f559ff3efb51a119d02f01254c5901c1f7d0c47c0ddfcf4313e38d6ca32c35381b8f87f36896d10e6f7
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre2/pcre2_10.42-4.diff.gz' pcre2_10.42-4.diff.gz 8111 SHA512:d13593a4e46d686238e766b253886eed102d8728a943f2f55d1459311d6e9715be46dd4fc2353d7375100d0200c9c0037521b5072f7ea30826c19af2d48f93e3
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/pcre2/10.42-4/
+
 
 ### `dpkg` source package: `perl=5.36.0-9ubuntu1`
 
@@ -1232,15 +1214,9 @@ Licenses: (parsed from: `/usr/share/doc/perl-base/copyright`)
 - `Unicode`
 - `ZLIB`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris perl=5.36.0-9ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.36.0-9ubuntu1.dsc' perl_5.36.0-9ubuntu1.dsc 3026 SHA512:d4ddd92d2291be5f8ed08833a7baedcf7d3af81d3053700dd621c6107c37022c32ebfe10b2e09b444f387bce75cd35042c2428ac617c77b45feb46c3140c39f5
-'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.36.0.orig-regen-configure.tar.xz' perl_5.36.0.orig-regen-configure.tar.xz 417784 SHA512:4d16685f569a5b1dea79d607b6d62718111c32efaf5547bb9e1528bd755acf0c8fc74a1cc1f4d68fcb10aef9da7d8fea17a5cc10dabce6efa4721ab45ab03a65
-'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.36.0.orig.tar.xz' perl_5.36.0.orig.tar.xz 13051500 SHA512:6dd6ac2a77566c173c5ab9c238cf555f2c3e592e89abb5600bc23ce1cbd0c349e0233f6417cbbf1f6d0aefc6a734ba491285af0d3dc68a605b658b65c89f1dab
-'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.36.0-9ubuntu1.debian.tar.xz' perl_5.36.0-9ubuntu1.debian.tar.xz 170808 SHA512:e2ea25d29a46e5cb5ee15bd43f0310ffd652c684f705603a34d8821d48f21956cd14dc46067dbffd7ec6228520ed36b1ec731989e696796b28d19e573a83cfa2
-```
 
 ### `dpkg` source package: `procps=2:4.0.3-1ubuntu1`
 
