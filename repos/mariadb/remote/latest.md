@@ -1,7 +1,7 @@
 ## `mariadb:latest`
 
 ```console
-$ docker pull mariadb@sha256:c0237db7b596e410e0b9cff9b3bd65227fdf403aa5d050a33eac024fe3455b4b
+$ docker pull mariadb@sha256:8611f27f3fba7b576dfa7eaffc1dab7a2d6d511fd91d0713ae4d7b0b1e7fe418
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -117,104 +117,104 @@ CMD ["mariadbd"]
 ### `mariadb:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull mariadb@sha256:70faf51cf761fe8cc7fae0e9f573682b2110102b97cbb21e6b96f70730e37eba
+$ docker pull mariadb@sha256:b3f43a8ef4dcdbb695ede47ce6b7f75cee6768a15e5b04e948dedbfe891da6d4
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **118.0 MB (118038254 bytes)**  
+-	Total Size: **118.0 MB (118038960 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:46acb2f21cf934578ed59ba026b8f9154ccce38474f3e23a224d8c6ec9f558e3`
+-	Image ID: `sha256:21970744eebb31140a594001bab1116683ce74d9be61282f4ce5391c9c100ef8`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mariadbd"]`
 
 ```dockerfile
-# Fri, 01 Dec 2023 07:43:19 GMT
+# Tue, 12 Dec 2023 11:41:50 GMT
 ARG RELEASE
-# Fri, 01 Dec 2023 07:43:20 GMT
+# Tue, 12 Dec 2023 11:41:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Fri, 01 Dec 2023 07:43:20 GMT
+# Tue, 12 Dec 2023 11:41:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Fri, 01 Dec 2023 07:43:20 GMT
+# Tue, 12 Dec 2023 11:41:51 GMT
 LABEL org.opencontainers.image.version=22.04
-# Fri, 01 Dec 2023 07:43:21 GMT
-ADD file:891dcab0c4ce2880c4dca013d326a3efd7601003b6f5076938d678101e301b79 in / 
-# Fri, 01 Dec 2023 07:43:22 GMT
+# Tue, 12 Dec 2023 11:41:54 GMT
+ADD file:50f947da69b3b6c63695be9c49eee16f7a7dcdecdceb51e5bee1609b845bf483 in / 
+# Tue, 12 Dec 2023 11:41:54 GMT
 CMD ["/bin/bash"]
-# Sat, 02 Dec 2023 05:59:53 GMT
+# Sat, 16 Dec 2023 10:49:06 GMT
 RUN groupadd -r mysql && useradd -r -g mysql mysql --home-dir /var/lib/mysql
-# Sat, 02 Dec 2023 05:59:53 GMT
+# Sat, 16 Dec 2023 10:49:06 GMT
 ENV GOSU_VERSION=1.17
-# Sat, 02 Dec 2023 05:59:53 GMT
+# Sat, 16 Dec 2023 10:49:06 GMT
 ARG GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8
-# Sat, 02 Dec 2023 06:00:09 GMT
+# Sat, 16 Dec 2023 10:49:28 GMT
 # ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8
 RUN set -eux; 	apt-get update; 	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends 		ca-certificates 		gpg 		gpgv 		libjemalloc2 		pwgen 		tzdata 		xz-utils 		zstd ; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get install -y --no-install-recommends 		dirmngr 		gpg-agent 		wget; 	rm -rf /var/lib/apt/lists/*; 	dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 	wget -q -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -q -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	GNUPGHOME="$(mktemp -d)"; 	export GNUPGHOME; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 	done; 	gpg --batch --export "$GPG_KEYS" > /etc/apt/trusted.gpg.d/mariadb.gpg; 	if command -v gpgconf >/dev/null; then 		gpgconf --kill all; 	fi; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] ||	apt-mark manual $savedAptMark >/dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	chmod +x /usr/local/bin/gosu; 	gosu --version; 	gosu nobody true
-# Sat, 02 Dec 2023 06:00:09 GMT
+# Sat, 16 Dec 2023 10:49:29 GMT
 # ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8
 RUN mkdir /docker-entrypoint-initdb.d
-# Sat, 02 Dec 2023 06:00:09 GMT
+# Sat, 16 Dec 2023 10:49:29 GMT
 ENV LANG=C.UTF-8
-# Sat, 02 Dec 2023 06:00:40 GMT
+# Sat, 16 Dec 2023 10:50:03 GMT
 LABEL org.opencontainers.image.authors=MariaDB Community org.opencontainers.image.title=MariaDB Database org.opencontainers.image.description=MariaDB Database for relational SQL org.opencontainers.image.documentation=https://hub.docker.com/_/mariadb/ org.opencontainers.image.base.name=docker.io/library/ubuntu:jammy org.opencontainers.image.licenses=GPL-2.0 org.opencontainers.image.source=https://github.com/MariaDB/mariadb-docker org.opencontainers.image.vendor=MariaDB Community org.opencontainers.image.version=11.2.2 org.opencontainers.image.url=https://github.com/MariaDB/mariadb-docker
-# Sat, 02 Dec 2023 06:00:41 GMT
+# Sat, 16 Dec 2023 10:50:03 GMT
 ARG MARIADB_VERSION=1:11.2.2+maria~ubu2204
-# Sat, 02 Dec 2023 06:00:41 GMT
+# Sat, 16 Dec 2023 10:50:03 GMT
 ENV MARIADB_VERSION=1:11.2.2+maria~ubu2204
-# Sat, 02 Dec 2023 06:00:41 GMT
+# Sat, 16 Dec 2023 10:50:04 GMT
 ARG REPOSITORY=http://archive.mariadb.org/mariadb-11.2.2/repo/ubuntu/ jammy main main/debug
-# Sat, 02 Dec 2023 06:00:41 GMT
+# Sat, 16 Dec 2023 10:50:04 GMT
 # ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 REPOSITORY=http://archive.mariadb.org/mariadb-11.2.2/repo/ubuntu/ jammy main main/debug
 RUN set -e;	echo "deb ${REPOSITORY}" > /etc/apt/sources.list.d/mariadb.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release o=MariaDB'; 		echo 'Pin-Priority: 999'; 	} > /etc/apt/preferences.d/mariadb
-# Sat, 02 Dec 2023 06:00:58 GMT
+# Sat, 16 Dec 2023 10:50:20 GMT
 # ARGS: GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 REPOSITORY=http://archive.mariadb.org/mariadb-11.2.2/repo/ubuntu/ jammy main main/debug
 RUN set -ex; 	{ 		echo "mariadb-server" mysql-server/root_password password 'unused'; 		echo "mariadb-server" mysql-server/root_password_again password 'unused'; 	} | debconf-set-selections; 	apt-get update; 	mkdir -p /var/lib/mysql/mysql ; touch /var/lib/mysql/mysql/user.frm ; 	apt-get install -y --no-install-recommends mariadb-server="$MARIADB_VERSION" mariadb-backup socat 	; 	rm -rf /var/lib/apt/lists/*; 	rm -rf /var/lib/mysql /etc/mysql/mariadb.conf.d/50-mysqld_safe.cnf; 	mkdir -p /var/lib/mysql /run/mysqld; 	chown -R mysql:mysql /var/lib/mysql /run/mysqld; 	chmod 1777 /run/mysqld; 	find /etc/mysql/ -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log|user\s)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user\s)/#&/'; 	printf "[mariadb]\nhost-cache-size=0\nskip-name-resolve\n" > /etc/mysql/mariadb.conf.d/05-skipcache.cnf; 	if [ -L /etc/mysql/my.cnf ]; then 		sed -i -e '/includedir/ {N;s/\(.*\)\n\(.*\)/\n\2\n\1/}' /etc/mysql/mariadb.cnf; 	fi
-# Sat, 02 Dec 2023 06:00:59 GMT
+# Sat, 16 Dec 2023 10:50:21 GMT
 VOLUME [/var/lib/mysql]
-# Sat, 02 Dec 2023 06:01:00 GMT
+# Sat, 16 Dec 2023 10:50:21 GMT
 COPY file:9a446c99b3f95c0895b9c81c454dd5f21965ad984eb9becb89690f77b54d08ae in /usr/local/bin/healthcheck.sh 
-# Sat, 02 Dec 2023 06:01:00 GMT
+# Sat, 16 Dec 2023 10:50:22 GMT
 COPY file:96ebfe41373ea3f34aed860f1bdf37a922a980d7c3150314988a012b7b1e0ac1 in /usr/local/bin/ 
-# Sat, 02 Dec 2023 06:01:00 GMT
+# Sat, 16 Dec 2023 10:50:22 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Sat, 02 Dec 2023 06:01:00 GMT
+# Sat, 16 Dec 2023 10:50:22 GMT
 EXPOSE 3306
-# Sat, 02 Dec 2023 06:01:00 GMT
+# Sat, 16 Dec 2023 10:50:22 GMT
 CMD ["mariadbd"]
 ```
 
 -	Layers:
-	-	`sha256:aeb9f260d781cd1e09daf0d0a9e5bcb581efce5b33b221f2f4a27de8db66e463`  
-		Last Modified: Thu, 30 Nov 2023 02:35:43 GMT  
-		Size: 28.4 MB (28399939 bytes)  
+	-	`sha256:7734efb8b826f955c6a3bb51d7c84cb262d0e600ea3980f5bce69fa7f4f92d24`  
+		Last Modified: Tue, 12 Dec 2023 16:00:15 GMT  
+		Size: 28.4 MB (28400282 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19eb1c6c20e389a6e3fea35c96b2a8801193051d9ffb433a17e83ec029eba2e2`  
-		Last Modified: Sat, 02 Dec 2023 06:04:37 GMT  
-		Size: 1.8 KB (1751 bytes)  
+	-	`sha256:6679b8459eab623cd285d042c466e07dab409a06b4c27dca023fb447994a12b9`  
+		Last Modified: Sat, 16 Dec 2023 10:53:57 GMT  
+		Size: 1.8 KB (1750 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1641b3e16fca1feca4d6eda617e0d7878527061e9b1e366e6bcc96a0daa05f0`  
-		Last Modified: Sat, 02 Dec 2023 06:04:38 GMT  
-		Size: 5.5 MB (5462092 bytes)  
+	-	`sha256:b45e2503f74789f82bc9f80cbc950f2ef493a30e2598a845b5201df30e3848ba`  
+		Last Modified: Sat, 16 Dec 2023 10:53:57 GMT  
+		Size: 5.5 MB (5462318 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5e35664529bc1c82fd82d422237d16c3774da01d364a59bcf55fe54156ae22e1`  
-		Last Modified: Sat, 02 Dec 2023 06:04:35 GMT  
+	-	`sha256:b67b11acf39c085063cec5d7a40e0c6f983495514e537753eeb72307386fc873`  
+		Last Modified: Sat, 16 Dec 2023 10:53:55 GMT  
 		Size: 149.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3198602b044f6d28c9cb91aa751605dc60b424ceeb41fe097e64f2a2ef3a7548`  
-		Last Modified: Sat, 02 Dec 2023 06:04:59 GMT  
-		Size: 331.0 B  
+	-	`sha256:d1772dadd839069bdb5050f7110a4c402c6da5d6185183c0b3be81af4f155e54`  
+		Last Modified: Sat, 16 Dec 2023 10:54:17 GMT  
+		Size: 332.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fa22afb0a54bbfd324d9b31a262c69cf2ce7836b0caaa750e2cdbfcdad0b7542`  
-		Last Modified: Sat, 02 Dec 2023 06:05:09 GMT  
-		Size: 84.2 MB (84162522 bytes)  
+	-	`sha256:cba874cb0f65fefd9a3db56f755155a7ef1e927f19ac3fa3e9334665b31616f3`  
+		Last Modified: Sat, 16 Dec 2023 10:54:26 GMT  
+		Size: 84.2 MB (84162652 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aedfcb2d397eff1da0be85ec5f93384d62048999acf83e2c4b0f09ea8c223ee6`  
-		Last Modified: Sat, 02 Dec 2023 06:04:59 GMT  
-		Size: 3.6 KB (3611 bytes)  
+	-	`sha256:a234ec5fc6f106b93ecfa8f51ef41afac3e3ac9190f4e8bb047a34671e6a9aa0`  
+		Last Modified: Sat, 16 Dec 2023 10:54:17 GMT  
+		Size: 3.6 KB (3616 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:85a621690fb9ca26b374e3044d9c9864fe86e714de13df12e5ee0a1179debfb6`  
-		Last Modified: Sat, 02 Dec 2023 06:04:59 GMT  
-		Size: 7.9 KB (7859 bytes)  
+	-	`sha256:984641727ec61da3dc9096888692a685053bfb658b187b7681f69a4e7c4de0ce`  
+		Last Modified: Sat, 16 Dec 2023 10:54:17 GMT  
+		Size: 7.9 KB (7861 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mariadb:latest` - linux; ppc64le
