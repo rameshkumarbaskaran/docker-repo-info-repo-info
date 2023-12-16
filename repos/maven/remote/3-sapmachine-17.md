@@ -1,7 +1,7 @@
 ## `maven:3-sapmachine-17`
 
 ```console
-$ docker pull maven@sha256:fc429e76e91d72426a0947be01fdb48b065af819211471eb9ae5bfb19c674c61
+$ docker pull maven@sha256:da19714473f91502495c8d3dd21fd2deadbf4bbd652f4dd303fe2227355e9072
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -99,34 +99,34 @@ CMD ["mvn"]
 ### `maven:3-sapmachine-17` - linux; arm64 variant v8
 
 ```console
-$ docker pull maven@sha256:2c803d975bc0981c7825ded7ac9fdcde678a66133cffd98875580848ea8df27e
+$ docker pull maven@sha256:0823f65873dc13938ae4f0689c52e9b100e424b5076d2074675990fac7d82275
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.0 MB (256986142 bytes)**  
+-	Total Size: **257.0 MB (256983349 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3c2db1bcef7375a5dbd4e200d88411780752423fcb9c2a8ed065e655d8d13eff`
+-	Image ID: `sha256:85fa3c70c24099b27e862431d331747395470a4f16c31a7d46d0d48f023642e4`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Fri, 01 Dec 2023 07:43:19 GMT
+# Tue, 12 Dec 2023 11:41:50 GMT
 ARG RELEASE
-# Fri, 01 Dec 2023 07:43:20 GMT
+# Tue, 12 Dec 2023 11:41:50 GMT
 ARG LAUNCHPAD_BUILD_ARCH
-# Fri, 01 Dec 2023 07:43:20 GMT
+# Tue, 12 Dec 2023 11:41:50 GMT
 LABEL org.opencontainers.image.ref.name=ubuntu
-# Fri, 01 Dec 2023 07:43:20 GMT
+# Tue, 12 Dec 2023 11:41:51 GMT
 LABEL org.opencontainers.image.version=22.04
-# Fri, 01 Dec 2023 07:43:21 GMT
-ADD file:891dcab0c4ce2880c4dca013d326a3efd7601003b6f5076938d678101e301b79 in / 
-# Fri, 01 Dec 2023 07:43:22 GMT
+# Tue, 12 Dec 2023 11:41:54 GMT
+ADD file:50f947da69b3b6c63695be9c49eee16f7a7dcdecdceb51e5bee1609b845bf483 in / 
+# Tue, 12 Dec 2023 11:41:54 GMT
 CMD ["/bin/bash"]
-# Sat, 02 Dec 2023 07:10:05 GMT
+# Sat, 16 Dec 2023 11:50:37 GMT
 RUN apt-get update     && apt-get -y --no-install-recommends install ca-certificates gnupg     && export GNUPGHOME="$(mktemp -d)"     && gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/sapmachine.gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys CACB9FE09150307D1D22D82962754C3B3ABCFE23     && chmod 644 /etc/apt/trusted.gpg.d/sapmachine.gpg     && echo "deb http://dist.sapmachine.io/debian/$(dpkg --print-architecture)/ ./" > /etc/apt/sources.list.d/sapmachine.list     && apt-get update     && apt-get -y --no-install-recommends install sapmachine-17-jdk=17.0.9     && apt-get remove -y --purge --autoremove ca-certificates gnupg     && rm -rf "$GNUPGHOME" /var/lib/apt/lists/*
-# Sat, 02 Dec 2023 07:10:07 GMT
+# Sat, 16 Dec 2023 11:50:39 GMT
 ENV JAVA_HOME=/usr/lib/jvm/sapmachine-17
-# Sat, 02 Dec 2023 07:10:07 GMT
+# Sat, 16 Dec 2023 11:50:39 GMT
 CMD ["jshell"]
 # Mon, 11 Dec 2023 11:12:11 GMT
 RUN apt-get update   && apt-get install -y ca-certificates curl git --no-install-recommends   && rm -rf /var/lib/apt/lists/* # buildkit
@@ -153,32 +153,32 @@ CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:aeb9f260d781cd1e09daf0d0a9e5bcb581efce5b33b221f2f4a27de8db66e463`  
-		Last Modified: Thu, 30 Nov 2023 02:35:43 GMT  
-		Size: 28.4 MB (28399939 bytes)  
+	-	`sha256:7734efb8b826f955c6a3bb51d7c84cb262d0e600ea3980f5bce69fa7f4f92d24`  
+		Last Modified: Tue, 12 Dec 2023 16:00:15 GMT  
+		Size: 28.4 MB (28400282 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5fce3a2761e0af814885c80771517d86128dfc308f7ae40aaee8021ba883b1d1`  
-		Last Modified: Sat, 02 Dec 2023 07:16:14 GMT  
-		Size: 198.2 MB (198193771 bytes)  
+	-	`sha256:d1ebdda837d5ca9139217a13b60678907cf74805536738ee7af909ec5fd34c90`  
+		Last Modified: Sat, 16 Dec 2023 11:56:37 GMT  
+		Size: 198.2 MB (198193955 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2cb1711979d400393f82c022c70cab5ce52e4224cd78d6124593a4a24f0ad98`  
-		Last Modified: Sat, 02 Dec 2023 11:51:40 GMT  
-		Size: 20.9 MB (20911169 bytes)  
+	-	`sha256:92dcc3106600d758411db434c7a17feaa2dc97bf16a782d5e5687f5ecf0b7e2e`  
+		Last Modified: Sat, 16 Dec 2023 15:50:35 GMT  
+		Size: 20.9 MB (20907818 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a4927eacf1418a485dd88ec03689d161bc5ae54f3b29e6dab1a2781f2a3df7c`  
-		Last Modified: Mon, 11 Dec 2023 19:54:50 GMT  
-		Size: 9.5 MB (9479903 bytes)  
+	-	`sha256:1c2999faa55651555103880e32bfe4ebf293391bbc2a67e294334e4b20b14c30`  
+		Last Modified: Sat, 16 Dec 2023 15:50:33 GMT  
+		Size: 9.5 MB (9479926 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6949add95b5d7ab540b77354a144317fa785bd44657bd0eab5851f1588d050e4`  
-		Last Modified: Mon, 11 Dec 2023 19:54:49 GMT  
-		Size: 851.0 B  
+	-	`sha256:e0d3b1e6ebc37d213854be09e12163e7654f6291dd77eba08ed5f7371bd8d8ff`  
+		Last Modified: Sat, 16 Dec 2023 15:50:32 GMT  
+		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:152d5297e38c353f7fad4b7ab69575c83c1d32d65770de8d6f0df3a14e69dd4c`  
-		Last Modified: Mon, 11 Dec 2023 19:54:49 GMT  
-		Size: 353.0 B  
+	-	`sha256:26ac0441a34d75596134faee768dfe8b3e4862a59166e178c0145536aafeca55`  
+		Last Modified: Sat, 16 Dec 2023 15:50:32 GMT  
+		Size: 357.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8056b6560286a08a9ac1f2d1b5113ff8f72a56eafd7f4a3bc73432003fe1bf17`  
-		Last Modified: Mon, 11 Dec 2023 19:54:49 GMT  
+	-	`sha256:4dffde758ce3359948c7b7e40293f8691425606a7ba445a5aac2e3b378233c8a`  
+		Last Modified: Sat, 16 Dec 2023 15:50:32 GMT  
 		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
