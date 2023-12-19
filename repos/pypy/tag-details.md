@@ -1499,7 +1499,7 @@ CMD ["pypy"]
 ## `pypy:2-7-slim`
 
 ```console
-$ docker pull pypy@sha256:0d288f06880433eca2228ec1e4fa1b5f1c08a73c6b5896e22a6c02994e2facc9
+$ docker pull pypy@sha256:0fffc356bba8bc46bb11f862e114cb4eec15c324267be4534f81189b50545b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1567,57 +1567,57 @@ CMD ["pypy"]
 ### `pypy:2-7-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a990c97132493501b5c4225ee8a927e8427138a6bd14bf3a7028e4c151e88c6f
+$ docker pull pypy@sha256:021adeba7c86899eb3a6e8137f7b99dc1fc78f1ecb16f7a644c56457b487671c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62172232 bytes)**  
+-	Total Size: **62.2 MB (62172172 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0ca025c66f86156facc2914eac34af489c183b0163f1caf314163c95a09a93`
+-	Image ID: `sha256:0fa5b52dffd4a7efdb1601196aab38ac9fad37a6a886694c04188cfc080624cb`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:21 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:43:36 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d423b9fab1fc6b2e095367a4e9ec55ae6bb340cceeabde7cc8a26604a530a141`  
-		Last Modified: Tue, 21 Nov 2023 20:49:22 GMT  
-		Size: 28.9 MB (28880462 bytes)  
+	-	`sha256:d5fe7ed2ddaec6e07982f60463a0a413cbf56ebe805eaeeeb8fdce5f06fc9de2`  
+		Last Modified: Tue, 19 Dec 2023 09:41:48 GMT  
+		Size: 28.9 MB (28880458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b18b9ca2e92abb1f4b922031ed38fc7ee32f2853431c4d56f6b05ba684a926`  
-		Last Modified: Tue, 21 Nov 2023 20:49:19 GMT  
-		Size: 2.2 MB (2171898 bytes)  
+	-	`sha256:65da2aa24f668478846cb08f92f17c03413b8a75ee2a75eb8ed5a2803e1171f4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:44 GMT  
+		Size: 2.2 MB (2171891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2-7-slim` - linux; 386
@@ -1679,7 +1679,7 @@ CMD ["pypy"]
 ## `pypy:2-7-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:565fe8bd0f8f3ec947afcaf0007cd63e703bd50e62a45dab195f4f649937cf97
+$ docker pull pypy@sha256:15b08e82d1e5094b14771fa44e0894127dc8aa421ba75bb9c5e5fcabffe3149b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1747,57 +1747,57 @@ CMD ["pypy"]
 ### `pypy:2-7-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:3b7473f579581598dbc9b5898b0be1c43bb5e589ce5c0bf3d7c66de1b5c6c0ea
+$ docker pull pypy@sha256:e87784d0765d7b929462408b02a63945099f1752cf048b2a838360c131b9b618
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **63.5 MB (63523970 bytes)**  
+-	Total Size: **63.5 MB (63496177 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ca2ebed01076fd50e04ce9199e21e2e3263d052cc15f24bde36e92fb0a1608a7`
+-	Image ID: `sha256:d494cbba96833436ab2f945e632f743baa1cb2374cf827e03d895c72a0067fbd`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:01 GMT
+# Tue, 19 Dec 2023 09:38:06 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:01 GMT
+# Tue, 19 Dec 2023 09:38:06 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b70d8cd54c73097b506e53b015c0300a64a6151c0d445d9ecc28d763a6167c1`  
-		Last Modified: Tue, 21 Nov 2023 20:48:32 GMT  
-		Size: 28.9 MB (28868058 bytes)  
+	-	`sha256:7bf40e05f01072382fad9038c1263dacfff3cffff50adc4ff64dfdee632182d4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:23 GMT  
+		Size: 28.9 MB (28866539 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3da2e66f45176fed50663ee700e14c465146c3c080a81788ac88d2847cc6ce0f`  
-		Last Modified: Tue, 21 Nov 2023 20:48:28 GMT  
-		Size: 2.2 MB (2159504 bytes)  
+	-	`sha256:8973baccf073e8d007207d07c67903bf4dedba9928c01495b32120b01199caf7`  
+		Last Modified: Tue, 19 Dec 2023 09:41:20 GMT  
+		Size: 2.2 MB (2158048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2-7-slim-bookworm` - linux; 386
@@ -1859,7 +1859,7 @@ CMD ["pypy"]
 ## `pypy:2-7-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:0d288f06880433eca2228ec1e4fa1b5f1c08a73c6b5896e22a6c02994e2facc9
+$ docker pull pypy@sha256:0fffc356bba8bc46bb11f862e114cb4eec15c324267be4534f81189b50545b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1927,57 +1927,57 @@ CMD ["pypy"]
 ### `pypy:2-7-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a990c97132493501b5c4225ee8a927e8427138a6bd14bf3a7028e4c151e88c6f
+$ docker pull pypy@sha256:021adeba7c86899eb3a6e8137f7b99dc1fc78f1ecb16f7a644c56457b487671c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62172232 bytes)**  
+-	Total Size: **62.2 MB (62172172 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0ca025c66f86156facc2914eac34af489c183b0163f1caf314163c95a09a93`
+-	Image ID: `sha256:0fa5b52dffd4a7efdb1601196aab38ac9fad37a6a886694c04188cfc080624cb`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:21 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:43:36 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d423b9fab1fc6b2e095367a4e9ec55ae6bb340cceeabde7cc8a26604a530a141`  
-		Last Modified: Tue, 21 Nov 2023 20:49:22 GMT  
-		Size: 28.9 MB (28880462 bytes)  
+	-	`sha256:d5fe7ed2ddaec6e07982f60463a0a413cbf56ebe805eaeeeb8fdce5f06fc9de2`  
+		Last Modified: Tue, 19 Dec 2023 09:41:48 GMT  
+		Size: 28.9 MB (28880458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b18b9ca2e92abb1f4b922031ed38fc7ee32f2853431c4d56f6b05ba684a926`  
-		Last Modified: Tue, 21 Nov 2023 20:49:19 GMT  
-		Size: 2.2 MB (2171898 bytes)  
+	-	`sha256:65da2aa24f668478846cb08f92f17c03413b8a75ee2a75eb8ed5a2803e1171f4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:44 GMT  
+		Size: 2.2 MB (2171891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2-7-slim-bullseye` - linux; 386
@@ -3320,7 +3320,7 @@ CMD ["pypy"]
 ## `pypy:2-7.3-slim`
 
 ```console
-$ docker pull pypy@sha256:0d288f06880433eca2228ec1e4fa1b5f1c08a73c6b5896e22a6c02994e2facc9
+$ docker pull pypy@sha256:0fffc356bba8bc46bb11f862e114cb4eec15c324267be4534f81189b50545b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3388,57 +3388,57 @@ CMD ["pypy"]
 ### `pypy:2-7.3-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a990c97132493501b5c4225ee8a927e8427138a6bd14bf3a7028e4c151e88c6f
+$ docker pull pypy@sha256:021adeba7c86899eb3a6e8137f7b99dc1fc78f1ecb16f7a644c56457b487671c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62172232 bytes)**  
+-	Total Size: **62.2 MB (62172172 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0ca025c66f86156facc2914eac34af489c183b0163f1caf314163c95a09a93`
+-	Image ID: `sha256:0fa5b52dffd4a7efdb1601196aab38ac9fad37a6a886694c04188cfc080624cb`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:21 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:43:36 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d423b9fab1fc6b2e095367a4e9ec55ae6bb340cceeabde7cc8a26604a530a141`  
-		Last Modified: Tue, 21 Nov 2023 20:49:22 GMT  
-		Size: 28.9 MB (28880462 bytes)  
+	-	`sha256:d5fe7ed2ddaec6e07982f60463a0a413cbf56ebe805eaeeeb8fdce5f06fc9de2`  
+		Last Modified: Tue, 19 Dec 2023 09:41:48 GMT  
+		Size: 28.9 MB (28880458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b18b9ca2e92abb1f4b922031ed38fc7ee32f2853431c4d56f6b05ba684a926`  
-		Last Modified: Tue, 21 Nov 2023 20:49:19 GMT  
-		Size: 2.2 MB (2171898 bytes)  
+	-	`sha256:65da2aa24f668478846cb08f92f17c03413b8a75ee2a75eb8ed5a2803e1171f4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:44 GMT  
+		Size: 2.2 MB (2171891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2-7.3-slim` - linux; 386
@@ -3500,7 +3500,7 @@ CMD ["pypy"]
 ## `pypy:2-7.3-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:565fe8bd0f8f3ec947afcaf0007cd63e703bd50e62a45dab195f4f649937cf97
+$ docker pull pypy@sha256:15b08e82d1e5094b14771fa44e0894127dc8aa421ba75bb9c5e5fcabffe3149b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3568,57 +3568,57 @@ CMD ["pypy"]
 ### `pypy:2-7.3-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:3b7473f579581598dbc9b5898b0be1c43bb5e589ce5c0bf3d7c66de1b5c6c0ea
+$ docker pull pypy@sha256:e87784d0765d7b929462408b02a63945099f1752cf048b2a838360c131b9b618
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **63.5 MB (63523970 bytes)**  
+-	Total Size: **63.5 MB (63496177 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ca2ebed01076fd50e04ce9199e21e2e3263d052cc15f24bde36e92fb0a1608a7`
+-	Image ID: `sha256:d494cbba96833436ab2f945e632f743baa1cb2374cf827e03d895c72a0067fbd`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:01 GMT
+# Tue, 19 Dec 2023 09:38:06 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:01 GMT
+# Tue, 19 Dec 2023 09:38:06 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b70d8cd54c73097b506e53b015c0300a64a6151c0d445d9ecc28d763a6167c1`  
-		Last Modified: Tue, 21 Nov 2023 20:48:32 GMT  
-		Size: 28.9 MB (28868058 bytes)  
+	-	`sha256:7bf40e05f01072382fad9038c1263dacfff3cffff50adc4ff64dfdee632182d4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:23 GMT  
+		Size: 28.9 MB (28866539 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3da2e66f45176fed50663ee700e14c465146c3c080a81788ac88d2847cc6ce0f`  
-		Last Modified: Tue, 21 Nov 2023 20:48:28 GMT  
-		Size: 2.2 MB (2159504 bytes)  
+	-	`sha256:8973baccf073e8d007207d07c67903bf4dedba9928c01495b32120b01199caf7`  
+		Last Modified: Tue, 19 Dec 2023 09:41:20 GMT  
+		Size: 2.2 MB (2158048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2-7.3-slim-bookworm` - linux; 386
@@ -3680,7 +3680,7 @@ CMD ["pypy"]
 ## `pypy:2-7.3-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:0d288f06880433eca2228ec1e4fa1b5f1c08a73c6b5896e22a6c02994e2facc9
+$ docker pull pypy@sha256:0fffc356bba8bc46bb11f862e114cb4eec15c324267be4534f81189b50545b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3748,57 +3748,57 @@ CMD ["pypy"]
 ### `pypy:2-7.3-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a990c97132493501b5c4225ee8a927e8427138a6bd14bf3a7028e4c151e88c6f
+$ docker pull pypy@sha256:021adeba7c86899eb3a6e8137f7b99dc1fc78f1ecb16f7a644c56457b487671c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62172232 bytes)**  
+-	Total Size: **62.2 MB (62172172 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0ca025c66f86156facc2914eac34af489c183b0163f1caf314163c95a09a93`
+-	Image ID: `sha256:0fa5b52dffd4a7efdb1601196aab38ac9fad37a6a886694c04188cfc080624cb`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:21 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:43:36 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d423b9fab1fc6b2e095367a4e9ec55ae6bb340cceeabde7cc8a26604a530a141`  
-		Last Modified: Tue, 21 Nov 2023 20:49:22 GMT  
-		Size: 28.9 MB (28880462 bytes)  
+	-	`sha256:d5fe7ed2ddaec6e07982f60463a0a413cbf56ebe805eaeeeb8fdce5f06fc9de2`  
+		Last Modified: Tue, 19 Dec 2023 09:41:48 GMT  
+		Size: 28.9 MB (28880458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b18b9ca2e92abb1f4b922031ed38fc7ee32f2853431c4d56f6b05ba684a926`  
-		Last Modified: Tue, 21 Nov 2023 20:49:19 GMT  
-		Size: 2.2 MB (2171898 bytes)  
+	-	`sha256:65da2aa24f668478846cb08f92f17c03413b8a75ee2a75eb8ed5a2803e1171f4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:44 GMT  
+		Size: 2.2 MB (2171891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2-7.3-slim-bullseye` - linux; 386
@@ -5141,7 +5141,7 @@ CMD ["pypy"]
 ## `pypy:2-7.3.13-slim`
 
 ```console
-$ docker pull pypy@sha256:0d288f06880433eca2228ec1e4fa1b5f1c08a73c6b5896e22a6c02994e2facc9
+$ docker pull pypy@sha256:0fffc356bba8bc46bb11f862e114cb4eec15c324267be4534f81189b50545b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5209,57 +5209,57 @@ CMD ["pypy"]
 ### `pypy:2-7.3.13-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a990c97132493501b5c4225ee8a927e8427138a6bd14bf3a7028e4c151e88c6f
+$ docker pull pypy@sha256:021adeba7c86899eb3a6e8137f7b99dc1fc78f1ecb16f7a644c56457b487671c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62172232 bytes)**  
+-	Total Size: **62.2 MB (62172172 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0ca025c66f86156facc2914eac34af489c183b0163f1caf314163c95a09a93`
+-	Image ID: `sha256:0fa5b52dffd4a7efdb1601196aab38ac9fad37a6a886694c04188cfc080624cb`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:21 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:43:36 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d423b9fab1fc6b2e095367a4e9ec55ae6bb340cceeabde7cc8a26604a530a141`  
-		Last Modified: Tue, 21 Nov 2023 20:49:22 GMT  
-		Size: 28.9 MB (28880462 bytes)  
+	-	`sha256:d5fe7ed2ddaec6e07982f60463a0a413cbf56ebe805eaeeeb8fdce5f06fc9de2`  
+		Last Modified: Tue, 19 Dec 2023 09:41:48 GMT  
+		Size: 28.9 MB (28880458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b18b9ca2e92abb1f4b922031ed38fc7ee32f2853431c4d56f6b05ba684a926`  
-		Last Modified: Tue, 21 Nov 2023 20:49:19 GMT  
-		Size: 2.2 MB (2171898 bytes)  
+	-	`sha256:65da2aa24f668478846cb08f92f17c03413b8a75ee2a75eb8ed5a2803e1171f4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:44 GMT  
+		Size: 2.2 MB (2171891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2-7.3.13-slim` - linux; 386
@@ -5321,7 +5321,7 @@ CMD ["pypy"]
 ## `pypy:2-7.3.13-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:565fe8bd0f8f3ec947afcaf0007cd63e703bd50e62a45dab195f4f649937cf97
+$ docker pull pypy@sha256:15b08e82d1e5094b14771fa44e0894127dc8aa421ba75bb9c5e5fcabffe3149b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5389,57 +5389,57 @@ CMD ["pypy"]
 ### `pypy:2-7.3.13-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:3b7473f579581598dbc9b5898b0be1c43bb5e589ce5c0bf3d7c66de1b5c6c0ea
+$ docker pull pypy@sha256:e87784d0765d7b929462408b02a63945099f1752cf048b2a838360c131b9b618
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **63.5 MB (63523970 bytes)**  
+-	Total Size: **63.5 MB (63496177 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ca2ebed01076fd50e04ce9199e21e2e3263d052cc15f24bde36e92fb0a1608a7`
+-	Image ID: `sha256:d494cbba96833436ab2f945e632f743baa1cb2374cf827e03d895c72a0067fbd`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:01 GMT
+# Tue, 19 Dec 2023 09:38:06 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:01 GMT
+# Tue, 19 Dec 2023 09:38:06 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b70d8cd54c73097b506e53b015c0300a64a6151c0d445d9ecc28d763a6167c1`  
-		Last Modified: Tue, 21 Nov 2023 20:48:32 GMT  
-		Size: 28.9 MB (28868058 bytes)  
+	-	`sha256:7bf40e05f01072382fad9038c1263dacfff3cffff50adc4ff64dfdee632182d4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:23 GMT  
+		Size: 28.9 MB (28866539 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3da2e66f45176fed50663ee700e14c465146c3c080a81788ac88d2847cc6ce0f`  
-		Last Modified: Tue, 21 Nov 2023 20:48:28 GMT  
-		Size: 2.2 MB (2159504 bytes)  
+	-	`sha256:8973baccf073e8d007207d07c67903bf4dedba9928c01495b32120b01199caf7`  
+		Last Modified: Tue, 19 Dec 2023 09:41:20 GMT  
+		Size: 2.2 MB (2158048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2-7.3.13-slim-bookworm` - linux; 386
@@ -5501,7 +5501,7 @@ CMD ["pypy"]
 ## `pypy:2-7.3.13-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:0d288f06880433eca2228ec1e4fa1b5f1c08a73c6b5896e22a6c02994e2facc9
+$ docker pull pypy@sha256:0fffc356bba8bc46bb11f862e114cb4eec15c324267be4534f81189b50545b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5569,57 +5569,57 @@ CMD ["pypy"]
 ### `pypy:2-7.3.13-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a990c97132493501b5c4225ee8a927e8427138a6bd14bf3a7028e4c151e88c6f
+$ docker pull pypy@sha256:021adeba7c86899eb3a6e8137f7b99dc1fc78f1ecb16f7a644c56457b487671c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62172232 bytes)**  
+-	Total Size: **62.2 MB (62172172 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0ca025c66f86156facc2914eac34af489c183b0163f1caf314163c95a09a93`
+-	Image ID: `sha256:0fa5b52dffd4a7efdb1601196aab38ac9fad37a6a886694c04188cfc080624cb`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:21 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:43:36 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d423b9fab1fc6b2e095367a4e9ec55ae6bb340cceeabde7cc8a26604a530a141`  
-		Last Modified: Tue, 21 Nov 2023 20:49:22 GMT  
-		Size: 28.9 MB (28880462 bytes)  
+	-	`sha256:d5fe7ed2ddaec6e07982f60463a0a413cbf56ebe805eaeeeb8fdce5f06fc9de2`  
+		Last Modified: Tue, 19 Dec 2023 09:41:48 GMT  
+		Size: 28.9 MB (28880458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b18b9ca2e92abb1f4b922031ed38fc7ee32f2853431c4d56f6b05ba684a926`  
-		Last Modified: Tue, 21 Nov 2023 20:49:19 GMT  
-		Size: 2.2 MB (2171898 bytes)  
+	-	`sha256:65da2aa24f668478846cb08f92f17c03413b8a75ee2a75eb8ed5a2803e1171f4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:44 GMT  
+		Size: 2.2 MB (2171891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2-7.3.13-slim-bullseye` - linux; 386
@@ -6544,7 +6544,7 @@ CMD ["pypy"]
 ## `pypy:2-slim`
 
 ```console
-$ docker pull pypy@sha256:0d288f06880433eca2228ec1e4fa1b5f1c08a73c6b5896e22a6c02994e2facc9
+$ docker pull pypy@sha256:0fffc356bba8bc46bb11f862e114cb4eec15c324267be4534f81189b50545b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6612,57 +6612,57 @@ CMD ["pypy"]
 ### `pypy:2-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a990c97132493501b5c4225ee8a927e8427138a6bd14bf3a7028e4c151e88c6f
+$ docker pull pypy@sha256:021adeba7c86899eb3a6e8137f7b99dc1fc78f1ecb16f7a644c56457b487671c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62172232 bytes)**  
+-	Total Size: **62.2 MB (62172172 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0ca025c66f86156facc2914eac34af489c183b0163f1caf314163c95a09a93`
+-	Image ID: `sha256:0fa5b52dffd4a7efdb1601196aab38ac9fad37a6a886694c04188cfc080624cb`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:21 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:43:36 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d423b9fab1fc6b2e095367a4e9ec55ae6bb340cceeabde7cc8a26604a530a141`  
-		Last Modified: Tue, 21 Nov 2023 20:49:22 GMT  
-		Size: 28.9 MB (28880462 bytes)  
+	-	`sha256:d5fe7ed2ddaec6e07982f60463a0a413cbf56ebe805eaeeeb8fdce5f06fc9de2`  
+		Last Modified: Tue, 19 Dec 2023 09:41:48 GMT  
+		Size: 28.9 MB (28880458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b18b9ca2e92abb1f4b922031ed38fc7ee32f2853431c4d56f6b05ba684a926`  
-		Last Modified: Tue, 21 Nov 2023 20:49:19 GMT  
-		Size: 2.2 MB (2171898 bytes)  
+	-	`sha256:65da2aa24f668478846cb08f92f17c03413b8a75ee2a75eb8ed5a2803e1171f4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:44 GMT  
+		Size: 2.2 MB (2171891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2-slim` - linux; 386
@@ -6724,7 +6724,7 @@ CMD ["pypy"]
 ## `pypy:2-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:565fe8bd0f8f3ec947afcaf0007cd63e703bd50e62a45dab195f4f649937cf97
+$ docker pull pypy@sha256:15b08e82d1e5094b14771fa44e0894127dc8aa421ba75bb9c5e5fcabffe3149b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6792,57 +6792,57 @@ CMD ["pypy"]
 ### `pypy:2-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:3b7473f579581598dbc9b5898b0be1c43bb5e589ce5c0bf3d7c66de1b5c6c0ea
+$ docker pull pypy@sha256:e87784d0765d7b929462408b02a63945099f1752cf048b2a838360c131b9b618
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **63.5 MB (63523970 bytes)**  
+-	Total Size: **63.5 MB (63496177 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ca2ebed01076fd50e04ce9199e21e2e3263d052cc15f24bde36e92fb0a1608a7`
+-	Image ID: `sha256:d494cbba96833436ab2f945e632f743baa1cb2374cf827e03d895c72a0067fbd`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:01 GMT
+# Tue, 19 Dec 2023 09:38:06 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:01 GMT
+# Tue, 19 Dec 2023 09:38:06 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b70d8cd54c73097b506e53b015c0300a64a6151c0d445d9ecc28d763a6167c1`  
-		Last Modified: Tue, 21 Nov 2023 20:48:32 GMT  
-		Size: 28.9 MB (28868058 bytes)  
+	-	`sha256:7bf40e05f01072382fad9038c1263dacfff3cffff50adc4ff64dfdee632182d4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:23 GMT  
+		Size: 28.9 MB (28866539 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3da2e66f45176fed50663ee700e14c465146c3c080a81788ac88d2847cc6ce0f`  
-		Last Modified: Tue, 21 Nov 2023 20:48:28 GMT  
-		Size: 2.2 MB (2159504 bytes)  
+	-	`sha256:8973baccf073e8d007207d07c67903bf4dedba9928c01495b32120b01199caf7`  
+		Last Modified: Tue, 19 Dec 2023 09:41:20 GMT  
+		Size: 2.2 MB (2158048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2-slim-bookworm` - linux; 386
@@ -6904,7 +6904,7 @@ CMD ["pypy"]
 ## `pypy:2-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:0d288f06880433eca2228ec1e4fa1b5f1c08a73c6b5896e22a6c02994e2facc9
+$ docker pull pypy@sha256:0fffc356bba8bc46bb11f862e114cb4eec15c324267be4534f81189b50545b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6972,57 +6972,57 @@ CMD ["pypy"]
 ### `pypy:2-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a990c97132493501b5c4225ee8a927e8427138a6bd14bf3a7028e4c151e88c6f
+$ docker pull pypy@sha256:021adeba7c86899eb3a6e8137f7b99dc1fc78f1ecb16f7a644c56457b487671c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62172232 bytes)**  
+-	Total Size: **62.2 MB (62172172 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0ca025c66f86156facc2914eac34af489c183b0163f1caf314163c95a09a93`
+-	Image ID: `sha256:0fa5b52dffd4a7efdb1601196aab38ac9fad37a6a886694c04188cfc080624cb`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:21 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:43:36 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d423b9fab1fc6b2e095367a4e9ec55ae6bb340cceeabde7cc8a26604a530a141`  
-		Last Modified: Tue, 21 Nov 2023 20:49:22 GMT  
-		Size: 28.9 MB (28880462 bytes)  
+	-	`sha256:d5fe7ed2ddaec6e07982f60463a0a413cbf56ebe805eaeeeb8fdce5f06fc9de2`  
+		Last Modified: Tue, 19 Dec 2023 09:41:48 GMT  
+		Size: 28.9 MB (28880458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b18b9ca2e92abb1f4b922031ed38fc7ee32f2853431c4d56f6b05ba684a926`  
-		Last Modified: Tue, 21 Nov 2023 20:49:19 GMT  
-		Size: 2.2 MB (2171898 bytes)  
+	-	`sha256:65da2aa24f668478846cb08f92f17c03413b8a75ee2a75eb8ed5a2803e1171f4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:44 GMT  
+		Size: 2.2 MB (2171891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2-slim-bullseye` - linux; 386
@@ -8783,7 +8783,7 @@ CMD ["pypy"]
 ## `pypy:2.7-7-slim`
 
 ```console
-$ docker pull pypy@sha256:0d288f06880433eca2228ec1e4fa1b5f1c08a73c6b5896e22a6c02994e2facc9
+$ docker pull pypy@sha256:0fffc356bba8bc46bb11f862e114cb4eec15c324267be4534f81189b50545b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8851,57 +8851,57 @@ CMD ["pypy"]
 ### `pypy:2.7-7-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a990c97132493501b5c4225ee8a927e8427138a6bd14bf3a7028e4c151e88c6f
+$ docker pull pypy@sha256:021adeba7c86899eb3a6e8137f7b99dc1fc78f1ecb16f7a644c56457b487671c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62172232 bytes)**  
+-	Total Size: **62.2 MB (62172172 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0ca025c66f86156facc2914eac34af489c183b0163f1caf314163c95a09a93`
+-	Image ID: `sha256:0fa5b52dffd4a7efdb1601196aab38ac9fad37a6a886694c04188cfc080624cb`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:21 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:43:36 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d423b9fab1fc6b2e095367a4e9ec55ae6bb340cceeabde7cc8a26604a530a141`  
-		Last Modified: Tue, 21 Nov 2023 20:49:22 GMT  
-		Size: 28.9 MB (28880462 bytes)  
+	-	`sha256:d5fe7ed2ddaec6e07982f60463a0a413cbf56ebe805eaeeeb8fdce5f06fc9de2`  
+		Last Modified: Tue, 19 Dec 2023 09:41:48 GMT  
+		Size: 28.9 MB (28880458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b18b9ca2e92abb1f4b922031ed38fc7ee32f2853431c4d56f6b05ba684a926`  
-		Last Modified: Tue, 21 Nov 2023 20:49:19 GMT  
-		Size: 2.2 MB (2171898 bytes)  
+	-	`sha256:65da2aa24f668478846cb08f92f17c03413b8a75ee2a75eb8ed5a2803e1171f4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:44 GMT  
+		Size: 2.2 MB (2171891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2.7-7-slim` - linux; 386
@@ -8963,7 +8963,7 @@ CMD ["pypy"]
 ## `pypy:2.7-7-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:565fe8bd0f8f3ec947afcaf0007cd63e703bd50e62a45dab195f4f649937cf97
+$ docker pull pypy@sha256:15b08e82d1e5094b14771fa44e0894127dc8aa421ba75bb9c5e5fcabffe3149b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9031,57 +9031,57 @@ CMD ["pypy"]
 ### `pypy:2.7-7-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:3b7473f579581598dbc9b5898b0be1c43bb5e589ce5c0bf3d7c66de1b5c6c0ea
+$ docker pull pypy@sha256:e87784d0765d7b929462408b02a63945099f1752cf048b2a838360c131b9b618
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **63.5 MB (63523970 bytes)**  
+-	Total Size: **63.5 MB (63496177 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ca2ebed01076fd50e04ce9199e21e2e3263d052cc15f24bde36e92fb0a1608a7`
+-	Image ID: `sha256:d494cbba96833436ab2f945e632f743baa1cb2374cf827e03d895c72a0067fbd`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:01 GMT
+# Tue, 19 Dec 2023 09:38:06 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:01 GMT
+# Tue, 19 Dec 2023 09:38:06 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b70d8cd54c73097b506e53b015c0300a64a6151c0d445d9ecc28d763a6167c1`  
-		Last Modified: Tue, 21 Nov 2023 20:48:32 GMT  
-		Size: 28.9 MB (28868058 bytes)  
+	-	`sha256:7bf40e05f01072382fad9038c1263dacfff3cffff50adc4ff64dfdee632182d4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:23 GMT  
+		Size: 28.9 MB (28866539 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3da2e66f45176fed50663ee700e14c465146c3c080a81788ac88d2847cc6ce0f`  
-		Last Modified: Tue, 21 Nov 2023 20:48:28 GMT  
-		Size: 2.2 MB (2159504 bytes)  
+	-	`sha256:8973baccf073e8d007207d07c67903bf4dedba9928c01495b32120b01199caf7`  
+		Last Modified: Tue, 19 Dec 2023 09:41:20 GMT  
+		Size: 2.2 MB (2158048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2.7-7-slim-bookworm` - linux; 386
@@ -9143,7 +9143,7 @@ CMD ["pypy"]
 ## `pypy:2.7-7-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:0d288f06880433eca2228ec1e4fa1b5f1c08a73c6b5896e22a6c02994e2facc9
+$ docker pull pypy@sha256:0fffc356bba8bc46bb11f862e114cb4eec15c324267be4534f81189b50545b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9211,57 +9211,57 @@ CMD ["pypy"]
 ### `pypy:2.7-7-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a990c97132493501b5c4225ee8a927e8427138a6bd14bf3a7028e4c151e88c6f
+$ docker pull pypy@sha256:021adeba7c86899eb3a6e8137f7b99dc1fc78f1ecb16f7a644c56457b487671c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62172232 bytes)**  
+-	Total Size: **62.2 MB (62172172 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0ca025c66f86156facc2914eac34af489c183b0163f1caf314163c95a09a93`
+-	Image ID: `sha256:0fa5b52dffd4a7efdb1601196aab38ac9fad37a6a886694c04188cfc080624cb`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:21 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:43:36 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d423b9fab1fc6b2e095367a4e9ec55ae6bb340cceeabde7cc8a26604a530a141`  
-		Last Modified: Tue, 21 Nov 2023 20:49:22 GMT  
-		Size: 28.9 MB (28880462 bytes)  
+	-	`sha256:d5fe7ed2ddaec6e07982f60463a0a413cbf56ebe805eaeeeb8fdce5f06fc9de2`  
+		Last Modified: Tue, 19 Dec 2023 09:41:48 GMT  
+		Size: 28.9 MB (28880458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b18b9ca2e92abb1f4b922031ed38fc7ee32f2853431c4d56f6b05ba684a926`  
-		Last Modified: Tue, 21 Nov 2023 20:49:19 GMT  
-		Size: 2.2 MB (2171898 bytes)  
+	-	`sha256:65da2aa24f668478846cb08f92f17c03413b8a75ee2a75eb8ed5a2803e1171f4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:44 GMT  
+		Size: 2.2 MB (2171891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2.7-7-slim-bullseye` - linux; 386
@@ -10604,7 +10604,7 @@ CMD ["pypy"]
 ## `pypy:2.7-7.3-slim`
 
 ```console
-$ docker pull pypy@sha256:0d288f06880433eca2228ec1e4fa1b5f1c08a73c6b5896e22a6c02994e2facc9
+$ docker pull pypy@sha256:0fffc356bba8bc46bb11f862e114cb4eec15c324267be4534f81189b50545b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10672,57 +10672,57 @@ CMD ["pypy"]
 ### `pypy:2.7-7.3-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a990c97132493501b5c4225ee8a927e8427138a6bd14bf3a7028e4c151e88c6f
+$ docker pull pypy@sha256:021adeba7c86899eb3a6e8137f7b99dc1fc78f1ecb16f7a644c56457b487671c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62172232 bytes)**  
+-	Total Size: **62.2 MB (62172172 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0ca025c66f86156facc2914eac34af489c183b0163f1caf314163c95a09a93`
+-	Image ID: `sha256:0fa5b52dffd4a7efdb1601196aab38ac9fad37a6a886694c04188cfc080624cb`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:21 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:43:36 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d423b9fab1fc6b2e095367a4e9ec55ae6bb340cceeabde7cc8a26604a530a141`  
-		Last Modified: Tue, 21 Nov 2023 20:49:22 GMT  
-		Size: 28.9 MB (28880462 bytes)  
+	-	`sha256:d5fe7ed2ddaec6e07982f60463a0a413cbf56ebe805eaeeeb8fdce5f06fc9de2`  
+		Last Modified: Tue, 19 Dec 2023 09:41:48 GMT  
+		Size: 28.9 MB (28880458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b18b9ca2e92abb1f4b922031ed38fc7ee32f2853431c4d56f6b05ba684a926`  
-		Last Modified: Tue, 21 Nov 2023 20:49:19 GMT  
-		Size: 2.2 MB (2171898 bytes)  
+	-	`sha256:65da2aa24f668478846cb08f92f17c03413b8a75ee2a75eb8ed5a2803e1171f4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:44 GMT  
+		Size: 2.2 MB (2171891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2.7-7.3-slim` - linux; 386
@@ -10784,7 +10784,7 @@ CMD ["pypy"]
 ## `pypy:2.7-7.3-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:565fe8bd0f8f3ec947afcaf0007cd63e703bd50e62a45dab195f4f649937cf97
+$ docker pull pypy@sha256:15b08e82d1e5094b14771fa44e0894127dc8aa421ba75bb9c5e5fcabffe3149b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10852,57 +10852,57 @@ CMD ["pypy"]
 ### `pypy:2.7-7.3-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:3b7473f579581598dbc9b5898b0be1c43bb5e589ce5c0bf3d7c66de1b5c6c0ea
+$ docker pull pypy@sha256:e87784d0765d7b929462408b02a63945099f1752cf048b2a838360c131b9b618
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **63.5 MB (63523970 bytes)**  
+-	Total Size: **63.5 MB (63496177 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ca2ebed01076fd50e04ce9199e21e2e3263d052cc15f24bde36e92fb0a1608a7`
+-	Image ID: `sha256:d494cbba96833436ab2f945e632f743baa1cb2374cf827e03d895c72a0067fbd`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:01 GMT
+# Tue, 19 Dec 2023 09:38:06 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:01 GMT
+# Tue, 19 Dec 2023 09:38:06 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b70d8cd54c73097b506e53b015c0300a64a6151c0d445d9ecc28d763a6167c1`  
-		Last Modified: Tue, 21 Nov 2023 20:48:32 GMT  
-		Size: 28.9 MB (28868058 bytes)  
+	-	`sha256:7bf40e05f01072382fad9038c1263dacfff3cffff50adc4ff64dfdee632182d4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:23 GMT  
+		Size: 28.9 MB (28866539 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3da2e66f45176fed50663ee700e14c465146c3c080a81788ac88d2847cc6ce0f`  
-		Last Modified: Tue, 21 Nov 2023 20:48:28 GMT  
-		Size: 2.2 MB (2159504 bytes)  
+	-	`sha256:8973baccf073e8d007207d07c67903bf4dedba9928c01495b32120b01199caf7`  
+		Last Modified: Tue, 19 Dec 2023 09:41:20 GMT  
+		Size: 2.2 MB (2158048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2.7-7.3-slim-bookworm` - linux; 386
@@ -10964,7 +10964,7 @@ CMD ["pypy"]
 ## `pypy:2.7-7.3-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:0d288f06880433eca2228ec1e4fa1b5f1c08a73c6b5896e22a6c02994e2facc9
+$ docker pull pypy@sha256:0fffc356bba8bc46bb11f862e114cb4eec15c324267be4534f81189b50545b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11032,57 +11032,57 @@ CMD ["pypy"]
 ### `pypy:2.7-7.3-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a990c97132493501b5c4225ee8a927e8427138a6bd14bf3a7028e4c151e88c6f
+$ docker pull pypy@sha256:021adeba7c86899eb3a6e8137f7b99dc1fc78f1ecb16f7a644c56457b487671c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62172232 bytes)**  
+-	Total Size: **62.2 MB (62172172 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0ca025c66f86156facc2914eac34af489c183b0163f1caf314163c95a09a93`
+-	Image ID: `sha256:0fa5b52dffd4a7efdb1601196aab38ac9fad37a6a886694c04188cfc080624cb`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:21 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:43:36 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d423b9fab1fc6b2e095367a4e9ec55ae6bb340cceeabde7cc8a26604a530a141`  
-		Last Modified: Tue, 21 Nov 2023 20:49:22 GMT  
-		Size: 28.9 MB (28880462 bytes)  
+	-	`sha256:d5fe7ed2ddaec6e07982f60463a0a413cbf56ebe805eaeeeb8fdce5f06fc9de2`  
+		Last Modified: Tue, 19 Dec 2023 09:41:48 GMT  
+		Size: 28.9 MB (28880458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b18b9ca2e92abb1f4b922031ed38fc7ee32f2853431c4d56f6b05ba684a926`  
-		Last Modified: Tue, 21 Nov 2023 20:49:19 GMT  
-		Size: 2.2 MB (2171898 bytes)  
+	-	`sha256:65da2aa24f668478846cb08f92f17c03413b8a75ee2a75eb8ed5a2803e1171f4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:44 GMT  
+		Size: 2.2 MB (2171891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2.7-7.3-slim-bullseye` - linux; 386
@@ -12425,7 +12425,7 @@ CMD ["pypy"]
 ## `pypy:2.7-7.3.13-slim`
 
 ```console
-$ docker pull pypy@sha256:0d288f06880433eca2228ec1e4fa1b5f1c08a73c6b5896e22a6c02994e2facc9
+$ docker pull pypy@sha256:0fffc356bba8bc46bb11f862e114cb4eec15c324267be4534f81189b50545b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12493,57 +12493,57 @@ CMD ["pypy"]
 ### `pypy:2.7-7.3.13-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a990c97132493501b5c4225ee8a927e8427138a6bd14bf3a7028e4c151e88c6f
+$ docker pull pypy@sha256:021adeba7c86899eb3a6e8137f7b99dc1fc78f1ecb16f7a644c56457b487671c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62172232 bytes)**  
+-	Total Size: **62.2 MB (62172172 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0ca025c66f86156facc2914eac34af489c183b0163f1caf314163c95a09a93`
+-	Image ID: `sha256:0fa5b52dffd4a7efdb1601196aab38ac9fad37a6a886694c04188cfc080624cb`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:21 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:43:36 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d423b9fab1fc6b2e095367a4e9ec55ae6bb340cceeabde7cc8a26604a530a141`  
-		Last Modified: Tue, 21 Nov 2023 20:49:22 GMT  
-		Size: 28.9 MB (28880462 bytes)  
+	-	`sha256:d5fe7ed2ddaec6e07982f60463a0a413cbf56ebe805eaeeeb8fdce5f06fc9de2`  
+		Last Modified: Tue, 19 Dec 2023 09:41:48 GMT  
+		Size: 28.9 MB (28880458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b18b9ca2e92abb1f4b922031ed38fc7ee32f2853431c4d56f6b05ba684a926`  
-		Last Modified: Tue, 21 Nov 2023 20:49:19 GMT  
-		Size: 2.2 MB (2171898 bytes)  
+	-	`sha256:65da2aa24f668478846cb08f92f17c03413b8a75ee2a75eb8ed5a2803e1171f4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:44 GMT  
+		Size: 2.2 MB (2171891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2.7-7.3.13-slim` - linux; 386
@@ -12605,7 +12605,7 @@ CMD ["pypy"]
 ## `pypy:2.7-7.3.13-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:565fe8bd0f8f3ec947afcaf0007cd63e703bd50e62a45dab195f4f649937cf97
+$ docker pull pypy@sha256:15b08e82d1e5094b14771fa44e0894127dc8aa421ba75bb9c5e5fcabffe3149b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12673,57 +12673,57 @@ CMD ["pypy"]
 ### `pypy:2.7-7.3.13-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:3b7473f579581598dbc9b5898b0be1c43bb5e589ce5c0bf3d7c66de1b5c6c0ea
+$ docker pull pypy@sha256:e87784d0765d7b929462408b02a63945099f1752cf048b2a838360c131b9b618
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **63.5 MB (63523970 bytes)**  
+-	Total Size: **63.5 MB (63496177 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ca2ebed01076fd50e04ce9199e21e2e3263d052cc15f24bde36e92fb0a1608a7`
+-	Image ID: `sha256:d494cbba96833436ab2f945e632f743baa1cb2374cf827e03d895c72a0067fbd`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:01 GMT
+# Tue, 19 Dec 2023 09:38:06 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:01 GMT
+# Tue, 19 Dec 2023 09:38:06 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b70d8cd54c73097b506e53b015c0300a64a6151c0d445d9ecc28d763a6167c1`  
-		Last Modified: Tue, 21 Nov 2023 20:48:32 GMT  
-		Size: 28.9 MB (28868058 bytes)  
+	-	`sha256:7bf40e05f01072382fad9038c1263dacfff3cffff50adc4ff64dfdee632182d4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:23 GMT  
+		Size: 28.9 MB (28866539 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3da2e66f45176fed50663ee700e14c465146c3c080a81788ac88d2847cc6ce0f`  
-		Last Modified: Tue, 21 Nov 2023 20:48:28 GMT  
-		Size: 2.2 MB (2159504 bytes)  
+	-	`sha256:8973baccf073e8d007207d07c67903bf4dedba9928c01495b32120b01199caf7`  
+		Last Modified: Tue, 19 Dec 2023 09:41:20 GMT  
+		Size: 2.2 MB (2158048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2.7-7.3.13-slim-bookworm` - linux; 386
@@ -12785,7 +12785,7 @@ CMD ["pypy"]
 ## `pypy:2.7-7.3.13-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:0d288f06880433eca2228ec1e4fa1b5f1c08a73c6b5896e22a6c02994e2facc9
+$ docker pull pypy@sha256:0fffc356bba8bc46bb11f862e114cb4eec15c324267be4534f81189b50545b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12853,57 +12853,57 @@ CMD ["pypy"]
 ### `pypy:2.7-7.3.13-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a990c97132493501b5c4225ee8a927e8427138a6bd14bf3a7028e4c151e88c6f
+$ docker pull pypy@sha256:021adeba7c86899eb3a6e8137f7b99dc1fc78f1ecb16f7a644c56457b487671c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62172232 bytes)**  
+-	Total Size: **62.2 MB (62172172 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0ca025c66f86156facc2914eac34af489c183b0163f1caf314163c95a09a93`
+-	Image ID: `sha256:0fa5b52dffd4a7efdb1601196aab38ac9fad37a6a886694c04188cfc080624cb`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:21 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:43:36 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d423b9fab1fc6b2e095367a4e9ec55ae6bb340cceeabde7cc8a26604a530a141`  
-		Last Modified: Tue, 21 Nov 2023 20:49:22 GMT  
-		Size: 28.9 MB (28880462 bytes)  
+	-	`sha256:d5fe7ed2ddaec6e07982f60463a0a413cbf56ebe805eaeeeb8fdce5f06fc9de2`  
+		Last Modified: Tue, 19 Dec 2023 09:41:48 GMT  
+		Size: 28.9 MB (28880458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b18b9ca2e92abb1f4b922031ed38fc7ee32f2853431c4d56f6b05ba684a926`  
-		Last Modified: Tue, 21 Nov 2023 20:49:19 GMT  
-		Size: 2.2 MB (2171898 bytes)  
+	-	`sha256:65da2aa24f668478846cb08f92f17c03413b8a75ee2a75eb8ed5a2803e1171f4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:44 GMT  
+		Size: 2.2 MB (2171891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2.7-7.3.13-slim-bullseye` - linux; 386
@@ -13828,7 +13828,7 @@ CMD ["pypy"]
 ## `pypy:2.7-slim`
 
 ```console
-$ docker pull pypy@sha256:0d288f06880433eca2228ec1e4fa1b5f1c08a73c6b5896e22a6c02994e2facc9
+$ docker pull pypy@sha256:0fffc356bba8bc46bb11f862e114cb4eec15c324267be4534f81189b50545b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13896,57 +13896,57 @@ CMD ["pypy"]
 ### `pypy:2.7-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a990c97132493501b5c4225ee8a927e8427138a6bd14bf3a7028e4c151e88c6f
+$ docker pull pypy@sha256:021adeba7c86899eb3a6e8137f7b99dc1fc78f1ecb16f7a644c56457b487671c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62172232 bytes)**  
+-	Total Size: **62.2 MB (62172172 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0ca025c66f86156facc2914eac34af489c183b0163f1caf314163c95a09a93`
+-	Image ID: `sha256:0fa5b52dffd4a7efdb1601196aab38ac9fad37a6a886694c04188cfc080624cb`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:21 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:43:36 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d423b9fab1fc6b2e095367a4e9ec55ae6bb340cceeabde7cc8a26604a530a141`  
-		Last Modified: Tue, 21 Nov 2023 20:49:22 GMT  
-		Size: 28.9 MB (28880462 bytes)  
+	-	`sha256:d5fe7ed2ddaec6e07982f60463a0a413cbf56ebe805eaeeeb8fdce5f06fc9de2`  
+		Last Modified: Tue, 19 Dec 2023 09:41:48 GMT  
+		Size: 28.9 MB (28880458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b18b9ca2e92abb1f4b922031ed38fc7ee32f2853431c4d56f6b05ba684a926`  
-		Last Modified: Tue, 21 Nov 2023 20:49:19 GMT  
-		Size: 2.2 MB (2171898 bytes)  
+	-	`sha256:65da2aa24f668478846cb08f92f17c03413b8a75ee2a75eb8ed5a2803e1171f4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:44 GMT  
+		Size: 2.2 MB (2171891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2.7-slim` - linux; 386
@@ -14008,7 +14008,7 @@ CMD ["pypy"]
 ## `pypy:2.7-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:565fe8bd0f8f3ec947afcaf0007cd63e703bd50e62a45dab195f4f649937cf97
+$ docker pull pypy@sha256:15b08e82d1e5094b14771fa44e0894127dc8aa421ba75bb9c5e5fcabffe3149b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14076,57 +14076,57 @@ CMD ["pypy"]
 ### `pypy:2.7-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:3b7473f579581598dbc9b5898b0be1c43bb5e589ce5c0bf3d7c66de1b5c6c0ea
+$ docker pull pypy@sha256:e87784d0765d7b929462408b02a63945099f1752cf048b2a838360c131b9b618
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **63.5 MB (63523970 bytes)**  
+-	Total Size: **63.5 MB (63496177 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ca2ebed01076fd50e04ce9199e21e2e3263d052cc15f24bde36e92fb0a1608a7`
+-	Image ID: `sha256:d494cbba96833436ab2f945e632f743baa1cb2374cf827e03d895c72a0067fbd`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:42:53 GMT
+# Tue, 19 Dec 2023 09:37:58 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:01 GMT
+# Tue, 19 Dec 2023 09:38:06 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:01 GMT
+# Tue, 19 Dec 2023 09:38:06 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b70d8cd54c73097b506e53b015c0300a64a6151c0d445d9ecc28d763a6167c1`  
-		Last Modified: Tue, 21 Nov 2023 20:48:32 GMT  
-		Size: 28.9 MB (28868058 bytes)  
+	-	`sha256:7bf40e05f01072382fad9038c1263dacfff3cffff50adc4ff64dfdee632182d4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:23 GMT  
+		Size: 28.9 MB (28866539 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3da2e66f45176fed50663ee700e14c465146c3c080a81788ac88d2847cc6ce0f`  
-		Last Modified: Tue, 21 Nov 2023 20:48:28 GMT  
-		Size: 2.2 MB (2159504 bytes)  
+	-	`sha256:8973baccf073e8d007207d07c67903bf4dedba9928c01495b32120b01199caf7`  
+		Last Modified: Tue, 19 Dec 2023 09:41:20 GMT  
+		Size: 2.2 MB (2158048 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2.7-slim-bookworm` - linux; 386
@@ -14188,7 +14188,7 @@ CMD ["pypy"]
 ## `pypy:2.7-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:0d288f06880433eca2228ec1e4fa1b5f1c08a73c6b5896e22a6c02994e2facc9
+$ docker pull pypy@sha256:0fffc356bba8bc46bb11f862e114cb4eec15c324267be4534f81189b50545b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14256,57 +14256,57 @@ CMD ["pypy"]
 ### `pypy:2.7-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a990c97132493501b5c4225ee8a927e8427138a6bd14bf3a7028e4c151e88c6f
+$ docker pull pypy@sha256:021adeba7c86899eb3a6e8137f7b99dc1fc78f1ecb16f7a644c56457b487671c
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62172232 bytes)**  
+-	Total Size: **62.2 MB (62172172 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c0ca025c66f86156facc2914eac34af489c183b0163f1caf314163c95a09a93`
+-	Image ID: `sha256:0fa5b52dffd4a7efdb1601196aab38ac9fad37a6a886694c04188cfc080624cb`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:21 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2'; 			sha256='e41ceb5dc6c4d3a9311ed5f88edfeedbf3e8abbd1ed3c4f2e151a90a5cf4e1d7'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-aarch64.tar.bz2'; 			sha256='f1e20f833cc86a097c1f1318069fc17d01c3988678c1438fe27ed567fcb5cfd0'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux32.tar.bz2'; 			sha256='b727d2e759a740f45bab1e333029d001c4384b52949bcbb4bd2ad7912eae8dad'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy2.7-v7.3.13-s390x.tar.bz2'; 			sha256='fbb2f3d92831c02b094f17e9609b95a6202d4bdcddae437e380ab14388d4556e'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy' /usr/local/bin/; 		pypy --version; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:43:35 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:43:36 GMT
+# Tue, 19 Dec 2023 09:38:22 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:43:44 GMT
+# Tue, 19 Dec 2023 09:38:29 GMT
 CMD ["pypy"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d423b9fab1fc6b2e095367a4e9ec55ae6bb340cceeabde7cc8a26604a530a141`  
-		Last Modified: Tue, 21 Nov 2023 20:49:22 GMT  
-		Size: 28.9 MB (28880462 bytes)  
+	-	`sha256:d5fe7ed2ddaec6e07982f60463a0a413cbf56ebe805eaeeeb8fdce5f06fc9de2`  
+		Last Modified: Tue, 19 Dec 2023 09:41:48 GMT  
+		Size: 28.9 MB (28880458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b18b9ca2e92abb1f4b922031ed38fc7ee32f2853431c4d56f6b05ba684a926`  
-		Last Modified: Tue, 21 Nov 2023 20:49:19 GMT  
-		Size: 2.2 MB (2171898 bytes)  
+	-	`sha256:65da2aa24f668478846cb08f92f17c03413b8a75ee2a75eb8ed5a2803e1171f4`  
+		Last Modified: Tue, 19 Dec 2023 09:41:44 GMT  
+		Size: 2.2 MB (2171891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2.7-slim-bullseye` - linux; 386
@@ -16043,7 +16043,7 @@ CMD ["pypy3"]
 ## `pypy:3-7-slim`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16111,57 +16111,57 @@ CMD ["pypy3"]
 ### `pypy:3-7-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3-7-slim` - linux; 386
@@ -16223,7 +16223,7 @@ CMD ["pypy3"]
 ## `pypy:3-7-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:cbe345489160f3722fb4b23de0857556bde535653ff0a1d5dc805459ae87ae43
+$ docker pull pypy@sha256:979a18f6df7f52fdab227078300c98c4c0fa641c557f6526c6af0d2e1e1c8f01
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16291,57 +16291,57 @@ CMD ["pypy3"]
 ### `pypy:3-7-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:c0fab5ae7e502ed012dd2a6b59bfe0e98f69609f2b77c86406ffd3f975d8252c
+$ docker pull pypy@sha256:757edfc4be8a46bb978b4a99502b6c10ad342f6ddcfabe0773e0583cff202002
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.5 MB (69476611 bytes)**  
+-	Total Size: **69.4 MB (69449178 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b37871717dbda4b87177d621802fd64f72e8a0bf1b22676cc634112883981b6d`
+-	Image ID: `sha256:2fc69a6ceef3243cb780c301a4db13d13965ecf7750f54d71112eb0d724b9d2b`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:38:23 GMT
+# Tue, 19 Dec 2023 09:34:59 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:38:35 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:38:36 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:215f9e967bac812ef423ef88297d42ba5c839f28e10e552269e61ba64a1d902d`  
-		Last Modified: Tue, 21 Nov 2023 20:45:17 GMT  
-		Size: 33.5 MB (33466352 bytes)  
+	-	`sha256:4a352305bbbd66a7d29f1a3984e28818a84a2a04861eca3d6ff57f59875b5877`  
+		Last Modified: Tue, 19 Dec 2023 09:39:30 GMT  
+		Size: 33.5 MB (33465308 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:760e380623e0ef627647ce3b644825e353aa4d11db61e264a67ae8d1e3b7ddcc`  
-		Last Modified: Tue, 21 Nov 2023 20:45:14 GMT  
-		Size: 3.5 MB (3513851 bytes)  
+	-	`sha256:1d7883d91504b577b50d5d1e704d116168df4aeadad4fd8ce1c886bd3125db55`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.5 MB (3512280 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3-7-slim-bookworm` - linux; 386
@@ -16403,7 +16403,7 @@ CMD ["pypy3"]
 ## `pypy:3-7-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16471,57 +16471,57 @@ CMD ["pypy3"]
 ### `pypy:3-7-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3-7-slim-bullseye` - linux; 386
@@ -17828,7 +17828,7 @@ CMD ["pypy3"]
 ## `pypy:3-7.3-slim`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -17896,57 +17896,57 @@ CMD ["pypy3"]
 ### `pypy:3-7.3-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3-7.3-slim` - linux; 386
@@ -18008,7 +18008,7 @@ CMD ["pypy3"]
 ## `pypy:3-7.3-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:cbe345489160f3722fb4b23de0857556bde535653ff0a1d5dc805459ae87ae43
+$ docker pull pypy@sha256:979a18f6df7f52fdab227078300c98c4c0fa641c557f6526c6af0d2e1e1c8f01
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18076,57 +18076,57 @@ CMD ["pypy3"]
 ### `pypy:3-7.3-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:c0fab5ae7e502ed012dd2a6b59bfe0e98f69609f2b77c86406ffd3f975d8252c
+$ docker pull pypy@sha256:757edfc4be8a46bb978b4a99502b6c10ad342f6ddcfabe0773e0583cff202002
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.5 MB (69476611 bytes)**  
+-	Total Size: **69.4 MB (69449178 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b37871717dbda4b87177d621802fd64f72e8a0bf1b22676cc634112883981b6d`
+-	Image ID: `sha256:2fc69a6ceef3243cb780c301a4db13d13965ecf7750f54d71112eb0d724b9d2b`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:38:23 GMT
+# Tue, 19 Dec 2023 09:34:59 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:38:35 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:38:36 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:215f9e967bac812ef423ef88297d42ba5c839f28e10e552269e61ba64a1d902d`  
-		Last Modified: Tue, 21 Nov 2023 20:45:17 GMT  
-		Size: 33.5 MB (33466352 bytes)  
+	-	`sha256:4a352305bbbd66a7d29f1a3984e28818a84a2a04861eca3d6ff57f59875b5877`  
+		Last Modified: Tue, 19 Dec 2023 09:39:30 GMT  
+		Size: 33.5 MB (33465308 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:760e380623e0ef627647ce3b644825e353aa4d11db61e264a67ae8d1e3b7ddcc`  
-		Last Modified: Tue, 21 Nov 2023 20:45:14 GMT  
-		Size: 3.5 MB (3513851 bytes)  
+	-	`sha256:1d7883d91504b577b50d5d1e704d116168df4aeadad4fd8ce1c886bd3125db55`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.5 MB (3512280 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3-7.3-slim-bookworm` - linux; 386
@@ -18188,7 +18188,7 @@ CMD ["pypy3"]
 ## `pypy:3-7.3-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18256,57 +18256,57 @@ CMD ["pypy3"]
 ### `pypy:3-7.3-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3-7.3-slim-bullseye` - linux; 386
@@ -19613,7 +19613,7 @@ CMD ["pypy3"]
 ## `pypy:3-7.3.13-slim`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -19681,57 +19681,57 @@ CMD ["pypy3"]
 ### `pypy:3-7.3.13-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3-7.3.13-slim` - linux; 386
@@ -19793,7 +19793,7 @@ CMD ["pypy3"]
 ## `pypy:3-7.3.13-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:cbe345489160f3722fb4b23de0857556bde535653ff0a1d5dc805459ae87ae43
+$ docker pull pypy@sha256:979a18f6df7f52fdab227078300c98c4c0fa641c557f6526c6af0d2e1e1c8f01
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -19861,57 +19861,57 @@ CMD ["pypy3"]
 ### `pypy:3-7.3.13-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:c0fab5ae7e502ed012dd2a6b59bfe0e98f69609f2b77c86406ffd3f975d8252c
+$ docker pull pypy@sha256:757edfc4be8a46bb978b4a99502b6c10ad342f6ddcfabe0773e0583cff202002
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.5 MB (69476611 bytes)**  
+-	Total Size: **69.4 MB (69449178 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b37871717dbda4b87177d621802fd64f72e8a0bf1b22676cc634112883981b6d`
+-	Image ID: `sha256:2fc69a6ceef3243cb780c301a4db13d13965ecf7750f54d71112eb0d724b9d2b`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:38:23 GMT
+# Tue, 19 Dec 2023 09:34:59 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:38:35 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:38:36 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:215f9e967bac812ef423ef88297d42ba5c839f28e10e552269e61ba64a1d902d`  
-		Last Modified: Tue, 21 Nov 2023 20:45:17 GMT  
-		Size: 33.5 MB (33466352 bytes)  
+	-	`sha256:4a352305bbbd66a7d29f1a3984e28818a84a2a04861eca3d6ff57f59875b5877`  
+		Last Modified: Tue, 19 Dec 2023 09:39:30 GMT  
+		Size: 33.5 MB (33465308 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:760e380623e0ef627647ce3b644825e353aa4d11db61e264a67ae8d1e3b7ddcc`  
-		Last Modified: Tue, 21 Nov 2023 20:45:14 GMT  
-		Size: 3.5 MB (3513851 bytes)  
+	-	`sha256:1d7883d91504b577b50d5d1e704d116168df4aeadad4fd8ce1c886bd3125db55`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.5 MB (3512280 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3-7.3.13-slim-bookworm` - linux; 386
@@ -19973,7 +19973,7 @@ CMD ["pypy3"]
 ## `pypy:3-7.3.13-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -20041,57 +20041,57 @@ CMD ["pypy3"]
 ### `pypy:3-7.3.13-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3-7.3.13-slim-bullseye` - linux; 386
@@ -20992,7 +20992,7 @@ CMD ["pypy3"]
 ## `pypy:3-slim`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -21060,57 +21060,57 @@ CMD ["pypy3"]
 ### `pypy:3-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3-slim` - linux; 386
@@ -21172,7 +21172,7 @@ CMD ["pypy3"]
 ## `pypy:3-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:cbe345489160f3722fb4b23de0857556bde535653ff0a1d5dc805459ae87ae43
+$ docker pull pypy@sha256:979a18f6df7f52fdab227078300c98c4c0fa641c557f6526c6af0d2e1e1c8f01
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -21240,57 +21240,57 @@ CMD ["pypy3"]
 ### `pypy:3-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:c0fab5ae7e502ed012dd2a6b59bfe0e98f69609f2b77c86406ffd3f975d8252c
+$ docker pull pypy@sha256:757edfc4be8a46bb978b4a99502b6c10ad342f6ddcfabe0773e0583cff202002
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.5 MB (69476611 bytes)**  
+-	Total Size: **69.4 MB (69449178 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b37871717dbda4b87177d621802fd64f72e8a0bf1b22676cc634112883981b6d`
+-	Image ID: `sha256:2fc69a6ceef3243cb780c301a4db13d13965ecf7750f54d71112eb0d724b9d2b`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:38:23 GMT
+# Tue, 19 Dec 2023 09:34:59 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:38:35 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:38:36 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:215f9e967bac812ef423ef88297d42ba5c839f28e10e552269e61ba64a1d902d`  
-		Last Modified: Tue, 21 Nov 2023 20:45:17 GMT  
-		Size: 33.5 MB (33466352 bytes)  
+	-	`sha256:4a352305bbbd66a7d29f1a3984e28818a84a2a04861eca3d6ff57f59875b5877`  
+		Last Modified: Tue, 19 Dec 2023 09:39:30 GMT  
+		Size: 33.5 MB (33465308 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:760e380623e0ef627647ce3b644825e353aa4d11db61e264a67ae8d1e3b7ddcc`  
-		Last Modified: Tue, 21 Nov 2023 20:45:14 GMT  
-		Size: 3.5 MB (3513851 bytes)  
+	-	`sha256:1d7883d91504b577b50d5d1e704d116168df4aeadad4fd8ce1c886bd3125db55`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.5 MB (3512280 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3-slim-bookworm` - linux; 386
@@ -21352,7 +21352,7 @@ CMD ["pypy3"]
 ## `pypy:3-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -21420,57 +21420,57 @@ CMD ["pypy3"]
 ### `pypy:3-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3-slim-bullseye` - linux; 386
@@ -23183,7 +23183,7 @@ CMD ["pypy3"]
 ## `pypy:3.10-7-slim`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -23251,57 +23251,57 @@ CMD ["pypy3"]
 ### `pypy:3.10-7-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.10-7-slim` - linux; 386
@@ -23363,7 +23363,7 @@ CMD ["pypy3"]
 ## `pypy:3.10-7-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:cbe345489160f3722fb4b23de0857556bde535653ff0a1d5dc805459ae87ae43
+$ docker pull pypy@sha256:979a18f6df7f52fdab227078300c98c4c0fa641c557f6526c6af0d2e1e1c8f01
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -23431,57 +23431,57 @@ CMD ["pypy3"]
 ### `pypy:3.10-7-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:c0fab5ae7e502ed012dd2a6b59bfe0e98f69609f2b77c86406ffd3f975d8252c
+$ docker pull pypy@sha256:757edfc4be8a46bb978b4a99502b6c10ad342f6ddcfabe0773e0583cff202002
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.5 MB (69476611 bytes)**  
+-	Total Size: **69.4 MB (69449178 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b37871717dbda4b87177d621802fd64f72e8a0bf1b22676cc634112883981b6d`
+-	Image ID: `sha256:2fc69a6ceef3243cb780c301a4db13d13965ecf7750f54d71112eb0d724b9d2b`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:38:23 GMT
+# Tue, 19 Dec 2023 09:34:59 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:38:35 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:38:36 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:215f9e967bac812ef423ef88297d42ba5c839f28e10e552269e61ba64a1d902d`  
-		Last Modified: Tue, 21 Nov 2023 20:45:17 GMT  
-		Size: 33.5 MB (33466352 bytes)  
+	-	`sha256:4a352305bbbd66a7d29f1a3984e28818a84a2a04861eca3d6ff57f59875b5877`  
+		Last Modified: Tue, 19 Dec 2023 09:39:30 GMT  
+		Size: 33.5 MB (33465308 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:760e380623e0ef627647ce3b644825e353aa4d11db61e264a67ae8d1e3b7ddcc`  
-		Last Modified: Tue, 21 Nov 2023 20:45:14 GMT  
-		Size: 3.5 MB (3513851 bytes)  
+	-	`sha256:1d7883d91504b577b50d5d1e704d116168df4aeadad4fd8ce1c886bd3125db55`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.5 MB (3512280 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.10-7-slim-bookworm` - linux; 386
@@ -23543,7 +23543,7 @@ CMD ["pypy3"]
 ## `pypy:3.10-7-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -23611,57 +23611,57 @@ CMD ["pypy3"]
 ### `pypy:3.10-7-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.10-7-slim-bullseye` - linux; 386
@@ -24968,7 +24968,7 @@ CMD ["pypy3"]
 ## `pypy:3.10-7.3-slim`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -25036,57 +25036,57 @@ CMD ["pypy3"]
 ### `pypy:3.10-7.3-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.10-7.3-slim` - linux; 386
@@ -25148,7 +25148,7 @@ CMD ["pypy3"]
 ## `pypy:3.10-7.3-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:cbe345489160f3722fb4b23de0857556bde535653ff0a1d5dc805459ae87ae43
+$ docker pull pypy@sha256:979a18f6df7f52fdab227078300c98c4c0fa641c557f6526c6af0d2e1e1c8f01
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -25216,57 +25216,57 @@ CMD ["pypy3"]
 ### `pypy:3.10-7.3-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:c0fab5ae7e502ed012dd2a6b59bfe0e98f69609f2b77c86406ffd3f975d8252c
+$ docker pull pypy@sha256:757edfc4be8a46bb978b4a99502b6c10ad342f6ddcfabe0773e0583cff202002
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.5 MB (69476611 bytes)**  
+-	Total Size: **69.4 MB (69449178 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b37871717dbda4b87177d621802fd64f72e8a0bf1b22676cc634112883981b6d`
+-	Image ID: `sha256:2fc69a6ceef3243cb780c301a4db13d13965ecf7750f54d71112eb0d724b9d2b`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:38:23 GMT
+# Tue, 19 Dec 2023 09:34:59 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:38:35 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:38:36 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:215f9e967bac812ef423ef88297d42ba5c839f28e10e552269e61ba64a1d902d`  
-		Last Modified: Tue, 21 Nov 2023 20:45:17 GMT  
-		Size: 33.5 MB (33466352 bytes)  
+	-	`sha256:4a352305bbbd66a7d29f1a3984e28818a84a2a04861eca3d6ff57f59875b5877`  
+		Last Modified: Tue, 19 Dec 2023 09:39:30 GMT  
+		Size: 33.5 MB (33465308 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:760e380623e0ef627647ce3b644825e353aa4d11db61e264a67ae8d1e3b7ddcc`  
-		Last Modified: Tue, 21 Nov 2023 20:45:14 GMT  
-		Size: 3.5 MB (3513851 bytes)  
+	-	`sha256:1d7883d91504b577b50d5d1e704d116168df4aeadad4fd8ce1c886bd3125db55`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.5 MB (3512280 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.10-7.3-slim-bookworm` - linux; 386
@@ -25328,7 +25328,7 @@ CMD ["pypy3"]
 ## `pypy:3.10-7.3-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -25396,57 +25396,57 @@ CMD ["pypy3"]
 ### `pypy:3.10-7.3-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.10-7.3-slim-bullseye` - linux; 386
@@ -26753,7 +26753,7 @@ CMD ["pypy3"]
 ## `pypy:3.10-7.3.13-slim`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -26821,57 +26821,57 @@ CMD ["pypy3"]
 ### `pypy:3.10-7.3.13-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.10-7.3.13-slim` - linux; 386
@@ -26933,7 +26933,7 @@ CMD ["pypy3"]
 ## `pypy:3.10-7.3.13-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:cbe345489160f3722fb4b23de0857556bde535653ff0a1d5dc805459ae87ae43
+$ docker pull pypy@sha256:979a18f6df7f52fdab227078300c98c4c0fa641c557f6526c6af0d2e1e1c8f01
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -27001,57 +27001,57 @@ CMD ["pypy3"]
 ### `pypy:3.10-7.3.13-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:c0fab5ae7e502ed012dd2a6b59bfe0e98f69609f2b77c86406ffd3f975d8252c
+$ docker pull pypy@sha256:757edfc4be8a46bb978b4a99502b6c10ad342f6ddcfabe0773e0583cff202002
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.5 MB (69476611 bytes)**  
+-	Total Size: **69.4 MB (69449178 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b37871717dbda4b87177d621802fd64f72e8a0bf1b22676cc634112883981b6d`
+-	Image ID: `sha256:2fc69a6ceef3243cb780c301a4db13d13965ecf7750f54d71112eb0d724b9d2b`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:38:23 GMT
+# Tue, 19 Dec 2023 09:34:59 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:38:35 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:38:36 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:215f9e967bac812ef423ef88297d42ba5c839f28e10e552269e61ba64a1d902d`  
-		Last Modified: Tue, 21 Nov 2023 20:45:17 GMT  
-		Size: 33.5 MB (33466352 bytes)  
+	-	`sha256:4a352305bbbd66a7d29f1a3984e28818a84a2a04861eca3d6ff57f59875b5877`  
+		Last Modified: Tue, 19 Dec 2023 09:39:30 GMT  
+		Size: 33.5 MB (33465308 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:760e380623e0ef627647ce3b644825e353aa4d11db61e264a67ae8d1e3b7ddcc`  
-		Last Modified: Tue, 21 Nov 2023 20:45:14 GMT  
-		Size: 3.5 MB (3513851 bytes)  
+	-	`sha256:1d7883d91504b577b50d5d1e704d116168df4aeadad4fd8ce1c886bd3125db55`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.5 MB (3512280 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.10-7.3.13-slim-bookworm` - linux; 386
@@ -27113,7 +27113,7 @@ CMD ["pypy3"]
 ## `pypy:3.10-7.3.13-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -27181,57 +27181,57 @@ CMD ["pypy3"]
 ### `pypy:3.10-7.3.13-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.10-7.3.13-slim-bullseye` - linux; 386
@@ -28132,7 +28132,7 @@ CMD ["pypy3"]
 ## `pypy:3.10-slim`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -28200,57 +28200,57 @@ CMD ["pypy3"]
 ### `pypy:3.10-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.10-slim` - linux; 386
@@ -28312,7 +28312,7 @@ CMD ["pypy3"]
 ## `pypy:3.10-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:cbe345489160f3722fb4b23de0857556bde535653ff0a1d5dc805459ae87ae43
+$ docker pull pypy@sha256:979a18f6df7f52fdab227078300c98c4c0fa641c557f6526c6af0d2e1e1c8f01
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -28380,57 +28380,57 @@ CMD ["pypy3"]
 ### `pypy:3.10-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:c0fab5ae7e502ed012dd2a6b59bfe0e98f69609f2b77c86406ffd3f975d8252c
+$ docker pull pypy@sha256:757edfc4be8a46bb978b4a99502b6c10ad342f6ddcfabe0773e0583cff202002
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.5 MB (69476611 bytes)**  
+-	Total Size: **69.4 MB (69449178 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b37871717dbda4b87177d621802fd64f72e8a0bf1b22676cc634112883981b6d`
+-	Image ID: `sha256:2fc69a6ceef3243cb780c301a4db13d13965ecf7750f54d71112eb0d724b9d2b`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:38:23 GMT
+# Tue, 19 Dec 2023 09:34:59 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:38:35 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:38:36 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:215f9e967bac812ef423ef88297d42ba5c839f28e10e552269e61ba64a1d902d`  
-		Last Modified: Tue, 21 Nov 2023 20:45:17 GMT  
-		Size: 33.5 MB (33466352 bytes)  
+	-	`sha256:4a352305bbbd66a7d29f1a3984e28818a84a2a04861eca3d6ff57f59875b5877`  
+		Last Modified: Tue, 19 Dec 2023 09:39:30 GMT  
+		Size: 33.5 MB (33465308 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:760e380623e0ef627647ce3b644825e353aa4d11db61e264a67ae8d1e3b7ddcc`  
-		Last Modified: Tue, 21 Nov 2023 20:45:14 GMT  
-		Size: 3.5 MB (3513851 bytes)  
+	-	`sha256:1d7883d91504b577b50d5d1e704d116168df4aeadad4fd8ce1c886bd3125db55`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.5 MB (3512280 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.10-slim-bookworm` - linux; 386
@@ -28492,7 +28492,7 @@ CMD ["pypy3"]
 ## `pypy:3.10-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -28560,57 +28560,57 @@ CMD ["pypy3"]
 ### `pypy:3.10-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.10-slim-bullseye` - linux; 386
@@ -30323,7 +30323,7 @@ CMD ["pypy3"]
 ## `pypy:3.9-7-slim`
 
 ```console
-$ docker pull pypy@sha256:744bbfe00ddf73993645214247a223d2bb026583fb04c60414da68a6d215f611
+$ docker pull pypy@sha256:6fbeb915624af1efba7fc4c966834e09c65dcc91d7098a1f44fdee43a0d9c698
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -30391,57 +30391,57 @@ CMD ["pypy3"]
 ### `pypy:3.9-7-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:927bf6b32c7c06bf5b063a05727f9f3a6df8a16777f8922d80496d2609704d75
+$ docker pull pypy@sha256:518d0ce60c554491e5dc1c6e717e04bab767549178d1bfdae3bb163bde00c63f
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67819190 bytes)**  
+-	Total Size: **67.8 MB (67818517 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3785838f2f20dee21185d6070f8d73a6bd9dc90fe2eeb90abfb13303f59968ce`
+-	Image ID: `sha256:c68e1a6655cd1e515af5034ff81a171c660ad764b52cab2564821af4f05086a4`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:42:02 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux64.tar.bz2'; 			sha256='323b05a9f607e932cda1995cbe77a96e4ea35994631aa6d734c8035e8479b74e'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-aarch64.tar.bz2'; 			sha256='317d7876c5825a086f854253648b967a432b993ce87695d2895d3ad6ed0d2716'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux32.tar.bz2'; 			sha256='ac695238b4a3635ac6b482e74e04e2ea78b31acca0decd5de601dfd2f4ebf35a'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-s390x.tar.bz2'; 			sha256='213c88f652a99c4dc4e8e00b4b5b58f381c7f7e9ea1a9b65801fc0eb1e50df0a'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.9; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:42:03 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:42:03 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:42:14 GMT
+# Tue, 19 Dec 2023 09:37:39 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:42:14 GMT
+# Tue, 19 Dec 2023 09:37:40 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aece2152647e71d9801afbc8f1c838e6f66c77834c61d4f1be4fc32b87f2c14`  
-		Last Modified: Tue, 21 Nov 2023 20:47:44 GMT  
-		Size: 33.6 MB (33567603 bytes)  
+	-	`sha256:d192a3b9f7c6e017bc849dc6f4ffced20e95ba82e68262a2c44bae4ff31f0326`  
+		Last Modified: Tue, 19 Dec 2023 09:40:57 GMT  
+		Size: 33.6 MB (33567600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5fbe3f7823239f3dd62cdd6b94bc775084cb238212d7e62beeae3c3b94edd11f`  
-		Last Modified: Tue, 21 Nov 2023 20:47:40 GMT  
-		Size: 3.1 MB (3131715 bytes)  
+	-	`sha256:be9d43301e94e47603dc4e09d001bc8263520c4cb947016bbdc855489540507d`  
+		Last Modified: Tue, 19 Dec 2023 09:40:53 GMT  
+		Size: 3.1 MB (3131094 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.9-7-slim` - linux; 386
@@ -30503,7 +30503,7 @@ CMD ["pypy3"]
 ## `pypy:3.9-7-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:773e86e5b14a2b538881bd272676f15e0ab61c6f280030e4ad6a0cf3d9dc7e50
+$ docker pull pypy@sha256:9e84b0d5c6fe5deffc14181cec71d7a8850b378ceab53defa95f3e07dd0f1873
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -30571,57 +30571,57 @@ CMD ["pypy3"]
 ### `pypy:3.9-7-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a9262bd27f1a07250b2fc8942b0f9a9541d93ef2fe1a0172ffeadf0fe65330ff
+$ docker pull pypy@sha256:518523263a9e717a5cc02bebe6755bd103c3b92b972c6b3458a166b0342d5cea
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.4 MB (69446317 bytes)**  
+-	Total Size: **69.4 MB (69418778 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:40c5143facdb4c3e2a243c11b4649f42bf6015c738dd0233df02b7b5938b6486`
+-	Image ID: `sha256:42028c25ff399a1dea8933051b2b0e14860061472d51ce5bd5a1b9d809c5102c`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:40:56 GMT
+# Tue, 19 Dec 2023 09:36:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux64.tar.bz2'; 			sha256='323b05a9f607e932cda1995cbe77a96e4ea35994631aa6d734c8035e8479b74e'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-aarch64.tar.bz2'; 			sha256='317d7876c5825a086f854253648b967a432b993ce87695d2895d3ad6ed0d2716'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux32.tar.bz2'; 			sha256='ac695238b4a3635ac6b482e74e04e2ea78b31acca0decd5de601dfd2f4ebf35a'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-s390x.tar.bz2'; 			sha256='213c88f652a99c4dc4e8e00b4b5b58f381c7f7e9ea1a9b65801fc0eb1e50df0a'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.9; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:40:57 GMT
+# Tue, 19 Dec 2023 09:36:42 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:40:57 GMT
+# Tue, 19 Dec 2023 09:36:42 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:41:08 GMT
+# Tue, 19 Dec 2023 09:36:53 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:41:08 GMT
+# Tue, 19 Dec 2023 09:36:53 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:43a0716e404a207c955451826fe6d8332df2113d3c00ee1c41d7d0c6908524db`  
-		Last Modified: Tue, 21 Nov 2023 20:47:11 GMT  
-		Size: 33.8 MB (33823802 bytes)  
+	-	`sha256:fe407c6611c9628a79418d355ef7daf29c78a4514ca1518aab209bd4beebdca7`  
+		Last Modified: Tue, 19 Dec 2023 09:40:39 GMT  
+		Size: 33.8 MB (33822683 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01ffd6f047cafb0e0e188e573fa51bd7f0ec79ac6770e7aa72ab38b5c1a929ec`  
-		Last Modified: Tue, 21 Nov 2023 20:47:07 GMT  
-		Size: 3.1 MB (3126107 bytes)  
+	-	`sha256:876aebeaf37d984cdb23444d83b7cb7c2c545a0182738a41691dc7faf14897c0`  
+		Last Modified: Tue, 19 Dec 2023 09:40:35 GMT  
+		Size: 3.1 MB (3124505 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.9-7-slim-bookworm` - linux; 386
@@ -30683,7 +30683,7 @@ CMD ["pypy3"]
 ## `pypy:3.9-7-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:744bbfe00ddf73993645214247a223d2bb026583fb04c60414da68a6d215f611
+$ docker pull pypy@sha256:6fbeb915624af1efba7fc4c966834e09c65dcc91d7098a1f44fdee43a0d9c698
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -30751,57 +30751,57 @@ CMD ["pypy3"]
 ### `pypy:3.9-7-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:927bf6b32c7c06bf5b063a05727f9f3a6df8a16777f8922d80496d2609704d75
+$ docker pull pypy@sha256:518d0ce60c554491e5dc1c6e717e04bab767549178d1bfdae3bb163bde00c63f
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67819190 bytes)**  
+-	Total Size: **67.8 MB (67818517 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3785838f2f20dee21185d6070f8d73a6bd9dc90fe2eeb90abfb13303f59968ce`
+-	Image ID: `sha256:c68e1a6655cd1e515af5034ff81a171c660ad764b52cab2564821af4f05086a4`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:42:02 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux64.tar.bz2'; 			sha256='323b05a9f607e932cda1995cbe77a96e4ea35994631aa6d734c8035e8479b74e'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-aarch64.tar.bz2'; 			sha256='317d7876c5825a086f854253648b967a432b993ce87695d2895d3ad6ed0d2716'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux32.tar.bz2'; 			sha256='ac695238b4a3635ac6b482e74e04e2ea78b31acca0decd5de601dfd2f4ebf35a'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-s390x.tar.bz2'; 			sha256='213c88f652a99c4dc4e8e00b4b5b58f381c7f7e9ea1a9b65801fc0eb1e50df0a'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.9; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:42:03 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:42:03 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:42:14 GMT
+# Tue, 19 Dec 2023 09:37:39 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:42:14 GMT
+# Tue, 19 Dec 2023 09:37:40 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aece2152647e71d9801afbc8f1c838e6f66c77834c61d4f1be4fc32b87f2c14`  
-		Last Modified: Tue, 21 Nov 2023 20:47:44 GMT  
-		Size: 33.6 MB (33567603 bytes)  
+	-	`sha256:d192a3b9f7c6e017bc849dc6f4ffced20e95ba82e68262a2c44bae4ff31f0326`  
+		Last Modified: Tue, 19 Dec 2023 09:40:57 GMT  
+		Size: 33.6 MB (33567600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5fbe3f7823239f3dd62cdd6b94bc775084cb238212d7e62beeae3c3b94edd11f`  
-		Last Modified: Tue, 21 Nov 2023 20:47:40 GMT  
-		Size: 3.1 MB (3131715 bytes)  
+	-	`sha256:be9d43301e94e47603dc4e09d001bc8263520c4cb947016bbdc855489540507d`  
+		Last Modified: Tue, 19 Dec 2023 09:40:53 GMT  
+		Size: 3.1 MB (3131094 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.9-7-slim-bullseye` - linux; 386
@@ -32108,7 +32108,7 @@ CMD ["pypy3"]
 ## `pypy:3.9-7.3-slim`
 
 ```console
-$ docker pull pypy@sha256:744bbfe00ddf73993645214247a223d2bb026583fb04c60414da68a6d215f611
+$ docker pull pypy@sha256:6fbeb915624af1efba7fc4c966834e09c65dcc91d7098a1f44fdee43a0d9c698
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -32176,57 +32176,57 @@ CMD ["pypy3"]
 ### `pypy:3.9-7.3-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:927bf6b32c7c06bf5b063a05727f9f3a6df8a16777f8922d80496d2609704d75
+$ docker pull pypy@sha256:518d0ce60c554491e5dc1c6e717e04bab767549178d1bfdae3bb163bde00c63f
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67819190 bytes)**  
+-	Total Size: **67.8 MB (67818517 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3785838f2f20dee21185d6070f8d73a6bd9dc90fe2eeb90abfb13303f59968ce`
+-	Image ID: `sha256:c68e1a6655cd1e515af5034ff81a171c660ad764b52cab2564821af4f05086a4`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:42:02 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux64.tar.bz2'; 			sha256='323b05a9f607e932cda1995cbe77a96e4ea35994631aa6d734c8035e8479b74e'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-aarch64.tar.bz2'; 			sha256='317d7876c5825a086f854253648b967a432b993ce87695d2895d3ad6ed0d2716'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux32.tar.bz2'; 			sha256='ac695238b4a3635ac6b482e74e04e2ea78b31acca0decd5de601dfd2f4ebf35a'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-s390x.tar.bz2'; 			sha256='213c88f652a99c4dc4e8e00b4b5b58f381c7f7e9ea1a9b65801fc0eb1e50df0a'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.9; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:42:03 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:42:03 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:42:14 GMT
+# Tue, 19 Dec 2023 09:37:39 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:42:14 GMT
+# Tue, 19 Dec 2023 09:37:40 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aece2152647e71d9801afbc8f1c838e6f66c77834c61d4f1be4fc32b87f2c14`  
-		Last Modified: Tue, 21 Nov 2023 20:47:44 GMT  
-		Size: 33.6 MB (33567603 bytes)  
+	-	`sha256:d192a3b9f7c6e017bc849dc6f4ffced20e95ba82e68262a2c44bae4ff31f0326`  
+		Last Modified: Tue, 19 Dec 2023 09:40:57 GMT  
+		Size: 33.6 MB (33567600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5fbe3f7823239f3dd62cdd6b94bc775084cb238212d7e62beeae3c3b94edd11f`  
-		Last Modified: Tue, 21 Nov 2023 20:47:40 GMT  
-		Size: 3.1 MB (3131715 bytes)  
+	-	`sha256:be9d43301e94e47603dc4e09d001bc8263520c4cb947016bbdc855489540507d`  
+		Last Modified: Tue, 19 Dec 2023 09:40:53 GMT  
+		Size: 3.1 MB (3131094 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.9-7.3-slim` - linux; 386
@@ -32288,7 +32288,7 @@ CMD ["pypy3"]
 ## `pypy:3.9-7.3-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:773e86e5b14a2b538881bd272676f15e0ab61c6f280030e4ad6a0cf3d9dc7e50
+$ docker pull pypy@sha256:9e84b0d5c6fe5deffc14181cec71d7a8850b378ceab53defa95f3e07dd0f1873
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -32356,57 +32356,57 @@ CMD ["pypy3"]
 ### `pypy:3.9-7.3-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a9262bd27f1a07250b2fc8942b0f9a9541d93ef2fe1a0172ffeadf0fe65330ff
+$ docker pull pypy@sha256:518523263a9e717a5cc02bebe6755bd103c3b92b972c6b3458a166b0342d5cea
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.4 MB (69446317 bytes)**  
+-	Total Size: **69.4 MB (69418778 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:40c5143facdb4c3e2a243c11b4649f42bf6015c738dd0233df02b7b5938b6486`
+-	Image ID: `sha256:42028c25ff399a1dea8933051b2b0e14860061472d51ce5bd5a1b9d809c5102c`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:40:56 GMT
+# Tue, 19 Dec 2023 09:36:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux64.tar.bz2'; 			sha256='323b05a9f607e932cda1995cbe77a96e4ea35994631aa6d734c8035e8479b74e'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-aarch64.tar.bz2'; 			sha256='317d7876c5825a086f854253648b967a432b993ce87695d2895d3ad6ed0d2716'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux32.tar.bz2'; 			sha256='ac695238b4a3635ac6b482e74e04e2ea78b31acca0decd5de601dfd2f4ebf35a'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-s390x.tar.bz2'; 			sha256='213c88f652a99c4dc4e8e00b4b5b58f381c7f7e9ea1a9b65801fc0eb1e50df0a'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.9; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:40:57 GMT
+# Tue, 19 Dec 2023 09:36:42 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:40:57 GMT
+# Tue, 19 Dec 2023 09:36:42 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:41:08 GMT
+# Tue, 19 Dec 2023 09:36:53 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:41:08 GMT
+# Tue, 19 Dec 2023 09:36:53 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:43a0716e404a207c955451826fe6d8332df2113d3c00ee1c41d7d0c6908524db`  
-		Last Modified: Tue, 21 Nov 2023 20:47:11 GMT  
-		Size: 33.8 MB (33823802 bytes)  
+	-	`sha256:fe407c6611c9628a79418d355ef7daf29c78a4514ca1518aab209bd4beebdca7`  
+		Last Modified: Tue, 19 Dec 2023 09:40:39 GMT  
+		Size: 33.8 MB (33822683 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01ffd6f047cafb0e0e188e573fa51bd7f0ec79ac6770e7aa72ab38b5c1a929ec`  
-		Last Modified: Tue, 21 Nov 2023 20:47:07 GMT  
-		Size: 3.1 MB (3126107 bytes)  
+	-	`sha256:876aebeaf37d984cdb23444d83b7cb7c2c545a0182738a41691dc7faf14897c0`  
+		Last Modified: Tue, 19 Dec 2023 09:40:35 GMT  
+		Size: 3.1 MB (3124505 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.9-7.3-slim-bookworm` - linux; 386
@@ -32468,7 +32468,7 @@ CMD ["pypy3"]
 ## `pypy:3.9-7.3-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:744bbfe00ddf73993645214247a223d2bb026583fb04c60414da68a6d215f611
+$ docker pull pypy@sha256:6fbeb915624af1efba7fc4c966834e09c65dcc91d7098a1f44fdee43a0d9c698
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -32536,57 +32536,57 @@ CMD ["pypy3"]
 ### `pypy:3.9-7.3-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:927bf6b32c7c06bf5b063a05727f9f3a6df8a16777f8922d80496d2609704d75
+$ docker pull pypy@sha256:518d0ce60c554491e5dc1c6e717e04bab767549178d1bfdae3bb163bde00c63f
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67819190 bytes)**  
+-	Total Size: **67.8 MB (67818517 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3785838f2f20dee21185d6070f8d73a6bd9dc90fe2eeb90abfb13303f59968ce`
+-	Image ID: `sha256:c68e1a6655cd1e515af5034ff81a171c660ad764b52cab2564821af4f05086a4`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:42:02 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux64.tar.bz2'; 			sha256='323b05a9f607e932cda1995cbe77a96e4ea35994631aa6d734c8035e8479b74e'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-aarch64.tar.bz2'; 			sha256='317d7876c5825a086f854253648b967a432b993ce87695d2895d3ad6ed0d2716'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux32.tar.bz2'; 			sha256='ac695238b4a3635ac6b482e74e04e2ea78b31acca0decd5de601dfd2f4ebf35a'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-s390x.tar.bz2'; 			sha256='213c88f652a99c4dc4e8e00b4b5b58f381c7f7e9ea1a9b65801fc0eb1e50df0a'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.9; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:42:03 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:42:03 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:42:14 GMT
+# Tue, 19 Dec 2023 09:37:39 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:42:14 GMT
+# Tue, 19 Dec 2023 09:37:40 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aece2152647e71d9801afbc8f1c838e6f66c77834c61d4f1be4fc32b87f2c14`  
-		Last Modified: Tue, 21 Nov 2023 20:47:44 GMT  
-		Size: 33.6 MB (33567603 bytes)  
+	-	`sha256:d192a3b9f7c6e017bc849dc6f4ffced20e95ba82e68262a2c44bae4ff31f0326`  
+		Last Modified: Tue, 19 Dec 2023 09:40:57 GMT  
+		Size: 33.6 MB (33567600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5fbe3f7823239f3dd62cdd6b94bc775084cb238212d7e62beeae3c3b94edd11f`  
-		Last Modified: Tue, 21 Nov 2023 20:47:40 GMT  
-		Size: 3.1 MB (3131715 bytes)  
+	-	`sha256:be9d43301e94e47603dc4e09d001bc8263520c4cb947016bbdc855489540507d`  
+		Last Modified: Tue, 19 Dec 2023 09:40:53 GMT  
+		Size: 3.1 MB (3131094 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.9-7.3-slim-bullseye` - linux; 386
@@ -33893,7 +33893,7 @@ CMD ["pypy3"]
 ## `pypy:3.9-7.3.13-slim`
 
 ```console
-$ docker pull pypy@sha256:744bbfe00ddf73993645214247a223d2bb026583fb04c60414da68a6d215f611
+$ docker pull pypy@sha256:6fbeb915624af1efba7fc4c966834e09c65dcc91d7098a1f44fdee43a0d9c698
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -33961,57 +33961,57 @@ CMD ["pypy3"]
 ### `pypy:3.9-7.3.13-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:927bf6b32c7c06bf5b063a05727f9f3a6df8a16777f8922d80496d2609704d75
+$ docker pull pypy@sha256:518d0ce60c554491e5dc1c6e717e04bab767549178d1bfdae3bb163bde00c63f
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67819190 bytes)**  
+-	Total Size: **67.8 MB (67818517 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3785838f2f20dee21185d6070f8d73a6bd9dc90fe2eeb90abfb13303f59968ce`
+-	Image ID: `sha256:c68e1a6655cd1e515af5034ff81a171c660ad764b52cab2564821af4f05086a4`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:42:02 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux64.tar.bz2'; 			sha256='323b05a9f607e932cda1995cbe77a96e4ea35994631aa6d734c8035e8479b74e'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-aarch64.tar.bz2'; 			sha256='317d7876c5825a086f854253648b967a432b993ce87695d2895d3ad6ed0d2716'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux32.tar.bz2'; 			sha256='ac695238b4a3635ac6b482e74e04e2ea78b31acca0decd5de601dfd2f4ebf35a'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-s390x.tar.bz2'; 			sha256='213c88f652a99c4dc4e8e00b4b5b58f381c7f7e9ea1a9b65801fc0eb1e50df0a'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.9; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:42:03 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:42:03 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:42:14 GMT
+# Tue, 19 Dec 2023 09:37:39 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:42:14 GMT
+# Tue, 19 Dec 2023 09:37:40 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aece2152647e71d9801afbc8f1c838e6f66c77834c61d4f1be4fc32b87f2c14`  
-		Last Modified: Tue, 21 Nov 2023 20:47:44 GMT  
-		Size: 33.6 MB (33567603 bytes)  
+	-	`sha256:d192a3b9f7c6e017bc849dc6f4ffced20e95ba82e68262a2c44bae4ff31f0326`  
+		Last Modified: Tue, 19 Dec 2023 09:40:57 GMT  
+		Size: 33.6 MB (33567600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5fbe3f7823239f3dd62cdd6b94bc775084cb238212d7e62beeae3c3b94edd11f`  
-		Last Modified: Tue, 21 Nov 2023 20:47:40 GMT  
-		Size: 3.1 MB (3131715 bytes)  
+	-	`sha256:be9d43301e94e47603dc4e09d001bc8263520c4cb947016bbdc855489540507d`  
+		Last Modified: Tue, 19 Dec 2023 09:40:53 GMT  
+		Size: 3.1 MB (3131094 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.9-7.3.13-slim` - linux; 386
@@ -34073,7 +34073,7 @@ CMD ["pypy3"]
 ## `pypy:3.9-7.3.13-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:773e86e5b14a2b538881bd272676f15e0ab61c6f280030e4ad6a0cf3d9dc7e50
+$ docker pull pypy@sha256:9e84b0d5c6fe5deffc14181cec71d7a8850b378ceab53defa95f3e07dd0f1873
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -34141,57 +34141,57 @@ CMD ["pypy3"]
 ### `pypy:3.9-7.3.13-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a9262bd27f1a07250b2fc8942b0f9a9541d93ef2fe1a0172ffeadf0fe65330ff
+$ docker pull pypy@sha256:518523263a9e717a5cc02bebe6755bd103c3b92b972c6b3458a166b0342d5cea
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.4 MB (69446317 bytes)**  
+-	Total Size: **69.4 MB (69418778 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:40c5143facdb4c3e2a243c11b4649f42bf6015c738dd0233df02b7b5938b6486`
+-	Image ID: `sha256:42028c25ff399a1dea8933051b2b0e14860061472d51ce5bd5a1b9d809c5102c`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:40:56 GMT
+# Tue, 19 Dec 2023 09:36:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux64.tar.bz2'; 			sha256='323b05a9f607e932cda1995cbe77a96e4ea35994631aa6d734c8035e8479b74e'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-aarch64.tar.bz2'; 			sha256='317d7876c5825a086f854253648b967a432b993ce87695d2895d3ad6ed0d2716'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux32.tar.bz2'; 			sha256='ac695238b4a3635ac6b482e74e04e2ea78b31acca0decd5de601dfd2f4ebf35a'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-s390x.tar.bz2'; 			sha256='213c88f652a99c4dc4e8e00b4b5b58f381c7f7e9ea1a9b65801fc0eb1e50df0a'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.9; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:40:57 GMT
+# Tue, 19 Dec 2023 09:36:42 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:40:57 GMT
+# Tue, 19 Dec 2023 09:36:42 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:41:08 GMT
+# Tue, 19 Dec 2023 09:36:53 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:41:08 GMT
+# Tue, 19 Dec 2023 09:36:53 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:43a0716e404a207c955451826fe6d8332df2113d3c00ee1c41d7d0c6908524db`  
-		Last Modified: Tue, 21 Nov 2023 20:47:11 GMT  
-		Size: 33.8 MB (33823802 bytes)  
+	-	`sha256:fe407c6611c9628a79418d355ef7daf29c78a4514ca1518aab209bd4beebdca7`  
+		Last Modified: Tue, 19 Dec 2023 09:40:39 GMT  
+		Size: 33.8 MB (33822683 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01ffd6f047cafb0e0e188e573fa51bd7f0ec79ac6770e7aa72ab38b5c1a929ec`  
-		Last Modified: Tue, 21 Nov 2023 20:47:07 GMT  
-		Size: 3.1 MB (3126107 bytes)  
+	-	`sha256:876aebeaf37d984cdb23444d83b7cb7c2c545a0182738a41691dc7faf14897c0`  
+		Last Modified: Tue, 19 Dec 2023 09:40:35 GMT  
+		Size: 3.1 MB (3124505 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.9-7.3.13-slim-bookworm` - linux; 386
@@ -34253,7 +34253,7 @@ CMD ["pypy3"]
 ## `pypy:3.9-7.3.13-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:744bbfe00ddf73993645214247a223d2bb026583fb04c60414da68a6d215f611
+$ docker pull pypy@sha256:6fbeb915624af1efba7fc4c966834e09c65dcc91d7098a1f44fdee43a0d9c698
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -34321,57 +34321,57 @@ CMD ["pypy3"]
 ### `pypy:3.9-7.3.13-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:927bf6b32c7c06bf5b063a05727f9f3a6df8a16777f8922d80496d2609704d75
+$ docker pull pypy@sha256:518d0ce60c554491e5dc1c6e717e04bab767549178d1bfdae3bb163bde00c63f
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67819190 bytes)**  
+-	Total Size: **67.8 MB (67818517 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3785838f2f20dee21185d6070f8d73a6bd9dc90fe2eeb90abfb13303f59968ce`
+-	Image ID: `sha256:c68e1a6655cd1e515af5034ff81a171c660ad764b52cab2564821af4f05086a4`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:42:02 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux64.tar.bz2'; 			sha256='323b05a9f607e932cda1995cbe77a96e4ea35994631aa6d734c8035e8479b74e'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-aarch64.tar.bz2'; 			sha256='317d7876c5825a086f854253648b967a432b993ce87695d2895d3ad6ed0d2716'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux32.tar.bz2'; 			sha256='ac695238b4a3635ac6b482e74e04e2ea78b31acca0decd5de601dfd2f4ebf35a'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-s390x.tar.bz2'; 			sha256='213c88f652a99c4dc4e8e00b4b5b58f381c7f7e9ea1a9b65801fc0eb1e50df0a'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.9; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:42:03 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:42:03 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:42:14 GMT
+# Tue, 19 Dec 2023 09:37:39 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:42:14 GMT
+# Tue, 19 Dec 2023 09:37:40 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aece2152647e71d9801afbc8f1c838e6f66c77834c61d4f1be4fc32b87f2c14`  
-		Last Modified: Tue, 21 Nov 2023 20:47:44 GMT  
-		Size: 33.6 MB (33567603 bytes)  
+	-	`sha256:d192a3b9f7c6e017bc849dc6f4ffced20e95ba82e68262a2c44bae4ff31f0326`  
+		Last Modified: Tue, 19 Dec 2023 09:40:57 GMT  
+		Size: 33.6 MB (33567600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5fbe3f7823239f3dd62cdd6b94bc775084cb238212d7e62beeae3c3b94edd11f`  
-		Last Modified: Tue, 21 Nov 2023 20:47:40 GMT  
-		Size: 3.1 MB (3131715 bytes)  
+	-	`sha256:be9d43301e94e47603dc4e09d001bc8263520c4cb947016bbdc855489540507d`  
+		Last Modified: Tue, 19 Dec 2023 09:40:53 GMT  
+		Size: 3.1 MB (3131094 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.9-7.3.13-slim-bullseye` - linux; 386
@@ -35272,7 +35272,7 @@ CMD ["pypy3"]
 ## `pypy:3.9-slim`
 
 ```console
-$ docker pull pypy@sha256:744bbfe00ddf73993645214247a223d2bb026583fb04c60414da68a6d215f611
+$ docker pull pypy@sha256:6fbeb915624af1efba7fc4c966834e09c65dcc91d7098a1f44fdee43a0d9c698
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -35340,57 +35340,57 @@ CMD ["pypy3"]
 ### `pypy:3.9-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:927bf6b32c7c06bf5b063a05727f9f3a6df8a16777f8922d80496d2609704d75
+$ docker pull pypy@sha256:518d0ce60c554491e5dc1c6e717e04bab767549178d1bfdae3bb163bde00c63f
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67819190 bytes)**  
+-	Total Size: **67.8 MB (67818517 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3785838f2f20dee21185d6070f8d73a6bd9dc90fe2eeb90abfb13303f59968ce`
+-	Image ID: `sha256:c68e1a6655cd1e515af5034ff81a171c660ad764b52cab2564821af4f05086a4`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:42:02 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux64.tar.bz2'; 			sha256='323b05a9f607e932cda1995cbe77a96e4ea35994631aa6d734c8035e8479b74e'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-aarch64.tar.bz2'; 			sha256='317d7876c5825a086f854253648b967a432b993ce87695d2895d3ad6ed0d2716'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux32.tar.bz2'; 			sha256='ac695238b4a3635ac6b482e74e04e2ea78b31acca0decd5de601dfd2f4ebf35a'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-s390x.tar.bz2'; 			sha256='213c88f652a99c4dc4e8e00b4b5b58f381c7f7e9ea1a9b65801fc0eb1e50df0a'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.9; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:42:03 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:42:03 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:42:14 GMT
+# Tue, 19 Dec 2023 09:37:39 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:42:14 GMT
+# Tue, 19 Dec 2023 09:37:40 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aece2152647e71d9801afbc8f1c838e6f66c77834c61d4f1be4fc32b87f2c14`  
-		Last Modified: Tue, 21 Nov 2023 20:47:44 GMT  
-		Size: 33.6 MB (33567603 bytes)  
+	-	`sha256:d192a3b9f7c6e017bc849dc6f4ffced20e95ba82e68262a2c44bae4ff31f0326`  
+		Last Modified: Tue, 19 Dec 2023 09:40:57 GMT  
+		Size: 33.6 MB (33567600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5fbe3f7823239f3dd62cdd6b94bc775084cb238212d7e62beeae3c3b94edd11f`  
-		Last Modified: Tue, 21 Nov 2023 20:47:40 GMT  
-		Size: 3.1 MB (3131715 bytes)  
+	-	`sha256:be9d43301e94e47603dc4e09d001bc8263520c4cb947016bbdc855489540507d`  
+		Last Modified: Tue, 19 Dec 2023 09:40:53 GMT  
+		Size: 3.1 MB (3131094 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.9-slim` - linux; 386
@@ -35452,7 +35452,7 @@ CMD ["pypy3"]
 ## `pypy:3.9-slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:773e86e5b14a2b538881bd272676f15e0ab61c6f280030e4ad6a0cf3d9dc7e50
+$ docker pull pypy@sha256:9e84b0d5c6fe5deffc14181cec71d7a8850b378ceab53defa95f3e07dd0f1873
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -35520,57 +35520,57 @@ CMD ["pypy3"]
 ### `pypy:3.9-slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:a9262bd27f1a07250b2fc8942b0f9a9541d93ef2fe1a0172ffeadf0fe65330ff
+$ docker pull pypy@sha256:518523263a9e717a5cc02bebe6755bd103c3b92b972c6b3458a166b0342d5cea
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.4 MB (69446317 bytes)**  
+-	Total Size: **69.4 MB (69418778 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:40c5143facdb4c3e2a243c11b4649f42bf6015c738dd0233df02b7b5938b6486`
+-	Image ID: `sha256:42028c25ff399a1dea8933051b2b0e14860061472d51ce5bd5a1b9d809c5102c`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:40:56 GMT
+# Tue, 19 Dec 2023 09:36:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux64.tar.bz2'; 			sha256='323b05a9f607e932cda1995cbe77a96e4ea35994631aa6d734c8035e8479b74e'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-aarch64.tar.bz2'; 			sha256='317d7876c5825a086f854253648b967a432b993ce87695d2895d3ad6ed0d2716'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux32.tar.bz2'; 			sha256='ac695238b4a3635ac6b482e74e04e2ea78b31acca0decd5de601dfd2f4ebf35a'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-s390x.tar.bz2'; 			sha256='213c88f652a99c4dc4e8e00b4b5b58f381c7f7e9ea1a9b65801fc0eb1e50df0a'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.9; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:40:57 GMT
+# Tue, 19 Dec 2023 09:36:42 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:40:57 GMT
+# Tue, 19 Dec 2023 09:36:42 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:41:08 GMT
+# Tue, 19 Dec 2023 09:36:53 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:41:08 GMT
+# Tue, 19 Dec 2023 09:36:53 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:43a0716e404a207c955451826fe6d8332df2113d3c00ee1c41d7d0c6908524db`  
-		Last Modified: Tue, 21 Nov 2023 20:47:11 GMT  
-		Size: 33.8 MB (33823802 bytes)  
+	-	`sha256:fe407c6611c9628a79418d355ef7daf29c78a4514ca1518aab209bd4beebdca7`  
+		Last Modified: Tue, 19 Dec 2023 09:40:39 GMT  
+		Size: 33.8 MB (33822683 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01ffd6f047cafb0e0e188e573fa51bd7f0ec79ac6770e7aa72ab38b5c1a929ec`  
-		Last Modified: Tue, 21 Nov 2023 20:47:07 GMT  
-		Size: 3.1 MB (3126107 bytes)  
+	-	`sha256:876aebeaf37d984cdb23444d83b7cb7c2c545a0182738a41691dc7faf14897c0`  
+		Last Modified: Tue, 19 Dec 2023 09:40:35 GMT  
+		Size: 3.1 MB (3124505 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.9-slim-bookworm` - linux; 386
@@ -35632,7 +35632,7 @@ CMD ["pypy3"]
 ## `pypy:3.9-slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:744bbfe00ddf73993645214247a223d2bb026583fb04c60414da68a6d215f611
+$ docker pull pypy@sha256:6fbeb915624af1efba7fc4c966834e09c65dcc91d7098a1f44fdee43a0d9c698
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -35700,57 +35700,57 @@ CMD ["pypy3"]
 ### `pypy:3.9-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:927bf6b32c7c06bf5b063a05727f9f3a6df8a16777f8922d80496d2609704d75
+$ docker pull pypy@sha256:518d0ce60c554491e5dc1c6e717e04bab767549178d1bfdae3bb163bde00c63f
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67819190 bytes)**  
+-	Total Size: **67.8 MB (67818517 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3785838f2f20dee21185d6070f8d73a6bd9dc90fe2eeb90abfb13303f59968ce`
+-	Image ID: `sha256:c68e1a6655cd1e515af5034ff81a171c660ad764b52cab2564821af4f05086a4`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:42:02 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux64.tar.bz2'; 			sha256='323b05a9f607e932cda1995cbe77a96e4ea35994631aa6d734c8035e8479b74e'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-aarch64.tar.bz2'; 			sha256='317d7876c5825a086f854253648b967a432b993ce87695d2895d3ad6ed0d2716'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux32.tar.bz2'; 			sha256='ac695238b4a3635ac6b482e74e04e2ea78b31acca0decd5de601dfd2f4ebf35a'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.9-v7.3.13-s390x.tar.bz2'; 			sha256='213c88f652a99c4dc4e8e00b4b5b58f381c7f7e9ea1a9b65801fc0eb1e50df0a'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.9; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:42:03 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:42:03 GMT
+# Tue, 19 Dec 2023 09:37:28 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:42:14 GMT
+# Tue, 19 Dec 2023 09:37:39 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:42:14 GMT
+# Tue, 19 Dec 2023 09:37:40 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aece2152647e71d9801afbc8f1c838e6f66c77834c61d4f1be4fc32b87f2c14`  
-		Last Modified: Tue, 21 Nov 2023 20:47:44 GMT  
-		Size: 33.6 MB (33567603 bytes)  
+	-	`sha256:d192a3b9f7c6e017bc849dc6f4ffced20e95ba82e68262a2c44bae4ff31f0326`  
+		Last Modified: Tue, 19 Dec 2023 09:40:57 GMT  
+		Size: 33.6 MB (33567600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5fbe3f7823239f3dd62cdd6b94bc775084cb238212d7e62beeae3c3b94edd11f`  
-		Last Modified: Tue, 21 Nov 2023 20:47:40 GMT  
-		Size: 3.1 MB (3131715 bytes)  
+	-	`sha256:be9d43301e94e47603dc4e09d001bc8263520c4cb947016bbdc855489540507d`  
+		Last Modified: Tue, 19 Dec 2023 09:40:53 GMT  
+		Size: 3.1 MB (3131094 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:3.9-slim-bullseye` - linux; 386
@@ -37057,7 +37057,7 @@ CMD ["pypy"]
 ## `pypy:slim`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -37125,57 +37125,57 @@ CMD ["pypy3"]
 ### `pypy:slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:slim` - linux; 386
@@ -37237,7 +37237,7 @@ CMD ["pypy3"]
 ## `pypy:slim-bookworm`
 
 ```console
-$ docker pull pypy@sha256:cbe345489160f3722fb4b23de0857556bde535653ff0a1d5dc805459ae87ae43
+$ docker pull pypy@sha256:979a18f6df7f52fdab227078300c98c4c0fa641c557f6526c6af0d2e1e1c8f01
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -37305,57 +37305,57 @@ CMD ["pypy3"]
 ### `pypy:slim-bookworm` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:c0fab5ae7e502ed012dd2a6b59bfe0e98f69609f2b77c86406ffd3f975d8252c
+$ docker pull pypy@sha256:757edfc4be8a46bb978b4a99502b6c10ad342f6ddcfabe0773e0583cff202002
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.5 MB (69476611 bytes)**  
+-	Total Size: **69.4 MB (69449178 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b37871717dbda4b87177d621802fd64f72e8a0bf1b22676cc634112883981b6d`
+-	Image ID: `sha256:2fc69a6ceef3243cb780c301a4db13d13965ecf7750f54d71112eb0d724b9d2b`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:06 GMT
-ADD file:869c7d0747a17c53715581a2e862992eb8516c7f45f167821dfa80966a4870d1 in / 
-# Tue, 21 Nov 2023 06:27:06 GMT
+# Tue, 19 Dec 2023 01:41:11 GMT
+ADD file:262fd7bf0bc26e5d2a229fba52626e22b8a93beac29733acfc60e716c26e689d in / 
+# Tue, 19 Dec 2023 01:41:11 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:37:57 GMT
+# Tue, 19 Dec 2023 09:34:30 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:38:23 GMT
+# Tue, 19 Dec 2023 09:34:59 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:38:24 GMT
+# Tue, 19 Dec 2023 09:35:00 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:38:35 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:38:36 GMT
+# Tue, 19 Dec 2023 09:35:12 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:2c6d21737d8318aa15c4cc838475029a5efc36c0429e3d8da80d97d0b96d9aaf`  
-		Last Modified: Tue, 21 Nov 2023 06:30:30 GMT  
-		Size: 29.2 MB (29179277 bytes)  
+	-	`sha256:24e221e92a36ab5b0075dd156b4f2ff095532a9b0927946cf6070bb1bea208b8`  
+		Last Modified: Tue, 19 Dec 2023 01:44:38 GMT  
+		Size: 29.2 MB (29157269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4223438abd50cef7b94d33f770a02d7a6312b1b2909d6e85e82801a5d3450d95`  
-		Last Modified: Tue, 21 Nov 2023 20:45:13 GMT  
-		Size: 3.3 MB (3317131 bytes)  
+	-	`sha256:9071966d3c5e7a69be8a39f3f1be771af1a624a107b796965302c315cb24729f`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.3 MB (3314321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:215f9e967bac812ef423ef88297d42ba5c839f28e10e552269e61ba64a1d902d`  
-		Last Modified: Tue, 21 Nov 2023 20:45:17 GMT  
-		Size: 33.5 MB (33466352 bytes)  
+	-	`sha256:4a352305bbbd66a7d29f1a3984e28818a84a2a04861eca3d6ff57f59875b5877`  
+		Last Modified: Tue, 19 Dec 2023 09:39:30 GMT  
+		Size: 33.5 MB (33465308 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:760e380623e0ef627647ce3b644825e353aa4d11db61e264a67ae8d1e3b7ddcc`  
-		Last Modified: Tue, 21 Nov 2023 20:45:14 GMT  
-		Size: 3.5 MB (3513851 bytes)  
+	-	`sha256:1d7883d91504b577b50d5d1e704d116168df4aeadad4fd8ce1c886bd3125db55`  
+		Last Modified: Tue, 19 Dec 2023 09:39:26 GMT  
+		Size: 3.5 MB (3512280 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:slim-bookworm` - linux; 386
@@ -37417,7 +37417,7 @@ CMD ["pypy3"]
 ## `pypy:slim-bullseye`
 
 ```console
-$ docker pull pypy@sha256:ffb3ea01f52b98bb8c58929f293eb531716af6e8c6ddecc243a9ab33419b6f36
+$ docker pull pypy@sha256:221474a1cb1e65e41760a5c92bbe8b4374b61f6ede47ca0e8b6bfb2e3a04445c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -37485,57 +37485,57 @@ CMD ["pypy3"]
 ### `pypy:slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull pypy@sha256:67fd10fbfe188cc34400dd148373aa6b0c3aa97d57a71e1e492ecfd8beb7d47c
+$ docker pull pypy@sha256:38c97e2c6c990bab923def00c94eb2c4f56e4874e5c6d12c2c582432153a1b3b
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.8 MB (67846497 bytes)**  
+-	Total Size: **67.8 MB (67845895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:371ce477047558196b9c72e88e5afbeb6b3f9eae532b08fdb138e56e0dd65b6a`
+-	Image ID: `sha256:cc63d7a2145bcc6a44cf0895bb15fa7cf9d3722fac3d46f0ddf5f0b4d6e04008`
 -	Default Command: `["pypy3"]`
 
 ```dockerfile
-# Tue, 21 Nov 2023 06:27:20 GMT
-ADD file:7b5bbc3b85f671aaf7b38dbe3fc76aae162bbff29c525bcd127f8a26a53bc664 in / 
-# Tue, 21 Nov 2023 06:27:21 GMT
+# Tue, 19 Dec 2023 01:41:25 GMT
+ADD file:4dd1c5e17a5e57644787f37e8ad290baef6c93f4f112b976f19136480a293713 in / 
+# Tue, 19 Dec 2023 01:41:25 GMT
 CMD ["bash"]
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates; 	rm -rf /var/lib/apt/lists/*
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV LANG=C.UTF-8
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:28 GMT
 ENV PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 21 Nov 2023 20:39:18 GMT
+# Tue, 19 Dec 2023 09:35:29 GMT
 ENV PYPY_VERSION=7.3.13
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:53 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		'amd64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2'; 			sha256='54936eeafd9350a5ea0375b036272a260871b9bca82e1b0bb3201deea9f5a442'; 			;; 		'arm64') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-aarch64.tar.bz2'; 			sha256='ac476f01c9653358404f2e4b52f62307b2f64ccdb8c96dadcbfe355824d81a63'; 			;; 		'i386') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux32.tar.bz2'; 			sha256='bfba57eb1f859dd0ad0d6fe841bb12e1256f1f023c7fbca083b536cccbc1233b'; 			;; 		's390x') 			url='https://downloads.python.org/pypy/pypy3.10-v7.3.13-s390x.tar.bz2'; 			sha256='3c813c7efa6a026b281313b299c186c585155fc164c7538e65d41efdabff87c9'; 			;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libexpat1 		libncurses5 		libncursesw6 		libsqlite3-0 	; 		wget -O pypy.tar.bz2 "$url" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; 	mkdir /opt/pypy; 	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		ln -sv '/opt/pypy/bin/pypy3' /usr/local/bin/; 		pypy3 --version; 		cd /opt/pypy/lib/pypy3.10; 	if [ -f _gdbm_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libgdbm-dev; 		pypy3 _gdbm_build.py; 	fi; 	if [ -f _ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		pypy3 _ssl_build.py; 	fi; 	if [ -f _lzma_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev liblzma-dev; 		pypy3 _lzma_build.py; 	fi; 	if [ -f _sqlite3_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libsqlite3-dev; 		pypy3 _sqlite3_build.py; 	fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /opt/pypy -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); print so }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy3 --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py
-# Tue, 21 Nov 2023 20:39:43 GMT
+# Tue, 19 Dec 2023 09:35:54 GMT
 ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pipVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._PIP_VERSION)')"; 	setuptoolsVersion="$(pypy3 -c 'import ensurepip; print(ensurepip._SETUPTOOLS_VERSION)')"; 		pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip == $pipVersion" 		"setuptools == $setuptoolsVersion" 	; 	apt-get purge -y --auto-remove wget; 	pip --version; 		find /opt/pypy -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 21 Nov 2023 20:39:55 GMT
+# Tue, 19 Dec 2023 09:36:05 GMT
 CMD ["pypy3"]
 ```
 
 -	Layers:
-	-	`sha256:ca426296fe928600d0b4b844aee43e2b70a05c6f4032de5f65dcc49f5cedfd82`  
-		Last Modified: Tue, 21 Nov 2023 06:31:08 GMT  
-		Size: 30.1 MB (30064123 bytes)  
+	-	`sha256:2244706f264b35566276550fbc21ada79613ddfff850e372b8f5113110a67c93`  
+		Last Modified: Tue, 19 Dec 2023 01:45:22 GMT  
+		Size: 30.1 MB (30064052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf157973a6a6e0198d38f8dec212a54185af3658f66389af49200fd69990568f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 1.1 MB (1055749 bytes)  
+	-	`sha256:6ca9389b369bc4c9568e2e93447fc474736aea2c14ad836e987f603c64f0cacd`  
+		Last Modified: Tue, 19 Dec 2023 09:39:53 GMT  
+		Size: 1.1 MB (1055771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2652e438c512884df48c950b3e9f32212281cba5a10ed665bf482d22c62dba4f`  
-		Last Modified: Tue, 21 Nov 2023 20:46:12 GMT  
-		Size: 33.2 MB (33207553 bytes)  
+	-	`sha256:5c55bbca43014e10114405af8ffbd1a8e7f2081336373ef134108895b67ca253`  
+		Last Modified: Tue, 19 Dec 2023 09:39:58 GMT  
+		Size: 33.2 MB (33207516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:057557c67d68e8e71c11daeca1d2adfe8c8169286e033ba6fd0c0f7e121d2a35`  
-		Last Modified: Tue, 21 Nov 2023 20:46:08 GMT  
-		Size: 3.5 MB (3519072 bytes)  
+	-	`sha256:897be70ebcb643221e77a2795e212662774f2f5c57ad8f780cb0fd37375663f8`  
+		Last Modified: Tue, 19 Dec 2023 09:39:54 GMT  
+		Size: 3.5 MB (3518556 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:slim-bullseye` - linux; 386
