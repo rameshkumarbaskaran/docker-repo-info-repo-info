@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:1c1f3a4e34c19083d7ee98431ea60c3c417d9dc02856392d71384fa0fc0daca9`
-- Created: `2023-12-13T03:23:58.19358363Z`
-- Virtual Size: ~ 581.24 Mb  
+- Image ID: `sha256:62d09e9149b9e1ad0632a5dc2807bd85791b042364a7cf9acd2eb4c0524eaae5`
+- Created: `2023-12-16T19:40:24.945441656Z`
+- Virtual Size: ~ 566.48 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["tini","--","/docker-entrypoint.sh"]`
@@ -215,16 +215,16 @@ $ apt-get source -qq --print-uris bash=5.0-6ubuntu1.2
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-6ubuntu1.2.debian.tar.xz' bash_5.0-6ubuntu1.2.debian.tar.xz 75200 SHA512:50de22a6cd140fcb95eca9172e9927a4eeddd90bfbd23072d5e209db1675f331716dfd54ef3281caa7020e3fa1aef9ca7caafc6a8d3067741b1ae41f7dff7724
 ```
 
-### `dpkg` source package: `binutils=2.34-6ubuntu1.6`
+### `dpkg` source package: `binutils=2.34-6ubuntu1.7`
 
 Binary Packages:
 
-- `binutils=2.34-6ubuntu1.6`
-- `binutils-common:amd64=2.34-6ubuntu1.6`
-- `binutils-x86-64-linux-gnu=2.34-6ubuntu1.6`
-- `libbinutils:amd64=2.34-6ubuntu1.6`
-- `libctf-nobfd0:amd64=2.34-6ubuntu1.6`
-- `libctf0:amd64=2.34-6ubuntu1.6`
+- `binutils=2.34-6ubuntu1.7`
+- `binutils-common:amd64=2.34-6ubuntu1.7`
+- `binutils-x86-64-linux-gnu=2.34-6ubuntu1.7`
+- `libbinutils:amd64=2.34-6ubuntu1.7`
+- `libctf-nobfd0:amd64=2.34-6ubuntu1.7`
+- `libctf0:amd64=2.34-6ubuntu1.7`
 
 Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/binutils-common/copyright`, `/usr/share/doc/binutils-x86-64-linux-gnu/copyright`, `/usr/share/doc/libbinutils/copyright`, `/usr/share/doc/libctf-nobfd0/copyright`, `/usr/share/doc/libctf0/copyright`)
 
@@ -232,9 +232,14 @@ Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/bin
 - `GPL`
 - `LGPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris binutils=2.34-6ubuntu1.7
+'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.34-6ubuntu1.7.dsc' binutils_2.34-6ubuntu1.7.dsc 8521 SHA512:d0fead488cee11212744e91c175d32373b46084157bb261f21ea24c33aa43d3210128f949a960ee1c1d85593085c6739980da25c5cf77ec325303abd41c28d0e
+'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.34.orig.tar.xz' binutils_2.34.orig.tar.xz 21637796 SHA512:2c7976939dcf5e8c5b7374cccd39bfe803b1bec73c6abfa0eb17c24e1942574c6bdb874c66a092a82adc443182eacd8a5a8001c19a76101f0c7ba40c27de0bbd
+'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.34-6ubuntu1.7.debian.tar.xz' binutils_2.34-6ubuntu1.7.debian.tar.xz 165000 SHA512:0b3b0a508d1c9089ea021ff4274d8e674066e210b19c5fca1e43716fc6bd997b6cdf4fbdf42d6f57b80f084f79a2f9ef48d0a28ba7da54b6317b76c80bef9d9c
+```
 
 ### `dpkg` source package: `brotli=1.0.7-6ubuntu0.1`
 
@@ -568,29 +573,15 @@ $ apt-get source -qq --print-uris gcc-10=10.5.0-1ubuntu1~20.04
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.5.0-1ubuntu1%7e20.04.debian.tar.xz' gcc-10_10.5.0-1ubuntu1~20.04.debian.tar.xz 5953836 SHA512:d68b8b10628bec39c370c9af1baa39bd76f3fb885d765b2d449435981ab772443187cba3bcb629e69a4a7c4b1e890babc4ea9ed8a3a3eb9a8e7e1e76abb8b526
 ```
 
-### `dpkg` source package: `glibc=2.31-0ubuntu9.12`
-
-Binary Packages:
-
-- `libc-bin=2.31-0ubuntu9.12`
-- `locales=2.31-0ubuntu9.12`
-
-Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/locales/copyright`)
-
-- `GPL-2`
-- `LGPL-2.1`
-
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
-
-
 ### `dpkg` source package: `glibc=2.31-0ubuntu9.14`
 
 Binary Packages:
 
+- `libc-bin=2.31-0ubuntu9.14`
 - `libc6:amd64=2.31-0ubuntu9.14`
+- `locales=2.31-0ubuntu9.14`
 
-Licenses: (parsed from: `/usr/share/doc/libc6/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/libc6/copyright`, `/usr/share/doc/locales/copyright`)
 
 - `GPL-2`
 - `LGPL-2.1`
@@ -1147,14 +1138,9 @@ Licenses: (parsed from: `/usr/share/doc/libssh-4/copyright`)
 - `LGPL-2.1+~OpenSSL`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libssh=0.9.3-2ubuntu2.3
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.9.3-2ubuntu2.3.dsc' libssh_0.9.3-2ubuntu2.3.dsc 2538 SHA512:a4a55cfe735d02a1bcf9bfc2d2fbd97b9c314e9938bdbd18da7b93f4894b071a40752995fd219873ff36e05db23c1b298c25262167261f2e6fc192293b80028b
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.9.3.orig.tar.xz' libssh_0.9.3.orig.tar.xz 500068 SHA512:6e59718565daeca6d224426cc1095a112deff9af8e0b021917e04f08bb7409263c35724de95f591f38e26f0fb3bbbbc69b679b6775edc21dec158d241b076c6f
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.9.3-2ubuntu2.3.debian.tar.xz' libssh_0.9.3-2ubuntu2.3.debian.tar.xz 39108 SHA512:2c5e565fda81e5579f93508fe730bb045ecc0784758f4e4f8c3f51196ec64970e4ab55780da078599e54d80979d4a3dcce62612ca52a5e4d74e12e6a45aef2f7
-```
 
 ### `dpkg` source package: `libtasn1-6=4.16.0-2`
 
@@ -1820,20 +1806,25 @@ $ apt-get source -qq --print-uris sysvinit=2.96-2.1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sysvinit/sysvinit_2.96-2.1ubuntu1.debian.tar.xz' sysvinit_2.96-2.1ubuntu1.debian.tar.xz 128840 SHA256:528041e261c90a957d9794bddb07217c89484d9c76a0279da508baec9684c4e6
 ```
 
-### `dpkg` source package: `tar=1.30+dfsg-7ubuntu0.20.04.3`
+### `dpkg` source package: `tar=1.30+dfsg-7ubuntu0.20.04.4`
 
 Binary Packages:
 
-- `tar=1.30+dfsg-7ubuntu0.20.04.3`
+- `tar=1.30+dfsg-7ubuntu0.20.04.4`
 
 Licenses: (parsed from: `/usr/share/doc/tar/copyright`)
 
 - `GPL-2`
 - `GPL-3`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris tar=1.30+dfsg-7ubuntu0.20.04.4
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.30%2bdfsg-7ubuntu0.20.04.4.dsc' tar_1.30+dfsg-7ubuntu0.20.04.4.dsc 1812 SHA512:a771e996dad6c7b2d75336bae73a0c9e52f030a7474bdebe519a9c072819530541ff3200046ddc5277b0204e1eac056ff3679062c182cb28404bdac73da768fa
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.30%2bdfsg.orig.tar.xz' tar_1.30+dfsg.orig.tar.xz 1883220 SHA512:f9b3843bd4da03f58d6f88de70ecb36b8ac29312714fd2120ff00f17c99e6d77cc82a8f9de348f4c2bdba9a6cc8e8c6c78039b6c14cdee15d68f2517000c36f2
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.30%2bdfsg-7ubuntu0.20.04.4.debian.tar.xz' tar_1.30+dfsg-7ubuntu0.20.04.4.debian.tar.xz 24572 SHA512:942a7fb6e2edb7e50b26b1588219d0a99caf17ff1dfa1748449c3fa84ab8cf3e3e94bafb8334cc3b8397562d6a3ecd57bc0df2ddb2b90644a361fa63426d2982
+```
 
 ### `dpkg` source package: `tini=0.18.0-1`
 
