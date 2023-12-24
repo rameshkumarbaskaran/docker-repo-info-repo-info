@@ -70,6 +70,24 @@
 -	[`elixir:1.15.7-otp-25-alpine`](#elixir1157-otp-25-alpine)
 -	[`elixir:1.15.7-otp-25-slim`](#elixir1157-otp-25-slim)
 -	[`elixir:1.15.7-slim`](#elixir1157-slim)
+-	[`elixir:1.16`](#elixir116)
+-	[`elixir:1.16-alpine`](#elixir116-alpine)
+-	[`elixir:1.16-otp-24`](#elixir116-otp-24)
+-	[`elixir:1.16-otp-24-alpine`](#elixir116-otp-24-alpine)
+-	[`elixir:1.16-otp-24-slim`](#elixir116-otp-24-slim)
+-	[`elixir:1.16-otp-25`](#elixir116-otp-25)
+-	[`elixir:1.16-otp-25-alpine`](#elixir116-otp-25-alpine)
+-	[`elixir:1.16-otp-25-slim`](#elixir116-otp-25-slim)
+-	[`elixir:1.16-slim`](#elixir116-slim)
+-	[`elixir:1.16.0`](#elixir1160)
+-	[`elixir:1.16.0-alpine`](#elixir1160-alpine)
+-	[`elixir:1.16.0-otp-24`](#elixir1160-otp-24)
+-	[`elixir:1.16.0-otp-24-alpine`](#elixir1160-otp-24-alpine)
+-	[`elixir:1.16.0-otp-24-slim`](#elixir1160-otp-24-slim)
+-	[`elixir:1.16.0-otp-25`](#elixir1160-otp-25)
+-	[`elixir:1.16.0-otp-25-alpine`](#elixir1160-otp-25-alpine)
+-	[`elixir:1.16.0-otp-25-slim`](#elixir1160-otp-25-slim)
+-	[`elixir:1.16.0-slim`](#elixir1160-slim)
 -	[`elixir:1.7`](#elixir17)
 -	[`elixir:1.7-slim`](#elixir17-slim)
 -	[`elixir:1.7.4`](#elixir174)
@@ -23297,6 +23315,78 @@ CMD ["iex"]
 		Last Modified: Tue, 19 Dec 2023 14:53:36 GMT  
 		Size: 6.8 MB (6831520 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `elixir:1.16`
+
+**does not exist** (yet?)
+
+## `elixir:1.16-alpine`
+
+**does not exist** (yet?)
+
+## `elixir:1.16-otp-24`
+
+**does not exist** (yet?)
+
+## `elixir:1.16-otp-24-alpine`
+
+**does not exist** (yet?)
+
+## `elixir:1.16-otp-24-slim`
+
+**does not exist** (yet?)
+
+## `elixir:1.16-otp-25`
+
+**does not exist** (yet?)
+
+## `elixir:1.16-otp-25-alpine`
+
+**does not exist** (yet?)
+
+## `elixir:1.16-otp-25-slim`
+
+**does not exist** (yet?)
+
+## `elixir:1.16-slim`
+
+**does not exist** (yet?)
+
+## `elixir:1.16.0`
+
+**does not exist** (yet?)
+
+## `elixir:1.16.0-alpine`
+
+**does not exist** (yet?)
+
+## `elixir:1.16.0-otp-24`
+
+**does not exist** (yet?)
+
+## `elixir:1.16.0-otp-24-alpine`
+
+**does not exist** (yet?)
+
+## `elixir:1.16.0-otp-24-slim`
+
+**does not exist** (yet?)
+
+## `elixir:1.16.0-otp-25`
+
+**does not exist** (yet?)
+
+## `elixir:1.16.0-otp-25-alpine`
+
+**does not exist** (yet?)
+
+## `elixir:1.16.0-otp-25-slim`
+
+**does not exist** (yet?)
+
+## `elixir:1.16.0-slim`
+
+**does not exist** (yet?)
 
 ## `elixir:1.7`
 
