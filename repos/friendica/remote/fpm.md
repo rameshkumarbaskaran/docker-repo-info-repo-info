@@ -1,7 +1,7 @@
 ## `friendica:fpm`
 
 ```console
-$ docker pull friendica@sha256:ade0b2d5fcfc7eeec9f1cad353e7dd490845ecee0591f197928d72dbf4c3f891
+$ docker pull friendica@sha256:7f2222f757314565acf8667fd914bcfa334db7b7f1d01ebdc4023d06f5eec775
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -364,14 +364,14 @@ CMD ["php-fpm"]
 ### `friendica:fpm` - linux; arm variant v7
 
 ```console
-$ docker pull friendica@sha256:85169928afa0950f3823b6b13a863cd27e31246c24d75f67e532c549901b3036
+$ docker pull friendica@sha256:3493f3921e2ebe71ff41fe7f2fa1b537c0baa8162a62ac79782daaff0e1df947
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **218.2 MB (218216218 bytes)**  
+-	Total Size: **218.6 MB (218584163 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1c966227c70683f3899c1acf59877d7e348294c3573ce433d5e4bfcfadf51b51`
+-	Image ID: `sha256:e9c822439ac53a2ab26026f0b400766f7ec6c58fd5149e99fc37cdf1d182a8ea`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -444,23 +444,23 @@ RUN set -ex;     {         echo 'opcache.enable=1' ;         echo 'opcache.inter
 VOLUME [/var/www/html]
 # Tue, 19 Dec 2023 15:26:05 GMT
 ENV FRIENDICA_SYSLOG_FLAGS=39
-# Tue, 19 Dec 2023 15:26:05 GMT
-ENV FRIENDICA_VERSION=2023.05
-# Tue, 19 Dec 2023 15:26:05 GMT
-ENV FRIENDICA_ADDONS=2023.05
-# Tue, 19 Dec 2023 15:26:05 GMT
-ENV FRIENDICA_DOWNLOAD_SHA256=333e63c0aaea24a072c21393de3a1ac5b66e6cb25158db668417b842bedcdee7
-# Tue, 19 Dec 2023 15:26:05 GMT
-ENV FRIENDICA_DOWNLOAD_ADDONS_SHA256=6b6f486532a995f67bf6bc0d459ee371a2bfd2ba9b95c84dac49193cdfe76ea8
-# Tue, 19 Dec 2023 15:26:29 GMT
+# Tue, 26 Dec 2023 20:35:11 GMT
+ENV FRIENDICA_VERSION=2023.12
+# Tue, 26 Dec 2023 20:35:12 GMT
+ENV FRIENDICA_ADDONS=2023.12
+# Tue, 26 Dec 2023 20:35:12 GMT
+ENV FRIENDICA_DOWNLOAD_SHA256=bc29faa339d8d0ccd339dbd809e727d0ed9708913cecb8060c4eef907bc10aec
+# Tue, 26 Dec 2023 20:35:12 GMT
+ENV FRIENDICA_DOWNLOAD_ADDONS_SHA256=3d40c14480e19329a22d51a9091cfce542cba52ff89e8acb41b16e8b0ed5a2fa
+# Tue, 26 Dec 2023 20:35:45 GMT
 RUN set -ex;     fetchDeps="         gnupg     ";     apt-get update;     apt-get install -y --no-install-recommends $fetchDeps;         export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 08656443618E6567A39524083EE197EF3F9E4287;         curl -fsSL -o friendica-full-${FRIENDICA_VERSION}.tar.gz         "https://files.friendi.ca/friendica-full-${FRIENDICA_VERSION}.tar.gz";     curl -fsSL -o friendica-full-${FRIENDICA_VERSION}.tar.gz.asc         "https://files.friendi.ca/friendica-full-${FRIENDICA_VERSION}.tar.gz.asc";     gpg --batch --verify friendica-full-${FRIENDICA_VERSION}.tar.gz.asc friendica-full-${FRIENDICA_VERSION}.tar.gz;     echo "${FRIENDICA_DOWNLOAD_SHA256} *friendica-full-${FRIENDICA_VERSION}.tar.gz" | sha256sum -c;     tar -xzf friendica-full-${FRIENDICA_VERSION}.tar.gz -C /usr/src/;     rm friendica-full-${FRIENDICA_VERSION}.tar.gz friendica-full-${FRIENDICA_VERSION}.tar.gz.asc;     mv -f /usr/src/friendica-full-${FRIENDICA_VERSION}/ /usr/src/friendica;     chmod 777 /usr/src/friendica/view/smarty3;         curl -fsSL -o friendica-addons-${FRIENDICA_ADDONS}.tar.gz             "https://files.friendi.ca/friendica-addons-${FRIENDICA_ADDONS}.tar.gz";     curl -fsSL -o friendica-addons-${FRIENDICA_ADDONS}.tar.gz.asc             "https://files.friendi.ca/friendica-addons-${FRIENDICA_ADDONS}.tar.gz.asc";     gpg --batch --verify friendica-addons-${FRIENDICA_ADDONS}.tar.gz.asc friendica-addons-${FRIENDICA_ADDONS}.tar.gz;     echo "${FRIENDICA_DOWNLOAD_ADDONS_SHA256} *friendica-addons-${FRIENDICA_ADDONS}.tar.gz" | sha256sum -c;     mkdir -p /usr/src/friendica/proxy;     mkdir -p /usr/src/friendica/addon;     tar -xzf friendica-addons-${FRIENDICA_ADDONS}.tar.gz -C /usr/src/friendica/addon --strip-components=1;     rm friendica-addons-${FRIENDICA_ADDONS}.tar.gz friendica-addons-${FRIENDICA_ADDONS}.tar.gz.asc;         gpgconf --kill all;     rm -rf "$GNUPGHOME";         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps;     rm -rf /var/lib/apt/lists/*
-# Tue, 19 Dec 2023 15:26:30 GMT
+# Tue, 26 Dec 2023 20:35:47 GMT
 COPY multi:ecba68c67f63e55d0b2b18cd57f1ecbe17d7d27bf9cb241b343fd490f8745145 in / 
-# Tue, 19 Dec 2023 15:26:30 GMT
+# Tue, 26 Dec 2023 20:35:47 GMT
 COPY multi:201dba5df7e408009a8882797a28095a47753a2db673a80c99e898e88501c42e in /usr/src/friendica/config/ 
-# Tue, 19 Dec 2023 15:26:30 GMT
+# Tue, 26 Dec 2023 20:35:47 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Tue, 19 Dec 2023 15:26:30 GMT
+# Tue, 26 Dec 2023 20:35:48 GMT
 CMD ["php-fpm"]
 ```
 
@@ -521,17 +521,17 @@ CMD ["php-fpm"]
 		Last Modified: Tue, 19 Dec 2023 15:27:52 GMT  
 		Size: 643.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c739f8ab236c529b647858c08f07be549b78d2d5ced56ea3373816a1ce57c5f4`  
-		Last Modified: Tue, 19 Dec 2023 15:28:00 GMT  
-		Size: 54.7 MB (54663191 bytes)  
+	-	`sha256:0370af0fedd412d8336ac96a3464acab6def16ca585d5977bea8ade4b4b3b917`  
+		Last Modified: Tue, 26 Dec 2023 20:38:05 GMT  
+		Size: 55.0 MB (55031138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:809faf750d5d35199105c3311c6fbfbe2348ad06e9985278eec7efb6f6aedd2d`  
-		Last Modified: Tue, 19 Dec 2023 15:27:52 GMT  
+	-	`sha256:5be5ebd944834c050811a732e1069ba68c059d32946ab223ffa5a2fb7d53f891`  
+		Last Modified: Tue, 26 Dec 2023 20:37:55 GMT  
 		Size: 3.1 KB (3136 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:56d1ade6444913dacec4f80fef10be550f9e9433c7e779d4b7da4eeeafe5cca2`  
-		Last Modified: Tue, 19 Dec 2023 15:27:53 GMT  
-		Size: 931.0 B  
+	-	`sha256:051175ec588403bfa02767de5b097303dc42257247e509c147dda1c386abf779`  
+		Last Modified: Tue, 26 Dec 2023 20:37:55 GMT  
+		Size: 929.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `friendica:fpm` - linux; arm64 variant v8
