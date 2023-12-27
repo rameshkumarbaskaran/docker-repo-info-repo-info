@@ -1,10 +1,10 @@
-# `friendica:2023.05-apache`
+# `friendica:2023.12-apache`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f5606ec4ea44aec882b377e2892b4f3366612639dea3c5564cedcdc50ee0f3b6`
-- Created: `2023-12-19T23:40:23.842749041Z`
-- Virtual Size: ~ 660.19 Mb  
+- Image ID: `sha256:fdc54999d5b0049e4fedf5358b1fe46d78841f81a5b968bf00a1ed25d8a6aa9b`
+- Created: `2023-12-26T19:57:23.133040792Z`
+- Virtual Size: ~ 659.41 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -27,10 +27,10 @@
   - `PHP_MEMORY_LIMIT=512M`
   - `PHP_UPLOAD_LIMIT=512M`
   - `FRIENDICA_SYSLOG_FLAGS=39`
-  - `FRIENDICA_VERSION=2023.05`
-  - `FRIENDICA_ADDONS=2023.05`
-  - `FRIENDICA_DOWNLOAD_SHA256=333e63c0aaea24a072c21393de3a1ac5b66e6cb25158db668417b842bedcdee7`
-  - `FRIENDICA_DOWNLOAD_ADDONS_SHA256=6b6f486532a995f67bf6bc0d459ee371a2bfd2ba9b95c84dac49193cdfe76ea8`
+  - `FRIENDICA_VERSION=2023.12`
+  - `FRIENDICA_ADDONS=2023.12`
+  - `FRIENDICA_DOWNLOAD_SHA256=bc29faa339d8d0ccd339dbd809e727d0ed9708913cecb8060c4eef907bc10aec`
+  - `FRIENDICA_DOWNLOAD_ADDONS_SHA256=3d40c14480e19329a22d51a9091cfce542cba52ff89e8acb41b16e8b0ed5a2fa`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -612,20 +612,13 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.74.0-1.3+deb11u10
-'http://deb.debian.org/debian-security/pool/updates/main/c/curl/curl_7.74.0-1.3%2bdeb11u10.dsc' curl_7.74.0-1.3+deb11u10.dsc 2703 SHA256:991d08ec7e549e5db57ef7c010d5014db2f96be7772b07b487bb65974aee0683
-'http://deb.debian.org/debian-security/pool/updates/main/c/curl/curl_7.74.0.orig.tar.gz' curl_7.74.0.orig.tar.gz 4043409 SHA256:e56b3921eeb7a2951959c02db0912b5fcd5fdba5aca071da819e1accf338bbd7
-'http://deb.debian.org/debian-security/pool/updates/main/c/curl/curl_7.74.0-1.3%2bdeb11u10.debian.tar.xz' curl_7.74.0-1.3+deb11u10.debian.tar.xz 72728 SHA256:ec93985b1f1a40221dfe06650db17e84d38432d7f7520d7ffd6018fff43e6c3a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/curl/7.74.0-1.3+deb11u10/
 
-- https://sources.debian.net/src/curl/7.74.0-1.3+deb11u10/ (for browsing the source)
-- https://sources.debian.net/src/curl/7.74.0-1.3+deb11u10/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/curl/7.74.0-1.3+deb11u10/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-2.1+deb11u1`
 
