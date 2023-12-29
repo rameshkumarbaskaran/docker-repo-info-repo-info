@@ -108,21 +108,13 @@ Licenses: (parsed from: `/usr/share/doc/libattr1/copyright`)
 - `LGPL-2+`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris attr=1:2.5.1-4
-'http://deb.debian.org/debian/pool/main/a/attr/attr_2.5.1-4.dsc' attr_2.5.1-4.dsc 2477 SHA256:0e1486bff1649602cb5cbb6224dbb641436dc8cd28d5c336ad85d650e07d23dd
-'http://deb.debian.org/debian/pool/main/a/attr/attr_2.5.1.orig.tar.xz' attr_2.5.1.orig.tar.xz 318188 SHA256:db448a626f9313a1a970d636767316a8da32aede70518b8050fa0de7947adc32
-'http://deb.debian.org/debian/pool/main/a/attr/attr_2.5.1.orig.tar.xz.asc' attr_2.5.1.orig.tar.xz.asc 833 SHA256:67bc632e754efbadba846d0b40138b3fc3e306c3b909a9ba868c6dba1e2689d0
-'http://deb.debian.org/debian/pool/main/a/attr/attr_2.5.1-4.debian.tar.xz' attr_2.5.1-4.debian.tar.xz 32152 SHA256:aea02a3c980a82804a5a333bf02e9e2737a8c5808671625595511290863d6791
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/attr/1:2.5.1-4/
 
-- https://sources.debian.net/src/attr/1:2.5.1-4/ (for browsing the source)
-- https://sources.debian.net/src/attr/1:2.5.1-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/attr/1:2.5.1-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `audit=1:3.1.2-1`
 
@@ -1130,20 +1122,13 @@ Licenses: (parsed from: `/usr/share/doc/libcap-ng0/copyright`)
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libcap-ng=0.8.3-3
-'http://deb.debian.org/debian/pool/main/libc/libcap-ng/libcap-ng_0.8.3-3.dsc' libcap-ng_0.8.3-3.dsc 1644 SHA256:fb95248570a9525dc705b02ba972f482e7c276dc5886356a228fbd3f02ae4931
-'http://deb.debian.org/debian/pool/main/libc/libcap-ng/libcap-ng_0.8.3.orig.tar.gz' libcap-ng_0.8.3.orig.tar.gz 455383 SHA256:bed6f6848e22bb2f83b5f764b2aef0ed393054e803a8e3a8711cb2a39e6b492d
-'http://deb.debian.org/debian/pool/main/libc/libcap-ng/libcap-ng_0.8.3-3.debian.tar.xz' libcap-ng_0.8.3-3.debian.tar.xz 10464 SHA256:47e2f032307279eae0f2febafb2079101f7c213beac630d167f7766c2a0a0346
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libcap-ng/0.8.3-3/
 
-- https://sources.debian.net/src/libcap-ng/0.8.3-3/ (for browsing the source)
-- https://sources.debian.net/src/libcap-ng/0.8.3-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libcap-ng/0.8.3-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libcap2=1:2.66-4`
 
@@ -1943,21 +1928,13 @@ Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`)
 - `customFSFUL`
 - `customFSFULLRWD`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris p11-kit=0.25.3-2
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.25.3-2.dsc' p11-kit_0.25.3-2.dsc 2538 SHA256:5468ff07c34951753426425a3a9136a3bf8e503b96cb0ad24a1439d6983dc0c4
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.25.3.orig.tar.xz' p11-kit_0.25.3.orig.tar.xz 991528 SHA256:d8ddce1bb7e898986f9d250ccae7c09ce14d82f1009046d202a0eb1b428b2adc
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.25.3.orig.tar.xz.asc' p11-kit_0.25.3.orig.tar.xz.asc 228 SHA256:91fb1fd7690b953eb32bf9ca52ae1b2466457539ac849468f1d236673b354860
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.25.3-2.debian.tar.xz' p11-kit_0.25.3-2.debian.tar.xz 25736 SHA256:4d081e7b3d52c33f9cb3f237564287ba1a6ae4cff3be8991985f1dd485014b96
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/p11-kit/0.25.3-2/
 
-- https://sources.debian.net/src/p11-kit/0.25.3-2/ (for browsing the source)
-- https://sources.debian.net/src/p11-kit/0.25.3-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/p11-kit/0.25.3-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pam=1.5.2-9.1`
 
@@ -2302,20 +2279,13 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=254.5-1
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_254.5-1.dsc' systemd_254.5-1.dsc 6890 SHA256:ee14c2e5e98ada43cb95004fcf8ada5ba7819973aa84328f78c056e85a1602c8
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_254.5.orig.tar.gz' systemd_254.5.orig.tar.gz 14334696 SHA256:41873783aa1c680e10d2f2626797a1c2fef8018d69b68c8c77639e140ee7846d
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_254.5-1.debian.tar.xz' systemd_254.5-1.debian.tar.xz 163340 SHA256:1132c18a30ad454307df343f4b6182eb2d9d8028c0b33835730a35f447d450e8
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/systemd/254.5-1/
 
-- https://sources.debian.net/src/systemd/254.5-1/ (for browsing the source)
-- https://sources.debian.net/src/systemd/254.5-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/systemd/254.5-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=3.08-3`
 

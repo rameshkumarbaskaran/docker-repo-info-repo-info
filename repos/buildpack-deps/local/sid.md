@@ -1733,21 +1733,13 @@ Licenses: (parsed from: `/usr/share/doc/gir1.2-freedesktop/copyright`, `/usr/sha
 - `Unicode-DFS-2016`
 - `bzip2-1.0.6`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gobject-introspection=1.78.1-5
-'http://deb.debian.org/debian/pool/main/g/gobject-introspection/gobject-introspection_1.78.1-5.dsc' gobject-introspection_1.78.1-5.dsc 3535 SHA256:1ad9d9be000ad5c70a3c8b4b8340cf57f0c407b38937dd3a7419c24efb38fb6d
-'http://deb.debian.org/debian/pool/main/g/gobject-introspection/gobject-introspection_1.78.1.orig-glib.tar.xz' gobject-introspection_1.78.1.orig-glib.tar.xz 5327096 SHA256:44eaab8b720877ce303c5540b657b126f12dc94972d9880b52959f43fb537b30
-'http://deb.debian.org/debian/pool/main/g/gobject-introspection/gobject-introspection_1.78.1.orig.tar.xz' gobject-introspection_1.78.1.orig.tar.xz 1060296 SHA256:bd7babd99af7258e76819e45ba4a6bc399608fe762d83fde3cac033c50841bb4
-'http://deb.debian.org/debian/pool/main/g/gobject-introspection/gobject-introspection_1.78.1-5.debian.tar.xz' gobject-introspection_1.78.1-5.debian.tar.xz 43960 SHA256:63c578605aa05c812a11ed2c8a0fc070d86f4a3af3b18c4b7db76634f6e66f38
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gobject-introspection/1.78.1-5/
 
-- https://sources.debian.net/src/gobject-introspection/1.78.1-5/ (for browsing the source)
-- https://sources.debian.net/src/gobject-introspection/1.78.1-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gobject-introspection/1.78.1-5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `graphite2=1.3.14-1`
 
@@ -2003,20 +1995,13 @@ Licenses: (parsed from: `/usr/share/doc/imagemagick/copyright`, `/usr/share/doc/
 - `Perllikelicence`
 - `aclocal`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris imagemagick=8:6.9.12.98+dfsg1-4
-'http://deb.debian.org/debian/pool/main/i/imagemagick/imagemagick_6.9.12.98%2bdfsg1-4.dsc' imagemagick_6.9.12.98+dfsg1-4.dsc 5073 SHA256:6de5f707c784bc044422fe219e249bab6983f7de0a525102d3d9d68cab381245
-'http://deb.debian.org/debian/pool/main/i/imagemagick/imagemagick_6.9.12.98%2bdfsg1.orig.tar.xz' imagemagick_6.9.12.98+dfsg1.orig.tar.xz 9606104 SHA256:123a3d1109bf76601614df30d886099abd47aad1b5af8789fae0a954e7475e2d
-'http://deb.debian.org/debian/pool/main/i/imagemagick/imagemagick_6.9.12.98%2bdfsg1-4.debian.tar.xz' imagemagick_6.9.12.98+dfsg1-4.debian.tar.xz 260080 SHA256:b5acd306a48c296ccd86496c49f27a654ca08812dd36ef9a084f7c77fa2a244c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/imagemagick/8:6.9.12.98+dfsg1-4/
 
-- https://sources.debian.net/src/imagemagick/8:6.9.12.98+dfsg1-4/ (for browsing the source)
-- https://sources.debian.net/src/imagemagick/8:6.9.12.98+dfsg1-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/imagemagick/8:6.9.12.98+dfsg1-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `imath=3.1.9-3`
 
@@ -2492,20 +2477,13 @@ Licenses: (parsed from: `/usr/share/doc/libde265-0/copyright`)
 - `other-1`
 - `public-domain-1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libde265=1.0.13-1
-'http://deb.debian.org/debian/pool/main/libd/libde265/libde265_1.0.13-1.dsc' libde265_1.0.13-1.dsc 2347 SHA256:941c639bf0f848e6b0b0c2eaebaab399dd00a609d75af20e16924729dbb7e9cb
-'http://deb.debian.org/debian/pool/main/libd/libde265/libde265_1.0.13.orig.tar.gz' libde265_1.0.13.orig.tar.gz 845625 SHA256:b921bc90521f28914bbf0c638c436b79831857ca4f7af1f3dd4ce2228bf40cfd
-'http://deb.debian.org/debian/pool/main/libd/libde265/libde265_1.0.13-1.debian.tar.xz' libde265_1.0.13-1.debian.tar.xz 136204 SHA256:0611de2493043a7d0399da53f48dc63ce7733c76deb7838501807343f9c60978
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libde265/1.0.13-1/
 
-- https://sources.debian.net/src/libde265/1.0.13-1/ (for browsing the source)
-- https://sources.debian.net/src/libde265/1.0.13-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libde265/1.0.13-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libdeflate=1.18-1`
 
@@ -2800,20 +2778,13 @@ Licenses: (parsed from: `/usr/share/doc/libheif-plugin-dav1d/copyright`, `/usr/s
 - `LGPL-3+`
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libheif=1.17.4-1
-'http://deb.debian.org/debian/pool/main/libh/libheif/libheif_1.17.4-1.dsc' libheif_1.17.4-1.dsc 3416 SHA256:3c92d9cd9ed56a161f46c18a53785dc977dee13d55c66aeef77abf8e8d7d772a
-'http://deb.debian.org/debian/pool/main/libh/libheif/libheif_1.17.4.orig.tar.gz' libheif_1.17.4.orig.tar.gz 1432474 SHA256:3619c092992eb5ccaf7795cbdc8ac70f96ab0f20fc5681fcef6ff5fec027a838
-'http://deb.debian.org/debian/pool/main/libh/libheif/libheif_1.17.4-1.debian.tar.xz' libheif_1.17.4-1.debian.tar.xz 9808 SHA256:7b7b81a0585788f1d015bb5bbe2776c64ec63070597463b452d186fd0e4b4a79
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libheif/1.17.4-1/
 
-- https://sources.debian.net/src/libheif/1.17.4-1/ (for browsing the source)
-- https://sources.debian.net/src/libheif/1.17.4-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libheif/1.17.4-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libice=2:1.0.10-1`
 
