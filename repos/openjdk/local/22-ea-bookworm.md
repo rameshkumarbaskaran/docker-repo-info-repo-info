@@ -1,10 +1,10 @@
-# `openjdk:22-ea-28-jdk-bookworm`
+# `openjdk:22-ea-29-jdk-bookworm`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3ac0d225855ce1bff2ac78d119cc3620cf7cbe067f00be5af5fa8d6dfc470c36`
-- Created: `2023-12-15T19:48:12Z`
-- Virtual Size: ~ 736.46 Mb  
+- Image ID: `sha256:1d05db9b28b4cdbf218647a69b68a87596df0cb2c90aa6cbe0bcacd33d14b6b6`
+- Created: `2023-12-22T01:48:11Z`
+- Virtual Size: ~ 736.50 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/openjdk-22/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/usr/local/openjdk-22`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=22-ea+28`
+  - `JAVA_VERSION=22-ea+29`
 
 ## `dpkg` (`.deb`-based packages)
 
