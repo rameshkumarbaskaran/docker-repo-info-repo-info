@@ -545,19 +545,13 @@ Licenses: (parsed from: `/usr/share/doc/debconf/copyright`)
 
 - `BSD-2-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris debconf=1.5.82
-'http://deb.debian.org/debian/pool/main/d/debconf/debconf_1.5.82.dsc' debconf_1.5.82.dsc 2035 SHA256:ed6e8cc6e073344a25ab932602b3b814f25cfa1a7bfd69e464f9bad65f250dea
-'http://deb.debian.org/debian/pool/main/d/debconf/debconf_1.5.82.tar.xz' debconf_1.5.82.tar.xz 571540 SHA256:2d0550c4e2fb98d12055b245907978b28ee2d2b07b62e46be7523384d2ce985e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/debconf/1.5.82/
 
-- https://sources.debian.net/src/debconf/1.5.82/ (for browsing the source)
-- https://sources.debian.net/src/debconf/1.5.82/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/debconf/1.5.82/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `debian-archive-keyring=2023.4`
 
@@ -2017,11 +2011,17 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libssh2=1.11.0-3
-'http://http.debian.net/debian/pool/main/libs/libssh2/libssh2_1.11.0-3.dsc' libssh2_1.11.0-3.dsc 2289 SHA256:250dad54817026377b10349f9ae2a59c2245fc01544fbc05ee32930938d19d01
-'http://http.debian.net/debian/pool/main/libs/libssh2/libssh2_1.11.0.orig.tar.gz' libssh2_1.11.0.orig.tar.gz 1053562 SHA256:3736161e41e2693324deb38c26cfdc3efe6209d634ba4258db1cecff6a5ad461
-'http://http.debian.net/debian/pool/main/libs/libssh2/libssh2_1.11.0.orig.tar.gz.asc' libssh2_1.11.0.orig.tar.gz.asc 488 SHA256:b6a32c85a3f9b6f30f2b3595ba034b48a8508ee9c94708ef811f58fd7adfcdee
-'http://http.debian.net/debian/pool/main/libs/libssh2/libssh2_1.11.0-3.debian.tar.xz' libssh2_1.11.0-3.debian.tar.xz 10504 SHA256:4c3443c6549f57496c219d0134766f81a4c97cde40daad1ce4ef8aa468934cd6
+'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.11.0-3.dsc' libssh2_1.11.0-3.dsc 2289 SHA256:250dad54817026377b10349f9ae2a59c2245fc01544fbc05ee32930938d19d01
+'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.11.0.orig.tar.gz' libssh2_1.11.0.orig.tar.gz 1053562 SHA256:3736161e41e2693324deb38c26cfdc3efe6209d634ba4258db1cecff6a5ad461
+'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.11.0.orig.tar.gz.asc' libssh2_1.11.0.orig.tar.gz.asc 488 SHA256:b6a32c85a3f9b6f30f2b3595ba034b48a8508ee9c94708ef811f58fd7adfcdee
+'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.11.0-3.debian.tar.xz' libssh2_1.11.0-3.debian.tar.xz 10504 SHA256:4c3443c6549f57496c219d0134766f81a4c97cde40daad1ce4ef8aa468934cd6
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libssh2/1.11.0-3/ (for browsing the source)
+- https://sources.debian.net/src/libssh2/1.11.0-3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libssh2/1.11.0-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libtasn1-6=4.19.0-3`
 
@@ -2226,10 +2226,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libxcrypt=1:4.4.36-2
-'http://http.debian.net/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.36-2.dsc' libxcrypt_4.4.36-2.dsc 1563 SHA256:7a1c78fcd9029f5828f22d5697ec02aacaec276c23ab06af82f13e1a77026ea2
-'http://http.debian.net/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.36.orig.tar.xz' libxcrypt_4.4.36.orig.tar.xz 392732 SHA256:7b7abbc89f13f5194211aa6861ed954e4fa3a210a4cb64f7e13dc8cf413e7f2a
-'http://http.debian.net/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.36-2.debian.tar.xz' libxcrypt_4.4.36-2.debian.tar.xz 8284 SHA256:c91f86abf83fc71f69fe80d38f92354042436b6eca8a3ef666ffc86e319dd267
+'http://deb.debian.org/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.36-2.dsc' libxcrypt_4.4.36-2.dsc 1563 SHA256:7a1c78fcd9029f5828f22d5697ec02aacaec276c23ab06af82f13e1a77026ea2
+'http://deb.debian.org/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.36.orig.tar.xz' libxcrypt_4.4.36.orig.tar.xz 392732 SHA256:7b7abbc89f13f5194211aa6861ed954e4fa3a210a4cb64f7e13dc8cf413e7f2a
+'http://deb.debian.org/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.36-2.debian.tar.xz' libxcrypt_4.4.36-2.debian.tar.xz 8284 SHA256:c91f86abf83fc71f69fe80d38f92354042436b6eca8a3ef666ffc86e319dd267
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libxcrypt/1:4.4.36-2/ (for browsing the source)
+- https://sources.debian.net/src/libxcrypt/1:4.4.36-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libxcrypt/1:4.4.36-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxdmcp=1:1.1.2-3`
 
@@ -3228,11 +3234,17 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris sed=4.9-1
-'http://http.debian.net/debian/pool/main/s/sed/sed_4.9-1.dsc' sed_4.9-1.dsc 2077 SHA256:f0670e00c1ad51321e5b741a737e977cdb3b0eef47964b2269535f7820df576a
-'http://http.debian.net/debian/pool/main/s/sed/sed_4.9.orig.tar.xz' sed_4.9.orig.tar.xz 1397092 SHA256:6e226b732e1cd739464ad6862bd1a1aba42d7982922da7a53519631d24975181
-'http://http.debian.net/debian/pool/main/s/sed/sed_4.9.orig.tar.xz.asc' sed_4.9.orig.tar.xz.asc 833 SHA256:9ea64f215b308ae0a80cd958daaac23bb13491d69a472a0195974d107890a8c6
-'http://http.debian.net/debian/pool/main/s/sed/sed_4.9-1.debian.tar.xz' sed_4.9-1.debian.tar.xz 62616 SHA256:24cdd6a3b40909ec374bd87df62364904bbe18fc12ba66111e9f9f617ff7f679
+'http://deb.debian.org/debian/pool/main/s/sed/sed_4.9-1.dsc' sed_4.9-1.dsc 2077 SHA256:f0670e00c1ad51321e5b741a737e977cdb3b0eef47964b2269535f7820df576a
+'http://deb.debian.org/debian/pool/main/s/sed/sed_4.9.orig.tar.xz' sed_4.9.orig.tar.xz 1397092 SHA256:6e226b732e1cd739464ad6862bd1a1aba42d7982922da7a53519631d24975181
+'http://deb.debian.org/debian/pool/main/s/sed/sed_4.9.orig.tar.xz.asc' sed_4.9.orig.tar.xz.asc 833 SHA256:9ea64f215b308ae0a80cd958daaac23bb13491d69a472a0195974d107890a8c6
+'http://deb.debian.org/debian/pool/main/s/sed/sed_4.9-1.debian.tar.xz' sed_4.9-1.debian.tar.xz 62616 SHA256:24cdd6a3b40909ec374bd87df62364904bbe18fc12ba66111e9f9f617ff7f679
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/sed/4.9-1/ (for browsing the source)
+- https://sources.debian.net/src/sed/4.9-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/sed/4.9-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sensible-utils=0.0.20`
 
@@ -3466,11 +3478,17 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tzdata=2023c-11
-'http://http.debian.net/debian/pool/main/t/tzdata/tzdata_2023c-11.dsc' tzdata_2023c-11.dsc 2433 SHA256:6185ed271bac61cb31740320206ec23710c5017532e1d0ef6e3bf3887c16594e
-'http://http.debian.net/debian/pool/main/t/tzdata/tzdata_2023c.orig.tar.gz' tzdata_2023c.orig.tar.gz 443902 SHA256:3f510b5d1b4ae9bb38e485aa302a776b317fb3637bdb6404c4adf7b6cadd965c
-'http://http.debian.net/debian/pool/main/t/tzdata/tzdata_2023c.orig.tar.gz.asc' tzdata_2023c.orig.tar.gz.asc 833 SHA256:d5ec7b6ceddc46aa137c0ef85fa5c87445509d7997c067ee0fd2e2a23f833557
-'http://http.debian.net/debian/pool/main/t/tzdata/tzdata_2023c-11.debian.tar.xz' tzdata_2023c-11.debian.tar.xz 122416 SHA256:1cce89e3aea23179d165cde708b82818cb7571b43828e29bb34af51ec4008127
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2023c-11.dsc' tzdata_2023c-11.dsc 2433 SHA256:6185ed271bac61cb31740320206ec23710c5017532e1d0ef6e3bf3887c16594e
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2023c.orig.tar.gz' tzdata_2023c.orig.tar.gz 443902 SHA256:3f510b5d1b4ae9bb38e485aa302a776b317fb3637bdb6404c4adf7b6cadd965c
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2023c.orig.tar.gz.asc' tzdata_2023c.orig.tar.gz.asc 833 SHA256:d5ec7b6ceddc46aa137c0ef85fa5c87445509d7997c067ee0fd2e2a23f833557
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2023c-11.debian.tar.xz' tzdata_2023c-11.debian.tar.xz 122416 SHA256:1cce89e3aea23179d165cde708b82818cb7571b43828e29bb34af51ec4008127
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/tzdata/2023c-11/ (for browsing the source)
+- https://sources.debian.net/src/tzdata/2023c-11/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tzdata/2023c-11/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0043+nmu1`
 
@@ -3606,10 +3624,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris vim=2:9.0.2116-1
-'http://http.debian.net/debian/pool/main/v/vim/vim_9.0.2116-1.dsc' vim_9.0.2116-1.dsc 3177 SHA256:13a3f80cc7cdf03e65ba8016d3746325ab9013ccdf4860dc816dab9e10e391a1
-'http://http.debian.net/debian/pool/main/v/vim/vim_9.0.2116.orig.tar.xz' vim_9.0.2116.orig.tar.xz 11392984 SHA256:b8e4d64b949ec16e37b8fe2df011475a1a6ac1eeb25fc518ae0fb97ce8b6a828
-'http://http.debian.net/debian/pool/main/v/vim/vim_9.0.2116-1.debian.tar.xz' vim_9.0.2116-1.debian.tar.xz 187300 SHA256:566fd27b303da29bf7e621a78697cf443c1862e46054d96e05ffe1ac4ae7ba1d
+'http://deb.debian.org/debian/pool/main/v/vim/vim_9.0.2116-1.dsc' vim_9.0.2116-1.dsc 3177 SHA256:13a3f80cc7cdf03e65ba8016d3746325ab9013ccdf4860dc816dab9e10e391a1
+'http://deb.debian.org/debian/pool/main/v/vim/vim_9.0.2116.orig.tar.xz' vim_9.0.2116.orig.tar.xz 11392984 SHA256:b8e4d64b949ec16e37b8fe2df011475a1a6ac1eeb25fc518ae0fb97ce8b6a828
+'http://deb.debian.org/debian/pool/main/v/vim/vim_9.0.2116-1.debian.tar.xz' vim_9.0.2116-1.debian.tar.xz 187300 SHA256:566fd27b303da29bf7e621a78697cf443c1862e46054d96e05ffe1ac4ae7ba1d
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/vim/2:9.0.2116-1/ (for browsing the source)
+- https://sources.debian.net/src/vim/2:9.0.2116-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/vim/2:9.0.2116-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `wget=1.21.4-1`
 
