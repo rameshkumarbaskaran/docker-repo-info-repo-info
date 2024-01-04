@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:22f4c50952578b11e50fea0d0b305e08be0d0ad19e7a0e97e8dbece79a708c12`
-- Created: `2023-12-06T16:27:27Z`
+- Image ID: `sha256:3fc7ef4fb9841b443900585b51458b0e9b0e2fc5d091cb202cbb039bdb82853a`
+- Created: `2024-01-03T18:58:56Z`
 - Virtual Size: ~ 469.08 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -22,6 +22,7 @@
   - `PHP_ASC_URL=https://www.php.net/distributions/php-8.2.14.tar.xz.asc`
   - `PHP_SHA256=763ecd39fcf51c3815af6ef6e43fa9aa0d0bd8e5a615009e5f4780c92705f583`
   - `DRUPAL_VERSION=7.99`
+  - `DRUPAL_URL=https://ftp.drupal.org/files/projects/drupal-7.99.tar.gz`
   - `DRUPAL_MD5=0fbcb06e354309356e6b4e33d2cd242d`
 
 ## `dpkg` (`.deb`-based packages)
