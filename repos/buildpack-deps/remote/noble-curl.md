@@ -1,0 +1,213 @@
+## `buildpack-deps:noble-curl`
+
+```console
+$ docker pull buildpack-deps@sha256:cc9f9581e65338f764023c6bd83fa0531e60313039b9cb14daac8069e884ed16
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 5
+	-	linux; amd64
+	-	linux; arm variant v7
+	-	linux; arm64 variant v8
+	-	linux; ppc64le
+	-	linux; s390x
+
+### `buildpack-deps:noble-curl` - linux; amd64
+
+```console
+$ docker pull buildpack-deps@sha256:39119ab23629bc02523acf730ee02c69e726a0c77dd8f7782a35bf57b34caa03
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **44.1 MB (44069174 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:4a90ee8d764bcb1fca0b09b0c994a4d1f3fba7d20a05d9e24621ca576c967c8e`
+-	Default Command: `["\/bin\/bash"]`
+
+```dockerfile
+# Thu, 21 Dec 2023 07:59:58 GMT
+ARG RELEASE
+# Thu, 21 Dec 2023 07:59:58 GMT
+ARG LAUNCHPAD_BUILD_ARCH
+# Thu, 21 Dec 2023 07:59:58 GMT
+LABEL org.opencontainers.image.ref.name=ubuntu
+# Thu, 21 Dec 2023 07:59:58 GMT
+LABEL org.opencontainers.image.version=24.04
+# Thu, 21 Dec 2023 08:00:00 GMT
+ADD file:a0ba91d32217ea2536915535ff91264b55534a6ec7ff3d6ae86c586ba16b04e5 in / 
+# Thu, 21 Dec 2023 08:00:01 GMT
+CMD ["/bin/bash"]
+# Thu, 04 Jan 2024 20:33:12 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		gnupg 		netbase 		sq 		wget 		tzdata 	; 	rm -rf /var/lib/apt/lists/*
+```
+
+-	Layers:
+	-	`sha256:e6e962016133a2e69bf8bb72544b211445633f148627c656908805f0ca1e2a14`  
+		Last Modified: Tue, 02 Jan 2024 21:20:35 GMT  
+		Size: 30.4 MB (30350118 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7eab6a772f8ed88e9b2ee72076bfd4fb0e94a8febad8182dcac2722aae4058e9`  
+		Last Modified: Thu, 04 Jan 2024 20:38:23 GMT  
+		Size: 13.7 MB (13719056 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `buildpack-deps:noble-curl` - linux; arm variant v7
+
+```console
+$ docker pull buildpack-deps@sha256:c35ef4721ff07e97371000cc01c57546cbd0db469e7e2eb68dc1ecdb5b87289f
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **40.4 MB (40390671 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:da3dbf4f3354eae5e63466282214af949b1c061985e490dfa855c389d1c6fc3a`
+-	Default Command: `["\/bin\/bash"]`
+
+```dockerfile
+# Thu, 21 Dec 2023 08:15:34 GMT
+ARG RELEASE
+# Thu, 21 Dec 2023 08:15:34 GMT
+ARG LAUNCHPAD_BUILD_ARCH
+# Thu, 21 Dec 2023 08:15:35 GMT
+LABEL org.opencontainers.image.ref.name=ubuntu
+# Thu, 21 Dec 2023 08:15:35 GMT
+LABEL org.opencontainers.image.version=24.04
+# Thu, 21 Dec 2023 08:15:37 GMT
+ADD file:e7d60066a3b63b2e3fe37105c61c5e46691f4f567804e5eca5a9006ceed5d139 in / 
+# Thu, 21 Dec 2023 08:15:37 GMT
+CMD ["/bin/bash"]
+# Thu, 04 Jan 2024 20:17:20 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		gnupg 		netbase 		sq 		wget 		tzdata 	; 	rm -rf /var/lib/apt/lists/*
+```
+
+-	Layers:
+	-	`sha256:5b1fdfccfb097e3ea8369bc634c0a794c7f5dfa00a944deeff4a97c9496acd7f`  
+		Last Modified: Thu, 04 Jan 2024 20:24:32 GMT  
+		Size: 25.8 MB (25769091 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7239c158ae97251c79c79b045912b146acfff69748a2146ac66091ac11d3a817`  
+		Last Modified: Thu, 04 Jan 2024 20:24:29 GMT  
+		Size: 14.6 MB (14621580 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `buildpack-deps:noble-curl` - linux; arm64 variant v8
+
+```console
+$ docker pull buildpack-deps@sha256:5308d374b09e185f3b16cfe0697c64dfd435279746844743abfff7693289f129
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **43.0 MB (42954135 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:ce458375baddd8c7c220058f0da32a873da480d3938150fb763fae803022e7a6`
+-	Default Command: `["\/bin\/bash"]`
+
+```dockerfile
+# Thu, 21 Dec 2023 08:07:26 GMT
+ARG RELEASE
+# Thu, 21 Dec 2023 08:07:26 GMT
+ARG LAUNCHPAD_BUILD_ARCH
+# Thu, 21 Dec 2023 08:07:26 GMT
+LABEL org.opencontainers.image.ref.name=ubuntu
+# Thu, 21 Dec 2023 08:07:26 GMT
+LABEL org.opencontainers.image.version=24.04
+# Thu, 21 Dec 2023 08:07:30 GMT
+ADD file:747b926a2c5db1bde721d5f2e6cc257e61f094098f4ec5109ca37f7ec202e15f in / 
+# Thu, 21 Dec 2023 08:07:31 GMT
+CMD ["/bin/bash"]
+# Thu, 04 Jan 2024 21:02:41 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		gnupg 		netbase 		sq 		wget 		tzdata 	; 	rm -rf /var/lib/apt/lists/*
+```
+
+-	Layers:
+	-	`sha256:894886ead4cb9562f49271af0159d0a1ca3cd047fe095546a95b2547503278bc`  
+		Last Modified: Thu, 04 Jan 2024 21:08:18 GMT  
+		Size: 27.4 MB (27440272 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cad4c764df2e8f81f9fa5b16b3c9e87d20f8f97148504bbf60a3eb3b51fc5d07`  
+		Last Modified: Thu, 04 Jan 2024 21:08:16 GMT  
+		Size: 15.5 MB (15513863 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `buildpack-deps:noble-curl` - linux; ppc64le
+
+```console
+$ docker pull buildpack-deps@sha256:573f51f70c554d48fc87e5ebc5d9233a687775315fd1acbd5b2ae574f5ac3a60
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **51.0 MB (50953001 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:d640d9d12e0a07c5b7812cf0dd6b763afffc93aa2c89e2ef93bf61c1349e90ca`
+-	Default Command: `["\/bin\/bash"]`
+
+```dockerfile
+# Thu, 21 Dec 2023 07:46:19 GMT
+ARG RELEASE
+# Thu, 21 Dec 2023 07:46:19 GMT
+ARG LAUNCHPAD_BUILD_ARCH
+# Thu, 21 Dec 2023 07:46:19 GMT
+LABEL org.opencontainers.image.ref.name=ubuntu
+# Thu, 21 Dec 2023 07:46:20 GMT
+LABEL org.opencontainers.image.version=24.04
+# Thu, 21 Dec 2023 07:46:22 GMT
+ADD file:83a18fa01ec4574671ff01727c2059a3f114915594312ad939999fb6266c8b85 in / 
+# Thu, 21 Dec 2023 07:46:23 GMT
+CMD ["/bin/bash"]
+# Thu, 04 Jan 2024 20:30:16 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		gnupg 		netbase 		sq 		wget 		tzdata 	; 	rm -rf /var/lib/apt/lists/*
+```
+
+-	Layers:
+	-	`sha256:f7ae3c70a47814103cc56d7659dc773a9caf5ce8df4d8324b88d9b5043e063d4`  
+		Last Modified: Thu, 04 Jan 2024 20:38:35 GMT  
+		Size: 32.4 MB (32405112 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:61a6c7c9e8ceb49b67e3dbdacee3d70552db6ae83ceaea6d637dab7c45794b13`  
+		Last Modified: Thu, 04 Jan 2024 20:38:28 GMT  
+		Size: 18.5 MB (18547889 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `buildpack-deps:noble-curl` - linux; s390x
+
+```console
+$ docker pull buildpack-deps@sha256:6821928908b5494c7eefa6dbc125e23bb3c1659bc2e522082425a0e4d1ab9ed9
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **44.8 MB (44784004 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:bedae039e7b5557273a8c4cb57e9ff66352e584f7baa2d11b4d0ebc7a138eb7f`
+-	Default Command: `["\/bin\/bash"]`
+
+```dockerfile
+# Thu, 21 Dec 2023 08:03:37 GMT
+ARG RELEASE
+# Thu, 21 Dec 2023 08:03:37 GMT
+ARG LAUNCHPAD_BUILD_ARCH
+# Thu, 21 Dec 2023 08:03:37 GMT
+LABEL org.opencontainers.image.ref.name=ubuntu
+# Thu, 21 Dec 2023 08:03:37 GMT
+LABEL org.opencontainers.image.version=24.04
+# Thu, 21 Dec 2023 08:03:39 GMT
+ADD file:6d95854b18c392a40cc9d516bfc1a0bcd815c49b996995d35c13d1ff02d92b8b in / 
+# Thu, 21 Dec 2023 08:03:39 GMT
+CMD ["/bin/bash"]
+# Thu, 04 Jan 2024 20:45:42 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		gnupg 		netbase 		sq 		wget 		tzdata 	; 	rm -rf /var/lib/apt/lists/*
+```
+
+-	Layers:
+	-	`sha256:b0eb0ee1ee32a505c711b23ae33e7ecc888899622d95c7e982ef82dbb529c5d8`  
+		Last Modified: Thu, 04 Jan 2024 20:50:14 GMT  
+		Size: 28.2 MB (28174524 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:02199b1c3761965bf141c9010678515a9c50e39cc89d2a830d1dd5d17aa25bc2`  
+		Last Modified: Thu, 04 Jan 2024 20:50:13 GMT  
+		Size: 16.6 MB (16609480 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
