@@ -1,17 +1,15 @@
-# `perl:5.39.5-threaded`
+# `perl:5.39.6-threaded`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d8ac96655040608c109b62d584b52b03b062a400f9e0de283f2c2f01fc5c3738`
-- Created: `2023-11-30T02:54:02Z`
-- Virtual Size: ~ 991.56 Mb  
+- Image ID: `sha256:1f12d49e778369e476d996d98f91c347380a25a37e9da6d40b51ca2772f06a21`
+- Created: `2023-12-31T10:01:19Z`
+- Virtual Size: ~ 991.62 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Command: `["perl5.39.5","-de0"]`
+- Command: `["perl5.39.6","-de0"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-- Labels:
-  - `maintainer=Peter Martini <PeterCMartini@GMail.com>, Zak B. Elep <zakame@cpan.org>`
 
 ## `dpkg` (`.deb`-based packages)
 

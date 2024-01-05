@@ -2,16 +2,14 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ff17f70767cfbdd064929e0b8bcf9db4d7cd29ce42ecc53b146cfbaf7b44f2b5`
-- Created: `2023-11-30T02:54:02Z`
-- Virtual Size: ~ 174.02 Mb  
+- Image ID: `sha256:131d419378ef74c8ce8f8bd92958b049c2e9e501aa86175bd5fddffafecfb86f`
+- Created: `2023-12-31T10:01:19Z`
+- Virtual Size: ~ 173.98 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["perl5.38.2","-de0"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-- Labels:
-  - `maintainer=Peter Martini <PeterCMartini@GMail.com>, Zak B. Elep <zakame@cpan.org>`
 
 ## `dpkg` (`.deb`-based packages)
 
