@@ -28,7 +28,7 @@
 ## `mongo-express:1`
 
 ```console
-$ docker pull mongo-express@sha256:46abf702a626e0069b829c7051039c1aa156ba0392bac70dbd14b037478f61fb
+$ docker pull mongo-express@sha256:104cf75d21a940f9fb7cb9be6fbb7038a0518cb7b8766b3c2480f820cdb95b82
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -129,84 +129,97 @@ CMD ["mongo-express"]
 ### `mongo-express:1` - linux; arm64 variant v8
 
 ```console
-$ docker pull mongo-express@sha256:a582adff71bded545782b7c43e06c50f99ff4843745e311a0f95772f11cc30a5
+$ docker pull mongo-express@sha256:ba5eaa9c99556abc3e37ece5d6b510a22717fe99c069cf66d42ca6d1334930c8
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.3 MB (69335949 bytes)**  
+-	Total Size: **79.4 MB (79444118 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:28a77c241c143b6a43a6ff849ecb2e73ac6ba1db5052f54607bcb57d78d9d709`
+-	Image ID: `sha256:684f8a881c7c2719aed4bf3eccaf9d92ad2b65400d96dd1f0a13fbfedaeda244`
 -	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["mongo-express"]`
 
 ```dockerfile
-# Thu, 30 Nov 2023 23:11:07 GMT
-ADD file:e5c66967d6570e36da50c9d42dd8f8f55e6c6a65b92c79601ea9e750c076fa2a in / 
-# Thu, 30 Nov 2023 23:11:07 GMT
+# Thu, 30 Nov 2023 23:11:03 GMT
+ADD file:d8a30995bbcd627f084912c728fda5483b6ba486de25af588a0956069d0bd7ad in / 
+# Thu, 30 Nov 2023 23:11:03 GMT
 CMD ["/bin/sh"]
-# Sat, 02 Dec 2023 03:27:42 GMT
+# Sat, 02 Dec 2023 03:48:51 GMT
 ENV NODE_VERSION=18.19.0
-# Sat, 02 Dec 2023 03:48:42 GMT
+# Sat, 02 Dec 2023 04:09:30 GMT
 RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="10b7b23b6b867a25f060a433b83f5c3ecb3bcf7cdba1c0ce46443065a832fd41" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
-# Sat, 02 Dec 2023 03:48:43 GMT
+# Sat, 02 Dec 2023 04:09:30 GMT
 ENV YARN_VERSION=1.22.19
-# Sat, 02 Dec 2023 03:48:47 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
-# Sat, 02 Dec 2023 03:48:48 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
-# Sat, 02 Dec 2023 03:48:48 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Sat, 02 Dec 2023 03:48:48 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 CMD ["node"]
-# Sat, 02 Dec 2023 04:45:05 GMT
-ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true VCAP_APP_HOST=0.0.0.0
-# Sat, 02 Dec 2023 04:45:05 GMT
-ENV MONGO_EXPRESS_VERSION=1.0.0
-# Sat, 02 Dec 2023 04:45:15 GMT
-RUN set -eux;     yarn add mongo-express@${MONGO_EXPRESS_VERSION};     apk -U add --no-cache         bash         tini
-# Sat, 02 Dec 2023 04:45:15 GMT
-WORKDIR /node_modules/mongo-express
-# Sat, 02 Dec 2023 04:45:15 GMT
+# Sat, 06 Jan 2024 01:56:27 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:56:27 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:56:59 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:57:01 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:57:01 GMT
 EXPOSE 8081
-# Sat, 02 Dec 2023 04:45:16 GMT
-COPY file:a907b69e6dd5a27a50ea886b61d030160973910412c6c144b98f31160550e1cf in / 
-# Sat, 02 Dec 2023 04:45:16 GMT
+# Sat, 06 Jan 2024 01:57:01 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:57:02 GMT
 ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
-# Sat, 02 Dec 2023 04:45:16 GMT
+# Sat, 06 Jan 2024 01:57:02 GMT
 CMD ["mongo-express"]
 ```
 
 -	Layers:
-	-	`sha256:b8180c93b172865af87a7c0e7e3c8bcb139e0d0c92e19c96467ff2cd4c8919ad`  
-		Last Modified: Thu, 30 Nov 2023 23:11:45 GMT  
-		Size: 3.3 MB (3258348 bytes)  
+	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
+		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
+		Size: 3.3 MB (3333033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:789e422d15b7bfbdf68dec022599a85f691da6929abdc4dd95e79e2ac01d39ea`  
-		Last Modified: Sat, 02 Dec 2023 04:16:53 GMT  
-		Size: 39.8 MB (39818057 bytes)  
+	-	`sha256:cd9cba98305bbc9b5b1acc82808c97ec2f1bdd0918782e26a4f249c89e8f5f1c`  
+		Last Modified: Sat, 02 Dec 2023 04:17:12 GMT  
+		Size: 39.8 MB (39817628 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19ee3be5ce42dbc4b3c8e895cde159839fc11b857d1e603974af0d856c4290e5`  
-		Last Modified: Sat, 02 Dec 2023 04:16:48 GMT  
-		Size: 2.3 MB (2342828 bytes)  
+	-	`sha256:fbb1cdcfb3b6e7d1dbbdde57709e15e2c4bbdcac8f7c3da88459d74bc402c637`  
+		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
+		Size: 2.3 MB (2342686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4084bae0cb59af9df43b6f9bbc3d04c234a005b2c4eae80c70641ccd9d9776e4`  
-		Last Modified: Sat, 02 Dec 2023 04:16:48 GMT  
-		Size: 447.0 B  
+	-	`sha256:266cff88a90930625e27a71f05f05b0bb69c1c3612e447e70131636367599c6c`  
+		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
+		Size: 449.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:711dc5ba72b1abcf9cb5d895b104e44afc440a91eefaef99cea83609d170db42`  
-		Last Modified: Sat, 02 Dec 2023 04:45:52 GMT  
-		Size: 23.9 MB (23915506 bytes)  
+	-	`sha256:b233574749281abc1a8ad5a8fb4f54bd3aa2b79c58bd876195c947c20d3083fa`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 887.0 KB (886996 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:52f4dec118937c0d93706facb3a84f5ff4ac5cf2c63761c517f5ec697213e6a3`  
-		Last Modified: Sat, 02 Dec 2023 04:45:48 GMT  
-		Size: 763.0 B  
+	-	`sha256:1254cb9a9f437dc36f890b22f67330bfbc4c76a86d4e1c845d093039c3455c1e`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ca088f0889c67078200ebc911786a79a006f465a4c1e1a6fe630152a483e40bb`  
+		Last Modified: Sat, 06 Jan 2024 01:58:29 GMT  
+		Size: 33.1 MB (33062417 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fbcca7110cd18932f3edb0f5e106ec20360693a67d7cb668788f9da77d541f99`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 783.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo-express:1-18`
 
 ```console
-$ docker pull mongo-express@sha256:46abf702a626e0069b829c7051039c1aa156ba0392bac70dbd14b037478f61fb
+$ docker pull mongo-express@sha256:104cf75d21a940f9fb7cb9be6fbb7038a0518cb7b8766b3c2480f820cdb95b82
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -307,84 +320,97 @@ CMD ["mongo-express"]
 ### `mongo-express:1-18` - linux; arm64 variant v8
 
 ```console
-$ docker pull mongo-express@sha256:a582adff71bded545782b7c43e06c50f99ff4843745e311a0f95772f11cc30a5
+$ docker pull mongo-express@sha256:ba5eaa9c99556abc3e37ece5d6b510a22717fe99c069cf66d42ca6d1334930c8
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.3 MB (69335949 bytes)**  
+-	Total Size: **79.4 MB (79444118 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:28a77c241c143b6a43a6ff849ecb2e73ac6ba1db5052f54607bcb57d78d9d709`
+-	Image ID: `sha256:684f8a881c7c2719aed4bf3eccaf9d92ad2b65400d96dd1f0a13fbfedaeda244`
 -	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["mongo-express"]`
 
 ```dockerfile
-# Thu, 30 Nov 2023 23:11:07 GMT
-ADD file:e5c66967d6570e36da50c9d42dd8f8f55e6c6a65b92c79601ea9e750c076fa2a in / 
-# Thu, 30 Nov 2023 23:11:07 GMT
+# Thu, 30 Nov 2023 23:11:03 GMT
+ADD file:d8a30995bbcd627f084912c728fda5483b6ba486de25af588a0956069d0bd7ad in / 
+# Thu, 30 Nov 2023 23:11:03 GMT
 CMD ["/bin/sh"]
-# Sat, 02 Dec 2023 03:27:42 GMT
+# Sat, 02 Dec 2023 03:48:51 GMT
 ENV NODE_VERSION=18.19.0
-# Sat, 02 Dec 2023 03:48:42 GMT
+# Sat, 02 Dec 2023 04:09:30 GMT
 RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="10b7b23b6b867a25f060a433b83f5c3ecb3bcf7cdba1c0ce46443065a832fd41" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
-# Sat, 02 Dec 2023 03:48:43 GMT
+# Sat, 02 Dec 2023 04:09:30 GMT
 ENV YARN_VERSION=1.22.19
-# Sat, 02 Dec 2023 03:48:47 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
-# Sat, 02 Dec 2023 03:48:48 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
-# Sat, 02 Dec 2023 03:48:48 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Sat, 02 Dec 2023 03:48:48 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 CMD ["node"]
-# Sat, 02 Dec 2023 04:45:05 GMT
-ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true VCAP_APP_HOST=0.0.0.0
-# Sat, 02 Dec 2023 04:45:05 GMT
-ENV MONGO_EXPRESS_VERSION=1.0.0
-# Sat, 02 Dec 2023 04:45:15 GMT
-RUN set -eux;     yarn add mongo-express@${MONGO_EXPRESS_VERSION};     apk -U add --no-cache         bash         tini
-# Sat, 02 Dec 2023 04:45:15 GMT
-WORKDIR /node_modules/mongo-express
-# Sat, 02 Dec 2023 04:45:15 GMT
+# Sat, 06 Jan 2024 01:56:27 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:56:27 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:56:59 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:57:01 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:57:01 GMT
 EXPOSE 8081
-# Sat, 02 Dec 2023 04:45:16 GMT
-COPY file:a907b69e6dd5a27a50ea886b61d030160973910412c6c144b98f31160550e1cf in / 
-# Sat, 02 Dec 2023 04:45:16 GMT
+# Sat, 06 Jan 2024 01:57:01 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:57:02 GMT
 ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
-# Sat, 02 Dec 2023 04:45:16 GMT
+# Sat, 06 Jan 2024 01:57:02 GMT
 CMD ["mongo-express"]
 ```
 
 -	Layers:
-	-	`sha256:b8180c93b172865af87a7c0e7e3c8bcb139e0d0c92e19c96467ff2cd4c8919ad`  
-		Last Modified: Thu, 30 Nov 2023 23:11:45 GMT  
-		Size: 3.3 MB (3258348 bytes)  
+	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
+		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
+		Size: 3.3 MB (3333033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:789e422d15b7bfbdf68dec022599a85f691da6929abdc4dd95e79e2ac01d39ea`  
-		Last Modified: Sat, 02 Dec 2023 04:16:53 GMT  
-		Size: 39.8 MB (39818057 bytes)  
+	-	`sha256:cd9cba98305bbc9b5b1acc82808c97ec2f1bdd0918782e26a4f249c89e8f5f1c`  
+		Last Modified: Sat, 02 Dec 2023 04:17:12 GMT  
+		Size: 39.8 MB (39817628 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19ee3be5ce42dbc4b3c8e895cde159839fc11b857d1e603974af0d856c4290e5`  
-		Last Modified: Sat, 02 Dec 2023 04:16:48 GMT  
-		Size: 2.3 MB (2342828 bytes)  
+	-	`sha256:fbb1cdcfb3b6e7d1dbbdde57709e15e2c4bbdcac8f7c3da88459d74bc402c637`  
+		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
+		Size: 2.3 MB (2342686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4084bae0cb59af9df43b6f9bbc3d04c234a005b2c4eae80c70641ccd9d9776e4`  
-		Last Modified: Sat, 02 Dec 2023 04:16:48 GMT  
-		Size: 447.0 B  
+	-	`sha256:266cff88a90930625e27a71f05f05b0bb69c1c3612e447e70131636367599c6c`  
+		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
+		Size: 449.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:711dc5ba72b1abcf9cb5d895b104e44afc440a91eefaef99cea83609d170db42`  
-		Last Modified: Sat, 02 Dec 2023 04:45:52 GMT  
-		Size: 23.9 MB (23915506 bytes)  
+	-	`sha256:b233574749281abc1a8ad5a8fb4f54bd3aa2b79c58bd876195c947c20d3083fa`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 887.0 KB (886996 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:52f4dec118937c0d93706facb3a84f5ff4ac5cf2c63761c517f5ec697213e6a3`  
-		Last Modified: Sat, 02 Dec 2023 04:45:48 GMT  
-		Size: 763.0 B  
+	-	`sha256:1254cb9a9f437dc36f890b22f67330bfbc4c76a86d4e1c845d093039c3455c1e`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ca088f0889c67078200ebc911786a79a006f465a4c1e1a6fe630152a483e40bb`  
+		Last Modified: Sat, 06 Jan 2024 01:58:29 GMT  
+		Size: 33.1 MB (33062417 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fbcca7110cd18932f3edb0f5e106ec20360693a67d7cb668788f9da77d541f99`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 783.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo-express:1-18-alpine3.18`
 
 ```console
-$ docker pull mongo-express@sha256:55b0b18b5a931e499813eddab75b46f15040624bb399f204f4d583b40868cb7e
+$ docker pull mongo-express@sha256:104cf75d21a940f9fb7cb9be6fbb7038a0518cb7b8766b3c2480f820cdb95b82
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -485,14 +511,14 @@ CMD ["mongo-express"]
 ### `mongo-express:1-18-alpine3.18` - linux; arm64 variant v8
 
 ```console
-$ docker pull mongo-express@sha256:13bc12ecd9c4008bc8731a0fcbd524891287e30034cfb99205a53f41745d790d
+$ docker pull mongo-express@sha256:ba5eaa9c99556abc3e37ece5d6b510a22717fe99c069cf66d42ca6d1334930c8
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.4 MB (69376489 bytes)**  
+-	Total Size: **79.4 MB (79444118 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:94771ca87989a8d0c6b38ce3c9056eb717d69c719b86f6ce74c5c5c8745987b9`
+-	Image ID: `sha256:684f8a881c7c2719aed4bf3eccaf9d92ad2b65400d96dd1f0a13fbfedaeda244`
 -	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["mongo-express"]`
 
@@ -515,21 +541,26 @@ COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /u
 ENTRYPOINT ["docker-entrypoint.sh"]
 # Sat, 02 Dec 2023 04:09:35 GMT
 CMD ["node"]
-# Sat, 02 Dec 2023 04:44:51 GMT
-ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true VCAP_APP_HOST=0.0.0.0
-# Sat, 02 Dec 2023 04:44:51 GMT
-ENV MONGO_EXPRESS_VERSION=1.0.0
-# Sat, 02 Dec 2023 04:45:01 GMT
-RUN set -eux;     yarn add mongo-express@${MONGO_EXPRESS_VERSION};     apk -U add --no-cache         bash         tini
-# Sat, 02 Dec 2023 04:45:01 GMT
-WORKDIR /node_modules/mongo-express
-# Sat, 02 Dec 2023 04:45:01 GMT
+# Sat, 06 Jan 2024 01:56:27 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:56:27 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:56:59 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:57:01 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:57:01 GMT
 EXPOSE 8081
-# Sat, 02 Dec 2023 04:45:02 GMT
-COPY file:a907b69e6dd5a27a50ea886b61d030160973910412c6c144b98f31160550e1cf in / 
-# Sat, 02 Dec 2023 04:45:02 GMT
+# Sat, 06 Jan 2024 01:57:01 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:57:02 GMT
 ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
-# Sat, 02 Dec 2023 04:45:02 GMT
+# Sat, 06 Jan 2024 01:57:02 GMT
 CMD ["mongo-express"]
 ```
 
@@ -550,24 +581,33 @@ CMD ["mongo-express"]
 		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
 		Size: 449.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:184369a966350b433bcdb74143be1939b3904dd97dd004a51c9c8186e399a8e4`  
-		Last Modified: Sat, 02 Dec 2023 04:45:38 GMT  
-		Size: 23.9 MB (23881930 bytes)  
+	-	`sha256:b233574749281abc1a8ad5a8fb4f54bd3aa2b79c58bd876195c947c20d3083fa`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 887.0 KB (886996 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19190d3003cd4b7e4385cce77e41b89069be968fa1ff67969b8444db0073c266`  
-		Last Modified: Sat, 02 Dec 2023 04:45:35 GMT  
-		Size: 763.0 B  
+	-	`sha256:1254cb9a9f437dc36f890b22f67330bfbc4c76a86d4e1c845d093039c3455c1e`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ca088f0889c67078200ebc911786a79a006f465a4c1e1a6fe630152a483e40bb`  
+		Last Modified: Sat, 06 Jan 2024 01:58:29 GMT  
+		Size: 33.1 MB (33062417 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fbcca7110cd18932f3edb0f5e106ec20360693a67d7cb668788f9da77d541f99`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 783.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo-express:1-18-alpine3.19`
 
 ```console
-$ docker pull mongo-express@sha256:94c64b3b92ad50c8aa721f39e82b2bea4e49e80f2d9ff95be12c5f2c68606c85
+$ docker pull mongo-express@sha256:fa251cb38fb8829560d2002f1939738fe9946dbff6f463a5dec5b65336e21c91
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
+-	Platforms: 2
 	-	linux; amd64
+	-	linux; arm64 variant v8
 
 ### `mongo-express:1-18-alpine3.19` - linux; amd64
 
@@ -659,10 +699,100 @@ CMD ["mongo-express"]
 		Size: 783.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `mongo-express:1-18-alpine3.19` - linux; arm64 variant v8
+
+```console
+$ docker pull mongo-express@sha256:e5de6e6d9678517ff4b023c24bf4f1089d8967c4b222f1b27119685d3ecceca1
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **79.6 MB (79594945 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:9dc592b4d457133e024b7b43eec4b4c4a2b34d39a7a939c28c3b02096a84cf5a`
+-	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
+-	Default Command: `["mongo-express"]`
+
+```dockerfile
+# Fri, 08 Dec 2023 01:39:30 GMT
+ADD file:8182c73f869a899cf624a59c400acb8226776d15e4d3a0d240a94e65340540d0 in / 
+# Fri, 08 Dec 2023 01:39:30 GMT
+CMD ["/bin/sh"]
+# Mon, 11 Dec 2023 18:40:05 GMT
+ENV NODE_VERSION=18.19.0
+# Mon, 11 Dec 2023 18:59:50 GMT
+RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="10b7b23b6b867a25f060a433b83f5c3ecb3bcf7cdba1c0ce46443065a832fd41" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
+# Mon, 11 Dec 2023 18:59:50 GMT
+ENV YARN_VERSION=1.22.19
+# Mon, 11 Dec 2023 18:59:55 GMT
+RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
+# Mon, 11 Dec 2023 18:59:55 GMT
+COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
+# Mon, 11 Dec 2023 18:59:55 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Mon, 11 Dec 2023 18:59:55 GMT
+CMD ["node"]
+# Sat, 06 Jan 2024 01:55:47 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:55:47 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:55:47 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:55:47 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:56:19 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:56:22 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:56:22 GMT
+EXPOSE 8081
+# Sat, 06 Jan 2024 01:56:22 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:56:22 GMT
+ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
+# Sat, 06 Jan 2024 01:56:22 GMT
+CMD ["mongo-express"]
+```
+
+-	Layers:
+	-	`sha256:c303524923177661067f7eb378c3dd5277088c2676ebd1cd78e68397bb80fdbf`  
+		Last Modified: Fri, 08 Dec 2023 01:39:48 GMT  
+		Size: 3.3 MB (3347794 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:eb7895eb72c1a145d166631d5a81c61bffd747783c52e8a1de9fa0e7d5871817`  
+		Last Modified: Mon, 11 Dec 2023 19:02:51 GMT  
+		Size: 40.0 MB (39978047 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7049a133eb54d652049fa44657d24cef7298dc371ffab6e27f5cd5e53e62159f`  
+		Last Modified: Mon, 11 Dec 2023 19:02:46 GMT  
+		Size: 2.3 MB (2342730 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:90577567f13c6046278cbfa4a557cb5a19ed5f9c281ab540e84ddd8f74c71922`  
+		Last Modified: Mon, 11 Dec 2023 19:02:45 GMT  
+		Size: 445.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:8e7fdab078a277850d97a71a23c41cbf45e5ac8092bc99a1429aa8247527f598`  
+		Last Modified: Sat, 06 Jan 2024 01:58:06 GMT  
+		Size: 862.4 KB (862441 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1063d3ecd5c04feb20d959e43633106ee5d678f9e00be9c39fb4023bf1cffb35`  
+		Last Modified: Sat, 06 Jan 2024 01:58:05 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d4dea9015fc2c949ef2ca11d0fffd8f60b647169e36e2e19d01045a8716ccec2`  
+		Last Modified: Sat, 06 Jan 2024 01:58:12 GMT  
+		Size: 33.1 MB (33062580 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:824ef5f6b0a5a6ab5ba8d490158c57ac113806423f3e27ef0164cd5f9d21584b`  
+		Last Modified: Sat, 06 Jan 2024 01:58:05 GMT  
+		Size: 782.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ## `mongo-express:1-20`
 
 ```console
-$ docker pull mongo-express@sha256:1c979e47db3649225acdf4b83f894835394714e665aa62501fc57d7b941f95e5
+$ docker pull mongo-express@sha256:79aac7f29d4b5a64c12fecbf6ba4b5e36826e8bddfc94f6323d9d603a475b98f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -763,84 +893,97 @@ CMD ["mongo-express"]
 ### `mongo-express:1-20` - linux; arm64 variant v8
 
 ```console
-$ docker pull mongo-express@sha256:c0dc327f20fe89f8b293da9df1c01db162f7fad1547b914a19342b2480222ce0
+$ docker pull mongo-express@sha256:13e71e6c0298116bd18370fb4a079b7e50a8cb9c9081032c64d0c203ced0fe78
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **71.3 MB (71293273 bytes)**  
+-	Total Size: **81.4 MB (81400691 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1be8574ab13f7a0421aaf0cc0eb97fbe353562ef915899b721b7eeb58f8f39e5`
+-	Image ID: `sha256:36c41a306e04e759c683af10725f04d1ac0f4f791efb1f82e2f7b3d9e34006b8`
 -	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["mongo-express"]`
 
 ```dockerfile
-# Thu, 30 Nov 2023 23:11:07 GMT
-ADD file:e5c66967d6570e36da50c9d42dd8f8f55e6c6a65b92c79601ea9e750c076fa2a in / 
-# Thu, 30 Nov 2023 23:11:07 GMT
+# Thu, 30 Nov 2023 23:11:03 GMT
+ADD file:d8a30995bbcd627f084912c728fda5483b6ba486de25af588a0956069d0bd7ad in / 
+# Thu, 30 Nov 2023 23:11:03 GMT
 CMD ["/bin/sh"]
-# Fri, 01 Dec 2023 05:15:14 GMT
+# Fri, 01 Dec 2023 05:40:38 GMT
 ENV NODE_VERSION=20.10.0
-# Fri, 01 Dec 2023 05:40:18 GMT
+# Fri, 01 Dec 2023 06:05:00 GMT
 RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="2c654df3615ed02dc1994f58bdbc6b5cd37fdc01f695188388326f12c753f01b" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
-# Fri, 01 Dec 2023 05:40:18 GMT
+# Fri, 01 Dec 2023 06:05:01 GMT
 ENV YARN_VERSION=1.22.19
-# Fri, 01 Dec 2023 05:40:23 GMT
+# Fri, 01 Dec 2023 06:05:05 GMT
 RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
-# Fri, 01 Dec 2023 05:40:23 GMT
+# Fri, 01 Dec 2023 06:05:05 GMT
 COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
-# Fri, 01 Dec 2023 05:40:23 GMT
+# Fri, 01 Dec 2023 06:05:05 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Dec 2023 05:40:23 GMT
+# Fri, 01 Dec 2023 06:05:06 GMT
 CMD ["node"]
-# Fri, 01 Dec 2023 11:17:46 GMT
-ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true VCAP_APP_HOST=0.0.0.0
-# Fri, 01 Dec 2023 11:17:46 GMT
-ENV MONGO_EXPRESS_VERSION=1.0.0
-# Fri, 01 Dec 2023 11:17:56 GMT
-RUN set -eux;     yarn add mongo-express@${MONGO_EXPRESS_VERSION};     apk -U add --no-cache         bash         tini
-# Fri, 01 Dec 2023 11:17:56 GMT
-WORKDIR /node_modules/mongo-express
-# Fri, 01 Dec 2023 11:17:57 GMT
+# Sat, 06 Jan 2024 01:54:59 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:54:59 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:54:59 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:54:59 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:55:35 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:55:37 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:55:37 GMT
 EXPOSE 8081
-# Fri, 01 Dec 2023 11:17:57 GMT
-COPY file:a907b69e6dd5a27a50ea886b61d030160973910412c6c144b98f31160550e1cf in / 
-# Fri, 01 Dec 2023 11:17:57 GMT
+# Sat, 06 Jan 2024 01:55:37 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:55:37 GMT
 ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
-# Fri, 01 Dec 2023 11:17:57 GMT
+# Sat, 06 Jan 2024 01:55:37 GMT
 CMD ["mongo-express"]
 ```
 
 -	Layers:
-	-	`sha256:b8180c93b172865af87a7c0e7e3c8bcb139e0d0c92e19c96467ff2cd4c8919ad`  
-		Last Modified: Thu, 30 Nov 2023 23:11:45 GMT  
-		Size: 3.3 MB (3258348 bytes)  
+	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
+		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
+		Size: 3.3 MB (3333033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:09fb314fbd1aba26de089f7b084f55e0b406ef21870f8711539425a61ab27cca`  
-		Last Modified: Fri, 01 Dec 2023 06:50:07 GMT  
-		Size: 41.8 MB (41777721 bytes)  
+	-	`sha256:6aa4366d22bbd5ff73b4fb8e51eb08dffd3f9cdebb26fa6736dbdfc17f8128e7`  
+		Last Modified: Fri, 01 Dec 2023 06:50:24 GMT  
+		Size: 41.8 MB (41776668 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e25ed8051e946563d9d1cf5ffe2816c207cef74d33bcfb4d3c46faa6ba34e3ee`  
-		Last Modified: Fri, 01 Dec 2023 06:50:03 GMT  
-		Size: 2.3 MB (2341056 bytes)  
+	-	`sha256:11b2318853c1598c0c3d299f3ad79198375e1118770b518eb4ab244368cde5d7`  
+		Last Modified: Fri, 01 Dec 2023 06:50:20 GMT  
+		Size: 2.3 MB (2341059 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc70c7ed77c52b19d4b5f4835719396b0e19f42a61f8a50689c7ec9c53e24e1c`  
-		Last Modified: Fri, 01 Dec 2023 06:50:02 GMT  
-		Size: 446.0 B  
+	-	`sha256:d3454bc31ad143acd9056fc26259ae5256eaa404e315f1476c70b724dc6b9424`  
+		Last Modified: Fri, 01 Dec 2023 06:50:20 GMT  
+		Size: 448.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6221dfd56ccbae384b94599a5fbd5f191aaf1759f8b8bc6a3df3965337a561bf`  
-		Last Modified: Fri, 01 Dec 2023 11:19:01 GMT  
-		Size: 23.9 MB (23914938 bytes)  
+	-	`sha256:86de8f42055e69b05fdf89d423b09d0fa6df6b03daf2ef9e0152c25e53815c50`  
+		Last Modified: Sat, 06 Jan 2024 01:57:41 GMT  
+		Size: 887.0 KB (887010 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39f813b1c2bab34aae5281abe24bfb8fd4343696e196ed59844369882a6cd365`  
-		Last Modified: Fri, 01 Dec 2023 11:18:57 GMT  
-		Size: 764.0 B  
+	-	`sha256:d3a332f2fdb3685871a42b721e21edcd8599f92fd0a558b55784f3b1f2f32fc5`  
+		Last Modified: Sat, 06 Jan 2024 01:57:40 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b01f6057e7a96d805866fa7ce040c9038e25fdbc1d980d18c40f38c28647fe25`  
+		Last Modified: Sat, 06 Jan 2024 01:57:47 GMT  
+		Size: 33.1 MB (33061565 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:578ebce496a1b808857552e33b1030853cc9ea5c30fce013d61fcfb9ce534e07`  
+		Last Modified: Sat, 06 Jan 2024 01:57:41 GMT  
+		Size: 782.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo-express:1-20-alpine3.18`
 
 ```console
-$ docker pull mongo-express@sha256:24feb5e78d0faf7623c0b100a5541a7231953105a5028ac213b605b1bb2a6e7d
+$ docker pull mongo-express@sha256:79aac7f29d4b5a64c12fecbf6ba4b5e36826e8bddfc94f6323d9d603a475b98f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -941,14 +1084,14 @@ CMD ["mongo-express"]
 ### `mongo-express:1-20-alpine3.18` - linux; arm64 variant v8
 
 ```console
-$ docker pull mongo-express@sha256:2ce0b47735c5acf0e9801e25f6b36d09f44e30e2372d13bb130bb48c21e8aa30
+$ docker pull mongo-express@sha256:13e71e6c0298116bd18370fb4a079b7e50a8cb9c9081032c64d0c203ced0fe78
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **71.3 MB (71342154 bytes)**  
+-	Total Size: **81.4 MB (81400691 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c60811e43e59a303ccbecbb20909987fbfe29116699476e1bc9e18c2c7103572`
+-	Image ID: `sha256:36c41a306e04e759c683af10725f04d1ac0f4f791efb1f82e2f7b3d9e34006b8`
 -	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["mongo-express"]`
 
@@ -971,21 +1114,26 @@ COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /u
 ENTRYPOINT ["docker-entrypoint.sh"]
 # Fri, 01 Dec 2023 06:05:06 GMT
 CMD ["node"]
-# Fri, 01 Dec 2023 11:17:32 GMT
-ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true VCAP_APP_HOST=0.0.0.0
-# Fri, 01 Dec 2023 11:17:32 GMT
-ENV MONGO_EXPRESS_VERSION=1.0.0
-# Fri, 01 Dec 2023 11:17:42 GMT
-RUN set -eux;     yarn add mongo-express@${MONGO_EXPRESS_VERSION};     apk -U add --no-cache         bash         tini
-# Fri, 01 Dec 2023 11:17:43 GMT
-WORKDIR /node_modules/mongo-express
-# Fri, 01 Dec 2023 11:17:43 GMT
+# Sat, 06 Jan 2024 01:54:59 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:54:59 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:54:59 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:54:59 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:55:35 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:55:37 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:55:37 GMT
 EXPOSE 8081
-# Fri, 01 Dec 2023 11:17:43 GMT
-COPY file:a907b69e6dd5a27a50ea886b61d030160973910412c6c144b98f31160550e1cf in / 
-# Fri, 01 Dec 2023 11:17:43 GMT
+# Sat, 06 Jan 2024 01:55:37 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:55:37 GMT
 ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
-# Fri, 01 Dec 2023 11:17:43 GMT
+# Sat, 06 Jan 2024 01:55:37 GMT
 CMD ["mongo-express"]
 ```
 
@@ -1006,24 +1154,33 @@ CMD ["mongo-express"]
 		Last Modified: Fri, 01 Dec 2023 06:50:20 GMT  
 		Size: 448.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:02e656da613fd632c7c711e13eb96c5f367c4efb3414a1b29117c9dc85cdf089`  
-		Last Modified: Fri, 01 Dec 2023 11:18:47 GMT  
-		Size: 23.9 MB (23890182 bytes)  
+	-	`sha256:86de8f42055e69b05fdf89d423b09d0fa6df6b03daf2ef9e0152c25e53815c50`  
+		Last Modified: Sat, 06 Jan 2024 01:57:41 GMT  
+		Size: 887.0 KB (887010 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:861d2dbf49f9f633e546487155575d1b7a08b030743f6eaa0f12ae4dd431eeb8`  
-		Last Modified: Fri, 01 Dec 2023 11:18:44 GMT  
-		Size: 764.0 B  
+	-	`sha256:d3a332f2fdb3685871a42b721e21edcd8599f92fd0a558b55784f3b1f2f32fc5`  
+		Last Modified: Sat, 06 Jan 2024 01:57:40 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b01f6057e7a96d805866fa7ce040c9038e25fdbc1d980d18c40f38c28647fe25`  
+		Last Modified: Sat, 06 Jan 2024 01:57:47 GMT  
+		Size: 33.1 MB (33061565 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:578ebce496a1b808857552e33b1030853cc9ea5c30fce013d61fcfb9ce534e07`  
+		Last Modified: Sat, 06 Jan 2024 01:57:41 GMT  
+		Size: 782.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo-express:1-20-alpine3.19`
 
 ```console
-$ docker pull mongo-express@sha256:17f690ed6bda7c744718b7aeeff6ce03e6bd0fd4571c8ba5e8e6711e9101e808
+$ docker pull mongo-express@sha256:80d97fd5a2bec5772d5d32b05a6839d85df52969a92f3988e7516470b80cd0ae
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
+-	Platforms: 2
 	-	linux; amd64
+	-	linux; arm64 variant v8
 
 ### `mongo-express:1-20-alpine3.19` - linux; amd64
 
@@ -1115,10 +1272,100 @@ CMD ["mongo-express"]
 		Size: 782.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `mongo-express:1-20-alpine3.19` - linux; arm64 variant v8
+
+```console
+$ docker pull mongo-express@sha256:12cbf00151dedefdf849de2562162e5fabd47b4666dd852e25c098f905560de9
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **81.6 MB (81578259 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:9cfa935068485d1c6f7f0d025ba5137be28bdc4f42ccb6fe4783b2b6059f9638`
+-	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
+-	Default Command: `["mongo-express"]`
+
+```dockerfile
+# Fri, 08 Dec 2023 01:39:30 GMT
+ADD file:8182c73f869a899cf624a59c400acb8226776d15e4d3a0d240a94e65340540d0 in / 
+# Fri, 08 Dec 2023 01:39:30 GMT
+CMD ["/bin/sh"]
+# Mon, 11 Dec 2023 18:16:31 GMT
+ENV NODE_VERSION=20.10.0
+# Mon, 11 Dec 2023 18:39:44 GMT
+RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="2c654df3615ed02dc1994f58bdbc6b5cd37fdc01f695188388326f12c753f01b" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
+# Mon, 11 Dec 2023 18:39:44 GMT
+ENV YARN_VERSION=1.22.19
+# Mon, 11 Dec 2023 18:39:49 GMT
+RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
+# Mon, 11 Dec 2023 18:39:49 GMT
+COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
+# Mon, 11 Dec 2023 18:39:49 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Mon, 11 Dec 2023 18:39:49 GMT
+CMD ["node"]
+# Sat, 06 Jan 2024 01:54:11 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:54:11 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:54:11 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:54:11 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:54:46 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:54:48 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:54:48 GMT
+EXPOSE 8081
+# Sat, 06 Jan 2024 01:54:48 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:54:48 GMT
+ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
+# Sat, 06 Jan 2024 01:54:49 GMT
+CMD ["mongo-express"]
+```
+
+-	Layers:
+	-	`sha256:c303524923177661067f7eb378c3dd5277088c2676ebd1cd78e68397bb80fdbf`  
+		Last Modified: Fri, 08 Dec 2023 01:39:48 GMT  
+		Size: 3.3 MB (3347794 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a7eb1ad3dce881e15c7a4c6d276f01c6a5e9d471e43a28ca0ebd473cfc495981`  
+		Last Modified: Mon, 11 Dec 2023 19:02:07 GMT  
+		Size: 42.0 MB (41964108 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:08e4b7445e132cd88a8bc4294659ad96c2b57b95e8576414b886f7b2db9b5665`  
+		Last Modified: Mon, 11 Dec 2023 19:02:02 GMT  
+		Size: 2.3 MB (2341154 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:41320be8b6a21e16ee8cbaa3577c04d93bb7983f5df465bb94d4efdb14432092`  
+		Last Modified: Mon, 11 Dec 2023 19:02:02 GMT  
+		Size: 446.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:4c274a08d39c0cd8fd3477fc79c393a53281a7e0ae3555bf3d932c3778e3dfb8`  
+		Last Modified: Sat, 06 Jan 2024 01:57:23 GMT  
+		Size: 862.4 KB (862445 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3094a5f400f139aa287f37603a50d5c1076b01e766f1214a478c38a934b38bed`  
+		Last Modified: Sat, 06 Jan 2024 01:57:23 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5531c40ac2770d4542e7aea0f23e1f495c1111352cf38226caf11955eade6cb7`  
+		Last Modified: Sat, 06 Jan 2024 01:57:29 GMT  
+		Size: 33.1 MB (33061403 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cca13a304e35884d7ebe396bc738935a20bea45acbe2ebe7cdd58f162eb5b4d0`  
+		Last Modified: Sat, 06 Jan 2024 01:57:23 GMT  
+		Size: 783.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ## `mongo-express:1.0`
 
 ```console
-$ docker pull mongo-express@sha256:46abf702a626e0069b829c7051039c1aa156ba0392bac70dbd14b037478f61fb
+$ docker pull mongo-express@sha256:104cf75d21a940f9fb7cb9be6fbb7038a0518cb7b8766b3c2480f820cdb95b82
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1219,84 +1466,97 @@ CMD ["mongo-express"]
 ### `mongo-express:1.0` - linux; arm64 variant v8
 
 ```console
-$ docker pull mongo-express@sha256:a582adff71bded545782b7c43e06c50f99ff4843745e311a0f95772f11cc30a5
+$ docker pull mongo-express@sha256:ba5eaa9c99556abc3e37ece5d6b510a22717fe99c069cf66d42ca6d1334930c8
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.3 MB (69335949 bytes)**  
+-	Total Size: **79.4 MB (79444118 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:28a77c241c143b6a43a6ff849ecb2e73ac6ba1db5052f54607bcb57d78d9d709`
+-	Image ID: `sha256:684f8a881c7c2719aed4bf3eccaf9d92ad2b65400d96dd1f0a13fbfedaeda244`
 -	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["mongo-express"]`
 
 ```dockerfile
-# Thu, 30 Nov 2023 23:11:07 GMT
-ADD file:e5c66967d6570e36da50c9d42dd8f8f55e6c6a65b92c79601ea9e750c076fa2a in / 
-# Thu, 30 Nov 2023 23:11:07 GMT
+# Thu, 30 Nov 2023 23:11:03 GMT
+ADD file:d8a30995bbcd627f084912c728fda5483b6ba486de25af588a0956069d0bd7ad in / 
+# Thu, 30 Nov 2023 23:11:03 GMT
 CMD ["/bin/sh"]
-# Sat, 02 Dec 2023 03:27:42 GMT
+# Sat, 02 Dec 2023 03:48:51 GMT
 ENV NODE_VERSION=18.19.0
-# Sat, 02 Dec 2023 03:48:42 GMT
+# Sat, 02 Dec 2023 04:09:30 GMT
 RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="10b7b23b6b867a25f060a433b83f5c3ecb3bcf7cdba1c0ce46443065a832fd41" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
-# Sat, 02 Dec 2023 03:48:43 GMT
+# Sat, 02 Dec 2023 04:09:30 GMT
 ENV YARN_VERSION=1.22.19
-# Sat, 02 Dec 2023 03:48:47 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
-# Sat, 02 Dec 2023 03:48:48 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
-# Sat, 02 Dec 2023 03:48:48 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Sat, 02 Dec 2023 03:48:48 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 CMD ["node"]
-# Sat, 02 Dec 2023 04:45:05 GMT
-ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true VCAP_APP_HOST=0.0.0.0
-# Sat, 02 Dec 2023 04:45:05 GMT
-ENV MONGO_EXPRESS_VERSION=1.0.0
-# Sat, 02 Dec 2023 04:45:15 GMT
-RUN set -eux;     yarn add mongo-express@${MONGO_EXPRESS_VERSION};     apk -U add --no-cache         bash         tini
-# Sat, 02 Dec 2023 04:45:15 GMT
-WORKDIR /node_modules/mongo-express
-# Sat, 02 Dec 2023 04:45:15 GMT
+# Sat, 06 Jan 2024 01:56:27 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:56:27 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:56:59 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:57:01 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:57:01 GMT
 EXPOSE 8081
-# Sat, 02 Dec 2023 04:45:16 GMT
-COPY file:a907b69e6dd5a27a50ea886b61d030160973910412c6c144b98f31160550e1cf in / 
-# Sat, 02 Dec 2023 04:45:16 GMT
+# Sat, 06 Jan 2024 01:57:01 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:57:02 GMT
 ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
-# Sat, 02 Dec 2023 04:45:16 GMT
+# Sat, 06 Jan 2024 01:57:02 GMT
 CMD ["mongo-express"]
 ```
 
 -	Layers:
-	-	`sha256:b8180c93b172865af87a7c0e7e3c8bcb139e0d0c92e19c96467ff2cd4c8919ad`  
-		Last Modified: Thu, 30 Nov 2023 23:11:45 GMT  
-		Size: 3.3 MB (3258348 bytes)  
+	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
+		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
+		Size: 3.3 MB (3333033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:789e422d15b7bfbdf68dec022599a85f691da6929abdc4dd95e79e2ac01d39ea`  
-		Last Modified: Sat, 02 Dec 2023 04:16:53 GMT  
-		Size: 39.8 MB (39818057 bytes)  
+	-	`sha256:cd9cba98305bbc9b5b1acc82808c97ec2f1bdd0918782e26a4f249c89e8f5f1c`  
+		Last Modified: Sat, 02 Dec 2023 04:17:12 GMT  
+		Size: 39.8 MB (39817628 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19ee3be5ce42dbc4b3c8e895cde159839fc11b857d1e603974af0d856c4290e5`  
-		Last Modified: Sat, 02 Dec 2023 04:16:48 GMT  
-		Size: 2.3 MB (2342828 bytes)  
+	-	`sha256:fbb1cdcfb3b6e7d1dbbdde57709e15e2c4bbdcac8f7c3da88459d74bc402c637`  
+		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
+		Size: 2.3 MB (2342686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4084bae0cb59af9df43b6f9bbc3d04c234a005b2c4eae80c70641ccd9d9776e4`  
-		Last Modified: Sat, 02 Dec 2023 04:16:48 GMT  
-		Size: 447.0 B  
+	-	`sha256:266cff88a90930625e27a71f05f05b0bb69c1c3612e447e70131636367599c6c`  
+		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
+		Size: 449.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:711dc5ba72b1abcf9cb5d895b104e44afc440a91eefaef99cea83609d170db42`  
-		Last Modified: Sat, 02 Dec 2023 04:45:52 GMT  
-		Size: 23.9 MB (23915506 bytes)  
+	-	`sha256:b233574749281abc1a8ad5a8fb4f54bd3aa2b79c58bd876195c947c20d3083fa`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 887.0 KB (886996 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:52f4dec118937c0d93706facb3a84f5ff4ac5cf2c63761c517f5ec697213e6a3`  
-		Last Modified: Sat, 02 Dec 2023 04:45:48 GMT  
-		Size: 763.0 B  
+	-	`sha256:1254cb9a9f437dc36f890b22f67330bfbc4c76a86d4e1c845d093039c3455c1e`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ca088f0889c67078200ebc911786a79a006f465a4c1e1a6fe630152a483e40bb`  
+		Last Modified: Sat, 06 Jan 2024 01:58:29 GMT  
+		Size: 33.1 MB (33062417 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fbcca7110cd18932f3edb0f5e106ec20360693a67d7cb668788f9da77d541f99`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 783.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo-express:1.0-18`
 
 ```console
-$ docker pull mongo-express@sha256:46abf702a626e0069b829c7051039c1aa156ba0392bac70dbd14b037478f61fb
+$ docker pull mongo-express@sha256:104cf75d21a940f9fb7cb9be6fbb7038a0518cb7b8766b3c2480f820cdb95b82
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1397,84 +1657,97 @@ CMD ["mongo-express"]
 ### `mongo-express:1.0-18` - linux; arm64 variant v8
 
 ```console
-$ docker pull mongo-express@sha256:a582adff71bded545782b7c43e06c50f99ff4843745e311a0f95772f11cc30a5
+$ docker pull mongo-express@sha256:ba5eaa9c99556abc3e37ece5d6b510a22717fe99c069cf66d42ca6d1334930c8
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.3 MB (69335949 bytes)**  
+-	Total Size: **79.4 MB (79444118 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:28a77c241c143b6a43a6ff849ecb2e73ac6ba1db5052f54607bcb57d78d9d709`
+-	Image ID: `sha256:684f8a881c7c2719aed4bf3eccaf9d92ad2b65400d96dd1f0a13fbfedaeda244`
 -	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["mongo-express"]`
 
 ```dockerfile
-# Thu, 30 Nov 2023 23:11:07 GMT
-ADD file:e5c66967d6570e36da50c9d42dd8f8f55e6c6a65b92c79601ea9e750c076fa2a in / 
-# Thu, 30 Nov 2023 23:11:07 GMT
+# Thu, 30 Nov 2023 23:11:03 GMT
+ADD file:d8a30995bbcd627f084912c728fda5483b6ba486de25af588a0956069d0bd7ad in / 
+# Thu, 30 Nov 2023 23:11:03 GMT
 CMD ["/bin/sh"]
-# Sat, 02 Dec 2023 03:27:42 GMT
+# Sat, 02 Dec 2023 03:48:51 GMT
 ENV NODE_VERSION=18.19.0
-# Sat, 02 Dec 2023 03:48:42 GMT
+# Sat, 02 Dec 2023 04:09:30 GMT
 RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="10b7b23b6b867a25f060a433b83f5c3ecb3bcf7cdba1c0ce46443065a832fd41" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
-# Sat, 02 Dec 2023 03:48:43 GMT
+# Sat, 02 Dec 2023 04:09:30 GMT
 ENV YARN_VERSION=1.22.19
-# Sat, 02 Dec 2023 03:48:47 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
-# Sat, 02 Dec 2023 03:48:48 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
-# Sat, 02 Dec 2023 03:48:48 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Sat, 02 Dec 2023 03:48:48 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 CMD ["node"]
-# Sat, 02 Dec 2023 04:45:05 GMT
-ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true VCAP_APP_HOST=0.0.0.0
-# Sat, 02 Dec 2023 04:45:05 GMT
-ENV MONGO_EXPRESS_VERSION=1.0.0
-# Sat, 02 Dec 2023 04:45:15 GMT
-RUN set -eux;     yarn add mongo-express@${MONGO_EXPRESS_VERSION};     apk -U add --no-cache         bash         tini
-# Sat, 02 Dec 2023 04:45:15 GMT
-WORKDIR /node_modules/mongo-express
-# Sat, 02 Dec 2023 04:45:15 GMT
+# Sat, 06 Jan 2024 01:56:27 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:56:27 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:56:59 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:57:01 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:57:01 GMT
 EXPOSE 8081
-# Sat, 02 Dec 2023 04:45:16 GMT
-COPY file:a907b69e6dd5a27a50ea886b61d030160973910412c6c144b98f31160550e1cf in / 
-# Sat, 02 Dec 2023 04:45:16 GMT
+# Sat, 06 Jan 2024 01:57:01 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:57:02 GMT
 ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
-# Sat, 02 Dec 2023 04:45:16 GMT
+# Sat, 06 Jan 2024 01:57:02 GMT
 CMD ["mongo-express"]
 ```
 
 -	Layers:
-	-	`sha256:b8180c93b172865af87a7c0e7e3c8bcb139e0d0c92e19c96467ff2cd4c8919ad`  
-		Last Modified: Thu, 30 Nov 2023 23:11:45 GMT  
-		Size: 3.3 MB (3258348 bytes)  
+	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
+		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
+		Size: 3.3 MB (3333033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:789e422d15b7bfbdf68dec022599a85f691da6929abdc4dd95e79e2ac01d39ea`  
-		Last Modified: Sat, 02 Dec 2023 04:16:53 GMT  
-		Size: 39.8 MB (39818057 bytes)  
+	-	`sha256:cd9cba98305bbc9b5b1acc82808c97ec2f1bdd0918782e26a4f249c89e8f5f1c`  
+		Last Modified: Sat, 02 Dec 2023 04:17:12 GMT  
+		Size: 39.8 MB (39817628 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19ee3be5ce42dbc4b3c8e895cde159839fc11b857d1e603974af0d856c4290e5`  
-		Last Modified: Sat, 02 Dec 2023 04:16:48 GMT  
-		Size: 2.3 MB (2342828 bytes)  
+	-	`sha256:fbb1cdcfb3b6e7d1dbbdde57709e15e2c4bbdcac8f7c3da88459d74bc402c637`  
+		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
+		Size: 2.3 MB (2342686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4084bae0cb59af9df43b6f9bbc3d04c234a005b2c4eae80c70641ccd9d9776e4`  
-		Last Modified: Sat, 02 Dec 2023 04:16:48 GMT  
-		Size: 447.0 B  
+	-	`sha256:266cff88a90930625e27a71f05f05b0bb69c1c3612e447e70131636367599c6c`  
+		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
+		Size: 449.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:711dc5ba72b1abcf9cb5d895b104e44afc440a91eefaef99cea83609d170db42`  
-		Last Modified: Sat, 02 Dec 2023 04:45:52 GMT  
-		Size: 23.9 MB (23915506 bytes)  
+	-	`sha256:b233574749281abc1a8ad5a8fb4f54bd3aa2b79c58bd876195c947c20d3083fa`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 887.0 KB (886996 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:52f4dec118937c0d93706facb3a84f5ff4ac5cf2c63761c517f5ec697213e6a3`  
-		Last Modified: Sat, 02 Dec 2023 04:45:48 GMT  
-		Size: 763.0 B  
+	-	`sha256:1254cb9a9f437dc36f890b22f67330bfbc4c76a86d4e1c845d093039c3455c1e`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ca088f0889c67078200ebc911786a79a006f465a4c1e1a6fe630152a483e40bb`  
+		Last Modified: Sat, 06 Jan 2024 01:58:29 GMT  
+		Size: 33.1 MB (33062417 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fbcca7110cd18932f3edb0f5e106ec20360693a67d7cb668788f9da77d541f99`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 783.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo-express:1.0-18-alpine3.18`
 
 ```console
-$ docker pull mongo-express@sha256:55b0b18b5a931e499813eddab75b46f15040624bb399f204f4d583b40868cb7e
+$ docker pull mongo-express@sha256:104cf75d21a940f9fb7cb9be6fbb7038a0518cb7b8766b3c2480f820cdb95b82
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1575,14 +1848,14 @@ CMD ["mongo-express"]
 ### `mongo-express:1.0-18-alpine3.18` - linux; arm64 variant v8
 
 ```console
-$ docker pull mongo-express@sha256:13bc12ecd9c4008bc8731a0fcbd524891287e30034cfb99205a53f41745d790d
+$ docker pull mongo-express@sha256:ba5eaa9c99556abc3e37ece5d6b510a22717fe99c069cf66d42ca6d1334930c8
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.4 MB (69376489 bytes)**  
+-	Total Size: **79.4 MB (79444118 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:94771ca87989a8d0c6b38ce3c9056eb717d69c719b86f6ce74c5c5c8745987b9`
+-	Image ID: `sha256:684f8a881c7c2719aed4bf3eccaf9d92ad2b65400d96dd1f0a13fbfedaeda244`
 -	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["mongo-express"]`
 
@@ -1605,21 +1878,26 @@ COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /u
 ENTRYPOINT ["docker-entrypoint.sh"]
 # Sat, 02 Dec 2023 04:09:35 GMT
 CMD ["node"]
-# Sat, 02 Dec 2023 04:44:51 GMT
-ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true VCAP_APP_HOST=0.0.0.0
-# Sat, 02 Dec 2023 04:44:51 GMT
-ENV MONGO_EXPRESS_VERSION=1.0.0
-# Sat, 02 Dec 2023 04:45:01 GMT
-RUN set -eux;     yarn add mongo-express@${MONGO_EXPRESS_VERSION};     apk -U add --no-cache         bash         tini
-# Sat, 02 Dec 2023 04:45:01 GMT
-WORKDIR /node_modules/mongo-express
-# Sat, 02 Dec 2023 04:45:01 GMT
+# Sat, 06 Jan 2024 01:56:27 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:56:27 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:56:59 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:57:01 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:57:01 GMT
 EXPOSE 8081
-# Sat, 02 Dec 2023 04:45:02 GMT
-COPY file:a907b69e6dd5a27a50ea886b61d030160973910412c6c144b98f31160550e1cf in / 
-# Sat, 02 Dec 2023 04:45:02 GMT
+# Sat, 06 Jan 2024 01:57:01 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:57:02 GMT
 ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
-# Sat, 02 Dec 2023 04:45:02 GMT
+# Sat, 06 Jan 2024 01:57:02 GMT
 CMD ["mongo-express"]
 ```
 
@@ -1640,24 +1918,33 @@ CMD ["mongo-express"]
 		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
 		Size: 449.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:184369a966350b433bcdb74143be1939b3904dd97dd004a51c9c8186e399a8e4`  
-		Last Modified: Sat, 02 Dec 2023 04:45:38 GMT  
-		Size: 23.9 MB (23881930 bytes)  
+	-	`sha256:b233574749281abc1a8ad5a8fb4f54bd3aa2b79c58bd876195c947c20d3083fa`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 887.0 KB (886996 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19190d3003cd4b7e4385cce77e41b89069be968fa1ff67969b8444db0073c266`  
-		Last Modified: Sat, 02 Dec 2023 04:45:35 GMT  
-		Size: 763.0 B  
+	-	`sha256:1254cb9a9f437dc36f890b22f67330bfbc4c76a86d4e1c845d093039c3455c1e`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ca088f0889c67078200ebc911786a79a006f465a4c1e1a6fe630152a483e40bb`  
+		Last Modified: Sat, 06 Jan 2024 01:58:29 GMT  
+		Size: 33.1 MB (33062417 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fbcca7110cd18932f3edb0f5e106ec20360693a67d7cb668788f9da77d541f99`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 783.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo-express:1.0-18-alpine3.19`
 
 ```console
-$ docker pull mongo-express@sha256:94c64b3b92ad50c8aa721f39e82b2bea4e49e80f2d9ff95be12c5f2c68606c85
+$ docker pull mongo-express@sha256:fa251cb38fb8829560d2002f1939738fe9946dbff6f463a5dec5b65336e21c91
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
+-	Platforms: 2
 	-	linux; amd64
+	-	linux; arm64 variant v8
 
 ### `mongo-express:1.0-18-alpine3.19` - linux; amd64
 
@@ -1749,10 +2036,100 @@ CMD ["mongo-express"]
 		Size: 783.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `mongo-express:1.0-18-alpine3.19` - linux; arm64 variant v8
+
+```console
+$ docker pull mongo-express@sha256:e5de6e6d9678517ff4b023c24bf4f1089d8967c4b222f1b27119685d3ecceca1
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **79.6 MB (79594945 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:9dc592b4d457133e024b7b43eec4b4c4a2b34d39a7a939c28c3b02096a84cf5a`
+-	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
+-	Default Command: `["mongo-express"]`
+
+```dockerfile
+# Fri, 08 Dec 2023 01:39:30 GMT
+ADD file:8182c73f869a899cf624a59c400acb8226776d15e4d3a0d240a94e65340540d0 in / 
+# Fri, 08 Dec 2023 01:39:30 GMT
+CMD ["/bin/sh"]
+# Mon, 11 Dec 2023 18:40:05 GMT
+ENV NODE_VERSION=18.19.0
+# Mon, 11 Dec 2023 18:59:50 GMT
+RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="10b7b23b6b867a25f060a433b83f5c3ecb3bcf7cdba1c0ce46443065a832fd41" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
+# Mon, 11 Dec 2023 18:59:50 GMT
+ENV YARN_VERSION=1.22.19
+# Mon, 11 Dec 2023 18:59:55 GMT
+RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
+# Mon, 11 Dec 2023 18:59:55 GMT
+COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
+# Mon, 11 Dec 2023 18:59:55 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Mon, 11 Dec 2023 18:59:55 GMT
+CMD ["node"]
+# Sat, 06 Jan 2024 01:55:47 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:55:47 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:55:47 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:55:47 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:56:19 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:56:22 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:56:22 GMT
+EXPOSE 8081
+# Sat, 06 Jan 2024 01:56:22 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:56:22 GMT
+ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
+# Sat, 06 Jan 2024 01:56:22 GMT
+CMD ["mongo-express"]
+```
+
+-	Layers:
+	-	`sha256:c303524923177661067f7eb378c3dd5277088c2676ebd1cd78e68397bb80fdbf`  
+		Last Modified: Fri, 08 Dec 2023 01:39:48 GMT  
+		Size: 3.3 MB (3347794 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:eb7895eb72c1a145d166631d5a81c61bffd747783c52e8a1de9fa0e7d5871817`  
+		Last Modified: Mon, 11 Dec 2023 19:02:51 GMT  
+		Size: 40.0 MB (39978047 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7049a133eb54d652049fa44657d24cef7298dc371ffab6e27f5cd5e53e62159f`  
+		Last Modified: Mon, 11 Dec 2023 19:02:46 GMT  
+		Size: 2.3 MB (2342730 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:90577567f13c6046278cbfa4a557cb5a19ed5f9c281ab540e84ddd8f74c71922`  
+		Last Modified: Mon, 11 Dec 2023 19:02:45 GMT  
+		Size: 445.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:8e7fdab078a277850d97a71a23c41cbf45e5ac8092bc99a1429aa8247527f598`  
+		Last Modified: Sat, 06 Jan 2024 01:58:06 GMT  
+		Size: 862.4 KB (862441 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1063d3ecd5c04feb20d959e43633106ee5d678f9e00be9c39fb4023bf1cffb35`  
+		Last Modified: Sat, 06 Jan 2024 01:58:05 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d4dea9015fc2c949ef2ca11d0fffd8f60b647169e36e2e19d01045a8716ccec2`  
+		Last Modified: Sat, 06 Jan 2024 01:58:12 GMT  
+		Size: 33.1 MB (33062580 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:824ef5f6b0a5a6ab5ba8d490158c57ac113806423f3e27ef0164cd5f9d21584b`  
+		Last Modified: Sat, 06 Jan 2024 01:58:05 GMT  
+		Size: 782.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ## `mongo-express:1.0-20`
 
 ```console
-$ docker pull mongo-express@sha256:1c979e47db3649225acdf4b83f894835394714e665aa62501fc57d7b941f95e5
+$ docker pull mongo-express@sha256:79aac7f29d4b5a64c12fecbf6ba4b5e36826e8bddfc94f6323d9d603a475b98f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1853,84 +2230,97 @@ CMD ["mongo-express"]
 ### `mongo-express:1.0-20` - linux; arm64 variant v8
 
 ```console
-$ docker pull mongo-express@sha256:c0dc327f20fe89f8b293da9df1c01db162f7fad1547b914a19342b2480222ce0
+$ docker pull mongo-express@sha256:13e71e6c0298116bd18370fb4a079b7e50a8cb9c9081032c64d0c203ced0fe78
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **71.3 MB (71293273 bytes)**  
+-	Total Size: **81.4 MB (81400691 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1be8574ab13f7a0421aaf0cc0eb97fbe353562ef915899b721b7eeb58f8f39e5`
+-	Image ID: `sha256:36c41a306e04e759c683af10725f04d1ac0f4f791efb1f82e2f7b3d9e34006b8`
 -	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["mongo-express"]`
 
 ```dockerfile
-# Thu, 30 Nov 2023 23:11:07 GMT
-ADD file:e5c66967d6570e36da50c9d42dd8f8f55e6c6a65b92c79601ea9e750c076fa2a in / 
-# Thu, 30 Nov 2023 23:11:07 GMT
+# Thu, 30 Nov 2023 23:11:03 GMT
+ADD file:d8a30995bbcd627f084912c728fda5483b6ba486de25af588a0956069d0bd7ad in / 
+# Thu, 30 Nov 2023 23:11:03 GMT
 CMD ["/bin/sh"]
-# Fri, 01 Dec 2023 05:15:14 GMT
+# Fri, 01 Dec 2023 05:40:38 GMT
 ENV NODE_VERSION=20.10.0
-# Fri, 01 Dec 2023 05:40:18 GMT
+# Fri, 01 Dec 2023 06:05:00 GMT
 RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="2c654df3615ed02dc1994f58bdbc6b5cd37fdc01f695188388326f12c753f01b" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
-# Fri, 01 Dec 2023 05:40:18 GMT
+# Fri, 01 Dec 2023 06:05:01 GMT
 ENV YARN_VERSION=1.22.19
-# Fri, 01 Dec 2023 05:40:23 GMT
+# Fri, 01 Dec 2023 06:05:05 GMT
 RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
-# Fri, 01 Dec 2023 05:40:23 GMT
+# Fri, 01 Dec 2023 06:05:05 GMT
 COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
-# Fri, 01 Dec 2023 05:40:23 GMT
+# Fri, 01 Dec 2023 06:05:05 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Dec 2023 05:40:23 GMT
+# Fri, 01 Dec 2023 06:05:06 GMT
 CMD ["node"]
-# Fri, 01 Dec 2023 11:17:46 GMT
-ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true VCAP_APP_HOST=0.0.0.0
-# Fri, 01 Dec 2023 11:17:46 GMT
-ENV MONGO_EXPRESS_VERSION=1.0.0
-# Fri, 01 Dec 2023 11:17:56 GMT
-RUN set -eux;     yarn add mongo-express@${MONGO_EXPRESS_VERSION};     apk -U add --no-cache         bash         tini
-# Fri, 01 Dec 2023 11:17:56 GMT
-WORKDIR /node_modules/mongo-express
-# Fri, 01 Dec 2023 11:17:57 GMT
+# Sat, 06 Jan 2024 01:54:59 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:54:59 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:54:59 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:54:59 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:55:35 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:55:37 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:55:37 GMT
 EXPOSE 8081
-# Fri, 01 Dec 2023 11:17:57 GMT
-COPY file:a907b69e6dd5a27a50ea886b61d030160973910412c6c144b98f31160550e1cf in / 
-# Fri, 01 Dec 2023 11:17:57 GMT
+# Sat, 06 Jan 2024 01:55:37 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:55:37 GMT
 ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
-# Fri, 01 Dec 2023 11:17:57 GMT
+# Sat, 06 Jan 2024 01:55:37 GMT
 CMD ["mongo-express"]
 ```
 
 -	Layers:
-	-	`sha256:b8180c93b172865af87a7c0e7e3c8bcb139e0d0c92e19c96467ff2cd4c8919ad`  
-		Last Modified: Thu, 30 Nov 2023 23:11:45 GMT  
-		Size: 3.3 MB (3258348 bytes)  
+	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
+		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
+		Size: 3.3 MB (3333033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:09fb314fbd1aba26de089f7b084f55e0b406ef21870f8711539425a61ab27cca`  
-		Last Modified: Fri, 01 Dec 2023 06:50:07 GMT  
-		Size: 41.8 MB (41777721 bytes)  
+	-	`sha256:6aa4366d22bbd5ff73b4fb8e51eb08dffd3f9cdebb26fa6736dbdfc17f8128e7`  
+		Last Modified: Fri, 01 Dec 2023 06:50:24 GMT  
+		Size: 41.8 MB (41776668 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e25ed8051e946563d9d1cf5ffe2816c207cef74d33bcfb4d3c46faa6ba34e3ee`  
-		Last Modified: Fri, 01 Dec 2023 06:50:03 GMT  
-		Size: 2.3 MB (2341056 bytes)  
+	-	`sha256:11b2318853c1598c0c3d299f3ad79198375e1118770b518eb4ab244368cde5d7`  
+		Last Modified: Fri, 01 Dec 2023 06:50:20 GMT  
+		Size: 2.3 MB (2341059 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc70c7ed77c52b19d4b5f4835719396b0e19f42a61f8a50689c7ec9c53e24e1c`  
-		Last Modified: Fri, 01 Dec 2023 06:50:02 GMT  
-		Size: 446.0 B  
+	-	`sha256:d3454bc31ad143acd9056fc26259ae5256eaa404e315f1476c70b724dc6b9424`  
+		Last Modified: Fri, 01 Dec 2023 06:50:20 GMT  
+		Size: 448.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6221dfd56ccbae384b94599a5fbd5f191aaf1759f8b8bc6a3df3965337a561bf`  
-		Last Modified: Fri, 01 Dec 2023 11:19:01 GMT  
-		Size: 23.9 MB (23914938 bytes)  
+	-	`sha256:86de8f42055e69b05fdf89d423b09d0fa6df6b03daf2ef9e0152c25e53815c50`  
+		Last Modified: Sat, 06 Jan 2024 01:57:41 GMT  
+		Size: 887.0 KB (887010 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39f813b1c2bab34aae5281abe24bfb8fd4343696e196ed59844369882a6cd365`  
-		Last Modified: Fri, 01 Dec 2023 11:18:57 GMT  
-		Size: 764.0 B  
+	-	`sha256:d3a332f2fdb3685871a42b721e21edcd8599f92fd0a558b55784f3b1f2f32fc5`  
+		Last Modified: Sat, 06 Jan 2024 01:57:40 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b01f6057e7a96d805866fa7ce040c9038e25fdbc1d980d18c40f38c28647fe25`  
+		Last Modified: Sat, 06 Jan 2024 01:57:47 GMT  
+		Size: 33.1 MB (33061565 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:578ebce496a1b808857552e33b1030853cc9ea5c30fce013d61fcfb9ce534e07`  
+		Last Modified: Sat, 06 Jan 2024 01:57:41 GMT  
+		Size: 782.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo-express:1.0-20-alpine3.18`
 
 ```console
-$ docker pull mongo-express@sha256:24feb5e78d0faf7623c0b100a5541a7231953105a5028ac213b605b1bb2a6e7d
+$ docker pull mongo-express@sha256:79aac7f29d4b5a64c12fecbf6ba4b5e36826e8bddfc94f6323d9d603a475b98f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2031,14 +2421,14 @@ CMD ["mongo-express"]
 ### `mongo-express:1.0-20-alpine3.18` - linux; arm64 variant v8
 
 ```console
-$ docker pull mongo-express@sha256:2ce0b47735c5acf0e9801e25f6b36d09f44e30e2372d13bb130bb48c21e8aa30
+$ docker pull mongo-express@sha256:13e71e6c0298116bd18370fb4a079b7e50a8cb9c9081032c64d0c203ced0fe78
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **71.3 MB (71342154 bytes)**  
+-	Total Size: **81.4 MB (81400691 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c60811e43e59a303ccbecbb20909987fbfe29116699476e1bc9e18c2c7103572`
+-	Image ID: `sha256:36c41a306e04e759c683af10725f04d1ac0f4f791efb1f82e2f7b3d9e34006b8`
 -	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["mongo-express"]`
 
@@ -2061,21 +2451,26 @@ COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /u
 ENTRYPOINT ["docker-entrypoint.sh"]
 # Fri, 01 Dec 2023 06:05:06 GMT
 CMD ["node"]
-# Fri, 01 Dec 2023 11:17:32 GMT
-ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true VCAP_APP_HOST=0.0.0.0
-# Fri, 01 Dec 2023 11:17:32 GMT
-ENV MONGO_EXPRESS_VERSION=1.0.0
-# Fri, 01 Dec 2023 11:17:42 GMT
-RUN set -eux;     yarn add mongo-express@${MONGO_EXPRESS_VERSION};     apk -U add --no-cache         bash         tini
-# Fri, 01 Dec 2023 11:17:43 GMT
-WORKDIR /node_modules/mongo-express
-# Fri, 01 Dec 2023 11:17:43 GMT
+# Sat, 06 Jan 2024 01:54:59 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:54:59 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:54:59 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:54:59 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:55:35 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:55:37 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:55:37 GMT
 EXPOSE 8081
-# Fri, 01 Dec 2023 11:17:43 GMT
-COPY file:a907b69e6dd5a27a50ea886b61d030160973910412c6c144b98f31160550e1cf in / 
-# Fri, 01 Dec 2023 11:17:43 GMT
+# Sat, 06 Jan 2024 01:55:37 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:55:37 GMT
 ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
-# Fri, 01 Dec 2023 11:17:43 GMT
+# Sat, 06 Jan 2024 01:55:37 GMT
 CMD ["mongo-express"]
 ```
 
@@ -2096,24 +2491,33 @@ CMD ["mongo-express"]
 		Last Modified: Fri, 01 Dec 2023 06:50:20 GMT  
 		Size: 448.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:02e656da613fd632c7c711e13eb96c5f367c4efb3414a1b29117c9dc85cdf089`  
-		Last Modified: Fri, 01 Dec 2023 11:18:47 GMT  
-		Size: 23.9 MB (23890182 bytes)  
+	-	`sha256:86de8f42055e69b05fdf89d423b09d0fa6df6b03daf2ef9e0152c25e53815c50`  
+		Last Modified: Sat, 06 Jan 2024 01:57:41 GMT  
+		Size: 887.0 KB (887010 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:861d2dbf49f9f633e546487155575d1b7a08b030743f6eaa0f12ae4dd431eeb8`  
-		Last Modified: Fri, 01 Dec 2023 11:18:44 GMT  
-		Size: 764.0 B  
+	-	`sha256:d3a332f2fdb3685871a42b721e21edcd8599f92fd0a558b55784f3b1f2f32fc5`  
+		Last Modified: Sat, 06 Jan 2024 01:57:40 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b01f6057e7a96d805866fa7ce040c9038e25fdbc1d980d18c40f38c28647fe25`  
+		Last Modified: Sat, 06 Jan 2024 01:57:47 GMT  
+		Size: 33.1 MB (33061565 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:578ebce496a1b808857552e33b1030853cc9ea5c30fce013d61fcfb9ce534e07`  
+		Last Modified: Sat, 06 Jan 2024 01:57:41 GMT  
+		Size: 782.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo-express:1.0-20-alpine3.19`
 
 ```console
-$ docker pull mongo-express@sha256:17f690ed6bda7c744718b7aeeff6ce03e6bd0fd4571c8ba5e8e6711e9101e808
+$ docker pull mongo-express@sha256:80d97fd5a2bec5772d5d32b05a6839d85df52969a92f3988e7516470b80cd0ae
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
+-	Platforms: 2
 	-	linux; amd64
+	-	linux; arm64 variant v8
 
 ### `mongo-express:1.0-20-alpine3.19` - linux; amd64
 
@@ -2205,15 +2609,106 @@ CMD ["mongo-express"]
 		Size: 782.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `mongo-express:1.0-20-alpine3.19` - linux; arm64 variant v8
+
+```console
+$ docker pull mongo-express@sha256:12cbf00151dedefdf849de2562162e5fabd47b4666dd852e25c098f905560de9
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **81.6 MB (81578259 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:9cfa935068485d1c6f7f0d025ba5137be28bdc4f42ccb6fe4783b2b6059f9638`
+-	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
+-	Default Command: `["mongo-express"]`
+
+```dockerfile
+# Fri, 08 Dec 2023 01:39:30 GMT
+ADD file:8182c73f869a899cf624a59c400acb8226776d15e4d3a0d240a94e65340540d0 in / 
+# Fri, 08 Dec 2023 01:39:30 GMT
+CMD ["/bin/sh"]
+# Mon, 11 Dec 2023 18:16:31 GMT
+ENV NODE_VERSION=20.10.0
+# Mon, 11 Dec 2023 18:39:44 GMT
+RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="2c654df3615ed02dc1994f58bdbc6b5cd37fdc01f695188388326f12c753f01b" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
+# Mon, 11 Dec 2023 18:39:44 GMT
+ENV YARN_VERSION=1.22.19
+# Mon, 11 Dec 2023 18:39:49 GMT
+RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
+# Mon, 11 Dec 2023 18:39:49 GMT
+COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
+# Mon, 11 Dec 2023 18:39:49 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Mon, 11 Dec 2023 18:39:49 GMT
+CMD ["node"]
+# Sat, 06 Jan 2024 01:54:11 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:54:11 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:54:11 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:54:11 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:54:46 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:54:48 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:54:48 GMT
+EXPOSE 8081
+# Sat, 06 Jan 2024 01:54:48 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:54:48 GMT
+ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
+# Sat, 06 Jan 2024 01:54:49 GMT
+CMD ["mongo-express"]
+```
+
+-	Layers:
+	-	`sha256:c303524923177661067f7eb378c3dd5277088c2676ebd1cd78e68397bb80fdbf`  
+		Last Modified: Fri, 08 Dec 2023 01:39:48 GMT  
+		Size: 3.3 MB (3347794 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a7eb1ad3dce881e15c7a4c6d276f01c6a5e9d471e43a28ca0ebd473cfc495981`  
+		Last Modified: Mon, 11 Dec 2023 19:02:07 GMT  
+		Size: 42.0 MB (41964108 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:08e4b7445e132cd88a8bc4294659ad96c2b57b95e8576414b886f7b2db9b5665`  
+		Last Modified: Mon, 11 Dec 2023 19:02:02 GMT  
+		Size: 2.3 MB (2341154 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:41320be8b6a21e16ee8cbaa3577c04d93bb7983f5df465bb94d4efdb14432092`  
+		Last Modified: Mon, 11 Dec 2023 19:02:02 GMT  
+		Size: 446.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:4c274a08d39c0cd8fd3477fc79c393a53281a7e0ae3555bf3d932c3778e3dfb8`  
+		Last Modified: Sat, 06 Jan 2024 01:57:23 GMT  
+		Size: 862.4 KB (862445 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3094a5f400f139aa287f37603a50d5c1076b01e766f1214a478c38a934b38bed`  
+		Last Modified: Sat, 06 Jan 2024 01:57:23 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5531c40ac2770d4542e7aea0f23e1f495c1111352cf38226caf11955eade6cb7`  
+		Last Modified: Sat, 06 Jan 2024 01:57:29 GMT  
+		Size: 33.1 MB (33061403 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cca13a304e35884d7ebe396bc738935a20bea45acbe2ebe7cdd58f162eb5b4d0`  
+		Last Modified: Sat, 06 Jan 2024 01:57:23 GMT  
+		Size: 783.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ## `mongo-express:1.0.2`
 
 ```console
-$ docker pull mongo-express@sha256:cfafdfe0f376daaa20deb5fa55c748e21c255f088144dceefd33443d9c29d524
+$ docker pull mongo-express@sha256:104cf75d21a940f9fb7cb9be6fbb7038a0518cb7b8766b3c2480f820cdb95b82
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
+-	Platforms: 2
 	-	linux; amd64
+	-	linux; arm64 variant v8
 
 ### `mongo-express:1.0.2` - linux; amd64
 
@@ -2305,15 +2800,106 @@ CMD ["mongo-express"]
 		Size: 783.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `mongo-express:1.0.2` - linux; arm64 variant v8
+
+```console
+$ docker pull mongo-express@sha256:ba5eaa9c99556abc3e37ece5d6b510a22717fe99c069cf66d42ca6d1334930c8
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **79.4 MB (79444118 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:684f8a881c7c2719aed4bf3eccaf9d92ad2b65400d96dd1f0a13fbfedaeda244`
+-	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
+-	Default Command: `["mongo-express"]`
+
+```dockerfile
+# Thu, 30 Nov 2023 23:11:03 GMT
+ADD file:d8a30995bbcd627f084912c728fda5483b6ba486de25af588a0956069d0bd7ad in / 
+# Thu, 30 Nov 2023 23:11:03 GMT
+CMD ["/bin/sh"]
+# Sat, 02 Dec 2023 03:48:51 GMT
+ENV NODE_VERSION=18.19.0
+# Sat, 02 Dec 2023 04:09:30 GMT
+RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="10b7b23b6b867a25f060a433b83f5c3ecb3bcf7cdba1c0ce46443065a832fd41" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
+# Sat, 02 Dec 2023 04:09:30 GMT
+ENV YARN_VERSION=1.22.19
+# Sat, 02 Dec 2023 04:09:35 GMT
+RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
+# Sat, 02 Dec 2023 04:09:35 GMT
+COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
+# Sat, 02 Dec 2023 04:09:35 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Sat, 02 Dec 2023 04:09:35 GMT
+CMD ["node"]
+# Sat, 06 Jan 2024 01:56:27 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:56:27 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:56:59 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:57:01 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:57:01 GMT
+EXPOSE 8081
+# Sat, 06 Jan 2024 01:57:01 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:57:02 GMT
+ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
+# Sat, 06 Jan 2024 01:57:02 GMT
+CMD ["mongo-express"]
+```
+
+-	Layers:
+	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
+		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
+		Size: 3.3 MB (3333033 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cd9cba98305bbc9b5b1acc82808c97ec2f1bdd0918782e26a4f249c89e8f5f1c`  
+		Last Modified: Sat, 02 Dec 2023 04:17:12 GMT  
+		Size: 39.8 MB (39817628 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fbb1cdcfb3b6e7d1dbbdde57709e15e2c4bbdcac8f7c3da88459d74bc402c637`  
+		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
+		Size: 2.3 MB (2342686 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:266cff88a90930625e27a71f05f05b0bb69c1c3612e447e70131636367599c6c`  
+		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
+		Size: 449.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b233574749281abc1a8ad5a8fb4f54bd3aa2b79c58bd876195c947c20d3083fa`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 887.0 KB (886996 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1254cb9a9f437dc36f890b22f67330bfbc4c76a86d4e1c845d093039c3455c1e`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ca088f0889c67078200ebc911786a79a006f465a4c1e1a6fe630152a483e40bb`  
+		Last Modified: Sat, 06 Jan 2024 01:58:29 GMT  
+		Size: 33.1 MB (33062417 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fbcca7110cd18932f3edb0f5e106ec20360693a67d7cb668788f9da77d541f99`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 783.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ## `mongo-express:1.0.2-18`
 
 ```console
-$ docker pull mongo-express@sha256:cfafdfe0f376daaa20deb5fa55c748e21c255f088144dceefd33443d9c29d524
+$ docker pull mongo-express@sha256:104cf75d21a940f9fb7cb9be6fbb7038a0518cb7b8766b3c2480f820cdb95b82
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
+-	Platforms: 2
 	-	linux; amd64
+	-	linux; arm64 variant v8
 
 ### `mongo-express:1.0.2-18` - linux; amd64
 
@@ -2405,15 +2991,106 @@ CMD ["mongo-express"]
 		Size: 783.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `mongo-express:1.0.2-18` - linux; arm64 variant v8
+
+```console
+$ docker pull mongo-express@sha256:ba5eaa9c99556abc3e37ece5d6b510a22717fe99c069cf66d42ca6d1334930c8
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **79.4 MB (79444118 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:684f8a881c7c2719aed4bf3eccaf9d92ad2b65400d96dd1f0a13fbfedaeda244`
+-	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
+-	Default Command: `["mongo-express"]`
+
+```dockerfile
+# Thu, 30 Nov 2023 23:11:03 GMT
+ADD file:d8a30995bbcd627f084912c728fda5483b6ba486de25af588a0956069d0bd7ad in / 
+# Thu, 30 Nov 2023 23:11:03 GMT
+CMD ["/bin/sh"]
+# Sat, 02 Dec 2023 03:48:51 GMT
+ENV NODE_VERSION=18.19.0
+# Sat, 02 Dec 2023 04:09:30 GMT
+RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="10b7b23b6b867a25f060a433b83f5c3ecb3bcf7cdba1c0ce46443065a832fd41" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
+# Sat, 02 Dec 2023 04:09:30 GMT
+ENV YARN_VERSION=1.22.19
+# Sat, 02 Dec 2023 04:09:35 GMT
+RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
+# Sat, 02 Dec 2023 04:09:35 GMT
+COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
+# Sat, 02 Dec 2023 04:09:35 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Sat, 02 Dec 2023 04:09:35 GMT
+CMD ["node"]
+# Sat, 06 Jan 2024 01:56:27 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:56:27 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:56:59 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:57:01 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:57:01 GMT
+EXPOSE 8081
+# Sat, 06 Jan 2024 01:57:01 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:57:02 GMT
+ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
+# Sat, 06 Jan 2024 01:57:02 GMT
+CMD ["mongo-express"]
+```
+
+-	Layers:
+	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
+		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
+		Size: 3.3 MB (3333033 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cd9cba98305bbc9b5b1acc82808c97ec2f1bdd0918782e26a4f249c89e8f5f1c`  
+		Last Modified: Sat, 02 Dec 2023 04:17:12 GMT  
+		Size: 39.8 MB (39817628 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fbb1cdcfb3b6e7d1dbbdde57709e15e2c4bbdcac8f7c3da88459d74bc402c637`  
+		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
+		Size: 2.3 MB (2342686 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:266cff88a90930625e27a71f05f05b0bb69c1c3612e447e70131636367599c6c`  
+		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
+		Size: 449.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b233574749281abc1a8ad5a8fb4f54bd3aa2b79c58bd876195c947c20d3083fa`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 887.0 KB (886996 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1254cb9a9f437dc36f890b22f67330bfbc4c76a86d4e1c845d093039c3455c1e`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ca088f0889c67078200ebc911786a79a006f465a4c1e1a6fe630152a483e40bb`  
+		Last Modified: Sat, 06 Jan 2024 01:58:29 GMT  
+		Size: 33.1 MB (33062417 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fbcca7110cd18932f3edb0f5e106ec20360693a67d7cb668788f9da77d541f99`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 783.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ## `mongo-express:1.0.2-18-alpine3.18`
 
 ```console
-$ docker pull mongo-express@sha256:cfafdfe0f376daaa20deb5fa55c748e21c255f088144dceefd33443d9c29d524
+$ docker pull mongo-express@sha256:104cf75d21a940f9fb7cb9be6fbb7038a0518cb7b8766b3c2480f820cdb95b82
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
+-	Platforms: 2
 	-	linux; amd64
+	-	linux; arm64 variant v8
 
 ### `mongo-express:1.0.2-18-alpine3.18` - linux; amd64
 
@@ -2505,15 +3182,106 @@ CMD ["mongo-express"]
 		Size: 783.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `mongo-express:1.0.2-18-alpine3.18` - linux; arm64 variant v8
+
+```console
+$ docker pull mongo-express@sha256:ba5eaa9c99556abc3e37ece5d6b510a22717fe99c069cf66d42ca6d1334930c8
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **79.4 MB (79444118 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:684f8a881c7c2719aed4bf3eccaf9d92ad2b65400d96dd1f0a13fbfedaeda244`
+-	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
+-	Default Command: `["mongo-express"]`
+
+```dockerfile
+# Thu, 30 Nov 2023 23:11:03 GMT
+ADD file:d8a30995bbcd627f084912c728fda5483b6ba486de25af588a0956069d0bd7ad in / 
+# Thu, 30 Nov 2023 23:11:03 GMT
+CMD ["/bin/sh"]
+# Sat, 02 Dec 2023 03:48:51 GMT
+ENV NODE_VERSION=18.19.0
+# Sat, 02 Dec 2023 04:09:30 GMT
+RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="10b7b23b6b867a25f060a433b83f5c3ecb3bcf7cdba1c0ce46443065a832fd41" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
+# Sat, 02 Dec 2023 04:09:30 GMT
+ENV YARN_VERSION=1.22.19
+# Sat, 02 Dec 2023 04:09:35 GMT
+RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
+# Sat, 02 Dec 2023 04:09:35 GMT
+COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
+# Sat, 02 Dec 2023 04:09:35 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Sat, 02 Dec 2023 04:09:35 GMT
+CMD ["node"]
+# Sat, 06 Jan 2024 01:56:27 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:56:27 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:56:59 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:57:01 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:57:01 GMT
+EXPOSE 8081
+# Sat, 06 Jan 2024 01:57:01 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:57:02 GMT
+ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
+# Sat, 06 Jan 2024 01:57:02 GMT
+CMD ["mongo-express"]
+```
+
+-	Layers:
+	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
+		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
+		Size: 3.3 MB (3333033 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cd9cba98305bbc9b5b1acc82808c97ec2f1bdd0918782e26a4f249c89e8f5f1c`  
+		Last Modified: Sat, 02 Dec 2023 04:17:12 GMT  
+		Size: 39.8 MB (39817628 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fbb1cdcfb3b6e7d1dbbdde57709e15e2c4bbdcac8f7c3da88459d74bc402c637`  
+		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
+		Size: 2.3 MB (2342686 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:266cff88a90930625e27a71f05f05b0bb69c1c3612e447e70131636367599c6c`  
+		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
+		Size: 449.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b233574749281abc1a8ad5a8fb4f54bd3aa2b79c58bd876195c947c20d3083fa`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 887.0 KB (886996 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1254cb9a9f437dc36f890b22f67330bfbc4c76a86d4e1c845d093039c3455c1e`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ca088f0889c67078200ebc911786a79a006f465a4c1e1a6fe630152a483e40bb`  
+		Last Modified: Sat, 06 Jan 2024 01:58:29 GMT  
+		Size: 33.1 MB (33062417 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fbcca7110cd18932f3edb0f5e106ec20360693a67d7cb668788f9da77d541f99`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 783.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ## `mongo-express:1.0.2-18-alpine3.19`
 
 ```console
-$ docker pull mongo-express@sha256:94c64b3b92ad50c8aa721f39e82b2bea4e49e80f2d9ff95be12c5f2c68606c85
+$ docker pull mongo-express@sha256:fa251cb38fb8829560d2002f1939738fe9946dbff6f463a5dec5b65336e21c91
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
+-	Platforms: 2
 	-	linux; amd64
+	-	linux; arm64 variant v8
 
 ### `mongo-express:1.0.2-18-alpine3.19` - linux; amd64
 
@@ -2605,15 +3373,106 @@ CMD ["mongo-express"]
 		Size: 783.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `mongo-express:1.0.2-18-alpine3.19` - linux; arm64 variant v8
+
+```console
+$ docker pull mongo-express@sha256:e5de6e6d9678517ff4b023c24bf4f1089d8967c4b222f1b27119685d3ecceca1
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **79.6 MB (79594945 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:9dc592b4d457133e024b7b43eec4b4c4a2b34d39a7a939c28c3b02096a84cf5a`
+-	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
+-	Default Command: `["mongo-express"]`
+
+```dockerfile
+# Fri, 08 Dec 2023 01:39:30 GMT
+ADD file:8182c73f869a899cf624a59c400acb8226776d15e4d3a0d240a94e65340540d0 in / 
+# Fri, 08 Dec 2023 01:39:30 GMT
+CMD ["/bin/sh"]
+# Mon, 11 Dec 2023 18:40:05 GMT
+ENV NODE_VERSION=18.19.0
+# Mon, 11 Dec 2023 18:59:50 GMT
+RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="10b7b23b6b867a25f060a433b83f5c3ecb3bcf7cdba1c0ce46443065a832fd41" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
+# Mon, 11 Dec 2023 18:59:50 GMT
+ENV YARN_VERSION=1.22.19
+# Mon, 11 Dec 2023 18:59:55 GMT
+RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
+# Mon, 11 Dec 2023 18:59:55 GMT
+COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
+# Mon, 11 Dec 2023 18:59:55 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Mon, 11 Dec 2023 18:59:55 GMT
+CMD ["node"]
+# Sat, 06 Jan 2024 01:55:47 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:55:47 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:55:47 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:55:47 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:56:19 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:56:22 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:56:22 GMT
+EXPOSE 8081
+# Sat, 06 Jan 2024 01:56:22 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:56:22 GMT
+ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
+# Sat, 06 Jan 2024 01:56:22 GMT
+CMD ["mongo-express"]
+```
+
+-	Layers:
+	-	`sha256:c303524923177661067f7eb378c3dd5277088c2676ebd1cd78e68397bb80fdbf`  
+		Last Modified: Fri, 08 Dec 2023 01:39:48 GMT  
+		Size: 3.3 MB (3347794 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:eb7895eb72c1a145d166631d5a81c61bffd747783c52e8a1de9fa0e7d5871817`  
+		Last Modified: Mon, 11 Dec 2023 19:02:51 GMT  
+		Size: 40.0 MB (39978047 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7049a133eb54d652049fa44657d24cef7298dc371ffab6e27f5cd5e53e62159f`  
+		Last Modified: Mon, 11 Dec 2023 19:02:46 GMT  
+		Size: 2.3 MB (2342730 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:90577567f13c6046278cbfa4a557cb5a19ed5f9c281ab540e84ddd8f74c71922`  
+		Last Modified: Mon, 11 Dec 2023 19:02:45 GMT  
+		Size: 445.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:8e7fdab078a277850d97a71a23c41cbf45e5ac8092bc99a1429aa8247527f598`  
+		Last Modified: Sat, 06 Jan 2024 01:58:06 GMT  
+		Size: 862.4 KB (862441 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1063d3ecd5c04feb20d959e43633106ee5d678f9e00be9c39fb4023bf1cffb35`  
+		Last Modified: Sat, 06 Jan 2024 01:58:05 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d4dea9015fc2c949ef2ca11d0fffd8f60b647169e36e2e19d01045a8716ccec2`  
+		Last Modified: Sat, 06 Jan 2024 01:58:12 GMT  
+		Size: 33.1 MB (33062580 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:824ef5f6b0a5a6ab5ba8d490158c57ac113806423f3e27ef0164cd5f9d21584b`  
+		Last Modified: Sat, 06 Jan 2024 01:58:05 GMT  
+		Size: 782.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ## `mongo-express:1.0.2-20`
 
 ```console
-$ docker pull mongo-express@sha256:cf5db6fbe97e089c35d62015dc652fa6d407c1f4a9e3d382c07c1b567eb8ba28
+$ docker pull mongo-express@sha256:79aac7f29d4b5a64c12fecbf6ba4b5e36826e8bddfc94f6323d9d603a475b98f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
+-	Platforms: 2
 	-	linux; amd64
+	-	linux; arm64 variant v8
 
 ### `mongo-express:1.0.2-20` - linux; amd64
 
@@ -2705,15 +3564,106 @@ CMD ["mongo-express"]
 		Size: 783.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `mongo-express:1.0.2-20` - linux; arm64 variant v8
+
+```console
+$ docker pull mongo-express@sha256:13e71e6c0298116bd18370fb4a079b7e50a8cb9c9081032c64d0c203ced0fe78
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **81.4 MB (81400691 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:36c41a306e04e759c683af10725f04d1ac0f4f791efb1f82e2f7b3d9e34006b8`
+-	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
+-	Default Command: `["mongo-express"]`
+
+```dockerfile
+# Thu, 30 Nov 2023 23:11:03 GMT
+ADD file:d8a30995bbcd627f084912c728fda5483b6ba486de25af588a0956069d0bd7ad in / 
+# Thu, 30 Nov 2023 23:11:03 GMT
+CMD ["/bin/sh"]
+# Fri, 01 Dec 2023 05:40:38 GMT
+ENV NODE_VERSION=20.10.0
+# Fri, 01 Dec 2023 06:05:00 GMT
+RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="2c654df3615ed02dc1994f58bdbc6b5cd37fdc01f695188388326f12c753f01b" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
+# Fri, 01 Dec 2023 06:05:01 GMT
+ENV YARN_VERSION=1.22.19
+# Fri, 01 Dec 2023 06:05:05 GMT
+RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
+# Fri, 01 Dec 2023 06:05:05 GMT
+COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
+# Fri, 01 Dec 2023 06:05:05 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Fri, 01 Dec 2023 06:05:06 GMT
+CMD ["node"]
+# Sat, 06 Jan 2024 01:54:59 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:54:59 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:54:59 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:54:59 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:55:35 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:55:37 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:55:37 GMT
+EXPOSE 8081
+# Sat, 06 Jan 2024 01:55:37 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:55:37 GMT
+ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
+# Sat, 06 Jan 2024 01:55:37 GMT
+CMD ["mongo-express"]
+```
+
+-	Layers:
+	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
+		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
+		Size: 3.3 MB (3333033 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6aa4366d22bbd5ff73b4fb8e51eb08dffd3f9cdebb26fa6736dbdfc17f8128e7`  
+		Last Modified: Fri, 01 Dec 2023 06:50:24 GMT  
+		Size: 41.8 MB (41776668 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:11b2318853c1598c0c3d299f3ad79198375e1118770b518eb4ab244368cde5d7`  
+		Last Modified: Fri, 01 Dec 2023 06:50:20 GMT  
+		Size: 2.3 MB (2341059 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d3454bc31ad143acd9056fc26259ae5256eaa404e315f1476c70b724dc6b9424`  
+		Last Modified: Fri, 01 Dec 2023 06:50:20 GMT  
+		Size: 448.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:86de8f42055e69b05fdf89d423b09d0fa6df6b03daf2ef9e0152c25e53815c50`  
+		Last Modified: Sat, 06 Jan 2024 01:57:41 GMT  
+		Size: 887.0 KB (887010 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d3a332f2fdb3685871a42b721e21edcd8599f92fd0a558b55784f3b1f2f32fc5`  
+		Last Modified: Sat, 06 Jan 2024 01:57:40 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b01f6057e7a96d805866fa7ce040c9038e25fdbc1d980d18c40f38c28647fe25`  
+		Last Modified: Sat, 06 Jan 2024 01:57:47 GMT  
+		Size: 33.1 MB (33061565 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:578ebce496a1b808857552e33b1030853cc9ea5c30fce013d61fcfb9ce534e07`  
+		Last Modified: Sat, 06 Jan 2024 01:57:41 GMT  
+		Size: 782.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ## `mongo-express:1.0.2-20-alpine3.18`
 
 ```console
-$ docker pull mongo-express@sha256:cf5db6fbe97e089c35d62015dc652fa6d407c1f4a9e3d382c07c1b567eb8ba28
+$ docker pull mongo-express@sha256:79aac7f29d4b5a64c12fecbf6ba4b5e36826e8bddfc94f6323d9d603a475b98f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
+-	Platforms: 2
 	-	linux; amd64
+	-	linux; arm64 variant v8
 
 ### `mongo-express:1.0.2-20-alpine3.18` - linux; amd64
 
@@ -2805,15 +3755,106 @@ CMD ["mongo-express"]
 		Size: 783.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `mongo-express:1.0.2-20-alpine3.18` - linux; arm64 variant v8
+
+```console
+$ docker pull mongo-express@sha256:13e71e6c0298116bd18370fb4a079b7e50a8cb9c9081032c64d0c203ced0fe78
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **81.4 MB (81400691 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:36c41a306e04e759c683af10725f04d1ac0f4f791efb1f82e2f7b3d9e34006b8`
+-	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
+-	Default Command: `["mongo-express"]`
+
+```dockerfile
+# Thu, 30 Nov 2023 23:11:03 GMT
+ADD file:d8a30995bbcd627f084912c728fda5483b6ba486de25af588a0956069d0bd7ad in / 
+# Thu, 30 Nov 2023 23:11:03 GMT
+CMD ["/bin/sh"]
+# Fri, 01 Dec 2023 05:40:38 GMT
+ENV NODE_VERSION=20.10.0
+# Fri, 01 Dec 2023 06:05:00 GMT
+RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="2c654df3615ed02dc1994f58bdbc6b5cd37fdc01f695188388326f12c753f01b" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
+# Fri, 01 Dec 2023 06:05:01 GMT
+ENV YARN_VERSION=1.22.19
+# Fri, 01 Dec 2023 06:05:05 GMT
+RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
+# Fri, 01 Dec 2023 06:05:05 GMT
+COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
+# Fri, 01 Dec 2023 06:05:05 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Fri, 01 Dec 2023 06:05:06 GMT
+CMD ["node"]
+# Sat, 06 Jan 2024 01:54:59 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:54:59 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:54:59 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:54:59 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:55:35 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:55:37 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:55:37 GMT
+EXPOSE 8081
+# Sat, 06 Jan 2024 01:55:37 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:55:37 GMT
+ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
+# Sat, 06 Jan 2024 01:55:37 GMT
+CMD ["mongo-express"]
+```
+
+-	Layers:
+	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
+		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
+		Size: 3.3 MB (3333033 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6aa4366d22bbd5ff73b4fb8e51eb08dffd3f9cdebb26fa6736dbdfc17f8128e7`  
+		Last Modified: Fri, 01 Dec 2023 06:50:24 GMT  
+		Size: 41.8 MB (41776668 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:11b2318853c1598c0c3d299f3ad79198375e1118770b518eb4ab244368cde5d7`  
+		Last Modified: Fri, 01 Dec 2023 06:50:20 GMT  
+		Size: 2.3 MB (2341059 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d3454bc31ad143acd9056fc26259ae5256eaa404e315f1476c70b724dc6b9424`  
+		Last Modified: Fri, 01 Dec 2023 06:50:20 GMT  
+		Size: 448.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:86de8f42055e69b05fdf89d423b09d0fa6df6b03daf2ef9e0152c25e53815c50`  
+		Last Modified: Sat, 06 Jan 2024 01:57:41 GMT  
+		Size: 887.0 KB (887010 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d3a332f2fdb3685871a42b721e21edcd8599f92fd0a558b55784f3b1f2f32fc5`  
+		Last Modified: Sat, 06 Jan 2024 01:57:40 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b01f6057e7a96d805866fa7ce040c9038e25fdbc1d980d18c40f38c28647fe25`  
+		Last Modified: Sat, 06 Jan 2024 01:57:47 GMT  
+		Size: 33.1 MB (33061565 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:578ebce496a1b808857552e33b1030853cc9ea5c30fce013d61fcfb9ce534e07`  
+		Last Modified: Sat, 06 Jan 2024 01:57:41 GMT  
+		Size: 782.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ## `mongo-express:1.0.2-20-alpine3.19`
 
 ```console
-$ docker pull mongo-express@sha256:17f690ed6bda7c744718b7aeeff6ce03e6bd0fd4571c8ba5e8e6711e9101e808
+$ docker pull mongo-express@sha256:80d97fd5a2bec5772d5d32b05a6839d85df52969a92f3988e7516470b80cd0ae
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
+-	Platforms: 2
 	-	linux; amd64
+	-	linux; arm64 variant v8
 
 ### `mongo-express:1.0.2-20-alpine3.19` - linux; amd64
 
@@ -2905,10 +3946,100 @@ CMD ["mongo-express"]
 		Size: 782.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `mongo-express:1.0.2-20-alpine3.19` - linux; arm64 variant v8
+
+```console
+$ docker pull mongo-express@sha256:12cbf00151dedefdf849de2562162e5fabd47b4666dd852e25c098f905560de9
+```
+
+-	Docker Version: 20.10.23
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **81.6 MB (81578259 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:9cfa935068485d1c6f7f0d025ba5137be28bdc4f42ccb6fe4783b2b6059f9638`
+-	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
+-	Default Command: `["mongo-express"]`
+
+```dockerfile
+# Fri, 08 Dec 2023 01:39:30 GMT
+ADD file:8182c73f869a899cf624a59c400acb8226776d15e4d3a0d240a94e65340540d0 in / 
+# Fri, 08 Dec 2023 01:39:30 GMT
+CMD ["/bin/sh"]
+# Mon, 11 Dec 2023 18:16:31 GMT
+ENV NODE_VERSION=20.10.0
+# Mon, 11 Dec 2023 18:39:44 GMT
+RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="2c654df3615ed02dc1994f58bdbc6b5cd37fdc01f695188388326f12c753f01b" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
+# Mon, 11 Dec 2023 18:39:44 GMT
+ENV YARN_VERSION=1.22.19
+# Mon, 11 Dec 2023 18:39:49 GMT
+RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
+# Mon, 11 Dec 2023 18:39:49 GMT
+COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
+# Mon, 11 Dec 2023 18:39:49 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Mon, 11 Dec 2023 18:39:49 GMT
+CMD ["node"]
+# Sat, 06 Jan 2024 01:54:11 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:54:11 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:54:11 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:54:11 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:54:46 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:54:48 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:54:48 GMT
+EXPOSE 8081
+# Sat, 06 Jan 2024 01:54:48 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:54:48 GMT
+ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
+# Sat, 06 Jan 2024 01:54:49 GMT
+CMD ["mongo-express"]
+```
+
+-	Layers:
+	-	`sha256:c303524923177661067f7eb378c3dd5277088c2676ebd1cd78e68397bb80fdbf`  
+		Last Modified: Fri, 08 Dec 2023 01:39:48 GMT  
+		Size: 3.3 MB (3347794 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a7eb1ad3dce881e15c7a4c6d276f01c6a5e9d471e43a28ca0ebd473cfc495981`  
+		Last Modified: Mon, 11 Dec 2023 19:02:07 GMT  
+		Size: 42.0 MB (41964108 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:08e4b7445e132cd88a8bc4294659ad96c2b57b95e8576414b886f7b2db9b5665`  
+		Last Modified: Mon, 11 Dec 2023 19:02:02 GMT  
+		Size: 2.3 MB (2341154 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:41320be8b6a21e16ee8cbaa3577c04d93bb7983f5df465bb94d4efdb14432092`  
+		Last Modified: Mon, 11 Dec 2023 19:02:02 GMT  
+		Size: 446.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:4c274a08d39c0cd8fd3477fc79c393a53281a7e0ae3555bf3d932c3778e3dfb8`  
+		Last Modified: Sat, 06 Jan 2024 01:57:23 GMT  
+		Size: 862.4 KB (862445 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3094a5f400f139aa287f37603a50d5c1076b01e766f1214a478c38a934b38bed`  
+		Last Modified: Sat, 06 Jan 2024 01:57:23 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5531c40ac2770d4542e7aea0f23e1f495c1111352cf38226caf11955eade6cb7`  
+		Last Modified: Sat, 06 Jan 2024 01:57:29 GMT  
+		Size: 33.1 MB (33061403 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cca13a304e35884d7ebe396bc738935a20bea45acbe2ebe7cdd58f162eb5b4d0`  
+		Last Modified: Sat, 06 Jan 2024 01:57:23 GMT  
+		Size: 783.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ## `mongo-express:latest`
 
 ```console
-$ docker pull mongo-express@sha256:46abf702a626e0069b829c7051039c1aa156ba0392bac70dbd14b037478f61fb
+$ docker pull mongo-express@sha256:104cf75d21a940f9fb7cb9be6fbb7038a0518cb7b8766b3c2480f820cdb95b82
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3009,76 +4140,89 @@ CMD ["mongo-express"]
 ### `mongo-express:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull mongo-express@sha256:a582adff71bded545782b7c43e06c50f99ff4843745e311a0f95772f11cc30a5
+$ docker pull mongo-express@sha256:ba5eaa9c99556abc3e37ece5d6b510a22717fe99c069cf66d42ca6d1334930c8
 ```
 
 -	Docker Version: 20.10.23
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.3 MB (69335949 bytes)**  
+-	Total Size: **79.4 MB (79444118 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:28a77c241c143b6a43a6ff849ecb2e73ac6ba1db5052f54607bcb57d78d9d709`
+-	Image ID: `sha256:684f8a881c7c2719aed4bf3eccaf9d92ad2b65400d96dd1f0a13fbfedaeda244`
 -	Entrypoint: `["\/sbin\/tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["mongo-express"]`
 
 ```dockerfile
-# Thu, 30 Nov 2023 23:11:07 GMT
-ADD file:e5c66967d6570e36da50c9d42dd8f8f55e6c6a65b92c79601ea9e750c076fa2a in / 
-# Thu, 30 Nov 2023 23:11:07 GMT
+# Thu, 30 Nov 2023 23:11:03 GMT
+ADD file:d8a30995bbcd627f084912c728fda5483b6ba486de25af588a0956069d0bd7ad in / 
+# Thu, 30 Nov 2023 23:11:03 GMT
 CMD ["/bin/sh"]
-# Sat, 02 Dec 2023 03:27:42 GMT
+# Sat, 02 Dec 2023 03:48:51 GMT
 ENV NODE_VERSION=18.19.0
-# Sat, 02 Dec 2023 03:48:42 GMT
+# Sat, 02 Dec 2023 04:09:30 GMT
 RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="10b7b23b6b867a25f060a433b83f5c3ecb3bcf7cdba1c0ce46443065a832fd41" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3     && export GNUPGHOME="$(mktemp -d)"     && for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version
-# Sat, 02 Dec 2023 03:48:43 GMT
+# Sat, 02 Dec 2023 04:09:30 GMT
 ENV YARN_VERSION=1.22.19
-# Sat, 02 Dec 2023 03:48:47 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
-# Sat, 02 Dec 2023 03:48:48 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
-# Sat, 02 Dec 2023 03:48:48 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Sat, 02 Dec 2023 03:48:48 GMT
+# Sat, 02 Dec 2023 04:09:35 GMT
 CMD ["node"]
-# Sat, 02 Dec 2023 04:45:05 GMT
-ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true VCAP_APP_HOST=0.0.0.0
-# Sat, 02 Dec 2023 04:45:05 GMT
-ENV MONGO_EXPRESS_VERSION=1.0.0
-# Sat, 02 Dec 2023 04:45:15 GMT
-RUN set -eux;     yarn add mongo-express@${MONGO_EXPRESS_VERSION};     apk -U add --no-cache         bash         tini
-# Sat, 02 Dec 2023 04:45:15 GMT
-WORKDIR /node_modules/mongo-express
-# Sat, 02 Dec 2023 04:45:15 GMT
+# Sat, 06 Jan 2024 01:56:27 GMT
+RUN set -eux;     apk add --no-cache         bash         tini
+# Sat, 06 Jan 2024 01:56:27 GMT
+WORKDIR /app
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express
+# Sat, 06 Jan 2024 01:56:27 GMT
+ARG MONGO_EXPRESS_VERSION=release/v1.0.2
+# Sat, 06 Jan 2024 01:56:59 GMT
+# ARGS: MONGO_EXPRESS_REPOSITORY=mongo-express/mongo-express MONGO_EXPRESS_VERSION=release/v1.0.2
+RUN set -eux;     apk add --no-cache --virtual .me-fetch-deps git;     git clone --depth 1 --branch "$MONGO_EXPRESS_VERSION" -c advice.detachedHead=false https://github.com/$MONGO_EXPRESS_REPOSITORY.git .;     export DISABLE_V8_COMPILE_CACHE=1;     yarn install;     yarn build;     apk del --no-network .me-fetch-deps;     rm -rf .git* ~/.cache ~/.yarn
+# Sat, 06 Jan 2024 01:57:01 GMT
+ENV ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_SITE_SESSIONSECRET=secret VCAP_APP_HOST=0.0.0.0
+# Sat, 06 Jan 2024 01:57:01 GMT
 EXPOSE 8081
-# Sat, 02 Dec 2023 04:45:16 GMT
-COPY file:a907b69e6dd5a27a50ea886b61d030160973910412c6c144b98f31160550e1cf in / 
-# Sat, 02 Dec 2023 04:45:16 GMT
+# Sat, 06 Jan 2024 01:57:01 GMT
+COPY file:e65cee9976795c6d0de277119de62066afbd539ecdb88fe4ea55fdafa2e2744b in / 
+# Sat, 06 Jan 2024 01:57:02 GMT
 ENTRYPOINT ["/sbin/tini" "--" "/docker-entrypoint.sh"]
-# Sat, 02 Dec 2023 04:45:16 GMT
+# Sat, 06 Jan 2024 01:57:02 GMT
 CMD ["mongo-express"]
 ```
 
 -	Layers:
-	-	`sha256:b8180c93b172865af87a7c0e7e3c8bcb139e0d0c92e19c96467ff2cd4c8919ad`  
-		Last Modified: Thu, 30 Nov 2023 23:11:45 GMT  
-		Size: 3.3 MB (3258348 bytes)  
+	-	`sha256:2c03dbb20264f09924f9eab176da44e5421e74a78b09531d3c63448a7baa7c59`  
+		Last Modified: Thu, 30 Nov 2023 23:11:32 GMT  
+		Size: 3.3 MB (3333033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:789e422d15b7bfbdf68dec022599a85f691da6929abdc4dd95e79e2ac01d39ea`  
-		Last Modified: Sat, 02 Dec 2023 04:16:53 GMT  
-		Size: 39.8 MB (39818057 bytes)  
+	-	`sha256:cd9cba98305bbc9b5b1acc82808c97ec2f1bdd0918782e26a4f249c89e8f5f1c`  
+		Last Modified: Sat, 02 Dec 2023 04:17:12 GMT  
+		Size: 39.8 MB (39817628 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19ee3be5ce42dbc4b3c8e895cde159839fc11b857d1e603974af0d856c4290e5`  
-		Last Modified: Sat, 02 Dec 2023 04:16:48 GMT  
-		Size: 2.3 MB (2342828 bytes)  
+	-	`sha256:fbb1cdcfb3b6e7d1dbbdde57709e15e2c4bbdcac8f7c3da88459d74bc402c637`  
+		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
+		Size: 2.3 MB (2342686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4084bae0cb59af9df43b6f9bbc3d04c234a005b2c4eae80c70641ccd9d9776e4`  
-		Last Modified: Sat, 02 Dec 2023 04:16:48 GMT  
-		Size: 447.0 B  
+	-	`sha256:266cff88a90930625e27a71f05f05b0bb69c1c3612e447e70131636367599c6c`  
+		Last Modified: Sat, 02 Dec 2023 04:17:07 GMT  
+		Size: 449.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:711dc5ba72b1abcf9cb5d895b104e44afc440a91eefaef99cea83609d170db42`  
-		Last Modified: Sat, 02 Dec 2023 04:45:52 GMT  
-		Size: 23.9 MB (23915506 bytes)  
+	-	`sha256:b233574749281abc1a8ad5a8fb4f54bd3aa2b79c58bd876195c947c20d3083fa`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 887.0 KB (886996 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:52f4dec118937c0d93706facb3a84f5ff4ac5cf2c63761c517f5ec697213e6a3`  
-		Last Modified: Sat, 02 Dec 2023 04:45:48 GMT  
-		Size: 763.0 B  
+	-	`sha256:1254cb9a9f437dc36f890b22f67330bfbc4c76a86d4e1c845d093039c3455c1e`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ca088f0889c67078200ebc911786a79a006f465a4c1e1a6fe630152a483e40bb`  
+		Last Modified: Sat, 06 Jan 2024 01:58:29 GMT  
+		Size: 33.1 MB (33062417 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fbcca7110cd18932f3edb0f5e106ec20360693a67d7cb668788f9da77d541f99`  
+		Last Modified: Sat, 06 Jan 2024 01:58:23 GMT  
+		Size: 783.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
