@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6048ece50a0463c790f1987dc6bab162c59b217bd1814bff0d134adc28b2c396`
-- Created: `2023-12-19T07:09:35.756142201Z`
-- Virtual Size: ~ 498.68 Mb  
+- Image ID: `sha256:803fd25ccd8e647f689f4710f88f9d3b036178026d32d40ceda44c2c68d1aa43`
+- Created: `2024-01-04T20:50:24.529493112Z`
+- Virtual Size: ~ 495.15 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint"]`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/opt/java/openjdk`
-  - `CLOJURE_VERSION=1.11.1.1429`
+  - `CLOJURE_VERSION=1.11.1.1435`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -353,11 +353,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/coreutils/8.32-4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/coreutils/8.32-4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `curl=7.74.0-1.3+deb11u10`
+### `dpkg` source package: `curl=7.74.0-1.3+deb11u11`
 
 Binary Packages:
 
-- `libcurl3-gnutls:amd64=7.74.0-1.3+deb11u10`
+- `libcurl3-gnutls:amd64=7.74.0-1.3+deb11u11`
 
 Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`)
 
@@ -368,13 +368,20 @@ Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`)
 - `other`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris curl=7.74.0-1.3+deb11u11
+'http://deb.debian.org/debian-security/pool/updates/main/c/curl/curl_7.74.0-1.3%2bdeb11u11.dsc' curl_7.74.0-1.3+deb11u11.dsc 2703 SHA256:0f294bd38cdfd08c4f3d259c64d1a573226acfc33dcd8a978995e5ac06c3051c
+'http://deb.debian.org/debian-security/pool/updates/main/c/curl/curl_7.74.0.orig.tar.gz' curl_7.74.0.orig.tar.gz 4043409 SHA256:e56b3921eeb7a2951959c02db0912b5fcd5fdba5aca071da819e1accf338bbd7
+'http://deb.debian.org/debian-security/pool/updates/main/c/curl/curl_7.74.0-1.3%2bdeb11u11.debian.tar.xz' curl_7.74.0-1.3+deb11u11.debian.tar.xz 73396 SHA256:78b7ad872075b48afe37d15089e6bb0831a1fdeabc40b1ee2987fc40a8b44290
+```
 
-- http://snapshot.debian.org/package/curl/7.74.0-1.3+deb11u10/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/curl/7.74.0-1.3+deb11u11/ (for browsing the source)
+- https://sources.debian.net/src/curl/7.74.0-1.3+deb11u11/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/curl/7.74.0-1.3+deb11u11/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-2.1+deb11u1`
 
@@ -2278,11 +2285,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openldap/2.4.57+dfsg-3+deb11u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openldap/2.4.57+dfsg-3+deb11u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openssh=1:8.4p1-5+deb11u2`
+### `dpkg` source package: `openssh=1:8.4p1-5+deb11u3`
 
 Binary Packages:
 
-- `openssh-client=1:8.4p1-5+deb11u2`
+- `openssh-client=1:8.4p1-5+deb11u3`
 
 Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 
@@ -2298,18 +2305,18 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openssh=1:8.4p1-5+deb11u2
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.4p1-5%2bdeb11u2.dsc' openssh_8.4p1-5+deb11u2.dsc 3393 SHA256:85766be35d9e1d460e8117164a7a7d5f7347de5130718a7065098c8e6fc4e7bd
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.4p1.orig.tar.gz' openssh_8.4p1.orig.tar.gz 1742201 SHA256:5a01d22e407eb1c05ba8a8f7c654d388a13e9f226e4ed33bd38748dafa1d2b24
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.4p1.orig.tar.gz.asc' openssh_8.4p1.orig.tar.gz.asc 683 SHA256:ccd9dd484651ce4cc926228f6e1b46afaf0c5ab98a866217fa0ef1074370ea2b
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.4p1-5%2bdeb11u2.debian.tar.xz' openssh_8.4p1-5+deb11u2.debian.tar.xz 181152 SHA256:72ab9d1e3186a3efbdbb792c9ae08daa4e965a219579482a23d743cfef0180cd
+$ apt-get source -qq --print-uris openssh=1:8.4p1-5+deb11u3
+'http://deb.debian.org/debian-security/pool/updates/main/o/openssh/openssh_8.4p1-5%2bdeb11u3.dsc' openssh_8.4p1-5+deb11u3.dsc 3270 SHA256:0f800a412ac707c735afd90b5529511c5c1629b6aef342d824b2f66250565459
+'http://deb.debian.org/debian-security/pool/updates/main/o/openssh/openssh_8.4p1.orig.tar.gz' openssh_8.4p1.orig.tar.gz 1742201 SHA256:5a01d22e407eb1c05ba8a8f7c654d388a13e9f226e4ed33bd38748dafa1d2b24
+'http://deb.debian.org/debian-security/pool/updates/main/o/openssh/openssh_8.4p1.orig.tar.gz.asc' openssh_8.4p1.orig.tar.gz.asc 683 SHA256:ccd9dd484651ce4cc926228f6e1b46afaf0c5ab98a866217fa0ef1074370ea2b
+'http://deb.debian.org/debian-security/pool/updates/main/o/openssh/openssh_8.4p1-5%2bdeb11u3.debian.tar.xz' openssh_8.4p1-5+deb11u3.debian.tar.xz 186600 SHA256:f460cc974def7a03753f6d3e5248265aa01deca7e2ba5e29979677487e89cd41
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openssh/1:8.4p1-5+deb11u2/ (for browsing the source)
-- https://sources.debian.net/src/openssh/1:8.4p1-5+deb11u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssh/1:8.4p1-5+deb11u2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openssh/1:8.4p1-5+deb11u3/ (for browsing the source)
+- https://sources.debian.net/src/openssh/1:8.4p1-5+deb11u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openssh/1:8.4p1-5+deb11u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=1.1.1w-0+deb11u1`
 

@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7db41149dda49041c94f3c70e659f628604e5692f4c02606cb809e1064fcf04b`
-- Created: `2023-12-05T18:22:34.671531268Z`
-- Virtual Size: ~ 263.56 Mb  
+- Image ID: `sha256:76e66e3469582aebccbe6ff152398914fe438c6db248768e9294ed31c2288285`
+- Created: `2024-01-04T20:41:36.824572055Z`
+- Virtual Size: ~ 260.03 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/__cacert_entrypoint.sh"]`
@@ -16,7 +16,7 @@
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
   - `JAVA_VERSION=jdk8u392-b08`
-  - `CLOJURE_VERSION=1.11.1.1429`
+  - `CLOJURE_VERSION=1.11.1.1435`
 
 ## `apk` (`.apk`-based packages)
 
@@ -346,16 +346,16 @@ Apache-2.0
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-8.4.0-r0 description:
+libcurl-8.5.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-8.4.0-r0 webpage:
+libcurl-8.5.0-r0 webpage:
 https://curl.se/
 
-libcurl-8.4.0-r0 installed size:
+libcurl-8.5.0-r0 installed size:
 584 KiB
 
-libcurl-8.4.0-r0 license:
+libcurl-8.5.0-r0 license:
 curl
 
 ```

@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:cceaf63982fa77774c8b11c77d806c5036b0bb9cc51cb6ce22c0f259a27df6bb`
-- Created: `2023-12-16T15:40:46.78281227Z`
-- Virtual Size: ~ 559.86 Mb  
+- Image ID: `sha256:c5c91a439ba0428f2d78a90e923a0987927cbafc12a1337eb61274e5979fa4db`
+- Created: `2024-01-04T20:53:33.594601546Z`
+- Virtual Size: ~ 556.33 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint"]`
@@ -16,7 +16,7 @@
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
   - `JAVA_VERSION=jdk-21.0.1+12`
-  - `CLOJURE_VERSION=1.11.1.1429`
+  - `CLOJURE_VERSION=1.11.1.1435`
 - Labels:
   - `org.opencontainers.image.ref.name=ubuntu`
   - `org.opencontainers.image.version=22.04`
@@ -1909,11 +1909,11 @@ $ apt-get source -qq --print-uris openldap=2.5.16+dfsg-0ubuntu0.22.04.1
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.5.16%2bdfsg-0ubuntu0.22.04.1.debian.tar.xz' openldap_2.5.16+dfsg-0ubuntu0.22.04.1.debian.tar.xz 171800 SHA512:18b60cf943512a8e2d726c9cd1114a3637d46efc928f4a1f241da11eeaf6c859d5f7402c0888a81da425386543d9a2eaac8a9e8c768cfa24b2c605aa88fb01db
 ```
 
-### `dpkg` source package: `openssh=1:8.9p1-3ubuntu0.4`
+### `dpkg` source package: `openssh=1:8.9p1-3ubuntu0.6`
 
 Binary Packages:
 
-- `openssh-client=1:8.9p1-3ubuntu0.4`
+- `openssh-client=1:8.9p1-3ubuntu0.6`
 
 Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 
@@ -1925,9 +1925,15 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openssh=1:8.9p1-3ubuntu0.6
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.9p1-3ubuntu0.6.dsc' openssh_8.9p1-3ubuntu0.6.dsc 3347 SHA512:048b6f76bbd42b901ef1b47d9da965146e14ec579e36db6ffd0c63e1f8317eddfa22c26ef33ee02428c9f1c872ea26b6815df6634e3a7be8887e74141aab1d0d
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.9p1.orig.tar.gz' openssh_8.9p1.orig.tar.gz 1820282 SHA512:04bd38ea6fe4be31acc8c4e83de7d3dda66fb7207be2e4ba25d3b8118d13d098a283769da9e8ce1fc4fba7edf739c14efcc6c9137132919261a7f882314b0f6b
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.9p1.orig.tar.gz.asc' openssh_8.9p1.orig.tar.gz.asc 833 SHA512:fd0bbd285ff2f8791f5a512f087f32bce026b716d5ac213cd4ef28f08722601fb943514bee71b2ac4b9f9363e2f120ce6c60fed952d1d8e53dbcf2a6fe2e706b
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.9p1-3ubuntu0.6.debian.tar.xz' openssh_8.9p1-3ubuntu0.6.debian.tar.xz 198192 SHA512:e2b41a020ff7255b26152b94b733c1e466bfa56c8f835092c0ec9f8c7838a2c0ac4a412dca361b445c1ea641232092caf14d61ee118291984e6fd8deb36f833c
+```
 
 ### `dpkg` source package: `openssl=3.0.2-0ubuntu1.12`
 
@@ -2318,11 +2324,11 @@ $ apt-get source -qq --print-uris shadow=1:4.8.1-2ubuntu2.1
 'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.8.1-2ubuntu2.1.debian.tar.xz' shadow_4.8.1-2ubuntu2.1.debian.tar.xz 96432 SHA512:aa6eead6f612c0dc9001ce0f74de0b9b0e4da371958d4860675e5cbf88d353adce8e070fa1bb904e287ce79de7ccc3d896936fb95113d2440b75f0207e2504f3
 ```
 
-### `dpkg` source package: `sqlite3=3.37.2-2ubuntu0.1`
+### `dpkg` source package: `sqlite3=3.37.2-2ubuntu0.3`
 
 Binary Packages:
 
-- `libsqlite3-0:amd64=3.37.2-2ubuntu0.1`
+- `libsqlite3-0:amd64=3.37.2-2ubuntu0.3`
 
 Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 
@@ -2330,9 +2336,15 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 - `GPL-2+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris sqlite3=3.37.2-2ubuntu0.3
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.37.2-2ubuntu0.3.dsc' sqlite3_3.37.2-2ubuntu0.3.dsc 2602 SHA512:086e45082a9d83001d2c97407d1c2ce0869add89f27594ed412ce930d45d16318e644ac4e6deb571ddedb17d76a38af6c12ab39b6c1f1001f9423498cc045508
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.37.2.orig-www.tar.xz' sqlite3_3.37.2.orig-www.tar.xz 5694016 SHA512:577e34b4ae18a3c73be6d955a2e2321e993f61decefbcca5112170072ea556eca93dcf55f3059fbcd96147124442b368150de7f68c603e84b80cbe0228ae78f8
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.37.2.orig.tar.xz' sqlite3_3.37.2.orig.tar.xz 7623768 SHA512:dfa51b0a32ab0597cd00ae7abdb53bb255102f397ff8409f3fdbefaad17bc7d5a25f53db90bed47feb1bf4a9a1a4707bc40440c6c5303f3ef5c49ded61558fed
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.37.2-2ubuntu0.3.debian.tar.xz' sqlite3_3.37.2-2ubuntu0.3.debian.tar.xz 30176 SHA512:6c8f4b6d233a566bdc7291a3135e0d748ef972cccbbdb50d145df1c3cae9f2fb3216e120e58e123e5234040865e69eb7e4c3720b24d655500d6514aff27056b7
+```
 
 ### `dpkg` source package: `systemd=249.11-0ubuntu3.11`
 
