@@ -1023,15 +1023,13 @@ Licenses: (parsed from: `/usr/share/doc/libbsd0/copyright`)
 - `libutil-David-Nugent`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libbsd=0.11.7-4
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.11.7-4.dsc' libbsd_0.11.7-4.dsc 2350 SHA512:9fc370950b1421a0ec801f1075fcf2d03d604f77a8f562c0e8647e0b68f821f9b6d0317b565f4db700fd1555aecdd6a3d66087b55e9a1944ffaea81de032a648
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.11.7.orig.tar.xz' libbsd_0.11.7.orig.tar.xz 418508 SHA512:51fda4724f41dd8a4628afd58c21236a7588d9045e337e06eeabf83805a9aaaa53705441ca901ad11f1c65f18e881523bdc97721a7d3d6a5cced27f2450d09a2
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.11.7.orig.tar.xz.asc' libbsd_0.11.7.orig.tar.xz.asc 833 SHA512:bdcce69ee261039900896c5be48659f1b6b809f3a6e8a5220aac30a6687926ac29e478a3ea737727d077d6575ee11b86eed896932568fdd261a9aaeb46d695b6
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.11.7-4.debian.tar.xz' libbsd_0.11.7-4.debian.tar.xz 21596 SHA512:24875c5a3b360ff1e2b0bb974e3b99f5bbd3b64a96f7948f94f2afc8c762d5e589fdfae2e81dc021bbc5cab6dbb63586c9cab9676067e4bd6afa5cd6b3612204
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libbsd/0.11.7-4/
+
 
 ### `dpkg` source package: `libcap-ng=0.8.3-3`
 
@@ -1296,15 +1294,13 @@ Licenses: (parsed from: `/usr/share/doc/libmd0/copyright`)
 - `public-domain-md5`
 - `public-domain-sha1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libmd=1.1.0-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libm/libmd/libmd_1.1.0-1.dsc' libmd_1.1.0-1.dsc 2283 SHA512:0838dfa6755a4e0ce750bc31fa7db32e66000ebfae117b92ad7f1b81b89fbfd1e209ad6bf2d5e19df5ef7b5f4d057c39974f4c475626ea69cc93d05d7fd64ceb
-'http://archive.ubuntu.com/ubuntu/pool/main/libm/libmd/libmd_1.1.0.orig.tar.xz' libmd_1.1.0.orig.tar.xz 271228 SHA512:5d0da3337038e474fae7377bbc646d17214e72dc848a7aadc157f49333ce7b5ac1456e45d13674bd410ea08477c6115fc4282fed6c8e6a0bf63537a418c0df96
-'http://archive.ubuntu.com/ubuntu/pool/main/libm/libmd/libmd_1.1.0.orig.tar.xz.asc' libmd_1.1.0.orig.tar.xz.asc 833 SHA512:b0ff3baa7eedc205ee6f8b844859145fa6922c39e8f62f1e997851a65b2881649b438a37baa5800d140541da6f4dacc9f92a370f945d7461937b8cdedeca1cef
-'http://archive.ubuntu.com/ubuntu/pool/main/libm/libmd/libmd_1.1.0-1.debian.tar.xz' libmd_1.1.0-1.debian.tar.xz 8156 SHA512:d5e657388c32afaa86e1ff86f35f354202065534173eadcc7118afefd1a37fc7f9e97a76f121f20ac7be8c6d53b7eeab242f2f52062e6679e4d470b969fcc581
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libmd/1.1.0-1/
+
 
 ### `dpkg` source package: `libnsl=1.3.0-3`
 
@@ -1669,15 +1665,13 @@ Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/me
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mercurial=6.5.3-1
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_6.5.3-1.dsc' mercurial_6.5.3-1.dsc 2806 SHA512:8d2939b34347e5c43cfe7ff8a95e0e4bfac285ee01545c0eb230aa17f7883c7cfdd96c833cc57077b2cfa5f08fc6dedc6739462722d7cbc47e258f5d27501a37
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_6.5.3.orig.tar.gz' mercurial_6.5.3.orig.tar.gz 8235306 SHA512:af90ec414fbf9da518ce0de5b855b5dd6e4141f838ab0da54a40f31aa00245d21f14f1352fe537744fb6ae5a3e4f2723076f4773fafac649b8483fefd002b510
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_6.5.3.orig.tar.gz.asc' mercurial_6.5.3.orig.tar.gz.asc 659 SHA512:01ee8724a342a4a71431effdf336c2e4982921d83bf6e350e62dadcbda1f1c264d7453acc00738bdba46763a3567369cee22037e4fe35c9e4d822829506805f2
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_6.5.3-1.debian.tar.xz' mercurial_6.5.3-1.debian.tar.xz 69264 SHA512:058a3f4793dfc003eca044a93022c5442721f745f5a7d173e9b7e5184783e53cb1057f3084a4a9842dec323e9271d489db3b05b68d27c464501d401033ff908c
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/mercurial/6.5.3-1/
+
 
 ### `dpkg` source package: `ncurses=6.4+20231209-1`
 
@@ -2430,15 +2424,9 @@ Licenses: (parsed from: `/usr/share/doc/tzdata/copyright`)
 - `ICU`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2023d-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023d-1ubuntu1.dsc' tzdata_2023d-1ubuntu1.dsc 2675 SHA512:36f31007453fd296aff7da93a419a3d3905c9f8accc3f5daf2b5ec8cd7f5a5b8f5fe0fb10db68cd576f3cf69ef6022cb22d6fcf4d82a34b21d9803577aeae212
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023d.orig.tar.gz' tzdata_2023d.orig.tar.gz 449767 SHA512:81832b2d738c28cecbcb3906cc07568c5ae574adc9de35b25d4bf613581c92d471d67213b4261a56f0ec02efcf211b4e298b7e1dc367c972e726b0a2e9498df4
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023d.orig.tar.gz.asc' tzdata_2023d.orig.tar.gz.asc 833 SHA512:3266f0ad4e05365fb09d48b9baeb884447cc4c16ecd4f0d2bf5f25b0aabe03b48fca11c19379a45545dc4f41acc68633c624d99d2700f439d9233ecab6d1f184
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2023d-1ubuntu1.debian.tar.xz' tzdata_2023d-1ubuntu1.debian.tar.xz 183520 SHA512:826d410372b739375fdf28bd7f7a045c3de088acf62b92a2feb0b6e5f039845826fa065bc467ea82fccf93fa71895f5bdbdde40c18a366f6823c67ac7a16393f
-```
 
 ### `dpkg` source package: `ubuntu-keyring=2023.11.28.1`
 
@@ -2487,13 +2475,9 @@ Licenses: (parsed from: `/usr/share/doc/usrmerge/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris usrmerge=35ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/u/usrmerge/usrmerge_35ubuntu1.dsc' usrmerge_35ubuntu1.dsc 1717 SHA512:187148b5844858d99506dadb3dc0f18f439df2f01835d1849d07cccfc2819405a0cd722a68ab67e483b4d5fd69e14ce7cf376710ef59edc4ec21610f98dc3c40
-'http://archive.ubuntu.com/ubuntu/pool/main/u/usrmerge/usrmerge_35ubuntu1.tar.xz' usrmerge_35ubuntu1.tar.xz 15240 SHA512:5116c42163a7b972282ca7af66c268f29197a725fc91020bcd2fcd7ba31f150a705749f3fcf7b02b45d778ffff93e4bc93af0db9491dd28f82e7be9793e9fb0d
-```
 
 ### `dpkg` source package: `utf8proc=2.9.0-1`
 
